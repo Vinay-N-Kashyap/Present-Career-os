@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why fairness is a safety issue",
+      "codeHash": "24f1d6246940142253e98ccd63ce98ddc9010b061fa7c5878ba8c2f7f344f106",
+      "spec": {
+        "template": "table",
+        "title": "Shortlisting decisions across demographic groups",
+        "columns": [
+          "group",
+          "shortlisted"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Systems decide who gets shortlisted for review.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "group"
+                  },
+                  {
+                    "text": "shortlisted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "group"
+                  },
+                  {
+                    "text": "shortlisted"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Biased training decisions cause models to learn unfair patterns.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "group"
+                  },
+                  {
+                    "text": "shortlisted"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "shortlisted"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Shortlisting decisions across demographic groups",
+        "columns": [
+          "group",
+          "shortlisted"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Systems decide who gets shortlisted for review.",
+            "rows": [
+              {
+                "cells": [
+                  "group",
+                  "shortlisted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "group",
+                  "shortlisted"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Biased training decisions cause models to learn unfair patterns.",
+            "rows": [
+              {
+                "cells": [
+                  "group",
+                  "shortlisted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "results",
+                  "shortlisted"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Demographic parity",
+      "codeHash": "f18848085ffe485bd799986b3ee40b950dce754eab2c9aebe1ffed1d1add90b9",
+      "spec": {
+        "template": "table",
+        "title": "Measuring demographic parity positive rates and gaps",
+        "columns": [
+          "groups",
+          "rates"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Demographic parity measures group positive outcome rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "rates"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "rates"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The parity gap subtracts the lowest rate from the highest rate.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "rates"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "preds"
+                  },
+                  {
+                    "text": "groups"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Measuring demographic parity positive rates and gaps",
+        "columns": [
+          "groups",
+          "rates"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Demographic parity measures group positive outcome rates.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "rates"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "groups",
+                  "rates"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The parity gap subtracts the lowest rate from the highest rate.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "rates"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "preds",
+                  "groups"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Equal opportunity",
+      "codeHash": "14933f7a20ea0765cb7b8fe789e3e71ed09d8ef912f1a64c6f25ca43b9d89c87",
+      "spec": {
+        "template": "table",
+        "title": "Equal opportunity true positive rates per group",
+        "columns": [
+          "groups",
+          "qualified"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "True positive rate is computed separately per group.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "qualified"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "qualified"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "True labels indicate which applicants were actually qualified.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "qualified"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "y_true"
+                  },
+                  {
+                    "text": "y_pred"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Equal opportunity true positive rates per group",
+        "columns": [
+          "groups",
+          "qualified"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "True positive rate is computed separately per group.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "qualified"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "groups",
+                  "qualified"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "True labels indicate which applicants were actually qualified.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "qualified"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "y_true",
+                  "y_pred"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fairness measures can conflict",
+      "codeHash": "ffce07c949c28af2df0fa979503f0d03d8efe1a50de76b8cc75a72aafc104435",
+      "spec": {
+        "template": "table",
+        "title": "Comparing positive rates and true positive rates across groups",
+        "columns": [
+          "groups",
+          "rate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Different fairness measures cannot always be satisfied.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Both groups are shortlisted while qualified members differ in recall.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "y_pred"
+                  },
+                  {
+                    "text": "qual"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comparing positive rates and true positive rates across groups",
+        "columns": [
+          "groups",
+          "rate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Different fairness measures cannot always be satisfied.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "rate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "groups",
+                  "rate"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Both groups are shortlisted while qualified members differ in recall.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "rate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "y_pred",
+                  "qual"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fairness for language models",
+      "codeHash": "e561431753eed33fa18500f9c3d165769b2e09aa950c9e5cc61fd577b40a4563",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Fairness checks in the pipeline",
+      "codeHash": "2ae56139eee018ea0922cd7cbfcabd4954b5ce17eb85c65769a1990a21e43309",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

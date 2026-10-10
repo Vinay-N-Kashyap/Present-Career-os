@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The architecture",
+      "codeHash": "fe2f55b4b884a2f3287c4239b27ee5ae2a252119767bdb3950024cc9efddfd2e",
+      "spec": {
+        "template": "table",
+        "title": "Event-driven video processing pipeline stages and executing AWS services",
+        "columns": [
+          "stage",
+          "service"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Clients request presigned URLs to upload directly to raw storage buckets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "request upload URL"
+                  },
+                  {
+                    "text": "API Gateway + Lambda"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "S3 upload completion notifications trigger asynchronous processing functions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "request upload URL"
+                  },
+                  {
+                    "text": "API Gateway + Lambda"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "upload finished event"
+                  },
+                  {
+                    "text": "S3 event notification"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Event driven pipeline components react to events and scale independently.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "request upload URL"
+                  },
+                  {
+                    "text": "API Gateway + Lambda"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "upload finished event"
+                  },
+                  {
+                    "text": "S3 event notification"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "transcode"
+                  },
+                  {
+                    "text": "Lambda -> MediaConvert"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "save result"
+                  },
+                  {
+                    "text": "S3 processed bucket + DynamoDB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Event-driven video processing pipeline stages and executing AWS services",
+        "columns": [
+          "stage",
+          "service"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Clients request presigned URLs to upload directly to raw storage buckets.",
+            "rows": [
+              {
+                "cells": [
+                  "request upload URL",
+                  "API Gateway + Lambda"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "S3 upload completion notifications trigger asynchronous processing functions.",
+            "rows": [
+              {
+                "cells": [
+                  "request upload URL",
+                  "API Gateway + Lambda"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "upload finished event",
+                  "S3 event notification"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Event driven pipeline components react to events and scale independently.",
+            "rows": [
+              {
+                "cells": [
+                  "request upload URL",
+                  "API Gateway + Lambda"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "upload finished event",
+                  "S3 event notification"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "transcode",
+                  "Lambda -> MediaConvert"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "save result",
+                  "S3 processed bucket + DynamoDB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reading S3 event records",
+      "codeHash": "8e79cc3f81c9535e8e2867a7256d1ec3fe39b44570267f0b91fb9cb47ec4c7e2",
+      "spec": {
+        "template": "table",
+        "title": "S3 event record payload fields parsing bucket names and object keys",
+        "columns": [
+          "eventName",
+          "key"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "S3 notification records describe affected objects including bucket and key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ObjectCreated:Put"
+                  },
+                  {
+                    "text": "demo.mp4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Event object keys arrive URL encoded requiring decoding before processing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ObjectCreated:Put"
+                  },
+                  {
+                    "text": "demo.mp4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ObjectCreated:Put"
+                  },
+                  {
+                    "text": "my+holiday%20video.mp4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Always log the bucket name and object key while processing event records.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ObjectCreated:Put"
+                  },
+                  {
+                    "text": "demo.mp4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ObjectCreated:Put"
+                  },
+                  {
+                    "text": "my+holiday%20video.mp4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "S3 event record payload fields parsing bucket names and object keys",
+        "columns": [
+          "eventName",
+          "key"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "S3 notification records describe affected objects including bucket and key.",
+            "rows": [
+              {
+                "cells": [
+                  "ObjectCreated:Put",
+                  "demo.mp4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Event object keys arrive URL encoded requiring decoding before processing.",
+            "rows": [
+              {
+                "cells": [
+                  "ObjectCreated:Put",
+                  "demo.mp4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ObjectCreated:Put",
+                  "my+holiday%20video.mp4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Always log the bucket name and object key while processing event records.",
+            "rows": [
+              {
+                "cells": [
+                  "ObjectCreated:Put",
+                  "demo.mp4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ObjectCreated:Put",
+                  "my+holiday%20video.mp4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Processing every record and isolating failures",
+      "codeHash": "0e2ccb612a9fda5944581bc63cf21f134362afc26e72d7f943e1beb35140f869",
+      "spec": {
+        "template": "table",
+        "title": "Batch upload processing outcomes with isolated corrupt file handling",
+        "columns": [
+          "file",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Isolating processing exceptions marks corrupt files as FAILED without crashing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "a.mp4"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "b.bad"
+                  },
+                  {
+                    "text": "FAILED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failure isolation ensures valid files complete successfully despite errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "a.mp4"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "b.bad"
+                  },
+                  {
+                    "text": "FAILED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c.mp4"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example processes batch uploads isolating corrupt files from valid ones.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "a.mp4"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "b.bad"
+                  },
+                  {
+                    "text": "FAILED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c.mp4"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Batch upload processing outcomes with isolated corrupt file handling",
+        "columns": [
+          "file",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Isolating processing exceptions marks corrupt files as FAILED without crashing.",
+            "rows": [
+              {
+                "cells": [
+                  "a.mp4",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "b.bad",
+                  "FAILED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failure isolation ensures valid files complete successfully despite errors.",
+            "rows": [
+              {
+                "cells": [
+                  "a.mp4",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "b.bad",
+                  "FAILED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "c.mp4",
+                  "DONE"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example processes batch uploads isolating corrupt files from valid ones.",
+            "rows": [
+              {
+                "cells": [
+                  "a.mp4",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "b.bad",
+                  "FAILED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "c.mp4",
+                  "DONE"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotency: safe to run twice",
+      "codeHash": "026ce8aeac8c619ff7973c82652170941ac5865dea85c477453adf145d8c027d",
+      "spec": {
+        "template": "table",
+        "title": "Idempotent execution verification tracking transcode runs across deliveries",
+        "columns": [
+          "event_delivery",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Idempotent event handlers avoid duplicate executions on repeated deliveries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "demo.mp4"
+                  },
+                  {
+                    "text": "transcoded"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Checking state in the database skips redundant work when already processed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "demo.mp4"
+                  },
+                  {
+                    "text": "transcoded"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "demo.mp4"
+                  },
+                  {
+                    "text": "skipped (already done)"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example executes identical events confirming expensive jobs run once.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "demo.mp4"
+                  },
+                  {
+                    "text": "transcoded"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "demo.mp4"
+                  },
+                  {
+                    "text": "skipped (already done)"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Idempotent execution verification tracking transcode runs across deliveries",
+        "columns": [
+          "event_delivery",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Idempotent event handlers avoid duplicate executions on repeated deliveries.",
+            "rows": [
+              {
+                "cells": [
+                  "demo.mp4",
+                  "transcoded"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Checking state in the database skips redundant work when already processed.",
+            "rows": [
+              {
+                "cells": [
+                  "demo.mp4",
+                  "transcoded"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "demo.mp4",
+                  "skipped (already done)"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example executes identical events confirming expensive jobs run once.",
+            "rows": [
+              {
+                "cells": [
+                  "demo.mp4",
+                  "transcoded"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "demo.mp4",
+                  "skipped (already done)"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Long jobs, costs and limits",
+      "codeHash": "6223d5a80e1fcd0a44a74389e4f5bca02828ddf77f5beabedc9126247e4a499b",
+      "spec": {
+        "template": "none",
+        "reason": "Long-running jobs and media conversion delegation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: build the engine",
+      "codeHash": "d86806db94847055a82f42e5763b39834f189da8bd9a63ef096fdd32fbfd64c6",
+      "spec": {
+        "template": "none",
+        "reason": "Milestone 2 integration engine test review."
+      },
+      "filled": {}
+    }
+  ]
+}

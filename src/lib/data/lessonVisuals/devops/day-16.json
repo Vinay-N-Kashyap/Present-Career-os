@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 16,
+  "promptSha": "e45550273a1cf32e1be8fb109b08518ea2c368fc606d57e1d2cacf1f1c07d972",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Kubernetes Control Plane Architecture & Consensus",
+      "codeHash": "6a09ec5b36cc05fd30cd5940435c7a7d7b1bde539e7e7c112e726cebc613d050",
+      "spec": {
+        "template": "compare",
+        "title": "Kubernetes control plane gateway versus consensus datastore",
+        "leftLabel": "API Gateway (kube-apiserver)",
+        "rightLabel": "Consensus Database (etcd)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Central entry point provides stateless gateway intercepting requests.",
+            "left": {
+              "code": "name: 'kube-apiserver'",
+              "result": {
+                "text": "kube-apiserver"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "protocol: 'HTTPS/JSON'",
+              "result": {
+                "text": "HTTPS/JSON"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Persistent cluster state resides in distributed key-value database storage.",
+            "left": {
+              "code": "name: 'etcd'",
+              "result": {
+                "text": "etcd"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "protocol: 'gRPC'",
+              "result": {
+                "text": "gRPC"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kubernetes control plane gateway versus consensus datastore",
+        "leftLabel": "API Gateway (kube-apiserver)",
+        "rightLabel": "Consensus Database (etcd)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Central entry point provides stateless gateway intercepting requests.",
+            "left": {
+              "code": "name: 'kube-apiserver'",
+              "result": {
+                "text": "kube-apiserver"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "protocol: 'HTTPS/JSON'",
+              "result": {
+                "text": "HTTPS/JSON"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Persistent cluster state resides in distributed key-value database storage.",
+            "left": {
+              "code": "name: 'etcd'",
+              "result": {
+                "text": "etcd"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "protocol: 'gRPC'",
+              "result": {
+                "text": "gRPC"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Worker Node Anatomy: Kubelet, Kube-Proxy & CRI",
+      "codeHash": "511e5b618e098ffdab77a75e637abfbb2ab4b321fa01462d5df4f81eddcc3496",
+      "spec": {
+        "template": "compare",
+        "title": "Worker node kubelet agent versus kube-proxy networking daemon",
+        "leftLabel": "Node Management (Kubelet)",
+        "rightLabel": "Network Balancing (Kube-Proxy)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Primary node agent registers with api server watching assigned podspecs.",
+            "left": {
+              "code": "name: 'kubelet'",
+              "result": {
+                "text": "kubelet"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "subsystem: 'Management'",
+              "result": {
+                "text": "Management"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Network proxy balances traffic across available pod addresses.",
+            "left": {
+              "code": "name: 'kube-proxy'",
+              "result": {
+                "text": "kube-proxy"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "subsystem: 'Networking'",
+              "result": {
+                "text": "Networking"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Worker node kubelet agent versus kube-proxy networking daemon",
+        "leftLabel": "Node Management (Kubelet)",
+        "rightLabel": "Network Balancing (Kube-Proxy)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Primary node agent registers with api server watching assigned podspecs.",
+            "left": {
+              "code": "name: 'kubelet'",
+              "result": {
+                "text": "kubelet"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "subsystem: 'Management'",
+              "result": {
+                "text": "Management"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Network proxy balances traffic across available pod addresses.",
+            "left": {
+              "code": "name: 'kube-proxy'",
+              "result": {
+                "text": "kube-proxy"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "subsystem: 'Networking'",
+              "result": {
+                "text": "Networking"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pod Lifecycle & Phase Transitions",
+      "codeHash": "7b4a1ade6b295226d9a2d65c5299b026c6b6f796a0fd52dc9b9a4b956bee88af",
+      "spec": {
+        "template": "states",
+        "title": "Pod execution lifecycle phase transitions",
+        "states": [
+          {
+            "id": "pending",
+            "label": "Pending"
+          },
+          {
+            "id": "running",
+            "label": "Running"
+          },
+          {
+            "id": "failed",
+            "label": "Failed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Accepted pod manifest awaits container creation during pending lifecycle.",
+            "currentState": "pending",
+            "transition": {
+              "from": "pending",
+              "to": "pending",
+              "label": "Pending"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Bound pod transitions to running phase once containers initialize.",
+            "currentState": "running",
+            "transition": {
+              "from": "pending",
+              "to": "running",
+              "label": "Running"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Pod execution lifecycle phase transitions",
+        "states": [
+          {
+            "id": "pending",
+            "label": "Pending"
+          },
+          {
+            "id": "running",
+            "label": "Running"
+          },
+          {
+            "id": "failed",
+            "label": "Failed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Accepted pod manifest awaits container creation during pending lifecycle.",
+            "currentState": "pending",
+            "transition": {
+              "from": "pending",
+              "to": "pending",
+              "label": "Pending"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Bound pod transitions to running phase once containers initialize.",
+            "currentState": "running",
+            "transition": {
+              "from": "pending",
+              "to": "running",
+              "label": "Running"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ReplicaSets & The Declarative Reconciliation Loop",
+      "codeHash": "4132d64b5e974caecad1ef94ba39e4b3ed6f3b10447f4b74089c5392119ccdf3",
+      "spec": {
+        "template": "states",
+        "title": "ReplicaSet declarative reconciliation loop states",
+        "states": [
+          {
+            "id": "idle",
+            "label": "IDLE"
+          },
+          {
+            "id": "spawn",
+            "label": "SPAWN"
+          },
+          {
+            "id": "delete",
+            "label": "DELETE"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Controller monitors matching pods according to desired replica selector.",
+            "currentState": "idle",
+            "transition": {
+              "from": "idle",
+              "to": "idle",
+              "label": "IDLE"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Reconciliation loop detects deficit and triggers spawn action.",
+            "currentState": "spawn",
+            "transition": {
+              "from": "idle",
+              "to": "spawn",
+              "label": "SPAWN"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "ReplicaSet declarative reconciliation loop states",
+        "states": [
+          {
+            "id": "idle",
+            "label": "IDLE"
+          },
+          {
+            "id": "spawn",
+            "label": "SPAWN"
+          },
+          {
+            "id": "delete",
+            "label": "DELETE"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Controller monitors matching pods according to desired replica selector.",
+            "currentState": "idle",
+            "transition": {
+              "from": "idle",
+              "to": "idle",
+              "label": "IDLE"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Reconciliation loop detects deficit and triggers spawn action.",
+            "currentState": "spawn",
+            "transition": {
+              "from": "idle",
+              "to": "spawn",
+              "label": "SPAWN"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kubernetes Deployments: RollingUpdate Strategies",
+      "codeHash": "8c5a3fb7f26989877be6cd32f4ca36bd6db8c5d75a23d2d7594cf01ec78d0ccf",
+      "spec": {
+        "template": "compare",
+        "title": "Deployment rolling update zero downtime versus aggressive pacing",
+        "leftLabel": "Zero Downtime Pacing",
+        "rightLabel": "Aggressive Rollout Pacing",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Surge parameter specifies allowable surplus pods created during rollout.",
+            "left": {
+              "code": "maxSurge: 1",
+              "result": {
+                "text": "maxSurge"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxSurge: 2",
+              "result": {
+                "text": "maxSurge"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Zero unavailable threshold guarantees continuous cluster capacity throughout.",
+            "left": {
+              "code": "maxUnavailable: 0",
+              "result": {
+                "text": "maxUnavailable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxUnavailable: 1",
+              "result": {
+                "text": "maxUnavailable"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Deployment rolling update zero downtime versus aggressive pacing",
+        "leftLabel": "Zero Downtime Pacing",
+        "rightLabel": "Aggressive Rollout Pacing",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Surge parameter specifies allowable surplus pods created during rollout.",
+            "left": {
+              "code": "maxSurge: 1",
+              "result": {
+                "text": "maxSurge"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxSurge: 2",
+              "result": {
+                "text": "maxSurge"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Zero unavailable threshold guarantees continuous cluster capacity throughout.",
+            "left": {
+              "code": "maxUnavailable: 0",
+              "result": {
+                "text": "maxUnavailable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxUnavailable: 1",
+              "result": {
+                "text": "maxUnavailable"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Authoring a Production Kubernetes Deployment Manifest",
+      "codeHash": "cd3ca6bbc7c79d065cc97700c2a24449e0bd7b6f9cb62717e7f2ed456fb7e191",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

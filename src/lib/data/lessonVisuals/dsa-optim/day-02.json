@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 2,
+  "promptSha": "b502c6a2c892fa2e2ead28a010eaf30a6d6e524b38f205468dddbda68ce42f1c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Contiguous Memory Allocation & Hardware Cache Locality",
+      "codeHash": "17bc5f6ac507f99f735a804e0a114a0171ed509585e0c03e0c5f40793ef440d2",
+      "spec": {
+        "template": "cells",
+        "title": "Contiguous buffer indexing and length",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Iterating through contiguous array yields rapid cache hits.",
+            "items": [
+              {
+                "text": "100"
+              },
+              {
+                "text": "undefined"
+              },
+              {
+                "text": "undefined"
+              },
+              {
+                "text": "undefined"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "length",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Calculating address directly from base address and index.",
+            "items": [
+              {
+                "text": "100"
+              },
+              {
+                "text": "undefined"
+              },
+              {
+                "text": "undefined"
+              },
+              {
+                "text": "undefined"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "length",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Contiguous buffer indexing and length",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Iterating through contiguous array yields rapid cache hits.",
+            "items": [
+              "100",
+              "undefined",
+              "undefined",
+              "undefined"
+            ],
+            "pointers": [
+              {
+                "name": "length",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Calculating address directly from base address and index.",
+            "items": [
+              "100",
+              "undefined",
+              "undefined",
+              "undefined"
+            ],
+            "pointers": [
+              {
+                "name": "length",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Geometric Capacity Doubling Architecture",
+      "codeHash": "ca849ef2dc0aebc84e5794698f9cecbabf22898898769c2dba91e05e383d1d20",
+      "spec": {
+        "template": "cells",
+        "title": "Geometric buffer doubling on capacity limit",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Dynamic arrays employ geometric expansion to double capacity.",
+            "items": [
+              {
+                "text": "a"
+              },
+              {
+                "text": "b"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "count",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Geometric progression bounds copy operations over appends.",
+            "items": [
+              {
+                "text": "a"
+              },
+              {
+                "text": "b"
+              },
+              {
+                "text": "c"
+              },
+              {
+                "text": "undefined"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "count",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Geometric buffer doubling on capacity limit",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Dynamic arrays employ geometric expansion to double capacity.",
+            "items": [
+              "a",
+              "b"
+            ],
+            "pointers": [
+              {
+                "name": "count",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Geometric progression bounds copy operations over appends.",
+            "items": [
+              "a",
+              "b",
+              "c",
+              "undefined"
+            ],
+            "pointers": [
+              {
+                "name": "count",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Random Access & Bounds Checking Invariants",
+      "codeHash": "b1aa5ba85dd6cf0a0ea567a3ad40ada63c802fa18cd976bcf77931f479ea9521",
+      "spec": {
+        "template": "compare",
+        "title": "In-bounds access vs out-of-bounds error handling",
+        "leftLabel": "In Bounds",
+        "rightLabel": "Out of Bounds",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Explicit index validation protects against invalid bounds reads.",
+            "left": {
+              "code": "ba.get(1)",
+              "result": {
+                "text": "20"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ba.get(5)",
+              "result": {
+                "text": "RangeError"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Enforcing bounds invariants avoids silent failure bugs.",
+            "left": {
+              "code": "index",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RangeError",
+              "result": {
+                "text": "5"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "In-bounds access vs out-of-bounds error handling",
+        "leftLabel": "In Bounds",
+        "rightLabel": "Out of Bounds",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Explicit index validation protects against invalid bounds reads.",
+            "left": {
+              "code": "ba.get(1)",
+              "result": "20",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ba.get(5)",
+              "result": "RangeError",
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Enforcing bounds invariants avoids silent failure bugs.",
+            "left": {
+              "code": "index",
+              "result": "1",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RangeError",
+              "result": "5",
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Place Deletion & Two-Pointer Compaction",
+      "codeHash": "82987a81e11b1f31dad92580f1b50979dea38edba659b073d6e70c8c18bcb885",
+      "spec": {
+        "template": "cells",
+        "title": "Two-pointer array compaction",
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Read pointer scans elements while write marks valid slots.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "write",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "read",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Retained elements copy to write pointer position.",
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "write",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "read",
+                "index": 3,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Two-pointer array compaction",
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Read pointer scans elements while write marks valid slots.",
+            "items": [
+              "3",
+              "2",
+              "2",
+              "3"
+            ],
+            "pointers": [
+              {
+                "name": "write",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "read",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Retained elements copy to write pointer position.",
+            "items": [
+              "2",
+              "2",
+              "2",
+              "3"
+            ],
+            "pointers": [
+              {
+                "name": "write",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "read",
+                "index": 3,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Buffer Shrinking & Memory Leak Prevention",
+      "codeHash": "d8a84ca70f1d5eb3921d0f5d24323e03f05d4a594480630f7d48f1caa8723cb2",
+      "spec": {
+        "template": "compare",
+        "title": "Buffer expansion vs buffer hysteresis shrinking",
+        "leftLabel": "Push Expansion",
+        "rightLabel": "Pop Shrinking",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Arrays employ hysteresis to avoid resizing thrashing.",
+            "left": {
+              "code": "next",
+              "result": {
+                "text": "8"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "shrunk",
+              "result": {
+                "text": "4"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Popping overwrites slot to clear unused references.",
+            "left": {
+              "code": "this.count++",
+              "result": {
+                "text": "5"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "undefined",
+              "result": {
+                "text": "undefined"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Buffer expansion vs buffer hysteresis shrinking",
+        "leftLabel": "Push Expansion",
+        "rightLabel": "Pop Shrinking",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Arrays employ hysteresis to avoid resizing thrashing.",
+            "left": {
+              "code": "next",
+              "result": "8",
+              "tone": "data"
+            },
+            "right": {
+              "code": "shrunk",
+              "result": "4",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Popping overwrites slot to clear unused references.",
+            "left": {
+              "code": "this.count++",
+              "result": "5",
+              "tone": "data"
+            },
+            "right": {
+              "code": "undefined",
+              "result": "undefined",
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production DynamicArray Engine Implementation",
+      "codeHash": "f6dbbe6d66fac3e720abcdbd07bda8f683f1c7e0db8865ba61a50b95fed96d25",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

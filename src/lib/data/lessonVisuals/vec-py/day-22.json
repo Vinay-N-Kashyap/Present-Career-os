@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why queries need help",
+      "codeHash": "5fa74da59ceb31851f40ec8df1cc1461632c9c1c7c2051b58cc87d9e7859fab9",
+      "spec": {
+        "template": "table",
+        "title": "User query degradation analysis and intent normalization",
+        "columns": [
+          "queries",
+          "typed",
+          "meant"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Keyword and vector search both degrade when queries contain typos.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "typed"
+                  },
+                  {
+                    "text": "meant"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "typed"
+                  },
+                  {
+                    "text": "meant"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Query understanding techniques enrich input text prior to search execution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "typed"
+                  },
+                  {
+                    "text": "meant"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "typed"
+                  },
+                  {
+                    "text": "queries"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "User query degradation analysis and intent normalization",
+        "columns": [
+          "queries",
+          "typed",
+          "meant"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Keyword and vector search both degrade when queries contain typos.",
+            "rows": [
+              {
+                "cells": [
+                  "queries",
+                  "typed",
+                  "meant"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "queries",
+                  "typed",
+                  "meant"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Query understanding techniques enrich input text prior to search execution.",
+            "rows": [
+              {
+                "cells": [
+                  "queries",
+                  "typed",
+                  "meant"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "queries",
+                  "typed",
+                  "queries"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Normalising queries",
+      "codeHash": "ab0eede36ac4039bd436124d09528c155fe124bfb27763ff9d79227df0a726a0",
+      "spec": {
+        "template": "table",
+        "title": "Spelling correction dictionary lookup and stopword removal",
+        "columns": [
+          "stop",
+          "spell",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query normalisation ensures text is consistent with how documents were indexed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stop"
+                  },
+                  {
+                    "text": "spell"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stop"
+                  },
+                  {
+                    "text": "spell"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Correcting spelling before removing stopwords ensures clean token parsing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stop"
+                  },
+                  {
+                    "text": "spell"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stop"
+                  },
+                  {
+                    "text": "spell"
+                  },
+                  {
+                    "text": "spell"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Spelling correction dictionary lookup and stopword removal",
+        "columns": [
+          "stop",
+          "spell",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query normalisation ensures text is consistent with how documents were indexed.",
+            "rows": [
+              {
+                "cells": [
+                  "stop",
+                  "spell",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stop",
+                  "spell",
+                  "tokens"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Correcting spelling before removing stopwords ensures clean token parsing.",
+            "rows": [
+              {
+                "cells": [
+                  "stop",
+                  "spell",
+                  "tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stop",
+                  "spell",
+                  "spell"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Synonym expansion",
+      "codeHash": "626d16c23e3a84caeb9dbbf7daf8bcb561cfbfa219eac66272d094778ab8464e",
+      "spec": {
+        "template": "table",
+        "title": "Single-substitution synonym expansion and variant generation",
+        "columns": [
+          "tokens",
+          "variants",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synonym expansion adds alternative vocabulary to match diverse documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The expansion creates query variants by replacing terms with valid synonyms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "variants"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Single-substitution synonym expansion and variant generation",
+        "columns": [
+          "tokens",
+          "variants",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synonym expansion adds alternative vocabulary to match diverse documents.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "variants",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "variants",
+                  "tokens"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The expansion creates query variants by replacing terms with valid synonyms.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "variants",
+                  "tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "variants",
+                  "variants"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Searching with several variants",
+      "codeHash": "106da89e509dfa4008321a51033967f53abbf548b95e9c5164d3bac4da377640",
+      "spec": {
+        "template": "table",
+        "title": "Multi-query reciprocal rank fusion across query variants",
+        "columns": [
+          "variants",
+          "scores",
+          "ranked"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-query results are combined with rank fusion across all search variants.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A document matching only a synonym variant still appears in the output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "variants"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-query reciprocal rank fusion across query variants",
+        "columns": [
+          "variants",
+          "scores",
+          "ranked"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-query results are combined with rank fusion across all search variants.",
+            "rows": [
+              {
+                "cells": [
+                  "variants",
+                  "scores",
+                  "ranked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "variants",
+                  "scores",
+                  "ranked"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A document matching only a synonym variant still appears in the output.",
+            "rows": [
+              {
+                "cells": [
+                  "variants",
+                  "scores",
+                  "ranked"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "variants",
+                  "scores",
+                  "scores"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Learning from query logs",
+      "codeHash": "d03f2367e9603b8ae9bd2ce487887ed23893a2034be4ded305ec51a2dd892287",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: queries",
+      "codeHash": "a0d264452ecc6f23ab4cfc897ebb3274dca92589305c1d553cf856e07ac9608c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

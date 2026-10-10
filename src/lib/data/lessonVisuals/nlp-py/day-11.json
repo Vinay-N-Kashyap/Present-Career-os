@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What named entity recognition does",
+      "codeHash": "2f3962819e226ee5821e0dd8ff7cbe57d3c66a6e8ad1b8f16a3f6ff28c06cff1",
+      "spec": {
+        "template": "table",
+        "title": "Named entity span extraction and category taxonomy",
+        "columns": [
+          "sentence",
+          "entities"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Named entity recognition identifies spans representing real world entities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "entities"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The sample sentence includes Sundar Pichai visited New Delhi.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "entities"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "etype"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Multi-word entity spans require explicit beginning and continuation boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "entities"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "etype"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Entity classification depends upon specific domain taxonomy definitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "entities"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "etype"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "start"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Named entity span extraction and category taxonomy",
+        "columns": [
+          "sentence",
+          "entities"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Named entity recognition identifies spans representing real world entities.",
+            "rows": [
+              {
+                "cells": [
+                  "sentence",
+                  "entities"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The sample sentence includes Sundar Pichai visited New Delhi.",
+            "rows": [
+              {
+                "cells": [
+                  "sentence",
+                  "entities"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "etype",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Multi-word entity spans require explicit beginning and continuation boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  "sentence",
+                  "entities"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "etype",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "len"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Entity classification depends upon specific domain taxonomy definitions.",
+            "rows": [
+              {
+                "cells": [
+                  "sentence",
+                  "entities"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "etype",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "len"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "start"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The BIO scheme",
+      "codeHash": "597150f42c0679aaf67ed56194cef310412a65e893c8c9fffd7ceb8521dcd28c",
+      "spec": {
+        "template": "table",
+        "title": "BIO token tagging representation for entity spans",
+        "columns": [
+          "tokens",
+          "tags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The standard scheme maps entity spans into individual token tags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix tags designate entity beginning, internal continuation, or outside.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spans"
+                  },
+                  {
+                    "text": "etype"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Beginning prefixes distinguish separate adjacent entities of identical type.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spans"
+                  },
+                  {
+                    "text": "etype"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "first"
+                  },
+                  {
+                    "text": "last"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Converting entity spans to per token tags maps into standard sequence models.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spans"
+                  },
+                  {
+                    "text": "etype"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "first"
+                  },
+                  {
+                    "text": "last"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "BIO token tagging representation for entity spans",
+        "columns": [
+          "tokens",
+          "tags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The standard scheme maps entity spans into individual token tags.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix tags designate entity beginning, internal continuation, or outside.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spans",
+                  "etype"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Beginning prefixes distinguish separate adjacent entities of identical type.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spans",
+                  "etype"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "first",
+                  "last"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Converting entity spans to per token tags maps into standard sequence models.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spans",
+                  "etype"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "first",
+                  "last"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Valid and invalid tag sequences",
+      "codeHash": "a67652aef55c6cf58e0ce6c0edcd74f4102da76a89f8425a98579c1a7556a705",
+      "spec": {
+        "template": "table",
+        "title": "Sequential tag transition grammar and constraint verification",
+        "columns": [
+          "tags",
+          "prev"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inside tag continuation requires an immediately preceding entity marker.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A dangling inside tag without a matching beginning tag is invalid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "valid"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unconstrained token classifiers can produce invalid grammatical transitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "valid"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "first_problem"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Validation ensures every continuation tag follows a matching entity type.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "valid"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "first_problem"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prev"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sequential tag transition grammar and constraint verification",
+        "columns": [
+          "tags",
+          "prev"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inside tag continuation requires an immediately preceding entity marker.",
+            "rows": [
+              {
+                "cells": [
+                  "tags",
+                  "prev"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A dangling inside tag without a matching beginning tag is invalid.",
+            "rows": [
+              {
+                "cells": [
+                  "tags",
+                  "prev"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "valid",
+                  "tags"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unconstrained token classifiers can produce invalid grammatical transitions.",
+            "rows": [
+              {
+                "cells": [
+                  "tags",
+                  "prev"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "valid",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "first_problem",
+                  "prev"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Validation ensures every continuation tag follows a matching entity type.",
+            "rows": [
+              {
+                "cells": [
+                  "tags",
+                  "prev"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "valid",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "first_problem",
+                  "prev"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "prev",
+                  "valid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From tags back to entities",
+      "codeHash": "bfca47340c54258445e043144361651e853f75a58f907138db261819c7308a7c",
+      "spec": {
+        "template": "table",
+        "title": "Token chunking and entity span reconstruction",
+        "columns": [
+          "tokens",
+          "tags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Converting predicted token tags back reconstructs original entity spans.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Beginning tags close active entities and initiate new labeled segments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spans"
+                  },
+                  {
+                    "text": "cur"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sentence termination requires closing any active entity remaining open.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spans"
+                  },
+                  {
+                    "text": "cur"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tok"
+                  },
+                  {
+                    "text": "tag"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Span reconstruction joins constituent tokens with spacing delimiters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spans"
+                  },
+                  {
+                    "text": "cur"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tok"
+                  },
+                  {
+                    "text": "tag"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bio_spans"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Token chunking and entity span reconstruction",
+        "columns": [
+          "tokens",
+          "tags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Converting predicted token tags back reconstructs original entity spans.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Beginning tags close active entities and initiate new labeled segments.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spans",
+                  "cur"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sentence termination requires closing any active entity remaining open.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spans",
+                  "cur"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tok",
+                  "tag"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Span reconstruction joins constituent tokens with spacing delimiters.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spans",
+                  "cur"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tok",
+                  "tag"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bio_spans",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating NER",
+      "codeHash": "f8aa36ce05c87f8f1330d5d82d48914110d9e9a3722f19ad354e921bcc063810",
+      "spec": {
+        "template": "none",
+        "reason": "Strict entity-level CoNLL evaluation metrics."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: validate and extract",
+      "codeHash": "bbdaf91c3b4ea96e4a4b82a353a35e933e3cf319e251500cc5d17b514a20754a",
+      "spec": {
+        "template": "none",
+        "reason": "BIO validation and span extraction practice implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

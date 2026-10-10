@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Clusters and schedulers",
+      "codeHash": "9e3a75be6bb531a6bf0ba611fd15bfa4d136ee6c89a8d8d913ac51ba17e5fdb9",
+      "spec": {
+        "template": "table",
+        "title": "Multi-node gang scheduling and queuing requirements",
+        "columns": [
+          "free",
+          "requests",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A cluster scheduler decides which job runs across shared hardware nodes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Distributed training requires gang scheduling where all workers launch.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "free"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-node gang scheduling and queuing requirements",
+        "columns": [
+          "free",
+          "requests",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A cluster scheduler decides which job runs across shared hardware nodes.",
+            "rows": [
+              {
+                "cells": [
+                  "free",
+                  "requests",
+                  "gpus"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "free",
+                  "requests",
+                  "gpus"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Distributed training requires gang scheduling where all workers launch.",
+            "rows": [
+              {
+                "cells": [
+                  "free",
+                  "requests",
+                  "gpus"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "free",
+                  "requests",
+                  "free"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Placing jobs well",
+      "codeHash": "3f4cdccdf15a582f02246a337401934171fc7545a6a404f9a5daab8783061472",
+      "spec": {
+        "template": "table",
+        "title": "Topology-aware bin packing and fragmentation mitigation",
+        "columns": [
+          "free",
+          "node",
+          "free"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Jobs should pack into as few physical nodes as possible to minimize latency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "free"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "free"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Best fit placement preserves larger free blocks for incoming jobs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "free"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "node"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Topology-aware bin packing and fragmentation mitigation",
+        "columns": [
+          "free",
+          "node",
+          "free"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Jobs should pack into as few physical nodes as possible to minimize latency.",
+            "rows": [
+              {
+                "cells": [
+                  "free",
+                  "node",
+                  "free"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "free",
+                  "node",
+                  "free"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Best fit placement preserves larger free blocks for incoming jobs.",
+            "rows": [
+              {
+                "cells": [
+                  "free",
+                  "node",
+                  "free"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "free",
+                  "node",
+                  "node"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The full cost of a run",
+      "codeHash": "d2b380824964bacb435d9855991c969f34fc79d26ce84cbd61803b29469cc8b9",
+      "spec": {
+        "template": "table",
+        "title": "Comprehensive cost modeling across on-demand and spot instances",
+        "columns": [
+          "hours",
+          "price",
+          "cost"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Hardware failures and restarts add extra hours to planned training time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Spot capacity is cheaper but introduces interruptions from cloud preemption.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comprehensive cost modeling across on-demand and spot instances",
+        "columns": [
+          "hours",
+          "price",
+          "cost"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Hardware failures and restarts add extra hours to planned training time.",
+            "rows": [
+              {
+                "cells": [
+                  "hours",
+                  "price",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "hours",
+                  "price",
+                  "cost"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Spot capacity is cheaper but introduces interruptions from cloud preemption.",
+            "rows": [
+              {
+                "cells": [
+                  "hours",
+                  "price",
+                  "cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "hours",
+                  "price",
+                  "hours"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Utilisation of shared clusters",
+      "codeHash": "6a1ad1694a77d29f737f5d002464b6e13b47d78b746a915315b1c618b5856d09",
+      "spec": {
+        "template": "table",
+        "title": "Cluster capacity tracking and backfilling efficiency",
+        "columns": [
+          "cluster_gpus",
+          "hours",
+          "used"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cluster utilisation measures the fraction of hardware hours running jobs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cluster_gpus"
+                  },
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "used"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cluster_gpus"
+                  },
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "used"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Backfilling allows short jobs to utilize scheduling gaps between large runs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cluster_gpus"
+                  },
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "used"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cluster_gpus"
+                  },
+                  {
+                    "text": "hours"
+                  },
+                  {
+                    "text": "cluster_gpus"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cluster capacity tracking and backfilling efficiency",
+        "columns": [
+          "cluster_gpus",
+          "hours",
+          "used"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cluster utilisation measures the fraction of hardware hours running jobs.",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_gpus",
+                  "hours",
+                  "used"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cluster_gpus",
+                  "hours",
+                  "used"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Backfilling allows short jobs to utilize scheduling gaps between large runs.",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_gpus",
+                  "hours",
+                  "used"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cluster_gpus",
+                  "hours",
+                  "cluster_gpus"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Planning the capacity you need",
+      "codeHash": "279515014b7a28d010f40f088970b34fda836c51ddb2b8ab1a71ce97630882fb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: clusters and cost",
+      "codeHash": "0c87168a59cf3f5ddb8fdd291fa52b9c0cf2f7be0189553b5f3fdc90baefa70a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

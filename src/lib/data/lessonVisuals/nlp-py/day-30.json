@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The capstone architecture",
+      "codeHash": "10b65b93a005d3ff69f094f99f4e24c384c7ce79f4d2882184fa3a859ed54734",
+      "spec": {
+        "template": "table",
+        "title": "End-to-end question answering pipeline architecture stages",
+        "columns": [
+          "stage",
+          "days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The system answers user questions from documents by pointing to its sources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Retrieval maps the question to candidate passages and forms a shortlist.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "enumerate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Re-ranking scores candidate passages to select the best few items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "enumerate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints the pipeline architecture across each processing stage.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "enumerate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "End-to-end question answering pipeline architecture stages",
+        "columns": [
+          "stage",
+          "days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The system answers user questions from documents by pointing to its sources.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "days"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Retrieval maps the question to candidate passages and forms a shortlist.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "days"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "enumerate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Re-ranking scores candidate passages to select the best few items.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "days"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "enumerate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "days"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints the pipeline architecture across each processing stage.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "days"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "enumerate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stage",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Preparing passages",
+      "codeHash": "1451aaa3944d3da6061168ec1780b5fcdd59facbe33fb956182dd8afb1b614d6",
+      "spec": {
+        "template": "table",
+        "title": "Passage chunking sliding windows and boundary metadata",
+        "columns": [
+          "chunks",
+          "words"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Long documents split into passages small enough for model retrieval.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Window overlap prevents boundary answers from being cut in half.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Preserving position metadata enables generated answers to cite their source.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example splits document text into overlapping windows with positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Passage chunking sliding windows and boundary metadata",
+        "columns": [
+          "chunks",
+          "words"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Long documents split into passages small enough for model retrieval.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Window overlap prevents boundary answers from being cut in half.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size",
+                  "overlap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Preserving position metadata enables generated answers to cite their source.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size",
+                  "overlap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "range"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example splits document text into overlapping windows with positions.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size",
+                  "overlap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "range"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retrieving passages",
+      "codeHash": "3aa61abfb351a4ebd1972c479163a4d61aa52f95ac9270efb397dd19c24be9de",
+      "spec": {
+        "template": "table",
+        "title": "Passage similarity matching and vocabulary cosine filtering",
+        "columns": [
+          "passages",
+          "STOP"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Tokenise each passage and score candidates using cosine similarity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "STOP"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sparse retrieval structures evaluate text using token count vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "STOP"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vec"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Word counts and dot product operations compute shared dictionary cosine terms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "STOP"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vec"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "Counter"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Returning nothing when no words match avoids answering from irrelevant text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "STOP"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vec"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "Counter"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dot"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Passage similarity matching and vocabulary cosine filtering",
+        "columns": [
+          "passages",
+          "STOP"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Tokenise each passage and score candidates using cosine similarity.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "STOP"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sparse retrieval structures evaluate text using token count vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "STOP"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vec",
+                  "cos"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Word counts and dot product operations compute shared dictionary cosine terms.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "STOP"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vec",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "Counter"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Returning nothing when no words match avoids answering from irrelevant text.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "STOP"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vec",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "Counter"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "dot",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Answering and grounding",
+      "codeHash": "ccc501a1b3b8f427db0d1c6dfc7397e9b31d62f7dd7ed48380be985633af9c27",
+      "spec": {
+        "template": "table",
+        "title": "Context prompt synthesis and factual grounding verification",
+        "columns": [
+          "passages",
+          "question"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retrieved passages provide the factual foundation to answer questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extractive methods copy spans from the source to guarantee faithful answers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "join"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Grounding checks compare generated answer tokens with the source passages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "join"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Displaying retrieved sources allows users to verify important answers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "join"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "passages"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Context prompt synthesis and factual grounding verification",
+        "columns": [
+          "passages",
+          "question"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retrieved passages provide the factual foundation to answer questions.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "question"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extractive methods copy spans from the source to guarantee faithful answers.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "question"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prompt",
+                  "join"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Grounding checks compare generated answer tokens with the source passages.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "question"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prompt",
+                  "join"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Displaying retrieved sources allows users to verify important answers.",
+            "rows": [
+              {
+                "cells": [
+                  "passages",
+                  "question"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prompt",
+                  "join"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "passages",
+                  "prompt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating and auditing the system",
+      "codeHash": "e6e6f369e8372bfc282eeb8a813e6293a11ca19025e7fb69b3c0c076af555f41",
+      "spec": {
+        "template": "none",
+        "reason": "System evaluation and operational audit criteria."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Capstone practice and what comes next",
+      "codeHash": "798be0d826cfb48d1ed64c1301e3d734208bc69baff26c1bebc2c426c1264650",
+      "spec": {
+        "template": "none",
+        "reason": "Capstone practice and course milestone wrap-up."
+      },
+      "filled": {}
+    }
+  ]
+}

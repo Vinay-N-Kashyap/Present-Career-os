@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Lessons from disasters",
+      "codeHash": "f4991aeb0c3b508acdcaa9ce747c223ddc724ab2c69e0f7ceb9d54ea9df7b4b7",
+      "spec": {
+        "template": "table",
+        "title": "Machine speed execution losses and catastrophic runaway trading",
+        "columns": [
+          "orders_per_second",
+          "loss_per_order",
+          "seconds",
+          "loss"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Software bugs can unleash millions of unintended orders in minutes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "orders_per_second"
+                  },
+                  {
+                    "text": "loss_per_order"
+                  },
+                  {
+                    "text": "seconds"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Machine speed execution requires automated safeguards to prevent disaster.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "orders_per_second"
+                  },
+                  {
+                    "text": "loss_per_order"
+                  },
+                  {
+                    "text": "seconds"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "15.0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Regulatory mandates require pre trade risk controls across all client orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "orders_per_second"
+                  },
+                  {
+                    "text": "loss_per_order"
+                  },
+                  {
+                    "text": "seconds"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "15.0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "15.0"
+                  },
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Machine speed execution losses and catastrophic runaway trading",
+        "columns": [
+          "orders_per_second",
+          "loss_per_order",
+          "seconds",
+          "loss"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Software bugs can unleash millions of unintended orders in minutes.",
+            "rows": [
+              {
+                "cells": [
+                  "orders_per_second",
+                  "loss_per_order",
+                  "seconds",
+                  "loss"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Machine speed execution requires automated safeguards to prevent disaster.",
+            "rows": [
+              {
+                "cells": [
+                  "orders_per_second",
+                  "loss_per_order",
+                  "seconds",
+                  "loss"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1000",
+                  "15.0",
+                  "1",
+                  "loss"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Regulatory mandates require pre trade risk controls across all client orders.",
+            "rows": [
+              {
+                "cells": [
+                  "orders_per_second",
+                  "loss_per_order",
+                  "seconds",
+                  "loss"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1000",
+                  "15.0",
+                  "1",
+                  "loss"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1000",
+                  "15.0",
+                  "60",
+                  "loss"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Order-level checks",
+      "codeHash": "95e601169ea6d63fbff6dadcfee72180bb54962a09d67962a7bd2e36d67b0fd4",
+      "spec": {
+        "template": "table",
+        "title": "Order-level pre-trade boundary validation limits",
+        "columns": [
+          "max_qty",
+          "max_notional",
+          "collar_pct"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inline risk checks evaluate every outbound order before submission.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_qty"
+                  },
+                  {
+                    "text": "max_notional"
+                  },
+                  {
+                    "text": "collar_pct"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quantity and notional limits reject fat finger order sizes instantly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_qty"
+                  },
+                  {
+                    "text": "max_notional"
+                  },
+                  {
+                    "text": "collar_pct"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5000"
+                  },
+                  {
+                    "text": "250000"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Price collars protect against aberrant quotes relative to the market mid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_qty"
+                  },
+                  {
+                    "text": "max_notional"
+                  },
+                  {
+                    "text": "collar_pct"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5000"
+                  },
+                  {
+                    "text": "250000"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5000"
+                  },
+                  {
+                    "text": "250000"
+                  },
+                  {
+                    "text": "collar_pct"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Order-level pre-trade boundary validation limits",
+        "columns": [
+          "max_qty",
+          "max_notional",
+          "collar_pct"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inline risk checks evaluate every outbound order before submission.",
+            "rows": [
+              {
+                "cells": [
+                  "max_qty",
+                  "max_notional",
+                  "collar_pct"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quantity and notional limits reject fat finger order sizes instantly.",
+            "rows": [
+              {
+                "cells": [
+                  "max_qty",
+                  "max_notional",
+                  "collar_pct"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "5000",
+                  "250000",
+                  "5"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Price collars protect against aberrant quotes relative to the market mid.",
+            "rows": [
+              {
+                "cells": [
+                  "max_qty",
+                  "max_notional",
+                  "collar_pct"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "5000",
+                  "250000",
+                  "5"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "5000",
+                  "250000",
+                  "collar_pct"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Aggregate limits and kill switches",
+      "codeHash": "3026487bba6b34cd0b257d8e90fd86029d95fd6df9f10f166556c30e960b834b",
+      "spec": {
+        "template": "table",
+        "title": "Aggregate cumulative notional monitoring and kill switch logic",
+        "columns": [
+          "cap",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregating order volume detects systemic flooding across normal sizes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cap"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cumulative notional totals monitor daily position limits and exposure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cap"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "150_000"
+                  },
+                  {
+                    "text": "0.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Kill switches halt trading activity when aggregate thresholds breach.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cap"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "150_000"
+                  },
+                  {
+                    "text": "0.0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "150_000"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Aggregate cumulative notional monitoring and kill switch logic",
+        "columns": [
+          "cap",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregating order volume detects systemic flooding across normal sizes.",
+            "rows": [
+              {
+                "cells": [
+                  "cap",
+                  "total"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cumulative notional totals monitor daily position limits and exposure.",
+            "rows": [
+              {
+                "cells": [
+                  "cap",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "150_000",
+                  "0.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Kill switches halt trading activity when aggregate thresholds breach.",
+            "rows": [
+              {
+                "cells": [
+                  "cap",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "150_000",
+                  "0.0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "150_000",
+                  "total"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where the checks live",
+      "codeHash": "46b2ebafebd96ddcd3c8ab1826431116ddf697ddd1a26e18ed0d6abbb8b7245a",
+      "spec": {
+        "template": "table",
+        "title": "Layered defense architecture for pre-trade risk gating",
+        "columns": [
+          "qty",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Layered defensive checks enforce risk boundaries at multiple points.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "qty"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent risk gateways isolate faults occurring inside algorithms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "qty"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2000"
+                  },
+                  {
+                    "text": "100.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Careful parameter governance limits administrative change approval.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "qty"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2000"
+                  },
+                  {
+                    "text": "100.0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "9000"
+                  },
+                  {
+                    "text": "100.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Layered defense architecture for pre-trade risk gating",
+        "columns": [
+          "qty",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Layered defensive checks enforce risk boundaries at multiple points.",
+            "rows": [
+              {
+                "cells": [
+                  "qty",
+                  "price"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent risk gateways isolate faults occurring inside algorithms.",
+            "rows": [
+              {
+                "cells": [
+                  "qty",
+                  "price"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2000",
+                  "100.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Careful parameter governance limits administrative change approval.",
+            "rows": [
+              {
+                "cells": [
+                  "qty",
+                  "price"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2000",
+                  "100.0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "9000",
+                  "100.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing the safety net",
+      "codeHash": "b8d1b1ebe8e20e221a1805b3320aade08c692616ce0769d0715f707c615e32cb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: gate and switch",
+      "codeHash": "3204718a1c4267b521f3d31f76ef1ce618be00fe92fd245adf7475cb032c7cc9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

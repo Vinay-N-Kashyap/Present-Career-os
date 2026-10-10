@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 20,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The problem: the same logic in many places",
+      "codeHash": "508abd58f94156fcd5cf8c57d0854a0e923e1911f5fd7c27287303718f15ec2c",
+      "spec": {
+        "template": "flow",
+        "title": "Extracting shared stateful logic into custom hooks",
+        "nodes": [
+          {
+            "id": "compA",
+            "label": "Dashboard",
+            "tappable": false
+          },
+          {
+            "id": "hook",
+            "label": "useSearch",
+            "tappable": false
+          },
+          {
+            "id": "compB",
+            "label": "JobListPage",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Copying logic across components creates maintenance risks.",
+            "values": {
+              "compA": {
+                "text": "jobs"
+              },
+              "hook": {
+                "text": "searchJobs"
+              },
+              "compB": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "compA": "idle",
+              "hook": "data",
+              "compB": "idle"
+            },
+            "arrows": [
+              [
+                "hook",
+                "compA"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A custom hook is a function starting with use calling other hooks.",
+            "values": {
+              "compA": {
+                "text": "jobs"
+              },
+              "hook": {
+                "text": "searchJobs"
+              },
+              "compB": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "compA": "ok",
+              "hook": "ok",
+              "compB": "ok"
+            },
+            "arrows": [
+              [
+                "hook",
+                "compA"
+              ],
+              [
+                "hook",
+                "compB"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Extracting shared stateful logic into custom hooks",
+        "nodes": [
+          {
+            "id": "compA",
+            "label": "Dashboard",
+            "tappable": false
+          },
+          {
+            "id": "hook",
+            "label": "useSearch",
+            "tappable": false
+          },
+          {
+            "id": "compB",
+            "label": "JobListPage",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Copying logic across components creates maintenance risks.",
+            "values": {
+              "compA": "jobs",
+              "hook": "searchJobs",
+              "compB": "jobs"
+            },
+            "tones": {
+              "compA": "idle",
+              "hook": "data",
+              "compB": "idle"
+            },
+            "arrows": [
+              [
+                "hook",
+                "compA"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A custom hook is a function starting with use calling other hooks.",
+            "values": {
+              "compA": "jobs",
+              "hook": "searchJobs",
+              "compB": "jobs"
+            },
+            "tones": {
+              "compA": "ok",
+              "hook": "ok",
+              "compB": "ok"
+            },
+            "arrows": [
+              [
+                "hook",
+                "compA"
+              ],
+              [
+                "hook",
+                "compB"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Your first custom hook: useSearch",
+      "codeHash": "57ab68ff0c351c508666183adf8ea10d900b4d9062feae582bbb506debf9e479",
+      "spec": {
+        "template": "boxes",
+        "title": "Independent state encapsulation inside custom hook instances",
+        "boxes": [
+          {
+            "id": "instA",
+            "label": "instanceA",
+            "tappable": false
+          },
+          {
+            "id": "instB",
+            "label": "instanceB",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Components call custom hooks to receive state and filter logic.",
+            "values": {
+              "instA": {
+                "text": "count"
+              },
+              "instB": {
+                "text": "count"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Each component calling a custom hook gets isolated independent state.",
+            "values": {
+              "instA": {
+                "text": "count"
+              },
+              "instB": {
+                "text": "count"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Independent state encapsulation inside custom hook instances",
+        "boxes": [
+          {
+            "id": "instA",
+            "label": "instanceA",
+            "tappable": false
+          },
+          {
+            "id": "instB",
+            "label": "instanceB",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Components call custom hooks to receive state and filter logic.",
+            "values": {
+              "instA": "count",
+              "instB": "count"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Each component calling a custom hook gets isolated independent state.",
+            "values": {
+              "instA": "count",
+              "instB": "count"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The rules of hooks",
+      "codeHash": "4af1d5f7553fb600945a6d6bd9e270b950ec51fb2b3dee148e27e1204175a1d3",
+      "spec": {
+        "template": "flow",
+        "title": "Rules of hooks: top level execution order consistency",
+        "nodes": [
+          {
+            "id": "h1",
+            "label": "first",
+            "tappable": false
+          },
+          {
+            "id": "h2",
+            "label": "second",
+            "tappable": false
+          },
+          {
+            "id": "h3",
+            "label": "third",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Only call hooks at the top level of components.",
+            "values": {
+              "h1": {
+                "text": "\"Asha\""
+              },
+              "h2": {
+                "text": "\"dark\""
+              },
+              "h3": {
+                "text": "render"
+              }
+            },
+            "tones": {
+              "h1": "data",
+              "h2": "idle",
+              "h3": "idle"
+            },
+            "arrows": [
+              [
+                "h1",
+                "h2"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "React identifies hooks by their exact relative execution order.",
+            "values": {
+              "h1": {
+                "text": "\"Asha\""
+              },
+              "h2": {
+                "text": "\"dark\""
+              },
+              "h3": {
+                "text": "render"
+              }
+            },
+            "tones": {
+              "h1": "idle",
+              "h2": "ok",
+              "h3": "ok"
+            },
+            "arrows": [
+              [
+                "h1",
+                "h2"
+              ],
+              [
+                "h2",
+                "h3"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Rules of hooks: top level execution order consistency",
+        "nodes": [
+          {
+            "id": "h1",
+            "label": "first",
+            "tappable": false
+          },
+          {
+            "id": "h2",
+            "label": "second",
+            "tappable": false
+          },
+          {
+            "id": "h3",
+            "label": "third",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Only call hooks at the top level of components.",
+            "values": {
+              "h1": "\"Asha\"",
+              "h2": "\"dark\"",
+              "h3": "render"
+            },
+            "tones": {
+              "h1": "data",
+              "h2": "idle",
+              "h3": "idle"
+            },
+            "arrows": [
+              [
+                "h1",
+                "h2"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "React identifies hooks by their exact relative execution order.",
+            "values": {
+              "h1": "\"Asha\"",
+              "h2": "\"dark\"",
+              "h3": "render"
+            },
+            "tones": {
+              "h1": "idle",
+              "h2": "ok",
+              "h3": "ok"
+            },
+            "arrows": [
+              [
+                "h1",
+                "h2"
+              ],
+              [
+                "h2",
+                "h3"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "useLocalStorage: state that saves itself",
+      "codeHash": "da52efdbd6221c9e38fd4085914c805199d67c2d5fdd2b0bfa144190b47aa305",
+      "spec": {
+        "template": "boxes",
+        "title": "Automating persistence with the useLocalStorage hook",
+        "boxes": [
+          {
+            "id": "stored",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "fallback",
+            "label": "default",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The useLocalStorage hook persists values and loads them back.",
+            "values": {
+              "stored": {
+                "text": "\"jobs\""
+              },
+              "fallback": {
+                "text": "\"safe default\""
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "A reusable storage hook supports any application data shape.",
+            "values": {
+              "stored": {
+                "text": "\"jobs\""
+              },
+              "fallback": {
+                "text": "\"safe default\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Automating persistence with the useLocalStorage hook",
+        "boxes": [
+          {
+            "id": "stored",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "fallback",
+            "label": "default",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The useLocalStorage hook persists values and loads them back.",
+            "values": {
+              "stored": "\"jobs\"",
+              "fallback": "\"safe default\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say5",
+            "caption": "A reusable storage hook supports any application data shape.",
+            "values": {
+              "stored": "\"jobs\"",
+              "fallback": "\"safe default\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "useFetch: loading data anywhere",
+      "codeHash": "a062c9921eda1a217e3a8f841fc791351a0e1e24d92de5d6a5c543c56f052891",
+      "spec": {
+        "template": "states",
+        "title": "Consolidating data fetching states in useFetch",
+        "states": [
+          "loading",
+          "success",
+          "error"
+        ],
+        "activeIndex": 0,
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Encapsulate remote status and data inside a useFetch hook.",
+            "activeIndex": 0
+          },
+          {
+            "at": "say2",
+            "caption": "Calling useFetch reduces components to concise declarative code.",
+            "activeIndex": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Consolidating data fetching states in useFetch",
+        "states": [
+          "loading",
+          "success",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Encapsulate remote status and data inside a useFetch hook."
+          },
+          {
+            "at": "say2",
+            "caption": "Calling useFetch reduces components to concise declarative code."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clean up the Job Tracker with hooks",
+      "codeHash": "381b60c0b783647dba39313dd60c29ecf0747d1ea73e63b6e9f9cc72f1e522c7",
+      "spec": {
+        "template": "none",
+        "reason": "Refactoring the Job Tracker application into clean custom hooks directory"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Refactoring the Job Tracker application into clean custom hooks directory"
+      }
+    }
+  ]
+}

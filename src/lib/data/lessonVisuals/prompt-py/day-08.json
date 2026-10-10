@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Two kinds of summary",
+      "codeHash": "05e52a921979b0424e904b010e1f2044523d06680b0ce55469241f94e0250861",
+      "spec": {
+        "template": "table",
+        "title": "Extractive vs abstractive summarization trade-offs",
+        "columns": [
+          "text",
+          "extractive",
+          "abstractive"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extractive summarisation copies important sentences from the original text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "extractive"
+                  },
+                  {
+                    "text": "abstractive"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "extractive"
+                  },
+                  {
+                    "text": "abstractive"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Abstractive summarisation writes new sentences that capture source meaning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "extractive"
+                  },
+                  {
+                    "text": "abstractive"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "costs"
+                  },
+                  {
+                    "text": "extractive"
+                  },
+                  {
+                    "text": "abstractive"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Extractive vs abstractive summarization trade-offs",
+        "columns": [
+          "text",
+          "extractive",
+          "abstractive"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extractive summarisation copies important sentences from the original text.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "extractive",
+                  "abstractive"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "extractive",
+                  "abstractive"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Abstractive summarisation writes new sentences that capture source meaning.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "extractive",
+                  "abstractive"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "costs",
+                  "extractive",
+                  "abstractive"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A simple extractive summariser",
+      "codeHash": "ecd268298127c22a5cf1e0363bd4237632726ea71e13ee43d62cc59c6f3d4b36",
+      "spec": {
+        "template": "table",
+        "title": "Word frequency scoring and sentence ranking",
+        "columns": [
+          "sentences",
+          "freq",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A classic extractive method scores sentences containing important words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "freq"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "freq"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding word frequency counts ranks each candidate sentence for the summary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "freq"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "freq"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Word frequency scoring and sentence ranking",
+        "columns": [
+          "sentences",
+          "freq",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A classic extractive method scores sentences containing important words.",
+            "rows": [
+              {
+                "cells": [
+                  "sentences",
+                  "freq",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentences",
+                  "freq",
+                  "score"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding word frequency counts ranks each candidate sentence for the summary.",
+            "rows": [
+              {
+                "cells": [
+                  "sentences",
+                  "freq",
+                  "score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "freq",
+                  "score"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prompting for good summaries",
+      "codeHash": "d2ae4027c9e894490ba3e1a165eb52517001a191e5093e9083300a19502db0b4",
+      "spec": {
+        "template": "table",
+        "title": "Audience-tailored executive briefing prompt structure",
+        "columns": [
+          "audience",
+          "length",
+          "prompts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A structured prompt states the audience, format, and target length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "prompts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "prompts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Specifying decisions and risks helps the model prioritise key items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "prompts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "focus"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Audience-tailored executive briefing prompt structure",
+        "columns": [
+          "audience",
+          "length",
+          "prompts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A structured prompt states the audience, format, and target length.",
+            "rows": [
+              {
+                "cells": [
+                  "audience",
+                  "length",
+                  "prompts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "audience",
+                  "length",
+                  "prompts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Specifying decisions and risks helps the model prioritise key items.",
+            "rows": [
+              {
+                "cells": [
+                  "audience",
+                  "length",
+                  "prompts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "audience",
+                  "length",
+                  "focus"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Documents longer than the context window",
+      "codeHash": "93f02ad139f5224b6387addec707ebf540202bd52794f495aa06f46836240c84",
+      "spec": {
+        "template": "table",
+        "title": "Map-reduce chunking for large document summarization",
+        "columns": [
+          "chunks",
+          "size",
+          "overlap"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Summarisation splits the document into chunks before the reduce step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Preserving natural boundaries and overlap prevents losing context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Map-reduce chunking for large document summarization",
+        "columns": [
+          "chunks",
+          "size",
+          "overlap"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Summarisation splits the document into chunks before the reduce step.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "size",
+                  "overlap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "size",
+                  "overlap"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Preserving natural boundaries and overlap prevents losing context.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "size",
+                  "overlap"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "words",
+                  "size",
+                  "overlap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking summary length and quality",
+      "codeHash": "9f4f41dee0b15515f8a160f5a312dac8b1e8b19fae2bdd9389e6201582096ffc",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: summarise and check",
+      "codeHash": "a3c455bf5d64b85817d27a577f532d6d305995588352b52b9d54afe60612315d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

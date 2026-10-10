@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 28,
+  "promptSha": "fec96c15e4624956e8e56085f297c97b0ae3fb68a7e0f19b73ac6c4e58fb71bf",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Forward Proxies vs Reverse Proxies & CDN Edge Architecture",
+      "codeHash": "010fd2388d13643cc21ea63c19afad3a99aee99d2fb3fb646e67f8d7fe4cd0d0",
+      "spec": {
+        "template": "workflow",
+        "title": "Client edge routing through forward proxies and reverse proxy networks",
+        "workflow": [
+          {
+            "id": "clientDevice",
+            "label": "Client Device Originates Request",
+            "status": "completed"
+          },
+          {
+            "id": "edgePop",
+            "label": "Geographic CDN Edge PoP Intercepts",
+            "status": "active"
+          },
+          {
+            "id": "reverseProxy",
+            "label": "Reverse Proxy Terminates TLS",
+            "status": "pending"
+          },
+          {
+            "id": "originServer",
+            "label": "Backend Origin Server Handles Compute",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A reverse proxy sits directly in front of backend origin servers.",
+            "activeWorkflowId": "reverseProxy",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Cached assets return rapidly over local fiber optic connections.",
+            "activeWorkflowId": "edgePop",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Client edge routing through forward proxies and reverse proxy networks",
+        "workflow": [
+          {
+            "id": "clientDevice",
+            "label": "Client Device Originates Request",
+            "status": "completed"
+          },
+          {
+            "id": "edgePop",
+            "label": "Geographic CDN Edge PoP Intercepts",
+            "status": "active"
+          },
+          {
+            "id": "reverseProxy",
+            "label": "Reverse Proxy Terminates TLS",
+            "status": "pending"
+          },
+          {
+            "id": "originServer",
+            "label": "Backend Origin Server Handles Compute",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A reverse proxy sits directly in front of backend origin servers.",
+            "activeWorkflowId": "reverseProxy",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Cached assets return rapidly over local fiber optic connections.",
+            "activeWorkflowId": "edgePop",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTP Caching Headers: Cache-Control, max-age, s-maxage & ETag",
+      "codeHash": "eb44facd5292aed525c627800740c49f6b08c27e3ea6068804ffa69264af746c",
+      "spec": {
+        "template": "table",
+        "title": "HTTP Cache-Control response directives and browser CDN caching behaviors",
+        "columns": [
+          "Directive",
+          "Target Cache",
+          "Duration Rule",
+          "Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Public cache directives permit intermediate proxies to store data.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Servers attach an etag checksum representing asset content.",
+            "activeRowIndex": 4,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "HTTP Cache-Control response directives and browser CDN caching behaviors",
+        "columns": [
+          "Directive",
+          "Target Cache",
+          "Duration Rule",
+          "Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Public cache directives permit intermediate proxies to store data.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Servers attach an etag checksum representing asset content.",
+            "activeRowIndex": 4,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "stale-while-revalidate & Cache Stampede Protection",
+      "codeHash": "209ccca7eeb7a449452d2d06fac19da168b7791efb570ec92bf10cfaee310b6d",
+      "spec": {
+        "template": "states",
+        "title": "Stale-while-revalidate cache entry freshness and background revalidation states",
+        "states": [
+          {
+            "id": "fresh",
+            "label": "Fresh Asset Under Max-Age"
+          },
+          {
+            "id": "staleServed",
+            "label": "Stale Asset Served Instantly"
+          },
+          {
+            "id": "revalidating",
+            "label": "Background Origin Fetch in Progress"
+          },
+          {
+            "id": "refreshed",
+            "label": "Cache Refreshed with New Payload"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional cache expiration causes catastrophic stampede spikes.",
+            "activeStateId": "staleServed",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The edge triggers background requests to refresh the cache.",
+            "activeStateId": "revalidating",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Stale-while-revalidate cache entry freshness and background revalidation states",
+        "states": [
+          {
+            "id": "fresh",
+            "label": "Fresh Asset Under Max-Age"
+          },
+          {
+            "id": "staleServed",
+            "label": "Stale Asset Served Instantly"
+          },
+          {
+            "id": "revalidating",
+            "label": "Background Origin Fetch in Progress"
+          },
+          {
+            "id": "refreshed",
+            "label": "Cache Refreshed with New Payload"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional cache expiration causes catastrophic stampede spikes.",
+            "activeStateId": "staleServed",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The edge triggers background requests to refresh the cache.",
+            "activeStateId": "revalidating",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation Patterns: Purge, Soft-Purge & Surrogate Keys (Tags)",
+      "codeHash": "9d070b0ab6370d037e99318262107d3e2245c3afa2caac584e5a36c6ab098254",
+      "spec": {
+        "template": "compare",
+        "title": "Naive URL purging versus tag-based surrogate key cache invalidation",
+        "left": {
+          "title": "Naive URL Purging",
+          "items": [
+            "Requires tracking all dependent URL paths",
+            "High API volume to purge related carousels",
+            "Leads to accidental stale edge pages"
+          ]
+        },
+        "right": {
+          "title": "Surrogate Keys (Tags)",
+          "items": [
+            "Origin tags assets with domain identifiers",
+            "Single API call invalidates all matching pages",
+            "Instant global purge across edge locations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The naive invalidation method purges individual resource urls.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The origin attaches a surrogate key header identifying domain tags.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Naive URL Purging",
+        "rightLabel": "Surrogate Keys (Tags)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Naive URL purging versus tag-based surrogate key cache invalidation",
+        "left": {
+          "title": "Naive URL Purging",
+          "items": [
+            "Requires tracking all dependent URL paths",
+            "High API volume to purge related carousels",
+            "Leads to accidental stale edge pages"
+          ]
+        },
+        "right": {
+          "title": "Surrogate Keys (Tags)",
+          "items": [
+            "Origin tags assets with domain identifiers",
+            "Single API call invalidates all matching pages",
+            "Instant global purge across edge locations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The naive invalidation method purges individual resource urls.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The origin attaches a surrogate key header identifying domain tags.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Naive URL Purging",
+        "rightLabel": "Surrogate Keys (Tags)"
+      }
+    },
+    {
+      "partTitle": "Cache Poisoning & CDN Security Protections",
+      "codeHash": "437e5c8d301e82c74fa5ba6cb1fba18c815c432230d875d008501c578120e50f",
+      "spec": {
+        "template": "sequence",
+        "title": "Web cache poisoning mitigation and cache key normalization sequence",
+        "actors": [
+          {
+            "id": "attacker",
+            "label": "Hostile Client"
+          },
+          {
+            "id": "cdnEdge",
+            "label": "CDN Edge Proxy"
+          },
+          {
+            "id": "originServer",
+            "label": "Origin Server"
+          }
+        ],
+        "messages": [
+          {
+            "from": "attacker",
+            "to": "cdnEdge",
+            "label": "Inject Malicious Unkeyed Forwarded Headers",
+            "tone": "error"
+          },
+          {
+            "from": "cdnEdge",
+            "to": "cdnEdge",
+            "label": "Normalize Cache Key Ignoring Unkeyed Headers",
+            "tone": "ok"
+          },
+          {
+            "from": "cdnEdge",
+            "to": "originServer",
+            "label": "Forward Sanitized Request to Origin",
+            "tone": "data"
+          },
+          {
+            "from": "cdnEdge",
+            "to": "attacker",
+            "label": "Return Safe Cached Response to Clients",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An adversary sends maliciously crafted requests with unkeyed headers.",
+            "activeMessageIndex": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "The cache key must include all components affecting responses.",
+            "activeMessageIndex": 1,
+            "statusBadge": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Web cache poisoning mitigation and cache key normalization sequence",
+        "actors": [
+          {
+            "id": "attacker",
+            "label": "Hostile Client"
+          },
+          {
+            "id": "cdnEdge",
+            "label": "CDN Edge Proxy"
+          },
+          {
+            "id": "originServer",
+            "label": "Origin Server"
+          }
+        ],
+        "messages": [
+          {
+            "from": "attacker",
+            "to": "cdnEdge",
+            "label": "Inject Malicious Unkeyed Forwarded Headers",
+            "tone": "error"
+          },
+          {
+            "from": "cdnEdge",
+            "to": "cdnEdge",
+            "label": "Normalize Cache Key Ignoring Unkeyed Headers",
+            "tone": "ok"
+          },
+          {
+            "from": "cdnEdge",
+            "to": "originServer",
+            "label": "Forward Sanitized Request to Origin",
+            "tone": "data"
+          },
+          {
+            "from": "cdnEdge",
+            "to": "attacker",
+            "label": "Return Safe Cached Response to Clients",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An adversary sends maliciously crafted requests with unkeyed headers.",
+            "activeMessageIndex": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "The cache key must include all components affecting responses.",
+            "activeMessageIndex": 1,
+            "statusBadge": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Global CDN Edge Cache Engine Simulator",
+      "codeHash": "f911b31a421b6669f9739846a362e78e7a33c104d988f1ef3f4ae75c42fc2d6b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

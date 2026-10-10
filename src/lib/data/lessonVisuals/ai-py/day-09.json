@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why documents are cut into chunks",
+      "codeHash": "27556370e30159065c4e84a06cc52936e2661248a29cf797d5e18e770f0790e2",
+      "spec": {
+        "template": "compare",
+        "title": "Monolithic document retrieval versus granular chunk indexing",
+        "leftLabel": "Whole Document",
+        "rightLabel": "Focused Chunks",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Oversized chunks mix multiple topics making retrieval vague and expensive.",
+            "left": {
+              "code": "monolithic document",
+              "result": {
+                "text": "vague broad matches"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "granular chunk",
+              "result": {
+                "text": "precise topic focus"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Thoughtful chunking represents a critical factor in overall retrieval quality.",
+            "left": {
+              "code": "arbitrary slices",
+              "result": {
+                "text": "degraded retrieval"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "contextual windows",
+              "result": {
+                "text": "high quality answers"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Monolithic document retrieval versus granular chunk indexing",
+        "leftLabel": "Whole Document",
+        "rightLabel": "Focused Chunks",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Oversized chunks mix multiple topics making retrieval vague and expensive.",
+            "left": {
+              "code": "monolithic document",
+              "result": "vague broad matches",
+              "tone": "error",
+              "checks": [
+                "vague broad matches"
+              ]
+            },
+            "right": {
+              "code": "granular chunk",
+              "result": "precise topic focus",
+              "tone": "ok",
+              "checks": [
+                "precise topic focus"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Thoughtful chunking represents a critical factor in overall retrieval quality.",
+            "left": {
+              "code": "arbitrary slices",
+              "result": "degraded retrieval",
+              "tone": "error",
+              "checks": [
+                "degraded retrieval"
+              ]
+            },
+            "right": {
+              "code": "contextual windows",
+              "result": "high quality answers",
+              "tone": "ok",
+              "checks": [
+                "high quality answers"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding window with overlap",
+      "codeHash": "d55380a93bd9a31e6193d44395dd7e2fbe61cebfd08a430aca21ac449d532c27",
+      "spec": {
+        "template": "bars",
+        "title": "Sliding window character spans and overlap offsets",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chunk overlap preserves sentence context across window transition edges.",
+            "bars": [
+              {
+                "label": "window_start",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "window_end",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Subsequent chunks repeat the configured overlap characters from prior text.",
+            "bars": [
+              {
+                "label": "chunk_one",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "overlap_span",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "chunk_two",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Sliding window character spans and overlap offsets",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chunk overlap preserves sentence context across window transition edges.",
+            "bars": [
+              {
+                "label": "window_start",
+                "value": 0,
+                "tone": "data"
+              },
+              {
+                "label": "window_end",
+                "value": 40,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Subsequent chunks repeat the configured overlap characters from prior text.",
+            "bars": [
+              {
+                "label": "chunk_one",
+                "value": 40,
+                "tone": "ok"
+              },
+              {
+                "label": "overlap_span",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "chunk_two",
+                "value": 40,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Overlap maths",
+      "codeHash": "9181eefa1373caafb085816dae328ab88815e889263b52074c54e2a77f6899fd",
+      "spec": {
+        "template": "none",
+        "reason": "Chunk duplication storage overhead and overlap percentage calculation math."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Chunk duplication storage overhead and overlap percentage calculation math."
+      }
+    },
+    {
+      "partTitle": "Splitting on natural boundaries",
+      "codeHash": "2eed35fe29d656a3b00bf8741c864f1b5bc9bd697073b7d5aac81c35a055827e",
+      "spec": {
+        "template": "table",
+        "title": "Recursive text splitting hierarchy by natural linguistic units",
+        "columns": [
+          "split_level",
+          "delimiter_target",
+          "semantic_preservation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Splitting on natural boundaries preserves coherent sentences and paragraphs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "paragraph"
+                  },
+                  {
+                    "text": "double newline"
+                  },
+                  {
+                    "text": "high topic unity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "punctuation mark"
+                  },
+                  {
+                    "text": "complete thoughts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Keeping ideas intact improves embedding precision and model comprehension.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "paragraph"
+                  },
+                  {
+                    "text": "double newline"
+                  },
+                  {
+                    "text": "high topic unity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "punctuation mark"
+                  },
+                  {
+                    "text": "complete thoughts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "whitespace boundary"
+                  },
+                  {
+                    "text": "fallback boundary"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Recursive text splitting hierarchy by natural linguistic units",
+        "columns": [
+          "split_level",
+          "delimiter_target",
+          "semantic_preservation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Splitting on natural boundaries preserves coherent sentences and paragraphs.",
+            "rows": [
+              {
+                "cells": [
+                  "paragraph",
+                  "double newline",
+                  "high topic unity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "punctuation mark",
+                  "complete thoughts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Keeping ideas intact improves embedding precision and model comprehension.",
+            "rows": [
+              {
+                "cells": [
+                  "paragraph",
+                  "double newline",
+                  "high topic unity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "punctuation mark",
+                  "complete thoughts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "word",
+                  "whitespace boundary",
+                  "fallback boundary"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chunk metadata for citations",
+      "codeHash": "6b0177b3a9265c5595a80a44c07a5cbf0dafbebede11cbe5220960146feb7c74",
+      "spec": {
+        "template": "table",
+        "title": "Indexed chunk schema with provenance metadata fields",
+        "columns": [
+          "chunk_id",
+          "source_document",
+          "chunk_text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Storing metadata alongside chunks enables traceable document citations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "policy-7#0"
+                  },
+                  {
+                    "text": "Refund Policy"
+                  },
+                  {
+                    "text": "Items can be returned"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rich chunk metadata facilitates accurate citations and targeted filtering.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "policy-7#0"
+                  },
+                  {
+                    "text": "Refund Policy"
+                  },
+                  {
+                    "text": "Items can be returned"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "policy-7#1"
+                  },
+                  {
+                    "text": "Refund Policy"
+                  },
+                  {
+                    "text": "within thirty days"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Indexed chunk schema with provenance metadata fields",
+        "columns": [
+          "chunk_id",
+          "source_document",
+          "chunk_text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Storing metadata alongside chunks enables traceable document citations.",
+            "rows": [
+              {
+                "cells": [
+                  "policy-7#0",
+                  "Refund Policy",
+                  "Items can be returned"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rich chunk metadata facilitates accurate citations and targeted filtering.",
+            "rows": [
+              {
+                "cells": [
+                  "policy-7#0",
+                  "Refund Policy",
+                  "Items can be returned"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "policy-7#1",
+                  "Refund Policy",
+                  "within thirty days"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a chunk size",
+      "codeHash": "d2c074ad1a290d9645e283d472880fb98b5246527bb120e9f450c4d011b22873",
+      "spec": {
+        "template": "none",
+        "reason": "Token prompt budget allocations and trade-off comparison across chunk sizes."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Token prompt budget allocations and trade-off comparison across chunk sizes."
+      }
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 12,
+  "promptSha": "b738770fba55575d6663fa1d188fc6520b97cddbeb502ff56184701987332312",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Anatomy of Broken Object Level Authorization (BOLA / IDOR)",
+      "codeHash": "36507955f5104500c8c888fcaa573d9a1307a69fb29374066401f1974d069bf0",
+      "spec": {
+        "template": "sequence",
+        "title": "Vulnerable direct object reference request flow and unauthorized access",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Browser"
+          },
+          {
+            "id": "api",
+            "label": "API Endpoint"
+          },
+          {
+            "id": "db",
+            "label": "Database Record"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "api",
+            "label": "Request Document by Numeric Identifier",
+            "tone": "data"
+          },
+          {
+            "from": "api",
+            "to": "db",
+            "label": "Fetch Record Directly Without Ownership Check",
+            "tone": "error"
+          },
+          {
+            "from": "db",
+            "to": "api",
+            "label": "Return Private Record of Different User",
+            "tone": "error"
+          },
+          {
+            "from": "api",
+            "to": "client",
+            "label": "Disclose Confidential Document to Attacker",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A vulnerable server fetches the record directly from the database.",
+            "activeMessageIndex": 1,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say9",
+            "caption": "Securing APIs requires enforcing authorization checks on database lookups.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Vulnerable direct object reference request flow and unauthorized access",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Browser"
+          },
+          {
+            "id": "api",
+            "label": "API Endpoint"
+          },
+          {
+            "id": "db",
+            "label": "Database Record"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "api",
+            "label": "Request Document by Numeric Identifier",
+            "tone": "data"
+          },
+          {
+            "from": "api",
+            "to": "db",
+            "label": "Fetch Record Directly Without Ownership Check",
+            "tone": "error"
+          },
+          {
+            "from": "db",
+            "to": "api",
+            "label": "Return Private Record of Different User",
+            "tone": "error"
+          },
+          {
+            "from": "api",
+            "to": "client",
+            "label": "Disclose Confidential Document to Attacker",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A vulnerable server fetches the record directly from the database.",
+            "activeMessageIndex": 1,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say9",
+            "caption": "Securing APIs requires enforcing authorization checks on database lookups.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sequential Numeric IDs vs Cryptographic Random Identifiers (UUIDv4)",
+      "codeHash": "f30d4b8c70ef0427b3d5c84805f7fcea4e61b2cdf45a420813acd469915f7b5b",
+      "spec": {
+        "template": "compare",
+        "title": "Sequential predictable numeric identifiers versus cryptographic random UUIDs",
+        "left": {
+          "title": "Sequential Numeric Identifiers",
+          "items": [
+            "Predictable auto incrementing integer sequences",
+            "Attackers systematically scrape and enumerate records",
+            "Leaks operational business intelligence and sales rates"
+          ]
+        },
+        "right": {
+          "title": "Cryptographic UUID Identifiers",
+          "items": [
+            "Random one hundred twenty eight bit cryptographic keys",
+            "Predicting another valid object identifier is impossible",
+            "Prevents enumeration while requiring ownership checks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Attackers can easily predict and enumerate sequential numbers in an API.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Random identifiers prevent enumeration but never replace authorization.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Sequential Numeric Identifiers",
+        "rightLabel": "Cryptographic UUID Identifiers"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Sequential predictable numeric identifiers versus cryptographic random UUIDs",
+        "left": {
+          "title": "Sequential Numeric Identifiers",
+          "items": [
+            "Predictable auto incrementing integer sequences",
+            "Attackers systematically scrape and enumerate records",
+            "Leaks operational business intelligence and sales rates"
+          ]
+        },
+        "right": {
+          "title": "Cryptographic UUID Identifiers",
+          "items": [
+            "Random one hundred twenty eight bit cryptographic keys",
+            "Predicting another valid object identifier is impossible",
+            "Prevents enumeration while requiring ownership checks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Attackers can easily predict and enumerate sequential numbers in an API.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Random identifiers prevent enumeration but never replace authorization.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Sequential Numeric Identifiers",
+        "rightLabel": "Cryptographic UUID Identifiers"
+      }
+    },
+    {
+      "partTitle": "Data Layer Authorization: Scoping Queries by Tenant & User Context",
+      "codeHash": "9f76a2a7c8cc161bb8b2e02715e6ae405e0233e79ac2ad1097a79120d762aa61",
+      "spec": {
+        "template": "states",
+        "title": "Database query layer tenant and user context scoping lifecycle",
+        "states": [
+          {
+            "id": "requestReceived",
+            "label": "Incoming Request Provides Document Key"
+          },
+          {
+            "id": "contextInjected",
+            "label": "Tenant and User Identifier Scoped"
+          },
+          {
+            "id": "queryExecuted",
+            "label": "Database Queries Compound Ownership"
+          },
+          {
+            "id": "accessGuarded",
+            "label": "Empty Result Set Yields Not Found"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The query automatically scopes to the authenticated user in the database.",
+            "activeStateId": "contextInjected",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The database query returns zero rows when users request unauthorized data.",
+            "activeStateId": "accessGuarded",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Database query layer tenant and user context scoping lifecycle",
+        "states": [
+          {
+            "id": "requestReceived",
+            "label": "Incoming Request Provides Document Key"
+          },
+          {
+            "id": "contextInjected",
+            "label": "Tenant and User Identifier Scoped"
+          },
+          {
+            "id": "queryExecuted",
+            "label": "Database Queries Compound Ownership"
+          },
+          {
+            "id": "accessGuarded",
+            "label": "Empty Result Set Yields Not Found"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The query automatically scopes to the authenticated user in the database.",
+            "activeStateId": "contextInjected",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The database query returns zero rows when users request unauthorized data.",
+            "activeStateId": "accessGuarded",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mass Assignment & Property-Level Authorization Vulnerabilities",
+      "codeHash": "bc0d2db8a7c06514170f20a54653f19441f7f76d01978025da33c9eedabd42e2",
+      "spec": {
+        "template": "flow",
+        "title": "Data transfer object allowlist filter eliminating mass assignment tampering",
+        "nodes": [
+          {
+            "id": "clientPayload",
+            "label": "Raw Client Request Body",
+            "tappable": false
+          },
+          {
+            "id": "schemaValidator",
+            "label": "Zod Schema Allowlist Filter",
+            "tappable": false
+          },
+          {
+            "id": "sanitizedDto",
+            "label": "Sanitized DTO Model",
+            "tappable": false
+          },
+          {
+            "id": "databaseStore",
+            "label": "Database Model Update",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "clientPayload",
+            "to": "schemaValidator",
+            "label": "Submits"
+          },
+          {
+            "from": "schemaValidator",
+            "to": "sanitizedDto",
+            "label": "Filters"
+          },
+          {
+            "from": "sanitizedDto",
+            "to": "databaseStore",
+            "label": "Writes"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Attackers add unexpected fields to request bodies to target the database.",
+            "activeNodes": [
+              "clientPayload",
+              "schemaValidator"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Explicitly pick and validate permitted fields using strict schemas.",
+            "activeNodes": [
+              "schemaValidator",
+              "sanitizedDto"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Data transfer object allowlist filter eliminating mass assignment tampering",
+        "nodes": [
+          {
+            "id": "clientPayload",
+            "label": "Raw Client Request Body",
+            "tappable": false
+          },
+          {
+            "id": "schemaValidator",
+            "label": "Zod Schema Allowlist Filter",
+            "tappable": false
+          },
+          {
+            "id": "sanitizedDto",
+            "label": "Sanitized DTO Model",
+            "tappable": false
+          },
+          {
+            "id": "databaseStore",
+            "label": "Database Model Update",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "clientPayload",
+            "to": "schemaValidator",
+            "label": "Submits"
+          },
+          {
+            "from": "schemaValidator",
+            "to": "sanitizedDto",
+            "label": "Filters"
+          },
+          {
+            "from": "sanitizedDto",
+            "to": "databaseStore",
+            "label": "Writes"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Attackers add unexpected fields to request bodies to target the database.",
+            "activeNodes": [
+              "clientPayload",
+              "schemaValidator"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Explicitly pick and validate permitted fields using strict schemas.",
+            "activeNodes": [
+              "schemaValidator",
+              "sanitizedDto"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Indirect Reference Maps & Encrypted Opaque Capability Tokens",
+      "codeHash": "18bb77fc128859579c7d4c356111d88cb7bab6a8911132298d816ffc75ddba91",
+      "spec": {
+        "template": "table",
+        "title": "Object reference mapping strategies and security isolation properties",
+        "columns": [
+          "Reference Type",
+          "Client Facing Token",
+          "Internal Database Key",
+          "Isolation Scope"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An indirect reference map replaces true database keys with transient tokens.",
+            "activeRowIndex": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Attackers cannot guess or substitute tokens outside an individual session.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Object reference mapping strategies and security isolation properties",
+        "columns": [
+          "Reference Type",
+          "Client Facing Token",
+          "Internal Database Key",
+          "Isolation Scope"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An indirect reference map replaces true database keys with transient tokens.",
+            "activeRowIndex": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Attackers cannot guess or substitute tokens outside an individual session.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Multi-Tenant Data Access Repository with Ownership Guards",
+      "codeHash": "0ef19bbf38715a30d2dce4aed85433c4fff131a818c8e95d6388e6143092bbf6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

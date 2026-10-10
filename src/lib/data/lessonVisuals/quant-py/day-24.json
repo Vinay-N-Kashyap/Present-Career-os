@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The speed of light in fibre",
+      "codeHash": "f36af4c4f35d551a4056a6aa218fc0b6e9a65bc6412eea9b32b6d776c083d05a",
+      "spec": {
+        "template": "table",
+        "title": "Signal propagation latency across physical cable mediums",
+        "columns": [
+          "label",
+          "meters"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vacuum propagation represents the ultimate physical upper speed bound.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rack cable"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Glass refractive index slows optical signal transmission velocity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rack cable"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cross-connect"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Physical cable lengths dictate unavoidable propagation delays.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rack cable"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cross-connect"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Mumbai to Pune (fibre)"
+                  },
+                  {
+                    "text": "150_000"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Signal propagation latency across physical cable mediums",
+        "columns": [
+          "label",
+          "meters"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vacuum propagation represents the ultimate physical upper speed bound.",
+            "rows": [
+              {
+                "cells": [
+                  "rack cable",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Glass refractive index slows optical signal transmission velocity.",
+            "rows": [
+              {
+                "cells": [
+                  "rack cable",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cross-connect",
+                  "100"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Physical cable lengths dictate unavoidable propagation delays.",
+            "rows": [
+              {
+                "cells": [
+                  "rack cable",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cross-connect",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Mumbai to Pune (fibre)",
+                  "150_000"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Colocation",
+      "codeHash": "abd9fc48c2192cd799abad0eb465c7e60249799f44111e4c2fc4f68ec86bd11b",
+      "spec": {
+        "template": "table",
+        "title": "Exchange colocation distance advantages versus remote offices",
+        "columns": [
+          "office",
+          "colo"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Colocation positions servers inside exchange data centres for speed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "office"
+                  },
+                  {
+                    "text": "colo"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Proximity to the matching engine compresses transit times significantly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "office"
+                  },
+                  {
+                    "text": "colo"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "20_000"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Equalized cable coils maintain fair latency access for colocated racks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "office"
+                  },
+                  {
+                    "text": "colo"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "20_000"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "office"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exchange colocation distance advantages versus remote offices",
+        "columns": [
+          "office",
+          "colo"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Colocation positions servers inside exchange data centres for speed.",
+            "rows": [
+              {
+                "cells": [
+                  "office",
+                  "colo"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Proximity to the matching engine compresses transit times significantly.",
+            "rows": [
+              {
+                "cells": [
+                  "office",
+                  "colo"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "20_000",
+                  "100"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Equalized cable coils maintain fair latency access for colocated racks.",
+            "rows": [
+              {
+                "cells": [
+                  "office",
+                  "colo"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "20_000",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "office",
+                  "100"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-connects and network design",
+      "codeHash": "57b152dced2d5670437cbf9eb9b8ccfb32304b1f8ed7ac50650da2ccb409f0ab",
+      "spec": {
+        "template": "table",
+        "title": "Data centre cross-connect hops and hardware switch budgets",
+        "columns": [
+          "hop",
+          "ns"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Direct cross connect cables link trading servers with exchange gates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cable to switch"
+                  },
+                  {
+                    "text": "ns"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Intermediate network switches introduce serial packet traversal delay.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cable to switch"
+                  },
+                  {
+                    "text": "ns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layer 1 switch"
+                  },
+                  {
+                    "text": "5.0"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Flattened network topologies reduce conversion hops across cables.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cable to switch"
+                  },
+                  {
+                    "text": "ns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layer 1 switch"
+                  },
+                  {
+                    "text": "5.0"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "exchange handoff"
+                  },
+                  {
+                    "text": "150.0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Data centre cross-connect hops and hardware switch budgets",
+        "columns": [
+          "hop",
+          "ns"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Direct cross connect cables link trading servers with exchange gates.",
+            "rows": [
+              {
+                "cells": [
+                  "cable to switch",
+                  "ns"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Intermediate network switches introduce serial packet traversal delay.",
+            "rows": [
+              {
+                "cells": [
+                  "cable to switch",
+                  "ns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layer 1 switch",
+                  "5.0"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Flattened network topologies reduce conversion hops across cables.",
+            "rows": [
+              {
+                "cells": [
+                  "cable to switch",
+                  "ns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layer 1 switch",
+                  "5.0"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "exchange handoff",
+                  "150.0"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fibre versus air",
+      "codeHash": "a4d1aaa126f73bed22eb6f9f628085074b472313d1fcaa1f78ba15ed558c3d57",
+      "spec": {
+        "template": "table",
+        "title": "Terrestrial fibre compared against atmospheric microwave paths",
+        "columns": [
+          "fibre",
+          "straight_fibre",
+          "micro"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Microwave radio propagation in air outpaces optical fibre speeds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fibre"
+                  },
+                  {
+                    "text": "straight_fibre"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Terrestrial fibre routes follow curved paths adding route distance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fibre"
+                  },
+                  {
+                    "text": "straight_fibre"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fibre"
+                  },
+                  {
+                    "text": "straight_fibre"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Intercity latency savings give high speed traders immediate price priority.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fibre"
+                  },
+                  {
+                    "text": "straight_fibre"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fibre"
+                  },
+                  {
+                    "text": "straight_fibre"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fibre"
+                  },
+                  {
+                    "text": "straight_fibre"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Terrestrial fibre compared against atmospheric microwave paths",
+        "columns": [
+          "fibre",
+          "straight_fibre",
+          "micro"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Microwave radio propagation in air outpaces optical fibre speeds.",
+            "rows": [
+              {
+                "cells": [
+                  "fibre",
+                  "straight_fibre",
+                  "micro"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Terrestrial fibre routes follow curved paths adding route distance.",
+            "rows": [
+              {
+                "cells": [
+                  "fibre",
+                  "straight_fibre",
+                  "micro"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fibre",
+                  "straight_fibre",
+                  "micro"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Intercity latency savings give high speed traders immediate price priority.",
+            "rows": [
+              {
+                "cells": [
+                  "fibre",
+                  "straight_fibre",
+                  "micro"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fibre",
+                  "straight_fibre",
+                  "micro"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fibre",
+                  "straight_fibre",
+                  "micro"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The latency arms race and its limits",
+      "codeHash": "ac407927f95d230814dbda0f4c5fc7b69a32ba0fd772b01b5083c4b2e63ad7a1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: physics calculators",
+      "codeHash": "9e00cf937822a717b7b030a8db4230592907b8da24392bed17d3d790b30f4a58",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

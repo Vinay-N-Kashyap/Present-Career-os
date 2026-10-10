@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why structured output",
+      "codeHash": "298471f6b37964004ff9b43bb13e29d786851add67d8f59ee8dd7fdfe87a09b9",
+      "spec": {
+        "template": "none",
+        "reason": "JSON string serialization and deserialization functions in standard library."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "JSON string serialization and deserialization functions in standard library."
+      }
+    },
+    {
+      "partTitle": "Cleaning up the model's JSON",
+      "codeHash": "a7d60581803b55580ede31732de5dc99c8b14c9fff946d0aee94813baeafe03f",
+      "spec": {
+        "template": "compare",
+        "title": "Stripping markdown code blocks from model outputs",
+        "leftLabel": "Raw Output",
+        "rightLabel": "Cleaned JSON",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models often wrap output in markdown fences or surrounding chatter.",
+            "left": {
+              "code": "```json\n{\"a\": 1}\n```",
+              "result": {
+                "text": "markdown wrapper"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "{\"a\": 1}",
+              "result": {
+                "text": "clean payload"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Stripping fences if present lets json loads parse the text cleanly.",
+            "left": {
+              "code": "fences present",
+              "result": {
+                "text": "decode syntax error"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "strip and parse",
+              "result": {
+                "text": "valid dict object"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Stripping markdown code blocks from model outputs",
+        "leftLabel": "Raw Output",
+        "rightLabel": "Cleaned JSON",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models often wrap output in markdown fences or surrounding chatter.",
+            "left": {
+              "code": "```json\n{\"a\": 1}\n```",
+              "result": "markdown wrapper",
+              "tone": "data",
+              "checks": [
+                "markdown wrapper"
+              ]
+            },
+            "right": {
+              "code": "{\"a\": 1}",
+              "result": "clean payload",
+              "tone": "ok",
+              "checks": [
+                "clean payload"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Stripping fences if present lets json loads parse the text cleanly.",
+            "left": {
+              "code": "fences present",
+              "result": "decode syntax error",
+              "tone": "error",
+              "checks": [
+                "decode syntax error"
+              ]
+            },
+            "right": {
+              "code": "strip and parse",
+              "result": "valid dict object",
+              "tone": "ok",
+              "checks": [
+                "valid dict object"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking required keys",
+      "codeHash": "b6ff7b646c975eb4c0fc9460b6bbd7fe050555798f48465c0301fcc4f07f7075",
+      "spec": {
+        "template": "table",
+        "title": "Required schema keys verification and missing field reporting",
+        "columns": [
+          "field_name",
+          "presence_check",
+          "validation_state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Checking required keys verifies that every expected field is present.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "present in dict"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "missing from input"
+                  },
+                  {
+                    "text": "missing key"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reporting all missing keys in stable order assists systematic prompt repair.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "present in dict"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "missing from input"
+                  },
+                  {
+                    "text": "missing key"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "city"
+                  },
+                  {
+                    "text": "missing from input"
+                  },
+                  {
+                    "text": "missing key"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Required schema keys verification and missing field reporting",
+        "columns": [
+          "field_name",
+          "presence_check",
+          "validation_state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Checking required keys verifies that every expected field is present.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "present in dict",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "age",
+                  "missing from input",
+                  "missing key"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reporting all missing keys in stable order assists systematic prompt repair.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "present in dict",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "age",
+                  "missing from input",
+                  "missing key"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "city",
+                  "missing from input",
+                  "missing key"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking value types",
+      "codeHash": "44ae78f087d1b87311d6135ce994a6f5ba70db96a6406d43a03b91e2fe705314",
+      "spec": {
+        "template": "bars",
+        "title": "Type validation checks against expected schema types",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Ruling out bool instances avoids Python treating boolean values as ints.",
+            "bars": [
+              {
+                "label": "valid_int",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "bool_as_int",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Type checks catch common model mistakes like numbers returned as strings.",
+            "bars": [
+              {
+                "label": "valid_int",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "bool_as_int",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "str_as_int",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Type validation checks against expected schema types",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Ruling out bool instances avoids Python treating boolean values as ints.",
+            "bars": [
+              {
+                "label": "valid_int",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "bool_as_int",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Type checks catch common model mistakes like numbers returned as strings.",
+            "bars": [
+              {
+                "label": "valid_int",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "bool_as_int",
+                "value": 0,
+                "tone": "error"
+              },
+              {
+                "label": "str_as_int",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retry with a repair prompt",
+      "codeHash": "849cd27d7a84990a67bfe7e31d4e0e1a31640b795dc23f9dfc2a66fe89436d9f",
+      "spec": {
+        "template": "sequence",
+        "title": "Automated validation failure and repair prompting sequence",
+        "actors": [
+          "client",
+          "model"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When validation fails asking again with clear error messages repairs the JSON.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "model",
+                "label": "Extract receipt info",
+                "tone": "data"
+              },
+              {
+                "from": "model",
+                "to": "client",
+                "label": "{\"name\": \"Asha\"}",
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A validate and retry loop ensures reliable structured output in production.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "model",
+                "label": "Missing age key. Reply with corrected JSON",
+                "tone": "data"
+              },
+              {
+                "from": "model",
+                "to": "client",
+                "label": "{\"name\": \"Asha\", \"age\": 30}",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Automated validation failure and repair prompting sequence",
+        "actors": [
+          "client",
+          "model"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When validation fails asking again with clear error messages repairs the JSON.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "model",
+                "label": "Extract receipt info",
+                "tone": "data"
+              },
+              {
+                "from": "model",
+                "to": "client",
+                "label": "{\"name\": \"Asha\"}",
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A validate and retry loop ensures reliable structured output in production.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "model",
+                "label": "Missing age key. Reply with corrected JSON",
+                "tone": "data"
+              },
+              {
+                "from": "model",
+                "to": "client",
+                "label": "{\"name\": \"Asha\", \"age\": 30}",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 1: a schema-checked extractor",
+      "codeHash": "53f5a369ae0e7fd9aa59b2ce54eca791bc3d77891087260b2404352ae6c8fcf0",
+      "spec": {
+        "template": "none",
+        "reason": "End-to-end receipt extraction dataclass validation pipeline."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "End-to-end receipt extraction dataclass validation pipeline."
+      }
+    }
+  ]
+}

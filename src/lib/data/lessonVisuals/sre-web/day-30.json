@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 30,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Multi-Cloud Reliability Scorecard Architecture & Pillars",
+      "codeHash": "3411ba1e91921f251290e105288a79102efa82a6acd8c76bd32774ce80e6b104",
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-Cloud Reliability Scorecard Pillar Architecture",
+        "nodes": [
+          {
+            "id": "slo",
+            "label": "SLO Compliance",
+            "description": "40 points for error budget health"
+          },
+          {
+            "id": "chaos",
+            "label": "Chaos Resilience",
+            "description": "30 points for fault injection pass"
+          },
+          {
+            "id": "canary",
+            "label": "Canary Safety",
+            "description": "30 points for statistical rollout"
+          },
+          {
+            "id": "scorecard",
+            "label": "Executive Scorecard",
+            "description": "Aggregates fleet reliability grade"
+          }
+        ],
+        "edges": [
+          {
+            "from": "slo",
+            "to": "scorecard",
+            "label": "40 pts"
+          },
+          {
+            "from": "chaos",
+            "to": "scorecard",
+            "label": "30 pts"
+          },
+          {
+            "from": "canary",
+            "to": "scorecard",
+            "label": "30 pts"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The scorecard synthesizes adherence, chaos resilience, and canary safety.",
+            "activeNode": "slo",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Aggregating service scores produces an organization composite grade.",
+            "activeNode": "scorecard",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Multi-Cloud Reliability Scorecard Pillar Architecture",
+        "nodes": [
+          {
+            "id": "slo",
+            "label": "SLO Compliance",
+            "description": "40 points for error budget health"
+          },
+          {
+            "id": "chaos",
+            "label": "Chaos Resilience",
+            "description": "30 points for fault injection pass"
+          },
+          {
+            "id": "canary",
+            "label": "Canary Safety",
+            "description": "30 points for statistical rollout"
+          },
+          {
+            "id": "scorecard",
+            "label": "Executive Scorecard",
+            "description": "Aggregates fleet reliability grade"
+          }
+        ],
+        "edges": [
+          {
+            "from": "slo",
+            "to": "scorecard",
+            "label": "40 pts"
+          },
+          {
+            "from": "chaos",
+            "to": "scorecard",
+            "label": "30 pts"
+          },
+          {
+            "from": "canary",
+            "to": "scorecard",
+            "label": "30 pts"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The scorecard synthesizes adherence, chaos resilience, and canary safety.",
+            "activeNode": "slo",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Aggregating service scores produces an organization composite grade.",
+            "activeNode": "scorecard",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 1: Multi-Cloud SLO Adherence & Error Budget Engine",
+      "codeHash": "c1e2ef93d1a0cdffd7ff287816d2ed422f597b6eec40bdda94f082c1478d5db9",
+      "spec": {
+        "template": "compare",
+        "title": "SLO Compliance Scoring: Healthy Budget versus Depleted Budget",
+        "left": {
+          "title": "Compliant Service (order-api)",
+          "items": [
+            "Observed SLI 99.95% exceeds 99.9% target",
+            "50% error budget remaining in window",
+            "Awards full 40 reliability scorecard points",
+            "Permitted to ship rapid feature releases"
+          ]
+        },
+        "right": {
+          "title": "Depleted Service (legacy-db)",
+          "items": [
+            "Observed SLI 98.5% breaches 99.5% target",
+            "0% error budget remaining (exhausted)",
+            "Docks SLO score to 0 reliability points",
+            "Triggers automated feature deployment freeze"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The engine compares observed service availability against customer targets.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Services burning through their error budget trigger a feature freeze.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Compliant Service (order-api)",
+        "rightLabel": "Depleted Service (legacy-db)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "SLO Compliance Scoring: Healthy Budget versus Depleted Budget",
+        "left": {
+          "title": "Compliant Service (order-api)",
+          "items": [
+            "Observed SLI 99.95% exceeds 99.9% target",
+            "50% error budget remaining in window",
+            "Awards full 40 reliability scorecard points",
+            "Permitted to ship rapid feature releases"
+          ]
+        },
+        "right": {
+          "title": "Depleted Service (legacy-db)",
+          "items": [
+            "Observed SLI 98.5% breaches 99.5% target",
+            "0% error budget remaining (exhausted)",
+            "Docks SLO score to 0 reliability points",
+            "Triggers automated feature deployment freeze"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The engine compares observed service availability against customer targets.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Services burning through their error budget trigger a feature freeze.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Compliant Service (order-api)",
+        "rightLabel": "Depleted Service (legacy-db)"
+      }
+    },
+    {
+      "partTitle": "Pillar 2: Chaos Resilience Scoring & Fault-Tolerance Verification",
+      "codeHash": "5efbd96b27d5128414c3867b001af1a940986f4a35f236ab93969ed223a7512d",
+      "spec": {
+        "template": "table",
+        "title": "Chaos Engineering Resilience Audit Scorecard",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Every production service undergoes weekly automated chaos experiments.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Maintaining the steady-state hypothesis throughout injection earns points.",
+            "highlightRow": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Service",
+          "Experiment Type",
+          "Steady State",
+          "Resilience Score"
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Chaos Engineering Resilience Audit Scorecard",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Every production service undergoes weekly automated chaos experiments.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Maintaining the steady-state hypothesis throughout injection earns points.",
+            "highlightRow": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Service",
+          "Experiment Type",
+          "Steady State",
+          "Resilience Score"
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 3: Deployment Safety & Automated Canary Validation Scoring",
+      "codeHash": "ae904f21d5d810588e51dde6abb0d6a171c70b802783a13ece8144e7ae4b6044",
+      "spec": {
+        "template": "sequence",
+        "title": "Deployment Safety Audit and Canary Verification Flow",
+        "actors": [
+          {
+            "id": "pipeline",
+            "label": "CI/CD Pipeline"
+          },
+          {
+            "id": "canary",
+            "label": "Canary Gate"
+          },
+          {
+            "id": "auditor",
+            "label": "Safety Auditor"
+          },
+          {
+            "id": "scorecard",
+            "label": "Scorecard Engine"
+          }
+        ],
+        "messages": [
+          {
+            "from": "pipeline",
+            "to": "canary",
+            "label": "Deploy candidate with soak"
+          },
+          {
+            "from": "canary",
+            "to": "auditor",
+            "label": "Report statistical verification"
+          },
+          {
+            "from": "auditor",
+            "to": "scorecard",
+            "label": "Award 30 safety points"
+          },
+          {
+            "from": "scorecard",
+            "to": "pipeline",
+            "label": "Certify progressive release"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Audits verify whether deployments utilized automated canary analysis.",
+            "highlightMessage": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Automated deployment safety accelerates release velocity without downtime.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Deployment Safety Audit and Canary Verification Flow",
+        "actors": [
+          {
+            "id": "pipeline",
+            "label": "CI/CD Pipeline"
+          },
+          {
+            "id": "canary",
+            "label": "Canary Gate"
+          },
+          {
+            "id": "auditor",
+            "label": "Safety Auditor"
+          },
+          {
+            "id": "scorecard",
+            "label": "Scorecard Engine"
+          }
+        ],
+        "messages": [
+          {
+            "from": "pipeline",
+            "to": "canary",
+            "label": "Deploy candidate with soak"
+          },
+          {
+            "from": "canary",
+            "to": "auditor",
+            "label": "Report statistical verification"
+          },
+          {
+            "from": "auditor",
+            "to": "scorecard",
+            "label": "Award 30 safety points"
+          },
+          {
+            "from": "scorecard",
+            "to": "pipeline",
+            "label": "Certify progressive release"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Audits verify whether deployments utilized automated canary analysis.",
+            "highlightMessage": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Automated deployment safety accelerates release velocity without downtime.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Score Aggregation, Grade Assignment & Executive Reporting",
+      "codeHash": "f29da9495d40b5d47397a4bdc4efbcc9047d415c3b1d81f851d50fc76d66433e",
+      "spec": {
+        "template": "bars",
+        "title": "Composite Reliability Scorecard Point Allocation",
+        "bars": [
+          {
+            "label": "SLO Adherence Pillar",
+            "value": 40,
+            "unit": "pts"
+          },
+          {
+            "label": "Chaos Resilience Pillar",
+            "value": 30,
+            "unit": "pts"
+          },
+          {
+            "label": "Canary Safety Pillar",
+            "value": 30,
+            "unit": "pts"
+          },
+          {
+            "label": "Composite Grade A",
+            "value": 100,
+            "unit": "pts"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The engine sums scores across adherence, chaos resilience, and canary.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Numerical scores map directly to executive letter grades for reporting.",
+            "highlightIndex": 3,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Composite Reliability Scorecard Point Allocation",
+        "bars": [
+          {
+            "label": "SLO Adherence Pillar",
+            "value": 40,
+            "unit": "pts"
+          },
+          {
+            "label": "Chaos Resilience Pillar",
+            "value": 30,
+            "unit": "pts"
+          },
+          {
+            "label": "Canary Safety Pillar",
+            "value": 30,
+            "unit": "pts"
+          },
+          {
+            "label": "Composite Grade A",
+            "value": 100,
+            "unit": "pts"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The engine sums scores across adherence, chaos resilience, and canary.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Numerical scores map directly to executive letter grades for reporting.",
+            "highlightIndex": 3,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capstone Graduation: Master Enterprise SRE Certification Audit",
+      "codeHash": "197732fe4ea2cceca90f203a4695e8c8de606f58e4d3ff18c80495fa3fcfde4d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

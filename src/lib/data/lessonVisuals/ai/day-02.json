@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 2,
+  "promptSha": "f2d5b7c1c827a183feb690637abcbe3c0952ce593fc25d43c2e1f6b79f3ae1f6",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Tokenization Abstraction: Why LLMs Ingest Tokens Not Characters",
+      "codeHash": "3252ff87763258e1604d605c91db9078e323aa0b5ff0a1f4795398231cadbbd7",
+      "spec": {
+        "template": "compare",
+        "title": "Character-level sequence overhead versus sub-word vocabulary balance",
+        "left": {
+          "title": "Character Level Processing",
+          "items": [
+            "Sequence lengths grow four to five times longer",
+            "Quadratic attention compute becomes prohibitive",
+            "Lacks semantic grouping across character clusters",
+            "GPU memory saturates on small document inputs"
+          ]
+        },
+        "right": {
+          "title": "Sub-Word BPE Tokenization",
+          "items": [
+            "Decomposes rare words into frequent sub-words",
+            "Preserves compact sequence length on GPU",
+            "Eliminates out-of-vocabulary exceptions",
+            "Balances vocabulary size against sequence length"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Character level modeling causes sequence lengths to explode compute costs.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Sub-word tokenization strikes an optimal balance for vocabulary size.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Character Level Processing",
+        "rightLabel": "Sub-Word BPE Tokenization"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Character-level sequence overhead versus sub-word vocabulary balance",
+        "left": {
+          "title": "Character Level Processing",
+          "items": [
+            "Sequence lengths grow four to five times longer",
+            "Quadratic attention compute becomes prohibitive",
+            "Lacks semantic grouping across character clusters",
+            "GPU memory saturates on small document inputs"
+          ]
+        },
+        "right": {
+          "title": "Sub-Word BPE Tokenization",
+          "items": [
+            "Decomposes rare words into frequent sub-words",
+            "Preserves compact sequence length on GPU",
+            "Eliminates out-of-vocabulary exceptions",
+            "Balances vocabulary size against sequence length"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Character level modeling causes sequence lengths to explode compute costs.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Sub-word tokenization strikes an optimal balance for vocabulary size.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Character Level Processing",
+        "rightLabel": "Sub-Word BPE Tokenization"
+      }
+    },
+    {
+      "partTitle": "Byte-Pair Encoding (BPE) Algorithm & Vocabulary Compression",
+      "codeHash": "6a3183e3e51a13ee1fd548d336c596d3fd7f67500dd78bb38221dc973c198f7d",
+      "spec": {
+        "template": "table",
+        "title": "Iterative byte-pair encoding merge rules and corpus compression",
+        "columns": [
+          "Iteration Step",
+          "Target Token Pair",
+          "New Merged Token",
+          "Corpus Frequency"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "BPE algorithms scan training text to merge frequent consecutive pairs.",
+            "activeRowIndex": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Frequent words are compressed into single high-level token identifiers.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Iterative byte-pair encoding merge rules and corpus compression",
+        "columns": [
+          "Iteration Step",
+          "Target Token Pair",
+          "New Merged Token",
+          "Corpus Frequency"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "BPE algorithms scan training text to merge frequent consecutive pairs.",
+            "activeRowIndex": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Frequent words are compressed into single high-level token identifiers.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Special Control Tokens & Prompt Delimiters (<|im_start|>, <|im_end|>)",
+      "codeHash": "40436362f7e1da6560524c82b4a3010487963c080cdb60ba5f68ef7a5c9edb1e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Tokenization Edge Cases: Numbers, Code Indentation, and Multilingual Bytes",
+      "codeHash": "aea185e474e8251b740ae782502f35ec49dfc35ba948f74e8ecd5e85157fc217",
+      "spec": {
+        "template": "compare",
+        "title": "English token efficiency versus non-English multilingual byte overhead",
+        "left": {
+          "title": "English Token Efficiency",
+          "items": [
+            "Single token represents whole common words",
+            "Compact sequence lengths on GPU tensor cores",
+            "Lower financial cost per thousand words",
+            "High context efficiency"
+          ]
+        },
+        "right": {
+          "title": "Multilingual Byte Overhead",
+          "items": [
+            "Non-Latin scripts split into multiple byte tokens",
+            "Single word requires four to eight tokens",
+            "Higher context consumption and inference cost",
+            "Fragmented sub-word token identifiers"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Tokenization compression is significantly worse in non-English languages.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The token tax causes multilingual prompts to consume additional context.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "English Token Efficiency",
+        "rightLabel": "Multilingual Byte Overhead"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "English token efficiency versus non-English multilingual byte overhead",
+        "left": {
+          "title": "English Token Efficiency",
+          "items": [
+            "Single token represents whole common words",
+            "Compact sequence lengths on GPU tensor cores",
+            "Lower financial cost per thousand words",
+            "High context efficiency"
+          ]
+        },
+        "right": {
+          "title": "Multilingual Byte Overhead",
+          "items": [
+            "Non-Latin scripts split into multiple byte tokens",
+            "Single word requires four to eight tokens",
+            "Higher context consumption and inference cost",
+            "Fragmented sub-word token identifiers"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Tokenization compression is significantly worse in non-English languages.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The token tax causes multilingual prompts to consume additional context.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "English Token Efficiency",
+        "rightLabel": "Multilingual Byte Overhead"
+      }
+    },
+    {
+      "partTitle": "Context Window Economics: Pricing Models and Token Budgeting",
+      "codeHash": "75a6c138c6bad8a9f78f654350be37b4dd26eec9958e9907aafbb0f86f18bd52",
+      "spec": {
+        "template": "flow",
+        "title": "Context window economics pricing tiers and prompt caching discounts",
+        "nodes": [
+          {
+            "id": "inputPrompt",
+            "label": "Input Prompt Batch",
+            "tappable": false
+          },
+          {
+            "id": "cachedPrefix",
+            "label": "Prompt KV Cache",
+            "tappable": false
+          },
+          {
+            "id": "tensorCores",
+            "label": "Parallel GPU Processing",
+            "tappable": false
+          },
+          {
+            "id": "autoregressiveOutput",
+            "label": "Sequential Output Generation",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "inputPrompt",
+            "to": "cachedPrefix",
+            "label": "Check Cache"
+          },
+          {
+            "from": "cachedPrefix",
+            "to": "tensorCores",
+            "label": "Process Parallel"
+          },
+          {
+            "from": "tensorCores",
+            "to": "autoregressiveOutput",
+            "label": "Generate Tokens"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "API providers charge asymmetric rates for input and output tokens.",
+            "activeNodes": [
+              "inputPrompt",
+              "cachedPrefix"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Generating output tokens requires separate sequential passes on networks.",
+            "activeNodes": [
+              "tensorCores",
+              "autoregressiveOutput"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Context window economics pricing tiers and prompt caching discounts",
+        "nodes": [
+          {
+            "id": "inputPrompt",
+            "label": "Input Prompt Batch",
+            "tappable": false
+          },
+          {
+            "id": "cachedPrefix",
+            "label": "Prompt KV Cache",
+            "tappable": false
+          },
+          {
+            "id": "tensorCores",
+            "label": "Parallel GPU Processing",
+            "tappable": false
+          },
+          {
+            "id": "autoregressiveOutput",
+            "label": "Sequential Output Generation",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "inputPrompt",
+            "to": "cachedPrefix",
+            "label": "Check Cache"
+          },
+          {
+            "from": "cachedPrefix",
+            "to": "tensorCores",
+            "label": "Process Parallel"
+          },
+          {
+            "from": "tensorCores",
+            "to": "autoregressiveOutput",
+            "label": "Generate Tokens"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "API providers charge asymmetric rates for input and output tokens.",
+            "activeNodes": [
+              "inputPrompt",
+              "cachedPrefix"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Generating output tokens requires separate sequential passes on networks.",
+            "activeNodes": [
+              "tensorCores",
+              "autoregressiveOutput"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Building a Production Token Budget & Cost Estimator",
+      "codeHash": "1a19f7e53f8ecace39ff3d77e899fb89933cdc4e4f8d6ca2c2672fa7d2d4dd63",
+      "spec": {
+        "template": "sequence",
+        "title": "Production token budgeting and conversation history eviction sequence",
+        "actors": [
+          {
+            "id": "chatClient",
+            "label": "Chat Application"
+          },
+          {
+            "id": "budgetGuard",
+            "label": "Token Budget Guard"
+          },
+          {
+            "id": "modelApi",
+            "label": "Language Model API"
+          }
+        ],
+        "messages": [
+          {
+            "from": "chatClient",
+            "to": "budgetGuard",
+            "label": "Submit Multi-Turn Conversation History",
+            "tone": "data"
+          },
+          {
+            "from": "budgetGuard",
+            "to": "chatClient",
+            "label": "Prune Historical Messages to Fit Budget",
+            "tone": "success"
+          },
+          {
+            "from": "budgetGuard",
+            "to": "modelApi",
+            "label": "Dispatch Compliant Prompt Within Limits",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The budget manager monitors token counts across conversation turns.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "The controller evicts older turns while preserving system prompts.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Production token budgeting and conversation history eviction sequence",
+        "actors": [
+          {
+            "id": "chatClient",
+            "label": "Chat Application"
+          },
+          {
+            "id": "budgetGuard",
+            "label": "Token Budget Guard"
+          },
+          {
+            "id": "modelApi",
+            "label": "Language Model API"
+          }
+        ],
+        "messages": [
+          {
+            "from": "chatClient",
+            "to": "budgetGuard",
+            "label": "Submit Multi-Turn Conversation History",
+            "tone": "data"
+          },
+          {
+            "from": "budgetGuard",
+            "to": "chatClient",
+            "label": "Prune Historical Messages to Fit Budget",
+            "tone": "success"
+          },
+          {
+            "from": "budgetGuard",
+            "to": "modelApi",
+            "label": "Dispatch Compliant Prompt Within Limits",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The budget manager monitors token counts across conversation turns.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "The controller evicts older turns while preserving system prompts.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

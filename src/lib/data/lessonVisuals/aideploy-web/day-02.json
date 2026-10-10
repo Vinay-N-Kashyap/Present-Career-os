@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 2,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Vendor Completion Payload Topologies & Invariants",
+      "codeHash": "4a8b858e41eb22c234b224d6ae242681417377dafb58a24551d8a5893bd33838",
+      "spec": {
+        "template": "flow",
+        "title": "Vendor-Agnostic Completion Normalization Adapter",
+        "subtitle": "Isolating OpenAI/Anthropic/Gemini payload shapes behind NormalizedCompletion",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Vendor HTTP JSON",
+            "sublabel": "choices[0].message",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Adapter Validation",
+            "sublabel": "normalizeVendorPayload()",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "NormalizedCompletion",
+            "sublabel": "id, text, finishReason, model",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Domain Services",
+            "sublabel": "Vendor-agnostic contract",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "chatcmpl-992"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "extract choice"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "typed envelope"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An adapter layer parses the vendor payload into an internal envelope.",
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The envelope standardizes generated text and finish reason into a contract.",
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Vendor-Agnostic Completion Normalization Adapter",
+        "subtitle": "Isolating OpenAI/Anthropic/Gemini payload shapes behind NormalizedCompletion",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Vendor HTTP JSON",
+            "sublabel": "choices[0].message",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Adapter Validation",
+            "sublabel": "normalizeVendorPayload()",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "NormalizedCompletion",
+            "sublabel": "id, text, finishReason, model",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Domain Services",
+            "sublabel": "Vendor-agnostic contract",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "chatcmpl-992"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "extract choice"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "typed envelope"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An adapter layer parses the vendor payload into an internal envelope.",
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The envelope standardizes generated text and finish reason into a contract.",
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Runtime Type Guards for Untrusted LLM Responses",
+      "codeHash": "5352d761fa5ddfee666ff09c66805be68facdb373993dfa6db896828f1f5dfac",
+      "spec": {
+        "template": "compare",
+        "title": "isStructuredInsight(data) Runtime Type Boundary",
+        "leftLabel": "Candidate 1 (Valid -> true)",
+        "rightLabel": "Candidate 2 (Invalid -> false)",
+        "leftItems": [
+          "title: 'GPU Utilization Spike' (string)",
+          "confidenceScore: 0.94 (number in 0..1)",
+          "tags: ['infrastructure', 'alert'] (string[])",
+          "isVerified: true (boolean)"
+        ],
+        "rightItems": [
+          "title: 'Bad Payload' (string)",
+          "confidenceScore: '0.94' (string instead of number!)",
+          "Fails typeof obj.confidenceScore !== 'number'",
+          "Quarantined before reaching core services"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Production systems enforce type boundaries using runtime type guards.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "When a property carries the wrong primitive type, the type guard returns false.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "isStructuredInsight(data) Runtime Type Boundary",
+        "leftLabel": "Candidate 1 (Valid -> true)",
+        "rightLabel": "Candidate 2 (Invalid -> false)",
+        "leftItems": [
+          "title: 'GPU Utilization Spike' (string)",
+          "confidenceScore: 0.94 (number in 0..1)",
+          "tags: ['infrastructure', 'alert'] (string[])",
+          "isVerified: true (boolean)"
+        ],
+        "rightItems": [
+          "title: 'Bad Payload' (string)",
+          "confidenceScore: '0.94' (string instead of number!)",
+          "Fails typeof obj.confidenceScore !== 'number'",
+          "Quarantined before reaching core services"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Production systems enforce type boundaries using runtime type guards.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "When a property carries the wrong primitive type, the type guard returns false.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient Markdown Code Fence & JSON Extraction",
+      "codeHash": "10a288a54df9c24380e81ee131bb739270c236dbcd54e303bfc871f7548b0694",
+      "spec": {
+        "template": "workflow",
+        "title": "Resilient JSON Fence & Brace Extractor",
+        "subtitle": "Stripping markdown code blocks and conversational prose prior to JSON.parse",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Raw LLM Output",
+            "subtext": "Prose + ```json block"
+          },
+          {
+            "id": "s2",
+            "name": "Fence Regex",
+            "subtext": "Match ```(?:json)?...```"
+          },
+          {
+            "id": "s3",
+            "name": "Brace Fallback",
+            "subtext": "indexOf('{')..lastIndexOf('}')"
+          },
+          {
+            "id": "s4",
+            "name": "Clean JSON",
+            "subtext": "Ready for JSON.parse()"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The extractor matches content between opening and closing backtick code fences.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Without a markdown fence, the extractor locates the outer curly braces.",
+            "activeStageId": "s3",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Resilient JSON Fence & Brace Extractor",
+        "subtitle": "Stripping markdown code blocks and conversational prose prior to JSON.parse",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Raw LLM Output",
+            "subtext": "Prose + ```json block"
+          },
+          {
+            "id": "s2",
+            "name": "Fence Regex",
+            "subtext": "Match ```(?:json)?...```"
+          },
+          {
+            "id": "s3",
+            "name": "Brace Fallback",
+            "subtext": "indexOf('{')..lastIndexOf('}')"
+          },
+          {
+            "id": "s4",
+            "name": "Clean JSON",
+            "subtext": "Ready for JSON.parse()"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The extractor matches content between opening and closing backtick code fences.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Without a markdown fence, the extractor locates the outer curly braces.",
+            "activeStageId": "s3",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Null Safety & Fallback Text Extraction",
+      "codeHash": "de106d42fe77fc2492927d3d9a056798a044b92e37050f2a75c2e8c7b5231ca6",
+      "spec": {
+        "template": "states",
+        "title": "safeExtractMessageContent Null-Safety State Machine",
+        "subtitle": "Handling normal completions, content_filter redactions, and empty payloads",
+        "states": [
+          {
+            "id": "s1",
+            "label": "Inspect choice & finish_reason"
+          },
+          {
+            "id": "s2",
+            "label": "FILTERED (finish_reason === 'content_filter')"
+          },
+          {
+            "id": "s3",
+            "label": "OK (Non-empty trimmed string)"
+          },
+          {
+            "id": "s4",
+            "label": "EMPTY (Fallback: 'Content unavailable')"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "content_filter"
+          },
+          {
+            "from": "s1",
+            "to": "s3",
+            "label": "valid string"
+          },
+          {
+            "from": "s1",
+            "to": "s4",
+            "label": "null / empty"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Triggering a content safety filter returns content_filter with a null body.",
+            "current": "s2",
+            "visited": [
+              "s1"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When extracted content is null or empty, the function returns a typed fallback.",
+            "current": "s4",
+            "visited": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "safeExtractMessageContent Null-Safety State Machine",
+        "subtitle": "Handling normal completions, content_filter redactions, and empty payloads",
+        "states": [
+          {
+            "id": "s1",
+            "label": "Inspect choice & finish_reason"
+          },
+          {
+            "id": "s2",
+            "label": "FILTERED (finish_reason === 'content_filter')"
+          },
+          {
+            "id": "s3",
+            "label": "OK (Non-empty trimmed string)"
+          },
+          {
+            "id": "s4",
+            "label": "EMPTY (Fallback: 'Content unavailable')"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "content_filter"
+          },
+          {
+            "from": "s1",
+            "to": "s3",
+            "label": "valid string"
+          },
+          {
+            "from": "s1",
+            "to": "s4",
+            "label": "null / empty"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Triggering a content safety filter returns content_filter with a null body.",
+            "current": "s2",
+            "visited": [
+              "s1"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When extracted content is null or empty, the function returns a typed fallback.",
+            "current": "s4",
+            "visited": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Usage Token Telemetry & Finish Reason Validation",
+      "codeHash": "7775392f01b1274ca16d4f6fda1e3bb68987782c08c917da91572cfa6c8b64fd",
+      "spec": {
+        "template": "bars",
+        "title": "Completion Token Usage & Truncation Audit",
+        "subtitle": "Comparing stop (200 total tokens) vs length cutoff (1000 total tokens)",
+        "unit": "tokens",
+        "max": 1000,
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A finish reason of stop indicates natural model termination within budget.",
+            "bars": [
+              {
+                "label": "Normal Prompt (150)",
+                "value": 150,
+                "tone": "data"
+              },
+              {
+                "label": "Normal Completion (50)",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Normal Total (stop)",
+                "value": 200,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A finish reason of length reveals generation was cut off by token budget.",
+            "bars": [
+              {
+                "label": "Cutoff Prompt (200)",
+                "value": 200,
+                "tone": "data"
+              },
+              {
+                "label": "Cutoff Completion (800)",
+                "value": 800,
+                "tone": "error"
+              },
+              {
+                "label": "Cutoff Total (length!)",
+                "value": 1000,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Completion Token Usage & Truncation Audit",
+        "subtitle": "Comparing stop (200 total tokens) vs length cutoff (1000 total tokens)",
+        "unit": "tokens",
+        "max": 1000,
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A finish reason of stop indicates natural model termination within budget.",
+            "bars": [
+              {
+                "label": "Normal Prompt (150)",
+                "value": 150,
+                "tone": "data"
+              },
+              {
+                "label": "Normal Completion (50)",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Normal Total (stop)",
+                "value": 200,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A finish reason of length reveals generation was cut off by token budget.",
+            "bars": [
+              {
+                "label": "Cutoff Prompt (200)",
+                "value": 200,
+                "tone": "data"
+              },
+              {
+                "label": "Cutoff Completion (800)",
+                "value": 800,
+                "tone": "error"
+              },
+              {
+                "label": "Cutoff Total (length!)",
+                "value": 1000,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Normalized LLM Completion Pipeline",
+      "codeHash": "2bc72691a827195b2a0f5b04ece03e6e6a88ae252ca4e14d68f193cc550c0320",
+      "spec": {
+        "template": "none",
+        "reason": "End-to-end completion pipeline combining fence stripping, JSON parsing, and runtime type guards"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "End-to-end completion pipeline combining fence stripping, JSON parsing, and runtime type guards"
+      }
+    }
+  ]
+}

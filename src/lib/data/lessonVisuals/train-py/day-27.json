@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What quantisation does",
+      "codeHash": "e89c4a20a4ca429334b835ce4c846c8aa3a27c1b2177e35bfbac63e68441ae5c",
+      "spec": {
+        "template": "table",
+        "title": "Precision reduction mapping floats to quantized integer levels",
+        "columns": [
+          "params",
+          "bits",
+          "params"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quantisation maps high-precision floats to discrete integer levels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "With integer representations weights are stored in a single byte.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "bits"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Precision reduction mapping floats to quantized integer levels",
+        "columns": [
+          "params",
+          "bits",
+          "params"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quantisation maps high-precision floats to discrete integer levels.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "params"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "params"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "With integer representations weights are stored in a single byte.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "params"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "bits"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Symmetric INT8 quantisation",
+      "codeHash": "02af7a60cd88e64ff5064552324f95a8a7a41337a5e86a7be7c6841982e74f89",
+      "spec": {
+        "template": "table",
+        "title": "Symmetric quantization scaling and integer clamping",
+        "columns": [
+          "values",
+          "scale",
+          "back"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Symmetric quantisation scales values by the largest absolute magnitude.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "back"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "back"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dequantising multiplies integer values back by the group scale.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "back"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Symmetric quantization scaling and integer clamping",
+        "columns": [
+          "values",
+          "scale",
+          "back"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Symmetric quantisation scales values by the largest absolute magnitude.",
+            "rows": [
+              {
+                "cells": [
+                  "values",
+                  "scale",
+                  "back"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "values",
+                  "scale",
+                  "back"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dequantising multiplies integer values back by the group scale.",
+            "rows": [
+              {
+                "cells": [
+                  "values",
+                  "scale",
+                  "back"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "values",
+                  "scale",
+                  "values"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring quantisation error",
+      "codeHash": "8ceaeabde8d9888563af52728dd2a486feac59b55871e63415a1b46939537783",
+      "spec": {
+        "template": "table",
+        "title": "Round-trip reconstruction error and outlier distortion",
+        "columns": [
+          "normal",
+          "with_outlier",
+          "normal"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Round-trip error measures the difference between original and restored values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "with_outlier"
+                  },
+                  {
+                    "text": "normal"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "with_outlier"
+                  },
+                  {
+                    "text": "normal"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A large outlier inflates the scale and increases rounding error.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "with_outlier"
+                  },
+                  {
+                    "text": "normal"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "with_outlier"
+                  },
+                  {
+                    "text": "with_outlier"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Round-trip reconstruction error and outlier distortion",
+        "columns": [
+          "normal",
+          "with_outlier",
+          "normal"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Round-trip error measures the difference between original and restored values.",
+            "rows": [
+              {
+                "cells": [
+                  "normal",
+                  "with_outlier",
+                  "normal"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "normal",
+                  "with_outlier",
+                  "normal"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A large outlier inflates the scale and increases rounding error.",
+            "rows": [
+              {
+                "cells": [
+                  "normal",
+                  "with_outlier",
+                  "normal"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "normal",
+                  "with_outlier",
+                  "with_outlier"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "4-bit quantisation",
+      "codeHash": "b85aa2ccd987ed8cecacb58bf46dca9b2c20c5b276d9248abcd1e0024fdd1a33",
+      "spec": {
+        "template": "table",
+        "title": "Extreme 4-bit quantization and per-group scale distribution",
+        "columns": [
+          "group",
+          "bits",
+          "back"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "With limited levels per-group scales are essential across weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "group"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "back"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "group"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "back"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Quantised formats space levels to match the distribution of neural weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "group"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "back"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "group"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "group"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Extreme 4-bit quantization and per-group scale distribution",
+        "columns": [
+          "group",
+          "bits",
+          "back"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "With limited levels per-group scales are essential across weights.",
+            "rows": [
+              {
+                "cells": [
+                  "group",
+                  "bits",
+                  "back"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "group",
+                  "bits",
+                  "back"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Quantised formats space levels to match the distribution of neural weights.",
+            "rows": [
+              {
+                "cells": [
+                  "group",
+                  "bits",
+                  "back"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "group",
+                  "bits",
+                  "group"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantisation in training and serving",
+      "codeHash": "4112a822b3adf139ba08ee5b8325a7aa895eea08e7fe2485364d7f7ce6567c73",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: quantisation",
+      "codeHash": "358efde73f75f8e1ebf930644ec4b58e4a0b0fc1487e3b6cb0fe9e287d133c1c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

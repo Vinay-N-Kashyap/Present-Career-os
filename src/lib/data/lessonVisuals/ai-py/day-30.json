@@ -1,0 +1,710 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The platform flow",
+      "codeHash": "b2f9979ac185dadc2fa0b788594a76a073244c82b8f53fc665bc7fd6d52c9bb4",
+      "spec": {
+        "template": "none",
+        "reason": "Enterprise agentic RAG platform high-level architecture overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The run_ai_platform function",
+      "codeHash": "73eb4be8326a82d8e33eb7a4166436da03839755a5b773bb3213668a9da8dac9",
+      "spec": {
+        "template": "flow",
+        "title": "Enterprise AI platform request routing and execution pipeline",
+        "nodes": [
+          {
+            "id": "threat",
+            "label": "is_threat"
+          },
+          {
+            "id": "cache",
+            "label": "cache"
+          },
+          {
+            "id": "retrieve",
+            "label": "retrieve"
+          }
+        ],
+        "edges": [
+          {
+            "from": "threat",
+            "to": "cache",
+            "label": "safe"
+          },
+          {
+            "from": "cache",
+            "to": "retrieve",
+            "label": "miss"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Guardrail checks is_threat blocking query immediately.",
+            "values": {
+              "threat": {
+                "text": "BLOCKED"
+              },
+              "cache": {
+                "text": "CACHE"
+              },
+              "retrieve": {
+                "text": "RAG"
+              }
+            },
+            "tones": {
+              "threat": "error",
+              "cache": "idle",
+              "retrieve": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Semantic cache returns existing response on match.",
+            "values": {
+              "threat": {
+                "text": "BLOCKED"
+              },
+              "cache": {
+                "text": "CACHE"
+              },
+              "retrieve": {
+                "text": "RAG"
+              }
+            },
+            "tones": {
+              "threat": "ok",
+              "cache": "ok",
+              "retrieve": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Cache miss falls back to retrieve sources and generate answer.",
+            "values": {
+              "threat": {
+                "text": "BLOCKED"
+              },
+              "cache": {
+                "text": "CACHE"
+              },
+              "retrieve": {
+                "text": "RAG"
+              }
+            },
+            "tones": {
+              "threat": "ok",
+              "cache": "idle",
+              "retrieve": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Enterprise AI platform request routing and execution pipeline",
+        "nodes": [
+          {
+            "id": "threat",
+            "label": "is_threat"
+          },
+          {
+            "id": "cache",
+            "label": "cache"
+          },
+          {
+            "id": "retrieve",
+            "label": "retrieve"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Guardrail checks is_threat blocking query immediately.",
+            "values": {
+              "threat": "BLOCKED",
+              "cache": "CACHE",
+              "retrieve": "RAG"
+            },
+            "tones": {
+              "threat": "error",
+              "cache": "idle",
+              "retrieve": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Semantic cache returns existing response on match.",
+            "values": {
+              "threat": "BLOCKED",
+              "cache": "CACHE",
+              "retrieve": "RAG"
+            },
+            "tones": {
+              "threat": "ok",
+              "cache": "ok",
+              "retrieve": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Cache miss falls back to retrieve sources and generate answer.",
+            "values": {
+              "threat": "BLOCKED",
+              "cache": "CACHE",
+              "retrieve": "RAG"
+            },
+            "tones": {
+              "threat": "ok",
+              "cache": "idle",
+              "retrieve": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Wrapping services with tracing",
+      "codeHash": "e49f0faf65a0fdace28df1e1649c069d33c69b78664f00c26752b218bf6feadf",
+      "spec": {
+        "template": "table",
+        "title": "Traced service span execution history and outcomes",
+        "columns": [
+          "service",
+          "query",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every service call records execution outcome and details.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "is_threat"
+                  },
+                  {
+                    "text": "hours?"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Wrapper function records trace span around underlying call.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "is_threat"
+                  },
+                  {
+                    "text": "hours?"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cache_get"
+                  },
+                  {
+                    "text": "hours?"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Complete trace captures request across wrapped services.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "is_threat"
+                  },
+                  {
+                    "text": "hours?"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cache_get"
+                  },
+                  {
+                    "text": "hours?"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "retrieve"
+                  },
+                  {
+                    "text": "hours?"
+                  },
+                  {
+                    "text": "faq.md"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Traced service span execution history and outcomes",
+        "columns": [
+          "service",
+          "query",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every service call records execution outcome and details.",
+            "rows": [
+              {
+                "cells": [
+                  "is_threat",
+                  "hours?",
+                  "False"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Wrapper function records trace span around underlying call.",
+            "rows": [
+              {
+                "cells": [
+                  "is_threat",
+                  "hours?",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cache_get",
+                  "hours?",
+                  "None"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Complete trace captures request across wrapped services.",
+            "rows": [
+              {
+                "cells": [
+                  "is_threat",
+                  "hours?",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cache_get",
+                  "hours?",
+                  "None"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "retrieve",
+                  "hours?",
+                  "faq.md"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing every path",
+      "codeHash": "89a62a949535fceab1a7ac8a722647a995bfc44bd0442696f5dd340196954445",
+      "spec": {
+        "template": "compare",
+        "title": "Platform test execution verification across all execution paths",
+        "leftLabel": "Guardrail Threat Path",
+        "rightLabel": "Cache & RAG Paths",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every execution path is tested including blocked and cached.",
+            "left": {
+              "code": "threat returns BLOCKED",
+              "result": {
+                "text": "BLOCKED"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "fresh query returns RAG",
+              "result": {
+                "text": "RAG"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Fake services verify test result without network calls.",
+            "left": {
+              "code": "assert status BLOCKED",
+              "result": {
+                "text": "BLOCKED"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "assert source CACHE",
+              "result": {
+                "text": "CACHE"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Fake records prove threat halts without calling cache.",
+            "left": {
+              "code": "blocked calls recorded: none",
+              "result": {
+                "text": "BLOCKED"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "rag calls recorded: save",
+              "result": {
+                "text": "save"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Platform test execution verification across all execution paths",
+        "leftLabel": "Guardrail Threat Path",
+        "rightLabel": "Cache & RAG Paths",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every execution path is tested including blocked and cached.",
+            "left": {
+              "code": "threat returns BLOCKED",
+              "result": "BLOCKED",
+              "tone": "error",
+              "checks": [
+                "BLOCKED"
+              ]
+            },
+            "right": {
+              "code": "fresh query returns RAG",
+              "result": "RAG",
+              "tone": "ok",
+              "checks": [
+                "RAG"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Fake services verify test result without network calls.",
+            "left": {
+              "code": "assert status BLOCKED",
+              "result": "BLOCKED",
+              "tone": "error",
+              "checks": [
+                "BLOCKED"
+              ]
+            },
+            "right": {
+              "code": "assert source CACHE",
+              "result": "CACHE",
+              "tone": "ok",
+              "checks": [
+                "CACHE"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Fake records prove threat halts without calling cache.",
+            "left": {
+              "code": "blocked calls recorded: none",
+              "result": "BLOCKED",
+              "tone": "error",
+              "checks": [
+                "BLOCKED"
+              ]
+            },
+            "right": {
+              "code": "rag calls recorded: save",
+              "result": "save",
+              "tone": "ok",
+              "checks": [
+                "save"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Certification audit",
+      "codeHash": "a7842f32f03ce79a7ef4c6840ea67d36856d81c8b90ad61a31c51b997bc40cd4",
+      "spec": {
+        "template": "table",
+        "title": "Certification module evaluation and audit results",
+        "columns": [
+          "module",
+          "score",
+          "threshold"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audit function checks module marks against average.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rag"
+                  },
+                  {
+                    "text": "92"
+                  },
+                  {
+                    "text": "70"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "High average with no failed module ensures balanced skill.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rag"
+                  },
+                  {
+                    "text": "92"
+                  },
+                  {
+                    "text": "70"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "agents"
+                  },
+                  {
+                    "text": "85"
+                  },
+                  {
+                    "text": "70"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sorting failed list produces predictable test output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rag"
+                  },
+                  {
+                    "text": "92"
+                  },
+                  {
+                    "text": "70"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "agents"
+                  },
+                  {
+                    "text": "85"
+                  },
+                  {
+                    "text": "70"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "security"
+                  },
+                  {
+                    "text": "65"
+                  },
+                  {
+                    "text": "70"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Certification module evaluation and audit results",
+        "columns": [
+          "module",
+          "score",
+          "threshold"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audit function checks module marks against average.",
+            "rows": [
+              {
+                "cells": [
+                  "rag",
+                  "92",
+                  "70"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "High average with no failed module ensures balanced skill.",
+            "rows": [
+              {
+                "cells": [
+                  "rag",
+                  "92",
+                  "70"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "agents",
+                  "85",
+                  "70"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sorting failed list produces predictable test output.",
+            "rows": [
+              {
+                "cells": [
+                  "rag",
+                  "92",
+                  "70"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "agents",
+                  "85",
+                  "70"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "security",
+                  "65",
+                  "70"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Your AI engineering checklist",
+      "codeHash": "5f8f704ac2a1a70e6efccdee825dc2114aa0d781e0c389420aa4283e2e340ac5",
+      "spec": {
+        "template": "none",
+        "reason": "AI Engineering comprehensive production release checklist."
+      },
+      "filled": {}
+    }
+  ]
+}

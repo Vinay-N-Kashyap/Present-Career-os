@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 9,
+  "promptSha": "7d504c74f8e4f8a5607838342cbbc9728b0bf5252e943d2c7530b3f05526a95e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "State Machine Replication (SMR) & The Consensus Challenge",
+      "codeHash": "bc99c419fcd4fe54210be0e5d9a484cf958b146f906f2dd9501268503967a73e",
+      "spec": {
+        "template": "compare",
+        "title": "State machine replication deterministic execution convergence",
+        "leftLabel": "Replica A Applied State Log",
+        "rightLabel": "Replica B Applied State Log",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Identical state machines applying identical commands reach convergent states.",
+            "left": {
+              "code": "applyLog(0, committedLog)",
+              "result": {
+                "text": "175"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "applyLog(0, committedLog)",
+              "result": {
+                "text": "175"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Strong leader protocols stream log entries unidirectionally to followers.",
+            "left": {
+              "code": "State Machine Convergence: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "replicaA === replicaB",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "State machine replication deterministic execution convergence",
+        "leftLabel": "Replica A Applied State Log",
+        "rightLabel": "Replica B Applied State Log",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Identical state machines applying identical commands reach convergent states.",
+            "left": {
+              "code": "applyLog(0, committedLog)",
+              "result": {
+                "text": "175"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "applyLog(0, committedLog)",
+              "result": {
+                "text": "175"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Strong leader protocols stream log entries unidirectionally to followers.",
+            "left": {
+              "code": "State Machine Convergence: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "replicaA === replicaB",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Raft Log Anatomy: Term Numbers, Entry Index & Log Matching Invariant",
+      "codeHash": "fbbaae2c9d8b204c5fa8344c95bd5589f49c336f8c7dda279445ff6d4acb6d5f",
+      "spec": {
+        "template": "cells",
+        "title": "Raft distributed log entry anatomy and matching invariants",
+        "cells": [
+          {
+            "id": "e1",
+            "label": "Idx 1 (Term 1)",
+            "value": "cmd: x=1",
+            "tone": "ok"
+          },
+          {
+            "id": "e2",
+            "label": "Idx 2 (Term 1)",
+            "value": "cmd: y=2",
+            "tone": "ok"
+          },
+          {
+            "id": "e3",
+            "label": "Idx 3 (Term 2)",
+            "value": "cmd: z=3",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raft log entries contain commands alongside explicit term and index numbers.",
+            "highlightIds": [
+              "e1"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The log matching invariant ensures identical commands across matching terms.",
+            "highlightIds": [
+              "e1",
+              "e2",
+              "e3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Raft distributed log entry anatomy and matching invariants",
+        "cells": [
+          {
+            "id": "e1",
+            "label": "Idx 1 (Term 1)",
+            "value": "cmd: x=1",
+            "tone": "ok"
+          },
+          {
+            "id": "e2",
+            "label": "Idx 2 (Term 1)",
+            "value": "cmd: y=2",
+            "tone": "ok"
+          },
+          {
+            "id": "e3",
+            "label": "Idx 3 (Term 2)",
+            "value": "cmd: z=3",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raft log entries contain commands alongside explicit term and index numbers.",
+            "highlightIds": [
+              "e1"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The log matching invariant ensures identical commands across matching terms.",
+            "highlightIds": [
+              "e1",
+              "e2",
+              "e3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AppendEntries RPC & Heartbeat Flow",
+      "codeHash": "9559e804fdd73ccdf4d6c1b68e9e8741190cd16d29d5f7af6b35b70975aa2793",
+      "spec": {
+        "template": "sequence",
+        "title": "Raft AppendEntries RPC replication and heartbeat flow",
+        "actors": [
+          {
+            "id": "raftLeader",
+            "label": "Raft Active Leader"
+          },
+          {
+            "id": "followerA",
+            "label": "Follower Node A"
+          },
+          {
+            "id": "followerB",
+            "label": "Follower Node B"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The leader dispatches entries in parallel to followers across the cluster.",
+            "messages": [
+              {
+                "from": "raftLeader",
+                "to": "followerA",
+                "label": "AppendEntries (Term 2, Entries: [cmd])"
+              },
+              {
+                "from": "raftLeader",
+                "to": "followerB",
+                "label": "AppendEntries (Term 2, Entries: [cmd])"
+              }
+            ],
+            "activeActorId": "followerA"
+          },
+          {
+            "at": "say6",
+            "caption": "Periodic empty heartbeat calls maintain active leadership authority.",
+            "messages": [
+              {
+                "from": "followerA",
+                "to": "raftLeader",
+                "label": "Ack Success (Term 2)"
+              },
+              {
+                "from": "followerB",
+                "to": "raftLeader",
+                "label": "Ack Success (Term 2)"
+              },
+              {
+                "from": "raftLeader",
+                "to": "followerA",
+                "label": "Heartbeat (Empty Entries, Commit: 2)"
+              }
+            ],
+            "activeActorId": "raftLeader"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Raft AppendEntries RPC replication and heartbeat flow",
+        "actors": [
+          {
+            "id": "raftLeader",
+            "label": "Raft Active Leader"
+          },
+          {
+            "id": "followerA",
+            "label": "Follower Node A"
+          },
+          {
+            "id": "followerB",
+            "label": "Follower Node B"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The leader dispatches entries in parallel to followers across the cluster.",
+            "messages": [
+              {
+                "from": "raftLeader",
+                "to": "followerA",
+                "label": "AppendEntries (Term 2, Entries: [cmd])"
+              },
+              {
+                "from": "raftLeader",
+                "to": "followerB",
+                "label": "AppendEntries (Term 2, Entries: [cmd])"
+              }
+            ],
+            "activeActorId": "followerA"
+          },
+          {
+            "at": "say6",
+            "caption": "Periodic empty heartbeat calls maintain active leadership authority.",
+            "messages": [
+              {
+                "from": "followerA",
+                "to": "raftLeader",
+                "label": "Ack Success (Term 2)"
+              },
+              {
+                "from": "followerB",
+                "to": "raftLeader",
+                "label": "Ack Success (Term 2)"
+              },
+              {
+                "from": "raftLeader",
+                "to": "followerA",
+                "label": "Heartbeat (Empty Entries, Commit: 2)"
+              }
+            ],
+            "activeActorId": "raftLeader"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quorum Commit Confirmation: When is a Log Entry Committed?",
+      "codeHash": "cd8029be7084531f813736b6778cb1b11ac04f74f973c98c2aeb1ed8e37a7588",
+      "spec": {
+        "template": "workflow",
+        "title": "Raft quorum majority log commitment and state machine execution",
+        "stages": [
+          {
+            "id": "appendLocal",
+            "name": "Leader Appends Log",
+            "subtext": "Uncommitted Local Entry"
+          },
+          {
+            "id": "dispatchFollowers",
+            "name": "Replicate Peers",
+            "subtext": "AppendEntries Broadcast"
+          },
+          {
+            "id": "quorumTally",
+            "name": "Quorum Tally",
+            "subtext": "Majority Acks Reached"
+          },
+          {
+            "id": "applyCommit",
+            "name": "Advance Commit Index",
+            "subtext": "Apply State Machine"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Entries are committed once replicated across a strict majority quorum.",
+            "activeStageId": "quorumTally",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Followers apply committed entries in order to local state machines.",
+            "activeStageId": "applyCommit",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Raft quorum majority log commitment and state machine execution",
+        "stages": [
+          {
+            "id": "appendLocal",
+            "name": "Leader Appends Log",
+            "subtext": "Uncommitted Local Entry"
+          },
+          {
+            "id": "dispatchFollowers",
+            "name": "Replicate Peers",
+            "subtext": "AppendEntries Broadcast"
+          },
+          {
+            "id": "quorumTally",
+            "name": "Quorum Tally",
+            "subtext": "Majority Acks Reached"
+          },
+          {
+            "id": "applyCommit",
+            "name": "Advance Commit Index",
+            "subtext": "Apply State Machine"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Entries are committed once replicated across a strict majority quorum.",
+            "activeStageId": "quorumTally",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Followers apply committed entries in order to local state machines.",
+            "activeStageId": "applyCommit",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Log Inconsistency Resolution: Overwriting Uncommitted Divergent Entries",
+      "codeHash": "433f98577c1cd682e132da1c266d0975dab799a19c459735627f22fc9cb11856",
+      "spec": {
+        "template": "table",
+        "title": "Raft log divergence reconciliation and uncommitted overwrite matrix",
+        "columns": [
+          "Log Entry Index",
+          "Leader Term & Command",
+          "Divergent Follower Term",
+          "Reconciliation Resolution"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Followers overwrite conflicting uncommitted entries with leader records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The decremented search finds the latest index where logs match.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Raft log divergence reconciliation and uncommitted overwrite matrix",
+        "columns": [
+          "Log Entry Index",
+          "Leader Term & Command",
+          "Divergent Follower Term",
+          "Reconciliation Resolution"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Followers overwrite conflicting uncommitted entries with leader records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The decremented search finds the latest index where logs match.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Raft Consensus Replicator Simulator",
+      "codeHash": "0fad826addcb929f036b9608b672bc49b129bf8accfa3dc64a2b3be84ac35f06",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

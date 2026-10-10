@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 3,
+  "promptSha": "79efdadb02c37a6c339afada6f2b8ae4e7d067217d31a92cf71829a9b2e179a8",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "ListNode Node Anatomy & Pointer Dereferencing",
+      "codeHash": "27d4d8842600f0af4fe9e52f5156250a6806df608cbed351e7e969953fa33f3d",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Singly linked list node chain",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Linked list nodes connect sequentially through next references.",
+            "activeNodeId": "n1",
+            "activeEdge": [
+              "n1",
+              "n2"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Next pointer holds reference to subsequent node.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "activeEdge": [
+              "n2",
+              "n3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Singly linked list node chain",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Linked list nodes connect sequentially through next references.",
+            "activeNodeId": "n1",
+            "activeEdge": [
+              "n1",
+              "n2"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Next pointer holds reference to subsequent node.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "activeEdge": [
+              "n2",
+              "n3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sentinel Dummy Nodes for Clean Edge-Case Handling",
+      "codeHash": "2f2506c8b5e3c7ec8e6bd45c0349dd0232ac236d0b27933af8685db258cc725b",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Sentinel dummy node pointer bridging",
+        "nodes": [
+          {
+            "id": "dummy",
+            "label": "0"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          }
+        ],
+        "edges": [
+          [
+            "dummy",
+            "n1"
+          ],
+          [
+            "n1",
+            "n2"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Dummy sentinel node points directly to head node.",
+            "activeNodeId": "dummy",
+            "activeEdge": [
+              "dummy",
+              "n1"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Sentinel guarantees valid predecessor pointer during mutations.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "dummy"
+            ],
+            "activeEdge": [
+              "dummy",
+              "n2"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Sentinel dummy node pointer bridging",
+        "nodes": [
+          {
+            "id": "dummy",
+            "label": "0"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          }
+        ],
+        "edges": [
+          [
+            "dummy",
+            "n1"
+          ],
+          [
+            "n1",
+            "n2"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Dummy sentinel node points directly to head node.",
+            "activeNodeId": "dummy",
+            "activeEdge": [
+              "dummy",
+              "n1"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Sentinel guarantees valid predecessor pointer during mutations.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "dummy"
+            ],
+            "activeEdge": [
+              "dummy",
+              "n2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Place Singly Linked List Reversal (Three-Pointer Method)",
+      "codeHash": "960f9ab8cf6a23aa8f02cc349403c0b8272cf2a46398c5678067f43b64422807",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Three-pointer in-place linked list reversal",
+        "nodes": [
+          {
+            "id": "n10",
+            "label": "10"
+          },
+          {
+            "id": "n20",
+            "label": "20"
+          },
+          {
+            "id": "n30",
+            "label": "30"
+          }
+        ],
+        "edges": [
+          [
+            "n10",
+            "n20"
+          ],
+          [
+            "n20",
+            "n30"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pointers track previous and current list nodes.",
+            "activeNodeId": "n10",
+            "activeEdge": [
+              "n10",
+              "n20"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Redirect pointer backward toward previous node.",
+            "activeNodeId": "n20",
+            "visitedNodeIds": [
+              "n10"
+            ],
+            "activeEdge": [
+              "n20",
+              "n10"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Three-pointer in-place linked list reversal",
+        "nodes": [
+          {
+            "id": "n10",
+            "label": "10"
+          },
+          {
+            "id": "n20",
+            "label": "20"
+          },
+          {
+            "id": "n30",
+            "label": "30"
+          }
+        ],
+        "edges": [
+          [
+            "n10",
+            "n20"
+          ],
+          [
+            "n20",
+            "n30"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pointers track previous and current list nodes.",
+            "activeNodeId": "n10",
+            "activeEdge": [
+              "n10",
+              "n20"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Redirect pointer backward toward previous node.",
+            "activeNodeId": "n20",
+            "visitedNodeIds": [
+              "n10"
+            ],
+            "activeEdge": [
+              "n20",
+              "n10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Floyd's Cycle-Finding Algorithm (Tortoise and Hare)",
+      "codeHash": "c9392c74373badac140a476ab88ba440990cd72260ea0e02667a6ac66bfb644c",
+      "spec": {
+        "template": "compare",
+        "title": "Acyclic list vs cyclic pointer detection",
+        "leftLabel": "Acyclic List",
+        "rightLabel": "Cyclic List",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Slow and fast pointers advance at different speeds.",
+            "left": {
+              "code": "slow = slow!.next",
+              "result": {
+                "text": "false"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "fast = fast.next.next",
+              "result": {
+                "text": "true"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Fast pointer collides with slow pointer inside loop.",
+            "left": {
+              "code": "hasCycle(a)",
+              "result": {
+                "text": "false"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "slow === fast",
+              "result": {
+                "text": "true"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Acyclic list vs cyclic pointer detection",
+        "leftLabel": "Acyclic List",
+        "rightLabel": "Cyclic List",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Slow and fast pointers advance at different speeds.",
+            "left": {
+              "code": "slow = slow!.next",
+              "result": "false",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "fast = fast.next.next",
+              "result": "true",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Fast pointer collides with slow pointer inside loop.",
+            "left": {
+              "code": "hasCycle(a)",
+              "result": "false",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "slow === fast",
+              "result": "true",
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Doubly Linked Lists & Bi-Directional Linking",
+      "codeHash": "cdb95a9be30b64f8cab16203cb85d9329c733cef6684c35c4264e9714c218e28",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Doubly linked list bidirectional connections",
+        "nodes": [
+          {
+            "id": "first",
+            "label": "A"
+          },
+          {
+            "id": "second",
+            "label": "B"
+          }
+        ],
+        "edges": [
+          [
+            "first",
+            "second"
+          ],
+          [
+            "second",
+            "first"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Doubly linked node links forward and backward.",
+            "activeNodeId": "first",
+            "activeEdge": [
+              "first",
+              "second"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bridging neighbor pointers removes node in constant time.",
+            "activeNodeId": "second",
+            "visitedNodeIds": [
+              "first"
+            ],
+            "activeEdge": [
+              "second",
+              "first"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Doubly linked list bidirectional connections",
+        "nodes": [
+          {
+            "id": "first",
+            "label": "A"
+          },
+          {
+            "id": "second",
+            "label": "B"
+          }
+        ],
+        "edges": [
+          [
+            "first",
+            "second"
+          ],
+          [
+            "second",
+            "first"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Doubly linked node links forward and backward.",
+            "activeNodeId": "first",
+            "activeEdge": [
+              "first",
+              "second"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bridging neighbor pointers removes node in constant time.",
+            "activeNodeId": "second",
+            "visitedNodeIds": [
+              "first"
+            ],
+            "activeEdge": [
+              "second",
+              "first"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fast-Slow Pointer Finding Middle of List",
+      "codeHash": "ad4f514cf42721797669e91a23ed06282806ed02b5d5edd223629ad7177a51f1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

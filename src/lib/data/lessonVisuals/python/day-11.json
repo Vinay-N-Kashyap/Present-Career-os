@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 11,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The shape of real data",
+      "codeHash": "5322b7e62f9552fb6366402f82eb6806c06cc073cef8323b97158b6bfc870496",
+      "spec": {
+        "template": "boxes",
+        "title": "Lists of dictionary records",
+        "boxes": [
+          {
+            "id": "expenses",
+            "label": "expenses"
+          },
+          {
+            "id": "record",
+            "label": "record"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each dictionary is one record in the list.",
+            "values": {
+              "expenses": {
+                "var": "expenses",
+                "line": 6
+              },
+              "record": {
+                "text": "{\"item\": \"Tea\", \"amount\": 20, \"category\": \"food\"}"
+              }
+            },
+            "tones": {
+              "expenses": "data",
+              "record": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Read one value by list position and dictionary key.",
+            "values": {
+              "expenses": {
+                "var": "expenses",
+                "line": 6
+              },
+              "record": {
+                "text": "Tea"
+              }
+            },
+            "tones": {
+              "expenses": "data",
+              "record": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Lists of dictionary records",
+        "boxes": [
+          {
+            "id": "expenses",
+            "label": "expenses"
+          },
+          {
+            "id": "record",
+            "label": "record"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each dictionary is one record in the list.",
+            "values": {
+              "expenses": "[{'item': 'Tea', 'amount': 20, 'categor…",
+              "record": "{\"item\": \"Tea\", \"amount\": 20, \"category\": \"food\"}"
+            },
+            "tones": {
+              "expenses": "data",
+              "record": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Read one value by list position and dictionary key.",
+            "values": {
+              "expenses": "[{'item': 'Tea', 'amount': 20, 'categor…",
+              "record": "Tea"
+            },
+            "tones": {
+              "expenses": "data",
+              "record": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Looping over records",
+      "codeHash": "df2fdfa534187c134a4e31c70637b6c5411d5b5b002ae2c9f3dc106ca4ef60e7",
+      "spec": {
+        "template": "boxes",
+        "title": "Iterating over dictionary items",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "expense",
+            "label": "expense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Loop over the list to hold one whole dictionary.",
+            "values": {
+              "total": {
+                "var": "total",
+                "line": 6
+              },
+              "expense": {
+                "text": "expense in expenses"
+              }
+            },
+            "tones": {
+              "total": "data",
+              "expense": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Add each amount to total inside the loop.",
+            "values": {
+              "total": {
+                "var": "total",
+                "line": 12
+              },
+              "expense": {
+                "var": "expense",
+                "line": 12
+              }
+            },
+            "tones": {
+              "total": "data",
+              "expense": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Iterating over dictionary items",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "expense",
+            "label": "expense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Loop over the list to hold one whole dictionary.",
+            "values": {
+              "total": "0",
+              "expense": "expense in expenses"
+            },
+            "tones": {
+              "total": "data",
+              "expense": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Add each amount to total inside the loop.",
+            "values": {
+              "total": "8140",
+              "expense": "{'item': 'Lunch', 'amount': 120, 'big':…"
+            },
+            "tones": {
+              "total": "data",
+              "expense": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Totals and filters with comprehensions",
+      "codeHash": "94b90053858b470ffa8991b2ddbb52a6db32027385fcf272ea3b16e521060141",
+      "spec": {
+        "template": "none",
+        "reason": "Filtering and summing records with comprehensions is directly expressed in code."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Finding one record",
+      "codeHash": "8390fe1dfcfa22e746934731be0132ba1c57df6016cfe6d42c48f7f3a2d2a01e",
+      "spec": {
+        "template": "boxes",
+        "title": "Finding matching records",
+        "boxes": [
+          {
+            "id": "expenses",
+            "label": "expenses"
+          },
+          {
+            "id": "biggest",
+            "label": "biggest"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A loop returns as soon as it finds a match.",
+            "values": {
+              "expenses": {
+                "var": "expenses",
+                "line": 1
+              },
+              "biggest": {
+                "text": "id"
+              }
+            },
+            "tones": {
+              "expenses": "data",
+              "biggest": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The max function gives the record with the biggest amount.",
+            "values": {
+              "expenses": {
+                "var": "expenses",
+                "line": 6
+              },
+              "biggest": {
+                "var": "biggest",
+                "line": 15
+              }
+            },
+            "tones": {
+              "expenses": "data",
+              "biggest": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Finding matching records",
+        "boxes": [
+          {
+            "id": "expenses",
+            "label": "expenses"
+          },
+          {
+            "id": "biggest",
+            "label": "biggest"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A loop returns as soon as it finds a match.",
+            "values": {
+              "expenses": "[{'id': 1, 'item': 'Tea', 'amount': 20}…",
+              "biggest": "id"
+            },
+            "tones": {
+              "expenses": "data",
+              "biggest": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The max function gives the record with the biggest amount.",
+            "values": {
+              "expenses": "[{'id': 1, 'item': 'Tea', 'amount': 20}…",
+              "biggest": "{'id': 2, 'item': 'Rent', 'amount': 800…"
+            },
+            "tones": {
+              "expenses": "data",
+              "biggest": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sorting records",
+      "codeHash": "aec674d141064ad2f5e4865e9bb104e71ebca9d9a64962e524f4844bb8da1e94",
+      "spec": {
+        "template": "none",
+        "reason": "Sorting records by keys and lambda functions is demonstrated via sorted output."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: a monthly report",
+      "codeHash": "abce2fb61d353a55f7dc31806e5533a8be9d4d0d545de71331a4ae977e45add3",
+      "spec": {
+        "template": "none",
+        "reason": "Monthly report aggregates previous list-of-dictionary operations."
+      },
+      "filled": {}
+    }
+  ]
+}

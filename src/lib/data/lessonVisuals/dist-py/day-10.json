@@ -1,0 +1,799 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "All or nothing across services",
+      "codeHash": "5486091dcf823aef45d001073e0d910769560b557f1511c18f673b0fd62b85ce",
+      "spec": {
+        "template": "none",
+        "reason": "Distributed bank transfer failure scenarios and atomic commit motivation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The two phases",
+      "codeHash": "344c653381540761bc3ccbebd532b3060065730f447e9014b57194e5cf1863ae",
+      "spec": {
+        "template": "sequence",
+        "title": "Two phase commit coordinator prepare and decision phases",
+        "actors": [
+          "coordinator",
+          "bank_a",
+          "bank_b"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Coordinator asks every participant whether they can commit.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "bank_a",
+                "label": {
+                  "text": "prepare?"
+                },
+                "tone": "data"
+              },
+              {
+                "from": "coordinator",
+                "to": "bank_b",
+                "label": {
+                  "text": "prepare?"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each participant records prepared state and returns COMMIT vote.",
+            "messages": [
+              {
+                "from": "bank_a",
+                "to": "coordinator",
+                "label": {
+                  "text": "VOTE_COMMIT"
+                },
+                "tone": "ok"
+              },
+              {
+                "from": "bank_b",
+                "to": "coordinator",
+                "label": {
+                  "text": "VOTE_COMMIT"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Coordinator notifies participants of the final commit decision.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "bank_a",
+                "label": {
+                  "text": "COMMIT"
+                },
+                "tone": "ok"
+              },
+              {
+                "from": "coordinator",
+                "to": "bank_b",
+                "label": {
+                  "text": "COMMIT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Two phase commit coordinator prepare and decision phases",
+        "actors": [
+          "coordinator",
+          "bank_a",
+          "bank_b"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Coordinator asks every participant whether they can commit.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "bank_a",
+                "label": "prepare?",
+                "tone": "data"
+              },
+              {
+                "from": "coordinator",
+                "to": "bank_b",
+                "label": "prepare?",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each participant records prepared state and returns COMMIT vote.",
+            "messages": [
+              {
+                "from": "bank_a",
+                "to": "coordinator",
+                "label": "VOTE_COMMIT",
+                "tone": "ok"
+              },
+              {
+                "from": "bank_b",
+                "to": "coordinator",
+                "label": "VOTE_COMMIT",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Coordinator notifies participants of the final commit decision.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "bank_a",
+                "label": "COMMIT",
+                "tone": "ok"
+              },
+              {
+                "from": "coordinator",
+                "to": "bank_b",
+                "label": "COMMIT",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Implementing the coordinator",
+      "codeHash": "3e33cc780e3530fedf21e1175ff59b66a8df16f75dfb443a344f538843df0a13",
+      "spec": {
+        "template": "compare",
+        "title": "Coordinator consensus commit versus abort outcomes comparison",
+        "leftLabel": "All Cohorts Vote Commit",
+        "rightLabel": "Any Cohort Votes Abort",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function two_phase_commit calls prepare on every cohort.",
+            "left": {
+              "code": "cohorts vote VOTE_COMMIT",
+              "result": {
+                "text": "prepared"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cohort votes VOTE_ABORT",
+              "result": {
+                "text": "prepared"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unanimous commit returns GLOBAL_COMMITTED otherwise GLOBAL_ABORTED.",
+            "left": {
+              "code": "all cohorts voted commit",
+              "result": {
+                "text": "GLOBAL_COMMITTED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cohort voted abort",
+              "result": {
+                "text": "GLOBAL_ABORTED"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Abort signal transitions every cohort to aborted state.",
+            "left": {
+              "code": "c.commit() sets state",
+              "result": {
+                "text": "committed"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "c.abort() sets state",
+              "result": {
+                "text": "aborted"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Coordinator consensus commit versus abort outcomes comparison",
+        "leftLabel": "All Cohorts Vote Commit",
+        "rightLabel": "Any Cohort Votes Abort",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function two_phase_commit calls prepare on every cohort.",
+            "left": {
+              "code": "cohorts vote VOTE_COMMIT",
+              "result": "prepared",
+              "tone": "ok",
+              "checks": [
+                "prepared"
+              ]
+            },
+            "right": {
+              "code": "cohort votes VOTE_ABORT",
+              "result": "prepared",
+              "tone": "error",
+              "checks": [
+                "prepared"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unanimous commit returns GLOBAL_COMMITTED otherwise GLOBAL_ABORTED.",
+            "left": {
+              "code": "all cohorts voted commit",
+              "result": "GLOBAL_COMMITTED",
+              "tone": "ok",
+              "checks": [
+                "GLOBAL_COMMITTED"
+              ]
+            },
+            "right": {
+              "code": "cohort voted abort",
+              "result": "GLOBAL_ABORTED",
+              "tone": "error",
+              "checks": [
+                "GLOBAL_ABORTED"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Abort signal transitions every cohort to aborted state.",
+            "left": {
+              "code": "c.commit() sets state",
+              "result": "committed",
+              "tone": "ok",
+              "checks": [
+                "committed"
+              ]
+            },
+            "right": {
+              "code": "c.abort() sets state",
+              "result": "aborted",
+              "tone": "idle",
+              "checks": [
+                "aborted"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting votes and keeping a log",
+      "codeHash": "6380f83488ef0c299882a9607c546052d9b808cae8ed9d8b972586e3a8853785",
+      "spec": {
+        "template": "table",
+        "title": "Two phase commit coordinator crash log recovery decision actions",
+        "columns": [
+          "tx",
+          "decision",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function count_votes returns commit and abort counts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tx-1"
+                  },
+                  {
+                    "text": "COMMIT"
+                  },
+                  {
+                    "text": "COMMIT"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "After crash logged decisions are resent while unlogged abort.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tx-1"
+                  },
+                  {
+                    "text": "COMMIT"
+                  },
+                  {
+                    "text": "COMMIT"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tx-2"
+                  },
+                  {
+                    "text": "None"
+                  },
+                  {
+                    "text": "ABORT"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Persistent logs ensure every promise survives crashes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tx-1"
+                  },
+                  {
+                    "text": "COMMIT"
+                  },
+                  {
+                    "text": "COMMIT"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tx-2"
+                  },
+                  {
+                    "text": "None"
+                  },
+                  {
+                    "text": "ABORT"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "commit"
+                  },
+                  {
+                    "text": "COMMIT"
+                  },
+                  {
+                    "text": "COMMIT"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Two phase commit coordinator crash log recovery decision actions",
+        "columns": [
+          "tx",
+          "decision",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function count_votes returns commit and abort counts.",
+            "rows": [
+              {
+                "cells": [
+                  "tx-1",
+                  "COMMIT",
+                  "COMMIT"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "After crash logged decisions are resent while unlogged abort.",
+            "rows": [
+              {
+                "cells": [
+                  "tx-1",
+                  "COMMIT",
+                  "COMMIT"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tx-2",
+                  "None",
+                  "ABORT"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Persistent logs ensure every promise survives crashes.",
+            "rows": [
+              {
+                "cells": [
+                  "tx-1",
+                  "COMMIT",
+                  "COMMIT"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tx-2",
+                  "None",
+                  "ABORT"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "commit",
+                  "COMMIT",
+                  "COMMIT"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The blocking problem",
+      "codeHash": "c858300e3fef6d84a1ed0399233df5e93a60103d47f8a860d66504d2a7780a77",
+      "spec": {
+        "template": "none",
+        "reason": "In-doubt transaction blocking and lock contention when coordinator fails."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Three-phase commit and alternatives",
+      "codeHash": "7942af06606f0227f9f09a9f5d7f540acf8b350b27eeb669fc9859de83252545",
+      "spec": {
+        "template": "table",
+        "title": "Distributed transaction protocols comparison guarantees and trade-offs",
+        "columns": [
+          "name",
+          "guarantee",
+          "weakness",
+          "used"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Three-phase commit adds pre-commit before committing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2PC"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "blocks if coordinator fails"
+                  },
+                  {
+                    "text": "databases, XA"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3PC"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "unsafe under partitions"
+                  },
+                  {
+                    "text": "rarely used"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Modern consensus systems replicate coordinators to prevent failure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2PC"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "blocks if coordinator fails"
+                  },
+                  {
+                    "text": "databases, XA"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3PC"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "unsafe under partitions"
+                  },
+                  {
+                    "text": "rarely used"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2PC + consensus"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "complex, slower"
+                  },
+                  {
+                    "text": "Spanner, CockroachDB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sagas break long transactions into local steps with compensations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2PC"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "blocks if coordinator fails"
+                  },
+                  {
+                    "text": "databases, XA"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3PC"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "unsafe under partitions"
+                  },
+                  {
+                    "text": "rarely used"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2PC + consensus"
+                  },
+                  {
+                    "text": "atomic"
+                  },
+                  {
+                    "text": "complex, slower"
+                  },
+                  {
+                    "text": "Spanner, CockroachDB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Saga"
+                  },
+                  {
+                    "text": "eventually consistent"
+                  },
+                  {
+                    "text": "needs compensations"
+                  },
+                  {
+                    "text": "microservices"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed transaction protocols comparison guarantees and trade-offs",
+        "columns": [
+          "name",
+          "guarantee",
+          "weakness",
+          "used"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Three-phase commit adds pre-commit before committing.",
+            "rows": [
+              {
+                "cells": [
+                  "2PC",
+                  "atomic",
+                  "blocks if coordinator fails",
+                  "databases, XA"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3PC",
+                  "atomic",
+                  "unsafe under partitions",
+                  "rarely used"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Modern consensus systems replicate coordinators to prevent failure.",
+            "rows": [
+              {
+                "cells": [
+                  "2PC",
+                  "atomic",
+                  "blocks if coordinator fails",
+                  "databases, XA"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3PC",
+                  "atomic",
+                  "unsafe under partitions",
+                  "rarely used"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "2PC + consensus",
+                  "atomic",
+                  "complex, slower",
+                  "Spanner, CockroachDB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sagas break long transactions into local steps with compensations.",
+            "rows": [
+              {
+                "cells": [
+                  "2PC",
+                  "atomic",
+                  "blocks if coordinator fails",
+                  "databases, XA"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3PC",
+                  "atomic",
+                  "unsafe under partitions",
+                  "rarely used"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "2PC + consensus",
+                  "atomic",
+                  "complex, slower",
+                  "Spanner, CockroachDB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Saga",
+                  "eventually consistent",
+                  "needs compensations",
+                  "microservices"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 18,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Sliding vs Tumbling: Overlapping Horizons & Rolling Metrics",
+      "codeHash": "3c41f99b2595329339b71f97d21f9214c7f6f83603976f1321f29b388620f179",
+      "spec": {
+        "template": "bars",
+        "title": "calculateOverlapRatio across tumbling (1x) and sliding (6x, 5x) configurations",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A sliding window is parameterized by window duration and slide interval.",
+            "bars": [
+              {
+                "label": "Config 1 (60s / 60s)",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Config 2 (60s / 10s)",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When window duration exceeds slide interval, adjacent windows overlap.",
+            "bars": [
+              {
+                "label": "Config 1 (60s / 60s)",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Config 2 (60s / 10s)",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Config 3 (300s / 60s)",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "calculateOverlapRatio across tumbling (1x) and sliding (6x, 5x) configurations",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A sliding window is parameterized by window duration and slide interval.",
+            "bars": [
+              {
+                "label": "Config 1 (60s / 60s)",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "Config 2 (60s / 10s)",
+                "value": 6,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When window duration exceeds slide interval, adjacent windows overlap.",
+            "bars": [
+              {
+                "label": "Config 1 (60s / 60s)",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "Config 2 (60s / 10s)",
+                "value": 6,
+                "tone": "ok"
+              },
+              {
+                "label": "Config 3 (300s / 60s)",
+                "value": 5,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Bucket Event Membership Math",
+      "codeHash": "aa4b913888856830c4a69f9ab673ec6ce7d89b4af2b21bc1b1b81bace3ca5b6d",
+      "spec": {
+        "template": "cells",
+        "title": "getSlidingWindowBuckets(2500, 2000, 1000) assigning 2500ms to 2 overlapping buckets",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The latest window containing event 2500 starts at 2000 (2500 minus 2500 % 1000).",
+            "items": [
+              {
+                "text": "[1000, 3000)"
+              },
+              {
+                "text": "[2000, 4000)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "earliest:1000",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "latest:2000",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Each valid window is defined by half-open boundaries containing 2500.",
+            "items": [
+              {
+                "text": "[1000, 3000) <- 2500"
+              },
+              {
+                "text": "[2000, 4000) <- 2500"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "match:1",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "match:2",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "getSlidingWindowBuckets(2500, 2000, 1000) assigning 2500ms to 2 overlapping buckets",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The latest window containing event 2500 starts at 2000 (2500 minus 2500 % 1000).",
+            "items": [
+              "[1000, 3000)",
+              "[2000, 4000)"
+            ],
+            "pointers": [
+              {
+                "name": "earliest:1000",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "latest:2000",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Each valid window is defined by half-open boundaries containing 2500.",
+            "items": [
+              "[1000, 3000) <- 2500",
+              "[2000, 4000) <- 2500"
+            ],
+            "pointers": [
+              {
+                "name": "match:1",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "match:2",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Incremental State Accumulation Across Hopping Slices",
+      "codeHash": "c027e3eca6da2436c3ebf718c195d777ca70127c5903ad43332174e97ff28e2f",
+      "spec": {
+        "template": "table",
+        "title": "SlidingWindowAggregator(20, 10) online accumulators across windows 0, 10, and 20",
+        "columns": [
+          "Window Start",
+          "Range [start, end)",
+          "Count",
+          "Total Sum"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When an event arrives, the processor updates all active window accumulators.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each accumulator tracks running metrics such as event count and running sum.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SlidingWindowAggregator(20, 10) online accumulators across windows 0, 10, and 20",
+        "columns": [
+          "Window Start",
+          "Range [start, end)",
+          "Count",
+          "Total Sum"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When an event arrives, the processor updates all active window accumulators.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each accumulator tracks running metrics such as event count and running sum.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rolling Max, Min & Moving Averages",
+      "codeHash": "9f68a8b1b161e31f9c5eaf49f197fd42721e6721c487f609c52926a5c8c0bd1f",
+      "spec": {
+        "template": "table",
+        "title": "RollingMetricEngine(200, 100) rolling count, max, and average across windows",
+        "columns": [
+          "Rolling Window",
+          "Count",
+          "Max Value",
+          "Moving Average"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Rolling maximums identify severe transient spikes such as value 80 at 120ms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When value 80 leaves expired windows, the second-highest value becomes max.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "RollingMetricEngine(200, 100) rolling count, max, and average across windows",
+        "columns": [
+          "Rolling Window",
+          "Count",
+          "Max Value",
+          "Moving Average"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Rolling maximums identify severe transient spikes such as value 80 at 120ms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When value 80 leaves expired windows, the second-highest value becomes max.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State Expiration & Slide-Window Garbage Collection",
+      "codeHash": "d6acf4db0c5f71ec3e0eb653a0cf16f995bbeb3b15acfd95aa7055fb62ea8a10",
+      "spec": {
+        "template": "states",
+        "title": "PruningSlidingEngine(100, 50) watermark expiration and Map deletion at 100ms",
+        "states": [
+          {
+            "id": "threeActive",
+            "label": "3 Active Windows ([0,100), [50,150), [100,200))"
+          },
+          {
+            "id": "expiredCheck",
+            "label": "Watermark 100ms (windowEnd <= 100)"
+          },
+          {
+            "id": "twoRetained",
+            "label": "Evicted [0,100) -> 2 Active Windows"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Any window whose end boundary is less than or equal to watermark 100 expires.",
+            "activeState": "expiredCheck",
+            "transition": {
+              "from": "threeActive",
+              "to": "expiredCheck",
+              "label": "pruneExpired(100)"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "When [0, 100) expires, its Sum=30 payload is emitted and its key is purged.",
+            "activeState": "twoRetained",
+            "transition": {
+              "from": "expiredCheck",
+              "to": "twoRetained",
+              "label": "delete(0) -> Sum: 30"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "PruningSlidingEngine(100, 50) watermark expiration and Map deletion at 100ms",
+        "states": [
+          {
+            "id": "threeActive",
+            "label": "3 Active Windows ([0,100), [50,150), [100,200))"
+          },
+          {
+            "id": "expiredCheck",
+            "label": "Watermark 100ms (windowEnd <= 100)"
+          },
+          {
+            "id": "twoRetained",
+            "label": "Evicted [0,100) -> 2 Active Windows"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Any window whose end boundary is less than or equal to watermark 100 expires.",
+            "activeState": "expiredCheck",
+            "transition": {
+              "from": "threeActive",
+              "to": "expiredCheck",
+              "label": "pruneExpired(100)"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "When [0, 100) expires, its Sum=30 payload is emitted and its key is purged.",
+            "activeState": "twoRetained",
+            "transition": {
+              "from": "expiredCheck",
+              "to": "twoRetained",
+              "label": "delete(0) -> Sum: 30"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Frequency Rolling Anomaly Metric Engine",
+      "codeHash": "32800c61e31ccb7410525791b2cff5867950f4d7c4ebb101709ccfe913c8e08d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 19,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Distributed Tracing & The OpenTelemetry Standard",
+      "codeHash": "733828e27df1f36298a95200ba4b6443bf03e0b1cbc2ee50e7d7bc408012e21f",
+      "spec": {
+        "template": "table",
+        "title": "OpenTelemetry unified telemetry signals specification matrix",
+        "columns": [
+          "Telemetry Signal",
+          "Core Purpose",
+          "Data Structure",
+          "Visualization Type"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Distributed tracing records request lifecycles and latency across boundaries.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "OpenTelemetry unifies metrics, logs, and traces into vendor neutral APIs.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "OpenTelemetry unified telemetry signals specification matrix",
+        "columns": [
+          "Telemetry Signal",
+          "Core Purpose",
+          "Data Structure",
+          "Visualization Type"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Distributed tracing records request lifecycles and latency across boundaries.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "OpenTelemetry unifies metrics, logs, and traces into vendor neutral APIs.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Trace and Span Data Model: Trees, DAGs & Identifiers",
+      "codeHash": "5fb452256303c9af1c467bc17a6d3e97ff0bbaacaa550bfd88986ce0cb7e4f93",
+      "spec": {
+        "template": "bars",
+        "title": "Distributed trace waterfall execution durations across child spans",
+        "bars": [
+          {
+            "id": "root",
+            "label": "Root: POST /checkout",
+            "value": 250
+          },
+          {
+            "id": "auth",
+            "label": "Child: AuthService.validateToken",
+            "value": 30
+          },
+          {
+            "id": "order",
+            "label": "Child: OrderService.createOrder",
+            "value": 180
+          },
+          {
+            "id": "db",
+            "label": "Grandchild: SQL INSERT INTO orders",
+            "value": 65
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Traces form directed graphs composed of interconnected child and root spans.",
+            "activeBars": [
+              "root",
+              "auth"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Linking parent and child spans reconstructs complete latency waterfalls.",
+            "activeBars": [
+              "root",
+              "auth",
+              "order",
+              "db"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Distributed trace waterfall execution durations across child spans",
+        "bars": [
+          {
+            "id": "root",
+            "label": "Root: POST /checkout",
+            "value": 250
+          },
+          {
+            "id": "auth",
+            "label": "Child: AuthService.validateToken",
+            "value": 30
+          },
+          {
+            "id": "order",
+            "label": "Child: OrderService.createOrder",
+            "value": 180
+          },
+          {
+            "id": "db",
+            "label": "Grandchild: SQL INSERT INTO orders",
+            "value": 65
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Traces form directed graphs composed of interconnected child and root spans.",
+            "activeBars": [
+              "root",
+              "auth"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Linking parent and child spans reconstructs complete latency waterfalls.",
+            "activeBars": [
+              "root",
+              "auth",
+              "order",
+              "db"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "W3C Trace Context: The traceparent Standard Format",
+      "codeHash": "30acc79d3feef434312856938b5b518b9c6c5faed4e61cc8aa801be16ab95857",
+      "spec": {
+        "template": "sequence",
+        "title": "W3C traceparent header serialization and context propagation",
+        "actors": [
+          "Client Ingress",
+          "Edge Gateway",
+          "Order Microservice"
+        ],
+        "messages": [
+          {
+            "from": "Client Ingress",
+            "to": "Edge Gateway",
+            "label": "HTTP GET request without trace header"
+          },
+          {
+            "from": "Edge Gateway",
+            "to": "Edge Gateway",
+            "label": "Generate 00-traceId-spanId-01"
+          },
+          {
+            "from": "Edge Gateway",
+            "to": "Order Microservice",
+            "label": "Forward request with traceparent"
+          },
+          {
+            "from": "Order Microservice",
+            "to": "Order Microservice",
+            "label": "Extract traceId and link child span"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The traceparent header encapsulates version, trace ID, parent ID, and flags.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Standardized headers enable seamless interoperability across cloud platforms.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "W3C traceparent header serialization and context propagation",
+        "actors": [
+          "Client Ingress",
+          "Edge Gateway",
+          "Order Microservice"
+        ],
+        "messages": [
+          {
+            "from": "Client Ingress",
+            "to": "Edge Gateway",
+            "label": "HTTP GET request without trace header"
+          },
+          {
+            "from": "Edge Gateway",
+            "to": "Edge Gateway",
+            "label": "Generate 00-traceId-spanId-01"
+          },
+          {
+            "from": "Edge Gateway",
+            "to": "Order Microservice",
+            "label": "Forward request with traceparent"
+          },
+          {
+            "from": "Order Microservice",
+            "to": "Order Microservice",
+            "label": "Extract traceId and link child span"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The traceparent header encapsulates version, trace ID, parent ID, and flags.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Standardized headers enable seamless interoperability across cloud platforms.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Span Attributes, Semantic Conventions & Error Statuses",
+      "codeHash": "b38c683530ec9055f235c8223efe6aeef67fa8db57aed48a3afa371538265974",
+      "spec": {
+        "template": "compare",
+        "title": "Semantic convention metadata attributes versus execution status codes",
+        "left": {
+          "title": "OpenTelemetry Semantic Attributes",
+          "items": [
+            "Standardized keys (http.method, db.system)",
+            "Consistent queryability across services",
+            "Powers automated service dependency maps",
+            "Eliminates ad-hoc variable fragmentation"
+          ]
+        },
+        "right": {
+          "title": "Span Status Lifecycle",
+          "items": [
+            "UNSET represents normal initial execution",
+            "OK explicitly affirms successful completion",
+            "ERROR flags unhandled failures and exceptions",
+            "Highlights failing spans in waterfall charts"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Semantic conventions mandate standard attribute keys across microservices.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Unhandled exceptions set span status to ERROR and attach error descriptions.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "OpenTelemetry Semantic Attributes",
+        "rightLabel": "Span Status Lifecycle"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Semantic convention metadata attributes versus execution status codes",
+        "left": {
+          "title": "OpenTelemetry Semantic Attributes",
+          "items": [
+            "Standardized keys (http.method, db.system)",
+            "Consistent queryability across services",
+            "Powers automated service dependency maps",
+            "Eliminates ad-hoc variable fragmentation"
+          ]
+        },
+        "right": {
+          "title": "Span Status Lifecycle",
+          "items": [
+            "UNSET represents normal initial execution",
+            "OK explicitly affirms successful completion",
+            "ERROR flags unhandled failures and exceptions",
+            "Highlights failing spans in waterfall charts"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Semantic conventions mandate standard attribute keys across microservices.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Unhandled exceptions set span status to ERROR and attach error descriptions.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "OpenTelemetry Semantic Attributes",
+        "rightLabel": "Span Status Lifecycle"
+      }
+    },
+    {
+      "partTitle": "In-Span Events vs Logs: Capturing Discrete Milestones",
+      "codeHash": "e463a1ef22b0d3e05012aa6687551b47960e5804cbda02d6470375d513466375",
+      "spec": {
+        "template": "workflow",
+        "title": "In-span discrete milestone events and timeline execution flow",
+        "nodes": [
+          {
+            "id": "start",
+            "label": "Span Start (0ms)"
+          },
+          {
+            "id": "evt1",
+            "label": "Event: cart_validated"
+          },
+          {
+            "id": "evt2",
+            "label": "Event: cache_miss"
+          },
+          {
+            "id": "evt3",
+            "label": "Event: payment_token_acquired"
+          },
+          {
+            "id": "finish",
+            "label": "Span End"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "evt1",
+            "label": "Initialize"
+          },
+          {
+            "from": "evt1",
+            "to": "evt2",
+            "label": "Cache Check"
+          },
+          {
+            "from": "evt2",
+            "to": "evt3",
+            "label": "Acquire Token"
+          },
+          {
+            "from": "evt3",
+            "to": "finish",
+            "label": "Complete Execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Span events provide timestamped milestone annotations on active spans.",
+            "activeNodes": [
+              "start",
+              "evt1",
+              "evt2"
+            ],
+            "activeEdges": [
+              "start->evt1",
+              "evt1->evt2"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Milestone events eliminate span proliferation while keeping traces clean.",
+            "activeNodes": [
+              "evt3",
+              "finish"
+            ],
+            "activeEdges": [
+              "evt2->evt3",
+              "evt3->finish"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "In-span discrete milestone events and timeline execution flow",
+        "nodes": [
+          {
+            "id": "start",
+            "label": "Span Start (0ms)"
+          },
+          {
+            "id": "evt1",
+            "label": "Event: cart_validated"
+          },
+          {
+            "id": "evt2",
+            "label": "Event: cache_miss"
+          },
+          {
+            "id": "evt3",
+            "label": "Event: payment_token_acquired"
+          },
+          {
+            "id": "finish",
+            "label": "Span End"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "evt1",
+            "label": "Initialize"
+          },
+          {
+            "from": "evt1",
+            "to": "evt2",
+            "label": "Cache Check"
+          },
+          {
+            "from": "evt2",
+            "to": "evt3",
+            "label": "Acquire Token"
+          },
+          {
+            "from": "evt3",
+            "to": "finish",
+            "label": "Complete Execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Span events provide timestamped milestone annotations on active spans.",
+            "activeNodes": [
+              "start",
+              "evt1",
+              "evt2"
+            ],
+            "activeEdges": [
+              "start->evt1",
+              "evt1->evt2"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Milestone events eliminate span proliferation while keeping traces clean.",
+            "activeNodes": [
+              "evt3",
+              "finish"
+            ],
+            "activeEdges": [
+              "evt2->evt3",
+              "evt3->finish"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complete OpenTelemetry-Compatible Tracer & Span Context Engine",
+      "codeHash": "2806ce8c8bb69608e8e01bcaef62df4601d81d34d6b39d9443a9111e362f67d3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

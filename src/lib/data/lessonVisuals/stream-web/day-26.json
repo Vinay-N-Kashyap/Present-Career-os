@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 26,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Binary Serialization vs JSON: The 70% Bandwidth Reduction",
+      "codeHash": "f348251c42261ceedd3c04def320a0647640869a3dfaa32c1ace184ebe22f79a",
+      "spec": {
+        "template": "bars",
+        "title": "estimatePayloadSizes comparing Standard JSON (184B), Protobuf (38B), and Avro (26B)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Field names consume over seventy percent of the byte payload in JSON events.",
+            "bars": [
+              {
+                "label": "Standard JSON (184 B)",
+                "value": {
+                  "text": "184"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Protobuf Binary (38 B)",
+                "value": {
+                  "text": "38"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Binary serialization formats like Avro and Protobuf strip field names.",
+            "bars": [
+              {
+                "label": "Standard JSON (184 B)",
+                "value": {
+                  "text": "184"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Protobuf Binary (38 B)",
+                "value": {
+                  "text": "38"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Apache Avro (26 B)",
+                "value": {
+                  "text": "26"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "estimatePayloadSizes comparing Standard JSON (184B), Protobuf (38B), and Avro (26B)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Field names consume over seventy percent of the byte payload in JSON events.",
+            "bars": [
+              {
+                "label": "Standard JSON (184 B)",
+                "value": 184,
+                "tone": "error"
+              },
+              {
+                "label": "Protobuf Binary (38 B)",
+                "value": 38,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Binary serialization formats like Avro and Protobuf strip field names.",
+            "bars": [
+              {
+                "label": "Standard JSON (184 B)",
+                "value": 184,
+                "tone": "error"
+              },
+              {
+                "label": "Protobuf Binary (38 B)",
+                "value": 38,
+                "tone": "data"
+              },
+              {
+                "label": "Apache Avro (26 B)",
+                "value": 26,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Schema Registry Wire Protocol: Magic Byte & Schema IDs",
+      "codeHash": "5242c438e59cf7d34bdca9ba73c38c3b05ea2d43219770432c0681f830a73a53",
+      "spec": {
+        "template": "cells",
+        "title": "encodeWireProtocol and decodeWireProtocol 5-byte Schema Registry wire frame layout",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Byte 0 is the Magic Byte fixed to value 0 indicating Schema Registry framing.",
+            "items": [
+              {
+                "text": "Byte 0: Magic=0"
+              },
+              {
+                "text": "Bytes 1..4: ID=142"
+              },
+              {
+                "text": "Byte 5+: Payload"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "magic:0",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bytes 1 through 4 hold the 32-bit Schema ID (142), followed by binary payload.",
+            "items": [
+              {
+                "text": "Valid (magic:0, id:142)"
+              },
+              {
+                "text": "Corrupt (magic:99 -> -1)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "valid:true",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "valid:false",
+                "index": 1,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "encodeWireProtocol and decodeWireProtocol 5-byte Schema Registry wire frame layout",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Byte 0 is the Magic Byte fixed to value 0 indicating Schema Registry framing.",
+            "items": [
+              "Byte 0: Magic=0",
+              "Bytes 1..4: ID=142",
+              "Byte 5+: Payload"
+            ],
+            "pointers": [
+              {
+                "name": "magic:0",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bytes 1 through 4 hold the 32-bit Schema ID (142), followed by binary payload.",
+            "items": [
+              "Valid (magic:0, id:142)",
+              "Corrupt (magic:99 -> -1)"
+            ],
+            "pointers": [
+              {
+                "name": "valid:true",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "valid:false",
+                "index": 1,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Schema Compatibility Modes: BACKWARD, FORWARD & FULL",
+      "codeHash": "1c0990d037621e31285edac3916201f4f1b657e56995958e15d5ce6ab6404673",
+      "spec": {
+        "template": "table",
+        "title": "checkCompatibility evaluating BACKWARD evolution from v1 to v2Valid and v2Invalid",
+        "columns": [
+          "Evolution",
+          "Added Field",
+          "hasDefault",
+          "BACKWARD Check"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "For backward compatibility, any new field added must have a default value.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "In FULL compatibility mode, schemas are both backward and forward compatible.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "checkCompatibility evaluating BACKWARD evolution from v1 to v2Valid and v2Invalid",
+        "columns": [
+          "Evolution",
+          "Added Field",
+          "hasDefault",
+          "BACKWARD Check"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "For backward compatibility, any new field added must have a default value.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "In FULL compatibility mode, schemas are both backward and forward compatible.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Poison Pills & Schema Validation Gatekeepers",
+      "codeHash": "82a10f890b9993eadfaa4cade19e6e5bd37ff4f67813ad296bba1f6bd4725618",
+      "spec": {
+        "template": "table",
+        "title": "SchemaValidator.validate gatekeeper rejecting poisonPill1 (-15) and poisonPill2",
+        "columns": [
+          "Order Payload",
+          "amount / currency",
+          "Valid",
+          "Gatekeeper Decision"
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "The gatekeeper validates every outbound message payload against the schema.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "If a message violates the schema, the producer rejects it at the client layer.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SchemaValidator.validate gatekeeper rejecting poisonPill1 (-15) and poisonPill2",
+        "columns": [
+          "Order Payload",
+          "amount / currency",
+          "Valid",
+          "Gatekeeper Decision"
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "The gatekeeper validates every outbound message payload against the schema.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "If a message violates the schema, the producer rejects it at the client layer.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Memory Schema Registry Mock & Dynamic ID Resolution",
+      "codeHash": "89a6b5108e4275dd61e2aa4c366b98598e5a6e929aaed9ddc33180ffd1687be0",
+      "spec": {
+        "template": "sequence",
+        "title": "InMemorySchemaRegistry registering user-value v1/v2 and resolving getById(1)",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Producer"
+          },
+          {
+            "id": "registry",
+            "label": "InMemorySchemaRegistry"
+          },
+          {
+            "id": "consumer",
+            "label": "Consumer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When registering a new schema, the registry allocates an incremented ID.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "registry",
+                "label": "register('user-value', v1) -> id: 1, version: 1"
+              },
+              {
+                "from": "producer",
+                "to": "registry",
+                "label": "register('user-value', v2) -> id: 2, version: 2"
+              }
+            ],
+            "activeActorId": "registry"
+          },
+          {
+            "at": "say6",
+            "caption": "Consumers use the registry to resolve Schema IDs dynamically on decode.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "registry",
+                "label": "getById(1) -> schemaJson v1"
+              },
+              {
+                "from": "consumer",
+                "to": "registry",
+                "label": "getLatestVersion('user-value') -> version: 2"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "InMemorySchemaRegistry registering user-value v1/v2 and resolving getById(1)",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Producer"
+          },
+          {
+            "id": "registry",
+            "label": "InMemorySchemaRegistry"
+          },
+          {
+            "id": "consumer",
+            "label": "Consumer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When registering a new schema, the registry allocates an incremented ID.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "registry",
+                "label": "register('user-value', v1) -> id: 1, version: 1"
+              },
+              {
+                "from": "producer",
+                "to": "registry",
+                "label": "register('user-value', v2) -> id: 2, version: 2"
+              }
+            ],
+            "activeActorId": "registry"
+          },
+          {
+            "at": "say6",
+            "caption": "Consumers use the registry to resolve Schema IDs dynamically on decode.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "registry",
+                "label": "getById(1) -> schemaJson v1"
+              },
+              {
+                "from": "consumer",
+                "to": "registry",
+                "label": "getLatestVersion('user-value') -> version: 2"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Schema-Governed Producer & Consumer Pipeline",
+      "codeHash": "d5776d1a1d13accf9f5474ca977123b6c426aabc66430106861c1835673b6d45",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

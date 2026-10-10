@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 25,
+  "promptSha": "2de43e412ac512999605fdd2d07374ffb1c51f5c01ce9decaf08c0eaeaca0a5a",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Feedback Telemetry Schema (Explicit Thumbs & Implicit Dwell Time)",
+      "codeHash": "2de43e412ac512999605fdd2d07374ffb1c51f5c01ce9decaf08c0eaeaca0a5a",
+      "spec": {
+        "template": "table",
+        "title": "Feedback Telemetry Capture Channels",
+        "columns": [
+          "Telemetry Channel",
+          "Signal Type",
+          "Grounding Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Monitoring production captures explicit and implicit interaction telemetry.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Explicit feedback includes deliberate user actions like clicking thumbs.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Capturing both explicit ratings and implicit cues shows satisfaction.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Feedback Telemetry Capture Channels",
+        "columns": [
+          "Telemetry Channel",
+          "Signal Type",
+          "Grounding Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Monitoring production captures explicit and implicit interaction telemetry.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Explicit feedback includes deliberate user actions like clicking thumbs.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Capturing both explicit ratings and implicit cues shows satisfaction.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "User Satisfaction Rate & Engagement Aggregation",
+      "codeHash": "dfbdd0ce9a8a803bc59e761ae06112f79d9fb273d37c751142c8a01609848ee7",
+      "spec": {
+        "template": "bars",
+        "title": "User Engagement and Satisfaction Rates",
+        "items": [
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute total ratings count satisfaction percentage and dwell time.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Prompt deployments dropping satisfaction below threshold trigger rollbacks.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous feedback monitoring ensures teams maintain visibility into sentiment.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "User Engagement and Satisfaction Rates",
+        "items": [
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute total ratings count satisfaction percentage and dwell time.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Prompt deployments dropping satisfaction below threshold trigger rollbacks.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous feedback monitoring ensures teams maintain visibility into sentiment.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Query Centroid Calculation in Vector Embedding Space",
+      "codeHash": "3c8ec4f9b283e9fa375c238bf2ec06862bffcb17fb66945fb98a3664de674140",
+      "spec": {
+        "template": "flow",
+        "title": "Embedding Centroid Calculation Pipeline",
+        "nodes": [
+          {
+            "id": "queries",
+            "label": "Query Embeddings",
+            "tappable": false
+          },
+          {
+            "id": "sum",
+            "label": "Coordinate Summation",
+            "tappable": false
+          },
+          {
+            "id": "average",
+            "label": "Element-wise Division",
+            "tappable": false
+          },
+          {
+            "id": "centroid",
+            "label": "Geometric Centroid",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "queries",
+            "to": "sum"
+          },
+          {
+            "from": "sum",
+            "to": "average"
+          },
+          {
+            "from": "average",
+            "to": "centroid"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Centroids are element-wise average coordinates across sample query vectors.",
+            "activeNodes": [
+              "queries",
+              "sum"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions sum coordinates across all vectors in batches by sample size.",
+            "activeNodes": [
+              "sum",
+              "average"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Centroids represent topical centers of gravity for user queries in windows.",
+            "activeNodes": [
+              "centroid"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Embedding Centroid Calculation Pipeline",
+        "nodes": [
+          {
+            "id": "queries",
+            "label": "Query Embeddings",
+            "tappable": false
+          },
+          {
+            "id": "sum",
+            "label": "Coordinate Summation",
+            "tappable": false
+          },
+          {
+            "id": "average",
+            "label": "Element-wise Division",
+            "tappable": false
+          },
+          {
+            "id": "centroid",
+            "label": "Geometric Centroid",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "queries",
+            "to": "sum"
+          },
+          {
+            "from": "sum",
+            "to": "average"
+          },
+          {
+            "from": "average",
+            "to": "centroid"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Centroids are element-wise average coordinates across sample query vectors.",
+            "activeNodes": [
+              "queries",
+              "sum"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions sum coordinates across all vectors in batches by sample size.",
+            "activeNodes": [
+              "sum",
+              "average"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Centroids represent topical centers of gravity for user queries in windows.",
+            "activeNodes": [
+              "centroid"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Euclidean Distance Drift Detection Between Centroids",
+      "codeHash": "62e4c3988b4cc7a77543a67808c2964cb5c932963b6c7f1541ebac94ff51aeec",
+      "spec": {
+        "template": "compare",
+        "title": "Baseline vs Drifting Query Centroid",
+        "leftLabel": "Baseline Query Centroid",
+        "rightLabel": "Drifting Recent Centroid",
+        "leftItems": [
+          "Historical distribution [0.4, 0.6, 0.8]",
+          "Stable distance delta (0.02)",
+          "Expected user domain queries"
+        ],
+        "rightItems": [
+          "Drifted coordinates [0.9, 0.1, 0.2]",
+          "Large distance surge (0.92)",
+          "Uncovered novel user inquiries"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Euclidean distance calculates straight-line distance across embedding space.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Large distances indicate users ask fundamentally different questions.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Calculations provide objective mathematical metrics for distribution shifts.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Baseline vs Drifting Query Centroid",
+        "leftLabel": "Baseline Query Centroid",
+        "rightLabel": "Drifting Recent Centroid",
+        "leftItems": [
+          "Historical distribution [0.4, 0.6, 0.8]",
+          "Stable distance delta (0.02)",
+          "Expected user domain queries"
+        ],
+        "rightItems": [
+          "Drifted coordinates [0.9, 0.1, 0.2]",
+          "Large distance surge (0.92)",
+          "Uncovered novel user inquiries"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Euclidean distance calculates straight-line distance across embedding space.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Large distances indicate users ask fundamentally different questions.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Calculations provide objective mathematical metrics for distribution shifts.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Alerting & Topic Shift Identification",
+      "codeHash": "de856fda0382899d46e5a01af1996924bf73d7471afa8642165779d552535ae5",
+      "spec": {
+        "template": "states",
+        "title": "Semantic Drift Alert Audit States",
+        "states": [
+          {
+            "id": "eval",
+            "label": "Distance Calculation"
+          },
+          {
+            "id": "threshold",
+            "label": "Threshold Comparison"
+          },
+          {
+            "id": "stable",
+            "label": "Stable Distribution"
+          },
+          {
+            "id": "alert",
+            "label": "Drift Alert Triggered"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Auditing functions compare centroid distance against empirical drift limits.",
+            "current": "eval",
+            "visited": [
+              "eval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Distance checks exceeding limits instantly fire drift alert status.",
+            "current": "alert",
+            "visited": [
+              "eval",
+              "threshold",
+              "alert"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Drift alerts signal retrieval documents and prompt examples must be updated.",
+            "current": "stable",
+            "visited": [
+              "eval",
+              "threshold",
+              "alert",
+              "stable"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Semantic Drift Alert Audit States",
+        "states": [
+          {
+            "id": "eval",
+            "label": "Distance Calculation"
+          },
+          {
+            "id": "threshold",
+            "label": "Threshold Comparison"
+          },
+          {
+            "id": "stable",
+            "label": "Stable Distribution"
+          },
+          {
+            "id": "alert",
+            "label": "Drift Alert Triggered"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Auditing functions compare centroid distance against empirical drift limits.",
+            "current": "eval",
+            "visited": [
+              "eval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Distance checks exceeding limits instantly fire drift alert status.",
+            "current": "alert",
+            "visited": [
+              "eval",
+              "threshold",
+              "alert"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Drift alerts signal retrieval documents and prompt examples must be updated.",
+            "current": "stable",
+            "visited": [
+              "eval",
+              "threshold",
+              "alert",
+              "stable"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Feedback Data Flywheel: Routing Drifted Queries to Evaluation Queues",
+      "codeHash": "6297bdc4cbd93a56aeb51e147de70d3810dca64d11977205959b3fd589468706",
+      "spec": {
+        "template": "none",
+        "reason": "Feedback Data Flywheel capstone synthesizing explicit/implicit user feedback, embedding centroid calculation, Euclidean distance drift, and automated remediation queues"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Feedback Data Flywheel capstone synthesizing explicit/implicit user feedback, embedding centroid calculation, Euclidean distance drift, and automated remediation queues"
+      }
+    }
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 21,
+  "promptSha": "20a6783ff9791b8f7c085cc07fe0d9df501576f00efdce1d1c0d58e6d330eee0",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Anatomy of an Edge API Gateway & Resilience Filter Chains",
+      "codeHash": "7018884752dd3e1aa7766021cf42b740a79011d0fe6009de31e99f0a2bfaf3e2",
+      "spec": {
+        "template": "workflow",
+        "title": "Edge API gateway request interception filter chain pipeline",
+        "workflow": [
+          {
+            "id": "preFilter",
+            "label": "Pre-Routing Security and Rate Limit Filter",
+            "status": "completed"
+          },
+          {
+            "id": "routeFilter",
+            "label": "Routing Filter Resolves Target Upstream Cluster",
+            "status": "active"
+          },
+          {
+            "id": "postFilter",
+            "label": "Post-Routing Response Header and Telemetry Filter",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An enterprise gateway executes an extensible filter chain for security.",
+            "activeWorkflowId": "preFilter",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "If any filter rejects a request execution halts immediately.",
+            "activeWorkflowId": "routeFilter",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Edge API gateway request interception filter chain pipeline",
+        "workflow": [
+          {
+            "id": "preFilter",
+            "label": "Pre-Routing Security and Rate Limit Filter",
+            "status": "completed"
+          },
+          {
+            "id": "routeFilter",
+            "label": "Routing Filter Resolves Target Upstream Cluster",
+            "status": "active"
+          },
+          {
+            "id": "postFilter",
+            "label": "Post-Routing Response Header and Telemetry Filter",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An enterprise gateway executes an extensible filter chain for security.",
+            "activeWorkflowId": "preFilter",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "If any filter rejects a request execution halts immediately.",
+            "activeWorkflowId": "routeFilter",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Token Bucket Rate Limiting (Redis Emulation)",
+      "codeHash": "f35ae98243674486d2b7b5611ae659765c042f688bd0449dd1cca9a8d0c291e4",
+      "spec": {
+        "template": "states",
+        "title": "Token bucket rate limiter states and capacity replenishment",
+        "states": [
+          {
+            "id": "tokensAvailable",
+            "label": "Tokens Available in Capacity Bucket"
+          },
+          {
+            "id": "tokenAcquired",
+            "label": "Token Acquired and Decremented by One"
+          },
+          {
+            "id": "bucketExhausted",
+            "label": "Bucket Exhausted HTTP Rate Limited"
+          },
+          {
+            "id": "bucketRefilled",
+            "label": "Continuous Refill Restores Token Balance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When a token is available the request proceeds and tokens decrement.",
+            "activeStateId": "tokenAcquired",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Token state is synchronized in a central redis cache across nodes.",
+            "activeStateId": "bucketRefilled",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Token bucket rate limiter states and capacity replenishment",
+        "states": [
+          {
+            "id": "tokensAvailable",
+            "label": "Tokens Available in Capacity Bucket"
+          },
+          {
+            "id": "tokenAcquired",
+            "label": "Token Acquired and Decremented by One"
+          },
+          {
+            "id": "bucketExhausted",
+            "label": "Bucket Exhausted HTTP Rate Limited"
+          },
+          {
+            "id": "bucketRefilled",
+            "label": "Continuous Refill Restores Token Balance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When a token is available the request proceeds and tokens decrement.",
+            "activeStateId": "tokenAcquired",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Token state is synchronized in a central redis cache across nodes.",
+            "activeStateId": "bucketRefilled",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Three-State Circuit Breaker Engine: Closed, Open, Half-Open",
+      "codeHash": "f970ddea84e0347e052fe50a56a14f84f9ba22869dc18a8ced7963542622e194",
+      "spec": {
+        "template": "compare",
+        "title": "Closed state healthy flow versus open state fail-fast rejection",
+        "left": {
+          "title": "CLOSED Circuit State",
+          "items": [
+            "Requests pass through to upstream service",
+            "Failures tracked against error threshold",
+            "Upstream microservice operates normally"
+          ]
+        },
+        "right": {
+          "title": "OPEN Circuit State",
+          "items": [
+            "All incoming calls fail fast immediately",
+            "Zero network traffic reaches wounded upstream",
+            "Sleep cooldown timer awaits canary trial"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "In the closed state all requests pass through to the upstream service.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "In open state all incoming calls fail immediately sparing backends.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "CLOSED Circuit State",
+        "rightLabel": "OPEN Circuit State"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Closed state healthy flow versus open state fail-fast rejection",
+        "left": {
+          "title": "CLOSED Circuit State",
+          "items": [
+            "Requests pass through to upstream service",
+            "Failures tracked against error threshold",
+            "Upstream microservice operates normally"
+          ]
+        },
+        "right": {
+          "title": "OPEN Circuit State",
+          "items": [
+            "All incoming calls fail fast immediately",
+            "Zero network traffic reaches wounded upstream",
+            "Sleep cooldown timer awaits canary trial"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "In the closed state all requests pass through to the upstream service.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "In open state all incoming calls fail immediately sparing backends.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "CLOSED Circuit State",
+        "rightLabel": "OPEN Circuit State"
+      }
+    },
+    {
+      "partTitle": "Bulkhead Isolation: Thread & Connection Pool Partitioning",
+      "codeHash": "d94d5c4fe7125f06bd75c4637384730bac8edfaea8549fd28f8cf35cdcb006a3",
+      "spec": {
+        "template": "table",
+        "title": "Bulkhead thread pool and concurrency quota partition table",
+        "columns": [
+          "Downstream Target",
+          "Allocated Quota",
+          "Active Usage",
+          "Degradation Impact"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bulkhead pattern partitions gateway resources into isolated pools.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Other critical services continue operating with zero degradation.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bulkhead thread pool and concurrency quota partition table",
+        "columns": [
+          "Downstream Target",
+          "Allocated Quota",
+          "Active Usage",
+          "Degradation Impact"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bulkhead pattern partitions gateway resources into isolated pools.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Other critical services continue operating with zero degradation.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Upstream Proxy Routing, Header Mutation & Fallbacks",
+      "codeHash": "0945dd5e22607d44f50b99a6a618ba92822aafb0f29ccd5070a96f7ba6d15529",
+      "spec": {
+        "template": "sequence",
+        "title": "Gateway proxy routing header mutation and fallback invocation",
+        "actors": [
+          {
+            "id": "client",
+            "label": "External Client App"
+          },
+          {
+            "id": "gateway",
+            "label": "API Gateway Proxy"
+          },
+          {
+            "id": "upstreamCluster",
+            "label": "Backend Microservice"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "gateway",
+            "label": "Inbound Request with Public Path",
+            "tone": "data"
+          },
+          {
+            "from": "gateway",
+            "to": "upstreamCluster",
+            "label": "Forward with Injected Tracing Headers",
+            "tone": "ok"
+          },
+          {
+            "from": "upstreamCluster",
+            "to": "gateway",
+            "label": "Upstream Timeout Error",
+            "tone": "error"
+          },
+          {
+            "from": "gateway",
+            "to": "client",
+            "label": "Return Cached Fallback Response",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The gateway mutates request headers and injects tracing metadata.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Fallbacks return sensible cached default data instead of abrupt errors.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Gateway proxy routing header mutation and fallback invocation",
+        "actors": [
+          {
+            "id": "client",
+            "label": "External Client App"
+          },
+          {
+            "id": "gateway",
+            "label": "API Gateway Proxy"
+          },
+          {
+            "id": "upstreamCluster",
+            "label": "Backend Microservice"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "gateway",
+            "label": "Inbound Request with Public Path",
+            "tone": "data"
+          },
+          {
+            "from": "gateway",
+            "to": "upstreamCluster",
+            "label": "Forward with Injected Tracing Headers",
+            "tone": "ok"
+          },
+          {
+            "from": "upstreamCluster",
+            "to": "gateway",
+            "label": "Upstream Timeout Error",
+            "tone": "error"
+          },
+          {
+            "from": "gateway",
+            "to": "client",
+            "label": "Return Cached Fallback Response",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The gateway mutates request headers and injects tracing metadata.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Fallbacks return sensible cached default data instead of abrupt errors.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone Synthesis: Resilient Distributed API Gateway Simulator",
+      "codeHash": "f7d6d771f54b278da7f257fc0002ba952671c6a3ecf18a89055bc04db4adc1a0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

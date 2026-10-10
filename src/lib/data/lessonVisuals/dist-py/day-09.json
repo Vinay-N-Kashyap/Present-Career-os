@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Replicated state machines",
+      "codeHash": "e6e8cff6e7f99e29388c29e48223bb96286699cf7947dc008b971aabbda8f5be",
+      "spec": {
+        "template": "none",
+        "reason": "Replicated state machines and consensus mathematical foundations."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Log entries, terms and AppendEntries",
+      "codeHash": "31c4441c10673f9ad930dd597e6dcb8fcb59408e03cdbcb4694653dc805a4974",
+      "spec": {
+        "template": "table",
+        "title": "Raft leader log entries terms and AppendEntries fields",
+        "columns": [
+          "entry",
+          "term",
+          "cmd"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each log entry records the command and term received.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "index"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "set x=1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The leader sends followers AppendEntries messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "index"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "set x=1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prev_index"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "set y=2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prev_term"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "set x=3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints leader log with index and term.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "index"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "set x=1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prev_index"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "set y=2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prev_term"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "set x=3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "entries"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "set z=9"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Raft leader log entries terms and AppendEntries fields",
+        "columns": [
+          "entry",
+          "term",
+          "cmd"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each log entry records the command and term received.",
+            "rows": [
+              {
+                "cells": [
+                  "index",
+                  "1",
+                  "set x=1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The leader sends followers AppendEntries messages.",
+            "rows": [
+              {
+                "cells": [
+                  "index",
+                  "1",
+                  "set x=1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prev_index",
+                  "1",
+                  "set y=2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prev_term",
+                  "2",
+                  "set x=3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints leader log with index and term.",
+            "rows": [
+              {
+                "cells": [
+                  "index",
+                  "1",
+                  "set x=1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prev_index",
+                  "1",
+                  "set y=2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prev_term",
+                  "2",
+                  "set x=3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "entries",
+                  "3",
+                  "set z=9"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The follower's consistency check",
+      "codeHash": "01b642c332fab6905568fb84afd334b8b5e37075383d5a2ea7b2f78b08baa3df",
+      "spec": {
+        "template": "compare",
+        "title": "Raft follower consistency check matching log prefix against mismatch",
+        "leftLabel": "Consistent Prefix Match",
+        "rightLabel": "Conflicting Log Mismatch",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When term differs append_entries replies LOG_MISMATCH.",
+            "left": {
+              "code": "prev_index term matches follower log",
+              "result": {
+                "text": "True"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "prev_index term mismatch on follower",
+              "result": {
+                "text": "LOG_MISMATCH"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Otherwise keep prefix add entries and reply match_index.",
+            "left": {
+              "code": "new_log = log[:prev_index + 1] + list(entries)",
+              "result": {
+                "text": "True"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "drop conflicting tail entries",
+              "result": {
+                "text": "False"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Entries after prev_index drop stale follower tail.",
+            "left": {
+              "code": "current leader version accepted",
+              "result": {
+                "text": "True"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "stale entry from old leader dropped",
+              "result": {
+                "text": "stale"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raft follower consistency check matching log prefix against mismatch",
+        "leftLabel": "Consistent Prefix Match",
+        "rightLabel": "Conflicting Log Mismatch",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When term differs append_entries replies LOG_MISMATCH.",
+            "left": {
+              "code": "prev_index term matches follower log",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ]
+            },
+            "right": {
+              "code": "prev_index term mismatch on follower",
+              "result": "LOG_MISMATCH",
+              "tone": "error",
+              "checks": [
+                "LOG_MISMATCH"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Otherwise keep prefix add entries and reply match_index.",
+            "left": {
+              "code": "new_log = log[:prev_index + 1] + list(entries)",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ]
+            },
+            "right": {
+              "code": "drop conflicting tail entries",
+              "result": "False",
+              "tone": "error",
+              "checks": [
+                "False"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Entries after prev_index drop stale follower tail.",
+            "left": {
+              "code": "current leader version accepted",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ]
+            },
+            "right": {
+              "code": "stale entry from old leader dropped",
+              "result": "stale",
+              "tone": "idle",
+              "checks": [
+                "stale"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When is an entry committed?",
+      "codeHash": "c48c5ff0ed18b22131fafa0f810b0b437e30f184a506521a63d5ec3ca3021926",
+      "spec": {
+        "template": "table",
+        "title": "Raft cluster match index quorum tracking and commit index calculation",
+        "columns": [
+          "match_count",
+          "cluster_size",
+          "commit_index"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An entry is committed once stored on cluster majority.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function is_committed checks match_count and cluster_size.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Leader tracks match_index taking middle value commit index.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Raft cluster match index quorum tracking and commit index calculation",
+        "columns": [
+          "match_count",
+          "cluster_size",
+          "commit_index"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An entry is committed once stored on cluster majority.",
+            "rows": [
+              {
+                "cells": [
+                  "7",
+                  "5",
+                  "5"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function is_committed checks match_count and cluster_size.",
+            "rows": [
+              {
+                "cells": [
+                  "7",
+                  "5",
+                  "5"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "4",
+                  "5",
+                  "5"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Leader tracks match_index taking middle value commit index.",
+            "rows": [
+              {
+                "cells": [
+                  "7",
+                  "5",
+                  "5"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "4",
+                  "5",
+                  "5"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "2",
+                  "5",
+                  "5"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Repairing a lagging follower",
+      "codeHash": "80d969ddee1d36a93c61c1b4dc484587faee63aab0cc1b207e46fcce81a7768c",
+      "spec": {
+        "template": "table",
+        "title": "Raft leader stepping back next_index to repair follower log mismatch",
+        "columns": [
+          "next_index",
+          "prev_term",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leader tracks next_index for each follower.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "next_index"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Mismatch decreases next_index stepping back to match.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "next_index"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prev"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Successful append replaces conflicting follower tail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "next_index"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prev"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "result"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Raft leader stepping back next_index to repair follower log mismatch",
+        "columns": [
+          "next_index",
+          "prev_term",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leader tracks next_index for each follower.",
+            "rows": [
+              {
+                "cells": [
+                  "next_index",
+                  "3",
+                  "None"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Mismatch decreases next_index stepping back to match.",
+            "rows": [
+              {
+                "cells": [
+                  "next_index",
+                  "3",
+                  "None"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "prev",
+                  "2",
+                  "None"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Successful append replaces conflicting follower tail.",
+            "rows": [
+              {
+                "cells": [
+                  "next_index",
+                  "3",
+                  "None"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "prev",
+                  "2",
+                  "None"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "result",
+                  "1",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reads, snapshots and Raft in practice",
+      "codeHash": "e56bc86b3012d9093664d2916992687a1952be8467ddc2a2539fd1f10946c6d6",
+      "spec": {
+        "template": "none",
+        "reason": "Reads snapshots log compaction and cluster sizing trade-offs."
+      },
+      "filled": {}
+    }
+  ]
+}

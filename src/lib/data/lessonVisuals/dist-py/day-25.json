@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The chatty client problem",
+      "codeHash": "8538c31837b080cd0d286c490f7f395fb639942904b769e35b9aa7069ab7344f",
+      "spec": {
+        "template": "none",
+        "reason": "Chatty client mobile network latency overhead comparison."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Aggregating a profile",
+      "codeHash": "45d4539b035d7932b6700c301bdbe87cbea825d047db309443f2f97dc201f4ea",
+      "spec": {
+        "template": "compare",
+        "title": "Profile aggregation handling complete and degraded optional reviews",
+        "leftLabel": "Healthy Response",
+        "rightLabel": "Degraded Partial",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The aggregator calls services returning user details and orders.",
+            "left": {
+              "code": "get_user(user_id)",
+              "result": {
+                "text": "Asha"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "reviews_down(uid)",
+              "result": {
+                "text": "reviews timed out"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Optional service failures return partial true instead of failing.",
+            "left": {
+              "code": "partial",
+              "result": {
+                "text": "False"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "partial",
+              "result": {
+                "text": "True"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "The partial flag signals clients that optional data is unavailable.",
+            "left": {
+              "code": "partial",
+              "result": {
+                "text": "False"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "partial",
+              "result": {
+                "text": "True"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Profile aggregation handling complete and degraded optional reviews",
+        "leftLabel": "Healthy Response",
+        "rightLabel": "Degraded Partial",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The aggregator calls services returning user details and orders.",
+            "left": {
+              "code": "get_user(user_id)",
+              "result": "Asha",
+              "tone": "ok",
+              "checks": [
+                "Asha"
+              ]
+            },
+            "right": {
+              "code": "reviews_down(uid)",
+              "result": "reviews timed out",
+              "tone": "idle",
+              "checks": [
+                "reviews timed out"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Optional service failures return partial true instead of failing.",
+            "left": {
+              "code": "partial",
+              "result": "False",
+              "tone": "ok",
+              "checks": [
+                "False"
+              ]
+            },
+            "right": {
+              "code": "partial",
+              "result": "True",
+              "tone": "idle",
+              "checks": [
+                "True"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "The partial flag signals clients that optional data is unavailable.",
+            "left": {
+              "code": "partial",
+              "result": "False",
+              "tone": "ok",
+              "checks": [
+                "False"
+              ]
+            },
+            "right": {
+              "code": "partial",
+              "result": "True",
+              "tone": "idle",
+              "checks": [
+                "True"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Calling services in parallel",
+      "codeHash": "d9a483ce63ccbe84b9df2b317859f71c7d7e83459ff3434f3d2b4299884c9856",
+      "spec": {
+        "template": "table",
+        "title": "Service latency budget and parallel execution timeout thresholds",
+        "columns": [
+          "service",
+          "latency_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parallel calls make the total latency equal to the slowest dependency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "users"
+                  },
+                  {
+                    "text": "40"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Setting timeouts ensures slow services do not delay the whole response.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "users"
+                  },
+                  {
+                    "text": "40"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reviews"
+                  },
+                  {
+                    "text": "90"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Sequential total adds latencies while parallel execution takes the maximum.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "users"
+                  },
+                  {
+                    "text": "40"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reviews"
+                  },
+                  {
+                    "text": "90"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "120"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Service latency budget and parallel execution timeout thresholds",
+        "columns": [
+          "service",
+          "latency_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parallel calls make the total latency equal to the slowest dependency.",
+            "rows": [
+              {
+                "cells": [
+                  "users",
+                  "40"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Setting timeouts ensures slow services do not delay the whole response.",
+            "rows": [
+              {
+                "cells": [
+                  "users",
+                  "40"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reviews",
+                  "90"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Sequential total adds latencies while parallel execution takes the maximum.",
+            "rows": [
+              {
+                "cells": [
+                  "users",
+                  "40"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reviews",
+                  "90"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "120"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CORS headers for browsers",
+      "codeHash": "cf1a98a622a7c87804284521442a5636ad62859aa7861776c684d7b7e2147f1a",
+      "spec": {
+        "template": "table",
+        "title": "Allowed origins and permitted methods for cross-origin security",
+        "columns": [
+          "origin",
+          "methods"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "CORS headers inform the browser which origins and methods are allowed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "https://app.pinit.example"
+                  },
+                  {
+                    "text": "GET"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Only echo origins present in an explicit allow list for security.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "https://app.pinit.example"
+                  },
+                  {
+                    "text": "GET"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "https://admin.pinit.example"
+                  },
+                  {
+                    "text": "POST"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The gateway restricts cross-origin access to company applications.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "https://app.pinit.example"
+                  },
+                  {
+                    "text": "GET"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "https://admin.pinit.example"
+                  },
+                  {
+                    "text": "POST"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Allowed origins and permitted methods for cross-origin security",
+        "columns": [
+          "origin",
+          "methods"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "CORS headers inform the browser which origins and methods are allowed.",
+            "rows": [
+              {
+                "cells": [
+                  "https://app.pinit.example",
+                  "GET"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Only echo origins present in an explicit allow list for security.",
+            "rows": [
+              {
+                "cells": [
+                  "https://app.pinit.example",
+                  "GET"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "https://admin.pinit.example",
+                  "POST"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The gateway restricts cross-origin access to company applications.",
+            "rows": [
+              {
+                "cells": [
+                  "https://app.pinit.example",
+                  "GET"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "https://admin.pinit.example",
+                  "POST"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "One BFF per client type",
+      "codeHash": "0e69ec79aba67b8f19c27db5e448fd8e2ec7b1d1474f5ed19a5fdfec202be42e",
+      "spec": {
+        "template": "compare",
+        "title": "Client tailored response payload shapes for mobile and web clients",
+        "leftLabel": "Mobile BFF",
+        "rightLabel": "Web BFF",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Different clients require tailored data shapes for optimal rendering.",
+            "left": {
+              "code": "mobile_bff(p)",
+              "result": {
+                "text": "Asha"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "web_bff(p)",
+              "result": {
+                "text": "Asha"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dedicated BFF layers evolve independently alongside client applications.",
+            "left": {
+              "code": "points",
+              "result": {
+                "text": "340"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "addresses",
+              "result": {
+                "text": "home"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Keeping BFF layers thin prevents duplicating business logic across services.",
+            "left": {
+              "code": "points",
+              "result": {
+                "text": "340"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "addresses",
+              "result": {
+                "text": "office"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Client tailored response payload shapes for mobile and web clients",
+        "leftLabel": "Mobile BFF",
+        "rightLabel": "Web BFF",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Different clients require tailored data shapes for optimal rendering.",
+            "left": {
+              "code": "mobile_bff(p)",
+              "result": "Asha",
+              "tone": "ok",
+              "checks": [
+                "Asha"
+              ]
+            },
+            "right": {
+              "code": "web_bff(p)",
+              "result": "Asha",
+              "tone": "ok",
+              "checks": [
+                "Asha"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dedicated BFF layers evolve independently alongside client applications.",
+            "left": {
+              "code": "points",
+              "result": "340",
+              "tone": "ok",
+              "checks": [
+                "340"
+              ]
+            },
+            "right": {
+              "code": "addresses",
+              "result": "home",
+              "tone": "data",
+              "checks": [
+                "home"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Keeping BFF layers thin prevents duplicating business logic across services.",
+            "left": {
+              "code": "points",
+              "result": "340",
+              "tone": "ok",
+              "checks": [
+                "340"
+              ]
+            },
+            "right": {
+              "code": "addresses",
+              "result": "office",
+              "tone": "data",
+              "checks": [
+                "office"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Operating the edge",
+      "codeHash": "de41d2107975e44b3f5dd4392ba019c09fe29cc74b2cf851f6f5a2560cd9df90",
+      "spec": {
+        "template": "none",
+        "reason": "Edge operations caching and partial response telemetry monitoring."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 23,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Real-Time Event Enrichment & The Stream-Table Join Pattern",
+      "codeHash": "3990235bc7bad6e6b24221bf3b91aa0ce78b26adb74d6324b92efedbc09c9d2d",
+      "spec": {
+        "template": "flow",
+        "title": "enrichOrderStream joining OrderEvent stream with CustomerProfile KTable",
+        "nodes": [
+          {
+            "id": "orderStream",
+            "label": "OrderEvent (ord-1, c-101, $250)",
+            "tappable": false
+          },
+          {
+            "id": "custTable",
+            "label": "CustomerProfile KTable (c-101: GOLD)",
+            "tappable": false
+          },
+          {
+            "id": "enrichedOut",
+            "label": "EnrichedOrder (Alice Smith, GOLD)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "orderStream",
+            "to": "custTable",
+            "label": "lookup c-101"
+          },
+          {
+            "from": "custTable",
+            "to": "enrichedOut",
+            "label": "join attributes"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Stream-Table Join enriches an incoming stream event via a local KTable lookup.",
+            "activeNodes": [
+              "orderStream",
+              "custTable"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The output event contains both transaction details and customer attributes.",
+            "activeNodes": [
+              "custTable",
+              "enrichedOut"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "enrichOrderStream joining OrderEvent stream with CustomerProfile KTable",
+        "nodes": [
+          {
+            "id": "orderStream",
+            "label": "OrderEvent (ord-1, c-101, $250)",
+            "tappable": false
+          },
+          {
+            "id": "custTable",
+            "label": "CustomerProfile KTable (c-101: GOLD)",
+            "tappable": false
+          },
+          {
+            "id": "enrichedOut",
+            "label": "EnrichedOrder (Alice Smith, GOLD)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "orderStream",
+            "to": "custTable",
+            "label": "lookup c-101"
+          },
+          {
+            "from": "custTable",
+            "to": "enrichedOut",
+            "label": "join attributes"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Stream-Table Join enriches an incoming stream event via a local KTable lookup.",
+            "activeNodes": [
+              "orderStream",
+              "custTable"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The output event contains both transaction details and customer attributes.",
+            "activeNodes": [
+              "custTable",
+              "enrichedOut"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why Stream-Table Joins Are Non-Windowed",
+      "codeHash": "d1c26da51d3048a02eef8dc9eead15896ae52584df148e73187e6e0a47e1d045",
+      "spec": {
+        "template": "sequence",
+        "title": "NonWindowedEnricher point-in-time table lookups before and after sensor relocation",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Temperature Stream"
+          },
+          {
+            "id": "enricher",
+            "label": "NonWindowedEnricher"
+          },
+          {
+            "id": "table",
+            "label": "sensorTable Map"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The event looks up whatever value currently resides in the table at processing.",
+            "messages": [
+              {
+                "from": "table",
+                "to": "enricher",
+                "label": "updateSensor('s-1', HQ Fl 2)"
+              },
+              {
+                "from": "stream",
+                "to": "enricher",
+                "label": "processReading(22.4) -> HQ - Fl 2"
+              }
+            ],
+            "activeActorId": "enricher"
+          },
+          {
+            "at": "say8",
+            "caption": "As soon as the table updates, subsequent stream events join with the new state.",
+            "messages": [
+              {
+                "from": "table",
+                "to": "enricher",
+                "label": "updateSensor('s-1', HQ Fl 4)"
+              },
+              {
+                "from": "stream",
+                "to": "enricher",
+                "label": "processReading(23.1) -> HQ - Fl 4"
+              }
+            ],
+            "activeActorId": "table"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "NonWindowedEnricher point-in-time table lookups before and after sensor relocation",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Temperature Stream"
+          },
+          {
+            "id": "enricher",
+            "label": "NonWindowedEnricher"
+          },
+          {
+            "id": "table",
+            "label": "sensorTable Map"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The event looks up whatever value currently resides in the table at processing.",
+            "messages": [
+              {
+                "from": "table",
+                "to": "enricher",
+                "label": "updateSensor('s-1', HQ Fl 2)"
+              },
+              {
+                "from": "stream",
+                "to": "enricher",
+                "label": "processReading(22.4) -> HQ - Fl 2"
+              }
+            ],
+            "activeActorId": "enricher"
+          },
+          {
+            "at": "say8",
+            "caption": "As soon as the table updates, subsequent stream events join with the new state.",
+            "messages": [
+              {
+                "from": "table",
+                "to": "enricher",
+                "label": "updateSensor('s-1', HQ Fl 4)"
+              },
+              {
+                "from": "stream",
+                "to": "enricher",
+                "label": "processReading(23.1) -> HQ - Fl 4"
+              }
+            ],
+            "activeActorId": "table"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inner vs Left Outer Join Semantics in Streaming",
+      "codeHash": "96856c002d1fd525b69e72afa5b43eefc6d7e3be6b53bc3570bb530907a136e1",
+      "spec": {
+        "template": "table",
+        "title": "joinInner vs joinLeftOuter handling missing foreign key m-99 on tx-2 ($75.00)",
+        "columns": [
+          "Join Type",
+          "tx-1 (m-1 Match)",
+          "tx-2 (m-99 Missing)",
+          "Output Count"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "In an Inner Join, if the foreign key does not exist in the table, it is dropped.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "In a Left Outer Join, missing foreign keys emit the event with null enrichment.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "joinInner vs joinLeftOuter handling missing foreign key m-99 on tx-2 ($75.00)",
+        "columns": [
+          "Join Type",
+          "tx-1 (m-1 Match)",
+          "tx-2 (m-99 Missing)",
+          "Output Count"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "In an Inner Join, if the foreign key does not exist in the table, it is dropped.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "In a Left Outer Join, missing foreign keys emit the event with null enrichment.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temporal Table Joins & Slowly Changing Dimensions (SCD)",
+      "codeHash": "0dfab40e379824aa716d8e71b9bc8d60754fcc2aa359c84aba58c3c3525260d2",
+      "spec": {
+        "template": "table",
+        "title": "joinTemporalDimension matching event timestamps against [validFrom, validTo) bounds",
+        "columns": [
+          "Event ID",
+          "Event Timestamp",
+          "Matched [validFrom, validTo)",
+          "Historical Tier"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Each dimension record in the temporal table includes validFrom and validTo.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The joiner matches event E against version D where validFrom <= timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "joinTemporalDimension matching event timestamps against [validFrom, validTo) bounds",
+        "columns": [
+          "Event ID",
+          "Event Timestamp",
+          "Matched [validFrom, validTo)",
+          "Historical Tier"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Each dimension record in the temporal table includes validFrom and validTo.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The joiner matches event E against version D where validFrom <= timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asynchronous Enrichment vs Local State: The 1000x Performance Gap",
+      "codeHash": "e534492bd9c7c9e5e8915571fbb704a10d3e8e129e9610455d42d897c12db0d5",
+      "spec": {
+        "template": "bars",
+        "title": "compareEnrichmentArchitectures maxThroughputPerCore across Remote HTTP, SQL, and KTable",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Remote HTTP and SQL calls cap throughput due to network round-trip latency.",
+            "bars": [
+              {
+                "label": "Remote HTTP (200 ops/s)",
+                "value": {
+                  "text": "200"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Remote SQL (1000 ops/s)",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "A single CPU core performing local lookups processes 1200000 enrichments/sec.",
+            "bars": [
+              {
+                "label": "Remote HTTP (200 ops/s)",
+                "value": {
+                  "text": "200"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Remote SQL (1000 ops/s)",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Local KTable (50ns)",
+                "value": {
+                  "text": "1200000"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "compareEnrichmentArchitectures maxThroughputPerCore across Remote HTTP, SQL, and KTable",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Remote HTTP and SQL calls cap throughput due to network round-trip latency.",
+            "bars": [
+              {
+                "label": "Remote HTTP (200 ops/s)",
+                "value": 200,
+                "tone": "error"
+              },
+              {
+                "label": "Remote SQL (1000 ops/s)",
+                "value": 1000,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "A single CPU core performing local lookups processes 1200000 enrichments/sec.",
+            "bars": [
+              {
+                "label": "Remote HTTP (200 ops/s)",
+                "value": 200,
+                "tone": "error"
+              },
+              {
+                "label": "Remote SQL (1000 ops/s)",
+                "value": 1000,
+                "tone": "data"
+              },
+              {
+                "label": "Local KTable (50ns)",
+                "value": 1200000,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Stream-Table Join Engine with Dynamic Updates",
+      "codeHash": "c4e289e0501a7bf7bd42129ae5f4339376df57bd20e221530fdf14f00f2e9c4b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What makes a great prompt",
+      "codeHash": "007e5038076addada812eead979120561747024e8d6f2fef17946b77c2361b95",
+      "spec": {
+        "template": "table",
+        "title": "Prompt engineering quality checklist and linter rules",
+        "columns": [
+          "role",
+          "format",
+          "audience"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Strong prompts combine a defined role with explicit format rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "role"
+                  },
+                  {
+                    "text": "format"
+                  },
+                  {
+                    "text": "audience"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "role"
+                  },
+                  {
+                    "text": "format"
+                  },
+                  {
+                    "text": "audience"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A prompt linter provides automatic feedback on structure and clarity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "role"
+                  },
+                  {
+                    "text": "format"
+                  },
+                  {
+                    "text": "audience"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "role"
+                  },
+                  {
+                    "text": "format"
+                  },
+                  {
+                    "text": "role"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Prompt engineering quality checklist and linter rules",
+        "columns": [
+          "role",
+          "format",
+          "audience"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Strong prompts combine a defined role with explicit format rules.",
+            "rows": [
+              {
+                "cells": [
+                  "role",
+                  "format",
+                  "audience"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "role",
+                  "format",
+                  "audience"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A prompt linter provides automatic feedback on structure and clarity.",
+            "rows": [
+              {
+                "cells": [
+                  "role",
+                  "format",
+                  "audience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "role",
+                  "format",
+                  "role"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safety in the linter",
+      "codeHash": "2ba1a53a062ee07083cbab2e0c80f7a39ae2a2dbea4e316cb5196d49717cbd51",
+      "spec": {
+        "template": "table",
+        "title": "Safety inspection and prompt injection risk evaluation",
+        "columns": [
+          "hits",
+          "score",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The linter detects injection phrases within structured prompt templates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Guardrails and gates combine multiple protection layers around tools.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Safety inspection and prompt injection risk evaluation",
+        "columns": [
+          "hits",
+          "score",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The linter detects injection phrases within structured prompt templates.",
+            "rows": [
+              {
+                "cells": [
+                  "hits",
+                  "score",
+                  "prompt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "hits",
+                  "score",
+                  "prompt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Guardrails and gates combine multiple protection layers around tools.",
+            "rows": [
+              {
+                "cells": [
+                  "hits",
+                  "score",
+                  "prompt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "hits",
+                  "score",
+                  "hits"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Certificate readiness",
+      "codeHash": "d04bc0e2bebe58d5fd03b9726c8cb5e175080a07199bb01b2cd50d738b033c81",
+      "spec": {
+        "template": "table",
+        "title": "Certificate readiness criteria and performance thresholds",
+        "columns": [
+          "ready",
+          "scores",
+          "weak"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Certification readiness confirms comprehensive skill mastery on tests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ready"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weak"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ready"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weak"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dual rules evaluate overall average scores and eliminate weak areas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ready"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weak"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ready"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Certificate readiness criteria and performance thresholds",
+        "columns": [
+          "ready",
+          "scores",
+          "weak"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Certification readiness confirms comprehensive skill mastery on tests.",
+            "rows": [
+              {
+                "cells": [
+                  "ready",
+                  "scores",
+                  "weak"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ready",
+                  "scores",
+                  "weak"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dual rules evaluate overall average scores and eliminate weak areas.",
+            "rows": [
+              {
+                "cells": [
+                  "ready",
+                  "scores",
+                  "weak"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ready",
+                  "scores",
+                  "ready"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Your AI toolkit",
+      "codeHash": "a27ec3480169f21ab199acf1755383f644f3ad1f3d3f74217f3fd4d1a15e6786",
+      "spec": {
+        "template": "table",
+        "title": "Comprehensive AI developer toolkit components",
+        "columns": [
+          "toolkit",
+          "area",
+          "tools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prompting covers explicit tasks, roles, formats, and reasoning budgets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "area"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "area"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Your modular toolkit acts as a permanent reference checklist.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "area"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "area"
+                  },
+                  {
+                    "text": "toolkit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comprehensive AI developer toolkit components",
+        "columns": [
+          "toolkit",
+          "area",
+          "tools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prompting covers explicit tasks, roles, formats, and reasoning budgets.",
+            "rows": [
+              {
+                "cells": [
+                  "toolkit",
+                  "area",
+                  "tools"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "toolkit",
+                  "area",
+                  "tools"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Your modular toolkit acts as a permanent reference checklist.",
+            "rows": [
+              {
+                "cells": [
+                  "toolkit",
+                  "area",
+                  "tools"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "toolkit",
+                  "area",
+                  "toolkit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Using AI responsibly, every day",
+      "codeHash": "b9879d1aa6bfffdf8d69c8fd882c7e4f28629fe4aff4dc66a7bcfcd5bd119bc0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Capstone practice: linter and readiness",
+      "codeHash": "e9a8f04581b95c24814af853e166d5629dac0ff60d8eaa9028badd73a4be5d14",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

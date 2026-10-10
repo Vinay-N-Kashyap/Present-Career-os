@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why mini-batches",
+      "codeHash": "e7c8f4beb63a80710b4b4122c5943db6b28b461a33219efaa9e943a478791978",
+      "spec": {
+        "template": "table",
+        "title": "Mini-batch stochastic gradient descent and epoch progression",
+        "columns": [
+          "batch",
+          "dataset",
+          "epoch"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Stochastic gradient descent updates parameters through frequent noisy steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "dataset"
+                  },
+                  {
+                    "text": "epoch"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "dataset"
+                  },
+                  {
+                    "text": "epoch"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A complete epoch partitions the dataset into uniform training mini-batches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "dataset"
+                  },
+                  {
+                    "text": "epoch"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "dataset"
+                  },
+                  {
+                    "text": "batch"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Mini-batch stochastic gradient descent and epoch progression",
+        "columns": [
+          "batch",
+          "dataset",
+          "epoch"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Stochastic gradient descent updates parameters through frequent noisy steps.",
+            "rows": [
+              {
+                "cells": [
+                  "batch",
+                  "dataset",
+                  "epoch"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "batch",
+                  "dataset",
+                  "epoch"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A complete epoch partitions the dataset into uniform training mini-batches.",
+            "rows": [
+              {
+                "cells": [
+                  "batch",
+                  "dataset",
+                  "epoch"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "batch",
+                  "dataset",
+                  "batch"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Making batches",
+      "codeHash": "15c9ef22ff28648e7f619bee433d66d5d661ca960043e349786e81ab1d81c072",
+      "spec": {
+        "template": "table",
+        "title": "Dataset batch partitioning and truncation handling",
+        "columns": [
+          "start",
+          "end",
+          "size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Batching slices datasets into continuous index ranges for fast loading.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Drop incomplete training batches so every step keeps uniform shape.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  },
+                  {
+                    "text": "start"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dataset batch partitioning and truncation handling",
+        "columns": [
+          "start",
+          "end",
+          "size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Batching slices datasets into continuous index ranges for fast loading.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end",
+                  "size"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "end",
+                  "size"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Drop incomplete training batches so every step keeps uniform shape.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end",
+                  "size"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "start",
+                  "end",
+                  "start"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Batch size and gradient noise",
+      "codeHash": "a1c279911c712bfef3e3f220efc0a1a9debd7d2575498cdaef956dd91f26ec31",
+      "spec": {
+        "template": "table",
+        "title": "Batch size variance reduction and gradient noise analysis",
+        "columns": [
+          "data",
+          "batch",
+          "means"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A bigger batch gives an accurate gradient estimate with less noise.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "means"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "means"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sampling variance shrinks with the square root of expanding batch size.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "means"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Batch size variance reduction and gradient noise analysis",
+        "columns": [
+          "data",
+          "batch",
+          "means"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A bigger batch gives an accurate gradient estimate with less noise.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "batch",
+                  "means"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "data",
+                  "batch",
+                  "means"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sampling variance shrinks with the square root of expanding batch size.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "batch",
+                  "means"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "data",
+                  "batch",
+                  "data"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Learning rate scaling rules",
+      "codeHash": "1749f032d89f947c0c7bc2b035b977234f45fdccc74ff8a04ce0f8b7c494dfec",
+      "spec": {
+        "template": "table",
+        "title": "Learning rate scaling rules: linear versus square root",
+        "columns": [
+          "batch",
+          "linear",
+          "sqrt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear scaling adjusts the learning rate proportionally with batch growth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "linear"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "linear"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adaptive optimizers often perform better using square root scaling rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "linear"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "batch"
+                  },
+                  {
+                    "text": "linear"
+                  },
+                  {
+                    "text": "batch"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Learning rate scaling rules: linear versus square root",
+        "columns": [
+          "batch",
+          "linear",
+          "sqrt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear scaling adjusts the learning rate proportionally with batch growth.",
+            "rows": [
+              {
+                "cells": [
+                  "batch",
+                  "linear",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "batch",
+                  "linear",
+                  "sqrt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adaptive optimizers often perform better using square root scaling rules.",
+            "rows": [
+              {
+                "cells": [
+                  "batch",
+                  "linear",
+                  "sqrt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "batch",
+                  "linear",
+                  "batch"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mini-batch training loop",
+      "codeHash": "31c2a214d0ffc31222dd40bdabe6f086ea262fdb709dbc8e419ff2169745f182",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: batches and scaling",
+      "codeHash": "bbb6c04b16cc46b90b609455218648adda0f8377866d68f0b9da28b22c392b94",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

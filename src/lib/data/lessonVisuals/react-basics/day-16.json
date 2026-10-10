@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 16,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Side effects: work outside drawing the screen",
+      "codeHash": "2f3fbb4c8e445fd682b038d545a90faa4d2c7079b5c2100340246e959aa1c8c4",
+      "spec": {
+        "template": "compare",
+        "title": "Direct render execution versus encapsulated side effects",
+        "leftLabel": "Direct In Body (Bad)",
+        "rightLabel": "Inside useEffect (Good)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Side effects reaching outside components cause unintended repeated work.",
+            "left": {
+              "code": "console.log(JobListBad());",
+              "result": {
+                "text": "\"Rendered. Server requests so far: 1\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(JobListBad());",
+              "result": {
+                "text": "\"Rendered. Server requests so far: 1\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "React runs useEffect code after drawing the screen.",
+            "left": {
+              "code": "console.log(JobListBad());",
+              "result": {
+                "text": "\"Rendered. Server requests so far: 2\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(JobListBad());",
+              "result": {
+                "text": "\"Rendered. Server requests so far: 1\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Direct render execution versus encapsulated side effects",
+        "leftLabel": "Direct In Body (Bad)",
+        "rightLabel": "Inside useEffect (Good)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Side effects reaching outside components cause unintended repeated work.",
+            "left": {
+              "code": "console.log(JobListBad());",
+              "result": "\"Rendered. Server requests so far: 1\"",
+              "tone": "warn",
+              "checks": [
+                "\"Rendered. Server requests so far: 1\""
+              ]
+            },
+            "right": {
+              "code": "console.log(JobListBad());",
+              "result": "\"Rendered. Server requests so far: 1\"",
+              "tone": "idle",
+              "checks": [
+                "\"Rendered. Server requests so far: 1\""
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "React runs useEffect code after drawing the screen.",
+            "left": {
+              "code": "console.log(JobListBad());",
+              "result": "\"Rendered. Server requests so far: 2\"",
+              "tone": "warn",
+              "checks": [
+                "\"Rendered. Server requests so far: 2\""
+              ]
+            },
+            "right": {
+              "code": "console.log(JobListBad());",
+              "result": "\"Rendered. Server requests so far: 1\"",
+              "tone": "ok",
+              "checks": [
+                "\"Rendered. Server requests so far: 1\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "useEffect and the empty dependency list",
+      "codeHash": "068251af47edfbe405062b77e69c24bc889d664b7b73cb91c3ffe556cb352c8a",
+      "spec": {
+        "template": "states",
+        "title": "Initial mounting execution with empty dependency array",
+        "states": [
+          "Component Mounts",
+          "Effect Executes Once",
+          "Subsequent Re-renders Skip"
+        ],
+        "activeIndex": 0,
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An empty dependency array runs the effect once after mount.",
+            "activeIndex": 1
+          },
+          {
+            "at": "say4",
+            "caption": "Future renders skip repeating the effect initialization.",
+            "activeIndex": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Initial mounting execution with empty dependency array",
+        "states": [
+          "Component Mounts",
+          "Effect Executes Once",
+          "Subsequent Re-renders Skip"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An empty dependency array runs the effect once after mount."
+          },
+          {
+            "at": "say4",
+            "caption": "Future renders skip repeating the effect initialization."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dependencies: running again when something changes",
+      "codeHash": "5025f29040446362f1a3001bbd7fe802affce04a50147a87d0fce1e709130596",
+      "spec": {
+        "template": "flow",
+        "title": "Re-running effects when tracked dependencies change",
+        "nodes": [
+          {
+            "id": "dep",
+            "label": "deps",
+            "tappable": false
+          },
+          {
+            "id": "check",
+            "label": "changed",
+            "tappable": false
+          },
+          {
+            "id": "eff",
+            "label": "effect",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Placing variables in dependencies tells React when to rerun.",
+            "values": {
+              "dep": {
+                "text": "deps"
+              },
+              "check": {
+                "text": "changed"
+              },
+              "eff": {
+                "text": "effect"
+              }
+            },
+            "tones": {
+              "dep": "data",
+              "check": "idle",
+              "eff": "idle"
+            },
+            "arrows": [
+              [
+                "dep",
+                "check"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If dependency values differ from previous render the effect runs.",
+            "values": {
+              "dep": {
+                "text": "deps"
+              },
+              "check": {
+                "text": "changed"
+              },
+              "eff": {
+                "text": "effect"
+              }
+            },
+            "tones": {
+              "dep": "idle",
+              "check": "ok",
+              "eff": "ok"
+            },
+            "arrows": [
+              [
+                "dep",
+                "check"
+              ],
+              [
+                "check",
+                "eff"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Re-running effects when tracked dependencies change",
+        "nodes": [
+          {
+            "id": "dep",
+            "label": "deps",
+            "tappable": false
+          },
+          {
+            "id": "check",
+            "label": "changed",
+            "tappable": false
+          },
+          {
+            "id": "eff",
+            "label": "effect",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Placing variables in dependencies tells React when to rerun.",
+            "values": {
+              "dep": "deps",
+              "check": "changed",
+              "eff": "effect"
+            },
+            "tones": {
+              "dep": "data",
+              "check": "idle",
+              "eff": "idle"
+            },
+            "arrows": [
+              [
+                "dep",
+                "check"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If dependency values differ from previous render the effect runs.",
+            "values": {
+              "dep": "deps",
+              "check": "changed",
+              "eff": "effect"
+            },
+            "tones": {
+              "dep": "idle",
+              "check": "ok",
+              "eff": "ok"
+            },
+            "arrows": [
+              [
+                "dep",
+                "check"
+              ],
+              [
+                "check",
+                "eff"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clean-up: stopping what you started",
+      "codeHash": "e4b35713c8ba18988c52a603355abb162f68a1a143ee28524d028cb360241905",
+      "spec": {
+        "template": "compare",
+        "title": "Cleaning up active timers and external subscriptions",
+        "leftLabel": "Start Effect",
+        "rightLabel": "Cleanup Return",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Some effects start ongoing processes like timers or listeners.",
+            "left": {
+              "code": "running.add(\"timer\");",
+              "result": {
+                "text": "\"timer\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "running.delete(\"timer\");",
+              "result": {
+                "text": "\"timer\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Return a cleanup function to stop ongoing background work.",
+            "left": {
+              "code": "running.add(\"timer\");",
+              "result": {
+                "text": "\"timer\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "running.delete(\"timer\");",
+              "result": {
+                "text": "\"timer\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cleaning up active timers and external subscriptions",
+        "leftLabel": "Start Effect",
+        "rightLabel": "Cleanup Return",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Some effects start ongoing processes like timers or listeners.",
+            "left": {
+              "code": "running.add(\"timer\");",
+              "result": "\"timer\"",
+              "tone": "idle",
+              "checks": [
+                "\"timer\""
+              ]
+            },
+            "right": {
+              "code": "running.delete(\"timer\");",
+              "result": "\"timer\"",
+              "tone": "ok",
+              "checks": [
+                "\"timer\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Return a cleanup function to stop ongoing background work.",
+            "left": {
+              "code": "running.add(\"timer\");",
+              "result": "\"timer\"",
+              "tone": "idle",
+              "checks": [
+                "\"timer\""
+              ]
+            },
+            "right": {
+              "code": "running.delete(\"timer\");",
+              "result": "\"timer\"",
+              "tone": "ok",
+              "checks": [
+                "\"timer\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Saving to the browser with localStorage",
+      "codeHash": "4a2951fe1c4f1378e9bb41b169bea3ebda53a732479af8a1847d9844a0df2d1c",
+      "spec": {
+        "template": "boxes",
+        "title": "Persistent browser storage serialization with localStorage",
+        "boxes": [
+          {
+            "id": "jobs",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "storage",
+            "label": "localStorage",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Turn the jobs array into text with stringify to save in localStorage.",
+            "values": {
+              "jobs": {
+                "text": "jobs"
+              },
+              "storage": {
+                "text": "text"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Loading saved jobs happens once when creating initial state.",
+            "values": {
+              "jobs": {
+                "text": "jobs"
+              },
+              "storage": {
+                "text": "saved"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Persistent browser storage serialization with localStorage",
+        "boxes": [
+          {
+            "id": "jobs",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "storage",
+            "label": "localStorage",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Turn the jobs array into text with stringify to save in localStorage.",
+            "values": {
+              "jobs": "jobs",
+              "storage": "text"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Loading saved jobs happens once when creating initial state.",
+            "values": {
+              "jobs": "jobs",
+              "storage": "saved"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When not to use useEffect",
+      "codeHash": "62e95d0ec065fc1fbb08ca4369ba6dee53f9eac3629dfd0beaff7fcf5146f914",
+      "spec": {
+        "template": "none",
+        "reason": "Best practice guidelines on calculating derived values directly without redundant effects"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Best practice guidelines on calculating derived values directly without redundant effects"
+      }
+    }
+  ]
+}

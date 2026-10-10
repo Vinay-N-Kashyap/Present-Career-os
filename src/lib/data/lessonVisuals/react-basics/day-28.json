@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 28,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why automatic tests",
+      "codeHash": "ceb1fd960a1eab3db7654ed9257e9e2261fd6fb0140dc69a3c01ef46aedc77ce",
+      "spec": {
+        "template": "compare",
+        "title": "Manual checklists versus automated test suites",
+        "leftLabel": "Manual Verification",
+        "rightLabel": "Automated Test Suite",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Testing by hand with a checklist is slow and repeats every change.",
+            "left": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": {
+                "text": "\"offer\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": {
+                "text": "\"PASS\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Automated test suites verify system logic rapidly after code changes.",
+            "left": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": {
+                "text": "\"applied\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": {
+                "text": "\"PASS\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Manual checklists versus automated test suites",
+        "leftLabel": "Manual Verification",
+        "rightLabel": "Automated Test Suite",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Testing by hand with a checklist is slow and repeats every change.",
+            "left": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": "\"offer\"",
+              "tone": "idle",
+              "checks": [
+                "\"offer\""
+              ]
+            },
+            "right": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": "\"PASS\"",
+              "tone": "ok",
+              "checks": [
+                "\"PASS\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Automated test suites verify system logic rapidly after code changes.",
+            "left": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": "\"applied\"",
+              "tone": "idle",
+              "checks": [
+                "\"applied\""
+              ]
+            },
+            "right": {
+              "code": "console.log(result.total === 2 && result.offers === 1 ? \"PASS\" : \"FAIL\");",
+              "result": "\"PASS\"",
+              "tone": "ok",
+              "checks": [
+                "\"PASS\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Arrange, act, check",
+      "codeHash": "ad1e9014ad7b32871e6b2669dffa3c3d75c8a9d9bec53191b7a24c0ecdc9f0b2",
+      "spec": {
+        "template": "flow",
+        "title": "The Arrange Act Assert unit test workflow",
+        "nodes": [
+          {
+            "id": "arr",
+            "label": "arrange",
+            "tappable": false
+          },
+          {
+            "id": "act",
+            "label": "act",
+            "tappable": false
+          },
+          {
+            "id": "chk",
+            "label": "check",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tests prepare sample inputs, execute operations and evaluate assertions.",
+            "values": {
+              "arr": {
+                "text": "\"all tab returns every job\""
+              },
+              "act": {
+                "text": "\"all\""
+              },
+              "chk": {
+                "text": "\"all\""
+              }
+            },
+            "tones": {
+              "arr": "data",
+              "act": "idle",
+              "chk": "idle"
+            },
+            "arrows": [
+              [
+                "arr",
+                "act"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clear descriptive names communicate failing test expectations immediately.",
+            "values": {
+              "arr": {
+                "text": "\"all tab returns every job\""
+              },
+              "act": {
+                "text": "\"all\""
+              },
+              "chk": {
+                "text": "\"all\""
+              }
+            },
+            "tones": {
+              "arr": "idle",
+              "act": "data",
+              "chk": "ok"
+            },
+            "arrows": [
+              [
+                "arr",
+                "act"
+              ],
+              [
+                "act",
+                "chk"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The Arrange Act Assert unit test workflow",
+        "nodes": [
+          {
+            "id": "arr",
+            "label": "arrange",
+            "tappable": false
+          },
+          {
+            "id": "act",
+            "label": "act",
+            "tappable": false
+          },
+          {
+            "id": "chk",
+            "label": "check",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tests prepare sample inputs, execute operations and evaluate assertions.",
+            "values": {
+              "arr": "\"all tab returns every job\"",
+              "act": "\"all\"",
+              "chk": "\"all\""
+            },
+            "tones": {
+              "arr": "data",
+              "act": "idle",
+              "chk": "idle"
+            },
+            "arrows": [
+              [
+                "arr",
+                "act"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clear descriptive names communicate failing test expectations immediately.",
+            "values": {
+              "arr": "\"all tab returns every job\"",
+              "act": "\"all\"",
+              "chk": "\"all\""
+            },
+            "tones": {
+              "arr": "idle",
+              "act": "data",
+              "chk": "ok"
+            },
+            "arrows": [
+              [
+                "arr",
+                "act"
+              ],
+              [
+                "act",
+                "chk"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vitest in your project",
+      "codeHash": "30c8abee148253e6b78769f10cfe76cb9040e16a29dd0b4b0d1419595bc6c64a",
+      "spec": {
+        "template": "boxes",
+        "title": "Comparing strict identity with deep value equality",
+        "boxes": [
+          {
+            "id": "toBe",
+            "label": "toBe",
+            "tappable": false
+          },
+          {
+            "id": "toEqual",
+            "label": "toEqual",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Install and configure Vitest to automate suite execution.",
+            "values": {
+              "toBe": {
+                "text": "3"
+              },
+              "toEqual": {
+                "text": "3"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Organize unit test files adjacent to source code implementations.",
+            "values": {
+              "toBe": {
+                "text": "3"
+              },
+              "toEqual": {
+                "text": "3"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Comparing strict identity with deep value equality",
+        "boxes": [
+          {
+            "id": "toBe",
+            "label": "toBe",
+            "tappable": false
+          },
+          {
+            "id": "toEqual",
+            "label": "toEqual",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Install and configure Vitest to automate suite execution.",
+            "values": {
+              "toBe": "3",
+              "toEqual": "3"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Organize unit test files adjacent to source code implementations.",
+            "values": {
+              "toBe": "3",
+              "toEqual": "3"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing edge cases",
+      "codeHash": "366696be53fce4333c271d00536a22081d4bc4ae3c01114d55d3124bcd09277d",
+      "spec": {
+        "template": "compare",
+        "title": "Isolating invalid inputs with regression assertions",
+        "leftLabel": "Valid Format",
+        "rightLabel": "Malformed Input",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Good tests focus on cases that are easy to get wrong like empty text.",
+            "left": {
+              "code": "console.log(isValidEmail(\"asha@mail.com\"));",
+              "result": {
+                "text": "\"asha@mail.com\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(isValidEmail(\"asha.mail.com\"));",
+              "result": {
+                "text": "\"asha.mail.com\""
+              },
+              "tone": "err"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Write regression tests to ensure resolved defects never resurface.",
+            "left": {
+              "code": "console.log(isValidEmail(\"asha@mail.com\"));",
+              "result": {
+                "text": "\"asha@mail.com\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(isValidEmail(\"@mail.com\"));",
+              "result": {
+                "text": "\"@mail.com\""
+              },
+              "tone": "err"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Isolating invalid inputs with regression assertions",
+        "leftLabel": "Valid Format",
+        "rightLabel": "Malformed Input",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Good tests focus on cases that are easy to get wrong like empty text.",
+            "left": {
+              "code": "console.log(isValidEmail(\"asha@mail.com\"));",
+              "result": "\"asha@mail.com\"",
+              "tone": "ok",
+              "checks": [
+                "\"asha@mail.com\""
+              ]
+            },
+            "right": {
+              "code": "console.log(isValidEmail(\"asha.mail.com\"));",
+              "result": "\"asha.mail.com\"",
+              "tone": "err",
+              "checks": [
+                "\"asha.mail.com\""
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Write regression tests to ensure resolved defects never resurface.",
+            "left": {
+              "code": "console.log(isValidEmail(\"asha@mail.com\"));",
+              "result": "\"asha@mail.com\"",
+              "tone": "ok",
+              "checks": [
+                "\"asha@mail.com\""
+              ]
+            },
+            "right": {
+              "code": "console.log(isValidEmail(\"@mail.com\"));",
+              "result": "\"@mail.com\"",
+              "tone": "err",
+              "checks": [
+                "\"@mail.com\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing components like a user",
+      "codeHash": "033396535ca521c15ba0611a28e1110b0163e80f840fdbaf1a760fb00c28de34",
+      "spec": {
+        "template": "boxes",
+        "title": "User-centric component rendering and validation",
+        "boxes": [
+          {
+            "id": "query",
+            "label": "screenQuery",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "validation",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Test component interactions from the perspective of real user actions.",
+            "values": {
+              "query": {
+                "text": "\"TCS\""
+              },
+              "status": {
+                "text": "\"Title is required\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Query elements by accessible role and verify user-facing validation errors.",
+            "values": {
+              "query": {
+                "text": "\"TCS\""
+              },
+              "status": {
+                "text": "\"Company is required\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "User-centric component rendering and validation",
+        "boxes": [
+          {
+            "id": "query",
+            "label": "screenQuery",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "validation",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Test component interactions from the perspective of real user actions.",
+            "values": {
+              "query": "\"TCS\"",
+              "status": "\"Title is required\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Query elements by accessible role and verify user-facing validation errors.",
+            "values": {
+              "query": "\"TCS\"",
+              "status": "\"Company is required\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Add tests to the Job Tracker",
+      "codeHash": "7a6b0e58ddd26a249f5c4156705c835494fa1271b3334f824c6bf13c99d9b97d",
+      "spec": {
+        "template": "none",
+        "reason": "Establishing test suites for business utilities, regression testing and continuous verification"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Establishing test suites for business utilities, regression testing and continuous verification"
+      }
+    }
+  ]
+}

@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 23,
+  "promptSha": "ea8747e96343e558969fcb647e7991d4805fe0b5d5b39f408cb3b9de4be688c9",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Spatial Memory Safety vs Temporal Memory Safety",
+      "codeHash": "99cc3f9cc14f87464b9aef9ffc999713f8a7d43782e54453ccfff607b829d7bc",
+      "spec": {
+        "template": "compare",
+        "title": "Spatial out-of-bounds bounds failure versus temporal lifetime invalidation",
+        "left": {
+          "title": "Spatial Safety Violations",
+          "items": [
+            "Operations access memory outside allocated buffer bounds",
+            "Out of bounds array indexing and off-by-one errors",
+            "Linear memory overwrites corrupting adjacent stack data"
+          ]
+        },
+        "right": {
+          "title": "Temporal Safety Violations",
+          "items": [
+            "Operations access memory outside valid object lifetimes",
+            "Dereferencing dangling pointers after free or delete",
+            "Use-after-free and double-free enabling heap hijacking"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Spatial memory safety is violated when operations access out of bounds data.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say4",
+            "caption": "Temporal memory safety is violated when operations access freed objects.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "Spatial Safety Violations",
+        "rightLabel": "Temporal Safety Violations"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Spatial out-of-bounds bounds failure versus temporal lifetime invalidation",
+        "left": {
+          "title": "Spatial Safety Violations",
+          "items": [
+            "Operations access memory outside allocated buffer bounds",
+            "Out of bounds array indexing and off-by-one errors",
+            "Linear memory overwrites corrupting adjacent stack data"
+          ]
+        },
+        "right": {
+          "title": "Temporal Safety Violations",
+          "items": [
+            "Operations access memory outside valid object lifetimes",
+            "Dereferencing dangling pointers after free or delete",
+            "Use-after-free and double-free enabling heap hijacking"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Spatial memory safety is violated when operations access out of bounds data.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say4",
+            "caption": "Temporal memory safety is violated when operations access freed objects.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "Spatial Safety Violations",
+        "rightLabel": "Temporal Safety Violations"
+      }
+    },
+    {
+      "partTitle": "Use-After-Free (UAF) & Heap Exploitation Mechanics",
+      "codeHash": "6d77e6797d688ba5f7951a3ef8728af11140d97906cb74362c7583710991334c",
+      "spec": {
+        "template": "states",
+        "title": "Use-after-free dangling pointer lifecycle and heap spray execution hijack",
+        "states": [
+          {
+            "id": "chunkAllocated",
+            "label": "Initial Heap Object Allocated"
+          },
+          {
+            "id": "chunkFreed",
+            "label": "Memory Freed But Pointer Retained"
+          },
+          {
+            "id": "heapSprayed",
+            "label": "Attacker Sprays Heap with Controlled Data"
+          },
+          {
+            "id": "controlHijacked",
+            "label": "Dangling Pointer Dereferences Malicious Data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Retaining a dangling pointer to deallocated memory creates vulnerabilities.",
+            "activeStateId": "chunkFreed",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Attacker controlled function pointers hijack execution control flow.",
+            "activeStateId": "controlHijacked",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Use-after-free dangling pointer lifecycle and heap spray execution hijack",
+        "states": [
+          {
+            "id": "chunkAllocated",
+            "label": "Initial Heap Object Allocated"
+          },
+          {
+            "id": "chunkFreed",
+            "label": "Memory Freed But Pointer Retained"
+          },
+          {
+            "id": "heapSprayed",
+            "label": "Attacker Sprays Heap with Controlled Data"
+          },
+          {
+            "id": "controlHijacked",
+            "label": "Dangling Pointer Dereferences Malicious Data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Retaining a dangling pointer to deallocated memory creates vulnerabilities.",
+            "activeStateId": "chunkFreed",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Attacker controlled function pointers hijack execution control flow.",
+            "activeStateId": "controlHijacked",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Double Free & The C/C++ Memory Safety Paradox",
+      "codeHash": "f91f9e45b81df76ef1c583b3c42cbcc80384de8fc6973f798fd3b7a716352b16",
+      "spec": {
+        "template": "table",
+        "title": "Empirical memory safety telemetry and vulnerability classifications",
+        "columns": [
+          "Vulnerability Class",
+          "Mechanism Trigger",
+          "Root Cause Dynamic",
+          "Industry Precedence"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A double free occurs when an application calls free on the same pointer.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The majority of vulnerabilities addressed across decades are memory bugs.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Empirical memory safety telemetry and vulnerability classifications",
+        "columns": [
+          "Vulnerability Class",
+          "Mechanism Trigger",
+          "Root Cause Dynamic",
+          "Industry Precedence"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A double free occurs when an application calls free on the same pointer.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The majority of vulnerabilities addressed across decades are memory bugs.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory-Safe Architecture: Ownership, Borrow Checking & Rust Safety Invariants",
+      "codeHash": "0814b90bd4c1ad9605d4538671ab3dea90f50ec7c6096a5ecf121bf10fc9c6bc",
+      "spec": {
+        "template": "compare",
+        "title": "Manual pointer lifecycle pitfalls versus Rust compile-time ownership",
+        "left": {
+          "title": "Unmanaged Manual Pointers",
+          "items": [
+            "Manual allocation and deallocation via malloc and free",
+            "Pointers can easily outlive their allocated object lifetime",
+            "Data races and dangling pointers discovered only at runtime"
+          ]
+        },
+        "right": {
+          "title": "Rust Compile-Time Ownership",
+          "items": [
+            "Each value has exactly one owner dropped on scope exit",
+            "Borrow checker enforces exclusive mutable reference rules",
+            "Complete spatial and temporal safety without garbage collector"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Rust ownership rules dictate that values are dropped when owners exit scope.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The borrow checker enforces strict rules on mutable and shared references.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Unmanaged Manual Pointers",
+        "rightLabel": "Rust Compile-Time Ownership"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Manual pointer lifecycle pitfalls versus Rust compile-time ownership",
+        "left": {
+          "title": "Unmanaged Manual Pointers",
+          "items": [
+            "Manual allocation and deallocation via malloc and free",
+            "Pointers can easily outlive their allocated object lifetime",
+            "Data races and dangling pointers discovered only at runtime"
+          ]
+        },
+        "right": {
+          "title": "Rust Compile-Time Ownership",
+          "items": [
+            "Each value has exactly one owner dropped on scope exit",
+            "Borrow checker enforces exclusive mutable reference rules",
+            "Complete spatial and temporal safety without garbage collector"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Rust ownership rules dictate that values are dropped when owners exit scope.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The borrow checker enforces strict rules on mutable and shared references.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Unmanaged Manual Pointers",
+        "rightLabel": "Rust Compile-Time Ownership"
+      }
+    },
+    {
+      "partTitle": "AddressSanitizer (ASan) & Dynamic Shadow Memory Instrumentation",
+      "codeHash": "11e383586e7332e73528c2a93da3aa05b81bb5c2fef64aded43ee16024293a8d",
+      "spec": {
+        "template": "flow",
+        "title": "AddressSanitizer poisoned redzone instrumentation and quarantine trapping",
+        "nodes": [
+          {
+            "id": "appMemory",
+            "label": "Application Memory Buffer",
+            "tappable": false
+          },
+          {
+            "id": "poisonedRedzone",
+            "label": "Poisoned Memory Redzone",
+            "tappable": false
+          },
+          {
+            "id": "shadowCheck",
+            "label": "Shadow Memory Interceptor",
+            "tappable": false
+          },
+          {
+            "id": "quarantineRing",
+            "label": "Quarantine Ring Buffer",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "appMemory",
+            "to": "poisonedRedzone",
+            "label": "Bounds"
+          },
+          {
+            "from": "poisonedRedzone",
+            "to": "shadowCheck",
+            "label": "Traps"
+          },
+          {
+            "from": "shadowCheck",
+            "to": "quarantineRing",
+            "label": "Quarantines"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "ASan surrounds allocations with poisoned redzones where access is forbidden.",
+            "activeNodes": [
+              "appMemory",
+              "poisonedRedzone"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Freed memory chunks are placed into a quarantine buffer by the runtime.",
+            "activeNodes": [
+              "shadowCheck",
+              "quarantineRing"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "AddressSanitizer poisoned redzone instrumentation and quarantine trapping",
+        "nodes": [
+          {
+            "id": "appMemory",
+            "label": "Application Memory Buffer",
+            "tappable": false
+          },
+          {
+            "id": "poisonedRedzone",
+            "label": "Poisoned Memory Redzone",
+            "tappable": false
+          },
+          {
+            "id": "shadowCheck",
+            "label": "Shadow Memory Interceptor",
+            "tappable": false
+          },
+          {
+            "id": "quarantineRing",
+            "label": "Quarantine Ring Buffer",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "appMemory",
+            "to": "poisonedRedzone",
+            "label": "Bounds"
+          },
+          {
+            "from": "poisonedRedzone",
+            "to": "shadowCheck",
+            "label": "Traps"
+          },
+          {
+            "from": "shadowCheck",
+            "to": "quarantineRing",
+            "label": "Quarantines"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "ASan surrounds allocations with poisoned redzones where access is forbidden.",
+            "activeNodes": [
+              "appMemory",
+              "poisonedRedzone"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Freed memory chunks are placed into a quarantine buffer by the runtime.",
+            "activeNodes": [
+              "shadowCheck",
+              "quarantineRing"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Smart Pointers & RAII in Modern C++ Memory Architecture",
+      "codeHash": "0022197d20d217a6d13b0cc0a2f5e4e1e8aa19b747bf4d6aacf81694825d1542",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

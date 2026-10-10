@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 24,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Project structure",
+      "codeHash": "320362715f555e35e3e898d36531cdd3f586e80f04164375e2099ec6a01275d6",
+      "spec": {
+        "template": "boxes",
+        "title": "Separating logic from interface modules",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "job",
+            "label": "job"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "tracker.py holds logic while main.py holds menu.",
+            "values": {
+              "name": {
+                "text": "tracker.py"
+              },
+              "job": {
+                "text": "logic"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "job": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Pure testable functions can be reused by web API.",
+            "values": {
+              "name": {
+                "var": "name",
+                "line": 6
+              },
+              "job": {
+                "var": "job",
+                "line": 6
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "job": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Separating logic from interface modules",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "job",
+            "label": "job"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "tracker.py holds logic while main.py holds menu.",
+            "values": {
+              "name": "tracker.py",
+              "job": "logic"
+            },
+            "tones": {
+              "name": "data",
+              "job": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Pure testable functions can be reused by web API.",
+            "values": {
+              "name": "'tracker.py'",
+              "job": "'logic'"
+            },
+            "tones": {
+              "name": "ok",
+              "job": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "add_expense with validation",
+      "codeHash": "3dcb03a3d12eedcd0ee32d86c0dba28fbd2a768fea56d570ac2b5b3e0419a750",
+      "spec": {
+        "template": "boxes",
+        "title": "Sanitising and validating expense inputs",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cleans input to strip spaces from item and category.",
+            "values": {
+              "item": {
+                "text": " Tea "
+              },
+              "amount": {
+                "text": "20"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Raises ValueError when amount is not a number above 0.",
+            "values": {
+              "item": {
+                "text": "Bus"
+              },
+              "amount": {
+                "text": "45"
+              }
+            },
+            "tones": {
+              "item": "ok",
+              "amount": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Sanitising and validating expense inputs",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cleans input to strip spaces from item and category.",
+            "values": {
+              "item": " Tea ",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Raises ValueError when amount is not a number above 0.",
+            "values": {
+              "item": "Bus",
+              "amount": "45"
+            },
+            "tones": {
+              "item": "ok",
+              "amount": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Listing expenses neatly",
+      "codeHash": "46e458e403044a7813bab13ae698851e4a61bcc0a360a22f19e7aba621e92c3c",
+      "spec": {
+        "template": "boxes",
+        "title": "Formatting tabular output lines",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "list_lines turns whole list into lines with a header.",
+            "values": {
+              "item": {
+                "text": "Tea"
+              },
+              "amount": {
+                "text": "20"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Empty list gets friendly message instead of blank screen.",
+            "values": {
+              "item": {
+                "text": "Metro card"
+              },
+              "amount": {
+                "text": "500"
+              }
+            },
+            "tones": {
+              "item": "ok",
+              "amount": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Formatting tabular output lines",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "list_lines turns whole list into lines with a header.",
+            "values": {
+              "item": "Tea",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Empty list gets friendly message instead of blank screen.",
+            "values": {
+              "item": "Metro card",
+              "amount": "500"
+            },
+            "tones": {
+              "item": "ok",
+              "amount": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The menu in main.py",
+      "codeHash": "e4a401745a254d2f04e5e3240fb03e90591fe44eee6796214479223cd8ee97dd",
+      "spec": {
+        "template": "none",
+        "reason": "Interactive CLI menu dispatch and loop handling are verified in terminal."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Testing what you built",
+      "codeHash": "dac68c5e24856c14a89ba83c7c0f7cab836ff6ab56ac0e631b900f22b95fa346",
+      "spec": {
+        "template": "none",
+        "reason": "Validation exception assertion suites are demonstrated via unit runner."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: today's working program",
+      "codeHash": "a51fe27d947f6502a1a11ae1f45ec82ed3d1235a7d22590e6f9343f601b3fe85",
+      "spec": {
+        "template": "none",
+        "reason": "Final module verification script builds on components exercised in earlier parts."
+      },
+      "filled": {}
+    }
+  ]
+}

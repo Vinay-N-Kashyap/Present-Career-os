@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 3,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Subword Tokenization & Byte-Pair Encoding Principles",
+      "codeHash": "2ac759f79121eed44ccd531aa66bdf10497bdf8a78a70b449c05fb6ded94b360",
+      "spec": {
+        "template": "workflow",
+        "title": "Byte-Pair Encoding (BPE) Iterative Subword Merge",
+        "subtitle": "Compressing 7 base characters ['t','h','e',' ','c','a','t'] into 3 tokens",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Base Chars (7)",
+            "subtext": "['t','h','e',' ','c','a','t']"
+          },
+          {
+            "id": "s2",
+            "name": "Bigram Merges",
+            "subtext": "('t','h')->'th', ('c','a')->'ca'"
+          },
+          {
+            "id": "s3",
+            "name": "Word Merges",
+            "subtext": "('th','e')->'the', ('ca','t')->'cat'"
+          },
+          {
+            "id": "s4",
+            "name": "Final Tokens (3)",
+            "subtext": "['the', ' ', 'cat']"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Byte-Pair Encoding iteratively merges adjacent byte pairs into unified tokens.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say3",
+            "caption": "Frequent words like the are compressed into single subword tokens.",
+            "activeStageId": "s4",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Byte-Pair Encoding (BPE) Iterative Subword Merge",
+        "subtitle": "Compressing 7 base characters ['t','h','e',' ','c','a','t'] into 3 tokens",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Base Chars (7)",
+            "subtext": "['t','h','e',' ','c','a','t']"
+          },
+          {
+            "id": "s2",
+            "name": "Bigram Merges",
+            "subtext": "('t','h')->'th', ('c','a')->'ca'"
+          },
+          {
+            "id": "s3",
+            "name": "Word Merges",
+            "subtext": "('th','e')->'the', ('ca','t')->'cat'"
+          },
+          {
+            "id": "s4",
+            "name": "Final Tokens (3)",
+            "subtext": "['the', ' ', 'cat']"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Byte-Pair Encoding iteratively merges adjacent byte pairs into unified tokens.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say3",
+            "caption": "Frequent words like the are compressed into single subword tokens.",
+            "activeStageId": "s4",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fast Heuristic Token Estimation (Character & Word Rules)",
+      "codeHash": "0f329ba08efaa907b3c29cd20ce415101153caa0ab51a95436d135e8204bf1d3",
+      "spec": {
+        "template": "table",
+        "title": "Domain Character-to-Token Heuristic Ratios (+15% Buffer)",
+        "subtitle": "estimateTokenCount(text, kind) = ceil((text.length / ratio) * 1.15)",
+        "columns": [
+          "Content Kind",
+          "Chars / Token Ratio",
+          "Safety Multiplier",
+          "Sample Result"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Standard English prose averages four characters per token while code uses fewer.",
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Applying a domain ratio with a safety buffer delivers upper-bound estimates.",
+            "highlightRows": [
+              0,
+              2,
+              3
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Domain Character-to-Token Heuristic Ratios (+15% Buffer)",
+        "subtitle": "estimateTokenCount(text, kind) = ceil((text.length / ratio) * 1.15)",
+        "columns": [
+          "Content Kind",
+          "Chars / Token Ratio",
+          "Safety Multiplier",
+          "Sample Result"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Standard English prose averages four characters per token while code uses fewer.",
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Applying a domain ratio with a safety buffer delivers upper-bound estimates.",
+            "highlightRows": [
+              0,
+              2,
+              3
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Compartment Context Budget Allocation",
+      "codeHash": "b9885498212462d816857ff6659f7194f7c2b5d10e64d0f13aa7e6b2bcd1699d",
+      "spec": {
+        "template": "bars",
+        "title": "8192-Token Window Compartment Allocation",
+        "subtitle": "Total Allocated = 6950 tokens; Remaining Headroom = 1242 tokens",
+        "unit": "tokens",
+        "max": 2500,
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Primary compartments govern system persona, few-shot examples, and history.",
+            "bars": [
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Few-Shot Examples (1200)",
+                "value": 1200,
+                "tone": "data"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "User Query (450)",
+                "value": 450,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "A generous slice of the context window is reserved for completion headroom.",
+            "bars": [
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "Reserved Output (2000)",
+                "value": 2000,
+                "tone": "ok"
+              },
+              {
+                "label": "Unallocated Margin (1242)",
+                "value": 1242,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "8192-Token Window Compartment Allocation",
+        "subtitle": "Total Allocated = 6950 tokens; Remaining Headroom = 1242 tokens",
+        "unit": "tokens",
+        "max": 2500,
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Primary compartments govern system persona, few-shot examples, and history.",
+            "bars": [
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Few-Shot Examples (1200)",
+                "value": 1200,
+                "tone": "data"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "User Query (450)",
+                "value": 450,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "A generous slice of the context window is reserved for completion headroom.",
+            "bars": [
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "Reserved Output (2000)",
+                "value": 2000,
+                "tone": "ok"
+              },
+              {
+                "label": "Unallocated Margin (1242)",
+                "value": 1242,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Output Token Headroom & Context Overflow Prevention",
+      "codeHash": "2343b70ec249d1ab09e917dfe164af85fca46ad4d3462b7bc29f23320f2e9da9",
+      "spec": {
+        "template": "compare",
+        "title": "calculateOutputHeadroom Pre-Flight Check (Window = 4096)",
+        "leftLabel": "Normal Case (Prompt = 1500)",
+        "rightLabel": "Overflow Case (Prompt = 3950)",
+        "leftItems": [
+          "absoluteRemaining: 2596 tokens (>= 300 min)",
+          "availableOutputTokens: 1000 (clamped to request)",
+          "safeToDispatch: true",
+          "Prevents length truncation and 400 errors"
+        ],
+        "rightItems": [
+          "absoluteRemaining: 146 tokens (< 300 min)",
+          "availableOutputTokens: 0",
+          "safeToDispatch: false",
+          "INSUFFICIENT_HEADROOM_FOR_MINIMAL_COMPLETION"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The formula calculates availableHeadroom and clamps requested max_tokens.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "When available headroom falls below the minimal threshold, dispatch halts.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "calculateOutputHeadroom Pre-Flight Check (Window = 4096)",
+        "leftLabel": "Normal Case (Prompt = 1500)",
+        "rightLabel": "Overflow Case (Prompt = 3950)",
+        "leftItems": [
+          "absoluteRemaining: 2596 tokens (>= 300 min)",
+          "availableOutputTokens: 1000 (clamped to request)",
+          "safeToDispatch: true",
+          "Prevents length truncation and 400 errors"
+        ],
+        "rightItems": [
+          "absoluteRemaining: 146 tokens (< 300 min)",
+          "availableOutputTokens: 0",
+          "safeToDispatch: false",
+          "INSUFFICIENT_HEADROOM_FOR_MINIMAL_COMPLETION"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The formula calculates availableHeadroom and clamps requested max_tokens.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "When available headroom falls below the minimal threshold, dispatch halts.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Message History Window Pruning (Sliding Budget)",
+      "codeHash": "78d2558b98f792a6084ab25e4b76ab5eafbdd64145e96ee6c03114daee9a3672",
+      "spec": {
+        "template": "flow",
+        "title": "Reverse-Chronological Sliding History Pruner (350t Budget)",
+        "subtitle": "Pinning system prompt (50t) while retaining newest turns (150t + 90t = 290t)",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Index 0: System (50t)",
+            "sublabel": "Always pinned",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Turn 4 & 3 (150t + 90t)",
+            "sublabel": "Retained (290t <= 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "Turn 2 & 1 (120t + 80t)",
+            "sublabel": "Pruned (exceeds 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Pruned Array (3 msgs)",
+            "sublabel": "[system, user, assistant]",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "walk backwards"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "budget full"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "unshift retained"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The pruning algorithm preserves system instructions and traverses backwards.",
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Older dialog turns accumulate in reverse order until the token budget fills.",
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Reverse-Chronological Sliding History Pruner (350t Budget)",
+        "subtitle": "Pinning system prompt (50t) while retaining newest turns (150t + 90t = 290t)",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Index 0: System (50t)",
+            "sublabel": "Always pinned",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Turn 4 & 3 (150t + 90t)",
+            "sublabel": "Retained (290t <= 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "Turn 2 & 1 (120t + 80t)",
+            "sublabel": "Pruned (exceeds 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Pruned Array (3 msgs)",
+            "sublabel": "[system, user, assistant]",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "walk backwards"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "budget full"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "unshift retained"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The pruning algorithm preserves system instructions and traverses backwards.",
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Older dialog turns accumulate in reverse order until the token budget fills.",
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Integrated Context Budget Governor",
+      "codeHash": "7120556f9a3167e29aa2418c7865d177fd80c0488c50e211b3b474f35e30eaa2",
+      "spec": {
+        "template": "none",
+        "reason": "Unified ContextGovernor class combining fixed-token validation, history pruning, and headroom clamping"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Unified ContextGovernor class combining fixed-token validation, history pruning, and headroom clamping"
+      }
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Micro-batches and the memory limit",
+      "codeHash": "670fe314c3eba91dcb6d245d7a3b4d4a33e589f0e3ba83e50a0798c2e8efef12",
+      "spec": {
+        "template": "table",
+        "title": "Micro-batch memory allocation and hardware capacity limits",
+        "columns": [
+          "micro",
+          "need",
+          "gpu_gb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hardware activation memory limits the maximum single batch size.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "need"
+                  },
+                  {
+                    "text": "gpu_gb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "need"
+                  },
+                  {
+                    "text": "gpu_gb"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Gradient accumulation solves memory limits across multiple micro-batches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "need"
+                  },
+                  {
+                    "text": "gpu_gb"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "need"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Micro-batch memory allocation and hardware capacity limits",
+        "columns": [
+          "micro",
+          "need",
+          "gpu_gb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hardware activation memory limits the maximum single batch size.",
+            "rows": [
+              {
+                "cells": [
+                  "micro",
+                  "need",
+                  "gpu_gb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "micro",
+                  "need",
+                  "gpu_gb"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Gradient accumulation solves memory limits across multiple micro-batches.",
+            "rows": [
+              {
+                "cells": [
+                  "micro",
+                  "need",
+                  "gpu_gb"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "micro",
+                  "need",
+                  "micro"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accumulating correctly",
+      "codeHash": "ae4ba4c25e6cd6efed0a8fafb2355c62f1a81767bac460b68a7bdf8137a3dd8e",
+      "spec": {
+        "template": "table",
+        "title": "Gradient accumulation arithmetic: summation versus averaging",
+        "columns": [
+          "micro",
+          "summed",
+          "averaged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each micro-batch produces a gradient averaged over its local examples.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "summed"
+                  },
+                  {
+                    "text": "averaged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "summed"
+                  },
+                  {
+                    "text": "averaged"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Accumulated updates must average gradients rather than computing sums.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "summed"
+                  },
+                  {
+                    "text": "averaged"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "summed"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Gradient accumulation arithmetic: summation versus averaging",
+        "columns": [
+          "micro",
+          "summed",
+          "averaged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each micro-batch produces a gradient averaged over its local examples.",
+            "rows": [
+              {
+                "cells": [
+                  "micro",
+                  "summed",
+                  "averaged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "micro",
+                  "summed",
+                  "averaged"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Accumulated updates must average gradients rather than computing sums.",
+            "rows": [
+              {
+                "cells": [
+                  "micro",
+                  "summed",
+                  "averaged"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "micro",
+                  "summed",
+                  "micro"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The effective batch size",
+      "codeHash": "23c4b5be54a046d79679839b91224510438be6313fe2ce871f64e919c532f5a4",
+      "spec": {
+        "template": "table",
+        "title": "Effective global batch sizing and multi-GPU factorisation",
+        "columns": [
+          "micro",
+          "accum",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Effective global batch sizes combine workers and accumulation steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "accum"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "accum"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Keeping the effective batch fixed preserves uniform training behaviour.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "accum"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "accum"
+                  },
+                  {
+                    "text": "micro"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Effective global batch sizing and multi-GPU factorisation",
+        "columns": [
+          "micro",
+          "accum",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Effective global batch sizes combine workers and accumulation steps.",
+            "rows": [
+              {
+                "cells": [
+                  "micro",
+                  "accum",
+                  "gpus"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "micro",
+                  "accum",
+                  "gpus"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Keeping the effective batch fixed preserves uniform training behaviour.",
+            "rows": [
+              {
+                "cells": [
+                  "micro",
+                  "accum",
+                  "gpus"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "micro",
+                  "accum",
+                  "micro"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fewer all-reduces",
+      "codeHash": "67c1c6c59d97c68ed4855925769bdaca28421406fdfce373989ec480ca827ac7",
+      "spec": {
+        "template": "table",
+        "title": "Collective communication reduction via gradient accumulation",
+        "columns": [
+          "examples",
+          "micro",
+          "updates"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accumulation triggers collective communication only once per update.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "updates"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "updates"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fewer exchanges accelerate training when the network is a bottleneck.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "updates"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Collective communication reduction via gradient accumulation",
+        "columns": [
+          "examples",
+          "micro",
+          "updates"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accumulation triggers collective communication only once per update.",
+            "rows": [
+              {
+                "cells": [
+                  "examples",
+                  "micro",
+                  "updates"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "examples",
+                  "micro",
+                  "updates"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fewer exchanges accelerate training when the network is a bottleneck.",
+            "rows": [
+              {
+                "cells": [
+                  "examples",
+                  "micro",
+                  "updates"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "examples",
+                  "micro",
+                  "examples"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A full accumulation loop",
+      "codeHash": "86f06cdd0bf035b9a42961129b6354e8568778a811bde8667a4aca17b7d34915",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: accumulation",
+      "codeHash": "11c61e6f02d2603724aaf8299e46504589ea825c62fc9fa7f1f6406c15f1ab11",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

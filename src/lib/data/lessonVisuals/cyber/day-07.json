@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 7,
+  "promptSha": "fe68bac5fb6534596a64dd2d958df342a4366e58da721886dcfe1ea2cac7a3a6",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Physics of Password Cracking: GPU Farms, ASICs & Why Fast Hashes (SHA-256) Fail",
+      "codeHash": "60f8a26d4431174520f4d006e2a8668cc2ada6a120695fdd2dd694420addcf4e",
+      "spec": {
+        "template": "table",
+        "title": "Cryptographic hash throughput benchmarks and password cracking resistance",
+        "columns": [
+          "Hash Algorithm",
+          "GPU Hash Rate",
+          "Time to Crack Password",
+          "Suitability for Credentials"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Graphics cards compute billions of general hashes per second.",
+            "activeRowIndex": 1,
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Password hashes require slow functions engineered to resist attacks.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cryptographic hash throughput benchmarks and password cracking resistance",
+        "columns": [
+          "Hash Algorithm",
+          "GPU Hash Rate",
+          "Time to Crack Password",
+          "Suitability for Credentials"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Graphics cards compute billions of general hashes per second.",
+            "activeRowIndex": 1,
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Password hashes require slow functions engineered to resist attacks.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Precomputed Rainbow Tables & The Mathematical Invariant of Unique Salts",
+      "codeHash": "0210f24bf6a4895be65e1b0d634b3908aba29be77701b7f0d0b4846b2d138d25",
+      "spec": {
+        "template": "compare",
+        "title": "Unsalted hash rainbow table lookups versus unique cryptographic salt defense",
+        "left": {
+          "title": "Unsalted Hash Vulnerability",
+          "items": [
+            "Identical passwords generate identical hash digests",
+            "Instantaneous reverse lookups via precomputed tables",
+            "Single compromised hash reveals thousands of accounts"
+          ]
+        },
+        "right": {
+          "title": "Salted Credential Protection",
+          "items": [
+            "Unique random byte sequence per account credential",
+            "Identical passwords produce completely distinct hashes",
+            "Forces adversaries to recompute hashes from scratch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Identical passwords produce matching hashes when unsalted.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Unique random salts ensure identical passwords produce distinct hashes.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Unsalted Hash Vulnerability",
+        "rightLabel": "Salted Credential Protection"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unsalted hash rainbow table lookups versus unique cryptographic salt defense",
+        "left": {
+          "title": "Unsalted Hash Vulnerability",
+          "items": [
+            "Identical passwords generate identical hash digests",
+            "Instantaneous reverse lookups via precomputed tables",
+            "Single compromised hash reveals thousands of accounts"
+          ]
+        },
+        "right": {
+          "title": "Salted Credential Protection",
+          "items": [
+            "Unique random byte sequence per account credential",
+            "Identical passwords produce completely distinct hashes",
+            "Forces adversaries to recompute hashes from scratch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Identical passwords produce matching hashes when unsalted.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Unique random salts ensure identical passwords produce distinct hashes.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Unsalted Hash Vulnerability",
+        "rightLabel": "Salted Credential Protection"
+      }
+    },
+    {
+      "partTitle": "Key Stretching & Iteration Work Factors: PBKDF2 & Bcrypt Cost Rounds",
+      "codeHash": "26e48047f8c41ea532c5a23fb077089175d93f2441c76f6b5dfc8d666e24b0b3",
+      "spec": {
+        "template": "states",
+        "title": "Bcrypt exponential cost rounds and password key stretching progression",
+        "states": [
+          {
+            "id": "rawInput",
+            "label": "Plaintext Password Provided"
+          },
+          {
+            "id": "costParsed",
+            "label": "Exponential Work Factor Parsed"
+          },
+          {
+            "id": "keyStretched",
+            "label": "Thousands of Expansion Rounds Applied"
+          },
+          {
+            "id": "hashEmitted",
+            "label": "Modular Crypt Format Hash Emitted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Key stretching repeatedly executes cryptographic operations thousands of times.",
+            "activeStateId": "keyStretched",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Increasing the cost factor doubles the computational effort required.",
+            "activeStateId": "hashEmitted",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Bcrypt exponential cost rounds and password key stretching progression",
+        "states": [
+          {
+            "id": "rawInput",
+            "label": "Plaintext Password Provided"
+          },
+          {
+            "id": "costParsed",
+            "label": "Exponential Work Factor Parsed"
+          },
+          {
+            "id": "keyStretched",
+            "label": "Thousands of Expansion Rounds Applied"
+          },
+          {
+            "id": "hashEmitted",
+            "label": "Modular Crypt Format Hash Emitted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Key stretching repeatedly executes cryptographic operations thousands of times.",
+            "activeStateId": "keyStretched",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Increasing the cost factor doubles the computational effort required.",
+            "activeStateId": "hashEmitted",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory-Hard Key Derivation: The Password Hashing Competition & Argon2id Architecture",
+      "codeHash": "242c27df2d8262b7a9e6be6d349e78ca0294432a573abe9e3abbc6f3b4ae67bf",
+      "spec": {
+        "template": "compare",
+        "title": "Argon2 cryptographic memory hardness variants comparison matrix",
+        "left": {
+          "title": "Argon2d Variant",
+          "items": [
+            "Data-dependent memory addressing matrix",
+            "Maximum resistance against GPU cracking farms",
+            "Potential vulnerability to cache timing side channels"
+          ]
+        },
+        "right": {
+          "title": "Argon2id Hybrid",
+          "items": [
+            "Combines data-independent and data-dependent passes",
+            "Defeats side-channel attacks during initial passes",
+            "Mandated gold standard by RFC 9106 and OWASP"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Argon2 is specifically designed to require large memory allocations.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Argon2id combines passes to defeat side channels and cracking farms.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Argon2d Variant",
+        "rightLabel": "Argon2id Hybrid"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Argon2 cryptographic memory hardness variants comparison matrix",
+        "left": {
+          "title": "Argon2d Variant",
+          "items": [
+            "Data-dependent memory addressing matrix",
+            "Maximum resistance against GPU cracking farms",
+            "Potential vulnerability to cache timing side channels"
+          ]
+        },
+        "right": {
+          "title": "Argon2id Hybrid",
+          "items": [
+            "Combines data-independent and data-dependent passes",
+            "Defeats side-channel attacks during initial passes",
+            "Mandated gold standard by RFC 9106 and OWASP"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Argon2 is specifically designed to require large memory allocations.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Argon2id combines passes to defeat side channels and cracking farms.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Argon2d Variant",
+        "rightLabel": "Argon2id Hybrid"
+      }
+    },
+    {
+      "partTitle": "Tuning Argon2id Parameters: Memory Cost (m), Time Cost (t), and Parallelism (p)",
+      "codeHash": "44fddbdae23f37e8bfd53b4933762a435a943c18e632d6d43b011de2bc912a7f",
+      "spec": {
+        "template": "table",
+        "title": "Argon2id configuration tuning parameters and OWASP recommended baselines",
+        "columns": [
+          "Tuning Parameter",
+          "Symbol",
+          "Recommended Baseline",
+          "Operational Role"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The memory cost defines memory allocation in kibibytes for verification.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Hash strings follow the modular crypt format encoding parameters.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Argon2id configuration tuning parameters and OWASP recommended baselines",
+        "columns": [
+          "Tuning Parameter",
+          "Symbol",
+          "Recommended Baseline",
+          "Operational Role"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The memory cost defines memory allocation in kibibytes for verification.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Hash strings follow the modular crypt format encoding parameters.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Credential Storage, Salting & Verification Pipeline",
+      "codeHash": "9fbf6098b206f58f14aa16657dce334ca640e362a0afceb39c48ae88a820da4c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

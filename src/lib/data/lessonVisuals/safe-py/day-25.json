@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why governance matters",
+      "codeHash": "5cde3356b460241e4d5a3a18f4fcdfeb282a00bf0ff31751d7955cc7b9202a39",
+      "spec": {
+        "template": "table",
+        "title": "Global AI regulatory frameworks and classifications",
+        "columns": [
+          "frameworks",
+          "kind"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Governance defines organization policies and accountabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "frameworks"
+                  },
+                  {
+                    "text": "kind"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "frameworks"
+                  },
+                  {
+                    "text": "law"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The framework provides voluntary guidance for AI risk management.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "frameworks"
+                  },
+                  {
+                    "text": "kind"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "frameworks"
+                  },
+                  {
+                    "text": "standard"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Global AI regulatory frameworks and classifications",
+        "columns": [
+          "frameworks",
+          "kind"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Governance defines organization policies and accountabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "frameworks",
+                  "kind"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "frameworks",
+                  "law"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The framework provides voluntary guidance for AI risk management.",
+            "rows": [
+              {
+                "cells": [
+                  "frameworks",
+                  "kind"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "frameworks",
+                  "standard"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The EU AI Act risk tiers",
+      "codeHash": "d2484c9c487de4f1e0febcb7ede2803a17513c16667545b6b0f790e74397225b",
+      "spec": {
+        "template": "table",
+        "title": "EU AI Act risk tier mapping and legal duties",
+        "columns": [
+          "tiers",
+          "systems"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Risk based tiers enforce stricter rules for higher danger.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tiers"
+                  },
+                  {
+                    "text": "systems"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PROHIBITED"
+                  },
+                  {
+                    "text": "banned"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "High risk applications include hiring and financial assessments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tiers"
+                  },
+                  {
+                    "text": "systems"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "HIGH"
+                  },
+                  {
+                    "text": "LIMITED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "EU AI Act risk tier mapping and legal duties",
+        "columns": [
+          "tiers",
+          "systems"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Risk based tiers enforce stricter rules for higher danger.",
+            "rows": [
+              {
+                "cells": [
+                  "tiers",
+                  "systems"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PROHIBITED",
+                  "banned"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "High risk applications include hiring and financial assessments.",
+            "rows": [
+              {
+                "cells": [
+                  "tiers",
+                  "systems"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HIGH",
+                  "LIMITED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Triage by keywords",
+      "codeHash": "806bb22e73b8200f35aac0efe18e4cb0ebc77ed1059a22d1bcb1f940b141b556",
+      "spec": {
+        "template": "table",
+        "title": "Keyword-based triage for AI regulatory risk tiers",
+        "columns": [
+          "RULES",
+          "tier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Keyword triage assists initial risk screening for legal teams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "RULES"
+                  },
+                  {
+                    "text": "tier"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PROHIBITED"
+                  },
+                  {
+                    "text": "HIGH"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Hierarchical evaluation ensures sensitive hiring tasks rank as high risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "RULES"
+                  },
+                  {
+                    "text": "tier"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LIMITED"
+                  },
+                  {
+                    "text": "MINIMAL"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Keyword-based triage for AI regulatory risk tiers",
+        "columns": [
+          "RULES",
+          "tier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Keyword triage assists initial risk screening for legal teams.",
+            "rows": [
+              {
+                "cells": [
+                  "RULES",
+                  "tier"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PROHIBITED",
+                  "HIGH"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Hierarchical evaluation ensures sensitive hiring tasks rank as high risk.",
+            "rows": [
+              {
+                "cells": [
+                  "RULES",
+                  "tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "LIMITED",
+                  "MINIMAL"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The NIST AI Risk Management Framework",
+      "codeHash": "43e5f73fa4fecae9b325c478e7962395aa4df761a571e173fcd1ad38e720fbfd",
+      "spec": {
+        "template": "table",
+        "title": "NIST AI Risk Management Framework core functions",
+        "columns": [
+          "activities",
+          "names"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The framework organizes risk activities into four core functions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "activities"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "GOVERN"
+                  },
+                  {
+                    "text": "MAP"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Governance defines policies, roles, and institutional accountability.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "activities"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "MEASURE"
+                  },
+                  {
+                    "text": "MANAGE"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "NIST AI Risk Management Framework core functions",
+        "columns": [
+          "activities",
+          "names"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The framework organizes risk activities into four core functions.",
+            "rows": [
+              {
+                "cells": [
+                  "activities",
+                  "names"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "GOVERN",
+                  "MAP"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Governance defines policies, roles, and institutional accountability.",
+            "rows": [
+              {
+                "cells": [
+                  "activities",
+                  "names"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MEASURE",
+                  "MANAGE"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking framework coverage",
+      "codeHash": "55bc26e22613d0f33808f1cf3737f84038302b2b09de0ea976856d397dc06f90",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Governance in the pipeline",
+      "codeHash": "7159f9949f3e979d402019466f4c3d308bb4b5319ea2b54306cdbca90acbd7bb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

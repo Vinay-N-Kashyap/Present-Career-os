@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The idea of clustering",
+      "codeHash": "1e8a0e4ae321cf358a6df3cf7794bad3440ea87155475981dac9ef35298b4f9f",
+      "spec": {
+        "template": "table",
+        "title": "Vector spatial clustering and centroid partitioning",
+        "columns": [
+          "points",
+          "centroids",
+          "points"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clustering groups vectors together so that nearby items share a cluster.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each group is represented by a central centroid average.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "centroids"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector spatial clustering and centroid partitioning",
+        "columns": [
+          "points",
+          "centroids",
+          "points"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clustering groups vectors together so that nearby items share a cluster.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "points"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "points"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each group is represented by a central centroid average.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "points"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "centroids"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Assigning points",
+      "codeHash": "673a262a665bbd1c3bba28b2fa4c4939a8537a5e740d682a7b76338d0b68b569",
+      "spec": {
+        "template": "table",
+        "title": "Nearest centroid assignment via Euclidean distance",
+        "columns": [
+          "points",
+          "centroids",
+          "assign"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The assignment step links every vector point to its nearest centroid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "assign"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "assign"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Squared Euclidean distance avoids square roots during distance ranking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "assign"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "centroids"
+                  },
+                  {
+                    "text": "centroids"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Nearest centroid assignment via Euclidean distance",
+        "columns": [
+          "points",
+          "centroids",
+          "assign"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The assignment step links every vector point to its nearest centroid.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "assign"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "assign"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Squared Euclidean distance avoids square roots during distance ranking.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "assign"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "points",
+                  "centroids",
+                  "centroids"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The k-means loop",
+      "codeHash": "def3d15cb8e217c0f04ae98bc6e23221ffea7a66f53e2441056cc96055bce50f",
+      "spec": {
+        "template": "table",
+        "title": "Iterative k-means centroid updates and partition convergence",
+        "columns": [
+          "groups",
+          "points",
+          "cents"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The algorithm alternates point assignment and moving each centroid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "cents"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "cents"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Total squared distance decreases until the algorithm settles down.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "cents"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "groups"
+                  },
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Iterative k-means centroid updates and partition convergence",
+        "columns": [
+          "groups",
+          "points",
+          "cents"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The algorithm alternates point assignment and moving each centroid.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "points",
+                  "cents"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "groups",
+                  "points",
+                  "cents"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Total squared distance decreases until the algorithm settles down.",
+            "rows": [
+              {
+                "cells": [
+                  "groups",
+                  "points",
+                  "cents"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "groups",
+                  "points",
+                  "points"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing k and training data",
+      "codeHash": "6d5e950d547db525df0577a6f68eebbb64f7985ec03b29bbfbad82535f66d262",
+      "spec": {
+        "template": "table",
+        "title": "Cluster partition sizing and vector space sampling",
+        "columns": [
+          "vectors",
+          "clusters",
+          "vectors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Setting cluster count near the square root of total vectors works well.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "More clusters make search faster but neighbours might fall elsewhere.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "clusters"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cluster partition sizing and vector space sampling",
+        "columns": [
+          "vectors",
+          "clusters",
+          "vectors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Setting cluster count near the square root of total vectors works well.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "clusters",
+                  "vectors"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "clusters",
+                  "vectors"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "More clusters make search faster but neighbours might fall elsewhere.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "clusters",
+                  "vectors"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "clusters",
+                  "clusters"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating a clustering",
+      "codeHash": "54ea56de66928cc4a65e95e18f2968768e293b98dc61f87e0e591948e8ab0f29",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: clustering",
+      "codeHash": "c448141b1d52cd7e6d1e7bc775dbb44be1e85d1cdb54bb041936e9606a48b566",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why rules belong in the database",
+      "codeHash": "a80ca8c06e3401f7122433926f78d0089ea03032a93129fd63132b611261d924",
+      "spec": {
+        "template": "compare",
+        "title": "Application check versus database constraint protection",
+        "leftLabel": "App Level Verification",
+        "rightLabel": "Database Constraint Safety Net",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A database constraint protects data whichever way input arrives.",
+            "left": {
+              "code": "client script bypass",
+              "result": {
+                "text": "bad data admitted"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CHECK (balance >= 0)",
+              "result": {
+                "text": "enforced everywhere"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A constraint turns a bad value into an immediate loud error.",
+            "left": {
+              "code": "unconstrained balance",
+              "result": {
+                "text": "silent -300 negative"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "balance_not_negative",
+              "result": {
+                "text": "loud rejection error"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Application check versus database constraint protection",
+        "leftLabel": "App Level Verification",
+        "rightLabel": "Database Constraint Safety Net",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A database constraint protects data whichever way input arrives.",
+            "left": {
+              "code": "client script bypass",
+              "result": "bad data admitted",
+              "tone": "error",
+              "checks": [
+                "bad data admitted"
+              ]
+            },
+            "right": {
+              "code": "CHECK (balance >= 0)",
+              "result": "enforced everywhere",
+              "tone": "ok",
+              "checks": [
+                "enforced everywhere"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A constraint turns a bad value into an immediate loud error.",
+            "left": {
+              "code": "unconstrained balance",
+              "result": "silent -300 negative",
+              "tone": "error",
+              "checks": [
+                "silent -300 negative"
+              ]
+            },
+            "right": {
+              "code": "balance_not_negative",
+              "result": "loud rejection error",
+              "tone": "ok",
+              "checks": [
+                "loud rejection error"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CHECK rules",
+      "codeHash": "c97ecb8d0480334b78e122bf55ba3b346a05bf7e2613aeb9fb0f57db7578f308",
+      "spec": {
+        "template": "compare",
+        "title": "CHECK constraint row validation",
+        "leftLabel": "Valid Booking Dates",
+        "rightLabel": "Violated Date Constraint",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL rejects the change with an error if condition is false.",
+            "left": {
+              "code": "seats = 2, range valid",
+              "result": {
+                "text": "row inserted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "seats = 0 or negative",
+              "result": {
+                "text": "error: check violated"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Comparing columns ensures end date does not precede booking start date.",
+            "left": {
+              "code": "2026-10-01 to 2026-10-03",
+              "result": {
+                "text": "end >= start passes"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "2026-10-05 to 2026-10-02",
+              "result": {
+                "text": "fails end >= start"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "CHECK constraint row validation",
+        "leftLabel": "Valid Booking Dates",
+        "rightLabel": "Violated Date Constraint",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL rejects the change with an error if condition is false.",
+            "left": {
+              "code": "seats = 2, range valid",
+              "result": "row inserted",
+              "tone": "ok",
+              "checks": [
+                "row inserted"
+              ]
+            },
+            "right": {
+              "code": "seats = 0 or negative",
+              "result": "error: check violated",
+              "tone": "error",
+              "checks": [
+                "error: check violated"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Comparing columns ensures end date does not precede booking start date.",
+            "left": {
+              "code": "2026-10-01 to 2026-10-03",
+              "result": "end >= start passes",
+              "tone": "ok",
+              "checks": [
+                "end >= start passes"
+              ]
+            },
+            "right": {
+              "code": "2026-10-05 to 2026-10-02",
+              "result": "fails end >= start",
+              "tone": "error",
+              "checks": [
+                "fails end >= start"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "UNIQUE on one or several columns",
+      "codeHash": "d2b381d516922e9019a045fe303441fa7cb818c83a9ef29411922794a59e2d3a",
+      "spec": {
+        "template": "table",
+        "title": "Composite UNIQUE constraint preventing duplicate pairs",
+        "columns": [
+          "student_id",
+          "course_id",
+          "enrolled_on"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Covering several columns together prevents enrolling in the same course twice.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Combined uniqueness is very common in junction tables and enrolments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "2026-09-02"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Composite UNIQUE constraint preventing duplicate pairs",
+        "columns": [
+          "student_id",
+          "course_id",
+          "enrolled_on"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Covering several columns together prevents enrolling in the same course twice.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "10",
+                  "2026-09-01"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Combined uniqueness is very common in junction tables and enrolments.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "10",
+                  "2026-09-01"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1",
+                  "20",
+                  "2026-09-01"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "10",
+                  "2026-09-02"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ALTER TABLE: changing a table that already exists",
+      "codeHash": "52eb24c7bdb3337cbdd733b2128c7a6898711cfbb77733ab45adf6f8eefab981",
+      "spec": {
+        "template": "table",
+        "title": "Evolving table schema with ALTER TABLE constraints",
+        "columns": [
+          "id",
+          "name",
+          "price",
+          "discount"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The ALTER TABLE command adds a column and adds a rule in place.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "0.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Cleaning invalid rows with UPDATE enables adding the constraint safely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "0.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Free sticker"
+                  },
+                  {
+                    "text": "1.00"
+                  },
+                  {
+                    "text": "0.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "0.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Evolving table schema with ALTER TABLE constraints",
+        "columns": [
+          "id",
+          "name",
+          "price",
+          "discount"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The ALTER TABLE command adds a column and adds a rule in place.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Pen",
+                  "10.00",
+                  "0.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Cleaning invalid rows with UPDATE enables adding the constraint safely.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Pen",
+                  "10.00",
+                  "0.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Free sticker",
+                  "1.00",
+                  "0.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Notebook",
+                  "60.00",
+                  "0.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What happens on delete: CASCADE, SET NULL, RESTRICT",
+      "codeHash": "649a6fc13c7b8696983961c7fcd4e460abded07415a1398c575613e40c9ffc10",
+      "spec": {
+        "template": "none",
+        "reason": "Referential integrity foreign key cascade restrict and set null behaviors."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Referential integrity foreign key cascade restrict and set null behaviors."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a well-protected table",
+      "codeHash": "524a08d411e0f0f0fa6c326ce916172db90918783cbcee674241d3a88c0dfe6d",
+      "spec": {
+        "template": "none",
+        "reason": "Comprehensive composite constraints validation script with expected error catches."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Comprehensive composite constraints validation script with expected error catches."
+      }
+    }
+  ]
+}

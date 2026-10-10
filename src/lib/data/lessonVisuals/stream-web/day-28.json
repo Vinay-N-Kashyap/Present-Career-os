@@ -1,0 +1,697 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 28,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Replay Superpower: Why Streaming Outperforms Queues",
+      "codeHash": "6ce93117d93bc6bba4b9c3c39b1fb83512f553511f6310a09056338a005f1e02",
+      "spec": {
+        "template": "cells",
+        "title": "Immutable Commit Log Replay (Non-Destructive Reads)",
+        "subtitle": "Consumers re-read committedLog across multiple passes without deleting records",
+        "slotLabels": [
+          "Offset 0 (1000ms)",
+          "Offset 1 (1100ms)",
+          "Offset 2 (1200ms)"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Log immutability unlocks Historical Stream Replay without losing records.",
+            "items": [
+              {
+                "text": "Deposit $100 (Pass 1)"
+              },
+              {
+                "text": "Withdrawal $40 (Pass 1)"
+              },
+              {
+                "text": "Transfer $25 (Pass 1)"
+              }
+            ],
+            "highlights": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engineers rewind consumer offsets back to any historical offset coordinate.",
+            "items": [
+              {
+                "text": "Deposit $100 (Retained)"
+              },
+              {
+                "text": "Withdrawal $40 (Re-read!)"
+              },
+              {
+                "text": "Transfer $25 (Retained)"
+              }
+            ],
+            "highlights": [
+              1
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Immutable Commit Log Replay (Non-Destructive Reads)",
+        "subtitle": "Consumers re-read committedLog across multiple passes without deleting records",
+        "slotLabels": [
+          "Offset 0 (1000ms)",
+          "Offset 1 (1100ms)",
+          "Offset 2 (1200ms)"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Log immutability unlocks Historical Stream Replay without losing records.",
+            "items": [
+              "Deposit $100 (Pass 1)",
+              "Withdrawal $40 (Pass 1)",
+              "Transfer $25 (Pass 1)"
+            ],
+            "highlights": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engineers rewind consumer offsets back to any historical offset coordinate.",
+            "items": [
+              "Deposit $100 (Retained)",
+              "Withdrawal $40 (Re-read!)",
+              "Transfer $25 (Retained)"
+            ],
+            "highlights": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Timestamp-to-Offset Index Searching",
+      "codeHash": "8142004804eb0ac1e824a64f25035afe97865b7abc045c029a3d91dc7ca19914",
+      "spec": {
+        "template": "table",
+        "title": "offsetsForTimes Binary Search Resolution",
+        "subtitle": "Finding earliest partition offset with record timestamp >= target",
+        "columns": [
+          "Partition",
+          "Log Timestamps",
+          "Target T = 180",
+          "Target T = 500"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The offsetsForTimes index search finds the earliest offset at target timestamp.",
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Partition 0",
+                  "[0:100, 1:200, 2:300]",
+                  "Offset 1 (ts 200)",
+                  "Offset 3 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 1",
+                  "[0:150, 1:250]",
+                  "Offset 1 (ts 250)",
+                  "Offset 2 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 2",
+                  "[] (Empty)",
+                  "Offset 0",
+                  "Offset 0"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When records precede the target timestamp, the search returns Log End Offset.",
+            "highlightRows": [
+              0,
+              1,
+              2
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Partition 0",
+                  "[0:100, 1:200, 2:300]",
+                  "Offset 1 (ts 200)",
+                  "Offset 3 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 1",
+                  "[0:150, 1:250]",
+                  "Offset 1 (ts 250)",
+                  "Offset 2 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 2",
+                  "[] (Empty)",
+                  "Offset 0",
+                  "Offset 0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "offsetsForTimes Binary Search Resolution",
+        "subtitle": "Finding earliest partition offset with record timestamp >= target",
+        "columns": [
+          "Partition",
+          "Log Timestamps",
+          "Target T = 180",
+          "Target T = 500"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The offsetsForTimes index search finds the earliest offset at target timestamp.",
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Partition 0",
+                  "[0:100, 1:200, 2:300]",
+                  "Offset 1 (ts 200)",
+                  "Offset 3 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 1",
+                  "[0:150, 1:250]",
+                  "Offset 1 (ts 250)",
+                  "Offset 2 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 2",
+                  "[] (Empty)",
+                  "Offset 0",
+                  "Offset 0"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When records precede the target timestamp, the search returns Log End Offset.",
+            "highlightRows": [
+              0,
+              1,
+              2
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Partition 0",
+                  "[0:100, 1:200, 2:300]",
+                  "Offset 1 (ts 200)",
+                  "Offset 3 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 1",
+                  "[0:150, 1:250]",
+                  "Offset 1 (ts 250)",
+                  "Offset 2 (Log End)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Partition 2",
+                  "[] (Empty)",
+                  "Offset 0",
+                  "Offset 0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Downtime Reprocessing with Fresh Consumer Groups",
+      "codeHash": "1edcd1e7fa8f2ab7447daf09cc21b0ed4e1a2945091b7a487ee74e2765dc86cc",
+      "spec": {
+        "template": "states",
+        "title": "Blue-Green Consumer Group Switchover Plan",
+        "subtitle": "Reprocessing payment-consumer-v2 in parallel without halting live v1",
+        "states": [
+          {
+            "id": "s1",
+            "label": "1. Start payment-consumer-v2 (earliest)"
+          },
+          {
+            "id": "s2",
+            "label": "2. Drain v2 Lag to Zero [0,1,2]"
+          },
+          {
+            "id": "s3",
+            "label": "3. Blue-Green Router Cutover to v2"
+          },
+          {
+            "id": "s4",
+            "label": "4. Decommission Legacy Group v1"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "backfill"
+          },
+          {
+            "from": "s2",
+            "to": "s3",
+            "label": "caught up"
+          },
+          {
+            "from": "s3",
+            "to": "s4",
+            "label": "stop v1"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Deploy a fresh Consumer Group with a distinct Group ID for parallel replay.",
+            "current": "s1",
+            "visited": []
+          },
+          {
+            "at": "say7",
+            "caption": "Once caught up to the live stream, Blue-Green cutover switches read traffic.",
+            "current": "s3",
+            "visited": [
+              "s1",
+              "s2"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Blue-Green Consumer Group Switchover Plan",
+        "subtitle": "Reprocessing payment-consumer-v2 in parallel without halting live v1",
+        "states": [
+          {
+            "id": "s1",
+            "label": "1. Start payment-consumer-v2 (earliest)"
+          },
+          {
+            "id": "s2",
+            "label": "2. Drain v2 Lag to Zero [0,1,2]"
+          },
+          {
+            "id": "s3",
+            "label": "3. Blue-Green Router Cutover to v2"
+          },
+          {
+            "id": "s4",
+            "label": "4. Decommission Legacy Group v1"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "backfill"
+          },
+          {
+            "from": "s2",
+            "to": "s3",
+            "label": "caught up"
+          },
+          {
+            "from": "s3",
+            "to": "s4",
+            "label": "stop v1"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Deploy a fresh Consumer Group with a distinct Group ID for parallel replay.",
+            "current": "s1",
+            "visited": []
+          },
+          {
+            "at": "say7",
+            "caption": "Once caught up to the live stream, Blue-Green cutover switches read traffic.",
+            "current": "s3",
+            "visited": [
+              "s1",
+              "s2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Downstream State Invalidation & Side-Effect Management",
+      "codeHash": "c3fddf2322ba25271d9a3e8f4ace66362652f0e394fa0bb4e2f114ae943454f2",
+      "spec": {
+        "template": "flow",
+        "title": "SafeReplayExecutionEngine Side-Effect Guard",
+        "subtitle": "Updating DB state idempotently while suppressing duplicate emails in replay mode",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Order Event (ord-1)",
+            "sublabel": "amount: 100",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Replay Mode Check",
+            "sublabel": "isReplayMode flag",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "DB UPSERT Sink",
+            "sublabel": "dbUpdated: true (always)",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Email Dispatch Gate",
+            "sublabel": "Suppressed if isReplayMode",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "processOrder"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "idempotent set"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "!isReplayMode"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "During replay mode, output sink adapters disable external email mutations.",
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n4"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Downstream database sinks use idempotent UPSERT statements to overwrite state.",
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "SafeReplayExecutionEngine Side-Effect Guard",
+        "subtitle": "Updating DB state idempotently while suppressing duplicate emails in replay mode",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Order Event (ord-1)",
+            "sublabel": "amount: 100",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Replay Mode Check",
+            "sublabel": "isReplayMode flag",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "DB UPSERT Sink",
+            "sublabel": "dbUpdated: true (always)",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Email Dispatch Gate",
+            "sublabel": "Suppressed if isReplayMode",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "processOrder"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "idempotent set"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "!isReplayMode"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "During replay mode, output sink adapters disable external email mutations.",
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n4"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Downstream database sinks use idempotent UPSERT statements to overwrite state.",
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stream Rewinding & Offset Reset Tooling",
+      "codeHash": "e6a8406d9ebd71394b3bd36722e7ff3ffe1efe08ae6220c12ab501bf70d895ba",
+      "spec": {
+        "template": "bars",
+        "title": "Consumer Group Offset Reset Operations",
+        "subtitle": "Rewinding Partition 0 (1500) and Partition 1 (2200) by 500 records",
+        "unit": "offset",
+        "max": 2200,
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Admin tool commits new target offset coordinates after rewinding records.",
+            "bars": [
+              {
+                "label": "P0 Initial Offset",
+                "value": {
+                  "text": "1500"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "P0 Rewound (-500)",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "P1 Initial Offset",
+                "value": {
+                  "text": "2200"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "P1 Rewound (-500)",
+                "value": {
+                  "text": "1700"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Restarted consumers read the newly committed offset and begin consuming.",
+            "bars": [
+              {
+                "label": "P0 Rewound (-500)",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "P0 Reset Earliest",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "P1 Rewound (-500)",
+                "value": {
+                  "text": "1700"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "P1 Reset Earliest",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Consumer Group Offset Reset Operations",
+        "subtitle": "Rewinding Partition 0 (1500) and Partition 1 (2200) by 500 records",
+        "unit": "offset",
+        "max": 2200,
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Admin tool commits new target offset coordinates after rewinding records.",
+            "bars": [
+              {
+                "label": "P0 Initial Offset",
+                "value": 1500,
+                "tone": "data"
+              },
+              {
+                "label": "P0 Rewound (-500)",
+                "value": 1000,
+                "tone": "ok"
+              },
+              {
+                "label": "P1 Initial Offset",
+                "value": 2200,
+                "tone": "data"
+              },
+              {
+                "label": "P1 Rewound (-500)",
+                "value": 1700,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Restarted consumers read the newly committed offset and begin consuming.",
+            "bars": [
+              {
+                "label": "P0 Rewound (-500)",
+                "value": 1000,
+                "tone": "ok"
+              },
+              {
+                "label": "P0 Reset Earliest",
+                "value": 0,
+                "tone": "ok"
+              },
+              {
+                "label": "P1 Rewound (-500)",
+                "value": 1700,
+                "tone": "ok"
+              },
+              {
+                "label": "P1 Reset Earliest",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Historical Backfill & Verification Pipeline",
+      "codeHash": "38971ebdd8d9ac269d2088386635666e84c0efcca7275f3f4e63253d7a93400b",
+      "spec": {
+        "template": "none",
+        "reason": "End-to-end financial ledger replay and automated V1 vs V2 reconciliation audit"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "End-to-end financial ledger replay and automated V1 vs V2 reconciliation audit"
+      }
+    }
+  ]
+}

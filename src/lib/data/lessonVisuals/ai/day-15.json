@@ -1,0 +1,643 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 15,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Architectural Blueprint: The 5-Stage Enterprise RAG Pipeline",
+      "codeHash": "ee308c81f9050e5df43aa63e3de3b65cca2ccc312a29040c85860ae277b2fef9",
+      "spec": {
+        "template": "flow",
+        "title": "The five-stage enterprise production hybrid RAG pipeline architecture",
+        "nodes": [
+          {
+            "id": "stage1",
+            "label": "Stage One: Security Firewall",
+            "tappable": false
+          },
+          {
+            "id": "stage2",
+            "label": "Stage Two: Hybrid Retrieval",
+            "tappable": false
+          },
+          {
+            "id": "stage3",
+            "label": "Stage Three: Rank Fusion",
+            "tappable": false
+          },
+          {
+            "id": "stage4",
+            "label": "Stage Four: Neural Reranking",
+            "tappable": false
+          },
+          {
+            "id": "stage5",
+            "label": "Stage Five: U-Shaped Assembly",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "stage1",
+            "to": "stage2",
+            "label": "Sanitized Clean Query"
+          },
+          {
+            "from": "stage2",
+            "to": "stage3",
+            "label": "Dense and Sparse Candidates"
+          },
+          {
+            "from": "stage3",
+            "to": "stage4",
+            "label": "Fused Multi-Modal Pool"
+          },
+          {
+            "from": "stage4",
+            "to": "stage5",
+            "label": "Certified Top Chunks"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Our certified architecture consists of tightly integrated stages.",
+            "activeNodes": [
+              "stage1",
+              "stage2"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Prompt assembly positions top chunks at primacy and recency peaks.",
+            "activeNodes": [
+              "stage4",
+              "stage5"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The five-stage enterprise production hybrid RAG pipeline architecture",
+        "nodes": [
+          {
+            "id": "stage1",
+            "label": "Stage One: Security Firewall",
+            "tappable": false
+          },
+          {
+            "id": "stage2",
+            "label": "Stage Two: Hybrid Retrieval",
+            "tappable": false
+          },
+          {
+            "id": "stage3",
+            "label": "Stage Three: Rank Fusion",
+            "tappable": false
+          },
+          {
+            "id": "stage4",
+            "label": "Stage Four: Neural Reranking",
+            "tappable": false
+          },
+          {
+            "id": "stage5",
+            "label": "Stage Five: U-Shaped Assembly",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "stage1",
+            "to": "stage2",
+            "label": "Sanitized Clean Query"
+          },
+          {
+            "from": "stage2",
+            "to": "stage3",
+            "label": "Dense and Sparse Candidates"
+          },
+          {
+            "from": "stage3",
+            "to": "stage4",
+            "label": "Fused Multi-Modal Pool"
+          },
+          {
+            "from": "stage4",
+            "to": "stage5",
+            "label": "Certified Top Chunks"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Our certified architecture consists of tightly integrated stages.",
+            "activeNodes": [
+              "stage1",
+              "stage2"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Prompt assembly positions top chunks at primacy and recency peaks.",
+            "activeNodes": [
+              "stage4",
+              "stage5"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 1 & 2: Ingress Firewall & Concurrent Hybrid Retrieval",
+      "codeHash": "1fdf1190c63479ce3c0af1a64843d6898441eaf4960097f7cad956b5bde73e86",
+      "spec": {
+        "template": "compare",
+        "title": "Dense vector semantic search versus sparse BM25 keyword matching",
+        "left": {
+          "title": "Dense Vector Retrieval",
+          "items": [
+            "Embeds query into unit vector",
+            "Executes fast dot product search",
+            "Captures conceptual synonyms",
+            "High semantic recall"
+          ]
+        },
+        "right": {
+          "title": "Sparse BM25 Keyword Matching",
+          "items": [
+            "Extracts query search tokens",
+            "Scores inverted keyword index",
+            "Finds exact error codes and IDs",
+            "High lexical precision"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The pipeline dispatches queries concurrently across search modalities.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Concurrent search captures broad semantic context and exact identifiers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Dense Vector Retrieval",
+        "rightLabel": "Sparse BM25 Keyword Matching"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dense vector semantic search versus sparse BM25 keyword matching",
+        "left": {
+          "title": "Dense Vector Retrieval",
+          "items": [
+            "Embeds query into unit vector",
+            "Executes fast dot product search",
+            "Captures conceptual synonyms",
+            "High semantic recall"
+          ]
+        },
+        "right": {
+          "title": "Sparse BM25 Keyword Matching",
+          "items": [
+            "Extracts query search tokens",
+            "Scores inverted keyword index",
+            "Finds exact error codes and IDs",
+            "High lexical precision"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The pipeline dispatches queries concurrently across search modalities.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Concurrent search captures broad semantic context and exact identifiers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Dense Vector Retrieval",
+        "rightLabel": "Sparse BM25 Keyword Matching"
+      }
+    },
+    {
+      "partTitle": "Stage 3 & 4: Reciprocal Rank Fusion & Neural Cross-Encoder Reranking",
+      "codeHash": "215ac95d5df92475bb0fc7933f217399b6d6027c3adf6aca1aeb0b5752a699e1",
+      "spec": {
+        "template": "table",
+        "title": "Multi-stage ranking candidate pooling and cross-encoder precision gating",
+        "columns": [
+          "Processing Stage",
+          "Mathematical Mechanism",
+          "Input Candidate Set",
+          "Output Candidate Set"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Rank fusion merges both lists into a single candidate pool.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Authoritative documents are elevated to the top with high confidence.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-stage ranking candidate pooling and cross-encoder precision gating",
+        "columns": [
+          "Processing Stage",
+          "Mathematical Mechanism",
+          "Input Candidate Set",
+          "Output Candidate Set"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Rank fusion merges both lists into a single candidate pool.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Authoritative documents are elevated to the top with high confidence.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 5: U-Shaped Attention Context Optimization & Prompt Assembly",
+      "codeHash": "d5246d7c7524a1560292bee43dc03c591c5d6a64e7c221567f59f83ac191baf2",
+      "spec": {
+        "template": "boxes",
+        "title": "Stage five prompt assembly delimiter sanitization and U-shaped ordering",
+        "boxes": [
+          {
+            "id": "xmlSanitize",
+            "title": "Delimiter Sanitization",
+            "items": [
+              "Escapes XML special brackets",
+              "Prevents context breakout attacks",
+              "Defensive prompt encapsulation"
+            ]
+          },
+          {
+            "id": "uShapedReorder",
+            "title": "U-Shaped Reordering",
+            "items": [
+              "Top fact placed at primacy start",
+              "Second fact placed at recency end",
+              "Intermediate facts in middle trough"
+            ]
+          },
+          {
+            "id": "budgetGuard",
+            "title": "Budget Headroom Guard",
+            "items": [
+              "Enforces maximum context budget",
+              "Reserves completion token buffer",
+              "Guarantees zero inference overflow"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "We arrange top chunks in a distribution with peaks at the beginning.",
+            "activeBoxId": "uShapedReorder",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Preparation ensures models attend to facts with maximum focus.",
+            "activeBoxId": "budgetGuard",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Stage five prompt assembly delimiter sanitization and U-shaped ordering",
+        "boxes": [
+          {
+            "id": "xmlSanitize",
+            "title": "Delimiter Sanitization",
+            "items": [
+              "Escapes XML special brackets",
+              "Prevents context breakout attacks",
+              "Defensive prompt encapsulation"
+            ]
+          },
+          {
+            "id": "uShapedReorder",
+            "title": "U-Shaped Reordering",
+            "items": [
+              "Top fact placed at primacy start",
+              "Second fact placed at recency end",
+              "Intermediate facts in middle trough"
+            ]
+          },
+          {
+            "id": "budgetGuard",
+            "title": "Budget Headroom Guard",
+            "items": [
+              "Enforces maximum context budget",
+              "Reserves completion token buffer",
+              "Guarantees zero inference overflow"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "We arrange top chunks in a distribution with peaks at the beginning.",
+            "activeBoxId": "uShapedReorder",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Preparation ensures models attend to facts with maximum focus.",
+            "activeBoxId": "budgetGuard",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auditing & Telemetry: Monitoring Real-Time RAG Operations",
+      "codeHash": "23b8c9a8c8b6a229ec284dde59e23e18a21a68e98c4ac12fbb93b5880450b9c7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete Certified Enterprise Hybrid RAG Platform",
+      "codeHash": "dd53548c87da4dc6819ab01339417ef520b2bccc30d9f67354fa89fa96c9df88",
+      "spec": {
+        "template": "sequence",
+        "title": "End-to-end enterprise hybrid RAG pipeline query execution transaction",
+        "actors": [
+          {
+            "id": "incidentUser",
+            "label": "Incident Support Engineer"
+          },
+          {
+            "id": "securityGate",
+            "label": "Enterprise Ingress Gateway"
+          },
+          {
+            "id": "hybridRerank",
+            "label": "Hybrid Retrieval and Reranker"
+          },
+          {
+            "id": "promptAssembler",
+            "label": "U-Shaped Context Assembler"
+          }
+        ],
+        "messages": [
+          {
+            "from": "incidentUser",
+            "to": "securityGate",
+            "label": "Query Socket Error Resolution",
+            "tone": "data"
+          },
+          {
+            "from": "securityGate",
+            "to": "hybridRerank",
+            "label": "Verify Clean Query and Dispatch",
+            "tone": "data"
+          },
+          {
+            "from": "hybridRerank",
+            "to": "promptAssembler",
+            "label": "Elevate Point-In-Time Doc to Rank One",
+            "tone": "success"
+          },
+          {
+            "from": "promptAssembler",
+            "to": "incidentUser",
+            "label": "Deliver Certified Hallucination-Free Context",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Stage one scans queries and verifies zero prompt injection threats.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Neural reranking elevates the recovery document to rank one with confidence.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "End-to-end enterprise hybrid RAG pipeline query execution transaction",
+        "actors": [
+          {
+            "id": "incidentUser",
+            "label": "Incident Support Engineer"
+          },
+          {
+            "id": "securityGate",
+            "label": "Enterprise Ingress Gateway"
+          },
+          {
+            "id": "hybridRerank",
+            "label": "Hybrid Retrieval and Reranker"
+          },
+          {
+            "id": "promptAssembler",
+            "label": "U-Shaped Context Assembler"
+          }
+        ],
+        "messages": [
+          {
+            "from": "incidentUser",
+            "to": "securityGate",
+            "label": "Query Socket Error Resolution",
+            "tone": "data"
+          },
+          {
+            "from": "securityGate",
+            "to": "hybridRerank",
+            "label": "Verify Clean Query and Dispatch",
+            "tone": "data"
+          },
+          {
+            "from": "hybridRerank",
+            "to": "promptAssembler",
+            "label": "Elevate Point-In-Time Doc to Rank One",
+            "tone": "success"
+          },
+          {
+            "from": "promptAssembler",
+            "to": "incidentUser",
+            "label": "Deliver Certified Hallucination-Free Context",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Stage one scans queries and verifies zero prompt injection threats.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Neural reranking elevates the recovery document to rank one with confidence.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

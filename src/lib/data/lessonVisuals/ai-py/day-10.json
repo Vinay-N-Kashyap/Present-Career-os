@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Retrieval-augmented generation",
+      "codeHash": "65e18b36f4796c24321d080f3f0f99b734da0ec4236b110459b2455ad7046c88",
+      "spec": {
+        "template": "flow",
+        "title": "Sequential three-stage RAG execution pipeline",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "retrieve"
+          },
+          {
+            "id": "n2",
+            "label": "augment"
+          },
+          {
+            "id": "n3",
+            "label": "generate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The pipeline has three steps: retrieve augment and generate.",
+            "values": {
+              "n1": {
+                "text": "retrieve"
+              },
+              "n2": {
+                "text": "prompt"
+              },
+              "n3": {
+                "text": "question"
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Naive retrieval pipelines provide an effective baseline for improvements.",
+            "values": {
+              "n1": {
+                "text": "c1"
+              },
+              "n2": {
+                "text": "c2"
+              },
+              "n3": {
+                "text": "c3"
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Sequential three-stage RAG execution pipeline",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "retrieve"
+          },
+          {
+            "id": "n2",
+            "label": "augment"
+          },
+          {
+            "id": "n3",
+            "label": "generate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The pipeline has three steps: retrieve augment and generate.",
+            "values": {
+              "n1": "retrieve",
+              "n2": "prompt",
+              "n3": "question"
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say4",
+            "caption": "Naive retrieval pipelines provide an effective baseline for improvements.",
+            "values": {
+              "n1": "c1",
+              "n2": "c2",
+              "n3": "c3"
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keyword search: counting whole words",
+      "codeHash": "693945df853c15491c9fd11ce32c6dec247855ee724bd82a70482df0276081f2",
+      "spec": {
+        "template": "none",
+        "reason": "Regular expression term frequency counting and word boundary token matching."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Regular expression term frequency counting and word boundary token matching."
+      }
+    },
+    {
+      "partTitle": "BM25 in brief",
+      "codeHash": "7d7e0da7fc59ecea9a365e1fc0033f229a26010c43a435f7e57149d45476c18d",
+      "spec": {
+        "template": "table",
+        "title": "BM25 ranking formula components and weights",
+        "columns": [
+          "bm25_feature",
+          "mechanism",
+          "retrieval_impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "BM25 scores how well a document matches query words using term statistics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inverse doc frequency"
+                  },
+                  {
+                    "text": "rare words score higher"
+                  },
+                  {
+                    "text": "weights specific codes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "term saturation"
+                  },
+                  {
+                    "text": "diminishing count returns"
+                  },
+                  {
+                    "text": "prevents spam repeats"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rare words carry high inverse document frequency to highlight specific terms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inverse doc frequency"
+                  },
+                  {
+                    "text": "rare words score higher"
+                  },
+                  {
+                    "text": "weights specific codes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "term saturation"
+                  },
+                  {
+                    "text": "diminishing count returns"
+                  },
+                  {
+                    "text": "prevents spam repeats"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "length normalisation"
+                  },
+                  {
+                    "text": "penalises long pages"
+                  },
+                  {
+                    "text": "fair size balance"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "BM25 ranking formula components and weights",
+        "columns": [
+          "bm25_feature",
+          "mechanism",
+          "retrieval_impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "BM25 scores how well a document matches query words using term statistics.",
+            "rows": [
+              {
+                "cells": [
+                  "inverse doc frequency",
+                  "rare words score higher",
+                  "weights specific codes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "term saturation",
+                  "diminishing count returns",
+                  "prevents spam repeats"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rare words carry high inverse document frequency to highlight specific terms.",
+            "rows": [
+              {
+                "cells": [
+                  "inverse doc frequency",
+                  "rare words score higher",
+                  "weights specific codes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "term saturation",
+                  "diminishing count returns",
+                  "prevents spam repeats"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "length normalisation",
+                  "penalises long pages",
+                  "fair size balance"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dense plus sparse: hybrid search",
+      "codeHash": "02dfd84223a26d6741004e662079e979d426edb227d606bb1b5247fe3de51984",
+      "spec": {
+        "template": "compare",
+        "title": "Semantic dense search versus exact token sparse search",
+        "leftLabel": "Single Search Mode",
+        "rightLabel": "Hybrid Search",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dense search understands meaning while sparse search nails exact tokens.",
+            "left": {
+              "code": "dense misses exact code",
+              "result": {
+                "text": "misses exact codes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sparse finds exact code",
+              "result": {
+                "text": "exact code matched"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Hybrid search merges dense and sparse results to outperform either mode.",
+            "left": {
+              "code": "single query mode",
+              "result": {
+                "text": "partial matches only"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "combined reciprocal fusion",
+              "result": {
+                "text": "optimal ranked union"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Semantic dense search versus exact token sparse search",
+        "leftLabel": "Single Search Mode",
+        "rightLabel": "Hybrid Search",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dense search understands meaning while sparse search nails exact tokens.",
+            "left": {
+              "code": "dense misses exact code",
+              "result": "misses exact codes",
+              "tone": "error",
+              "checks": [
+                "misses exact codes"
+              ]
+            },
+            "right": {
+              "code": "sparse finds exact code",
+              "result": "exact code matched",
+              "tone": "ok",
+              "checks": [
+                "exact code matched"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Hybrid search merges dense and sparse results to outperform either mode.",
+            "left": {
+              "code": "single query mode",
+              "result": "partial matches only",
+              "tone": "data",
+              "checks": [
+                "partial matches only"
+              ]
+            },
+            "right": {
+              "code": "combined reciprocal fusion",
+              "result": "optimal ranked union",
+              "tone": "ok",
+              "checks": [
+                "optimal ranked union"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reciprocal rank fusion",
+      "codeHash": "70b007957ce9e5de1a71af48dd1081315527c035fcae3ee00555497904bb8eca",
+      "spec": {
+        "template": "table",
+        "title": "Reciprocal rank fusion score aggregation table",
+        "columns": [
+          "document_id",
+          "dense_rank",
+          "sparse_rank",
+          "rrf_score"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Documents earn reciprocal rank scores based on position in each result list.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "login-help"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  },
+                  {
+                    "text": "0.032522"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Documents appearing in both searches collect dual contributions to rise up.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "login-help"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  },
+                  {
+                    "text": "0.032522"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "err-504"
+                  },
+                  {
+                    "text": "none"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "0.016393"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reciprocal rank fusion score aggregation table",
+        "columns": [
+          "document_id",
+          "dense_rank",
+          "sparse_rank",
+          "rrf_score"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Documents earn reciprocal rank scores based on position in each result list.",
+            "rows": [
+              {
+                "cells": [
+                  "login-help",
+                  "one",
+                  "two",
+                  "0.032522"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Documents appearing in both searches collect dual contributions to rise up.",
+            "rows": [
+              {
+                "cells": [
+                  "login-help",
+                  "one",
+                  "two",
+                  "0.032522"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "err-504",
+                  "none",
+                  "one",
+                  "0.016393"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A grounded prompt with citations",
+      "codeHash": "76a2f75f0ee45b0a3d175cc79d34a5042da117424531047b2e564702be47748f",
+      "spec": {
+        "template": "none",
+        "reason": "Grounded context prompt templating and citation reference regex verification."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Grounded context prompt templating and citation reference regex verification."
+      }
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Safety is an engineering job",
+      "codeHash": "79e8192c376c011c77374ea82fa06a88a67957d670bc0e6e6a75e55bd76df223",
+      "spec": {
+        "template": "table",
+        "title": "Defense in depth guardrail layers across production pipelines",
+        "columns": [
+          "layers",
+          "layers",
+          "layers"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Safety engineers find failures before users do and build controls to stop them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "No single control is perfect so production systems stack defences in depth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Defense in depth guardrail layers across production pipelines",
+        "columns": [
+          "layers",
+          "layers",
+          "layers"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Safety engineers find failures before users do and build controls to stop them.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "layers",
+                  "layers"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "layers",
+                  "layers"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "No single control is perfect so production systems stack defences in depth.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "layers",
+                  "layers"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "layers",
+                  "layers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kinds of harm",
+      "codeHash": "f32ad6c8c20f52ecf597aba7733fd9cc533637875514158d6165f7ff34fcaa9d",
+      "spec": {
+        "template": "table",
+        "title": "Taxonomies of harm and empirical failure categorization",
+        "columns": [
+          "reports",
+          "counts",
+          "reports"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Teams need names for specific harms to reduce risk across deployments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reports"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "reports"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reports"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "reports"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Grouping failures shows where a product is weakest to prioritize safety effort.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reports"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "reports"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reports"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "reports"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Taxonomies of harm and empirical failure categorization",
+        "columns": [
+          "reports",
+          "counts",
+          "reports"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Teams need names for specific harms to reduce risk across deployments.",
+            "rows": [
+              {
+                "cells": [
+                  "reports",
+                  "counts",
+                  "reports"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reports",
+                  "counts",
+                  "reports"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Grouping failures shows where a product is weakest to prioritize safety effort.",
+            "rows": [
+              {
+                "cells": [
+                  "reports",
+                  "counts",
+                  "reports"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "reports",
+                  "counts",
+                  "reports"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Likelihood times impact",
+      "codeHash": "ba90e75a97feae19d7e7c2090dcfd03529296a36a1ee093496a971a188352a86",
+      "spec": {
+        "template": "table",
+        "title": "Likelihood times impact severity matrix scoring",
+        "columns": [
+          "likelihood",
+          "impact",
+          "likelihood"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Not every risk deserves identical attention so engineering teams score them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "likelihood"
+                  },
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "likelihood"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "likelihood"
+                  },
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "likelihood"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Overall risk score equals likelihood multiplied by potential impact severity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "likelihood"
+                  },
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "likelihood"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "likelihood"
+                  },
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "likelihood"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Likelihood times impact severity matrix scoring",
+        "columns": [
+          "likelihood",
+          "impact",
+          "likelihood"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Not every risk deserves identical attention so engineering teams score them.",
+            "rows": [
+              {
+                "cells": [
+                  "likelihood",
+                  "impact",
+                  "likelihood"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "likelihood",
+                  "impact",
+                  "likelihood"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Overall risk score equals likelihood multiplied by potential impact severity.",
+            "rows": [
+              {
+                "cells": [
+                  "likelihood",
+                  "impact",
+                  "likelihood"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "likelihood",
+                  "impact",
+                  "likelihood"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The risk register",
+      "codeHash": "d52cb0f3660cc4712e2e6e7405caf29ad19506142ca0fb2d876524a82d3abd38",
+      "spec": {
+        "template": "table",
+        "title": "Risk register tracking and tie-breaker sorting",
+        "columns": [
+          "register",
+          "rows",
+          "register"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A risk register maintains a shared list of known risks with scored controls.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "register"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "register"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "register"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "register"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sorting the register by score tells the team what priorities to address first.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "register"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "register"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "register"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "register"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Risk register tracking and tie-breaker sorting",
+        "columns": [
+          "register",
+          "rows",
+          "register"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A risk register maintains a shared list of known risks with scored controls.",
+            "rows": [
+              {
+                "cells": [
+                  "register",
+                  "rows",
+                  "register"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "register",
+                  "rows",
+                  "register"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sorting the register by score tells the team what priorities to address first.",
+            "rows": [
+              {
+                "cells": [
+                  "register",
+                  "rows",
+                  "register"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "register",
+                  "rows",
+                  "register"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Controls and residual risk",
+      "codeHash": "aa57e86d64668481e125b33a3d073a882254ff1b7ca0048ba9c904da21467d26",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Where this course goes",
+      "codeHash": "d7958af7dc0a820331310d4e3d0797487b3a1712ca9572c612aa06eea51cb774",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 17,
+  "promptSha": "7a7300f64d141f959137ed8ffcdc0698ec260bedf5d76926c77bd44c0a2f3ed3",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "DNS Fundamentals & Route 53 Hosted Zones",
+      "codeHash": "4f055ed5e6913ff90c0bb3dd5ce3e51952b6ee0f4474ef9930bcd5acf6c79836",
+      "spec": {
+        "template": "states",
+        "title": "Route 53 hosted zone network scope states",
+        "states": [
+          {
+            "id": "publicZone",
+            "label": "Public Hosted Zone (Internet)"
+          },
+          {
+            "id": "privateZone",
+            "label": "Private Hosted Zone (VPC Boundary)"
+          },
+          {
+            "id": "splitView",
+            "label": "Split-View DNS Resolution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Public hosted zones contain records that route internet traffic.",
+            "active": "publicZone"
+          },
+          {
+            "at": "say8",
+            "caption": "Private hosted zones route internal traffic within virtual private clouds.",
+            "active": "privateZone"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Route 53 hosted zone network scope states",
+        "states": [
+          {
+            "id": "publicZone",
+            "label": "Public Hosted Zone (Internet)"
+          },
+          {
+            "id": "privateZone",
+            "label": "Private Hosted Zone (VPC Boundary)"
+          },
+          {
+            "id": "splitView",
+            "label": "Split-View DNS Resolution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Public hosted zones contain records that route internet traffic.",
+            "active": "publicZone"
+          },
+          {
+            "at": "say8",
+            "caption": "Private hosted zones route internal traffic within virtual private clouds.",
+            "active": "privateZone"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Record Types & Route 53 ALIAS Records",
+      "codeHash": "a1f7197d84b21ff89998c0d98ddea8bcae634492ed45c08e489a74bc5c1799a8",
+      "spec": {
+        "template": "compare",
+        "title": "Standard CNAME records compared to Route 53 ALIAS records",
+        "leftLabel": "Standard CNAME Record",
+        "rightLabel": "Route 53 ALIAS Record",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Standard DNS specifications forbid CNAME records at the zone apex.",
+            "left": {
+              "code": "Zone Apex Prohibited",
+              "result": {
+                "text": "RFC Violation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Zone Apex Allowed",
+              "result": {
+                "text": "Native Apex Support"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Route resolves the AWS resource and returns an A record response.",
+            "left": {
+              "code": "type: \"CNAME\"",
+              "result": {
+                "text": "Paid Recursive Query"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "type: \"ALIAS\"",
+              "result": {
+                "text": "Free Direct Resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Standard CNAME records compared to Route 53 ALIAS records",
+        "leftLabel": "Standard CNAME Record",
+        "rightLabel": "Route 53 ALIAS Record",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Standard DNS specifications forbid CNAME records at the zone apex.",
+            "left": {
+              "code": "Zone Apex Prohibited",
+              "result": {
+                "text": "RFC Violation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Zone Apex Allowed",
+              "result": {
+                "text": "Native Apex Support"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Route resolves the AWS resource and returns an A record response.",
+            "left": {
+              "code": "type: \"CNAME\"",
+              "result": {
+                "text": "Paid Recursive Query"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "type: \"ALIAS\"",
+              "result": {
+                "text": "Free Direct Resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Route 53 Routing Policies: Simple, Weighted & Latency-Based",
+      "codeHash": "2a7b084787525da35dda713fc93f73441724aebd718dd0451af3ccef6cd2f4df",
+      "spec": {
+        "template": "bars",
+        "title": "Weighted routing policy traffic distribution shares",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Weighted routing policy allows architects to assign relative weights.",
+            "bars": [
+              {
+                "label": "Production v1 Endpoint",
+                "value": 90,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Canary v2 Endpoint",
+                "value": 10,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Weighted routing allows teams to test new releases with live user traffic.",
+            "bars": [
+              {
+                "label": "Production v1 Endpoint",
+                "value": 75,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Canary v2 Endpoint",
+                "value": 25,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Weighted routing policy traffic distribution shares",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Weighted routing policy allows architects to assign relative weights.",
+            "bars": [
+              {
+                "label": "Production v1 Endpoint",
+                "value": 90,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Canary v2 Endpoint",
+                "value": 10,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Weighted routing allows teams to test new releases with live user traffic.",
+            "bars": [
+              {
+                "label": "Production v1 Endpoint",
+                "value": 75,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Canary v2 Endpoint",
+                "value": 25,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Geolocation & Geoproximity Routing with Traffic Flow",
+      "codeHash": "4d2cfb6689e7876b694a2b7a3f4deada0df823e44cf32a97a078c38dd4186934",
+      "spec": {
+        "template": "table",
+        "title": "Geolocation and geoproximity routing policy rules",
+        "columns": [
+          "Query Origin",
+          "Target Endpoint",
+          "Routing Criterion",
+          "Compliance Goal"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Geolocation routes traffic based on the geographic location of the query.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Geoproximity lets architects define bias values to expand region footprints.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Geolocation and geoproximity routing policy rules",
+        "columns": [
+          "Query Origin",
+          "Target Endpoint",
+          "Routing Criterion",
+          "Compliance Goal"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Geolocation routes traffic based on the geographic location of the query.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Geoproximity lets architects define bias values to expand region footprints.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Route 53 Health Checks & Active-Passive DNS Failover",
+      "codeHash": "1975dcdd1f6bdaf20e2aac311058c75fb17f1b69ef464641ada0e731340681d4",
+      "spec": {
+        "template": "sequence",
+        "title": "Automated active-passive DNS health check failover sequence",
+        "actors": [
+          {
+            "id": "client",
+            "name": "Web Client"
+          },
+          {
+            "id": "route53",
+            "name": "Route 53 DNS"
+          },
+          {
+            "id": "primary",
+            "name": "Primary Region"
+          },
+          {
+            "id": "secondary",
+            "name": "Secondary Region"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Route routes user traffic to the primary region while health checks pass.",
+            "from": "client",
+            "to": "primary",
+            "label": "Primary Active 100%",
+            "tone": "ok"
+          },
+          {
+            "at": "say7",
+            "caption": "Route automatically flips resolution to the secondary disaster recovery region.",
+            "from": "client",
+            "to": "secondary",
+            "label": "Failover Switched",
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Automated active-passive DNS health check failover sequence",
+        "actors": [
+          {
+            "id": "client",
+            "name": "Web Client"
+          },
+          {
+            "id": "route53",
+            "name": "Route 53 DNS"
+          },
+          {
+            "id": "primary",
+            "name": "Primary Region"
+          },
+          {
+            "id": "secondary",
+            "name": "Secondary Region"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Route routes user traffic to the primary region while health checks pass.",
+            "from": "client",
+            "to": "primary",
+            "label": "Primary Active 100%",
+            "tone": "ok"
+          },
+          {
+            "at": "say7",
+            "caption": "Route automatically flips resolution to the secondary disaster recovery region.",
+            "from": "client",
+            "to": "secondary",
+            "label": "Failover Switched",
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Global Multi-Region Routing Engine Verification",
+      "codeHash": "63590d5826cbda467492fe54d93073e41de9cc0680b98e0ce06c6c7b694d063b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

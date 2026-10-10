@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why stream?",
+      "codeHash": "2d9f6dfc532a84d2f35b2c2fe6a0e7281be3f14d9edce7cda222af3178f2dd8c",
+      "spec": {
+        "template": "bars",
+        "title": "Time to first token perceived latency with streaming",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "With streaming each token is sent as soon as it is ready.",
+            "bars": [
+              {
+                "label": "with_streaming_ttft",
+                "value": {
+                  "text": "300"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "ms_per_token",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Time to first token TTFT is key number for perceived speed.",
+            "bars": [
+              {
+                "label": "with_streaming_ttft",
+                "value": {
+                  "text": "300"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "ms_per_token",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "All major APIs support streaming through server-sent events.",
+            "bars": [
+              {
+                "label": "with_streaming_ttft",
+                "value": {
+                  "text": "300"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "ms_per_token",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Time to first token perceived latency with streaming",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "With streaming each token is sent as soon as it is ready.",
+            "bars": [
+              {
+                "label": "with_streaming_ttft",
+                "value": 300,
+                "tone": "ok"
+              },
+              {
+                "label": "ms_per_token",
+                "value": 40,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Time to first token TTFT is key number for perceived speed.",
+            "bars": [
+              {
+                "label": "with_streaming_ttft",
+                "value": 300,
+                "tone": "ok"
+              },
+              {
+                "label": "ms_per_token",
+                "value": 40,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "All major APIs support streaming through server-sent events.",
+            "bars": [
+              {
+                "label": "with_streaming_ttft",
+                "value": 300,
+                "tone": "ok"
+              },
+              {
+                "label": "ms_per_token",
+                "value": 40,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The SSE format",
+      "codeHash": "3c77f68f13614b00e0016bdc13d55381032217f5ed9b3f1c6554c340afed75d5",
+      "spec": {
+        "template": "table",
+        "title": "Server-sent events SSE payload structure and control frames",
+        "columns": [
+          "event_line",
+          "payload",
+          "frame_type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Server-sent events are plain text sent over HTTP response.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Namaste"
+                  },
+                  {
+                    "text": "assistant"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": ": keep-alive"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The stream ends with special line marker data [DONE].",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Namaste"
+                  },
+                  {
+                    "text": "assistant"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": ": keep-alive"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data: [DONE]"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Comments starting with colon are used as keep-alive pings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Namaste"
+                  },
+                  {
+                    "text": "assistant"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": ": keep-alive"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data: [DONE]"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Server-sent events SSE payload structure and control frames",
+        "columns": [
+          "event_line",
+          "payload",
+          "frame_type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Server-sent events are plain text sent over HTTP response.",
+            "rows": [
+              {
+                "cells": [
+                  "Namaste",
+                  "assistant",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  ": keep-alive",
+                  "line",
+                  "line"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The stream ends with special line marker data [DONE].",
+            "rows": [
+              {
+                "cells": [
+                  "Namaste",
+                  "assistant",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  ": keep-alive",
+                  "line",
+                  "line"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "data: [DONE]",
+                  "line",
+                  "line"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Comments starting with colon are used as keep-alive pings.",
+            "rows": [
+              {
+                "cells": [
+                  "Namaste",
+                  "assistant",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  ": keep-alive",
+                  "line",
+                  "line"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "data: [DONE]",
+                  "line",
+                  "line"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parsing a streamed chunk",
+      "codeHash": "f64ba779b85af9e4bdfa494c4ad3b8f8c1ce67f1e13c9b844eb9bb41d5725bea",
+      "spec": {
+        "template": "compare",
+        "title": "Streamed SSE chunk payload accumulation into completed response",
+        "leftLabel": "Incoming Chunk",
+        "rightLabel": "Accumulated Text",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parse SSE chunk joins content of data lines and returns text.",
+            "left": {
+              "code": "data: {\"choices\":[{\"delta\":{\"content\":\"Hi\"}}]}",
+              "result": {
+                "text": "Hi"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "data: [DONE]",
+              "result": {
+                "text": "data: [DONE]"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Marker data [DONE] sets done while data lines are parsed.",
+            "left": {
+              "code": "data: {\"choices\":[{\"delta\":{\"content\":\"partial\"}}]}",
+              "result": {
+                "text": "partial"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "done = True on terminal marker",
+              "result": {
+                "text": "data: [DONE]"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Skip lines that are not data lines such as comments.",
+            "left": {
+              "code": ": ping comment keep-alive line",
+              "result": {
+                "text": "Hi"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "json.loads extracts delta content",
+              "result": {
+                "text": "partial"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Streamed SSE chunk payload accumulation into completed response",
+        "leftLabel": "Incoming Chunk",
+        "rightLabel": "Accumulated Text",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parse SSE chunk joins content of data lines and returns text.",
+            "left": {
+              "code": "data: {\"choices\":[{\"delta\":{\"content\":\"Hi\"}}]}",
+              "result": "Hi",
+              "tone": "data",
+              "checks": [
+                "Hi"
+              ]
+            },
+            "right": {
+              "code": "data: [DONE]",
+              "result": "data: [DONE]",
+              "tone": "ok",
+              "checks": [
+                "data: [DONE]"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Marker data [DONE] sets done while data lines are parsed.",
+            "left": {
+              "code": "data: {\"choices\":[{\"delta\":{\"content\":\"partial\"}}]}",
+              "result": "partial",
+              "tone": "data",
+              "checks": [
+                "partial"
+              ]
+            },
+            "right": {
+              "code": "done = True on terminal marker",
+              "result": "data: [DONE]",
+              "tone": "ok",
+              "checks": [
+                "data: [DONE]"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Skip lines that are not data lines such as comments.",
+            "left": {
+              "code": ": ping comment keep-alive line",
+              "result": "Hi",
+              "tone": "idle",
+              "checks": [
+                "Hi"
+              ]
+            },
+            "right": {
+              "code": "json.loads extracts delta content",
+              "result": "partial",
+              "tone": "ok",
+              "checks": [
+                "partial"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing events for the browser",
+      "codeHash": "fb01e88dbe5375516cc61ee439aa977c4dd37d63b1995b61499cc407c57d194b",
+      "spec": {
+        "template": "table",
+        "title": "Formatting server event objects into spec-compliant SSE lines",
+        "columns": [
+          "event_type",
+          "event_text",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Server forwards stream writing format_sse_line with two newlines.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "token"
+                  },
+                  {
+                    "text": "Hi"
+                  },
+                  {
+                    "text": "type"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "done"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Two newlines tell browser that event is complete.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "token"
+                  },
+                  {
+                    "text": "Hi"
+                  },
+                  {
+                    "text": "type"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "done"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Send custom event shapes with token text and done sources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "token"
+                  },
+                  {
+                    "text": "Hi"
+                  },
+                  {
+                    "text": "type"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "done"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Formatting server event objects into spec-compliant SSE lines",
+        "columns": [
+          "event_type",
+          "event_text",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Server forwards stream writing format_sse_line with two newlines.",
+            "rows": [
+              {
+                "cells": [
+                  "token",
+                  "Hi",
+                  "type"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "done",
+                  "c2",
+                  "sources"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Two newlines tell browser that event is complete.",
+            "rows": [
+              {
+                "cells": [
+                  "token",
+                  "Hi",
+                  "type"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "done",
+                  "c2",
+                  "sources"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Send custom event shapes with token text and done sources.",
+            "rows": [
+              {
+                "cells": [
+                  "token",
+                  "Hi",
+                  "type"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "done",
+                  "c2",
+                  "sources"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partial lines and buffering",
+      "codeHash": "26561ae32f234516981b0f27c2c4b5c67c8fa9d236c7e672b3c2b97a2bdd73fb",
+      "spec": {
+        "template": "none",
+        "reason": "TCP socket chunk fragmentation newline buffer assembly logic."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Cancellation and good streaming UX",
+      "codeHash": "25d97b7923ba5fa818e62ce68c08011ada2ea818ddeadcab8276c0cb0c4b2e88",
+      "spec": {
+        "template": "none",
+        "reason": "Streaming UI cancellation tokens and mid-stream error recovery patterns."
+      },
+      "filled": {}
+    }
+  ]
+}

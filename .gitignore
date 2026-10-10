@@ -3,7 +3,7 @@ __pycache__/
 node_modules/
 .next/
 out/
-dist/
+/dist/
 coverage/
 .firebase/
 .idea/  
@@ -41,7 +41,7 @@ dist-test/
 dump.rdb
 
 # TypeScript incremental build cache
-tsconfig.tsbuildinfo
+*.tsbuildinfo
 
 # Batch files may contain credentials
 start_backend.bat
@@ -57,3 +57,6 @@ public/pyodide/
 public/sql/
 public/esbuild/
 public/sandbox/
+test-results/
+playwright-report/
+screenshots/

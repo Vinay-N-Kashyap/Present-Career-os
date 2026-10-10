@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 18,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Perils of Unstructured Print Statements vs Structured JSON",
+      "codeHash": "2dd18fbb8442173c226fa4ebe4deb9da24da457413b0f55022164c9c84d540b4",
+      "spec": {
+        "template": "compare",
+        "title": "Unstructured plain text logs versus queryable structured JSON documents",
+        "left": {
+          "title": "Unstructured Plain Text",
+          "items": [
+            "Brittle regular expression parsing",
+            "Breaks on arbitrary wording changes",
+            "Slow full-text scans across gigabytes",
+            "Opaque terminal strings without schema"
+          ]
+        },
+        "right": {
+          "title": "Structured JSON Document",
+          "items": [
+            "Discrete machine-parseable key-value fields",
+            "Automatic indexing in log engines",
+            "Sub-millisecond algebraic queries",
+            "Standardized severity and timestamps"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Parsing plain text requires brittle regular expressions that break easily.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Structured logging emits machine parseable JSON documents for indexing.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Unstructured Plain Text",
+        "rightLabel": "Structured JSON Document"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unstructured plain text logs versus queryable structured JSON documents",
+        "left": {
+          "title": "Unstructured Plain Text",
+          "items": [
+            "Brittle regular expression parsing",
+            "Breaks on arbitrary wording changes",
+            "Slow full-text scans across gigabytes",
+            "Opaque terminal strings without schema"
+          ]
+        },
+        "right": {
+          "title": "Structured JSON Document",
+          "items": [
+            "Discrete machine-parseable key-value fields",
+            "Automatic indexing in log engines",
+            "Sub-millisecond algebraic queries",
+            "Standardized severity and timestamps"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Parsing plain text requires brittle regular expressions that break easily.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Structured logging emits machine parseable JSON documents for indexing.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Unstructured Plain Text",
+        "rightLabel": "Structured JSON Document"
+      }
+    },
+    {
+      "partTitle": "Enterprise JSON Log Schema Design (Standard Fields & Context)",
+      "codeHash": "074eac68927fc834fdb2d8f996c001d35fc22f398c43268a43438936afd70741",
+      "spec": {
+        "template": "table",
+        "title": "Mandatory enterprise JSON log event schema specification",
+        "columns": [
+          "Schema Field",
+          "Data Type",
+          "Standard Format",
+          "Operational Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mandatory base fields include timestamps, severity levels, and service names.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Standardizing schemas ensures incident teams can query telemetry company wide.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Mandatory enterprise JSON log event schema specification",
+        "columns": [
+          "Schema Field",
+          "Data Type",
+          "Standard Format",
+          "Operational Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mandatory base fields include timestamps, severity levels, and service names.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Standardizing schemas ensures incident teams can query telemetry company wide.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Correlation IDs: Tracing Causality Across Service Boundaries",
+      "codeHash": "5dd0a005c7df324eaed99d5aa481f82d67ca8f9519e73912861646b665371b62",
+      "spec": {
+        "template": "sequence",
+        "title": "Distributed transaction trace propagation via correlation identifiers",
+        "actors": [
+          "Client Ingress",
+          "API Gateway",
+          "Order Service",
+          "Payment Service"
+        ],
+        "messages": [
+          {
+            "from": "Client Ingress",
+            "to": "API Gateway",
+            "label": "POST /checkout (No Correlation ID)"
+          },
+          {
+            "from": "API Gateway",
+            "to": "Order Service",
+            "label": "RPC with x-correlation-id injected"
+          },
+          {
+            "from": "Order Service",
+            "to": "Payment Service",
+            "label": "Forward request with x-correlation-id"
+          },
+          {
+            "from": "Payment Service",
+            "to": "API Gateway",
+            "label": "Correlated response token"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The API gateway generates unique correlation identifiers for incoming calls.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Downstream microservices inject correlation identifiers into emitted logs.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Distributed transaction trace propagation via correlation identifiers",
+        "actors": [
+          "Client Ingress",
+          "API Gateway",
+          "Order Service",
+          "Payment Service"
+        ],
+        "messages": [
+          {
+            "from": "Client Ingress",
+            "to": "API Gateway",
+            "label": "POST /checkout (No Correlation ID)"
+          },
+          {
+            "from": "API Gateway",
+            "to": "Order Service",
+            "label": "RPC with x-correlation-id injected"
+          },
+          {
+            "from": "Order Service",
+            "to": "Payment Service",
+            "label": "Forward request with x-correlation-id"
+          },
+          {
+            "from": "Payment Service",
+            "to": "API Gateway",
+            "label": "Correlated response token"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The API gateway generates unique correlation identifiers for incoming calls.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Downstream microservices inject correlation identifiers into emitted logs.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTP Header Propagation: Injecting & Extracting X-Correlation-ID",
+      "codeHash": "54c0ff406a52049881a4ad60667e7ed66f183aadd644954538da84535d141683",
+      "spec": {
+        "template": "workflow",
+        "title": "HTTP header extraction and AsyncLocalStorage execution context flow",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Incoming HTTP Ingress"
+          },
+          {
+            "id": "extract",
+            "label": "Inspect x-correlation-id Header"
+          },
+          {
+            "id": "generate",
+            "label": "Generate Fresh ID (If Missing)"
+          },
+          {
+            "id": "storage",
+            "label": "Store in AsyncLocalStorage"
+          },
+          {
+            "id": "egress",
+            "label": "Inject Header into Outbound Client"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "extract",
+            "label": "Inspect Headers"
+          },
+          {
+            "from": "extract",
+            "to": "generate",
+            "label": "Header Missing"
+          },
+          {
+            "from": "extract",
+            "to": "storage",
+            "label": "Header Present"
+          },
+          {
+            "from": "generate",
+            "to": "storage",
+            "label": "Bind Context"
+          },
+          {
+            "from": "storage",
+            "to": "egress",
+            "label": "Forward Call"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Middleware extracts correlation headers and binds them to execution contexts.",
+            "activeNodes": [
+              "ingress",
+              "extract",
+              "storage"
+            ],
+            "activeEdges": [
+              "ingress->extract",
+              "extract->storage"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Outgoing HTTP clients automatically forward correlation headers downstream.",
+            "activeNodes": [
+              "storage",
+              "egress"
+            ],
+            "activeEdges": [
+              "storage->egress"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "HTTP header extraction and AsyncLocalStorage execution context flow",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Incoming HTTP Ingress"
+          },
+          {
+            "id": "extract",
+            "label": "Inspect x-correlation-id Header"
+          },
+          {
+            "id": "generate",
+            "label": "Generate Fresh ID (If Missing)"
+          },
+          {
+            "id": "storage",
+            "label": "Store in AsyncLocalStorage"
+          },
+          {
+            "id": "egress",
+            "label": "Inject Header into Outbound Client"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "extract",
+            "label": "Inspect Headers"
+          },
+          {
+            "from": "extract",
+            "to": "generate",
+            "label": "Header Missing"
+          },
+          {
+            "from": "extract",
+            "to": "storage",
+            "label": "Header Present"
+          },
+          {
+            "from": "generate",
+            "to": "storage",
+            "label": "Bind Context"
+          },
+          {
+            "from": "storage",
+            "to": "egress",
+            "label": "Forward Call"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Middleware extracts correlation headers and binds them to execution contexts.",
+            "activeNodes": [
+              "ingress",
+              "extract",
+              "storage"
+            ],
+            "activeEdges": [
+              "ingress->extract",
+              "extract->storage"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Outgoing HTTP clients automatically forward correlation headers downstream.",
+            "activeNodes": [
+              "storage",
+              "egress"
+            ],
+            "activeEdges": [
+              "storage->egress"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Log Scrubbing: Sanitizing PII, Passwords & Sensitive Data",
+      "codeHash": "43d28e8bbb3c1efea7b6228be6edffc7d1665a47d7876c1b6c15dafc8897df6f",
+      "spec": {
+        "template": "bars",
+        "title": "Log payload sanitization and sensitive key redaction statistics",
+        "bars": [
+          {
+            "id": "raw",
+            "label": "Raw Unscrubbed Fields",
+            "value": 100
+          },
+          {
+            "id": "redacted",
+            "label": "Sensitive Fields Redacted",
+            "value": 25
+          },
+          {
+            "id": "clean",
+            "label": "Safe Sanitized Output",
+            "value": 75
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Scrubbing interceptors scan JSON keys for sensitive credential patterns.",
+            "activeBars": [
+              "raw",
+              "redacted"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Automated sanitization ensures operational debugging preserves privacy.",
+            "activeBars": [
+              "raw",
+              "redacted",
+              "clean"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Log payload sanitization and sensitive key redaction statistics",
+        "bars": [
+          {
+            "id": "raw",
+            "label": "Raw Unscrubbed Fields",
+            "value": 100
+          },
+          {
+            "id": "redacted",
+            "label": "Sensitive Fields Redacted",
+            "value": 25
+          },
+          {
+            "id": "clean",
+            "label": "Safe Sanitized Output",
+            "value": 75
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Scrubbing interceptors scan JSON keys for sensitive credential patterns.",
+            "activeBars": [
+              "raw",
+              "redacted"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Automated sanitization ensures operational debugging preserves privacy.",
+            "activeBars": [
+              "raw",
+              "redacted",
+              "clean"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Production Structured Logger with Context Baggage",
+      "codeHash": "d702a595627b37b9ea4a96e875f6a9632b148c71d16d9158c0636730c5ce49c0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

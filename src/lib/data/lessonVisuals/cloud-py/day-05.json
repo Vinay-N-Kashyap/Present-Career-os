@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The reference architecture",
+      "codeHash": "c5d92d188e272c5bd8c313b35cd5bd6335ad5e8ff85f4664f314363fd3043094",
+      "spec": {
+        "template": "table",
+        "title": "Standard multi-AZ reference architecture subnet layout",
+        "columns": [
+          "id",
+          "az",
+          "type",
+          "cidr"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Public subnets hold internet facing components across availability zones.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public-a"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "public-b"
+                  },
+                  {
+                    "text": "us-east-1b"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  },
+                  {
+                    "text": "10.0.2.0/24"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Private subnets isolate internal application databases from public routing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public-a"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "public-b"
+                  },
+                  {
+                    "text": "us-east-1b"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  },
+                  {
+                    "text": "10.0.2.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "private-a"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  },
+                  {
+                    "text": "PRIVATE"
+                  },
+                  {
+                    "text": "10.0.11.0/24"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example builds this subnet architecture design using structured data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public-a"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "public-b"
+                  },
+                  {
+                    "text": "us-east-1b"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  },
+                  {
+                    "text": "10.0.2.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "private-a"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  },
+                  {
+                    "text": "PRIVATE"
+                  },
+                  {
+                    "text": "10.0.11.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "private-b"
+                  },
+                  {
+                    "text": "us-east-1b"
+                  },
+                  {
+                    "text": "PRIVATE"
+                  },
+                  {
+                    "text": "10.0.12.0/24"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Standard multi-AZ reference architecture subnet layout",
+        "columns": [
+          "id",
+          "az",
+          "type",
+          "cidr"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Public subnets hold internet facing components across availability zones.",
+            "rows": [
+              {
+                "cells": [
+                  "public-a",
+                  "us-east-1a",
+                  "PUBLIC",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "public-b",
+                  "us-east-1b",
+                  "PUBLIC",
+                  "10.0.2.0/24"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Private subnets isolate internal application databases from public routing.",
+            "rows": [
+              {
+                "cells": [
+                  "public-a",
+                  "us-east-1a",
+                  "PUBLIC",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "public-b",
+                  "us-east-1b",
+                  "PUBLIC",
+                  "10.0.2.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "private-a",
+                  "us-east-1a",
+                  "PRIVATE",
+                  "10.0.11.0/24"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example builds this subnet architecture design using structured data.",
+            "rows": [
+              {
+                "cells": [
+                  "public-a",
+                  "us-east-1a",
+                  "PUBLIC",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "public-b",
+                  "us-east-1b",
+                  "PUBLIC",
+                  "10.0.2.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "private-a",
+                  "us-east-1a",
+                  "PRIVATE",
+                  "10.0.11.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "private-b",
+                  "us-east-1b",
+                  "PRIVATE",
+                  "10.0.12.0/24"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "NAT gateways: out but not in",
+      "codeHash": "c02d60e84ced1d64562be9658fbf1e633916bd660efea29c5b8643ebe11ac3db",
+      "spec": {
+        "template": "table",
+        "title": "NAT gateway stateful address translation table tracking outgoing flows",
+        "columns": [
+          "event",
+          "destination"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A NAT gateway allows outbound connections while blocking inbound attempts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Leaves as:"
+                  },
+                  {
+                    "text": "54.12.3.4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swapping the private server address on replies forwards traffic safely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Leaves as:"
+                  },
+                  {
+                    "text": "54.12.3.4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Reply goes to:"
+                  },
+                  {
+                    "text": "10.0.11.25"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates address swaps for outbound connections and replies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Leaves as:"
+                  },
+                  {
+                    "text": "54.12.3.4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Reply goes to:"
+                  },
+                  {
+                    "text": "10.0.11.25"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Unsolicited packet:"
+                  },
+                  {
+                    "text": "DROPPED: nobody asked for this"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "NAT gateway stateful address translation table tracking outgoing flows",
+        "columns": [
+          "event",
+          "destination"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A NAT gateway allows outbound connections while blocking inbound attempts.",
+            "rows": [
+              {
+                "cells": [
+                  "Leaves as:",
+                  "54.12.3.4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swapping the private server address on replies forwards traffic safely.",
+            "rows": [
+              {
+                "cells": [
+                  "Leaves as:",
+                  "54.12.3.4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Reply goes to:",
+                  "10.0.11.25"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates address swaps for outbound connections and replies.",
+            "rows": [
+              {
+                "cells": [
+                  "Leaves as:",
+                  "54.12.3.4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Reply goes to:",
+                  "10.0.11.25"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Unsolicited packet:",
+                  "DROPPED: nobody asked for this"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The bastion host",
+      "codeHash": "a443ce00bd63cde29eaa4a343a73994a0d63857f3ca99acc9a185650e85def3b",
+      "spec": {
+        "template": "table",
+        "title": "Hardened bastion host ingress and app security group rules",
+        "columns": [
+          "group",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Its security group allows SSH access only from the company office IP range.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bastion-sg"
+                  },
+                  {
+                    "text": "203.0.113.0/24"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks that private servers accept SSH only from the bastion.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bastion-sg"
+                  },
+                  {
+                    "text": "203.0.113.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "app-sg"
+                  },
+                  {
+                    "text": "bastion-sg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Security group references make chained ingress access rules easy to express.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bastion-sg"
+                  },
+                  {
+                    "text": "203.0.113.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "app-sg"
+                  },
+                  {
+                    "text": "bastion-sg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "app-sg"
+                  },
+                  {
+                    "text": "alb-sg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hardened bastion host ingress and app security group rules",
+        "columns": [
+          "group",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Its security group allows SSH access only from the company office IP range.",
+            "rows": [
+              {
+                "cells": [
+                  "bastion-sg",
+                  "203.0.113.0/24"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks that private servers accept SSH only from the bastion.",
+            "rows": [
+              {
+                "cells": [
+                  "bastion-sg",
+                  "203.0.113.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "app-sg",
+                  "bastion-sg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Security group references make chained ingress access rules easy to express.",
+            "rows": [
+              {
+                "cells": [
+                  "bastion-sg",
+                  "203.0.113.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "app-sg",
+                  "bastion-sg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "app-sg",
+                  "alb-sg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing a validator that lists every problem",
+      "codeHash": "ca8f1f9aa992d0d6bf70634e5fd9936d361aa777dc9599d6f848bdd2d55f74f9",
+      "spec": {
+        "template": "table",
+        "title": "VPC validator rule checks and problem diagnostics",
+        "columns": [
+          "field",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A good validator reports every discovered architectural issue in the plan.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "has_internet_gateway"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Append each problem code sequentially as validation rules fail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "has_internet_gateway"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "has_nat_gateway"
+                  },
+                  {
+                    "text": "NO_NAT_GATEWAY"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Returning standardized error codes makes validation easy to test.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "has_internet_gateway"
+                  },
+                  {
+                    "text": "PUBLIC"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "has_nat_gateway"
+                  },
+                  {
+                    "text": "NO_NAT_GATEWAY"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PRIVATE"
+                  },
+                  {
+                    "text": "NEEDS_2_PRIVATE_SUBNETS"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "VPC validator rule checks and problem diagnostics",
+        "columns": [
+          "field",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A good validator reports every discovered architectural issue in the plan.",
+            "rows": [
+              {
+                "cells": [
+                  "has_internet_gateway",
+                  "PUBLIC"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Append each problem code sequentially as validation rules fail.",
+            "rows": [
+              {
+                "cells": [
+                  "has_internet_gateway",
+                  "PUBLIC"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "has_nat_gateway",
+                  "NO_NAT_GATEWAY"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Returning standardized error codes makes validation easy to test.",
+            "rows": [
+              {
+                "cells": [
+                  "has_internet_gateway",
+                  "PUBLIC"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "has_nat_gateway",
+                  "NO_NAT_GATEWAY"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "PRIVATE",
+                  "NEEDS_2_PRIVATE_SUBNETS"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Proving subnets do not overlap",
+      "codeHash": "1f69e41112bf3a5d93c823c68897f69d55aaabffc569658be16ad8d9b30be7d1",
+      "spec": {
+        "template": "none",
+        "reason": "Pairwise IP network overlap verification algorithm."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone review: from plan to production",
+      "codeHash": "ce45d315760da920e7a18c90a132ae4b4ae5daa4695402360b16bc9b52ecf917",
+      "spec": {
+        "template": "none",
+        "reason": "Full architecture validation pipeline summary and deployment review."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 26,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Principles of Chaos Engineering & Blast Radius",
+      "codeHash": "1c4b4ccf8b71abf97ba5cc4cadd09399121b3677032ebd60be0726632343c8f9",
+      "spec": {
+        "template": "compare",
+        "title": "Controlled Scientific Chaos versus Uncontrolled Fault Injection",
+        "left": {
+          "title": "Controlled Scientific Chaos",
+          "items": [
+            "Strictly bounded blast radius (<= 5% traffic)",
+            "Restricted to staging or canary environments",
+            "Mandatory automated emergency stop ceiling",
+            "Validates explicit steady-state hypotheses"
+          ]
+        },
+        "right": {
+          "title": "Uncontrolled Unsafe Injection",
+          "items": [
+            "Excessive blast radius across full production",
+            "Missing automated abort safety thresholds",
+            "Risks unmitigated customer-wide outages",
+            "Blocked immediately by blast radius guard"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Bounded blast radius limits chaos scope to small canary traffic.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Automated stop buttons abort experiments when metrics breach safety.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Controlled Scientific Chaos",
+        "rightLabel": "Uncontrolled Unsafe Injection"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Controlled Scientific Chaos versus Uncontrolled Fault Injection",
+        "left": {
+          "title": "Controlled Scientific Chaos",
+          "items": [
+            "Strictly bounded blast radius (<= 5% traffic)",
+            "Restricted to staging or canary environments",
+            "Mandatory automated emergency stop ceiling",
+            "Validates explicit steady-state hypotheses"
+          ]
+        },
+        "right": {
+          "title": "Uncontrolled Unsafe Injection",
+          "items": [
+            "Excessive blast radius across full production",
+            "Missing automated abort safety thresholds",
+            "Risks unmitigated customer-wide outages",
+            "Blocked immediately by blast radius guard"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Bounded blast radius limits chaos scope to small canary traffic.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Automated stop buttons abort experiments when metrics breach safety.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Controlled Scientific Chaos",
+        "rightLabel": "Uncontrolled Unsafe Injection"
+      }
+    },
+    {
+      "partTitle": "Defining Measurable Steady-State Hypotheses",
+      "codeHash": "30940433b184f884ce630381cc32af2658a5e9ea49383ad7ee9ef2d967afc5d1",
+      "spec": {
+        "template": "table",
+        "title": "Steady-State Hypothesis Evaluation Across Chaos Phases",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The scientific method establishes quantifiable steady-state behavior.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Metrics degrading beyond tolerance boundaries disprove the hypothesis.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Experiment Phase",
+          "Error Rate",
+          "p99 Latency",
+          "Hypothesis Status"
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Steady-State Hypothesis Evaluation Across Chaos Phases",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The scientific method establishes quantifiable steady-state behavior.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Metrics degrading beyond tolerance boundaries disprove the hypothesis.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Experiment Phase",
+          "Error Rate",
+          "p99 Latency",
+          "Hypothesis Status"
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure Injection Type 1: Latency & Jitter Injection",
+      "codeHash": "8a6f6b387cc7eb96b111be06a109157b1c2aa2e375014088fbf732f3313db32f",
+      "spec": {
+        "template": "bars",
+        "title": "Simulated Request Duration Under Latency and Jitter Injection",
+        "bars": [
+          {
+            "label": "Untargeted /health",
+            "value": 5,
+            "unit": "ms"
+          },
+          {
+            "label": "Chaos /charge Low Jitter",
+            "value": 365,
+            "unit": "ms"
+          },
+          {
+            "label": "Chaos /charge High Jitter",
+            "value": 415,
+            "unit": "ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Latency fault injection simulates slow networks and degraded gateways.",
+            "highlightIndex": 1,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Latency injection proves whether circuit breakers trip properly.",
+            "highlightIndex": 2,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Simulated Request Duration Under Latency and Jitter Injection",
+        "bars": [
+          {
+            "label": "Untargeted /health",
+            "value": 5,
+            "unit": "ms"
+          },
+          {
+            "label": "Chaos /charge Low Jitter",
+            "value": 365,
+            "unit": "ms"
+          },
+          {
+            "label": "Chaos /charge High Jitter",
+            "value": 415,
+            "unit": "ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Latency fault injection simulates slow networks and degraded gateways.",
+            "highlightIndex": 1,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Latency injection proves whether circuit breakers trip properly.",
+            "highlightIndex": 2,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure Injection Type 2: Error Injection & Fault Middleware",
+      "codeHash": "f9fe2bc0bddc1906e52e25575d9aeb7eb6bb892ec9b92597b0c7c46b5d48e05a",
+      "spec": {
+        "template": "sequence",
+        "title": "Error Fault Injection and Client Graceful Degradation Flow",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Checkout Client"
+          },
+          {
+            "id": "interceptor",
+            "label": "Chaos Interceptor"
+          },
+          {
+            "id": "reco",
+            "label": "Recommendation API"
+          },
+          {
+            "id": "cache",
+            "label": "Fallback Cache"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "interceptor",
+            "label": "GET /recommendations"
+          },
+          {
+            "from": "interceptor",
+            "to": "client",
+            "label": "Inject HTTP 503 Fault"
+          },
+          {
+            "from": "client",
+            "to": "cache",
+            "label": "Query local fallback"
+          },
+          {
+            "from": "cache",
+            "to": "client",
+            "label": "Serve cached items"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Error fault injection forces requests to fail with specific error codes.",
+            "highlightMessage": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Clients verify graceful degradation by serving cached recommendations.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Error Fault Injection and Client Graceful Degradation Flow",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Checkout Client"
+          },
+          {
+            "id": "interceptor",
+            "label": "Chaos Interceptor"
+          },
+          {
+            "id": "reco",
+            "label": "Recommendation API"
+          },
+          {
+            "id": "cache",
+            "label": "Fallback Cache"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "interceptor",
+            "label": "GET /recommendations"
+          },
+          {
+            "from": "interceptor",
+            "to": "client",
+            "label": "Inject HTTP 503 Fault"
+          },
+          {
+            "from": "client",
+            "to": "cache",
+            "label": "Query local fallback"
+          },
+          {
+            "from": "cache",
+            "to": "client",
+            "label": "Serve cached items"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Error fault injection forces requests to fail with specific error codes.",
+            "highlightMessage": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Clients verify graceful degradation by serving cached recommendations.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure Injection Type 3: Resource Exhaustion & Partitions",
+      "codeHash": "a276f8295090622fc403b871e710def96f921838013b18a0e6979adbabcc60e3",
+      "spec": {
+        "template": "workflow",
+        "title": "OOM Starvation and Network Partition Consensus Check",
+        "nodes": [
+          {
+            "id": "cluster",
+            "label": "Consensus Cluster",
+            "description": "Five nodes distributed across two zones"
+          },
+          {
+            "id": "oom",
+            "label": "OOM Kill Node-1",
+            "description": "Simulates kernel SIGKILL termination"
+          },
+          {
+            "id": "partition",
+            "label": "Network Partition",
+            "description": "Severs links to zone us-east-1b"
+          },
+          {
+            "id": "quorum",
+            "label": "Quorum Guard",
+            "description": "Blocks split-brain write corruption"
+          }
+        ],
+        "edges": [
+          {
+            "from": "cluster",
+            "to": "oom",
+            "label": "Starve Memory"
+          },
+          {
+            "from": "oom",
+            "to": "partition",
+            "label": "Sever Zone"
+          },
+          {
+            "from": "partition",
+            "to": "quorum",
+            "label": "Verify Quorum"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The kernel out-of-memory killer terminates processes hitting limits.",
+            "activeNode": "oom",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Blocking split-brain writes prevents catastrophic data corruption.",
+            "activeNode": "quorum",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "OOM Starvation and Network Partition Consensus Check",
+        "nodes": [
+          {
+            "id": "cluster",
+            "label": "Consensus Cluster",
+            "description": "Five nodes distributed across two zones"
+          },
+          {
+            "id": "oom",
+            "label": "OOM Kill Node-1",
+            "description": "Simulates kernel SIGKILL termination"
+          },
+          {
+            "id": "partition",
+            "label": "Network Partition",
+            "description": "Severs links to zone us-east-1b"
+          },
+          {
+            "id": "quorum",
+            "label": "Quorum Guard",
+            "description": "Blocks split-brain write corruption"
+          }
+        ],
+        "edges": [
+          {
+            "from": "cluster",
+            "to": "oom",
+            "label": "Starve Memory"
+          },
+          {
+            "from": "oom",
+            "to": "partition",
+            "label": "Sever Zone"
+          },
+          {
+            "from": "partition",
+            "to": "quorum",
+            "label": "Verify Quorum"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The kernel out-of-memory killer terminates processes hitting limits.",
+            "activeNode": "oom",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Blocking split-brain writes prevents catastrophic data corruption.",
+            "activeNode": "quorum",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Enterprise Chaos Experiment Controller",
+      "codeHash": "27e277e3f6cea6e0f9575c2a930c5db48dd653fb37a24af668d75c1e0eb513e5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

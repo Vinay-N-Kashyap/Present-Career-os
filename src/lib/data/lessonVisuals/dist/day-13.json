@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 13,
+  "promptSha": "d5faebaf4d994c6aabc76e7187f88b2b7c74b2e997663c7e0092a1f5ce65047e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Fallacy of 'Exactly-Once' Network Transport",
+      "codeHash": "3c60b28d563224b96e0ccda19baf6a5f2954552d2ee8ec527560d67438a0046b",
+      "spec": {
+        "template": "sequence",
+        "title": "Network packet drop during acknowledgment causing client retries",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Application"
+          },
+          {
+            "id": "network",
+            "label": "Unreliable Network"
+          },
+          {
+            "id": "server",
+            "label": "Payment Server"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "network",
+            "label": "Send Payment Request",
+            "tone": "data"
+          },
+          {
+            "from": "network",
+            "to": "server",
+            "label": "Deliver Payment Request",
+            "tone": "data"
+          },
+          {
+            "from": "server",
+            "to": "network",
+            "label": "Send HTTP Success Ack",
+            "tone": "ok"
+          },
+          {
+            "from": "network",
+            "to": "client",
+            "label": "Dropped Packet Timeout",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The server processes payment but return acknowledgment packet drops.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Client retries request because timeout leaves outcome unknown.",
+            "activeMessageIndex": 3,
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Network packet drop during acknowledgment causing client retries",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Application"
+          },
+          {
+            "id": "network",
+            "label": "Unreliable Network"
+          },
+          {
+            "id": "server",
+            "label": "Payment Server"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "network",
+            "label": "Send Payment Request",
+            "tone": "data"
+          },
+          {
+            "from": "network",
+            "to": "server",
+            "label": "Deliver Payment Request",
+            "tone": "data"
+          },
+          {
+            "from": "server",
+            "to": "network",
+            "label": "Send HTTP Success Ack",
+            "tone": "ok"
+          },
+          {
+            "from": "network",
+            "to": "client",
+            "label": "Dropped Packet Timeout",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The server processes payment but return acknowledgment packet drops.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Client retries request because timeout leaves outcome unknown.",
+            "activeMessageIndex": 3,
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotency Keys: Client-Generated Unique Transaction Tokens",
+      "codeHash": "dbae6ec2171fff901d4e65baeb9b2b0998c07bf06ab21de742ecb959ced7db39",
+      "spec": {
+        "template": "states",
+        "title": "Idempotency key state transitions in distributed payment gateway",
+        "states": [
+          {
+            "id": "unseenKey",
+            "label": "New Unique Idempotency Key"
+          },
+          {
+            "id": "processing",
+            "label": "Atomically Claimed Processing"
+          },
+          {
+            "id": "completed",
+            "label": "Completed Response Cached"
+          },
+          {
+            "id": "duplicateBypassed",
+            "label": "Duplicate Key Cached Return"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The server atomically claims the idempotency key with processing status.",
+            "activeStateId": "processing",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Server bypasses business logic and returns cached response for retries.",
+            "activeStateId": "duplicateBypassed",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Idempotency key state transitions in distributed payment gateway",
+        "states": [
+          {
+            "id": "unseenKey",
+            "label": "New Unique Idempotency Key"
+          },
+          {
+            "id": "processing",
+            "label": "Atomically Claimed Processing"
+          },
+          {
+            "id": "completed",
+            "label": "Completed Response Cached"
+          },
+          {
+            "id": "duplicateBypassed",
+            "label": "Duplicate Key Cached Return"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The server atomically claims the idempotency key with processing status.",
+            "activeStateId": "processing",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Server bypasses business logic and returns cached response for retries.",
+            "activeStateId": "duplicateBypassed",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Natural vs Artificial Idempotency: HTTP Verbs & Deduplication Math",
+      "codeHash": "01598d614b756aec9bbdec1959895dc243077b6637061fdaef4c7cb6c04078c6",
+      "spec": {
+        "template": "compare",
+        "title": "Comparison between natural idempotency and artificial idempotency",
+        "left": {
+          "title": "Naturally Idempotent",
+          "items": [
+            "Absolute state replacement logic",
+            "Standard HTTP verbs like GET PUT and DELETE",
+            "Zero extra deduplication storage needed"
+          ]
+        },
+        "right": {
+          "title": "Artificially Idempotent",
+          "items": [
+            "Incremental business operations like POST",
+            "Requires explicit idempotency tokens",
+            "Relies on deduplication table records"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Verbs like get put and delete are naturally idempotent by specification.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Non-idempotent actions require artificial tokens or database unique keys.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Naturally Idempotent",
+        "rightLabel": "Artificially Idempotent"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Comparison between natural idempotency and artificial idempotency",
+        "left": {
+          "title": "Naturally Idempotent",
+          "items": [
+            "Absolute state replacement logic",
+            "Standard HTTP verbs like GET PUT and DELETE",
+            "Zero extra deduplication storage needed"
+          ]
+        },
+        "right": {
+          "title": "Artificially Idempotent",
+          "items": [
+            "Incremental business operations like POST",
+            "Requires explicit idempotency tokens",
+            "Relies on deduplication table records"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Verbs like get put and delete are naturally idempotent by specification.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Non-idempotent actions require artificial tokens or database unique keys.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Naturally Idempotent",
+        "rightLabel": "Artificially Idempotent"
+      }
+    },
+    {
+      "partTitle": "The Dual-Write Problem: Why Database + Message Queue Causes Inconsistency",
+      "codeHash": "3fc74838b32a5b8adffaf065a2a7a5362c36e9a3fcf867ab7923f2f31d6f4fc0",
+      "spec": {
+        "template": "workflow",
+        "title": "The dual-write failure hazard across database and message queue",
+        "workflow": [
+          {
+            "id": "clientReq",
+            "label": "Incoming Order Creation Request",
+            "status": "completed"
+          },
+          {
+            "id": "dbCommit",
+            "label": "Commit Order to Local Database",
+            "status": "active"
+          },
+          {
+            "id": "kafkaPublish",
+            "label": "Publish Event to Message Broker",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "If the server crashes before publishing the event is lost forever.",
+            "activeWorkflowId": "dbCommit",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "Publishing first risks emitting phantom events if the database rolls back.",
+            "activeWorkflowId": "kafkaPublish",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The dual-write failure hazard across database and message queue",
+        "workflow": [
+          {
+            "id": "clientReq",
+            "label": "Incoming Order Creation Request",
+            "status": "completed"
+          },
+          {
+            "id": "dbCommit",
+            "label": "Commit Order to Local Database",
+            "status": "active"
+          },
+          {
+            "id": "kafkaPublish",
+            "label": "Publish Event to Message Broker",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "If the server crashes before publishing the event is lost forever.",
+            "activeWorkflowId": "dbCommit",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "Publishing first risks emitting phantom events if the database rolls back.",
+            "activeWorkflowId": "kafkaPublish",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Transactional Outbox Pattern: Atomic Consistency via Local DB Transactions",
+      "codeHash": "1a197b89f36d4b78aac2e430a2b27a1686c5d9322e34f7c73219c15c568c0d41",
+      "spec": {
+        "template": "table",
+        "title": "Transactional outbox architecture and atomicity guarantees",
+        "columns": [
+          "Subsystem",
+          "Database Entity",
+          "Action Performed",
+          "Consistency Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The application inserts order and pending message into local outbox.",
+            "highlightRow": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The background relay reads outbox rows and publishes to the broker.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Transactional outbox architecture and atomicity guarantees",
+        "columns": [
+          "Subsystem",
+          "Database Entity",
+          "Action Performed",
+          "Consistency Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The application inserts order and pending message into local outbox.",
+            "highlightRow": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The background relay reads outbox rows and publishes to the broker.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Idempotent Message Processor with Outbox Relay",
+      "codeHash": "ef45f9e65599b80764e24c472c4372f64dd8ed4e787e0455300063aa47c9a7d7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

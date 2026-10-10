@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 25,
+  "promptSha": "4d32124c047bff5987b28ce381facea8e5bae7d8140e1a3a06a8bdfb5974fed1",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Monolithic API Gateways vs Backend-For-Frontend (BFF)",
+      "codeHash": "372de87007b22a8fc96669ed96908e22f0331f28d02b8312bbd92f0374a9a427",
+      "spec": {
+        "template": "compare",
+        "title": "Monolithic API gateway versus dedicated backend-for-frontend layers",
+        "left": {
+          "title": "Monolithic API Gateway",
+          "items": [
+            "Single shared endpoint schema for all clients",
+            "Bloated payloads drain mobile smartphone batteries",
+            "Team coupling across mobile and web teams"
+          ]
+        },
+        "right": {
+          "title": "Backend-For-Frontend (BFF)",
+          "items": [
+            "Dedicated gateway per client experience platform",
+            "Compact optimized responses for mobile devices",
+            "Independent frontend team autonomy and deployments"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Smartphones on cellular data need compact payloads to save battery.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The backend for frontend pattern builds specialized gateway layers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Monolithic API Gateway",
+        "rightLabel": "Backend-For-Frontend (BFF)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Monolithic API gateway versus dedicated backend-for-frontend layers",
+        "left": {
+          "title": "Monolithic API Gateway",
+          "items": [
+            "Single shared endpoint schema for all clients",
+            "Bloated payloads drain mobile smartphone batteries",
+            "Team coupling across mobile and web teams"
+          ]
+        },
+        "right": {
+          "title": "Backend-For-Frontend (BFF)",
+          "items": [
+            "Dedicated gateway per client experience platform",
+            "Compact optimized responses for mobile devices",
+            "Independent frontend team autonomy and deployments"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Smartphones on cellular data need compact payloads to save battery.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The backend for frontend pattern builds specialized gateway layers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Monolithic API Gateway",
+        "rightLabel": "Backend-For-Frontend (BFF)"
+      }
+    },
+    {
+      "partTitle": "Response Aggregation & Scatter-Gather Microservice Stitching",
+      "codeHash": "2fad13282654afdd880b3d1c49abf0dc5b7c3ec713514b56ad824d350331f83d",
+      "spec": {
+        "template": "workflow",
+        "title": "Mobile dashboard response aggregation and scatter-gather workflow",
+        "workflow": [
+          {
+            "id": "clientCall",
+            "label": "Client Issues Single HTTP Dashboard Request",
+            "status": "completed"
+          },
+          {
+            "id": "scatterCalls",
+            "label": "BFF Scatters Parallel Calls to Internal Services",
+            "status": "active"
+          },
+          {
+            "id": "stitchResponse",
+            "label": "BFF Gathers Responses and Stitches Compact JSON",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The client issues a single request to the backend for frontend gateway.",
+            "activeWorkflowId": "clientCall",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "The gateway gathers responses and stitches them into a unified object.",
+            "activeWorkflowId": "stitchResponse",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Mobile dashboard response aggregation and scatter-gather workflow",
+        "workflow": [
+          {
+            "id": "clientCall",
+            "label": "Client Issues Single HTTP Dashboard Request",
+            "status": "completed"
+          },
+          {
+            "id": "scatterCalls",
+            "label": "BFF Scatters Parallel Calls to Internal Services",
+            "status": "active"
+          },
+          {
+            "id": "stitchResponse",
+            "label": "BFF Gathers Responses and Stitches Compact JSON",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The client issues a single request to the backend for frontend gateway.",
+            "activeWorkflowId": "clientCall",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "The gateway gathers responses and stitches them into a unified object.",
+            "activeWorkflowId": "stitchResponse",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Protocol Translation: Transcoding Internal gRPC to External REST/JSON",
+      "codeHash": "babcf7a29ea06ece2074e861777fd4186ab2dcae137298c44c521c3091dd47d9",
+      "spec": {
+        "template": "sequence",
+        "title": "Public REST JSON to internal binary gRPC Protobuf transcoding sequence",
+        "actors": [
+          {
+            "id": "browser",
+            "label": "Web Browser Client"
+          },
+          {
+            "id": "transcoder",
+            "label": "API Gateway Transcoder"
+          },
+          {
+            "id": "grpcBackend",
+            "label": "Internal gRPC Order Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "browser",
+            "to": "transcoder",
+            "label": "Inbound REST HTTP JSON Request",
+            "tone": "data"
+          },
+          {
+            "from": "transcoder",
+            "to": "grpcBackend",
+            "label": "Transcode to Binary Protobuf RPC",
+            "tone": "ok"
+          },
+          {
+            "from": "grpcBackend",
+            "to": "transcoder",
+            "label": "Binary Protobuf Response Bytes",
+            "tone": "data"
+          },
+          {
+            "from": "transcoder",
+            "to": "browser",
+            "label": "Transcode to Outbound JSON HTTP Success",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Web browsers expect standard rest endpoints with human readable payloads.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The gateway serializes fields into binary protobuf for grpc calls.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Public REST JSON to internal binary gRPC Protobuf transcoding sequence",
+        "actors": [
+          {
+            "id": "browser",
+            "label": "Web Browser Client"
+          },
+          {
+            "id": "transcoder",
+            "label": "API Gateway Transcoder"
+          },
+          {
+            "id": "grpcBackend",
+            "label": "Internal gRPC Order Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "browser",
+            "to": "transcoder",
+            "label": "Inbound REST HTTP JSON Request",
+            "tone": "data"
+          },
+          {
+            "from": "transcoder",
+            "to": "grpcBackend",
+            "label": "Transcode to Binary Protobuf RPC",
+            "tone": "ok"
+          },
+          {
+            "from": "grpcBackend",
+            "to": "transcoder",
+            "label": "Binary Protobuf Response Bytes",
+            "tone": "data"
+          },
+          {
+            "from": "transcoder",
+            "to": "browser",
+            "label": "Transcode to Outbound JSON HTTP Success",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Web browsers expect standard rest endpoints with human readable payloads.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The gateway serializes fields into binary protobuf for grpc calls.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Origin Resource Sharing (CORS) & Security Header Injection",
+      "codeHash": "c88d1c768463eab6e1d3ea38b93686a35b768e0684241339d91197f81e0203a5",
+      "spec": {
+        "template": "table",
+        "title": "API gateway CORS and security perimeter defense headers",
+        "columns": [
+          "Security Header",
+          "Directive Policy",
+          "Attack Vector Defended",
+          "Browser Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Browsers issue an options preflight request before cross-origin mutations.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The gateway verifies the origin and responds with allow origin headers.",
+            "highlightRow": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "API gateway CORS and security perimeter defense headers",
+        "columns": [
+          "Security Header",
+          "Directive Policy",
+          "Attack Vector Defended",
+          "Browser Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Browsers issue an options preflight request before cross-origin mutations.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The gateway verifies the origin and responds with allow origin headers.",
+            "highlightRow": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "API Versioning Strategies: URI, Header & Content Negotiation",
+      "codeHash": "13f23f7614617956173b99add461ecfe1a37228f890721446a2a611bf14cb86b",
+      "spec": {
+        "template": "states",
+        "title": "API versioning URI and content negotiation routing states",
+        "states": [
+          {
+            "id": "v1Route",
+            "label": "Version One Request Routed to Legacy Handlers"
+          },
+          {
+            "id": "v2Route",
+            "label": "Version Two Request Routed to Modern Handlers"
+          },
+          {
+            "id": "headerInspection",
+            "label": "Custom Version Header or Content Negotiation Check"
+          },
+          {
+            "id": "sideBySide",
+            "label": "Side-by-Side Coexistence During Deprecation Window"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Uri path versioning is the most explicit and cache friendly pattern.",
+            "activeStateId": "v1Route",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Content negotiation specifies the desired version in the accept header.",
+            "activeStateId": "headerInspection",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "API versioning URI and content negotiation routing states",
+        "states": [
+          {
+            "id": "v1Route",
+            "label": "Version One Request Routed to Legacy Handlers"
+          },
+          {
+            "id": "v2Route",
+            "label": "Version Two Request Routed to Modern Handlers"
+          },
+          {
+            "id": "headerInspection",
+            "label": "Custom Version Header or Content Negotiation Check"
+          },
+          {
+            "id": "sideBySide",
+            "label": "Side-by-Side Coexistence During Deprecation Window"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Uri path versioning is the most explicit and cache friendly pattern.",
+            "activeStateId": "v1Route",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Content negotiation specifies the desired version in the accept header.",
+            "activeStateId": "headerInspection",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Platform BFF Gateway Platform Simulator",
+      "codeHash": "f57a6c299e3c49533c3e4befa0e225755d8e247460a7c3974ad00b3d80884608",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

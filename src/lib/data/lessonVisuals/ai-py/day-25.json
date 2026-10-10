@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why self-host an open model?",
+      "codeHash": "a1cfc2796108952cfe0dd3b3a4c73eb9977d1771c35e515ca5d90220f085ed9b",
+      "spec": {
+        "template": "none",
+        "reason": "Economic break-even analysis of hosted API per-token cost versus dedicated GPU hardware rental."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The KV cache",
+      "codeHash": "c77c547e2282f7a6243b92d46925958d2ac838356e0d85d9d1aa15897f6f9466",
+      "spec": {
+        "template": "bars",
+        "title": "KV cache memory consumption scaling with context length",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "KV cache stores keys and values so transformer reuses earlier tokens.",
+            "bars": [
+              {
+                "label": "context_1k",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "context_4k",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "KV cache grows with every token across long contexts.",
+            "bars": [
+              {
+                "label": "context_1k",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "context_4k",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "context_32k",
+                "value": {
+                  "text": "32000"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Cache memory is main limit on how many users a GPU serves at once.",
+            "bars": [
+              {
+                "label": "context_1k",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "context_4k",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "context_32k",
+                "value": {
+                  "text": "32000"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "KV cache memory consumption scaling with context length",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "KV cache stores keys and values so transformer reuses earlier tokens.",
+            "bars": [
+              {
+                "label": "context_1k",
+                "value": 1000,
+                "tone": "ok"
+              },
+              {
+                "label": "context_4k",
+                "value": 4000,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "KV cache grows with every token across long contexts.",
+            "bars": [
+              {
+                "label": "context_1k",
+                "value": 1000,
+                "tone": "ok"
+              },
+              {
+                "label": "context_4k",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "context_32k",
+                "value": 32000,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Cache memory is main limit on how many users a GPU serves at once.",
+            "bars": [
+              {
+                "label": "context_1k",
+                "value": 1000,
+                "tone": "ok"
+              },
+              {
+                "label": "context_4k",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "context_32k",
+                "value": 32000,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PagedAttention",
+      "codeHash": "fce11c2db0f346af055f19a4fb352210ef14b5b3ed7228bd73fc87c2f68c387a",
+      "spec": {
+        "template": "compare",
+        "title": "Pre-allocated contiguous buffer versus paged virtual memory allocation",
+        "leftLabel": "Traditional Buffer",
+        "rightLabel": "PagedAttention",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional servers reserve one big block of memory per request.",
+            "left": {
+              "code": "reserved_per_request = 2048 MB",
+              "result": {
+                "text": "2048"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "paged_mb = 512 MB virtual pages",
+              "result": {
+                "text": "512"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PagedAttention stores KV cache in small pages like virtual memory.",
+            "left": {
+              "code": "contiguous pre-allocation waste",
+              "result": {
+                "text": "2048"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "on-demand page allocation blocks",
+              "result": {
+                "text": "512"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Less wasted memory allows more requests on the same GPU raising throughput.",
+            "left": {
+              "code": "internal fragmentation bottlenecks",
+              "result": {
+                "text": "2048"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "high batch capacity concurrency",
+              "result": {
+                "text": "512"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Pre-allocated contiguous buffer versus paged virtual memory allocation",
+        "leftLabel": "Traditional Buffer",
+        "rightLabel": "PagedAttention",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional servers reserve one big block of memory per request.",
+            "left": {
+              "code": "reserved_per_request = 2048 MB",
+              "result": "2048",
+              "tone": "error",
+              "checks": [
+                "2048"
+              ]
+            },
+            "right": {
+              "code": "paged_mb = 512 MB virtual pages",
+              "result": "512",
+              "tone": "ok",
+              "checks": [
+                "512"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PagedAttention stores KV cache in small pages like virtual memory.",
+            "left": {
+              "code": "contiguous pre-allocation waste",
+              "result": "2048",
+              "tone": "error",
+              "checks": [
+                "2048"
+              ]
+            },
+            "right": {
+              "code": "on-demand page allocation blocks",
+              "result": "512",
+              "tone": "ok",
+              "checks": [
+                "512"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Less wasted memory allows more requests on the same GPU raising throughput.",
+            "left": {
+              "code": "internal fragmentation bottlenecks",
+              "result": "2048",
+              "tone": "error",
+              "checks": [
+                "2048"
+              ]
+            },
+            "right": {
+              "code": "high batch capacity concurrency",
+              "result": "512",
+              "tone": "ok",
+              "checks": [
+                "512"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Batching and throughput",
+      "codeHash": "e5171991c8da0e66569ee1eb77f1d193edf0f5417791e7d04b46bf295e6eebfa",
+      "spec": {
+        "template": "compare",
+        "title": "Sequential static batching versus dynamic continuous batching",
+        "leftLabel": "Static Batching",
+        "rightLabel": "Continuous Batching",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Static batching waits for whole batch to finish before starting next.",
+            "left": {
+              "code": "static_time = sum(max(...))",
+              "result": {
+                "text": "static batching steps:"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "continuous_time = max(finish)",
+              "result": {
+                "text": "continuous batching steps:"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Continuous batching adds new requests as soon as sequence finishes.",
+            "left": {
+              "code": "idle GPU slots waiting for longest sequence",
+              "result": {
+                "text": "static batching steps:"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "immediate slot refill on token finish",
+              "result": {
+                "text": "continuous batching steps:"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Continuous batching keeps GPU busy and raises total tokens per second.",
+            "left": {
+              "code": "underutilized compute hardware",
+              "result": {
+                "text": "static batching steps:"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "near 100% compute hardware saturation",
+              "result": {
+                "text": "continuous batching steps:"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Sequential static batching versus dynamic continuous batching",
+        "leftLabel": "Static Batching",
+        "rightLabel": "Continuous Batching",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Static batching waits for whole batch to finish before starting next.",
+            "left": {
+              "code": "static_time = sum(max(...))",
+              "result": "static batching steps:",
+              "tone": "data",
+              "checks": [
+                "static batching steps:"
+              ]
+            },
+            "right": {
+              "code": "continuous_time = max(finish)",
+              "result": "continuous batching steps:",
+              "tone": "ok",
+              "checks": [
+                "continuous batching steps:"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Continuous batching adds new requests as soon as sequence finishes.",
+            "left": {
+              "code": "idle GPU slots waiting for longest sequence",
+              "result": "static batching steps:",
+              "tone": "data",
+              "checks": [
+                "static batching steps:"
+              ]
+            },
+            "right": {
+              "code": "immediate slot refill on token finish",
+              "result": "continuous batching steps:",
+              "tone": "ok",
+              "checks": [
+                "continuous batching steps:"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Continuous batching keeps GPU busy and raises total tokens per second.",
+            "left": {
+              "code": "underutilized compute hardware",
+              "result": "static batching steps:",
+              "tone": "data",
+              "checks": [
+                "static batching steps:"
+              ]
+            },
+            "right": {
+              "code": "near 100% compute hardware saturation",
+              "result": "continuous batching steps:",
+              "tone": "ok",
+              "checks": [
+                "continuous batching steps:"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GGUF and quantisation names",
+      "codeHash": "fadf36fe92b94862c9256969bbc3715aa8e4890d370c87a66f6539d1d6c6fb93",
+      "spec": {
+        "template": "table",
+        "title": "GGUF quantization format naming conventions and bit precision",
+        "columns": [
+          "gguf_name",
+          "bit_precision",
+          "file_size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "GGUF is the file format used by llama.cpp and Ollama.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Q4_K_M"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Q8_0"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "File names show quantisation bits per weight with quality mix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Q4_K_M"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Q8_0"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FP16"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Quantization bits returns the number after Q for quantised names.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Q4_K_M"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Q8_0"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FP16"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "GGUF quantization format naming conventions and bit precision",
+        "columns": [
+          "gguf_name",
+          "bit_precision",
+          "file_size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "GGUF is the file format used by llama.cpp and Ollama.",
+            "rows": [
+              {
+                "cells": [
+                  "Q4_K_M",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Q8_0",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "File names show quantisation bits per weight with quality mix.",
+            "rows": [
+              {
+                "cells": [
+                  "Q4_K_M",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Q8_0",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "FP16",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Quantization bits returns the number after Q for quantised names.",
+            "rows": [
+              {
+                "cells": [
+                  "Q4_K_M",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Q8_0",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "FP16",
+                  "bits",
+                  "GB"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing how to run a model",
+      "codeHash": "b5cf8538323befd5a55b3bc1f25973bb52252b2de62a016c943f6e1f0bb8e8a0",
+      "spec": {
+        "template": "none",
+        "reason": "Runtime selection decision matrix across local Ollama, vLLM cluster, and cloud hosted endpoints."
+      },
+      "filled": {}
+    }
+  ]
+}

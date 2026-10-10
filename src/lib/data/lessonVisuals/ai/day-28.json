@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 28,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Black Box Problem: Why LLM Observability is Essential",
+      "codeHash": "67637b291bcd881365e9868852509b9c848e5204fff00470d66c1057c5059396",
+      "spec": {
+        "template": "boxes",
+        "title": "LLM telemetry event schema fields",
+        "boxes": [
+          {
+            "id": "traceId",
+            "label": "Trace Identifier",
+            "detail": "Global Transaction Key",
+            "tappable": false
+          },
+          {
+            "id": "eventType",
+            "label": "Event Type",
+            "detail": "Inference / Tool Work",
+            "tappable": false
+          },
+          {
+            "id": "tokens",
+            "label": "Token Counters",
+            "detail": "Input & Completion",
+            "tappable": false
+          },
+          {
+            "id": "latency",
+            "label": "Latency Profiler",
+            "detail": "Millisecond Duration",
+            "tappable": false
+          },
+          {
+            "id": "cost",
+            "label": "Calculated Cost",
+            "detail": "Financial Attribution",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Observability systems debug complex multi-step interactions.",
+            "activeBoxes": [
+              "traceId",
+              "eventType"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Telemetry records capture exact prompt inputs outputs and token counts.",
+            "activeBoxes": [
+              "tokens",
+              "latency",
+              "cost"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "LLM telemetry event schema fields",
+        "boxes": [
+          {
+            "id": "traceId",
+            "label": "Trace Identifier",
+            "detail": "Global Transaction Key",
+            "tappable": false
+          },
+          {
+            "id": "eventType",
+            "label": "Event Type",
+            "detail": "Inference / Tool Work",
+            "tappable": false
+          },
+          {
+            "id": "tokens",
+            "label": "Token Counters",
+            "detail": "Input & Completion",
+            "tappable": false
+          },
+          {
+            "id": "latency",
+            "label": "Latency Profiler",
+            "detail": "Millisecond Duration",
+            "tappable": false
+          },
+          {
+            "id": "cost",
+            "label": "Calculated Cost",
+            "detail": "Financial Attribution",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Observability systems debug complex multi-step interactions.",
+            "activeBoxes": [
+              "traceId",
+              "eventType"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Telemetry records capture exact prompt inputs outputs and token counts.",
+            "activeBoxes": [
+              "tokens",
+              "latency",
+              "cost"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical Tracing: Traces, Spans, and Generations",
+      "codeHash": "de451521eb04cd2dd49833900808d0011888df02ca56a4b13e5dbb211f5968f4",
+      "spec": {
+        "template": "flow",
+        "title": "Hierarchical trace and nested execution span tree",
+        "nodes": [
+          {
+            "id": "traceRoot",
+            "label": "Parent Trace Root",
+            "tappable": false
+          },
+          {
+            "id": "spanGuard",
+            "label": "Input Guardrail Span",
+            "tappable": false
+          },
+          {
+            "id": "spanVector",
+            "label": "Vector Search Span",
+            "tappable": false
+          },
+          {
+            "id": "spanGen",
+            "label": "Generation Span",
+            "tappable": false
+          },
+          {
+            "id": "telemetryOut",
+            "label": "Telemetry Exporter",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "traceRoot",
+            "to": "spanGuard",
+            "label": "Initial Filter"
+          },
+          {
+            "from": "traceRoot",
+            "to": "spanVector",
+            "label": "Context Retrieval"
+          },
+          {
+            "from": "traceRoot",
+            "to": "spanGen",
+            "label": "Model Inference"
+          },
+          {
+            "from": "spanGen",
+            "to": "telemetryOut",
+            "label": "Publish Tree"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Parent trace represents overarching user interaction from prompt to response.",
+            "activeNodes": [
+              "traceRoot",
+              "spanGuard"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Generation span specifically captures inference calls recording tokens.",
+            "activeNodes": [
+              "spanVector",
+              "spanGen",
+              "telemetryOut"
+            ],
+            "activeEdges": [
+              "from-traceRoot-to-spanVector",
+              "from-traceRoot-to-spanGen",
+              "from-spanGen-to-telemetryOut"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Hierarchical trace and nested execution span tree",
+        "nodes": [
+          {
+            "id": "traceRoot",
+            "label": "Parent Trace Root",
+            "tappable": false
+          },
+          {
+            "id": "spanGuard",
+            "label": "Input Guardrail Span",
+            "tappable": false
+          },
+          {
+            "id": "spanVector",
+            "label": "Vector Search Span",
+            "tappable": false
+          },
+          {
+            "id": "spanGen",
+            "label": "Generation Span",
+            "tappable": false
+          },
+          {
+            "id": "telemetryOut",
+            "label": "Telemetry Exporter",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "traceRoot",
+            "to": "spanGuard",
+            "label": "Initial Filter"
+          },
+          {
+            "from": "traceRoot",
+            "to": "spanVector",
+            "label": "Context Retrieval"
+          },
+          {
+            "from": "traceRoot",
+            "to": "spanGen",
+            "label": "Model Inference"
+          },
+          {
+            "from": "spanGen",
+            "to": "telemetryOut",
+            "label": "Publish Tree"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Parent trace represents overarching user interaction from prompt to response.",
+            "activeNodes": [
+              "traceRoot",
+              "spanGuard"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Generation span specifically captures inference calls recording tokens.",
+            "activeNodes": [
+              "spanVector",
+              "spanGen",
+              "telemetryOut"
+            ],
+            "activeEdges": [
+              "from-traceRoot-to-spanVector",
+              "from-traceRoot-to-spanGen",
+              "from-spanGen-to-telemetryOut"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Token Tracking, Cost Attribution, and Latency Profiling",
+      "codeHash": "60cd4cea340ee29a356723561145f5c9012d77ac74f137982275c7ee554aa856",
+      "spec": {
+        "template": "table",
+        "title": "Model token pricing and inference throughput comparison",
+        "columns": [
+          "Target Model",
+          "Prompt Pricing",
+          "Completion Pricing",
+          "Latency Performance"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Frontier models enforce asymmetrical pricing with cheaper input tokens.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Tracking generation latency allows teams to monitor token throughput.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model token pricing and inference throughput comparison",
+        "columns": [
+          "Target Model",
+          "Prompt Pricing",
+          "Completion Pricing",
+          "Latency Performance"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Frontier models enforce asymmetrical pricing with cheaper input tokens.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Tracking generation latency allows teams to monitor token throughput.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prompt Versioning & Production A/B Evaluation",
+      "codeHash": "b2be661587f0ab0a393b7f339ed57f7114471031d39bbf4b7eabbfb2377c2735",
+      "spec": {
+        "template": "compare",
+        "title": "Prompt template versioning architecture comparison",
+        "leftLabel": "Prompt Version 1",
+        "rightLabel": "Prompt Version 2",
+        "leftItems": [
+          "Direct concise instruction template",
+          "Baseline model target configuration",
+          "Deterministic low temperature setting",
+          "Minimal prompt token footprint"
+        ],
+        "rightItems": [
+          "Chain of thought role reasoning template",
+          "Architect role framing with rubric checks",
+          "Balanced temperature parameter",
+          "Comprehensive multi-step reasoning prompt"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "System prompts are stored as versioned assets in the platform.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "Platform routes traffic across prompt variants for production testing.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Prompt template versioning architecture comparison",
+        "leftLabel": "Prompt Version 1",
+        "rightLabel": "Prompt Version 2",
+        "leftItems": [
+          "Direct concise instruction template",
+          "Baseline model target configuration",
+          "Deterministic low temperature setting",
+          "Minimal prompt token footprint"
+        ],
+        "rightItems": [
+          "Chain of thought role reasoning template",
+          "Architect role framing with rubric checks",
+          "Balanced temperature parameter",
+          "Comprehensive multi-step reasoning prompt"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "System prompts are stored as versioned assets in the platform.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "Platform routes traffic across prompt variants for production testing.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "User Feedback Loops & Online Evaluations (Thumb Up/Down)",
+      "codeHash": "74aebc1bbd5e52f1407e967d0ceb4c8241476acb5b1804d1a9d3ffae4a71c3cf",
+      "spec": {
+        "template": "bars",
+        "title": "Online user feedback distribution metrics",
+        "bars": [
+          {
+            "id": "positive",
+            "label": "Positive Feedback",
+            "value": 67
+          },
+          {
+            "id": "negative",
+            "label": "Negative Feedback",
+            "value": 33
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Client transmits feedback score alongside generation trace identifier.",
+            "activeBars": [
+              "positive"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers inspect exact prompt and model output causing dissatisfaction.",
+            "activeBars": [
+              "negative"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Online user feedback distribution metrics",
+        "bars": [
+          {
+            "id": "positive",
+            "label": "Positive Feedback",
+            "value": 67
+          },
+          {
+            "id": "negative",
+            "label": "Negative Feedback",
+            "value": 33
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Client transmits feedback score alongside generation trace identifier.",
+            "activeBars": [
+              "positive"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers inspect exact prompt and model output causing dissatisfaction.",
+            "activeBars": [
+              "negative"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Observability Pipeline: End-to-End Trace Logger",
+      "codeHash": "523e8b0cb1385dfac274c0e86092f4cc8fbd87468702b6132813a36e7e013adc",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}

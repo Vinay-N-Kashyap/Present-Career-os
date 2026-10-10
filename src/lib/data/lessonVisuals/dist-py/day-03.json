@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Remote procedure calls",
+      "codeHash": "778028790ec33a1cd80b42c13fa5513aaaba9a4eb899b801f5192e65fa2329fa",
+      "spec": {
+        "template": "none",
+        "reason": "Client-server stub architecture and RPC semantics overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Text versus binary serialisation",
+      "codeHash": "b95089d63989244cf8baa858cbc013e569b66a46b39682ae6af2e85cd979944c",
+      "spec": {
+        "template": "compare",
+        "title": "JSON text representation versus Protobuf packed binary serialization",
+        "leftLabel": "JSON Payload",
+        "rightLabel": "Binary Packed Payload",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "JSON repeats field names in every message making payloads verbose.",
+            "left": {
+              "code": "json.dumps(order).encode()",
+              "result": {
+                "text": "order_id"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "struct.pack(\"<IHI\", ...)",
+              "result": {
+                "text": "123456"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Binary formats replace field names with compact schema numbers.",
+            "left": {
+              "code": "text field key string",
+              "result": {
+                "text": "quantity"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "packed numeric struct",
+              "result": {
+                "text": "3"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Compact binary representation is smaller and faster to parse.",
+            "left": {
+              "code": "verbose ASCII encoding",
+              "result": {
+                "text": "price_paise"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "compact binary bytes",
+              "result": {
+                "text": "49900"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "JSON text representation versus Protobuf packed binary serialization",
+        "leftLabel": "JSON Payload",
+        "rightLabel": "Binary Packed Payload",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "JSON repeats field names in every message making payloads verbose.",
+            "left": {
+              "code": "json.dumps(order).encode()",
+              "result": "order_id",
+              "tone": "data",
+              "checks": [
+                "order_id"
+              ]
+            },
+            "right": {
+              "code": "struct.pack(\"<IHI\", ...)",
+              "result": "123456",
+              "tone": "ok",
+              "checks": [
+                "123456"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Binary formats replace field names with compact schema numbers.",
+            "left": {
+              "code": "text field key string",
+              "result": "quantity",
+              "tone": "data",
+              "checks": [
+                "quantity"
+              ]
+            },
+            "right": {
+              "code": "packed numeric struct",
+              "result": "3",
+              "tone": "ok",
+              "checks": [
+                "3"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Compact binary representation is smaller and faster to parse.",
+            "left": {
+              "code": "verbose ASCII encoding",
+              "result": "price_paise",
+              "tone": "data",
+              "checks": [
+                "price_paise"
+              ]
+            },
+            "right": {
+              "code": "compact binary bytes",
+              "result": "49900",
+              "tone": "ok",
+              "checks": [
+                "49900"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Varints: small numbers, few bytes",
+      "codeHash": "4463c6fcd037746d5b3a93933ec9caed954fb540d369d048ea8704983821022b",
+      "spec": {
+        "template": "table",
+        "title": "Protobuf variable length integer encoding and continuation bits",
+        "columns": [
+          "value",
+          "continuation",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Varints store integers using fewer bytes for smaller numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Continuation flag bit indicates whether more bytes follow.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "127"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Function encode_varint encodes values exceeding 128 across bytes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "127"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "shift"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Protobuf variable length integer encoding and continuation bits",
+        "columns": [
+          "value",
+          "continuation",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Varints store integers using fewer bytes for smaller numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "0",
+                  "value"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Continuation flag bit indicates whether more bytes follow.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "0",
+                  "value"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "127",
+                  "0",
+                  "value"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Function encode_varint encodes values exceeding 128 across bytes.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "0",
+                  "value"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "127",
+                  "0",
+                  "value"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "300",
+                  "1",
+                  "shift"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tags and wire types",
+      "codeHash": "0b8dc81c0c8e5ce95f33b3bf68752f6f450e75773cca7afae47af393026c8121",
+      "spec": {
+        "template": "table",
+        "title": "Protobuf tag decoding extracting field numbers and wire types",
+        "columns": [
+          "field",
+          "wire_type",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tag combines field number and wire type to tell decoder how to read.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "VARINT"
+                  },
+                  {
+                    "text": "150"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Wire types define length and byte interpretation for values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "VARINT"
+                  },
+                  {
+                    "text": "150"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "LENGTH_DELIMITED"
+                  },
+                  {
+                    "text": "hi"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tag bit shift extracts field number and length to consume.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "VARINT"
+                  },
+                  {
+                    "text": "150"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "LENGTH_DELIMITED"
+                  },
+                  {
+                    "text": "hi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "FIXED64"
+                  },
+                  {
+                    "text": "UNKNOWN"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Protobuf tag decoding extracting field numbers and wire types",
+        "columns": [
+          "field",
+          "wire_type",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tag combines field number and wire type to tell decoder how to read.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "VARINT",
+                  "150"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Wire types define length and byte interpretation for values.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "VARINT",
+                  "150"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "LENGTH_DELIMITED",
+                  "hi"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tag bit shift extracts field number and length to consume.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "VARINT",
+                  "150"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "LENGTH_DELIMITED",
+                  "hi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0",
+                  "FIXED64",
+                  "UNKNOWN"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evolving schemas safely",
+      "codeHash": "01628ac323a47705c6d561bce122fa16c821d8044fdc21181ed0ad1f01e586b2",
+      "spec": {
+        "template": "compare",
+        "title": "Backward compatible schema evolution between service versions",
+        "leftLabel": "Old Service Decoder",
+        "rightLabel": "New Service Decoder",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Schema evolution allows services with different versions to communicate.",
+            "left": {
+              "code": "decode_known(new_msg, {1: \"id\"})",
+              "result": {
+                "text": "id"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "decode_known(new_msg, {3: \"is_premium\"})",
+              "result": {
+                "text": "is_premium"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Decoders skip unknown fields cleanly using wire type lengths.",
+            "left": {
+              "code": "skip unknown field 3",
+              "result": {
+                "text": "name"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "parse new field 3",
+              "result": {
+                "text": "is_premium"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Compatibility allows zero-downtime deployments across services.",
+            "left": {
+              "code": "backward compatible read",
+              "result": {
+                "text": "name"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "forward compatible read",
+              "result": {
+                "text": "is_premium"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Backward compatible schema evolution between service versions",
+        "leftLabel": "Old Service Decoder",
+        "rightLabel": "New Service Decoder",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Schema evolution allows services with different versions to communicate.",
+            "left": {
+              "code": "decode_known(new_msg, {1: \"id\"})",
+              "result": "id",
+              "tone": "ok",
+              "checks": [
+                "id"
+              ]
+            },
+            "right": {
+              "code": "decode_known(new_msg, {3: \"is_premium\"})",
+              "result": "is_premium",
+              "tone": "ok",
+              "checks": [
+                "is_premium"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Decoders skip unknown fields cleanly using wire type lengths.",
+            "left": {
+              "code": "skip unknown field 3",
+              "result": "name",
+              "tone": "idle",
+              "checks": [
+                "name"
+              ]
+            },
+            "right": {
+              "code": "parse new field 3",
+              "result": "is_premium",
+              "tone": "ok",
+              "checks": [
+                "is_premium"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Compatibility allows zero-downtime deployments across services.",
+            "left": {
+              "code": "backward compatible read",
+              "result": "name",
+              "tone": "ok",
+              "checks": [
+                "name"
+              ]
+            },
+            "right": {
+              "code": "forward compatible read",
+              "result": "is_premium",
+              "tone": "ok",
+              "checks": [
+                "is_premium"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deadlines, retries and status codes",
+      "codeHash": "80e6765c01bf92c13e4fe38311de7e1282b48cdd5537faadd7e90e6289d350c2",
+      "spec": {
+        "template": "none",
+        "reason": "RPC propagation deadlines and error response codes."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 24,
+  "promptSha": "6648c33972a14d54aa8aa04d96579a274c3e43b19589b12d7c1ff838a85b9900",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Disjoint Set Forest Representation",
+      "codeHash": "fe15019f195bcedd733760dd776d7094e468f80a2cbb5d9da0c4e5f5bf350cdd",
+      "spec": {
+        "template": "cells",
+        "title": "Disjoint set forest parent array representation",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each element starts as singleton set with parent pointing to itself.",
+            "items": [
+              {
+                "text": "root-0"
+              },
+              {
+                "text": "root-1"
+              },
+              {
+                "text": "root-2"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Union merges two sets by attaching root element to other.",
+            "items": [
+              {
+                "text": "parent-1"
+              },
+              {
+                "text": "root-2"
+              },
+              {
+                "text": "root-2"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Disjoint set forest parent array representation",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each element starts as singleton set with parent pointing to itself.",
+            "items": [
+              {
+                "text": "root-0"
+              },
+              {
+                "text": "root-1"
+              },
+              {
+                "text": "root-2"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Union merges two sets by attaching root element to other.",
+            "items": [
+              {
+                "text": "parent-1"
+              },
+              {
+                "text": "root-2"
+              },
+              {
+                "text": "root-2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Degenerate Trees & The Need for Optimizations",
+      "codeHash": "511345120f2b48dc098af237aa46f51c5df0bc206148d5b7e66bd5f46fc28065",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Degenerate linear tree chain pathology",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "0"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n0",
+            "n1"
+          ],
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attaching tree under shorter branch creates degenerate chain.",
+            "activeNodeId": "n0",
+            "visitedNodeIds": [
+              "n0"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Degenerate state forces traversal through sequential pointers.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n0",
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n2",
+              "n3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Degenerate linear tree chain pathology",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "0"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n0",
+            "n1"
+          ],
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attaching tree under shorter branch creates degenerate chain.",
+            "activeNodeId": "n0",
+            "visitedNodeIds": [
+              "n0"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Degenerate state forces traversal through sequential pointers.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n0",
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n2",
+              "n3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Path Compression Optimization",
+      "codeHash": "c31bf92648a680427cf329bb9e6aefdcecba898a587c4b15f731558783ee7639",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Path compression shallow star tree flattening",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "0"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n0",
+            "n3"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Path compression rewires visited node directly to root.",
+            "activeNodeId": "n0",
+            "visitedNodeIds": [
+              "n0"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Compression flattens tree into shallow star graphs.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n0",
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n0",
+              "n3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Path compression shallow star tree flattening",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "0"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n0",
+            "n3"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Path compression rewires visited node directly to root.",
+            "activeNodeId": "n0",
+            "visitedNodeIds": [
+              "n0"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Compression flattens tree into shallow star graphs.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n0",
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n0",
+              "n3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Union by Rank & Inverse Ackermann Complexity",
+      "codeHash": "1af2881500bfb25be62b611f0c98bdbbf72d11113ce32b2f269a1c6cdd8e7fa5",
+      "spec": {
+        "template": "table",
+        "title": "Union by rank subtree height bounds table",
+        "columns": [
+          "Element",
+          "Parent",
+          "Rank"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Rank array represents upper bound on subtree height.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "low"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "high"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Attach tree with smaller rank under larger root.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "low"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "high"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-2"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "low"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Union by rank subtree height bounds table",
+        "columns": [
+          "Element",
+          "Parent",
+          "Rank"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Rank array represents upper bound on subtree height.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "low"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "high"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Attach tree with smaller rank under larger root.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "low"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "high"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-2"
+                  },
+                  {
+                    "text": "parent-1"
+                  },
+                  {
+                    "text": "low"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cycle Detection in Undirected Graphs (Redundant Connection)",
+      "codeHash": "8140db15419f8a3c349977d959d49dfead990974ada3c4709ba69a53e12156a1",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Undirected cycle detection redundant connection",
+        "nodes": [
+          {
+            "id": "1",
+            "label": "1"
+          },
+          {
+            "id": "2",
+            "label": "2"
+          },
+          {
+            "id": "3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "1"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Vertices already connected by existing path in graph.",
+            "activeNodeId": "1",
+            "visitedNodeIds": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Adding edge introduces redundant connection creating cycle.",
+            "activeNodeId": "3",
+            "visitedNodeIds": [
+              "1",
+              "2",
+              "3"
+            ],
+            "activeEdge": [
+              "3",
+              "1"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Undirected cycle detection redundant connection",
+        "nodes": [
+          {
+            "id": "1",
+            "label": "1"
+          },
+          {
+            "id": "2",
+            "label": "2"
+          },
+          {
+            "id": "3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "1"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Vertices already connected by existing path in graph.",
+            "activeNodeId": "1",
+            "visitedNodeIds": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Adding edge introduces redundant connection creating cycle.",
+            "activeNodeId": "3",
+            "visitedNodeIds": [
+              "1",
+              "2",
+              "3"
+            ],
+            "activeEdge": [
+              "3",
+              "1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Disjoint Set Engine & Dynamic Connectivity",
+      "codeHash": "ecdab5c20d3b94d88328dd66d13abbd137dc1c02c21961bd9c42bb03e0328573",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

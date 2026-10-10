@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Primary and read replicas",
+      "codeHash": "294697cfe40c1e3e1c0682ec927f01859078a936a69367e0b91d8aad15b5a192",
+      "spec": {
+        "template": "none",
+        "reason": "Primary-replica architecture overview and read scale limits."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The read-your-own-writes problem",
+      "codeHash": "1651a4abc1d34bc563461b478217804f6fbe8ca7289cb0bc2483c8c54d605788",
+      "spec": {
+        "template": "compare",
+        "title": "Read your own writes session consistency versus stale replica read",
+        "leftLabel": "Primary Read-Your-Own-Writes",
+        "rightLabel": "Lagging Replica Read",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User updates profile photo then page reloads from a lagging replica.",
+            "left": {
+              "code": "primary holds latest write",
+              "result": {
+                "text": "new.jpg"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "replica holds stale data",
+              "result": {
+                "text": "old.jpg"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Read-your-own-writes guarantees a user always sees their own changes.",
+            "left": {
+              "code": "session pinned to primary",
+              "result": {
+                "text": "new.jpg"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "stale read confusing user",
+              "result": {
+                "text": "old.jpg"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "RYW is a session guarantee about user experience.",
+            "left": {
+              "code": "user reads updated photo",
+              "result": {
+                "text": "new.jpg"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "other users may see lag",
+              "result": {
+                "text": "old.jpg"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Read your own writes session consistency versus stale replica read",
+        "leftLabel": "Primary Read-Your-Own-Writes",
+        "rightLabel": "Lagging Replica Read",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User updates profile photo then page reloads from a lagging replica.",
+            "left": {
+              "code": "primary holds latest write",
+              "result": "new.jpg",
+              "tone": "ok",
+              "checks": [
+                "new.jpg"
+              ]
+            },
+            "right": {
+              "code": "replica holds stale data",
+              "result": "old.jpg",
+              "tone": "error",
+              "checks": [
+                "old.jpg"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Read-your-own-writes guarantees a user always sees their own changes.",
+            "left": {
+              "code": "session pinned to primary",
+              "result": "new.jpg",
+              "tone": "ok",
+              "checks": [
+                "new.jpg"
+              ]
+            },
+            "right": {
+              "code": "stale read confusing user",
+              "result": "old.jpg",
+              "tone": "error",
+              "checks": [
+                "old.jpg"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "RYW is a session guarantee about user experience.",
+            "left": {
+              "code": "user reads updated photo",
+              "result": "new.jpg",
+              "tone": "ok",
+              "checks": [
+                "new.jpg"
+              ]
+            },
+            "right": {
+              "code": "other users may see lag",
+              "result": "old.jpg",
+              "tone": "idle",
+              "checks": [
+                "old.jpg"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Routing queries by session",
+      "codeHash": "444bfdede9d8d66712382aa3ec8384ed2a78a57fc293722280dd3270a6ec0778",
+      "spec": {
+        "template": "table",
+        "title": "Session query routing directing recent writes to primary master",
+        "columns": [
+          "op",
+          "replicas"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function route_query sends WRITE operations to MASTER.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "WRITE"
+                  },
+                  {
+                    "text": "MASTER"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reads within five seconds of last write go to MASTER.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "WRITE"
+                  },
+                  {
+                    "text": "MASTER"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "READ"
+                  },
+                  {
+                    "text": "MASTER"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Other reads route round-robin across replicas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "WRITE"
+                  },
+                  {
+                    "text": "MASTER"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "READ"
+                  },
+                  {
+                    "text": "MASTER"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "READ"
+                  },
+                  {
+                    "text": "replica-1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "READ"
+                  },
+                  {
+                    "text": "replica-2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Session query routing directing recent writes to primary master",
+        "columns": [
+          "op",
+          "replicas"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function route_query sends WRITE operations to MASTER.",
+            "rows": [
+              {
+                "cells": [
+                  "WRITE",
+                  "MASTER"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reads within five seconds of last write go to MASTER.",
+            "rows": [
+              {
+                "cells": [
+                  "WRITE",
+                  "MASTER"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "READ",
+                  "MASTER"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Other reads route round-robin across replicas.",
+            "rows": [
+              {
+                "cells": [
+                  "WRITE",
+                  "MASTER"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "READ",
+                  "MASTER"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "READ",
+                  "replica-1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "READ",
+                  "replica-2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring and alerting on lag",
+      "codeHash": "ee0e873666df61f4e52b557f2788a069b09faffffc3e7187b6ab459a2977a90d",
+      "spec": {
+        "template": "table",
+        "title": "Replication lag monitoring threshold check and pool eviction",
+        "columns": [
+          "lag_seconds",
+          "max_lag"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Replication lag is measured in seconds behind primary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0.4"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function lag_exceeded checks when lag is above max_lag.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0.4"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2.1"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lagging replicas trigger alerts and are removed from pool.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0.4"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2.1"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "14.2"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Replication lag monitoring threshold check and pool eviction",
+        "columns": [
+          "lag_seconds",
+          "max_lag"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Replication lag is measured in seconds behind primary.",
+            "rows": [
+              {
+                "cells": [
+                  "0.4",
+                  "10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function lag_exceeded checks when lag is above max_lag.",
+            "rows": [
+              {
+                "cells": [
+                  "0.4",
+                  "10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2.1",
+                  "10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lagging replicas trigger alerts and are removed from pool.",
+            "rows": [
+              {
+                "cells": [
+                  "0.4",
+                  "10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2.1",
+                  "10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "14.2",
+                  "10"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Synchronous, asynchronous and semi-synchronous",
+      "codeHash": "95228d2ca07c9350160bf73a937c73d0835ac4a7f8463ffbe54848d9d7d59bba",
+      "spec": {
+        "template": "table",
+        "title": "Replication mode latency versus data loss trade-off comparison",
+        "columns": [
+          "mode",
+          "loss"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous replication waits for replicas before acknowledging.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "synchronous (all)"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Asynchronous replication acknowledges writes immediately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "synchronous (all)"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asynchronous"
+                  },
+                  {
+                    "text": "possible"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Semi-synchronous replication bounds data loss.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "synchronous (all)"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asynchronous"
+                  },
+                  {
+                    "text": "possible"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "semi-synchronous (1)"
+                  },
+                  {
+                    "text": "small"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Replication mode latency versus data loss trade-off comparison",
+        "columns": [
+          "mode",
+          "loss"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous replication waits for replicas before acknowledging.",
+            "rows": [
+              {
+                "cells": [
+                  "synchronous (all)",
+                  "none"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Asynchronous replication acknowledges writes immediately.",
+            "rows": [
+              {
+                "cells": [
+                  "synchronous (all)",
+                  "none"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "asynchronous",
+                  "possible"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Semi-synchronous replication bounds data loss.",
+            "rows": [
+              {
+                "cells": [
+                  "synchronous (all)",
+                  "none"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "asynchronous",
+                  "possible"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "semi-synchronous (1)",
+                  "small"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Other session guarantees",
+      "codeHash": "32a0bce7b427dea2b7ea67a7fc3488a50f00daa67acc909bdce57de633b96b4a",
+      "spec": {
+        "template": "none",
+        "reason": "Session guarantees monotonic reads and sticky routing trade-offs."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 28,
+  "promptSha": "656efa28ee93a70e8ea41c65c541b3dd5ffec5dffaf44a17a21f936c8568f1f3",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Shift-Left Security Architecture & CI Quality Gates",
+      "codeHash": "e15558f16b6154466936414fc19adfbd092033912abee51a2ab17b63fdd32170",
+      "spec": {
+        "template": "compare",
+        "title": "Shift-left security architecture and CI quality gates",
+        "leftLabel": "Developer Pipeline Stage",
+        "rightLabel": "Security Gate Enforcement",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Shift left security integrates scanners directly into pull request pipelines.",
+            "left": {
+              "code": "shiftLeft",
+              "result": {
+                "text": "Shift-Left"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "pipelineStage",
+              "result": {
+                "text": "pipelines"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Security gate evaluates automated scan results against defined policies.",
+            "left": {
+              "code": "qualityGates",
+              "result": {
+                "text": "gates"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "severityStatus",
+              "result": {
+                "text": "vulnerabilities"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Shift-left security architecture and CI quality gates",
+        "leftLabel": "Developer Pipeline Stage",
+        "rightLabel": "Security Gate Enforcement",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Shift left security integrates scanners directly into pull request pipelines.",
+            "left": {
+              "code": "shiftLeft",
+              "result": {
+                "text": "Shift-Left"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "pipelineStage",
+              "result": {
+                "text": "pipelines"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Security gate evaluates automated scan results against defined policies.",
+            "left": {
+              "code": "qualityGates",
+              "result": {
+                "text": "gates"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "severityStatus",
+              "result": {
+                "text": "vulnerabilities"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Static Application Security Testing (SAST) & Secret Detection",
+      "codeHash": "07252374d3dbdf6f34cc7a3d4997f02c97b635d8768625c37ca77e5c197e652b",
+      "spec": {
+        "template": "compare",
+        "title": "Static application security testing and secret detection",
+        "leftLabel": "AST Source Code Analysis",
+        "rightLabel": "Secret Scanner Audit",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Static analyzers inspect source code without executing application binaries.",
+            "left": {
+              "code": "sastAnalyzer",
+              "result": {
+                "text": "SAST"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "codeInspect",
+              "result": {
+                "text": "source"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Secret scanners detect committed passwords tokens and sensitive credentials.",
+            "left": {
+              "code": "secretScanner",
+              "result": {
+                "text": "passwords"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "auditStatus",
+              "result": {
+                "text": "tokens"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Static application security testing and secret detection",
+        "leftLabel": "AST Source Code Analysis",
+        "rightLabel": "Secret Scanner Audit",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Static analyzers inspect source code without executing application binaries.",
+            "left": {
+              "code": "sastAnalyzer",
+              "result": {
+                "text": "SAST"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "codeInspect",
+              "result": {
+                "text": "source"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Secret scanners detect committed passwords tokens and sensitive credentials.",
+            "left": {
+              "code": "secretScanner",
+              "result": {
+                "text": "passwords"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "auditStatus",
+              "result": {
+                "text": "tokens"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Software Bill of Materials (SBOM) Generation with CycloneDX",
+      "codeHash": "444121b3d07e48c52a3f9fb401dc8e7924fcd819cefaaaf6d4bee540148fc6e8",
+      "spec": {
+        "template": "compare",
+        "title": "Software bill of materials generation with CycloneDX",
+        "leftLabel": "Software Components Inventory",
+        "rightLabel": "CycloneDX Manifest Specification",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Software bill of materials provides machine readable inventory of dependencies.",
+            "left": {
+              "code": "sbomInventory",
+              "result": {
+                "text": "SBOM"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "componentCount",
+              "result": {
+                "text": "dependency"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "CycloneDX inspects dependency manifests generating standardized records.",
+            "left": {
+              "code": "cycloneDxSpec",
+              "result": {
+                "text": "CycloneDX"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "standardizedOutput",
+              "result": {
+                "text": "manifests"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Software bill of materials generation with CycloneDX",
+        "leftLabel": "Software Components Inventory",
+        "rightLabel": "CycloneDX Manifest Specification",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Software bill of materials provides machine readable inventory of dependencies.",
+            "left": {
+              "code": "sbomInventory",
+              "result": {
+                "text": "SBOM"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "componentCount",
+              "result": {
+                "text": "dependency"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "CycloneDX inspects dependency manifests generating standardized records.",
+            "left": {
+              "code": "cycloneDxSpec",
+              "result": {
+                "text": "CycloneDX"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "standardizedOutput",
+              "result": {
+                "text": "manifests"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Container Image Vulnerability Scanning & CVE Scoring",
+      "codeHash": "67b8c5dc5def7aed77fcffba30e81defb111bc436510a2ea0dfdcbe28e5d140b",
+      "spec": {
+        "template": "compare",
+        "title": "Container image vulnerability scanning and CVE scoring",
+        "leftLabel": "Container Layer Scanner",
+        "rightLabel": "Vulnerability Database Score",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Container scanners inspect file layers against known vulnerability databases.",
+            "left": {
+              "code": "imageScanner",
+              "result": {
+                "text": "scanners"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "layerAnalysis",
+              "result": {
+                "text": "layers"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Secure pipelines scan container images before pushing to production registries.",
+            "left": {
+              "code": "pipelineCheck",
+              "result": {
+                "text": "images"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "registryPush",
+              "result": {
+                "text": "registries"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Container image vulnerability scanning and CVE scoring",
+        "leftLabel": "Container Layer Scanner",
+        "rightLabel": "Vulnerability Database Score",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Container scanners inspect file layers against known vulnerability databases.",
+            "left": {
+              "code": "imageScanner",
+              "result": {
+                "text": "scanners"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "layerAnalysis",
+              "result": {
+                "text": "layers"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Secure pipelines scan container images before pushing to production registries.",
+            "left": {
+              "code": "pipelineCheck",
+              "result": {
+                "text": "images"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "registryPush",
+              "result": {
+                "text": "registries"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cryptographic Image Signing with Sigstore Cosign",
+      "codeHash": "6ae7a8b9e315f3c6014e918c154159af7a579674b25367e71717fcaf927dd6a3",
+      "spec": {
+        "template": "compare",
+        "title": "Cryptographic image signing with Sigstore Cosign",
+        "leftLabel": "Cosign Image Signature",
+        "rightLabel": "Rekor Transparency Log",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Supply chain integrity requires cryptographic image signing across pipelines.",
+            "left": {
+              "code": "imageSignature",
+              "result": {
+                "text": "Cryptographic"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "integrityVerification",
+              "result": {
+                "text": "Signing"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Signature certificate is permanently recorded in rekor transparency log.",
+            "left": {
+              "code": "rekorTransparencyLog",
+              "result": {
+                "text": "Rekor"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "appendOnlyLedger",
+              "result": {
+                "text": "recorded"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cryptographic image signing with Sigstore Cosign",
+        "leftLabel": "Cosign Image Signature",
+        "rightLabel": "Rekor Transparency Log",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Supply chain integrity requires cryptographic image signing across pipelines.",
+            "left": {
+              "code": "imageSignature",
+              "result": {
+                "text": "Cryptographic"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "integrityVerification",
+              "result": {
+                "text": "Signing"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Signature certificate is permanently recorded in rekor transparency log.",
+            "left": {
+              "code": "rekorTransparencyLog",
+              "result": {
+                "text": "Rekor"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "appendOnlyLedger",
+              "result": {
+                "text": "recorded"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kubernetes Admission Controllers & Kyverno Policy Enforcement",
+      "codeHash": "86b19b0a62f1ef3fe34fedd058371a2073ca28c5c694022304cb935f016b576c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

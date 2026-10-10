@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Zero-shot and few-shot prompts",
+      "codeHash": "3e47504f6fa75621e9c779b08c31e4dea6ed2f6283d5fcd9ecd99d9b5d0cd3c7",
+      "spec": {
+        "template": "compare",
+        "title": "Zero-shot prompt versus few-shot demonstration prompt",
+        "leftLabel": "Zero-Shot",
+        "rightLabel": "Few-Shot",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A zero-shot prompt just describes the task without providing sample answers.",
+            "left": {
+              "code": "Classify review directly",
+              "result": {
+                "text": "general instructions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Include sample reviews",
+              "result": {
+                "text": "patterned demonstration"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A few-shot prompt adds worked examples to guide format and consistent labels.",
+            "left": {
+              "code": "Review: Dosa was crisp",
+              "result": {
+                "text": "variable format"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Review: Great! Label: POSITIVE",
+              "result": {
+                "text": "consistent styling"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Zero-shot prompt versus few-shot demonstration prompt",
+        "leftLabel": "Zero-Shot",
+        "rightLabel": "Few-Shot",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A zero-shot prompt just describes the task without providing sample answers.",
+            "left": {
+              "code": "Classify review directly",
+              "result": "general instructions",
+              "tone": "data",
+              "checks": [
+                "general instructions"
+              ]
+            },
+            "right": {
+              "code": "Include sample reviews",
+              "result": "patterned demonstration",
+              "tone": "ok",
+              "checks": [
+                "patterned demonstration"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A few-shot prompt adds worked examples to guide format and consistent labels.",
+            "left": {
+              "code": "Review: Dosa was crisp",
+              "result": "variable format",
+              "tone": "data",
+              "checks": [
+                "variable format"
+              ]
+            },
+            "right": {
+              "code": "Review: Great! Label: POSITIVE",
+              "result": "consistent styling",
+              "tone": "ok",
+              "checks": [
+                "consistent styling"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Formatting examples cleanly",
+      "codeHash": "ae620757f69cdb7e1e6f7cff56aab9ab66fc662b7b9811f26347a1ca9d97beec",
+      "spec": {
+        "template": "table",
+        "title": "Structural layout of clean few-shot prompt blocks",
+        "columns": [
+          "section",
+          "content",
+          "role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each example has an input thought and output line written cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "Solve word problem"
+                  },
+                  {
+                    "text": "goal"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "example"
+                  },
+                  {
+                    "text": "Input: 12 apples"
+                  },
+                  {
+                    "text": "demonstration"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Ending with Thought nudges the model to reason before giving its output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "Solve word problem"
+                  },
+                  {
+                    "text": "goal"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "example"
+                  },
+                  {
+                    "text": "Input: 12 apples"
+                  },
+                  {
+                    "text": "demonstration"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "Thought:"
+                  },
+                  {
+                    "text": "reasoning trigger"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Structural layout of clean few-shot prompt blocks",
+        "columns": [
+          "section",
+          "content",
+          "role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each example has an input thought and output line written cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "Solve word problem",
+                  "goal"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "example",
+                  "Input: 12 apples",
+                  "demonstration"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Ending with Thought nudges the model to reason before giving its output.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "Solve word problem",
+                  "goal"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "example",
+                  "Input: 12 apples",
+                  "demonstration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "query",
+                  "Thought:",
+                  "reasoning trigger"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing good examples",
+      "codeHash": "c8d986d7187720335b89e1fc2546fd67a1262226745f3640efe02708a4e819c6",
+      "spec": {
+        "template": "bars",
+        "title": "Example label balance distribution checks",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Balancing example labels prevents the model from leaning towards one class.",
+            "bars": [
+              {
+                "label": "POSITIVE",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "NEGATIVE",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A quick count in code catches unbalanced labels before you ship the prompt.",
+            "bars": [
+              {
+                "label": "POSITIVE",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "NEGATIVE",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Example label balance distribution checks",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Balancing example labels prevents the model from leaning towards one class.",
+            "bars": [
+              {
+                "label": "POSITIVE",
+                "value": 3,
+                "tone": "data"
+              },
+              {
+                "label": "NEGATIVE",
+                "value": 1,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A quick count in code catches unbalanced labels before you ship the prompt.",
+            "bars": [
+              {
+                "label": "POSITIVE",
+                "value": 2,
+                "tone": "ok"
+              },
+              {
+                "label": "NEGATIVE",
+                "value": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chain-of-thought reasoning",
+      "codeHash": "0372d63fd53657cb30bb2064354485b81e88ef9dc4e42d02f3654df9feab9b4f",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-step reasoning string synthesis and regular expression answer extraction."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Multi-step reasoning string synthesis and regular expression answer extraction."
+      }
+    },
+    {
+      "partTitle": "Self-consistency: majority vote",
+      "codeHash": "af9b78b67571f9b123cbcce153747b8448b20ab52dec54728a8da8adeb201755",
+      "spec": {
+        "template": "table",
+        "title": "Candidate answer aggregation and majority voting",
+        "columns": [
+          "candidate_answer",
+          "vote_count",
+          "selected_status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Self-consistency takes the most common final answer to improve accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "550"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "majority leader"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Counting each answer determines the winner or returns the one appearing first.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "550"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "winner"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "600"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "runner-up"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "runner-up"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Candidate answer aggregation and majority voting",
+        "columns": [
+          "candidate_answer",
+          "vote_count",
+          "selected_status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Self-consistency takes the most common final answer to improve accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "550",
+                  "3",
+                  "majority leader"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Counting each answer determines the winner or returns the one appearing first.",
+            "rows": [
+              {
+                "cells": [
+                  "550",
+                  "3",
+                  "winner"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "600",
+                  "1",
+                  "runner-up"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "500",
+                  "1",
+                  "runner-up"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When reasoning is worth the tokens",
+      "codeHash": "f0a417dcb809c25fbbf797c59b953bec45eaaab03a33ccd3d94c8a730c39bb35",
+      "spec": {
+        "template": "none",
+        "reason": "Accuracy versus token expenditure trade-off analysis across reasoning methods."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Accuracy versus token expenditure trade-off analysis across reasoning methods."
+      }
+    }
+  ]
+}

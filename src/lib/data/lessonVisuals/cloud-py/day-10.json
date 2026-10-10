@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "How buckets leak",
+      "codeHash": "5a6440486112cb4f24db6ed17e576bc17c443f3e5c58a9845de9cb981d95f501",
+      "spec": {
+        "template": "table",
+        "title": "S3 Block Public Access safety check and exposure classification",
+        "columns": [
+          "bucket",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "New S3 buckets remain private unless configuration changes grant access.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "invoices-prod"
+                  },
+                  {
+                    "text": "ok:"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Block Public Access overrides policies or ACLs that would expose data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "invoices-prod"
+                  },
+                  {
+                    "text": "ok:"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "marketing-site"
+                  },
+                  {
+                    "text": "PUBLIC:"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example scans bucket configurations flagging risky permissions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "invoices-prod"
+                  },
+                  {
+                    "text": "ok:"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "marketing-site"
+                  },
+                  {
+                    "text": "PUBLIC:"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "backup-2026"
+                  },
+                  {
+                    "text": "WARNING, public access not blocked:"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "S3 Block Public Access safety check and exposure classification",
+        "columns": [
+          "bucket",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "New S3 buckets remain private unless configuration changes grant access.",
+            "rows": [
+              {
+                "cells": [
+                  "invoices-prod",
+                  "ok:"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Block Public Access overrides policies or ACLs that would expose data.",
+            "rows": [
+              {
+                "cells": [
+                  "invoices-prod",
+                  "ok:"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "marketing-site",
+                  "PUBLIC:"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example scans bucket configurations flagging risky permissions.",
+            "rows": [
+              {
+                "cells": [
+                  "invoices-prod",
+                  "ok:"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "marketing-site",
+                  "PUBLIC:"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "backup-2026",
+                  "WARNING, public access not blocked:"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bucket policies",
+      "codeHash": "a862fad1375e58269b2aa5ab91fa56769de3afbc84546b0295bfb41a6d07649a",
+      "spec": {
+        "template": "table",
+        "title": "Bucket policy statements and target resource specifications",
+        "columns": [
+          "Action",
+          "Resource"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A bucket policy declares JSON resource permissions attached to the bucket.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s3:ListBucket"
+                  },
+                  {
+                    "text": "arn:aws:s3:::reports"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Resources distinguish bucket listing actions from individual object reads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s3:ListBucket"
+                  },
+                  {
+                    "text": "arn:aws:s3:::reports"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3:GetObject"
+                  },
+                  {
+                    "text": "arn:aws:s3:::reports/*"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints policy statements allowing role access to list and read.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s3:ListBucket"
+                  },
+                  {
+                    "text": "arn:aws:s3:::reports"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3:GetObject"
+                  },
+                  {
+                    "text": "arn:aws:s3:::reports/*"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bucket policy statements and target resource specifications",
+        "columns": [
+          "Action",
+          "Resource"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A bucket policy declares JSON resource permissions attached to the bucket.",
+            "rows": [
+              {
+                "cells": [
+                  "s3:ListBucket",
+                  "arn:aws:s3:::reports"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Resources distinguish bucket listing actions from individual object reads.",
+            "rows": [
+              {
+                "cells": [
+                  "s3:ListBucket",
+                  "arn:aws:s3:::reports"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "s3:GetObject",
+                  "arn:aws:s3:::reports/*"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints policy statements allowing role access to list and read.",
+            "rows": [
+              {
+                "cells": [
+                  "s3:ListBucket",
+                  "arn:aws:s3:::reports"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "s3:GetObject",
+                  "arn:aws:s3:::reports/*"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enforcing HTTPS with aws:SecureTransport",
+      "codeHash": "b592a819a6a7a1c1a99713dd9b1d3aa6a449d5168f1aa5f37b121ad5fb558dd0",
+      "spec": {
+        "template": "table",
+        "title": "TLS enforcement verification checking SecureTransport condition",
+        "columns": [
+          "policy",
+          "Effect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data in transit must be protected by forbidding plain unencrypted HTTP.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "deny http"
+                  },
+                  {
+                    "text": "Deny"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A Deny statement with false SecureTransport condition enforces encryption.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "deny http"
+                  },
+                  {
+                    "text": "Deny"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "allow http"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example checks candidate policies verifying TLS transport enforcement.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "deny http"
+                  },
+                  {
+                    "text": "Deny"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "allow http"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "empty"
+                  },
+                  {
+                    "text": "Deny"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "TLS enforcement verification checking SecureTransport condition",
+        "columns": [
+          "policy",
+          "Effect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data in transit must be protected by forbidding plain unencrypted HTTP.",
+            "rows": [
+              {
+                "cells": [
+                  "deny http",
+                  "Deny"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A Deny statement with false SecureTransport condition enforces encryption.",
+            "rows": [
+              {
+                "cells": [
+                  "deny http",
+                  "Deny"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "allow http",
+                  "Allow"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example checks candidate policies verifying TLS transport enforcement.",
+            "rows": [
+              {
+                "cells": [
+                  "deny http",
+                  "Deny"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "allow http",
+                  "Allow"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "empty",
+                  "Deny"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bucket naming rules",
+      "codeHash": "a10e46679c362bba683d54b8d032b3aa369d75fbb19cabdcf758ab2de6f71c11",
+      "spec": {
+        "template": "table",
+        "title": "Global S3 bucket naming validation checks and violation reasons",
+        "columns": [
+          "name",
+          "validation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bucket names are globally unique across accounts following DNS rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit-media-prod"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pinit_Media"
+                  },
+                  {
+                    "text": "length, characters, or start/end"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Names must not contain consecutive dots or resemble an IP address.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit-media-prod"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pinit_Media"
+                  },
+                  {
+                    "text": "length, characters, or start/end"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "my..bucket"
+                  },
+                  {
+                    "text": "two dots in a row"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.0.1"
+                  },
+                  {
+                    "text": "looks like an IP address"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example tests candidate bucket names explaining each validation failure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit-media-prod"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pinit_Media"
+                  },
+                  {
+                    "text": "length, characters, or start/end"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "my..bucket"
+                  },
+                  {
+                    "text": "two dots in a row"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.0.1"
+                  },
+                  {
+                    "text": "looks like an IP address"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Global S3 bucket naming validation checks and violation reasons",
+        "columns": [
+          "name",
+          "validation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bucket names are globally unique across accounts following DNS rules.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit-media-prod",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pinit_Media",
+                  "length, characters, or start/end"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Names must not contain consecutive dots or resemble an IP address.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit-media-prod",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pinit_Media",
+                  "length, characters, or start/end"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "my..bucket",
+                  "two dots in a row"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "10.0.0.1",
+                  "looks like an IP address"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example tests candidate bucket names explaining each validation failure.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit-media-prod",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pinit_Media",
+                  "length, characters, or start/end"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "my..bucket",
+                  "two dots in a row"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "10.0.0.1",
+                  "looks like an IP address"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Encryption at rest",
+      "codeHash": "d4a7d6fbb4ed4edccf26a2be90a8d89d53fdd3e67500d35efe37486470dccfe0",
+      "spec": {
+        "template": "none",
+        "reason": "Server-side encryption classes and key management."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: lock the bucket down",
+      "codeHash": "ec300f6e6fc43f8187537e1d209106bcc6a48775863dd039dad62660882295cd",
+      "spec": {
+        "template": "none",
+        "reason": "Security baseline audit and lockdown configuration."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "How an app talks to a database",
+      "codeHash": "e4aaab64085409d3c2807be1e6616cd664c0d16311e55b5efc2c67588cae4c2d",
+      "spec": {
+        "template": "table",
+        "title": "Application client connection and row mapping",
+        "columns": [
+          "id",
+          "name",
+          "price",
+          "client_mapping"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The driver opens a connection to the database and receives rows back.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "mapped tuple"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Apps maintain a connection pool to reuse open connections efficiently.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "mapped tuple"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "mapped object"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "mapped object"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Application client connection and row mapping",
+        "columns": [
+          "id",
+          "name",
+          "price",
+          "client_mapping"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The driver opens a connection to the database and receives rows back.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Pen",
+                  "10.00",
+                  "mapped tuple"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Apps maintain a connection pool to reuse open connections efficiently.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Pen",
+                  "10.00",
+                  "mapped tuple"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Notebook",
+                  "60.00",
+                  "mapped object"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Backpack",
+                  "1200.00",
+                  "mapped object"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SQL injection: the most important security rule",
+      "codeHash": "ea746a2b66ad462d85f61e0c864f1329440bf1eebbd32e6b5d7cf41e0c815408",
+      "spec": {
+        "template": "compare",
+        "title": "String concatenation vulnerability versus parameter isolation",
+        "leftLabel": "Vulnerable Concatenation",
+        "rightLabel": "SQL Injection Exploitation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gluing input directly into SQL text exposes login queries to tampering.",
+            "left": {
+              "code": "WHERE name = 'Asha'",
+              "result": {
+                "text": "finds single user"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "WHERE name = '' OR '1'='1'",
+              "result": {
+                "text": "condition always true"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The database cannot distinguish between developer query text and user input.",
+            "left": {
+              "code": "unparsed merged query string",
+              "result": {
+                "text": "code and data mixed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "unintended execution flow",
+              "result": {
+                "text": "dumps entire user table"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "String concatenation vulnerability versus parameter isolation",
+        "leftLabel": "Vulnerable Concatenation",
+        "rightLabel": "SQL Injection Exploitation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gluing input directly into SQL text exposes login queries to tampering.",
+            "left": {
+              "code": "WHERE name = 'Asha'",
+              "result": "finds single user",
+              "tone": "data",
+              "checks": [
+                "finds single user"
+              ]
+            },
+            "right": {
+              "code": "WHERE name = '' OR '1'='1'",
+              "result": "condition always true",
+              "tone": "error",
+              "checks": [
+                "condition always true"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The database cannot distinguish between developer query text and user input.",
+            "left": {
+              "code": "unparsed merged query string",
+              "result": "code and data mixed",
+              "tone": "error",
+              "checks": [
+                "code and data mixed"
+              ]
+            },
+            "right": {
+              "code": "unintended execution flow",
+              "result": "dumps entire user table",
+              "tone": "error",
+              "checks": [
+                "dumps entire user table"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parameters: the safe way",
+      "codeHash": "4b8d2418405e069b62e64a29148b5415329cd36863875ec6bf1f41352b753ed6",
+      "spec": {
+        "template": "compare",
+        "title": "Parameterized queries separating code and data",
+        "leftLabel": "Raw String Embedding",
+        "rightLabel": "Parameterized Query",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Writing queries with placeholders keeps data and SQL logic separate.",
+            "left": {
+              "code": "query string concat",
+              "result": {
+                "text": "injection risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PREPARE find_user($1)",
+              "result": {
+                "text": "placeholder bound safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The database treats parameter values as data so malicious input is not found.",
+            "left": {
+              "code": "EXECUTE find_user('Asha')",
+              "result": {
+                "text": "matches id 1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "EXECUTE with \"' OR '1'='1\"",
+              "result": {
+                "text": "zero rows returned"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Parameterized queries separating code and data",
+        "leftLabel": "Raw String Embedding",
+        "rightLabel": "Parameterized Query",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Writing queries with placeholders keeps data and SQL logic separate.",
+            "left": {
+              "code": "query string concat",
+              "result": "injection risk",
+              "tone": "error",
+              "checks": [
+                "injection risk"
+              ]
+            },
+            "right": {
+              "code": "PREPARE find_user($1)",
+              "result": "placeholder bound safely",
+              "tone": "ok",
+              "checks": [
+                "placeholder bound safely"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The database treats parameter values as data so malicious input is not found.",
+            "left": {
+              "code": "EXECUTE find_user('Asha')",
+              "result": "matches id 1",
+              "tone": "ok",
+              "checks": [
+                "matches id 1"
+              ]
+            },
+            "right": {
+              "code": "EXECUTE with \"' OR '1'='1\"",
+              "result": "zero rows returned",
+              "tone": "ok",
+              "checks": [
+                "zero rows returned"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transactions and errors from code",
+      "codeHash": "3ba72f5817ea8b323da6de758d215de03cde6f95157cb43cde75efc85a35a818",
+      "spec": {
+        "template": "table",
+        "title": "Handling database errors programmatically via SQLSTATE",
+        "columns": [
+          "sqlstate_code",
+          "error_type",
+          "client_action"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Apps catch expected database exceptions and return friendly messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "23505"
+                  },
+                  {
+                    "text": "unique_violation"
+                  },
+                  {
+                    "text": "Show email registered error"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Checking the unique SQLSTATE code is more reliable than matching error text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "23505"
+                  },
+                  {
+                    "text": "unique_violation"
+                  },
+                  {
+                    "text": "Show email registered error"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "23514"
+                  },
+                  {
+                    "text": "check_violation"
+                  },
+                  {
+                    "text": "Validate form boundary"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "23503"
+                  },
+                  {
+                    "text": "foreign_key_violation"
+                  },
+                  {
+                    "text": "Check entity reference"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Handling database errors programmatically via SQLSTATE",
+        "columns": [
+          "sqlstate_code",
+          "error_type",
+          "client_action"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Apps catch expected database exceptions and return friendly messages.",
+            "rows": [
+              {
+                "cells": [
+                  "23505",
+                  "unique_violation",
+                  "Show email registered error"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Checking the unique SQLSTATE code is more reliable than matching error text.",
+            "rows": [
+              {
+                "cells": [
+                  "23505",
+                  "unique_violation",
+                  "Show email registered error"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "23514",
+                  "check_violation",
+                  "Validate form boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "23503",
+                  "foreign_key_violation",
+                  "Check entity reference"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ORMs and query builders",
+      "codeHash": "ab4ae41af8fefc15d25af755ed6729396f9c84a1b76ab10d32a91d28a13c2f9d",
+      "spec": {
+        "template": "none",
+        "reason": "ORM mapping patterns and N+1 query performance anti-patterns."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "ORM mapping patterns and N+1 query performance anti-patterns."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a safe search feature",
+      "codeHash": "f5315b5975ebb97da26d1765e7b931c7e63f37d0b8a770d8d4cb3acb10f28597",
+      "spec": {
+        "template": "none",
+        "reason": "Production prepared statement search script with parameterized ILIKE pattern."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production prepared statement search script with parameterized ILIKE pattern."
+      }
+    }
+  ]
+}

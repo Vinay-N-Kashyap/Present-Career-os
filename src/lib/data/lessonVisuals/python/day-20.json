@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 20,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Installing Python and VS Code",
+      "codeHash": "433faa06fda4d172e852d20610b277b4b06a3cefb070184aa203c6f008269cab",
+      "spec": {
+        "template": "boxes",
+        "title": "Verifying installed Python version",
+        "boxes": [
+          {
+            "id": "major",
+            "label": "major"
+          },
+          {
+            "id": "minor",
+            "label": "minor"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Install Python from python org installer.",
+            "values": {
+              "major": {
+                "text": "3"
+              },
+              "minor": {
+                "text": "10"
+              }
+            },
+            "tones": {
+              "major": "data",
+              "minor": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Check it works in terminal with python version.",
+            "values": {
+              "major": {
+                "var": "major",
+                "line": 3
+              },
+              "minor": {
+                "var": "minor",
+                "line": 3
+              }
+            },
+            "tones": {
+              "major": "ok",
+              "minor": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Verifying installed Python version",
+        "boxes": [
+          {
+            "id": "major",
+            "label": "major"
+          },
+          {
+            "id": "minor",
+            "label": "minor"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Install Python from python org installer.",
+            "values": {
+              "major": "3",
+              "minor": "10"
+            },
+            "tones": {
+              "major": "data",
+              "minor": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Check it works in terminal with python version.",
+            "values": {
+              "major": "3",
+              "minor": "12"
+            },
+            "tones": {
+              "major": "ok",
+              "minor": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running a .py file from the terminal",
+      "codeHash": "36f19fce9e9027f54523d2941130fe47f2cc734fd4947e8125269c46644b24c1",
+      "spec": {
+        "template": "none",
+        "reason": "Running files and terminal navigation commands are demonstrated via project scripts."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Reading what the user types with input()",
+      "codeHash": "f46edb0b32bbe3e6739b6f73cfe184064a58f4f7779a2ff4838a5aa48f77b736",
+      "spec": {
+        "template": "boxes",
+        "title": "Parsing string input into numbers safely",
+        "boxes": [
+          {
+            "id": "typed",
+            "label": "typed"
+          },
+          {
+            "id": "text",
+            "label": "text"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Convert string to float inside try and except.",
+            "values": {
+              "typed": {
+                "text": " 120 "
+              },
+              "text": {
+                "text": "float"
+              }
+            },
+            "tones": {
+              "typed": "data",
+              "text": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Keep logic in functions that take plain values.",
+            "values": {
+              "typed": {
+                "var": "typed",
+                "line": 9
+              },
+              "text": {
+                "text": "None"
+              }
+            },
+            "tones": {
+              "typed": "ok",
+              "text": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Parsing string input into numbers safely",
+        "boxes": [
+          {
+            "id": "typed",
+            "label": "typed"
+          },
+          {
+            "id": "text",
+            "label": "text"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Convert string to float inside try and except.",
+            "values": {
+              "typed": " 120 ",
+              "text": "float"
+            },
+            "tones": {
+              "typed": "data",
+              "text": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Keep logic in functions that take plain values.",
+            "values": {
+              "typed": "' 120 '",
+              "text": "None"
+            },
+            "tones": {
+              "typed": "ok",
+              "text": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A menu loop",
+      "codeHash": "1b497db9dfc28a5b7f93e1a0e293a992291406b0a40a46518150eafad9600785",
+      "spec": {
+        "template": "none",
+        "reason": "Interactive menu loop flow is exercised with iterative simulation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "pip and packages",
+      "codeHash": "a15ef1d45d6b0b4f74d5cdcdd50199491de87290041cb1ec89e56f5f86f8f7a9",
+      "spec": {
+        "template": "boxes",
+        "title": "Tracking dependencies in requirements",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "version",
+            "label": "version"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "pip downloads and installs packages in the terminal.",
+            "values": {
+              "name": {
+                "text": "requests"
+              },
+              "version": {
+                "text": "2.32.3"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "version": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "requirements writes exact packages and versions to file.",
+            "values": {
+              "name": {
+                "var": "name",
+                "line": 6
+              },
+              "version": {
+                "var": "version",
+                "line": 6
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "version": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Tracking dependencies in requirements",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "version",
+            "label": "version"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "pip downloads and installs packages in the terminal.",
+            "values": {
+              "name": "requests",
+              "version": "2.32.3"
+            },
+            "tones": {
+              "name": "data",
+              "version": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "requirements writes exact packages and versions to file.",
+            "values": {
+              "name": "'requests'",
+              "version": "'2.32.3'"
+            },
+            "tones": {
+              "name": "ok",
+              "version": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Virtual environments",
+      "codeHash": "95ff0255a44ee177a7fcac55a1875634a507c9a023ed759d692c0005c73d7667",
+      "spec": {
+        "template": "none",
+        "reason": "Virtual environment activation and directory separation are command-line concepts."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a custom assistant is",
+      "codeHash": "7c470ea8fac9b6cc433440a8f0d19e45451ac6c001e3e8f521f072841c889611",
+      "spec": {
+        "template": "table",
+        "title": "Custom assistant configuration and knowledge grounding",
+        "columns": [
+          "config",
+          "key",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Custom chat assistants are configured specifically for dedicated tasks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "config"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "config"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Assistants combine prompt instructions, uploaded knowledge, and action tools.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "config"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "config"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "config"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Custom assistant configuration and knowledge grounding",
+        "columns": [
+          "config",
+          "key",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Custom chat assistants are configured specifically for dedicated tasks.",
+            "rows": [
+              {
+                "cells": [
+                  "config",
+                  "key",
+                  "value"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "config",
+                  "key",
+                  "value"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Assistants combine prompt instructions, uploaded knowledge, and action tools.",
+            "rows": [
+              {
+                "cells": [
+                  "config",
+                  "key",
+                  "value"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "config",
+                  "key",
+                  "config"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing assistant instructions",
+      "codeHash": "12b1f5c86ef2506183b672b6ab256f81eed7314274345551873fe085e2fac31f",
+      "spec": {
+        "template": "table",
+        "title": "Modular assistant prompt specification and role boundaries",
+        "columns": [
+          "parts",
+          "parts",
+          "parts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Assistant instructions define context, role, instructions, and target tone.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Explicit rules state scope limits clearly and redirect out-of-scope questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Modular assistant prompt specification and role boundaries",
+        "columns": [
+          "parts",
+          "parts",
+          "parts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Assistant instructions define context, role, instructions, and target tone.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "parts",
+                  "parts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "parts",
+                  "parts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Explicit rules state scope limits clearly and redirect out-of-scope questions.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "parts",
+                  "parts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "parts",
+                  "parts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Answering from a FAQ",
+      "codeHash": "03a543c5024ce36915b0f96cc4e10038f0149599b8fd1e3a3cd82595c628e29a",
+      "spec": {
+        "template": "table",
+        "title": "Jaccard similarity FAQ retrieval and fallback triggering",
+        "columns": [
+          "faq",
+          "words",
+          "faq"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Many assistants answer user queries from curated frequently asked questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "faq"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "faq"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "faq"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "faq"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Jaccard similarity measures shared words between the user query and FAQ.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "faq"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "faq"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "faq"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Jaccard similarity FAQ retrieval and fallback triggering",
+        "columns": [
+          "faq",
+          "words",
+          "faq"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Many assistants answer user queries from curated frequently asked questions.",
+            "rows": [
+              {
+                "cells": [
+                  "faq",
+                  "words",
+                  "faq"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "faq",
+                  "words",
+                  "faq"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Jaccard similarity measures shared words between the user query and FAQ.",
+            "rows": [
+              {
+                "cells": [
+                  "faq",
+                  "words",
+                  "faq"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "faq",
+                  "words",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Actions: connecting to APIs",
+      "codeHash": "db37e4fac0965de30f42e6b927c00e4836087e119b2d8a75412296a38f484dab",
+      "spec": {
+        "template": "table",
+        "title": "External action endpoint security and HTTPS verification",
+        "columns": [
+          "actions",
+          "name",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Actions empower the assistant to call external services and check order status.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Security requires HTTPS encryption for every external action endpoint URL.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "External action endpoint security and HTTPS verification",
+        "columns": [
+          "actions",
+          "name",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Actions empower the assistant to call external services and check order status.",
+            "rows": [
+              {
+                "cells": [
+                  "actions",
+                  "name",
+                  "actions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "actions",
+                  "name",
+                  "actions"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Security requires HTTPS encryption for every external action endpoint URL.",
+            "rows": [
+              {
+                "cells": [
+                  "actions",
+                  "name",
+                  "actions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "actions",
+                  "name",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating assistant configurations",
+      "codeHash": "14ebaa13178c9c1ce161d7e9afec43b15bd2b36f6766ca80d405200a6a003d36",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: FAQ answers and config checks",
+      "codeHash": "bdff210283909b6172f731db90e4d9c355c4ea09697d9c979d5cdf8a6e3652b2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

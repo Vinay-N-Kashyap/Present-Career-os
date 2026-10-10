@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why hybrid search",
+      "codeHash": "48e7d32b0bf6424c3eb80e61847ab86de06ea88916db02822cff1d275fd860e3",
+      "spec": {
+        "template": "table",
+        "title": "Hybrid search sparse and dense retrieval fusion",
+        "columns": [
+          "dense",
+          "sparse",
+          "dense"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hybrid search combines sparse keyword and dense vector results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "dense"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "dense"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dense search catches paraphrases while keywords match exact codes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "dense"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hybrid search sparse and dense retrieval fusion",
+        "columns": [
+          "dense",
+          "sparse",
+          "dense"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hybrid search combines sparse keyword and dense vector results.",
+            "rows": [
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "dense"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "dense"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dense search catches paraphrases while keywords match exact codes.",
+            "rows": [
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "dense"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "sparse"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reciprocal rank fusion",
+      "codeHash": "8673ac92cd2c8afc29d072a5c77eddac7e82ed904021d87d1fe93bf554e41240",
+      "spec": {
+        "template": "table",
+        "title": "Reciprocal rank fusion positional reciprocal scores",
+        "columns": [
+          "scores",
+          "dense",
+          "sparse"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rank fusion ignores raw scores and relies on candidate positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Documents ranked highly across several methods rise to the top.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "dense"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reciprocal rank fusion positional reciprocal scores",
+        "columns": [
+          "scores",
+          "dense",
+          "sparse"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rank fusion ignores raw scores and relies on candidate positions.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "dense",
+                  "sparse"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "dense",
+                  "sparse"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Documents ranked highly across several methods rise to the top.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "dense",
+                  "sparse"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "dense",
+                  "dense"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Normalised score fusion",
+      "codeHash": "1ef4326b21f51ba8a9c89125663494f2095870f83b3677f000e75dc02f5cc6c0",
+      "spec": {
+        "template": "table",
+        "title": "Min-max normalised score combination with alpha balance",
+        "columns": [
+          "alpha",
+          "dense",
+          "sparse"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Score fusion maps candidate scores onto the same comparable scale.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "alpha"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "alpha"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The parameter alpha sets the balance between dense and sparse scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "alpha"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "alpha"
+                  },
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Min-max normalised score combination with alpha balance",
+        "columns": [
+          "alpha",
+          "dense",
+          "sparse"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Score fusion maps candidate scores onto the same comparable scale.",
+            "rows": [
+              {
+                "cells": [
+                  "alpha",
+                  "dense",
+                  "sparse"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "alpha",
+                  "dense",
+                  "sparse"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The parameter alpha sets the balance between dense and sparse scores.",
+            "rows": [
+              {
+                "cells": [
+                  "alpha",
+                  "dense",
+                  "sparse"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "alpha",
+                  "dense",
+                  "alpha"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a fusion method",
+      "codeHash": "1c69f4c0d51468ea602a33234ee2ab7ee404d9d3501250df809955494b195ae5",
+      "spec": {
+        "template": "table",
+        "title": "Fusion method comparison on sparse and dense candidates",
+        "columns": [
+          "dense",
+          "sparse",
+          "rrf"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rank fusion provides a robust default across diverse query inputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "rrf"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "rrf"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Score fusion keeps valuable information about how strong each match is.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "rrf"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dense"
+                  },
+                  {
+                    "text": "sparse"
+                  },
+                  {
+                    "text": "sparse"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fusion method comparison on sparse and dense candidates",
+        "columns": [
+          "dense",
+          "sparse",
+          "rrf"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rank fusion provides a robust default across diverse query inputs.",
+            "rows": [
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "rrf"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "rrf"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Score fusion keeps valuable information about how strong each match is.",
+            "rows": [
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "rrf"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "dense",
+                  "sparse",
+                  "sparse"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid search in a pipeline",
+      "codeHash": "baa6be8283d6829ff03174154206d9cf7e341084dc731def9ed66c56dce875f2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: fusion",
+      "codeHash": "780096ab247fcb30860167df60304fa056a08393aec05a4805e979f0e3637b0e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

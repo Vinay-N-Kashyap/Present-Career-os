@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 5,
+  "promptSha": "59fc5e061171232261c116801b69aca10d296847f248f6eed99c3feda7284e7e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Docker Compose Architecture & Service Declarations",
+      "codeHash": "a228ba0cdb690e18c18ced27f97234496a85fd9dbf82df70f63ed4411730c986",
+      "spec": {
+        "template": "workflow",
+        "title": "Docker Compose declarative multi-container stack",
+        "stages": [
+          {
+            "id": "frontend",
+            "name": "Frontend",
+            "subtext": "React Vite (3000)"
+          },
+          {
+            "id": "api",
+            "name": "ApiServer",
+            "subtext": "Express Node (8080)"
+          },
+          {
+            "id": "postgres",
+            "name": "Postgres",
+            "subtext": "Database (5432)"
+          },
+          {
+            "id": "redis",
+            "name": "Redis",
+            "subtext": "Cache (6379)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Compose defines entire system architecture as code across services.",
+            "activeStageId": "frontend",
+            "statusBadge": "declared"
+          },
+          {
+            "at": "say7",
+            "caption": "Single command creates networks mounts storage and starts services.",
+            "activeStageId": "api",
+            "statusBadge": "running"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Docker Compose declarative multi-container stack",
+        "stages": [
+          {
+            "id": "frontend",
+            "name": "Frontend",
+            "subtext": "React Vite (3000)"
+          },
+          {
+            "id": "api",
+            "name": "ApiServer",
+            "subtext": "Express Node (8080)"
+          },
+          {
+            "id": "postgres",
+            "name": "Postgres",
+            "subtext": "Database (5432)"
+          },
+          {
+            "id": "redis",
+            "name": "Redis",
+            "subtext": "Cache (6379)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Compose defines entire system architecture as code across services.",
+            "activeStageId": "frontend",
+            "statusBadge": "declared"
+          },
+          {
+            "at": "say7",
+            "caption": "Single command creates networks mounts storage and starts services.",
+            "activeStageId": "api",
+            "statusBadge": "running"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "User-Defined Bridge Networks & Service Discovery",
+      "codeHash": "dfdca0b356b7df45b07c46acbcc9c1785d6b825f4512ffb404d2da7a467fa17f",
+      "spec": {
+        "template": "sequence",
+        "title": "Embedded Docker DNS service discovery resolution",
+        "actors": [
+          "ApiServer",
+          "DockerDNS",
+          "PostgresDB",
+          "RedisCache"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Docker provides internal DNS service discovery on bridge network.",
+            "messages": [
+              {
+                "from": "ApiServer",
+                "to": "DockerDNS",
+                "label": "resolve postgres:5432"
+              }
+            ],
+            "activeActor": "ApiServer"
+          },
+          {
+            "at": "say8",
+            "caption": "Embedded DNS server intercepts queries and dynamically resolves address.",
+            "messages": [
+              {
+                "from": "DockerDNS",
+                "to": "ApiServer",
+                "label": "returns 172.28.0.2"
+              },
+              {
+                "from": "ApiServer",
+                "to": "PostgresDB",
+                "label": "connect TCP socket"
+              }
+            ],
+            "activeActor": "PostgresDB"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Embedded Docker DNS service discovery resolution",
+        "actors": [
+          "ApiServer",
+          "DockerDNS",
+          "PostgresDB",
+          "RedisCache"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Docker provides internal DNS service discovery on bridge network.",
+            "messages": [
+              {
+                "from": "ApiServer",
+                "to": "DockerDNS",
+                "label": "resolve postgres:5432"
+              }
+            ],
+            "activeActor": "ApiServer"
+          },
+          {
+            "at": "say8",
+            "caption": "Embedded DNS server intercepts queries and dynamically resolves address.",
+            "messages": [
+              {
+                "from": "DockerDNS",
+                "to": "ApiServer",
+                "label": "returns 172.28.0.2"
+              },
+              {
+                "from": "ApiServer",
+                "to": "PostgresDB",
+                "label": "connect TCP socket"
+              }
+            ],
+            "activeActor": "PostgresDB"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Named Volumes vs Bind Mounts for Data Persistence",
+      "codeHash": "458d321cfc9efb154031953f288c246b108b2109a696f9e4f0682308e2d7a22d",
+      "spec": {
+        "template": "compare",
+        "title": "Named volumes vs bind mounts storage persistence",
+        "leftLabel": "Named Volumes (Databases)",
+        "rightLabel": "Bind Mounts (Local Development)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Named volumes are managed exclusively by Docker daemon for persistence.",
+            "left": {
+              "code": "pgdata:/var/lib/postgresql/data",
+              "result": {
+                "text": "MANAGED_VOLUME"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "./src:/app/src",
+              "result": {
+                "text": "HOST_PATH"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Bind mounts reflect host code changes immediately without rebuilding.",
+            "left": {
+              "code": "Persistence: Survives restarts",
+              "result": {
+                "text": "PRODUCTION_SAFE"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Hot-Reload: Instant sync",
+              "result": {
+                "text": "DEV_OPTIMIZED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Named volumes vs bind mounts storage persistence",
+        "leftLabel": "Named Volumes (Databases)",
+        "rightLabel": "Bind Mounts (Local Development)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Named volumes are managed exclusively by Docker daemon for persistence.",
+            "left": {
+              "code": "pgdata:/var/lib/postgresql/data",
+              "result": {
+                "text": "MANAGED_VOLUME"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "./src:/app/src",
+              "result": {
+                "text": "HOST_PATH"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Bind mounts reflect host code changes immediately without rebuilding.",
+            "left": {
+              "code": "Persistence: Survives restarts",
+              "result": {
+                "text": "PRODUCTION_SAFE"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Hot-Reload: Instant sync",
+              "result": {
+                "text": "DEV_OPTIMIZED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dependency Ordering & Healthcheck Conditions",
+      "codeHash": "5388fd2dcbd373525b49fa0854f1c821376a46be9a5756dc79e28a746eefbbcc",
+      "spec": {
+        "template": "states",
+        "title": "Docker Compose healthcheck condition dependency gates",
+        "states": [
+          {
+            "id": "stopped",
+            "label": "Stopped"
+          },
+          {
+            "id": "initializing",
+            "label": "Initializing"
+          },
+          {
+            "id": "healthy",
+            "label": "Healthy"
+          },
+          {
+            "id": "api_started",
+            "label": "ApiStarted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Define healthcheck on database service testing readiness socket.",
+            "currentState": "stopped",
+            "transition": {
+              "from": "stopped",
+              "to": "initializing",
+              "label": "pg_isready"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Database healthcheck succeeds and only then launches API server.",
+            "currentState": "healthy",
+            "transition": {
+              "from": "healthy",
+              "to": "api_started",
+              "label": "service_healthy"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Docker Compose healthcheck condition dependency gates",
+        "states": [
+          {
+            "id": "stopped",
+            "label": "Stopped"
+          },
+          {
+            "id": "initializing",
+            "label": "Initializing"
+          },
+          {
+            "id": "healthy",
+            "label": "Healthy"
+          },
+          {
+            "id": "api_started",
+            "label": "ApiStarted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Define healthcheck on database service testing readiness socket.",
+            "currentState": "stopped",
+            "transition": {
+              "from": "stopped",
+              "to": "initializing",
+              "label": "pg_isready"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Database healthcheck succeeds and only then launches API server.",
+            "currentState": "healthy",
+            "transition": {
+              "from": "healthy",
+              "to": "api_started",
+              "label": "service_healthy"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Environment Compose Overrides",
+      "codeHash": "13b6ff71fe1dab17b48c1e61765e966cc8f2a737454d7d0e3fc840fc6529be21",
+      "spec": {
+        "template": "compare",
+        "title": "Base compose versus environment override merging",
+        "leftLabel": "Base Compose Definition",
+        "rightLabel": "Merged Environment Override",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Base compose file defines standard architecture and service names.",
+            "left": {
+              "code": "compose.yaml",
+              "result": {
+                "text": "STANDARD_BASE"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "compose.override.yaml",
+              "result": {
+                "text": "OVERLAY"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Production override file enforces immutable image tags and restart policies.",
+            "left": {
+              "code": "volumes: bind mount",
+              "result": {
+                "text": "DEV_BIND"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "volumes: named volume",
+              "result": {
+                "text": "PROD_PERSIST"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Base compose versus environment override merging",
+        "leftLabel": "Base Compose Definition",
+        "rightLabel": "Merged Environment Override",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Base compose file defines standard architecture and service names.",
+            "left": {
+              "code": "compose.yaml",
+              "result": {
+                "text": "STANDARD_BASE"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "compose.override.yaml",
+              "result": {
+                "text": "OVERLAY"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Production override file enforces immutable image tags and restart policies.",
+            "left": {
+              "code": "volumes: bind mount",
+              "result": {
+                "text": "DEV_BIND"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "volumes: named volume",
+              "result": {
+                "text": "PROD_PERSIST"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 1 Synthesis: Production 4-Tier Compose Architecture",
+      "codeHash": "d7488c21ee7e6297541630b4efba6c5208a4478c280aadbaf9678d36ccaff91f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

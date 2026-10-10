@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Tenants and namespaces",
+      "codeHash": "edb5288f1097ce91069bd37788dc986adcddf9c75cd16c66258a80eb0aab6ec7",
+      "spec": {
+        "template": "table",
+        "title": "Tenant data namespace boundaries and isolation",
+        "columns": [
+          "records",
+          "tenant",
+          "records"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tenant partition keeps customer data isolated from every other client.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "tenant"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "tenant"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Every search query must enforce the authenticated tenant identity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "tenant"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "tenant"
+                  },
+                  {
+                    "text": "tenant"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tenant data namespace boundaries and isolation",
+        "columns": [
+          "records",
+          "tenant",
+          "records"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tenant partition keeps customer data isolated from every other client.",
+            "rows": [
+              {
+                "cells": [
+                  "records",
+                  "tenant",
+                  "records"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "records",
+                  "tenant",
+                  "records"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Every search query must enforce the authenticated tenant identity.",
+            "rows": [
+              {
+                "cells": [
+                  "records",
+                  "tenant",
+                  "records"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "records",
+                  "tenant",
+                  "tenant"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Access control lists",
+      "codeHash": "67515e136540776971c7fd90af7b4b21d192c6ea6a56107c6c17d21b031d081f",
+      "spec": {
+        "template": "table",
+        "title": "Access control list evaluation and role permission checks",
+        "columns": [
+          "can_read",
+          "user",
+          "can_read"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An access control list defines which users or groups may view documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "can_read"
+                  },
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "can_read"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "can_read"
+                  },
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "can_read"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deny by default principles ensure an empty access list grants nothing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "can_read"
+                  },
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "can_read"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "can_read"
+                  },
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "user"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Access control list evaluation and role permission checks",
+        "columns": [
+          "can_read",
+          "user",
+          "can_read"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An access control list defines which users or groups may view documents.",
+            "rows": [
+              {
+                "cells": [
+                  "can_read",
+                  "user",
+                  "can_read"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "can_read",
+                  "user",
+                  "can_read"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deny by default principles ensure an empty access list grants nothing.",
+            "rows": [
+              {
+                "cells": [
+                  "can_read",
+                  "user",
+                  "can_read"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "can_read",
+                  "user",
+                  "user"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tenant-safe search",
+      "codeHash": "6c18110d832b844e0197aa675d584ca4a557c3d26c87f093a72835728a275471",
+      "spec": {
+        "template": "table",
+        "title": "Pre-ranking authorization filtering in search pipelines",
+        "columns": [
+          "items",
+          "allowed",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tenant filters apply before ranking so forbidden items never appear.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering prevents forbidden documents from influencing retrieval results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "allowed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pre-ranking authorization filtering in search pipelines",
+        "columns": [
+          "items",
+          "allowed",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tenant filters apply before ranking so forbidden items never appear.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "allowed",
+                  "hits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "items",
+                  "allowed",
+                  "hits"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering prevents forbidden documents from influencing retrieval results.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "allowed",
+                  "hits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "items",
+                  "allowed",
+                  "allowed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Leaks through AI answers",
+      "codeHash": "08c871c476c38f2dd6b87f85c6e8d09e73cdf78ef504e27cd89af257017ab8b1",
+      "spec": {
+        "template": "table",
+        "title": "Information leakage prevention in generative contexts",
+        "columns": [
+          "retrieved",
+          "safe",
+          "user_groups"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Retrieval must exclude restricted items before passing text to the model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "safe"
+                  },
+                  {
+                    "text": "user_groups"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "safe"
+                  },
+                  {
+                    "text": "user_groups"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "The security principle is simple: what is not retrieved cannot leak.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "safe"
+                  },
+                  {
+                    "text": "user_groups"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "safe"
+                  },
+                  {
+                    "text": "safe"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Information leakage prevention in generative contexts",
+        "columns": [
+          "retrieved",
+          "safe",
+          "user_groups"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Retrieval must exclude restricted items before passing text to the model.",
+            "rows": [
+              {
+                "cells": [
+                  "retrieved",
+                  "safe",
+                  "user_groups"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "retrieved",
+                  "safe",
+                  "user_groups"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "The security principle is simple: what is not retrieved cannot leak.",
+            "rows": [
+              {
+                "cells": [
+                  "retrieved",
+                  "safe",
+                  "user_groups"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "retrieved",
+                  "safe",
+                  "safe"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing isolation",
+      "codeHash": "a562c1b1d972382ea3e56fedd4def9c5e83829a6ceedba55ab82df3b1ba96aaa",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: access control",
+      "codeHash": "de4f7df9c44ce1f642cf0ea0a0c92b0834100d85b2bc9d862b336d855c8f68f0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

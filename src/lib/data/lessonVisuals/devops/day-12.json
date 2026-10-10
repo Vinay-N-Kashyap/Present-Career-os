@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 12,
+  "promptSha": "588bc9ab2ec41e2c3de9beb05e06f85c9d759caf2ed198b83957e034598dac25",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Container Supply Chain Vulnerabilities Overview",
+      "codeHash": "4d505e0b19e3499cd32df1c11221e4b9cf565aa65e099f1c1354f830408267a5",
+      "spec": {
+        "template": "compare",
+        "title": "Container image layer vulnerability distribution analysis",
+        "leftLabel": "Base OS Layer (Debian)",
+        "rightLabel": "Application Source Code",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Container images consist of layered filesystem stacks with system libraries.",
+            "left": {
+              "code": "source: 'Base OS (Debian)'",
+              "result": {
+                "text": "Base OS (Debian)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "source: 'App Source Code'",
+              "result": {
+                "text": "App Source Code"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Vulnerability scanners analyze image layers against security databases.",
+            "left": {
+              "code": "knownVulnerabilities: 3",
+              "result": {
+                "text": "Base OS (Debian)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "knownVulnerabilities: 0",
+              "result": {
+                "text": "App Source Code"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Container image layer vulnerability distribution analysis",
+        "leftLabel": "Base OS Layer (Debian)",
+        "rightLabel": "Application Source Code",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Container images consist of layered filesystem stacks with system libraries.",
+            "left": {
+              "code": "source: 'Base OS (Debian)'",
+              "result": {
+                "text": "Base OS (Debian)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "source: 'App Source Code'",
+              "result": {
+                "text": "App Source Code"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Vulnerability scanners analyze image layers against security databases.",
+            "left": {
+              "code": "knownVulnerabilities: 3",
+              "result": {
+                "text": "Base OS (Debian)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "knownVulnerabilities: 0",
+              "result": {
+                "text": "App Source Code"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Common Vulnerabilities and Exposures (CVEs) & CVSS v3 Scoring",
+      "codeHash": "65c5fe31b160014574a78905b6912005f036153f544f82f1ab56c996ae0ca507",
+      "spec": {
+        "template": "compare",
+        "title": "CVSS v3 vulnerability severity score classification thresholds",
+        "leftLabel": "Critical Severity (10.0)",
+        "rightLabel": "High Severity (7.5)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Scoring systems evaluate vulnerability severity on standardized scale.",
+            "left": {
+              "code": "cveId: 'CVE-2024-3094'",
+              "result": {
+                "text": "CRITICAL"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "cveId: 'CVE-2023-44487'",
+              "result": {
+                "text": "HIGH"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Critical scores represent severe remote code execution attack hazards.",
+            "left": {
+              "code": "score >= 9.0",
+              "result": {
+                "text": "CRITICAL"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "score >= 7.0",
+              "result": {
+                "text": "HIGH"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "CVSS v3 vulnerability severity score classification thresholds",
+        "leftLabel": "Critical Severity (10.0)",
+        "rightLabel": "High Severity (7.5)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Scoring systems evaluate vulnerability severity on standardized scale.",
+            "left": {
+              "code": "cveId: 'CVE-2024-3094'",
+              "result": {
+                "text": "CRITICAL"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "cveId: 'CVE-2023-44487'",
+              "result": {
+                "text": "HIGH"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Critical scores represent severe remote code execution attack hazards.",
+            "left": {
+              "code": "score >= 9.0",
+              "result": {
+                "text": "CRITICAL"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "score >= 7.0",
+              "result": {
+                "text": "HIGH"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running Trivy CLI for Container & Filesystem Scanning",
+      "codeHash": "59fcc15e8ed84a05cb9f3c41dca00fd51718629c9be52609ea3fb2f0f787472f",
+      "spec": {
+        "template": "compare",
+        "title": "Trivy automated image scan vulnerability findings breakdown",
+        "leftLabel": "Target Identification",
+        "rightLabel": "Scan Execution Profile",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Scanner inspects local container images detecting installed package risks.",
+            "left": {
+              "code": "target: 'myorg/web-service:v1.2.0'",
+              "result": {
+                "text": "target"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scanDurationSec",
+              "result": {
+                "text": "myorg/web-service:v1.2.0"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Output summarizes vulnerabilities alongside severity levels and package fixes.",
+            "left": {
+              "code": "bySeverity.CRITICAL",
+              "result": {
+                "text": "target"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bySeverity.HIGH",
+              "result": {
+                "text": "myorg/web-service:v1.2.0"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Trivy automated image scan vulnerability findings breakdown",
+        "leftLabel": "Target Identification",
+        "rightLabel": "Scan Execution Profile",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Scanner inspects local container images detecting installed package risks.",
+            "left": {
+              "code": "target: 'myorg/web-service:v1.2.0'",
+              "result": {
+                "text": "target"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scanDurationSec",
+              "result": {
+                "text": "myorg/web-service:v1.2.0"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Output summarizes vulnerabilities alongside severity levels and package fixes.",
+            "left": {
+              "code": "bySeverity.CRITICAL",
+              "result": {
+                "text": "target"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bySeverity.HIGH",
+              "result": {
+                "text": "myorg/web-service:v1.2.0"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CI Security Gates: Enforcing Build-Breaking Policies",
+      "codeHash": "86e9d54810abc26a96470bb8e3e95dd5b4ad7858bdcc66d6df965789614c8195",
+      "spec": {
+        "template": "states",
+        "title": "CI pipeline automated security gate build-breaking evaluation",
+        "states": [
+          {
+            "id": "passed",
+            "label": "passed"
+          },
+          {
+            "id": "failed",
+            "label": "FAILED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Security scanner enforces exit code failure upon discovering critical flaws.",
+            "currentState": "passed",
+            "transition": {
+              "from": "passed",
+              "to": "passed",
+              "label": "passed"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Detected high severity vulnerabilities fail the pipeline step immediately.",
+            "currentState": "failed",
+            "transition": {
+              "from": "passed",
+              "to": "failed",
+              "label": "FAILED"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "CI pipeline automated security gate build-breaking evaluation",
+        "states": [
+          {
+            "id": "passed",
+            "label": "passed"
+          },
+          {
+            "id": "failed",
+            "label": "FAILED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Security scanner enforces exit code failure upon discovering critical flaws.",
+            "currentState": "passed",
+            "transition": {
+              "from": "passed",
+              "to": "passed",
+              "label": "passed"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Detected high severity vulnerabilities fail the pipeline step immediately.",
+            "currentState": "failed",
+            "transition": {
+              "from": "passed",
+              "to": "failed",
+              "label": "FAILED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Remediation Strategies: Multi-Stage Distroless & .trivyignore",
+      "codeHash": "d1833a07767711646e5a323c74e587ce352c7e9ce3c7fcebddf6fc5ce28d8bf7",
+      "spec": {
+        "template": "compare",
+        "title": "Vulnerability remediation actions distroless switch versus dependency bump",
+        "leftLabel": "Switch to Distroless",
+        "rightLabel": "Dependency Upgrade",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Switching to minimal distroless base images eliminates unnecessary packages.",
+            "left": {
+              "code": "actionTaken: 'Switch to Distroless'",
+              "result": {
+                "text": "Switch to Distroless"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "actionTaken: 'npm update'",
+              "result": {
+                "text": "npm update"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Documented unexploitable findings may be recorded in ignore configuration.",
+            "left": {
+              "code": "justification",
+              "result": {
+                "text": "Switch to Distroless"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "actionTaken: 'Documented in .trivyignore'",
+              "result": {
+                "text": "Documented in .trivyignore"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Vulnerability remediation actions distroless switch versus dependency bump",
+        "leftLabel": "Switch to Distroless",
+        "rightLabel": "Dependency Upgrade",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Switching to minimal distroless base images eliminates unnecessary packages.",
+            "left": {
+              "code": "actionTaken: 'Switch to Distroless'",
+              "result": {
+                "text": "Switch to Distroless"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "actionTaken: 'npm update'",
+              "result": {
+                "text": "npm update"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Documented unexploitable findings may be recorded in ignore configuration.",
+            "left": {
+              "code": "justification",
+              "result": {
+                "text": "Switch to Distroless"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "actionTaken: 'Documented in .trivyignore'",
+              "result": {
+                "text": "Documented in .trivyignore"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cryptographic Image Signing with Cosign & Sigstore",
+      "codeHash": "a7491ab771892958a1d3845e8683f86e74408ea241eed791e5d8031c5707407a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

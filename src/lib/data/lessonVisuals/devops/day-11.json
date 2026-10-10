@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 11,
+  "promptSha": "c621aadbb99c7f227eb457706c2fdccd4ce448f15493f6c7fa4760c5a568bde7",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Semantic Versioning (SemVer 2.0.0) Specification",
+      "codeHash": "9c5bbfda735e18c83114099118ee95e1fb54d93bf97b14f35df35fce704568ed",
+      "spec": {
+        "template": "compare",
+        "title": "Patch bugfix versus major breaking change version increments",
+        "leftLabel": "Bugfix (Patch Bump)",
+        "rightLabel": "Breaking Change (Major Bump)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Increment patch when making backwards-compatible bug fixes without api changes.",
+            "left": {
+              "code": "bumpVersion(v1, 'patch')",
+              "result": {
+                "text": "patch"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bumpVersion(v1, 'major')",
+              "result": {
+                "text": "major"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Increment major when introducing incompatible alterations breaking consumers.",
+            "left": {
+              "code": "minor: current.minor",
+              "result": {
+                "text": "minor"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "major: current.major + 1",
+              "result": {
+                "text": "major"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Patch bugfix versus major breaking change version increments",
+        "leftLabel": "Bugfix (Patch Bump)",
+        "rightLabel": "Breaking Change (Major Bump)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Increment patch when making backwards-compatible bug fixes without api changes.",
+            "left": {
+              "code": "bumpVersion(v1, 'patch')",
+              "result": {
+                "text": "patch"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bumpVersion(v1, 'major')",
+              "result": {
+                "text": "major"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Increment major when introducing incompatible alterations breaking consumers.",
+            "left": {
+              "code": "minor: current.minor",
+              "result": {
+                "text": "minor"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "major: current.major + 1",
+              "result": {
+                "text": "major"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Conventional Commits 1.0.0: Machine-Readable Git Logs",
+      "codeHash": "0961a8b30d9849c4d12a0dd59c007399c301c3f5312eaa1b2c6b9362012abe2d",
+      "spec": {
+        "template": "compare",
+        "title": "Conventional commit message prefix mapping to semantic release",
+        "leftLabel": "Fix Prefix (PATCH)",
+        "rightLabel": "Breaking Feature (MAJOR)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Fix prefixes correlate directly to patch increments without changing signature.",
+            "left": {
+              "code": "classifyCommitMessage('fix(auth): ...')",
+              "result": {
+                "text": "PATCH"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "classifyCommitMessage('feat(api)!: ...')",
+              "result": {
+                "text": "MAJOR"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Exclamation marks or breaking change footers indicate major version bumps.",
+            "left": {
+              "code": "header.startsWith('fix')",
+              "result": {
+                "text": "fix"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "msg.includes('BREAKING CHANGE')",
+              "result": {
+                "text": "breaking"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Conventional commit message prefix mapping to semantic release",
+        "leftLabel": "Fix Prefix (PATCH)",
+        "rightLabel": "Breaking Feature (MAJOR)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Fix prefixes correlate directly to patch increments without changing signature.",
+            "left": {
+              "code": "classifyCommitMessage('fix(auth): ...')",
+              "result": {
+                "text": "PATCH"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "classifyCommitMessage('feat(api)!: ...')",
+              "result": {
+                "text": "MAJOR"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Exclamation marks or breaking change footers indicate major version bumps.",
+            "left": {
+              "code": "header.startsWith('fix')",
+              "result": {
+                "text": "fix"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "msg.includes('BREAKING CHANGE')",
+              "result": {
+                "text": "breaking"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated CHANGELOG Generation from Git History",
+      "codeHash": "1127d61ec533f8fb8fcc49a6cafe345480c00e784c0799ca73185bc50a49423b",
+      "spec": {
+        "template": "compare",
+        "title": "Structured conventional commit changelog markdown generation",
+        "leftLabel": "Feature Commit",
+        "rightLabel": "Breaking Change",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Automated tools inspect commit logs assembling formatted markdown release notes.",
+            "left": {
+              "code": "type: 'feat'",
+              "result": {
+                "text": "dashboard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "type: 'breaking'",
+              "result": {
+                "text": "breaking"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Generator categorizes commits into distinct sections for features and fixes.",
+            "left": {
+              "code": "type: 'fix'",
+              "result": {
+                "text": "auth"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "renderChangelog",
+              "result": {
+                "text": "feat"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Structured conventional commit changelog markdown generation",
+        "leftLabel": "Feature Commit",
+        "rightLabel": "Breaking Change",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Automated tools inspect commit logs assembling formatted markdown release notes.",
+            "left": {
+              "code": "type: 'feat'",
+              "result": {
+                "text": "dashboard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "type: 'breaking'",
+              "result": {
+                "text": "breaking"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Generator categorizes commits into distinct sections for features and fixes.",
+            "left": {
+              "code": "type: 'fix'",
+              "result": {
+                "text": "auth"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "renderChangelog",
+              "result": {
+                "text": "feat"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Release Drafter & GitHub Releases Automation",
+      "codeHash": "f45bc1a5c00fb21a39a3c1486ed58876cdaf5bd418e4255a0f029ef59f6cf9cd",
+      "spec": {
+        "template": "compare",
+        "title": "Production release tag publication versus staging draft candidate",
+        "leftLabel": "Production Release",
+        "rightLabel": "Staging Candidate",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Releases provide structured distribution portals for binaries and notes.",
+            "left": {
+              "code": "isPrerelease: false",
+              "result": {
+                "text": "Release"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "isPrerelease: true",
+              "result": {
+                "text": "Release"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Pushing git release tags automatically publishes draft distributions.",
+            "left": {
+              "code": "tagName: 'v1.3.0'",
+              "result": {
+                "text": "v"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "tagName: 'v1.4.0-rc.1'",
+              "result": {
+                "text": "v"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Production release tag publication versus staging draft candidate",
+        "leftLabel": "Production Release",
+        "rightLabel": "Staging Candidate",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Releases provide structured distribution portals for binaries and notes.",
+            "left": {
+              "code": "isPrerelease: false",
+              "result": {
+                "text": "Release"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "isPrerelease: true",
+              "result": {
+                "text": "Release"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Pushing git release tags automatically publishes draft distributions.",
+            "left": {
+              "code": "tagName: 'v1.3.0'",
+              "result": {
+                "text": "v"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "tagName: 'v1.4.0-rc.1'",
+              "result": {
+                "text": "v"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pre-release Identifiers & Build Metadata",
+      "codeHash": "28613d1eb28b9bdfdc94015f486329779b4b77fb4a297f580c0db97731c2aa48",
+      "spec": {
+        "template": "compare",
+        "title": "Stable production channel versus pre-release version identifiers",
+        "leftLabel": "Stable Channel",
+        "rightLabel": "Release Candidate Channel",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standard syntax supports pre-release channel identifiers for testing.",
+            "left": {
+              "code": "parsePreRelease('2.0.0')",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "parsePreRelease('2.0.0-rc.1')",
+              "result": {
+                "text": "2.0.0-rc.1"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Pre-release identifiers carry lower evaluation precedence than stable versions.",
+            "left": {
+              "code": "isPrerelease: false",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "isPrerelease: true",
+              "result": {
+                "text": "2.0.0"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Stable production channel versus pre-release version identifiers",
+        "leftLabel": "Stable Channel",
+        "rightLabel": "Release Candidate Channel",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standard syntax supports pre-release channel identifiers for testing.",
+            "left": {
+              "code": "parsePreRelease('2.0.0')",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "parsePreRelease('2.0.0-rc.1')",
+              "result": {
+                "text": "2.0.0-rc.1"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Pre-release identifiers carry lower evaluation precedence than stable versions.",
+            "left": {
+              "code": "isPrerelease: false",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "isPrerelease: true",
+              "result": {
+                "text": "2.0.0"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Automated Git Tagging Release Pipeline",
+      "codeHash": "815aa827850fd97e9ac5b71efec6e3098f4c7eb0700d08e15b97e3d7e250ec6f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

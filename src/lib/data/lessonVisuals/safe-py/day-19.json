@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What calibration means",
+      "codeHash": "fd02713b956d63755cbae315fb2dcce967977ce7d7436da685a99ac364e5aff9",
+      "spec": {
+        "template": "table",
+        "title": "Confidence scores versus empirical correctness",
+        "columns": [
+          "answers",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Calibrated confidence matches actual accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Decisions use confidence when deciding whether to escalate or answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "conf"
+                  },
+                  {
+                    "text": "level"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Confidence scores versus empirical correctness",
+        "columns": [
+          "answers",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Calibrated confidence matches actual accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "hits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answers",
+                  "hits"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Decisions use confidence when deciding whether to escalate or answer.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "hits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "conf",
+                  "level"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Confidence bins",
+      "codeHash": "68a3b7658e484e04cf9420ffdeebfe5df009ef0ba37b4429b25883369c9878d1",
+      "spec": {
+        "template": "table",
+        "title": "Grouping confidence predictions into discrete bins",
+        "columns": [
+          "bins",
+          "conf"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Group varied confidence values into discrete bins.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bins"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bins"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each bin tracks average confidence alongside actual accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bins"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "confidence"
+                  },
+                  {
+                    "text": "bin"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Grouping confidence predictions into discrete bins",
+        "columns": [
+          "bins",
+          "conf"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Group varied confidence values into discrete bins.",
+            "rows": [
+              {
+                "cells": [
+                  "bins",
+                  "conf"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bins",
+                  "conf"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each bin tracks average confidence alongside actual accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "bins",
+                  "conf"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "confidence",
+                  "bin"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expected calibration error",
+      "codeHash": "1a0fd081704a544e9815becb0132a65580bf3cfaedb39c8681ff075c281374c5",
+      "spec": {
+        "template": "table",
+        "title": "Expected calibration error computation components",
+        "columns": [
+          "correct",
+          "conf"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each bin compares average confidence with accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "correct"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "correct"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Predictions are weighted by the share of observations in that bin.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "correct"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "accuracy"
+                  },
+                  {
+                    "text": "confidence"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Expected calibration error computation components",
+        "columns": [
+          "correct",
+          "conf"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each bin compares average confidence with accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "correct",
+                  "conf"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "correct",
+                  "conf"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Predictions are weighted by the share of observations in that bin.",
+            "rows": [
+              {
+                "cells": [
+                  "correct",
+                  "conf"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "accuracy",
+                  "confidence"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reliability tables",
+      "codeHash": "c4dfbb1ee5218aab4da03e6eb7e0f1cccdd7cd9c6fb09b66b28d8ea225fc7ce7",
+      "spec": {
+        "template": "table",
+        "title": "Reliability table entries across confidence bins",
+        "columns": [
+          "data",
+          "rows"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Reliability table rows show predictions and accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "rows"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "rows"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Bins where accuracy falls below confidence indicate overconfidence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "rows"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bins"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reliability table entries across confidence bins",
+        "columns": [
+          "data",
+          "rows"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Reliability table rows show predictions and accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "rows"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "data",
+                  "rows"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Bins where accuracy falls below confidence indicate overconfidence.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "rows"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bins",
+                  "conf"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixing calibration",
+      "codeHash": "d8f3b5cfc4fccaac90aa4abd0c234beea018f3438160a3837237fa506b09066b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Calibration in the pipeline",
+      "codeHash": "f112b7f6f546885dca4bd5651d383805ce1f8c610320bbdd74eab1ebd1f007fa",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

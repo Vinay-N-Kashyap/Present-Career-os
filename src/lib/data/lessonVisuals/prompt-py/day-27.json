@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "High-stakes domains",
+      "codeHash": "825b079678d12ba2cac0c52e46ab155cb0e9ff5aaee811193eea2cd7bdce85b6",
+      "spec": {
+        "template": "table",
+        "title": "High-stakes domain tasks and required review level",
+        "columns": [
+          "contract",
+          "review",
+          "doctor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Medicine and finance require strict regulation due to errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "doctor"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "doctor"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "AI assists professionals in drafting routine documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "doctor"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "contract"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "High-stakes domain tasks and required review level",
+        "columns": [
+          "contract",
+          "review",
+          "doctor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Medicine and finance require strict regulation due to errors.",
+            "rows": [
+              {
+                "cells": [
+                  "contract",
+                  "review",
+                  "doctor"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "contract",
+                  "review",
+                  "doctor"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "AI assists professionals in drafting routine documents.",
+            "rows": [
+              {
+                "cells": [
+                  "contract",
+                  "review",
+                  "doctor"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "contract",
+                  "review",
+                  "contract"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Disclaimers and scope",
+      "codeHash": "0486da208aee6adf18e5e6fd1457f16aeb004d03de7ae352e92985e9f4bfc612",
+      "spec": {
+        "template": "table",
+        "title": "Disclaimer verification and domain safety policies",
+        "columns": [
+          "medical",
+          "financial",
+          "emergency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sensitive domains require clear disclaimers in generated text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "medical"
+                  },
+                  {
+                    "text": "financial"
+                  },
+                  {
+                    "text": "emergency"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "medical"
+                  },
+                  {
+                    "text": "financial"
+                  },
+                  {
+                    "text": "emergency"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Medical answers mention emergency steps to avoid delays in care.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "medical"
+                  },
+                  {
+                    "text": "financial"
+                  },
+                  {
+                    "text": "emergency"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "medical"
+                  },
+                  {
+                    "text": "financial"
+                  },
+                  {
+                    "text": "medical"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disclaimer verification and domain safety policies",
+        "columns": [
+          "medical",
+          "financial",
+          "emergency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sensitive domains require clear disclaimers in generated text.",
+            "rows": [
+              {
+                "cells": [
+                  "medical",
+                  "financial",
+                  "emergency"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "medical",
+                  "financial",
+                  "emergency"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Medical answers mention emergency steps to avoid delays in care.",
+            "rows": [
+              {
+                "cells": [
+                  "medical",
+                  "financial",
+                  "emergency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "medical",
+                  "financial",
+                  "medical"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AI in legal work",
+      "codeHash": "27a77b82f699ab7b243852374d349577c46198872c55b4b8e0418963f9b0d0ee",
+      "spec": {
+        "template": "table",
+        "title": "Legal contract review and risky clause detection",
+        "columns": [
+          "contract",
+          "penalty",
+          "lease"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lawyers use tools to summarise contracts and compare clauses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "penalty"
+                  },
+                  {
+                    "text": "lease"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "penalty"
+                  },
+                  {
+                    "text": "lease"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Automated review flags unlimited liability and penalties.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "penalty"
+                  },
+                  {
+                    "text": "lease"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "contract"
+                  },
+                  {
+                    "text": "penalty"
+                  },
+                  {
+                    "text": "contract"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Legal contract review and risky clause detection",
+        "columns": [
+          "contract",
+          "penalty",
+          "lease"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lawyers use tools to summarise contracts and compare clauses.",
+            "rows": [
+              {
+                "cells": [
+                  "contract",
+                  "penalty",
+                  "lease"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "contract",
+                  "penalty",
+                  "lease"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Automated review flags unlimited liability and penalties.",
+            "rows": [
+              {
+                "cells": [
+                  "contract",
+                  "penalty",
+                  "lease"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "contract",
+                  "penalty",
+                  "contract"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AI in healthcare",
+      "codeHash": "08b8a48c7dafdbf4836ee7761a46b80097e14c630bc78da467996bc80b94b3af",
+      "spec": {
+        "template": "table",
+        "title": "Healthcare communication and plain language explanation",
+        "columns": [
+          "hypertension",
+          "tachycardia",
+          "benign"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clinicians draft consultation notes and patient explanations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hypertension"
+                  },
+                  {
+                    "text": "tachycardia"
+                  },
+                  {
+                    "text": "benign"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hypertension"
+                  },
+                  {
+                    "text": "tachycardia"
+                  },
+                  {
+                    "text": "benign"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Plain language avoids alarm and directs patients to emergency care.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hypertension"
+                  },
+                  {
+                    "text": "tachycardia"
+                  },
+                  {
+                    "text": "benign"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hypertension"
+                  },
+                  {
+                    "text": "tachycardia"
+                  },
+                  {
+                    "text": "benign"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Healthcare communication and plain language explanation",
+        "columns": [
+          "hypertension",
+          "tachycardia",
+          "benign"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clinicians draft consultation notes and patient explanations.",
+            "rows": [
+              {
+                "cells": [
+                  "hypertension",
+                  "tachycardia",
+                  "benign"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "hypertension",
+                  "tachycardia",
+                  "benign"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Plain language avoids alarm and directs patients to emergency care.",
+            "rows": [
+              {
+                "cells": [
+                  "hypertension",
+                  "tachycardia",
+                  "benign"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "hypertension",
+                  "tachycardia",
+                  "benign"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AI in marketing and finance",
+      "codeHash": "1087c726a41b48a45a537f085833919c4fdbbde28dc928cc3e44fa58ffc0e645",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: disclaimers and clauses",
+      "codeHash": "61f0328992515df4deea72e7ac657c1c18c38b01eae300e66b99e04281719007",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

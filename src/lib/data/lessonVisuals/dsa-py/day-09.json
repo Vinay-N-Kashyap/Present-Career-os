@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a sliding window is",
+      "codeHash": "7008e7f414508e1186754576fbeb9783f302cc1d7a286ac9b257c297a4d68039",
+      "spec": {
+        "template": "cells",
+        "title": "Sliding window stretch between positions",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Window stretch marked by left and right positions.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "3"
+              }
+            ],
+            "highlightRange": [
+              0,
+              2
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sliding window adds entering item on right and drops left item.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "3"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Sliding window stretch between positions",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Window stretch marked by left and right positions.",
+            "items": [
+              "4",
+              "2",
+              "7",
+              "1",
+              "8",
+              "3"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              2
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sliding window adds entering item on right and drops left item.",
+            "items": [
+              "4",
+              "2",
+              "7",
+              "1",
+              "8",
+              "3"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixed window: the best sum of k in a row",
+      "codeHash": "8e4835eaf8939337f08cbd555d79f9d1cd329afaa1dc51d55626e2b7bfe4820f",
+      "spec": {
+        "template": "bars",
+        "title": "Fixed sliding window sum comparison",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Slide adds coming number and subtracts leaving number.",
+            "bars": [
+              {
+                "label": "win [0..2]",
+                "value": {
+                  "text": "350"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "win [1..3]",
+                "value": {
+                  "text": "320"
+                },
+                "tone": "data"
+              }
+            ],
+            "max": 500
+          },
+          {
+            "at": "say3",
+            "caption": "Each slide is constant work tracking best sum.",
+            "bars": [
+              {
+                "label": "win [0..2]",
+                "value": {
+                  "text": "350"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "win [1..3]",
+                "value": {
+                  "text": "320"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "win [2..4]",
+                "value": {
+                  "text": "440"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 500
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Fixed sliding window sum comparison",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Slide adds coming number and subtracts leaving number.",
+            "bars": [
+              {
+                "label": "win [0..2]",
+                "value": 350,
+                "tone": "data"
+              },
+              {
+                "label": "win [1..3]",
+                "value": 320,
+                "tone": "data"
+              }
+            ],
+            "max": 500
+          },
+          {
+            "at": "say3",
+            "caption": "Each slide is constant work tracking best sum.",
+            "bars": [
+              {
+                "label": "win [0..2]",
+                "value": 350,
+                "tone": "data"
+              },
+              {
+                "label": "win [1..3]",
+                "value": 320,
+                "tone": "data"
+              },
+              {
+                "label": "win [2..4]",
+                "value": 440,
+                "tone": "ok"
+              }
+            ],
+            "max": 500
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flexible window: longest stretch with no repeats",
+      "codeHash": "f8b6dd373f2765e63db7ee843731bdd73ef90b84eacbf8d36a9c2ebaff420ae6",
+      "spec": {
+        "template": "cells",
+        "title": "Flexible window expanding and contracting",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Move right one character while tracking last seen position.",
+            "items": [
+              {
+                "text": "a"
+              },
+              {
+                "text": "b"
+              },
+              {
+                "text": "c"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "b"
+              }
+            ],
+            "highlightRange": [
+              0,
+              2
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Window length without repeats forms candidate answer.",
+            "items": [
+              {
+                "text": "a"
+              },
+              {
+                "text": "b"
+              },
+              {
+                "text": "c"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "b"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Flexible window expanding and contracting",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Move right one character while tracking last seen position.",
+            "items": [
+              "a",
+              "b",
+              "c",
+              "a",
+              "b"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              2
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Window length without repeats forms candidate answer.",
+            "items": [
+              "a",
+              "b",
+              "c",
+              "a",
+              "b"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flexible window: shortest stretch reaching a total",
+      "codeHash": "9453d87bdf7c472798999d44820c38f8f5ee2f6dff65d5138eaa1c0f80e764cd",
+      "spec": {
+        "template": "none",
+        "reason": "Dynamic contraction when prefix sum reaches target threshold."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Dynamic contraction when prefix sum reaches target threshold."
+      }
+    },
+    {
+      "partTitle": "Counting letters in a window",
+      "codeHash": "661ab6a28d631aa944c977fe6540f860a34cd50837caaa597906e78660e26837",
+      "spec": {
+        "template": "table",
+        "title": "Sliding window letter frequency matching",
+        "columns": [
+          "Window",
+          "Counter Map",
+          "Matches Need",
+          "Anagram Match"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Counter holds letter counts as window slides along text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cba"
+                  },
+                  {
+                    "text": "{a:1, b:1, c:1}"
+                  },
+                  {
+                    "text": "yes"
+                  },
+                  {
+                    "text": "index 0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bae"
+                  },
+                  {
+                    "text": "{a:1, b:1, e:1}"
+                  },
+                  {
+                    "text": "no"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Comparing small counters quickly detects pattern anagram match.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cba"
+                  },
+                  {
+                    "text": "{a:1, b:1, c:1}"
+                  },
+                  {
+                    "text": "yes"
+                  },
+                  {
+                    "text": "index 0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bae"
+                  },
+                  {
+                    "text": "{a:1, b:1, e:1}"
+                  },
+                  {
+                    "text": "no"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bac"
+                  },
+                  {
+                    "text": "{a:1, b:1, c:1}"
+                  },
+                  {
+                    "text": "yes"
+                  },
+                  {
+                    "text": "index 6"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sliding window letter frequency matching",
+        "columns": [
+          "Window",
+          "Counter Map",
+          "Matches Need",
+          "Anagram Match"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Counter holds letter counts as window slides along text.",
+            "rows": [
+              {
+                "cells": [
+                  "cba",
+                  "{a:1, b:1, c:1}",
+                  "yes",
+                  "index 0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bae",
+                  "{a:1, b:1, e:1}",
+                  "no",
+                  "none"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Comparing small counters quickly detects pattern anagram match.",
+            "rows": [
+              {
+                "cells": [
+                  "cba",
+                  "{a:1, b:1, c:1}",
+                  "yes",
+                  "index 0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bae",
+                  "{a:1, b:1, e:1}",
+                  "no",
+                  "none"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bac",
+                  "{a:1, b:1, c:1}",
+                  "yes",
+                  "index 6"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spotting a window problem",
+      "codeHash": "c7ccd9f3b3ed7414c09d102965d25b9ee74a860806f1c27e5897b7c7fc928082",
+      "spec": {
+        "template": "none",
+        "reason": "Identifying sliding window keywords in problem statements."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Identifying sliding window keywords in problem statements."
+      }
+    }
+  ]
+}

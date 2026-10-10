@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What hallucination is",
+      "codeHash": "476f2a7af403ca655ebeb1e1c05414a8e40dc9cd4b1a24ab93befae0d75309d2",
+      "spec": {
+        "template": "table",
+        "title": "Groundedness verification against authoritative source chunks",
+        "columns": [
+          "source",
+          "answer",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A hallucination is a statement from a model that is not supported by sources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Groundedness requires every claim in the answer to be supported by sources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Groundedness verification against authoritative source chunks",
+        "columns": [
+          "source",
+          "answer",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A hallucination is a statement from a model that is not supported by sources.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "answer",
+                  "source"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "source",
+                  "answer",
+                  "source"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Groundedness requires every claim in the answer to be supported by sources.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "answer",
+                  "source"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "source",
+                  "answer",
+                  "source"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Content words",
+      "codeHash": "b34dcf11eb29023261e28a9d220599d84ac311cf20ac1de508fc1139424c698e",
+      "spec": {
+        "template": "table",
+        "title": "Content token extraction and stop-word filtering heuristic",
+        "columns": [
+          "sentence",
+          "tokens",
+          "content"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To compare a sentence with a source algorithms isolate informative words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "content"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "content"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A simple rule keeps words longer than three characters as content words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "content"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "content"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Content token extraction and stop-word filtering heuristic",
+        "columns": [
+          "sentence",
+          "tokens",
+          "content"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To compare a sentence with a source algorithms isolate informative words.",
+            "rows": [
+              {
+                "cells": [
+                  "sentence",
+                  "tokens",
+                  "content"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "tokens",
+                  "content"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A simple rule keeps words longer than three characters as content words.",
+            "rows": [
+              {
+                "cells": [
+                  "sentence",
+                  "tokens",
+                  "content"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "tokens",
+                  "content"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scoring support",
+      "codeHash": "e49e1acf87dea2aa2f401195aa5297749b5a45e67f8da30078cf26acf81d99a7",
+      "spec": {
+        "template": "table",
+        "title": "Sentence-level support threshold scoring and overlap ratios",
+        "columns": [
+          "sources",
+          "best",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A sentence is supported if half its content words appear in one single source.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Requiring support from one single source avoids stitching unverified claims.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sentence-level support threshold scoring and overlap ratios",
+        "columns": [
+          "sources",
+          "best",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A sentence is supported if half its content words appear in one single source.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "best",
+                  "sources"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "best",
+                  "sources"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Requiring support from one single source avoids stitching unverified claims.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "best",
+                  "sources"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "best",
+                  "sources"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Numbers are where it hurts",
+      "codeHash": "ef433c1e461da702014a1d07f2e1d128ac4cdd759d5f5a011127fe81e8eb94cb",
+      "spec": {
+        "template": "table",
+        "title": "Unsupported numerical factoid validation and discrepancy flagging",
+        "columns": [
+          "sources",
+          "answer",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The most damaging hallucinations often involve small numerical discrepancies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A focused safety check compares numbers directly between answer and source.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Unsupported numerical factoid validation and discrepancy flagging",
+        "columns": [
+          "sources",
+          "answer",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The most damaging hallucinations often involve small numerical discrepancies.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A focused safety check compares numbers directly between answer and source.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stronger groundedness checks",
+      "codeHash": "6b1b3b1543de4cd46d2a9475ff7971d8ba14163efcf01efb46da2fb81b76cefc",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Groundedness in the pipeline",
+      "codeHash": "0e37ce42811e60f48424d36b507e567f47e1130571df46c95a6d8028ba05fa6e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

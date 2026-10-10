@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 20,
+  "promptSha": "d4a063272bc42b7e65b06de7408f74f8fd82e7b80dcb22c3340be71f8fc93853",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Kubernetes Health Probes Architecture & Philosophy",
+      "codeHash": "58dea22d16db4615650758495010f13b5bae660693790e093bca74788e3bf34d",
+      "spec": {
+        "template": "compare",
+        "title": "Kubernetes diagnostic health probe types comparison",
+        "leftLabel": "Liveness Probe Function",
+        "rightLabel": "Readiness Probe Function",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Three distinct probe types serve unique operational roles across workload.",
+            "left": {
+              "code": "name: 'Liveness'",
+              "result": {
+                "text": "Liveness"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'Readiness'",
+              "result": {
+                "text": "Readiness"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Configuring diagnostic probes establishes autonomous self-healing systems.",
+            "left": {
+              "code": "name: 'Startup'",
+              "result": {
+                "text": "Startup"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "actionOnFailure",
+              "result": {
+                "text": "Liveness"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kubernetes diagnostic health probe types comparison",
+        "leftLabel": "Liveness Probe Function",
+        "rightLabel": "Readiness Probe Function",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Three distinct probe types serve unique operational roles across workload.",
+            "left": {
+              "code": "name: 'Liveness'",
+              "result": {
+                "text": "Liveness"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'Readiness'",
+              "result": {
+                "text": "Readiness"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Configuring diagnostic probes establishes autonomous self-healing systems.",
+            "left": {
+              "code": "name: 'Startup'",
+              "result": {
+                "text": "Startup"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "actionOnFailure",
+              "result": {
+                "text": "Liveness"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Liveness Probes: Detecting Deadlocks & Process Hangs",
+      "codeHash": "391c623b34f889a81b94b3dd03e049267bcdc1ed1af036f511e8f119a997f6fd",
+      "spec": {
+        "template": "compare",
+        "title": "Liveness probe event loop deadlock detection and pod restart",
+        "leftLabel": "Healthy Event Loop",
+        "rightLabel": "Deadlocked Event Loop",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Liveness probes ping dedicated endpoints verifying container responsiveness.",
+            "left": {
+              "code": "eventLoopBlocked: false",
+              "result": {
+                "text": "eventLoopBlocked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "eventLoopBlocked: true",
+              "result": {
+                "text": "eventLoopBlocked"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Consecutive probe failures prompt kubelet to terminate unresponsive process.",
+            "left": {
+              "code": "consecutiveFailures: 0",
+              "result": {
+                "text": "evaluateLiveness"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "consecutiveFailures: 2",
+              "result": {
+                "text": "evaluateLiveness"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Liveness probe event loop deadlock detection and pod restart",
+        "leftLabel": "Healthy Event Loop",
+        "rightLabel": "Deadlocked Event Loop",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Liveness probes ping dedicated endpoints verifying container responsiveness.",
+            "left": {
+              "code": "eventLoopBlocked: false",
+              "result": {
+                "text": "eventLoopBlocked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "eventLoopBlocked: true",
+              "result": {
+                "text": "eventLoopBlocked"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Consecutive probe failures prompt kubelet to terminate unresponsive process.",
+            "left": {
+              "code": "consecutiveFailures: 0",
+              "result": {
+                "text": "evaluateLiveness"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "consecutiveFailures: 2",
+              "result": {
+                "text": "evaluateLiveness"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Readiness Probes: Controlling Service Endpoint Routing",
+      "codeHash": "5ea7f7c24cc9bad05c90efca5b2478807cb9366eb7b4a662c1d231649b3c0bad",
+      "spec": {
+        "template": "compare",
+        "title": "Readiness probe dependency verification and traffic endpoint routing",
+        "leftLabel": "Initializing Dependencies (503)",
+        "rightLabel": "Fully Ready for Traffic (200)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Readiness probes evaluate when container is prepared for incoming traffic.",
+            "left": {
+              "code": "cacheWarmed: false",
+              "result": {
+                "text": "cacheWarmed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "cacheWarmed: true",
+              "result": {
+                "text": "cacheWarmed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Failing readiness probe removes pod from service endpoints without restart.",
+            "left": {
+              "code": "inServiceEndpoints: false",
+              "result": {
+                "text": "dbConnected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "inServiceEndpoints: true",
+              "result": {
+                "text": "evaluateReadiness"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Readiness probe dependency verification and traffic endpoint routing",
+        "leftLabel": "Initializing Dependencies (503)",
+        "rightLabel": "Fully Ready for Traffic (200)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Readiness probes evaluate when container is prepared for incoming traffic.",
+            "left": {
+              "code": "cacheWarmed: false",
+              "result": {
+                "text": "cacheWarmed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "cacheWarmed: true",
+              "result": {
+                "text": "cacheWarmed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Failing readiness probe removes pod from service endpoints without restart.",
+            "left": {
+              "code": "inServiceEndpoints: false",
+              "result": {
+                "text": "dbConnected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "inServiceEndpoints: true",
+              "result": {
+                "text": "evaluateReadiness"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Startup Probes: Grace Windows for Slow-Booting Applications",
+      "codeHash": "397e3ae6d4b838532660827c350522e7028299b6718c26b61000a5f051fcbd91",
+      "spec": {
+        "template": "compare",
+        "title": "Startup probe initialization grace window configuration",
+        "leftLabel": "Slow Boot Initialization",
+        "rightLabel": "Fast Boot Initialization",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Startup probes introduce designated grace intervals for slow initialization.",
+            "left": {
+              "code": "periodSeconds: 10",
+              "result": {
+                "text": "periodSeconds"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "periodSeconds: 2",
+              "result": {
+                "text": "periodSeconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Active startup checks disable other probes until application boot succeeds.",
+            "left": {
+              "code": "failureThreshold: 30",
+              "result": {
+                "text": "failureThreshold"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "failureThreshold: 10",
+              "result": {
+                "text": "calculateMaxBootWindow"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Startup probe initialization grace window configuration",
+        "leftLabel": "Slow Boot Initialization",
+        "rightLabel": "Fast Boot Initialization",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Startup probes introduce designated grace intervals for slow initialization.",
+            "left": {
+              "code": "periodSeconds: 10",
+              "result": {
+                "text": "periodSeconds"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "periodSeconds: 2",
+              "result": {
+                "text": "periodSeconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Active startup checks disable other probes until application boot succeeds.",
+            "left": {
+              "code": "failureThreshold: 30",
+              "result": {
+                "text": "failureThreshold"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "failureThreshold: 10",
+              "result": {
+                "text": "calculateMaxBootWindow"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Probe Handlers: httpGet, tcpSocket & exec Commands",
+      "codeHash": "179ba14d32190ac7516c9e612a45fce24f3a17f42290964e2b5286e7b0e56846",
+      "spec": {
+        "template": "compare",
+        "title": "Probe handler diagnostics HTTP GET versus TCP socket connections",
+        "leftLabel": "HTTP GET Handler",
+        "rightLabel": "TCP Socket Handler",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Http handler issues get requests verifying response status code bounds.",
+            "left": {
+              "code": "type: 'httpGet'",
+              "result": {
+                "text": "httpGet"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "type: 'tcpSocket'",
+              "result": {
+                "text": "tcpSocket"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Tcp socket handler validates connection establishment for backend services.",
+            "left": {
+              "code": "type: 'exec'",
+              "result": {
+                "text": "exec"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "ProbeHandlerConfig",
+              "result": {
+                "text": "tcpSocket"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Probe handler diagnostics HTTP GET versus TCP socket connections",
+        "leftLabel": "HTTP GET Handler",
+        "rightLabel": "TCP Socket Handler",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Http handler issues get requests verifying response status code bounds.",
+            "left": {
+              "code": "type: 'httpGet'",
+              "result": {
+                "text": "httpGet"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "type: 'tcpSocket'",
+              "result": {
+                "text": "tcpSocket"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Tcp socket handler validates connection establishment for backend services.",
+            "left": {
+              "code": "type: 'exec'",
+              "result": {
+                "text": "exec"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "ProbeHandlerConfig",
+              "result": {
+                "text": "tcpSocket"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tuning Production Health Probe Specifications",
+      "codeHash": "7960025f895fca5debe5a4eee6be13bac1ff893c0b6f79051eab75995adadaff",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

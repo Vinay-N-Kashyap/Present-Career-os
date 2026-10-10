@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Predicting the next token",
+      "codeHash": "48c65f26207c1990f2cf0ff0f9ee4d27815a36ee095cc376a3ea143e4fad0803",
+      "spec": {
+        "template": "table",
+        "title": "Autoregressive next token sequence conditioning",
+        "columns": [
+          "tokens",
+          "context"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Decoder blocks optimize a single task to predict the next token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "context"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Previous sequence context guides generative word prediction across sentences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "context"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Self-supervised training extracts labels directly from the next token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "context"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Scaling parameters and compute produces powerful generative assistants.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "context"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "context"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Autoregressive next token sequence conditioning",
+        "columns": [
+          "tokens",
+          "context"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Decoder blocks optimize a single task to predict the next token.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "context"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Previous sequence context guides generative word prediction across sentences.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "context"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Self-supervised training extracts labels directly from the next token.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "context"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Scaling parameters and compute produces powerful generative assistants.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "context"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "context",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The causal mask",
+      "codeHash": "36489211bfc0ce6d5a2a1005118ac8f87249d8ac107e84d7827ba8d3bd596370",
+      "spec": {
+        "template": "table",
+        "title": "Lower triangular causal attention mask structure",
+        "columns": [
+          "causal_mask",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unrestricted attention allows positions to copy future tokens trivially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "causal_mask"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The causal mask restricts attention to current and earlier positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "causal_mask"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "float"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scores receive minus infinity where future attention is blocked.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "causal_mask"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "float"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The lower-triangular structure keeps zeros up to the active column.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "causal_mask"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "float"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "join"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Lower triangular causal attention mask structure",
+        "columns": [
+          "causal_mask",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unrestricted attention allows positions to copy future tokens trivially.",
+            "rows": [
+              {
+                "cells": [
+                  "causal_mask",
+                  "row"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The causal mask restricts attention to current and earlier positions.",
+            "rows": [
+              {
+                "cells": [
+                  "causal_mask",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "float",
+                  "range"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scores receive minus infinity where future attention is blocked.",
+            "rows": [
+              {
+                "cells": [
+                  "causal_mask",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "float",
+                  "range"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The lower-triangular structure keeps zeros up to the active column.",
+            "rows": [
+              {
+                "cells": [
+                  "causal_mask",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "float",
+                  "range"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "join",
+                  "row"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masked attention in action",
+      "codeHash": "0b5d864a4df9fc5c1d8b33bf5f40e7b23601d9a58ad47f1f1c1c2d0925a132d9",
+      "spec": {
+        "template": "table",
+        "title": "Attention score masking and directional normalization",
+        "columns": [
+          "scores",
+          "weights"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adding the causal mask to raw scores precedes standard softmax computation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Initial positions split attention weights exclusively across allowed inputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Matrix masks enable parallel computation across all sequence positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Masking operations produce normalized weights across the matrix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Attention score masking and directional normalization",
+        "columns": [
+          "scores",
+          "weights"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adding the causal mask to raw scores precedes standard softmax computation.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Initial positions split attention weights exclusively across allowed inputs.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mask",
+                  "zip"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Matrix masks enable parallel computation across all sequence positions.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mask",
+                  "zip"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "exp"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Masking operations produce normalized weights across the matrix.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mask",
+                  "zip"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "exp"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "round",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Generation and the KV cache",
+      "codeHash": "84f59e0ae3f85463d273ca28227fe07c5cbdde86acb0b97f01d3cb7d0c93e02e",
+      "spec": {
+        "template": "none",
+        "reason": "Generation and KV cache sizing calculations."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Encoders, decoders and both",
+      "codeHash": "9d7507517ef7d8461c4c3d516eaf9945a48e27103ed818203bca7478cd7f0013",
+      "spec": {
+        "template": "table",
+        "title": "Architectural families across encoders and decoders",
+        "columns": [
+          "family",
+          "tasks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Architectural families help you choose an appropriate transformer model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "family"
+                  },
+                  {
+                    "text": "tasks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Encoder-only architectures excel at understanding tasks and tagging.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "family"
+                  },
+                  {
+                    "text": "tasks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "families"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decoder-only models excel at text generation through causal masking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "family"
+                  },
+                  {
+                    "text": "tasks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "families"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "families"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Encoder-decoder models naturally suit translation and summarisation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "family"
+                  },
+                  {
+                    "text": "tasks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "families"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "families"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "family"
+                  },
+                  {
+                    "text": "tasks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Architectural families across encoders and decoders",
+        "columns": [
+          "family",
+          "tasks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Architectural families help you choose an appropriate transformer model.",
+            "rows": [
+              {
+                "cells": [
+                  "family",
+                  "tasks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Encoder-only architectures excel at understanding tasks and tagging.",
+            "rows": [
+              {
+                "cells": [
+                  "family",
+                  "tasks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "families",
+                  "items"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decoder-only models excel at text generation through causal masking.",
+            "rows": [
+              {
+                "cells": [
+                  "family",
+                  "tasks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "families",
+                  "items"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "families",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Encoder-decoder models naturally suit translation and summarisation.",
+            "rows": [
+              {
+                "cells": [
+                  "family",
+                  "tasks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "families",
+                  "items"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "families",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "family",
+                  "tasks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: masks and caches",
+      "codeHash": "31295d23eb47f10632fe48271fec59b20c3755d0f00ca6b2e39bb28c4952b531",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: masks and caches."
+      },
+      "filled": {}
+    }
+  ]
+}

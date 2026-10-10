@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 5,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 1 Architecture: The SRE Reliability Engine",
+      "codeHash": "5217cda01df8fd2c797662615d3c88f1d12ec87f123a314f4b7fb754a34d57d6",
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 1 centralized SRE reliability and governance pipeline",
+        "stages": [
+          {
+            "id": "ingest",
+            "name": "Telemetry Stream",
+            "subtext": "Logs Ingestion"
+          },
+          {
+            "id": "sliEval",
+            "name": "SLI Computation",
+            "subtext": "Availability & Latency"
+          },
+          {
+            "id": "budgetBurn",
+            "name": "Budget Tracking",
+            "subtext": "Burn Rate Analysis"
+          },
+          {
+            "id": "gatePolicy",
+            "name": "Governance Gate",
+            "subtext": "Freeze Decision"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine ingests streaming telemetry from gateways and microservices.",
+            "activeStageId": "ingest",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "It tracks error budget consumption and calculates instantaneous burn rates.",
+            "activeStageId": "budgetBurn",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Milestone 1 centralized SRE reliability and governance pipeline",
+        "stages": [
+          {
+            "id": "ingest",
+            "name": "Telemetry Stream",
+            "subtext": "Logs Ingestion"
+          },
+          {
+            "id": "sliEval",
+            "name": "SLI Computation",
+            "subtext": "Availability & Latency"
+          },
+          {
+            "id": "budgetBurn",
+            "name": "Budget Tracking",
+            "subtext": "Burn Rate Analysis"
+          },
+          {
+            "id": "gatePolicy",
+            "name": "Governance Gate",
+            "subtext": "Freeze Decision"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine ingests streaming telemetry from gateways and microservices.",
+            "activeStageId": "ingest",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "It tracks error budget consumption and calculates instantaneous burn rates.",
+            "activeStageId": "budgetBurn",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ingesting Telemetry Streams & Computing Golden Signal SLIs",
+      "codeHash": "f02d180dfa5228c8d19880318b404da1fdc2b337ba590e72aa1b04b81fd5f8d7",
+      "spec": {
+        "template": "bars",
+        "title": "Measured availability and latency golden signal SLIs",
+        "bars": [
+          {
+            "id": "avail",
+            "label": "Availability SLI",
+            "value": 99.8
+          },
+          {
+            "id": "latency",
+            "label": "Latency SLI (P99)",
+            "value": 95
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Availability SLI is computed as the percentage of valid requests.",
+            "activeBars": [
+              "avail"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Latency SLI is computed as the percentage of successful requests.",
+            "activeBars": [
+              "avail",
+              "latency"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Measured availability and latency golden signal SLIs",
+        "bars": [
+          {
+            "id": "avail",
+            "label": "Availability SLI",
+            "value": 99.8
+          },
+          {
+            "id": "latency",
+            "label": "Latency SLI (P99)",
+            "value": 95
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Availability SLI is computed as the percentage of valid requests.",
+            "activeBars": [
+              "avail"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Latency SLI is computed as the percentage of successful requests.",
+            "activeBars": [
+              "avail",
+              "latency"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Error Budget Consumption & Multi-Horizon Burn Rate Tracking",
+      "codeHash": "4f9497e359cd4d8426d3e16963305b85c869b5d03bbf68d1fb1c24fa41375fea",
+      "spec": {
+        "template": "table",
+        "title": "Multi-horizon burn rate multipliers and budget depletion speed",
+        "columns": [
+          "Burn Rate",
+          "Observed Error",
+          "Budget Impact",
+          "Depletion Time"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Error budget consumption represents the ratio of actual failed requests.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A burn rate indicates nominal budget consumption depleting in days.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-horizon burn rate multipliers and budget depletion speed",
+        "columns": [
+          "Burn Rate",
+          "Observed Error",
+          "Budget Impact",
+          "Depletion Time"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Error budget consumption represents the ratio of actual failed requests.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A burn rate indicates nominal budget consumption depleting in days.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Policy Enforcement: Automated Deployment Gating",
+      "codeHash": "b1310a72b4e238a2e031b2d8a8ebc2c673a4717feaa29b0483d84b4fa35a5148",
+      "spec": {
+        "template": "states",
+        "title": "Automated deployment gate states based on reliability headroom",
+        "states": [
+          {
+            "id": "green",
+            "label": "GREEN Fast Track Approved"
+          },
+          {
+            "id": "amber",
+            "label": "AMBER Canary Throttled"
+          },
+          {
+            "id": "red",
+            "label": "RED Deployment Frozen"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The module connects into deployment webhooks to evaluate whether releases pass.",
+            "activeStateId": "green",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "If the error budget is completely exhausted non critical releases are blocked.",
+            "activeStateId": "red",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Automated deployment gate states based on reliability headroom",
+        "states": [
+          {
+            "id": "green",
+            "label": "GREEN Fast Track Approved"
+          },
+          {
+            "id": "amber",
+            "label": "AMBER Canary Throttled"
+          },
+          {
+            "id": "red",
+            "label": "RED Deployment Frozen"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The module connects into deployment webhooks to evaluate whether releases pass.",
+            "activeStateId": "green",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "If the error budget is completely exhausted non critical releases are blocked.",
+            "activeStateId": "red",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Generating Multi-Tenant Service Reliability Scorecards",
+      "codeHash": "1ae27f2997bfcc5fa87fb60d34a86fbd6582e65f8d16ba0059fdc98d55e3a9d0",
+      "spec": {
+        "template": "compare",
+        "title": "Multi-tenant reliability scorecard comparison across service tiers",
+        "left": {
+          "title": "High-Performing Services",
+          "items": [
+            "Grade A reliability score",
+            "Full SLO compliance achieved",
+            "Healthy error budget remaining",
+            "Nominal burn rate trajectory"
+          ]
+        },
+        "right": {
+          "title": "Degraded Services (Remediation)",
+          "items": [
+            "Grade F critical score",
+            "SLO breached below threshold",
+            "Error budget completely exhausted",
+            "Mandatory engineering review"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A reliability scorecard provides an executive summary ranking services.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Services maintaining high reliability receive a green health designation.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "High-Performing Services",
+        "rightLabel": "Degraded Services (Remediation)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Multi-tenant reliability scorecard comparison across service tiers",
+        "left": {
+          "title": "High-Performing Services",
+          "items": [
+            "Grade A reliability score",
+            "Full SLO compliance achieved",
+            "Healthy error budget remaining",
+            "Nominal burn rate trajectory"
+          ]
+        },
+        "right": {
+          "title": "Degraded Services (Remediation)",
+          "items": [
+            "Grade F critical score",
+            "SLO breached below threshold",
+            "Error budget completely exhausted",
+            "Mandatory engineering review"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A reliability scorecard provides an executive summary ranking services.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Services maintaining high reliability receive a green health designation.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "High-Performing Services",
+        "rightLabel": "Degraded Services (Remediation)"
+      }
+    },
+    {
+      "partTitle": "Full End-to-End Milestone 1 System Integration",
+      "codeHash": "887616974b9abd31608c5373c1300d6f7d7c960dd459a0b4ef4bbb0922cc2b06",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}

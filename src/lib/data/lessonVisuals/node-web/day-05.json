@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 5,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Promises Under the Hood and async/await Semantics",
+      "codeHash": "fbb90bd1b1018f76790e2f32dab5daefc9594e4b560fa7749f7bfe7105da766c",
+      "spec": {
+        "template": "boxes",
+        "title": "Async function execution state",
+        "boxes": [
+          {
+            "id": "userId",
+            "label": "userId"
+          },
+          {
+            "id": "active",
+            "label": "active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An async function always returns a Promise resolving or rejecting.",
+            "values": {
+              "userId": {
+                "text": "usr_200"
+              },
+              "active": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "userId": "data",
+              "active": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The await keyword pauses execution until the awaited Promise settles.",
+            "values": {
+              "userId": {
+                "text": "usr_200"
+              },
+              "active": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "userId": "idle",
+              "active": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Writing asynchronous code with async/await makes stack traces easier to read.",
+            "values": {
+              "userId": {
+                "text": "usr_200"
+              },
+              "active": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "userId": "ok",
+              "active": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Async function execution state",
+        "boxes": [
+          {
+            "id": "userId",
+            "label": "userId"
+          },
+          {
+            "id": "active",
+            "label": "active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An async function always returns a Promise resolving or rejecting.",
+            "values": {
+              "userId": "usr_200",
+              "active": "true"
+            },
+            "tones": {
+              "userId": "data",
+              "active": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The await keyword pauses execution until the awaited Promise settles.",
+            "values": {
+              "userId": "usr_200",
+              "active": "true"
+            },
+            "tones": {
+              "userId": "idle",
+              "active": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Writing asynchronous code with async/await makes stack traces easier to read.",
+            "values": {
+              "userId": "usr_200",
+              "active": "true"
+            },
+            "tones": {
+              "userId": "ok",
+              "active": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concurrent Operations: Promise.all vs Promise.allSettled",
+      "codeHash": "975c303b9b9a15fe953510b2ca991d41f37295d4e497694d8366450ab76ab3d9",
+      "spec": {
+        "template": "table",
+        "title": "Promise concurrency outcomes",
+        "columns": [
+          "Task Identifier",
+          "Service State",
+          "Settled Outcome"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A common novice mistake is to await each promise sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "taskA"
+                  },
+                  {
+                    "text": "Service A: OK"
+                  },
+                  {
+                    "text": "Service A: OK"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "taskB"
+                  },
+                  {
+                    "text": "Service B: 503 Unavailable"
+                  },
+                  {
+                    "text": "Service B: 503 Unavailable"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Promise.all has fail-fast behavior while allSettled inspects each.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "taskA"
+                  },
+                  {
+                    "text": "Service A: OK"
+                  },
+                  {
+                    "text": "Service A: OK"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "taskB"
+                  },
+                  {
+                    "text": "Service B: 503 Unavailable"
+                  },
+                  {
+                    "text": "Service B: 503 Unavailable"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Promise.allSettled enables composite dashboard endpoints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "taskA"
+                  },
+                  {
+                    "text": "Service A: OK"
+                  },
+                  {
+                    "text": "Service A: OK"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "taskB"
+                  },
+                  {
+                    "text": "Service B: 503 Unavailable"
+                  },
+                  {
+                    "text": "Service B: 503 Unavailable"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Promise concurrency outcomes",
+        "columns": [
+          "Task Identifier",
+          "Service State",
+          "Settled Outcome"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A common novice mistake is to await each promise sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  "taskA",
+                  "Service A: OK",
+                  "Service A: OK"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "taskB",
+                  "Service B: 503 Unavailable",
+                  "Service B: 503 Unavailable"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Promise.all has fail-fast behavior while allSettled inspects each.",
+            "rows": [
+              {
+                "cells": [
+                  "taskA",
+                  "Service A: OK",
+                  "Service A: OK"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "taskB",
+                  "Service B: 503 Unavailable",
+                  "Service B: 503 Unavailable"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Promise.allSettled enables composite dashboard endpoints.",
+            "rows": [
+              {
+                "cells": [
+                  "taskA",
+                  "Service A: OK",
+                  "Service A: OK"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "taskB",
+                  "Service B: 503 Unavailable",
+                  "Service B: 503 Unavailable"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safe Error Handling with Custom AppError Hierarchies",
+      "codeHash": "6158c780e0338f29640bc8a7ab7cb72655ae49f0dca9164a634259c75b53596b",
+      "spec": {
+        "template": "boxes",
+        "title": "Operational error hierarchy attributes",
+        "boxes": [
+          {
+            "id": "code",
+            "label": "statusCode"
+          },
+          {
+            "id": "message",
+            "label": "message"
+          },
+          {
+            "id": "operational",
+            "label": "isOperational"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Professional Node applications define a custom AppError class.",
+            "values": {
+              "code": {
+                "text": "404"
+              },
+              "message": {
+                "text": "User profile not found"
+              },
+              "operational": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "code": "data",
+              "message": "idle",
+              "operational": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Centralized middleware can inspect statusCode and respond with problem details.",
+            "values": {
+              "code": {
+                "text": "404"
+              },
+              "message": {
+                "text": "User profile not found"
+              },
+              "operational": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "code": "idle",
+              "message": "data",
+              "operational": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Distinguishing operational errors ensures security auditing detects attacks.",
+            "values": {
+              "code": {
+                "text": "404"
+              },
+              "message": {
+                "text": "User profile not found"
+              },
+              "operational": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "code": "ok",
+              "message": "ok",
+              "operational": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Operational error hierarchy attributes",
+        "boxes": [
+          {
+            "id": "code",
+            "label": "statusCode"
+          },
+          {
+            "id": "message",
+            "label": "message"
+          },
+          {
+            "id": "operational",
+            "label": "isOperational"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Professional Node applications define a custom AppError class.",
+            "values": {
+              "code": "404",
+              "message": "User profile not found",
+              "operational": "true"
+            },
+            "tones": {
+              "code": "data",
+              "message": "idle",
+              "operational": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Centralized middleware can inspect statusCode and respond with problem details.",
+            "values": {
+              "code": "404",
+              "message": "User profile not found",
+              "operational": "true"
+            },
+            "tones": {
+              "code": "idle",
+              "message": "data",
+              "operational": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Distinguishing operational errors ensures security auditing detects attacks.",
+            "values": {
+              "code": "404",
+              "message": "User profile not found",
+              "operational": "true"
+            },
+            "tones": {
+              "code": "ok",
+              "message": "ok",
+              "operational": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Timeout Patterns and Promise Races",
+      "codeHash": "e0789183118ea10804cbb02d9975dfdb0a3262e7fbc1c7a889430f5b545b39b1",
+      "spec": {
+        "template": "states",
+        "title": "Promise timeout race resolution",
+        "states": [
+          {
+            "id": "pending",
+            "label": "pending"
+          },
+          {
+            "id": "resolved",
+            "label": "resolved"
+          },
+          {
+            "id": "timeout",
+            "label": "timeout"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Production code must enforce strict timeouts on network operations.",
+            "currentState": "pending",
+            "transition": {
+              "from": "pending",
+              "to": "resolved",
+              "label": {
+                "text": "Fast Service Result"
+              }
+            },
+            "tone": "idle"
+          },
+          {
+            "at": "say3",
+            "caption": "Promise.race resolves or rejects as soon as the first promise settles.",
+            "currentState": "resolved",
+            "transition": {
+              "from": "pending",
+              "to": "resolved",
+              "label": {
+                "text": "Fast Service Result"
+              }
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "say8",
+            "caption": "Combining timeout patterns with retry policies creates fault tolerance.",
+            "currentState": "timeout",
+            "transition": {
+              "from": "pending",
+              "to": "timeout",
+              "label": {
+                "text": "executeWithSimulatedTimeout"
+              }
+            },
+            "tone": "error"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Promise timeout race resolution",
+        "states": [
+          {
+            "id": "pending",
+            "label": "pending"
+          },
+          {
+            "id": "resolved",
+            "label": "resolved"
+          },
+          {
+            "id": "timeout",
+            "label": "timeout"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Production code must enforce strict timeouts on network operations.",
+            "currentState": "pending",
+            "transition": {
+              "from": "pending",
+              "to": "resolved",
+              "label": "Fast Service Result"
+            },
+            "tone": "idle"
+          },
+          {
+            "at": "say3",
+            "caption": "Promise.race resolves or rejects as soon as the first promise settles.",
+            "currentState": "resolved",
+            "transition": {
+              "from": "pending",
+              "to": "resolved",
+              "label": "Fast Service Result"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "say8",
+            "caption": "Combining timeout patterns with retry policies creates fault tolerance.",
+            "currentState": "timeout",
+            "transition": {
+              "from": "pending",
+              "to": "timeout",
+              "label": "executeWithSimulatedTimeout"
+            },
+            "tone": "error"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Error Propagation vs Error Swallowing in Pipelines",
+      "codeHash": "9ce1121456d7b4d0a3da2258743ce23c03de9d426858adfe7f20a4b032265800",
+      "spec": {
+        "template": "flow",
+        "title": "Safe JSON parsing pipeline",
+        "nodes": [
+          {
+            "id": "raw",
+            "label": "raw"
+          },
+          {
+            "id": "fallback",
+            "label": "fallback"
+          },
+          {
+            "id": "result",
+            "label": "valid"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Swallowing an error causes callers to assume the operation succeeded.",
+            "values": {
+              "raw": {
+                "text": "{\"port\": 5000}"
+              },
+              "fallback": {
+                "text": "3000"
+              },
+              "result": {
+                "text": "5000"
+              }
+            },
+            "tones": {
+              "raw": "data",
+              "fallback": "idle",
+              "result": "idle"
+            },
+            "arrows": [
+              [
+                "raw",
+                "result"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Catch an error only if you can meaningfully handle it.",
+            "values": {
+              "raw": {
+                "text": "not-json"
+              },
+              "fallback": {
+                "text": "3000"
+              },
+              "result": {
+                "text": "3000"
+              }
+            },
+            "tones": {
+              "raw": "idle",
+              "fallback": "data",
+              "result": "ok"
+            },
+            "arrows": [
+              [
+                "fallback",
+                "result"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Structured error logging ensures engineers correlate failures across logs.",
+            "values": {
+              "raw": {
+                "text": "{\"port\": 5000}"
+              },
+              "fallback": {
+                "text": "3000"
+              },
+              "result": {
+                "text": "5000"
+              }
+            },
+            "tones": {
+              "raw": "ok",
+              "fallback": "ok",
+              "result": "ok"
+            },
+            "arrows": [
+              [
+                "raw",
+                "result"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Safe JSON parsing pipeline",
+        "nodes": [
+          {
+            "id": "raw",
+            "label": "raw"
+          },
+          {
+            "id": "fallback",
+            "label": "fallback"
+          },
+          {
+            "id": "result",
+            "label": "valid"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Swallowing an error causes callers to assume the operation succeeded.",
+            "values": {
+              "raw": "{\"port\": 5000}",
+              "fallback": "3000",
+              "result": "5000"
+            },
+            "tones": {
+              "raw": "data",
+              "fallback": "idle",
+              "result": "idle"
+            },
+            "arrows": [
+              [
+                "raw",
+                "result"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Catch an error only if you can meaningfully handle it.",
+            "values": {
+              "raw": "not-json",
+              "fallback": "3000",
+              "result": "3000"
+            },
+            "tones": {
+              "raw": "idle",
+              "fallback": "data",
+              "result": "ok"
+            },
+            "arrows": [
+              [
+                "fallback",
+                "result"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Structured error logging ensures engineers correlate failures across logs.",
+            "values": {
+              "raw": "{\"port\": 5000}",
+              "fallback": "3000",
+              "result": "5000"
+            },
+            "tones": {
+              "raw": "ok",
+              "fallback": "ok",
+              "result": "ok"
+            },
+            "arrows": [
+              [
+                "raw",
+                "result"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Asynchronous Batch Worker with Failure Isolation",
+      "codeHash": "e665d6243ae02b5aed92ead1423f4ef5c6b885cd4a0333cac45d2e3d3c1cd2f1",
+      "spec": {
+        "template": "none",
+        "reason": "Architectural overview of batch worker isolation, error aggregation, and retry queues"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Architectural overview of batch worker isolation, error aggregation, and retry queues"
+      }
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 20,
+  "promptSha": "8e4b2f5ca1b3586cadd1ef025c8cfd0ea65c809e119d1f1c889057cda507e85c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Amazon EventBridge vs Amazon SNS & SQS",
+      "codeHash": "73c74d0da5c47dc2c0e7b45e4cd2bf6abca286cd1e6c906c9413ac1e17d1dcfb",
+      "spec": {
+        "template": "compare",
+        "title": "Amazon SNS topics compared to EventBridge event buses",
+        "leftLabel": "Amazon SNS (Pub/Sub)",
+        "rightLabel": "Amazon EventBridge (Event Bus)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "EventBridge inspects the entire payload body of an incoming event.",
+            "left": {
+              "code": "Attribute Inspection Only",
+              "result": {
+                "text": "Limited Filtering"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Full JSON Body Parsing",
+              "result": {
+                "text": "Deep Payload Match"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "EventBridge routes events to diverse targets including step functions.",
+            "left": {
+              "code": "Limited Target Endpoints",
+              "result": {
+                "text": "SQS, Lambda, Webhooks"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "20+ AWS Native Targets",
+              "result": {
+                "text": "State Machines & Tasks"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Amazon SNS topics compared to EventBridge event buses",
+        "leftLabel": "Amazon SNS (Pub/Sub)",
+        "rightLabel": "Amazon EventBridge (Event Bus)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "EventBridge inspects the entire payload body of an incoming event.",
+            "left": {
+              "code": "Attribute Inspection Only",
+              "result": {
+                "text": "Limited Filtering"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Full JSON Body Parsing",
+              "result": {
+                "text": "Deep Payload Match"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "EventBridge routes events to diverse targets including step functions.",
+            "left": {
+              "code": "Limited Target Endpoints",
+              "result": {
+                "text": "SQS, Lambda, Webhooks"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "20+ AWS Native Targets",
+              "result": {
+                "text": "State Machines & Tasks"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Event Buses, Custom Events & The AWS Event Schema",
+      "codeHash": "48bcaa90ac2a01d3eae11d827d8f8cb84107bea983c366bd1b67e55afaf4d254",
+      "spec": {
+        "template": "table",
+        "title": "Standardized AWS EventBridge JSON envelope structure",
+        "columns": [
+          "Envelope Field",
+          "Description & Purpose",
+          "Example Payload Value",
+          "Evaluation Scope"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Custom event buses are created by your team to receive application events.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The custom payload of your event sits inside the detail object.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Standardized AWS EventBridge JSON envelope structure",
+        "columns": [
+          "Envelope Field",
+          "Description & Purpose",
+          "Example Payload Value",
+          "Evaluation Scope"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Custom event buses are created by your team to receive application events.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The custom payload of your event sits inside the detail object.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Content-Based Event Pattern Matching",
+      "codeHash": "66e315ec344bdcef0c0e270b820d5cb99e83b5e0d84c8be75991e9850bf679a9",
+      "spec": {
+        "template": "states",
+        "title": "Event pattern matching and evaluation states",
+        "states": [
+          {
+            "id": "evaluating",
+            "label": "Evaluating Pattern Rules"
+          },
+          {
+            "id": "matched",
+            "label": "Pattern Matched Successfully"
+          },
+          {
+            "id": "discarded",
+            "label": "No Match (Event Dropped)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "If all specified fields match the pattern the rule triggers.",
+            "active": "evaluating"
+          },
+          {
+            "at": "say5",
+            "caption": "Exact matching checks for specific strings in detail types.",
+            "active": "matched"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Event pattern matching and evaluation states",
+        "states": [
+          {
+            "id": "evaluating",
+            "label": "Evaluating Pattern Rules"
+          },
+          {
+            "id": "matched",
+            "label": "Pattern Matched Successfully"
+          },
+          {
+            "id": "discarded",
+            "label": "No Match (Event Dropped)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "If all specified fields match the pattern the rule triggers.",
+            "active": "evaluating"
+          },
+          {
+            "at": "say5",
+            "caption": "Exact matching checks for specific strings in detail types.",
+            "active": "matched"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EventBridge Targets, Input Transformers & DLQ",
+      "codeHash": "60736d18034da07a35519cab1526918db1d82d5a2df5d511d7f9894ea6895237",
+      "spec": {
+        "template": "workflow",
+        "title": "EventBridge input transformer reshaping pipeline",
+        "stages": [
+          {
+            "id": "eventIn",
+            "name": "Raw AWS Event",
+            "subtext": "Full JSON Envelope"
+          },
+          {
+            "id": "inputPath",
+            "name": "JSONPath Extraction",
+            "subtext": "Target Variables"
+          },
+          {
+            "id": "template",
+            "name": "Input Template",
+            "subtext": "Interpolated Payload"
+          },
+          {
+            "id": "target",
+            "name": "Clean Target Ingest",
+            "subtext": "Target Microservice"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Input paths use expressions to extract variables from the incoming event.",
+            "activeStageId": "inputPath",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "This transforms an envelope into a clean payload without lambda functions.",
+            "activeStageId": "target",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "EventBridge input transformer reshaping pipeline",
+        "stages": [
+          {
+            "id": "eventIn",
+            "name": "Raw AWS Event",
+            "subtext": "Full JSON Envelope"
+          },
+          {
+            "id": "inputPath",
+            "name": "JSONPath Extraction",
+            "subtext": "Target Variables"
+          },
+          {
+            "id": "template",
+            "name": "Input Template",
+            "subtext": "Interpolated Payload"
+          },
+          {
+            "id": "target",
+            "name": "Clean Target Ingest",
+            "subtext": "Target Microservice"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Input paths use expressions to extract variables from the incoming event.",
+            "activeStageId": "inputPath",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "This transforms an envelope into a clean payload without lambda functions.",
+            "activeStageId": "target",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EventBridge Schema Registry & Code Generation",
+      "codeHash": "c36d7dcb16b18159ca7422b635d10c054d45f324e09e4f9890b228e2ceee3890",
+      "spec": {
+        "template": "bars",
+        "title": "Event schema registry type generation code safety coverage",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "EventBridge automatically inspects live event traffic and discovers schemas.",
+            "bars": [
+              {
+                "label": "Discovered Schema Properties",
+                "value": 8,
+                "max": 10,
+                "tone": "data"
+              },
+              {
+                "label": "Validated JSON Schema",
+                "value": 10,
+                "max": 10,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Developers gain compile time type checking and autocomplete in IDEs.",
+            "bars": [
+              {
+                "label": "Strongly Typed Bindings",
+                "value": 10,
+                "max": 10,
+                "tone": "ok"
+              },
+              {
+                "label": "Compile-Time Safety Ratio",
+                "value": 10,
+                "max": 10,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Event schema registry type generation code safety coverage",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "EventBridge automatically inspects live event traffic and discovers schemas.",
+            "bars": [
+              {
+                "label": "Discovered Schema Properties",
+                "value": 8,
+                "max": 10,
+                "tone": "data"
+              },
+              {
+                "label": "Validated JSON Schema",
+                "value": 10,
+                "max": 10,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Developers gain compile time type checking and autocomplete in IDEs.",
+            "bars": [
+              {
+                "label": "Strongly Typed Bindings",
+                "value": 10,
+                "max": 10,
+                "tone": "ok"
+              },
+              {
+                "label": "Compile-Time Safety Ratio",
+                "value": 10,
+                "max": 10,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Event-Driven Choreography Verification",
+      "codeHash": "c5adad1e1d72ed5b0d47a06970b604e3539b8e05d698ed9291558ebd9622a365",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

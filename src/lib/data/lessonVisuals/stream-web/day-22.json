@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 22,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Stream-Table Duality: Two Sides of the Same Coin",
+      "codeHash": "e577a228d803d548b941559929469aa75928b9f40058ba8b73b1d84a4b239d60",
+      "spec": {
+        "template": "flow",
+        "title": "Stream-Table Duality converting between streamToTable and tableToStream",
+        "nodes": [
+          {
+            "id": "factStream",
+            "label": "StreamFacts (+100, +50, -30)",
+            "tappable": false
+          },
+          {
+            "id": "stateTable",
+            "label": "Materialized Table (wallet-1:70, wallet-2:50)",
+            "tappable": false
+          },
+          {
+            "id": "changeStream",
+            "label": "Change Stream (wallet-1: +80)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "factStream",
+            "to": "stateTable",
+            "label": "streamToTable"
+          },
+          {
+            "from": "stateTable",
+            "to": "changeStream",
+            "label": "tableToStream"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "A table represents the accumulated current state snapshot derived from stream.",
+            "activeNodes": [
+              "factStream",
+              "stateTable"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Observing changes occurring to table rows over time produces a changelog stream.",
+            "activeNodes": [
+              "stateTable",
+              "changeStream"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Stream-Table Duality converting between streamToTable and tableToStream",
+        "nodes": [
+          {
+            "id": "factStream",
+            "label": "StreamFacts (+100, +50, -30)",
+            "tappable": false
+          },
+          {
+            "id": "stateTable",
+            "label": "Materialized Table (wallet-1:70, wallet-2:50)",
+            "tappable": false
+          },
+          {
+            "id": "changeStream",
+            "label": "Change Stream (wallet-1: +80)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "factStream",
+            "to": "stateTable",
+            "label": "streamToTable"
+          },
+          {
+            "from": "stateTable",
+            "to": "changeStream",
+            "label": "tableToStream"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "A table represents the accumulated current state snapshot derived from stream.",
+            "activeNodes": [
+              "factStream",
+              "stateTable"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Observing changes occurring to table rows over time produces a changelog stream.",
+            "activeNodes": [
+              "stateTable",
+              "changeStream"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "KStream vs KTable Semantics in Processing Topologies",
+      "codeHash": "ef9e3b4f1c7700f6d38ddb75326785b89b8794385c8978616841d7ddbb8afdf5",
+      "spec": {
+        "template": "table",
+        "title": "StreamVsTableDemo comparing 4 KStream historical facts vs 1 active KTable entity",
+        "columns": [
+          "Abstraction",
+          "Semantic Model",
+          "Retained Count",
+          "usr-1 / usr-2 State"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A KStream interprets every incoming record as an independent insert statement.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "In a KTable, a null value acts as a delete operation, removing usr-2.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "StreamVsTableDemo comparing 4 KStream historical facts vs 1 active KTable entity",
+        "columns": [
+          "Abstraction",
+          "Semantic Model",
+          "Retained Count",
+          "usr-1 / usr-2 State"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A KStream interprets every incoming record as an independent insert statement.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "In a KTable, a null value acts as a delete operation, removing usr-2.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Log Compaction: Compacting Changelogs to Bound Storage",
+      "codeHash": "6c3185f82289fdc42753a3bca174ce6f53e22b766fd128aacc5ed1a9d5c3b748",
+      "spec": {
+        "template": "cells",
+        "title": "compactLog pruning 6 raw changelog records down to 2 latest non-null offsets",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Log compaction retains the latest record for each key across changelog offsets.",
+            "items": [
+              {
+                "text": "#0 AAPL=150"
+              },
+              {
+                "text": "#2 AAPL=152.5"
+              },
+              {
+                "text": "#3 MSFT=null"
+              },
+              {
+                "text": "#4 GOOG=135"
+              },
+              {
+                "text": "#5 AAPL=155"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "obsolete",
+                "index": 0,
+                "tone": "muted"
+              },
+              {
+                "name": "latest",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Compaction purges obsolete updates and tombstones, leaving offsets #4 and #5.",
+            "items": [
+              {
+                "text": "#4 GOOG=135.00"
+              },
+              {
+                "text": "#5 AAPL=155.00"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "retained:2",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "compactLog pruning 6 raw changelog records down to 2 latest non-null offsets",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Log compaction retains the latest record for each key across changelog offsets.",
+            "items": [
+              "#0 AAPL=150",
+              "#2 AAPL=152.5",
+              "#3 MSFT=null",
+              "#4 GOOG=135",
+              "#5 AAPL=155"
+            ],
+            "pointers": [
+              {
+                "name": "obsolete",
+                "index": 0,
+                "tone": "muted"
+              },
+              {
+                "name": "latest",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Compaction purges obsolete updates and tombstones, leaving offsets #4 and #5.",
+            "items": [
+              "#4 GOOG=135.00",
+              "#5 AAPL=155.00"
+            ],
+            "pointers": [
+              {
+                "name": "retained:2",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stream-to-Table Aggregations: Dynamic Balance Ledger",
+      "codeHash": "0123b941b77ecaefb6fc565a6f1ba899077791a8ad438400948e409a9dd6d417",
+      "spec": {
+        "template": "states",
+        "title": "BalanceLedger.applyTransaction updating acc-1 (60) and closing acc-2 at zero balance",
+        "states": [
+          {
+            "id": "deposited",
+            "label": "UPDATED (acc-1: 100, acc-2: 50)"
+          },
+          {
+            "id": "debited",
+            "label": "UPDATED (acc-1: 60 after -40)"
+          },
+          {
+            "id": "closedZero",
+            "label": "CLOSED (acc-2: 0 deleted)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The stream-to-table reducer accumulates deltas into current account balances.",
+            "activeState": "debited",
+            "transition": {
+              "from": "deposited",
+              "to": "debited",
+              "label": "acc-1 delta: -40 -> 60"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "When acc-2 balance reaches 0, the ledger prunes the key to save memory.",
+            "activeState": "closedZero",
+            "transition": {
+              "from": "debited",
+              "to": "closedZero",
+              "label": "acc-2 delta: -50 -> 0"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "BalanceLedger.applyTransaction updating acc-1 (60) and closing acc-2 at zero balance",
+        "states": [
+          {
+            "id": "deposited",
+            "label": "UPDATED (acc-1: 100, acc-2: 50)"
+          },
+          {
+            "id": "debited",
+            "label": "UPDATED (acc-1: 60 after -40)"
+          },
+          {
+            "id": "closedZero",
+            "label": "CLOSED (acc-2: 0 deleted)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The stream-to-table reducer accumulates deltas into current account balances.",
+            "activeState": "debited",
+            "transition": {
+              "from": "deposited",
+              "to": "debited",
+              "label": "acc-1 delta: -40 -> 60"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "When acc-2 balance reaches 0, the ledger prunes the key to save memory.",
+            "activeState": "closedZero",
+            "transition": {
+              "from": "debited",
+              "to": "closedZero",
+              "label": "acc-2 delta: -50 -> 0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interactive Queries on Materialized Views",
+      "codeHash": "1abac7bc18286d94bf16366c72d0c4a0fb0069cd8a0630c852ee92be2887c2a0",
+      "spec": {
+        "template": "sequence",
+        "title": "MaterializedViewEngine serving interactive point lookups and tier queries from RAM",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Event Stream"
+          },
+          {
+            "id": "viewEngine",
+            "label": "MaterializedViewEngine"
+          },
+          {
+            "id": "httpClient",
+            "label": "HTTP Query API"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The stream processor maintains an up-to-date KTable in local memory.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "viewEngine",
+                "label": "updateState(u-10: GOLD, 850)"
+              },
+              {
+                "from": "stream",
+                "to": "viewEngine",
+                "label": "updateState(u-20: SILVER, 250)"
+              }
+            ],
+            "activeActorId": "viewEngine"
+          },
+          {
+            "at": "say5",
+            "caption": "Web servers query the stream processor local KTable directly for user state.",
+            "messages": [
+              {
+                "from": "httpClient",
+                "to": "viewEngine",
+                "label": "queryUser('u-10') -> { found: true, Carol }"
+              },
+              {
+                "from": "httpClient",
+                "to": "viewEngine",
+                "label": "queryByTier('GOLD') -> ['Carol']"
+              }
+            ],
+            "activeActorId": "httpClient"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "MaterializedViewEngine serving interactive point lookups and tier queries from RAM",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Event Stream"
+          },
+          {
+            "id": "viewEngine",
+            "label": "MaterializedViewEngine"
+          },
+          {
+            "id": "httpClient",
+            "label": "HTTP Query API"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The stream processor maintains an up-to-date KTable in local memory.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "viewEngine",
+                "label": "updateState(u-10: GOLD, 850)"
+              },
+              {
+                "from": "stream",
+                "to": "viewEngine",
+                "label": "updateState(u-20: SILVER, 250)"
+              }
+            ],
+            "activeActorId": "viewEngine"
+          },
+          {
+            "at": "say5",
+            "caption": "Web servers query the stream processor local KTable directly for user state.",
+            "messages": [
+              {
+                "from": "httpClient",
+                "to": "viewEngine",
+                "label": "queryUser('u-10') -> { found: true, Carol }"
+              },
+              {
+                "from": "httpClient",
+                "to": "viewEngine",
+                "label": "queryByTier('GOLD') -> ['Carol']"
+              }
+            ],
+            "activeActorId": "httpClient"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End KStream-KTable Pipeline Architecture",
+      "codeHash": "0775f115d3a0033e6331b235d7bad13667e742cb2ff58264e62f460b20693995",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

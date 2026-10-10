@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why order is never guaranteed",
+      "codeHash": "def8a059ba037dcfa03d4e767d53ee80da9a6bcf99b237661a40c3f7e9dc1ade",
+      "spec": {
+        "template": "compare",
+        "title": "Unordered results versus guaranteed ORDER BY",
+        "leftLabel": "Without ORDER BY",
+        "rightLabel": "With ORDER BY",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When you run SELECT without asking for order PostgreSQL returns any order.",
+            "left": {
+              "code": "SELECT name, price",
+              "result": {
+                "text": "arbitrary order"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "disk block order",
+              "result": {
+                "text": "unstable sequence"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If the order matters ask for it with ORDER BY to guarantee sort order.",
+            "left": {
+              "code": "Pen, Backpack, Notebook",
+              "result": {
+                "text": "unpredictable"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ORDER BY price",
+              "result": {
+                "text": "12, 60, 899, 1200"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unordered results versus guaranteed ORDER BY",
+        "leftLabel": "Without ORDER BY",
+        "rightLabel": "With ORDER BY",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When you run SELECT without asking for order PostgreSQL returns any order.",
+            "left": {
+              "code": "SELECT name, price",
+              "result": "arbitrary order",
+              "tone": "error",
+              "checks": [
+                "arbitrary order"
+              ]
+            },
+            "right": {
+              "code": "disk block order",
+              "result": "unstable sequence",
+              "tone": "data",
+              "checks": [
+                "unstable sequence"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If the order matters ask for it with ORDER BY to guarantee sort order.",
+            "left": {
+              "code": "Pen, Backpack, Notebook",
+              "result": "unpredictable",
+              "tone": "error",
+              "checks": [
+                "unpredictable"
+              ]
+            },
+            "right": {
+              "code": "ORDER BY price",
+              "result": "12, 60, 899, 1200",
+              "tone": "ok",
+              "checks": [
+                "12, 60, 899, 1200"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ORDER BY: ascending and descending",
+      "codeHash": "a7aa1e0d88655e81c8103e753a20feed37a7bd3a241620e1f9625237feb3102d",
+      "spec": {
+        "template": "table",
+        "title": "Ascending and descending sort orders",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "By default it sorts from smallest to largest which is called ascending.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Add DESC after the column for descending order with largest at top.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Ascending and descending sort orders",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "By default it sorts from smallest to largest which is called ascending.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Add DESC after the column for descending order with largest at top.",
+            "rows": [
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pen",
+                  "10.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sorting by more than one column",
+      "codeHash": "fe1fe9b88e6d623dd7b1788d0892634eaf9d1bce0997335cf7095c23df3485cd",
+      "spec": {
+        "template": "none",
+        "reason": "Secondary tie-breaker sorting logic across multiple column keys."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Secondary tie-breaker sorting logic across multiple column keys."
+      }
+    },
+    {
+      "partTitle": "LIMIT: the top few rows",
+      "codeHash": "27b5e1710c8ab02892d1eaf5d71d6a8d55fc9c7830abe1808113ce43ffae1d2f",
+      "spec": {
+        "template": "table",
+        "title": "LIMIT query results",
+        "columns": [
+          "id",
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Very often you only want the first few rows of a sorted result.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Together ORDER BY and LIMIT answer questions correctly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Desk lamp"
+                  },
+                  {
+                    "text": "899.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "LIMIT query results",
+        "columns": [
+          "id",
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Very often you only want the first few rows of a sorted result.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Headphones",
+                  "1499.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Together ORDER BY and LIMIT answer questions correctly.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Headphones",
+                  "1499.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Desk lamp",
+                  "899.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OFFSET: pages of results",
+      "codeHash": "38d2e961bb0a2652234106f5797a525e62173c14a51991daac9ac868e69d6bc3",
+      "spec": {
+        "template": "none",
+        "reason": "Pagination formula mechanics and skipped offset row counting overhead."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Pagination formula mechanics and skipped offset row counting overhead."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a catalogue with pages",
+      "codeHash": "cfa59c0d090240d56ee85c3557ce8455e6349d2df2080204613a1c1d40f14898",
+      "spec": {
+        "template": "table",
+        "title": "Paged product catalogue result",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us build the query behind a catalogue page for the shop.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Phone stand"
+                  },
+                  {
+                    "text": "299.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The filter goes in WHERE while page pagination becomes LIMIT and OFFSET.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Phone stand"
+                  },
+                  {
+                    "text": "299.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Water bottle"
+                  },
+                  {
+                    "text": "350.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Paged product catalogue result",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us build the query behind a catalogue page for the shop.",
+            "rows": [
+              {
+                "cells": [
+                  "Phone stand",
+                  "299.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The filter goes in WHERE while page pagination becomes LIMIT and OFFSET.",
+            "rows": [
+              {
+                "cells": [
+                  "Phone stand",
+                  "299.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Water bottle",
+                  "350.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "From logits to a choice",
+      "codeHash": "b4690e85e1ed07ba7ba2db15c2d6304704611d9930e52f739d4ad978226475f3",
+      "spec": {
+        "template": "table",
+        "title": "Vocabulary probability distribution and choice strategies",
+        "columns": [
+          "probs",
+          "greedy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models generate vocabulary probabilities at each sequence step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decoding rules select candidate tokens from the computed distribution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "samples"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy decoding selects the most probable token deterministically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "samples"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Stochastic sampling introduces variety weighted by candidate probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "samples"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vocabulary probability distribution and choice strategies",
+        "columns": [
+          "probs",
+          "greedy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models generate vocabulary probabilities at each sequence step.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "greedy"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decoding rules select candidate tokens from the computed distribution.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "greedy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "samples"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy decoding selects the most probable token deterministically.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "greedy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "samples"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "values"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Stochastic sampling introduces variety weighted by candidate probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "greedy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "samples"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "values"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "probs",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temperature",
+      "codeHash": "296596ebe6e392a3ae09a255f60f9b04055bfc5ec546121578ae3a74ae0e739a",
+      "spec": {
+        "template": "table",
+        "title": "Temperature parameter logit scaling and smoothing",
+        "columns": [
+          "logits",
+          "scaled"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Temperature reshapes logit distributions before applying softmax sampling.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Temperature below one sharpens distribution choices making tokens more likely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Zero temperature reduces sampling directly to deterministic greedy decoding.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Temperature changes how strongly the model prefers the most likely token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "apply_temperature"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Temperature parameter logit scaling and smoothing",
+        "columns": [
+          "logits",
+          "scaled"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Temperature reshapes logit distributions before applying softmax sampling.",
+            "rows": [
+              {
+                "cells": [
+                  "logits",
+                  "scaled"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Temperature below one sharpens distribution choices making tokens more likely.",
+            "rows": [
+              {
+                "cells": [
+                  "logits",
+                  "scaled"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "exp"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Zero temperature reduces sampling directly to deterministic greedy decoding.",
+            "rows": [
+              {
+                "cells": [
+                  "logits",
+                  "scaled"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "exp"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Temperature changes how strongly the model prefers the most likely token.",
+            "rows": [
+              {
+                "cells": [
+                  "logits",
+                  "scaled"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "exp"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "apply_temperature",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Top-k sampling",
+      "codeHash": "a23a903f3efb39ccd0e7eb98f83daef588e8428b84845d486a42783b1833214f",
+      "spec": {
+        "template": "table",
+        "title": "Top-k candidate truncation and probability renormalisation",
+        "columns": [
+          "probs",
+          "top"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Top-k sampling isolates likely tokens and renormalises their probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Trimming prevents low probability tail candidates from being sampled.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Temperature reshapes candidate scores before top-k bounds the selection.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Dividing by total probability renormalises the remaining distribution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top-k candidate truncation and probability renormalisation",
+        "columns": [
+          "probs",
+          "top"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Top-k sampling isolates likely tokens and renormalises their probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "top"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Trimming prevents low probability tail candidates from being sampled.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "top"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "sorted"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Temperature reshapes candidate scores before top-k bounds the selection.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "top"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "round",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Dividing by total probability renormalises the remaining distribution.",
+            "rows": [
+              {
+                "cells": [
+                  "probs",
+                  "top"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "round",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "probs",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Nucleus (top-p) sampling",
+      "codeHash": "05a050904dacf009cbb3f5e4329d97eb333538ae8ac2214f360e171df8073e70",
+      "spec": {
+        "template": "table",
+        "title": "Nucleus cumulative probability thresholding and adaptive cutoffs",
+        "columns": [
+          "keep",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Nucleus sampling accumulates the smallest set exceeding probability mass.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keep"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Confident predictions restrict candidates while uncertainty expands options.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keep"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "confident"
+                  },
+                  {
+                    "text": "uncertain"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dynamic nucleus sets adapt flexibly unlike fixed static cutoffs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keep"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "confident"
+                  },
+                  {
+                    "text": "uncertain"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example applies top-p to an uncertain distribution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keep"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "confident"
+                  },
+                  {
+                    "text": "uncertain"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "top_p"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Nucleus cumulative probability thresholding and adaptive cutoffs",
+        "columns": [
+          "keep",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Nucleus sampling accumulates the smallest set exceeding probability mass.",
+            "rows": [
+              {
+                "cells": [
+                  "keep",
+                  "total"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Confident predictions restrict candidates while uncertainty expands options.",
+            "rows": [
+              {
+                "cells": [
+                  "keep",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "confident",
+                  "uncertain"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dynamic nucleus sets adapt flexibly unlike fixed static cutoffs.",
+            "rows": [
+              {
+                "cells": [
+                  "keep",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "confident",
+                  "uncertain"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "round",
+                  "sorted"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example applies top-p to an uncertain distribution.",
+            "rows": [
+              {
+                "cells": [
+                  "keep",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "confident",
+                  "uncertain"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "round",
+                  "sorted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "top_p",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing decoding settings",
+      "codeHash": "813b8ceed93016dc45d9d3c6bfd71226e586ad23b34363633083cdfe07c83e2f",
+      "spec": {
+        "template": "none",
+        "reason": "Guidelines for choosing decoding hyperparameters."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: nucleus and temperature",
+      "codeHash": "8a74c51eee55943fb39cdde11744f8f498e31b9a780b957b6b9ded2d49798ed1",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: nucleus and temperature functions."
+      },
+      "filled": {}
+    }
+  ]
+}

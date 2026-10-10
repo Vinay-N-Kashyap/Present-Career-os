@@ -1,0 +1,668 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 17,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Limitations of Pure Generation & The Agency Paradigm",
+      "codeHash": "dc83b516981f8038886821152364eaaeec0604e8d82d7ddb810858dc3f4ae8b5",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to the agency paradigm and tool use"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to the agency paradigm and tool use"
+      }
+    },
+    {
+      "partTitle": "The ReAct Triad: Thought, Action, and Observation",
+      "codeHash": "9a2926497bc0ddc95614c8cef6fadfed50a124e6635755cc6077d59530536fbd",
+      "spec": {
+        "template": "flow",
+        "title": "The ReAct iterative reasoning and acting loop architecture",
+        "nodes": [
+          {
+            "id": "thought",
+            "label": "Thought: Internal Monologue",
+            "tappable": false
+          },
+          {
+            "id": "action",
+            "label": "Action: Tool Command Call",
+            "tappable": false
+          },
+          {
+            "id": "execution",
+            "label": "Host Sandbox Execution",
+            "tappable": false
+          },
+          {
+            "id": "observation",
+            "label": "Observation: Tool Feedback",
+            "tappable": false
+          },
+          {
+            "id": "finalAnswer",
+            "label": "Final Answer Synthesis",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "thought",
+            "to": "action",
+            "label": "Emits Structured Tool Intent"
+          },
+          {
+            "from": "action",
+            "to": "execution",
+            "label": "Dispatches Sandboxed Handler"
+          },
+          {
+            "from": "execution",
+            "to": "observation",
+            "label": "Returns Real-World Results"
+          },
+          {
+            "from": "observation",
+            "to": "thought",
+            "label": "Appends Context for Next Step"
+          },
+          {
+            "from": "thought",
+            "to": "finalAnswer",
+            "label": "Satisfies Objective Completion"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "In the thought phase the model decomposes the current situation.",
+            "activeNodes": [
+              "thought"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The host executes tools and appends returned results into observation context.",
+            "activeNodes": [
+              "action",
+              "execution",
+              "observation"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The ReAct iterative reasoning and acting loop architecture",
+        "nodes": [
+          {
+            "id": "thought",
+            "label": "Thought: Internal Monologue",
+            "tappable": false
+          },
+          {
+            "id": "action",
+            "label": "Action: Tool Command Call",
+            "tappable": false
+          },
+          {
+            "id": "execution",
+            "label": "Host Sandbox Execution",
+            "tappable": false
+          },
+          {
+            "id": "observation",
+            "label": "Observation: Tool Feedback",
+            "tappable": false
+          },
+          {
+            "id": "finalAnswer",
+            "label": "Final Answer Synthesis",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "thought",
+            "to": "action",
+            "label": "Emits Structured Tool Intent"
+          },
+          {
+            "from": "action",
+            "to": "execution",
+            "label": "Dispatches Sandboxed Handler"
+          },
+          {
+            "from": "execution",
+            "to": "observation",
+            "label": "Returns Real-World Results"
+          },
+          {
+            "from": "observation",
+            "to": "thought",
+            "label": "Appends Context for Next Step"
+          },
+          {
+            "from": "thought",
+            "to": "finalAnswer",
+            "label": "Satisfies Objective Completion"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "In the thought phase the model decomposes the current situation.",
+            "activeNodes": [
+              "thought"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The host executes tools and appends returned results into observation context.",
+            "activeNodes": [
+              "action",
+              "execution",
+              "observation"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tool Registry & Dispatcher Architecture",
+      "codeHash": "8e54be1a67765b11b589c52a74c668fe0960ca3f0a44e7464b9de2a407b3d745",
+      "spec": {
+        "template": "table",
+        "title": "Centralized agent tool registry schema definitions and sandboxing",
+        "columns": [
+          "Tool Identifier",
+          "Semantic Description",
+          "Execution Sandbox",
+          "Error Contract"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A tool registry manages registration and sandboxed execution of functions.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When tools throw errors the sandbox catches failures safely as observations.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Centralized agent tool registry schema definitions and sandboxing",
+        "columns": [
+          "Tool Identifier",
+          "Semantic Description",
+          "Execution Sandbox",
+          "Error Contract"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A tool registry manages registration and sandboxed execution of functions.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When tools throw errors the sandbox catches failures safely as observations.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The ReAct Parser: Extracting Thought, Action & Final Answer",
+      "codeHash": "4a4385a38cd810e51dbbb5665480023d549236fcb0cfb3f7d7adfbc85791142a",
+      "spec": {
+        "template": "boxes",
+        "title": "ReAct delimiter stream extraction and token boundary isolation",
+        "boxes": [
+          {
+            "id": "thoughtBox",
+            "title": "Thought Delimiter",
+            "items": [
+              "Isolates internal reasoning",
+              "Monologues next objective",
+              "Decomposes complex problems"
+            ]
+          },
+          {
+            "id": "actionBox",
+            "title": "Action Directive",
+            "items": [
+              "Extracts tool name and input",
+              "Validates parameter payload",
+              "Dispatches execution handler"
+            ]
+          },
+          {
+            "id": "answerBox",
+            "title": "Final Answer Delimiter",
+            "items": [
+              "Signifies goal completion",
+              "Terminates agent loop",
+              "Emits synthesized result"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The parser extracts the thought statement capturing agent reasoning.",
+            "activeBoxId": "thoughtBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The parser detects the final answer delimiter and terminates the loop.",
+            "activeBoxId": "answerBox",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "ReAct delimiter stream extraction and token boundary isolation",
+        "boxes": [
+          {
+            "id": "thoughtBox",
+            "title": "Thought Delimiter",
+            "items": [
+              "Isolates internal reasoning",
+              "Monologues next objective",
+              "Decomposes complex problems"
+            ]
+          },
+          {
+            "id": "actionBox",
+            "title": "Action Directive",
+            "items": [
+              "Extracts tool name and input",
+              "Validates parameter payload",
+              "Dispatches execution handler"
+            ]
+          },
+          {
+            "id": "answerBox",
+            "title": "Final Answer Delimiter",
+            "items": [
+              "Signifies goal completion",
+              "Terminates agent loop",
+              "Emits synthesized result"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The parser extracts the thought statement capturing agent reasoning.",
+            "activeBoxId": "thoughtBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The parser detects the final answer delimiter and terminates the loop.",
+            "activeBoxId": "answerBox",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executing the Observation Loop: Sandboxing and Error Feedback",
+      "codeHash": "bdef0b1e20924d3fd6b04221b7dee6ba9f630a56a555e293be054f8ecb9debe8",
+      "spec": {
+        "template": "compare",
+        "title": "Bounded sandboxed observation loop versus unconstrained runaway agent",
+        "left": {
+          "title": "Bounded Protected Loop",
+          "items": [
+            "Strict iteration boundaries",
+            "Execution timeout limits",
+            "Loop duplication breaker",
+            "Predictable financial budget"
+          ]
+        },
+        "right": {
+          "title": "Unconstrained Rogue Loop",
+          "items": [
+            "Infinite recursive calls",
+            "Unbounded execution hangs",
+            "Repeats identical failures",
+            "Runaway API credit usage"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Production engines must enforce hard iteration bounds and timeout limits.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Without guardrails rogue agents burn through credits in infinite loops.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Bounded Protected Loop",
+        "rightLabel": "Unconstrained Rogue Loop"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Bounded sandboxed observation loop versus unconstrained runaway agent",
+        "left": {
+          "title": "Bounded Protected Loop",
+          "items": [
+            "Strict iteration boundaries",
+            "Execution timeout limits",
+            "Loop duplication breaker",
+            "Predictable financial budget"
+          ]
+        },
+        "right": {
+          "title": "Unconstrained Rogue Loop",
+          "items": [
+            "Infinite recursive calls",
+            "Unbounded execution hangs",
+            "Repeats identical failures",
+            "Runaway API credit usage"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Production engines must enforce hard iteration bounds and timeout limits.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Without guardrails rogue agents burn through credits in infinite loops.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Bounded Protected Loop",
+        "rightLabel": "Unconstrained Rogue Loop"
+      }
+    },
+    {
+      "partTitle": "Production ReAct Agent: Autonomous Multi-Step Problem Solving",
+      "codeHash": "35fb7608e52e52f5756d3bb2f9006c78e712e73cd21d7e2f9fc1da49290a3e16",
+      "spec": {
+        "template": "sequence",
+        "title": "Autonomous multi-step infrastructure storage resolution transaction",
+        "actors": [
+          {
+            "id": "operator",
+            "label": "DevOps Operator"
+          },
+          {
+            "id": "agent",
+            "label": "Autonomous ReAct Agent"
+          },
+          {
+            "id": "storageTool",
+            "label": "Cluster Storage Inspector"
+          },
+          {
+            "id": "calcTool",
+            "label": "Arithmetic Calculator"
+          }
+        ],
+        "messages": [
+          {
+            "from": "operator",
+            "to": "agent",
+            "label": "Request Storage Analysis",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "storageTool",
+            "label": "Query Cluster Alpha Storage",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "storageTool",
+            "label": "Query Cluster Beta Storage",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "calcTool",
+            "label": "Sum Storage Capacities",
+            "tone": "ok"
+          },
+          {
+            "from": "agent",
+            "to": "operator",
+            "label": "Emit Final Answer Resolution",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The agent reasons and calls cluster storage to inspect available capacity.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The reasoning chain executes deterministically with zero human intervention.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Autonomous multi-step infrastructure storage resolution transaction",
+        "actors": [
+          {
+            "id": "operator",
+            "label": "DevOps Operator"
+          },
+          {
+            "id": "agent",
+            "label": "Autonomous ReAct Agent"
+          },
+          {
+            "id": "storageTool",
+            "label": "Cluster Storage Inspector"
+          },
+          {
+            "id": "calcTool",
+            "label": "Arithmetic Calculator"
+          }
+        ],
+        "messages": [
+          {
+            "from": "operator",
+            "to": "agent",
+            "label": "Request Storage Analysis",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "storageTool",
+            "label": "Query Cluster Alpha Storage",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "storageTool",
+            "label": "Query Cluster Beta Storage",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "calcTool",
+            "label": "Sum Storage Capacities",
+            "tone": "ok"
+          },
+          {
+            "from": "agent",
+            "to": "operator",
+            "label": "Emit Final Answer Resolution",
+            "tone": "ok"
+          }
+        ],
+        "messages_alt": [],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The agent reasons and calls cluster storage to inspect available capacity.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The reasoning chain executes deterministically with zero human intervention.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

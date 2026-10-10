@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 24,
+  "promptSha": "8717dae47cc2c7d344c48a4ac3812c372c3962bbd1c3495d4d18a8fbfbc58877",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Prometheus Monitoring Architecture: The Pull Model",
+      "codeHash": "55bd858176ab75303b4b8e263a6ebaba9dc028266c30b49d3904d06ce5ab05eb",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus pull based metric scraping target topology",
+        "leftLabel": "Kubernetes Node Scrape Job",
+        "rightLabel": "Application Microservice Job",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Prometheus initiates regular HTTP scrape requests against metric endpoints.",
+            "left": {
+              "code": "job: 'kubernetes-nodes'",
+              "result": {
+                "text": "kubernetes-nodes"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "endpoint: 'node-exporter:9100/metrics'",
+              "result": {
+                "text": "node-exporter:9100/metrics"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Crash detection occurs immediately when targets stop responding to scrape.",
+            "left": {
+              "code": "job: 'order-api'",
+              "result": {
+                "text": "order-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "lastScrapeStatus: 'UP'",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Prometheus pull based metric scraping target topology",
+        "leftLabel": "Kubernetes Node Scrape Job",
+        "rightLabel": "Application Microservice Job",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Prometheus initiates regular HTTP scrape requests against metric endpoints.",
+            "left": {
+              "code": "job: 'kubernetes-nodes'",
+              "result": {
+                "text": "kubernetes-nodes"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "endpoint: 'node-exporter:9100/metrics'",
+              "result": {
+                "text": "node-exporter:9100/metrics"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Crash detection occurs immediately when targets stop responding to scrape.",
+            "left": {
+              "code": "job: 'order-api'",
+              "result": {
+                "text": "order-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "lastScrapeStatus: 'UP'",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Prometheus Data Model & Four Metric Types",
+      "codeHash": "d14c3a9f54f2cc12adebe455336f7f56448a864de4b277f3815d55a51f200f48",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus data model counters versus gauges telemetry",
+        "leftLabel": "Monotonic Counter Metric",
+        "rightLabel": "Instantaneous Gauge Metric",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Counters increase monotonically and reset to zero only on process restart.",
+            "left": {
+              "code": "kind: 'Counter'",
+              "result": {
+                "text": "Counter"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'http_requests_total'",
+              "result": {
+                "text": "http_requests_total"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Gauges record fluctuating measurements that rise and fall arbitrarily.",
+            "left": {
+              "code": "kind: 'Gauge'",
+              "result": {
+                "text": "Gauge"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'process_resident_memory_bytes'",
+              "result": {
+                "text": "process_resident_memory_bytes"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Prometheus data model counters versus gauges telemetry",
+        "leftLabel": "Monotonic Counter Metric",
+        "rightLabel": "Instantaneous Gauge Metric",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Counters increase monotonically and reset to zero only on process restart.",
+            "left": {
+              "code": "kind: 'Counter'",
+              "result": {
+                "text": "Counter"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'http_requests_total'",
+              "result": {
+                "text": "http_requests_total"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Gauges record fluctuating measurements that rise and fall arbitrarily.",
+            "left": {
+              "code": "kind: 'Gauge'",
+              "result": {
+                "text": "Gauge"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'process_resident_memory_bytes'",
+              "result": {
+                "text": "process_resident_memory_bytes"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PromQL Fundamentals: Range Vectors & rate() Calculations",
+      "codeHash": "059f4deeebb75215c33114bf0b4fe8b412d17950ae2e025da7067065d7eb1b25",
+      "spec": {
+        "template": "compare",
+        "title": "PromQL range vector rate and per second throughput calculations",
+        "leftLabel": "Range Vector Samples Window",
+        "rightLabel": "Per Second Rate Derivative",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Range vectors capture buffers of time series samples over fixed windows.",
+            "left": {
+              "code": "counterValue: 1000",
+              "result": {
+                "text": "counterValue"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "timestampSec: 0",
+              "result": {
+                "text": "timestampSec"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Rate calculations derive per second velocity across changing sample counts.",
+            "left": {
+              "code": "counterValue: 8500",
+              "result": {
+                "text": "counterValue"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "calculateRatePerSecond",
+              "result": {
+                "text": "calculateRatePerSecond"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "PromQL range vector rate and per second throughput calculations",
+        "leftLabel": "Range Vector Samples Window",
+        "rightLabel": "Per Second Rate Derivative",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Range vectors capture buffers of time series samples over fixed windows.",
+            "left": {
+              "code": "counterValue: 1000",
+              "result": {
+                "text": "counterValue"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "timestampSec: 0",
+              "result": {
+                "text": "timestampSec"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Rate calculations derive per second velocity across changing sample counts.",
+            "left": {
+              "code": "counterValue: 8500",
+              "result": {
+                "text": "counterValue"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "calculateRatePerSecond",
+              "result": {
+                "text": "calculateRatePerSecond"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SLIs & Percentile Latencies with histogram_quantile",
+      "codeHash": "4d04d3f7c4a6f021ab0133001bf124cac4db17275566a74618fb99347dc2c34f",
+      "spec": {
+        "template": "compare",
+        "title": "Percentile response latencies and service level indicator tracking",
+        "leftLabel": "Median P50 Latency",
+        "rightLabel": "Tail P99 Percentile Latency",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Tracking service level indicators relies on percentile distributions.",
+            "left": {
+              "code": "metric: 'p95'",
+              "result": {
+                "text": "p95"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "metric: 'p99'",
+              "result": {
+                "text": "p99"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Quantile calculations accurately reveal tail latencies across containers.",
+            "left": {
+              "code": "histogram_quantile",
+              "result": {
+                "text": "histogram_quantile"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "http_request_duration_seconds_bucket",
+              "result": {
+                "text": "http_request_duration_seconds_bucket"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Percentile response latencies and service level indicator tracking",
+        "leftLabel": "Median P50 Latency",
+        "rightLabel": "Tail P99 Percentile Latency",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Tracking service level indicators relies on percentile distributions.",
+            "left": {
+              "code": "metric: 'p95'",
+              "result": {
+                "text": "p95"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "metric: 'p99'",
+              "result": {
+                "text": "p99"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Quantile calculations accurately reveal tail latencies across containers.",
+            "left": {
+              "code": "histogram_quantile",
+              "result": {
+                "text": "histogram_quantile"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "http_request_duration_seconds_bucket",
+              "result": {
+                "text": "http_request_duration_seconds_bucket"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prometheus Alerting Rules & Alertmanager Routing",
+      "codeHash": "58575ec00052017487e632954867d593539801940f79156979149b67a031bd8d",
+      "spec": {
+        "template": "compare",
+        "title": "Alert rule evaluations and alertmanager dispatch states",
+        "leftLabel": "Pending Alert Evaluation",
+        "rightLabel": "Firing Alert Dispatch",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Alert enters pending state while evaluation duration window elapses.",
+            "left": {
+              "code": "state: 'Pending'",
+              "result": {
+                "text": "Pending"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "durationThresholdMin",
+              "result": {
+                "text": "durationThresholdMin"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Sustained metric errors transition alert to active firing status.",
+            "left": {
+              "code": "state: 'Firing'",
+              "result": {
+                "text": "Firing"
+              },
+              "tone": "accent"
+            },
+            "right": {
+              "code": "alertName: 'HighHttp5xxErrorRate'",
+              "result": {
+                "text": "HighHttp5xxErrorRate"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Alert rule evaluations and alertmanager dispatch states",
+        "leftLabel": "Pending Alert Evaluation",
+        "rightLabel": "Firing Alert Dispatch",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Alert enters pending state while evaluation duration window elapses.",
+            "left": {
+              "code": "state: 'Pending'",
+              "result": {
+                "text": "Pending"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "durationThresholdMin",
+              "result": {
+                "text": "durationThresholdMin"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Sustained metric errors transition alert to active firing status.",
+            "left": {
+              "code": "state: 'Firing'",
+              "result": {
+                "text": "Firing"
+              },
+              "tone": "accent"
+            },
+            "right": {
+              "code": "alertName: 'HighHttp5xxErrorRate'",
+              "result": {
+                "text": "HighHttp5xxErrorRate"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Declarative Monitoring with ServiceMonitors & Operator",
+      "codeHash": "26ec362d9ad091398fb549212fa06147976f0fd4851f65de5fd4578393133f09",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

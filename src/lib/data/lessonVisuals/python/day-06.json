@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 6,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why we need loops",
+      "codeHash": "f6f6247b9b5aedd0f35faed6961ca8d1caefd6250880818ef8ac2870e8f2747d",
+      "spec": {
+        "template": "boxes",
+        "title": "Iterating through expenses",
+        "boxes": [
+          {
+            "id": "amount",
+            "label": "amount"
+          },
+          {
+            "id": "expenses",
+            "label": "expenses"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A for loop goes through each value one at a time.",
+            "values": {
+              "amount": {
+                "var": "amount",
+                "line": 2
+              },
+              "expenses": {
+                "text": "[20, 45, 120]"
+              }
+            },
+            "tones": {
+              "amount": "data",
+              "expenses": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Indented lines underneath repeat for every value.",
+            "values": {
+              "amount": {
+                "var": "amount",
+                "line": 3
+              },
+              "expenses": {
+                "text": "[20, 45, 120]"
+              }
+            },
+            "tones": {
+              "amount": "ok",
+              "expenses": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Iterating through expenses",
+        "boxes": [
+          {
+            "id": "amount",
+            "label": "amount"
+          },
+          {
+            "id": "expenses",
+            "label": "expenses"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A for loop goes through each value one at a time.",
+            "values": {
+              "amount": "20",
+              "expenses": "[20, 45, 120]"
+            },
+            "tones": {
+              "amount": "data",
+              "expenses": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Indented lines underneath repeat for every value.",
+            "values": {
+              "amount": "20",
+              "expenses": "[20, 45, 120]"
+            },
+            "tones": {
+              "amount": "ok",
+              "expenses": "idle"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Looping over text and range()",
+      "codeHash": "ff2143e9db24fe6f60780deb9b2d50229d044bbb8f81d033f415cab655457193",
+      "spec": {
+        "template": "none",
+        "reason": "Range and text iteration are directly clear from the printed code loops."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The accumulator pattern: running totals",
+      "codeHash": "e33cb13ad77ae6d0d2f4e143a9be6fa9c17979b87d0a78ed16045e5486e0aaae",
+      "spec": {
+        "template": "boxes",
+        "title": "Accumulator totals and counts",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "big",
+            "label": "big"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Start a variable before the loop and add to it each time.",
+            "values": {
+              "total": {
+                "var": "total",
+                "line": 2
+              },
+              "big": {
+                "var": "big",
+                "line": 3
+              }
+            },
+            "tones": {
+              "total": "data",
+              "big": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Count only the values you care about inside the loop.",
+            "values": {
+              "total": {
+                "var": "total",
+                "line": 8
+              },
+              "big": {
+                "var": "big",
+                "line": 9
+              }
+            },
+            "tones": {
+              "total": "data",
+              "big": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Accumulator totals and counts",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "big",
+            "label": "big"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Start a variable before the loop and add to it each time.",
+            "values": {
+              "total": "0",
+              "big": "0"
+            },
+            "tones": {
+              "total": "data",
+              "big": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Count only the values you care about inside the loop.",
+            "values": {
+              "total": "545",
+              "big": "2"
+            },
+            "tones": {
+              "total": "data",
+              "big": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "while loops",
+      "codeHash": "dc5b680482ca0f8ccffa1a47a69b64a02b3350b392c4959dc31f2aeb65968d5e",
+      "spec": {
+        "template": "boxes",
+        "title": "Tracking while loop progress",
+        "boxes": [
+          {
+            "id": "savings",
+            "label": "savings"
+          },
+          {
+            "id": "months",
+            "label": "months"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A while loop repeats as long as a condition is True.",
+            "values": {
+              "savings": {
+                "var": "savings",
+                "line": 1
+              },
+              "months": {
+                "var": "months",
+                "line": 2
+              }
+            },
+            "tones": {
+              "savings": "data",
+              "months": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The loop works out how many months are needed.",
+            "values": {
+              "savings": {
+                "var": "savings",
+                "line": 6
+              },
+              "months": {
+                "var": "months",
+                "line": 6
+              }
+            },
+            "tones": {
+              "savings": "ok",
+              "months": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Tracking while loop progress",
+        "boxes": [
+          {
+            "id": "savings",
+            "label": "savings"
+          },
+          {
+            "id": "months",
+            "label": "months"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A while loop repeats as long as a condition is True.",
+            "values": {
+              "savings": "0",
+              "months": "0"
+            },
+            "tones": {
+              "savings": "data",
+              "months": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The loop works out how many months are needed.",
+            "values": {
+              "savings": "3000",
+              "months": "6"
+            },
+            "tones": {
+              "savings": "ok",
+              "months": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "break and continue",
+      "codeHash": "acd2033e36cafcffb7bb26408e92b8089e74c4c606670f63375d5b90983ce832",
+      "spec": {
+        "template": "none",
+        "reason": "Break and continue loop control flow is clear from linear code logic."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: a spending report",
+      "codeHash": "0939a8968a275e541533384290ebe984f8886c7f542f3323d55d5ac965544ae6",
+      "spec": {
+        "template": "boxes",
+        "title": "Spending report summary",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "largest",
+            "label": "largest"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "We have a list of amounts and want a small report.",
+            "values": {
+              "total": {
+                "var": "total",
+                "line": 3
+              },
+              "largest": {
+                "var": "largest",
+                "line": 4
+              }
+            },
+            "tones": {
+              "total": "data",
+              "largest": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Keep the biggest seen so far and replace it when bigger.",
+            "values": {
+              "total": {
+                "var": "total",
+                "line": 10
+              },
+              "largest": {
+                "var": "largest",
+                "line": 11
+              }
+            },
+            "tones": {
+              "total": "data",
+              "largest": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Spending report summary",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "largest",
+            "label": "largest"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "We have a list of amounts and want a small report.",
+            "values": {
+              "total": "0",
+              "largest": "0"
+            },
+            "tones": {
+              "total": "data",
+              "largest": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Keep the biggest seen so far and replace it when bigger.",
+            "values": {
+              "total": "20",
+              "largest": "300"
+            },
+            "tones": {
+              "total": "data",
+              "largest": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

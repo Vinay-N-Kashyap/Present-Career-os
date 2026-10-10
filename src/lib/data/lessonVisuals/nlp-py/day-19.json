@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why more than one head",
+      "codeHash": "b981e2b630f5ecc892c5653a7f370045549711b5eadc5412191457a6806e15be",
+      "spec": {
+        "template": "table",
+        "title": "Multi-head parallel representation subspaces and specialized roles",
+        "columns": [
+          "words",
+          "heads"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In one sentence a word relates to others in several ways at once.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Single attention mechanisms conflate multiple contextual targets into one blend.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Multi-head attention evaluates multiple distinct projections in parallel.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Individual heads specialize in specific linguistic dependencies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "index"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-head parallel representation subspaces and specialized roles",
+        "columns": [
+          "words",
+          "heads"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In one sentence a word relates to others in several ways at once.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "heads"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Single attention mechanisms conflate multiple contextual targets into one blend.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "weights",
+                  "index"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Multi-head attention evaluates multiple distinct projections in parallel.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "weights",
+                  "index"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "weights"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Individual heads specialize in specific linguistic dependencies.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "weights",
+                  "index"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "weights"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "index",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Splitting the model dimension",
+      "codeHash": "6e1570a2d1e98aca2f6e3a54655666aac62ea85ba6617c38d4107697faebe37c",
+      "spec": {
+        "template": "table",
+        "title": "Model dimension partitioning and head configuration constraints",
+        "columns": [
+          "d_model",
+          "heads"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-head attention partitions model dimensionality among parallel heads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "d_model"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Total model dimension must divide evenly across assigned head counts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "d_model"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "head_dim"
+                  },
+                  {
+                    "text": "ValueError"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The head dimension calculation ensures positive and divisible inputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "d_model"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "head_dim"
+                  },
+                  {
+                    "text": "ValueError"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "heads"
+                  },
+                  {
+                    "text": "head_dim"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Validating tensor dimensions early prevents silent runtime failures.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "d_model"
+                  },
+                  {
+                    "text": "heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "head_dim"
+                  },
+                  {
+                    "text": "ValueError"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "heads"
+                  },
+                  {
+                    "text": "head_dim"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ValueError"
+                  },
+                  {
+                    "text": "d_model"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model dimension partitioning and head configuration constraints",
+        "columns": [
+          "d_model",
+          "heads"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-head attention partitions model dimensionality among parallel heads.",
+            "rows": [
+              {
+                "cells": [
+                  "d_model",
+                  "heads"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Total model dimension must divide evenly across assigned head counts.",
+            "rows": [
+              {
+                "cells": [
+                  "d_model",
+                  "heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "head_dim",
+                  "ValueError"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The head dimension calculation ensures positive and divisible inputs.",
+            "rows": [
+              {
+                "cells": [
+                  "d_model",
+                  "heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "head_dim",
+                  "ValueError"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "heads",
+                  "head_dim"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Validating tensor dimensions early prevents silent runtime failures.",
+            "rows": [
+              {
+                "cells": [
+                  "d_model",
+                  "heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "head_dim",
+                  "ValueError"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "heads",
+                  "head_dim"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ValueError",
+                  "d_model"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Splitting and merging vectors",
+      "codeHash": "f63dd6ee3896680823c3a5736701d8cd70be74d038fadeb310079e2182497c44",
+      "spec": {
+        "template": "table",
+        "title": "Head tensor chunk slicing and lossless concatenation merge",
+        "columns": [
+          "vector",
+          "chunks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Projected representations split into consecutive chunks for each head.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Individual head outputs concatenate back into one unified vector.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "split_heads"
+                  },
+                  {
+                    "text": "merge_heads"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Splitting into equal consecutive chunks divides heads cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "split_heads"
+                  },
+                  {
+                    "text": "merge_heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "heads"
+                  },
+                  {
+                    "text": "ValueError"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The round trip property guarantees lossless vector reconstruction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "split_heads"
+                  },
+                  {
+                    "text": "merge_heads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "heads"
+                  },
+                  {
+                    "text": "ValueError"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "vector"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Head tensor chunk slicing and lossless concatenation merge",
+        "columns": [
+          "vector",
+          "chunks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Projected representations split into consecutive chunks for each head.",
+            "rows": [
+              {
+                "cells": [
+                  "vector",
+                  "chunks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Individual head outputs concatenate back into one unified vector.",
+            "rows": [
+              {
+                "cells": [
+                  "vector",
+                  "chunks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "split_heads",
+                  "merge_heads"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Splitting into equal consecutive chunks divides heads cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  "vector",
+                  "chunks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "split_heads",
+                  "merge_heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "heads",
+                  "ValueError"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The round trip property guarantees lossless vector reconstruction.",
+            "rows": [
+              {
+                "cells": [
+                  "vector",
+                  "chunks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "split_heads",
+                  "merge_heads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "heads",
+                  "ValueError"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "vector"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running the heads",
+      "codeHash": "acbe70f3befe7768dce6c75a52163c9beff08ce655e297f03c67328669c5e21e",
+      "spec": {
+        "template": "table",
+        "title": "Parallel head attention execution and output projection mixing",
+        "columns": [
+          "keys",
+          "values"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each attention head executes independent scoring and weighted summing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent head computations execute in parallel across GPU processors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attend"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Concatenated head outputs are combined through a final output projection.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attend"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attend"
+                  },
+                  {
+                    "text": "keys"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Distinct heads produce diverse attention weights from identical input tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attend"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attend"
+                  },
+                  {
+                    "text": "keys"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "attend"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Parallel head attention execution and output projection mixing",
+        "columns": [
+          "keys",
+          "values"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each attention head executes independent scoring and weighted summing.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "values"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent head computations execute in parallel across GPU processors.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "values"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attend",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Concatenated head outputs are combined through a final output projection.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "values"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attend",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attend",
+                  "keys"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Distinct heads produce diverse attention weights from identical input tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "values"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attend",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attend",
+                  "keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "values",
+                  "attend"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What heads learn, and efficient variants",
+      "codeHash": "de0312bd17a786e7cd899828d7c16baa102ebe767498184f02b6f54556873d02",
+      "spec": {
+        "template": "none",
+        "reason": "Head pattern visualization and grouped-query variants."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: dimensions and heads",
+      "codeHash": "765cd3cca82ff03442e4724aaf09b64ae157baac022c1759f2943348d505de76",
+      "spec": {
+        "template": "none",
+        "reason": "Head dimension and splitting practice implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

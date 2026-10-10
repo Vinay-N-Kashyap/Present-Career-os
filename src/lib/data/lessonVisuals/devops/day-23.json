@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 23,
+  "promptSha": "dab5b6342f68e9b01100a9e1cf6e6d1f1a027dd2d55c337cc6f40d59deaf2851",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The GitOps Paradigm & Core Principles",
+      "codeHash": "c2f0ae6342eef28ab4b39aebc5c68aad60001eb67d48c3a8aac47aa88f8d2d3a",
+      "spec": {
+        "template": "compare",
+        "title": "Continuous delivery architectural models comparison",
+        "leftLabel": "Push Model (Traditional CI/CD)",
+        "rightLabel": "Pull Model (Declarative GitOps)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Version controlled repository provides the single authoritative source.",
+            "left": {
+              "code": "singleSourceOfTruth: 'Fragmented (Git + Manual cluster tweaks)'",
+              "result": {
+                "text": "Fragmented (Git + Manual cluster tweaks)"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "singleSourceOfTruth: 'Git Repository strictly'",
+              "result": {
+                "text": "Git Repository strictly"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous reconciliation loop reverses unauthorized changes automatically.",
+            "left": {
+              "code": "driftDetection: 'None (Manual)'",
+              "result": {
+                "text": "None (Manual)"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "driftDetection: 'Automated (Continuous)'",
+              "result": {
+                "text": "Automated (Continuous)"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Continuous delivery architectural models comparison",
+        "leftLabel": "Push Model (Traditional CI/CD)",
+        "rightLabel": "Pull Model (Declarative GitOps)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Version controlled repository provides the single authoritative source.",
+            "left": {
+              "code": "singleSourceOfTruth: 'Fragmented (Git + Manual cluster tweaks)'",
+              "result": {
+                "text": "Fragmented (Git + Manual cluster tweaks)"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "singleSourceOfTruth: 'Git Repository strictly'",
+              "result": {
+                "text": "Git Repository strictly"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous reconciliation loop reverses unauthorized changes automatically.",
+            "left": {
+              "code": "driftDetection: 'None (Manual)'",
+              "result": {
+                "text": "None (Manual)"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "driftDetection: 'Automated (Continuous)'",
+              "result": {
+                "text": "Automated (Continuous)"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ArgoCD Architecture: Components & Control Loop",
+      "codeHash": "7d82e9d1180edd3cf7e9c48d426b6064a1d53b93aacad9dcfa675310fe15d59e",
+      "spec": {
+        "template": "compare",
+        "title": "ArgoCD internal controller components architecture",
+        "leftLabel": "Repository Server Renderer",
+        "rightLabel": "Application Reconciler",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Repository server clones repositories and renders parameterized manifests.",
+            "left": {
+              "code": "name: 'argocd-repo-server'",
+              "result": {
+                "text": "argocd-repo-server"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "watches: 'Git commits & Helm tags'",
+              "result": {
+                "text": "Git commits & Helm tags"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Application controller continuously reconciles live state with git source.",
+            "left": {
+              "code": "name: 'argocd-application-controller'",
+              "result": {
+                "text": "argocd-application-controller"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "watches: 'Cluster resources & Application CRDs'",
+              "result": {
+                "text": "Cluster resources & Application CRDs"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "ArgoCD internal controller components architecture",
+        "leftLabel": "Repository Server Renderer",
+        "rightLabel": "Application Reconciler",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Repository server clones repositories and renders parameterized manifests.",
+            "left": {
+              "code": "name: 'argocd-repo-server'",
+              "result": {
+                "text": "argocd-repo-server"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "watches: 'Git commits & Helm tags'",
+              "result": {
+                "text": "Git commits & Helm tags"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Application controller continuously reconciles live state with git source.",
+            "left": {
+              "code": "name: 'argocd-application-controller'",
+              "result": {
+                "text": "argocd-application-controller"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "watches: 'Cluster resources & Application CRDs'",
+              "result": {
+                "text": "Cluster resources & Application CRDs"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Declarative Application CRD Manifests",
+      "codeHash": "ff0840daff6e18c0c45f4cc05f8e60607cebfe282c063e7f7fec0a860b617782",
+      "spec": {
+        "template": "compare",
+        "title": "Declarative ArgoCD application custom resource specification",
+        "leftLabel": "Source Repository Spec",
+        "rightLabel": "Target Destination Cluster",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Source definition binds desired state to repository branch and manifest path.",
+            "left": {
+              "code": "repoUrl: 'https://github.com/myorg/gitops-manifests.git'",
+              "result": {
+                "text": "https://github.com/myorg/gitops-manifests.git"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "path: 'deployments/staging/order-api'",
+              "result": {
+                "text": "deployments/staging/order-api"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Destination specification identifies target cluster address and namespace.",
+            "left": {
+              "code": "destinationNamespace: 'staging'",
+              "result": {
+                "text": "staging"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destinationCluster: 'https://kubernetes.default.svc'",
+              "result": {
+                "text": "https://kubernetes.default.svc"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Declarative ArgoCD application custom resource specification",
+        "leftLabel": "Source Repository Spec",
+        "rightLabel": "Target Destination Cluster",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Source definition binds desired state to repository branch and manifest path.",
+            "left": {
+              "code": "repoUrl: 'https://github.com/myorg/gitops-manifests.git'",
+              "result": {
+                "text": "https://github.com/myorg/gitops-manifests.git"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "path: 'deployments/staging/order-api'",
+              "result": {
+                "text": "deployments/staging/order-api"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Destination specification identifies target cluster address and namespace.",
+            "left": {
+              "code": "destinationNamespace: 'staging'",
+              "result": {
+                "text": "staging"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destinationCluster: 'https://kubernetes.default.svc'",
+              "result": {
+                "text": "https://kubernetes.default.svc"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Sync Policies, Prune & Self-Healing",
+      "codeHash": "27375ceb184e3657581b76efa60d79c2ae783c4846596caaaf18f05b64693e18",
+      "spec": {
+        "template": "compare",
+        "title": "Automated sync policy with pruning and self-healing",
+        "leftLabel": "Automated Pruning Policy",
+        "rightLabel": "Anti-Drift Self-Healing",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Prune setting ensures removed manifests trigger cluster resource cleanup.",
+            "left": {
+              "code": "prune: true",
+              "result": {
+                "text": "prune"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "action: 'PRUNE'",
+              "result": {
+                "text": "PRUNE"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Enforces anti drift protection to maintain cluster configuration integrity.",
+            "left": {
+              "code": "selfHeal: true",
+              "result": {
+                "text": "selfHeal"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "action: 'SELF_HEAL'",
+              "result": {
+                "text": "SELF_HEAL"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Automated sync policy with pruning and self-healing",
+        "leftLabel": "Automated Pruning Policy",
+        "rightLabel": "Anti-Drift Self-Healing",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Prune setting ensures removed manifests trigger cluster resource cleanup.",
+            "left": {
+              "code": "prune: true",
+              "result": {
+                "text": "prune"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "action: 'PRUNE'",
+              "result": {
+                "text": "PRUNE"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Enforces anti drift protection to maintain cluster configuration integrity.",
+            "left": {
+              "code": "selfHeal: true",
+              "result": {
+                "text": "selfHeal"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "action: 'SELF_HEAL'",
+              "result": {
+                "text": "SELF_HEAL"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cluster Drift Detection: Synced vs Out-of-Sync States",
+      "codeHash": "1982cfafab6d06575197882b4833f3ee36c044fd91119022410f7e67350d0dea",
+      "spec": {
+        "template": "compare",
+        "title": "ArgoCD cluster drift detection and application health",
+        "leftLabel": "Healthy Synced Application",
+        "rightLabel": "Drifted OutOfSync Application",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Controller classifies resources into synchronized or out of sync statuses.",
+            "left": {
+              "code": "syncStatus: 'Synced'",
+              "result": {
+                "text": "Synced"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "healthStatus: 'Healthy'",
+              "result": {
+                "text": "Healthy"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Progressing deployments transition to healthy once readiness probes pass.",
+            "left": {
+              "code": "syncStatus: 'OutOfSync'",
+              "result": {
+                "text": "OutOfSync"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "appName: 'billing-api'",
+              "result": {
+                "text": "billing-api"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "ArgoCD cluster drift detection and application health",
+        "leftLabel": "Healthy Synced Application",
+        "rightLabel": "Drifted OutOfSync Application",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Controller classifies resources into synchronized or out of sync statuses.",
+            "left": {
+              "code": "syncStatus: 'Synced'",
+              "result": {
+                "text": "Synced"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "healthStatus: 'Healthy'",
+              "result": {
+                "text": "Healthy"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Progressing deployments transition to healthy once readiness probes pass.",
+            "left": {
+              "code": "syncStatus: 'OutOfSync'",
+              "result": {
+                "text": "OutOfSync"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "appName: 'billing-api'",
+              "result": {
+                "text": "billing-api"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Cluster GitOps & The App-of-Apps Pattern",
+      "codeHash": "ef6a8386d1188b595eb69efb9764489ec0b9dbd04d82d073479a35620c743726",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

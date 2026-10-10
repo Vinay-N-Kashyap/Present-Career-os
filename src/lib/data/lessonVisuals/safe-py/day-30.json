@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Looking back",
+      "codeHash": "ae1f98c8d5e8a5663f09e3c8856ae94003a5072d15dd3f7c127ecda4370e4265",
+      "spec": {
+        "template": "table",
+        "title": "Curriculum defense-in-depth safety layers overview",
+        "columns": [
+          "layers",
+          "day"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safety layers guard user messages throughout the processing pipeline.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "day"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "EMPTY"
+                  },
+                  {
+                    "text": "day"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The capstone guardrail combines multiple defensive checks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "day"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "INJECTION"
+                  },
+                  {
+                    "text": "BANNED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Curriculum defense-in-depth safety layers overview",
+        "columns": [
+          "layers",
+          "day"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safety layers guard user messages throughout the processing pipeline.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "day"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "EMPTY",
+                  "day"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The capstone guardrail combines multiple defensive checks.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "day"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "INJECTION",
+                  "BANNED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Collecting reasons, not stopping early",
+      "codeHash": "0b5d2f5c83606e94a2ba18227c216f4717fc530bfedd1bc865222cb6d2e57ce1",
+      "spec": {
+        "template": "table",
+        "title": "Reason accumulation and violation condition tracking",
+        "columns": [
+          "text",
+          "reasons"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The guardrail collects every applicable reason in fixed order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "reasons"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "EMPTY"
+                  },
+                  {
+                    "text": "TOO_LONG"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Collecting all reasons provides richer logs for incident investigation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "reasons"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "INJECTION"
+                  },
+                  {
+                    "text": "CARD"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reason accumulation and violation condition tracking",
+        "columns": [
+          "text",
+          "reasons"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The guardrail collects every applicable reason in fixed order.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "reasons"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "EMPTY",
+                  "TOO_LONG"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Collecting all reasons provides richer logs for incident investigation.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "reasons"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "INJECTION",
+                  "CARD"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From reasons to a decision",
+      "codeHash": "158b230eb24a9275767a000a7328a9ceec976ba4941e944d04c53b42387aa7ed",
+      "spec": {
+        "template": "table",
+        "title": "Reason set evaluation to final enforcement decision",
+        "columns": [
+          "reasons",
+          "reasons"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Severe policy violations trigger an immediate block decision.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reasons"
+                  },
+                  {
+                    "text": "reasons"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CARD"
+                  },
+                  {
+                    "text": "BLOCK"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When no violation reasons exist the message decision is allow.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reasons"
+                  },
+                  {
+                    "text": "reasons"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "REDACT"
+                  },
+                  {
+                    "text": "ALLOW"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reason set evaluation to final enforcement decision",
+        "columns": [
+          "reasons",
+          "reasons"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Severe policy violations trigger an immediate block decision.",
+            "rows": [
+              {
+                "cells": [
+                  "reasons",
+                  "reasons"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "CARD",
+                  "BLOCK"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When no violation reasons exist the message decision is allow.",
+            "rows": [
+              {
+                "cells": [
+                  "reasons",
+                  "reasons"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "REDACT",
+                  "ALLOW"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The full guardrail",
+      "codeHash": "2010c725f7e71d2887c2e99fdb2fd27633c3a3d4b3c744cbcdf74442ff03d3ff",
+      "spec": {
+        "template": "table",
+        "title": "Multi-layer guardrail pipeline regex and normalization checks",
+        "columns": [
+          "INJ",
+          "CARD"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Integrated pipeline layers form a compact defensive guardrail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "INJ"
+                  },
+                  {
+                    "text": "CARD"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "EMPTY"
+                  },
+                  {
+                    "text": "TOO_LONG"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Checks detect injections, banned terms, and card numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "INJ"
+                  },
+                  {
+                    "text": "CARD"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "INJECTION"
+                  },
+                  {
+                    "text": "BANNED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-layer guardrail pipeline regex and normalization checks",
+        "columns": [
+          "INJ",
+          "CARD"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Integrated pipeline layers form a compact defensive guardrail.",
+            "rows": [
+              {
+                "cells": [
+                  "INJ",
+                  "CARD"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "EMPTY",
+                  "TOO_LONG"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Checks detect injections, banned terms, and card numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "INJ",
+                  "CARD"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "INJECTION",
+                  "BANNED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The safety scorecard",
+      "codeHash": "9b2b1cd41f590b6d20dbcccebcdf0a73b959c93da2beb5891a7cc774cf1b243b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Your safety pipeline",
+      "codeHash": "2345aeb86bc2b97e1f11acaea34342d5de94111573cf58ac8db454701eaf9a30",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

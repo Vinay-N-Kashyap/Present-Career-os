@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 30,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Capstone Architectural Blueprint: Modular Controller, Service, and Repository Layers",
+      "codeHash": "89ac029cb70f693339ffe93a19885b6566bab9c952d79714fffb58af0d720784",
+      "spec": {
+        "template": "boxes",
+        "title": "Three-tier architecture job entity attributes",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "id": "sal",
+            "label": "salary"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise backends rely on controller service and repository layers.",
+            "values": {
+              "title": {
+                "text": "Staff Engineer"
+              },
+              "sal": {
+                "text": "160000"
+              }
+            },
+            "tones": {
+              "title": "data",
+              "sal": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Services enforce domain validation without knowing database details.",
+            "values": {
+              "title": {
+                "text": "Staff Engineer"
+              },
+              "sal": {
+                "text": "160000"
+              }
+            },
+            "tones": {
+              "title": "data",
+              "sal": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "This strict separation of concerns makes your backend highly modular.",
+            "values": {
+              "title": {
+                "text": "Staff Engineer"
+              },
+              "sal": {
+                "text": "160000"
+              }
+            },
+            "tones": {
+              "title": "ok",
+              "sal": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Three-tier architecture job entity attributes",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "id": "sal",
+            "label": "salary"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise backends rely on controller service and repository layers.",
+            "values": {
+              "title": "Staff Engineer",
+              "sal": "160000"
+            },
+            "tones": {
+              "title": "data",
+              "sal": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Services enforce domain validation without knowing database details.",
+            "values": {
+              "title": "Staff Engineer",
+              "sal": "160000"
+            },
+            "tones": {
+              "title": "data",
+              "sal": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "This strict separation of concerns makes your backend highly modular.",
+            "values": {
+              "title": "Staff Engineer",
+              "sal": "160000"
+            },
+            "tones": {
+              "title": "ok",
+              "sal": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unifying Middleware: Security Headers, Logging, and Rate Limiting",
+      "codeHash": "3f3bdd26bf8702cee262fd645c22b3a90c8c6945a386a7abdff5132e87403c74",
+      "spec": {
+        "template": "boxes",
+        "title": "Pipeline context request parameters",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "path",
+            "label": "path"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Requests pass through security and operational middleware pipelines.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "path": {
+                "text": "/api/jobs"
+              }
+            },
+            "tones": {
+              "method": "data",
+              "path": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Structured logging middleware records request methods paths and durations.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "path": {
+                "text": "/api/jobs"
+              }
+            },
+            "tones": {
+              "method": "data",
+              "path": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Chaining middleware linearly ensures every incoming request is protected.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "path": {
+                "text": "/api/jobs"
+              }
+            },
+            "tones": {
+              "method": "ok",
+              "path": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Pipeline context request parameters",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "path",
+            "label": "path"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Requests pass through security and operational middleware pipelines.",
+            "values": {
+              "method": "GET",
+              "path": "/api/jobs"
+            },
+            "tones": {
+              "method": "data",
+              "path": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Structured logging middleware records request methods paths and durations.",
+            "values": {
+              "method": "GET",
+              "path": "/api/jobs"
+            },
+            "tones": {
+              "method": "data",
+              "path": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Chaining middleware linearly ensures every incoming request is protected.",
+            "values": {
+              "method": "GET",
+              "path": "/api/jobs"
+            },
+            "tones": {
+              "method": "ok",
+              "path": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Request Pipeline: Validation, Authentication, and Business Dispatch",
+      "codeHash": "68c6103669c2a54c36a6225a66097dac38a59441c3116dcf7291cb482a62cbb5",
+      "spec": {
+        "template": "boxes",
+        "title": "Authorized user authentication identity and role",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "role",
+            "label": "role"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Authentication verifies bearer tokens and extracts identity claims.",
+            "values": {
+              "id": {
+                "text": "usr_1"
+              },
+              "role": {
+                "text": "student"
+              }
+            },
+            "tones": {
+              "id": "data",
+              "role": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Role based access control halts requests if permissions are lacking.",
+            "values": {
+              "id": {
+                "text": "usr_1"
+              },
+              "role": {
+                "text": "student"
+              }
+            },
+            "tones": {
+              "id": "error",
+              "role": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Only requests passing security checks dispatch to business handlers.",
+            "values": {
+              "id": {
+                "text": "usr_2"
+              },
+              "role": {
+                "text": "admin"
+              }
+            },
+            "tones": {
+              "id": "ok",
+              "role": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Authorized user authentication identity and role",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "role",
+            "label": "role"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Authentication verifies bearer tokens and extracts identity claims.",
+            "values": {
+              "id": "usr_1",
+              "role": "student"
+            },
+            "tones": {
+              "id": "data",
+              "role": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Role based access control halts requests if permissions are lacking.",
+            "values": {
+              "id": "usr_1",
+              "role": "student"
+            },
+            "tones": {
+              "id": "error",
+              "role": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Only requests passing security checks dispatch to business handlers.",
+            "values": {
+              "id": "usr_2",
+              "role": "admin"
+            },
+            "tones": {
+              "id": "ok",
+              "role": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Observability, Metrics Collection, and Error Boundary Recovery",
+      "codeHash": "3ef458bbb32c81ae9abf0bc16ea5d32a57e4711b5e53a8908370ab285d16e8a0",
+      "spec": {
+        "template": "boxes",
+        "title": "Global error boundary status and sanitized title",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status"
+          },
+          {
+            "id": "title",
+            "label": "title"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Global error boundary middleware wraps the request pipeline in a catch.",
+            "values": {
+              "status": {
+                "text": "200"
+              },
+              "title": {
+                "text": "Internal Server Error"
+              }
+            },
+            "tones": {
+              "status": "ok",
+              "title": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Unhandled exceptions are intercepted to return a sanitized RFC response.",
+            "values": {
+              "status": {
+                "text": "500"
+              },
+              "title": {
+                "text": "Internal Server Error"
+              }
+            },
+            "tones": {
+              "status": "error",
+              "title": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sanitizing errors protects infrastructure details while servers stay online.",
+            "values": {
+              "status": {
+                "text": "500"
+              },
+              "title": {
+                "text": "Internal Server Error"
+              }
+            },
+            "tones": {
+              "status": "ok",
+              "title": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Global error boundary status and sanitized title",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status"
+          },
+          {
+            "id": "title",
+            "label": "title"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Global error boundary middleware wraps the request pipeline in a catch.",
+            "values": {
+              "status": "200",
+              "title": "Internal Server Error"
+            },
+            "tones": {
+              "status": "ok",
+              "title": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Unhandled exceptions are intercepted to return a sanitized RFC response.",
+            "values": {
+              "status": "500",
+              "title": "Internal Server Error"
+            },
+            "tones": {
+              "status": "error",
+              "title": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sanitizing errors protects infrastructure details while servers stay online.",
+            "values": {
+              "status": "500",
+              "title": "Internal Server Error"
+            },
+            "tones": {
+              "status": "ok",
+              "title": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Request Trace: From Ingress to Idempotent Mutation",
+      "codeHash": "1561ab0c55703b129a10defbe3e8bcfd8c1cb47e9134891af2e07e12547e9de3",
+      "spec": {
+        "template": "boxes",
+        "title": "Request pipeline end-to-end trace context",
+        "boxes": [
+          {
+            "id": "trace",
+            "label": "traceId"
+          },
+          {
+            "id": "step",
+            "label": "stepLog"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When clients send mutating requests with keys they enter the pipeline.",
+            "values": {
+              "trace": {
+                "text": "trace_abc_123"
+              },
+              "step": {
+                "text": "1. Security & Trace Headers attached"
+              }
+            },
+            "tones": {
+              "trace": "data",
+              "step": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Authentication validates tokens and services invoke the repository.",
+            "values": {
+              "trace": {
+                "text": "trace_abc_123"
+              },
+              "step": {
+                "text": "5. Application Entity Saved in Repository"
+              }
+            },
+            "tones": {
+              "trace": "data",
+              "step": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "The response is cached under idempotency keys and returned to clients.",
+            "values": {
+              "trace": {
+                "text": "trace_abc_123"
+              },
+              "step": {
+                "text": "6. Emitted 201 Created"
+              }
+            },
+            "tones": {
+              "trace": "ok",
+              "step": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Request pipeline end-to-end trace context",
+        "boxes": [
+          {
+            "id": "trace",
+            "label": "traceId"
+          },
+          {
+            "id": "step",
+            "label": "stepLog"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When clients send mutating requests with keys they enter the pipeline.",
+            "values": {
+              "trace": "trace_abc_123",
+              "step": "1. Security & Trace Headers attached"
+            },
+            "tones": {
+              "trace": "data",
+              "step": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Authentication validates tokens and services invoke the repository.",
+            "values": {
+              "trace": "trace_abc_123",
+              "step": "5. Application Entity Saved in Repository"
+            },
+            "tones": {
+              "trace": "data",
+              "step": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "The response is cached under idempotency keys and returned to clients.",
+            "values": {
+              "trace": "trace_abc_123",
+              "step": "6. Emitted 201 Created"
+            },
+            "tones": {
+              "trace": "ok",
+              "step": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building the Unified Production API Engine",
+      "codeHash": "92f8edd0b9eeade08b332ced7821505b039c7989fa8ea5ef99f2af42e4aba95c",
+      "spec": {
+        "template": "none",
+        "reason": "Building the unified production API engine"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building the unified production API engine"
+      }
+    }
+  ]
+}

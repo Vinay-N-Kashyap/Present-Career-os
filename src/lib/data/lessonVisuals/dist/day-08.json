@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 8,
+  "promptSha": "13d290aafd89c71521623bf716558b3caaa22accb9a27650d016afaf0799153c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Unique ID Challenge: Auto-Increment Limitations & UUIDv4 Flaws",
+      "codeHash": "70b6e49df48802c7a0639fb2c3fdefcdf93d5104e9e3684ef5517ccec2865814",
+      "spec": {
+        "template": "compare",
+        "title": "Compact 64-bit Snowflake integer index compared to random UUID string index",
+        "leftLabel": "64-Bit Snowflake Integer ID",
+        "rightLabel": "128-Bit UUIDv4 Random String",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Inserting completely random identifiers causes massive index disk page splits.",
+            "left": {
+              "code": "1M Records Index Size (64-bit Snowflake): 22.9 MB",
+              "result": {
+                "text": "22.9 MB"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "1M Records Index Size (128-bit UUIDv4): 49.6 MB",
+              "result": {
+                "text": "49.6 MB"
+              },
+              "tone": "warn"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Random string identifiers consume twice the storage space of compact integers.",
+            "left": {
+              "code": "keySizeBytes: 8 bytes",
+              "result": {
+                "text": "22.9"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "keySizeBytes: 36 bytes",
+              "result": {
+                "text": "49.6"
+              },
+              "tone": "failed"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Compact 64-bit Snowflake integer index compared to random UUID string index",
+        "leftLabel": "64-Bit Snowflake Integer ID",
+        "rightLabel": "128-Bit UUIDv4 Random String",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Inserting completely random identifiers causes massive index disk page splits.",
+            "left": {
+              "code": "1M Records Index Size (64-bit Snowflake): 22.9 MB",
+              "result": {
+                "text": "22.9 MB"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "1M Records Index Size (128-bit UUIDv4): 49.6 MB",
+              "result": {
+                "text": "49.6 MB"
+              },
+              "tone": "warn"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Random string identifiers consume twice the storage space of compact integers.",
+            "left": {
+              "code": "keySizeBytes: 8 bytes",
+              "result": {
+                "text": "22.9"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "keySizeBytes: 36 bytes",
+              "result": {
+                "text": "49.6"
+              },
+              "tone": "failed"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Twitter Snowflake Architecture: 64-Bit Bit-Packing Layout",
+      "codeHash": "9b1abd548d7b61135ef14c825f3e69aaf286273ed07dfeef53259f169689cd1f",
+      "spec": {
+        "template": "table",
+        "title": "Twitter Snowflake 64-bit binary layout field specifications",
+        "columns": [
+          "Bit-Field Segment",
+          "Bit Width Allocation",
+          "Represented Capacity",
+          "Architectural Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An unused sign bit ensures that generated integer keys remain positive.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Worker machine bits identify independent generator nodes across datacenters.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Twitter Snowflake 64-bit binary layout field specifications",
+        "columns": [
+          "Bit-Field Segment",
+          "Bit Width Allocation",
+          "Represented Capacity",
+          "Architectural Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An unused sign bit ensures that generated integer keys remain positive.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Worker machine bits identify independent generator nodes across datacenters.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bit-Shifting Math: Timestamp, Machine ID & Sequence Assembly",
+      "codeHash": "958bfdb250c5a6fea0c68b73125ad49c9a13f64372cc5106f3667ddb681876dd",
+      "spec": {
+        "template": "cells",
+        "title": "Snowflake 64-bit binary bit-shift representation segments",
+        "cells": [
+          {
+            "id": "bSign",
+            "label": "Bit 63: Sign Bit (0)",
+            "value": "0b0",
+            "tone": "idle"
+          },
+          {
+            "id": "bTime",
+            "label": "Bits 22-62: Timestamp Delta (41 bits)",
+            "value": "<< 22n",
+            "tone": "ok"
+          },
+          {
+            "id": "bWork",
+            "label": "Bits 12-21: Worker Machine ID (10 bits)",
+            "value": "<< 12n",
+            "tone": "data"
+          },
+          {
+            "id": "bSeq",
+            "label": "Bits 0-11: Sequence Number (12 bits)",
+            "value": "& 4095",
+            "tone": "warn"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The timestamp delta is shifted left to clear space for lower bits.",
+            "highlightIds": [
+              "bTime"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Combining segments using bitwise operators produces the composite integer.",
+            "highlightIds": [
+              "bSign",
+              "bTime",
+              "bWork",
+              "bSeq"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Snowflake 64-bit binary bit-shift representation segments",
+        "cells": [
+          {
+            "id": "bSign",
+            "label": "Bit 63: Sign Bit (0)",
+            "value": "0b0",
+            "tone": "idle"
+          },
+          {
+            "id": "bTime",
+            "label": "Bits 22-62: Timestamp Delta (41 bits)",
+            "value": "<< 22n",
+            "tone": "ok"
+          },
+          {
+            "id": "bWork",
+            "label": "Bits 12-21: Worker Machine ID (10 bits)",
+            "value": "<< 12n",
+            "tone": "data"
+          },
+          {
+            "id": "bSeq",
+            "label": "Bits 0-11: Sequence Number (12 bits)",
+            "value": "& 4095",
+            "tone": "warn"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The timestamp delta is shifted left to clear space for lower bits.",
+            "highlightIds": [
+              "bTime"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Combining segments using bitwise operators produces the composite integer.",
+            "highlightIds": [
+              "bSign",
+              "bTime",
+              "bWork",
+              "bSeq"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sequence Exhaustion & Sub-Millisecond Rollover Handling",
+      "codeHash": "38ff907b5e556bdc38d12b9973501bbed8787ab210b091b7627ddf87dfeb41e5",
+      "spec": {
+        "template": "workflow",
+        "title": "Sub-millisecond sequence counter exhaustion and rollover workflow",
+        "stages": [
+          {
+            "id": "checkMs",
+            "name": "Timestamp Check",
+            "subtext": "Compare to Last ms"
+          },
+          {
+            "id": "incSequence",
+            "name": "Increment Sequence",
+            "subtext": "Sequence + 1"
+          },
+          {
+            "id": "detectOverflow",
+            "name": "Overflow Detection",
+            "subtext": "Sequence === 0"
+          },
+          {
+            "id": "advanceClock",
+            "name": "Advance Millisecond",
+            "subtext": "Wait Next ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Generators detect when local sequence counters overflow active boundaries.",
+            "activeStageId": "detectOverflow",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Advancing the wall clock resets the local sequence counter safely.",
+            "activeStageId": "advanceClock",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Sub-millisecond sequence counter exhaustion and rollover workflow",
+        "stages": [
+          {
+            "id": "checkMs",
+            "name": "Timestamp Check",
+            "subtext": "Compare to Last ms"
+          },
+          {
+            "id": "incSequence",
+            "name": "Increment Sequence",
+            "subtext": "Sequence + 1"
+          },
+          {
+            "id": "detectOverflow",
+            "name": "Overflow Detection",
+            "subtext": "Sequence === 0"
+          },
+          {
+            "id": "advanceClock",
+            "name": "Advance Millisecond",
+            "subtext": "Wait Next ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Generators detect when local sequence counters overflow active boundaries.",
+            "activeStageId": "detectOverflow",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Advancing the wall clock resets the local sequence counter safely.",
+            "activeStageId": "advanceClock",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clock Backward Drift (NTP Rewind) & Leap Second Mitigations",
+      "codeHash": "62b08ba6bc6c64e6fd90aee3027fc889b54080b55286fdae8532110e24f07722",
+      "spec": {
+        "template": "states",
+        "title": "NTP backward clock drift detection and safety mitigation states",
+        "states": [
+          {
+            "id": "normalClock",
+            "label": "Monotonic Clock Advance (Normal Flow)"
+          },
+          {
+            "id": "minorDrift",
+            "label": "Minor Backward Drift (Tolerated Catchup Pause)"
+          },
+          {
+            "id": "fatalDrift",
+            "label": "Severe Backward Drift (Fatal Error Halted)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clock backward drift introduces operational hazards for distributed systems.",
+            "activeStateId": "minorDrift",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say8",
+            "caption": "Minor backward drift allows the generator to wait until the clock catches up.",
+            "activeStateId": "fatalDrift",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "NTP backward clock drift detection and safety mitigation states",
+        "states": [
+          {
+            "id": "normalClock",
+            "label": "Monotonic Clock Advance (Normal Flow)"
+          },
+          {
+            "id": "minorDrift",
+            "label": "Minor Backward Drift (Tolerated Catchup Pause)"
+          },
+          {
+            "id": "fatalDrift",
+            "label": "Severe Backward Drift (Fatal Error Halted)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clock backward drift introduces operational hazards for distributed systems.",
+            "activeStateId": "minorDrift",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say8",
+            "caption": "Minor backward drift allows the generator to wait until the clock catches up.",
+            "activeStateId": "fatalDrift",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Snowflake ID Generator Engine with BigInt & Clock Drift Protection",
+      "codeHash": "01474188077c8e49326f61a1c3da2caa1656de0c9e5d78630925245fa2e2f4e7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

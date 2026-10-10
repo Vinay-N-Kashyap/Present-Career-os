@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 1,
+  "promptSha": "4e44213cf06af44f0ad260ee6d95c3cd5772e743489e16580073ae49deb963da",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Asymptotic Upper Bounds & Growth Rates",
+      "codeHash": "0a341bca72816d52f05b2b3b7657f9faeef45e55de7e046c174d88e1b48ef222",
+      "spec": {
+        "template": "table",
+        "title": "Step ratio scaling across complexities",
+        "columns": [
+          "Function",
+          "Growth Ratio"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Constant time algorithm maintains identical execution ratio.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "constantFn"
+                  },
+                  {
+                    "text": "1.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "linearFn"
+                  },
+                  {
+                    "text": "2.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "quadraticFn"
+                  },
+                  {
+                    "text": "4.0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Linear algorithm doubles operations when input doubles.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "constantFn"
+                  },
+                  {
+                    "text": "1.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "linearFn"
+                  },
+                  {
+                    "text": "2.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "quadraticFn"
+                  },
+                  {
+                    "text": "4.0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Step ratio scaling across complexities",
+        "columns": [
+          "Function",
+          "Growth Ratio"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Constant time algorithm maintains identical execution ratio.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "constantFn",
+                  "1.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "linearFn",
+                  "2.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "quadraticFn",
+                  "4.0"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Linear algorithm doubles operations when input doubles.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "constantFn",
+                  "1.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "linearFn",
+                  "2.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "quadraticFn",
+                  "4.0"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auxiliary Heap vs Call Stack Space Complexity",
+      "codeHash": "9ca38a9fc8dd07513b9cc0769f5ec78e68e96b65028b75e6973090746fbfa742",
+      "spec": {
+        "template": "compare",
+        "title": "Heap memory vs execution call stack",
+        "leftLabel": "Dynamic Heap",
+        "rightLabel": "Call Stack",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Heap space holds dynamically allocated objects.",
+            "left": {
+              "code": "auxiliaryHeap",
+              "result": {
+                "text": "O(N)"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "callStackDepth",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Call stack frames allocate memory recursively.",
+            "left": {
+              "code": "auxiliaryHeap",
+              "result": {
+                "text": "O(1)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "callStackDepth",
+              "result": {
+                "text": "O(N)"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Heap memory vs execution call stack",
+        "leftLabel": "Dynamic Heap",
+        "rightLabel": "Call Stack",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Heap space holds dynamically allocated objects.",
+            "left": {
+              "code": "auxiliaryHeap",
+              "result": "O(N)",
+              "tone": "data"
+            },
+            "right": {
+              "code": "callStackDepth",
+              "result": "1",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Call stack frames allocate memory recursively.",
+            "left": {
+              "code": "auxiliaryHeap",
+              "result": "O(1)",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "callStackDepth",
+              "result": "O(N)",
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Big-O Hierarchy & Dominant Term Simplification",
+      "codeHash": "c7e41ee4cff7fdd0313460c3d6179d54959ffce824007ade64fcba97c365343e",
+      "spec": {
+        "template": "bars",
+        "title": "Big-O hierarchy and dominant term ranking",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Dominant polynomial terms outgrow all smaller terms combined.",
+            "bars": [
+              {
+                "label": "O(1)",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "O(N)",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "O(N^2)",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hierarchy strictly establishes term dominance ranking.",
+            "bars": [
+              {
+                "label": "O(1)",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "O(N)",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "O(N^2)",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "O(2^N)",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Big-O hierarchy and dominant term ranking",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Dominant polynomial terms outgrow all smaller terms combined.",
+            "bars": [
+              {
+                "label": "O(1)",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "O(N)",
+                "value": 3,
+                "tone": "data"
+              },
+              {
+                "label": "O(N^2)",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hierarchy strictly establishes term dominance ranking.",
+            "bars": [
+              {
+                "label": "O(1)",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "O(N)",
+                "value": 3,
+                "tone": "data"
+              },
+              {
+                "label": "O(N^2)",
+                "value": 5,
+                "tone": "data"
+              },
+              {
+                "label": "O(2^N)",
+                "value": 6,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Logarithmic Halving & Binary Search Spaces",
+      "codeHash": "3fa4ac17a1fcff0b52b576981772c0bc46949e176db17c6a609e51137539ca0e",
+      "spec": {
+        "template": "table",
+        "title": "Binary halving step counts by input size",
+        "columns": [
+          "Input Size",
+          "Halving Steps"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Halving sixteen elements takes four operations to reach one.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1048576"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Binary search requires ten comparisons for one thousand items.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1048576"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Binary halving step counts by input size",
+        "columns": [
+          "Input Size",
+          "Halving Steps"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Halving sixteen elements takes four operations to reach one.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "4"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1048576",
+                  "20"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Binary search requires ten comparisons for one thousand items.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "4"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1048576",
+                  "20"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amortized Complexity & Aggregate Capacity Doubling",
+      "codeHash": "d7f8587bbc33a8af5deff3f495368b4cb13f1329c5eb2b54427519f0e7066229",
+      "spec": {
+        "template": "compare",
+        "title": "Normal insertion vs buffer expansion copying",
+        "leftLabel": "Spare Capacity",
+        "rightLabel": "Resizing Doubling",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Inserting element with spare capacity runs in constant time.",
+            "left": {
+              "code": "totalCopies",
+              "result": {
+                "text": "O(1)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "capacity *= 2",
+              "result": {
+                "text": "O(N)"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Resizing operations occur exponentially less frequently.",
+            "left": {
+              "code": "averageCost",
+              "result": {
+                "text": "O(1)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "pushes",
+              "result": {
+                "text": "2N"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Normal insertion vs buffer expansion copying",
+        "leftLabel": "Spare Capacity",
+        "rightLabel": "Resizing Doubling",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Inserting element with spare capacity runs in constant time.",
+            "left": {
+              "code": "totalCopies",
+              "result": "O(1)",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "capacity *= 2",
+              "result": "O(N)",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Resizing operations occur exponentially less frequently.",
+            "left": {
+              "code": "averageCost",
+              "result": "O(1)",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "pushes",
+              "result": "2N",
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Complexity Auditing & Complexity Verification",
+      "codeHash": "23fb67495a9d7cea892844794da00c32c277adb31dec814f4f7e321bad6a5152",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

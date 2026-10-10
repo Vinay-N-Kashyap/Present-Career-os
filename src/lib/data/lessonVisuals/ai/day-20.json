@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 20,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The UX Latency Bottleneck: TTFT vs Total Generation Time",
+      "codeHash": "8b1b8e96625a15e9b91e675e3375063fc95575bffdaf0bcbc567cc70c1f48320",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to TTFT and real-time streaming ergonomics"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to TTFT and real-time streaming ergonomics"
+      }
+    },
+    {
+      "partTitle": "Server-Sent Events (SSE) Protocol Fundamentals & Headers",
+      "codeHash": "18f531fad535d29e0da2be96d677824c61dea6dcee4049ebb0539c0a564195cc",
+      "spec": {
+        "template": "table",
+        "title": "Server-Sent Events HTTP protocol headers and frame boundary delimiters",
+        "columns": [
+          "Protocol Field",
+          "Wire Specification",
+          "HTTP Standard",
+          "Runtime Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The server keeps the HTTP socket open and transmits streaming text chunks.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Double newline delimiters inform the client that an event frame is complete.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Server-Sent Events HTTP protocol headers and frame boundary delimiters",
+        "columns": [
+          "Protocol Field",
+          "Wire Specification",
+          "HTTP Standard",
+          "Runtime Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The server keeps the HTTP socket open and transmits UTF-8 text chunks.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Double newline delimiters inform the client that an event frame is complete.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OpenAI-Compatible Streaming Delta Chunk Schema",
+      "codeHash": "7c45f8a12f3475262afa5ec7355c7f328e1f83fc9819347e25b0ad81be92e146",
+      "spec": {
+        "template": "boxes",
+        "title": "OpenAI-compatible streaming delta completion JSON chunk schema",
+        "boxes": [
+          {
+            "id": "roleChunk",
+            "title": "Role Initialization",
+            "items": [
+              "delta.role: assistant",
+              "delta.content: empty",
+              "Prepares client buffer"
+            ]
+          },
+          {
+            "id": "deltaChunk",
+            "title": "Delta Token Fragments",
+            "items": [
+              "delta.content: subword",
+              "Incremental text pieces",
+              "Real-time UI reassembly"
+            ]
+          },
+          {
+            "id": "sentinelChunk",
+            "title": "Terminal Sentinel",
+            "items": [
+              "finish_reason: stop",
+              "data: [DONE] delimiter",
+              "Closes TCP connection"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each choice contains a delta object with an incremental content string.",
+            "activeBoxId": "deltaChunk",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The server transmits a terminal sentinel frame signaling stream completion.",
+            "activeBoxId": "sentinelChunk",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "OpenAI-compatible streaming delta completion JSON chunk schema",
+        "boxes": [
+          {
+            "id": "roleChunk",
+            "title": "Role Initialization",
+            "items": [
+              "delta.role: assistant",
+              "delta.content: empty",
+              "Prepares client buffer"
+            ]
+          },
+          {
+            "id": "deltaChunk",
+            "title": "Delta Token Fragments",
+            "items": [
+              "delta.content: subword",
+              "Incremental text pieces",
+              "Real-time UI reassembly"
+            ]
+          },
+          {
+            "id": "sentinelChunk",
+            "title": "Terminal Sentinel",
+            "items": [
+              "finish_reason: stop",
+              "data: [DONE] delimiter",
+              "Closes TCP connection"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each choice contains a delta object with an incremental content string.",
+            "activeBoxId": "deltaChunk",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The server transmits a terminal sentinel frame signaling stream completion.",
+            "activeBoxId": "sentinelChunk",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Simulating the Server-Side Token Stream Generator",
+      "codeHash": "c29dfc1956370940a9edeeef47f7ba4034e3d958e1a137bad9fafb0cae85bd34",
+      "spec": {
+        "template": "flow",
+        "title": "Backend server-side token generation and SSE frame emission pipeline",
+        "nodes": [
+          {
+            "id": "inference",
+            "label": "LLM Inference Engine",
+            "tappable": false
+          },
+          {
+            "id": "tokenizer",
+            "label": "Token Fragment Emitter",
+            "tappable": false
+          },
+          {
+            "id": "sseFormatter",
+            "label": "SSE Frame Formatter",
+            "tappable": false
+          },
+          {
+            "id": "socket",
+            "label": "Flushed HTTP Socket",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "inference",
+            "to": "tokenizer",
+            "label": "Generates Next Token"
+          },
+          {
+            "from": "tokenizer",
+            "to": "sseFormatter",
+            "label": "Builds Delta Chunk JSON"
+          },
+          {
+            "from": "sseFormatter",
+            "to": "socket",
+            "label": "Flushes Frame Directly"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The emitter constructs chunk JSON and packages it inside an SSE frame.",
+            "activeNodes": [
+              "tokenizer",
+              "sseFormatter"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "High throughput servers flush each chunk immediately without buffering.",
+            "activeNodes": [
+              "sseFormatter",
+              "socket"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Backend server-side token generation and SSE frame emission pipeline",
+        "nodes": [
+          {
+            "id": "inference",
+            "label": "LLM Inference Engine",
+            "tappable": false
+          },
+          {
+            "id": "tokenizer",
+            "label": "Token Fragment Emitter",
+            "tappable": false
+          },
+          {
+            "id": "sseFormatter",
+            "label": "SSE Frame Formatter",
+            "tappable": false
+          },
+          {
+            "id": "socket",
+            "label": "Flushed HTTP Socket",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "inference",
+            "to": "tokenizer",
+            "label": "Generates Next Token"
+          },
+          {
+            "from": "tokenizer",
+            "to": "sseFormatter",
+            "label": "Builds Delta Chunk JSON"
+          },
+          {
+            "from": "sseFormatter",
+            "to": "socket",
+            "label": "Flushes Frame Directly"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The emitter constructs chunk JSON and packages it inside an SSE frame.",
+            "activeNodes": [
+              "tokenizer",
+              "sseFormatter"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "High throughput servers flush each chunk immediately without buffering.",
+            "activeNodes": [
+              "sseFormatter",
+              "socket"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient Client-Side SSE Chunk Parsing & Line Buffering",
+      "codeHash": "abaef6c9a5e7c1c23a713390f2e5d27d0c20944ea67fe0c3ff1a7f7274eca803",
+      "spec": {
+        "template": "compare",
+        "title": "Naive packet parsing versus resilient line-buffered SSE chunk ingestion",
+        "left": {
+          "title": "Naive Packet Parsing",
+          "items": [
+            "Parses raw incoming packets",
+            "Assumes clean frame boundaries",
+            "Crashes on split TCP packets",
+            "Throws JSON syntax exceptions"
+          ]
+        },
+        "right": {
+          "title": "Resilient Line Buffer",
+          "items": [
+            "Accumulates raw fragment bytes",
+            "Splits on double newlines",
+            "Retains incomplete fragments",
+            "Guarantees 100% parse safety"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Naive parsing on raw incoming network packets causes JSON syntax crashes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Complete frames are extracted while incomplete fragments stay in the buffer.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Naive Packet Parsing",
+        "rightLabel": "Resilient Line Buffer"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Naive packet parsing versus resilient line-buffered SSE chunk ingestion",
+        "left": {
+          "title": "Naive Packet Parsing",
+          "items": [
+            "Parses raw incoming packets",
+            "Assumes clean frame boundaries",
+            "Crashes on split TCP packets",
+            "Throws JSON syntax exceptions"
+          ]
+        },
+        "right": {
+          "title": "Resilient Line Buffer",
+          "items": [
+            "Accumulates raw fragment bytes",
+            "Splits on double newlines",
+            "Retains incomplete fragments",
+            "Guarantees 100% parse safety"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Naive parsing on raw incoming network packets causes JSON syntax crashes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Complete frames are extracted while incomplete fragments stay in the buffer.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Naive Packet Parsing",
+        "rightLabel": "Resilient Line Buffer"
+      }
+    },
+    {
+      "partTitle": "Production Real-Time Streaming Pipeline: Reassembly & Metrics",
+      "codeHash": "e5940b04a97467a2b6c069aa5b6bd99f7d6108a9250befee10f3de14d69f58e1",
+      "spec": {
+        "template": "sequence",
+        "title": "End-to-end production real-time token streaming pipeline transaction",
+        "actors": [
+          {
+            "id": "browser",
+            "label": "Client Application"
+          },
+          {
+            "id": "gateway",
+            "label": "API Route Gateway"
+          },
+          {
+            "id": "generator",
+            "label": "Inference Streamer"
+          },
+          {
+            "id": "buffer",
+            "label": "Client Line Buffer"
+          }
+        ],
+        "messages": [
+          {
+            "from": "browser",
+            "to": "gateway",
+            "label": "Initiate Prompt Request",
+            "tone": "data"
+          },
+          {
+            "from": "gateway",
+            "to": "generator",
+            "label": "Start Streaming Inference Session",
+            "tone": "data"
+          },
+          {
+            "from": "generator",
+            "to": "buffer",
+            "label": "Transmit Fragmented SSE Chunks",
+            "tone": "data"
+          },
+          {
+            "from": "buffer",
+            "to": "browser",
+            "label": "Emit Rendered Tokens In Real Time",
+            "tone": "ok"
+          },
+          {
+            "from": "generator",
+            "to": "browser",
+            "label": "Transmit Sentinel Frame to Close",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Network packets arrive in fragments and the parser reconstitutes the stream.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The pipeline terminates cleanly upon receiving the sentinel frame.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "End-to-end production real-time token streaming pipeline transaction",
+        "actors": [
+          {
+            "id": "browser",
+            "label": "Client Application"
+          },
+          {
+            "id": "gateway",
+            "label": "API Route Gateway"
+          },
+          {
+            "id": "generator",
+            "label": "Inference Streamer"
+          },
+          {
+            "id": "buffer",
+            "label": "Client Line Buffer"
+          }
+        ],
+        "messages": [
+          {
+            "from": "browser",
+            "to": "gateway",
+            "label": "Initiate Prompt Request",
+            "tone": "data"
+          },
+          {
+            "from": "gateway",
+            "to": "generator",
+            "label": "Start Streaming Inference Session",
+            "tone": "data"
+          },
+          {
+            "from": "generator",
+            "to": "buffer",
+            "label": "Transmit Fragmented SSE Chunks",
+            "tone": "data"
+          },
+          {
+            "from": "buffer",
+            "to": "browser",
+            "label": "Emit Rendered Tokens In Real Time",
+            "tone": "ok"
+          },
+          {
+            "from": "generator",
+            "to": "browser",
+            "label": "Transmit Sentinel Frame to Close",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Network packets arrive in fragments and the parser reconstitutes the stream.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The pipeline terminates cleanly upon receiving the sentinel frame.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

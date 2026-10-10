@@ -1,0 +1,741 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Models that see",
+      "codeHash": "e4a461175164b61c095d1a2d231ea0fec9edb85b413bf10bd4ceee596993efc9",
+      "spec": {
+        "template": "none",
+        "reason": "Multimodal vision-language models capability overview and application domains."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Images become patch tokens",
+      "codeHash": "f2d7365708c85715b3814c08d18dd74969a595a25ed9d5d9fe41bfae92e33f13",
+      "spec": {
+        "template": "table",
+        "title": "Vision transformer patch decomposition and token calculation",
+        "columns": [
+          "image_size",
+          "patch_size",
+          "tokens_total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vision encoder cuts image into grid of square patches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "224"
+                  },
+                  {
+                    "text": "patches_x"
+                  },
+                  {
+                    "text": "total_tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "448"
+                  },
+                  {
+                    "text": "patches_y"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vision tokens returns patches across and down plus summary token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "224"
+                  },
+                  {
+                    "text": "patches_x"
+                  },
+                  {
+                    "text": "total_tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "448"
+                  },
+                  {
+                    "text": "patches_y"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "896"
+                  },
+                  {
+                    "text": "patches_x"
+                  },
+                  {
+                    "text": "total_tokens"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bigger images give more tokens quadrupling cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "224"
+                  },
+                  {
+                    "text": "patches_x"
+                  },
+                  {
+                    "text": "total_tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "448"
+                  },
+                  {
+                    "text": "patches_y"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "896"
+                  },
+                  {
+                    "text": "patches_x"
+                  },
+                  {
+                    "text": "total_tokens"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vision transformer patch decomposition and token calculation",
+        "columns": [
+          "image_size",
+          "patch_size",
+          "tokens_total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vision encoder cuts image into grid of square patches.",
+            "rows": [
+              {
+                "cells": [
+                  "224",
+                  "patches_x",
+                  "total_tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "448",
+                  "patches_y",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vision tokens returns patches across and down plus summary token.",
+            "rows": [
+              {
+                "cells": [
+                  "224",
+                  "patches_x",
+                  "total_tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "448",
+                  "patches_y",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "896",
+                  "patches_x",
+                  "total_tokens"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bigger images give more tokens quadrupling cost.",
+            "rows": [
+              {
+                "cells": [
+                  "224",
+                  "patches_x",
+                  "total_tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "448",
+                  "patches_y",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "896",
+                  "patches_x",
+                  "total_tokens"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The cost of images",
+      "codeHash": "468667cec566e140ea9d0e1e230558ad8824ae62640f25ec92f605cf6422fc76",
+      "spec": {
+        "template": "bars",
+        "title": "Token footprint scaling with input image resolution",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Image tokens are billed like text tokens.",
+            "bars": [
+              {
+                "label": "res_4000",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "res_2000",
+                "value": {
+                  "text": "2000"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Resize images before sending to save tokens while keeping accuracy.",
+            "bars": [
+              {
+                "label": "res_4000",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "res_2000",
+                "value": {
+                  "text": "2000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "res_1000",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Savings add up quickly in apps processing thousands of photos.",
+            "bars": [
+              {
+                "label": "res_4000",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "res_2000",
+                "value": {
+                  "text": "2000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "res_1000",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Token footprint scaling with input image resolution",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Image tokens are billed like text tokens.",
+            "bars": [
+              {
+                "label": "res_4000",
+                "value": 4000,
+                "tone": "error"
+              },
+              {
+                "label": "res_2000",
+                "value": 2000,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Resize images before sending to save tokens while keeping accuracy.",
+            "bars": [
+              {
+                "label": "res_4000",
+                "value": 4000,
+                "tone": "error"
+              },
+              {
+                "label": "res_2000",
+                "value": 2000,
+                "tone": "data"
+              },
+              {
+                "label": "res_1000",
+                "value": 1000,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Savings add up quickly in apps processing thousands of photos.",
+            "bars": [
+              {
+                "label": "res_4000",
+                "value": 4000,
+                "tone": "error"
+              },
+              {
+                "label": "res_2000",
+                "value": 2000,
+                "tone": "data"
+              },
+              {
+                "label": "res_1000",
+                "value": 1000,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keeping the aspect ratio",
+      "codeHash": "539731368ec07202e18839fed2b0a93da0e8dd7f0ae94dccc59a5668b214326a",
+      "spec": {
+        "template": "table",
+        "title": "Aspect ratio preservation and bounding box scaling constraints",
+        "columns": [
+          "raw_resolution",
+          "gcd_divisor",
+          "ratio_result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When resizing keep aspect ratio so image is not stretched.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1920"
+                  },
+                  {
+                    "text": "1080"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4000"
+                  },
+                  {
+                    "text": "3000"
+                  },
+                  {
+                    "text": "640"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Aspect ratio returns simplest ratio string using greatest common divisor.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1920"
+                  },
+                  {
+                    "text": "1080"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4000"
+                  },
+                  {
+                    "text": "3000"
+                  },
+                  {
+                    "text": "640"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Never upscale small images as it only adds tokens without detail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1920"
+                  },
+                  {
+                    "text": "1080"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4000"
+                  },
+                  {
+                    "text": "3000"
+                  },
+                  {
+                    "text": "640"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Aspect ratio preservation and bounding box scaling constraints",
+        "columns": [
+          "raw_resolution",
+          "gcd_divisor",
+          "ratio_result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When resizing keep aspect ratio so image is not stretched.",
+            "rows": [
+              {
+                "cells": [
+                  "1920",
+                  "1080",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "4000",
+                  "3000",
+                  "640"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Aspect ratio returns simplest ratio string using greatest common divisor.",
+            "rows": [
+              {
+                "cells": [
+                  "1920",
+                  "1080",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "4000",
+                  "3000",
+                  "640"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Never upscale small images as it only adds tokens without detail.",
+            "rows": [
+              {
+                "cells": [
+                  "1920",
+                  "1080",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "4000",
+                  "3000",
+                  "640"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shared embeddings for text and images",
+      "codeHash": "15f8e37d92fce38fd479a21382194148d6899db77126c3867fe318a79117cf1c",
+      "spec": {
+        "template": "compare",
+        "title": "CLIP cross-modal joint embedding text-to-image similarity ranking",
+        "leftLabel": "Text Query",
+        "rightLabel": "Top Image Match",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models like CLIP learn one embedding space for images and text.",
+            "left": {
+              "code": "query_text = \"sunny sea shore\"",
+              "result": {
+                "text": "sunny sea shore"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "ranked[0] = \"beach.jpg\"",
+              "result": {
+                "text": "beach.jpg"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Photo and text description land close together in shared vector space.",
+            "left": {
+              "code": "multimodal query vector representation",
+              "result": {
+                "text": "sunny sea shore"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "high cosine similarity dot product",
+              "result": {
+                "text": "beach.jpg"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Embed query text and compare by cosine similarity with image embeddings.",
+            "left": {
+              "code": "query_vec = [0.85, 0.15, 0.25]",
+              "result": {
+                "text": "sunny sea shore"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "images[\"beach.jpg\"] = [0.9, 0.1, 0.2]",
+              "result": {
+                "text": "beach.jpg"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "CLIP cross-modal joint embedding text-to-image similarity ranking",
+        "leftLabel": "Text Query",
+        "rightLabel": "Top Image Match",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models like CLIP learn one embedding space for images and text.",
+            "left": {
+              "code": "query_text = \"sunny sea shore\"",
+              "result": "sunny sea shore",
+              "tone": "data",
+              "checks": [
+                "sunny sea shore"
+              ]
+            },
+            "right": {
+              "code": "ranked[0] = \"beach.jpg\"",
+              "result": "beach.jpg",
+              "tone": "ok",
+              "checks": [
+                "beach.jpg"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Photo and text description land close together in shared vector space.",
+            "left": {
+              "code": "multimodal query vector representation",
+              "result": "sunny sea shore",
+              "tone": "data",
+              "checks": [
+                "sunny sea shore"
+              ]
+            },
+            "right": {
+              "code": "high cosine similarity dot product",
+              "result": "beach.jpg",
+              "tone": "ok",
+              "checks": [
+                "beach.jpg"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Embed query text and compare by cosine similarity with image embeddings.",
+            "left": {
+              "code": "query_vec = [0.85, 0.15, 0.25]",
+              "result": "sunny sea shore",
+              "tone": "data",
+              "checks": [
+                "sunny sea shore"
+              ]
+            },
+            "right": {
+              "code": "images[\"beach.jpg\"] = [0.9, 0.1, 0.2]",
+              "result": "beach.jpg",
+              "tone": "ok",
+              "checks": [
+                "beach.jpg"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prompting with images, safely",
+      "codeHash": "4e28cd9bac6d920c8be53c104f8ac855f1dfba8669cc7a22b28b2d51d988f085",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-modal payload schemas privacy redaction and visual prompt injection safety."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "You shall know a word by the company it keeps",
+      "codeHash": "a2267b87211db5b9b9f5728441add40127f86c17f8068c20c458dbdb6c98e571",
+      "spec": {
+        "template": "table",
+        "title": "Distributional hypothesis co-occurrence context analysis",
+        "columns": [
+          "coffee",
+          "tea"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The distributional hypothesis states words are known by context company.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Words appearing in similar contexts share related meanings in language.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drink"
+                  },
+                  {
+                    "text": "morning"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dense vectors represent words with continuous values across all dimensions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drink"
+                  },
+                  {
+                    "text": "morning"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cup"
+                  },
+                  {
+                    "text": "please"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Distributed dimensions capture structural patterns across the vector space.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drink"
+                  },
+                  {
+                    "text": "morning"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cup"
+                  },
+                  {
+                    "text": "please"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fuel"
+                  },
+                  {
+                    "text": "sentences"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributional hypothesis co-occurrence context analysis",
+        "columns": [
+          "coffee",
+          "tea"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The distributional hypothesis states words are known by context company.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "tea"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Words appearing in similar contexts share related meanings in language.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drink",
+                  "morning"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dense vectors represent words with continuous values across all dimensions.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drink",
+                  "morning"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cup",
+                  "please"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Distributed dimensions capture structural patterns across the vector space.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drink",
+                  "morning"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cup",
+                  "please"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "fuel",
+                  "sentences"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Skip-gram and CBOW",
+      "codeHash": "6283ec61b420c660a82ad1d1220f333b4a4b6e22f11935c7a60c24c762364443",
+      "spec": {
+        "template": "table",
+        "title": "Word2Vec architecture comparison and training objectives",
+        "columns": [
+          "tokens",
+          "pairs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word2Vec learns distributed word embeddings using neural training objectives.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "pairs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Skip-gram predicts surrounding context words given an observed centre word.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "pairs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "centre"
+                  },
+                  {
+                    "text": "window"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Continuous bag of words predicts the centre target from surrounding context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "pairs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "centre"
+                  },
+                  {
+                    "text": "window"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drink"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Negative sampling accelerates training by contrasting with random noise words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "pairs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "centre"
+                  },
+                  {
+                    "text": "window"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drink"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Word2Vec architecture comparison and training objectives",
+        "columns": [
+          "tokens",
+          "pairs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word2Vec learns distributed word embeddings using neural training objectives.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "pairs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Skip-gram predicts surrounding context words given an observed centre word.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "pairs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "centre",
+                  "window"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Continuous bag of words predicts the centre target from surrounding context.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "pairs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "centre",
+                  "window"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drink",
+                  "coffee"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Negative sampling accelerates training by contrasting with random noise words.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "pairs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "centre",
+                  "window"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drink",
+                  "coffee"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "range",
+                  "append"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Similarity in embedding space",
+      "codeHash": "d25e197da419b2aa669fe97993f4975cab6134c45838dbeeaafe287197aa80d1",
+      "spec": {
+        "template": "table",
+        "title": "Semantic neighborhood similarity in dense vector space",
+        "columns": [
+          "coffee",
+          "car"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine similarity measures semantic closeness within trained embedding space.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "car"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Semantically related words form dense clusters and neighbourhoods in space.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "car"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tea"
+                  },
+                  {
+                    "text": "juice"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pre-trained embeddings provide semantic representations for diverse NLP tasks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "car"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tea"
+                  },
+                  {
+                    "text": "juice"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "automobile"
+                  },
+                  {
+                    "text": "emb"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dense representations bridge synonymous words like car and automobile.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "car"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tea"
+                  },
+                  {
+                    "text": "juice"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "automobile"
+                  },
+                  {
+                    "text": "emb"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Semantic neighborhood similarity in dense vector space",
+        "columns": [
+          "coffee",
+          "car"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine similarity measures semantic closeness within trained embedding space.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "car"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Semantically related words form dense clusters and neighbourhoods in space.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "car"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tea",
+                  "juice"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pre-trained embeddings provide semantic representations for diverse NLP tasks.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "car"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tea",
+                  "juice"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "automobile",
+                  "emb"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dense representations bridge synonymous words like car and automobile.",
+            "rows": [
+              {
+                "cells": [
+                  "coffee",
+                  "car"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tea",
+                  "juice"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "automobile",
+                  "emb"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cos",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Analogies with vector arithmetic",
+      "codeHash": "7e7714dd58a71b95726715f10abc5c3002c3bdf63c3cbcba241120e91d3ad285",
+      "spec": {
+        "template": "table",
+        "title": "Vector analogy arithmetic and semantic offset vectors",
+        "columns": [
+          "king",
+          "queen"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Subtracting man and adding woman to king yields vectors near queen.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "king"
+                  },
+                  {
+                    "text": "queen"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vector subtraction removes gender components while preserving royalty concepts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "king"
+                  },
+                  {
+                    "text": "queen"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "man"
+                  },
+                  {
+                    "text": "woman"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Vector analogy performs element by element addition and subtraction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "king"
+                  },
+                  {
+                    "text": "queen"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "man"
+                  },
+                  {
+                    "text": "woman"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "result"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The zip operation pairs vector dimensions together for parallel computation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "king"
+                  },
+                  {
+                    "text": "queen"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "man"
+                  },
+                  {
+                    "text": "woman"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "result"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "zip"
+                  },
+                  {
+                    "text": "vector_analogy"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector analogy arithmetic and semantic offset vectors",
+        "columns": [
+          "king",
+          "queen"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Subtracting man and adding woman to king yields vectors near queen.",
+            "rows": [
+              {
+                "cells": [
+                  "king",
+                  "queen"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vector subtraction removes gender components while preserving royalty concepts.",
+            "rows": [
+              {
+                "cells": [
+                  "king",
+                  "queen"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "man",
+                  "woman"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Vector analogy performs element by element addition and subtraction.",
+            "rows": [
+              {
+                "cells": [
+                  "king",
+                  "queen"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "man",
+                  "woman"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "result",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The zip operation pairs vector dimensions together for parallel computation.",
+            "rows": [
+              {
+                "cells": [
+                  "king",
+                  "queen"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "man",
+                  "woman"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "result",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "zip",
+                  "vector_analogy"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding the nearest word",
+      "codeHash": "3c44b7c878abdd2d1e77f58889fb1af21750e87a322801a659a00352b6e40802",
+      "spec": {
+        "template": "none",
+        "reason": "Nearest word cosine lookup and tie breaking."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: analogies",
+      "codeHash": "294aa9c326e63741f9ab2a17ed8ecb106be5366d4f680a95d7e962539a415dfe",
+      "spec": {
+        "template": "none",
+        "reason": "Analogy solving practice implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

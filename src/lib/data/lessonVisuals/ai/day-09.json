@@ -1,0 +1,671 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 9,
+  "promptSha": "dd20a502fb4864c0b8e66117c61c35589aa60ec1add755695b14f00b9d97d66a",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Chunking Problem: Balancing Relevance Density with Context Preservation",
+      "codeHash": "c5bab6011ffd71dd8dac8409e7adbffff288236197154d48ac42cbd686bf7297",
+      "spec": {
+        "template": "compare",
+        "title": "Oversized document embeddings versus fragile sentence micro-chunks",
+        "left": {
+          "title": "Oversized Document Chunks",
+          "items": [
+            "Entire chapters in single vector",
+            "Averages disparate topics together",
+            "Dilutes semantic similarity score",
+            "Exceeds prompt context capacity"
+          ]
+        },
+        "right": {
+          "title": "Micro Chunks Fragility",
+          "items": [
+            "Tiny sentence fragment tokens",
+            "Lacks surrounding semantic context",
+            "Breaks conditional business logic",
+            "Missing critical noun references"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Embedding an entire employee handbook averages pages into a generic blur.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Micro-chunks lack surrounding context needed to understand the rule.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Oversized Document Chunks",
+        "rightLabel": "Micro Chunks Fragility"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Oversized document embeddings versus fragile sentence micro-chunks",
+        "left": {
+          "title": "Oversized Document Chunks",
+          "items": [
+            "Entire chapters in single vector",
+            "Averages disparate topics together",
+            "Dilutes semantic similarity score",
+            "Exceeds prompt context capacity"
+          ]
+        },
+        "right": {
+          "title": "Micro Chunks Fragility",
+          "items": [
+            "Tiny sentence fragment tokens",
+            "Lacks surrounding semantic context",
+            "Breaks conditional business logic",
+            "Missing critical noun references"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Embedding an entire employee handbook averages pages into a generic blur.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Micro-chunks lack surrounding context needed to understand the rule.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Oversized Document Chunks",
+        "rightLabel": "Micro Chunks Fragility"
+      }
+    },
+    {
+      "partTitle": "Sliding Window Overlap Mathematics: Preventing Boundary Amputation",
+      "codeHash": "0765571aa28b3ce657ccb846dc187748fba40bca83f0ecbdb95e118102c30506",
+      "spec": {
+        "template": "flow",
+        "title": "Sliding window chunk partition stride and overlap boundary preservation",
+        "nodes": [
+          {
+            "id": "rawDoc",
+            "label": "Raw Text Stream",
+            "tappable": false
+          },
+          {
+            "id": "chunkOne",
+            "label": "Chunk One Bounds",
+            "tappable": false
+          },
+          {
+            "id": "overlapZone",
+            "label": "Sliding Overlap Window",
+            "tappable": false
+          },
+          {
+            "id": "chunkTwo",
+            "label": "Chunk Two Bounds",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawDoc",
+            "to": "chunkOne",
+            "label": "Partition Size S"
+          },
+          {
+            "from": "chunkOne",
+            "to": "overlapZone",
+            "label": "Retain Overlap O"
+          },
+          {
+            "from": "overlapZone",
+            "to": "chunkTwo",
+            "label": "Stride Step S Minus O"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "We introduce sliding window chunk overlap to solve boundary amputation.",
+            "activeNodes": [
+              "rawDoc",
+              "chunkOne"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Index arithmetic defines step stride as chunk size minus overlap.",
+            "activeNodes": [
+              "overlapZone",
+              "chunkTwo"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Sliding window chunk partition stride and overlap boundary preservation",
+        "nodes": [
+          {
+            "id": "rawDoc",
+            "label": "Raw Text Stream",
+            "tappable": false
+          },
+          {
+            "id": "chunkOne",
+            "label": "Chunk One Bounds",
+            "tappable": false
+          },
+          {
+            "id": "overlapZone",
+            "label": "Sliding Overlap Window",
+            "tappable": false
+          },
+          {
+            "id": "chunkTwo",
+            "label": "Chunk Two Bounds",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawDoc",
+            "to": "chunkOne",
+            "label": "Partition Size S"
+          },
+          {
+            "from": "chunkOne",
+            "to": "overlapZone",
+            "label": "Retain Overlap O"
+          },
+          {
+            "from": "overlapZone",
+            "to": "chunkTwo",
+            "label": "Stride Step S Minus O"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "We introduce sliding window chunk overlap to solve boundary amputation.",
+            "activeNodes": [
+              "rawDoc",
+              "chunkOne"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Index arithmetic defines step stride as chunk size minus overlap.",
+            "activeNodes": [
+              "overlapZone",
+              "chunkTwo"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recursive Character Splitting: Honoring Natural Language Hierarchy",
+      "codeHash": "11122ed57e45a3f1776856fea8e1a9ddd7416663d1558750bb404f8e5ac93fa4",
+      "spec": {
+        "template": "boxes",
+        "title": "Recursive text splitting hierarchical delimiters and natural boundaries",
+        "boxes": [
+          {
+            "id": "paragraphs",
+            "title": "Paragraph Separators",
+            "items": [
+              "Double newline delimiter",
+              "Preserves paragraph cohesion",
+              "Primary candidate split"
+            ]
+          },
+          {
+            "id": "sentences",
+            "title": "Sentence Separators",
+            "items": [
+              "Single newline and period",
+              "Maintains statement semantics",
+              "Secondary fallback split"
+            ]
+          },
+          {
+            "id": "words",
+            "title": "Word Separators",
+            "items": [
+              "Whitespace delimiter",
+              "Prevents word amputation",
+              "Ultimate fallback split"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The splitter accepts an ordered list of natural delimiters.",
+            "activeBoxId": "paragraphs",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The recursive hierarchy guarantees paragraphs and sentences are preserved.",
+            "activeBoxId": "sentences",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Recursive text splitting hierarchical delimiters and natural boundaries",
+        "boxes": [
+          {
+            "id": "paragraphs",
+            "title": "Paragraph Separators",
+            "items": [
+              "Double newline delimiter",
+              "Preserves paragraph cohesion",
+              "Primary candidate split"
+            ]
+          },
+          {
+            "id": "sentences",
+            "title": "Sentence Separators",
+            "items": [
+              "Single newline and period",
+              "Maintains statement semantics",
+              "Secondary fallback split"
+            ]
+          },
+          {
+            "id": "words",
+            "title": "Word Separators",
+            "items": [
+              "Whitespace delimiter",
+              "Prevents word amputation",
+              "Ultimate fallback split"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The splitter accepts an ordered list of natural delimiters.",
+            "activeBoxId": "paragraphs",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The recursive hierarchy guarantees paragraphs and sentences are preserved.",
+            "activeBoxId": "sentences",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Markdown & Code Aware Splitting: Preserving Structural Headers",
+      "codeHash": "8fdecefbd1ea7b88e6a3ee32598e2d5ccaa91ec7575612c2d48442a7772bb068",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Chunk Metadata Architecture: Citations, Parentage & Offsets",
+      "codeHash": "10cf266c5f2753b03bd78a2ac6e8b0d2c44999ef16cade77bb2c404cf218594c",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise chunk metadata schema properties and lineage tracking",
+        "columns": [
+          "Metadata Property",
+          "TypeScript Type",
+          "Architectural Purpose",
+          "RAG Pipeline Benefit"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Enterprise users demand verifiable citations for retrieved source text.",
+            "activeRowIndex": 2,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Neighboring pointers enable window expansion when models need context.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise chunk metadata schema properties and lineage tracking",
+        "columns": [
+          "Metadata Property",
+          "TypeScript Type",
+          "Architectural Purpose",
+          "RAG Pipeline Benefit"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Enterprise users demand verifiable citations for retrieved source text.",
+            "activeRowIndex": 2,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Neighboring pointers enable window expansion when models need context.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete Recursive Chunker with Metadata Pipeline",
+      "codeHash": "9e5f88800584cc7810afc5f5b9a7d2b2331940a3f97316449d3fe9b38fc0efb2",
+      "spec": {
+        "template": "sequence",
+        "title": "End-to-end recursive document chunking and metadata generation pipeline",
+        "actors": [
+          {
+            "id": "policyDoc",
+            "label": "Policy Text Stream"
+          },
+          {
+            "id": "recChunker",
+            "label": "Recursive Chunker Engine"
+          },
+          {
+            "id": "metaFactory",
+            "label": "Metadata Generator"
+          },
+          {
+            "id": "chunkCatalog",
+            "label": "Production Chunk Catalog"
+          }
+        ],
+        "messages": [
+          {
+            "from": "policyDoc",
+            "to": "recChunker",
+            "label": "Stream Unstructured Policy Document",
+            "tone": "data"
+          },
+          {
+            "from": "recChunker",
+            "to": "metaFactory",
+            "label": "Pass Splitted Semantic Paragraphs",
+            "tone": "data"
+          },
+          {
+            "from": "metaFactory",
+            "to": "metaFactory",
+            "label": "Attach Offsets and Lineage Tokens",
+            "tone": "data"
+          },
+          {
+            "from": "metaFactory",
+            "to": "chunkCatalog",
+            "label": "Store Certified Chunk Records",
+            "tone": "success"
+          },
+          {
+            "from": "chunkCatalog",
+            "to": "policyDoc",
+            "label": "Complete Ingestion Pipeline Audit",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our pipeline ingests documents and performs recursive paragraph splitting.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "We verify that each chunk contains rich lineage metadata for indexing.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "End-to-end recursive document chunking and metadata generation pipeline",
+        "actors": [
+          {
+            "id": "policyDoc",
+            "label": "Policy Text Stream"
+          },
+          {
+            "id": "recChunker",
+            "label": "Recursive Chunker Engine"
+          },
+          {
+            "id": "metaFactory",
+            "label": "Metadata Generator"
+          },
+          {
+            "id": "chunkCatalog",
+            "label": "Production Chunk Catalog"
+          }
+        ],
+        "messages": [
+          {
+            "from": "policyDoc",
+            "to": "recChunker",
+            "label": "Stream Unstructured Policy Document",
+            "tone": "data"
+          },
+          {
+            "from": "recChunker",
+            "to": "metaFactory",
+            "label": "Pass Splitted Semantic Paragraphs",
+            "tone": "data"
+          },
+          {
+            "from": "metaFactory",
+            "to": "metaFactory",
+            "label": "Attach Offsets and Lineage Tokens",
+            "tone": "data"
+          },
+          {
+            "from": "metaFactory",
+            "to": "chunkCatalog",
+            "label": "Store Certified Chunk Records",
+            "tone": "success"
+          },
+          {
+            "from": "chunkCatalog",
+            "to": "policyDoc",
+            "label": "Complete Ingestion Pipeline Audit",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our pipeline ingests documents and performs recursive paragraph splitting.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "We verify that each chunk contains rich lineage metadata for indexing.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

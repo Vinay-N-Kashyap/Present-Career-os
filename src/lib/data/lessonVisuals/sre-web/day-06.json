@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 6,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Infrastructure as Data Paradigm & Declarative State",
+      "codeHash": "9ee4300f66b973e602624d4eded4de1de6830e35bda617606aa608bc7b833600",
+      "spec": {
+        "template": "compare",
+        "title": "Imperative scripting workflows versus declarative infrastructure as data",
+        "left": {
+          "title": "Imperative Provisioning",
+          "items": [
+            "Step-by-step bash procedures",
+            "Prone to non-idempotent errors",
+            "Hidden side effects on failure",
+            "Difficult to audit in Git"
+          ]
+        },
+        "right": {
+          "title": "Declarative Infrastructure",
+          "items": [
+            "Specifies target desired state",
+            "Strictly typed immutable data",
+            "Versionable in Git history",
+            "Predictable automated drift diffing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Imperative scripts describe the operational sequence required to reach states.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Infrastructure treats cloud topology as declarative immutable data structures.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Imperative Provisioning",
+        "rightLabel": "Declarative Infrastructure"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Imperative scripting workflows versus declarative infrastructure as data",
+        "left": {
+          "title": "Imperative Provisioning",
+          "items": [
+            "Step-by-step bash procedures",
+            "Prone to non-idempotent errors",
+            "Hidden side effects on failure",
+            "Difficult to audit in Git"
+          ]
+        },
+        "right": {
+          "title": "Declarative Infrastructure",
+          "items": [
+            "Specifies target desired state",
+            "Strictly typed immutable data",
+            "Versionable in Git history",
+            "Predictable automated drift diffing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Imperative scripts describe the operational sequence required to reach states.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Infrastructure treats cloud topology as declarative immutable data structures.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Imperative Provisioning",
+        "rightLabel": "Declarative Infrastructure"
+      }
+    },
+    {
+      "partTitle": "State Persistence & Current vs Desired State Representation",
+      "codeHash": "2510560051c32a24eedcafa3509e6e6f632977f30b64209738f14aeb3c491edc",
+      "spec": {
+        "template": "table",
+        "title": "Reconciliation deltas between current deployed state and desired state",
+        "columns": [
+          "Catalog Delta",
+          "Key Count",
+          "Scheduled Action",
+          "Risk Level"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Current reality is recorded inside a persistent state file.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Reconciling snapshots requires contrasting declared keys against deployed keys.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reconciliation deltas between current deployed state and desired state",
+        "columns": [
+          "Catalog Delta",
+          "Key Count",
+          "Scheduled Action",
+          "Risk Level"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Current reality is recorded inside a persistent state file.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Reconciling snapshots requires contrasting declared keys against deployed keys.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Plan Engine: Computing Create, Update, and Delete Actions",
+      "codeHash": "872a891cc09a1cade94fc5d563e91e7a6fa0647cc659efbfb6f691ecc5abad87",
+      "spec": {
+        "template": "workflow",
+        "title": "Execution plan computation pipeline and mutation preview flow",
+        "stages": [
+          {
+            "id": "inspect",
+            "name": "Catalog Inspect",
+            "subtext": "Key Comparison"
+          },
+          {
+            "id": "propDiff",
+            "name": "Property Diff",
+            "subtext": "Attribute Analysis"
+          },
+          {
+            "id": "planGen",
+            "name": "Plan Preview",
+            "subtext": "Action List"
+          },
+          {
+            "id": "review",
+            "name": "Safety Review",
+            "subtext": "Approval Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine computes a detailed update action summarizing changed fields.",
+            "activeStageId": "propDiff",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The execution plan provides a preview of every mutation before applying.",
+            "activeStageId": "planGen",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Execution plan computation pipeline and mutation preview flow",
+        "stages": [
+          {
+            "id": "inspect",
+            "name": "Catalog Inspect",
+            "subtext": "Key Comparison"
+          },
+          {
+            "id": "propDiff",
+            "name": "Property Diff",
+            "subtext": "Attribute Analysis"
+          },
+          {
+            "id": "planGen",
+            "name": "Plan Preview",
+            "subtext": "Action List"
+          },
+          {
+            "id": "review",
+            "name": "Safety Review",
+            "subtext": "Approval Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine computes a detailed update action summarizing changed fields.",
+            "activeStageId": "propDiff",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The execution plan provides a preview of every mutation before applying.",
+            "activeStageId": "planGen",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Attribute-Level Diffing & In-Place vs Destructive Mutations",
+      "codeHash": "1b4ceb15298ab53a4623a9b86179c0757ac35e721673c96161ff79cf0773e9d3",
+      "spec": {
+        "template": "states",
+        "title": "Infrastructure property mutation classification and safety states",
+        "states": [
+          {
+            "id": "in_place",
+            "label": "IN_PLACE Safe Update"
+          },
+          {
+            "id": "requires_recreation",
+            "label": "REQUIRES_RECREATION Destructive"
+          },
+          {
+            "id": "prevent_destroy",
+            "label": "PREVENT_DESTROY Protected"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Certain property modifications can be applied in place without disruption.",
+            "activeStateId": "in_place",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "An enterprise plan engine tags updates as in place or destructive recreation.",
+            "activeStateId": "requires_recreation",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Infrastructure property mutation classification and safety states",
+        "states": [
+          {
+            "id": "in_place",
+            "label": "IN_PLACE Safe Update"
+          },
+          {
+            "id": "requires_recreation",
+            "label": "REQUIRES_RECREATION Destructive"
+          },
+          {
+            "id": "prevent_destroy",
+            "label": "PREVENT_DESTROY Protected"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Certain property modifications can be applied in place without disruption.",
+            "activeStateId": "in_place",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "An enterprise plan engine tags updates as in place or destructive recreation.",
+            "activeStateId": "requires_recreation",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dependency Graphs & Directed Acyclic Graph (DAG) Modeling",
+      "codeHash": "42a87c4112b07dfa421e16318c4f18d6f69bac9c377edf93eac483ced56a1325",
+      "spec": {
+        "template": "bars",
+        "title": "Infrastructure dependency DAG topology metrics",
+        "bars": [
+          {
+            "id": "nodes",
+            "label": "Graph Nodes",
+            "value": 4
+          },
+          {
+            "id": "edges",
+            "label": "Directed Edges",
+            "value": 4
+          },
+          {
+            "id": "cycles",
+            "label": "Detected Cycles",
+            "value": 0
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Hierarchical relationships are modeled as a Directed Acyclic Graph.",
+            "activeBars": [
+              "nodes",
+              "edges"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The SRE engine validates that the dependency graph contains zero cycles.",
+            "activeBars": [
+              "nodes",
+              "edges",
+              "cycles"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Infrastructure dependency DAG topology metrics",
+        "bars": [
+          {
+            "id": "nodes",
+            "label": "Graph Nodes",
+            "value": 4
+          },
+          {
+            "id": "edges",
+            "label": "Directed Edges",
+            "value": 4
+          },
+          {
+            "id": "cycles",
+            "label": "Detected Cycles",
+            "value": 0
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Hierarchical relationships are modeled as a Directed Acyclic Graph.",
+            "activeBars": [
+              "nodes",
+              "edges"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The SRE engine validates that the dependency graph contains zero cycles.",
+            "activeBars": [
+              "nodes",
+              "edges",
+              "cycles"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Topological Sorting for Safe Execution Plan Ordering",
+      "codeHash": "33ece53c3bd65bd106ea43b416ca6fd48ea6b8dec743a7c45d166014cc221df7",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}

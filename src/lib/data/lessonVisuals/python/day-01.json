@@ -1,0 +1,1121 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 1,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What Python is and why so many people learn it",
+      "codeHash": "9178192aff4853786b9cbb466615f28946448aeff376fb6b83abf7e3be4c33dd",
+      "spec": {
+        "template": "flow",
+        "title": "From your instructions to the screen",
+        "nodes": [
+          {
+            "id": "instructions",
+            "label": "Instructions"
+          },
+          {
+            "id": "python",
+            "label": "Python"
+          },
+          {
+            "id": "screen",
+            "label": "Screen",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "You write exact instructions for the computer.",
+            "values": {
+              "instructions": {
+                "text": "print(\"Hello! This is my first Python program.\")"
+              },
+              "python": {
+                "text": ""
+              },
+              "screen": {
+                "text": ""
+              }
+            },
+            "tones": {
+              "instructions": "data",
+              "python": "idle",
+              "screen": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Python reads your instructions, one line at a time.",
+            "values": {
+              "instructions": {
+                "text": "print(\"Hello! This is my first Python program.\")"
+              },
+              "python": {
+                "text": ""
+              },
+              "screen": {
+                "text": ""
+              }
+            },
+            "tones": {
+              "instructions": "idle",
+              "python": "data",
+              "screen": "idle"
+            },
+            "arrows": [
+              [
+                "instructions",
+                "python"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "The computer follows the steps and shows the result.",
+            "values": {
+              "instructions": {
+                "text": "print(\"Hello! This is my first Python program.\")"
+              },
+              "python": {
+                "text": ""
+              },
+              "screen": {
+                "text": "Hello! This is my first Python program."
+              }
+            },
+            "tones": {
+              "instructions": "idle",
+              "python": "idle",
+              "screen": "ok"
+            },
+            "arrows": [
+              [
+                "python",
+                "screen"
+              ]
+            ],
+            "checks": [
+              "Hello! This is my first Python program."
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "From your instructions to the screen",
+        "nodes": [
+          {
+            "id": "instructions",
+            "label": "Instructions"
+          },
+          {
+            "id": "python",
+            "label": "Python"
+          },
+          {
+            "id": "screen",
+            "label": "Screen",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "You write exact instructions for the computer.",
+            "values": {
+              "instructions": "print(\"Hello! This is my first Python program.\")",
+              "python": "",
+              "screen": ""
+            },
+            "tones": {
+              "instructions": "data",
+              "python": "idle",
+              "screen": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Python reads your instructions, one line at a time.",
+            "values": {
+              "instructions": "print(\"Hello! This is my first Python program.\")",
+              "python": "reads it",
+              "screen": ""
+            },
+            "tones": {
+              "instructions": "idle",
+              "python": "data",
+              "screen": "idle"
+            },
+            "arrows": [
+              [
+                "instructions",
+                "python"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "The computer follows the steps and shows the result.",
+            "values": {
+              "instructions": "print(\"Hello! This is my first Python program.\")",
+              "python": "reads it",
+              "screen": "Hello! This is my first Python program."
+            },
+            "tones": {
+              "instructions": "idle",
+              "python": "idle",
+              "screen": "ok"
+            },
+            "arrows": [
+              [
+                "python",
+                "screen"
+              ]
+            ],
+            "checks": [
+              "Hello! This is my first Python program."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "print(): showing results on the screen",
+      "codeHash": "e867be60138ae278885812a860f51e21be50540643343f2aef07f36bf18c7877",
+      "spec": {
+        "template": "table",
+        "title": "Each print line makes one screen line",
+        "columns": [
+          "Line",
+          "Screen"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "print shows what is inside the brackets.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "My Expense Tracker"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Four lines run top to bottom, so four results appear in order.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(20 + 45)",
+                  "65"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus ticket 45",
+              "65"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A comma prints both things with one space between.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(20 + 45)",
+                  "65"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus ticket 45",
+              "65"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Each print line makes one screen line",
+        "columns": [
+          "Line",
+          "Screen"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "print shows what is inside the brackets.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "My Expense Tracker"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Four lines run top to bottom, so four results appear in order.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(20 + 45)",
+                  "65"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus ticket 45",
+              "65"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A comma prints both things with one space between.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(20 + 45)",
+                  "65"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus ticket 45",
+              "65"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How Python reads your code: line by line",
+      "codeHash": "676ab98b0746aca268c333ad65a102844211f3bb02040142809e0233d50b80d2",
+      "spec": {
+        "template": "table",
+        "title": "Python reads top to bottom",
+        "columns": [
+          "Line",
+          "What happens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each line finishes before the next one starts.",
+            "rows": [
+              {
+                "cells": [
+                  "line 1",
+                  "Step 1: open the app"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "line 2",
+                  "Step 2: add an expense"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "line 3",
+                  "Step 3: see the total"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Step 1: open the app",
+              "Step 2: add an expense",
+              "Step 3: see the total"
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A mistake while running stops Python; lines below never run.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"Step 1: open the app\")",
+                  "Step 1: open the app"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prnt(\"Step 2: add an expense\")",
+                  "NameError"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Step 3: see the total\")",
+                  "never ran"
+                ],
+                "tone": "idle"
+              }
+            ],
+            "whatIf": "print(\"Step 1: open the app\")\nprnt(\"Step 2: add an expense\")\nprint(\"Step 3: see the total\")",
+            "checks": [
+              "Step 1: open the app",
+              "NameError"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A missing quote is a SyntaxError, so nothing runs at all.",
+            "rows": [
+              {
+                "cells": [
+                  "line 1",
+                  "nothing printed"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Step 2: add an expense)",
+                  "SyntaxError"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "line 3",
+                  "nothing printed"
+                ],
+                "tone": "idle"
+              }
+            ],
+            "whatIf": "print(\"Step 1: open the app\")\nprint(\"Step 2: add an expense)\nprint(\"Step 3: see the total\")",
+            "checks": [
+              "SyntaxError"
+            ],
+            "mustNotShow": [
+              "Step 1: open the app"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Python reads top to bottom",
+        "columns": [
+          "Line",
+          "What happens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each line finishes before the next one starts.",
+            "rows": [
+              {
+                "cells": [
+                  "line 1",
+                  "Step 1: open the app"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "line 2",
+                  "Step 2: add an expense"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "line 3",
+                  "Step 3: see the total"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Step 1: open the app",
+              "Step 2: add an expense",
+              "Step 3: see the total"
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A mistake while running stops Python; lines below never run.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"Step 1: open the app\")",
+                  "Step 1: open the app"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prnt(\"Step 2: add an expense\")",
+                  "NameError"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Step 3: see the total\")",
+                  "never ran"
+                ],
+                "tone": "idle"
+              }
+            ],
+            "whatIf": "print(\"Step 1: open the app\")\nprnt(\"Step 2: add an expense\")\nprint(\"Step 3: see the total\")",
+            "checks": [
+              "Step 1: open the app",
+              "NameError"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A missing quote is a SyntaxError, so nothing runs at all.",
+            "rows": [
+              {
+                "cells": [
+                  "line 1",
+                  "nothing printed"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Step 2: add an expense)",
+                  "SyntaxError"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "line 3",
+                  "nothing printed"
+                ],
+                "tone": "idle"
+              }
+            ],
+            "whatIf": "print(\"Step 1: open the app\")\nprint(\"Step 2: add an expense)\nprint(\"Step 3: see the total\")",
+            "checks": [
+              "SyntaxError"
+            ],
+            "mustNotShow": [
+              "Step 1: open the app"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capital letters matter",
+      "codeHash": "4a6a443e8de280c1941c3d0bde2584175ba4347e5783b6d326d2a5983d460a6c",
+      "spec": {
+        "template": "compare",
+        "title": "Small and capital letters are different",
+        "leftLabel": "print",
+        "rightLabel": "Print",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Python knows print, not Print.",
+            "left": {
+              "code": "print(\"hello\")",
+              "result": "hello",
+              "tone": "ok",
+              "checks": [
+                "hello"
+              ]
+            },
+            "right": {
+              "code": "Print(\"hello\")",
+              "result": "NameError",
+              "tone": "error",
+              "checks": [
+                "NameError"
+              ],
+              "whatIf": "Print(\"hello\")"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Inside quotes any letters work, but H and h are still different.",
+            "left": {
+              "code": "print(\"HELLO\")",
+              "result": "HELLO",
+              "tone": "ok",
+              "checks": [
+                "HELLO"
+              ]
+            },
+            "right": {
+              "code": "print(\"Hello\" == \"hello\")",
+              "result": "False",
+              "tone": "data",
+              "checks": [
+                "False"
+              ]
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Small and capital letters are different",
+        "leftLabel": "print",
+        "rightLabel": "Print",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Python knows print, not Print.",
+            "left": {
+              "code": "print(\"hello\")",
+              "result": "hello",
+              "tone": "ok",
+              "checks": [
+                "hello"
+              ]
+            },
+            "right": {
+              "code": "Print(\"hello\")",
+              "result": "NameError",
+              "tone": "error",
+              "checks": [
+                "NameError"
+              ],
+              "whatIf": "Print(\"hello\")"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Inside quotes any letters work, but H and h are still different.",
+            "left": {
+              "code": "print(\"HELLO\")",
+              "result": "HELLO",
+              "tone": "ok",
+              "checks": [
+                "HELLO"
+              ]
+            },
+            "right": {
+              "code": "print(\"Hello\" == \"hello\")",
+              "result": "False",
+              "tone": "data",
+              "checks": [
+                "False"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comments: notes for humans",
+      "codeHash": "b6ffba96f82ed35d240103dbf8f85564f213083802ccf38bd270dee892a7682a",
+      "spec": {
+        "template": "table",
+        "title": "Python skips everything after #",
+        "columns": [
+          "Line",
+          "What happens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A # line is a note for people; Python skips it.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# print(\"Movie\", 300)",
+                  ""
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45) # the bus to college",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Putting # in front of a line turns it off without deleting it.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# print(\"Movie\", 300)",
+                  "turned off"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45) # the bus to college",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ],
+            "mustNotShow": [
+              "Movie"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Python skips everything after #",
+        "columns": [
+          "Line",
+          "What happens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A # line is a note for people; Python skips it.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# print(\"Movie\", 300)",
+                  ""
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45) # the bus to college",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Putting # in front of a line turns it off without deleting it.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# print(\"Movie\", 300)",
+                  "turned off"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45) # the bus to college",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ],
+            "mustNotShow": [
+              "Movie"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together: your first small program",
+      "codeHash": "b94889503baee18c1351da6c2120b07f29ac171bd9ecfaa217431d0e4614829c",
+      "spec": {
+        "template": "table",
+        "title": "Your first receipt",
+        "columns": [
+          "Line",
+          "Screen"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A title, one line per expense, and the total at the bottom.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Tea 20",
+              "Bus 45",
+              "Lunch 120",
+              "Total: 185"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "20, 45 and 120 are typed twice; tomorrow variables fix this.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "error"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Tea 20",
+              "Bus 45",
+              "Lunch 120",
+              "Total: 185"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Your first receipt",
+        "columns": [
+          "Line",
+          "Screen"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A title, one line per expense, and the total at the bottom.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Tea 20",
+              "Bus 45",
+              "Lunch 120",
+              "Total: 185"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "20, 45 and 120 are typed twice; tomorrow variables fix this.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "error"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Tea 20",
+              "Bus 45",
+              "Lunch 120",
+              "Total: 185"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

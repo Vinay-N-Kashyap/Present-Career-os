@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Comparing two strings",
+      "codeHash": "a1401fb8b9574b81fbcc29719461c6cd533c17f0313aed398137aad7023c37aa",
+      "spec": {
+        "template": "compare",
+        "title": "Valid subsequence preserving order versus invalid scrambled sequence",
+        "leftLabel": "Ordered Subsequence",
+        "rightLabel": "Invalid Order",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A subsequence keeps letters in their order but may skip some.",
+            "left": {
+              "code": "subsequence ace",
+              "result": {
+                "text": "valid from abcde"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "subsequence aec",
+              "result": {
+                "text": "invalid order"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The longest common subsequence is the longest subsequence found in both.",
+            "left": {
+              "code": "text1=abcde",
+              "result": {
+                "text": "matched"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "LCS=ace",
+              "result": {
+                "text": "length 3"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Valid subsequence preserving order versus invalid scrambled sequence",
+        "leftLabel": "Ordered Subsequence",
+        "rightLabel": "Invalid Order",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A subsequence keeps letters in their order but may skip some.",
+            "left": {
+              "code": "subsequence ace",
+              "result": "valid from abcde",
+              "tone": "ok",
+              "checks": [
+                "valid from abcde"
+              ]
+            },
+            "right": {
+              "code": "subsequence aec",
+              "result": "invalid order",
+              "tone": "error",
+              "checks": [
+                "invalid order"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The longest common subsequence is the longest subsequence found in both.",
+            "left": {
+              "code": "text1=abcde",
+              "result": "matched",
+              "tone": "data",
+              "checks": [
+                "matched"
+              ]
+            },
+            "right": {
+              "code": "LCS=ace",
+              "result": "length 3",
+              "tone": "ok",
+              "checks": [
+                "length 3"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The LCS recurrence",
+      "codeHash": "3035795974d36da5af8eff418c7f5552b4c3808d7d91ffd6fca6505e3c9f8c46",
+      "spec": {
+        "template": "table",
+        "title": "2D LCS cell recurrence conditions",
+        "columns": [
+          "Character Condition",
+          "Recurrence Transition",
+          "Cell Origin"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "If characters match take diagonal answer plus one for common subsequence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text1[i] == text2[j]"
+                  },
+                  {
+                    "text": "dp[i-1][j-1] + 1"
+                  },
+                  {
+                    "text": "Diagonal up-left"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "If they do not match drop one or other taking maximum better value.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text1[i] == text2[j]"
+                  },
+                  {
+                    "text": "dp[i-1][j-1] + 1"
+                  },
+                  {
+                    "text": "Diagonal up-left"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text1[i] != text2[j]"
+                  },
+                  {
+                    "text": "max(dp[i-1][j], dp[i][j-1])"
+                  },
+                  {
+                    "text": "Max of top or left"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "2D LCS cell recurrence conditions",
+        "columns": [
+          "Character Condition",
+          "Recurrence Transition",
+          "Cell Origin"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "If characters match take diagonal answer plus one for common subsequence.",
+            "rows": [
+              {
+                "cells": [
+                  "text1[i] == text2[j]",
+                  "dp[i-1][j-1] + 1",
+                  "Diagonal up-left"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "If they do not match drop one or other taking maximum better value.",
+            "rows": [
+              {
+                "cells": [
+                  "text1[i] == text2[j]",
+                  "dp[i-1][j-1] + 1",
+                  "Diagonal up-left"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text1[i] != text2[j]",
+                  "max(dp[i-1][j], dp[i][j-1])",
+                  "Max of top or left"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rebuilding the common letters",
+      "codeHash": "43fe2d1259f991daec18a3a1264d5e5691e6a2006c2c03cfd79a76deb6fa3caf",
+      "spec": {
+        "template": "none",
+        "reason": "Backtracking diagonally through 2D table to reconstruct matched characters."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Backtracking diagonally through 2D table to reconstruct matched characters."
+      }
+    },
+    {
+      "partTitle": "Edit distance",
+      "codeHash": "209f733497b8dd78b45328db196b0d10111982d01cb93d96ce3a28df058535d3",
+      "spec": {
+        "template": "table",
+        "title": "Edit distance dynamic operations matrix",
+        "columns": [
+          "Edit Operation",
+          "Subproblem Transition",
+          "Unit Cost Added"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Edit distance counts fewest inserts deletes or replacements between words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Match"
+                  },
+                  {
+                    "text": "dp[i-1][j-1]"
+                  },
+                  {
+                    "text": "+0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Try all three edits and take the cheapest plus one for cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Match"
+                  },
+                  {
+                    "text": "dp[i-1][j-1]"
+                  },
+                  {
+                    "text": "+0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Insert / Delete / Replace"
+                  },
+                  {
+                    "text": "min(top, left, diag)"
+                  },
+                  {
+                    "text": "+1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Edit distance dynamic operations matrix",
+        "columns": [
+          "Edit Operation",
+          "Subproblem Transition",
+          "Unit Cost Added"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Edit distance counts fewest inserts deletes or replacements between words.",
+            "rows": [
+              {
+                "cells": [
+                  "Match",
+                  "dp[i-1][j-1]",
+                  "+0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Try all three edits and take the cheapest plus one for cost.",
+            "rows": [
+              {
+                "cells": [
+                  "Match",
+                  "dp[i-1][j-1]",
+                  "+0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Insert / Delete / Replace",
+                  "min(top, left, diag)",
+                  "+1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A tiny spell checker",
+      "codeHash": "671c6ca6fadad5e607f8ffef3615a9bb55e1dfd181396c950b338a06fc405c96",
+      "spec": {
+        "template": "table",
+        "title": "Spell checker ranking using edit distance metric",
+        "columns": [
+          "Dictionary Word",
+          "Edit Distance",
+          "Suggestion Filter"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suggest closest dictionary words based on computed edit distance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "spelling"
+                  },
+                  {
+                    "text": "dist: 0"
+                  },
+                  {
+                    "text": "Exact match"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compute distance to every word keeping candidates within small limit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "spelling"
+                  },
+                  {
+                    "text": "dist: 0"
+                  },
+                  {
+                    "text": "Exact match"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spelled"
+                  },
+                  {
+                    "text": "dist: 2"
+                  },
+                  {
+                    "text": "Suggest candidate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Spell checker ranking using edit distance metric",
+        "columns": [
+          "Dictionary Word",
+          "Edit Distance",
+          "Suggestion Filter"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suggest closest dictionary words based on computed edit distance.",
+            "rows": [
+              {
+                "cells": [
+                  "spelling",
+                  "dist: 0",
+                  "Exact match"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compute distance to every word keeping candidates within small limit.",
+            "rows": [
+              {
+                "cells": [
+                  "spelling",
+                  "dist: 0",
+                  "Exact match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "spelled",
+                  "dist: 2",
+                  "Suggest candidate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spotting 2D DP problems",
+      "codeHash": "8709d53f9bf87f1d43f1afe848fbb7da32b38feb6735ac003c135f9e335a8321",
+      "spec": {
+        "template": "none",
+        "reason": "Taxonomy of 2D DP grids, coordinate mappings, and table visualization."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Taxonomy of 2D DP grids, coordinate mappings, and table visualization."
+      }
+    }
+  ]
+}

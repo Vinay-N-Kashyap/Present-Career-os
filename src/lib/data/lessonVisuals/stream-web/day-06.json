@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 6,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Consumer Groups & Horizontal Processing Elasticity",
+      "codeHash": "08d943fa4fdcd2d3e08dbf846531da400718dcf3d87cd954d16f7bfcb7b82ab1",
+      "spec": {
+        "template": "flow",
+        "title": "ConsumerGroupTopology partition division across payment-processors workers",
+        "nodes": [
+          {
+            "id": "topicLogs",
+            "label": "Topic Partitions [0, 1, 2, 3]",
+            "tappable": false
+          },
+          {
+            "id": "topology",
+            "label": "payment-processors Group",
+            "tappable": false
+          },
+          {
+            "id": "worker1",
+            "label": "worker-1 [0, 1]",
+            "tappable": false
+          },
+          {
+            "id": "worker2",
+            "label": "worker-2 [2, 3]",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "topicLogs",
+            "to": "topology",
+            "label": "4 Partitions"
+          },
+          {
+            "from": "topology",
+            "to": "worker1",
+            "label": "Assign [0, 1]"
+          },
+          {
+            "from": "topology",
+            "to": "worker2",
+            "label": "Assign [2, 3]"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When workers connect, the broker divides topic partitions among group members.",
+            "activeNodes": [
+              "topicLogs",
+              "topology"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Each worker process reads a subset of the topic partitions concurrently.",
+            "activeNodes": [
+              "worker1",
+              "worker2"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "ConsumerGroupTopology partition division across payment-processors workers",
+        "nodes": [
+          {
+            "id": "topicLogs",
+            "label": "Topic Partitions [0, 1, 2, 3]",
+            "tappable": false
+          },
+          {
+            "id": "topology",
+            "label": "payment-processors Group",
+            "tappable": false
+          },
+          {
+            "id": "worker1",
+            "label": "worker-1 [0, 1]",
+            "tappable": false
+          },
+          {
+            "id": "worker2",
+            "label": "worker-2 [2, 3]",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "topicLogs",
+            "to": "topology",
+            "label": "4 Partitions"
+          },
+          {
+            "from": "topology",
+            "to": "worker1",
+            "label": "Assign [0, 1]"
+          },
+          {
+            "from": "topology",
+            "to": "worker2",
+            "label": "Assign [2, 3]"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When workers connect, the broker divides topic partitions among group members.",
+            "activeNodes": [
+              "topicLogs",
+              "topology"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Each worker process reads a subset of the topic partitions concurrently.",
+            "activeNodes": [
+              "worker1",
+              "worker2"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition Assignment Cardinality: Single-Consumer Invariant",
+      "codeHash": "ca8461ef748fe7af04e2555f8e8ece90df9ccf226d8a4f38550913825dddaa9f",
+      "spec": {
+        "template": "states",
+        "title": "PartitionAssignmentValidator enforcing single-consumer cardinality invariant",
+        "states": [
+          {
+            "id": "candidatePlan",
+            "label": "Candidate Assignment Plan"
+          },
+          {
+            "id": "conflictRejected",
+            "label": "INVALID (Conflict on Partition 1)"
+          },
+          {
+            "id": "validSerial",
+            "label": "VALID (A:[0,1], B:[2])"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each partition can be assigned to at most one consumer worker instance.",
+            "activeState": "conflictRejected",
+            "transition": {
+              "from": "candidatePlan",
+              "to": "conflictRejected",
+              "label": "conflictPartition: 1"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Enforcing one active consumer per group preserves strict serial processing.",
+            "activeState": "validSerial",
+            "transition": {
+              "from": "candidatePlan",
+              "to": "validSerial",
+              "label": "isValid: true"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "PartitionAssignmentValidator enforcing single-consumer cardinality invariant",
+        "states": [
+          {
+            "id": "candidatePlan",
+            "label": "Candidate Assignment Plan"
+          },
+          {
+            "id": "conflictRejected",
+            "label": "INVALID (Conflict on Partition 1)"
+          },
+          {
+            "id": "validSerial",
+            "label": "VALID (A:[0,1], B:[2])"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each partition can be assigned to at most one consumer worker instance.",
+            "activeState": "conflictRejected",
+            "transition": {
+              "from": "candidatePlan",
+              "to": "conflictRejected",
+              "label": "conflictPartition: 1"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Enforcing one active consumer per group preserves strict serial processing.",
+            "activeState": "validSerial",
+            "transition": {
+              "from": "candidatePlan",
+              "to": "validSerial",
+              "label": "isValid: true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Range vs Round-Robin Partition Assignors",
+      "codeHash": "459acf6fb1b3dcbc6aa6b878e808be10a6bf29d15246880eae6365a93ddea042",
+      "spec": {
+        "template": "table",
+        "title": "Range versus Round-Robin partition distribution across 5 partitions [0..4]",
+        "columns": [
+          "Assignor Strategy",
+          "worker-A Partitions",
+          "worker-B Partitions"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The Range Assignor divides the topic partitions into contiguous segments.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The Round-Robin Assignor pools all partitions and distributes them cyclically.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Range versus Round-Robin partition distribution across 5 partitions [0..4]",
+        "columns": [
+          "Assignor Strategy",
+          "worker-A Partitions",
+          "worker-B Partitions"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The Range Assignor divides the topic partitions into contiguous segments.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The Round-Robin Assignor pools all partitions and distributes them cyclically.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Worker Over-Provisioning & Idle Standby Instances",
+      "codeHash": "bc033b4bbeacc3c0e0f0e16b7b240fc4bd0b17e1d6334fd4fee581b898eba652",
+      "spec": {
+        "template": "bars",
+        "title": "Active and idle standby worker counts for a 4-partition topic",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "If a topic has four partitions, a group utilizes at most four active instances.",
+            "bars": [
+              {
+                "label": "Scenario A Active",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Scenario A Idle",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Unassigned workers become idle standby instances doing zero actual work.",
+            "bars": [
+              {
+                "label": "Scenario B Active",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Scenario B Idle",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "idle"
+              },
+              {
+                "label": "Total Deployed",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Active and idle standby worker counts for a 4-partition topic",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "If a topic has four partitions, a group utilizes at most four active instances.",
+            "bars": [
+              {
+                "label": "Scenario A Active",
+                "value": 4,
+                "tone": "ok"
+              },
+              {
+                "label": "Scenario A Idle",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Unassigned workers become idle standby instances doing zero actual work.",
+            "bars": [
+              {
+                "label": "Scenario B Active",
+                "value": 4,
+                "tone": "ok"
+              },
+              {
+                "label": "Scenario B Idle",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "Total Deployed",
+                "value": 6,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamically Reassigning Partitions upon Worker Addition",
+      "codeHash": "f1d5a27d82247d8e2b4e637f33e4d07bd164ecc9785d5e54a3e4c62100b2b711",
+      "spec": {
+        "template": "sequence",
+        "title": "Dynamic partition migration when worker-3 joins existing workers [worker-1, worker-2]",
+        "actors": [
+          {
+            "id": "worker3",
+            "label": "New Worker (worker-3)"
+          },
+          {
+            "id": "coordinator",
+            "label": "Group Coordinator"
+          },
+          {
+            "id": "existing",
+            "label": "worker-1 & worker-2"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When an autoscaler boots a container, the worker sends a JoinGroup request.",
+            "messages": [
+              {
+                "from": "worker3",
+                "to": "coordinator",
+                "label": "JoinGroup (Expand Fleet to 3 Workers)"
+              },
+              {
+                "from": "coordinator",
+                "to": "existing",
+                "label": "Revoke Partition 2 from worker-1"
+              }
+            ],
+            "activeActorId": "coordinator"
+          },
+          {
+            "at": "say7",
+            "caption": "Once the rebalance concludes, the new consumer polls from the committed offset.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "worker3",
+                "label": "Assign Partition 2 to worker-3"
+              },
+              {
+                "from": "worker3",
+                "to": "coordinator",
+                "label": "Fetch Committed Offset & Resume Poll"
+              }
+            ],
+            "activeActorId": "worker3"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Dynamic partition migration when worker-3 joins existing workers [worker-1, worker-2]",
+        "actors": [
+          {
+            "id": "worker3",
+            "label": "New Worker (worker-3)"
+          },
+          {
+            "id": "coordinator",
+            "label": "Group Coordinator"
+          },
+          {
+            "id": "existing",
+            "label": "worker-1 & worker-2"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When an autoscaler boots a container, the worker sends a JoinGroup request.",
+            "messages": [
+              {
+                "from": "worker3",
+                "to": "coordinator",
+                "label": "JoinGroup (Expand Fleet to 3 Workers)"
+              },
+              {
+                "from": "coordinator",
+                "to": "existing",
+                "label": "Revoke Partition 2 from worker-1"
+              }
+            ],
+            "activeActorId": "coordinator"
+          },
+          {
+            "at": "say7",
+            "caption": "Once the rebalance concludes, the new consumer polls from the committed offset.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "worker3",
+                "label": "Assign Partition 2 to worker-3"
+              },
+              {
+                "from": "worker3",
+                "to": "coordinator",
+                "label": "Fetch Committed Offset & Resume Poll"
+              }
+            ],
+            "activeActorId": "worker3"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Distributed Partition Assignment Manager",
+      "codeHash": "a5e4848e481bb0c07a96620d3763b0ede9a6cc30e6787121645732edafe29cf4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

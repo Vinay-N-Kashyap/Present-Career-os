@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The latency-bandwidth model",
+      "codeHash": "e8cd6cc70591f0466412f405795cb9a9eb6e6761c03e5fdf22f7fccb65534d1d",
+      "spec": {
+        "template": "table",
+        "title": "Alpha-beta network communication transfer cost model",
+        "columns": [
+          "size_mb",
+          "latency_us",
+          "gbps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The time to send a message has startup latency and size transfer bandwidth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "latency_us"
+                  },
+                  {
+                    "text": "gbps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "latency_us"
+                  },
+                  {
+                    "text": "gbps"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Bandwidth dominates for large messages while latency dominates for tiny ones.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "latency_us"
+                  },
+                  {
+                    "text": "gbps"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "latency_us"
+                  },
+                  {
+                    "text": "size_mb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Alpha-beta network communication transfer cost model",
+        "columns": [
+          "size_mb",
+          "latency_us",
+          "gbps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The time to send a message has startup latency and size transfer bandwidth.",
+            "rows": [
+              {
+                "cells": [
+                  "size_mb",
+                  "latency_us",
+                  "gbps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size_mb",
+                  "latency_us",
+                  "gbps"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Bandwidth dominates for large messages while latency dominates for tiny ones.",
+            "rows": [
+              {
+                "cells": [
+                  "size_mb",
+                  "latency_us",
+                  "gbps"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "size_mb",
+                  "latency_us",
+                  "size_mb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ring all-reduce time",
+      "codeHash": "afe68b2ee60c51f65432c9ae5cc424e4ca8e304d2bfdab0cd093509db76966f0",
+      "spec": {
+        "template": "table",
+        "title": "Ring all-reduce execution time scaling across ranks",
+        "columns": [
+          "size_mb",
+          "lat_us",
+          "gbps"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The bandwidth part approaches a limit that barely depends on cluster size.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "lat_us"
+                  },
+                  {
+                    "text": "gbps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "lat_us"
+                  },
+                  {
+                    "text": "gbps"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The latency part grows linearly on very large clusters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "lat_us"
+                  },
+                  {
+                    "text": "gbps"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size_mb"
+                  },
+                  {
+                    "text": "lat_us"
+                  },
+                  {
+                    "text": "size_mb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Ring all-reduce execution time scaling across ranks",
+        "columns": [
+          "size_mb",
+          "lat_us",
+          "gbps"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The bandwidth part approaches a limit that barely depends on cluster size.",
+            "rows": [
+              {
+                "cells": [
+                  "size_mb",
+                  "lat_us",
+                  "gbps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size_mb",
+                  "lat_us",
+                  "gbps"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The latency part grows linearly on very large clusters.",
+            "rows": [
+              {
+                "cells": [
+                  "size_mb",
+                  "lat_us",
+                  "gbps"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "size_mb",
+                  "lat_us",
+                  "size_mb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network topology",
+      "codeHash": "3a6f042872ecd06aab2bf11dd3f55bf446346e4f11d6fbafae27f28fbe46b12b",
+      "spec": {
+        "template": "table",
+        "title": "Interconnect bandwidth comparison and topology placement",
+        "columns": [
+          "name",
+          "gb_per_s",
+          "links"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inside a server GPUs are connected by fast links such as NVLink systems.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "gb_per_s"
+                  },
+                  {
+                    "text": "links"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "gb_per_s"
+                  },
+                  {
+                    "text": "links"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Topology-aware placement puts parallel workloads on the fastest links.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "gb_per_s"
+                  },
+                  {
+                    "text": "links"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "gb_per_s"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Interconnect bandwidth comparison and topology placement",
+        "columns": [
+          "name",
+          "gb_per_s",
+          "links"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inside a server GPUs are connected by fast links such as NVLink systems.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "gb_per_s",
+                  "links"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "gb_per_s",
+                  "links"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Topology-aware placement puts parallel workloads on the fastest links.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "gb_per_s",
+                  "links"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "name",
+                  "gb_per_s",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Is communication the bottleneck?",
+      "codeHash": "2aaf5e30accc5ab3565655ae042716a13b2105af3f53da1a1575bd4f1b04f18a",
+      "spec": {
+        "template": "table",
+        "title": "Compute versus communication ratio and bottleneck diagnosis",
+        "columns": [
+          "params",
+          "tokens_per_gpu",
+          "flops"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineers compare communication step time with computation requirements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens_per_gpu"
+                  },
+                  {
+                    "text": "flops"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens_per_gpu"
+                  },
+                  {
+                    "text": "flops"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Communication remains a small fraction of step time on a fast network.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens_per_gpu"
+                  },
+                  {
+                    "text": "flops"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens_per_gpu"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Compute versus communication ratio and bottleneck diagnosis",
+        "columns": [
+          "params",
+          "tokens_per_gpu",
+          "flops"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineers compare communication step time with computation requirements.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "tokens_per_gpu",
+                  "flops"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "tokens_per_gpu",
+                  "flops"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Communication remains a small fraction of step time on a fast network.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "tokens_per_gpu",
+                  "flops"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "tokens_per_gpu",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reducing communication",
+      "codeHash": "44e79143f33d093b9904a2158d4c0ee53e2dac33bf200994b2cb4708d64adea7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: communication cost",
+      "codeHash": "e2224edee0c206372c3010ad638197e3868412ded2c59f657974f4a8bbe11596",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

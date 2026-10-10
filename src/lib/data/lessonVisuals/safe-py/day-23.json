@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What an AI incident looks like",
+      "codeHash": "9ccec96d02d911b1b8c3790b0a13aa3cb5c69efea5b30eb24abe9b81ee229e50",
+      "spec": {
+        "template": "table",
+        "title": "AI safety incident manifestations and detection channels",
+        "columns": [
+          "incidents",
+          "how"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An incident occurs when a system causes or risks harm.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "incidents"
+                  },
+                  {
+                    "text": "how"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "incidents"
+                  },
+                  {
+                    "text": "jailbreak"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Incident response contains and triages unfolding safety issues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "incidents"
+                  },
+                  {
+                    "text": "how"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "incidents"
+                  },
+                  {
+                    "text": "fairness"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AI safety incident manifestations and detection channels",
+        "columns": [
+          "incidents",
+          "how"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An incident occurs when a system causes or risks harm.",
+            "rows": [
+              {
+                "cells": [
+                  "incidents",
+                  "how"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "incidents",
+                  "jailbreak"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Incident response contains and triages unfolding safety issues.",
+            "rows": [
+              {
+                "cells": [
+                  "incidents",
+                  "how"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "incidents",
+                  "fairness"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Severity levels",
+      "codeHash": "d982bddbdc6cb6ff1ffdcba20e3bb3898aadd4660b669ef71e76ab8431d8115b",
+      "spec": {
+        "template": "table",
+        "title": "Incident severity classification criteria",
+        "columns": [
+          "users",
+          "severity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Teams classify severity to organize emergency response.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "users"
+                  },
+                  {
+                    "text": "severity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SEV1"
+                  },
+                  {
+                    "text": "SEV2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Severity determines response speed and executive escalation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "users"
+                  },
+                  {
+                    "text": "severity"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SEV3"
+                  },
+                  {
+                    "text": "SEV4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Incident severity classification criteria",
+        "columns": [
+          "users",
+          "severity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Teams classify severity to organize emergency response.",
+            "rows": [
+              {
+                "cells": [
+                  "users",
+                  "severity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SEV1",
+                  "SEV2"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Severity determines response speed and executive escalation.",
+            "rows": [
+              {
+                "cells": [
+                  "users",
+                  "severity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "SEV4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Containment first",
+      "codeHash": "c95d360630817d75293f6f65f6582ee78739b06823c4ee91a2b574f35fcf86c7",
+      "spec": {
+        "template": "table",
+        "title": "Containment switch configuration state before and after",
+        "columns": [
+          "switches",
+          "switches"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Containment stops harm from spreading before finding root causes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "switches"
+                  },
+                  {
+                    "text": "switches"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "switches"
+                  },
+                  {
+                    "text": "switches"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prebuilt containment switches can be flipped in seconds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "switches"
+                  },
+                  {
+                    "text": "switches"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "switches"
+                  },
+                  {
+                    "text": "switches"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Containment switch configuration state before and after",
+        "columns": [
+          "switches",
+          "switches"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Containment stops harm from spreading before finding root causes.",
+            "rows": [
+              {
+                "cells": [
+                  "switches",
+                  "switches"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "switches",
+                  "switches"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prebuilt containment switches can be flipped in seconds.",
+            "rows": [
+              {
+                "cells": [
+                  "switches",
+                  "switches"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "switches",
+                  "switches"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring response times",
+      "codeHash": "4863beffae356b18265caadc2ee6b2e8cedc8837352790874c6cc418ce75523d",
+      "spec": {
+        "template": "table",
+        "title": "Measuring detection and mitigation response durations",
+        "columns": [
+          "detect",
+          "mitigate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Time to detect measures elapsed duration before noticing issues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "detect"
+                  },
+                  {
+                    "text": "mitigate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "datetime"
+                  },
+                  {
+                    "text": "detected"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Time to mitigate tracks the period required to halt harm.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "detect"
+                  },
+                  {
+                    "text": "mitigate"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "started"
+                  },
+                  {
+                    "text": "mitigated"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Measuring detection and mitigation response durations",
+        "columns": [
+          "detect",
+          "mitigate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Time to detect measures elapsed duration before noticing issues.",
+            "rows": [
+              {
+                "cells": [
+                  "detect",
+                  "mitigate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "datetime",
+                  "detected"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Time to mitigate tracks the period required to halt harm.",
+            "rows": [
+              {
+                "cells": [
+                  "detect",
+                  "mitigate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "started",
+                  "mitigated"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Communicating during an incident",
+      "codeHash": "cd205e4e8d9824a5900b261171c57287df2f1ea080799d37e67aa7a7e7572cc9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Blameless post-mortems",
+      "codeHash": "fe1e580e4daf99fa3d84bf2b5f0a965f099e8e33481d296dea46df35c5e5fb07",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

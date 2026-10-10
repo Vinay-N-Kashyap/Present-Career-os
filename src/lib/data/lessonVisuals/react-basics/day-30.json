@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 30,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What junior React interviews look like",
+      "codeHash": "1a8bea23356c37394c2e79135f3d45f1b70f1e650b62db9b94ae6cff49ae112f",
+      "spec": {
+        "template": "flow",
+        "title": "Standard frontend engineering interview progression",
+        "nodes": [
+          {
+            "id": "r1",
+            "label": "Screening",
+            "tappable": false
+          },
+          {
+            "id": "r2",
+            "label": "Technical",
+            "tappable": false
+          },
+          {
+            "id": "r3",
+            "label": "Manager",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Junior interviews consist of screening, technical and management stages.",
+            "values": {
+              "r1": {
+                "text": "\"Screening\""
+              },
+              "r2": {
+                "text": "\"Technical\""
+              },
+              "r3": {
+                "text": "\"Manager\""
+              }
+            },
+            "tones": {
+              "r1": "data",
+              "r2": "idle",
+              "r3": "idle"
+            },
+            "arrows": [
+              [
+                "r1",
+                "r2"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Interviewers look for core fundamentals and clear problem-solving thought.",
+            "values": {
+              "r1": {
+                "text": "\"Screening\""
+              },
+              "r2": {
+                "text": "\"Technical\""
+              },
+              "r3": {
+                "text": "\"Manager\""
+              }
+            },
+            "tones": {
+              "r1": "idle",
+              "r2": "data",
+              "r3": "ok"
+            },
+            "arrows": [
+              [
+                "r1",
+                "r2"
+              ],
+              [
+                "r2",
+                "r3"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Standard frontend engineering interview progression",
+        "nodes": [
+          {
+            "id": "r1",
+            "label": "Screening",
+            "tappable": false
+          },
+          {
+            "id": "r2",
+            "label": "Technical",
+            "tappable": false
+          },
+          {
+            "id": "r3",
+            "label": "Manager",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Junior interviews consist of screening, technical and management stages.",
+            "values": {
+              "r1": "\"Screening\"",
+              "r2": "\"Technical\"",
+              "r3": "\"Manager\""
+            },
+            "tones": {
+              "r1": "data",
+              "r2": "idle",
+              "r3": "idle"
+            },
+            "arrows": [
+              [
+                "r1",
+                "r2"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Interviewers look for core fundamentals and clear problem-solving thought.",
+            "values": {
+              "r1": "\"Screening\"",
+              "r2": "\"Technical\"",
+              "r3": "\"Manager\""
+            },
+            "tones": {
+              "r1": "idle",
+              "r2": "data",
+              "r3": "ok"
+            },
+            "arrows": [
+              [
+                "r1",
+                "r2"
+              ],
+              [
+                "r2",
+                "r3"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Common React questions and short answers",
+      "codeHash": "b927c0b3fb0cad1586e331b236e47ec4afdb01c151497b4cbe853b221fe28d58",
+      "spec": {
+        "template": "compare",
+        "title": "Contrasting read-only component inputs with owned local state",
+        "leftLabel": "Props (Read-only)",
+        "rightLabel": "State (Mutable)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Props provide immutable inputs whereas state represents internal mutable data.",
+            "left": {
+              "code": "console.log(questions[\"props vs state\"]);",
+              "result": {
+                "text": "\"props vs state\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(questions[\"props vs state\"]);",
+              "result": {
+                "text": "\"why keys\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unique keys preserve DOM identity across rendering updates.",
+            "left": {
+              "code": "console.log(questions[\"why keys\"]);",
+              "result": {
+                "text": "\"why keys\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(questions[\"useEffect\"]);",
+              "result": {
+                "text": "\"useEffect\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Contrasting read-only component inputs with owned local state",
+        "leftLabel": "Props (Read-only)",
+        "rightLabel": "State (Mutable)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Props provide immutable inputs whereas state represents internal mutable data.",
+            "left": {
+              "code": "console.log(questions[\"props vs state\"]);",
+              "result": "\"props vs state\"",
+              "tone": "idle",
+              "checks": [
+                "\"props vs state\""
+              ]
+            },
+            "right": {
+              "code": "console.log(questions[\"props vs state\"]);",
+              "result": "\"why keys\"",
+              "tone": "ok",
+              "checks": [
+                "\"why keys\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unique keys preserve DOM identity across rendering updates.",
+            "left": {
+              "code": "console.log(questions[\"why keys\"]);",
+              "result": "\"why keys\"",
+              "tone": "idle",
+              "checks": [
+                "\"why keys\""
+              ]
+            },
+            "right": {
+              "code": "console.log(questions[\"useEffect\"]);",
+              "result": "\"useEffect\"",
+              "tone": "ok",
+              "checks": [
+                "\"useEffect\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Explaining your project in two minutes",
+      "codeHash": "25cf2ff817ac9241e8a7741ba4d8861481a59f48dfa88e034d64661eb5890a7e",
+      "spec": {
+        "template": "boxes",
+        "title": "Four-part project elevator pitch structure",
+        "boxes": [
+          {
+            "id": "part",
+            "label": "narrative",
+            "tappable": false
+          },
+          {
+            "id": "content",
+            "label": "summary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Structure project overviews into four focused narrative segments.",
+            "values": {
+              "part": {
+                "text": "\"A Job Tracker in React to track my job applications\""
+              },
+              "content": {
+                "text": "\"React, React Router, custom hooks, localStorage, Vitest, deployed on Vercel\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Describe what you built and explain one challenge you solved in React.",
+            "values": {
+              "part": {
+                "text": "\"Refresh broke inner pages after deploy; fixed with a rewrite rule\""
+              },
+              "content": {
+                "text": "\"Add a backend so data syncs across devices\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Four-part project elevator pitch structure",
+        "boxes": [
+          {
+            "id": "part",
+            "label": "narrative",
+            "tappable": false
+          },
+          {
+            "id": "content",
+            "label": "summary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Structure project overviews into four focused narrative segments.",
+            "values": {
+              "part": "\"A Job Tracker in React to track my job applications\"",
+              "content": "\"React, React Router, custom hooks, localStorage, Vitest, deployed on Vercel\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Describe what you built and explain one challenge you solved in React.",
+            "values": {
+              "part": "\"Refresh broke inner pages after deploy; fixed with a rewrite rule\"",
+              "content": "\"Add a backend so data syncs across devices\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Live coding: think aloud",
+      "codeHash": "2794bb7e9672f929dda1f067a65c2605032786204674af8049d9926a7dbbd903",
+      "spec": {
+        "template": "compare",
+        "title": "Deconstructing interview coding challenges aloud",
+        "leftLabel": "Problem Formulation",
+        "rightLabel": "Working Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Live coding assessments evaluate problem solving approach under pressure.",
+            "left": {
+              "code": "console.log(fizzBuzz(3));",
+              "result": {
+                "text": "\"Fizz\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(fizzBuzz(15));",
+              "result": {
+                "text": "\"FizzBuzz\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Communicate planned approaches verbally before implementing and testing.",
+            "left": {
+              "code": "console.log(fizzBuzz(5));",
+              "result": {
+                "text": "\"Buzz\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(fizzBuzz(15));",
+              "result": {
+                "text": "\"FizzBuzz\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Deconstructing interview coding challenges aloud",
+        "leftLabel": "Problem Formulation",
+        "rightLabel": "Working Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Live coding assessments evaluate problem solving approach under pressure.",
+            "left": {
+              "code": "console.log(fizzBuzz(3));",
+              "result": "\"Fizz\"",
+              "tone": "idle",
+              "checks": [
+                "\"Fizz\""
+              ]
+            },
+            "right": {
+              "code": "console.log(fizzBuzz(15));",
+              "result": "\"FizzBuzz\"",
+              "tone": "ok",
+              "checks": [
+                "\"FizzBuzz\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Communicate planned approaches verbally before implementing and testing.",
+            "left": {
+              "code": "console.log(fizzBuzz(5));",
+              "result": "\"Buzz\"",
+              "tone": "idle",
+              "checks": [
+                "\"Buzz\""
+              ]
+            },
+            "right": {
+              "code": "console.log(fizzBuzz(15));",
+              "result": "\"FizzBuzz\"",
+              "tone": "ok",
+              "checks": [
+                "\"FizzBuzz\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Applying for jobs",
+      "codeHash": "48457bd3da84a924d1cfb5ee70ef640d4fcee07c2ada2c918d5f5f12781f8c9e",
+      "spec": {
+        "template": "boxes",
+        "title": "Strategic job search tracking and pipeline metrics",
+        "boxes": [
+          {
+            "id": "target",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "state",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Submit job applications across job boards, networks and professional referrals.",
+            "values": {
+              "target": {
+                "text": "\"Zoho\""
+              },
+              "state": {
+                "text": "\"interview\""
+              }
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Track applications steadily and follow up on submissions over time.",
+            "values": {
+              "target": {
+                "text": "\"Swiggy\""
+              },
+              "state": {
+                "text": "\"rejected\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Strategic job search tracking and pipeline metrics",
+        "boxes": [
+          {
+            "id": "target",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "state",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Submit job applications across job boards, networks and professional referrals.",
+            "values": {
+              "target": "\"Zoho\"",
+              "state": "\"interview\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say4",
+            "caption": "Track applications steadily and follow up on submissions over time.",
+            "values": {
+              "target": "\"Swiggy\"",
+              "state": "\"rejected\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What to learn next",
+      "codeHash": "f0b0c20917cea67e7577e389b36e5182a2ab3538c71dac9ce719bcd2135a1a41",
+      "spec": {
+        "template": "none",
+        "reason": "Planning post-course growth trajectories across TypeScript, Next.js, backend architecture and portfolio expansion"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Planning post-course growth trajectories across TypeScript, Next.js, backend architecture and portfolio expansion"
+      }
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "From text to actions",
+      "codeHash": "771f12b17993a5ad5528937d7864ebde98584c949a956511b116d6fb761ea759",
+      "spec": {
+        "template": "table",
+        "title": "Excessive agency mitigations in agent architectures",
+        "columns": [
+          "proposed",
+          "allowed",
+          "proposed"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The core defence is that code, not the model, decides what is allowed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "proposed"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "proposed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "proposed"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "proposed"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The model proposes calls but the system executes only those passing checks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "proposed"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "proposed"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "proposed"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "proposed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Excessive agency mitigations in agent architectures",
+        "columns": [
+          "proposed",
+          "allowed",
+          "proposed"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The core defence is that code, not the model, decides what is allowed.",
+            "rows": [
+              {
+                "cells": [
+                  "proposed",
+                  "allowed",
+                  "proposed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "proposed",
+                  "allowed",
+                  "proposed"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The model proposes calls but the system executes only those passing checks.",
+            "rows": [
+              {
+                "cells": [
+                  "proposed",
+                  "allowed",
+                  "proposed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "proposed",
+                  "allowed",
+                  "proposed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A tool registry",
+      "codeHash": "86ce5b4ff8fc41568241e4671c2fafd4883009e581590bf027fc4dfc7e9085d1",
+      "spec": {
+        "template": "table",
+        "title": "Tool registry schema definition and argument constraints",
+        "columns": [
+          "registry",
+          "optional",
+          "registry"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tool registry specifies permitted tools, argument types and requirements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "registry"
+                  },
+                  {
+                    "text": "optional"
+                  },
+                  {
+                    "text": "registry"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "registry"
+                  },
+                  {
+                    "text": "optional"
+                  },
+                  {
+                    "text": "registry"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "An allowlist naming what is permitted is much safer than a blocklist.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "registry"
+                  },
+                  {
+                    "text": "optional"
+                  },
+                  {
+                    "text": "registry"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "registry"
+                  },
+                  {
+                    "text": "optional"
+                  },
+                  {
+                    "text": "registry"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tool registry schema definition and argument constraints",
+        "columns": [
+          "registry",
+          "optional",
+          "registry"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tool registry specifies permitted tools, argument types and requirements.",
+            "rows": [
+              {
+                "cells": [
+                  "registry",
+                  "optional",
+                  "registry"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "registry",
+                  "optional",
+                  "registry"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "An allowlist naming what is permitted is much safer than a blocklist.",
+            "rows": [
+              {
+                "cells": [
+                  "registry",
+                  "optional",
+                  "registry"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "registry",
+                  "optional",
+                  "registry"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating a tool call",
+      "codeHash": "10511107084a32d93ec5c7fd74b3acac115d729969d3387e79d51e5721b860e3",
+      "spec": {
+        "template": "table",
+        "title": "Action parameter validation and type enforcement",
+        "columns": [
+          "args",
+          "errors",
+          "args"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The validator reports missing required arguments and unexpected parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "args"
+                  },
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "args"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "args"
+                  },
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "args"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Always validate on the server side without trusting model self-assertions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "args"
+                  },
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "args"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "args"
+                  },
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "args"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Action parameter validation and type enforcement",
+        "columns": [
+          "args",
+          "errors",
+          "args"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The validator reports missing required arguments and unexpected parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "args",
+                  "errors",
+                  "args"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "args",
+                  "errors",
+                  "args"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Always validate on the server side without trusting model self-assertions.",
+            "rows": [
+              {
+                "cells": [
+                  "args",
+                  "errors",
+                  "args"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "args",
+                  "errors",
+                  "args"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Path traversal",
+      "codeHash": "14e6420b3960891ac72f0af5fbdd0b929aa9742d38441e852725e985bae299c1",
+      "spec": {
+        "template": "table",
+        "title": "Path normalization and boundary breakout prevention",
+        "columns": [
+          "user_path",
+          "joined",
+          "user_path"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Path traversal escapes the working folder when relative segments climb up.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user_path"
+                  },
+                  {
+                    "text": "joined"
+                  },
+                  {
+                    "text": "user_path"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user_path"
+                  },
+                  {
+                    "text": "joined"
+                  },
+                  {
+                    "text": "user_path"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Applications must normalise path strings first and verify where they land.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user_path"
+                  },
+                  {
+                    "text": "joined"
+                  },
+                  {
+                    "text": "user_path"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user_path"
+                  },
+                  {
+                    "text": "joined"
+                  },
+                  {
+                    "text": "user_path"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Path normalization and boundary breakout prevention",
+        "columns": [
+          "user_path",
+          "joined",
+          "user_path"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Path traversal escapes the working folder when relative segments climb up.",
+            "rows": [
+              {
+                "cells": [
+                  "user_path",
+                  "joined",
+                  "user_path"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "user_path",
+                  "joined",
+                  "user_path"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Applications must normalise path strings first and verify where they land.",
+            "rows": [
+              {
+                "cells": [
+                  "user_path",
+                  "joined",
+                  "user_path"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "user_path",
+                  "joined",
+                  "user_path"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A safe join",
+      "codeHash": "01dca2ca7b5d51339f98a4675ff4c1872de7f5c021c1a3924e32a1b2c8b7a21e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Tool safety in the pipeline",
+      "codeHash": "b94c2bde9a26b85135fb65027a5d7c28c3ef36ad6f5f02ea5ff0c9c22cf3b338",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

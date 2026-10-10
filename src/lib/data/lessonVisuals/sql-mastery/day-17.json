@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a window function is",
+      "codeHash": "431b4fc67c56187d00b3ee09c2a41db00bb14c9d9da896b3c33e366ed3763a9b",
+      "spec": {
+        "template": "table",
+        "title": "Window functions preserving rows while computing aggregates",
+        "columns": [
+          "name",
+          "price",
+          "price_rank",
+          "overall_average"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Window functions calculate across a set of rows without removing rows.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "355.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Adding OVER shows the overall average next to every product.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "355.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Stapler"
+                  },
+                  {
+                    "text": "150.00"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "355.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "355.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Window functions preserving rows while computing aggregates",
+        "columns": [
+          "name",
+          "price",
+          "price_rank",
+          "overall_average"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Window functions calculate across a set of rows without removing rows.",
+            "rows": [
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00",
+                  "1",
+                  "355.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Adding OVER shows the overall average next to every product.",
+            "rows": [
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00",
+                  "1",
+                  "355.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Stapler",
+                  "150.00",
+                  "2",
+                  "355.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00",
+                  "3",
+                  "355.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ROW_NUMBER, RANK and DENSE_RANK",
+      "codeHash": "626b8c8992a7ea7f297b71ed645bb99cf9df608937f037bf89ea40e594f302bb",
+      "spec": {
+        "template": "compare",
+        "title": "Comparing rank versus dense_rank tie handling",
+        "leftLabel": "RANK (Skips after Ties)",
+        "rightLabel": "DENSE_RANK (No Gaps)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The rank function gives tied rows the same number and skips.",
+            "left": {
+              "code": "Asha 92, Ravi 88, Priya 88",
+              "result": {
+                "text": "1, 2, 2"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Karan 75 with rank()",
+              "result": {
+                "text": "rank: 4 (skips 3)"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The dense_rank function does not skip numbers when ties occur.",
+            "left": {
+              "code": "gap in ranking sequence",
+              "result": {
+                "text": "position 3 skipped"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Karan 75 with dense_rank()",
+              "result": {
+                "text": "dense_rank: 3 (no gap)"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Comparing rank versus dense_rank tie handling",
+        "leftLabel": "RANK (Skips after Ties)",
+        "rightLabel": "DENSE_RANK (No Gaps)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The rank function gives tied rows the same number and skips.",
+            "left": {
+              "code": "Asha 92, Ravi 88, Priya 88",
+              "result": "1, 2, 2",
+              "tone": "data",
+              "checks": [
+                "1, 2, 2"
+              ]
+            },
+            "right": {
+              "code": "Karan 75 with rank()",
+              "result": "rank: 4 (skips 3)",
+              "tone": "error",
+              "checks": [
+                "rank: 4 (skips 3)"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The dense_rank function does not skip numbers when ties occur.",
+            "left": {
+              "code": "gap in ranking sequence",
+              "result": "position 3 skipped",
+              "tone": "error",
+              "checks": [
+                "position 3 skipped"
+              ]
+            },
+            "right": {
+              "code": "Karan 75 with dense_rank()",
+              "result": "dense_rank: 3 (no gap)",
+              "tone": "ok",
+              "checks": [
+                "dense_rank: 3 (no gap)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PARTITION BY: ranking inside each group",
+      "codeHash": "71fe0d6b23eb4cd110bdf9bb2ba31032cc2a796882314ff782b02019022b7532",
+      "spec": {
+        "template": "table",
+        "title": "PARTITION BY grouping within window calculation",
+        "columns": [
+          "category",
+          "name",
+          "price",
+          "rank_in_category"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "PARTITION BY splits rows into groups ranking products inside each.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "1499.00"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "PARTITION BY decides groups while ORDER BY decides the order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "1499.00"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "Phone stand"
+                  },
+                  {
+                    "text": "299.00"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "Stapler"
+                  },
+                  {
+                    "text": "150.00"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "PARTITION BY grouping within window calculation",
+        "columns": [
+          "category",
+          "name",
+          "price",
+          "rank_in_category"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "PARTITION BY splits rows into groups ranking products inside each.",
+            "rows": [
+              {
+                "cells": [
+                  "electronics",
+                  "Headphones",
+                  "1499.00",
+                  "1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "PARTITION BY decides groups while ORDER BY decides the order.",
+            "rows": [
+              {
+                "cells": [
+                  "electronics",
+                  "Headphones",
+                  "1499.00",
+                  "1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "electronics",
+                  "Phone stand",
+                  "299.00",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stationery",
+                  "Stapler",
+                  "150.00",
+                  "1"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The top item per group",
+      "codeHash": "12fc8478d2eff56c8371bd8e9731ac2a13bf423a245aabe91d4ded72bf64b5b8",
+      "spec": {
+        "template": "none",
+        "reason": "Top-per-group filtering using CTE and window row_number filter."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Top-per-group filtering using CTE and window row_number filter."
+      }
+    },
+    {
+      "partTitle": "Comparing with the previous row: LAG and LEAD",
+      "codeHash": "5cfe6aca1a0e8e41c0f2f6f40b7d88cb48389a450b3306b81592a9e8d34a93ef",
+      "spec": {
+        "template": "none",
+        "reason": "Inter-row lead and lag boundary offsets and time-series delta computation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Inter-row lead and lag boundary offsets and time-series delta computation."
+      }
+    },
+    {
+      "partTitle": "Putting it together: top products per category",
+      "codeHash": "405ac0338432e82f627b8473ead1f7686cdb9722df6dafc8693b3b59c97ae068",
+      "spec": {
+        "template": "table",
+        "title": "Top product per category using window rank",
+        "columns": [
+          "category",
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us answer questions about the most expensive product in each category.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bags"
+                  },
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The query uses row_number with PARTITION BY category keeping rank 1.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bags"
+                  },
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "Stapler"
+                  },
+                  {
+                    "text": "150.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top product per category using window rank",
+        "columns": [
+          "category",
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us answer questions about the most expensive product in each category.",
+            "rows": [
+              {
+                "cells": [
+                  "bags",
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The query uses row_number with PARTITION BY category keeping rank 1.",
+            "rows": [
+              {
+                "cells": [
+                  "bags",
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "electronics",
+                  "Headphones",
+                  "1499.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stationery",
+                  "Stapler",
+                  "150.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

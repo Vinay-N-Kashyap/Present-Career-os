@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 18,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What classes and objects are",
+      "codeHash": "83ab66fa25d087c8fdee3b58b51859622579b2190dd5df1eefa8c6bab45f893c",
+      "spec": {
+        "template": "boxes",
+        "title": "Classes as blueprints for objects",
+        "boxes": [
+          {
+            "id": "tea",
+            "label": "tea"
+          },
+          {
+            "id": "bus",
+            "label": "bus"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A class is a blueprint for making objects.",
+            "values": {
+              "tea": {
+                "text": "Expense"
+              },
+              "bus": {
+                "text": "Expense"
+              }
+            },
+            "tones": {
+              "tea": "data",
+              "bus": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Every string and list is an object in Python.",
+            "values": {
+              "tea": {
+                "var": "tea",
+                "line": 4
+              },
+              "bus": {
+                "var": "bus",
+                "line": 5
+              }
+            },
+            "tones": {
+              "tea": "ok",
+              "bus": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Classes as blueprints for objects",
+        "boxes": [
+          {
+            "id": "tea",
+            "label": "tea"
+          },
+          {
+            "id": "bus",
+            "label": "bus"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A class is a blueprint for making objects.",
+            "values": {
+              "tea": "Expense",
+              "bus": "Expense"
+            },
+            "tones": {
+              "tea": "data",
+              "bus": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Every string and list is an object in Python.",
+            "values": {
+              "tea": "<Expense>",
+              "bus": "<Expense>"
+            },
+            "tones": {
+              "tea": "ok",
+              "bus": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "__init__ and self: giving objects their data",
+      "codeHash": "aa156e5e45acd8bf8400b0766669cd31f9fd4e402dbc95296c49c7a861264d67",
+      "spec": {
+        "template": "boxes",
+        "title": "Initializing object attributes",
+        "boxes": [
+          {
+            "id": "tea",
+            "label": "tea"
+          },
+          {
+            "id": "bus",
+            "label": "bus"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Values stored on this object are called attributes.",
+            "values": {
+              "tea": {
+                "var": "tea",
+                "line": 6
+              },
+              "bus": {
+                "text": "Bus"
+              }
+            },
+            "tones": {
+              "tea": "data",
+              "bus": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Each object has its own attributes that can be different.",
+            "values": {
+              "tea": {
+                "var": "tea",
+                "line": 7
+              },
+              "bus": {
+                "var": "bus",
+                "line": 7
+              }
+            },
+            "tones": {
+              "tea": "ok",
+              "bus": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Initializing object attributes",
+        "boxes": [
+          {
+            "id": "tea",
+            "label": "tea"
+          },
+          {
+            "id": "bus",
+            "label": "bus"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Values stored on this object are called attributes.",
+            "values": {
+              "tea": "<Expense>",
+              "bus": "Bus"
+            },
+            "tones": {
+              "tea": "data",
+              "bus": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Each object has its own attributes that can be different.",
+            "values": {
+              "tea": "<Expense>",
+              "bus": "<Expense>"
+            },
+            "tones": {
+              "tea": "ok",
+              "bus": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Methods: actions that belong to an object",
+      "codeHash": "10bfb0d6ab9be22c351462bd531f220450a0e35248d59bfe64a3151b0ca3f9f0",
+      "spec": {
+        "template": "none",
+        "reason": "Calling instance methods and passing self is demonstrated by return value outputs."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Methods that change the object",
+      "codeHash": "2eb734121783a86a8c89f265dda2abe170bea91ee394d3c8dbff3d7c1d7ba7e7",
+      "spec": {
+        "template": "boxes",
+        "title": "Encapsulating state changes",
+        "boxes": [
+          {
+            "id": "w",
+            "label": "w"
+          },
+          {
+            "id": "balance",
+            "label": "balance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Objects hold state that changes over time.",
+            "values": {
+              "w": {
+                "var": "w",
+                "line": 14
+              },
+              "balance": {
+                "text": "100"
+              }
+            },
+            "tones": {
+              "w": "data",
+              "balance": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Keeping rules inside the class protects its own data.",
+            "values": {
+              "w": {
+                "var": "w",
+                "line": 17
+              },
+              "balance": {
+                "text": "Wallet(100)"
+              }
+            },
+            "tones": {
+              "w": "ok",
+              "balance": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Encapsulating state changes",
+        "boxes": [
+          {
+            "id": "w",
+            "label": "w"
+          },
+          {
+            "id": "balance",
+            "label": "balance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Objects hold state that changes over time.",
+            "values": {
+              "w": "<Wallet>",
+              "balance": "100"
+            },
+            "tones": {
+              "w": "data",
+              "balance": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Keeping rules inside the class protects its own data.",
+            "values": {
+              "w": "<Wallet>",
+              "balance": "Wallet(100)"
+            },
+            "tones": {
+              "w": "ok",
+              "balance": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Many objects in a list",
+      "codeHash": "93f4d353c58057bab69eeafc51a09688fe55ee0c574079e893c864e14b471c2c",
+      "spec": {
+        "template": "none",
+        "reason": "Sorting and iterating lists of objects mirrors list-of-dictionary operations."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: an ExpenseBook class",
+      "codeHash": "ffba69782f3b1b97f778efc2ed051978e1c3b4ce6f93cd29d9f8f37300bbf33b",
+      "spec": {
+        "template": "none",
+        "reason": "ExpenseBook class composes budget tracking and exception handling covered earlier."
+      },
+      "filled": {}
+    }
+  ]
+}

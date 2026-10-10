@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why full fine-tuning is expensive",
+      "codeHash": "778a5c295b072478fdfea598bc535f8c69d45b8b771042691472af372ca7bcd4",
+      "spec": {
+        "template": "table",
+        "title": "Full fine-tuning overhead versus parameter-efficient adaptation",
+        "columns": [
+          "params",
+          "full",
+          "trainable"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Full fine-tuning updates every weight requiring extensive optimizer states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "trainable"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "trainable"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Frozen weights need no gradients and no optimizer states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "trainable"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Full fine-tuning overhead versus parameter-efficient adaptation",
+        "columns": [
+          "params",
+          "full",
+          "trainable"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Full fine-tuning updates every weight requiring extensive optimizer states.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "full",
+                  "trainable"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "full",
+                  "trainable"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Frozen weights need no gradients and no optimizer states.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "full",
+                  "trainable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "full",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The low-rank idea",
+      "codeHash": "3189250570e82bf8aec9a6eac3303b4ca53c79ca23396a261b3d130689c051d0",
+      "spec": {
+        "template": "table",
+        "title": "Low-rank matrix factorisation reducing active parameters",
+        "columns": [
+          "layers",
+          "d_in",
+          "d_out"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LoRA assumes the weight matrix update can be described with fewer numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "d_in"
+                  },
+                  {
+                    "text": "d_out"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "d_in"
+                  },
+                  {
+                    "text": "d_out"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Instead of learning full updates it learns two thin matrices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "d_in"
+                  },
+                  {
+                    "text": "d_out"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "d_in"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Low-rank matrix factorisation reducing active parameters",
+        "columns": [
+          "layers",
+          "d_in",
+          "d_out"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LoRA assumes the weight matrix update can be described with fewer numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "d_in",
+                  "d_out"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "d_in",
+                  "d_out"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Instead of learning full updates it learns two thin matrices.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "d_in",
+                  "d_out"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "d_in",
+                  "layers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The LoRA forward pass",
+      "codeHash": "9739c92269c932e9d186511322c82360fa13933e11808b92936f04b372d0cd07",
+      "spec": {
+        "template": "table",
+        "title": "LoRA forward pass combining frozen weights with adapter pathways",
+        "columns": [
+          "base",
+          "low",
+          "base"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A LoRA layer computes updates where base weight W remains frozen.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "low"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "low"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Matrix B is initialised to zeros so starting behaviour matches the original.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "low"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "low"
+                  },
+                  {
+                    "text": "low"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "LoRA forward pass combining frozen weights with adapter pathways",
+        "columns": [
+          "base",
+          "low",
+          "base"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A LoRA layer computes updates where base weight W remains frozen.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "low",
+                  "base"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "base",
+                  "low",
+                  "base"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Matrix B is initialised to zeros so starting behaviour matches the original.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "low",
+                  "base"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "base",
+                  "low",
+                  "low"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Merging adapters",
+      "codeHash": "8e180e93ccb46056f81c31b59d3a711c87d673add70a67b9e1f804e6003624db",
+      "spec": {
+        "template": "table",
+        "title": "Merging adapter weights for zero-overhead inference execution",
+        "columns": [
+          "merged",
+          "lora",
+          "merged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "After training the adapter can be merged into the base weight.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "lora"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "lora"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The merged layer produces identical outputs with no extra inference cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "lora"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "lora"
+                  },
+                  {
+                    "text": "lora"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Merging adapter weights for zero-overhead inference execution",
+        "columns": [
+          "merged",
+          "lora",
+          "merged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "After training the adapter can be merged into the base weight.",
+            "rows": [
+              {
+                "cells": [
+                  "merged",
+                  "lora",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "merged",
+                  "lora",
+                  "merged"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The merged layer produces identical outputs with no extra inference cost.",
+            "rows": [
+              {
+                "cells": [
+                  "merged",
+                  "lora",
+                  "merged"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "merged",
+                  "lora",
+                  "lora"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "QLoRA and distributed fine-tuning",
+      "codeHash": "56bdf9c4b700f2e199981bf7b164d850b35b4212e724929482cb1ef72d010490",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: LoRA",
+      "codeHash": "98bb873708214963ae06d2cd1ff328a85b8ee81a4fc20a2dbf5372f632f8fc2b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

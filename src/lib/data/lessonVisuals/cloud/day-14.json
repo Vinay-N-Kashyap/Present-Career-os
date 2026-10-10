@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 14,
+  "promptSha": "576033c5eaf4a02baf84abc1e7d5ee7c3df967fac9dc8235a90ac81f994a4e3f",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Amazon RDS vs Self-Managed EC2 Databases",
+      "codeHash": "f28d02645b4859ce9023591f534cac911e6552b8f6dcf09bcdc380938de328be",
+      "spec": {
+        "template": "compare",
+        "title": "Self-managed EC2 database compared to managed Amazon RDS",
+        "leftLabel": "Self-Managed EC2 Database",
+        "rightLabel": "Managed Amazon RDS",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Self-managed database instances require operating system patching and toil.",
+            "left": {
+              "code": "Manual OS Patching",
+              "result": {
+                "text": "High Maintenance"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated Minor Upgrades",
+              "result": {
+                "text": "Zero Maintenance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Managed RDS automates administrative toil with automated storage backups.",
+            "left": {
+              "code": "Custom Cron Backup Scripts",
+              "result": {
+                "text": "Manual Backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated Daily Snapshots",
+              "result": {
+                "text": "Point-in-Time Recovery"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Self-managed EC2 database compared to managed Amazon RDS",
+        "leftLabel": "Self-Managed EC2 Database",
+        "rightLabel": "Managed Amazon RDS",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Self-managed database instances require operating system patching and toil.",
+            "left": {
+              "code": "Manual OS Patching",
+              "result": {
+                "text": "High Maintenance"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated Minor Upgrades",
+              "result": {
+                "text": "Zero Maintenance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Managed RDS automates administrative toil with automated storage backups.",
+            "left": {
+              "code": "Custom Cron Backup Scripts",
+              "result": {
+                "text": "Manual Backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated Daily Snapshots",
+              "result": {
+                "text": "Point-in-Time Recovery"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RDS Multi-AZ Deployment & Synchronous Replication",
+      "codeHash": "2d48ff647243991044381cf562e308d2587ff100bc98feafad39208006aace59",
+      "spec": {
+        "template": "workflow",
+        "title": "RDS Multi-AZ synchronous replication architecture",
+        "stages": [
+          {
+            "id": "client",
+            "name": "Application Server",
+            "subtext": "Read / Write Ingress"
+          },
+          {
+            "id": "primary",
+            "name": "Primary DB (AZ-A)",
+            "subtext": "Active Write Engine"
+          },
+          {
+            "id": "mirror",
+            "name": "Synchronous Mirror",
+            "subtext": "EBS Storage Layer"
+          },
+          {
+            "id": "standby",
+            "name": "Standby DB (AZ-B)",
+            "subtext": "Warm Passive Node"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "RDS maintains a synchronous standby replica in a second availability zone.",
+            "activeStageId": "primary",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Database writes are synchronously mirrored before acknowledging commits.",
+            "activeStageId": "mirror",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "RDS Multi-AZ synchronous replication architecture",
+        "stages": [
+          {
+            "id": "client",
+            "name": "Application Server",
+            "subtext": "Read / Write Ingress"
+          },
+          {
+            "id": "primary",
+            "name": "Primary DB (AZ-A)",
+            "subtext": "Active Write Engine"
+          },
+          {
+            "id": "mirror",
+            "name": "Synchronous Mirror",
+            "subtext": "EBS Storage Layer"
+          },
+          {
+            "id": "standby",
+            "name": "Standby DB (AZ-B)",
+            "subtext": "Warm Passive Node"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "RDS maintains a synchronous standby replica in a second availability zone.",
+            "activeStageId": "primary",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Database writes are synchronously mirrored before acknowledging commits.",
+            "activeStageId": "mirror",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Multi-AZ Failover Mechanics",
+      "codeHash": "590e3de051ddfe884a90233376928bcf9fec149ed3c628d22c7b6649ede596a1",
+      "spec": {
+        "template": "states",
+        "title": "Automated Multi-AZ failover and DNS CNAME switch states",
+        "states": [
+          {
+            "id": "primaryActive",
+            "label": "Primary AZ-A Active"
+          },
+          {
+            "id": "outageDetected",
+            "label": "Outage Detected by RDS"
+          },
+          {
+            "id": "cnameSwapped",
+            "label": "DNS CNAME Swapped to AZ-B"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Amazon RDS automates failover with zero human intervention.",
+            "active": "outageDetected"
+          },
+          {
+            "at": "say6",
+            "caption": "During failover RDS flips canonical records to resolve to the standby replica.",
+            "active": "cnameSwapped"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Automated Multi-AZ failover and DNS CNAME switch states",
+        "states": [
+          {
+            "id": "primaryActive",
+            "label": "Primary AZ-A Active"
+          },
+          {
+            "id": "outageDetected",
+            "label": "Outage Detected by RDS"
+          },
+          {
+            "id": "cnameSwapped",
+            "label": "DNS CNAME Swapped to AZ-B"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Amazon RDS automates failover with zero human intervention.",
+            "active": "outageDetected"
+          },
+          {
+            "at": "say6",
+            "caption": "During failover RDS flips canonical records to resolve to the standby replica.",
+            "active": "cnameSwapped"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Read Replicas & Asynchronous Read Scaling",
+      "codeHash": "cf10f2ee15c8ee791355c244782062a078dca4c220d1434b720bad5f07129c60",
+      "spec": {
+        "template": "sequence",
+        "title": "Asynchronous read replica replication and traffic offloading",
+        "actors": [
+          {
+            "id": "app",
+            "name": "Read Client"
+          },
+          {
+            "id": "master",
+            "name": "Primary DB Master"
+          },
+          {
+            "id": "replica",
+            "name": "Read Replica"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Read replicas solve bottlenecks offloading heavy queries from master.",
+            "from": "app",
+            "to": "replica",
+            "label": "SELECT Query",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "Read replicas replicate asynchronously across multiple regions.",
+            "from": "master",
+            "to": "replica",
+            "label": "Binlog Sync",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Asynchronous read replica replication and traffic offloading",
+        "actors": [
+          {
+            "id": "app",
+            "name": "Read Client"
+          },
+          {
+            "id": "master",
+            "name": "Primary DB Master"
+          },
+          {
+            "id": "replica",
+            "name": "Read Replica"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Read replicas solve bottlenecks offloading heavy queries from master.",
+            "from": "app",
+            "to": "replica",
+            "label": "SELECT Query",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "Read replicas replicate asynchronously across multiple regions.",
+            "from": "master",
+            "to": "replica",
+            "label": "Binlog Sync",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Replication Lag & Eventual Consistency in Read Replicas",
+      "codeHash": "88c4e0f11667fa3540fa563de40470a5d479b701e486d9bc74fce5d9fe02f50d",
+      "spec": {
+        "template": "table",
+        "title": "Replication lag and eventual consistency routing models",
+        "columns": [
+          "Query Intent",
+          "Routed Endpoint",
+          "Consistency Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Replication lag causes a small delay between writes and replica reads.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Strong consistency workflows must route queries directly to the primary.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Replication lag and eventual consistency routing models",
+        "columns": [
+          "Query Intent",
+          "Routed Endpoint",
+          "Consistency Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Replication lag causes a small delay between writes and replica reads.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Strong consistency workflows must route queries directly to the primary.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amazon Aurora: Cloud-Native Distributed Storage",
+      "codeHash": "35d0d8e6d25318ae2dfb560dc6dd73cbf49169e1ff34cff1b12fb9bf7d277964",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

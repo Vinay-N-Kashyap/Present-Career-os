@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 29,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Liveness (/healthz) vs Readiness (/readyz) Probe Semantics",
+      "codeHash": "16ac28da29526882f0dc288ea2fc864b3450d801c99a33816e97a605ea5141ca",
+      "spec": {
+        "template": "boxes",
+        "title": "Health probe manager liveness and readiness states",
+        "boxes": [
+          {
+            "id": "alive",
+            "label": "isAlive"
+          },
+          {
+            "id": "ready",
+            "label": "isReady"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A liveness probe determines whether the process is alive.",
+            "values": {
+              "alive": {
+                "text": "true"
+              },
+              "ready": {
+                "text": "false"
+              }
+            },
+            "tones": {
+              "alive": "ok",
+              "ready": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A readiness probe determines whether applications can accept traffic.",
+            "values": {
+              "alive": {
+                "text": "true"
+              },
+              "ready": {
+                "text": "false"
+              }
+            },
+            "tones": {
+              "alive": "ok",
+              "ready": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Distinguishing probes prevents restart loops when databases reboot.",
+            "values": {
+              "alive": {
+                "text": "true"
+              },
+              "ready": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "alive": "ok",
+              "ready": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Health probe manager liveness and readiness states",
+        "boxes": [
+          {
+            "id": "alive",
+            "label": "isAlive"
+          },
+          {
+            "id": "ready",
+            "label": "isReady"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A liveness probe determines whether the process is alive.",
+            "values": {
+              "alive": "true",
+              "ready": "false"
+            },
+            "tones": {
+              "alive": "ok",
+              "ready": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A readiness probe determines whether applications can accept traffic.",
+            "values": {
+              "alive": "true",
+              "ready": "false"
+            },
+            "tones": {
+              "alive": "ok",
+              "ready": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Distinguishing probes prevents restart loops when databases reboot.",
+            "values": {
+              "alive": "true",
+              "ready": "true"
+            },
+            "tones": {
+              "alive": "ok",
+              "ready": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking Critical Subsystem Dependencies (Storage, Memory, Cache)",
+      "codeHash": "167f135c200fa81d81201e704569df7cad64e9b9ca02342a49094f435bfd5ca9",
+      "spec": {
+        "template": "boxes",
+        "title": "Subsystem dependency health evaluation",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "healthy",
+            "label": "healthy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The health utility inspects database latency and memory usage.",
+            "values": {
+              "name": {
+                "text": "database"
+              },
+              "healthy": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "healthy": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Each subsystem check enforces timeouts so frozen queries do not hang.",
+            "values": {
+              "name": {
+                "text": "database"
+              },
+              "healthy": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "healthy": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Structured health inspection reports pinpoint degraded dependencies.",
+            "values": {
+              "name": {
+                "text": "database"
+              },
+              "healthy": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "healthy": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Subsystem dependency health evaluation",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "healthy",
+            "label": "healthy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The health utility inspects database latency and memory usage.",
+            "values": {
+              "name": "database",
+              "healthy": "true"
+            },
+            "tones": {
+              "name": "data",
+              "healthy": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Each subsystem check enforces timeouts so frozen queries do not hang.",
+            "values": {
+              "name": "database",
+              "healthy": "true"
+            },
+            "tones": {
+              "name": "data",
+              "healthy": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Structured health inspection reports pinpoint degraded dependencies.",
+            "values": {
+              "name": "database",
+              "healthy": "true"
+            },
+            "tones": {
+              "name": "ok",
+              "healthy": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Trapping Process Termination Signals (SIGTERM & SIGINT)",
+      "codeHash": "c5d89572d818e221aeea4e1405ebee4eb1b7286a7ecae508332e9f2a3bb2cee1",
+      "spec": {
+        "template": "boxes",
+        "title": "Operating system process termination signals",
+        "boxes": [
+          {
+            "id": "sig1",
+            "label": "SIGTERM"
+          },
+          {
+            "id": "sig2",
+            "label": "SIGINT"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "SIGTERM is the standard termination signal sent by orchestrators.",
+            "values": {
+              "sig1": {
+                "text": "SIGTERM"
+              },
+              "sig2": {
+                "text": "SIGINT"
+              }
+            },
+            "tones": {
+              "sig1": "data",
+              "sig2": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Trapping SIGTERM allows the server to execute an orderly cleanup.",
+            "values": {
+              "sig1": {
+                "text": "SIGTERM"
+              },
+              "sig2": {
+                "text": "SIGINT"
+              }
+            },
+            "tones": {
+              "sig1": "data",
+              "sig2": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Graceful signal interception ensures background jobs do not abort.",
+            "values": {
+              "sig1": {
+                "text": "SIGTERM"
+              },
+              "sig2": {
+                "text": "SIGINT"
+              }
+            },
+            "tones": {
+              "sig1": "ok",
+              "sig2": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Operating system process termination signals",
+        "boxes": [
+          {
+            "id": "sig1",
+            "label": "SIGTERM"
+          },
+          {
+            "id": "sig2",
+            "label": "SIGINT"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "SIGTERM is the standard termination signal sent by orchestrators.",
+            "values": {
+              "sig1": "SIGTERM",
+              "sig2": "SIGINT"
+            },
+            "tones": {
+              "sig1": "data",
+              "sig2": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Trapping SIGTERM allows the server to execute an orderly cleanup.",
+            "values": {
+              "sig1": "SIGTERM",
+              "sig2": "SIGINT"
+            },
+            "tones": {
+              "sig1": "data",
+              "sig2": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Graceful signal interception ensures background jobs do not abort.",
+            "values": {
+              "sig1": "SIGTERM",
+              "sig2": "SIGINT"
+            },
+            "tones": {
+              "sig1": "ok",
+              "sig2": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Draining In-Flight Requests and Refusing New Traffic",
+      "codeHash": "578272da4df3bec5cd0e38de92b9c52042fa0ca4cf11c1fc410a5d02f3437764",
+      "spec": {
+        "template": "boxes",
+        "title": "Request draining and in-flight traffic tracking",
+        "boxes": [
+          {
+            "id": "drain",
+            "label": "isDraining"
+          },
+          {
+            "id": "inFlight",
+            "label": "inFlightCount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Upon shutdown signals the server stops accepting new connections.",
+            "values": {
+              "drain": {
+                "text": "true"
+              },
+              "inFlight": {
+                "text": "0"
+              }
+            },
+            "tones": {
+              "drain": "data",
+              "inFlight": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Requests in flight must complete execution within a drain timeout.",
+            "values": {
+              "drain": {
+                "text": "true"
+              },
+              "inFlight": {
+                "text": "0"
+              }
+            },
+            "tones": {
+              "drain": "data",
+              "inFlight": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Tracking active in flight requests allows servers to exit cleanly.",
+            "values": {
+              "drain": {
+                "text": "true"
+              },
+              "inFlight": {
+                "text": "0"
+              }
+            },
+            "tones": {
+              "drain": "ok",
+              "inFlight": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Request draining and in-flight traffic tracking",
+        "boxes": [
+          {
+            "id": "drain",
+            "label": "isDraining"
+          },
+          {
+            "id": "inFlight",
+            "label": "inFlightCount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Upon shutdown signals the server stops accepting new connections.",
+            "values": {
+              "drain": "true",
+              "inFlight": "0"
+            },
+            "tones": {
+              "drain": "data",
+              "inFlight": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Requests in flight must complete execution within a drain timeout.",
+            "values": {
+              "drain": "true",
+              "inFlight": "0"
+            },
+            "tones": {
+              "drain": "data",
+              "inFlight": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Tracking active in flight requests allows servers to exit cleanly.",
+            "values": {
+              "drain": "true",
+              "inFlight": "0"
+            },
+            "tones": {
+              "drain": "ok",
+              "inFlight": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cleaning Up Active Handles, Timers, and Storage Connections",
+      "codeHash": "f3476a1da99ad168a22b0d03c29772764b62bb82313c7e8ee1242321460ea33e",
+      "spec": {
+        "template": "boxes",
+        "title": "Active resource handle cleanup manager",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "fn",
+            "label": "executeAll"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "After draining HTTP requests the server closes persistent connections.",
+            "values": {
+              "name": {
+                "text": "db"
+              },
+              "fn": {
+                "text": "executeAll"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "fn": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A graceful shutdown manager orchestrates cleanup tasks sequentially.",
+            "values": {
+              "name": {
+                "text": "cache"
+              },
+              "fn": {
+                "text": "executeAll"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "fn": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Releasing connection pool handles returns slots to the database cluster.",
+            "values": {
+              "name": {
+                "text": "queue"
+              },
+              "fn": {
+                "text": "executeAll"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "fn": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Active resource handle cleanup manager",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "fn",
+            "label": "executeAll"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "After draining HTTP requests the server closes persistent connections.",
+            "values": {
+              "name": "db",
+              "fn": "executeAll"
+            },
+            "tones": {
+              "name": "data",
+              "fn": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A graceful shutdown manager orchestrates cleanup tasks sequentially.",
+            "values": {
+              "name": "cache",
+              "fn": "executeAll"
+            },
+            "tones": {
+              "name": "ok",
+              "fn": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Releasing connection pool handles returns slots to the database cluster.",
+            "values": {
+              "name": "queue",
+              "fn": "executeAll"
+            },
+            "tones": {
+              "name": "ok",
+              "fn": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Production Server Lifecycle and Graceful Shutdown Manager",
+      "codeHash": "2db0c1941a5388d5214cc7c22a4cdb9fe2fb136780bde3b161947a6fd0b94153",
+      "spec": {
+        "template": "none",
+        "reason": "Building a production server lifecycle and graceful shutdown manager"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building a production server lifecycle and graceful shutdown manager"
+      }
+    }
+  ]
+}

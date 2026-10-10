@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Code interpreter tools",
+      "codeHash": "b89f27f37f0f347a0b72384bd9822abdb30c5d2cb6831a72be5074cbc9d5375b",
+      "spec": {
+        "template": "table",
+        "title": "Code interpreter sandbox execution and arithmetic validation",
+        "columns": [
+          "region",
+          "amount",
+          "totals"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Behind the scenes the system writes Python code and runs it in a sandbox.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "region"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "totals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "region"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "totals"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Exact arithmetic is done by verified code rather than probabilistic guesses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "region"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "totals"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "region"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "sales"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Code interpreter sandbox execution and arithmetic validation",
+        "columns": [
+          "region",
+          "amount",
+          "totals"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Behind the scenes the system writes Python code and runs it in a sandbox.",
+            "rows": [
+              {
+                "cells": [
+                  "region",
+                  "amount",
+                  "totals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "region",
+                  "amount",
+                  "totals"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Exact arithmetic is done by verified code rather than probabilistic guesses.",
+            "rows": [
+              {
+                "cells": [
+                  "region",
+                  "amount",
+                  "totals"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "region",
+                  "amount",
+                  "sales"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Describing data",
+      "codeHash": "fe02ae7199c236797b53d944c7a664b34d5cd26aa1492855d49120ecef5ba894",
+      "spec": {
+        "template": "table",
+        "title": "Summary statistics and distributional spread metrics",
+        "columns": [
+          "count",
+          "mean",
+          "median"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The mean reflects the average while the median is resilient to skew.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Standard deviation measures data spread relative to the calculated mean.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "stdev"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Summary statistics and distributional spread metrics",
+        "columns": [
+          "count",
+          "mean",
+          "median"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The mean reflects the average while the median is resilient to skew.",
+            "rows": [
+              {
+                "cells": [
+                  "count",
+                  "mean",
+                  "median"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "count",
+                  "mean",
+                  "median"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Standard deviation measures data spread relative to the calculated mean.",
+            "rows": [
+              {
+                "cells": [
+                  "count",
+                  "mean",
+                  "median"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "count",
+                  "stdev",
+                  "median"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grouping and totals",
+      "codeHash": "9055f74565558917815f8310177a1b1b07b8d3ceaf8520385a0093735d858e12",
+      "spec": {
+        "template": "table",
+        "title": "Categorical aggregation and group sum sorting",
+        "columns": [
+          "expenses",
+          "totals",
+          "ranked"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grouping sales and expenses by category answers key business questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expenses"
+                  },
+                  {
+                    "text": "totals"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "expenses"
+                  },
+                  {
+                    "text": "totals"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Aggregating group totals sorts categories from largest to smallest.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expenses"
+                  },
+                  {
+                    "text": "totals"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "expenses"
+                  },
+                  {
+                    "text": "check"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Categorical aggregation and group sum sorting",
+        "columns": [
+          "expenses",
+          "totals",
+          "ranked"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grouping sales and expenses by category answers key business questions.",
+            "rows": [
+              {
+                "cells": [
+                  "expenses",
+                  "totals",
+                  "ranked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "expenses",
+                  "totals",
+                  "ranked"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Aggregating group totals sorts categories from largest to smallest.",
+            "rows": [
+              {
+                "cells": [
+                  "expenses",
+                  "totals",
+                  "ranked"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "expenses",
+                  "check",
+                  "ranked"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Common data problems",
+      "codeHash": "c18b306b252488c5b7bdcc689c46fa17a47a0f8beddd1c14433d7d3efaf5b4dd",
+      "spec": {
+        "template": "table",
+        "title": "Inconsistent data normalization and label resolution",
+        "columns": [
+          "raw",
+          "aliases",
+          "totals"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real data contains missing values, inconsistent labels, and messy numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "aliases"
+                  },
+                  {
+                    "text": "totals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "aliases"
+                  },
+                  {
+                    "text": "totals"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standardising labels prevents the same category from splitting into parts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "aliases"
+                  },
+                  {
+                    "text": "totals"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "aliases"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Inconsistent data normalization and label resolution",
+        "columns": [
+          "raw",
+          "aliases",
+          "totals"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real data contains missing values, inconsistent labels, and messy numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "aliases",
+                  "totals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "aliases",
+                  "totals"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standardising labels prevents the same category from splitting into parts.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "aliases",
+                  "totals"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "aliases",
+                  "raw"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking AI analysis",
+      "codeHash": "94c3f203b81daa228a5a5343dac0d445fa503adc3c20acb94f35af2a9ee31d78",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: describe and group",
+      "codeHash": "f96a4921bb621e4cbe5f7e78ec1cea24385f8a0d7d0ad79f1405f36a5a8791e6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

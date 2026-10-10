@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Personal data in vector search",
+      "codeHash": "c324198d9f59248e41974e61fca0deae71bce4546affbc8a6293c8a990e3de19",
+      "spec": {
+        "template": "table",
+        "title": "Personal data touchpoints across vector pipelines",
+        "columns": [
+          "places",
+          "places",
+          "places"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents often contain personal data requiring strict privacy handling.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every copy counts across chunks, vectors, cached answers and query logs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  },
+                  {
+                    "text": "places"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Personal data touchpoints across vector pipelines",
+        "columns": [
+          "places",
+          "places",
+          "places"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents often contain personal data requiring strict privacy handling.",
+            "rows": [
+              {
+                "cells": [
+                  "places",
+                  "places",
+                  "places"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "places",
+                  "places",
+                  "places"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every copy counts across chunks, vectors, cached answers and query logs.",
+            "rows": [
+              {
+                "cells": [
+                  "places",
+                  "places",
+                  "places"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "places",
+                  "places",
+                  "places"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Redacting before embedding",
+      "codeHash": "02bc245979b1a29c5095dd22a4ad3458658bcfd035d5b02e1556ac8fe5336193",
+      "spec": {
+        "template": "table",
+        "title": "PII pattern redaction prior to text embedding",
+        "columns": [
+          "text",
+          "emails",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Redaction replaces personal data with placeholders before text is embedded.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "emails"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "emails"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If search does not need personal details they should never enter the index.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "emails"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "emails"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "PII pattern redaction prior to text embedding",
+        "columns": [
+          "text",
+          "emails",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Redaction replaces personal data with placeholders before text is embedded.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "emails",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "emails",
+                  "text"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If search does not need personal details they should never enter the index.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "emails",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "emails",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deleting a user's data",
+      "codeHash": "176d450801326e8c725157257fcab7f67d114528c781c7f6c13eeec7651ab381",
+      "spec": {
+        "template": "table",
+        "title": "User record deletion and audit trail generation",
+        "columns": [
+          "records",
+          "deleted",
+          "records"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When data is deleted every copy must go across records, vectors and cache.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "deleted"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "deleted"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Records need an owner field so they can be found before deletion.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "deleted"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "deleted"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "User record deletion and audit trail generation",
+        "columns": [
+          "records",
+          "deleted",
+          "records"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When data is deleted every copy must go across records, vectors and cache.",
+            "rows": [
+              {
+                "cells": [
+                  "records",
+                  "deleted",
+                  "records"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "records",
+                  "deleted",
+                  "records"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Records need an owner field so they can be found before deletion.",
+            "rows": [
+              {
+                "cells": [
+                  "records",
+                  "deleted",
+                  "records"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "records",
+                  "deleted",
+                  "records"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retention and minimisation",
+      "codeHash": "a62f7003e4d4704731ee4fb4a2482200afc2b548dbdd5912bccaaf5ae6fc8c15",
+      "spec": {
+        "template": "table",
+        "title": "Data retention policies and automatic log expiry",
+        "columns": [
+          "logs",
+          "kept",
+          "logs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retention policies say how long each kind of data is kept in stores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logs"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "logs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "logs"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "logs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Automatic expiry is more reliable than manual clean-ups for logging.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logs"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "logs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "logs"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "logs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Data retention policies and automatic log expiry",
+        "columns": [
+          "logs",
+          "kept",
+          "logs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retention policies say how long each kind of data is kept in stores.",
+            "rows": [
+              {
+                "cells": [
+                  "logs",
+                  "kept",
+                  "logs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "logs",
+                  "kept",
+                  "logs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Automatic expiry is more reliable than manual clean-ups for logging.",
+            "rows": [
+              {
+                "cells": [
+                  "logs",
+                  "kept",
+                  "logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "logs",
+                  "kept",
+                  "logs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Security threats specific to RAG",
+      "codeHash": "286fc3b0dbd97a41c1d28590b936e104d155887daa83fcfbbaac19b6cbcb691e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: privacy",
+      "codeHash": "5f39d4eb9465bee14218f0d2a10af20ea13c3e7341ba85ffc6a8365c1af05848",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

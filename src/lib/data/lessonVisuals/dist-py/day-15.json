@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The engine's flow",
+      "codeHash": "8e687c5b72f5b8eae4c01a35ccfb69965a78f09ad162d00eba3ac3f6453b8db1",
+      "spec": {
+        "template": "table",
+        "title": "Transaction engine stages from deduplication to key commit",
+        "columns": [
+          "stage",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An event arrives carrying an idempotency key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dedupe"
+                  },
+                  {
+                    "text": "Day 13: drop events whose key is already committed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "If a step fails compensate finished steps and send event to DLQ.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dedupe"
+                  },
+                  {
+                    "text": "Day 13: drop events whose key is already committed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "saga steps"
+                  },
+                  {
+                    "text": "Day 11: run each step in order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "compensate"
+                  },
+                  {
+                    "text": "Day 11: undo finished steps newest first"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dead letter"
+                  },
+                  {
+                    "text": "Day 14: park the failed event with its error"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "On success record the key as COMMITTED so repeats are dropped.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dedupe"
+                  },
+                  {
+                    "text": "Day 13: drop events whose key is already committed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "saga steps"
+                  },
+                  {
+                    "text": "Day 11: run each step in order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "compensate"
+                  },
+                  {
+                    "text": "Day 11: undo finished steps newest first"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dead letter"
+                  },
+                  {
+                    "text": "Day 14: park the failed event with its error"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "commit key"
+                  },
+                  {
+                    "text": "Day 13: remember the key as COMMITTED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Transaction engine stages from deduplication to key commit",
+        "columns": [
+          "stage",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An event arrives carrying an idempotency key.",
+            "rows": [
+              {
+                "cells": [
+                  "dedupe",
+                  "Day 13: drop events whose key is already committed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "If a step fails compensate finished steps and send event to DLQ.",
+            "rows": [
+              {
+                "cells": [
+                  "dedupe",
+                  "Day 13: drop events whose key is already committed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "saga steps",
+                  "Day 11: run each step in order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "compensate",
+                  "Day 11: undo finished steps newest first"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "dead letter",
+                  "Day 14: park the failed event with its error"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "On success record the key as COMMITTED so repeats are dropped.",
+            "rows": [
+              {
+                "cells": [
+                  "dedupe",
+                  "Day 13: drop events whose key is already committed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "saga steps",
+                  "Day 11: run each step in order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "compensate",
+                  "Day 11: undo finished steps newest first"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "dead letter",
+                  "Day 14: park the failed event with its error"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "commit key",
+                  "Day 13: remember the key as COMMITTED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dropping duplicates",
+      "codeHash": "e1ca7db30a14a0a698c4696a40e41dc01d33e03fdfe3115157bd72c59f984a1e",
+      "spec": {
+        "template": "compare",
+        "title": "Transaction idempotency check fresh processing versus duplicate drop",
+        "leftLabel": "First Arrival (Fresh)",
+        "rightLabel": "Duplicate Arrival",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The store maps idempotency keys to their final state.",
+            "left": {
+              "code": "store key not present",
+              "result": {
+                "text": "COMMITTED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "store key already present",
+              "result": {
+                "text": "DUPLICATE_DROPPED"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Return DUPLICATE_DROPPED without running any step.",
+            "left": {
+              "code": "event runs cleanly",
+              "result": {
+                "text": "COMMITTED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "skip execution immediately",
+              "result": {
+                "text": "DUPLICATE_DROPPED"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Unique key ensures only one copy can record COMMITTED.",
+            "left": {
+              "code": "first copy records committed",
+              "result": {
+                "text": "COMMITTED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "second copy dropped",
+              "result": {
+                "text": "DUPLICATE_DROPPED"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Transaction idempotency check fresh processing versus duplicate drop",
+        "leftLabel": "First Arrival (Fresh)",
+        "rightLabel": "Duplicate Arrival",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The store maps idempotency keys to their final state.",
+            "left": {
+              "code": "store key not present",
+              "result": "COMMITTED",
+              "tone": "ok",
+              "checks": [
+                "COMMITTED"
+              ]
+            },
+            "right": {
+              "code": "store key already present",
+              "result": "DUPLICATE_DROPPED",
+              "tone": "idle",
+              "checks": [
+                "DUPLICATE_DROPPED"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Return DUPLICATE_DROPPED without running any step.",
+            "left": {
+              "code": "event runs cleanly",
+              "result": "COMMITTED",
+              "tone": "ok",
+              "checks": [
+                "COMMITTED"
+              ]
+            },
+            "right": {
+              "code": "skip execution immediately",
+              "result": "DUPLICATE_DROPPED",
+              "tone": "idle",
+              "checks": [
+                "DUPLICATE_DROPPED"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Unique key ensures only one copy can record COMMITTED.",
+            "left": {
+              "code": "first copy records committed",
+              "result": "COMMITTED",
+              "tone": "ok",
+              "checks": [
+                "COMMITTED"
+              ]
+            },
+            "right": {
+              "code": "second copy dropped",
+              "result": "DUPLICATE_DROPPED",
+              "tone": "idle",
+              "checks": [
+                "DUPLICATE_DROPPED"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The run_transaction function",
+      "codeHash": "afbf0fe6c51517f880f27361a3e4a0e248988a6fee223e905df1a5ce1cdecb09",
+      "spec": {
+        "template": "compare",
+        "title": "Transaction engine execution flow success versus compensated failure",
+        "leftLabel": "Successful Transaction",
+        "rightLabel": "Failed Step Compensated",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If store has event key return DUPLICATE_DROPPED.",
+            "left": {
+              "code": "new key processed",
+              "result": {
+                "text": "COMMITTED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "duplicate key dropped",
+              "result": {
+                "text": "DUPLICATE_DROPPED"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "If a step raises run compensate and return FAILED_COMPENSATED.",
+            "left": {
+              "code": "all steps finish cleanly",
+              "result": {
+                "text": "COMMITTED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "failed step appends to dlq",
+              "result": {
+                "text": "FAILED_COMPENSATED"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If all steps succeed set key COMMITTED and return status.",
+            "left": {
+              "code": "reserve stock and charge card",
+              "result": {
+                "text": "COMMITTED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "undo finished steps in reverse",
+              "result": {
+                "text": "FAILED_COMPENSATED"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Transaction engine execution flow success versus compensated failure",
+        "leftLabel": "Successful Transaction",
+        "rightLabel": "Failed Step Compensated",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If store has event key return DUPLICATE_DROPPED.",
+            "left": {
+              "code": "new key processed",
+              "result": "COMMITTED",
+              "tone": "ok",
+              "checks": [
+                "COMMITTED"
+              ]
+            },
+            "right": {
+              "code": "duplicate key dropped",
+              "result": "DUPLICATE_DROPPED",
+              "tone": "idle",
+              "checks": [
+                "DUPLICATE_DROPPED"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "If a step raises run compensate and return FAILED_COMPENSATED.",
+            "left": {
+              "code": "all steps finish cleanly",
+              "result": "COMMITTED",
+              "tone": "ok",
+              "checks": [
+                "COMMITTED"
+              ]
+            },
+            "right": {
+              "code": "failed step appends to dlq",
+              "result": "FAILED_COMPENSATED",
+              "tone": "error",
+              "checks": [
+                "FAILED_COMPENSATED"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If all steps succeed set key COMMITTED and return status.",
+            "left": {
+              "code": "reserve stock and charge card",
+              "result": "COMMITTED",
+              "tone": "ok",
+              "checks": [
+                "COMMITTED"
+              ]
+            },
+            "right": {
+              "code": "undo finished steps in reverse",
+              "result": "FAILED_COMPENSATED",
+              "tone": "error",
+              "checks": [
+                "FAILED_COMPENSATED"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring duration",
+      "codeHash": "fade56ccb3b826096637a8cb8ebcc7532b5041d0228ff8d180ebc1980a207058",
+      "spec": {
+        "template": "none",
+        "reason": "Transaction execution duration timing and percentile metrics."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Testing every failure path",
+      "codeHash": "438b182f2b8d1e43ff41fc56c7d33c44621c18c76bf546a5b6c6159d9c8bb6cf",
+      "spec": {
+        "template": "table",
+        "title": "Transaction failure scenario table-driven test assertion cases",
+        "columns": [
+          "key",
+          "expected"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A transaction engine must be tested on every path.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "new"
+                  },
+                  {
+                    "text": "COMMITTED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Write each test as a table row with expected status.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "new"
+                  },
+                  {
+                    "text": "COMMITTED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "done-key"
+                  },
+                  {
+                    "text": "DUPLICATE_DROPPED"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fail-first"
+                  },
+                  {
+                    "text": "FAILED_COMPENSATED:"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs test scenarios and asserts the results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "new"
+                  },
+                  {
+                    "text": "COMMITTED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "done-key"
+                  },
+                  {
+                    "text": "DUPLICATE_DROPPED"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fail-first"
+                  },
+                  {
+                    "text": "FAILED_COMPENSATED:"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fail-last"
+                  },
+                  {
+                    "text": "FAILED_COMPENSATED:undo b,undo a"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Transaction failure scenario table-driven test assertion cases",
+        "columns": [
+          "key",
+          "expected"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A transaction engine must be tested on every path.",
+            "rows": [
+              {
+                "cells": [
+                  "new",
+                  "COMMITTED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Write each test as a table row with expected status.",
+            "rows": [
+              {
+                "cells": [
+                  "new",
+                  "COMMITTED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "done-key",
+                  "DUPLICATE_DROPPED"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "fail-first",
+                  "FAILED_COMPENSATED:"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs test scenarios and asserts the results.",
+            "rows": [
+              {
+                "cells": [
+                  "new",
+                  "COMMITTED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "done-key",
+                  "DUPLICATE_DROPPED"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "fail-first",
+                  "FAILED_COMPENSATED:"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "fail-last",
+                  "FAILED_COMPENSATED:undo b,undo a"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Publishing events reliably: the outbox",
+      "codeHash": "30d087eea6a08f1d03d909afefa6d29fad7db38b1db5968de912211572657762",
+      "spec": {
+        "template": "none",
+        "reason": "Transactional outbox pattern for reliable event publishing."
+      },
+      "filled": {}
+    }
+  ]
+}

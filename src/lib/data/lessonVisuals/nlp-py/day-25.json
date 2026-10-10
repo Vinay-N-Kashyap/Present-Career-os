@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Extractive question answering",
+      "codeHash": "8590c4686f87020b26420cbf37bc2dbf342f341cff950ba0d526edf095119160",
+      "spec": {
+        "template": "table",
+        "title": "Extractive question answering span pointer grounding",
+        "columns": [
+          "start",
+          "end"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extractive systems identify spans directly copied from the input passage.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Extracting spans guarantees factual answers remain traceable to the source.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "passage"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The model outputs start and end scores for every passage token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "passage"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "enumerate"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Boundary indices locate the target span within the sequence passage.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "passage"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "enumerate"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Extractive question answering span pointer grounding",
+        "columns": [
+          "start",
+          "end"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extractive systems identify spans directly copied from the input passage.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Extracting spans guarantees factual answers remain traceable to the source.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "passage",
+                  "question"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The model outputs start and end scores for every passage token.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "passage",
+                  "question"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "enumerate"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Boundary indices locate the target span within the sequence passage.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "passage",
+                  "question"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "enumerate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "start",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Start and end scores",
+      "codeHash": "31837c71d98418d9a19838012a479f1851553dad27752807fbd211b001074702",
+      "spec": {
+        "template": "table",
+        "title": "Token-level span boundary start and end logits",
+        "columns": [
+          "start",
+          "end"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dual output heads produce start and end logits for each passage token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Raw logits quantify likelihood scores over positions prior to softmax.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fine-tuning trains models to yield high scores at true span boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max"
+                  },
+                  {
+                    "text": "marks"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Displaying output vectors marks the highest scoring positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max"
+                  },
+                  {
+                    "text": "marks"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Token-level span boundary start and end logits",
+        "columns": [
+          "start",
+          "end"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dual output heads produce start and end logits for each passage token.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Raw logits quantify likelihood scores over positions prior to softmax.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "zip"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fine-tuning trains models to yield high scores at true span boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "zip"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max",
+                  "marks"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Displaying output vectors marks the highest scoring positions.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "zip"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max",
+                  "marks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing the best valid span",
+      "codeHash": "fcabdd40ea4ba53ed65845ae59f9451989585ee638d5161db3227f2f0378d944",
+      "spec": {
+        "template": "table",
+        "title": "Constrained valid span search and length thresholding",
+        "columns": [
+          "start",
+          "end"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unconstrained selection risks predicting inverted or impossible spans.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Constrained search evaluates valid index pairs within maximum span length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max_len"
+                  },
+                  {
+                    "text": "best_span"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Nested iteration tests pairs and resolves ties by keeping the first best.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max_len"
+                  },
+                  {
+                    "text": "best_span"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Heuristic constraints turn raw model scores into sensible decisions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "end"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max_len"
+                  },
+                  {
+                    "text": "best_span"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Constrained valid span search and length thresholding",
+        "columns": [
+          "start",
+          "end"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unconstrained selection risks predicting inverted or impossible spans.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Constrained search evaluates valid index pairs within maximum span length.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max_len",
+                  "best_span"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Nested iteration tests pairs and resolves ties by keeping the first best.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max_len",
+                  "best_span"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "score"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Heuristic constraints turn raw model scores into sensible decisions.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "end"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max_len",
+                  "best_span"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "round",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Normalising answers",
+      "codeHash": "75a687b0ea2e134b0e116ba2a1b2491e201c283a667bd2304951389a60a52672",
+      "spec": {
+        "template": "table",
+        "title": "Evaluation answer canonicalization and whitespace normalization",
+        "columns": [
+          "answer",
+          "normalise"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Superficial differences in casing should not penalize correct answers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "normalise"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Standard evaluation normalises strings by stripping punctuation and casing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "normalise"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "string"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standard character sets assist in filtering punctuation symbols easily.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "normalise"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "string"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "split"
+                  },
+                  {
+                    "text": "lower"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Canonical form transformations normalize varied answer candidates cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "normalise"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "string"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "split"
+                  },
+                  {
+                    "text": "lower"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Evaluation answer canonicalization and whitespace normalization",
+        "columns": [
+          "answer",
+          "normalise"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Superficial differences in casing should not penalize correct answers.",
+            "rows": [
+              {
+                "cells": [
+                  "answer",
+                  "normalise"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Standard evaluation normalises strings by stripping punctuation and casing.",
+            "rows": [
+              {
+                "cells": [
+                  "answer",
+                  "normalise"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "string",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standard character sets assist in filtering punctuation symbols easily.",
+            "rows": [
+              {
+                "cells": [
+                  "answer",
+                  "normalise"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "string",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "split",
+                  "lower"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Canonical form transformations normalize varied answer candidates cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  "answer",
+                  "normalise"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "string",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "split",
+                  "lower"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "answer",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exact match and F1",
+      "codeHash": "8dc92bfea9941576c2603b17b0be208116cd64b84b72e056ef857e7cd7b66b0d",
+      "spec": {
+        "template": "none",
+        "reason": "Exact match and F1 metric definitions."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: spans and matches",
+      "codeHash": "0259fc93f0cea88ccea236e05d9f5ddddd56fa1f0a194d28222785380344db0c",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: spans and matches implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

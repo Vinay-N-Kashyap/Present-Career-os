@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The trading engine's requirements",
+      "codeHash": "6ce47d4c0d7044e8352d029317017a9f8b7df778593a7aa9e72d1fbf6223c574",
+      "spec": {
+        "template": "none",
+        "reason": "Trading engine distributed architecture and safety invariants overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The execute_trade function",
+      "codeHash": "69ba07eb1e7f8c38e7429a6c4199a1244af44560283a2d2163a56a91d06f2dae",
+      "spec": {
+        "template": "table",
+        "title": "Trading engine order transaction pipeline stages and execution outcomes",
+        "columns": [
+          "account",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rate limited orders return immediately without acquiring an account lock.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ACC-9"
+                  },
+                  {
+                    "text": "RATE_LIMITED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The finally block guarantees releasing the account lock on every exit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ACC-9"
+                  },
+                  {
+                    "text": "RATE_LIMITED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ACC-9"
+                  },
+                  {
+                    "text": "ACCOUNT_LOCKED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The trade transaction executes safely with mock service dependencies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ACC-9"
+                  },
+                  {
+                    "text": "RATE_LIMITED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ACC-9"
+                  },
+                  {
+                    "text": "ACCOUNT_LOCKED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ACC-9"
+                  },
+                  {
+                    "text": "lock_7"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Trading engine order transaction pipeline stages and execution outcomes",
+        "columns": [
+          "account",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rate limited orders return immediately without acquiring an account lock.",
+            "rows": [
+              {
+                "cells": [
+                  "ACC-9",
+                  "RATE_LIMITED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The finally block guarantees releasing the account lock on every exit.",
+            "rows": [
+              {
+                "cells": [
+                  "ACC-9",
+                  "RATE_LIMITED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "ACC-9",
+                  "ACCOUNT_LOCKED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The trade transaction executes safely with mock service dependencies.",
+            "rows": [
+              {
+                "cells": [
+                  "ACC-9",
+                  "RATE_LIMITED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "ACC-9",
+                  "ACCOUNT_LOCKED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "ACC-9",
+                  "lock_7"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing every failure path",
+      "codeHash": "85138ef0edd63585cc6a1b376dcd90ca869ff79d96d9e58d0b7b9ce2c3930f01",
+      "spec": {
+        "template": "table",
+        "title": "Trading engine scenario test suite verifying failure branch assertions",
+        "columns": [
+          "account",
+          "expected"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Test every execution path including rate limits lock failures and success.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A1"
+                  },
+                  {
+                    "text": "RATE_LIMITED"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Assert that release is called exactly once whenever acquire succeeds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A1"
+                  },
+                  {
+                    "text": "RATE_LIMITED"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A1"
+                  },
+                  {
+                    "text": "ACCOUNT_LOCKED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rate limited trades must never invoke acquire or backend operations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A1"
+                  },
+                  {
+                    "text": "RATE_LIMITED"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A1"
+                  },
+                  {
+                    "text": "ACCOUNT_LOCKED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A1"
+                  },
+                  {
+                    "text": "OK rcpt-1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Trading engine scenario test suite verifying failure branch assertions",
+        "columns": [
+          "account",
+          "expected"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Test every execution path including rate limits lock failures and success.",
+            "rows": [
+              {
+                "cells": [
+                  "A1",
+                  "RATE_LIMITED"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Assert that release is called exactly once whenever acquire succeeds.",
+            "rows": [
+              {
+                "cells": [
+                  "A1",
+                  "RATE_LIMITED"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "A1",
+                  "ACCOUNT_LOCKED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rate limited trades must never invoke acquire or backend operations.",
+            "rows": [
+              {
+                "cells": [
+                  "A1",
+                  "RATE_LIMITED"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "A1",
+                  "ACCOUNT_LOCKED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "A1",
+                  "OK rcpt-1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fencing tokens protect the ledger",
+      "codeHash": "a8ab971ccdbda762d1f7117768ddd781c10214fa4351057b84005f9ffafbd492",
+      "spec": {
+        "template": "none",
+        "reason": "Monotonic fencing token validation preventing stale ledger writes."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The certification audit",
+      "codeHash": "88046b19f18a1d9f70659a7ae405553ea5860da8c02e8a9422650e0ae4291880",
+      "spec": {
+        "template": "table",
+        "title": "Capstone release certification checklist status and audit gates",
+        "columns": [
+          "name",
+          "ok"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Auditing distributed checklist rules requires passing all quality gates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rate limiting"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The audit requires at least one check to prevent empty passes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rate limiting"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fenced locks"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Automated release checklists enforce engineering rigor on every build.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rate limiting"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fenced locks"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dr drill"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Capstone release certification checklist status and audit gates",
+        "columns": [
+          "name",
+          "ok"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Auditing distributed checklist rules requires passing all quality gates.",
+            "rows": [
+              {
+                "cells": [
+                  "rate limiting",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The audit requires at least one check to prevent empty passes.",
+            "rows": [
+              {
+                "cells": [
+                  "rate limiting",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fenced locks",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Automated release checklists enforce engineering rigor on every build.",
+            "rows": [
+              {
+                "cells": [
+                  "rate limiting",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fenced locks",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dr drill",
+                  "False"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Looking back, and next steps",
+      "codeHash": "c393dbdfbc5154f99f4165fb1fd595798b7c9fa9b82b95fd0efbf893c7cfe553",
+      "spec": {
+        "template": "table",
+        "title": "Distributed systems engineering architectural patterns and tool mapping",
+        "columns": [
+          "problem",
+          "tool"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed architectures overcome network fallacies with systematic designs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "only one may act"
+                  },
+                  {
+                    "text": "leases, fencing tokens, leader election"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fundamental distributed concepts repeat across databases queues and caches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "only one may act"
+                  },
+                  {
+                    "text": "leases, fencing tokens, leader election"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replicas must agree"
+                  },
+                  {
+                    "text": "Raft consensus and quorums"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Engineers frame system architecture around concrete design trade-offs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "only one may act"
+                  },
+                  {
+                    "text": "leases, fencing tokens, leader election"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replicas must agree"
+                  },
+                  {
+                    "text": "Raft consensus and quorums"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "transactions span services"
+                  },
+                  {
+                    "text": "sagas with compensations"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed systems engineering architectural patterns and tool mapping",
+        "columns": [
+          "problem",
+          "tool"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed architectures overcome network fallacies with systematic designs.",
+            "rows": [
+              {
+                "cells": [
+                  "only one may act",
+                  "leases, fencing tokens, leader election"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fundamental distributed concepts repeat across databases queues and caches.",
+            "rows": [
+              {
+                "cells": [
+                  "only one may act",
+                  "leases, fencing tokens, leader election"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "replicas must agree",
+                  "Raft consensus and quorums"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Engineers frame system architecture around concrete design trade-offs.",
+            "rows": [
+              {
+                "cells": [
+                  "only one may act",
+                  "leases, fencing tokens, leader election"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "replicas must agree",
+                  "Raft consensus and quorums"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "transactions span services",
+                  "sagas with compensations"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

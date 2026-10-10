@@ -1,0 +1,513 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What dynamic programming is",
+      "codeHash": "fae41d57bd868dc40bef70d6860bc5417718468c2322b2b8216b4cd665b24ee4",
+      "spec": {
+        "template": "compare",
+        "title": "Exponential recursive tree vs memoized linear work",
+        "leftLabel": "Naive Recursion",
+        "rightLabel": "Dynamic Programming",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic programming solves smaller subproblems once and reuses answers.",
+            "left": {
+              "code": "fib(30)",
+              "result": {
+                "text": "1M calls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "memo fib(30)",
+              "result": {
+                "text": "30 cached steps"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "DP turns exponential work into linear work by storing each answer.",
+            "left": {
+              "code": "work complexity",
+              "result": {
+                "text": "O(2^N) exponential"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "work complexity",
+              "result": {
+                "text": "O(N) linear"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Exponential recursive tree vs memoized linear work",
+        "leftLabel": "Naive Recursion",
+        "rightLabel": "Dynamic Programming",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic programming solves smaller subproblems once and reuses answers.",
+            "left": {
+              "code": "fib(30)",
+              "result": "1M calls",
+              "tone": "error",
+              "checks": [
+                "1M calls"
+              ]
+            },
+            "right": {
+              "code": "memo fib(30)",
+              "result": "30 cached steps",
+              "tone": "ok",
+              "checks": [
+                "30 cached steps"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "DP turns exponential work into linear work by storing each answer.",
+            "left": {
+              "code": "work complexity",
+              "result": "O(2^N) exponential",
+              "tone": "error",
+              "checks": [
+                "O(2^N) exponential"
+              ]
+            },
+            "right": {
+              "code": "work complexity",
+              "result": "O(N) linear",
+              "tone": "ok",
+              "checks": [
+                "O(N) linear"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memoization: top-down DP",
+      "codeHash": "58fe503a30413f03b1c9734a5020b7d56288ee71b19db76c32314d33aa4bde5d",
+      "spec": {
+        "template": "table",
+        "title": "Top-down memoization dictionary cache lookups",
+        "columns": [
+          "Call Stage",
+          "Subproblem Argument",
+          "Cache Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Memoization stores each computed answer returning it immediately next time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "First Call"
+                  },
+                  {
+                    "text": "fib(5)"
+                  },
+                  {
+                    "text": "Compute and memoize"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Top-down recursion fills the memo cache on the way back up.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "First Call"
+                  },
+                  {
+                    "text": "fib(5)"
+                  },
+                  {
+                    "text": "Compute and memoize"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Second Call"
+                  },
+                  {
+                    "text": "fib(5)"
+                  },
+                  {
+                    "text": "Return memo[5]"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top-down memoization dictionary cache lookups",
+        "columns": [
+          "Call Stage",
+          "Subproblem Argument",
+          "Cache Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Memoization stores each computed answer returning it immediately next time.",
+            "rows": [
+              {
+                "cells": [
+                  "First Call",
+                  "fib(5)",
+                  "Compute and memoize"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Top-down recursion fills the memo cache on the way back up.",
+            "rows": [
+              {
+                "cells": [
+                  "First Call",
+                  "fib(5)",
+                  "Compute and memoize"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Second Call",
+                  "fib(5)",
+                  "Return memo[5]"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tabulation: bottom-up DP",
+      "codeHash": "0a408e928385181b92fd59c285d51e6ff497152bb6f8da5160c36e44c9475d23",
+      "spec": {
+        "template": "cells",
+        "title": "Bottom-up DP table populated sequentially",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tabulation fills a table from smallest subproblems upwards with a loop.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "?"
+              },
+              {
+                "text": "?"
+              },
+              {
+                "text": "?"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "base",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "base",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each entry is filled from the sum of the two preceding values.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "dp[i-2]",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "dp[i-1]",
+                "index": 2,
+                "tone": "data"
+              },
+              {
+                "name": "dp[i]",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Bottom-up DP table populated sequentially",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tabulation fills a table from smallest subproblems upwards with a loop.",
+            "items": [
+              "0",
+              "1",
+              "?",
+              "?",
+              "?"
+            ],
+            "pointers": [
+              {
+                "name": "base",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "base",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each entry is filled from the sum of the two preceding values.",
+            "items": [
+              "0",
+              "1",
+              "1",
+              "2",
+              "3"
+            ],
+            "pointers": [
+              {
+                "name": "dp[i-2]",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "dp[i-1]",
+                "index": 2,
+                "tone": "data"
+              },
+              {
+                "name": "dp[i]",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Climbing stairs",
+      "codeHash": "deff1ae77d5ab53fe761de21b23868f348f3af78437eaee9aa43da1795139bfb",
+      "spec": {
+        "template": "none",
+        "reason": "Climbing stairs state transition mapping to Fibonacci recurrence."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Climbing stairs state transition mapping to Fibonacci recurrence."
+      }
+    },
+    {
+      "partTitle": "House robber: choose or skip",
+      "codeHash": "7e851a1a81a5468bdf89e0af87c9a77e0368d8d0a014458aceecd8bc53d4abc3",
+      "spec": {
+        "template": "table",
+        "title": "House robber decision choices: skip or take",
+        "columns": [
+          "House Index",
+          "Skip Choice (i-1)",
+          "Take Choice (i-2 + val)",
+          "Optimal Max"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "At each house choose to skip keeping previous or take adding current money.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "House 0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The choose or skip pattern takes the maximum between both possibilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "House 0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "House 1"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "House robber decision choices: skip or take",
+        "columns": [
+          "House Index",
+          "Skip Choice (i-1)",
+          "Take Choice (i-2 + val)",
+          "Optimal Max"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "At each house choose to skip keeping previous or take adding current money.",
+            "rows": [
+              {
+                "cells": [
+                  "House 0",
+                  "0",
+                  "2",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The choose or skip pattern takes the maximum between both possibilities.",
+            "rows": [
+              {
+                "cells": [
+                  "House 0",
+                  "0",
+                  "2",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "House 1",
+                  "2",
+                  "7",
+                  "7"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A recipe for DP problems",
+      "codeHash": "1b70c0619f07ef4659ea60fd92cbca43051337760f0959a1077b5329fd5b2c15",
+      "spec": {
+        "template": "none",
+        "reason": "Five-step framework defining state, transitions, base cases, and memory reduction."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Five-step framework defining state, transitions, base cases, and memory reduction."
+      }
+    }
+  ]
+}

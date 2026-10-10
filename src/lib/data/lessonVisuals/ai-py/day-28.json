@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why LLM apps need observability",
+      "codeHash": "7a5d4edd7aa3c8931fa82ea8f3b326c66c097e9d184ac7a1c7a77dfcb7a7d3ea",
+      "spec": {
+        "template": "none",
+        "reason": "Silent failures and LLM app observability overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Traces and spans",
+      "codeHash": "eabe3ecb376aa489ecc4ada9e974504521ba9ce1f240cf998b3fa534f7ad84f7",
+      "spec": {
+        "template": "flow",
+        "title": "Distributed trace spans breakdown and timing hierarchy",
+        "nodes": [
+          {
+            "id": "retrieve",
+            "label": "retrieve"
+          },
+          {
+            "id": "rerank",
+            "label": "rerank"
+          },
+          {
+            "id": "generate",
+            "label": "generate"
+          }
+        ],
+        "edges": [
+          {
+            "from": "retrieve",
+            "to": "rerank",
+            "label": "then"
+          },
+          {
+            "from": "rerank",
+            "to": "generate",
+            "label": "then"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User request trace breaks down into sequential pipeline spans.",
+            "values": {
+              "retrieve": {
+                "text": "180"
+              },
+              "rerank": {
+                "text": "140"
+              },
+              "generate": {
+                "text": "1900"
+              }
+            },
+            "tones": {
+              "retrieve": "data",
+              "rerank": "data",
+              "generate": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Spans record latency tokens and cost details.",
+            "values": {
+              "retrieve": {
+                "text": "retrieve"
+              },
+              "rerank": {
+                "text": "rerank"
+              },
+              "generate": {
+                "text": "generate"
+              }
+            },
+            "tones": {
+              "retrieve": "ok",
+              "rerank": "ok",
+              "generate": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Timeline trace shows immediately which step was slow.",
+            "values": {
+              "retrieve": {
+                "text": "180"
+              },
+              "rerank": {
+                "text": "140"
+              },
+              "generate": {
+                "text": "1900"
+              }
+            },
+            "tones": {
+              "retrieve": "ok",
+              "rerank": "ok",
+              "generate": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Distributed trace spans breakdown and timing hierarchy",
+        "nodes": [
+          {
+            "id": "retrieve",
+            "label": "retrieve"
+          },
+          {
+            "id": "rerank",
+            "label": "rerank"
+          },
+          {
+            "id": "generate",
+            "label": "generate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User request trace breaks down into sequential pipeline spans.",
+            "values": {
+              "retrieve": "180",
+              "rerank": "140",
+              "generate": "1900"
+            },
+            "tones": {
+              "retrieve": "data",
+              "rerank": "data",
+              "generate": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Spans record latency tokens and cost details.",
+            "values": {
+              "retrieve": "retrieve",
+              "rerank": "rerank",
+              "generate": "generate"
+            },
+            "tones": {
+              "retrieve": "ok",
+              "rerank": "ok",
+              "generate": "ok"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say5",
+            "caption": "Timeline trace shows immediately which step was slow.",
+            "values": {
+              "retrieve": "180",
+              "rerank": "140",
+              "generate": "1900"
+            },
+            "tones": {
+              "retrieve": "ok",
+              "rerank": "ok",
+              "generate": "error"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Aggregating a trace",
+      "codeHash": "ffd3985ae9e3bd5ce44c90c56486fcc99175825b1eee1f10e06bc14254e3af97",
+      "spec": {
+        "template": "table",
+        "title": "Distributed trace span aggregation metrics",
+        "columns": [
+          "prompt_tokens",
+          "cost",
+          "latency_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregate function returns total tokens cost and seconds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0.0"
+                  },
+                  {
+                    "text": "180"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Summing latency across spans calculates total execution time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0.0"
+                  },
+                  {
+                    "text": "180"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "0.0004"
+                  },
+                  {
+                    "text": "140"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Aggregated traces give cost and tokens metrics per question.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0.0"
+                  },
+                  {
+                    "text": "180"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "0.0004"
+                  },
+                  {
+                    "text": "140"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1200"
+                  },
+                  {
+                    "text": "0.0055"
+                  },
+                  {
+                    "text": "1900"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed trace span aggregation metrics",
+        "columns": [
+          "prompt_tokens",
+          "cost",
+          "latency_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregate function returns total tokens cost and seconds.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "0.0",
+                  "180"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Summing latency across spans calculates total execution time.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "0.0",
+                  "180"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "300",
+                  "0.0004",
+                  "140"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Aggregated traces give cost and tokens metrics per question.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "0.0",
+                  "180"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "300",
+                  "0.0004",
+                  "140"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1200",
+                  "0.0055",
+                  "1900"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "User feedback",
+      "codeHash": "4192d9a745261d0b0203f61cb53c75ae6de233839534c1a180d959e6cf3b879b",
+      "spec": {
+        "template": "bars",
+        "title": "User feedback thumbs-up quality distribution",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User quality signal captures thumbs up or down on answers.",
+            "bars": [
+              {
+                "label": "up_votes",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "down_votes",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function feedback_score returns share of positive votes.",
+            "bars": [
+              {
+                "label": "up_votes",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "down_votes",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "empty_votes",
+                "value": {
+                  "text": "0.0%"
+                },
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Review thumbs down traces weekly to fix failure causes.",
+            "bars": [
+              {
+                "label": "t-001",
+                "value": {
+                  "text": "up"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "t-002",
+                "value": {
+                  "text": "down"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "t-003",
+                "value": {
+                  "text": "up"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "t-005",
+                "value": {
+                  "text": "down"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "User feedback thumbs-up quality distribution",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User quality signal captures thumbs up or down on answers.",
+            "bars": [
+              {
+                "label": "up_votes",
+                "value": 0,
+                "tone": "ok"
+              },
+              {
+                "label": "down_votes",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function feedback_score returns share of positive votes.",
+            "bars": [
+              {
+                "label": "up_votes",
+                "value": 0,
+                "tone": "ok"
+              },
+              {
+                "label": "down_votes",
+                "value": 0,
+                "tone": "error"
+              },
+              {
+                "label": "empty_votes",
+                "value": "0.0%",
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Review thumbs down traces weekly to fix failure causes.",
+            "bars": [
+              {
+                "label": "t-001",
+                "value": "up",
+                "tone": "ok"
+              },
+              {
+                "label": "t-002",
+                "value": "down",
+                "tone": "error"
+              },
+              {
+                "label": "t-003",
+                "value": "up",
+                "tone": "ok"
+              },
+              {
+                "label": "t-005",
+                "value": "down",
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dashboards and alerts",
+      "codeHash": "be9a0a0e027181473245c38d0d1e1cde76023493e4032d14ec87939c983c3f8c",
+      "spec": {
+        "template": "compare",
+        "title": "Observability alert thresholds today vs last week baseline",
+        "leftLabel": "Today Current",
+        "rightLabel": "Last Week Baseline",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Metrics track p95 latency error rate and cost per day.",
+            "left": {
+              "code": "today p95 latency 5400 ms",
+              "result": {
+                "text": "5400"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "baseline p95 latency 3100 ms",
+              "result": {
+                "text": "3100"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Set alerts when latency or cost cross normal thresholds.",
+            "left": {
+              "code": "today cost spike 182.0",
+              "result": {
+                "text": "182.0"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "baseline cost level 120.0",
+              "result": {
+                "text": "120.0"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Compare metrics against last week baseline for anomalies.",
+            "left": {
+              "code": "feedback drop 0.71",
+              "result": {
+                "text": "0.71"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "baseline feedback 0.83",
+              "result": {
+                "text": "0.83"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Observability alert thresholds today vs last week baseline",
+        "leftLabel": "Today Current",
+        "rightLabel": "Last Week Baseline",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Metrics track p95 latency error rate and cost per day.",
+            "left": {
+              "code": "today p95 latency 5400 ms",
+              "result": "5400",
+              "tone": "error",
+              "checks": [
+                "5400"
+              ]
+            },
+            "right": {
+              "code": "baseline p95 latency 3100 ms",
+              "result": "3100",
+              "tone": "ok",
+              "checks": [
+                "3100"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Set alerts when latency or cost cross normal thresholds.",
+            "left": {
+              "code": "today cost spike 182.0",
+              "result": "182.0",
+              "tone": "error",
+              "checks": [
+                "182.0"
+              ]
+            },
+            "right": {
+              "code": "baseline cost level 120.0",
+              "result": "120.0",
+              "tone": "ok",
+              "checks": [
+                "120.0"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Compare metrics against last week baseline for anomalies.",
+            "left": {
+              "code": "feedback drop 0.71",
+              "result": "0.71",
+              "tone": "error",
+              "checks": [
+                "0.71"
+              ]
+            },
+            "right": {
+              "code": "baseline feedback 0.83",
+              "result": "0.83",
+              "tone": "ok",
+              "checks": [
+                "0.83"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Privacy in logs",
+      "codeHash": "66c27c6b88e7b90e64c260190cb28f6fb8e69dd9428f40d97afe7d958d0f35f3",
+      "spec": {
+        "template": "none",
+        "reason": "PII scrubbing and log masking policies."
+      },
+      "filled": {}
+    }
+  ]
+}

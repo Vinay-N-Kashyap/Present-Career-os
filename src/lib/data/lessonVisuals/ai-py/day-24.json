@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "From imitation to preference",
+      "codeHash": "2076ae75ee5e3f3158f81b0559b1d7b2543e61dcc0fece01cd7473851ed8198d",
+      "spec": {
+        "template": "compare",
+        "title": "Human preference alignment chosen versus rejected candidate answers",
+        "leftLabel": "Chosen Response",
+        "rightLabel": "Rejected Response",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Preference training uses pairs with chosen and rejected answers.",
+            "left": {
+              "code": "An API is like a waiter: your app asks it for something and it brings back what the kitchen prepared.",
+              "result": {
+                "text": "chosen"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "An API is an application programming interface enabling programmatic interoperability between software components.",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Model makes chosen answers more likely and rejected answers less likely.",
+            "left": {
+              "code": "clear empathetic explanation",
+              "result": {
+                "text": "chosen"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "stiff jargon laden description",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Pipeline moves through pre-training SFT and preference tuning.",
+            "left": {
+              "code": "supervised fine tuning baseline",
+              "result": {
+                "text": "chosen"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "unaligned raw text continuation",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Human preference alignment chosen versus rejected candidate answers",
+        "leftLabel": "Chosen Response",
+        "rightLabel": "Rejected Response",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Preference training uses pairs with chosen and rejected answers.",
+            "left": {
+              "code": "An API is like a waiter: your app asks it for something and it brings back what the kitchen prepared.",
+              "result": "chosen",
+              "tone": "ok",
+              "checks": [
+                "chosen"
+              ]
+            },
+            "right": {
+              "code": "An API is an application programming interface enabling programmatic interoperability between software components.",
+              "result": "rejected",
+              "tone": "error",
+              "checks": [
+                "rejected"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Model makes chosen answers more likely and rejected answers less likely.",
+            "left": {
+              "code": "clear empathetic explanation",
+              "result": "chosen",
+              "tone": "ok",
+              "checks": [
+                "chosen"
+              ]
+            },
+            "right": {
+              "code": "stiff jargon laden description",
+              "result": "rejected",
+              "tone": "error",
+              "checks": [
+                "rejected"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Pipeline moves through pre-training SFT and preference tuning.",
+            "left": {
+              "code": "supervised fine tuning baseline",
+              "result": "chosen",
+              "tone": "ok",
+              "checks": [
+                "chosen"
+              ]
+            },
+            "right": {
+              "code": "unaligned raw text continuation",
+              "result": "rejected",
+              "tone": "error",
+              "checks": [
+                "rejected"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RLHF in outline",
+      "codeHash": "dd329364f6d1b816d06fcde2d31764ff3ebeb0879db0c1c81002fc275cda2068",
+      "spec": {
+        "template": "table",
+        "title": "Reward model score differentials and preference probabilities",
+        "columns": [
+          "reward_chosen",
+          "reward_rejected",
+          "preference_p"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "RLHF trains reward model to output score for how people like answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2.0"
+                  },
+                  {
+                    "text": "0.5"
+                  },
+                  {
+                    "text": "reward chosen"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "rejected"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reward model learns from pairs where chosen answer scores higher.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2.0"
+                  },
+                  {
+                    "text": "0.5"
+                  },
+                  {
+                    "text": "reward chosen"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "rejected"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "DPO skips separate reward model simplifying training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2.0"
+                  },
+                  {
+                    "text": "0.5"
+                  },
+                  {
+                    "text": "reward chosen"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "rejected"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reward model score differentials and preference probabilities",
+        "columns": [
+          "reward_chosen",
+          "reward_rejected",
+          "preference_p"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "RLHF trains reward model to output score for how people like answer.",
+            "rows": [
+              {
+                "cells": [
+                  "2.0",
+                  "0.5",
+                  "reward chosen"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1.0",
+                  "1.0",
+                  "rejected"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reward model learns from pairs where chosen answer scores higher.",
+            "rows": [
+              {
+                "cells": [
+                  "2.0",
+                  "0.5",
+                  "reward chosen"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1.0",
+                  "1.0",
+                  "rejected"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "DPO skips separate reward model simplifying training.",
+            "rows": [
+              {
+                "cells": [
+                  "2.0",
+                  "0.5",
+                  "reward chosen"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1.0",
+                  "1.0",
+                  "rejected"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Log probabilities",
+      "codeHash": "451fbde5a6d87b5968fa32a1918619c5725ea46bc10f1dc7462d52ad5b00de1a",
+      "spec": {
+        "template": "none",
+        "reason": "Log probabilities product-to-sum conversion and float rounding mechanics."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Direct preference optimisation",
+      "codeHash": "4a5df0d6bf931ba5e105cabbaa9b91c8466b0946cce02c36a5b41878a0247578",
+      "spec": {
+        "template": "table",
+        "title": "Direct preference optimization policy margin alignment status",
+        "columns": [
+          "chosen_logprob",
+          "rejected_logprob",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "DPO trains directly on preference pairs without separate reward model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "-12.0"
+                  },
+                  {
+                    "text": "-15.5"
+                  },
+                  {
+                    "text": "ALIGNED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-20.0"
+                  },
+                  {
+                    "text": "-18.0"
+                  },
+                  {
+                    "text": "MISALIGNED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluate DPO pair checks margin returning ALIGNED or MISALIGNED.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "-12.0"
+                  },
+                  {
+                    "text": "-15.5"
+                  },
+                  {
+                    "text": "ALIGNED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-20.0"
+                  },
+                  {
+                    "text": "-18.0"
+                  },
+                  {
+                    "text": "MISALIGNED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Training lowers loss by widening margin over reference model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "-12.0"
+                  },
+                  {
+                    "text": "-15.5"
+                  },
+                  {
+                    "text": "ALIGNED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-20.0"
+                  },
+                  {
+                    "text": "-18.0"
+                  },
+                  {
+                    "text": "MISALIGNED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Direct preference optimization policy margin alignment status",
+        "columns": [
+          "chosen_logprob",
+          "rejected_logprob",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "DPO trains directly on preference pairs without separate reward model.",
+            "rows": [
+              {
+                "cells": [
+                  "-12.0",
+                  "-15.5",
+                  "ALIGNED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "-20.0",
+                  "-18.0",
+                  "MISALIGNED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluate DPO pair checks margin returning ALIGNED or MISALIGNED.",
+            "rows": [
+              {
+                "cells": [
+                  "-12.0",
+                  "-15.5",
+                  "ALIGNED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "-20.0",
+                  "-18.0",
+                  "MISALIGNED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Training lowers loss by widening margin over reference model.",
+            "rows": [
+              {
+                "cells": [
+                  "-12.0",
+                  "-15.5",
+                  "ALIGNED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "-20.0",
+                  "-18.0",
+                  "MISALIGNED"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Collecting good preference data",
+      "codeHash": "d038d087b7cc36be776b80226be6f456daf1211c5b6e67eac5abe5efd7888024",
+      "spec": {
+        "template": "none",
+        "reason": "Human annotator agreement metrics guideline curation and inter-annotator disagreement."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Measuring alignment with win rates",
+      "codeHash": "b043e6a22020edd9adfbafab53c022bb6c9a4e75692b8f370b7ad5056a2bd4b9",
+      "spec": {
+        "template": "bars",
+        "title": "Model evaluation win rate and judgement outcome breakdown",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compare new model with old model where judge picks better answer or tie.",
+            "bars": [
+              {
+                "label": "new_model_wins",
+                "value": {
+                  "text": "new"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "old_model_losses",
+                "value": {
+                  "text": "old"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "judgement_ties",
+                "value": {
+                  "text": "tie"
+                },
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Win rate counts wins and ties where rate above fifty percent is preferred.",
+            "bars": [
+              {
+                "label": "new_model_wins",
+                "value": {
+                  "text": "new"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "old_model_losses",
+                "value": {
+                  "text": "old"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "judgement_ties",
+                "value": {
+                  "text": "tie"
+                },
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Use enough prompts before trusting a win rate across judgements.",
+            "bars": [
+              {
+                "label": "new_model_wins",
+                "value": {
+                  "text": "new"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "old_model_losses",
+                "value": {
+                  "text": "old"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "judgement_ties",
+                "value": {
+                  "text": "tie"
+                },
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Model evaluation win rate and judgement outcome breakdown",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compare new model with old model where judge picks better answer or tie.",
+            "bars": [
+              {
+                "label": "new_model_wins",
+                "value": "new",
+                "tone": "ok"
+              },
+              {
+                "label": "old_model_losses",
+                "value": "old",
+                "tone": "error"
+              },
+              {
+                "label": "judgement_ties",
+                "value": "tie",
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Win rate counts wins and ties where rate above fifty percent is preferred.",
+            "bars": [
+              {
+                "label": "new_model_wins",
+                "value": "new",
+                "tone": "ok"
+              },
+              {
+                "label": "old_model_losses",
+                "value": "old",
+                "tone": "error"
+              },
+              {
+                "label": "judgement_ties",
+                "value": "tie",
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Use enough prompts before trusting a win rate across judgements.",
+            "bars": [
+              {
+                "label": "new_model_wins",
+                "value": "new",
+                "tone": "ok"
+              },
+              {
+                "label": "old_model_losses",
+                "value": "old",
+                "tone": "error"
+              },
+              {
+                "label": "judgement_ties",
+                "value": "tie",
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

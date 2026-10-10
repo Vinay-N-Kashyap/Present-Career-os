@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 26,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Simulating HTTP Requests & In-Memory Response Assertions",
+      "codeHash": "6e6ce5589ec942cafcbabb9c8a22fb1cb0598d0824353555ce414f0641a58a41",
+      "spec": {
+        "template": "boxes",
+        "title": "Simulated HTTP mock request parameters",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "url",
+            "label": "url"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unit testing handlers without live servers requires simulating requests.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "url": {
+                "text": "/ping"
+              }
+            },
+            "tones": {
+              "method": "data",
+              "url": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Mock response abstractions capture status codes and serialized bodies.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "url": {
+                "text": "/ping"
+              }
+            },
+            "tones": {
+              "method": "data",
+              "url": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Simulated request testing eliminates flaky port collisions in pipelines.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "url": {
+                "text": "/ping"
+              }
+            },
+            "tones": {
+              "method": "ok",
+              "url": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Simulated HTTP mock request parameters",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "url",
+            "label": "url"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unit testing handlers without live servers requires simulating requests.",
+            "values": {
+              "method": "GET",
+              "url": "/ping"
+            },
+            "tones": {
+              "method": "data",
+              "url": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Mock response abstractions capture status codes and serialized bodies.",
+            "values": {
+              "method": "GET",
+              "url": "/ping"
+            },
+            "tones": {
+              "method": "data",
+              "url": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Simulated request testing eliminates flaky port collisions in pipelines.",
+            "values": {
+              "method": "GET",
+              "url": "/ping"
+            },
+            "tones": {
+              "method": "ok",
+              "url": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Status Code Contracts & Header Verification",
+      "codeHash": "0bf21f3faef984211103e81ab44675d79f731d4dc33b72ba31cbb6552b3511c4",
+      "spec": {
+        "template": "boxes",
+        "title": "User creation response status and location contract",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status"
+          },
+          {
+            "id": "loc",
+            "label": "location"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Successful resource creation returns 201 with a Location header.",
+            "values": {
+              "status": {
+                "text": "201"
+              },
+              "loc": {
+                "text": "/api/users/usr_42"
+              }
+            },
+            "tones": {
+              "status": "ok",
+              "loc": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Validation errors must return 400 Bad Request to communicate failure.",
+            "values": {
+              "status": {
+                "text": "400"
+              },
+              "loc": {
+                "text": "/api/users/usr_42"
+              }
+            },
+            "tones": {
+              "status": "error",
+              "loc": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Testing response headers guarantees proxies interpret payloads correctly.",
+            "values": {
+              "status": {
+                "text": "201"
+              },
+              "loc": {
+                "text": "/api/users/usr_42"
+              }
+            },
+            "tones": {
+              "status": "ok",
+              "loc": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "User creation response status and location contract",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status"
+          },
+          {
+            "id": "loc",
+            "label": "location"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Successful resource creation returns 201 with a Location header.",
+            "values": {
+              "status": "201",
+              "loc": "/api/users/usr_42"
+            },
+            "tones": {
+              "status": "ok",
+              "loc": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Validation errors must return 400 Bad Request to communicate failure.",
+            "values": {
+              "status": "400",
+              "loc": "/api/users/usr_42"
+            },
+            "tones": {
+              "status": "error",
+              "loc": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Testing response headers guarantees proxies interpret payloads correctly.",
+            "values": {
+              "status": "201",
+              "loc": "/api/users/usr_42"
+            },
+            "tones": {
+              "status": "ok",
+              "loc": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Payload Schema Assertions & RFC 7807 Error Contracts",
+      "codeHash": "0c4e7944d4bff8e9903fafc03850ca243e968b861dc61d7a7d49d00d6d4674c7",
+      "spec": {
+        "template": "boxes",
+        "title": "RFC 7807 problem details error payload",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "id": "detail",
+            "label": "detail"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standardizing error responses according to RFC 7807 ensures metadata.",
+            "values": {
+              "title": {
+                "text": "Unauthorized Access"
+              },
+              "detail": {
+                "text": "The provided authentication token has expired."
+              }
+            },
+            "tones": {
+              "title": "error",
+              "detail": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Testing payload schemas prevents accidental breaking changes for clients.",
+            "values": {
+              "title": {
+                "text": "Unauthorized Access"
+              },
+              "detail": {
+                "text": "The provided authentication token has expired."
+              }
+            },
+            "tones": {
+              "title": "error",
+              "detail": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Problem objects allow client SDKs to write unified error middleware.",
+            "values": {
+              "title": {
+                "text": "Unauthorized Access"
+              },
+              "detail": {
+                "text": "The provided authentication token has expired."
+              }
+            },
+            "tones": {
+              "title": "ok",
+              "detail": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "RFC 7807 problem details error payload",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "id": "detail",
+            "label": "detail"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standardizing error responses according to RFC 7807 ensures metadata.",
+            "values": {
+              "title": "Unauthorized Access",
+              "detail": "The provided authentication token has expired."
+            },
+            "tones": {
+              "title": "error",
+              "detail": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Testing payload schemas prevents accidental breaking changes for clients.",
+            "values": {
+              "title": "Unauthorized Access",
+              "detail": "The provided authentication token has expired."
+            },
+            "tones": {
+              "title": "error",
+              "detail": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Problem objects allow client SDKs to write unified error middleware.",
+            "values": {
+              "title": "Unauthorized Access",
+              "detail": "The provided authentication token has expired."
+            },
+            "tones": {
+              "title": "ok",
+              "detail": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing Boundary Edge Cases (Malformed JSON & Truncated Payloads)",
+      "codeHash": "ba75b0f54f5b48751fa1d0f4137cf71fed045a8f9236a90ca71ed67dd7f1827e",
+      "spec": {
+        "template": "boxes",
+        "title": "JSON body parser boundary edge check",
+        "boxes": [
+          {
+            "id": "ok",
+            "label": "ok"
+          },
+          {
+            "id": "status",
+            "label": "status"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Robust backends must handle malformed input gracefully without crashing.",
+            "values": {
+              "ok": {
+                "text": "true"
+              },
+              "status": {
+                "text": "400"
+              }
+            },
+            "tones": {
+              "ok": "ok",
+              "status": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "When invalid syntax is parsed the server emits a 400 Bad Request error.",
+            "values": {
+              "ok": {
+                "text": "false"
+              },
+              "status": {
+                "text": "400"
+              }
+            },
+            "tones": {
+              "ok": "error",
+              "status": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Writing edge case tests builds confidence that APIs withstand attacks.",
+            "values": {
+              "ok": {
+                "text": "true"
+              },
+              "status": {
+                "text": "400"
+              }
+            },
+            "tones": {
+              "ok": "ok",
+              "status": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "JSON body parser boundary edge check",
+        "boxes": [
+          {
+            "id": "ok",
+            "label": "ok"
+          },
+          {
+            "id": "status",
+            "label": "status"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Robust backends must handle malformed input gracefully without crashing.",
+            "values": {
+              "ok": "true",
+              "status": "400"
+            },
+            "tones": {
+              "ok": "ok",
+              "status": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "When invalid syntax is parsed the server emits a 400 Bad Request error.",
+            "values": {
+              "ok": "false",
+              "status": "400"
+            },
+            "tones": {
+              "ok": "error",
+              "status": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Writing edge case tests builds confidence that APIs withstand attacks.",
+            "values": {
+              "ok": "true",
+              "status": "400"
+            },
+            "tones": {
+              "ok": "ok",
+              "status": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mocking External Service Dependencies in Route Handlers",
+      "codeHash": "5dfb2442134214c2ab68b7599cb9813227bbb19e4a7acb5749c0ebc1ae63aa7e",
+      "spec": {
+        "template": "boxes",
+        "title": "Mock email service dependency injection",
+        "boxes": [
+          {
+            "id": "email",
+            "label": "to"
+          },
+          {
+            "id": "sent",
+            "label": "emailSent"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Testing handlers against real external services introduces network latency.",
+            "values": {
+              "email": {
+                "text": "student@pin.it"
+              },
+              "sent": {
+                "text": "emailSent"
+              }
+            },
+            "tones": {
+              "email": "data",
+              "sent": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Injecting service mocks lets unit tests verify expected parameters.",
+            "values": {
+              "email": {
+                "text": "student@pin.it"
+              },
+              "sent": {
+                "text": "emailSent"
+              }
+            },
+            "tones": {
+              "email": "data",
+              "sent": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Mocking external services allows test suites to execute completely offline.",
+            "values": {
+              "email": {
+                "text": "student@pin.it"
+              },
+              "sent": {
+                "text": "emailSent"
+              }
+            },
+            "tones": {
+              "email": "ok",
+              "sent": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Mock email service dependency injection",
+        "boxes": [
+          {
+            "id": "email",
+            "label": "to"
+          },
+          {
+            "id": "sent",
+            "label": "emailSent"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Testing handlers against real external services introduces network latency.",
+            "values": {
+              "email": "student@pin.it",
+              "sent": "emailSent"
+            },
+            "tones": {
+              "email": "data",
+              "sent": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Injecting service mocks lets unit tests verify expected parameters.",
+            "values": {
+              "email": "student@pin.it",
+              "sent": "emailSent"
+            },
+            "tones": {
+              "email": "data",
+              "sent": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Mocking external services allows test suites to execute completely offline.",
+            "values": {
+              "email": "student@pin.it",
+              "sent": "emailSent"
+            },
+            "tones": {
+              "email": "ok",
+              "sent": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Automated API Integration Test Suite",
+      "codeHash": "2c80acb26dd941e4689e063034f4261d220377ad013ea602b04dae5b44392dca",
+      "spec": {
+        "template": "none",
+        "reason": "Building an automated API integration test suite"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building an automated API integration test suite"
+      }
+    }
+  ]
+}

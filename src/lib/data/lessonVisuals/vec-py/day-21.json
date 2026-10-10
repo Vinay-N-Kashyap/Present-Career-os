@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Two-stage retrieval",
+      "codeHash": "72c2ea690530f78881cdd8a5b493a708ea10293fc39e85627ba0555d4fbf422e",
+      "spec": {
+        "template": "table",
+        "title": "Two-stage retrieval architecture and candidate shortlisting",
+        "columns": [
+          "docs",
+          "per_doc_ms",
+          "top"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A re-ranker evaluates top candidates with a slower but accurate model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "per_doc_ms"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "per_doc_ms"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A two-stage design delivers high accuracy at a small fraction of cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "per_doc_ms"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "per_doc_ms"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Two-stage retrieval architecture and candidate shortlisting",
+        "columns": [
+          "docs",
+          "per_doc_ms",
+          "top"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A re-ranker evaluates top candidates with a slower but accurate model.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "per_doc_ms",
+                  "top"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "per_doc_ms",
+                  "top"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A two-stage design delivers high accuracy at a small fraction of cost.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "per_doc_ms",
+                  "top"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "per_doc_ms",
+                  "docs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A simple re-ranker",
+      "codeHash": "621c35303d0b45e50676a50efa9ae7e55e28c6de790ca98d0d735f7c25af3aaf",
+      "spec": {
+        "template": "table",
+        "title": "Distinct query term coverage scoring and stable ordering",
+        "columns": [
+          "scored",
+          "first_stage",
+          "scored"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The re-ranker scores candidate documents by distinct query word matches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scored"
+                  },
+                  {
+                    "text": "first_stage"
+                  },
+                  {
+                    "text": "scored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scored"
+                  },
+                  {
+                    "text": "first_stage"
+                  },
+                  {
+                    "text": "scored"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Preserving original candidate order resolves equal re-ranking scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scored"
+                  },
+                  {
+                    "text": "first_stage"
+                  },
+                  {
+                    "text": "scored"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scored"
+                  },
+                  {
+                    "text": "first_stage"
+                  },
+                  {
+                    "text": "first_stage"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distinct query term coverage scoring and stable ordering",
+        "columns": [
+          "scored",
+          "first_stage",
+          "scored"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The re-ranker scores candidate documents by distinct query word matches.",
+            "rows": [
+              {
+                "cells": [
+                  "scored",
+                  "first_stage",
+                  "scored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scored",
+                  "first_stage",
+                  "scored"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Preserving original candidate order resolves equal re-ranking scores.",
+            "rows": [
+              {
+                "cells": [
+                  "scored",
+                  "first_stage",
+                  "scored"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "scored",
+                  "first_stage",
+                  "first_stage"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The redundancy problem",
+      "codeHash": "6af134f10476ae18fa8c23c65b33af198563907d7c93a296868f05fb9ca8c208",
+      "spec": {
+        "template": "table",
+        "title": "Near-duplicate redundancy identification in candidate sets",
+        "columns": [
+          "names",
+          "top3",
+          "names"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Showing identical results wastes user attention and generative context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "top3"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "top3"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Retrieval must balance relevance with novelty across candidate outputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "top3"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "top3"
+                  },
+                  {
+                    "text": "top3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Near-duplicate redundancy identification in candidate sets",
+        "columns": [
+          "names",
+          "top3",
+          "names"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Showing identical results wastes user attention and generative context.",
+            "rows": [
+              {
+                "cells": [
+                  "names",
+                  "top3",
+                  "names"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "names",
+                  "top3",
+                  "names"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Retrieval must balance relevance with novelty across candidate outputs.",
+            "rows": [
+              {
+                "cells": [
+                  "names",
+                  "top3",
+                  "names"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "names",
+                  "top3",
+                  "top3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Maximal marginal relevance",
+      "codeHash": "5b1663e6e0d87c8f1b2f67d653c59806750eab49062f8eb04bed9c233ce50e25",
+      "spec": {
+        "template": "table",
+        "title": "Maximal marginal relevance greedy selection and trade-offs",
+        "columns": [
+          "chosen",
+          "rest",
+          "chosen"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "MMR maximises relevance while penalising redundancy against chosen items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "rest"
+                  },
+                  {
+                    "text": "chosen"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "rest"
+                  },
+                  {
+                    "text": "chosen"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adjusting lambda balances pure relevance ranking against diversity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "rest"
+                  },
+                  {
+                    "text": "chosen"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "rest"
+                  },
+                  {
+                    "text": "rest"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Maximal marginal relevance greedy selection and trade-offs",
+        "columns": [
+          "chosen",
+          "rest",
+          "chosen"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "MMR maximises relevance while penalising redundancy against chosen items.",
+            "rows": [
+              {
+                "cells": [
+                  "chosen",
+                  "rest",
+                  "chosen"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chosen",
+                  "rest",
+                  "chosen"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adjusting lambda balances pure relevance ranking against diversity.",
+            "rows": [
+              {
+                "cells": [
+                  "chosen",
+                  "rest",
+                  "chosen"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chosen",
+                  "rest",
+                  "rest"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting the pipeline together",
+      "codeHash": "d767ff8213cbb87a72e0e9fccdf0c8432eaae8e363843c5d44eedb5514e2bb80",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: re-ranking",
+      "codeHash": "eabeb4fcfd5368aa09351b246518e6244a69f509f26e4e3270a56ace612777f2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

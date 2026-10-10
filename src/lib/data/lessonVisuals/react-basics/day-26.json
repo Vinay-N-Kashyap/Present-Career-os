@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 26,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Saved data can be broken",
+      "codeHash": "074d0cbdff5f1271366b524856da7a0a1ce7b6887d35c7b8885f5b4ca670c352",
+      "spec": {
+        "template": "compare",
+        "title": "Valid JSON collections versus malformed storage strings",
+        "leftLabel": "Valid Data Array",
+        "rightLabel": "Malformed String",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Saved browser storage data may become corrupted or outdated.",
+            "left": {
+              "code": "console.log(Array.isArray(data) ? \"ok: a list\" : \"wrong shape\");",
+              "result": {
+                "text": "\"[{\\\"id\\\":1}]\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(\"broken text\");",
+              "result": {
+                "text": "\"broken{\""
+              },
+              "tone": "err"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Defensive parsing prevents unexpected corrupted data from crashing the app.",
+            "left": {
+              "code": "console.log(Array.isArray(data) ? \"ok: a list\" : \"wrong shape\");",
+              "result": {
+                "text": "\"[{\\\"id\\\":1}]\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(\"broken text\");",
+              "result": {
+                "text": "\"{\\\"a\\\":1}\""
+              },
+              "tone": "err"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Valid JSON collections versus malformed storage strings",
+        "leftLabel": "Valid Data Array",
+        "rightLabel": "Malformed String",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Saved browser storage data may become corrupted or outdated.",
+            "left": {
+              "code": "console.log(Array.isArray(data) ? \"ok: a list\" : \"wrong shape\");",
+              "result": "\"[{\\\"id\\\":1}]\"",
+              "tone": "ok",
+              "checks": [
+                "\"[{\\\"id\\\":1}]\""
+              ]
+            },
+            "right": {
+              "code": "console.log(\"broken text\");",
+              "result": "\"broken{\"",
+              "tone": "err",
+              "checks": [
+                "\"broken{\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Defensive parsing prevents unexpected corrupted data from crashing the app.",
+            "left": {
+              "code": "console.log(Array.isArray(data) ? \"ok: a list\" : \"wrong shape\");",
+              "result": "\"[{\\\"id\\\":1}]\"",
+              "tone": "ok",
+              "checks": [
+                "\"[{\\\"id\\\":1}]\""
+              ]
+            },
+            "right": {
+              "code": "console.log(\"broken text\");",
+              "result": "\"{\\\"a\\\":1}\"",
+              "tone": "err",
+              "checks": [
+                "\"{\\\"a\\\":1}\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A safe loadJobs function",
+      "codeHash": "d53dc4b8aef6f0415be5fcb931233fcc4bef5fca911acda7a81b394f6fb0c5b0",
+      "spec": {
+        "template": "boxes",
+        "title": "Resilient data loader returning default empty array",
+        "boxes": [
+          {
+            "id": "input",
+            "label": "input",
+            "tappable": false
+          },
+          {
+            "id": "output",
+            "label": "result",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The loadJobs function always returns a valid array even on parse failure.",
+            "values": {
+              "input": {
+                "text": "'[{\"id\":1}]'"
+              },
+              "output": {
+                "text": "'[{\"id\":1}]'"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Returning consistent fallback collections shields components from surprises.",
+            "values": {
+              "input": {
+                "text": "\"broken{\""
+              },
+              "output": {
+                "text": "\"\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Resilient data loader returning default empty array",
+        "boxes": [
+          {
+            "id": "input",
+            "label": "input",
+            "tappable": false
+          },
+          {
+            "id": "output",
+            "label": "result",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The loadJobs function always returns a valid array even on parse failure.",
+            "values": {
+              "input": "'[{\"id\":1}]'",
+              "output": "'[{\"id\":1}]'"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Returning consistent fallback collections shields components from surprises.",
+            "values": {
+              "input": "\"broken{\"",
+              "output": "\"\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding the job for the details page",
+      "codeHash": "db0e1cd02c6bdb50abd74b15f2a193db439d6c09bd4d9ff35a7052298e86b506",
+      "spec": {
+        "template": "boxes",
+        "title": "Lookup by identifier with safe null fallback",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "idText",
+            "tappable": false
+          },
+          {
+            "id": "result",
+            "label": "found",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Read URL parameter identifiers and search matching job records.",
+            "values": {
+              "id": {
+                "text": "\"2\""
+              },
+              "result": {
+                "text": "\"Tester\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Return null explicitly when a requested job record cannot be located.",
+            "values": {
+              "id": {
+                "text": "\"9\""
+              },
+              "result": {
+                "text": "null"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Lookup by identifier with safe null fallback",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "idText",
+            "tappable": false
+          },
+          {
+            "id": "result",
+            "label": "found",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Read URL parameter identifiers and search matching job records.",
+            "values": {
+              "id": "\"2\"",
+              "result": "\"Tester\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Return null explicitly when a requested job record cannot be located.",
+            "values": {
+              "id": "\"9\"",
+              "result": "null"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changing status from the details page",
+      "codeHash": "6cc0b78240d4c262a5609f70f7f5a0b0e72cb846362fd058595a78472ceaaf7c",
+      "spec": {
+        "template": "flow",
+        "title": "Unidirectional status updates flowing upward to App state",
+        "nodes": [
+          {
+            "id": "details",
+            "label": "JobDetails",
+            "tappable": false
+          },
+          {
+            "id": "app",
+            "label": "App",
+            "tappable": false
+          },
+          {
+            "id": "storage",
+            "label": "Storage",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Users advance application stages directly using status button triggers.",
+            "values": {
+              "details": {
+                "text": "\"interview\""
+              },
+              "app": {
+                "text": "\"applied\""
+              },
+              "storage": {
+                "text": "\"applied\""
+              }
+            },
+            "tones": {
+              "details": "data",
+              "app": "idle",
+              "storage": "idle"
+            },
+            "arrows": [
+              [
+                "details",
+                "app"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Callback handlers update centralized job state held in the root component.",
+            "values": {
+              "details": {
+                "text": "\"interview\""
+              },
+              "app": {
+                "text": "\"interview\""
+              },
+              "storage": {
+                "text": "\"interview\""
+              }
+            },
+            "tones": {
+              "details": "idle",
+              "app": "ok",
+              "storage": "ok"
+            },
+            "arrows": [
+              [
+                "details",
+                "app"
+              ],
+              [
+                "app",
+                "storage"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Unidirectional status updates flowing upward to App state",
+        "nodes": [
+          {
+            "id": "details",
+            "label": "JobDetails",
+            "tappable": false
+          },
+          {
+            "id": "app",
+            "label": "App",
+            "tappable": false
+          },
+          {
+            "id": "storage",
+            "label": "Storage",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Users advance application stages directly using status button triggers.",
+            "values": {
+              "details": "\"interview\"",
+              "app": "\"applied\"",
+              "storage": "\"applied\""
+            },
+            "tones": {
+              "details": "data",
+              "app": "idle",
+              "storage": "idle"
+            },
+            "arrows": [
+              [
+                "details",
+                "app"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Callback handlers update centralized job state held in the root component.",
+            "values": {
+              "details": "\"interview\"",
+              "app": "\"interview\"",
+              "storage": "\"interview\""
+            },
+            "tones": {
+              "details": "idle",
+              "app": "ok",
+              "storage": "ok"
+            },
+            "arrows": [
+              [
+                "details",
+                "app"
+              ],
+              [
+                "app",
+                "storage"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Notes: editing text that is saved",
+      "codeHash": "2da5055726be89b959f17119fa31cabb1faf9c28966ca3b279c1a70333288d77",
+      "spec": {
+        "template": "compare",
+        "title": "Local draft textarea state versus persisted model",
+        "leftLabel": "Local Draft",
+        "rightLabel": "Persisted Notes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Users capture interview feedback and details inside a dedicated notes area.",
+            "left": {
+              "code": "console.log(notesInfo(\"Call HR on Monday\", \"Call HR on Monday\"));",
+              "result": {
+                "text": "\"Call HR on Monday\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(notesInfo(\"Call HR on Monday\", \"Call HR on Monday\"));",
+              "result": {
+                "text": "\"Call HR on Monday\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Maintain uncommitted draft text in local state until the user clicks save.",
+            "left": {
+              "code": "console.log(notesInfo(\"Call HR on Monday at 10\", \"Call HR on Monday\"));",
+              "result": {
+                "text": "\"Call HR on Monday at 10\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(notesInfo(\"Call HR on Monday\", \"Call HR on Monday\"));",
+              "result": {
+                "text": "\"Call HR on Monday\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Local draft textarea state versus persisted model",
+        "leftLabel": "Local Draft",
+        "rightLabel": "Persisted Notes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Users capture interview feedback and details inside a dedicated notes area.",
+            "left": {
+              "code": "console.log(notesInfo(\"Call HR on Monday\", \"Call HR on Monday\"));",
+              "result": "\"Call HR on Monday\"",
+              "tone": "idle",
+              "checks": [
+                "\"Call HR on Monday\""
+              ]
+            },
+            "right": {
+              "code": "console.log(notesInfo(\"Call HR on Monday\", \"Call HR on Monday\"));",
+              "result": "\"Call HR on Monday\"",
+              "tone": "ok",
+              "checks": [
+                "\"Call HR on Monday\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Maintain uncommitted draft text in local state until the user clicks save.",
+            "left": {
+              "code": "console.log(notesInfo(\"Call HR on Monday at 10\", \"Call HR on Monday\"));",
+              "result": "\"Call HR on Monday at 10\"",
+              "tone": "idle",
+              "checks": [
+                "\"Call HR on Monday at 10\""
+              ]
+            },
+            "right": {
+              "code": "console.log(notesInfo(\"Call HR on Monday\", \"Call HR on Monday\"));",
+              "result": "\"Call HR on Monday\"",
+              "tone": "ok",
+              "checks": [
+                "\"Call HR on Monday\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Feature complete",
+      "codeHash": "33db57dec472ea1dfef1b0c33e8015f0e1b4984ad4b0132d28fa55e39f13d336",
+      "spec": {
+        "template": "none",
+        "reason": "End-to-end regression validation, edge case verification and milestone completion"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "End-to-end regression validation, edge case verification and milestone completion"
+      }
+    }
+  ]
+}

@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 3,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Mathematics of System Availability",
+      "codeHash": "c0a19444751f814008deaf8641878a322b2113539add0820f5552e7bca2685d8",
+      "spec": {
+        "template": "bars",
+        "title": "System availability uptime fraction versus downtime margin",
+        "bars": [
+          {
+            "id": "uptime",
+            "label": "Uptime Fraction",
+            "value": 99.9
+          },
+          {
+            "id": "downtime",
+            "label": "Downtime Margin",
+            "value": 0.1
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "System availability is defined as the probability of correct operation.",
+            "activeBars": [
+              "uptime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Components connected in series multiply their individual reliabilities.",
+            "activeBars": [
+              "uptime",
+              "downtime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "System availability uptime fraction versus downtime margin",
+        "bars": [
+          {
+            "id": "uptime",
+            "label": "Uptime Fraction",
+            "value": 99.9
+          },
+          {
+            "id": "downtime",
+            "label": "Downtime Margin",
+            "value": 0.1
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "System availability is defined as the probability of correct operation.",
+            "activeBars": [
+              "uptime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Components connected in series multiply their individual reliabilities.",
+            "activeBars": [
+              "uptime",
+              "downtime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Serial Systems & The Multiplicative Degradation Rule",
+      "codeHash": "ef9be8ba45357113cdc5126dd6e8036bb9292c083b6decd922db3ea390383b8f",
+      "spec": {
+        "template": "compare",
+        "title": "Serial system architecture versus multiplicative availability rule",
+        "left": {
+          "title": "Serial System Pipeline",
+          "items": [
+            "Every component must function",
+            "Single failure halts transaction",
+            "Multiplicative degradation rule",
+            "Availability drops with length"
+          ]
+        },
+        "right": {
+          "title": "Composite Product Rule",
+          "items": [
+            "Total availability is A1 times A2",
+            "Product is lower than weakest link",
+            "Ten tiers drop to ninety percent",
+            "Synchronous calls reduce uptime"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A system is arranged in series when every component must function.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say3",
+            "caption": "The overall availability of a serial system is the mathematical product.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Serial System Pipeline",
+        "rightLabel": "Composite Product Rule"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Serial system architecture versus multiplicative availability rule",
+        "left": {
+          "title": "Serial System Pipeline",
+          "items": [
+            "Every component must function",
+            "Single failure halts transaction",
+            "Multiplicative degradation rule",
+            "Availability drops with length"
+          ]
+        },
+        "right": {
+          "title": "Composite Product Rule",
+          "items": [
+            "Total availability is A1 times A2",
+            "Product is lower than weakest link",
+            "Ten tiers drop to ninety percent",
+            "Synchronous calls reduce uptime"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A system is arranged in series when every component must function.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say3",
+            "caption": "The overall availability of a serial system is the mathematical product.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Serial System Pipeline",
+        "rightLabel": "Composite Product Rule"
+      }
+    },
+    {
+      "partTitle": "Parallel Redundant Systems & High Availability",
+      "codeHash": "5b9651b19736568761bef1201484bbe4972cedc1d4a10489359452ba17ba0a68",
+      "spec": {
+        "template": "table",
+        "title": "Parallel redundant components and combined system availability",
+        "columns": [
+          "Replica Count",
+          "Component Uptime",
+          "Failure Probability",
+          "Parallel Uptime"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed systems employ parallel redundancy to overcome serial degradation.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1 Replica",
+                  "90.0%",
+                  "10.0%",
+                  "90.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2 Replicas",
+                  "90.0%",
+                  "1.0%",
+                  "99.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "3 Replicas",
+                  "90.0%",
+                  "0.1%",
+                  "99.9%"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The mathematical formula for parallel availability multiplies unavailabilities.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 2
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1 Replica",
+                  "90.0%",
+                  "10.0%",
+                  "90.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2 Replicas",
+                  "90.0%",
+                  "1.0%",
+                  "99.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "3 Replicas",
+                  "90.0%",
+                  "0.1%",
+                  "99.9%"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Parallel redundant components and combined system availability",
+        "columns": [
+          "Replica Count",
+          "Component Uptime",
+          "Failure Probability",
+          "Parallel Uptime"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed systems employ parallel redundancy to overcome serial degradation.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1 Replica",
+                  "90.0%",
+                  "10.0%",
+                  "90.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2 Replicas",
+                  "90.0%",
+                  "1.0%",
+                  "99.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "3 Replicas",
+                  "90.0%",
+                  "0.1%",
+                  "99.9%"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The mathematical formula for parallel availability multiplies unavailabilities.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 2
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1 Replica",
+                  "90.0%",
+                  "10.0%",
+                  "90.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2 Replicas",
+                  "90.0%",
+                  "1.0%",
+                  "99.0%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "3 Replicas",
+                  "90.0%",
+                  "0.1%",
+                  "99.9%"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Composite Architectures: Mixing Serial & Parallel Subsystems",
+      "codeHash": "6a21bdfccb4399388f9e910f8f0e8846069b1cf20f758207f88d4eaace022f0e",
+      "spec": {
+        "template": "workflow",
+        "title": "Hierarchical composite architecture reduction and evaluation flow",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Ingress Tier",
+            "subtext": "2x Load Balancers"
+          },
+          {
+            "id": "appPods",
+            "name": "App Tier",
+            "subtext": "3x Web Pods"
+          },
+          {
+            "id": "dataTier",
+            "name": "Data Tier",
+            "subtext": "Primary & Replica"
+          },
+          {
+            "id": "composite",
+            "name": "Composite Total",
+            "subtext": "Multiplied Score"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A typical web application features ingress balancers and database clusters.",
+            "activeStageId": "ingress",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Evaluate internal availability by collapsing redundant clusters into scores.",
+            "activeStageId": "composite",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Hierarchical composite architecture reduction and evaluation flow",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Ingress Tier",
+            "subtext": "2x Load Balancers"
+          },
+          {
+            "id": "appPods",
+            "name": "App Tier",
+            "subtext": "3x Web Pods"
+          },
+          {
+            "id": "dataTier",
+            "name": "Data Tier",
+            "subtext": "Primary & Replica"
+          },
+          {
+            "id": "composite",
+            "name": "Composite Total",
+            "subtext": "Multiplied Score"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A typical web application features ingress balancers and database clusters.",
+            "activeStageId": "ingress",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Evaluate internal availability by collapsing redundant clusters into scores.",
+            "activeStageId": "composite",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Fallacy of Adding Microservice Dependencies",
+      "codeHash": "f47d8c92ec19e07e86513eb2d9110ed29b0739b2fb5d89fe53f86913d9b54990",
+      "spec": {
+        "template": "states",
+        "title": "Microservice dependency states and degradation impact",
+        "states": [
+          {
+            "id": "monolith",
+            "label": "Single Service Baseline"
+          },
+          {
+            "id": "sprawl",
+            "label": "Synchronous Microservice Sprawl"
+          },
+          {
+            "id": "mitigated",
+            "label": "Asynchronous Decoupled Topology"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Invoking downstream microservices increases failure probability.",
+            "activeStateId": "sprawl",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers combat dependency inflation by establishing timeouts and caching.",
+            "activeStateId": "mitigated",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Microservice dependency states and degradation impact",
+        "states": [
+          {
+            "id": "monolith",
+            "label": "Single Service Baseline"
+          },
+          {
+            "id": "sprawl",
+            "label": "Synchronous Microservice Sprawl"
+          },
+          {
+            "id": "mitigated",
+            "label": "Asynchronous Decoupled Topology"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Invoking downstream microservices increases failure probability.",
+            "activeStateId": "sprawl",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers combat dependency inflation by establishing timeouts and caching.",
+            "activeStateId": "mitigated",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Engineering Highly Available Microservice Topologies",
+      "codeHash": "9771d915974c67f292582d739da36ded63096a06a4700ba233c970ee893fcbb5",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}

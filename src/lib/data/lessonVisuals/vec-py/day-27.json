@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why averages hide slow queries",
+      "codeHash": "cf4745745956048fea78ddc94267a2476903b02a462416724ffb398966a324f2",
+      "spec": {
+        "template": "table",
+        "title": "Tail latency distributions and percentile masking",
+        "columns": [
+          "lat",
+          "mean",
+          "ordered"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Average latency can look fine while some users wait a long time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "ordered"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "ordered"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Slowest percentiles called tail latency often decide user experience.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "ordered"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "ordered"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tail latency distributions and percentile masking",
+        "columns": [
+          "lat",
+          "mean",
+          "ordered"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Average latency can look fine while some users wait a long time.",
+            "rows": [
+              {
+                "cells": [
+                  "lat",
+                  "mean",
+                  "ordered"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "lat",
+                  "mean",
+                  "ordered"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Slowest percentiles called tail latency often decide user experience.",
+            "rows": [
+              {
+                "cells": [
+                  "lat",
+                  "mean",
+                  "ordered"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lat",
+                  "mean",
+                  "ordered"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Computing percentiles",
+      "codeHash": "6e3300cf09aaf777293aaaf3e6671867f2938c77adea271adef375a65e6d568e",
+      "spec": {
+        "template": "table",
+        "title": "Nearest-rank percentile calculations and summary reporting",
+        "columns": [
+          "values",
+          "lat",
+          "values"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Nearest rank calculation sorts values to extract precise threshold ranks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Method returns an actual measured value that operators can explain easily.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "lat"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Nearest-rank percentile calculations and summary reporting",
+        "columns": [
+          "values",
+          "lat",
+          "values"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Nearest rank calculation sorts values to extract precise threshold ranks.",
+            "rows": [
+              {
+                "cells": [
+                  "values",
+                  "lat",
+                  "values"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "values",
+                  "lat",
+                  "values"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Method returns an actual measured value that operators can explain easily.",
+            "rows": [
+              {
+                "cells": [
+                  "values",
+                  "lat",
+                  "values"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "values",
+                  "lat",
+                  "values"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Embedding drift",
+      "codeHash": "065fda696eaf7e059d81c171b10cd13a15615e6fadc7d570136d567638370b18",
+      "spec": {
+        "template": "table",
+        "title": "Embedding distribution drift and baseline cosine comparison",
+        "columns": [
+          "baseline",
+          "current",
+          "baseline"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Drift means incoming queries change over time across evolving topics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "baseline"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "baseline"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "baseline"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "baseline"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A simple drift signal compares mean embedding vectors against a baseline.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "baseline"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "baseline"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "baseline"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "baseline"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Embedding distribution drift and baseline cosine comparison",
+        "columns": [
+          "baseline",
+          "current",
+          "baseline"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Drift means incoming queries change over time across evolving topics.",
+            "rows": [
+              {
+                "cells": [
+                  "baseline",
+                  "current",
+                  "baseline"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "baseline",
+                  "current",
+                  "baseline"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A simple drift signal compares mean embedding vectors against a baseline.",
+            "rows": [
+              {
+                "cells": [
+                  "baseline",
+                  "current",
+                  "baseline"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "baseline",
+                  "current",
+                  "baseline"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quality signals in production",
+      "codeHash": "b6708d215834df3aa1b365a50bf0212957a7abbb714a2a7dee47b9766acd6dfe",
+      "spec": {
+        "template": "table",
+        "title": "Production quality signals and indirect telemetry metrics",
+        "columns": [
+          "log",
+          "results",
+          "log"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Live systems lack golden labels and rely on indirect signals in production.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "log"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "log"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "log"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "log"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dashboards should show these signals next to latency and error telemetry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "log"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "log"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "log"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "log"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production quality signals and indirect telemetry metrics",
+        "columns": [
+          "log",
+          "results",
+          "log"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Live systems lack golden labels and rely on indirect signals in production.",
+            "rows": [
+              {
+                "cells": [
+                  "log",
+                  "results",
+                  "log"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "log",
+                  "results",
+                  "log"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dashboards should show these signals next to latency and error telemetry.",
+            "rows": [
+              {
+                "cells": [
+                  "log",
+                  "results",
+                  "log"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "log",
+                  "results",
+                  "log"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Alerts that help",
+      "codeHash": "41c55f33eee4d745688d6730bc5e2db1efa496971dec7b0ec57654fa0ccd6885",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: monitoring",
+      "codeHash": "5e372ae01e9d86b4c997a11797257518494a835b259c73a79922de824fd4db89",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

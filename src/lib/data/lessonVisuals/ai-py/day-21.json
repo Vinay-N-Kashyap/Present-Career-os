@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What the research assistant does",
+      "codeHash": "df0fc86aa3a9661833cbc5623a6af7042d78d59e61a46c04be7ae850b80396d7",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-agent research assistant architecture overview and user workflow."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The supervisor interface",
+      "codeHash": "72f7561fc27421bea24b88f56206d68536b6fe4b64b84e3ae13ecd56002e661a",
+      "spec": {
+        "template": "flow",
+        "title": "Supervisor planning dispatch and synthesis interface contract",
+        "nodes": [
+          {
+            "id": "plan",
+            "label": "create_plan"
+          },
+          {
+            "id": "agent",
+            "label": "get_agent"
+          },
+          {
+            "id": "synth",
+            "label": "synthesize"
+          }
+        ],
+        "edges": [
+          {
+            "from": "plan",
+            "to": "agent"
+          },
+          {
+            "from": "agent",
+            "to": "synth"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Supervisor plans steps and passes each to specialist agent.",
+            "values": {
+              "plan": {
+                "text": "ResearcherAgent"
+              },
+              "agent": {
+                "text": "CoderAgent"
+              },
+              "synth": {
+                "text": "WriterAgent"
+              }
+            },
+            "tones": {
+              "plan": "ok",
+              "agent": "data",
+              "synth": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Class defines create_plan get_agent and synthesize methods.",
+            "values": {
+              "plan": {
+                "text": "ResearcherAgent"
+              },
+              "agent": {
+                "text": "CoderAgent"
+              },
+              "synth": {
+                "text": "WriterAgent"
+              }
+            },
+            "tones": {
+              "plan": "ok",
+              "agent": "ok",
+              "synth": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Writing interface first is good habit for multi-part system.",
+            "values": {
+              "plan": {
+                "text": "ResearcherAgent"
+              },
+              "agent": {
+                "text": "CoderAgent"
+              },
+              "synth": {
+                "text": "WriterAgent"
+              }
+            },
+            "tones": {
+              "plan": "ok",
+              "agent": "ok",
+              "synth": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Supervisor planning dispatch and synthesis interface contract",
+        "nodes": [
+          {
+            "id": "plan",
+            "label": "create_plan"
+          },
+          {
+            "id": "agent",
+            "label": "get_agent"
+          },
+          {
+            "id": "synth",
+            "label": "synthesize"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Supervisor plans steps and passes each to specialist agent.",
+            "values": {
+              "plan": "ResearcherAgent",
+              "agent": "CoderAgent",
+              "synth": "WriterAgent"
+            },
+            "tones": {
+              "plan": "ok",
+              "agent": "data",
+              "synth": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Class defines create_plan get_agent and synthesize methods.",
+            "values": {
+              "plan": "ResearcherAgent",
+              "agent": "CoderAgent",
+              "synth": "WriterAgent"
+            },
+            "tones": {
+              "plan": "ok",
+              "agent": "ok",
+              "synth": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say6",
+            "caption": "Writing interface first is good habit for multi-part system.",
+            "values": {
+              "plan": "ResearcherAgent",
+              "agent": "CoderAgent",
+              "synth": "WriterAgent"
+            },
+            "tones": {
+              "plan": "ok",
+              "agent": "ok",
+              "synth": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Orchestrating the plan",
+      "codeHash": "a694dfb36fcfda0e41b658fa31dbf2960348d76175f6fc9ff5404eb56e8d63b1",
+      "spec": {
+        "template": "table",
+        "title": "Multi-agent plan execution log and audit trail",
+        "columns": [
+          "step_id",
+          "agent_name",
+          "output_log"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Orchestrate agents runs every step in order logging output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "find sales"
+                  },
+                  {
+                    "text": "Researcher"
+                  },
+                  {
+                    "text": "sales grew 30% [source: report]"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "summarise"
+                  },
+                  {
+                    "text": "Writer"
+                  },
+                  {
+                    "text": "Sales grew about 30%."
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Return goal achieved status with steps executed and report.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "find sales"
+                  },
+                  {
+                    "text": "Researcher"
+                  },
+                  {
+                    "text": "sales grew 30% [source: report]"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "summarise"
+                  },
+                  {
+                    "text": "Writer"
+                  },
+                  {
+                    "text": "Sales grew about 30%."
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The logs are audit trail showing what each agent produced.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "find sales"
+                  },
+                  {
+                    "text": "Researcher"
+                  },
+                  {
+                    "text": "sales grew 30% [source: report]"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "summarise"
+                  },
+                  {
+                    "text": "Writer"
+                  },
+                  {
+                    "text": "Sales grew about 30%."
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-agent plan execution log and audit trail",
+        "columns": [
+          "step_id",
+          "agent_name",
+          "output_log"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Orchestrate agents runs every step in order logging output.",
+            "rows": [
+              {
+                "cells": [
+                  "find sales",
+                  "Researcher",
+                  "sales grew 30% [source: report]"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "summarise",
+                  "Writer",
+                  "Sales grew about 30%."
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Return goal achieved status with steps executed and report.",
+            "rows": [
+              {
+                "cells": [
+                  "find sales",
+                  "Researcher",
+                  "sales grew 30% [source: report]"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "summarise",
+                  "Writer",
+                  "Sales grew about 30%."
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The logs are audit trail showing what each agent produced.",
+            "rows": [
+              {
+                "cells": [
+                  "find sales",
+                  "Researcher",
+                  "sales grew 30% [source: report]"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "summarise",
+                  "Writer",
+                  "Sales grew about 30%."
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating the report",
+      "codeHash": "ee71c84a69c807e7e26ba948364752762f2c442bf66a38cee7f15e60dd8c5ecf",
+      "spec": {
+        "template": "compare",
+        "title": "Validation of cited sources and minimum report character length",
+        "leftLabel": "Short / Unsourced",
+        "rightLabel": "Valid Report",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Valid report returns True only when report string exceeds length.",
+            "left": {
+              "code": "report = {\"report\": \"   short  \"}",
+              "result": {
+                "text": "   short  "
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "report = \"Sales grew 30% in 2024 [source: report-12]\"",
+              "result": {
+                "text": "[source:"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Real systems check that every number has a source citation.",
+            "left": {
+              "code": "unsourced sentences detected by regex",
+              "result": {
+                "text": "   short  "
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "all numeric claims cite source tags",
+              "result": {
+                "text": "[source:"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Never show broken report to user as if it were success.",
+            "left": {
+              "code": "broken report without verified data",
+              "result": {
+                "text": "   short  "
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "clean verified research output delivered",
+              "result": {
+                "text": "[source:"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Validation of cited sources and minimum report character length",
+        "leftLabel": "Short / Unsourced",
+        "rightLabel": "Valid Report",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Valid report returns True only when report string exceeds length.",
+            "left": {
+              "code": "report = {\"report\": \"   short  \"}",
+              "result": "   short  ",
+              "tone": "error",
+              "checks": [
+                "   short  "
+              ]
+            },
+            "right": {
+              "code": "report = \"Sales grew 30% in 2024 [source: report-12]\"",
+              "result": "[source:",
+              "tone": "ok",
+              "checks": [
+                "[source:"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Real systems check that every number has a source citation.",
+            "left": {
+              "code": "unsourced sentences detected by regex",
+              "result": "   short  ",
+              "tone": "error",
+              "checks": [
+                "   short  "
+              ]
+            },
+            "right": {
+              "code": "all numeric claims cite source tags",
+              "result": "[source:",
+              "tone": "ok",
+              "checks": [
+                "[source:"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Never show broken report to user as if it were success.",
+            "left": {
+              "code": "broken report without verified data",
+              "result": "   short  ",
+              "tone": "error",
+              "checks": [
+                "   short  "
+              ]
+            },
+            "right": {
+              "code": "clean verified research output delivered",
+              "result": "[source:",
+              "tone": "ok",
+              "checks": [
+                "[source:"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tools with sources and safe code",
+      "codeHash": "fee6635b9b312cd2c72d3e4fc5eea336922aba46f1cb944919f290cea147c758",
+      "spec": {
+        "template": "bars",
+        "title": "EV two-wheeler sales growth metrics across annual datasets",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Researcher search tool returns results with source ID.",
+            "bars": [
+              {
+                "label": "sales_2023_millions",
+                "value": {
+                  "text": "0.88"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "sales_2024_millions",
+                "value": {
+                  "text": "1.14"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Coder tool computes growth rates using safe fixed operations.",
+            "bars": [
+              {
+                "label": "sales_2023_millions",
+                "value": {
+                  "text": "0.88"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "sales_2024_millions",
+                "value": {
+                  "text": "1.14"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Keeping source attached from search to report makes answer checkable.",
+            "bars": [
+              {
+                "label": "sales_2023_millions",
+                "value": {
+                  "text": "0.88"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "sales_2024_millions",
+                "value": {
+                  "text": "1.14"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "EV two-wheeler sales growth metrics across annual datasets",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Researcher search tool returns results with source ID.",
+            "bars": [
+              {
+                "label": "sales_2023_millions",
+                "value": 0.88,
+                "tone": "ok"
+              },
+              {
+                "label": "sales_2024_millions",
+                "value": 1.14,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Coder tool computes growth rates using safe fixed operations.",
+            "bars": [
+              {
+                "label": "sales_2023_millions",
+                "value": 0.88,
+                "tone": "ok"
+              },
+              {
+                "label": "sales_2024_millions",
+                "value": 1.14,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Keeping source attached from search to report makes answer checkable.",
+            "bars": [
+              {
+                "label": "sales_2023_millions",
+                "value": 0.88,
+                "tone": "ok"
+              },
+              {
+                "label": "sales_2024_millions",
+                "value": 1.14,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardening the assistant",
+      "codeHash": "ef242879668a1500b820e046a31980cfb131ed54c426c3f4dede4098da3de18e",
+      "spec": {
+        "template": "none",
+        "reason": "Budget ceilings step limits and graceful degradation to partial results."
+      },
+      "filled": {}
+    }
+  ]
+}

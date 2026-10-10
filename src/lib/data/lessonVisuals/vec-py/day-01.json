@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why vectors",
+      "codeHash": "87d488d7880524a36d48e35295576968e98281526f3c1a08bfa5e711433ae203",
+      "spec": {
+        "template": "table",
+        "title": "Vector embedding geometry and semantic distance mapping",
+        "columns": [
+          "points",
+          "names",
+          "points"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Turning text into vectors allows searching for meaning via nearby points.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The list of numbers that represents a text is called its embedding.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector embedding geometry and semantic distance mapping",
+        "columns": [
+          "points",
+          "names",
+          "points"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Turning text into vectors allows searching for meaning via nearby points.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "names",
+                  "points"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "points",
+                  "names",
+                  "points"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The list of numbers that represents a text is called its embedding.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "names",
+                  "points"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "points",
+                  "names",
+                  "names"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bag-of-words vectors",
+      "codeHash": "3a0d963e7ca6d703667f454ebee26628b1a69fd84c6bc9d13ee8f413cd8aea1e",
+      "spec": {
+        "template": "table",
+        "title": "Bag of words token frequency counts over fixed vocabulary",
+        "columns": [
+          "vocab",
+          "tokens",
+          "vocab"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A vocabulary assigns each vocabulary word a distinct position in the vector.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "vocab"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "vocab"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The value at each position records word frequencies in the text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "vocab"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bag of words token frequency counts over fixed vocabulary",
+        "columns": [
+          "vocab",
+          "tokens",
+          "vocab"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A vocabulary assigns each vocabulary word a distinct position in the vector.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "tokens",
+                  "vocab"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "tokens",
+                  "vocab"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The value at each position records word frequencies in the text.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "tokens",
+                  "vocab"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "tokens",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The hashing trick",
+      "codeHash": "9580f3bdb384756558ea5f3384980f1ad4a1d5f8e6b7358a90b9bd11e35fb21e",
+      "spec": {
+        "template": "table",
+        "title": "Feature hashing trick mapping arbitrary tokens to buckets",
+        "columns": [
+          "dims",
+          "word",
+          "bucket"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The hashing trick maps tokens to vector positions using a hash function.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "bucket"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "bucket"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Collisions occur when different words share the same hashed position.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "bucket"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "dims"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Feature hashing trick mapping arbitrary tokens to buckets",
+        "columns": [
+          "dims",
+          "word",
+          "bucket"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The hashing trick maps tokens to vector positions using a hash function.",
+            "rows": [
+              {
+                "cells": [
+                  "dims",
+                  "word",
+                  "bucket"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dims",
+                  "word",
+                  "bucket"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Collisions occur when different words share the same hashed position.",
+            "rows": [
+              {
+                "cells": [
+                  "dims",
+                  "word",
+                  "bucket"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "dims",
+                  "word",
+                  "dims"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unit-length vectors",
+      "codeHash": "3cfd79a1eb0d2148ebac6ef1926ed4f064fec94c939ba55e32c0d725fdef95cb",
+      "spec": {
+        "template": "table",
+        "title": "Vector normalization yielding unit length directional vectors",
+        "columns": [
+          "short",
+          "long",
+          "short"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "To compare direction rather than size we scale each vector to unit length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  },
+                  {
+                    "text": "short"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  },
+                  {
+                    "text": "short"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dividing every value by the norm yields a normalized unit vector.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  },
+                  {
+                    "text": "short"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  },
+                  {
+                    "text": "long"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector normalization yielding unit length directional vectors",
+        "columns": [
+          "short",
+          "long",
+          "short"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "To compare direction rather than size we scale each vector to unit length.",
+            "rows": [
+              {
+                "cells": [
+                  "short",
+                  "long",
+                  "short"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "short",
+                  "long",
+                  "short"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dividing every value by the norm yields a normalized unit vector.",
+            "rows": [
+              {
+                "cells": [
+                  "short",
+                  "long",
+                  "short"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "short",
+                  "long",
+                  "long"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Learned embeddings",
+      "codeHash": "86707d687cdd67d7299a2c030768bfbde3ab9d47d1eca2a62632ad9d2f866c98",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: making vectors",
+      "codeHash": "017ec107ffe6a2e0b894b3efbbef2fed1e36b115bd5e1dd7c31b03dec28376bf",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

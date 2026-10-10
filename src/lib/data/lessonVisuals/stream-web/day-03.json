@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 3,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Pull vs Push Architecture in Distributed Stream Consumption",
+      "codeHash": "c10b8ff9e90b1e5fa85df455265d7b2a5a8f6dd381aa0373b752b095c871f227",
+      "spec": {
+        "template": "sequence",
+        "title": "Pull-based consumer batch polling and self-throttled backpressure",
+        "actors": [
+          {
+            "id": "consumer",
+            "label": "PullConsumer"
+          },
+          {
+            "id": "broker",
+            "label": "Event Broker"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "The consumer explicitly requests batches of records from the broker.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "broker",
+                "label": "pollBatch(batchSize: 5)"
+              },
+              {
+                "from": "broker",
+                "to": "consumer",
+                "label": "Return ['evt-1', 'evt-2', 'evt-3'] (Depth: 3)"
+              }
+            ],
+            "activeActorId": "consumer"
+          },
+          {
+            "at": "say9",
+            "caption": "Client-driven flow control prevents consumer saturation across the stream.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "consumer",
+                "label": "processOne() -> 'evt-1' (Remaining Depth: 2)"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Pull-based consumer batch polling and self-throttled backpressure",
+        "actors": [
+          {
+            "id": "consumer",
+            "label": "PullConsumer"
+          },
+          {
+            "id": "broker",
+            "label": "Event Broker"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "The consumer explicitly requests batches of records from the broker.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "broker",
+                "label": "pollBatch(batchSize: 5)"
+              },
+              {
+                "from": "broker",
+                "to": "consumer",
+                "label": "Return ['evt-1', 'evt-2', 'evt-3'] (Depth: 3)"
+              }
+            ],
+            "activeActorId": "consumer"
+          },
+          {
+            "at": "say9",
+            "caption": "Client-driven flow control prevents consumer saturation across the stream.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "consumer",
+                "label": "processOne() -> 'evt-1' (Remaining Depth: 2)"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Consumer Polling Loop & Batch Fetch Mechanics",
+      "codeHash": "61e67ab455358654bb3b37c43a92070fa81d17b0e242c7f252872b2459224151",
+      "spec": {
+        "template": "cells",
+        "title": "Consumer polling loop advancing currentOffset across partition log",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The broker inspects current offset pointers and packs available records.",
+            "items": [
+              {
+                "text": "0: msg-0"
+              },
+              {
+                "text": "1: msg-1"
+              },
+              {
+                "text": "2: msg-2"
+              },
+              {
+                "text": "3: msg-3"
+              },
+              {
+                "text": "4: msg-4"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "offset",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Once the batch arrives, business logic iterates over the records synchronously.",
+            "items": [
+              {
+                "text": "0: msg-0"
+              },
+              {
+                "text": "1: msg-1"
+              },
+              {
+                "text": "2: msg-2"
+              },
+              {
+                "text": "3: msg-3"
+              },
+              {
+                "text": "4: msg-4"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "offset",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Consumer polling loop advancing currentOffset across partition log",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The broker inspects current offset pointers and packs available records.",
+            "items": [
+              "0: msg-0",
+              "1: msg-1",
+              "2: msg-2",
+              "3: msg-3",
+              "4: msg-4"
+            ],
+            "pointers": [
+              {
+                "name": "offset",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Once the batch arrives, business logic iterates over the records synchronously.",
+            "items": [
+              "0: msg-0",
+              "1: msg-1",
+              "2: msg-2",
+              "3: msg-3",
+              "4: msg-4"
+            ],
+            "pointers": [
+              {
+                "name": "offset",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Log End Offset (LEO) vs High-Water Mark (HWM) Boundaries",
+      "codeHash": "e075c6d6576e40a6f111e6154b497f87dcca1f29f2d9733998a56777020e33e6",
+      "spec": {
+        "template": "bars",
+        "title": "Leader Log End Offset (LEO) versus replicated High-Water Mark (HWM)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The High-Water Mark is the highest offset replicated across follower replicas.",
+            "bars": [
+              {
+                "label": "leaderLEO",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "broker-2 LEO",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "broker-3 LEO",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "idle"
+              },
+              {
+                "label": "highWaterMark",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Consumers are strictly forbidden from reading past the High-Water Mark.",
+            "bars": [
+              {
+                "label": "leaderLEO",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "broker-2 LEO",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "broker-3 LEO",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "highWaterMark",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Leader Log End Offset (LEO) versus replicated High-Water Mark (HWM)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The High-Water Mark is the highest offset replicated across follower replicas.",
+            "bars": [
+              {
+                "label": "leaderLEO",
+                "value": 5,
+                "tone": "data"
+              },
+              {
+                "label": "broker-2 LEO",
+                "value": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "broker-3 LEO",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "highWaterMark",
+                "value": 3,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Consumers are strictly forbidden from reading past the High-Water Mark.",
+            "bars": [
+              {
+                "label": "leaderLEO",
+                "value": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "broker-2 LEO",
+                "value": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "broker-3 LEO",
+                "value": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "highWaterMark",
+                "value": 5,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tuning Fetch Parameters: min.bytes, max.wait.ms, and max.records",
+      "codeHash": "a04697551760352c770f6083faf93926af06625bb40c8fca265a044b6ec51416",
+      "spec": {
+        "template": "table",
+        "title": "Broker long-polling dispatch evaluation for minBytes=1024 and maxWaitMs=50",
+        "columns": [
+          "Elapsed Wait",
+          "Available Bytes",
+          "Dispatched",
+          "Dispatch Reason"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The broker withholds its response until enough data arrives for a batch.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When maxWaitMs expires before the byte threshold, the broker returns records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Broker long-polling dispatch evaluation for minBytes=1024 and maxWaitMs=50",
+        "columns": [
+          "Elapsed Wait",
+          "Available Bytes",
+          "Dispatched",
+          "Dispatch Reason"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The broker withholds its response until enough data arrives for a batch.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When maxWaitMs expires before the byte threshold, the broker returns records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flow Control: Pause, Resume, and Backpressure Mitigation in Consumers",
+      "codeHash": "473c85809414cfdbe27b04f55ece817d4bb38c1096ab22172afae9b526359ed7",
+      "spec": {
+        "template": "states",
+        "title": "Consumer backpressure flow control between highWatermark=4 and lowWatermark=1",
+        "states": [
+          {
+            "id": "activePolling",
+            "label": "Active Polling (depth: 3)"
+          },
+          {
+            "id": "pausedState",
+            "label": "Paused Polling (depth >= 4)"
+          },
+          {
+            "id": "drainingQueue",
+            "label": "Draining Buffer"
+          },
+          {
+            "id": "resumedPolling",
+            "label": "Resumed Polling (depth <= 1)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When the processing buffer reaches threshold, the consumer calls pause.",
+            "activeState": "pausedState",
+            "transition": {
+              "from": "activePolling",
+              "to": "pausedState",
+              "label": "depth 5 >= 4"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Once internal queues drain below low-water mark, the consumer invokes resume.",
+            "activeState": "resumedPolling",
+            "transition": {
+              "from": "drainingQueue",
+              "to": "resumedPolling",
+              "label": "depth 1 <= 1"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Consumer backpressure flow control between highWatermark=4 and lowWatermark=1",
+        "states": [
+          {
+            "id": "activePolling",
+            "label": "Active Polling (depth: 3)"
+          },
+          {
+            "id": "pausedState",
+            "label": "Paused Polling (depth >= 4)"
+          },
+          {
+            "id": "drainingQueue",
+            "label": "Draining Buffer"
+          },
+          {
+            "id": "resumedPolling",
+            "label": "Resumed Polling (depth <= 1)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When the processing buffer reaches threshold, the consumer calls pause.",
+            "activeState": "pausedState",
+            "transition": {
+              "from": "activePolling",
+              "to": "pausedState",
+              "label": "depth 5 >= 4"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Once internal queues drain below low-water mark, the consumer invokes resume.",
+            "activeState": "resumedPolling",
+            "transition": {
+              "from": "drainingQueue",
+              "to": "resumedPolling",
+              "label": "depth 1 <= 1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Asynchronous High-Water Mark Bounded Polling Engine",
+      "codeHash": "8da6546f8c9d6a10c362006d5715f2178c94c3cfa20261899d6cdf8e3cd421a4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

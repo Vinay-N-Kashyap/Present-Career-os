@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Exploding gradients",
+      "codeHash": "a04780d67cf439268ec1f2375669639eb48b30d11bacd4a69952186f9134aeac",
+      "spec": {
+        "template": "table",
+        "title": "Exploding gradients and weight divergence",
+        "columns": [
+          "grads",
+          "step",
+          "gradient"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An enormous gradient pushes training into a sharp region of the loss surface.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "gradient"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "gradient"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Main defences are gradient clipping and monitoring with automatic responses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "gradient"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "grads"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exploding gradients and weight divergence",
+        "columns": [
+          "grads",
+          "step",
+          "gradient"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An enormous gradient pushes training into a sharp region of the loss surface.",
+            "rows": [
+              {
+                "cells": [
+                  "grads",
+                  "step",
+                  "gradient"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "grads",
+                  "step",
+                  "gradient"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Main defences are gradient clipping and monitoring with automatic responses.",
+            "rows": [
+              {
+                "cells": [
+                  "grads",
+                  "step",
+                  "gradient"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "grads",
+                  "step",
+                  "grads"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The global gradient norm",
+      "codeHash": "97411e253a0910b633508fb382b1bc011fe8f04eda6741e1bb7d21aa15b50158",
+      "spec": {
+        "template": "table",
+        "title": "The global gradient norm across model layers",
+        "columns": [
+          "sum_sq",
+          "layer",
+          "math"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The global gradient norm measures the total size of all gradients together.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sum_sq"
+                  },
+                  {
+                    "text": "layer"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum_sq"
+                  },
+                  {
+                    "text": "layer"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Watching the norm over time shows when training becomes unstable.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sum_sq"
+                  },
+                  {
+                    "text": "layer"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum_sq"
+                  },
+                  {
+                    "text": "layer"
+                  },
+                  {
+                    "text": "sum_sq"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "The global gradient norm across model layers",
+        "columns": [
+          "sum_sq",
+          "layer",
+          "math"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The global gradient norm measures the total size of all gradients together.",
+            "rows": [
+              {
+                "cells": [
+                  "sum_sq",
+                  "layer",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum_sq",
+                  "layer",
+                  "math"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Watching the norm over time shows when training becomes unstable.",
+            "rows": [
+              {
+                "cells": [
+                  "sum_sq",
+                  "layer",
+                  "math"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sum_sq",
+                  "layer",
+                  "sum_sq"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clipping by global norm",
+      "codeHash": "1c902a79d7c9f1efbca1f324a07c1436c4b352726c75c82f049c921b30c76007",
+      "spec": {
+        "template": "table",
+        "title": "Clipping gradient vectors by global threshold norm",
+        "columns": [
+          "grads",
+          "norm",
+          "scale"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gradient clipping limits the global norm to a maximum for language models.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The direction of the update stays the same while size is capped.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grads"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "grads"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Clipping gradient vectors by global threshold norm",
+        "columns": [
+          "grads",
+          "norm",
+          "scale"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gradient clipping limits the global norm to a maximum for language models.",
+            "rows": [
+              {
+                "cells": [
+                  "grads",
+                  "norm",
+                  "scale"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "grads",
+                  "norm",
+                  "scale"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The direction of the update stays the same while size is capped.",
+            "rows": [
+              {
+                "cells": [
+                  "grads",
+                  "norm",
+                  "scale"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "grads",
+                  "norm",
+                  "grads"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting spikes and NaNs",
+      "codeHash": "8c081698a7270509a28ef694ba70e328bb98cfb392a630b890ce2bf2ec2c0983",
+      "spec": {
+        "template": "table",
+        "title": "Detecting loss spikes and NaN numerical errors",
+        "columns": [
+          "losses",
+          "loss",
+          "mean"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automatic monitors watch the loss and react when something looks wrong.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "losses"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "mean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "losses"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "mean"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Any NaN loss is flagged immediately across subsequent training computation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "losses"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "mean"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "losses"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "losses"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Detecting loss spikes and NaN numerical errors",
+        "columns": [
+          "losses",
+          "loss",
+          "mean"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automatic monitors watch the loss and react when something looks wrong.",
+            "rows": [
+              {
+                "cells": [
+                  "losses",
+                  "loss",
+                  "mean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "losses",
+                  "loss",
+                  "mean"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Any NaN loss is flagged immediately across subsequent training computation.",
+            "rows": [
+              {
+                "cells": [
+                  "losses",
+                  "loss",
+                  "mean"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "losses",
+                  "loss",
+                  "losses"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Responding to instability",
+      "codeHash": "f90d98b44c375a12de5edb534b49ad650a69e951590d542fbfec00ee3a196a1f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: stability",
+      "codeHash": "848ba16b2b1e6a6a351c46bf5da4bf8c883ddbbce13e8afe7bda0fc3c19bcd79",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 10,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "From an array of data to a list on screen",
+      "codeHash": "595004ee972a2c22c6005850e7269fa1e78012250bd36418349d4b7d92a4d2b7",
+      "spec": {
+        "template": "flow",
+        "title": "Transforming data collections into interactive components",
+        "nodes": [
+          {
+            "id": "arr",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "map",
+            "label": "map",
+            "tappable": false
+          },
+          {
+            "id": "ui",
+            "label": "JobCard",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Array map transforms raw data objects into React components.",
+            "values": {
+              "arr": {
+                "text": "\"Frontend Developer\""
+              },
+              "map": {
+                "text": "map"
+              },
+              "ui": {
+                "text": "\"React Developer\""
+              }
+            },
+            "tones": {
+              "arr": "idle",
+              "map": "data",
+              "ui": "ok"
+            },
+            "arrows": [
+              [
+                "arr",
+                "map"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Mapping data collections is the fundamental list rendering pattern.",
+            "values": {
+              "arr": {
+                "text": "\"Frontend Developer\""
+              },
+              "map": {
+                "text": "map"
+              },
+              "ui": {
+                "text": "\"React Developer\""
+              }
+            },
+            "tones": {
+              "arr": "idle",
+              "map": "idle",
+              "ui": "ok"
+            },
+            "arrows": [
+              [
+                "arr",
+                "map"
+              ],
+              [
+                "map",
+                "ui"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Transforming data collections into interactive components",
+        "nodes": [
+          {
+            "id": "arr",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "map",
+            "label": "map",
+            "tappable": false
+          },
+          {
+            "id": "ui",
+            "label": "JobCard",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Array map transforms raw data objects into React components.",
+            "values": {
+              "arr": "\"Frontend Developer\"",
+              "map": "map",
+              "ui": "\"React Developer\""
+            },
+            "tones": {
+              "arr": "idle",
+              "map": "data",
+              "ui": "ok"
+            },
+            "arrows": [
+              [
+                "arr",
+                "map"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Mapping data collections is the fundamental list rendering pattern.",
+            "values": {
+              "arr": "\"Frontend Developer\"",
+              "map": "map",
+              "ui": "\"React Developer\""
+            },
+            "tones": {
+              "arr": "idle",
+              "map": "idle",
+              "ui": "ok"
+            },
+            "arrows": [
+              [
+                "arr",
+                "map"
+              ],
+              [
+                "map",
+                "ui"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing map inside JSX",
+      "codeHash": "d7e94977ecee40028823d3cf20bd60df360b9a939795786ab837e4e00e7ef113",
+      "spec": {
+        "template": "compare",
+        "title": "Correct arrow function return syntax in map",
+        "leftLabel": "Missing Return",
+        "rightLabel": "Implicit Return",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array map expressions inside JSX curly braces return values.",
+            "left": {
+              "code": "const wrong = jobs.map(job => { `<li>${job}</li>` });",
+              "result": {
+                "text": "wrong"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "const right = jobs.map(job => `<li>${job}</li>`);",
+              "result": {
+                "text": "right"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Curly brackets without return yield undefined empty list rendering.",
+            "left": {
+              "code": "const wrong = jobs.map(job => { `<li>${job}</li>` });",
+              "result": {
+                "text": "wrong"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "const right = jobs.map(job => `<li>${job}</li>`);",
+              "result": {
+                "text": "right"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Correct arrow function return syntax in map",
+        "leftLabel": "Missing Return",
+        "rightLabel": "Implicit Return",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array map expressions inside JSX curly braces return values.",
+            "left": {
+              "code": "const wrong = jobs.map(job => { `<li>${job}</li>` });",
+              "result": "wrong",
+              "tone": "warn",
+              "checks": [
+                "wrong"
+              ]
+            },
+            "right": {
+              "code": "const right = jobs.map(job => `<li>${job}</li>`);",
+              "result": "right",
+              "tone": "ok",
+              "checks": [
+                "right"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Curly brackets without return yield undefined empty list rendering.",
+            "left": {
+              "code": "const wrong = jobs.map(job => { `<li>${job}</li>` });",
+              "result": "wrong",
+              "tone": "warn",
+              "checks": [
+                "wrong"
+              ]
+            },
+            "right": {
+              "code": "const right = jobs.map(job => `<li>${job}</li>`);",
+              "result": "right",
+              "tone": "ok",
+              "checks": [
+                "right"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why every item needs a key",
+      "codeHash": "673fc72e333edcfe398064d96ecfaf3d7acb01f97afdf9308166ecc5696cf790",
+      "spec": {
+        "template": "boxes",
+        "title": "Unique keys for list item reconciliation",
+        "boxes": [
+          {
+            "id": "id1",
+            "label": "id1",
+            "tappable": false
+          },
+          {
+            "id": "id2",
+            "label": "id2",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "React requires a unique key prop for list items.",
+            "values": {
+              "id1": {
+                "text": "1"
+              },
+              "id2": {
+                "text": "2"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A stable unique key identifies each item across updates.",
+            "values": {
+              "id1": {
+                "text": "1"
+              },
+              "id2": {
+                "text": "2"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Unique keys for list item reconciliation",
+        "boxes": [
+          {
+            "id": "id1",
+            "label": "id1",
+            "tappable": false
+          },
+          {
+            "id": "id2",
+            "label": "id2",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "React requires a unique key prop for list items.",
+            "values": {
+              "id1": "1",
+              "id2": "2"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "A stable unique key identifies each item across updates.",
+            "values": {
+              "id1": "1",
+              "id2": "2"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When the list is empty",
+      "codeHash": "02bb1215a506aa20baa2ad5a981709a3e1ff12a305da5903bc887ba4f1b12ee9",
+      "spec": {
+        "template": "compare",
+        "title": "Handling empty lists with conditional rendering",
+        "leftLabel": "Empty List",
+        "rightLabel": "With Data",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Empty collections should display a friendly fallback message.",
+            "left": {
+              "code": "console.log(listMessage([]));",
+              "result": {
+                "text": "\"No jobs yet. Add your first one!\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(listMessage([{ id: 1 }, { id: 2 }]));",
+              "result": {
+                "text": "`Showing ${jobs.length} jobs`"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional logical AND operator renders elements when length matches.",
+            "left": {
+              "code": "console.log(listMessage([]));",
+              "result": {
+                "text": "\"No jobs yet. Add your first one!\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(listMessage([{ id: 1 }, { id: 2 }]));",
+              "result": {
+                "text": "`Showing ${jobs.length} jobs`"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Handling empty lists with conditional rendering",
+        "leftLabel": "Empty List",
+        "rightLabel": "With Data",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Empty collections should display a friendly fallback message.",
+            "left": {
+              "code": "console.log(listMessage([]));",
+              "result": "\"No jobs yet. Add your first one!\"",
+              "tone": "idle",
+              "checks": [
+                "\"No jobs yet. Add your first one!\""
+              ]
+            },
+            "right": {
+              "code": "console.log(listMessage([{ id: 1 }, { id: 2 }]));",
+              "result": "`Showing ${jobs.length} jobs`",
+              "tone": "ok",
+              "checks": [
+                "`Showing ${jobs.length} jobs`"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional logical AND operator renders elements when length matches.",
+            "left": {
+              "code": "console.log(listMessage([]));",
+              "result": "\"No jobs yet. Add your first one!\"",
+              "tone": "idle",
+              "checks": [
+                "\"No jobs yet. Add your first one!\""
+              ]
+            },
+            "right": {
+              "code": "console.log(listMessage([{ id: 1 }, { id: 2 }]));",
+              "result": "`Showing ${jobs.length} jobs`",
+              "tone": "ok",
+              "checks": [
+                "`Showing ${jobs.length} jobs`"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "filter and map together",
+      "codeHash": "f56c6baa5fd1e9048d413908d7530ce41b4f2a608ce2850b5ed41b87058ba961",
+      "spec": {
+        "template": "flow",
+        "title": "Chaining filter and map for list display",
+        "nodes": [
+          {
+            "id": "all",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "filter",
+            "label": "filter",
+            "tappable": false
+          },
+          {
+            "id": "cards",
+            "label": "cards",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Combine filter and map to show subsets of items.",
+            "values": {
+              "all": {
+                "text": "jobs"
+              },
+              "filter": {
+                "text": "\"interview\""
+              },
+              "cards": {
+                "text": "cards"
+              }
+            },
+            "tones": {
+              "all": "idle",
+              "filter": "idle",
+              "cards": "idle"
+            },
+            "arrows": [
+              [
+                "all",
+                "filter"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering jobs before mapping keeps JSX return statements clean.",
+            "values": {
+              "all": {
+                "text": "jobs"
+              },
+              "filter": {
+                "text": "\"interview\""
+              },
+              "cards": {
+                "text": "cards"
+              }
+            },
+            "tones": {
+              "all": "idle",
+              "filter": "data",
+              "cards": "ok"
+            },
+            "arrows": [
+              [
+                "all",
+                "filter"
+              ],
+              [
+                "filter",
+                "cards"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Chaining filter and map for list display",
+        "nodes": [
+          {
+            "id": "all",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "filter",
+            "label": "filter",
+            "tappable": false
+          },
+          {
+            "id": "cards",
+            "label": "cards",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Combine filter and map to show subsets of items.",
+            "values": {
+              "all": "jobs",
+              "filter": "\"interview\"",
+              "cards": "cards"
+            },
+            "tones": {
+              "all": "idle",
+              "filter": "idle",
+              "cards": "idle"
+            },
+            "arrows": [
+              [
+                "all",
+                "filter"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering jobs before mapping keeps JSX return statements clean.",
+            "values": {
+              "all": "jobs",
+              "filter": "\"interview\"",
+              "cards": "cards"
+            },
+            "tones": {
+              "all": "idle",
+              "filter": "data",
+              "cards": "ok"
+            },
+            "arrows": [
+              [
+                "all",
+                "filter"
+              ],
+              [
+                "filter",
+                "cards"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Build the JobList component",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Walkthrough of creating the JobList component and assembling the week one application skeleton"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Walkthrough of creating the JobList component and assembling the week one application skeleton"
+      }
+    }
+  ]
+}

@@ -1,0 +1,617 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Merging without coordination",
+      "codeHash": "6c94a19b5771b55c50277aa5c332801c595ec6b3df6cbeb14eccf51e02d03b43",
+      "spec": {
+        "template": "none",
+        "reason": "Eventual consistency without locks and state-based convergence properties."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The G-Counter",
+      "codeHash": "a3346c1903602f84d391b4ccef2575780570ab6d5679771e37bf1dab27729fc1",
+      "spec": {
+        "template": "table",
+        "title": "Grow-only counter replica increments and element-wise max merge",
+        "columns": [
+          "node",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A grow-only counter keeps one entry per node.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The value is the sum of entries while merge takes maximum.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Max merge satisfies commutative and idempotent properties.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Grow-only counter replica increments and element-wise max merge",
+        "columns": [
+          "node",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A grow-only counter keeps one entry per node.",
+            "rows": [
+              {
+                "cells": [
+                  "A",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The value is the sum of entries while merge takes maximum.",
+            "rows": [
+              {
+                "cells": [
+                  "A",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "B",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Max merge satisfies commutative and idempotent properties.",
+            "rows": [
+              {
+                "cells": [
+                  "A",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "B",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The PN-Counter",
+      "codeHash": "4f1fc7584346ed3066ad1a30980db0c32e1588286a55ce7714f6556ed5ce3ef0",
+      "spec": {
+        "template": "table",
+        "title": "Positive-negative counter independent maps and net value resolution",
+        "columns": [
+          "node",
+          "p",
+          "n"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A PN-Counter combines positive P and negative N counters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mumbai"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function value computes sum of P minus sum of N.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mumbai"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "delhi"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Both halves only grow so the max merge still works.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mumbai"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "delhi"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Positive-negative counter independent maps and net value resolution",
+        "columns": [
+          "node",
+          "p",
+          "n"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A PN-Counter combines positive P and negative N counters.",
+            "rows": [
+              {
+                "cells": [
+                  "mumbai",
+                  "10",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function value computes sum of P minus sum of N.",
+            "rows": [
+              {
+                "cells": [
+                  "mumbai",
+                  "10",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "delhi",
+                  "5",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Both halves only grow so the max merge still works.",
+            "rows": [
+              {
+                "cells": [
+                  "mumbai",
+                  "10",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "delhi",
+                  "5",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Last-writer-wins registers",
+      "codeHash": "059b24b13cb5a26960db1f0d70b9f2cab869312dca71514674df3ec7d0df31f4",
+      "spec": {
+        "template": "compare",
+        "title": "Last-writer-wins register timestamp ordering and deterministic tie-breaking",
+        "leftLabel": "Higher Timestamp Wins",
+        "rightLabel": "Tie-Break by Node ID",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A last-writer-wins register keeps value with highest timestamp.",
+            "left": {
+              "code": "resolve_lww(x, y)",
+              "result": {
+                "text": "Asha Kumar"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "resolve_lww(y, z)",
+              "result": {
+                "text": "Asha R"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Higher timestamp wins and on tie higher node id wins.",
+            "left": {
+              "code": "ts 110 beats ts 105",
+              "result": {
+                "text": "Asha Kumar"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "node n3 beats node n2",
+              "result": {
+                "text": "Asha R"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Tie break ensures every replica converges to the same value.",
+            "left": {
+              "code": "resolve_lww symmetric winner",
+              "result": {
+                "text": "Asha Kumar"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "deterministic tie-break winner",
+              "result": {
+                "text": "Asha R"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Last-writer-wins register timestamp ordering and deterministic tie-breaking",
+        "leftLabel": "Higher Timestamp Wins",
+        "rightLabel": "Tie-Break by Node ID",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A last-writer-wins register keeps value with highest timestamp.",
+            "left": {
+              "code": "resolve_lww(x, y)",
+              "result": "Asha Kumar",
+              "tone": "ok",
+              "checks": [
+                "Asha Kumar"
+              ]
+            },
+            "right": {
+              "code": "resolve_lww(y, z)",
+              "result": "Asha R",
+              "tone": "ok",
+              "checks": [
+                "Asha R"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Higher timestamp wins and on tie higher node id wins.",
+            "left": {
+              "code": "ts 110 beats ts 105",
+              "result": "Asha Kumar",
+              "tone": "ok",
+              "checks": [
+                "Asha Kumar"
+              ]
+            },
+            "right": {
+              "code": "node n3 beats node n2",
+              "result": "Asha R",
+              "tone": "ok",
+              "checks": [
+                "Asha R"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Tie break ensures every replica converges to the same value.",
+            "left": {
+              "code": "resolve_lww symmetric winner",
+              "result": "Asha Kumar",
+              "tone": "ok",
+              "checks": [
+                "Asha Kumar"
+              ]
+            },
+            "right": {
+              "code": "deterministic tie-break winner",
+              "result": "Asha R",
+              "tone": "ok",
+              "checks": [
+                "Asha R"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sets that merge: add-wins sets",
+      "codeHash": "e5f9bf7564bea0cd6e642ebcf6b3b460ad79ba6afd4b20125a240ad2eafe6999",
+      "spec": {
+        "template": "compare",
+        "title": "Observed-remove set concurrent tag preservation and add-wins resolution",
+        "leftLabel": "Observed-Remove Set (OR-Set)",
+        "rightLabel": "Concurrent Operations",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If one replica adds milk and another removes it concurrently.",
+            "left": {
+              "code": "phone adds with new tag t2",
+              "result": {
+                "text": "milk"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "laptop removes old tag t1",
+              "result": {
+                "text": "milk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Observed-remove set preserves new tags so concurrent add wins.",
+            "left": {
+              "code": "add with new tag survives",
+              "result": {
+                "text": "milk"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "remove only deleted tag t1",
+              "result": {
+                "text": "milk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "An add on one replica survives a concurrent remove on another.",
+            "left": {
+              "code": "merged items retain milk",
+              "result": {
+                "text": "milk"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "item preserved in final set",
+              "result": {
+                "text": "milk"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Observed-remove set concurrent tag preservation and add-wins resolution",
+        "leftLabel": "Observed-Remove Set (OR-Set)",
+        "rightLabel": "Concurrent Operations",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If one replica adds milk and another removes it concurrently.",
+            "left": {
+              "code": "phone adds with new tag t2",
+              "result": "milk",
+              "tone": "ok",
+              "checks": [
+                "milk"
+              ]
+            },
+            "right": {
+              "code": "laptop removes old tag t1",
+              "result": "milk",
+              "tone": "ok",
+              "checks": [
+                "milk"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Observed-remove set preserves new tags so concurrent add wins.",
+            "left": {
+              "code": "add with new tag survives",
+              "result": "milk",
+              "tone": "ok",
+              "checks": [
+                "milk"
+              ]
+            },
+            "right": {
+              "code": "remove only deleted tag t1",
+              "result": "milk",
+              "tone": "ok",
+              "checks": [
+                "milk"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "An add on one replica survives a concurrent remove on another.",
+            "left": {
+              "code": "merged items retain milk",
+              "result": "milk",
+              "tone": "ok",
+              "checks": [
+                "milk"
+              ]
+            },
+            "right": {
+              "code": "item preserved in final set",
+              "result": "milk",
+              "tone": "ok",
+              "checks": [
+                "milk"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When to use CRDTs",
+      "codeHash": "b75a3ec3b02bbee84d07005d4723d24ea934e8d955a175e3c8881b0d0478891b",
+      "spec": {
+        "template": "none",
+        "reason": "Decision criteria for choosing between CRDTs and consensus protocols."
+      },
+      "filled": {}
+    }
+  ]
+}

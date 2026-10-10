@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why automatic metrics",
+      "codeHash": "290c7a34ba9066e8cc12b2b89c57600d0c103333a6f8e1a23a7746e6da45c65e",
+      "spec": {
+        "template": "table",
+        "title": "Automatic evaluation metric candidate reference matching",
+        "columns": [
+          "reference",
+          "candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automatic evaluation methods replace slow and expensive human evaluation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reference"
+                  },
+                  {
+                    "text": "candidate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Automatic metrics compare candidate text against human reference text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reference"
+                  },
+                  {
+                    "text": "candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Overlap metrics tally shared words and phrases between candidate pairs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reference"
+                  },
+                  {
+                    "text": "candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example counts shared words between candidate and reference strings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reference"
+                  },
+                  {
+                    "text": "candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reference"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automatic evaluation metric candidate reference matching",
+        "columns": [
+          "reference",
+          "candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automatic evaluation methods replace slow and expensive human evaluation.",
+            "rows": [
+              {
+                "cells": [
+                  "reference",
+                  "candidate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Automatic metrics compare candidate text against human reference text.",
+            "rows": [
+              {
+                "cells": [
+                  "reference",
+                  "candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shared",
+                  "split"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Overlap metrics tally shared words and phrases between candidate pairs.",
+            "rows": [
+              {
+                "cells": [
+                  "reference",
+                  "candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shared",
+                  "split"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shared",
+                  "len"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example counts shared words between candidate and reference strings.",
+            "rows": [
+              {
+                "cells": [
+                  "reference",
+                  "candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shared",
+                  "split"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shared",
+                  "len"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "reference",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BLEU: clipped n-gram precision",
+      "codeHash": "96e7c65a45e313daad57b62cfa06ae49b6ed64088bace3e655163dc11c56c526",
+      "spec": {
+        "template": "table",
+        "title": "BLEU modified n-gram precision and count clipping",
+        "columns": [
+          "candidate",
+          "reference"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "BLEU measures precision by calculating shared candidate n-grams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Count clipping bounds repeated words to their actual reference count.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cand"
+                  },
+                  {
+                    "text": "ref"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Combining precisions across n-gram lengths rewards coherent phrases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cand"
+                  },
+                  {
+                    "text": "ref"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "clipped"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Counter frequencies determine minimum matches between candidate counts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cand"
+                  },
+                  {
+                    "text": "ref"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "clipped"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "modified_precision"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "BLEU modified n-gram precision and count clipping",
+        "columns": [
+          "candidate",
+          "reference"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "BLEU measures precision by calculating shared candidate n-grams.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Count clipping bounds repeated words to their actual reference count.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cand",
+                  "ref"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Combining precisions across n-gram lengths rewards coherent phrases.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cand",
+                  "ref"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "clipped",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Counter frequencies determine minimum matches between candidate counts.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cand",
+                  "ref"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "clipped",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "modified_precision",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The brevity penalty",
+      "codeHash": "4889223e94af70b4bbeccf6b7ef23529c5dda94177c45d5a482bb11a8fe153b1",
+      "spec": {
+        "template": "none",
+        "reason": "Brevity penalty formula and decay curves."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "ROUGE for summaries",
+      "codeHash": "290b85e0ccb454ef72adaeb1c29bae43126e7e352303fb2b27df090056e7e1ae",
+      "spec": {
+        "template": "table",
+        "title": "ROUGE recall calculation and content coverage",
+        "columns": [
+          "candidate",
+          "reference"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Summary evaluation measures recall of important content from reference.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recall measures reference words matched by candidate words divided by length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cand"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Combining recall with precision as an harmonic metric prevents verbosity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cand"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Counter"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "ROUGE uses clipped counts normalized by the reference length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidate"
+                  },
+                  {
+                    "text": "reference"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cand"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Counter"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rouge1_recall"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ROUGE recall calculation and content coverage",
+        "columns": [
+          "candidate",
+          "reference"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Summary evaluation measures recall of important content from reference.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recall measures reference words matched by candidate words divided by length.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cand",
+                  "overlap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Combining recall with precision as an harmonic metric prevents verbosity.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cand",
+                  "overlap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Counter",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "ROUGE uses clipped counts normalized by the reference length.",
+            "rows": [
+              {
+                "cells": [
+                  "candidate",
+                  "reference"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cand",
+                  "overlap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Counter",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "rouge1_recall",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The limits of overlap metrics",
+      "codeHash": "701e76c9887f4444f68c6e28c23cfa868209826f30de93dfa73d5bb047649d36",
+      "spec": {
+        "template": "table",
+        "title": "Semantic paraphrase divergence and superficial lexical overlap",
+        "columns": [
+          "paraphrase",
+          "word_salad"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Overlap metrics reward matching words rather than matching sentence meaning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "paraphrase"
+                  },
+                  {
+                    "text": "word_salad"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unordered word sequences can score well despite lacking grammatical fluency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "paraphrase"
+                  },
+                  {
+                    "text": "word_salad"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ref"
+                  },
+                  {
+                    "text": "recall"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Embedding based evaluations compare contextual embeddings to capture synonyms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "paraphrase"
+                  },
+                  {
+                    "text": "word_salad"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ref"
+                  },
+                  {
+                    "text": "recall"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Counter"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows a paraphrase scoring poorly on ROUGE overlap.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "paraphrase"
+                  },
+                  {
+                    "text": "word_salad"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ref"
+                  },
+                  {
+                    "text": "recall"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Counter"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "paraphrase"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Semantic paraphrase divergence and superficial lexical overlap",
+        "columns": [
+          "paraphrase",
+          "word_salad"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Overlap metrics reward matching words rather than matching sentence meaning.",
+            "rows": [
+              {
+                "cells": [
+                  "paraphrase",
+                  "word_salad"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unordered word sequences can score well despite lacking grammatical fluency.",
+            "rows": [
+              {
+                "cells": [
+                  "paraphrase",
+                  "word_salad"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ref",
+                  "recall"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Embedding based evaluations compare contextual embeddings to capture synonyms.",
+            "rows": [
+              {
+                "cells": [
+                  "paraphrase",
+                  "word_salad"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ref",
+                  "recall"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Counter",
+                  "split"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows a paraphrase scoring poorly on ROUGE overlap.",
+            "rows": [
+              {
+                "cells": [
+                  "paraphrase",
+                  "word_salad"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ref",
+                  "recall"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Counter",
+                  "split"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "paraphrase",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: penalties and recall",
+      "codeHash": "941205eaa9bc1afb31b922eef16395a7e94022bcd0a5db29f88e695a2fe12aac",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: penalties and recall implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

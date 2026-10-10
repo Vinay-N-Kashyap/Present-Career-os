@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 26,
+  "promptSha": "0c27898deb3a3eee5f238c2cf45f581ed4db1e752a31c509d5c42872209dc636",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Observability Triad: Metrics, Logs & Distributed Traces",
+      "codeHash": "489325efa3d7a06d2b2813b915236da7b7a224a040c3401886c56bf7f94f778a",
+      "spec": {
+        "template": "workflow",
+        "title": "Observability triad telemetry ingestion and tracing pipeline",
+        "workflow": [
+          {
+            "id": "metricsCollector",
+            "label": "Metrics Aggregation Engine",
+            "status": "completed"
+          },
+          {
+            "id": "logAggregator",
+            "label": "Structured Log Ingestion Daemon",
+            "status": "completed"
+          },
+          {
+            "id": "traceCollector",
+            "label": "Distributed Tracing Collector",
+            "status": "active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production observability unites metrics logs and distributed tracing.",
+            "activeWorkflowId": "metricsCollector",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "Distributed tracing follows the journey across network boundaries.",
+            "activeWorkflowId": "traceCollector",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Observability triad telemetry ingestion and tracing pipeline",
+        "workflow": [
+          {
+            "id": "metricsCollector",
+            "label": "Metrics Aggregation Engine",
+            "status": "completed"
+          },
+          {
+            "id": "logAggregator",
+            "label": "Structured Log Ingestion Daemon",
+            "status": "completed"
+          },
+          {
+            "id": "traceCollector",
+            "label": "Distributed Tracing Collector",
+            "status": "active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production observability unites metrics logs and distributed tracing.",
+            "activeWorkflowId": "metricsCollector",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "Distributed tracing follows the journey across network boundaries.",
+            "activeWorkflowId": "traceCollector",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "W3C TraceContext Specification & The traceparent Header",
+      "codeHash": "8bd29c502867f74194a3adc679368308a4ba8e0821817b447e40a49bbc69c01c",
+      "spec": {
+        "template": "table",
+        "title": "W3C TraceContext traceparent header wire format specification",
+        "columns": [
+          "Field Name",
+          "Hex Format",
+          "Length",
+          "Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The core transport mechanism is the standardized header.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The distributed transaction identifier identifies overall execution.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "W3C TraceContext traceparent header wire format specification",
+        "columns": [
+          "Field Name",
+          "Hex Format",
+          "Length",
+          "Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The core transport mechanism is the standardized header.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The distributed transaction identifier identifies overall execution.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical Spans, Parent-Child Relationships & Context Injection",
+      "codeHash": "35c30eee704fa2c884d6065150402a2eead5e9eb0746490e9e6ee651c6a8e2d4",
+      "spec": {
+        "template": "sequence",
+        "title": "Hierarchical trace span context injection and child extraction sequence",
+        "actors": [
+          {
+            "id": "gateway",
+            "label": "Edge Gateway"
+          },
+          {
+            "id": "orderSvc",
+            "label": "Order Service"
+          },
+          {
+            "id": "inventorySvc",
+            "label": "Inventory Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "gateway",
+            "to": "orderSvc",
+            "label": "Inject traceparent Header in Outbound HTTP",
+            "tone": "data"
+          },
+          {
+            "from": "orderSvc",
+            "to": "orderSvc",
+            "label": "Extract Trace ID and Create Child Span",
+            "tone": "ok"
+          },
+          {
+            "from": "orderSvc",
+            "to": "inventorySvc",
+            "label": "Propagate Context to Downstream Service",
+            "tone": "data"
+          },
+          {
+            "from": "inventorySvc",
+            "to": "inventorySvc",
+            "label": "Execute Grandchild Span and Return Result",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The gateway injects its current span into the outbound header.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The child span links directly to the root span.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Hierarchical trace span context injection and child extraction sequence",
+        "actors": [
+          {
+            "id": "gateway",
+            "label": "Edge Gateway"
+          },
+          {
+            "id": "orderSvc",
+            "label": "Order Service"
+          },
+          {
+            "id": "inventorySvc",
+            "label": "Inventory Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "gateway",
+            "to": "orderSvc",
+            "label": "Inject traceparent Header in Outbound HTTP",
+            "tone": "data"
+          },
+          {
+            "from": "orderSvc",
+            "to": "orderSvc",
+            "label": "Extract Trace ID and Create Child Span",
+            "tone": "ok"
+          },
+          {
+            "from": "orderSvc",
+            "to": "inventorySvc",
+            "label": "Propagate Context to Downstream Service",
+            "tone": "data"
+          },
+          {
+            "from": "inventorySvc",
+            "to": "inventorySvc",
+            "label": "Execute Grandchild Span and Return Result",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The gateway injects its current span into the outbound header.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The child span links directly to the root span.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Span Attributes, Events, Status Codes & Error Recording",
+      "codeHash": "4ef773d14fec5741f973bc8b42961f5ed06c4e60ac37ead817fa6cc981fd0f45",
+      "spec": {
+        "template": "states",
+        "title": "OpenTelemetry span lifecycle states and error recording transitions",
+        "states": [
+          {
+            "id": "spanCreated",
+            "label": "Span Initialized UNSET Status"
+          },
+          {
+            "id": "attributesSet",
+            "label": "Semantic Attributes Enriched"
+          },
+          {
+            "id": "eventRecorded",
+            "label": "Milestone Events Appended"
+          },
+          {
+            "id": "errorRecorded",
+            "label": "Exception Recorded ERROR Status"
+          },
+          {
+            "id": "spanEnded",
+            "label": "Span Finalized and Dispatched"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attributes provide structured key value pairs following semantic rules.",
+            "activeStateId": "attributesSet",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The span status is updated to error when an exception occurs.",
+            "activeStateId": "errorRecorded",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "OpenTelemetry span lifecycle states and error recording transitions",
+        "states": [
+          {
+            "id": "spanCreated",
+            "label": "Span Initialized UNSET Status"
+          },
+          {
+            "id": "attributesSet",
+            "label": "Semantic Attributes Enriched"
+          },
+          {
+            "id": "eventRecorded",
+            "label": "Milestone Events Appended"
+          },
+          {
+            "id": "errorRecorded",
+            "label": "Exception Recorded ERROR Status"
+          },
+          {
+            "id": "spanEnded",
+            "label": "Span Finalized and Dispatched"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attributes provide structured key value pairs following semantic rules.",
+            "activeStateId": "attributesSet",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The span status is updated to error when an exception occurs.",
+            "activeStateId": "errorRecorded",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sampling Strategies: Head-Based vs Tail-Based Sampling",
+      "codeHash": "a07116060a2bd41100772b37114de53211110e3eb86a55001f5311ed05b5ce99",
+      "spec": {
+        "template": "compare",
+        "title": "Head-based probabilistic sampling versus tail-based collector sampling",
+        "left": {
+          "title": "Head-Based Sampling",
+          "items": [
+            "Decision made at ingress root span",
+            "Fixed probabilistic sampling rate",
+            "Drops rare errors in unsampled traffic"
+          ]
+        },
+        "right": {
+          "title": "Tail-Based Sampling",
+          "items": [
+            "Buffers spans in memory until completion",
+            "Retains all high-latency traces",
+            "Saves error traces while dropping routine traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Sampling decisions occur at the root span when entering the gateway.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Tail sampling buffers spans in memory until request completion.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Head-Based Sampling",
+        "rightLabel": "Tail-Based Sampling"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Head-based probabilistic sampling versus tail-based collector sampling",
+        "left": {
+          "title": "Head-Based Sampling",
+          "items": [
+            "Decision made at ingress root span",
+            "Fixed probabilistic sampling rate",
+            "Drops rare errors in unsampled traffic"
+          ]
+        },
+        "right": {
+          "title": "Tail-Based Sampling",
+          "items": [
+            "Buffers spans in memory until completion",
+            "Retains all high-latency traces",
+            "Saves error traces while dropping routine traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Sampling decisions occur at the root span when entering the gateway.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Tail sampling buffers spans in memory until request completion.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Head-Based Sampling",
+        "rightLabel": "Tail-Based Sampling"
+      }
+    },
+    {
+      "partTitle": "Enterprise End-to-End Distributed Tracing Pipeline Simulator",
+      "codeHash": "b031b10b18b4056f37df867fc14d76e924dceda7fc95e486ab70e84aca66bbc3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

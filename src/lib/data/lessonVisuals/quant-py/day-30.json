@@ -1,0 +1,853 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The tick handler",
+      "codeHash": "c3490859818def465ab41f4c37b9e8280cb74da9b2eca8a0792bf70693a57501",
+      "spec": {
+        "template": "table",
+        "title": "Micro-price reservation pricing and tick execution workflow",
+        "columns": [
+          "bid",
+          "bid_qty",
+          "ask",
+          "ask_qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The market making tick handler evaluates book updates and risk limits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Micro price weights order book depth to estimate true underlying fair value.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "100.0"
+                  },
+                  {
+                    "text": "600"
+                  },
+                  {
+                    "text": "100.1"
+                  },
+                  {
+                    "text": "400"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reservation prices adjust quotes dynamically against current inventory skew.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "100.0"
+                  },
+                  {
+                    "text": "600"
+                  },
+                  {
+                    "text": "100.1"
+                  },
+                  {
+                    "text": "400"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Micro-price reservation pricing and tick execution workflow",
+        "columns": [
+          "bid",
+          "bid_qty",
+          "ask",
+          "ask_qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The market making tick handler evaluates book updates and risk limits.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "bid_qty",
+                  "ask",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Micro price weights order book depth to estimate true underlying fair value.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "bid_qty",
+                  "ask",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "100.0",
+                  "600",
+                  "100.1",
+                  "400"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reservation prices adjust quotes dynamically against current inventory skew.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "bid_qty",
+                  "ask",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "100.0",
+                  "600",
+                  "100.1",
+                  "400"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid",
+                  "bid_qty",
+                  "ask",
+                  "ask_qty"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inventory skew in action",
+      "codeHash": "b71798e38e3d4c311e8cbf1a3662655cc5664b074af222795d6cb10c0fede1c4",
+      "spec": {
+        "template": "table",
+        "title": "Avellaneda-Stoikov inventory skew quoting shifts",
+        "columns": [
+          "inventory",
+          "micro",
+          "gamma",
+          "sigma"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inventory skew lowers quotes to encourage sales and rebalance holdings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Inventory parameters determine quoting shifts per asset unit held.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "100.06"
+                  },
+                  {
+                    "text": "0.1"
+                  },
+                  {
+                    "text": "0.5"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Skew adjustments control position risk without crossing market spreads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "100.06"
+                  },
+                  {
+                    "text": "0.1"
+                  },
+                  {
+                    "text": "0.5"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "40"
+                  },
+                  {
+                    "text": "100.06"
+                  },
+                  {
+                    "text": "0.1"
+                  },
+                  {
+                    "text": "0.5"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Avellaneda-Stoikov inventory skew quoting shifts",
+        "columns": [
+          "inventory",
+          "micro",
+          "gamma",
+          "sigma"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inventory skew lowers quotes to encourage sales and rebalance holdings.",
+            "rows": [
+              {
+                "cells": [
+                  "inventory",
+                  "micro",
+                  "gamma",
+                  "sigma"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Inventory parameters determine quoting shifts per asset unit held.",
+            "rows": [
+              {
+                "cells": [
+                  "inventory",
+                  "micro",
+                  "gamma",
+                  "sigma"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10",
+                  "100.06",
+                  "0.1",
+                  "0.5"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Skew adjustments control position risk without crossing market spreads.",
+            "rows": [
+              {
+                "cells": [
+                  "inventory",
+                  "micro",
+                  "gamma",
+                  "sigma"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10",
+                  "100.06",
+                  "0.1",
+                  "0.5"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "40",
+                  "100.06",
+                  "0.1",
+                  "0.5"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Risk gating each quote",
+      "codeHash": "e8c50ff3cf8b906bf2a0379c16dd9bdc278bebabdcbe4f9b55b541bd7f7ae0d7",
+      "spec": {
+        "template": "table",
+        "title": "One-sided inventory gating and price collar validation",
+        "columns": [
+          "max_qty",
+          "collar_pct",
+          "max_inventory"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Independent quote verification checks each bid and ask separately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_qty"
+                  },
+                  {
+                    "text": "collar_pct"
+                  },
+                  {
+                    "text": "max_inventory"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Price collars and size constraints gate quote transmission directly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_qty"
+                  },
+                  {
+                    "text": "collar_pct"
+                  },
+                  {
+                    "text": "max_inventory"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "1000"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "One sided inventory limits permit risk reducing quotes while blocking additions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_qty"
+                  },
+                  {
+                    "text": "collar_pct"
+                  },
+                  {
+                    "text": "max_inventory"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "1000"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max_qty"
+                  },
+                  {
+                    "text": "collar_pct"
+                  },
+                  {
+                    "text": "max_inventory"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "One-sided inventory gating and price collar validation",
+        "columns": [
+          "max_qty",
+          "collar_pct",
+          "max_inventory"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Independent quote verification checks each bid and ask separately.",
+            "rows": [
+              {
+                "cells": [
+                  "max_qty",
+                  "collar_pct",
+                  "max_inventory"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Price collars and size constraints gate quote transmission directly.",
+            "rows": [
+              {
+                "cells": [
+                  "max_qty",
+                  "collar_pct",
+                  "max_inventory"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "500",
+                  "1.0",
+                  "1000"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "One sided inventory limits permit risk reducing quotes while blocking additions.",
+            "rows": [
+              {
+                "cells": [
+                  "max_qty",
+                  "collar_pct",
+                  "max_inventory"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "500",
+                  "1.0",
+                  "1000"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max_qty",
+                  "collar_pct",
+                  "max_inventory"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production readiness",
+      "codeHash": "246bda800fb2145bda9749d0e3c17a6f8b2cfd1a47092086f22adadd4aea4220",
+      "spec": {
+        "template": "table",
+        "title": "Production readiness audit checklist and latency budget validation",
+        "columns": [
+          "p99_ns",
+          "budget_ns",
+          "failed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Comprehensive readiness reviews audit trading components before live rollout.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p99_ns"
+                  },
+                  {
+                    "text": "budget_ns"
+                  },
+                  {
+                    "text": "failed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict latency percentile budgets verify responsive execution speed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p99_ns"
+                  },
+                  {
+                    "text": "budget_ns"
+                  },
+                  {
+                    "text": "failed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1500"
+                  },
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "failed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Readiness verification flags unfulfilled test items and performance deficits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p99_ns"
+                  },
+                  {
+                    "text": "budget_ns"
+                  },
+                  {
+                    "text": "failed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1500"
+                  },
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "failed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99_ns"
+                  },
+                  {
+                    "text": "budget_ns"
+                  },
+                  {
+                    "text": "failed"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production readiness audit checklist and latency budget validation",
+        "columns": [
+          "p99_ns",
+          "budget_ns",
+          "failed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Comprehensive readiness reviews audit trading components before live rollout.",
+            "rows": [
+              {
+                "cells": [
+                  "p99_ns",
+                  "budget_ns",
+                  "failed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict latency percentile budgets verify responsive execution speed.",
+            "rows": [
+              {
+                "cells": [
+                  "p99_ns",
+                  "budget_ns",
+                  "failed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1500",
+                  "1000",
+                  "failed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Readiness verification flags unfulfilled test items and performance deficits.",
+            "rows": [
+              {
+                "cells": [
+                  "p99_ns",
+                  "budget_ns",
+                  "failed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1500",
+                  "1000",
+                  "failed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99_ns",
+                  "budget_ns",
+                  "failed"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Going live safely",
+      "codeHash": "6a2f15c55bf03a9ce88c60a4d1b594558098133497c8c0d7869646baf6aa216c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Capstone practice: tick handler and readiness",
+      "codeHash": "00d3d71a98b61837dc0da49ef5b5d2274f7be2ec1d8565f4e9c54bf9d9f78302",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

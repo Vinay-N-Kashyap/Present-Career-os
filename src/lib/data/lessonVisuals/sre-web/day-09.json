@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 9,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "How DNS Governs Global Cloud Traffic & Anycast Resolution",
+      "codeHash": "80a6a4e8722404e3edfd1d94d08b6954b93f960cdb22b68fff75e00a6d0aad83",
+      "spec": {
+        "template": "sequence",
+        "title": "Global DNS Anycast resolution and recursive caching sequence",
+        "actors": [
+          "HTTP Client",
+          "Recursive Resolver",
+          "Anycast Nameserver"
+        ],
+        "messages": [
+          {
+            "from": "HTTP Client",
+            "to": "Recursive Resolver",
+            "label": "Query domain name"
+          },
+          {
+            "from": "Recursive Resolver",
+            "to": "Anycast Nameserver",
+            "label": "Fetch authoritative A record"
+          },
+          {
+            "from": "Anycast Nameserver",
+            "to": "Recursive Resolver",
+            "label": "Return IP and TTL"
+          },
+          {
+            "from": "Recursive Resolver",
+            "to": "HTTP Client",
+            "label": "Cached IP response"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Before connecting to load balancers the client resolves a domain name.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When querying domains requests route to nearest Anycast edge points.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Global DNS Anycast resolution and recursive caching sequence",
+        "actors": [
+          "HTTP Client",
+          "Recursive Resolver",
+          "Anycast Nameserver"
+        ],
+        "messages": [
+          {
+            "from": "HTTP Client",
+            "to": "Recursive Resolver",
+            "label": "Query domain name"
+          },
+          {
+            "from": "Recursive Resolver",
+            "to": "Anycast Nameserver",
+            "label": "Fetch authoritative A record"
+          },
+          {
+            "from": "Anycast Nameserver",
+            "to": "Recursive Resolver",
+            "label": "Return IP and TTL"
+          },
+          {
+            "from": "Recursive Resolver",
+            "to": "HTTP Client",
+            "label": "Cached IP response"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Before connecting to load balancers the client resolves a domain name.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When querying domains requests route to nearest Anycast edge points.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weighted DNS Traffic Distribution & Canary Routing",
+      "codeHash": "b7f099c57a98211257cfee781255bb98565250a1161741e60f0503a8978d3ff2",
+      "spec": {
+        "template": "bars",
+        "title": "Weighted DNS query distribution across production fleets",
+        "bars": [
+          {
+            "id": "stable",
+            "label": "Stable Fleet (90%)",
+            "value": 90
+          },
+          {
+            "id": "canary",
+            "label": "Canary Fleet (10%)",
+            "value": 10
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Weighted routing distributes incoming traffic across assigned endpoints.",
+            "activeBars": [
+              "stable"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When releasing new revisions engineers allocate weight to canary endpoints.",
+            "activeBars": [
+              "stable",
+              "canary"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Weighted DNS query distribution across production fleets",
+        "bars": [
+          {
+            "id": "stable",
+            "label": "Stable Fleet (90%)",
+            "value": 90
+          },
+          {
+            "id": "canary",
+            "label": "Canary Fleet (10%)",
+            "value": 10
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Weighted routing distributes incoming traffic across assigned endpoints.",
+            "activeBars": [
+              "stable"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When releasing new revisions engineers allocate weight to canary endpoints.",
+            "activeBars": [
+              "stable",
+              "canary"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Latency-Based Geographic Routing (Geo-Proximity)",
+      "codeHash": "aa7c405188b4b7d0f7d26ca9cfbd0906c326810db9e7584a10812ce639a77cac",
+      "spec": {
+        "template": "table",
+        "title": "Latency based geographic routing resolution matrix",
+        "columns": [
+          "Client Location",
+          "Lowest Latency Region",
+          "Estimated RTT",
+          "Target IP"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Latency based routing directs users to regions with lowest round trip latency.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "New York",
+                  "US East (us-east-1)",
+                  "15ms",
+                  "198.51.100.1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "London",
+                  "EU West (eu-west-1)",
+                  "12ms",
+                  "198.51.100.3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tokyo",
+                  "US West (us-west-2)",
+                  "110ms",
+                  "198.51.100.2"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "European customers land in Ireland while Asian customers land in Tokyo.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 2,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "New York",
+                  "US East (us-east-1)",
+                  "15ms",
+                  "198.51.100.1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "London",
+                  "EU West (eu-west-1)",
+                  "12ms",
+                  "198.51.100.3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tokyo",
+                  "US West (us-west-2)",
+                  "110ms",
+                  "198.51.100.2"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Latency based geographic routing resolution matrix",
+        "columns": [
+          "Client Location",
+          "Lowest Latency Region",
+          "Estimated RTT",
+          "Target IP"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Latency based routing directs users to regions with lowest round trip latency.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "New York",
+                  "US East (us-east-1)",
+                  "15ms",
+                  "198.51.100.1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "London",
+                  "EU West (eu-west-1)",
+                  "12ms",
+                  "198.51.100.3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tokyo",
+                  "US West (us-west-2)",
+                  "110ms",
+                  "198.51.100.2"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "European customers land in Ireland while Asian customers land in Tokyo.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 2,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "New York",
+                  "US East (us-east-1)",
+                  "15ms",
+                  "198.51.100.1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "London",
+                  "EU West (eu-west-1)",
+                  "12ms",
+                  "198.51.100.3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tokyo",
+                  "US West (us-west-2)",
+                  "110ms",
+                  "198.51.100.2"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Health-Checked DNS Records & Active Probing",
+      "codeHash": "bd0f2e547b78e9fbd0380ad6f53361fedaad2575af44cd10d8e7c32c7335e17b",
+      "spec": {
+        "template": "states",
+        "title": "DNS endpoint health states and automatic probe withdrawal",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "HEALTHY 200 OK"
+          },
+          {
+            "id": "failing_probes",
+            "label": "PROBE_FAILURE Threshold"
+          },
+          {
+            "id": "withdrawn",
+            "label": "WITHDRAWN Rerouted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cloud DNS systems associate records with an active health checker probe.",
+            "activeStateId": "healthy",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "When endpoints fail consecutive checks controllers withdraw the IP.",
+            "activeStateId": "withdrawn",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "DNS endpoint health states and automatic probe withdrawal",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "HEALTHY 200 OK"
+          },
+          {
+            "id": "failing_probes",
+            "label": "PROBE_FAILURE Threshold"
+          },
+          {
+            "id": "withdrawn",
+            "label": "WITHDRAWN Rerouted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cloud DNS systems associate records with an active health checker probe.",
+            "activeStateId": "healthy",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "When endpoints fail consecutive checks controllers withdraw the IP.",
+            "activeStateId": "withdrawn",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cascading Failover Chains & Fallback Hierarchies",
+      "codeHash": "dbaa5a0e86343b0611ec916121f27b821f4e6e3268c75fa55a17dc128808e40b",
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-tier priority cascading DNS failover chain",
+        "stages": [
+          {
+            "id": "p1",
+            "name": "Priority 1 Primary",
+            "subtext": "us-east-1"
+          },
+          {
+            "id": "p2",
+            "name": "Priority 2 Secondary",
+            "subtext": "eu-west-1"
+          },
+          {
+            "id": "p3",
+            "name": "Priority 3 DR Cluster",
+            "subtext": "ap-northeast-1"
+          },
+          {
+            "id": "p4",
+            "name": "Priority 4 Static S3",
+            "subtext": "Maintenance Page"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Engineers construct cascading DNS failover chains to survive catastrophes.",
+            "activeStageId": "p1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "As a last resort traffic routes to a static error page on object storage.",
+            "activeStageId": "p4",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Multi-tier priority cascading DNS failover chain",
+        "stages": [
+          {
+            "id": "p1",
+            "name": "Priority 1 Primary",
+            "subtext": "us-east-1"
+          },
+          {
+            "id": "p2",
+            "name": "Priority 2 Secondary",
+            "subtext": "eu-west-1"
+          },
+          {
+            "id": "p3",
+            "name": "Priority 3 DR Cluster",
+            "subtext": "ap-northeast-1"
+          },
+          {
+            "id": "p4",
+            "name": "Priority 4 Static S3",
+            "subtext": "Maintenance Page"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Engineers construct cascading DNS failover chains to survive catastrophes.",
+            "activeStageId": "p1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "As a last resort traffic routes to a static error page on object storage.",
+            "activeStageId": "p4",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Low-TTL Trade-off: Cost vs Failover Speed",
+      "codeHash": "72c380ffcce9887b4033a4aa1d185d9c4df80c6dabbe6dea3e025b1912040ab8",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}

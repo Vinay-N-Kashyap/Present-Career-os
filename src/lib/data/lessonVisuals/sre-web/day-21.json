@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 21,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Severity Classification Matrix: SEV1 Through SEV4",
+      "codeHash": "f7151bd2213b0252eac9e136a64a69f2ac515c50681655e3d3f51e21bd1eed95",
+      "spec": {
+        "template": "table",
+        "title": "Incident Severity Classification Matrix and Response Escalations",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Catastrophic outages downing primary services require immediate intervention.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Minor cosmetic defects and low-priority warnings are queued for daytime review.",
+            "highlightRow": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Tier",
+          "Impact Level",
+          "Max SLA",
+          "Escalation Target"
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Incident Severity Classification Matrix and Response Escalations",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Catastrophic outages downing primary services require immediate intervention.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Minor cosmetic defects and low-priority warnings are queued for daytime review.",
+            "highlightRow": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Tier",
+          "Impact Level",
+          "Max SLA",
+          "Escalation Target"
+        ]
+      }
+    },
+    {
+      "partTitle": "Incident Command System: Roles & State Transitions",
+      "codeHash": "07d47dbcc93a7eba743986d8f0f229457ff512307095aed22f8cfdd878a6fe2c",
+      "spec": {
+        "template": "states",
+        "title": "Incident Command Lifecycle State Machine",
+        "states": [
+          {
+            "id": "detected",
+            "label": "DETECTED"
+          },
+          {
+            "id": "triaging",
+            "label": "TRIAGING"
+          },
+          {
+            "id": "mitigating",
+            "label": "MITIGATING"
+          },
+          {
+            "id": "mitigated",
+            "label": "MITIGATED"
+          },
+          {
+            "id": "resolved",
+            "label": "RESOLVED"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "detected",
+            "to": "triaging",
+            "label": "Triage"
+          },
+          {
+            "from": "triaging",
+            "to": "mitigating",
+            "label": "Mitigate"
+          },
+          {
+            "from": "mitigating",
+            "to": "mitigated",
+            "label": "Stop Impact"
+          },
+          {
+            "from": "mitigated",
+            "to": "resolved",
+            "label": "Verify Clean"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The incident commander orchestrates engineers and maintains strategic focus.",
+            "activeState": "triaging",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Mitigation stops customer pain before permanent resolution cleans up systems.",
+            "activeState": "mitigated",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Incident Command Lifecycle State Machine",
+        "states": [
+          {
+            "id": "detected",
+            "label": "DETECTED"
+          },
+          {
+            "id": "triaging",
+            "label": "TRIAGING"
+          },
+          {
+            "id": "mitigating",
+            "label": "MITIGATING"
+          },
+          {
+            "id": "mitigated",
+            "label": "MITIGATED"
+          },
+          {
+            "id": "resolved",
+            "label": "RESOLVED"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "detected",
+            "to": "triaging",
+            "label": "Triage"
+          },
+          {
+            "from": "triaging",
+            "to": "mitigating",
+            "label": "Mitigate"
+          },
+          {
+            "from": "mitigating",
+            "to": "mitigated",
+            "label": "Stop Impact"
+          },
+          {
+            "from": "mitigated",
+            "to": "resolved",
+            "label": "Verify Clean"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The incident commander orchestrates engineers and maintains strategic focus.",
+            "activeState": "triaging",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Mitigation stops customer pain before permanent resolution cleans up systems.",
+            "activeState": "mitigated",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chronological Incident Timelines & Milestone Tracking",
+      "codeHash": "9b4641d46dee82b09cf8bdcf4291cdb8ea492d3c1615549e3f243ff214b92974",
+      "spec": {
+        "template": "workflow",
+        "title": "Chronological Milestones in Incident Response",
+        "nodes": [
+          {
+            "id": "start",
+            "label": "INCIDENT_START",
+            "description": "Customer degradation begins"
+          },
+          {
+            "id": "detect",
+            "label": "DETECTED",
+            "description": "Automated alert triggers page"
+          },
+          {
+            "id": "ack",
+            "label": "ACKNOWLEDGED",
+            "description": "On-call engineer assumes command"
+          },
+          {
+            "id": "mitigate",
+            "label": "MITIGATED",
+            "description": "Rollback or traffic shift deployed"
+          },
+          {
+            "id": "resolve",
+            "label": "RESOLVED",
+            "description": "Permanent fix verified stable"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "detect",
+            "label": "MTTD"
+          },
+          {
+            "from": "detect",
+            "to": "ack",
+            "label": "MTTA"
+          },
+          {
+            "from": "ack",
+            "to": "mitigate",
+            "label": "Mitigate"
+          },
+          {
+            "from": "mitigate",
+            "to": "resolve",
+            "label": "Resolve"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accurate chronological timelines capture immutable records of all events.",
+            "activeNode": "start",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Traffic shifts or rollbacks stop user pain at the mitigation milestone.",
+            "activeNode": "mitigate",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Chronological Milestones in Incident Response",
+        "nodes": [
+          {
+            "id": "start",
+            "label": "INCIDENT_START",
+            "description": "Customer degradation begins"
+          },
+          {
+            "id": "detect",
+            "label": "DETECTED",
+            "description": "Automated alert triggers page"
+          },
+          {
+            "id": "ack",
+            "label": "ACKNOWLEDGED",
+            "description": "On-call engineer assumes command"
+          },
+          {
+            "id": "mitigate",
+            "label": "MITIGATED",
+            "description": "Rollback or traffic shift deployed"
+          },
+          {
+            "id": "resolve",
+            "label": "RESOLVED",
+            "description": "Permanent fix verified stable"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "detect",
+            "label": "MTTD"
+          },
+          {
+            "from": "detect",
+            "to": "ack",
+            "label": "MTTA"
+          },
+          {
+            "from": "ack",
+            "to": "mitigate",
+            "label": "Mitigate"
+          },
+          {
+            "from": "mitigate",
+            "to": "resolve",
+            "label": "Resolve"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accurate chronological timelines capture immutable records of all events.",
+            "activeNode": "start",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Traffic shifts or rollbacks stop user pain at the mitigation milestone.",
+            "activeNode": "mitigate",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring Operational Health: MTTD & MTTA Math",
+      "codeHash": "492d11cbeef042928dae2a2caa79d0b59c901e340291862ef0ad1ee84cf38bcc",
+      "spec": {
+        "template": "compare",
+        "title": "Mean Time to Detect versus Mean Time to Acknowledge",
+        "left": {
+          "title": "Mean Time to Detect (MTTD)",
+          "items": [
+            "Measures gap from incident start to alert trigger",
+            "Reflects observability fidelity and coverage",
+            "High values expose telemetry blind spots",
+            "Shortened by proactive SLO burn alerts"
+          ]
+        },
+        "right": {
+          "title": "Mean Time to Acknowledge (MTTA)",
+          "items": [
+            "Measures elapsed time until engineer responds",
+            "Reflects on-call discipline and paging policies",
+            "High values indicate paging gaps or alert fatigue",
+            "Shortened by automated escalation paths"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Mean time to detect measures elapsed duration before alert dispatch fires.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Crisp on-call discipline and working escalation policies keep response fast.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Mean Time to Detect (MTTD)",
+        "rightLabel": "Mean Time to Acknowledge (MTTA)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Mean Time to Detect versus Mean Time to Acknowledge",
+        "left": {
+          "title": "Mean Time to Detect (MTTD)",
+          "items": [
+            "Measures gap from incident start to alert trigger",
+            "Reflects observability fidelity and coverage",
+            "High values expose telemetry blind spots",
+            "Shortened by proactive SLO burn alerts"
+          ]
+        },
+        "right": {
+          "title": "Mean Time to Acknowledge (MTTA)",
+          "items": [
+            "Measures elapsed time until engineer responds",
+            "Reflects on-call discipline and paging policies",
+            "High values indicate paging gaps or alert fatigue",
+            "Shortened by automated escalation paths"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Mean time to detect measures elapsed duration before alert dispatch fires.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Crisp on-call discipline and working escalation policies keep response fast.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Mean Time to Detect (MTTD)",
+        "rightLabel": "Mean Time to Acknowledge (MTTA)"
+      }
+    },
+    {
+      "partTitle": "Recovery Metrics: MTTR & MTBF Reliability Calculations",
+      "codeHash": "9ea521e5a3a893bd54d21211367d04d6d362a6ebd263e1a7404a9b58ca2fcdd7",
+      "spec": {
+        "template": "bars",
+        "title": "Availability Metrics: Recovery Duration versus Uptime Interval",
+        "bars": [
+          {
+            "label": "MTTR Fast Recovery",
+            "value": 15,
+            "unit": "min"
+          },
+          {
+            "label": "MTTR Slow Outage",
+            "value": 720,
+            "unit": "min"
+          },
+          {
+            "label": "MTBF Monthly Uptime",
+            "value": 719,
+            "unit": "hours"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Lowering recovery duration maximizes service availability across incidents.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Availability equals uptime interval divided by total operational duration.",
+            "highlightIndex": 2,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Availability Metrics: Recovery Duration versus Uptime Interval",
+        "bars": [
+          {
+            "label": "MTTR Fast Recovery",
+            "value": 15,
+            "unit": "min"
+          },
+          {
+            "label": "MTTR Slow Outage",
+            "value": 720,
+            "unit": "min"
+          },
+          {
+            "label": "MTBF Monthly Uptime",
+            "value": 719,
+            "unit": "hours"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Lowering recovery duration maximizes service availability across incidents.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Availability equals uptime interval divided by total operational duration.",
+            "highlightIndex": 2,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Incident Response Orchestrator",
+      "codeHash": "a48c8810bc49047abf5bbcde718f4ea137bce305197259da0497e9130fa547c1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "LEFT JOIN: keep every row from the first table",
+      "codeHash": "3e067d0bb637fd75e3134923ddd0b26cbff0a2dd47e1e707e190510ae0d18cf0",
+      "spec": {
+        "template": "table",
+        "title": "LEFT JOIN preserving unmatched left rows",
+        "columns": [
+          "name",
+          "order_id",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "LEFT JOIN keeps every row from the left table even without a match.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "delivered"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "NULL"
+                  },
+                  {
+                    "text": "NULL"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every customer appears with orders and unmatched rows filled with NULL.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "delivered"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Priya"
+                  },
+                  {
+                    "text": "104"
+                  },
+                  {
+                    "text": "pending"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "delivered"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "NULL"
+                  },
+                  {
+                    "text": "NULL"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "LEFT JOIN preserving unmatched left rows",
+        "columns": [
+          "name",
+          "order_id",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "LEFT JOIN keeps every row from the left table even without a match.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "101",
+                  "delivered"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Meera",
+                  "NULL",
+                  "NULL"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every customer appears with orders and unmatched rows filled with NULL.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "101",
+                  "delivered"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Priya",
+                  "104",
+                  "pending"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ravi",
+                  "102",
+                  "delivered"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Meera",
+                  "NULL",
+                  "NULL"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting zero correctly",
+      "codeHash": "274b4b234ac1c47492671d98a950ae2d5505a95da751ba3356a9736303b073d4",
+      "spec": {
+        "template": "compare",
+        "title": "Counting with star versus counting foreign key column",
+        "leftLabel": "Buggy count(*)",
+        "rightLabel": "Correct count(o.id)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The count star counts rows including the row filled with NULLs.",
+            "left": {
+              "code": "count(*) on Meera",
+              "result": {
+                "text": "1 (wrong)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "count(o.id) on Meera",
+              "result": {
+                "text": "0 (correct)"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The fix is to count a column from the right table skipping NULL values.",
+            "left": {
+              "code": "counts null rows",
+              "result": {
+                "text": "distorted totals"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "skips nulls",
+              "result": {
+                "text": "true order count"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Counting with star versus counting foreign key column",
+        "leftLabel": "Buggy count(*)",
+        "rightLabel": "Correct count(o.id)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The count star counts rows including the row filled with NULLs.",
+            "left": {
+              "code": "count(*) on Meera",
+              "result": "1 (wrong)",
+              "tone": "error",
+              "checks": [
+                "1 (wrong)"
+              ]
+            },
+            "right": {
+              "code": "count(o.id) on Meera",
+              "result": "0 (correct)",
+              "tone": "ok",
+              "checks": [
+                "0 (correct)"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The fix is to count a column from the right table skipping NULL values.",
+            "left": {
+              "code": "counts null rows",
+              "result": "distorted totals",
+              "tone": "error",
+              "checks": [
+                "distorted totals"
+              ]
+            },
+            "right": {
+              "code": "skips nulls",
+              "result": "true order count",
+              "tone": "ok",
+              "checks": [
+                "true order count"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding rows with no match",
+      "codeHash": "eee9beeb0882c6a9289a82edd58a3f45181662a4c956592d85fe6e51d429edb2",
+      "spec": {
+        "template": "table",
+        "title": "Anti-join finding rows without matching orders",
+        "columns": [
+          "name",
+          "order_id"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The anti join finds rows in the first table having no match in second.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "NULL"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unmatched rows have NULL in all the right columns keeping only those.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "NULL"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Anti-join finding rows without matching orders",
+        "columns": [
+          "name",
+          "order_id"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The anti join finds rows in the first table having no match in second.",
+            "rows": [
+              {
+                "cells": [
+                  "Meera",
+                  "NULL"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unmatched rows have NULL in all the right columns keeping only those.",
+            "rows": [
+              {
+                "cells": [
+                  "Meera",
+                  "NULL"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The WHERE trap with LEFT JOIN",
+      "codeHash": "8967b809eb823b41902908e6270d9118d358982bdf69e1a4d1201971efd04adc",
+      "spec": {
+        "template": "none",
+        "reason": "Post-join filtering converting LEFT JOIN semantics to INNER JOIN."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Post-join filtering converting LEFT JOIN semantics to INNER JOIN."
+      }
+    },
+    {
+      "partTitle": "RIGHT JOIN and FULL JOIN",
+      "codeHash": "cf80737ddecc590432bd6794cd9e518fe6f52280ca8d55c27da8101271d05258",
+      "spec": {
+        "template": "none",
+        "reason": "Set difference comparisons across full bidirectional outer joins."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Set difference comparisons across full bidirectional outer joins."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a customer activity report",
+      "codeHash": "053296a1d497473ed9c09b357437fefbda3e106d2a30698821eeda858481a3d7",
+      "spec": {
+        "template": "table",
+        "title": "Customer activity summary with zero handling",
+        "columns": [
+          "name",
+          "orders",
+          "spent"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us build a report for a marketing campaign of customer activity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2377.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every customer appears with counts and totals using coalesce for zero.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2377.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Priya"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Customer activity summary with zero handling",
+        "columns": [
+          "name",
+          "orders",
+          "spent"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us build a report for a marketing campaign of customer activity.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2",
+                  "2377.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every customer appears with counts and totals using coalesce for zero.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2",
+                  "2377.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ravi",
+                  "1",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Priya",
+                  "1",
+                  "60.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Meera",
+                  "0",
+                  "0.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

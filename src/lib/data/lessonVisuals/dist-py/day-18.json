@@ -1,0 +1,629 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why shard?",
+      "codeHash": "1c5cd1824287520c65fb9d3852b189ba0af227ca30b2fc35447913a785b61029",
+      "spec": {
+        "template": "none",
+        "reason": "Database scaling limits and single-server disk exhaustion calculations."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Range sharding",
+      "codeHash": "c1d84218a3814a62947f21f3d3e324e0f103a8a307c3c437d8f317170d806cc3",
+      "spec": {
+        "template": "table",
+        "title": "Range sharding contiguous intervals and write hotspot vulnerability",
+        "columns": [
+          "user_id",
+          "range_shard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Range sharding assigns contiguous key ranges to shards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "shard_1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function range_shard returns shard based on key boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "shard_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2000"
+                  },
+                  {
+                    "text": "shard_2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Increasing IDs cause hot spots where writes land on the last shard.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "shard_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2000"
+                  },
+                  {
+                    "text": "shard_2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "99999"
+                  },
+                  {
+                    "text": "shard_3"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Range sharding contiguous intervals and write hotspot vulnerability",
+        "columns": [
+          "user_id",
+          "range_shard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Range sharding assigns contiguous key ranges to shards.",
+            "rows": [
+              {
+                "cells": [
+                  "1000",
+                  "shard_1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function range_shard returns shard based on key boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  "1000",
+                  "shard_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2000",
+                  "shard_2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Increasing IDs cause hot spots where writes land on the last shard.",
+            "rows": [
+              {
+                "cells": [
+                  "1000",
+                  "shard_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2000",
+                  "shard_2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "99999",
+                  "shard_3"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hash and directory sharding",
+      "codeHash": "3e731ee9a2822aaa6d60320fe93e1aebbd630f259fadb076c38a4b62bb7419ee",
+      "spec": {
+        "template": "table",
+        "title": "Directory sharding lookup with fallback hash routing across nodes",
+        "columns": [
+          "customer_id",
+          "directory"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hash sharding spreads keys evenly across all available shards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "megamart"
+                  },
+                  {
+                    "text": "shard_dedicated_1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Directory sharding allows dedicated shard placement for large tenants.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "megamart"
+                  },
+                  {
+                    "text": "shard_dedicated_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asha-store"
+                  },
+                  {
+                    "text": "shard_dedicated_1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function shard_for_customer uses directory for listed customers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "megamart"
+                  },
+                  {
+                    "text": "shard_dedicated_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asha-store"
+                  },
+                  {
+                    "text": "shard_dedicated_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bala-bakes"
+                  },
+                  {
+                    "text": "shard_dedicated_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chai-point"
+                  },
+                  {
+                    "text": "shard_dedicated_1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Directory sharding lookup with fallback hash routing across nodes",
+        "columns": [
+          "customer_id",
+          "directory"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hash sharding spreads keys evenly across all available shards.",
+            "rows": [
+              {
+                "cells": [
+                  "megamart",
+                  "shard_dedicated_1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Directory sharding allows dedicated shard placement for large tenants.",
+            "rows": [
+              {
+                "cells": [
+                  "megamart",
+                  "shard_dedicated_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "asha-store",
+                  "shard_dedicated_1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function shard_for_customer uses directory for listed customers.",
+            "rows": [
+              {
+                "cells": [
+                  "megamart",
+                  "shard_dedicated_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "asha-store",
+                  "shard_dedicated_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bala-bakes",
+                  "shard_dedicated_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chai-point",
+                  "shard_dedicated_1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a shard key",
+      "codeHash": "aab13462ff1bcd15384ca97d6518208dcb7fc48a3bdd56b99efad6810c6e4a0f",
+      "spec": {
+        "template": "none",
+        "reason": "Shard key selection criteria skew metrics and tenant isolation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Resharding",
+      "codeHash": "cef6f7efb5e4aa2ed06356777c67b6a51ebe390d4699ec1b7b4e8b88379a8079",
+      "spec": {
+        "template": "table",
+        "title": "Online resharding logical partition migration across physical servers",
+        "columns": [
+          "key",
+          "placement"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Moving data while the system runs is online resharding.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user-42"
+                  },
+                  {
+                    "text": "server-2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Mapping logical shards to servers allows smooth online resharding.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user-42"
+                  },
+                  {
+                    "text": "server-2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Moves copy data and switch routing to the new server.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user-42"
+                  },
+                  {
+                    "text": "server-2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Online resharding logical partition migration across physical servers",
+        "columns": [
+          "key",
+          "placement"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Moving data while the system runs is online resharding.",
+            "rows": [
+              {
+                "cells": [
+                  "user-42",
+                  "server-2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Mapping logical shards to servers allows smooth online resharding.",
+            "rows": [
+              {
+                "cells": [
+                  "user-42",
+                  "server-2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Moves copy data and switch routing to the new server.",
+            "rows": [
+              {
+                "cells": [
+                  "user-42",
+                  "server-2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Queries across shards",
+      "codeHash": "2dea5404b67c1d39638e75eab814f58954795ac6898a63de39402dedcd8969cb",
+      "spec": {
+        "template": "compare",
+        "title": "Query routing targeted single shard lookup versus scatter-gather fan-out",
+        "leftLabel": "Single Shard Key Query",
+        "rightLabel": "Scatter-Gather Cross-Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query with shard key routes directly to one shard.",
+            "left": {
+              "code": "key includes shard_0",
+              "result": {
+                "text": "book"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scatter across all shards",
+              "result": {
+                "text": "bag"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Queries without shard key scatter to all shards and gather results.",
+            "left": {
+              "code": "single shard lookup",
+              "result": {
+                "text": "pen"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scatter gather top results",
+              "result": {
+                "text": "shoe"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Scatter-gather latency is bounded by the slowest shard.",
+            "left": {
+              "code": "direct shard response",
+              "result": {
+                "text": "book"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "slowest shard tail latency",
+              "result": {
+                "text": "cap"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query routing targeted single shard lookup versus scatter-gather fan-out",
+        "leftLabel": "Single Shard Key Query",
+        "rightLabel": "Scatter-Gather Cross-Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query with shard key routes directly to one shard.",
+            "left": {
+              "code": "key includes shard_0",
+              "result": "book",
+              "tone": "ok",
+              "checks": [
+                "book"
+              ]
+            },
+            "right": {
+              "code": "scatter across all shards",
+              "result": "bag",
+              "tone": "ok",
+              "checks": [
+                "bag"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Queries without shard key scatter to all shards and gather results.",
+            "left": {
+              "code": "single shard lookup",
+              "result": "pen",
+              "tone": "ok",
+              "checks": [
+                "pen"
+              ]
+            },
+            "right": {
+              "code": "scatter gather top results",
+              "result": "shoe",
+              "tone": "ok",
+              "checks": [
+                "shoe"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Scatter-gather latency is bounded by the slowest shard.",
+            "left": {
+              "code": "direct shard response",
+              "result": "book",
+              "tone": "ok",
+              "checks": [
+                "book"
+              ]
+            },
+            "right": {
+              "code": "slowest shard tail latency",
+              "result": "cap",
+              "tone": "idle",
+              "checks": [
+                "cap"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

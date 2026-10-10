@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Relevance judgements",
+      "codeHash": "672f3a4efdd2937c0fab4a109c6c8fb530797af3ad5ed6fb27a117431250d700",
+      "spec": {
+        "template": "table",
+        "title": "Relevance ground truth annotation and evaluation benchmark sets",
+        "columns": [
+          "golden",
+          "results",
+          "marks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To measure search quality engineers determine which documents are relevant.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "marks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "marks"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A labelled golden test set associates queries with known relevant documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "marks"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Relevance ground truth annotation and evaluation benchmark sets",
+        "columns": [
+          "golden",
+          "results",
+          "marks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To measure search quality engineers determine which documents are relevant.",
+            "rows": [
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "marks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "marks"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A labelled golden test set associates queries with known relevant documents.",
+            "rows": [
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "marks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "golden"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recall and precision at k",
+      "codeHash": "cf742a87edd257494a3650e8807d6a9d4da32544e2348cb7acd07e3e5b33d9a4",
+      "spec": {
+        "template": "table",
+        "title": "Precision and recall trade-offs across cut-off thresholds",
+        "columns": [
+          "retrieved",
+          "relevant",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recall measures the fraction of relevant documents retrieved in the ranking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "relevant"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "relevant"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Precision reflects the fraction of displayed results that prove relevant.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "relevant"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "retrieved"
+                  },
+                  {
+                    "text": "relevant"
+                  },
+                  {
+                    "text": "retrieved"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Precision and recall trade-offs across cut-off thresholds",
+        "columns": [
+          "retrieved",
+          "relevant",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recall measures the fraction of relevant documents retrieved in the ranking.",
+            "rows": [
+              {
+                "cells": [
+                  "retrieved",
+                  "relevant",
+                  "hits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "retrieved",
+                  "relevant",
+                  "hits"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Precision reflects the fraction of displayed results that prove relevant.",
+            "rows": [
+              {
+                "cells": [
+                  "retrieved",
+                  "relevant",
+                  "hits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "retrieved",
+                  "relevant",
+                  "retrieved"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mean reciprocal rank",
+      "codeHash": "56dd712e6d08fc7526541053b828f2acc780e11cfa5bbbfcd6edd7a33cf7b251",
+      "spec": {
+        "template": "table",
+        "title": "Mean Reciprocal Rank evaluating top-rank discovery positions",
+        "columns": [
+          "runs",
+          "rrs",
+          "runs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluation often focuses on how high the first relevant result appears.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "rrs"
+                  },
+                  {
+                    "text": "runs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "rrs"
+                  },
+                  {
+                    "text": "runs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Mean reciprocal rank averages the inverse position across query evaluations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "rrs"
+                  },
+                  {
+                    "text": "runs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "rrs"
+                  },
+                  {
+                    "text": "rrs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Mean Reciprocal Rank evaluating top-rank discovery positions",
+        "columns": [
+          "runs",
+          "rrs",
+          "runs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluation often focuses on how high the first relevant result appears.",
+            "rows": [
+              {
+                "cells": [
+                  "runs",
+                  "rrs",
+                  "runs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "runs",
+                  "rrs",
+                  "runs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Mean reciprocal rank averages the inverse position across query evaluations.",
+            "rows": [
+              {
+                "cells": [
+                  "runs",
+                  "rrs",
+                  "runs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "runs",
+                  "rrs",
+                  "rrs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recall against exact search",
+      "codeHash": "7f90f2e1d7574640ac1dee3779c46d547ade04e32985679227f16b33aeff575f",
+      "spec": {
+        "template": "table",
+        "title": "Faithfulness benchmarking: approximate index recall against exact search",
+        "columns": [
+          "exact",
+          "approx",
+          "overlap"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Exact search provides ground truth to compute recall of approximate indexes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "exact"
+                  },
+                  {
+                    "text": "approx"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "exact"
+                  },
+                  {
+                    "text": "approx"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "This benchmark measures how faithfully an index approximates exact search.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "exact"
+                  },
+                  {
+                    "text": "approx"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "exact"
+                  },
+                  {
+                    "text": "approx"
+                  },
+                  {
+                    "text": "exact"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Faithfulness benchmarking: approximate index recall against exact search",
+        "columns": [
+          "exact",
+          "approx",
+          "overlap"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Exact search provides ground truth to compute recall of approximate indexes.",
+            "rows": [
+              {
+                "cells": [
+                  "exact",
+                  "approx",
+                  "overlap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "exact",
+                  "approx",
+                  "overlap"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "This benchmark measures how faithfully an index approximates exact search.",
+            "rows": [
+              {
+                "cells": [
+                  "exact",
+                  "approx",
+                  "overlap"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "exact",
+                  "approx",
+                  "exact"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reading the numbers",
+      "codeHash": "d91d69579c0a3e112fcc9d0c251bf9b9c02a1baa46b83e01191768bbb38b3312",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: metrics",
+      "codeHash": "2b926e1124b970aa8bcc48b5342cb260125ad4166b34faf42873a639d790c1d4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

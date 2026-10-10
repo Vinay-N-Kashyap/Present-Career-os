@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Benchmarking a configuration",
+      "codeHash": "f2bed5305b16f8598f95341e9ddc172d9b1996f0d9cb3dd750cd3abff5dd14ca",
+      "spec": {
+        "template": "table",
+        "title": "Empirical benchmark recall and latency evaluation",
+        "columns": [
+          "configs",
+          "recall",
+          "configs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A benchmark measures recall and query latency for each index configuration.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "recall"
+                  },
+                  {
+                    "text": "configs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "recall"
+                  },
+                  {
+                    "text": "configs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Good benchmarks make index configuration choices objective and repeatable.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "recall"
+                  },
+                  {
+                    "text": "configs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "recall"
+                  },
+                  {
+                    "text": "recall"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Empirical benchmark recall and latency evaluation",
+        "columns": [
+          "configs",
+          "recall",
+          "configs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A benchmark measures recall and query latency for each index configuration.",
+            "rows": [
+              {
+                "cells": [
+                  "configs",
+                  "recall",
+                  "configs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "configs",
+                  "recall",
+                  "configs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Good benchmarks make index configuration choices objective and repeatable.",
+            "rows": [
+              {
+                "cells": [
+                  "configs",
+                  "recall",
+                  "configs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "configs",
+                  "recall",
+                  "recall"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dominated configurations",
+      "codeHash": "21dd0134c8355f1126a806a44f24fbdaae287e198025940d4be1f06f398660d2",
+      "spec": {
+        "template": "table",
+        "title": "Pareto frontier identification across configurations",
+        "columns": [
+          "configs",
+          "beaten_by",
+          "configs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A configuration is dominated if another option is strictly better.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "beaten_by"
+                  },
+                  {
+                    "text": "configs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "beaten_by"
+                  },
+                  {
+                    "text": "configs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The remaining configurations form the optimal Pareto front curve.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "beaten_by"
+                  },
+                  {
+                    "text": "configs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "beaten_by"
+                  },
+                  {
+                    "text": "beaten_by"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pareto frontier identification across configurations",
+        "columns": [
+          "configs",
+          "beaten_by",
+          "configs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A configuration is dominated if another option is strictly better.",
+            "rows": [
+              {
+                "cells": [
+                  "configs",
+                  "beaten_by",
+                  "configs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "configs",
+                  "beaten_by",
+                  "configs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The remaining configurations form the optimal Pareto front curve.",
+            "rows": [
+              {
+                "cells": [
+                  "configs",
+                  "beaten_by",
+                  "configs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "configs",
+                  "beaten_by",
+                  "beaten_by"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing with requirements",
+      "codeHash": "be5ad8420e7db97a8003c616dac9c4651a2c3037ea9af855a5cad225c672c42f",
+      "spec": {
+        "template": "table",
+        "title": "Constrained configuration selection under SLA targets",
+        "columns": [
+          "configs",
+          "min_recall",
+          "max_ms"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The best choice is the fastest configuration meeting target requirements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "min_recall"
+                  },
+                  {
+                    "text": "max_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "min_recall"
+                  },
+                  {
+                    "text": "max_ms"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "If several candidates are equally fast, select the one with higher recall.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "min_recall"
+                  },
+                  {
+                    "text": "max_ms"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "configs"
+                  },
+                  {
+                    "text": "min_recall"
+                  },
+                  {
+                    "text": "min_recall"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Constrained configuration selection under SLA targets",
+        "columns": [
+          "configs",
+          "min_recall",
+          "max_ms"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The best choice is the fastest configuration meeting target requirements.",
+            "rows": [
+              {
+                "cells": [
+                  "configs",
+                  "min_recall",
+                  "max_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "configs",
+                  "min_recall",
+                  "max_ms"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "If several candidates are equally fast, select the one with higher recall.",
+            "rows": [
+              {
+                "cells": [
+                  "configs",
+                  "min_recall",
+                  "max_ms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "configs",
+                  "min_recall",
+                  "min_recall"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tuning in practice",
+      "codeHash": "c15cbc096581374aaebc1307a83ef484f3688f43e05ed057f8a04650b849513a",
+      "spec": {
+        "template": "table",
+        "title": "Iterative parameter sweep and convergence stops",
+        "columns": [
+          "measured",
+          "target",
+          "measured"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tune one parameter setting at a time starting from sensible defaults.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "measured"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "measured"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "measured"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "measured"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Recall exhibits diminishing returns, making parameter doubling effective.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "measured"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "measured"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "measured"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Iterative parameter sweep and convergence stops",
+        "columns": [
+          "measured",
+          "target",
+          "measured"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tune one parameter setting at a time starting from sensible defaults.",
+            "rows": [
+              {
+                "cells": [
+                  "measured",
+                  "target",
+                  "measured"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "measured",
+                  "target",
+                  "measured"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Recall exhibits diminishing returns, making parameter doubling effective.",
+            "rows": [
+              {
+                "cells": [
+                  "measured",
+                  "target",
+                  "measured"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "measured",
+                  "target",
+                  "target"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Beyond recall and latency",
+      "codeHash": "39501f6ede3efdcb2e52127bd1780c6b113518334ae1f3787f333c2fc5f13108",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: tuning",
+      "codeHash": "239ff65f7474b1eb21f77d3d99da1761edc0173ef0e39382f6e6ae4810ecf681",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

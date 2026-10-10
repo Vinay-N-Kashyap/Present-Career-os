@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a language model does",
+      "codeHash": "dbdab743935d14282035473e56bb103e2eba4669ddd2e795baa883a5fc9089a1",
+      "spec": {
+        "template": "table",
+        "title": "Word sequence probabilities and bigram frequency distributions",
+        "columns": [
+          "tokens",
+          "bigrams"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A language model assigns a probability to a sequence of words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tea"
+                  },
+                  {
+                    "text": "like"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Counting word co-occurrences identifies which word pairs are more probable.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tea"
+                  },
+                  {
+                    "text": "like"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "like"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "An n-gram represents a sequence where bigrams denote pairs of words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tea"
+                  },
+                  {
+                    "text": "like"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "like"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "bigrams"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The bigram Markov assumption models words depending on prior context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tea"
+                  },
+                  {
+                    "text": "like"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "coffee"
+                  },
+                  {
+                    "text": "like"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "bigrams"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "bigrams"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Word sequence probabilities and bigram frequency distributions",
+        "columns": [
+          "tokens",
+          "bigrams"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A language model assigns a probability to a sequence of words.",
+            "rows": [
+              {
+                "cells": [
+                  "tea",
+                  "like"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Counting word co-occurrences identifies which word pairs are more probable.",
+            "rows": [
+              {
+                "cells": [
+                  "tea",
+                  "like"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "coffee",
+                  "like"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "An n-gram represents a sequence where bigrams denote pairs of words.",
+            "rows": [
+              {
+                "cells": [
+                  "tea",
+                  "like"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "coffee",
+                  "like"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "bigrams"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The bigram Markov assumption models words depending on prior context.",
+            "rows": [
+              {
+                "cells": [
+                  "tea",
+                  "like"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "coffee",
+                  "like"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "bigrams"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "counts",
+                  "bigrams"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Maximum likelihood estimates",
+      "codeHash": "caebaf28ae4fa2f6a868e0947bddebb3f99671cc451c3bfd3ac5d03e03d839a6",
+      "spec": {
+        "template": "table",
+        "title": "Maximum likelihood bigram transition probabilities over corpus",
+        "columns": [
+          "pair",
+          "single"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Maximum likelihood estimation turns empirical counts into probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bigram probabilities divide pair counts by single preceding word counts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sentence probability is the product of constituent bigram probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pair"
+                  },
+                  {
+                    "text": "single"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Start and end symbols let the model learn which words begin and end.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pair"
+                  },
+                  {
+                    "text": "single"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "single"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Maximum likelihood bigram transition probabilities over corpus",
+        "columns": [
+          "pair",
+          "single"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Maximum likelihood estimation turns empirical counts into probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bigram probabilities divide pair counts by single preceding word counts.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "coffee"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sentence probability is the product of constituent bigram probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "coffee"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pair",
+                  "single"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Start and end symbols let the model learn which words begin and end.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "coffee"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pair",
+                  "single"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "single"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The zero problem",
+      "codeHash": "92ad363a003b5ef0cd0060322d25fb9f1c01aa8130a247f3fec5741e7ef0a5c9",
+      "spec": {
+        "template": "table",
+        "title": "Vocabulary sparsity and zero probability penalties for unseen pairs",
+        "columns": [
+          "seen",
+          "possible"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Any word pair never seen in the training text receives zero probability.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "One zero probability in a sentence product makes the whole text impossible.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Data sparsity means most possible word pairs never appear in training text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "seen"
+                  },
+                  {
+                    "text": "possible"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Smoothing reallocates probability mass from seen events to unseen pairs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "tea"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "coffee"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "seen"
+                  },
+                  {
+                    "text": "possible"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "possible"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vocabulary sparsity and zero probability penalties for unseen pairs",
+        "columns": [
+          "seen",
+          "possible"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Any word pair never seen in the training text receives zero probability.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "One zero probability in a sentence product makes the whole text impossible.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "coffee"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Data sparsity means most possible word pairs never appear in training text.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "coffee"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "seen",
+                  "possible"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Smoothing reallocates probability mass from seen events to unseen pairs.",
+            "rows": [
+              {
+                "cells": [
+                  "like",
+                  "tea"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "coffee"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "seen",
+                  "possible"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "possible"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Laplace (add-one) smoothing",
+      "codeHash": "4efb94298127a7868aab0e440aab5c4cca6264fb803d94e28acb710801c65c33",
+      "spec": {
+        "template": "table",
+        "title": "Laplace smoothing adding uniform count mass across entire vocabulary",
+        "columns": [
+          "bigram_count",
+          "context_count"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Laplace smoothing assumes every possible bigram was seen one extra time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mle"
+                  },
+                  {
+                    "text": "laplace"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Add-one formula adds vocabulary size V to the context denominator count.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mle"
+                  },
+                  {
+                    "text": "laplace"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "V"
+                  },
+                  {
+                    "text": "vocab_size"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding V to the denominator keeps next word conditional probabilities valid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mle"
+                  },
+                  {
+                    "text": "laplace"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "V"
+                  },
+                  {
+                    "text": "vocab_size"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bigram_count"
+                  },
+                  {
+                    "text": "context_count"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Unseen pairs receive non-zero probabilities while seen pairs yield mass.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mle"
+                  },
+                  {
+                    "text": "laplace"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "V"
+                  },
+                  {
+                    "text": "vocab_size"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bigram_count"
+                  },
+                  {
+                    "text": "context_count"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "laplace"
+                  },
+                  {
+                    "text": "V"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Laplace smoothing adding uniform count mass across entire vocabulary",
+        "columns": [
+          "bigram_count",
+          "context_count"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Laplace smoothing assumes every possible bigram was seen one extra time.",
+            "rows": [
+              {
+                "cells": [
+                  "mle",
+                  "laplace"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Add-one formula adds vocabulary size V to the context denominator count.",
+            "rows": [
+              {
+                "cells": [
+                  "mle",
+                  "laplace"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "V",
+                  "vocab_size"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding V to the denominator keeps next word conditional probabilities valid.",
+            "rows": [
+              {
+                "cells": [
+                  "mle",
+                  "laplace"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "V",
+                  "vocab_size"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bigram_count",
+                  "context_count"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Unseen pairs receive non-zero probabilities while seen pairs yield mass.",
+            "rows": [
+              {
+                "cells": [
+                  "mle",
+                  "laplace"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "V",
+                  "vocab_size"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bigram_count",
+                  "context_count"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "laplace",
+                  "V"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating with perplexity",
+      "codeHash": "eb456bc70140a4120a3f8943e4877acb7382aa679ab66c2b07cbd439dd3e7d1a",
+      "spec": {
+        "template": "none",
+        "reason": "Evaluating with perplexity."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: smooth and evaluate",
+      "codeHash": "732f70c61d01f8621e7d466b4279d6161818c5564bc0226493a9cba294316929",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: smooth and evaluate."
+      },
+      "filled": {}
+    }
+  ]
+}

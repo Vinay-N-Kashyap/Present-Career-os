@@ -1,0 +1,909 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Orchestration and Step Functions",
+      "codeHash": "5ea9d57bd650d89f5e1f1d9f94e28af962589f1e41ed698c9cb775cdbaf59064",
+      "spec": {
+        "template": "table",
+        "title": "State machine execution path and sequential transitions",
+        "columns": [
+          "state",
+          "next"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "State machines coordinate transitions between workflow steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ValidateOrder"
+                  },
+                  {
+                    "text": "ChargeCard"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Orchestration coordinates process execution from one central place.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ValidateOrder"
+                  },
+                  {
+                    "text": "ChargeCard"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChargeCard"
+                  },
+                  {
+                    "text": "ShipOrder"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standard workflows reliably record every execution step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ValidateOrder"
+                  },
+                  {
+                    "text": "ChargeCard"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChargeCard"
+                  },
+                  {
+                    "text": "ShipOrder"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ShipOrder"
+                  },
+                  {
+                    "text": "ShipOrder"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Orchestration provides clear order and auditability.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ValidateOrder"
+                  },
+                  {
+                    "text": "ChargeCard"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChargeCard"
+                  },
+                  {
+                    "text": "ShipOrder"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ShipOrder"
+                  },
+                  {
+                    "text": "ShipOrder"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "State machine execution path and sequential transitions",
+        "columns": [
+          "state",
+          "next"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "State machines coordinate transitions between workflow steps.",
+            "rows": [
+              {
+                "cells": [
+                  "ValidateOrder",
+                  "ChargeCard"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Orchestration coordinates process execution from one central place.",
+            "rows": [
+              {
+                "cells": [
+                  "ValidateOrder",
+                  "ChargeCard"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ChargeCard",
+                  "ShipOrder"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standard workflows reliably record every execution step.",
+            "rows": [
+              {
+                "cells": [
+                  "ValidateOrder",
+                  "ChargeCard"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ChargeCard",
+                  "ShipOrder"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ShipOrder",
+                  "ShipOrder"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Orchestration provides clear order and auditability.",
+            "rows": [
+              {
+                "cells": [
+                  "ValidateOrder",
+                  "ChargeCard"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ChargeCard",
+                  "ShipOrder"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ShipOrder",
+                  "ShipOrder"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amazon States Language",
+      "codeHash": "001eeb7cb20f6537bb76c14e24deb162c5d2569a8f53f61595cc35a316830d49",
+      "spec": {
+        "template": "table",
+        "title": "Amazon States Language state types and syntax validation",
+        "columns": [
+          "name",
+          "type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Amazon States Language defines state machine transitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Charge"
+                  },
+                  {
+                    "text": "Task"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each state declares an execution Type for its task.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Charge"
+                  },
+                  {
+                    "text": "Task"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ship"
+                  },
+                  {
+                    "text": "Task"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "States connect sequentially with Next or terminate with End.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Charge"
+                  },
+                  {
+                    "text": "Task"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ship"
+                  },
+                  {
+                    "text": "Task"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Done"
+                  },
+                  {
+                    "text": "Finish"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Validators check StartAt and Next targets across state definitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Charge"
+                  },
+                  {
+                    "text": "Task"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ship"
+                  },
+                  {
+                    "text": "Task"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Done"
+                  },
+                  {
+                    "text": "Finish"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Amazon States Language state types and syntax validation",
+        "columns": [
+          "name",
+          "type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Amazon States Language defines state machine transitions.",
+            "rows": [
+              {
+                "cells": [
+                  "Charge",
+                  "Task"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each state declares an execution Type for its task.",
+            "rows": [
+              {
+                "cells": [
+                  "Charge",
+                  "Task"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ship",
+                  "Task"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "States connect sequentially with Next or terminate with End.",
+            "rows": [
+              {
+                "cells": [
+                  "Charge",
+                  "Task"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ship",
+                  "Task"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Done",
+                  "Finish"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Validators check StartAt and Next targets across state definitions.",
+            "rows": [
+              {
+                "cells": [
+                  "Charge",
+                  "Task"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ship",
+                  "Task"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Done",
+                  "Finish"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The saga pattern",
+      "codeHash": "7ee51f0c2a8a76d7919e007e560bb054fc1a20e3ddfa871cece4a27e977dcae9",
+      "spec": {
+        "template": "table",
+        "title": "Distributed transaction saga execution and compensation undo",
+        "columns": [
+          "name",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-service workflows lack a single distributed database transaction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ReserveHotel"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sagas pair each completed step with a compensating undo action.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ReserveHotel"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BookFlight"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failures trigger compensations in reverse order for succeeded steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ReserveHotel"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BookFlight"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChargeCard"
+                  },
+                  {
+                    "text": "failed_step"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Undoing completed actions in reverse order preserves consistency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ReserveHotel"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BookFlight"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChargeCard"
+                  },
+                  {
+                    "text": "failed_step"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed transaction saga execution and compensation undo",
+        "columns": [
+          "name",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-service workflows lack a single distributed database transaction.",
+            "rows": [
+              {
+                "cells": [
+                  "ReserveHotel",
+                  "success"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sagas pair each completed step with a compensating undo action.",
+            "rows": [
+              {
+                "cells": [
+                  "ReserveHotel",
+                  "success"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BookFlight",
+                  "success"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failures trigger compensations in reverse order for succeeded steps.",
+            "rows": [
+              {
+                "cells": [
+                  "ReserveHotel",
+                  "success"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BookFlight",
+                  "success"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ChargeCard",
+                  "failed_step"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Undoing completed actions in reverse order preserves consistency.",
+            "rows": [
+              {
+                "cells": [
+                  "ReserveHotel",
+                  "success"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BookFlight",
+                  "success"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ChargeCard",
+                  "failed_step"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retries, catches and timeouts",
+      "codeHash": "ef4df87f655e696e540fbc366746f649b86f0eb8d4109be811c9df7a34964ee9",
+      "spec": {
+        "template": "table",
+        "title": "Declarative task retry policies and catch fallbacks",
+        "columns": [
+          "fn",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Step Functions tasks declare declarative Retry and Catch rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flaky"
+                  },
+                  {
+                    "text": "TimeoutError"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Retry rules configure intervals and progressive backoff rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flaky"
+                  },
+                  {
+                    "text": "TimeoutError"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Catch transitions route exhausted retries to failure states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flaky"
+                  },
+                  {
+                    "text": "TimeoutError"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "declined"
+                  },
+                  {
+                    "text": "ValueError"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Permanent errors route directly to Catch without repeated retries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flaky"
+                  },
+                  {
+                    "text": "TimeoutError"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "declined"
+                  },
+                  {
+                    "text": "ValueError"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Declarative task retry policies and catch fallbacks",
+        "columns": [
+          "fn",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Step Functions tasks declare declarative Retry and Catch rules.",
+            "rows": [
+              {
+                "cells": [
+                  "flaky",
+                  "TimeoutError"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Retry rules configure intervals and progressive backoff rates.",
+            "rows": [
+              {
+                "cells": [
+                  "flaky",
+                  "TimeoutError"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Catch transitions route exhausted retries to failure states.",
+            "rows": [
+              {
+                "cells": [
+                  "flaky",
+                  "TimeoutError"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "declined",
+                  "ValueError"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Permanent errors route directly to Catch without repeated retries.",
+            "rows": [
+              {
+                "cells": [
+                  "flaky",
+                  "TimeoutError"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "declined",
+                  "ValueError"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parallel steps and human approval",
+      "codeHash": "12719c6ee81bb8389ca2280024510dce7307d0bb5bd1cd808cb2d278fda6a672",
+      "spec": {
+        "template": "none",
+        "reason": "Parallel steps and human approval."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: saga and validator",
+      "codeHash": "22a420c7e97b19fc7fff190fc6928e0e8cc9adfc6e79bee78452deb82d7ee319",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: saga and validator."
+      },
+      "filled": {}
+    }
+  ]
+}

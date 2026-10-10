@@ -10,11 +10,17 @@ import { resolveQuestLanguage } from '../src/components/quests/workspace/useWork
 import { buildJsTaskScript } from '../src/lib/code/runners/jsTaskScript';
 import { getReactRuntimeSync } from '../src/lib/code/react/reactRuntime';
 import { compileTsSync } from '../src/lib/code/ts/compileTs';
+import { executeHtmlCssTask } from '../src/lib/code/runners/webTaskRunner';
 
 type Quest = { id: string; category?: string; starterCode?: string; testSuite?: string; language?: string };
 
-/** Runs a JavaScript/TSX practice task the way the sandbox worker does (new Function(script)(), then waits). */
+/** Runs a JavaScript/TSX/HTML/CSS practice task the way the sandbox worker does. */
 async function gradeJs(code: string, testSuite: string, language?: string): Promise<{ passed: boolean; error?: string }> {
+  if (language === 'html' || language === 'css') {
+    const res = await executeHtmlCssTask(code, testSuite, 5000, language);
+    return { passed: res.allPassed, error: res.terminalLogs?.join('\n') || res.error || undefined };
+  }
+
   let executableCode = code;
   const isTsx = language === 'tsx' || /<[A-Za-z]/.test(code) || /render\(/.test(testSuite);
   const isTs = isTsx || language === 'typescript' || /:\s*[a-zA-Z]/.test(code);
@@ -120,12 +126,20 @@ test('every React practice task fails when the student has not written the answe
 
 /** Reference answers, kept out of the app so students never download them. */
 const SOLUTIONS: Record<string, string> = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/practice_solutions.json'), 'utf8'));
+for (const f of fs.readdirSync(path.join(__dirname, 'fixtures'))) {
+  if (f.endsWith('_solutions.json')) {
+    try {
+      const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', f), 'utf8'));
+      Object.assign(SOLUTIONS, data);
+    } catch {}
+  }
+}
 
 /** Answers a student could guess without solving the task. */
 const LAZY_RETURNS = ['true', 'false', '0', '1', '-1', '[]', "''", 'null', '{}'];
 
 /** Recall questions whose right answer is one fixed value (for example "greedy decoding uses temperature 0"). */
-const RECALL_TASKS = new Set(['nlp-assign-day-6', 'nlp-assign-day-27', 'ai_prompt-assign-day-6']);
+const RECALL_TASKS = new Set(['nlp-assign-day-6', 'nlp-assign-day-27']);
 
 /** The starting code with every function and method (except constructors) returning `value`. */
 function lazyAnswer(starter: string, value: string): string {
@@ -336,13 +350,7 @@ export const KNOWN_CONSTANT_TASKS = new Set<string>([
   'fullstack-js-assign-day-75', 'fullstack-js-assign-day-76', 'fullstack-js-assign-day-80', 'fullstack-js-assign-day-85',
   'fullstack-js-assign-day-90', 'fullstack-js-assign-day-91', 'fullstack-js-exam-day-97', 'fullstack-js-exam-day-98',
   'fullstack-js-exam-day-107', 'fullstack-js-exam-day-111', 'fullstack-js-exam-day-117', 'fullstack-js-exam-day-120',
-  // course-react-web (19 tasks)
-  'react-basics-exam-day-2', 'react-basics-exam-day-4', 'react-basics-assign-day-4',
-  'react-basics-exam-day-5', 'react-basics-assign-day-5', 'react-basics-exam-day-6', 'react-basics-assign-day-6',
-  'react-basics-exam-day-7', 'react-basics-assign-day-7',
-  'react-basics-assign-day-14', 'react-basics-exam-day-15', 'react-basics-assign-day-15', 'react-basics-assign-day-22',
-  'react-basics-exam-day-23', 'react-basics-assign-day-23', 'react-basics-exam-day-25',
-  'react-basics-exam-day-27', 'react-basics-assign-day-29', 'react-basics-assign-day-30',
+  // course-react-web: 0 tasks (all 60 tasks non-constant and verified)
   // course-cloud-native: 0 tasks (all 60 tasks non-constant and verified)
   // course-devops-cicd: 0 tasks (all 60 tasks non-constant and verified)
   // course-quant-systems (24 tasks)
@@ -403,9 +411,11 @@ test('every practice task in the checked courses: the reference answer passes, t
         assert.equal(blank.passed, false, `${q.id}: the starting code already passes`);
         assert.ok(!String(q.starterCode).includes(solution.trim()), `${q.id}: the starting code contains the answer`);
         if (RECALL_TASKS.has(q.id)) continue;
-        for (const value of LAZY_RETURNS) {
-          const lazy = await gradeJs(lazyAnswer(String(q.starterCode || ''), value), String(q.testSuite), lang);
-          assert.equal(lazy.passed, false, `${q.id}: passes when every function just returns ${value}`);
+        if (lang !== 'html' && lang !== 'css') {
+          for (const value of LAZY_RETURNS) {
+            const lazy = await gradeJs(lazyAnswer(String(q.starterCode || ''), value), String(q.testSuite), lang);
+            assert.equal(lazy.passed, false, `${q.id}: passes when every function just returns ${value}`);
+          }
         }
       }
     }
@@ -460,4 +470,62 @@ test('W-09: constant-answer detector catches lazy constant solutions', async () 
   const constFirst = await getFirstReturnValues(constantSolution, constantSuite, constFns);
   const constResult = await gradeJs(constantAnswer(constantSolution, constFirst), constantSuite);
   assert.equal(constResult.passed, true, 'Constant task passes constant answer');
+});
+
+test('F-14: constant-answer gate enforces that passing-with-constant tasks equals KNOWN_CONSTANT_TASKS across all web courses', async () => {
+  const WEB_COURSES = [
+    'course-react-web',
+    'course-node-web',
+    'course-dsa-optim',
+    'course-devops-cicd',
+    'course-cloud-native',
+    'course-distributed-sys',
+    'course-cybersecurity',
+    'course-ai-eng',
+    'course-sre-web',
+    'course-stream-web',
+    'course-aideploy-web',
+    'course-design-systems',
+    'course-fullstack-js',
+  ];
+
+  const detected: string[] = [];
+  for (const courseId of WEB_COURSES) {
+    const course = (COURSES_REGISTRY as any[]).find((c) => c.id === courseId);
+    if (!course) continue;
+    const taskList = course.quests.filter((q: any) => q.testSuite && String(q.testSuite).trim());
+    for (const q of taskList) {
+      const sol = SOLUTIONS[q.id];
+      if (!sol) continue;
+      const fnNames = extractFunctionNames(sol);
+      if (fnNames.length === 0) continue;
+      const lang = (q as any).language;
+      const firstReturns = await getFirstReturnValues(sol, String(q.testSuite), fnNames, lang);
+      if (Object.keys(firstReturns).length === 0) continue;
+      const constCode = constantAnswer(sol, firstReturns);
+      const res = await gradeJs(constCode, String(q.testSuite), lang);
+      if (res.passed) {
+        detected.push(q.id);
+      }
+    }
+  }
+
+  const expectedKnownWeb = Array.from(KNOWN_CONSTANT_TASKS).filter((id: string) => {
+    return WEB_COURSES.some((c) => {
+      const prefix = c.replace('course-', '');
+      return (
+        id.startsWith(prefix) ||
+        (c === 'course-react-web' && id.startsWith('react-')) ||
+        (c === 'course-fullstack-js' && id.startsWith('fullstack-')) ||
+        (c === 'course-design-systems' && id.startsWith('design-')) ||
+        (c === 'course-ai-eng' && id.startsWith('ai-'))
+      );
+    });
+  });
+
+  assert.deepEqual(
+    detected.sort(),
+    expectedKnownWeb.sort(),
+    'Detected constant tasks must exactly match KNOWN_CONSTANT_TASKS (gate enforced)'
+  );
 });

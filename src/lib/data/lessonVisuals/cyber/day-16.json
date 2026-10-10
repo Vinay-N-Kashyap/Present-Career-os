@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 16,
+  "promptSha": "19dc3477092d10a9366b4760cd785afd6d689f4a7349832f983fc86afbe12b18",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "SSRF Exploitation Mechanics & Cloud Metadata Abuse",
+      "codeHash": "77b5c434327a8c5cdb05a1d1c20e149101b05709c40ba78e9fe3716b03e809bd",
+      "spec": {
+        "template": "sequence",
+        "title": "Server-side request forgery metadata exploitation and credential theft",
+        "actors": [
+          {
+            "id": "attacker",
+            "label": "External Attacker"
+          },
+          {
+            "id": "backend",
+            "label": "Vulnerable Backend"
+          },
+          {
+            "id": "metadata",
+            "label": "Cloud Metadata Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "attacker",
+            "to": "backend",
+            "label": "Submit Malicious URL with Link-Local Address",
+            "tone": "data"
+          },
+          {
+            "from": "backend",
+            "to": "metadata",
+            "label": "Issue Unsanitized HTTP Request to Internal Host",
+            "tone": "error"
+          },
+          {
+            "from": "metadata",
+            "to": "backend",
+            "label": "Disclose Temporary Security Credentials and Tokens",
+            "tone": "error"
+          },
+          {
+            "from": "backend",
+            "to": "attacker",
+            "label": "Exfiltrate Stolen Cloud Credentials in Response",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attackers exploit this capability to force servers to query internal networks.",
+            "activeMessageIndex": 1,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "An attacker can harvest temporary security tokens and session credentials.",
+            "activeMessageIndex": 3,
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Server-side request forgery metadata exploitation and credential theft",
+        "actors": [
+          {
+            "id": "attacker",
+            "label": "External Attacker"
+          },
+          {
+            "id": "backend",
+            "label": "Vulnerable Backend"
+          },
+          {
+            "id": "metadata",
+            "label": "Cloud Metadata Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "attacker",
+            "to": "backend",
+            "label": "Submit Malicious URL with Link-Local Address",
+            "tone": "data"
+          },
+          {
+            "from": "backend",
+            "to": "metadata",
+            "label": "Issue Unsanitized HTTP Request to Internal Host",
+            "tone": "error"
+          },
+          {
+            "from": "metadata",
+            "to": "backend",
+            "label": "Disclose Temporary Security Credentials and Tokens",
+            "tone": "error"
+          },
+          {
+            "from": "backend",
+            "to": "attacker",
+            "label": "Exfiltrate Stolen Cloud Credentials in Response",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attackers exploit this capability to force servers to query internal networks.",
+            "activeMessageIndex": 1,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "An attacker can harvest temporary security tokens and session credentials.",
+            "activeMessageIndex": 3,
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RFC 1918 Private Subnet Filtering & Loopback Defense",
+      "codeHash": "2f276d5adcc593603419703ae93114897f048d6a1a3b3beb5a1da1fe10f13995",
+      "spec": {
+        "template": "table",
+        "title": "Private IPv4 address allocations and SSRF boundary filtering rules",
+        "columns": [
+          "Address Family",
+          "Network CIDR Range",
+          "Designated Purpose",
+          "SSRF Filter Policy"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Reserved ranges include loopback networks and private address allocations.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Requests resolving to private addresses must be discarded immediately.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Private IPv4 address allocations and SSRF boundary filtering rules",
+        "columns": [
+          "Address Family",
+          "Network CIDR Range",
+          "Designated Purpose",
+          "SSRF Filter Policy"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Reserved ranges include loopback networks and private address allocations.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Requests resolving to private addresses must be discarded immediately.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DNS Rebinding Attack Vector & Resolution Pinning",
+      "codeHash": "532ec59179964f439b6fdfe6629239b8a0674070bbb4d38e8067b6f49e1c4383",
+      "spec": {
+        "template": "states",
+        "title": "DNS rebinding time-of-check race conditions and resolution pinning defense",
+        "states": [
+          {
+            "id": "initialLookup",
+            "label": "Attacker Nameserver Returns Public IP"
+          },
+          {
+            "id": "filterApproved",
+            "label": "SSRF Validator Approves Safe Public IP"
+          },
+          {
+            "id": "rebindTriggered",
+            "label": "Subsequent DNS Resolves Loopback Target"
+          },
+          {
+            "id": "pinningEnforced",
+            "label": "Resolution Pinning Connects to First IP"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The attacker nameserver returns a public address during initial resolution.",
+            "activeStateId": "initialLookup",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The application resolves the record once and connects directly to that IP.",
+            "activeStateId": "pinningEnforced",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "DNS rebinding time-of-check race conditions and resolution pinning defense",
+        "states": [
+          {
+            "id": "initialLookup",
+            "label": "Attacker Nameserver Returns Public IP"
+          },
+          {
+            "id": "filterApproved",
+            "label": "SSRF Validator Approves Safe Public IP"
+          },
+          {
+            "id": "rebindTriggered",
+            "label": "Subsequent DNS Resolves Loopback Target"
+          },
+          {
+            "id": "pinningEnforced",
+            "label": "Resolution Pinning Connects to First IP"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The attacker nameserver returns a public address during initial resolution.",
+            "activeStateId": "initialLookup",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The application resolves the record once and connects directly to that IP.",
+            "activeStateId": "pinningEnforced",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defense-in-Depth: IMDSv2 Token-Based Access & Egress Gateways",
+      "codeHash": "01f672a15045996c6abbd77fa795a2156880dfecb3dffdf58f1150d3c0555ddb",
+      "spec": {
+        "template": "compare",
+        "title": "Unauthenticated IMDSv1 protocol versus session-token hardened IMDSv2",
+        "left": {
+          "title": "Vulnerable IMDSv1 Architecture",
+          "items": [
+            "Serves sensitive credentials over simple GET requests",
+            "Exploitable through standard single request SSRF bugs",
+            "Lacks mandatory session tokens or cryptographic checks"
+          ]
+        },
+        "right": {
+          "title": "Hardened IMDSv2 Protocol",
+          "items": [
+            "Mandates session-oriented PUT request with token header",
+            "Requires secret session token on all subsequent GETs",
+            "Neutralizes typical SSRF exploits lacking custom headers"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "IMDS requires a session oriented request with a mandatory token header.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Attackers cannot inject arbitrary headers to acquire session tokens.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Vulnerable IMDSv1 Architecture",
+        "rightLabel": "Hardened IMDSv2 Protocol"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unauthenticated IMDSv1 protocol versus session-token hardened IMDSv2",
+        "left": {
+          "title": "Vulnerable IMDSv1 Architecture",
+          "items": [
+            "Serves sensitive credentials over simple GET requests",
+            "Exploitable through standard single request SSRF bugs",
+            "Lacks mandatory session tokens or cryptographic checks"
+          ]
+        },
+        "right": {
+          "title": "Hardened IMDSv2 Protocol",
+          "items": [
+            "Mandates session-oriented PUT request with token header",
+            "Requires secret session token on all subsequent GETs",
+            "Neutralizes typical SSRF exploits lacking custom headers"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "IMDS requires a session oriented request with a mandatory token header.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Attackers cannot inject arbitrary headers to acquire session tokens.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Vulnerable IMDSv1 Architecture",
+        "rightLabel": "Hardened IMDSv2 Protocol"
+      }
+    },
+    {
+      "partTitle": "URL Parser Inconsistencies & Redirect SSRF Evasion",
+      "codeHash": "b12046b8abe75051ec91d6ae4c3e0073e491a7857d3abeb2fcdb0b37d3f1b3a8",
+      "spec": {
+        "template": "flow",
+        "title": "HTTP redirect evaluation filter preventing recursive SSRF bypass vectors",
+        "nodes": [
+          {
+            "id": "initialRequest",
+            "label": "Initial Whitelisted External URL",
+            "tappable": false
+          },
+          {
+            "id": "externalHost",
+            "label": "External Server Returns HTTP Redirect",
+            "tappable": false
+          },
+          {
+            "id": "hopEvaluator",
+            "label": "Recursive Redirect Inspection Guard",
+            "tappable": false
+          },
+          {
+            "id": "blockedHop",
+            "label": "Private Internal Hop Quarantined",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "initialRequest",
+            "to": "externalHost",
+            "label": "Fetches"
+          },
+          {
+            "from": "externalHost",
+            "to": "hopEvaluator",
+            "label": "Redirects"
+          },
+          {
+            "from": "hopEvaluator",
+            "to": "blockedHop",
+            "label": "Blocks"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An attacker can supply an external domain that redirects to internal IPs.",
+            "activeNodes": [
+              "initialRequest",
+              "externalHost"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Inspect every redirect hop against the filter before following requests.",
+            "activeNodes": [
+              "hopEvaluator",
+              "blockedHop"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "HTTP redirect evaluation filter preventing recursive SSRF bypass vectors",
+        "nodes": [
+          {
+            "id": "initialRequest",
+            "label": "Initial Whitelisted External URL",
+            "tappable": false
+          },
+          {
+            "id": "externalHost",
+            "label": "External Server Returns HTTP Redirect",
+            "tappable": false
+          },
+          {
+            "id": "hopEvaluator",
+            "label": "Recursive Redirect Inspection Guard",
+            "tappable": false
+          },
+          {
+            "id": "blockedHop",
+            "label": "Private Internal Hop Quarantined",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "initialRequest",
+            "to": "externalHost",
+            "label": "Fetches"
+          },
+          {
+            "from": "externalHost",
+            "to": "hopEvaluator",
+            "label": "Redirects"
+          },
+          {
+            "from": "hopEvaluator",
+            "to": "blockedHop",
+            "label": "Blocks"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An attacker can supply an external domain that redirects to internal IPs.",
+            "activeNodes": [
+              "initialRequest",
+              "externalHost"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Inspect every redirect hop against the filter before following requests.",
+            "activeNodes": [
+              "hopEvaluator",
+              "blockedHop"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IMDSv2 Session Token Protocol & Network Hop Limit Hardening",
+      "codeHash": "a99b4885d23261fd1d810c317f08a3c42e40608240aa17866b9983aebcba86f2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why audit logs",
+      "codeHash": "7fbc916872f4c559a45e4407fd62f4d95ba6bec77e925b740cd2ed26094cc612",
+      "spec": {
+        "template": "table",
+        "title": "Risky vs privacy-safe audit log schemas",
+        "columns": [
+          "risky",
+          "safer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audit logs record critical decisions and system actions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "risky"
+                  },
+                  {
+                    "text": "safer"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "reasons"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Storing prompt text risks logging sensitive card numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "risky"
+                  },
+                  {
+                    "text": "safer"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "safer"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Risky vs privacy-safe audit log schemas",
+        "columns": [
+          "risky",
+          "safer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audit logs record critical decisions and system actions.",
+            "rows": [
+              {
+                "cells": [
+                  "risky",
+                  "safer"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "reasons"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Storing prompt text risks logging sensitive card numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "risky",
+                  "safer"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "safer"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hashing identifiers",
+      "codeHash": "a8f8381c9796e726d92f01fe440960f41ef002a3819587ecf50ea7c50b752c3b",
+      "spec": {
+        "template": "table",
+        "title": "Cryptographic hashing of sensitive identifiers",
+        "columns": [
+          "uid",
+          "hashlib"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hash functions convert arbitrary text into fixed length fingerprints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "hashlib"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sha256"
+                  },
+                  {
+                    "text": "hexdigest"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Hashing a user id groups events without storing raw identity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "hashlib"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "encode"
+                  },
+                  {
+                    "text": "hexdigest"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cryptographic hashing of sensitive identifiers",
+        "columns": [
+          "uid",
+          "hashlib"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hash functions convert arbitrary text into fixed length fingerprints.",
+            "rows": [
+              {
+                "cells": [
+                  "uid",
+                  "hashlib"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sha256",
+                  "hexdigest"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Hashing a user id groups events without storing raw identity.",
+            "rows": [
+              {
+                "cells": [
+                  "uid",
+                  "hashlib"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "encode",
+                  "hexdigest"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A privacy-safe audit entry",
+      "codeHash": "73da8938a992cf5b328a16ca573c746a674a94f4d50625f194d717564fea62f1",
+      "spec": {
+        "template": "table",
+        "title": "Privacy-safe audit record structures",
+        "columns": [
+          "uid",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Log entries store hash digests and prompt length in characters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "injection"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Decisions and sorted reasons explain why guards intervened.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "override"
+                  },
+                  {
+                    "text": "sha256"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Privacy-safe audit record structures",
+        "columns": [
+          "uid",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Log entries store hash digests and prompt length in characters.",
+            "rows": [
+              {
+                "cells": [
+                  "uid",
+                  "prompt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "injection"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Decisions and sorted reasons explain why guards intervened.",
+            "rows": [
+              {
+                "cells": [
+                  "uid",
+                  "prompt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "override",
+                  "sha256"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What else to log",
+      "codeHash": "5ed4a2fcd673a85ebeae719ae7670bc38b338a917d18e39fc23f643ae970c0b0",
+      "spec": {
+        "template": "table",
+        "title": "Heterogeneous pipeline events in audit logs",
+        "columns": [
+          "events",
+          "decision"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audit records capture diverse events across the pipeline.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "decision"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "guard"
+                  },
+                  {
+                    "text": "BLOCK"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Configuration updates record new thresholds and who made them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "decision"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tool"
+                  },
+                  {
+                    "text": "refund"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Heterogeneous pipeline events in audit logs",
+        "columns": [
+          "events",
+          "decision"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audit records capture diverse events across the pipeline.",
+            "rows": [
+              {
+                "cells": [
+                  "events",
+                  "decision"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "guard",
+                  "BLOCK"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Configuration updates record new thresholds and who made them.",
+            "rows": [
+              {
+                "cells": [
+                  "events",
+                  "decision"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tool",
+                  "refund"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Summarising the log",
+      "codeHash": "bb56899984869b6bba79a059463a2ef9fb90c7a433cf397a1365dfd4b6732339",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Audit logs in the pipeline",
+      "codeHash": "861e862d31d5a761e8a1e4c2923965dc6e97bb16bd753140a8f99bf35d375f4d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

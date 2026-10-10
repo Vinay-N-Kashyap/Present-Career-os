@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why data is split into several tables",
+      "codeHash": "e75988cd3751f8add13364d1f6fcc704e25a02e0e0938720738b38645a51c443",
+      "spec": {
+        "template": "compare",
+        "title": "Denormalized duplication versus relational separation",
+        "leftLabel": "Single Big Table",
+        "rightLabel": "Normalized Relational Tables",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Keeping everything in one table copies customer address repeatedly.",
+            "left": {
+              "code": "orders table",
+              "result": {
+                "text": "address repeated 50 times"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "customers + orders",
+              "result": {
+                "text": "address stored once"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The better design stores each customer once with an id in customers.",
+            "left": {
+              "code": "update customer move",
+              "result": {
+                "text": "modify 50 rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "update customer 1",
+              "result": {
+                "text": "modify 1 row"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Denormalized duplication versus relational separation",
+        "leftLabel": "Single Big Table",
+        "rightLabel": "Normalized Relational Tables",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Keeping everything in one table copies customer address repeatedly.",
+            "left": {
+              "code": "orders table",
+              "result": "address repeated 50 times",
+              "tone": "error",
+              "checks": [
+                "address repeated 50 times"
+              ]
+            },
+            "right": {
+              "code": "customers + orders",
+              "result": "address stored once",
+              "tone": "ok",
+              "checks": [
+                "address stored once"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The better design stores each customer once with an id in customers.",
+            "left": {
+              "code": "update customer move",
+              "result": "modify 50 rows",
+              "tone": "error",
+              "checks": [
+                "modify 50 rows"
+              ]
+            },
+            "right": {
+              "code": "update customer 1",
+              "result": "modify 1 row",
+              "tone": "ok",
+              "checks": [
+                "modify 1 row"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "One-to-many relationships",
+      "codeHash": "7c82c5c416b462fd36c2bc89ebe3761546c2743725f8d43b0f86cdfda041e1ed",
+      "spec": {
+        "template": "table",
+        "title": "Foreign key customer_id order grouping",
+        "columns": [
+          "customer_id",
+          "orders",
+          "spent"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In the tables the many side holds the link using customer_id column.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "2427.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The column on the many side is a foreign key pointing to customers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "2427.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Foreign key customer_id order grouping",
+        "columns": [
+          "customer_id",
+          "orders",
+          "spent"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In the tables the many side holds the link using customer_id column.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "3",
+                  "2427.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The column on the many side is a foreign key pointing to customers.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "3",
+                  "2427.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "1",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FOREIGN KEY: letting PostgreSQL protect the link",
+      "codeHash": "5452c621caf1ce011e25e8bcada4308c32ff6e80f5c74feb1364ad1e6aaddd16",
+      "spec": {
+        "template": "none",
+        "reason": "Foreign key referential integrity constraints preventing orphan rows."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Foreign key referential integrity constraints preventing orphan rows."
+      }
+    },
+    {
+      "partTitle": "Many-to-many relationships",
+      "codeHash": "af1c3d609665a8c55506ae0d5bad03f6de422829e3b515fd9e4481991974d045",
+      "spec": {
+        "template": "table",
+        "title": "Many-to-many junction table order_items",
+        "columns": [
+          "product_id",
+          "in_orders",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "You add a third table in the middle often called a junction table.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The junction table has two foreign keys one to each side.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Many-to-many junction table order_items",
+        "columns": [
+          "product_id",
+          "in_orders",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "You add a third table in the middle often called a junction table.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "1",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The junction table has two foreign keys one to each side.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "1",
+                  "3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "20",
+                  "2",
+                  "15"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reading a database design",
+      "codeHash": "714a76ca145f7ace40ea4ee3f086a56e25fb2c0a074cf6564e64299eb41c83c3",
+      "spec": {
+        "template": "none",
+        "reason": "Schema catalog introspection using information_schema views."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Schema catalog introspection using information_schema views."
+      }
+    },
+    {
+      "partTitle": "Putting it together: adding reviews to the shop",
+      "codeHash": "a6bd8cfae1f520ccf616c4165061562660f99a1614392494ed062362e0f61916",
+      "spec": {
+        "template": "table",
+        "title": "Product review aggregates with CHECK and foreign key",
+        "columns": [
+          "product_id",
+          "reviews",
+          "avg_rating"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us extend the shop with product reviews and foreign key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "4.5"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Then we add reviews and show the average rating per product id.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "4.5"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Product review aggregates with CHECK and foreign key",
+        "columns": [
+          "product_id",
+          "reviews",
+          "avg_rating"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us extend the shop with product reviews and foreign key.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "2",
+                  "4.5"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Then we add reviews and show the average rating per product id.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "2",
+                  "4.5"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "1",
+                  "3.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

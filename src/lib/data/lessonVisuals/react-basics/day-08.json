@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 8,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What a component really is",
+      "codeHash": "2b18ae28b0005d35cfd765c5c7f74e17d5a9546e90028188373fac459c9f28c7",
+      "spec": {
+        "template": "component-tree",
+        "title": "Component hierarchy and return structures",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "hdr",
+            "name": "Header",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A component is a function returning screen interface markup.",
+            "activeId": "hdr",
+            "tone": "ok"
+          },
+          {
+            "at": "say3",
+            "caption": "React components combine by rendering child functions inside parents.",
+            "activeId": "app",
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Component hierarchy and return structures",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "hdr",
+            "name": "Header",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A component is a function returning screen interface markup.",
+            "activeId": "hdr",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "hdr",
+                "name": "Header",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "React components combine by rendering child functions inside parents.",
+            "activeId": "app",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "hdr",
+                "name": "Header",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JSX: HTML-like code inside JavaScript",
+      "codeHash": "05cda7ccc8d291abba4b0a398bd1ef489828f340f85cd2cef903176bac054b07",
+      "spec": {
+        "template": "compare",
+        "title": "JSX markup compiled to JavaScript objects",
+        "leftLabel": "JSX Element",
+        "rightLabel": "Virtual Object",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "JSX compiles directly into JavaScript descriptor objects.",
+            "left": {
+              "code": "console.log(element.type);",
+              "result": {
+                "text": "\"h1\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(element.props.children);",
+              "result": {
+                "text": "\"Hello\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "React reads element description objects to create real pages.",
+            "left": {
+              "code": "console.log(element.type);",
+              "result": {
+                "text": "\"h1\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(element.props.className);",
+              "result": {
+                "text": "\"title\""
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "JSX markup compiled to JavaScript objects",
+        "leftLabel": "JSX Element",
+        "rightLabel": "Virtual Object",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "JSX compiles directly into JavaScript descriptor objects.",
+            "left": {
+              "code": "console.log(element.type);",
+              "result": "\"h1\"",
+              "tone": "idle",
+              "checks": [
+                "\"h1\""
+              ]
+            },
+            "right": {
+              "code": "console.log(element.props.children);",
+              "result": "\"Hello\"",
+              "tone": "ok",
+              "checks": [
+                "\"Hello\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "React reads element description objects to create real pages.",
+            "left": {
+              "code": "console.log(element.type);",
+              "result": "\"h1\"",
+              "tone": "idle",
+              "checks": [
+                "\"h1\""
+              ]
+            },
+            "right": {
+              "code": "console.log(element.props.className);",
+              "result": "\"title\"",
+              "tone": "data",
+              "checks": [
+                "\"title\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The JSX rules",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Comprehensive guide to JSX structural syntax rules and element closing"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Comprehensive guide to JSX structural syntax rules and element closing"
+      }
+    },
+    {
+      "partTitle": "Curly braces: showing JavaScript values",
+      "codeHash": "98e7ee68746a56f285ec24365f623b92a35130a6ec5b5e87018e414e44574244",
+      "spec": {
+        "template": "compare",
+        "title": "Embedding dynamic JavaScript expressions inside JSX",
+        "leftLabel": "Static Text",
+        "rightLabel": "Curly Braces",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Curly braces calculate and display dynamic JavaScript expressions.",
+            "left": {
+              "code": "const name = \"Asha\";",
+              "result": {
+                "text": "\"Asha\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(`<h1>${name}'s Job Tracker</h1>`);",
+              "result": {
+                "text": "name"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Expressions inside braces compute values like mathematical arithmetic.",
+            "left": {
+              "code": "const jobsApplied = 5;",
+              "result": {
+                "text": "5"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(`<p>Goal this month: ${jobsApplied * 4}</p>`);",
+              "result": {
+                "text": "jobsApplied"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Embedding dynamic JavaScript expressions inside JSX",
+        "leftLabel": "Static Text",
+        "rightLabel": "Curly Braces",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Curly braces calculate and display dynamic JavaScript expressions.",
+            "left": {
+              "code": "const name = \"Asha\";",
+              "result": "\"Asha\"",
+              "tone": "idle",
+              "checks": [
+                "\"Asha\""
+              ]
+            },
+            "right": {
+              "code": "console.log(`<h1>${name}'s Job Tracker</h1>`);",
+              "result": "name",
+              "tone": "ok",
+              "checks": [
+                "name"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Expressions inside braces compute values like mathematical arithmetic.",
+            "left": {
+              "code": "const jobsApplied = 5;",
+              "result": "5",
+              "tone": "idle",
+              "checks": [
+                "5"
+              ]
+            },
+            "right": {
+              "code": "console.log(`<p>Goal this month: ${jobsApplied * 4}</p>`);",
+              "result": "jobsApplied",
+              "tone": "ok",
+              "checks": [
+                "jobsApplied"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Components inside components",
+      "codeHash": "c3a8cf8727c34856ca1e11222a694a49d2b6827feb269fa28c1e8569def6b4d3",
+      "spec": {
+        "template": "component-tree",
+        "title": "Composing multiple components into application tree",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "hdr",
+            "name": "Header",
+            "tone": "ok"
+          },
+          {
+            "id": "card",
+            "name": "JobCard",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Composing components allows building complex structured applications.",
+            "activeId": "app",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "Parent components organize and render child component tags.",
+            "activeId": "card",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Composing multiple components into application tree",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "hdr",
+            "name": "Header",
+            "tone": "ok"
+          },
+          {
+            "id": "card",
+            "name": "JobCard",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Composing components allows building complex structured applications.",
+            "activeId": "app",
+            "tone": "idle",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "hdr",
+                "name": "Header",
+                "tone": "ok"
+              },
+              {
+                "id": "card",
+                "name": "JobCard",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Parent components organize and render child component tags.",
+            "activeId": "card",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "hdr",
+                "name": "Header",
+                "tone": "ok"
+              },
+              {
+                "id": "card",
+                "name": "JobCard",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Your first real components in the Job Tracker",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "wireframe",
+        "title": "Initial application layout structure in wireframe",
+        "layout": "dashboard",
+        "wireframe": {
+          "header": "My Job Tracker",
+          "sidebar": [
+            "All Jobs",
+            "Applied",
+            "Interviews"
+          ],
+          "content": "Frontend Developer at Infosys"
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Create organized component folders for application screen layouts."
+          },
+          {
+            "at": "say2",
+            "caption": "Now import both components into App to show the clean header."
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Initial application layout structure in wireframe",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Create organized component folders for application screen layouts."
+          },
+          {
+            "at": "say2",
+            "caption": "Now import both components into App to show the clean header."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why card numbers are special",
+      "codeHash": "9bdf063a713bfcf00cfaac73d7ff40030ebd3411f9368e4b4ad9c7ed1778bf18",
+      "spec": {
+        "template": "table",
+        "title": "Payment data exposure risks and redaction principles",
+        "columns": [
+          "card",
+          "digits",
+          "card"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Full card numbers should never appear in model input, output or logs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "card"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "card"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Showing only the last four digits lets users recognise their card safely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "card"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "card"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Payment data exposure risks and redaction principles",
+        "columns": [
+          "card",
+          "digits",
+          "card"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Full card numbers should never appear in model input, output or logs.",
+            "rows": [
+              {
+                "cells": [
+                  "card",
+                  "digits",
+                  "card"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "card",
+                  "digits",
+                  "card"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Showing only the last four digits lets users recognise their card safely.",
+            "rows": [
+              {
+                "cells": [
+                  "card",
+                  "digits",
+                  "card"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "card",
+                  "digits",
+                  "card"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Luhn check",
+      "codeHash": "6876a059ad30983fb0e791c28c77cdcab5b7b189de1629f1f3d39b97cabd4b3c",
+      "spec": {
+        "template": "table",
+        "title": "Luhn mod-10 check digit verification algorithm",
+        "columns": [
+          "number",
+          "total",
+          "number"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Most card numbers end with a check digit calculated by the Luhn algorithm.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "number"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "number"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "number"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "number"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The example walks through calculation steps for a well-known test number.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "number"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "number"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "number"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "number"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Luhn mod-10 check digit verification algorithm",
+        "columns": [
+          "number",
+          "total",
+          "number"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Most card numbers end with a check digit calculated by the Luhn algorithm.",
+            "rows": [
+              {
+                "cells": [
+                  "number",
+                  "total",
+                  "number"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "number",
+                  "total",
+                  "number"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The example walks through calculation steps for a well-known test number.",
+            "rows": [
+              {
+                "cells": [
+                  "number",
+                  "total",
+                  "number"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "number",
+                  "total",
+                  "number"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cleaning and length rules",
+      "codeHash": "217beb074a1297d7f908213cbc3983db49c0ec2b975b182c55fbb980cd4f630c",
+      "spec": {
+        "template": "table",
+        "title": "Normalization cleaning and digit span length boundaries",
+        "columns": [
+          "raw",
+          "digits",
+          "raw"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "People write card numbers in several formats with spaces or dashes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The isdigit check verifies that every remaining character is a valid digit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Normalization cleaning and digit span length boundaries",
+        "columns": [
+          "raw",
+          "digits",
+          "raw"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "People write card numbers in several formats with spaces or dashes.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "digits",
+                  "raw"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "digits",
+                  "raw"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The isdigit check verifies that every remaining character is a valid digit.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "digits",
+                  "raw"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "digits",
+                  "raw"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding card numbers in text",
+      "codeHash": "d3be2077d53efd8d0b9d00bf0eb09cba54dd539dbb88c1df5646cb8686343cb2",
+      "spec": {
+        "template": "table",
+        "title": "Regex candidate identification and in-text substitution",
+        "columns": [
+          "text",
+          "digits",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In real text card numbers sit inside sentences so detectors find candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Each candidate is checked with Luhn to treat valid numbers as cards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "digits"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Regex candidate identification and in-text substitution",
+        "columns": [
+          "text",
+          "digits",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In real text card numbers sit inside sentences so detectors find candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "digits",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "digits",
+                  "text"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Each candidate is checked with Luhn to treat valid numbers as cards.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "digits",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "digits",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masking in place",
+      "codeHash": "87ad60c38b6bcfa914b4aaf1627599114667581bd858abdea9531aee730c2976",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Personal data on both sides",
+      "codeHash": "154ac536f990ae7af9910155e9a60176bcdfd41357715d1fe2739733c9068b85",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

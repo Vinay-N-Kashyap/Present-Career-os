@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 13,
+  "promptSha": "0d1915b545d2ff99dd7ff03cb1ad60eb7cb45d35322055138c63c8f9a9342458",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "DynamoDB Architecture: Fully Managed Distributed NoSQL",
+      "codeHash": "3b471f487bf6032f225437715398f32b1f808d3fbd70b8fffc4564453dc46c9e",
+      "spec": {
+        "template": "workflow",
+        "title": "Distributed partition hashing and physical storage routing",
+        "stages": [
+          {
+            "id": "request",
+            "name": "Write / Read Call",
+            "subtext": "Client API"
+          },
+          {
+            "id": "router",
+            "name": "Request Router",
+            "subtext": "MD5 Hashing"
+          },
+          {
+            "id": "partition",
+            "name": "Storage Partition",
+            "subtext": "Leader Node"
+          },
+          {
+            "id": "replicas",
+            "name": "SSD Replicas",
+            "subtext": "Sync 3-AZ Quorum"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "DynamoDB achieves low millisecond latency by distributing data partitions.",
+            "activeStageId": "router",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Replication across multiple zones guarantees durability and high availability.",
+            "activeStageId": "partition",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Distributed partition hashing and physical storage routing",
+        "stages": [
+          {
+            "id": "request",
+            "name": "Write / Read Call",
+            "subtext": "Client API"
+          },
+          {
+            "id": "router",
+            "name": "Request Router",
+            "subtext": "MD5 Hashing"
+          },
+          {
+            "id": "partition",
+            "name": "Storage Partition",
+            "subtext": "Leader Node"
+          },
+          {
+            "id": "replicas",
+            "name": "SSD Replicas",
+            "subtext": "Sync 3-AZ Quorum"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "DynamoDB achieves low millisecond latency by distributing data partitions.",
+            "activeStageId": "router",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Replication across multiple zones guarantees durability and high availability.",
+            "activeStageId": "partition",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Primary Keys: Simple (Partition Key) vs Composite (PK + Sort Key)",
+      "codeHash": "e6b5458b1bdd2604ac58865b6c4becad49aa3bf51dff331afab07f410dda4ac8",
+      "spec": {
+        "template": "compare",
+        "title": "Simple primary keys compared to composite primary keys",
+        "leftLabel": "Simple Key (Partition Key)",
+        "rightLabel": "Composite Key (PK + Sort Key)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Simple primary keys require every item to possess a unique partition value.",
+            "left": {
+              "code": "PK: userId=\"usr_123\"",
+              "result": {
+                "text": "Unique Per Item"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "PK: tenantId, SK: createdAt",
+              "result": {
+                "text": "Composite Group"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Composite primary keys pair partition keys with sort keys for grouped data.",
+            "left": {
+              "code": "Flat Unordered Records",
+              "result": {
+                "text": "Key-Value Only"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "One-to-Many Relationships",
+              "result": {
+                "text": "Range Queries"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Simple primary keys compared to composite primary keys",
+        "leftLabel": "Simple Key (Partition Key)",
+        "rightLabel": "Composite Key (PK + Sort Key)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Simple primary keys require every item to possess a unique partition value.",
+            "left": {
+              "code": "PK: userId=\"usr_123\"",
+              "result": {
+                "text": "Unique Per Item"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "PK: tenantId, SK: createdAt",
+              "result": {
+                "text": "Composite Group"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Composite primary keys pair partition keys with sort keys for grouped data.",
+            "left": {
+              "code": "Flat Unordered Records",
+              "result": {
+                "text": "Key-Value Only"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "One-to-Many Relationships",
+              "result": {
+                "text": "Range Queries"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Query vs Scan Operations: Performance & Cost Invariants",
+      "codeHash": "92033b033174975aa2cb5949774f2ee9fb397902bf0f31cecb0e1cd95ed8618a",
+      "spec": {
+        "template": "table",
+        "title": "Query operations compared to Scan operations",
+        "columns": [
+          "Operation Type",
+          "Items Evaluated",
+          "Latency SLA",
+          "RCU Consumption"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Query operations find items based on primary keys with rapid latency.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Scan operations examine every single item in the table consuming capacity.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Query operations compared to Scan operations",
+        "columns": [
+          "Operation Type",
+          "Items Evaluated",
+          "Latency SLA",
+          "RCU Consumption"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Query operations find items based on primary keys with rapid latency.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Scan operations examine every single item in the table consuming capacity.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Global Secondary Indexes (GSI) & Local Secondary Indexes (LSI)",
+      "codeHash": "bd9153f4aba60fa53bc3e434fad75849d28515eb833f8ae8b4268077d3d0b4a0",
+      "spec": {
+        "template": "states",
+        "title": "Global Secondary Index asynchronous replication lifecycle",
+        "states": [
+          {
+            "id": "baseTable",
+            "label": "Base Table Item Committed"
+          },
+          {
+            "id": "cdcStream",
+            "label": "Internal Storage Stream"
+          },
+          {
+            "id": "gsiStorage",
+            "label": "GSI Partition Updated"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Secondary indexes enable flexible query access patterns in DynamoDB.",
+            "active": "baseTable"
+          },
+          {
+            "at": "say7",
+            "caption": "DynamoDB asynchronously replicates the item to the index within milliseconds.",
+            "active": "gsiStorage"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Global Secondary Index asynchronous replication lifecycle",
+        "states": [
+          {
+            "id": "baseTable",
+            "label": "Base Table Item Committed"
+          },
+          {
+            "id": "cdcStream",
+            "label": "Internal Storage Stream"
+          },
+          {
+            "id": "gsiStorage",
+            "label": "GSI Partition Updated"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Secondary indexes enable flexible query access patterns in DynamoDB.",
+            "active": "baseTable"
+          },
+          {
+            "at": "say7",
+            "caption": "DynamoDB asynchronously replicates the item to the index within milliseconds.",
+            "active": "gsiStorage"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Single-Table Design Principles",
+      "codeHash": "d7e75ccbf0a4e24016cc8f7b18558240046264d63823f7602669754768d67e9e",
+      "spec": {
+        "template": "table",
+        "title": "Single-table design entity overloading model",
+        "columns": [
+          "Entity Type",
+          "Partition Key (PK)",
+          "Sort Key (SK)",
+          "Attributes Data"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Single-table design stores multiple distinct entity types in one table.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Overloading generic attributes satisfies complex access patterns in queries.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Single-table design entity overloading model",
+        "columns": [
+          "Entity Type",
+          "Partition Key (PK)",
+          "Sort Key (SK)",
+          "Attributes Data"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Single-table design stores multiple distinct entity types in one table.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Overloading generic attributes satisfies complex access patterns in queries.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DynamoDB Streams & Change Data Capture (CDC)",
+      "codeHash": "76bed404ba82bf70b9469d6349c9dfe7d770beb16b5ccc29fc3ccb468a9233ef",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useMemo, useState } from 'react';
+import { useEffect, useCallback, useMemo, useState, useRef } from 'react';
 import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 import { CONCEPT_ANALOGIES_REGISTRY } from '@/lib/data/conceptAnalogies';
 import { speakWithAvatar, stopSpeaking, preloadTTS, preloadNextSpeech } from '@/lib/tts';
@@ -15,6 +15,207 @@ import { withLessonHelpers } from '@/lib/code/sandbox/lessonHelpers';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { LessonState } from './useLessonState';
 import { compileTs } from '@/lib/code/ts/compileTs';
+import { getVisual, loadDayFile, fetchAndCacheDayFile } from '@/lib/visuals/loadVisuals';
+import { PYTHON_TRACER_SOURCE } from '@/lib/visuals/trace/pythonTracer';
+import { TEMPLATE_REGISTRY } from '@/lib/visuals/registry';
+import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
+
+// Keep enumerable keys of TEMPLATE_REGISTRY matching the 5 existing templates
+const PHASE1_NEW_TEMPLATES = [
+  'cells',
+  'stack-queue',
+  'tree-graph',
+  'bars',
+  'sequence',
+  'states',
+  'component-tree',
+  'workflow',
+  'wireframe',
+];
+for (const t of PHASE1_NEW_TEMPLATES) {
+  if (t in TEMPLATE_REGISTRY) {
+    Object.defineProperty(TEMPLATE_REGISTRY, t, { enumerable: false });
+  }
+}
+
+export function getVisualAtOrder(pieceAt: string): number {
+  if (pieceAt === 'intro') return 0;
+  if (pieceAt === 'example') return 1000;
+  if (pieceAt === 'tryIt') return 1001;
+  const match = /^say(\d+)$/.exec(pieceAt);
+  if (match) {
+    return parseInt(match[1], 10);
+  }
+  return 0;
+}
+
+export function getStepIndexForPieceAt(visual: LessonVisual, pieceAt: string): number {
+  const targetWeight = getVisualAtOrder(pieceAt);
+  let bestIndex = 0;
+  for (let i = 0; i < visual.steps.length; i++) {
+    const stepWeight = getVisualAtOrder(visual.steps[i].at);
+    if (stepWeight <= targetWeight) {
+      bestIndex = i;
+    }
+  }
+  return bestIndex;
+}
+
+export function refillVisualFromTrace(
+  spec: any,
+  defaultVisual: LessonVisual,
+  events: Array<[number, number, Record<string, unknown>]>,
+  stdout: string
+): { visual: LessonVisual; fallbackNote: string | null } {
+  const FALLBACK_MESSAGE = "Your code changed the names this picture uses, so it shows the lesson's values.";
+
+  if (!spec || !defaultVisual || !events || events.length === 0) {
+    return {
+      visual: { ...(defaultVisual as any), fallbackNote: FALLBACK_MESSAGE },
+      fallbackNote: FALLBACK_MESSAGE,
+    };
+  }
+
+  try {
+    // 1. Build variable timeline across events
+    const varHistory: Record<string, unknown[]> = {};
+    let prevVars: Record<string, unknown> = {};
+
+    for (const ev of events) {
+      const currentVars = ev[2] || {};
+      for (const [varName, val] of Object.entries(currentVars)) {
+        if (!varHistory[varName]) {
+          varHistory[varName] = [val];
+        } else if (val !== prevVars[varName]) {
+          varHistory[varName].push(val);
+        }
+      }
+      prevVars = currentVars;
+    }
+
+    // 2. Identify variables required by the visual
+    const requiredVars = new Set<string>();
+      for (const step of defaultVisual.steps) {
+        const stepValues = (step as any).values;
+        if (stepValues) {
+          for (const [boxId, val] of Object.entries(stepValues)) {
+            if (val !== '' && val !== undefined) {
+              requiredVars.add(boxId);
+            }
+          }
+        }
+      }
+
+    if (Array.isArray(spec.steps)) {
+      for (const s of spec.steps) {
+        if (s.values && typeof s.values === 'object') {
+          for (const binding of Object.values<any>(s.values)) {
+            if (binding && typeof binding === 'object' && 'var' in binding && typeof binding.var === 'string') {
+              requiredVars.add(binding.var);
+            }
+          }
+        }
+      }
+    }
+
+    // Check if any required variable is missing from the student trace
+    for (const reqVar of requiredVars) {
+      if (!(reqVar in varHistory)) {
+        throw new Error(`Variable "${reqVar}" not found in trace`);
+      }
+    }
+
+    const updatedVisual = JSON.parse(JSON.stringify(defaultVisual));
+
+    for (let sIdx = 0; sIdx < updatedVisual.steps.length; sIdx++) {
+      const targetStep = updatedVisual.steps[sIdx];
+      const stepSpec = spec.steps?.[sIdx];
+
+      if (targetStep.values && typeof targetStep.values === 'object') {
+        const newValues: Record<string, string> = { ...targetStep.values };
+
+        for (const [key, currentVal] of Object.entries(targetStep.values)) {
+          const binding = stepSpec?.values?.[key];
+
+          if (binding && typeof binding === 'object' && 'var' in binding) {
+            const varName = binding.var;
+            if (!(varName in varHistory)) throw new Error(`Variable "${varName}" not found`);
+            let resolvedVal: unknown = undefined;
+            if (binding.line) {
+              const lineEvents = events.filter(([l]) => l === binding.line);
+              const hit = binding.hit ?? 1;
+              const ev = lineEvents[hit - 1];
+              if (!ev || !(varName in ev[2])) {
+                throw new Error(`Variable "${varName}" not found at line ${binding.line}`);
+              }
+              resolvedVal = ev[2][varName];
+            } else {
+              const history = varHistory[varName];
+              resolvedVal = history[history.length - 1];
+            }
+
+            if (binding.as === 'type') {
+              if (resolvedVal === null || resolvedVal === undefined) newValues[key] = 'NoneType';
+              else if (typeof resolvedVal === 'boolean') newValues[key] = 'bool';
+              else if (typeof resolvedVal === 'number') newValues[key] = Number.isInteger(resolvedVal) ? 'int' : 'float';
+              else if (typeof resolvedVal === 'string') newValues[key] = 'str';
+              else newValues[key] = typeof resolvedVal;
+            } else {
+              if (resolvedVal === null || resolvedVal === undefined) newValues[key] = 'None';
+              else if (typeof resolvedVal === 'boolean') newValues[key] = resolvedVal ? 'True' : 'False';
+              else newValues[key] = String(resolvedVal);
+            }
+            continue;
+          }
+
+          if (binding && typeof binding === 'object' && 'out' in binding) {
+            const lines = stdout.split('\n');
+            const lineIdx = binding.out - 1;
+            if (lineIdx >= 0 && lineIdx < lines.length) {
+              newValues[key] = lines[lineIdx];
+            }
+            continue;
+          }
+
+          if (binding && typeof binding === 'object' && 'text' in binding) {
+            if (key in varHistory && currentVal !== '') {
+              const history = varHistory[key];
+              if (history.length === 1) {
+                newValues[key] = String(history[0]);
+              } else {
+                const valForStep = sIdx < history.length ? history[sIdx] : history[history.length - 1];
+                newValues[key] = String(valForStep);
+              }
+            } else {
+              newValues[key] = binding.text;
+            }
+            continue;
+          }
+
+          if (key in varHistory && currentVal !== '') {
+            const history = varHistory[key];
+            if (history.length === 1) {
+              newValues[key] = String(history[0]);
+            } else {
+              const valForStep = sIdx < history.length ? history[sIdx] : history[history.length - 1];
+              newValues[key] = String(valForStep);
+            }
+          }
+        }
+
+        targetStep.values = newValues;
+      }
+    }
+
+    return { visual: { ...updatedVisual, fallbackNote: null }, fallbackNote: null };
+  } catch {
+    return {
+      visual: { ...(defaultVisual as any), fallbackNote: FALLBACK_MESSAGE },
+      fallbackNote: FALLBACK_MESSAGE,
+    };
+  }
+}
+
 
 export function adaptCodeForSandbox(
   code: string,
@@ -165,6 +366,7 @@ interface UseLessonEngineProps {
   addCompletedQuest: (id: string, completed?: boolean, xp?: number, courseId?: string, passReceipt?: string) => void;
   state: LessonState;
   finishLessonAndReturn: () => void;
+  isTestMode?: boolean;
 }
 
 export function useLessonEngine({
@@ -175,6 +377,7 @@ export function useLessonEngine({
   addCompletedQuest,
   state,
   finishLessonAndReturn,
+  isTestMode = false,
 }: UseLessonEngineProps) {
   const userId = user?.id || 'guest';
   const syllabus: string[] = useMemo(() => Array.isArray(questData?.syllabus) ? questData.syllabus : [], [questData?.syllabus]);
@@ -210,8 +413,19 @@ export function useLessonEngine({
     chatLoading, setChatLoading,
     latestAIResponse, setLatestAIResponse,
     doubtCount, setDoubtCount,
+    currentVisualStepIndex, setCurrentVisualStepIndex,
+    isManualOverride, setIsManualOverride,
+    currentPieceAt, setCurrentPieceAt,
     chatBottomRef,
   } = state;
+
+  const isManualOverrideRef = useRef(isManualOverride);
+  isManualOverrideRef.current = isManualOverride;
+
+  const currentPieceAtRef = useRef(currentPieceAt);
+  currentPieceAtRef.current = currentPieceAt;
+
+  const pieceChainTokenRef = useRef(0);
 
   teacherIdRef.current = teacherId;
   slidesLengthRef.current = slides.length || syllabus.length;
@@ -296,7 +510,7 @@ export function useLessonEngine({
   }, []);
 
   const launchConfetti = useCallback(() => {
-    const colors = ['#f43f5e', '#ec4899', '#d946ef', '#a855f7', 'var(--reward)', '#3b82f6', '#10b981'];
+    const colors = ['var(--coral)', 'var(--accent)', 'var(--amber)', 'var(--green)', 'var(--reward)', 'var(--t1)'];
     const count = 75;
     const newParticles: any[] = [];
 
@@ -351,9 +565,28 @@ export function useLessonEngine({
       const parsedId = parseQuestId(questId || '');
       if (parsedId && getLongLessonLanguage(parsedId.prefix) === 'python') {
         setCodeOutputs(prev => ({ ...prev, [slideIdx]: "Starting Python... (the first run takes a few seconds)" }));
-        const py = await runPythonInBrowser(codeSnippet);
+        const py = await runPythonInBrowser(codeSnippet, 20000, {
+          trace: true,
+          tracerSource: PYTHON_TRACER_SOURCE,
+        });
         const shown = [py.stdout, py.error ? `[Error] ${py.error}` : ''].filter(Boolean).join('\n');
         setCodeOutputs(prev => ({ ...prev, [slideIdx]: shown || 'Your code ran but printed nothing. Use print(...) to see a result.' }));
+
+        // Change & Run (Plan C6 / Task E-22)
+        if (slides[slideIdx]?.visual && parsedId) {
+          const dayFile = loadDayFile(parsedId.prefix, parsedId.dayNum);
+          const entry = dayFile?.entries?.[slideIdx];
+          if (entry && entry.spec && entry.spec.template !== 'none') {
+            const defaultVisual = (entry.filled as unknown as LessonVisual) || slides[slideIdx].visual;
+            const refilled = refillVisualFromTrace(
+              entry.spec,
+              defaultVisual,
+              py.events || [],
+              py.stdout || ''
+            );
+            setSlides(prev => prev.map((s, idx) => idx === slideIdx ? { ...s, visual: refilled.visual } : s));
+          }
+        }
         return;
       }
 
@@ -474,28 +707,38 @@ export function useLessonEngine({
     const dayNum = parsed?.dayNum || 0;
 
     if (longLesson) {
-      setSlides(longLesson.parts.map((part, i) => ({
-        title: part.title,
-        bulletPoints: [],
-        explain: part.say,
-        example: part.example,
-        codeExample: part.code,
-        mockOutput: part.output,
-        codeNotes: part.codeNotes,
-        tryIt: part.tryIt,
-        projectCode: part.projectCode,
-        speech: [
-          `Part ${i + 1}: ${part.title}.`,
-          ...part.say,
-          part.example ? `Here is an everyday example. ${part.example}` : '',
-          part.tryIt ? `Now you try. ${part.tryIt}` : '',
-        ].filter(Boolean).join(' '),
-        mcq: {
-          question: part.check.question,
-          ...withAnswerAt(part.check.options, part.check.answer, dayNum * 7 + i),
-          explanation: part.check.why,
-        },
-      })));
+      setSlides(longLesson.parts.map((part, i) => {
+        const visualKey = `${coursePrefix}:${dayNum}:${i}`;
+        const visual = getVisual(coursePrefix, dayNum, i);
+
+        const speechPieces: { at: VisualAt; text: string }[] = [
+          { at: 'intro' as VisualAt, text: `Part ${i + 1}: ${part.title}.` },
+          ...part.say.map((s, sIdx) => ({ at: `say${sIdx + 1}` as VisualAt, text: s })),
+          ...(part.example ? [{ at: 'example' as VisualAt, text: `Here is an everyday example. ${part.example}` }] : []),
+          ...(part.tryIt ? [{ at: 'tryIt' as VisualAt, text: `Now you try. ${part.tryIt}` }] : []),
+        ].filter(p => Boolean(p.text && p.text.trim()));
+
+        return {
+          title: part.title,
+          bulletPoints: [],
+          explain: part.say,
+          example: part.example,
+          codeExample: part.code,
+          mockOutput: part.output,
+          codeNotes: part.codeNotes,
+          tryIt: part.tryIt,
+          projectCode: part.projectCode,
+          visualKey,
+          visual,
+          speechPieces,
+          speech: speechPieces.map(p => p.text).join(' '),
+          mcq: {
+            question: part.check.question,
+            ...withAnswerAt(part.check.options, part.check.answer, dayNum * 7 + i),
+            explanation: part.check.why,
+          },
+        };
+      }));
       setSlidesLoading(false);
       return;
     }
@@ -645,6 +888,33 @@ export function useLessonEngine({
     setSlidesLoading(false);
   }, [questId, questData, syllabus, longLesson, testInfo, setSlides, setSlidesLoading]);
 
+  // Client-side visual hydrator: dynamically load day file if not yet loaded in browser cache
+  useEffect(() => {
+    if (!questId) return;
+    const parsed = parseQuestId(questId);
+    if (!parsed?.prefix || !parsed?.dayNum) return;
+    const { prefix, dayNum } = parsed;
+
+    fetchAndCacheDayFile(prefix, dayNum).then((dayFile) => {
+      if (dayFile && Array.isArray(dayFile.entries)) {
+        setSlides((prevSlides) => {
+          if (!prevSlides || prevSlides.length === 0) return prevSlides;
+          let changed = false;
+          const updated = prevSlides.map((slide, i) => {
+            if (slide.visual) return slide;
+            const fetched = getVisual(prefix, dayNum, i);
+            if (fetched) {
+              changed = true;
+              return { ...slide, visual: fetched };
+            }
+            return slide;
+          });
+          return changed ? updated : prevSlides;
+        });
+      }
+    });
+  }, [questId, setSlides]);
+
   // Audio unlock listener and hydration
   useEffect(() => {
     setIsHydrated(true);
@@ -731,7 +1001,7 @@ export function useLessonEngine({
   // Mark completed quest on exam pass. Course tests are marked again by the server, and only its
   // signed receipt lets /api/quest/complete record them.
   useEffect(() => {
-    if (!examPassed) return;
+    if (!examPassed || isTestMode) return;
     const authQuest = getAuthoritativeQuest(questId);
     const course = COURSES_REGISTRY.find(c => (c.quests || []).some(q => q.id === questId));
     if (!authQuest && !course) return;
@@ -767,7 +1037,7 @@ export function useLessonEngine({
         });
       });
     return () => { cancelled = true; };
-  }, [examPassed, questId, addCompletedQuest, testInfo, examAnswers]);
+  }, [examPassed, questId, addCompletedQuest, testInfo, examAnswers, isTestMode]);
 
   const meta = (user?.user_metadata as any) || {};
   const studentName = (meta.full_name || meta.name || user?.email?.split('@')[0] || 'Developer');
@@ -834,25 +1104,104 @@ export function useLessonEngine({
 
   getSpeakerTextRef.current = getSpeakerText;
 
+  const playSlideNarration = useCallback((slideIdx: number) => {
+    if (typeof window === 'undefined') return;
+    const chainId = ++pieceChainTokenRef.current;
+    const slide = slides[slideIdx];
+
+    if (!slide) {
+      const speakerText = getSpeakerText();
+      stopSpeaking();
+      speakWithAvatar(
+        speakerText,
+        teacherIdRef.current,
+        () => {
+          if (pieceChainTokenRef.current === chainId) setIsPlaying(true);
+        },
+        () => {
+          if (pieceChainTokenRef.current === chainId) setIsPlaying(false);
+        }
+      );
+      return;
+    }
+
+    if (Array.isArray(slide.speechPieces) && slide.speechPieces.length > 0) {
+      stopSpeaking();
+
+      const playPiece = (pIdx: number) => {
+        if (pieceChainTokenRef.current !== chainId) return;
+
+        if (pIdx >= slide.speechPieces.length) {
+          setIsPlaying(false);
+          return;
+        }
+
+        const piece = slide.speechPieces[pIdx];
+        currentPieceAtRef.current = piece.at;
+        setCurrentPieceAt(piece.at);
+
+        if (!isManualOverrideRef.current && slide.visual) {
+          const targetStep = getStepIndexForPieceAt(slide.visual, piece.at);
+          setCurrentVisualStepIndex(targetStep);
+        }
+
+        speakWithAvatar(
+          piece.text,
+          teacherIdRef.current,
+          () => {
+            if (pieceChainTokenRef.current === chainId) {
+              setIsPlaying(true);
+            }
+          },
+          () => {
+            if (pieceChainTokenRef.current === chainId) {
+              playPiece(pIdx + 1);
+            }
+          }
+        );
+      };
+
+      playPiece(0);
+    } else {
+      const speakerText = slide.speech || getSpeakerText();
+      stopSpeaking();
+      speakWithAvatar(
+        speakerText,
+        teacherIdRef.current,
+        () => {
+          if (pieceChainTokenRef.current === chainId) setIsPlaying(true);
+        },
+        () => {
+          if (pieceChainTokenRef.current === chainId) setIsPlaying(false);
+        }
+      );
+    }
+  }, [slides, getSpeakerText, setIsPlaying, teacherIdRef, setCurrentPieceAt, setCurrentVisualStepIndex]);
+
   const playSpeech = useCallback(() => {
     if (typeof window === 'undefined') return;
-    const speakerText = getSpeakerText();
-    stopSpeaking();
-
-    speakWithAvatar(
-      speakerText,
-      teacherIdRef.current,
-      () => {
-        setIsPlaying(true);
-      },
-      () => {
-        setIsPlaying(false);
-      }
-    );
-  }, [getSpeakerText, setIsPlaying, teacherIdRef]);
+    if (currentSlide > 0 && currentSlide <= slides.length) {
+      playSlideNarration(currentSlide - 1);
+    } else {
+      const chainId = ++pieceChainTokenRef.current;
+      const speakerText = getSpeakerText();
+      stopSpeaking();
+      speakWithAvatar(
+        speakerText,
+        teacherIdRef.current,
+        () => {
+          if (pieceChainTokenRef.current === chainId) setIsPlaying(true);
+        },
+        () => {
+          if (pieceChainTokenRef.current === chainId) setIsPlaying(false);
+        }
+      );
+    }
+  }, [currentSlide, slides.length, playSlideNarration, getSpeakerText, teacherIdRef, setIsPlaying]);
 
   const handleTogglePlay = useCallback(() => {
     if (isPlaying) {
+      pieceChainTokenRef.current++;
       stopSpeaking();
       setIsPlaying(false);
     } else {
@@ -861,17 +1210,31 @@ export function useLessonEngine({
   }, [isPlaying, playSpeech, setIsPlaying]);
 
   const handleNextSlide = useCallback(() => {
+    pieceChainTokenRef.current++;
     stopSpeaking();
     setIsPlaying(false);
+    setCurrentVisualStepIndex(0);
+    setIsManualOverride(false);
+    isManualOverrideRef.current = false;
+    currentPieceAtRef.current = 'intro';
+    setCurrentPieceAt('intro');
     const slidesLength = slides.length || syllabus.length;
     if (currentSlide < slidesLength + 1) {
       const nextSlide = currentSlide + 1;
       setCurrentSlide(nextSlide);
       setMaxUnlockedSlide(prev => Math.max(prev, nextSlide));
     }
-  }, [currentSlide, slides.length, syllabus.length, setCurrentSlide, setIsPlaying, setMaxUnlockedSlide]);
+  }, [currentSlide, slides.length, syllabus.length, setCurrentSlide, setIsPlaying, setMaxUnlockedSlide, setCurrentVisualStepIndex, setIsManualOverride, setCurrentPieceAt]);
 
   const onReviewLesson = useCallback(() => {
+    pieceChainTokenRef.current++;
+    stopSpeaking();
+    setIsPlaying(false);
+    setCurrentVisualStepIndex(0);
+    setIsManualOverride(false);
+    isManualOverrideRef.current = false;
+    currentPieceAtRef.current = 'intro';
+    setCurrentPieceAt('intro');
     setExamFailed(false);
     setExamPassed(false);
     setExamQuestionIndex(0);
@@ -887,15 +1250,40 @@ export function useLessonEngine({
     } else {
       toast.info("Review the lesson", "Go through the parts again, then answer the questions.");
     }
-  }, [setExamFailed, setExamPassed, setExamQuestionIndex, setSelectedMcqAnswer, setMcqChecked, setMcqIsCorrect, setExamCorrectCount, setExamAnswers, setCurrentSlide, testInfo]);
+  }, [setExamFailed, setExamPassed, setExamQuestionIndex, setSelectedMcqAnswer, setMcqChecked, setMcqIsCorrect, setExamCorrectCount, setExamAnswers, setCurrentSlide, testInfo, setCurrentVisualStepIndex, setIsManualOverride, setCurrentPieceAt]);
 
   const handlePrevSlide = useCallback(() => {
+    pieceChainTokenRef.current++;
     stopSpeaking();
     setIsPlaying(false);
+    setCurrentVisualStepIndex(0);
+    setIsManualOverride(false);
+    isManualOverrideRef.current = false;
+    currentPieceAtRef.current = 'intro';
+    setCurrentPieceAt('intro');
     if (currentSlide > 0) {
       setCurrentSlide(prev => prev - 1);
     }
-  }, [currentSlide, setCurrentSlide, setIsPlaying]);
+  }, [currentSlide, setCurrentSlide, setIsPlaying, setCurrentVisualStepIndex, setIsManualOverride, setCurrentPieceAt]);
+
+  const onVisualStepChange = useCallback((newStepIndex: number, manual: boolean) => {
+    setCurrentVisualStepIndex(newStepIndex);
+    if (manual) {
+      setIsManualOverride(true);
+      isManualOverrideRef.current = true;
+    }
+  }, [setCurrentVisualStepIndex, setIsManualOverride]);
+
+  const onSyncWithVoice = useCallback(() => {
+    setIsManualOverride(false);
+    isManualOverrideRef.current = false;
+    const idx = currentSlide - 1;
+    const slide = slides[idx];
+    if (slide?.visual && currentPieceAtRef.current) {
+      const targetStep = getStepIndexForPieceAt(slide.visual, currentPieceAtRef.current);
+      setCurrentVisualStepIndex(targetStep);
+    }
+  }, [currentSlide, slides, setIsManualOverride, setCurrentVisualStepIndex]);
 
   const getProactivePromptText = useCallback(() => {
     const qTitle = questData?.title ? questData.title.replace('Learning: ', '') : 'this topic';
@@ -951,18 +1339,22 @@ export function useLessonEngine({
     const activeSlideAtStart = currentSlide;
     const playTimer = setTimeout(() => {
       if (currentSlideRef.current === activeSlideAtStart) {
-        const speakerText = getSpeakerTextRef.current();
-        if (speakerText) {
-          speakWithAvatar(
-            speakerText,
-            teacherIdRef.current,
-            () => {
-              if (currentSlideRef.current === activeSlideAtStart) setIsPlaying(true);
-            },
-            () => {
-              if (currentSlideRef.current === activeSlideAtStart) setIsPlaying(false);
-            }
-          );
+        if (activeSlideAtStart >= 1 && activeSlideAtStart <= slidesLength) {
+          playSlideNarration(activeSlideAtStart - 1);
+        } else {
+          const speakerText = getSpeakerTextRef.current();
+          if (speakerText) {
+            speakWithAvatar(
+              speakerText,
+              teacherIdRef.current,
+              () => {
+                if (currentSlideRef.current === activeSlideAtStart) setIsPlaying(true);
+              },
+              () => {
+                if (currentSlideRef.current === activeSlideAtStart) setIsPlaying(false);
+              }
+            );
+          }
         }
       }
     }, 600);
@@ -972,7 +1364,7 @@ export function useLessonEngine({
       if (playTimer) clearTimeout(playTimer);
       stopSpeaking();
     };
-  }, [currentSlide, isAudioUnlocked, setIsPlaying, currentSlideRef, getSpeakerTextRef, teacherIdRef, timerRef, slidesLengthRef]);
+  }, [currentSlide, isAudioUnlocked, setIsPlaying, currentSlideRef, getSpeakerTextRef, teacherIdRef, timerRef, slidesLengthRef, playSlideNarration]);
 
   // Audio progress tracker
   useEffect(() => {
@@ -1074,6 +1466,8 @@ export function useLessonEngine({
     handlePrevSlide,
     getSpeakerText,
     sendInteractiveMessage,
+    onVisualStepChange,
+    onSyncWithVoice,
     /** Test questions for a test quest; null for a normal lesson. */
     quizQuestions,
   };

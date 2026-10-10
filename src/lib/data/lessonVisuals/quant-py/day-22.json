@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What alpha means",
+      "codeHash": "4c99e3698d0f7d931ad2a17f9b557fea1a77aebbfc02dd13c43f79df4519a7dc",
+      "spec": {
+        "template": "table",
+        "title": "Statistical edge and trade volume accumulation",
+        "columns": [
+          "win_rate",
+          "pnl"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Alpha signals predict market returns beyond simple benchmark movements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "win_rate"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Statistical arbitrage aggregates thousands of repeated small edges.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "win_rate"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.5"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "High volume execution generates substantial edge above baseline win rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "win_rate"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.5"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.52"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Statistical edge and trade volume accumulation",
+        "columns": [
+          "win_rate",
+          "pnl"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Alpha signals predict market returns beyond simple benchmark movements.",
+            "rows": [
+              {
+                "cells": [
+                  "win_rate",
+                  "pnl"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Statistical arbitrage aggregates thousands of repeated small edges.",
+            "rows": [
+              {
+                "cells": [
+                  "win_rate",
+                  "pnl"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.5",
+                  "pnl"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "High volume execution generates substantial edge above baseline win rates.",
+            "rows": [
+              {
+                "cells": [
+                  "win_rate",
+                  "pnl"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.5",
+                  "pnl"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.52",
+                  "pnl"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pairs and the spread",
+      "codeHash": "b49bfffcf0425526d8d98cee9b21c7338d23ae923486f0c7aca9b2b55940246b",
+      "spec": {
+        "template": "table",
+        "title": "Asset pairs regression hedge ratio and spread",
+        "columns": [
+          "mb",
+          "ma",
+          "beta"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pairs trading identifies correlated asset prices with shared dynamics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mb"
+                  },
+                  {
+                    "text": "ma"
+                  },
+                  {
+                    "text": "beta"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The hedge ratio beta determines the historical spread relation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mb"
+                  },
+                  {
+                    "text": "ma"
+                  },
+                  {
+                    "text": "beta"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "50.2"
+                  },
+                  {
+                    "text": "101.0"
+                  },
+                  {
+                    "text": "beta"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cointegrated price series mean revert towards stationary equilibrium spreads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mb"
+                  },
+                  {
+                    "text": "ma"
+                  },
+                  {
+                    "text": "beta"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "50.2"
+                  },
+                  {
+                    "text": "101.0"
+                  },
+                  {
+                    "text": "beta"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "52.9"
+                  },
+                  {
+                    "text": "106.1"
+                  },
+                  {
+                    "text": "beta"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Asset pairs regression hedge ratio and spread",
+        "columns": [
+          "mb",
+          "ma",
+          "beta"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pairs trading identifies correlated asset prices with shared dynamics.",
+            "rows": [
+              {
+                "cells": [
+                  "mb",
+                  "ma",
+                  "beta"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The hedge ratio beta determines the historical spread relation.",
+            "rows": [
+              {
+                "cells": [
+                  "mb",
+                  "ma",
+                  "beta"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "50.2",
+                  "101.0",
+                  "beta"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cointegrated price series mean revert towards stationary equilibrium spreads.",
+            "rows": [
+              {
+                "cells": [
+                  "mb",
+                  "ma",
+                  "beta"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "50.2",
+                  "101.0",
+                  "beta"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "52.9",
+                  "106.1",
+                  "beta"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Z-score signals",
+      "codeHash": "11c199c34699c9299e18da7e2cea9a0ccce755a6ac836bbf976075b801cd59f3",
+      "spec": {
+        "template": "table",
+        "title": "Spread standardization and signal trigger thresholds",
+        "columns": [
+          "spread",
+          "mean",
+          "std",
+          "z"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standardised z scores normalize spread variations against moving windows.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "spread"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "std"
+                  },
+                  {
+                    "text": "z"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Threshold boundaries determine long, short or exit trading triggers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "spread"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "std"
+                  },
+                  {
+                    "text": "z"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5.0"
+                  },
+                  {
+                    "text": "2.0"
+                  },
+                  {
+                    "text": "1.2"
+                  },
+                  {
+                    "text": "z"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Elevated spread divergences signal short positions until reversion occurs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "spread"
+                  },
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "std"
+                  },
+                  {
+                    "text": "z"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5.0"
+                  },
+                  {
+                    "text": "2.0"
+                  },
+                  {
+                    "text": "1.2"
+                  },
+                  {
+                    "text": "z"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-2.0"
+                  },
+                  {
+                    "text": "2.0"
+                  },
+                  {
+                    "text": "1.2"
+                  },
+                  {
+                    "text": "z"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Spread standardization and signal trigger thresholds",
+        "columns": [
+          "spread",
+          "mean",
+          "std",
+          "z"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standardised z scores normalize spread variations against moving windows.",
+            "rows": [
+              {
+                "cells": [
+                  "spread",
+                  "mean",
+                  "std",
+                  "z"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Threshold boundaries determine long, short or exit trading triggers.",
+            "rows": [
+              {
+                "cells": [
+                  "spread",
+                  "mean",
+                  "std",
+                  "z"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "5.0",
+                  "2.0",
+                  "1.2",
+                  "z"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Elevated spread divergences signal short positions until reversion occurs.",
+            "rows": [
+              {
+                "cells": [
+                  "spread",
+                  "mean",
+                  "std",
+                  "z"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "5.0",
+                  "2.0",
+                  "1.2",
+                  "z"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "-2.0",
+                  "2.0",
+                  "1.2",
+                  "z"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mean reversion speed: half-life",
+      "codeHash": "c08fb62d15a8455d291e96ba7e67f3cf431643be9321e7eaddc3d75e672d9cc9",
+      "spec": {
+        "template": "table",
+        "title": "Ornstein-Uhlenbeck decay and spread half-life",
+        "columns": [
+          "theta",
+          "gap"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Slowly reverting spreads lock up valuable trading capital and risk limits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "theta"
+                  },
+                  {
+                    "text": "gap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Mean reversion speed parameters model gap shrinkage across intervals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "theta"
+                  },
+                  {
+                    "text": "gap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.1"
+                  },
+                  {
+                    "text": "10.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The half life determines required holding duration before mean return.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "theta"
+                  },
+                  {
+                    "text": "gap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.1"
+                  },
+                  {
+                    "text": "10.0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.1"
+                  },
+                  {
+                    "text": "gap"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Ornstein-Uhlenbeck decay and spread half-life",
+        "columns": [
+          "theta",
+          "gap"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Slowly reverting spreads lock up valuable trading capital and risk limits.",
+            "rows": [
+              {
+                "cells": [
+                  "theta",
+                  "gap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Mean reversion speed parameters model gap shrinkage across intervals.",
+            "rows": [
+              {
+                "cells": [
+                  "theta",
+                  "gap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.1",
+                  "10.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The half life determines required holding duration before mean return.",
+            "rows": [
+              {
+                "cells": [
+                  "theta",
+                  "gap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.1",
+                  "10.0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.1",
+                  "gap"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating and combining signals",
+      "codeHash": "59b1d3dfcc2d5e76d6cc6910893ee950899de903ae96d87ac6aa25622c79ccf2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: pairs and half-life",
+      "codeHash": "d15c5c6ad988f5fcb3d3d617edae1f6884b4e2a1ed7cdda64b4609a6cee2ff1a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

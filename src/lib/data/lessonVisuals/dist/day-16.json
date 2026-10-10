@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 16,
+  "promptSha": "7f69c19b159e93a69c68e634f52654e1dabaecb171febe74eb96d754e7de73ec",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Unreliability of Physical Clocks in Distributed Systems",
+      "codeHash": "fc634f77987d7629a2dd030f097536645fe4bb9050e2540c0ca723d1f425fcd8",
+      "spec": {
+        "template": "states",
+        "title": "Physical clock drift and causality breakdown states",
+        "states": [
+          {
+            "id": "hardwareDrift",
+            "label": "Hardware Clock Drift Accumulation"
+          },
+          {
+            "id": "ntpStepBack",
+            "label": "NTP Backward Step Glitch"
+          },
+          {
+            "id": "causalityInverted",
+            "label": "Causality Inversion Data Anomaly"
+          },
+          {
+            "id": "logicalClocks",
+            "label": "Logical Clocks Causality Capture"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Hardware clocks drift across machines due to temperature fluctuations.",
+            "activeStateId": "hardwareDrift",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say9",
+            "caption": "Distributed systems capture causality using logical clocks instead.",
+            "activeStateId": "logicalClocks",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Physical clock drift and causality breakdown states",
+        "states": [
+          {
+            "id": "hardwareDrift",
+            "label": "Hardware Clock Drift Accumulation"
+          },
+          {
+            "id": "ntpStepBack",
+            "label": "NTP Backward Step Glitch"
+          },
+          {
+            "id": "causalityInverted",
+            "label": "Causality Inversion Data Anomaly"
+          },
+          {
+            "id": "logicalClocks",
+            "label": "Logical Clocks Causality Capture"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Hardware clocks drift across machines due to temperature fluctuations.",
+            "activeStateId": "hardwareDrift",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say9",
+            "caption": "Distributed systems capture causality using logical clocks instead.",
+            "activeStateId": "logicalClocks",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lamport's 'Happened-Before' Relation ($a \\to b$)",
+      "codeHash": "bcf2ab7044efe86c5afded94ca20b3587651162889ca6d15772edd2608a5cdf6",
+      "spec": {
+        "template": "table",
+        "title": "Mathematical properties of the happened-before relation",
+        "columns": [
+          "Causal Relation",
+          "Symbolic Notation",
+          "Mathematical Rule",
+          "System Meaning"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The happened before relation captures causal influence between events.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Concurrent events have no causal relationship between one another.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Mathematical properties of the happened-before relation",
+        "columns": [
+          "Causal Relation",
+          "Symbolic Notation",
+          "Mathematical Rule",
+          "System Meaning"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The happened before relation captures causal influence between events.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Concurrent events have no causal relationship between one another.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lamport Timestamps: Scalar Logical Clock Algorithm",
+      "codeHash": "84984f0fa68fd5edc4d3730825ee47016f7aa708d596f4abddcf3a8eb989a40a",
+      "spec": {
+        "template": "workflow",
+        "title": "Lamport scalar clock tick and message merge workflow",
+        "workflow": [
+          {
+            "id": "localIncrement",
+            "label": "Increment Clock on Local Event",
+            "status": "completed"
+          },
+          {
+            "id": "attachMetadata",
+            "label": "Attach Clock Metadata on Send",
+            "status": "active"
+          },
+          {
+            "id": "mergeReceive",
+            "label": "Take Max Plus One on Message Receive",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each process increments its logical clock on internal events.",
+            "activeWorkflowId": "localIncrement",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say5",
+            "caption": "Receiver updates its clock using the maximum value plus one.",
+            "activeWorkflowId": "mergeReceive",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Lamport scalar clock tick and message merge workflow",
+        "workflow": [
+          {
+            "id": "localIncrement",
+            "label": "Increment Clock on Local Event",
+            "status": "completed"
+          },
+          {
+            "id": "attachMetadata",
+            "label": "Attach Clock Metadata on Send",
+            "status": "active"
+          },
+          {
+            "id": "mergeReceive",
+            "label": "Take Max Plus One on Message Receive",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each process increments its logical clock on internal events.",
+            "activeWorkflowId": "localIncrement",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say5",
+            "caption": "Receiver updates its clock using the maximum value plus one.",
+            "activeWorkflowId": "mergeReceive",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vector Clocks: Detecting Concurrent Conflicts & Causality",
+      "codeHash": "bc5ff1866878aefaf4cfc047972f510f10ba03917007afa9265e4908e1c4015e",
+      "spec": {
+        "template": "compare",
+        "title": "Comparison of Lamport timestamps versus vector clocks",
+        "left": {
+          "title": "Lamport Timestamps",
+          "items": [
+            "Single scalar integer per process",
+            "Cannot detect true concurrency",
+            "Cannot prove reverse causal implication"
+          ]
+        },
+        "right": {
+          "title": "Vector Clocks",
+          "items": [
+            "Array of integer clocks across all nodes",
+            "Element-wise comparison verifies causality",
+            "Detects concurrent conflicting edits"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every cluster node maintains an array vector of integers.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Vector comparison detects concurrent events and conflicting updates.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Lamport Timestamps",
+        "rightLabel": "Vector Clocks"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Comparison of Lamport timestamps versus vector clocks",
+        "left": {
+          "title": "Lamport Timestamps",
+          "items": [
+            "Single scalar integer per process",
+            "Cannot detect true concurrency",
+            "Cannot prove reverse causal implication"
+          ]
+        },
+        "right": {
+          "title": "Vector Clocks",
+          "items": [
+            "Array of integer clocks across all nodes",
+            "Element-wise comparison verifies causality",
+            "Detects concurrent conflicting edits"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every cluster node maintains an array vector of integers.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Vector comparison detects concurrent events and conflicting updates.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Lamport Timestamps",
+        "rightLabel": "Vector Clocks"
+      }
+    },
+    {
+      "partTitle": "Version Vectors in DynamoDB & Sibling Conflict Resolution",
+      "codeHash": "67700110718554570f9b6dd5a44727d79993428d333a663a54f96e562688621b",
+      "spec": {
+        "template": "sequence",
+        "title": "Dynamo sibling version resolution and client cart merge",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Application"
+          },
+          {
+            "id": "storage",
+            "label": "Distributed Database"
+          },
+          {
+            "id": "appResolver",
+            "label": "Cart Conflict Resolver"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "storage",
+            "label": "Read Key With Concurrent Writes",
+            "tone": "data"
+          },
+          {
+            "from": "storage",
+            "to": "client",
+            "label": "Return Sibling Versions",
+            "tone": "data"
+          },
+          {
+            "from": "client",
+            "to": "appResolver",
+            "label": "Merge Shopping Cart Items",
+            "tone": "ok"
+          },
+          {
+            "from": "appResolver",
+            "to": "storage",
+            "label": "Write Unified Version Vector",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "The database stores both concurrent versions as siblings.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "The client application merges cart items and writes back a unified vector.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Dynamo sibling version resolution and client cart merge",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Application"
+          },
+          {
+            "id": "storage",
+            "label": "Distributed Database"
+          },
+          {
+            "id": "appResolver",
+            "label": "Cart Conflict Resolver"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "storage",
+            "label": "Read Key With Concurrent Writes",
+            "tone": "data"
+          },
+          {
+            "from": "storage",
+            "to": "client",
+            "label": "Return Sibling Versions",
+            "tone": "data"
+          },
+          {
+            "from": "client",
+            "to": "appResolver",
+            "label": "Merge Shopping Cart Items",
+            "tone": "ok"
+          },
+          {
+            "from": "appResolver",
+            "to": "storage",
+            "label": "Write Unified Version Vector",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "The database stores both concurrent versions as siblings.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "The client application merges cart items and writes back a unified vector.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Vector Clock Engine with Concurrency & Conflict Detection",
+      "codeHash": "29bf9d0cefb2091b50c076e5531fd857a4204b5fada6b12aea40d6c1e4affa9f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

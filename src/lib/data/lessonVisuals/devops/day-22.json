@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 22,
+  "promptSha": "2c88a3fcf51c2261160e093af074d25e3dcfda8add677021bc967a8e980bb795",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Helm Architecture: Charts, Releases & The Engine",
+      "codeHash": "2013e5e092c22c3b96059fd9f35039e0727c0a7252cd87faa33ea8345e97ee90",
+      "spec": {
+        "template": "compare",
+        "title": "Helm release versions across deployment environments",
+        "leftLabel": "Staging Environment Release",
+        "rightLabel": "Production Environment Release",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Running release instances combine parameterized charts with active config.",
+            "left": {
+              "code": "name: 'payment-api-staging'",
+              "result": {
+                "text": "payment-api-staging"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "namespace: 'staging'",
+              "result": {
+                "text": "staging"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Independent releases isolate environment configurations within namespaces.",
+            "left": {
+              "code": "name: 'payment-api-prod'",
+              "result": {
+                "text": "payment-api-prod"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "namespace: 'prod'",
+              "result": {
+                "text": "prod"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Helm release versions across deployment environments",
+        "leftLabel": "Staging Environment Release",
+        "rightLabel": "Production Environment Release",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Running release instances combine parameterized charts with active config.",
+            "left": {
+              "code": "name: 'payment-api-staging'",
+              "result": {
+                "text": "payment-api-staging"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "namespace: 'staging'",
+              "result": {
+                "text": "staging"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Independent releases isolate environment configurations within namespaces.",
+            "left": {
+              "code": "name: 'payment-api-prod'",
+              "result": {
+                "text": "payment-api-prod"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "namespace: 'prod'",
+              "result": {
+                "text": "prod"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Helm Chart Directory Structure & Metadata",
+      "codeHash": "44c025fb3c7fb72117bcd983d7d106c2f9c2f2f915dc160dad8a43972063fbbe",
+      "spec": {
+        "template": "compare",
+        "title": "Helm chart packaging metadata and application versions",
+        "leftLabel": "Chart Package Metadata",
+        "rightLabel": "Upstream Application Version",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chart metadata defines semantic package versioning and descriptive summary.",
+            "left": {
+              "code": "name: 'order-service'",
+              "result": {
+                "text": "order-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "version: '1.4.0'",
+              "result": {
+                "text": "1.4.0"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Templates directory organizes parameterized kubernetes manifest definitions.",
+            "left": {
+              "code": "appVersion: '2.8.2'",
+              "result": {
+                "text": "2.8.2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "description: 'Enterprise Order Processing Microservice Helm Chart'",
+              "result": {
+                "text": "Enterprise Order Processing Microservice Helm Chart"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Helm chart packaging metadata and application versions",
+        "leftLabel": "Chart Package Metadata",
+        "rightLabel": "Upstream Application Version",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chart metadata defines semantic package versioning and descriptive summary.",
+            "left": {
+              "code": "name: 'order-service'",
+              "result": {
+                "text": "order-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "version: '1.4.0'",
+              "result": {
+                "text": "1.4.0"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Templates directory organizes parameterized kubernetes manifest definitions.",
+            "left": {
+              "code": "appVersion: '2.8.2'",
+              "result": {
+                "text": "2.8.2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "description: 'Enterprise Order Processing Microservice Helm Chart'",
+              "result": {
+                "text": "Enterprise Order Processing Microservice Helm Chart"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Go Template Syntax & Built-in Objects (.Values, .Release)",
+      "codeHash": "8a7672921c057a7cdcb58b1727b0b25983284e9eab1a4139d4b6ae751fd01439",
+      "spec": {
+        "template": "compare",
+        "title": "Helm template context values and release injection",
+        "leftLabel": "Release Context Values",
+        "rightLabel": "Container Image Config",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Release context injects deployment names and target namespace identifiers.",
+            "left": {
+              "code": "Name: 'payment-svc'",
+              "result": {
+                "text": "payment-svc"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Namespace: 'prod'",
+              "result": {
+                "text": "prod"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Template pipelines apply transforms directly formatting configuration values.",
+            "left": {
+              "code": "replicas: 3",
+              "result": {
+                "text": "replicas"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "repository: 'ghcr.io/pinit/payment'",
+              "result": {
+                "text": "ghcr.io/pinit/payment"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Helm template context values and release injection",
+        "leftLabel": "Release Context Values",
+        "rightLabel": "Container Image Config",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Release context injects deployment names and target namespace identifiers.",
+            "left": {
+              "code": "Name: 'payment-svc'",
+              "result": {
+                "text": "payment-svc"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Namespace: 'prod'",
+              "result": {
+                "text": "prod"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Template pipelines apply transforms directly formatting configuration values.",
+            "left": {
+              "code": "replicas: 3",
+              "result": {
+                "text": "replicas"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "repository: 'ghcr.io/pinit/payment'",
+              "result": {
+                "text": "ghcr.io/pinit/payment"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Environment Values Pattern: Staging vs Production",
+      "codeHash": "251b6a9b87fb97148c76a6618afa5b8848cb15f5bed4b5123cacbc6ac45e1f04",
+      "spec": {
+        "template": "compare",
+        "title": "Multi-environment values staging versus production overrides",
+        "leftLabel": "Staging Environment Overrides",
+        "rightLabel": "Production Environment Overrides",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Staging configuration provisions conservative replicas and lightweight limits.",
+            "left": {
+              "code": "ingressHost: 'staging-api.pinit.com'",
+              "result": {
+                "text": "staging-api.pinit.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cpuRequest: '100m'",
+              "result": {
+                "text": "100m"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Production values activate multi-zone affinity and strict ingress security.",
+            "left": {
+              "code": "ingressHost: 'api.pinit.com'",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cpuRequest: '500m'",
+              "result": {
+                "text": "500m"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Multi-environment values staging versus production overrides",
+        "leftLabel": "Staging Environment Overrides",
+        "rightLabel": "Production Environment Overrides",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Staging configuration provisions conservative replicas and lightweight limits.",
+            "left": {
+              "code": "ingressHost: 'staging-api.pinit.com'",
+              "result": {
+                "text": "staging-api.pinit.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cpuRequest: '100m'",
+              "result": {
+                "text": "100m"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Production values activate multi-zone affinity and strict ingress security.",
+            "left": {
+              "code": "ingressHost: 'api.pinit.com'",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cpuRequest: '500m'",
+              "result": {
+                "text": "500m"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Helm Lifecycle: Upgrade, Rollback & Test Hooks",
+      "codeHash": "771e4710b7c38f079d8f26ef6e6afcfb5e2c1e2a61067568e84258def6c214bf",
+      "spec": {
+        "template": "compare",
+        "title": "Helm release revision history and rollback states",
+        "leftLabel": "Previous Superseded Revision",
+        "rightLabel": "Active Deployed Revision",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Release revisions increment sequentially preserving operational checkpoints.",
+            "left": {
+              "code": "status: 'superseded'",
+              "result": {
+                "text": "superseded"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "chart: 'api-1.1.0'",
+              "result": {
+                "text": "api-1.1.0"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Rollback commands restore previous working states within seconds.",
+            "left": {
+              "code": "status: 'deployed'",
+              "result": {
+                "text": "deployed"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "description: 'Rollback to revision 1'",
+              "result": {
+                "text": "Rollback to revision 1"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Helm release revision history and rollback states",
+        "leftLabel": "Previous Superseded Revision",
+        "rightLabel": "Active Deployed Revision",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Release revisions increment sequentially preserving operational checkpoints.",
+            "left": {
+              "code": "status: 'superseded'",
+              "result": {
+                "text": "superseded"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "chart: 'api-1.1.0'",
+              "result": {
+                "text": "api-1.1.0"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Rollback commands restore previous working states within seconds.",
+            "left": {
+              "code": "status: 'deployed'",
+              "result": {
+                "text": "deployed"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "description: 'Rollback to revision 1'",
+              "result": {
+                "text": "Rollback to revision 1"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Publishing Charts to OCI Registries (GHCR / AWS ECR)",
+      "codeHash": "a63a1a2369226373b280a77590574c13d9b07356cf11a71ccd8fb1cac4363ff2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

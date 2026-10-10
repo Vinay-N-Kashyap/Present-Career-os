@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 4,
+  "promptSha": "c66dff3bddb344c7a8975df126a30ab9fcb1875441b533320a2f4e30dc709262",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Problem of Bloated Production Images",
+      "codeHash": "589d87eb61b7a1835f3fa216f5919276df4c02c26bf3a6444b9c2c420f2a34fa",
+      "spec": {
+        "template": "compare",
+        "title": "Bloated monolithic container vs multi-stage image profile",
+        "leftLabel": "Bloated Image (node:20)",
+        "rightLabel": "Multi-Stage Image (alpine)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bloated images impose performance penalties slowing container transfers.",
+            "left": {
+              "code": "image size: 1250MB",
+              "result": {
+                "text": "BLOATED_RISK"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "image size: 52MB",
+              "result": {
+                "text": "LEAN_ARTIFACT"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Unnecessary compilers inside container create severe security risks.",
+            "left": {
+              "code": "cve count: 48 CVEs",
+              "result": {
+                "text": "VULNERABLE"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "cve count: 0 CVEs",
+              "result": {
+                "text": "HARDENED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Bloated monolithic container vs multi-stage image profile",
+        "leftLabel": "Bloated Image (node:20)",
+        "rightLabel": "Multi-Stage Image (alpine)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bloated images impose performance penalties slowing container transfers.",
+            "left": {
+              "code": "image size: 1250MB",
+              "result": {
+                "text": "BLOATED_RISK"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "image size: 52MB",
+              "result": {
+                "text": "LEAN_ARTIFACT"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Unnecessary compilers inside container create severe security risks.",
+            "left": {
+              "code": "cve count: 48 CVEs",
+              "result": {
+                "text": "VULNERABLE"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "cve count: 0 CVEs",
+              "result": {
+                "text": "HARDENED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Stage Build Syntax (FROM ... AS builder)",
+      "codeHash": "da000e9cc17c99570e06bd40bf0943542d72133687abdc7a2120aadcf3ee4f71",
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-stage build builder to runner artifact transfer",
+        "stages": [
+          {
+            "id": "deps",
+            "name": "DepsStage",
+            "subtext": "npm install"
+          },
+          {
+            "id": "builder",
+            "name": "BuilderStage",
+            "subtext": "TypeScript compile"
+          },
+          {
+            "id": "runner",
+            "name": "RunnerStage",
+            "subtext": "Minimal runtime"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Naming stage allows targeting independent build environments in file.",
+            "activeStageId": "builder",
+            "statusBadge": "named"
+          },
+          {
+            "at": "say8",
+            "caption": "Copies only compiled output and runtime artifacts into final image.",
+            "activeStageId": "runner",
+            "statusBadge": "production"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Multi-stage build builder to runner artifact transfer",
+        "stages": [
+          {
+            "id": "deps",
+            "name": "DepsStage",
+            "subtext": "npm install"
+          },
+          {
+            "id": "builder",
+            "name": "BuilderStage",
+            "subtext": "TypeScript compile"
+          },
+          {
+            "id": "runner",
+            "name": "RunnerStage",
+            "subtext": "Minimal runtime"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Naming stage allows targeting independent build environments in file.",
+            "activeStageId": "builder",
+            "statusBadge": "named"
+          },
+          {
+            "at": "say8",
+            "caption": "Copies only compiled output and runtime artifacts into final image.",
+            "activeStageId": "runner",
+            "statusBadge": "production"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Base Image Selection: Debian vs Alpine vs Distroless",
+      "codeHash": "e69b4484356cbac75468288d83fa7756be43e370d52baee093be7b661b46d627",
+      "spec": {
+        "template": "compare",
+        "title": "Alpine Linux vs Google Distroless base image comparison",
+        "leftLabel": "Alpine Linux (45MB)",
+        "rightLabel": "Google Distroless (35MB)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Alpine Linux is lightweight distribution built on musl library.",
+            "left": {
+              "code": "Alpine Linux",
+              "result": {
+                "text": "TINY_BUSYBOX"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Google Distroless",
+              "result": {
+                "text": "NO_SHELL"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Distroless contains no package manager and no interactive shell.",
+            "left": {
+              "code": "Shell: /bin/sh present",
+              "result": {
+                "text": "HAS_SHELL"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Shell: None",
+              "result": {
+                "text": "ZERO_SHELL"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Alpine Linux vs Google Distroless base image comparison",
+        "leftLabel": "Alpine Linux (45MB)",
+        "rightLabel": "Google Distroless (35MB)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Alpine Linux is lightweight distribution built on musl library.",
+            "left": {
+              "code": "Alpine Linux",
+              "result": {
+                "text": "TINY_BUSYBOX"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Google Distroless",
+              "result": {
+                "text": "NO_SHELL"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Distroless contains no package manager and no interactive shell.",
+            "left": {
+              "code": "Shell: /bin/sh present",
+              "result": {
+                "text": "HAS_SHELL"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Shell: None",
+              "result": {
+                "text": "ZERO_SHELL"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pruning DevDependencies in Production Containers",
+      "codeHash": "fc980119909d038784300c6ef9d0b3ef33f04173b0ac7b44bf2a0fc30fa67748",
+      "spec": {
+        "template": "compare",
+        "title": "Production node_modules pruning devDependencies reduction",
+        "leftLabel": "Full Node Modules (Dev Included)",
+        "rightLabel": "Pruned Production Node Modules",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Full dependencies directory consumes hundreds of megabytes of disk space.",
+            "left": {
+              "code": "node_modules (with dev)",
+              "result": {
+                "text": "600MB_HEAP"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "node_modules (pruned)",
+              "result": {
+                "text": "50MB_LEAN"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Pruning strips build tools leaving only lean runtime dependencies.",
+            "left": {
+              "code": "deps: 4 prod + 5 dev",
+              "result": {
+                "text": "BLOATED"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "deps: 4 prod only",
+              "result": {
+                "text": "PRUNED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Production node_modules pruning devDependencies reduction",
+        "leftLabel": "Full Node Modules (Dev Included)",
+        "rightLabel": "Pruned Production Node Modules",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Full dependencies directory consumes hundreds of megabytes of disk space.",
+            "left": {
+              "code": "node_modules (with dev)",
+              "result": {
+                "text": "600MB_HEAP"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "node_modules (pruned)",
+              "result": {
+                "text": "50MB_LEAN"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Pruning strips build tools leaving only lean runtime dependencies.",
+            "left": {
+              "code": "deps: 4 prod + 5 dev",
+              "result": {
+                "text": "BLOATED"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "deps: 4 prod only",
+              "result": {
+                "text": "PRUNED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Non-Root Execution (USER 10001)",
+      "codeHash": "f28001c04a3beae6c255657105a1d8c945a313fb2c51d03a6846292d2da46809",
+      "spec": {
+        "template": "compare",
+        "title": "Container unprivileged non-root user execution policy",
+        "leftLabel": "Default Root Execution",
+        "rightLabel": "Hardened Non-Root User",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Dockerfiles must explicitly declare unprivileged non-root user.",
+            "left": {
+              "code": "USER root (default)",
+              "result": {
+                "text": "FAILED_INSECURE_ROOT_DEFAULT"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "USER 10001 (appuser)",
+              "result": {
+                "text": "PASSED_NON_ROOT_ENFORCED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Invoke user directive before entrypoint to enforce unprivileged runtime.",
+            "left": {
+              "code": "Effective UID: 0",
+              "result": {
+                "text": "ROOT_EXEC"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Effective UID: 10001",
+              "result": {
+                "text": "APPUSER_EXEC"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Container unprivileged non-root user execution policy",
+        "leftLabel": "Default Root Execution",
+        "rightLabel": "Hardened Non-Root User",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Dockerfiles must explicitly declare unprivileged non-root user.",
+            "left": {
+              "code": "USER root (default)",
+              "result": {
+                "text": "FAILED_INSECURE_ROOT_DEFAULT"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "USER 10001 (appuser)",
+              "result": {
+                "text": "PASSED_NON_ROOT_ENFORCED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Invoke user directive before entrypoint to enforce unprivileged runtime.",
+            "left": {
+              "code": "Effective UID: 0",
+              "result": {
+                "text": "ROOT_EXEC"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Effective UID: 10001",
+              "result": {
+                "text": "APPUSER_EXEC"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complete Production Dockerfile Blueprint",
+      "codeHash": "c4f652b4534d4fc317c780cf7bedef041436f4ff321828cc59674ce889428c54",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

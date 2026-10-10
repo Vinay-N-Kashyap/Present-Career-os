@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Learning from preferences",
+      "codeHash": "0f0032ddb3cafa4f2b9f11c41cad56f22bc01db0f88fa8d91121cc2d95ec2d1a",
+      "spec": {
+        "template": "table",
+        "title": "Human preference pair records for model alignment",
+        "columns": [
+          "record",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Human feedback shapes model outputs to be safe and helpful.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "record"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "record"
+                  },
+                  {
+                    "text": "chosen"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Comparative evaluations show two answers to human raters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "record"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "record"
+                  },
+                  {
+                    "text": "rejected"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Human preference pair records for model alignment",
+        "columns": [
+          "record",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Human feedback shapes model outputs to be safe and helpful.",
+            "rows": [
+              {
+                "cells": [
+                  "record",
+                  "prompt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "record",
+                  "chosen"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Comparative evaluations show two answers to human raters.",
+            "rows": [
+              {
+                "cells": [
+                  "record",
+                  "prompt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "record",
+                  "rejected"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Bradley-Terry model",
+      "codeHash": "17463395d7cfffafd2535eb91558537e16c9b3ff3b8cee9e460eb58f0fddb8bb",
+      "spec": {
+        "template": "table",
+        "title": "Bradley-Terry preference probability curve mapping",
+        "columns": [
+          "r_a",
+          "r_b"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bradley Terry transforms scalar scores into preference probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "r_a"
+                  },
+                  {
+                    "text": "r_b"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "r_a"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Higher rewards increase the probability of choosing an option.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "r_a"
+                  },
+                  {
+                    "text": "r_b"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "exp"
+                  },
+                  {
+                    "text": "r_b"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bradley-Terry preference probability curve mapping",
+        "columns": [
+          "r_a",
+          "r_b"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bradley Terry transforms scalar scores into preference probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "r_a",
+                  "r_b"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "r_a",
+                  "math"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Higher rewards increase the probability of choosing an option.",
+            "rows": [
+              {
+                "cells": [
+                  "r_a",
+                  "r_b"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "exp",
+                  "r_b"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The pairwise loss",
+      "codeHash": "527dfe7f48c6430bb2445e2b430054559c3a107f6daba91fe0744f857c8cd420",
+      "spec": {
+        "template": "table",
+        "title": "Pairwise negative log likelihood loss calculation",
+        "columns": [
+          "rc",
+          "rr"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pairwise loss penalizes model disagreement with human judgements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rc"
+                  },
+                  {
+                    "text": "rr"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rc"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Optimization lowers average loss across preference comparisons.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rc"
+                  },
+                  {
+                    "text": "rr"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "rejected"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pairwise negative log likelihood loss calculation",
+        "columns": [
+          "rc",
+          "rr"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pairwise loss penalizes model disagreement with human judgements.",
+            "rows": [
+              {
+                "cells": [
+                  "rc",
+                  "rr"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rc",
+                  "loss"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Optimization lowers average loss across preference comparisons.",
+            "rows": [
+              {
+                "cells": [
+                  "rc",
+                  "rr"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chosen",
+                  "rejected"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fitting ratings from comparisons",
+      "codeHash": "7ccd390d0cef17e42f07c1c89320326bcff67d21209b29e7ddd72a8863ff20cd",
+      "spec": {
+        "template": "table",
+        "title": "Fitting item preference ratings via pairwise updates",
+        "columns": [
+          "items",
+          "comparisons"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Learning ratings from pairwise comparisons over training epochs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "comparisons"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "careful"
+                  },
+                  {
+                    "text": "vague"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Passing through all comparisons allows numerical ratings to settle.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "comparisons"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unsafe"
+                  },
+                  {
+                    "text": "vague"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fitting item preference ratings via pairwise updates",
+        "columns": [
+          "items",
+          "comparisons"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Learning ratings from pairwise comparisons over training epochs.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "comparisons"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "careful",
+                  "vague"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Passing through all comparisons allows numerical ratings to settle.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "comparisons"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "unsafe",
+                  "vague"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reward hacking",
+      "codeHash": "1171b45b86d984179a2eac920f652e2a01282f3ff425fe549362ac215ab7d420",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Preferences in the pipeline",
+      "codeHash": "a3077120f3e1cf1c237e9554a04f51875eed72addf60f4dba98866cf88e95e4b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

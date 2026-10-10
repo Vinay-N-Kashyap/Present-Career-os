@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 5,
+  "promptSha": "4cacefdfd905b6d425fce0f447bf138f14ee8ab6ddf17e9bd7301868da5e809d",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Production Multi-AZ Topology Blueprint",
+      "codeHash": "025452eb70c6bda5186c331fff0eb7e0c251ca0890e9aea4e7925bac6ed44927",
+      "spec": {
+        "template": "workflow",
+        "title": "Production multi-AZ VPC network topology blueprint",
+        "stages": [
+          {
+            "id": "igw",
+            "name": "Internet Gateway",
+            "subtext": "Perimeter Ingress"
+          },
+          {
+            "id": "publicSubnet",
+            "name": "Public Subnet",
+            "subtext": "NAT & Bastion"
+          },
+          {
+            "id": "appSubnet",
+            "name": "Application Subnet",
+            "subtext": "Microservices"
+          },
+          {
+            "id": "dbSubnet",
+            "name": "Database Subnet",
+            "subtext": "Private Multi-AZ"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Custom VPC architecture establishes CIDR block spanning availability zones.",
+            "activeStageId": "igw",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "AZ contains segmented tiers for public gateways and private databases.",
+            "activeStageId": "appSubnet",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Production multi-AZ VPC network topology blueprint",
+        "stages": [
+          {
+            "id": "igw",
+            "name": "Internet Gateway",
+            "subtext": "Perimeter Ingress"
+          },
+          {
+            "id": "publicSubnet",
+            "name": "Public Subnet",
+            "subtext": "NAT & Bastion"
+          },
+          {
+            "id": "appSubnet",
+            "name": "Application Subnet",
+            "subtext": "Microservices"
+          },
+          {
+            "id": "dbSubnet",
+            "name": "Database Subnet",
+            "subtext": "Private Multi-AZ"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Custom VPC architecture establishes CIDR block spanning availability zones.",
+            "activeStageId": "igw",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "AZ contains segmented tiers for public gateways and private databases.",
+            "activeStageId": "appSubnet",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Redundant NAT Gateway Placement",
+      "codeHash": "ac8eaa193d0687f3694ea2b83e53895b882dd245bb7254488fda9c71c06aa4e6",
+      "spec": {
+        "template": "compare",
+        "title": "Single NAT gateway failure risk compared to redundant NAT gateways",
+        "leftLabel": "Single NAT Gateway",
+        "rightLabel": "Dual Redundant NAT Gateways",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Naïve setup routing both private subnets through single gateway is risky.",
+            "left": {
+              "code": "Single NAT Gateway",
+              "result": {
+                "text": "Single Point of Failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Multi-AZ Redundancy",
+              "result": {
+                "text": "Fault Tolerant"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Production architecture deploys independent NAT gateways in each public subnet.",
+            "left": {
+              "code": "AZ Outage Severance",
+              "result": {
+                "text": "Outage Vulnerable"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Independent Gateway per AZ",
+              "result": {
+                "text": "High Availability"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Single NAT gateway failure risk compared to redundant NAT gateways",
+        "leftLabel": "Single NAT Gateway",
+        "rightLabel": "Dual Redundant NAT Gateways",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Naïve setup routing both private subnets through single gateway is risky.",
+            "left": {
+              "code": "Single NAT Gateway",
+              "result": {
+                "text": "Single Point of Failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Multi-AZ Redundancy",
+              "result": {
+                "text": "Fault Tolerant"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Production architecture deploys independent NAT gateways in each public subnet.",
+            "left": {
+              "code": "AZ Outage Severance",
+              "result": {
+                "text": "Outage Vulnerable"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Independent Gateway per AZ",
+              "result": {
+                "text": "High Availability"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bastion Host (Jump Box) Architecture",
+      "codeHash": "096c66a16927aed9e94c2f913e7d8f05e4b6f69cca7733d9196870ba3aed4ac3",
+      "spec": {
+        "template": "sequence",
+        "title": "Bastion host jump architecture for administrative access",
+        "actors": [
+          {
+            "id": "admin",
+            "name": "Staff Engineer"
+          },
+          {
+            "id": "bastion",
+            "name": "Bastion Jump Host"
+          },
+          {
+            "id": "privateServer",
+            "name": "Private App Server"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bastion hosts provide secure administrative access for operations staff.",
+            "from": "admin",
+            "to": "bastion",
+            "label": "SSH Authentication",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "Administrators SSH into public bastion before jumping to internal instances.",
+            "from": "bastion",
+            "to": "privateServer",
+            "label": "Internal Jump",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Bastion host jump architecture for administrative access",
+        "actors": [
+          {
+            "id": "admin",
+            "name": "Staff Engineer"
+          },
+          {
+            "id": "bastion",
+            "name": "Bastion Jump Host"
+          },
+          {
+            "id": "privateServer",
+            "name": "Private App Server"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bastion hosts provide secure administrative access for operations staff.",
+            "from": "admin",
+            "to": "bastion",
+            "label": "SSH Authentication",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "Administrators SSH into public bastion before jumping to internal instances.",
+            "from": "bastion",
+            "to": "privateServer",
+            "label": "Internal Jump",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS Systems Manager (SSM) Session Manager: The Modern Bastion",
+      "codeHash": "129a16877ec4797e6e092fccdfac31fa941a01ec9102a3d841196e663cbae68f",
+      "spec": {
+        "template": "states",
+        "title": "AWS Systems Manager Session Manager connection states",
+        "states": [
+          {
+            "id": "iamRole",
+            "label": "IAM Role Bound"
+          },
+          {
+            "id": "ssmAgent",
+            "label": "SSM Agent Polling"
+          },
+          {
+            "id": "tunnel",
+            "label": "Encrypted Session Active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Systems Manager session manager replaces traditional bastion jump boxes.",
+            "active": "ssmAgent"
+          },
+          {
+            "at": "say6",
+            "caption": "Session manager operates without requiring public IPs or inbound ports.",
+            "active": "tunnel"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "AWS Systems Manager Session Manager connection states",
+        "states": [
+          {
+            "id": "iamRole",
+            "label": "IAM Role Bound"
+          },
+          {
+            "id": "ssmAgent",
+            "label": "SSM Agent Polling"
+          },
+          {
+            "id": "tunnel",
+            "label": "Encrypted Session Active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Systems Manager session manager replaces traditional bastion jump boxes.",
+            "active": "ssmAgent"
+          },
+          {
+            "at": "say6",
+            "caption": "Session manager operates without requiring public IPs or inbound ports.",
+            "active": "tunnel"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "VPC Flow Logs for Network Observability",
+      "codeHash": "a0a7145176456daa9aead7a308bcaecb5f1c056ea0cb9ae1b9e948237c33f5d2",
+      "spec": {
+        "template": "table",
+        "title": "VPC flow logs network traffic inspection records",
+        "columns": [
+          "Interface ID",
+          "Source Address",
+          "Dest Port",
+          "Flow Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Flow logs capture telemetry metadata regarding network interface traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each log record documents whether traffic was permitted or rejected.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "VPC flow logs network traffic inspection records",
+        "columns": [
+          "Interface ID",
+          "Source Address",
+          "Dest Port",
+          "Flow Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Flow logs capture telemetry metadata regarding network interface traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each log record documents whether traffic was permitted or rejected.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 1 Architecture Verification & Health Check",
+      "codeHash": "1699b772b056619ede425ef021f337f3284bf04a2297b290355f82d37a401967",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

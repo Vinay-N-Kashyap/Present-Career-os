@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The memory problem",
+      "codeHash": "21abe1d1a8cb73e284eac8811eb927f486267ef614efb633bd3df888ae58b491",
+      "spec": {
+        "template": "table",
+        "title": "Memory consumption comparison under vector quantization",
+        "columns": [
+          "code_bytes",
+          "full_tb",
+          "code_bytes"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Compressed vectors allow large indices to fit directly in fast memory caches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "code_bytes"
+                  },
+                  {
+                    "text": "full_tb"
+                  },
+                  {
+                    "text": "code_bytes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "code_bytes"
+                  },
+                  {
+                    "text": "full_tb"
+                  },
+                  {
+                    "text": "code_bytes"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Splitting each vector into parts maps subvectors to a prototype.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "code_bytes"
+                  },
+                  {
+                    "text": "full_tb"
+                  },
+                  {
+                    "text": "code_bytes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "code_bytes"
+                  },
+                  {
+                    "text": "full_tb"
+                  },
+                  {
+                    "text": "full_tb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Memory consumption comparison under vector quantization",
+        "columns": [
+          "code_bytes",
+          "full_tb",
+          "code_bytes"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Compressed vectors allow large indices to fit directly in fast memory caches.",
+            "rows": [
+              {
+                "cells": [
+                  "code_bytes",
+                  "full_tb",
+                  "code_bytes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code_bytes",
+                  "full_tb",
+                  "code_bytes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Splitting each vector into parts maps subvectors to a prototype.",
+            "rows": [
+              {
+                "cells": [
+                  "code_bytes",
+                  "full_tb",
+                  "code_bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "code_bytes",
+                  "full_tb",
+                  "full_tb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sub-vectors and codebooks",
+      "codeHash": "891aead988895ce9eddbe511f7a7f0dc50e3e50d38e2224c68e42ebab1ed13a8",
+      "spec": {
+        "template": "table",
+        "title": "Vector dimension splitting and prototype codebook learning",
+        "columns": [
+          "parts",
+          "d_sub",
+          "parts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Product quantisation splits input dimensions into equal subvector parts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "d_sub"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "d_sub"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each codeword serves as a shared prototype across all stored vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "d_sub"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "d_sub"
+                  },
+                  {
+                    "text": "d_sub"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector dimension splitting and prototype codebook learning",
+        "columns": [
+          "parts",
+          "d_sub",
+          "parts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Product quantisation splits input dimensions into equal subvector parts.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "d_sub",
+                  "parts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "d_sub",
+                  "parts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each codeword serves as a shared prototype across all stored vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "d_sub",
+                  "parts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "d_sub",
+                  "d_sub"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Encoding",
+      "codeHash": "bf2534080a4729780eaa84dce71886e507f762eaa22546169ef1326b7101f153",
+      "spec": {
+        "template": "table",
+        "title": "Codeword index assignment and quantization reconstruction",
+        "columns": [
+          "code",
+          "decoded",
+          "books"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Encoding compares subvectors with codewords in the matching codebook.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "decoded"
+                  },
+                  {
+                    "text": "books"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "decoded"
+                  },
+                  {
+                    "text": "books"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The difference between original and decoded representations is the error.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "decoded"
+                  },
+                  {
+                    "text": "books"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "decoded"
+                  },
+                  {
+                    "text": "code"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Codeword index assignment and quantization reconstruction",
+        "columns": [
+          "code",
+          "decoded",
+          "books"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Encoding compares subvectors with codewords in the matching codebook.",
+            "rows": [
+              {
+                "cells": [
+                  "code",
+                  "decoded",
+                  "books"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "decoded",
+                  "books"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The difference between original and decoded representations is the error.",
+            "rows": [
+              {
+                "cells": [
+                  "code",
+                  "decoded",
+                  "books"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "code",
+                  "decoded",
+                  "code"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asymmetric distance computation",
+      "codeHash": "0dee066585db0df00dc35995804dcbbb48efdcf0cb21f570f0b258f75aea959d",
+      "spec": {
+        "template": "table",
+        "title": "Asymmetric distance table lookups and additions",
+        "columns": [
+          "table",
+          "code",
+          "table"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Asymmetric distance keeps the query exact while looking up codewords.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "table"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "table"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Precomputing distances to every codeword builds an efficient lookup table.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "table"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "code"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Asymmetric distance table lookups and additions",
+        "columns": [
+          "table",
+          "code",
+          "table"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Asymmetric distance keeps the query exact while looking up codewords.",
+            "rows": [
+              {
+                "cells": [
+                  "table",
+                  "code",
+                  "table"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "table",
+                  "code",
+                  "table"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Precomputing distances to every codeword builds an efficient lookup table.",
+            "rows": [
+              {
+                "cells": [
+                  "table",
+                  "code",
+                  "table"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "table",
+                  "code",
+                  "code"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accuracy and tuning",
+      "codeHash": "f709150090d2c77583e73cf1b884f9656ab5f6a22fa69a3a7bf7a608571f4b0f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: product quantisation",
+      "codeHash": "a49b60e9c5ebdfafb9472c449d89aa45417f6c3d414db321782f8f846a2e0dbe",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

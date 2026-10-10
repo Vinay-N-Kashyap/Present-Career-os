@@ -1,0 +1,853 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why hardware",
+      "codeHash": "3528074ba178ab3693ed8ae0d12161a28468e76dfffc1b1801784becbc5783a8",
+      "spec": {
+        "template": "table",
+        "title": "FPGA hardware tick-to-trade path versus software pipeline",
+        "columns": [
+          "path",
+          "decode",
+          "strategy",
+          "send"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "FPGA circuits implement logic physically without instructions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "path"
+                  },
+                  {
+                    "text": "decode"
+                  },
+                  {
+                    "text": "strategy"
+                  },
+                  {
+                    "text": "send"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Network card FPGAs decode market packets directly bypassing the host CPU.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "path"
+                  },
+                  {
+                    "text": "decode"
+                  },
+                  {
+                    "text": "strategy"
+                  },
+                  {
+                    "text": "send"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "software"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "800"
+                  },
+                  {
+                    "text": "800"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sub microsecond tick to trade latency drastically outperforms software.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "path"
+                  },
+                  {
+                    "text": "decode"
+                  },
+                  {
+                    "text": "strategy"
+                  },
+                  {
+                    "text": "send"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "software"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "800"
+                  },
+                  {
+                    "text": "800"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fpga"
+                  },
+                  {
+                    "text": "12"
+                  },
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "FPGA hardware tick-to-trade path versus software pipeline",
+        "columns": [
+          "path",
+          "decode",
+          "strategy",
+          "send"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "FPGA circuits implement logic physically without instructions.",
+            "rows": [
+              {
+                "cells": [
+                  "path",
+                  "decode",
+                  "strategy",
+                  "send"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Network card FPGAs decode market packets directly bypassing the host CPU.",
+            "rows": [
+              {
+                "cells": [
+                  "path",
+                  "decode",
+                  "strategy",
+                  "send"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "software",
+                  "300",
+                  "800",
+                  "800"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sub microsecond tick to trade latency drastically outperforms software.",
+            "rows": [
+              {
+                "cells": [
+                  "path",
+                  "decode",
+                  "strategy",
+                  "send"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "software",
+                  "300",
+                  "800",
+                  "800"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fpga",
+                  "12",
+                  "16",
+                  "20"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clocks and pipelines",
+      "codeHash": "50b1d27139b27f3c81115f09d4586ac55b2ba6d1238e3897212bbd8c80086ca5",
+      "spec": {
+        "template": "table",
+        "title": "Clock frequency and stage pipelining latency and throughput",
+        "columns": [
+          "stages",
+          "mhz",
+          "cycles",
+          "cycles_per_stage"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clock frequencies determine the nanosecond cycle duration of each tick.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "mhz"
+                  },
+                  {
+                    "text": "cycles"
+                  },
+                  {
+                    "text": "cycles_per_stage"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pipelining subdivides packet processing into discrete clocked stages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "mhz"
+                  },
+                  {
+                    "text": "cycles"
+                  },
+                  {
+                    "text": "cycles_per_stage"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "12"
+                  },
+                  {
+                    "text": "250"
+                  },
+                  {
+                    "text": "cycles"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Single cycle pipelines maximize high throughput message ingestion.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "mhz"
+                  },
+                  {
+                    "text": "cycles"
+                  },
+                  {
+                    "text": "cycles_per_stage"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "12"
+                  },
+                  {
+                    "text": "250"
+                  },
+                  {
+                    "text": "cycles"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "12"
+                  },
+                  {
+                    "text": "400"
+                  },
+                  {
+                    "text": "cycles"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Clock frequency and stage pipelining latency and throughput",
+        "columns": [
+          "stages",
+          "mhz",
+          "cycles",
+          "cycles_per_stage"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clock frequencies determine the nanosecond cycle duration of each tick.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "mhz",
+                  "cycles",
+                  "cycles_per_stage"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pipelining subdivides packet processing into discrete clocked stages.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "mhz",
+                  "cycles",
+                  "cycles_per_stage"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "12",
+                  "250",
+                  "cycles",
+                  "1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Single cycle pipelines maximize high throughput message ingestion.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "mhz",
+                  "cycles",
+                  "cycles_per_stage"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "12",
+                  "250",
+                  "cycles",
+                  "1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "12",
+                  "400",
+                  "cycles",
+                  "2"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resources and fitting the design",
+      "codeHash": "840f3da764be859154515398ef9045b1500c5fa4c30353e8642a6ae20dac9418",
+      "spec": {
+        "template": "table",
+        "title": "FPGA lookup table utilization and timing closure feasibility",
+        "columns": [
+          "used",
+          "total",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hardware silicon budgets limit available lookup tables and registers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "used"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "status"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "High resource utilization complicates routing and target clock closure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "used"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "status"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "300_000"
+                  },
+                  {
+                    "text": "1_000_000"
+                  },
+                  {
+                    "text": "OK"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Percentage thresholds classify status as tight risky or ok.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "used"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "status"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "300_000"
+                  },
+                  {
+                    "text": "1_000_000"
+                  },
+                  {
+                    "text": "OK"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "700_000"
+                  },
+                  {
+                    "text": "1_000_000"
+                  },
+                  {
+                    "text": "TIGHT"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "FPGA lookup table utilization and timing closure feasibility",
+        "columns": [
+          "used",
+          "total",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hardware silicon budgets limit available lookup tables and registers.",
+            "rows": [
+              {
+                "cells": [
+                  "used",
+                  "total",
+                  "status"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "High resource utilization complicates routing and target clock closure.",
+            "rows": [
+              {
+                "cells": [
+                  "used",
+                  "total",
+                  "status"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "300_000",
+                  "1_000_000",
+                  "OK"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Percentage thresholds classify status as tight risky or ok.",
+            "rows": [
+              {
+                "cells": [
+                  "used",
+                  "total",
+                  "status"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "300_000",
+                  "1_000_000",
+                  "OK"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "700_000",
+                  "1_000_000",
+                  "TIGHT"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware and software together",
+      "codeHash": "4d074a64a1507f673bb717af6564c55c80b4ac194444300f84fef3e4dbe1efc2",
+      "spec": {
+        "template": "table",
+        "title": "Hybrid architecture hardware comparator triggers",
+        "columns": [
+          "side",
+          "below",
+          "qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hybrid architectures partition work across software engines and hardware.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "below"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Software configures parameters while hardware reacts at line rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "below"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BUY"
+                  },
+                  {
+                    "text": "100.05"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Inline hardware risk checks prevent safety bypass on fast paths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "below"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BUY"
+                  },
+                  {
+                    "text": "100.05"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BUY"
+                  },
+                  {
+                    "text": "100.05"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hybrid architecture hardware comparator triggers",
+        "columns": [
+          "side",
+          "below",
+          "qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hybrid architectures partition work across software engines and hardware.",
+            "rows": [
+              {
+                "cells": [
+                  "side",
+                  "below",
+                  "qty"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Software configures parameters while hardware reacts at line rates.",
+            "rows": [
+              {
+                "cells": [
+                  "side",
+                  "below",
+                  "qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BUY",
+                  "100.05",
+                  "100"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Inline hardware risk checks prevent safety bypass on fast paths.",
+            "rows": [
+              {
+                "cells": [
+                  "side",
+                  "below",
+                  "qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BUY",
+                  "100.05",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BUY",
+                  "100.05",
+                  "qty"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Costs and trade-offs",
+      "codeHash": "dfef34ffca91291ba1b08f01e4e3a3cdeb6d8256e8db9f50be29ba083ed4024b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: pipeline and resources",
+      "codeHash": "bf10a8eaa12dbdba966c5b99d98a595944e63baee8468f52577c4c5edebe42e6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

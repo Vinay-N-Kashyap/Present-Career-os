@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Words, characters or subwords?",
+      "codeHash": "5db7f3f7ade8ae73a9b85da1f922d96d4dc3546c616d95abee94ef58dc2d7374",
+      "spec": {
+        "template": "table",
+        "title": "Token granularity tradeoffs across words characters and subwords",
+        "columns": [
+          "words",
+          "subwords"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed vocabulary choices determine sequence length and token granularity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "subwords"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Word tokens keep sequences short but struggle with unknown vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "subwords"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "chars"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Character tokens prevent unknown items while sequences become very long.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "subwords"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "chars"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Subword tokens split rare terms into meaningful and flexible pieces.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "subwords"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "chars"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Token granularity tradeoffs across words characters and subwords",
+        "columns": [
+          "words",
+          "subwords"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed vocabulary choices determine sequence length and token granularity.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "subwords"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Word tokens keep sequences short but struggle with unknown vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "subwords"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "chars"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Character tokens prevent unknown items while sequences become very long.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "subwords"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "chars"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "split"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Subword tokens split rare terms into meaningful and flexible pieces.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "subwords"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "chars"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "split"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "words",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How byte-pair encoding learns",
+      "codeHash": "f5195d24f78a5c2a26d0ca98c027e4ec850867005e3e094d88e465306d3bdb6a",
+      "spec": {
+        "template": "table",
+        "title": "Byte-pair encoding iterative frequency-based merge process",
+        "columns": [
+          "pairs",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Byte-pair encoding serves as an adaptive compression method for words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Training starts with characters and finds the most frequent adjacent pair.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "Counter"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each merge operation adds a newly formed token to the model vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "Counter"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "zip"
+                  },
+                  {
+                    "text": "list"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The ordered list of merges defines the rules to tokenise new text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "Counter"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "zip"
+                  },
+                  {
+                    "text": "list"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Byte-pair encoding iterative frequency-based merge process",
+        "columns": [
+          "pairs",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Byte-pair encoding serves as an adaptive compression method for words.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "best"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Training starts with characters and finds the most frequent adjacent pair.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "Counter"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each merge operation adds a newly formed token to the model vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "Counter"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "zip",
+                  "list"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The ordered list of merges defines the rules to tokenise new text.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "Counter"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "zip",
+                  "list"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "pairs",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Applying a merge",
+      "codeHash": "a6a275b238426de60d7787ff5ad5f66a6fcdd9063aa34a70101ded2d8d6018ab",
+      "spec": {
+        "template": "table",
+        "title": "Sequential token substitution during subword merge execution",
+        "columns": [
+          "pair",
+          "new_token"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scan left to right and replace each adjacent occurrence of the pair.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pair"
+                  },
+                  {
+                    "text": "new_token"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Merged tokens are never reused for an overlapping match.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pair"
+                  },
+                  {
+                    "text": "new_token"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "out"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A while loop scans the current index and skips ahead when pairs match.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pair"
+                  },
+                  {
+                    "text": "new_token"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "out"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tuple"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pair order matters because token sequences are strictly directional.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pair"
+                  },
+                  {
+                    "text": "new_token"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "out"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tuple"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "merge_pair"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sequential token substitution during subword merge execution",
+        "columns": [
+          "pair",
+          "new_token"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scan left to right and replace each adjacent occurrence of the pair.",
+            "rows": [
+              {
+                "cells": [
+                  "pair",
+                  "new_token"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Merged tokens are never reused for an overlapping match.",
+            "rows": [
+              {
+                "cells": [
+                  "pair",
+                  "new_token"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "out",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A while loop scans the current index and skips ahead when pairs match.",
+            "rows": [
+              {
+                "cells": [
+                  "pair",
+                  "new_token"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "out",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tuple",
+                  "len"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pair order matters because token sequences are strictly directional.",
+            "rows": [
+              {
+                "cells": [
+                  "pair",
+                  "new_token"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "out",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tuple",
+                  "len"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "merge_pair",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tokenising new text",
+      "codeHash": "fe81fb96ca0fe6af091d3e2e8bfcffe8b2067e5c6a4428cfc90c11dab24e42e2",
+      "spec": {
+        "template": "none",
+        "reason": "Greedy subword tokenization execution walkthrough."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "WordPiece and SentencePiece",
+      "codeHash": "af6e6fdd043861368c1060c742614270fa41d3d31351dd7dd8368343fb21e9c2",
+      "spec": {
+        "template": "table",
+        "title": "WordPiece prefix tokenization and longest match matching",
+        "columns": [
+          "start",
+          "piece"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "WordPiece chooses merges by likelihood rather than simple raw frequency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "piece"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix symbols mark pieces that continue a word across token boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "piece"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "wordpiece"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Subword models share a data-driven vocabulary covering diverse vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "piece"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "wordpiece"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Greedy longest match selects the longest vocabulary piece that fits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "piece"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "wordpiece"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "WordPiece prefix tokenization and longest match matching",
+        "columns": [
+          "start",
+          "piece"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "WordPiece chooses merges by likelihood rather than simple raw frequency.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "piece"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix symbols mark pieces that continue a word across token boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "piece"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "wordpiece"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Subword models share a data-driven vocabulary covering diverse vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "piece"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "wordpiece"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "word",
+                  "range"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Greedy longest match selects the longest vocabulary piece that fits.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "piece"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "wordpiece"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "word",
+                  "range"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "start",
+                  "len"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: merges",
+      "codeHash": "34c25e0d0c6c4c5c5ec9bbef05c0d2a40986fcb8921cace005cc997db10e9971",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: merges and BPE training functions."
+      },
+      "filled": {}
+    }
+  ]
+}

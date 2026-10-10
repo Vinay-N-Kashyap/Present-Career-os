@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "How a search engine works",
+      "codeHash": "c2e01296ed4d9cfde826ee8cfea898beb6e6c772cc68beed64ea65f9f054a26e",
+      "spec": {
+        "template": "table",
+        "title": "Search engine architecture contrasting indexing and querying lifecycles",
+        "columns": [
+          "indexing",
+          "querying"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search engines operate in two fundamental phases: indexing and querying.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "indexing"
+                  },
+                  {
+                    "text": "querying"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Indexing cleans documents and records words with document frequencies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "indexing"
+                  },
+                  {
+                    "text": "querying"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "indexing"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Querying finds candidate documents through the index and ranks by score.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "indexing"
+                  },
+                  {
+                    "text": "querying"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "indexing"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "querying"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Using the same cleaning for documents and queries prevents mismatch.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "indexing"
+                  },
+                  {
+                    "text": "querying"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "indexing"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "querying"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "run"
+                  },
+                  {
+                    "text": "running"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Search engine architecture contrasting indexing and querying lifecycles",
+        "columns": [
+          "indexing",
+          "querying"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search engines operate in two fundamental phases: indexing and querying.",
+            "rows": [
+              {
+                "cells": [
+                  "indexing",
+                  "querying"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Indexing cleans documents and records words with document frequencies.",
+            "rows": [
+              {
+                "cells": [
+                  "indexing",
+                  "querying"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "indexing",
+                  "clean"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Querying finds candidate documents through the index and ranks by score.",
+            "rows": [
+              {
+                "cells": [
+                  "indexing",
+                  "querying"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "indexing",
+                  "clean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "querying",
+                  "index"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Using the same cleaning for documents and queries prevents mismatch.",
+            "rows": [
+              {
+                "cells": [
+                  "indexing",
+                  "querying"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "indexing",
+                  "clean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "querying",
+                  "index"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "run",
+                  "running"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The inverted index",
+      "codeHash": "06dae4b79a5a0a2f4c3b91353590341b334e491d472604f6aeb191e6b0ed9b8d",
+      "spec": {
+        "template": "table",
+        "title": "Inverted index structure mapping tokens to document posting lists",
+        "columns": [
+          "docs",
+          "index"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An inverted index provides fast lookups without scanning every document.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The inverted structure maps individual words to lists of containing documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "python"
+                  },
+                  {
+                    "text": "d2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Look up each query word in postings lists to find candidate documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "python"
+                  },
+                  {
+                    "text": "d2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tests"
+                  },
+                  {
+                    "text": "d3"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Inverted indexes produce sorted lists of document ids containing each token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "python"
+                  },
+                  {
+                    "text": "d2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tests"
+                  },
+                  {
+                    "text": "d3"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Inverted index structure mapping tokens to document posting lists",
+        "columns": [
+          "docs",
+          "index"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An inverted index provides fast lookups without scanning every document.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "d1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The inverted structure maps individual words to lists of containing documents.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "d1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "python",
+                  "d2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Look up each query word in postings lists to find candidate documents.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "d1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "python",
+                  "d2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tests",
+                  "d3"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Inverted indexes produce sorted lists of document ids containing each token.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "d1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "python",
+                  "d2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tests",
+                  "d3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "index"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scoring documents for a query",
+      "codeHash": "d163929d24d24de7b9f1a53dd8a05a8cb9114736d4112ed3c33ad4d0ea96630b",
+      "spec": {
+        "template": "table",
+        "title": "TF-IDF query relevance scoring and alphabetical tie resolution",
+        "columns": [
+          "cloud",
+          "python"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Add up TF-IDF weights of query words to score candidate documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "python"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Search scores keep positive values and sort by highest score first.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "python"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lambda"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Tie breaking rules ensure predictable document ordering for identical scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "python"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lambda"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "savings"
+                  },
+                  {
+                    "text": "tests"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Documents that contain no query words score zero and are omitted.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "python"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lambda"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "savings"
+                  },
+                  {
+                    "text": "tests"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cooking"
+                  },
+                  {
+                    "text": "rice"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "TF-IDF query relevance scoring and alphabetical tie resolution",
+        "columns": [
+          "cloud",
+          "python"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Add up TF-IDF weights of query words to score candidate documents.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "python"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Search scores keep positive values and sort by highest score first.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "python"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "lambda",
+                  "cost"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Tie breaking rules ensure predictable document ordering for identical scores.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "python"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "lambda",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "savings",
+                  "tests"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Documents that contain no query words score zero and are omitted.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "python"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "lambda",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "savings",
+                  "tests"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cooking",
+                  "rice"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting the pipeline together",
+      "codeHash": "09a8035ec49fc0a396b54181a70c82c7f17ccaa56c43b974c3bb0610ce8b3463",
+      "spec": {
+        "template": "table",
+        "title": "Full search pipeline lifecycle from raw text cleaning to scored hits",
+        "columns": [
+          "toks",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A real search engine runs raw text and queries through identical cleaning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Wrapping cleaning in one shared function keeps indexing and querying in sync.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "toks"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The pipeline lowercases text, removes punctuation, splits and drops stopwords.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "toks"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "STOP"
+                  },
+                  {
+                    "text": "toks"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stemming in the pipeline allows inflected query terms to match document stems.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "toks"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "STOP"
+                  },
+                  {
+                    "text": "toks"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Full search pipeline lifecycle from raw text cleaning to scored hits",
+        "columns": [
+          "toks",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A real search engine runs raw text and queries through identical cleaning.",
+            "rows": [
+              {
+                "cells": [
+                  "clean",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Wrapping cleaning in one shared function keeps indexing and querying in sync.",
+            "rows": [
+              {
+                "cells": [
+                  "clean",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "toks",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The pipeline lowercases text, removes punctuation, splits and drops stopwords.",
+            "rows": [
+              {
+                "cells": [
+                  "clean",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "toks",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "STOP",
+                  "toks"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stemming in the pipeline allows inflected query terms to match document stems.",
+            "rows": [
+              {
+                "cells": [
+                  "clean",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "toks",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "STOP",
+                  "toks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cost",
+                  "run"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating search quality",
+      "codeHash": "20a477c7dd373a2abb031c2856e3f11f045de0bc68ba9ff0c7f4a6d1811f7884",
+      "spec": {
+        "template": "none",
+        "reason": "Evaluating search quality."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: build the engine",
+      "codeHash": "e9dac257c246eda85dbab372497aa57073735116960a0e0534ad939a8baa8e12",
+      "spec": {
+        "template": "none",
+        "reason": "Milestone practice: build the engine."
+      },
+      "filled": {}
+    }
+  ]
+}

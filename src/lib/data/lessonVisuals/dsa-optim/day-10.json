@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 10,
+  "promptSha": "c43bccff5e861a43bb7c37fd309b52ae609ba751ee714a5b7c6cd8fbb19434fe",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Classic Binary Search Loop Invariants",
+      "codeHash": "bd66745f471a7a08a3d20f512f77e4b6beda2a312c9abdbd2da4c259fd252405",
+      "spec": {
+        "template": "cells",
+        "title": "Classic binary search interval bisection",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Midpoint is calculated from left and right pointers.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "9"
+              },
+              {
+                "text": "11"
+              },
+              {
+                "text": "13"
+              },
+              {
+                "text": "15"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 7,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Target equals element so return index immediately.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "9"
+              },
+              {
+                "text": "11"
+              },
+              {
+                "text": "13"
+              },
+              {
+                "text": "15"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 7,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Classic binary search interval bisection",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Midpoint is calculated from left and right pointers.",
+            "items": [
+              "1",
+              "3",
+              "5",
+              "7",
+              "9",
+              "11",
+              "13",
+              "15"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 7,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Target equals element so return index immediately.",
+            "items": [
+              "1",
+              "3",
+              "5",
+              "7",
+              "9",
+              "11",
+              "13",
+              "15"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 7,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Left Bisect & Right Bisect (Insertion Point)",
+      "codeHash": "40e513fec8099dbb650c0dd407ee4538a7bb29520fcc844a9337b0627cc47910",
+      "spec": {
+        "template": "compare",
+        "title": "Left bisect vs right bisect insertion points",
+        "leftLabel": "Left Bisect",
+        "rightLabel": "Right Bisect",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Left bisect returns index of target occurrence.",
+            "left": {
+              "code": "bisectLeft(arr, 3)",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bisectRight(arr, 3)",
+              "result": {
+                "text": "4"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Right bisect finds rightmost position for insertion.",
+            "left": {
+              "code": "bisectLeft(arr, 4)",
+              "result": {
+                "text": "4"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bisectRight(arr, 3)",
+              "result": {
+                "text": "4"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Left bisect vs right bisect insertion points",
+        "leftLabel": "Left Bisect",
+        "rightLabel": "Right Bisect",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Left bisect returns index of target occurrence.",
+            "left": {
+              "code": "bisectLeft(arr, 3)",
+              "result": "1",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bisectRight(arr, 3)",
+              "result": "4",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Right bisect finds rightmost position for insertion.",
+            "left": {
+              "code": "bisectLeft(arr, 4)",
+              "result": "4",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bisectRight(arr, 3)",
+              "result": "4",
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Search in Rotated Sorted Array",
+      "codeHash": "67f158e807f8a8f41922af107308adaaf0494df4e7d271bde64926ab1b20a2cd",
+      "spec": {
+        "template": "cells",
+        "title": "Search in rotated sorted array",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Midpoint guarantees at least one of the halves is sorted.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Check if target falls within sorted left half.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 5,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Search in rotated sorted array",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Midpoint guarantees at least one of the halves is sorted.",
+            "items": [
+              "4",
+              "5",
+              "6",
+              "7",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Check if target falls within sorted left half.",
+            "items": [
+              "4",
+              "5",
+              "6",
+              "7",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 5,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Binary Search on Answer Space (Square Root)",
+      "codeHash": "adc99e14d55aace5dfcc3305f6fcd01346a270abba8b00bd13c20a81e684c261",
+      "spec": {
+        "template": "table",
+        "title": "Binary search candidate evaluations on square root space",
+        "columns": [
+          "Candidate x",
+          "Predicate Valid"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Monotonic predicate is true up to threshold then false.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "right"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Record mid as candidate when answer could be larger.",
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "right"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Binary search candidate evaluations on square root space",
+        "columns": [
+          "Candidate x",
+          "Predicate Valid"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Monotonic predicate is true up to threshold then false.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "result"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "8",
+                  "right"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "16",
+                  "result"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Record mid as candidate when answer could be larger.",
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "result"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "8",
+                  "right"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "16",
+                  "result"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Find Minimum in Rotated Sorted Array",
+      "codeHash": "012ed2a469b20631a070e99da539f1fb2907db80614de2f60b0c0b13e00342c3",
+      "spec": {
+        "template": "cells",
+        "title": "Rotated array minimum pivot convergence",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pivot minimum must be in right half so advance left.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 2,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Current mid could be minimum so keep as candidate.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Rotated array minimum pivot convergence",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pivot minimum must be in right half so advance left.",
+            "items": [
+              "3",
+              "4",
+              "5",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 2,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Current mid could be minimum so keep as candidate.",
+            "items": [
+              "3",
+              "4",
+              "5",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Binary Search Template & Complexity Analysis Summary",
+      "codeHash": "f6496d47125061204e941b96eafe3a8942cbd51e17297d7e0597ea908e9ccfa2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,671 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 13,
+  "promptSha": "e8b3148ca29c24702b1bb9c54733c1a51d705bf6914ef6bf226d1dbb55c6ea33",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Evaluation Challenge: Why BLEU and ROUGE Fail for Modern LLMs",
+      "codeHash": "143fd56481db6caea31154ade58b9bb0fcaf897f98448e1f513d017fb977cb33",
+      "spec": {
+        "template": "compare",
+        "title": "Lexical word overlap metrics versus semantic atomic claim decomposition",
+        "left": {
+          "title": "Lexical Overlap Metrics",
+          "items": [
+            "Calculates n-gram word overlaps",
+            "Fails on valid synonym phrasing",
+            "High score on inverted hallucinations",
+            "Brittle static string comparisons"
+          ]
+        },
+        "right": {
+          "title": "Semantic RAG Evaluation",
+          "items": [
+            "Decomposes answers into atomic claims",
+            "Cross checks facts against context",
+            "Measures contextual faithfulness",
+            "Automated LLM assisted evaluation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lexical metrics calculate exact word overlaps between candidate sentences.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Modern evaluation breaks answers into atomic claims for verification.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Lexical Overlap Metrics",
+        "rightLabel": "Semantic RAG Evaluation"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Lexical word overlap metrics versus semantic atomic claim decomposition",
+        "left": {
+          "title": "Lexical Overlap Metrics",
+          "items": [
+            "Calculates n-gram word overlaps",
+            "Fails on valid synonym phrasing",
+            "High score on inverted hallucinations",
+            "Brittle static string comparisons"
+          ]
+        },
+        "right": {
+          "title": "Semantic RAG Evaluation",
+          "items": [
+            "Decomposes answers into atomic claims",
+            "Cross checks facts against context",
+            "Measures contextual faithfulness",
+            "Automated LLM assisted evaluation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lexical metrics calculate exact word overlaps between candidate sentences.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Modern evaluation breaks answers into atomic claims for verification.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Lexical Overlap Metrics",
+        "rightLabel": "Semantic RAG Evaluation"
+      }
+    },
+    {
+      "partTitle": "The RAG Triad: Faithfulness, Answer Relevance & Context Relevance",
+      "codeHash": "a19a637f1d77edd82fdaf9ff099cc417b27f4963fbd931ad0f25ca5776c42009",
+      "spec": {
+        "template": "boxes",
+        "title": "The three core evaluation pillars of the retrieval-augmented generation triad",
+        "boxes": [
+          {
+            "id": "contextRel",
+            "title": "Context Relevance",
+            "items": [
+              "Evaluates query to context retrieval",
+              "Measures noise in retrieved chunks",
+              "Flags embedding search failure"
+            ]
+          },
+          {
+            "id": "faithfulness",
+            "title": "Grounded Faithfulness",
+            "items": [
+              "Evaluates context to generated answer",
+              "Detects unsupported factual hallucinations",
+              "Enforces strict source attribution"
+            ]
+          },
+          {
+            "id": "answerRel",
+            "title": "Answer Relevance",
+            "items": [
+              "Evaluates query to generated answer",
+              "Verifies answer directly addresses prompt",
+              "Prevents topic evasion responses"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Faithfulness evaluates if claims are substantiated by retrieved context.",
+            "activeBoxId": "faithfulness",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Answer relevance evaluates if generated answers directly resolve questions.",
+            "activeBoxId": "answerRel",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "The three core evaluation pillars of the retrieval-augmented generation triad",
+        "boxes": [
+          {
+            "id": "contextRel",
+            "title": "Context Relevance",
+            "items": [
+              "Evaluates query to context retrieval",
+              "Measures noise in retrieved chunks",
+              "Flags embedding search failure"
+            ]
+          },
+          {
+            "id": "faithfulness",
+            "title": "Grounded Faithfulness",
+            "items": [
+              "Evaluates context to generated answer",
+              "Detects unsupported factual hallucinations",
+              "Enforces strict source attribution"
+            ]
+          },
+          {
+            "id": "answerRel",
+            "title": "Answer Relevance",
+            "items": [
+              "Evaluates query to generated answer",
+              "Verifies answer directly addresses prompt",
+              "Prevents topic evasion responses"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Faithfulness evaluates if claims are substantiated by retrieved context.",
+            "activeBoxId": "faithfulness",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Answer relevance evaluates if generated answers directly resolve questions.",
+            "activeBoxId": "answerRel",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Faithfulness Mathematics: Atomic Claim Decomposition",
+      "codeHash": "4af329d3a6ac23668955bc1fda688abb0f9914d50ae7a4a4929f07340296ab66",
+      "spec": {
+        "template": "flow",
+        "title": "Atomic claim extraction verification and faithfulness score ratio calculation",
+        "nodes": [
+          {
+            "id": "genAnswer",
+            "label": "Generated LLM Answer",
+            "tappable": false
+          },
+          {
+            "id": "claimDecomp",
+            "label": "Atomic Claim Extraction",
+            "tappable": false
+          },
+          {
+            "id": "contextCheck",
+            "label": "Context Entailment Verification",
+            "tappable": false
+          },
+          {
+            "id": "faithScore",
+            "label": "Faithfulness Score Ratio",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "genAnswer",
+            "to": "claimDecomp",
+            "label": "Extract Self-Contained Statements"
+          },
+          {
+            "from": "claimDecomp",
+            "to": "contextCheck",
+            "label": "Check Subsumed Claims Against Context"
+          },
+          {
+            "from": "contextCheck",
+            "to": "faithScore",
+            "label": "Verified Claims Divided by Total"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The evaluation engine decomposes generated answers into atomic statements.",
+            "activeNodes": [
+              "genAnswer",
+              "claimDecomp"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Faithfulness is defined as the ratio of verified statements to total claims.",
+            "activeNodes": [
+              "contextCheck",
+              "faithScore"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Atomic claim extraction verification and faithfulness score ratio calculation",
+        "nodes": [
+          {
+            "id": "genAnswer",
+            "label": "Generated LLM Answer",
+            "tappable": false
+          },
+          {
+            "id": "claimDecomp",
+            "label": "Atomic Claim Extraction",
+            "tappable": false
+          },
+          {
+            "id": "contextCheck",
+            "label": "Context Entailment Verification",
+            "tappable": false
+          },
+          {
+            "id": "faithScore",
+            "label": "Faithfulness Score Ratio",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "genAnswer",
+            "to": "claimDecomp",
+            "label": "Extract Self-Contained Statements"
+          },
+          {
+            "from": "claimDecomp",
+            "to": "contextCheck",
+            "label": "Check Subsumed Claims Against Context"
+          },
+          {
+            "from": "contextCheck",
+            "to": "faithScore",
+            "label": "Verified Claims Divided by Total"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The evaluation engine decomposes generated answers into atomic statements.",
+            "activeNodes": [
+              "genAnswer",
+              "claimDecomp"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Faithfulness is defined as the ratio of verified statements to total claims.",
+            "activeNodes": [
+              "contextCheck",
+              "faithScore"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Answer Relevance & Semantic Question Generation",
+      "codeHash": "16b89646b1498d08d87f347f88bfdc0c8eb535c76347686a0267aecfd4696224",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Context Recall & Ground Truth Benchmark Alignment",
+      "codeHash": "71c1f368f389152cd255822e431f6341fddbf3bc2262eecc75672f8313e1cf4e",
+      "spec": {
+        "template": "table",
+        "title": "RAG evaluation triad pillars required inputs and production target bars",
+        "columns": [
+          "Evaluation Pillar",
+          "Required Inputs",
+          "Primary Metric",
+          "Target Threshold"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Context recall evaluates retrievers against gold-standard benchmarks.",
+            "activeRowIndex": 3,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Measuring recall helps engineers optimize chunk sizes and thresholds.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "RAG evaluation triad pillars required inputs and production target bars",
+        "columns": [
+          "Evaluation Pillar",
+          "Required Inputs",
+          "Primary Metric",
+          "Target Threshold"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Context recall evaluates retrievers against gold-standard benchmarks.",
+            "activeRowIndex": 3,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Measuring recall helps engineers optimize chunk sizes and thresholds.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete Automated RAG Evaluation Suite",
+      "codeHash": "b40e4ce329f86d754b35ff47aa698eff7f5ec48c4919c1b9c1931299bc7ec916",
+      "spec": {
+        "template": "sequence",
+        "title": "Automated RAG evaluation pipeline claim verification and audit scoring",
+        "actors": [
+          {
+            "id": "evalHarness",
+            "label": "Automated Test Harness"
+          },
+          {
+            "id": "claimExtractor",
+            "label": "Atomic Claim Parser"
+          },
+          {
+            "id": "judgeVerifier",
+            "label": "Context Entailment Judge"
+          },
+          {
+            "id": "auditReporter",
+            "label": "Evaluation Report Card"
+          }
+        ],
+        "messages": [
+          {
+            "from": "evalHarness",
+            "to": "claimExtractor",
+            "label": "Submit Generated Encryption Answer",
+            "tone": "data"
+          },
+          {
+            "from": "claimExtractor",
+            "to": "judgeVerifier",
+            "label": "Pass Three Atomic Factual Claims",
+            "tone": "data"
+          },
+          {
+            "from": "judgeVerifier",
+            "to": "judgeVerifier",
+            "label": "Verify Each Statement Against Context",
+            "tone": "data"
+          },
+          {
+            "from": "judgeVerifier",
+            "to": "auditReporter",
+            "label": "Flag Unsupported Hallucinated Claim",
+            "tone": "danger"
+          },
+          {
+            "from": "auditReporter",
+            "to": "evalHarness",
+            "label": "Issue Formal Quality Certification Verdict",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The suite evaluates context relevance faithfulness and answer relevance.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The automated suite rejects the output and flags it for review.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Automated RAG evaluation pipeline claim verification and audit scoring",
+        "actors": [
+          {
+            "id": "evalHarness",
+            "label": "Automated Test Harness"
+          },
+          {
+            "id": "claimExtractor",
+            "label": "Atomic Claim Parser"
+          },
+          {
+            "id": "judgeVerifier",
+            "label": "Context Entailment Judge"
+          },
+          {
+            "id": "auditReporter",
+            "label": "Evaluation Report Card"
+          }
+        ],
+        "messages": [
+          {
+            "from": "evalHarness",
+            "to": "claimExtractor",
+            "label": "Submit Generated Encryption Answer",
+            "tone": "data"
+          },
+          {
+            "from": "claimExtractor",
+            "to": "judgeVerifier",
+            "label": "Pass Three Atomic Factual Claims",
+            "tone": "data"
+          },
+          {
+            "from": "judgeVerifier",
+            "to": "judgeVerifier",
+            "label": "Verify Each Statement Against Context",
+            "tone": "data"
+          },
+          {
+            "from": "judgeVerifier",
+            "to": "auditReporter",
+            "label": "Flag Unsupported Hallucinated Claim",
+            "tone": "danger"
+          },
+          {
+            "from": "auditReporter",
+            "to": "evalHarness",
+            "label": "Issue Formal Quality Certification Verdict",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The suite evaluates context relevance faithfulness and answer relevance.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The automated suite rejects the output and flags it for review.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

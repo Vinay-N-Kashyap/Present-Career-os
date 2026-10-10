@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 13,
+  "promptSha": "ad40e171b37d2baaac66b8b9eeb2e6dc52062fe03b84650ae2f36457a54c4107",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Build-Once, Deploy-Many Artifact Invariant",
+      "codeHash": "842c588f3cc406286c83a4376fc0ca55285084fbd5fe4b75d6fe0d70ad0a57bc",
+      "spec": {
+        "template": "flow",
+        "title": "Build-once deploy-many immutable artifact promotion flow",
+        "nodes": [
+          {
+            "id": "ci",
+            "label": "development"
+          },
+          {
+            "id": "stg",
+            "label": "staging"
+          },
+          {
+            "id": "prd",
+            "label": "production"
+          },
+          {
+            "id": "art",
+            "label": "commit-9a8b1c"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Build binary artifact once tagging with immutable commit reference.",
+            "values": {
+              "ci": {
+                "text": "development"
+              },
+              "art": {
+                "text": "commit-9a8b1c"
+              }
+            },
+            "arrows": [
+              [
+                "ci",
+                "art"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Identical binary artifact promotes sequentially across staging to production.",
+            "values": {
+              "stg": {
+                "text": "staging"
+              },
+              "prd": {
+                "text": "production"
+              }
+            },
+            "arrows": [
+              [
+                "stg",
+                "prd"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Build-once deploy-many immutable artifact promotion flow",
+        "nodes": [
+          {
+            "id": "ci",
+            "label": "development"
+          },
+          {
+            "id": "stg",
+            "label": "staging"
+          },
+          {
+            "id": "prd",
+            "label": "production"
+          },
+          {
+            "id": "art",
+            "label": "commit-9a8b1c"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Build binary artifact once tagging with immutable commit reference.",
+            "values": {
+              "ci": {
+                "text": "development"
+              },
+              "art": {
+                "text": "commit-9a8b1c"
+              }
+            },
+            "arrows": [
+              [
+                "ci",
+                "art"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Identical binary artifact promotes sequentially across staging to production.",
+            "values": {
+              "stg": {
+                "text": "staging"
+              },
+              "prd": {
+                "text": "production"
+              }
+            },
+            "arrows": [
+              [
+                "stg",
+                "prd"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Environment Promotion Pipelines & Approval Gates",
+      "codeHash": "de0f3f35efa134874921857dcafacf86fa477d2201a911279db1926fc2873b9c",
+      "spec": {
+        "template": "states",
+        "title": "Environment deployment promotion approval gate states",
+        "states": [
+          {
+            "id": "pending",
+            "label": "PENDING"
+          },
+          {
+            "id": "approved",
+            "label": "APPROVED"
+          },
+          {
+            "id": "deployed",
+            "label": "DEPLOYED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Approval gate pauses pipeline pending designated engineering sign-off.",
+            "currentState": "pending",
+            "transition": {
+              "from": "pending",
+              "to": "pending",
+              "label": "PENDING"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Designated engineer approval deploys verified staging artifact to live users.",
+            "currentState": "deployed",
+            "transition": {
+              "from": "pending",
+              "to": "deployed",
+              "label": "DEPLOYED"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Environment deployment promotion approval gate states",
+        "states": [
+          {
+            "id": "pending",
+            "label": "PENDING"
+          },
+          {
+            "id": "approved",
+            "label": "APPROVED"
+          },
+          {
+            "id": "deployed",
+            "label": "DEPLOYED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Approval gate pauses pipeline pending designated engineering sign-off.",
+            "currentState": "pending",
+            "transition": {
+              "from": "pending",
+              "to": "pending",
+              "label": "PENDING"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Designated engineer approval deploys verified staging artifact to live users.",
+            "currentState": "deployed",
+            "transition": {
+              "from": "pending",
+              "to": "deployed",
+              "label": "DEPLOYED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SSH Bastion (Jump Box) Architecture & Secure Tunnels",
+      "codeHash": "de592f258a2d2eb7f53a61d13afdbff12aa27017493bff2cc2ca2898e5b675d2",
+      "spec": {
+        "template": "compare",
+        "title": "Bastion host public access versus private network subnet isolation",
+        "leftLabel": "Public Bastion Node",
+        "rightLabel": "Private Application Node",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bastion host resides on public subnet accepting authenticated entry tunnels.",
+            "left": {
+              "code": "name: 'bastion-jump-host'",
+              "result": {
+                "text": "public"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'app-server-01'",
+              "result": {
+                "text": "private"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Encrypted tunnels route through bastion proxy to private internal servers.",
+            "left": {
+              "code": "allowsDirectInternetInbound: true",
+              "result": {
+                "text": "public"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "allowsDirectInternetInbound: false",
+              "result": {
+                "text": "private"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Bastion host public access versus private network subnet isolation",
+        "leftLabel": "Public Bastion Node",
+        "rightLabel": "Private Application Node",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bastion host resides on public subnet accepting authenticated entry tunnels.",
+            "left": {
+              "code": "name: 'bastion-jump-host'",
+              "result": {
+                "text": "public"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'app-server-01'",
+              "result": {
+                "text": "private"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Encrypted tunnels route through bastion proxy to private internal servers.",
+            "left": {
+              "code": "allowsDirectInternetInbound: true",
+              "result": {
+                "text": "public"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "allowsDirectInternetInbound: false",
+              "result": {
+                "text": "private"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Trust Deployments: OpenID Connect (OIDC) Federation",
+      "codeHash": "f660333f03c8f2c22f1036a1d522b7267c63d6c26e7af47f8adc7389c6c76f74",
+      "spec": {
+        "template": "compare",
+        "title": "OIDC token federation exchange for ephemeral cloud credentials",
+        "leftLabel": "Verified OIDC Token Claims",
+        "rightLabel": "Temporary Credential Issue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Zero-trust federation eliminates long-lived credentials across pipelines.",
+            "left": {
+              "code": "repository: 'myorg/web-service'",
+              "result": {
+                "text": "myorg/web-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "actor: 'ci-runner'",
+              "result": {
+                "text": "ci-runner"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cloud providers exchange verified tokens for temporary credentials.",
+            "left": {
+              "code": "tempKey: 'ASIA_TEMP_EPHEMERAL99'",
+              "result": {
+                "text": "ASIA_TEMP_EPHEMERAL99"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ttlMinutes: 15",
+              "result": {
+                "text": "ci-runner"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "OIDC token federation exchange for ephemeral cloud credentials",
+        "leftLabel": "Verified OIDC Token Claims",
+        "rightLabel": "Temporary Credential Issue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Zero-trust federation eliminates long-lived credentials across pipelines.",
+            "left": {
+              "code": "repository: 'myorg/web-service'",
+              "result": {
+                "text": "myorg/web-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "actor: 'ci-runner'",
+              "result": {
+                "text": "ci-runner"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cloud providers exchange verified tokens for temporary credentials.",
+            "left": {
+              "code": "tempKey: 'ASIA_TEMP_EPHEMERAL99'",
+              "result": {
+                "text": "ASIA_TEMP_EPHEMERAL99"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ttlMinutes: 15",
+              "result": {
+                "text": "ci-runner"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ephemeral Pull Request Environments (Preview Apps)",
+      "codeHash": "6cc5ff8075c15698bcdfb3f0899aaf3cd108545273ef354400bd0ed9f4afe907",
+      "spec": {
+        "template": "states",
+        "title": "Ephemeral pull request preview app environment lifecycle",
+        "states": [
+          {
+            "id": "provisioning",
+            "label": "PROVISIONING"
+          },
+          {
+            "id": "ready",
+            "label": "READY"
+          },
+          {
+            "id": "destroyed",
+            "label": "DESTROYED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Opening pull request automatically provisions isolated ephemeral environment.",
+            "currentState": "ready",
+            "transition": {
+              "from": "provisioning",
+              "to": "ready",
+              "label": "READY"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Closing pull request destroys temporary preview environment freeing resources.",
+            "currentState": "destroyed",
+            "transition": {
+              "from": "ready",
+              "to": "destroyed",
+              "label": "DESTROYED"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Ephemeral pull request preview app environment lifecycle",
+        "states": [
+          {
+            "id": "provisioning",
+            "label": "PROVISIONING"
+          },
+          {
+            "id": "ready",
+            "label": "READY"
+          },
+          {
+            "id": "destroyed",
+            "label": "DESTROYED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Opening pull request automatically provisions isolated ephemeral environment.",
+            "currentState": "ready",
+            "transition": {
+              "from": "provisioning",
+              "to": "ready",
+              "label": "READY"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Closing pull request destroys temporary preview environment freeing resources.",
+            "currentState": "destroyed",
+            "transition": {
+              "from": "ready",
+              "to": "destroyed",
+              "label": "DESTROYED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Database Backups Before Staging Deployments",
+      "codeHash": "9de32f468346f10097b46cf05686f275725c7d2b628e85f7a73ffa32a5d6c150",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

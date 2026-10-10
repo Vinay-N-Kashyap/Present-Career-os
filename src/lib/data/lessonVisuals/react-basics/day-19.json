@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 19,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why apps have pages",
+      "codeHash": "476015f30f4b7db239730179f59d2f529591d3bf43a9072a52b7fba9135ef9b0",
+      "spec": {
+        "template": "flow",
+        "title": "Matching browser pathname to dedicated page view",
+        "nodes": [
+          {
+            "id": "url",
+            "label": "path",
+            "tappable": false
+          },
+          {
+            "id": "router",
+            "label": "router",
+            "tappable": false
+          },
+          {
+            "id": "view",
+            "label": "page",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real applications split features across separate addressable pages.",
+            "values": {
+              "url": {
+                "text": "\"/\""
+              },
+              "router": {
+                "text": "show"
+              },
+              "view": {
+                "text": "\"Dashboard\""
+              }
+            },
+            "tones": {
+              "url": "data",
+              "router": "idle",
+              "view": "idle"
+            },
+            "arrows": [
+              [
+                "url",
+                "router"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Without pages apps cannot share a link to one job or screen.",
+            "values": {
+              "url": {
+                "text": "\"/jobs\""
+              },
+              "router": {
+                "text": "show"
+              },
+              "view": {
+                "text": "\"JobListPage\""
+              }
+            },
+            "tones": {
+              "url": "idle",
+              "router": "ok",
+              "view": "ok"
+            },
+            "arrows": [
+              [
+                "url",
+                "router"
+              ],
+              [
+                "router",
+                "view"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Matching browser pathname to dedicated page view",
+        "nodes": [
+          {
+            "id": "url",
+            "label": "path",
+            "tappable": false
+          },
+          {
+            "id": "router",
+            "label": "router",
+            "tappable": false
+          },
+          {
+            "id": "view",
+            "label": "page",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real applications split features across separate addressable pages.",
+            "values": {
+              "url": "\"/\"",
+              "router": "show",
+              "view": "\"Dashboard\""
+            },
+            "tones": {
+              "url": "data",
+              "router": "idle",
+              "view": "idle"
+            },
+            "arrows": [
+              [
+                "url",
+                "router"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Without pages apps cannot share a link to one job or screen.",
+            "values": {
+              "url": "\"/jobs\"",
+              "router": "show",
+              "view": "\"JobListPage\""
+            },
+            "tones": {
+              "url": "idle",
+              "router": "ok",
+              "view": "ok"
+            },
+            "arrows": [
+              [
+                "url",
+                "router"
+              ],
+              [
+                "router",
+                "view"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Setting up React Router",
+      "codeHash": "f56532a5e8e250099d5ecb5345188e1e69b73e11a393b0c9cea3d0031d3545ef",
+      "spec": {
+        "template": "compare",
+        "title": "Route table mapping path pattern rules",
+        "leftLabel": "Root Route",
+        "rightLabel": "Collection Route",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Define routes pairing URL path patterns with elements.",
+            "left": {
+              "code": "console.log(matchRoute(\"/\"));",
+              "result": {
+                "text": "\"home\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(matchRoute(\"/jobs\"));",
+              "result": {
+                "text": "\"jobs\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Wildcard path patterns catch unrecognised URL routes.",
+            "left": {
+              "code": "console.log(matchRoute(\"/\"));",
+              "result": {
+                "text": "\"home\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(matchRoute(\"/jobs\"));",
+              "result": {
+                "text": "\"jobs\""
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Route table mapping path pattern rules",
+        "leftLabel": "Root Route",
+        "rightLabel": "Collection Route",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Define routes pairing URL path patterns with elements.",
+            "left": {
+              "code": "console.log(matchRoute(\"/\"));",
+              "result": "\"home\"",
+              "tone": "ok",
+              "checks": [
+                "\"home\""
+              ]
+            },
+            "right": {
+              "code": "console.log(matchRoute(\"/jobs\"));",
+              "result": "\"jobs\"",
+              "tone": "idle",
+              "checks": [
+                "\"jobs\""
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Wildcard path patterns catch unrecognised URL routes.",
+            "left": {
+              "code": "console.log(matchRoute(\"/\"));",
+              "result": "\"home\"",
+              "tone": "ok",
+              "checks": [
+                "\"home\""
+              ]
+            },
+            "right": {
+              "code": "console.log(matchRoute(\"/jobs\"));",
+              "result": "\"jobs\"",
+              "tone": "idle",
+              "checks": [
+                "\"jobs\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Moving between pages with Link",
+      "codeHash": "67e7da81d90b447cc53e83c057b14e679890a27b9b3d443e1dfb230ddffeb79f",
+      "spec": {
+        "template": "compare",
+        "title": "Client side navigation using Link over anchor tags",
+        "leftLabel": "Link Component",
+        "rightLabel": "Anchor Tag (Reloads)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard anchor tags trigger browser reloads losing state.",
+            "left": {
+              "code": "console.log(links[0]);",
+              "result": {
+                "text": "\"/jobs/7\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(links[1]);",
+              "result": {
+                "text": "\"/jobs/12\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Link updates browser history smoothly without refreshing.",
+            "left": {
+              "code": "console.log(links[0]);",
+              "result": {
+                "text": "\"/jobs/7\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(links[1]);",
+              "result": {
+                "text": "\"/jobs/12\""
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Client side navigation using Link over anchor tags",
+        "leftLabel": "Link Component",
+        "rightLabel": "Anchor Tag (Reloads)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard anchor tags trigger browser reloads losing state.",
+            "left": {
+              "code": "console.log(links[0]);",
+              "result": "\"/jobs/7\"",
+              "tone": "ok",
+              "checks": [
+                "\"/jobs/7\""
+              ]
+            },
+            "right": {
+              "code": "console.log(links[1]);",
+              "result": "\"/jobs/12\"",
+              "tone": "idle",
+              "checks": [
+                "\"/jobs/12\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Link updates browser history smoothly without refreshing.",
+            "left": {
+              "code": "console.log(links[0]);",
+              "result": "\"/jobs/7\"",
+              "tone": "ok",
+              "checks": [
+                "\"/jobs/7\""
+              ]
+            },
+            "right": {
+              "code": "console.log(links[1]);",
+              "result": "\"/jobs/12\"",
+              "tone": "idle",
+              "checks": [
+                "\"/jobs/12\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reading the id from the address",
+      "codeHash": "b6a4148b82e0ee2b2e981f919263214787a6fc8a1659ef423af5e058dc9b6024",
+      "spec": {
+        "template": "boxes",
+        "title": "Extracting dynamic URL parameters with useParams",
+        "boxes": [
+          {
+            "id": "path",
+            "label": "path",
+            "tappable": false
+          },
+          {
+            "id": "id",
+            "label": "id",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Colon parameters match dynamic URL segments in routes.",
+            "values": {
+              "path": {
+                "text": "path"
+              },
+              "id": {
+                "text": "parts[2]"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The useParams hook extracts URL parameter values into components.",
+            "values": {
+              "path": {
+                "text": "path"
+              },
+              "id": {
+                "text": "parts[2]"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Extracting dynamic URL parameters with useParams",
+        "boxes": [
+          {
+            "id": "path",
+            "label": "path",
+            "tappable": false
+          },
+          {
+            "id": "id",
+            "label": "id",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Colon parameters match dynamic URL segments in routes.",
+            "values": {
+              "path": "path",
+              "id": "parts[2]"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "The useParams hook extracts URL parameter values into components.",
+            "values": {
+              "path": "path",
+              "id": "parts[2]"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Organising pages and components",
+      "codeHash": "2ec80335283cbb24652a6b974f19868a2e6fb72000b7a7e4a253a330bf921c40",
+      "spec": {
+        "template": "component-tree",
+        "title": "Separating screen pages from reusable components",
+        "nodes": [
+          {
+            "id": "router",
+            "name": "BrowserRouter",
+            "tone": "idle"
+          },
+          {
+            "id": "dash",
+            "name": "Dashboard",
+            "tone": "ok"
+          },
+          {
+            "id": "list",
+            "name": "JobListPage",
+            "tone": "ok"
+          },
+          {
+            "id": "det",
+            "name": "JobDetails",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Organise applications by separating screen pages and components.",
+            "activeId": "router",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "Clear folder separation keeps growing applications maintainable.",
+            "activeId": "det",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Separating screen pages from reusable components",
+        "nodes": [
+          {
+            "id": "router",
+            "name": "BrowserRouter",
+            "tone": "idle"
+          },
+          {
+            "id": "dash",
+            "name": "Dashboard",
+            "tone": "ok"
+          },
+          {
+            "id": "list",
+            "name": "JobListPage",
+            "tone": "ok"
+          },
+          {
+            "id": "det",
+            "name": "JobDetails",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Organise applications by separating screen pages and components.",
+            "activeId": "router",
+            "tone": "idle",
+            "nodes": [
+              {
+                "id": "router",
+                "name": "BrowserRouter",
+                "tone": "idle"
+              },
+              {
+                "id": "dash",
+                "name": "Dashboard",
+                "tone": "ok"
+              },
+              {
+                "id": "list",
+                "name": "JobListPage",
+                "tone": "ok"
+              },
+              {
+                "id": "det",
+                "name": "JobDetails",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clear folder separation keeps growing applications maintainable.",
+            "activeId": "det",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "router",
+                "name": "BrowserRouter",
+                "tone": "idle"
+              },
+              {
+                "id": "dash",
+                "name": "Dashboard",
+                "tone": "ok"
+              },
+              {
+                "id": "list",
+                "name": "JobListPage",
+                "tone": "ok"
+              },
+              {
+                "id": "det",
+                "name": "JobDetails",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Add pages to the Job Tracker",
+      "codeHash": "bae115a0cf01c6c3ef96a825195ce794b07b90bb61c1b273d16b90ce11b1eed3",
+      "spec": {
+        "template": "none",
+        "reason": "Assembling three full pages in Job Tracker with NavLink menus and deep view links"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Assembling three full pages in Job Tracker with NavLink menus and deep view links"
+      }
+    }
+  ]
+}

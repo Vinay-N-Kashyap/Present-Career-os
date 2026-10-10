@@ -1,0 +1,831 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why not a simple counter?",
+      "codeHash": "5cde3b690cdd2acf842311adfa273545d87eaaec5c363beb4dbd86ba0ad06be1",
+      "spec": {
+        "template": "none",
+        "reason": "Distributed ID collision probability and counter bottlenecks."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The Snowflake layout",
+      "codeHash": "5ff075a8d42f442b743c185976a930be9cfd3b9498b0ee94b424b670427ef733",
+      "spec": {
+        "template": "table",
+        "title": "Twitter Snowflake 64-bit layout bit field allocations",
+        "columns": [
+          "field",
+          "bits",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Snowflake ID allocates 41 bits for millisecond epoch time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "TIME_BITS"
+                  },
+                  {
+                    "text": "41"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Datacenter and worker IDs allow 1024 distributed generators.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "TIME_BITS"
+                  },
+                  {
+                    "text": "41"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DC_BITS"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "WORKER_BITS"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Shifts and OR operations assemble worker and sequence bits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "TIME_BITS"
+                  },
+                  {
+                    "text": "41"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DC_BITS"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "WORKER_BITS"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SEQ_BITS"
+                  },
+                  {
+                    "text": "12"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Twitter Snowflake 64-bit layout bit field allocations",
+        "columns": [
+          "field",
+          "bits",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Snowflake ID allocates 41 bits for millisecond epoch time.",
+            "rows": [
+              {
+                "cells": [
+                  "TIME_BITS",
+                  "41",
+                  "1024"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Datacenter and worker IDs allow 1024 distributed generators.",
+            "rows": [
+              {
+                "cells": [
+                  "TIME_BITS",
+                  "41",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DC_BITS",
+                  "5",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "WORKER_BITS",
+                  "5",
+                  "1024"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Shifts and OR operations assemble worker and sequence bits.",
+            "rows": [
+              {
+                "cells": [
+                  "TIME_BITS",
+                  "41",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DC_BITS",
+                  "5",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "WORKER_BITS",
+                  "5",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SEQ_BITS",
+                  "12",
+                  "1024"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building the generator",
+      "codeHash": "b02176272aa01bb030fcf01a206a70a690600ede1be2f847018d026f7b99e6d9",
+      "spec": {
+        "template": "compare",
+        "title": "Snowflake generator clock monotonicity and backward jump error handling",
+        "leftLabel": "Monotonic Progression",
+        "rightLabel": "Clock Backward Anomaly",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function next_id increments sequence when millisecond equals last.",
+            "left": {
+              "code": "ms == last_ms: sequence + 1",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ms != last_ms: sequence = 0",
+              "result": {
+                "text": "3"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Backward clock raises CLOCK_MOVED_BACKWARDS avoiding duplicates.",
+            "left": {
+              "code": "advancing millisecond timestamp",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ms < last_ms clock backward",
+              "result": {
+                "text": "CLOCK_MOVED_BACKWARDS"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "ID generation happens locally without network calls.",
+            "left": {
+              "code": "local sequence calculation",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "clock exception aborts id",
+              "result": {
+                "text": "CLOCK_MOVED_BACKWARDS"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Snowflake generator clock monotonicity and backward jump error handling",
+        "leftLabel": "Monotonic Progression",
+        "rightLabel": "Clock Backward Anomaly",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function next_id increments sequence when millisecond equals last.",
+            "left": {
+              "code": "ms == last_ms: sequence + 1",
+              "result": "1",
+              "tone": "ok",
+              "checks": [
+                "1"
+              ]
+            },
+            "right": {
+              "code": "ms != last_ms: sequence = 0",
+              "result": "3",
+              "tone": "ok",
+              "checks": [
+                "3"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Backward clock raises CLOCK_MOVED_BACKWARDS avoiding duplicates.",
+            "left": {
+              "code": "advancing millisecond timestamp",
+              "result": "1",
+              "tone": "ok",
+              "checks": [
+                "1"
+              ]
+            },
+            "right": {
+              "code": "ms < last_ms clock backward",
+              "result": "CLOCK_MOVED_BACKWARDS",
+              "tone": "error",
+              "checks": [
+                "CLOCK_MOVED_BACKWARDS"
+              ]
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "ID generation happens locally without network calls.",
+            "left": {
+              "code": "local sequence calculation",
+              "result": "1",
+              "tone": "ok",
+              "checks": [
+                "1"
+              ]
+            },
+            "right": {
+              "code": "clock exception aborts id",
+              "result": "CLOCK_MOVED_BACKWARDS",
+              "tone": "error",
+              "checks": [
+                "CLOCK_MOVED_BACKWARDS"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Decoding an ID",
+      "codeHash": "95242850ccb9fceba88736ac9aeef493358adebd44ac9c0688f74517476b6235",
+      "spec": {
+        "template": "table",
+        "title": "Snowflake ID bitmask extraction and component field decoding",
+        "columns": [
+          "field",
+          "shift",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed layout allows bit shifts and masks to separate fields.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ms_since_epoch"
+                  },
+                  {
+                    "text": "123_456"
+                  },
+                  {
+                    "text": "123_456"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Shifts and bitmasks extract datacenter worker and sequence values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ms_since_epoch"
+                  },
+                  {
+                    "text": "123_456"
+                  },
+                  {
+                    "text": "123_456"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "datacenter"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worker"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decoded ID reveals which machine created it for debugging.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ms_since_epoch"
+                  },
+                  {
+                    "text": "123_456"
+                  },
+                  {
+                    "text": "123_456"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "datacenter"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worker"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sequence"
+                  },
+                  {
+                    "text": "42"
+                  },
+                  {
+                    "text": "42"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Snowflake ID bitmask extraction and component field decoding",
+        "columns": [
+          "field",
+          "shift",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed layout allows bit shifts and masks to separate fields.",
+            "rows": [
+              {
+                "cells": [
+                  "ms_since_epoch",
+                  "123_456",
+                  "123_456"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Shifts and bitmasks extract datacenter worker and sequence values.",
+            "rows": [
+              {
+                "cells": [
+                  "ms_since_epoch",
+                  "123_456",
+                  "123_456"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "datacenter",
+                  "2",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "worker",
+                  "7",
+                  "7"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decoded ID reveals which machine created it for debugging.",
+            "rows": [
+              {
+                "cells": [
+                  "ms_since_epoch",
+                  "123_456",
+                  "123_456"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "datacenter",
+                  "2",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "worker",
+                  "7",
+                  "7"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sequence",
+                  "42",
+                  "42"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Time-sortable text IDs",
+      "codeHash": "0cf425f0291968b7087a524959ce7e362035e42bd7168f3d3061269072e7dfd5",
+      "spec": {
+        "template": "table",
+        "title": "Time-sortable Base-36 timestamp prefix string representation",
+        "columns": [
+          "input_ms",
+          "digits",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Timestamp prefix in compact alphabet keeps IDs sortable as text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "35"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function time_prefix writes timestamp in base 36 representation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "35"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "36"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Base 36 compacts millisecond timestamp to 9 characters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "35"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "36"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1_790_000_000_000"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Time-sortable Base-36 timestamp prefix string representation",
+        "columns": [
+          "input_ms",
+          "digits",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Timestamp prefix in compact alphabet keeps IDs sortable as text.",
+            "rows": [
+              {
+                "cells": [
+                  "35",
+                  "0",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function time_prefix writes timestamp in base 36 representation.",
+            "rows": [
+              {
+                "cells": [
+                  "35",
+                  "0",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "36",
+                  "0",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Base 36 compacts millisecond timestamp to 9 characters.",
+            "rows": [
+              {
+                "cells": [
+                  "35",
+                  "0",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "36",
+                  "0",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1_790_000_000_000",
+                  "0",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing an ID scheme",
+      "codeHash": "30eb25ca9e841a74b035d3296605fda5b497c1c351c8378dbd5d2319722595c1",
+      "spec": {
+        "template": "none",
+        "reason": "Architecture trade-offs among auto-increment UUID v4 and Snowflake."
+      },
+      "filled": {}
+    }
+  ]
+}

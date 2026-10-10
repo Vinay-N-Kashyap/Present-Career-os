@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 10,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What a dictionary is",
+      "codeHash": "985312a29d3fd3c14774706f23bc71f6bde068dd2c967129d864823dc1173edc",
+      "spec": {
+        "template": "boxes",
+        "title": "Dictionary keys and values",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A dictionary stores values under names called keys.",
+            "values": {
+              "item": {
+                "text": "Tea"
+              },
+              "amount": {
+                "text": "20"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "You read a value with its key in square brackets.",
+            "values": {
+              "item": {
+                "text": "Tea"
+              },
+              "amount": {
+                "text": "20"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Dictionary keys and values",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A dictionary stores values under names called keys.",
+            "values": {
+              "item": "Tea",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "You read a value with its key in square brackets.",
+            "values": {
+              "item": "Tea",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adding and changing keys",
+      "codeHash": "b08d7ad1f8e6eaf604c25a0d180b99ba16fb8317f6275a5bc709be422607b275",
+      "spec": {
+        "template": "boxes",
+        "title": "Adding and removing dictionary keys",
+        "boxes": [
+          {
+            "id": "expense",
+            "label": "expense"
+          },
+          {
+            "id": "removed",
+            "label": "removed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dictionaries can change by assigning to a new key.",
+            "values": {
+              "expense": {
+                "var": "expense",
+                "line": 2
+              },
+              "removed": {
+                "text": "food"
+              }
+            },
+            "tones": {
+              "expense": "data",
+              "removed": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Pop gives back the value it removed from the dictionary.",
+            "values": {
+              "expense": {
+                "var": "expense",
+                "line": 6
+              },
+              "removed": {
+                "var": "removed",
+                "line": 6
+              }
+            },
+            "tones": {
+              "expense": "data",
+              "removed": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Adding and removing dictionary keys",
+        "boxes": [
+          {
+            "id": "expense",
+            "label": "expense"
+          },
+          {
+            "id": "removed",
+            "label": "removed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dictionaries can change by assigning to a new key.",
+            "values": {
+              "expense": "{'item': 'Tea', 'amount': 20, 'category…",
+              "removed": "food"
+            },
+            "tones": {
+              "expense": "data",
+              "removed": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Pop gives back the value it removed from the dictionary.",
+            "values": {
+              "expense": "{'item': 'Tea', 'amount': 25}",
+              "removed": "'food'"
+            },
+            "tones": {
+              "expense": "data",
+              "removed": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Missing keys and get()",
+      "codeHash": "c1e82b315431dc656e766211e0c55f590d8b2d856935aa7d5ad2d7d27539ce13",
+      "spec": {
+        "template": "none",
+        "reason": "The get() fallback behavior for missing keys is clear from print outputs."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Looping over a dictionary",
+      "codeHash": "5f1298cb1b18ca1a3d623b7857c220235024108a18b40a21ff2ab7f95a8eac8d",
+      "spec": {
+        "template": "none",
+        "reason": "Dictionary iteration over keys, values, and items is directly visible in output."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Counting with a dictionary",
+      "codeHash": "92eefd2982d6d7ee0dd3d73bdfc434bb4f0a2c0bdbddf83b55849880869e5813",
+      "spec": {
+        "template": "boxes",
+        "title": "Grouping and counting with dictionaries",
+        "boxes": [
+          {
+            "id": "totals",
+            "label": "totals"
+          },
+          {
+            "id": "counts",
+            "label": "counts"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The categories become keys and totals become values.",
+            "values": {
+              "totals": {
+                "var": "totals",
+                "line": 6
+              },
+              "counts": {
+                "text": "{}"
+              }
+            },
+            "tones": {
+              "totals": "data",
+              "counts": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Start with an empty dictionary and add each expense.",
+            "values": {
+              "totals": {
+                "var": "totals",
+                "line": 10
+              },
+              "counts": {
+                "var": "counts",
+                "line": 10
+              }
+            },
+            "tones": {
+              "totals": "data",
+              "counts": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Grouping and counting with dictionaries",
+        "boxes": [
+          {
+            "id": "totals",
+            "label": "totals"
+          },
+          {
+            "id": "counts",
+            "label": "counts"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The categories become keys and totals become values.",
+            "values": {
+              "totals": "{'food': 200, 'travel': 75, 'rent': 800…",
+              "counts": "{}"
+            },
+            "tones": {
+              "totals": "data",
+              "counts": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Start with an empty dictionary and add each expense.",
+            "values": {
+              "totals": "{'food': 200, 'travel': 75, 'rent': 800…",
+              "counts": "{'food': 3, 'travel': 2, 'rent': 1}"
+            },
+            "tones": {
+              "totals": "data",
+              "counts": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together: one expense as a dictionary",
+      "codeHash": "eb59827ca66159ef3a3dce17b50021e955dee23911014463b3b8940cc7a6caf0",
+      "spec": {
+        "template": "none",
+        "reason": "Packaging records into structured dictionaries is demonstrated in functions."
+      },
+      "filled": {}
+    }
+  ]
+}

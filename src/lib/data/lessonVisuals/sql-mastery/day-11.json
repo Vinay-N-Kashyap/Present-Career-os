@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a join does",
+      "codeHash": "3314162b58b2e616d2dac0bb994ccc39055c2f2dd0a9d054895a2c9c088c741d",
+      "spec": {
+        "template": "table",
+        "title": "INNER JOIN orders and customers",
+        "columns": [
+          "id",
+          "status",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A join puts rows from two tables side by side matching them by a rule.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The ON part provides the matching rule connecting related tables.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "Ravi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "103"
+                  },
+                  {
+                    "text": "shipped"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "INNER JOIN orders and customers",
+        "columns": [
+          "id",
+          "status",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A join puts rows from two tables side by side matching them by a rule.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "delivered",
+                  "Asha"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The ON part provides the matching rule connecting related tables.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "delivered",
+                  "Asha"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "102",
+                  "delivered",
+                  "Ravi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "103",
+                  "shipped",
+                  "Asha"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Table aliases: shorter joins",
+      "codeHash": "4287a55912b446f9b7228a3af51ed218c9776211fe5194fb685700e7756d1c08",
+      "spec": {
+        "template": "compare",
+        "title": "Full table qualifiers versus table aliases",
+        "leftLabel": "Full Table Names",
+        "rightLabel": "Table Aliases",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SQL lets you give each table a short alias right after its name.",
+            "left": {
+              "code": "customers.name, orders.id",
+              "result": {
+                "text": "verbose syntax"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "c.name, o.id",
+              "result": {
+                "text": "concise alias"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The query becomes much shorter and easier to read with aliases.",
+            "left": {
+              "code": "unaliased join",
+              "result": {
+                "text": "cluttered query"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "FROM orders o JOIN customers c",
+              "result": {
+                "text": "clean readable"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Full table qualifiers versus table aliases",
+        "leftLabel": "Full Table Names",
+        "rightLabel": "Table Aliases",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SQL lets you give each table a short alias right after its name.",
+            "left": {
+              "code": "customers.name, orders.id",
+              "result": "verbose syntax",
+              "tone": "data",
+              "checks": [
+                "verbose syntax"
+              ]
+            },
+            "right": {
+              "code": "c.name, o.id",
+              "result": "concise alias",
+              "tone": "ok",
+              "checks": [
+                "concise alias"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The query becomes much shorter and easier to read with aliases.",
+            "left": {
+              "code": "unaliased join",
+              "result": "cluttered query",
+              "tone": "data",
+              "checks": [
+                "cluttered query"
+              ]
+            },
+            "right": {
+              "code": "FROM orders o JOIN customers c",
+              "result": "clean readable",
+              "tone": "ok",
+              "checks": [
+                "clean readable"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "INNER JOIN keeps only matching rows",
+      "codeHash": "6ec90cdb10c9e1940e887e24ed25ce8110aa0f4887e768a0ae4086607b172ed5",
+      "spec": {
+        "template": "none",
+        "reason": "Inner join filtering mechanics dropping unmatched rows."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Inner join filtering mechanics dropping unmatched rows."
+      }
+    },
+    {
+      "partTitle": "Joining and then filtering, sorting and totalling",
+      "codeHash": "b238b300c050721ad2ecb73a5b2f62db374a80ca4dce9e1a4c09b8c4f8c69f34",
+      "spec": {
+        "template": "table",
+        "title": "Joined orders filtered by city",
+        "columns": [
+          "id",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A join produces rows like any query so filters and sorts work on top.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Orders from customers in Pune joins tables and adds a city filter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "103"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "104"
+                  },
+                  {
+                    "text": "Priya"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Joined orders filtered by city",
+        "columns": [
+          "id",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A join produces rows like any query so filters and sorts work on top.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "Asha"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Orders from customers in Pune joins tables and adds a city filter.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "Asha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "103",
+                  "Asha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "104",
+                  "Priya"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Joining a junction table",
+      "codeHash": "e9abdd814f8fbf36eb0b56a5bf6347b9efa4b88aec89315ceff4d1580c32e7f4",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-table relationship cardinality in junction table order line joins."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Multi-table relationship cardinality in junction table order line joins."
+      }
+    },
+    {
+      "partTitle": "Putting it together: an orders report",
+      "codeHash": "7493b5e26fd5c301b5f182c6b5cb5f919a70e8aba4be5a104465325230a895ca",
+      "spec": {
+        "template": "table",
+        "title": "Delivered orders summary with customer and total",
+        "columns": [
+          "order_id",
+          "customer",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us combine ideas into a report a shop manager would use.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "This query joins tables to get customer names and order totals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Delivered orders summary with customer and total",
+        "columns": [
+          "order_id",
+          "customer",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us combine ideas into a report a shop manager would use.",
+            "rows": [
+              {
+                "cells": [
+                  "102",
+                  "Ravi",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "This query joins tables to get customer names and order totals.",
+            "rows": [
+              {
+                "cells": [
+                  "102",
+                  "Ravi",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "101",
+                  "Asha",
+                  "280.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

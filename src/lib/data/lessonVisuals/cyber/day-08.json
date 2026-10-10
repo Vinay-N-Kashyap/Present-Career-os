@@ -1,0 +1,707 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 8,
+  "promptSha": "526450b0d92cdcfdf0b10645d14cff6e50f8eb76f934c5ea242a69ef384f64eb",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Web of Trust vs Public Key Infrastructure & Root Certificate Stores",
+      "codeHash": "9b4fb5f36b909aeb75080b794b3485e3f5cc4499beb7cc05956e006d2813b8a2",
+      "spec": {
+        "template": "states",
+        "title": "Public key infrastructure hierarchical certificate trust states",
+        "states": [
+          {
+            "id": "untrustedCert",
+            "label": "Unverified Leaf Certificate"
+          },
+          {
+            "id": "intermediateResolved",
+            "label": "Intermediate CA Signature Validated"
+          },
+          {
+            "id": "rootStoreAnchored",
+            "label": "Anchor Root CA Verified in Local Store"
+          },
+          {
+            "id": "secureSession",
+            "label": "Authenticated TLS Session Established"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Operating systems ship with root stores containing vetted certificates.",
+            "activeStateId": "rootStoreAnchored",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If certificates lack trusted root signatures the browser aborts.",
+            "activeStateId": "untrustedCert",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Public key infrastructure hierarchical certificate trust states",
+        "states": [
+          {
+            "id": "untrustedCert",
+            "label": "Unverified Leaf Certificate"
+          },
+          {
+            "id": "intermediateResolved",
+            "label": "Intermediate CA Signature Validated"
+          },
+          {
+            "id": "rootStoreAnchored",
+            "label": "Anchor Root CA Verified in Local Store"
+          },
+          {
+            "id": "secureSession",
+            "label": "Authenticated TLS Session Established"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Operating systems ship with root stores containing vetted certificates.",
+            "activeStateId": "rootStoreAnchored",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If certificates lack trusted root signatures the browser aborts.",
+            "activeStateId": "untrustedCert",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anatomy of an X.509 Certificate: Subject, Issuer, SANs & Validity Periods",
+      "codeHash": "43c26466a2d1877a09a185f1caa4caebe599e04e5c6c7a89d8de79b19a0b6dac",
+      "spec": {
+        "template": "table",
+        "title": "X.509 digital certificate attributes and verification criteria",
+        "columns": [
+          "Certificate Field",
+          "ASN.1 Type",
+          "Standard Content",
+          "Security Role"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The extension specifies all valid domain names covered by certificates.",
+            "activeRowIndex": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Basic constraints declare whether the certificate is an authorized ca.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "X.509 digital certificate attributes and verification criteria",
+        "columns": [
+          "Certificate Field",
+          "ASN.1 Type",
+          "Standard Content",
+          "Security Role"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The extension specifies all valid domain names covered by certificates.",
+            "activeRowIndex": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Basic constraints declare whether the certificate is an authorized ca.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cryptographic Signature Verification in Certificate Chains",
+      "codeHash": "153eda8c58e99d1f467a88d83e865516a66437ea38ce0388b1fb4034233813c5",
+      "spec": {
+        "template": "sequence",
+        "title": "Certificate chain recursive signature verification sequence",
+        "actors": [
+          {
+            "id": "clientBrowser",
+            "label": "Client TLS Agent"
+          },
+          {
+            "id": "leafCert",
+            "label": "Server Leaf Cert"
+          },
+          {
+            "id": "intermediateCa",
+            "label": "Intermediate CA"
+          },
+          {
+            "id": "rootCa",
+            "label": "Root CA Anchor"
+          }
+        ],
+        "messages": [
+          {
+            "from": "leafCert",
+            "to": "clientBrowser",
+            "label": "Present Leaf Certificate and Signature",
+            "tone": "data"
+          },
+          {
+            "from": "clientBrowser",
+            "to": "intermediateCa",
+            "label": "Extract Intermediate Public Key to Verify Leaf",
+            "tone": "ok"
+          },
+          {
+            "from": "intermediateCa",
+            "to": "rootCa",
+            "label": "Verify Intermediate Signature Against Root",
+            "tone": "ok"
+          },
+          {
+            "from": "rootCa",
+            "to": "clientBrowser",
+            "label": "Root Found in OS Trust Store Chain Confirmed",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The client extracts the public key from the parent certificate.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Matching hashes prove the certificate was genuinely issued and unaltered.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Certificate chain recursive signature verification sequence",
+        "actors": [
+          {
+            "id": "clientBrowser",
+            "label": "Client TLS Agent"
+          },
+          {
+            "id": "leafCert",
+            "label": "Server Leaf Cert"
+          },
+          {
+            "id": "intermediateCa",
+            "label": "Intermediate CA"
+          },
+          {
+            "id": "rootCa",
+            "label": "Root CA Anchor"
+          }
+        ],
+        "messages": [
+          {
+            "from": "leafCert",
+            "to": "clientBrowser",
+            "label": "Present Leaf Certificate and Signature",
+            "tone": "data"
+          },
+          {
+            "from": "clientBrowser",
+            "to": "intermediateCa",
+            "label": "Extract Intermediate Public Key to Verify Leaf",
+            "tone": "ok"
+          },
+          {
+            "from": "intermediateCa",
+            "to": "rootCa",
+            "label": "Verify Intermediate Signature Against Root",
+            "tone": "ok"
+          },
+          {
+            "from": "rootCa",
+            "to": "clientBrowser",
+            "label": "Root Found in OS Trust Store Chain Confirmed",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The client extracts the public key from the parent certificate.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Matching hashes prove the certificate was genuinely issued and unaltered.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Certificate Revocation Mechanics: Certificate Revocation Lists (CRL) vs OCSP Stapling",
+      "codeHash": "789480db073acde849e23cd9a7a0ee37a338825970b95d3e41a74f80cc1d634d",
+      "spec": {
+        "template": "compare",
+        "title": "Certificate revocation list overhead versus private OCSP stapling",
+        "left": {
+          "title": "Certificate Revocation List",
+          "items": [
+            "Large downloaded files listing all revoked serials",
+            "Adds latency and bandwidth waste to connections",
+            "Vulnerable to caching delays and stale lists"
+          ]
+        },
+        "right": {
+          "title": "OCSP Stapling (RFC 6066)",
+          "items": [
+            "Server staples timestamped CA status to TLS handshake",
+            "Zero extra network round-trips for connecting clients",
+            "Completely preserves user browsing privacy from CAs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Revocation lists created massive connection latency and bandwidth waste.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Clients verify the digital signature with zero extra network round trips.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Certificate Revocation List",
+        "rightLabel": "OCSP Stapling (RFC 6066)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Certificate revocation list overhead versus private OCSP stapling",
+        "left": {
+          "title": "Certificate Revocation List",
+          "items": [
+            "Large downloaded files listing all revoked serials",
+            "Adds latency and bandwidth waste to connections",
+            "Vulnerable to caching delays and stale lists"
+          ]
+        },
+        "right": {
+          "title": "OCSP Stapling (RFC 6066)",
+          "items": [
+            "Server staples timestamped CA status to TLS handshake",
+            "Zero extra network round-trips for connecting clients",
+            "Completely preserves user browsing privacy from CAs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Revocation lists created massive connection latency and bandwidth waste.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Clients verify the digital signature with zero extra network round trips.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Certificate Revocation List",
+        "rightLabel": "OCSP Stapling (RFC 6066)"
+      }
+    },
+    {
+      "partTitle": "The Modern TLS 1.3 Handshake: 1-RTT Setup, Deprecated Ciphers & Forward Secrecy",
+      "codeHash": "172f6e7a4f79612799c41b550a1ef9687c2992a075d2a954ae1aa9a91968629c",
+      "spec": {
+        "template": "table",
+        "title": "Transport Layer Security protocol evolution TLS 1.2 versus TLS 1.3",
+        "columns": [
+          "Security Capability",
+          "Legacy TLS 1.2 Protocol",
+          "Modern TLS 1.3 Standard",
+          "Architectural Advantage"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Protocol upgrades reduce connection latency to a single round trip.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "All modern cipher suites mandate authenticated encryption algorithms.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Transport Layer Security protocol evolution TLS 1.2 versus TLS 1.3",
+        "columns": [
+          "Security Capability",
+          "Legacy TLS 1.2 Protocol",
+          "Modern TLS 1.3 Standard",
+          "Architectural Advantage"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Protocol upgrades reduce connection latency to a single round trip.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "All modern cipher suites mandate authenticated encryption algorithms.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Engineering an Automated Certificate Authority Validator & Expiration Monitor",
+      "codeHash": "959c2652d04597391997884c14f244ce5f3bb29861b3e51a94743fc416d98a19",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

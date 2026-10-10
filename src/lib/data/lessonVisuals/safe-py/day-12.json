@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Two ways to get refusal wrong",
+      "codeHash": "6483104ee03d8f57ed0f8df7cb15d7d36bbb89a5f1c1e5ada203309a416f77c7",
+      "spec": {
+        "template": "table",
+        "title": "Under-refusal vs over-refusal failure trade-offs",
+        "columns": [
+          "prompts",
+          "prompts",
+          "prompts"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Under-refusal means answering a request that should have been refused.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Over-refusal means refusing harmless requests containing benign keywords.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  },
+                  {
+                    "text": "prompts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Under-refusal vs over-refusal failure trade-offs",
+        "columns": [
+          "prompts",
+          "prompts",
+          "prompts"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Under-refusal means answering a request that should have been refused.",
+            "rows": [
+              {
+                "cells": [
+                  "prompts",
+                  "prompts",
+                  "prompts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prompts",
+                  "prompts",
+                  "prompts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Over-refusal means refusing harmless requests containing benign keywords.",
+            "rows": [
+              {
+                "cells": [
+                  "prompts",
+                  "prompts",
+                  "prompts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "prompts",
+                  "prompts",
+                  "prompts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting refusals",
+      "codeHash": "c687bdc5d681cedc94abb5025e082fb535d01543d5fe75851e92590ba67aea09",
+      "spec": {
+        "template": "table",
+        "title": "Boilerplate refusal phrase matching and character normalization",
+        "columns": [
+          "answer",
+          "raw",
+          "fixed"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Refusals often use standard boilerplate phrases when declining to answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Models often write curly apostrophes which detectors must normalize.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Boilerplate refusal phrase matching and character normalization",
+        "columns": [
+          "answer",
+          "raw",
+          "fixed"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Refusals often use standard boilerplate phrases when declining to answer.",
+            "rows": [
+              {
+                "cells": [
+                  "answer",
+                  "raw",
+                  "fixed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answer",
+                  "raw",
+                  "fixed"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Models often write curly apostrophes which detectors must normalize.",
+            "rows": [
+              {
+                "cells": [
+                  "answer",
+                  "raw",
+                  "fixed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "answer",
+                  "raw",
+                  "fixed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Over- and under-refusal rates",
+      "codeHash": "6a955764576d9bde019746e2c36c288c5e704247b45b1da7003baa852f2616cb",
+      "spec": {
+        "template": "table",
+        "title": "Empirical over- and under-refusal rate metrics",
+        "columns": [
+          "results",
+          "benign",
+          "harmful"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The over-refusal rate measures the share of benign prompts that were refused.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "benign"
+                  },
+                  {
+                    "text": "harmful"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "benign"
+                  },
+                  {
+                    "text": "harmful"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Under-refusal rate measures the share of harmful prompts that were answered.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "benign"
+                  },
+                  {
+                    "text": "harmful"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "benign"
+                  },
+                  {
+                    "text": "harmful"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Empirical over- and under-refusal rate metrics",
+        "columns": [
+          "results",
+          "benign",
+          "harmful"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The over-refusal rate measures the share of benign prompts that were refused.",
+            "rows": [
+              {
+                "cells": [
+                  "results",
+                  "benign",
+                  "harmful"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "results",
+                  "benign",
+                  "harmful"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Under-refusal rate measures the share of harmful prompts that were answered.",
+            "rows": [
+              {
+                "cells": [
+                  "results",
+                  "benign",
+                  "harmful"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "results",
+                  "benign",
+                  "harmful"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Balancing the two",
+      "codeHash": "717a5b87a1187c10206f464a5c25025f55807e928cb0946d1ce45f3282852469",
+      "spec": {
+        "template": "table",
+        "title": "Version comparisons across dual safety and utility targets",
+        "columns": [
+          "versions",
+          "targets",
+          "fails"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Changes that reduce one failure mode usually increase the opposite failure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "versions"
+                  },
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "fails"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "versions"
+                  },
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "fails"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Showing both rates stops teams from optimizing one and ignoring the other.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "versions"
+                  },
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "fails"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "versions"
+                  },
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "fails"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Version comparisons across dual safety and utility targets",
+        "columns": [
+          "versions",
+          "targets",
+          "fails"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Changes that reduce one failure mode usually increase the opposite failure.",
+            "rows": [
+              {
+                "cells": [
+                  "versions",
+                  "targets",
+                  "fails"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "versions",
+                  "targets",
+                  "fails"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Showing both rates stops teams from optimizing one and ignoring the other.",
+            "rows": [
+              {
+                "cells": [
+                  "versions",
+                  "targets",
+                  "fails"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "versions",
+                  "targets",
+                  "fails"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Refusing well",
+      "codeHash": "dba3519a3cdf88c3964275ac9aba5876e6ba23d9bf488f7d46aa557ebc5bf5c7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Refusal testing in the pipeline",
+      "codeHash": "9603f3d84d50e6f05004fe3b7c971fc71f7b872940546abf73ced68564a11675",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

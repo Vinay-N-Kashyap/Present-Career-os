@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 11,
+  "promptSha": "9e0a2e06004c584eaf85e0bd34df24fa5dbcba0f528ca60ecb7f331911128787",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Tiered LLM Architecture & Economic Routing",
+      "codeHash": "9e0a2e06004c584eaf85e0bd34df24fa5dbcba0f528ca60ecb7f331911128787",
+      "spec": {
+        "template": "table",
+        "title": "Foundation Model Pricing Tiers and Workloads",
+        "columns": [
+          "Model Tier",
+          "Input Cost / 1M",
+          "Output Cost / 1M",
+          "Target Workload"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Most prompts represent simple conversational tasks and extraction.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tiered architectures partition models into nano, balanced, and frontier tiers.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Frontier models are reserved for complex proofs and multi-step reasoning.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Foundation Model Pricing Tiers and Workloads",
+        "columns": [
+          "Model Tier",
+          "Input Cost / 1M",
+          "Output Cost / 1M",
+          "Target Workload"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Most prompts represent simple conversational tasks and extraction.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tiered architectures partition models into nano, balanced, and frontier tiers.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Frontier models are reserved for complex proofs and multi-step reasoning.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Structural Complexity Heuristics (Code & Formats)",
+      "codeHash": "024ef6456fbc3cf8e21776c167f185d44b843e74cc2ce7e9059aa151ce8e4b18",
+      "spec": {
+        "template": "compare",
+        "title": "Natural Language vs Structural Technical Queries",
+        "leftLabel": "Natural Language Query (Score 0)",
+        "rightLabel": "Code & Schema Query (Score 70)",
+        "leftItems": [
+          "Pure conversational text",
+          "No programming keywords or syntax",
+          "Low syntactic difficulty",
+          "Routes efficiently to nano model tier"
+        ],
+        "rightItems": [
+          "Contains functions, types, or interfaces",
+          "Nested JSON schemas or SQL queries",
+          "Requires strict syntax adherence",
+          "Routes to balanced or frontier tier"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Programming language syntax demands higher model reasoning capabilities.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Natural language queries devoid of code receive low structural scores.",
+            "highlightSide": "left"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Natural Language vs Structural Technical Queries",
+        "leftLabel": "Natural Language Query (Score 0)",
+        "rightLabel": "Code & Schema Query (Score 70)",
+        "leftItems": [
+          "Pure conversational text",
+          "No programming keywords or syntax",
+          "Low syntactic difficulty",
+          "Routes efficiently to nano model tier"
+        ],
+        "rightItems": [
+          "Contains functions, types, or interfaces",
+          "Nested JSON schemas or SQL queries",
+          "Requires strict syntax adherence",
+          "Routes to balanced or frontier tier"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Programming language syntax demands higher model reasoning capabilities.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Natural language queries devoid of code receive low structural scores.",
+            "highlightSide": "left"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Semantic Reasoning & Intent Signals",
+      "codeHash": "f36c7c769696137d44f4b996d2b86a6765e18a22473ae4833f877e3927a9ead1",
+      "spec": {
+        "template": "states",
+        "title": "Cognitive Reasoning Intent States",
+        "states": [
+          {
+            "id": "ingest",
+            "label": "Prompt Ingested"
+          },
+          {
+            "id": "scan",
+            "label": "Reasoning Terms Scanned"
+          },
+          {
+            "id": "scored",
+            "label": "Cognitive Depth Scored"
+          },
+          {
+            "id": "qualified",
+            "label": "Frontier Tier Qualified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Phrases like derive or step by step signal heavy cognitive depth.",
+            "current": "scan",
+            "visited": [
+              "ingest",
+              "scan"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Detected reasoning terms increment prompt cognitive difficulty scores.",
+            "current": "scored",
+            "visited": [
+              "ingest",
+              "scan",
+              "scored"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Filtering conversational queries protects costly reasoning models.",
+            "current": "qualified",
+            "visited": [
+              "ingest",
+              "scan",
+              "scored",
+              "qualified"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Cognitive Reasoning Intent States",
+        "states": [
+          {
+            "id": "ingest",
+            "label": "Prompt Ingested"
+          },
+          {
+            "id": "scan",
+            "label": "Reasoning Terms Scanned"
+          },
+          {
+            "id": "scored",
+            "label": "Cognitive Depth Scored"
+          },
+          {
+            "id": "qualified",
+            "label": "Frontier Tier Qualified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Phrases like derive or step by step signal heavy cognitive depth.",
+            "current": "scan",
+            "visited": [
+              "ingest",
+              "scan"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Detected reasoning terms increment prompt cognitive difficulty scores.",
+            "current": "scored",
+            "visited": [
+              "ingest",
+              "scan",
+              "scored"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Filtering conversational queries protects costly reasoning models.",
+            "current": "qualified",
+            "visited": [
+              "ingest",
+              "scan",
+              "scored",
+              "qualified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Token Length & Context Depth Scoring",
+      "codeHash": "721bbec4f42d211a019cb389239235fc09aad5cc779e4b699a776351277d8b04",
+      "spec": {
+        "template": "bars",
+        "title": "Token Context Threshold Boundaries",
+        "bars": [
+          {
+            "label": "Nano Cap",
+            "value": {
+              "text": "500"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "Balanced Cap",
+            "value": {
+              "text": "4000"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Frontier Deep",
+            "value": {
+              "text": "8000"
+            },
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Short prompts require minimal working memory and fit on nano models.",
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": {
+                  "text": "8000"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Routing document lookups to long-context balanced models preserves budgets.",
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": {
+                  "text": "8000"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Large deep contexts route to high-capacity engines based on token counts.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": {
+                  "text": "8000"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Token Context Threshold Boundaries",
+        "bars": [
+          {
+            "label": "Nano Cap",
+            "value": 500,
+            "tone": "ok"
+          },
+          {
+            "label": "Balanced Cap",
+            "value": 4000,
+            "tone": "data"
+          },
+          {
+            "label": "Frontier Deep",
+            "value": 8000,
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Short prompts require minimal working memory and fit on nano models.",
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": 500,
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": 8000,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Routing document lookups to long-context balanced models preserves budgets.",
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": 500,
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": 8000,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Large deep contexts route to high-capacity engines based on token counts.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": 500,
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": 8000,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Factor Router Score Aggregator",
+      "codeHash": "2f07bb852f285651b2b5712bb5bae4f48fb5c2a210725121d83c5a5a5ad0dd02",
+      "spec": {
+        "template": "workflow",
+        "title": "Weighted Multi-Factor Router Evaluation",
+        "stages": [
+          {
+            "id": "struct",
+            "name": "Structural (40%)",
+            "subtext": "Code & schema weight"
+          },
+          {
+            "id": "intent",
+            "name": "Reasoning (40%)",
+            "subtext": "Cognitive depth weight"
+          },
+          {
+            "id": "length",
+            "name": "Length (20%)",
+            "subtext": "Context token weight"
+          },
+          {
+            "id": "composite",
+            "name": "Tier Selection",
+            "subtext": "Nano vs Balanced vs Frontier"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Multi-factor aggregators calculate weighted composite complexity indices.",
+            "activeStageId": "struct",
+            "statusBadge": "weighting"
+          },
+          {
+            "at": "say5",
+            "caption": "Low complexity prompts scoring below threshold route to fast nano models.",
+            "activeStageId": "intent",
+            "statusBadge": "evaluating"
+          },
+          {
+            "at": "say7",
+            "caption": "High composite scores route to flagship frontier models.",
+            "activeStageId": "composite",
+            "statusBadge": "frontier"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Weighted Multi-Factor Router Evaluation",
+        "stages": [
+          {
+            "id": "struct",
+            "name": "Structural (40%)",
+            "subtext": "Code & schema weight"
+          },
+          {
+            "id": "intent",
+            "name": "Reasoning (40%)",
+            "subtext": "Cognitive depth weight"
+          },
+          {
+            "id": "length",
+            "name": "Length (20%)",
+            "subtext": "Context token weight"
+          },
+          {
+            "id": "composite",
+            "name": "Tier Selection",
+            "subtext": "Nano vs Balanced vs Frontier"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Multi-factor aggregators calculate weighted composite complexity indices.",
+            "activeStageId": "struct",
+            "statusBadge": "weighting"
+          },
+          {
+            "at": "say5",
+            "caption": "Low complexity prompts scoring below threshold route to fast nano models.",
+            "activeStageId": "intent",
+            "statusBadge": "evaluating"
+          },
+          {
+            "at": "say7",
+            "caption": "High composite scores route to flagship frontier models.",
+            "activeStageId": "composite",
+            "statusBadge": "frontier"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Dynamic Inference Router",
+      "codeHash": "412dbd42519504b8d337ffb1d07752a393aa87a2f05b454ef0ad09622c2e15a2",
+      "spec": {
+        "template": "none",
+        "reason": "Production Dynamic Inference Router capstone synthesizing tiered architecture, heuristics, reasoning scoring, and token bounds"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Dynamic Inference Router capstone synthesizing tiered architecture, heuristics, reasoning scoring, and token bounds"
+      }
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 5,
+  "promptSha": "194f3272a4a421cb5342bc7e1b8e74d92df87735cd830cde1fb47b4fcfca7b24",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cache-Aside (Lazy Loading) vs Write-Through vs Write-Back",
+      "codeHash": "4406dd8008f0b35db74a0e36208dc4f4b624a42c2324742ff0c1dbf22bf425e1",
+      "spec": {
+        "template": "table",
+        "title": "Distributed caching access patterns and write synchronization models",
+        "columns": [
+          "Caching Access Pattern",
+          "Read Pathway Flow",
+          "Write Pathway Flow",
+          "Consistency vs Latency Tradeoff"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cache aside queries the cache before requesting from database.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Write through ensures cache and database remain in sync.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed caching access patterns and write synchronization models",
+        "columns": [
+          "Caching Access Pattern",
+          "Read Pathway Flow",
+          "Write Pathway Flow",
+          "Consistency vs Latency Tradeoff"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cache aside queries the cache before requesting from database.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Write through ensures cache and database remain in sync.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Stampede & The Thundering Herd Problem Under High Concurrency",
+      "codeHash": "49c7fc79b872f8c6ad2fb3ff7cc1054a445dec122a212e6dcc671f3017b9bb02",
+      "spec": {
+        "template": "states",
+        "title": "Cache stampede and thundering herd system lifecycle states",
+        "states": [
+          {
+            "id": "freshCache",
+            "label": "Warm Cache State (Sub-Millisecond Hits)"
+          },
+          {
+            "id": "expiredStampede",
+            "label": "Expired Key State (Thundering Herd Misses)"
+          },
+          {
+            "id": "dbCrash",
+            "label": "Database Saturation State (Exhausted Pools)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache stampede represents a major failure mode under high traffic.",
+            "activeStateId": "expiredStampede",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say6",
+            "caption": "Multiple concurrent requests issue heavy queries to the primary database.",
+            "activeStateId": "dbCrash",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Cache stampede and thundering herd system lifecycle states",
+        "states": [
+          {
+            "id": "freshCache",
+            "label": "Warm Cache State (Sub-Millisecond Hits)"
+          },
+          {
+            "id": "expiredStampede",
+            "label": "Expired Key State (Thundering Herd Misses)"
+          },
+          {
+            "id": "dbCrash",
+            "label": "Database Saturation State (Exhausted Pools)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache stampede represents a major failure mode under high traffic.",
+            "activeStateId": "expiredStampede",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say6",
+            "caption": "Multiple concurrent requests issue heavy queries to the primary database.",
+            "activeStateId": "dbCrash",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Probabilistic Early Expiration (XFetch Algorithm) & TTL Jitter",
+      "codeHash": "f902384b2b8bf3f8de28fb31b5c9d459db1a08edb83d87d4cc40c5582a94a5de",
+      "spec": {
+        "template": "workflow",
+        "title": "XFetch probabilistic early expiration and background refresh pipeline",
+        "stages": [
+          {
+            "id": "readArrives",
+            "name": "Request Arrives",
+            "subtext": "Query Cache Key"
+          },
+          {
+            "id": "evalXFetch",
+            "name": "XFetch Calculation",
+            "subtext": "Delta * Beta * ln(rand)"
+          },
+          {
+            "id": "asyncRefresh",
+            "name": "Background Refresh",
+            "subtext": "Spawn Worker Thread"
+          },
+          {
+            "id": "serveFresh",
+            "name": "Serve Fresh Value",
+            "subtext": "Zero Latency Hit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Researchers developed probabilistic algorithms for early cache refresh.",
+            "activeStageId": "evalXFetch",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "A reader refreshes cache in background while returning cached data.",
+            "activeStageId": "asyncRefresh",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "XFetch probabilistic early expiration and background refresh pipeline",
+        "stages": [
+          {
+            "id": "readArrives",
+            "name": "Request Arrives",
+            "subtext": "Query Cache Key"
+          },
+          {
+            "id": "evalXFetch",
+            "name": "XFetch Calculation",
+            "subtext": "Delta * Beta * ln(rand)"
+          },
+          {
+            "id": "asyncRefresh",
+            "name": "Background Refresh",
+            "subtext": "Spawn Worker Thread"
+          },
+          {
+            "id": "serveFresh",
+            "name": "Serve Fresh Value",
+            "subtext": "Zero Latency Hit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Researchers developed probabilistic algorithms for early cache refresh.",
+            "activeStageId": "evalXFetch",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "A reader refreshes cache in background while returning cached data.",
+            "activeStageId": "asyncRefresh",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Singleflight Mutex: Suppressing Duplicate Concurrent Backend Misses",
+      "codeHash": "03fd95ee3534b7ed8fdd3d640978d7fc553803be02329f47a9c29111813ec558",
+      "spec": {
+        "template": "sequence",
+        "title": "Singleflight mutex duplicate backend call suppression sequence",
+        "actors": [
+          {
+            "id": "clients",
+            "label": "Concurrent Clients"
+          },
+          {
+            "id": "singleflight",
+            "label": "Singleflight Mutex Group"
+          },
+          {
+            "id": "dbBackend",
+            "label": "Primary SQL Database"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Singleflight ensures that only one request hits the database for a key.",
+            "messages": [
+              {
+                "from": "clients",
+                "to": "singleflight",
+                "label": "4 Concurrent Calls for item:42"
+              },
+              {
+                "from": "singleflight",
+                "to": "dbBackend",
+                "label": "Single Leader Query for item:42"
+              }
+            ],
+            "activeActorId": "singleflight"
+          },
+          {
+            "at": "say8",
+            "caption": "Awaiting requests receive the resolved value simultaneously from cache.",
+            "messages": [
+              {
+                "from": "dbBackend",
+                "to": "singleflight",
+                "label": "Return PRODUCT_DETAILS_42"
+              },
+              {
+                "from": "singleflight",
+                "to": "clients",
+                "label": "Broadcast Exact Result to All 4 Clients"
+              }
+            ],
+            "activeActorId": "clients"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Singleflight mutex duplicate backend call suppression sequence",
+        "actors": [
+          {
+            "id": "clients",
+            "label": "Concurrent Clients"
+          },
+          {
+            "id": "singleflight",
+            "label": "Singleflight Mutex Group"
+          },
+          {
+            "id": "dbBackend",
+            "label": "Primary SQL Database"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Singleflight ensures that only one request hits the database for a key.",
+            "messages": [
+              {
+                "from": "clients",
+                "to": "singleflight",
+                "label": "4 Concurrent Calls for item:42"
+              },
+              {
+                "from": "singleflight",
+                "to": "dbBackend",
+                "label": "Single Leader Query for item:42"
+              }
+            ],
+            "activeActorId": "singleflight"
+          },
+          {
+            "at": "say8",
+            "caption": "Awaiting requests receive the resolved value simultaneously from cache.",
+            "messages": [
+              {
+                "from": "dbBackend",
+                "to": "singleflight",
+                "label": "Return PRODUCT_DETAILS_42"
+              },
+              {
+                "from": "singleflight",
+                "to": "clients",
+                "label": "Broadcast Exact Result to All 4 Clients"
+              }
+            ],
+            "activeActorId": "clients"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation Patterns, Stale-While-Revalidate & CDN Edge Synchronization",
+      "codeHash": "ad85fd39975d11ad3d818409a7616d1a3b2e0d40eed8a6ded8a1e028b276a950",
+      "spec": {
+        "template": "compare",
+        "title": "Synchronous cache invalidation compared to stale-while-revalidate",
+        "leftLabel": "Synchronous Cache Invalidation",
+        "rightLabel": "Stale-While-Revalidate (SWR)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Purge on write immediately deletes the record in storage.",
+            "left": {
+              "code": "status: \"MISS_EXPIRED\"",
+              "result": {
+                "text": "MISS_EXPIRED"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "status: \"STALE_REVALIDATING\"",
+              "result": {
+                "text": "STALE_REVALIDATING"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "The cache immediately returns the stale version to the client.",
+            "left": {
+              "code": "shouldRevalidateBackground: false",
+              "result": {
+                "text": "false"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "shouldRevalidateBackground: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Synchronous cache invalidation compared to stale-while-revalidate",
+        "leftLabel": "Synchronous Cache Invalidation",
+        "rightLabel": "Stale-While-Revalidate (SWR)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Purge on write immediately deletes the record in storage.",
+            "left": {
+              "code": "status: \"MISS_EXPIRED\"",
+              "result": {
+                "text": "MISS_EXPIRED"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "status: \"STALE_REVALIDATING\"",
+              "result": {
+                "text": "STALE_REVALIDATING"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "The cache immediately returns the stale version to the client.",
+            "left": {
+              "code": "shouldRevalidateBackground: false",
+              "result": {
+                "text": "false"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "shouldRevalidateBackground: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complete Enterprise Distributed Cache Engine with Singleflight & Circuit Breaker",
+      "codeHash": "0068dcd0028f8c0d5c0c810bfe5a33f1518d0b486ff9414175ed85b9b532279f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

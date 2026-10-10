@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 3,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why we need functions",
+      "codeHash": "48b0f41a7a7eeea1907b42ac24a22b4c03d8dc62f36c9f60eb8c0fd868488eb0",
+      "spec": {
+        "template": "flow",
+        "title": "Reusable instruction execution with functions",
+        "nodes": [
+          {
+            "id": "call1",
+            "label": "greet",
+            "tappable": true
+          },
+          {
+            "id": "fn",
+            "label": "function",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "instructions",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A function calculates rules across different products.",
+            "values": {
+              "call1": {
+                "text": "greet()"
+              },
+              "fn": {
+                "text": "greet"
+              },
+              "out": {
+                "text": "function"
+              }
+            },
+            "tones": {
+              "call1": "data",
+              "fn": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "call1",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A function is a named set of instructions with curly brackets.",
+            "values": {
+              "call1": {
+                "text": "greet()"
+              },
+              "fn": {
+                "text": "Welcome to Job Tracker!"
+              },
+              "out": {
+                "text": "Welcome to Job Tracker!"
+              }
+            },
+            "tones": {
+              "call1": "idle",
+              "fn": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "fn",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Reusable instruction execution with functions",
+        "nodes": [
+          {
+            "id": "call1",
+            "label": "greet",
+            "tappable": true
+          },
+          {
+            "id": "fn",
+            "label": "function",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "instructions",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A function calculates rules across different products.",
+            "values": {
+              "call1": "greet()",
+              "fn": "greet",
+              "out": "function"
+            },
+            "tones": {
+              "call1": "data",
+              "fn": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "call1",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A function is a named set of instructions with curly brackets.",
+            "values": {
+              "call1": "greet()",
+              "fn": "Welcome to Job Tracker!",
+              "out": "Welcome to Job Tracker!"
+            },
+            "tones": {
+              "call1": "idle",
+              "fn": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "fn",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inputs and answers: parameters and return",
+      "codeHash": "c566558c3eb07f9e841993340e9d4f060f365d8fe4aece8a584d64d1c0fa0a6c",
+      "spec": {
+        "template": "flow",
+        "title": "Function parameters and return values",
+        "nodes": [
+          {
+            "id": "input",
+            "label": "price",
+            "tappable": true
+          },
+          {
+            "id": "fn",
+            "label": "addGst",
+            "tappable": true
+          },
+          {
+            "id": "output",
+            "label": "phone",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parameters pass input information into the function.",
+            "values": {
+              "input": {
+                "text": "10000"
+              },
+              "fn": {
+                "text": "addGst"
+              },
+              "output": {
+                "text": "phone"
+              }
+            },
+            "tones": {
+              "input": "data",
+              "fn": "idle",
+              "output": "idle"
+            },
+            "arrows": [
+              [
+                "input",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The return keyword sends the calculated result back.",
+            "values": {
+              "input": {
+                "text": "10000"
+              },
+              "fn": {
+                "text": "price"
+              },
+              "output": {
+                "text": "phone"
+              }
+            },
+            "tones": {
+              "input": "idle",
+              "fn": "data",
+              "output": "ok"
+            },
+            "arrows": [
+              [
+                "fn",
+                "output"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Function parameters and return values",
+        "nodes": [
+          {
+            "id": "input",
+            "label": "price",
+            "tappable": true
+          },
+          {
+            "id": "fn",
+            "label": "addGst",
+            "tappable": true
+          },
+          {
+            "id": "output",
+            "label": "phone",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parameters pass input information into the function.",
+            "values": {
+              "input": "10000",
+              "fn": "addGst",
+              "output": "phone"
+            },
+            "tones": {
+              "input": "data",
+              "fn": "idle",
+              "output": "idle"
+            },
+            "arrows": [
+              [
+                "input",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The return keyword sends the calculated result back.",
+            "values": {
+              "input": "10000",
+              "fn": "price",
+              "output": "phone"
+            },
+            "tones": {
+              "input": "idle",
+              "fn": "data",
+              "output": "ok"
+            },
+            "arrows": [
+              [
+                "fn",
+                "output"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Arrow functions: the short way",
+      "codeHash": "77c2144f0b1910f76574e02468aa0a33101962a82d9ab18d07070546ddac4834",
+      "spec": {
+        "template": "boxes",
+        "title": "Arrow function definitions and execution",
+        "boxes": [
+          {
+            "id": "double",
+            "label": "double",
+            "tappable": true
+          },
+          {
+            "id": "fullName",
+            "label": "fullName",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Arrow functions provide a concise syntax for writing logic.",
+            "values": {
+              "double": {
+                "text": "double"
+              },
+              "fullName": {
+                "text": "fullName"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Calling double with 21 returns the multiplied answer.",
+            "values": {
+              "double": {
+                "text": "double(21)"
+              },
+              "fullName": {
+                "text": "Kumar"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Arrow function definitions and execution",
+        "boxes": [
+          {
+            "id": "double",
+            "label": "double",
+            "tappable": true
+          },
+          {
+            "id": "fullName",
+            "label": "fullName",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Arrow functions provide a concise syntax for writing logic.",
+            "values": {
+              "double": "double",
+              "fullName": "fullName"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Calling double with 21 returns the multiplied answer.",
+            "values": {
+              "double": "double(21)",
+              "fullName": "Kumar"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Making decisions with if and else",
+      "codeHash": "4e96c82635c2af290e24cdc2523fa717ba32522620ab067bf935722ed1246400",
+      "spec": {
+        "template": "compare",
+        "title": "Conditional branching with if and else",
+        "leftLabel": "Pass Branch",
+        "rightLabel": "Fail Branch",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programs make choices by checking conditions with if and else.",
+            "left": {
+              "code": "console.log(getResult(72));",
+              "result": {
+                "text": "\"Pass\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(getResult(35));",
+              "result": {
+                "text": "\"Fail\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Round brackets hold the condition to run when it is true.",
+            "left": {
+              "code": "console.log(getResult(72));",
+              "result": {
+                "text": "Pass"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(getResult(35));",
+              "result": {
+                "text": "Fail"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Conditional branching with if and else",
+        "leftLabel": "Pass Branch",
+        "rightLabel": "Fail Branch",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programs make choices by checking conditions with if and else.",
+            "left": {
+              "code": "console.log(getResult(72));",
+              "result": "\"Pass\"",
+              "tone": "ok",
+              "checks": [
+                "\"Pass\""
+              ]
+            },
+            "right": {
+              "code": "console.log(getResult(35));",
+              "result": "\"Fail\"",
+              "tone": "idle",
+              "checks": [
+                "\"Fail\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Round brackets hold the condition to run when it is true.",
+            "left": {
+              "code": "console.log(getResult(72));",
+              "result": "Pass",
+              "tone": "ok",
+              "checks": [
+                "Pass"
+              ]
+            },
+            "right": {
+              "code": "console.log(getResult(35));",
+              "result": "Fail",
+              "tone": "data",
+              "checks": [
+                "Fail"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "More choices: else if, and, or",
+      "codeHash": "2bba45d82ee67214a6ec5168d877f181f6bce9359cc589e2627b2efa7632c1a0",
+      "spec": {
+        "template": "boxes",
+        "title": "Multiple choices and logical operators",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": true
+          },
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Else if tests multiple branches in sequential order.",
+            "values": {
+              "status": {
+                "text": "interview"
+              },
+              "salary": {
+                "text": "600000"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Logical operators check whether conditions match criteria.",
+            "values": {
+              "status": {
+                "text": "Interview scheduled"
+              },
+              "salary": {
+                "text": "600000"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Multiple choices and logical operators",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": true
+          },
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Else if tests multiple branches in sequential order.",
+            "values": {
+              "status": "interview",
+              "salary": "600000"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Logical operators check whether conditions match criteria.",
+            "values": {
+              "status": "Interview scheduled",
+              "salary": "600000"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Functions working together (and how this becomes React)",
+      "codeHash": "f11b5a68e898b750c647a2bd9369c683e6f069271f503505cdc6dad50abc4760",
+      "spec": {
+        "template": "none",
+        "reason": "Overview of function composition and how functions form React components"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Overview of function composition and how functions form React components"
+      }
+    }
+  ]
+}

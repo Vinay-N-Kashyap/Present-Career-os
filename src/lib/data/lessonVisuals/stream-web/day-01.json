@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 1,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Immutability Invariant & High-Throughput Event Streaming",
+      "codeHash": "423cfd45888a4914cc396a229b285a6de00e6b011ec085310631c75914fd3624",
+      "spec": {
+        "template": "cells",
+        "title": "Immutable append-only commit log and sequential offset tail",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An event streaming log enforces an append-only invariant at the physical tail.",
+            "items": [
+              {
+                "text": "0: order.created"
+              },
+              {
+                "text": "1: payment.authorized"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "tail",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Concurrent consumers read log streams without blocking producer writes.",
+            "items": [
+              {
+                "text": "0: order.created"
+              },
+              {
+                "text": "1: payment.authorized"
+              },
+              {
+                "text": "2: order.shipped"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "reader",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "tail",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Immutable append-only commit log and sequential offset tail",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An event streaming log enforces an append-only invariant at the physical tail.",
+            "items": [
+              "0: order.created",
+              "1: payment.authorized"
+            ],
+            "pointers": [
+              {
+                "name": "tail",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Concurrent consumers read log streams without blocking producer writes.",
+            "items": [
+              "0: order.created",
+              "1: payment.authorized",
+              "2: order.shipped"
+            ],
+            "pointers": [
+              {
+                "name": "reader",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "tail",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Append-Only Storage Model vs Mutable Database In-Place Updates",
+      "codeHash": "55089c2ab03856273e13a61d3d7a6123137d933723c968b8859d9775758ec53f",
+      "spec": {
+        "template": "bars",
+        "title": "Disk write throughput in MB/s across random and sequential storage modes",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Random writes achieve only a tiny fraction of raw theoretical storage bandwidth.",
+            "bars": [
+              {
+                "label": "inplace_random (MB/s)",
+                "value": {
+                  "text": "18.5"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Sequential write operations achieve throughput orders of magnitude higher.",
+            "bars": [
+              {
+                "label": "inplace_random (MB/s)",
+                "value": {
+                  "text": "18.5"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "sequential_append (MB/s)",
+                "value": {
+                  "text": "640"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Disk write throughput in MB/s across random and sequential storage modes",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Random writes achieve only a tiny fraction of raw theoretical storage bandwidth.",
+            "bars": [
+              {
+                "label": "inplace_random (MB/s)",
+                "value": 18.5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Sequential write operations achieve throughput orders of magnitude higher.",
+            "bars": [
+              {
+                "label": "inplace_random (MB/s)",
+                "value": 18.5,
+                "tone": "data"
+              },
+              {
+                "label": "sequential_append (MB/s)",
+                "value": 640,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monotonic 64-Bit Offsets as Universal Log Coordinates",
+      "codeHash": "1f092dba715c6de2fd29c777bb97eaa8f5cf0b00d17fafd4833af3c1ca41cc02",
+      "spec": {
+        "template": "table",
+        "title": "Monotonic consumer group offset commits and lag calculation",
+        "columns": [
+          "Consumer Group",
+          "Committed Offset",
+          "Log End Offset",
+          "Consumer Lag"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The offset is assigned authoritatively by the broker when the record commits.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Consumers use this offset as an exact bookmark pointer for processed records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Monotonic consumer group offset commits and lag calculation",
+        "columns": [
+          "Consumer Group",
+          "Committed Offset",
+          "Log End Offset",
+          "Consumer Lag"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The offset is assigned authoritatively by the broker when the record commits.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Consumers use this offset as an exact bookmark pointer for processed records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Operating System Page Cache & Sequential Disk I/O Throughput",
+      "codeHash": "ddc9efddb4eb1821c1d4483d9c2630d3bb50ceef76d8ced62152c1a87e21df3b",
+      "spec": {
+        "template": "sequence",
+        "title": "OS kernel page cache write caching and zero-copy consumer retrieval",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Event Producer"
+          },
+          {
+            "id": "pageCache",
+            "label": "OS Kernel Page Cache"
+          },
+          {
+            "id": "consumer",
+            "label": "Real-Time Consumer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The operating system caches sequential dirty pages in available memory.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "pageCache",
+                "label": "writeBlock(0) & writeBlock(1) (Dirty RAM Pages)"
+              }
+            ],
+            "activeActorId": "pageCache"
+          },
+          {
+            "at": "say6",
+            "caption": "Streaming engines leverage zero-copy calls to transfer page cache buffers.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "pageCache",
+                "label": "readBlock(0) -> PAGE_CACHE_HIT (0.02ms)"
+              },
+              {
+                "from": "pageCache",
+                "to": "consumer",
+                "label": "Zero-Copy sendfile Socket Transfer"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "OS kernel page cache write caching and zero-copy consumer retrieval",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Event Producer"
+          },
+          {
+            "id": "pageCache",
+            "label": "OS Kernel Page Cache"
+          },
+          {
+            "id": "consumer",
+            "label": "Real-Time Consumer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The operating system caches sequential dirty pages in available memory.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "pageCache",
+                "label": "writeBlock(0) & writeBlock(1) (Dirty RAM Pages)"
+              }
+            ],
+            "activeActorId": "pageCache"
+          },
+          {
+            "at": "say6",
+            "caption": "Streaming engines leverage zero-copy calls to transfer page cache buffers.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "pageCache",
+                "label": "readBlock(0) -> PAGE_CACHE_HIT (0.02ms)"
+              },
+              {
+                "from": "pageCache",
+                "to": "consumer",
+                "label": "Zero-Copy sendfile Socket Transfer"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deterministic Stream Replay & Time Travel Debugging",
+      "codeHash": "86667165952f9c67b6e05e5c237390d679d48b71050e5eeaaff0ddc9c785227f",
+      "spec": {
+        "template": "flow",
+        "title": "Deterministic offset rewind and historical ledger state reconstruction",
+        "nodes": [
+          {
+            "id": "offsetReset",
+            "label": "Reset Bookmark (fromOffset: 0)",
+            "tappable": false
+          },
+          {
+            "id": "scanHistory",
+            "label": "Scan Immutable Ledger Events",
+            "tappable": false
+          },
+          {
+            "id": "foldBalance",
+            "label": "Fold CREDIT & DEBIT Amounts",
+            "tappable": false
+          },
+          {
+            "id": "rebuiltState",
+            "label": "Rebuilt Balance ($500)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "offsetReset",
+            "to": "scanHistory",
+            "label": "Seek Start"
+          },
+          {
+            "from": "scanHistory",
+            "to": "foldBalance",
+            "label": "4 Events"
+          },
+          {
+            "from": "foldBalance",
+            "to": "rebuiltState",
+            "label": "Verified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Any consumer can reset its offset bookmark back to any historical point.",
+            "activeNodes": [
+              "offsetReset",
+              "scanHistory"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The consumer processes historical events from scratch to reconstruct state.",
+            "activeNodes": [
+              "foldBalance",
+              "rebuiltState"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Deterministic offset rewind and historical ledger state reconstruction",
+        "nodes": [
+          {
+            "id": "offsetReset",
+            "label": "Reset Bookmark (fromOffset: 0)",
+            "tappable": false
+          },
+          {
+            "id": "scanHistory",
+            "label": "Scan Immutable Ledger Events",
+            "tappable": false
+          },
+          {
+            "id": "foldBalance",
+            "label": "Fold CREDIT & DEBIT Amounts",
+            "tappable": false
+          },
+          {
+            "id": "rebuiltState",
+            "label": "Rebuilt Balance ($500)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "offsetReset",
+            "to": "scanHistory",
+            "label": "Seek Start"
+          },
+          {
+            "from": "scanHistory",
+            "to": "foldBalance",
+            "label": "4 Events"
+          },
+          {
+            "from": "foldBalance",
+            "to": "rebuiltState",
+            "label": "Verified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Any consumer can reset its offset bookmark back to any historical point.",
+            "activeNodes": [
+              "offsetReset",
+              "scanHistory"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The consumer processes historical events from scratch to reconstruct state.",
+            "activeNodes": [
+              "foldBalance",
+              "rebuiltState"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Memory-Mapped Append-Only Segment Log in TypeScript",
+      "codeHash": "a99ad529e8aec8a70de97df5ffc4095e484f80b1ef2991ef30b4b67ae1d87969",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

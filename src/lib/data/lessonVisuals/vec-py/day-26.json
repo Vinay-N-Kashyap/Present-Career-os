@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Graded relevance",
+      "codeHash": "4acadd12e7b32f5fbfe40317d8681979e0996777ce6f11708661bfdbeaaa394e",
+      "spec": {
+        "template": "table",
+        "title": "Graded relevance levels and top ranking distribution",
+        "columns": [
+          "results",
+          "grades",
+          "results"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Graded judgements let metrics reward systems that place best documents highest.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Labelling guidelines with examples for each grade keep judges consistent.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Graded relevance levels and top ranking distribution",
+        "columns": [
+          "results",
+          "grades",
+          "results"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Graded judgements let metrics reward systems that place best documents highest.",
+            "rows": [
+              {
+                "cells": [
+                  "results",
+                  "grades",
+                  "results"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "results",
+                  "grades",
+                  "results"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Labelling guidelines with examples for each grade keep judges consistent.",
+            "rows": [
+              {
+                "cells": [
+                  "results",
+                  "grades",
+                  "results"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "results",
+                  "grades",
+                  "results"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DCG and nDCG",
+      "codeHash": "65fe1b5eadf7c238eea035923285f1c462ff3c27c13122a46d4be95fcd2af661",
+      "spec": {
+        "template": "table",
+        "title": "Discounted cumulative gain and ideal ordering normalisation",
+        "columns": [
+          "grades",
+          "ideal",
+          "grades"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Discounted cumulative gain adds the value of each result discounted by position.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "ideal"
+                  },
+                  {
+                    "text": "grades"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "ideal"
+                  },
+                  {
+                    "text": "grades"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Metric complements recall and MRR by evaluating whole lists with grades.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "ideal"
+                  },
+                  {
+                    "text": "grades"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grades"
+                  },
+                  {
+                    "text": "ideal"
+                  },
+                  {
+                    "text": "grades"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Discounted cumulative gain and ideal ordering normalisation",
+        "columns": [
+          "grades",
+          "ideal",
+          "grades"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Discounted cumulative gain adds the value of each result discounted by position.",
+            "rows": [
+              {
+                "cells": [
+                  "grades",
+                  "ideal",
+                  "grades"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "grades",
+                  "ideal",
+                  "grades"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Metric complements recall and MRR by evaluating whole lists with grades.",
+            "rows": [
+              {
+                "cells": [
+                  "grades",
+                  "ideal",
+                  "grades"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "grades",
+                  "ideal",
+                  "grades"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating a system on a golden set",
+      "codeHash": "15e78b75db753a0686ff7ac1534ca48000f5cb9275569922b26e2aba4a1b9f69",
+      "spec": {
+        "template": "table",
+        "title": "Golden set evaluation metrics and worst query diagnostics",
+        "columns": [
+          "golden",
+          "results",
+          "golden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A system evaluation runs every golden query and averages summary metrics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reporting the worst query alongside averages points straight at what to repair.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "results"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Golden set evaluation metrics and worst query diagnostics",
+        "columns": [
+          "golden",
+          "results",
+          "golden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A system evaluation runs every golden query and averages summary metrics.",
+            "rows": [
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "golden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "golden"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reporting the worst query alongside averages points straight at what to repair.",
+            "rows": [
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "golden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "golden",
+                  "results",
+                  "golden"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comparing systems fairly",
+      "codeHash": "fe9d027b9fd2fd6cb85c993b153f6874c0843977d16fee4668222c7b95e467d7",
+      "spec": {
+        "template": "table",
+        "title": "Per-query comparisons and head-to-head system deltas",
+        "columns": [
+          "better",
+          "worse",
+          "better"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To compare two systems run both on the same golden set with identical metrics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "better"
+                  },
+                  {
+                    "text": "worse"
+                  },
+                  {
+                    "text": "better"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "better"
+                  },
+                  {
+                    "text": "worse"
+                  },
+                  {
+                    "text": "better"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A simple check counts how many queries improved or got worse between systems.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "better"
+                  },
+                  {
+                    "text": "worse"
+                  },
+                  {
+                    "text": "better"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "better"
+                  },
+                  {
+                    "text": "worse"
+                  },
+                  {
+                    "text": "better"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Per-query comparisons and head-to-head system deltas",
+        "columns": [
+          "better",
+          "worse",
+          "better"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To compare two systems run both on the same golden set with identical metrics.",
+            "rows": [
+              {
+                "cells": [
+                  "better",
+                  "worse",
+                  "better"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "better",
+                  "worse",
+                  "better"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A simple check counts how many queries improved or got worse between systems.",
+            "rows": [
+              {
+                "cells": [
+                  "better",
+                  "worse",
+                  "better"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "better",
+                  "worse",
+                  "better"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a golden set that lasts",
+      "codeHash": "bf8d0880633b21e077181f766517011b0ff0fd0ff6a43539388cbee523bb08f1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: evaluation",
+      "codeHash": "12ff9eef08a100b6f44bc2158af5d82fd4cbec37fe1b99ccd71e43221a4f328f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

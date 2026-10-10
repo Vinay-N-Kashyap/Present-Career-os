@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 7,
+  "promptSha": "e8c1fbe7171bff156adf14380b249b67fbb4a3c8fbe717f8542fa589e2145772",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Hash Function Principles & Deterministic Mapping",
+      "codeHash": "82079a8cbef34ce659c073c12d2a2b7f6324f1fd5cab7dee4c8e96d4062e2e1c",
+      "spec": {
+        "template": "table",
+        "title": "Deterministic hash mapping to table size",
+        "columns": [
+          "Key Input",
+          "Hash Bucket"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Deterministic hash function maps keys to table indices.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hello"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "world"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Uniform distribution minimizes clustering and collisions.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hello"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "world"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deterministic hash mapping to table size",
+        "columns": [
+          "Key Input",
+          "Hash Bucket"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Deterministic hash function maps keys to table indices.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "hello",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "world",
+                  "7"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Uniform distribution minimizes clustering and collisions.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "hello",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "world",
+                  "7"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Separate Chaining Collision Resolution",
+      "codeHash": "1d337fd301e4df048c9ea916a276cd383a01ed197bbe54266d3b633e6833bb3c",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Separate chaining collision list",
+        "nodes": [
+          {
+            "id": "b0",
+            "label": "apple"
+          },
+          {
+            "id": "b1",
+            "label": "banana"
+          },
+          {
+            "id": "b2",
+            "label": "cherry"
+          }
+        ],
+        "edges": [
+          [
+            "b0",
+            "b1"
+          ],
+          [
+            "b1",
+            "b2"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Separate chaining resolves collisions via bucket chains.",
+            "activeNodeId": "b0",
+            "activeEdge": [
+              "b0",
+              "b1"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Retrieval scans bucket chain for matching key.",
+            "activeNodeId": "b1",
+            "visitedNodeIds": [
+              "b0"
+            ],
+            "activeEdge": [
+              "b1",
+              "b2"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Separate chaining collision list",
+        "nodes": [
+          {
+            "id": "b0",
+            "label": "apple"
+          },
+          {
+            "id": "b1",
+            "label": "banana"
+          },
+          {
+            "id": "b2",
+            "label": "cherry"
+          }
+        ],
+        "edges": [
+          [
+            "b0",
+            "b1"
+          ],
+          [
+            "b1",
+            "b2"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Separate chaining resolves collisions via bucket chains.",
+            "activeNodeId": "b0",
+            "activeEdge": [
+              "b0",
+              "b1"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Retrieval scans bucket chain for matching key.",
+            "activeNodeId": "b1",
+            "visitedNodeIds": [
+              "b0"
+            ],
+            "activeEdge": [
+              "b1",
+              "b2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Open Addressing & Linear Probing",
+      "codeHash": "39f5ec24514ee729fdab0609d02a23e610afafba0ceeb3e7d8d477098d8a11ac",
+      "spec": {
+        "template": "cells",
+        "title": "Linear probing open addressing slots",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Linear probing probes subsequent slots upon collisions.",
+            "items": [
+              {
+                "text": "cat"
+              },
+              {
+                "text": "dog"
+              },
+              {
+                "text": "rat"
+              },
+              {
+                "text": "null"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Contiguous probing leverages cache lines for fast access.",
+            "items": [
+              {
+                "text": "cat"
+              },
+              {
+                "text": "dog"
+              },
+              {
+                "text": "rat"
+              },
+              {
+                "text": "null"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Linear probing open addressing slots",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Linear probing probes subsequent slots upon collisions.",
+            "items": [
+              "cat",
+              "dog",
+              "rat",
+              "null"
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Contiguous probing leverages cache lines for fast access.",
+            "items": [
+              "cat",
+              "dog",
+              "rat",
+              "null"
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tombstone Markers & Deletion in Open Addressing",
+      "codeHash": "baee0648f25bfa99b38b081f424e573ead1d03b01d1bbf41cb0642d1968abf9f",
+      "spec": {
+        "template": "cells",
+        "title": "Tombstone marker slot preservation",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Soft deletion marks deleted slot with tombstone marker.",
+            "items": [
+              {
+                "text": "__TOMB__"
+              },
+              {
+                "text": "k2"
+              },
+              {
+                "text": "null"
+              },
+              {
+                "text": "null"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Search scans past tombstones to maintain probe chain.",
+            "items": [
+              {
+                "text": "__TOMB__"
+              },
+              {
+                "text": "k2"
+              },
+              {
+                "text": "null"
+              },
+              {
+                "text": "null"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Tombstone marker slot preservation",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Soft deletion marks deleted slot with tombstone marker.",
+            "items": [
+              "__TOMB__",
+              "k2",
+              "null",
+              "null"
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Search scans past tombstones to maintain probe chain.",
+            "items": [
+              "__TOMB__",
+              "k2",
+              "null",
+              "null"
+            ],
+            "pointers": [
+              {
+                "name": "idx",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Load Factor Threshold & Dynamic Rehashing",
+      "codeHash": "78abef84341503f2d4435b37d2dc4e17732eca7d5001f5dc30bfaec2b653892b",
+      "spec": {
+        "template": "compare",
+        "title": "Load factor threshold and capacity doubling",
+        "leftLabel": "Initial Size",
+        "rightLabel": "Doubled Size",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Exceeding load threshold triggers table resize.",
+            "left": {
+              "code": "this.count",
+              "result": {
+                "text": "3"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "this.cap",
+              "result": {
+                "text": "4"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Existing entries insert into table when size changes.",
+            "left": {
+              "code": "this.count",
+              "result": {
+                "text": "4"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "newCap",
+              "result": {
+                "text": "8"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Load factor threshold and capacity doubling",
+        "leftLabel": "Initial Size",
+        "rightLabel": "Doubled Size",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Exceeding load threshold triggers table resize.",
+            "left": {
+              "code": "this.count",
+              "result": "3",
+              "tone": "data"
+            },
+            "right": {
+              "code": "this.cap",
+              "result": "4",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Existing entries insert into table when size changes.",
+            "left": {
+              "code": "this.count",
+              "result": "4",
+              "tone": "data"
+            },
+            "right": {
+              "code": "newCap",
+              "result": "8",
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Frequency Counter Pattern with Hash Maps",
+      "codeHash": "d8a5c838cfff435490b47bfb21ab69678ff71317fbb76e6a0129b056673ccdde",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

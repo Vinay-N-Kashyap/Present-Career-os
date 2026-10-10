@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Physical clocks drift",
+      "codeHash": "c49a239ffad8c068fe98c9aa0422d4e9529660f738346b367d424b1e0dee69d3",
+      "spec": {
+        "template": "table",
+        "title": "Physical server clock drift causing silent last-write-wins data loss",
+        "columns": [
+          "server",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quartz clocks on servers drift by milliseconds per hour.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "server-A"
+                  },
+                  {
+                    "text": "status=SHIPPED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Events a few milliseconds apart cannot be ordered by physical timestamps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "server-A"
+                  },
+                  {
+                    "text": "status=SHIPPED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "server-B"
+                  },
+                  {
+                    "text": "status=DELIVERED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Last-write-wins based on wall clock time can drop the latest write.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "server-A"
+                  },
+                  {
+                    "text": "status=SHIPPED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "server-B"
+                  },
+                  {
+                    "text": "status=DELIVERED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Physical server clock drift causing silent last-write-wins data loss",
+        "columns": [
+          "server",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quartz clocks on servers drift by milliseconds per hour.",
+            "rows": [
+              {
+                "cells": [
+                  "server-A",
+                  "status=SHIPPED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Events a few milliseconds apart cannot be ordered by physical timestamps.",
+            "rows": [
+              {
+                "cells": [
+                  "server-A",
+                  "status=SHIPPED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "server-B",
+                  "status=DELIVERED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Last-write-wins based on wall clock time can drop the latest write.",
+            "rows": [
+              {
+                "cells": [
+                  "server-A",
+                  "status=SHIPPED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "server-B",
+                  "status=DELIVERED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Happened-before",
+      "codeHash": "8a2ec2f43daac40792da71cc9e8cf496092f63182a56f33cd3d44aa6669c7f69",
+      "spec": {
+        "template": "none",
+        "reason": "Happened-before causal relation definitions and message chains."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Lamport timestamps",
+      "codeHash": "3a3ad6bdf02076b98c93e946bdafe550759e43d14c8fdf31cbcf46eae19be81d",
+      "spec": {
+        "template": "table",
+        "title": "Lamport logical clock updates on message receipt and local events",
+        "columns": [
+          "local",
+          "received"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A Lamport clock increments before each local event or send.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "On receiving the clock becomes max of local and received plus one.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lamport timestamps guarantee consistent total order across all nodes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Lamport logical clock updates on message receipt and local events",
+        "columns": [
+          "local",
+          "received"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A Lamport clock increments before each local event or send.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "On receiving the clock becomes max of local and received plus one.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "7"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lamport timestamps guarantee consistent total order across all nodes.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "7"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vector clocks",
+      "codeHash": "4f73f0f9bfac241c91031288289d5003cb5ac933f07d90a215d4fb93ff8405e6",
+      "spec": {
+        "template": "none",
+        "reason": "Vector clock structure element-wise maximum merge rules."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Comparing vector clocks",
+      "codeHash": "28f50947d76cad90e3c822a06eee67b57b5510efe032d29836c32b0aba53ef74",
+      "spec": {
+        "template": "compare",
+        "title": "Vector clock comparison causal dominance versus concurrent conflict",
+        "leftLabel": "Causal Dominance (A_BEFORE_B)",
+        "rightLabel": "Divergent Concurrent Writes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function compare_vector_clocks determines causal ordering.",
+            "left": {
+              "code": "N1: 1 compared to N1: 2, N2: 1",
+              "result": {
+                "text": "A_BEFORE_B"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "N1: 2, N2: 1 compared to N1: 1, N2: 2",
+              "result": {
+                "text": "CONCURRENT"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Compute flags to check if one clock is ahead of the other.",
+            "left": {
+              "code": "b_ahead is true",
+              "result": {
+                "text": "A_BEFORE_B"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "both ahead is true",
+              "result": {
+                "text": "CONCURRENT"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "CONCURRENT identifies conflicting writes requiring conflict resolution.",
+            "left": {
+              "code": "clear causal ancestor",
+              "result": {
+                "text": "A_BEFORE_B"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "divergent concurrent branches",
+              "result": {
+                "text": "CONCURRENT"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Vector clock comparison causal dominance versus concurrent conflict",
+        "leftLabel": "Causal Dominance (A_BEFORE_B)",
+        "rightLabel": "Divergent Concurrent Writes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function compare_vector_clocks determines causal ordering.",
+            "left": {
+              "code": "N1: 1 compared to N1: 2, N2: 1",
+              "result": "A_BEFORE_B",
+              "tone": "ok",
+              "checks": [
+                "A_BEFORE_B"
+              ]
+            },
+            "right": {
+              "code": "N1: 2, N2: 1 compared to N1: 1, N2: 2",
+              "result": "CONCURRENT",
+              "tone": "error",
+              "checks": [
+                "CONCURRENT"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Compute flags to check if one clock is ahead of the other.",
+            "left": {
+              "code": "b_ahead is true",
+              "result": "A_BEFORE_B",
+              "tone": "ok",
+              "checks": [
+                "A_BEFORE_B"
+              ]
+            },
+            "right": {
+              "code": "both ahead is true",
+              "result": "CONCURRENT",
+              "tone": "error",
+              "checks": [
+                "CONCURRENT"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "CONCURRENT identifies conflicting writes requiring conflict resolution.",
+            "left": {
+              "code": "clear causal ancestor",
+              "result": "A_BEFORE_B",
+              "tone": "ok",
+              "checks": [
+                "A_BEFORE_B"
+              ]
+            },
+            "right": {
+              "code": "divergent concurrent branches",
+              "result": "CONCURRENT",
+              "tone": "error",
+              "checks": [
+                "CONCURRENT"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resolving conflicts",
+      "codeHash": "5a8baca7185a8a3b9597f67d46055c50a78331eadd29c5dd5f4aa32b13e80751",
+      "spec": {
+        "template": "compare",
+        "title": "Conflict resolution strategies deterministic union merge versus LWW",
+        "leftLabel": "Union Merge (No Data Lost)",
+        "rightLabel": "Last-Write-Wins (LWW Loss)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrent writes require deterministic conflict resolution strategies.",
+            "left": {
+              "code": "cart_phone | cart_laptop",
+              "result": {
+                "text": "ghee"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "last-write-wins keeps laptop only",
+              "result": {
+                "text": "jaggery"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Shopping carts merged by union preserve all added items.",
+            "left": {
+              "code": "all items preserved",
+              "result": {
+                "text": "rice"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "concurrent item overwritten",
+              "result": {
+                "text": "dal"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Conflict resolution must be deterministic across replicas.",
+            "left": {
+              "code": "union merge preserves ghee",
+              "result": {
+                "text": "ghee"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "lww silently drops ghee",
+              "result": {
+                "text": "jaggery"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Conflict resolution strategies deterministic union merge versus LWW",
+        "leftLabel": "Union Merge (No Data Lost)",
+        "rightLabel": "Last-Write-Wins (LWW Loss)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrent writes require deterministic conflict resolution strategies.",
+            "left": {
+              "code": "cart_phone | cart_laptop",
+              "result": "ghee",
+              "tone": "ok",
+              "checks": [
+                "ghee"
+              ]
+            },
+            "right": {
+              "code": "last-write-wins keeps laptop only",
+              "result": "jaggery",
+              "tone": "idle",
+              "checks": [
+                "jaggery"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Shopping carts merged by union preserve all added items.",
+            "left": {
+              "code": "all items preserved",
+              "result": "rice",
+              "tone": "ok",
+              "checks": [
+                "rice"
+              ]
+            },
+            "right": {
+              "code": "concurrent item overwritten",
+              "result": "dal",
+              "tone": "error",
+              "checks": [
+                "dal"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Conflict resolution must be deterministic across replicas.",
+            "left": {
+              "code": "union merge preserves ghee",
+              "result": "ghee",
+              "tone": "ok",
+              "checks": [
+                "ghee"
+              ]
+            },
+            "right": {
+              "code": "lww silently drops ghee",
+              "result": "jaggery",
+              "tone": "error",
+              "checks": [
+                "jaggery"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

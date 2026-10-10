@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 24,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Cloud Pricing Triad: On-Demand, Reserved & Spot",
+      "codeHash": "7b50dc380a5dd6edcedbfd1e06c0ae216135650ca15d786a5b1b6a159de21da5",
+      "spec": {
+        "template": "bars",
+        "title": "Annual Compute Costs Across Cloud Pricing Tiers",
+        "bars": [
+          {
+            "label": "On-Demand Retail",
+            "value": 2978,
+            "unit": "USD"
+          },
+          {
+            "label": "1-Yr Reserved 40%",
+            "value": 1787,
+            "unit": "USD"
+          },
+          {
+            "label": "3-Yr Reserved 60%",
+            "value": 1191,
+            "unit": "USD"
+          },
+          {
+            "label": "Spot Surplus 75%",
+            "value": 745,
+            "unit": "USD"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "On-demand instances offer maximum flexibility at highest retail cost.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "On-Demand Retail",
+                "value": 2978,
+                "tone": "idle"
+              },
+              {
+                "label": "1-Yr Reserved 40%",
+                "value": 1787,
+                "tone": "idle"
+              },
+              {
+                "label": "3-Yr Reserved 60%",
+                "value": 1191,
+                "tone": "idle"
+              },
+              {
+                "label": "Spot Surplus 75%",
+                "value": 745,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Surplus datacenter capacity is sold as spot instances at massive discounts.",
+            "highlightIndex": 3,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "On-Demand Retail",
+                "value": 2978,
+                "tone": "idle"
+              },
+              {
+                "label": "1-Yr Reserved 40%",
+                "value": 1787,
+                "tone": "idle"
+              },
+              {
+                "label": "3-Yr Reserved 60%",
+                "value": 1191,
+                "tone": "idle"
+              },
+              {
+                "label": "Spot Surplus 75%",
+                "value": 745,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Annual Compute Costs Across Cloud Pricing Tiers",
+        "bars": [
+          {
+            "label": "On-Demand Retail",
+            "value": 2978,
+            "unit": "USD"
+          },
+          {
+            "label": "1-Yr Reserved 40%",
+            "value": 1787,
+            "unit": "USD"
+          },
+          {
+            "label": "3-Yr Reserved 60%",
+            "value": 1191,
+            "unit": "USD"
+          },
+          {
+            "label": "Spot Surplus 75%",
+            "value": 745,
+            "unit": "USD"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "On-demand instances offer maximum flexibility at highest retail cost.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "On-Demand Retail",
+                "value": 2978,
+                "tone": "idle"
+              },
+              {
+                "label": "1-Yr Reserved 40%",
+                "value": 1787,
+                "tone": "idle"
+              },
+              {
+                "label": "3-Yr Reserved 60%",
+                "value": 1191,
+                "tone": "idle"
+              },
+              {
+                "label": "Spot Surplus 75%",
+                "value": 745,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Surplus datacenter capacity is sold as spot instances at massive discounts.",
+            "highlightIndex": 3,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "On-Demand Retail",
+                "value": 2978,
+                "tone": "idle"
+              },
+              {
+                "label": "1-Yr Reserved 40%",
+                "value": 1787,
+                "tone": "idle"
+              },
+              {
+                "label": "3-Yr Reserved 60%",
+                "value": 1191,
+                "tone": "idle"
+              },
+              {
+                "label": "Spot Surplus 75%",
+                "value": 745,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Break-Even Utilization Math for Reserved Instances",
+      "codeHash": "6e17ba32e4d3872f83c1ec8794c5c6658c0b91f7d1d107eff6b3ad54361283b2",
+      "spec": {
+        "template": "compare",
+        "title": "Break-Even Utilization: Production DB versus Staging Workload",
+        "left": {
+          "title": "24/7 Production Database",
+          "items": [
+            "Runs all 8,760 hours continuously per year",
+            "100% utilization exceeds 60% break-even mark",
+            "Reserved instance yields massive net savings",
+            "Recommendation: PURCHASE_RESERVED"
+          ]
+        },
+        "right": {
+          "title": "Intermittent Staging Workload",
+          "items": [
+            "Runs only 40 hours per week (2,080 hours/year)",
+            "24% utilization falls far below break-even",
+            "Reserved instance incurs heavy wasted costs",
+            "Recommendation: KEEP_ON_DEMAND"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The break-even formula calculates the minimum utilization for commitment.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous production workloads running year-round make reserved cheaper.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "24/7 Production Database",
+        "rightLabel": "Intermittent Staging Workload"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Break-Even Utilization: Production DB versus Staging Workload",
+        "left": {
+          "title": "24/7 Production Database",
+          "items": [
+            "Runs all 8,760 hours continuously per year",
+            "100% utilization exceeds 60% break-even mark",
+            "Reserved instance yields massive net savings",
+            "Recommendation: PURCHASE_RESERVED"
+          ]
+        },
+        "right": {
+          "title": "Intermittent Staging Workload",
+          "items": [
+            "Runs only 40 hours per week (2,080 hours/year)",
+            "24% utilization falls far below break-even",
+            "Reserved instance incurs heavy wasted costs",
+            "Recommendation: KEEP_ON_DEMAND"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The break-even formula calculates the minimum utilization for commitment.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous production workloads running year-round make reserved cheaper.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "24/7 Production Database",
+        "rightLabel": "Intermittent Staging Workload"
+      }
+    },
+    {
+      "partTitle": "Spot Economics & Graceful Preemption Handling",
+      "codeHash": "5a87ab845a506b58eaf21f7c67f90aa8ba15a8c39bd40862fec6dfa9eabe3a88",
+      "spec": {
+        "template": "sequence",
+        "title": "Spot Preemption Graceful Drainage Protocol",
+        "actors": [
+          {
+            "id": "cloud",
+            "label": "Cloud Metadata"
+          },
+          {
+            "id": "node",
+            "label": "Spot Worker"
+          },
+          {
+            "id": "alb",
+            "label": "Load Balancer"
+          },
+          {
+            "id": "client",
+            "label": "In-Flight Clients"
+          }
+        ],
+        "messages": [
+          {
+            "from": "cloud",
+            "to": "node",
+            "label": "Reclaim notice (120s)"
+          },
+          {
+            "from": "node",
+            "to": "alb",
+            "label": "Deregister target"
+          },
+          {
+            "from": "node",
+            "to": "client",
+            "label": "Drain active streams"
+          },
+          {
+            "from": "node",
+            "to": "cloud",
+            "label": "Safe termination"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cloud metadata provides an interruption countdown notice before reclaim.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The node deregisters from load balancer and drains in-flight requests.",
+            "highlightMessage": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Spot Preemption Graceful Drainage Protocol",
+        "actors": [
+          {
+            "id": "cloud",
+            "label": "Cloud Metadata"
+          },
+          {
+            "id": "node",
+            "label": "Spot Worker"
+          },
+          {
+            "id": "alb",
+            "label": "Load Balancer"
+          },
+          {
+            "id": "client",
+            "label": "In-Flight Clients"
+          }
+        ],
+        "messages": [
+          {
+            "from": "cloud",
+            "to": "node",
+            "label": "Reclaim notice (120s)"
+          },
+          {
+            "from": "node",
+            "to": "alb",
+            "label": "Deregister target"
+          },
+          {
+            "from": "node",
+            "to": "client",
+            "label": "Drain active streams"
+          },
+          {
+            "from": "node",
+            "to": "cloud",
+            "label": "Safe termination"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cloud metadata provides an interruption countdown notice before reclaim.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The node deregisters from load balancer and drains in-flight requests.",
+            "highlightMessage": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid Fleet Portfolio Optimization",
+      "codeHash": "978b5d3fbe37a1bba1f0c5d2ea4a28e97422ee1919248746ca11eafe5e5e963f",
+      "spec": {
+        "template": "table",
+        "title": "Hybrid Fleet Allocation and Risk Diversification",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Baseline traffic running continuously is backed by reserved commitments.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "On-demand instances serve as fallback safety buffers when spot reclaims.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Tier",
+          "Allocation",
+          "Discount",
+          "Operational Role"
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hybrid Fleet Allocation and Risk Diversification",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Baseline traffic running continuously is backed by reserved commitments.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "On-demand instances serve as fallback safety buffers when spot reclaims.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Tier",
+          "Allocation",
+          "Discount",
+          "Operational Role"
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost Allocation Tagging & Per-Request Unit Economics",
+      "codeHash": "64fe500f8e8849ff7ecdb9e18568b5cdb11dbee8259a6a986b0981a0f7176f80",
+      "spec": {
+        "template": "workflow",
+        "title": "FinOps Telemetry and Unit Economics Lifecycle",
+        "nodes": [
+          {
+            "id": "tags",
+            "label": "Allocation Tags",
+            "description": "Environment, Service, and CostCenter"
+          },
+          {
+            "id": "telemetry",
+            "label": "Cloud Billing",
+            "description": "Aggregates monthly invoice telemetry"
+          },
+          {
+            "id": "unitecon",
+            "label": "Unit Economics",
+            "description": "Calculates cost per million requests"
+          },
+          {
+            "id": "governance",
+            "label": "FinOps Guardrails",
+            "description": "Flags error waste and budget drift"
+          }
+        ],
+        "edges": [
+          {
+            "from": "tags",
+            "to": "telemetry",
+            "label": "Attribute"
+          },
+          {
+            "from": "telemetry",
+            "to": "unitecon",
+            "label": "Normalize"
+          },
+          {
+            "from": "unitecon",
+            "to": "governance",
+            "label": "Enforce"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cost allocation tagging is the foundation of modern cloud finops.",
+            "activeNode": "tags",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Unit economics normalize cloud spending against incoming request volume.",
+            "activeNode": "unitecon",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "FinOps Telemetry and Unit Economics Lifecycle",
+        "nodes": [
+          {
+            "id": "tags",
+            "label": "Allocation Tags",
+            "description": "Environment, Service, and CostCenter"
+          },
+          {
+            "id": "telemetry",
+            "label": "Cloud Billing",
+            "description": "Aggregates monthly invoice telemetry"
+          },
+          {
+            "id": "unitecon",
+            "label": "Unit Economics",
+            "description": "Calculates cost per million requests"
+          },
+          {
+            "id": "governance",
+            "label": "FinOps Guardrails",
+            "description": "Flags error waste and budget drift"
+          }
+        ],
+        "edges": [
+          {
+            "from": "tags",
+            "to": "telemetry",
+            "label": "Attribute"
+          },
+          {
+            "from": "telemetry",
+            "to": "unitecon",
+            "label": "Normalize"
+          },
+          {
+            "from": "unitecon",
+            "to": "governance",
+            "label": "Enforce"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cost allocation tagging is the foundation of modern cloud finops.",
+            "activeNode": "tags",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Unit economics normalize cloud spending against incoming request volume.",
+            "activeNode": "unitecon",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Enterprise Cloud Financial Optimizer",
+      "codeHash": "5773947db8c6d22284d7261e05c9200789799b3af3272670d947f5fde786d926",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

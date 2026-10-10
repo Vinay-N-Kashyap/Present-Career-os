@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Reverse proxies and CDNs",
+      "codeHash": "88c5d4b7454227775289312398c15b9c0e65e034b357a81a1b72f921ed78983d",
+      "spec": {
+        "template": "none",
+        "reason": "Reverse proxy and CDN edge caching architecture overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Cache-Control headers",
+      "codeHash": "436ddf37ee9ee0eb6622309ae59bf491ba013e6aeb91a6217f6fd3d1b47feef7",
+      "spec": {
+        "template": "table",
+        "title": "HTTP Cache-Control response header directives and timing values",
+        "columns": [
+          "name",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The max-age directive defines fresh lifetime in seconds for shared caches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The no-store directive forbids caching entirely for sensitive customer data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max-age"
+                  },
+                  {
+                    "text": "60"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The stale-while-revalidate directive serves cached copies while refreshing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max-age"
+                  },
+                  {
+                    "text": "60"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stale-while-revalidate"
+                  },
+                  {
+                    "text": "30"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "HTTP Cache-Control response header directives and timing values",
+        "columns": [
+          "name",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The max-age directive defines fresh lifetime in seconds for shared caches.",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The no-store directive forbids caching entirely for sensitive customer data.",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "60"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The stale-while-revalidate directive serves cached copies while refreshing.",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "60"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stale-while-revalidate",
+                  "30"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fresh, stale or expired?",
+      "codeHash": "7af8ff67cd3d62b36a8fdb44e77193beb94c894a46cd94c89bea2db05f05ea9c",
+      "spec": {
+        "template": "table",
+        "title": "Edge cache evaluation status and revalidation decisions by age",
+        "columns": [
+          "status",
+          "revalidate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "If age is within max-age the copy is fresh and served without revalidation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "FRESH"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stale content is served immediately while triggering background refresh.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "FRESH"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "STALE_REVALIDATING"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Otherwise expired assets must fetch fresh responses from origin.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "FRESH"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "STALE_REVALIDATING"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "EXPIRED"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Edge cache evaluation status and revalidation decisions by age",
+        "columns": [
+          "status",
+          "revalidate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "If age is within max-age the copy is fresh and served without revalidation.",
+            "rows": [
+              {
+                "cells": [
+                  "FRESH",
+                  "False"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stale content is served immediately while triggering background refresh.",
+            "rows": [
+              {
+                "cells": [
+                  "FRESH",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "STALE_REVALIDATING",
+                  "True"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Otherwise expired assets must fetch fresh responses from origin.",
+            "rows": [
+              {
+                "cells": [
+                  "FRESH",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "STALE_REVALIDATING",
+                  "True"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "EXPIRED",
+                  "False"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Purging with surrogate keys",
+      "codeHash": "afd95f050340140766cb871d7234314fcb2c75f7077aacb9225cd20c4a1f14cf",
+      "spec": {
+        "template": "table",
+        "title": "Surrogate keys cache tag association for granular edge invalidation",
+        "columns": [
+          "url",
+          "keys"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Purging invalidates outdated copies from edge caches when prices change.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/product/42"
+                  },
+                  {
+                    "text": "product-42"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Surrogate keys tag responses so related pages purge together in one operation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/product/42"
+                  },
+                  {
+                    "text": "product-42"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/category/shoes"
+                  },
+                  {
+                    "text": "category-shoes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Purging by key invalidates cached copies globally across all edge locations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/product/42"
+                  },
+                  {
+                    "text": "product-42"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/category/shoes"
+                  },
+                  {
+                    "text": "category-shoes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/home"
+                  },
+                  {
+                    "text": "home"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Surrogate keys cache tag association for granular edge invalidation",
+        "columns": [
+          "url",
+          "keys"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Purging invalidates outdated copies from edge caches when prices change.",
+            "rows": [
+              {
+                "cells": [
+                  "/product/42",
+                  "product-42"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Surrogate keys tag responses so related pages purge together in one operation.",
+            "rows": [
+              {
+                "cells": [
+                  "/product/42",
+                  "product-42"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/category/shoes",
+                  "category-shoes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Purging by key invalidates cached copies globally across all edge locations.",
+            "rows": [
+              {
+                "cells": [
+                  "/product/42",
+                  "product-42"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/category/shoes",
+                  "category-shoes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/home",
+                  "home"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What to cache, and what not",
+      "codeHash": "25260e7c185c6daf355716ff9769ebf03a06e60db9d2563f0af825f2b20669d1",
+      "spec": {
+        "template": "table",
+        "title": "Caching policies and header strategies across web resource types",
+        "columns": [
+          "kind",
+          "rules"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache static assets for long durations with content hashed filenames.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "static asset"
+                  },
+                  {
+                    "text": "public, max-age=31536000, immutable"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cache public pages briefly and configure stale revalidation for fast loads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "static asset"
+                  },
+                  {
+                    "text": "public, max-age=31536000, immutable"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "public page"
+                  },
+                  {
+                    "text": "public, max-age=60, stale-while-revalidate=30"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Never store personalized or sensitive account pages in shared caches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "static asset"
+                  },
+                  {
+                    "text": "public, max-age=31536000, immutable"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "public page"
+                  },
+                  {
+                    "text": "public, max-age=60, stale-while-revalidate=30"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user account page"
+                  },
+                  {
+                    "text": "private, no-store"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Caching policies and header strategies across web resource types",
+        "columns": [
+          "kind",
+          "rules"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache static assets for long durations with content hashed filenames.",
+            "rows": [
+              {
+                "cells": [
+                  "static asset",
+                  "public, max-age=31536000, immutable"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cache public pages briefly and configure stale revalidation for fast loads.",
+            "rows": [
+              {
+                "cells": [
+                  "static asset",
+                  "public, max-age=31536000, immutable"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "public page",
+                  "public, max-age=60, stale-while-revalidate=30"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Never store personalized or sensitive account pages in shared caches.",
+            "rows": [
+              {
+                "cells": [
+                  "static asset",
+                  "public, max-age=31536000, immutable"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "public page",
+                  "public, max-age=60, stale-while-revalidate=30"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "user account page",
+                  "private, no-store"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Protecting the origin",
+      "codeHash": "fb04ff721a7d70256cf242f8de7d857391640ccd8ef925180151d5a5e675a311",
+      "spec": {
+        "template": "none",
+        "reason": "Request collapsing and origin shields mitigating cache stampedes."
+      },
+      "filled": {}
+    }
+  ]
+}

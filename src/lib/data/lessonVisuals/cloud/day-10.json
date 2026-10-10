@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 10,
+  "promptSha": "29bf1ad862ba812465dcdda6fc24bb2d5a24586d9513687da09134ba9ccc8fcb",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "S3 Block Public Access: The Account & Bucket Kill-Switch",
+      "codeHash": "3cbc710f5a65219e6d9070b3f99392672616c50400ea6f2f85b623d59b464659",
+      "spec": {
+        "template": "states",
+        "title": "S3 Block Public Access centralized protection states",
+        "states": [
+          {
+            "id": "evaluating",
+            "label": "Access Evaluated"
+          },
+          {
+            "id": "blocked",
+            "label": "Block Public Access Enabled"
+          },
+          {
+            "id": "enforced",
+            "label": "Strict Private Enforcement"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "AWS introduced block public access to eliminate public data exposure.",
+            "active": "blocked"
+          },
+          {
+            "at": "say8",
+            "caption": "Bucket policies granting public access are rejected by block public policy.",
+            "active": "enforced"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "S3 Block Public Access centralized protection states",
+        "states": [
+          {
+            "id": "evaluating",
+            "label": "Access Evaluated"
+          },
+          {
+            "id": "blocked",
+            "label": "Block Public Access Enabled"
+          },
+          {
+            "id": "enforced",
+            "label": "Strict Private Enforcement"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "AWS introduced block public access to eliminate public data exposure.",
+            "active": "blocked"
+          },
+          {
+            "at": "say8",
+            "caption": "Bucket policies granting public access are rejected by block public policy.",
+            "active": "enforced"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Bucket Policies vs IAM Policies vs ACLs",
+      "codeHash": "41a8bbfe1e524b845a9e48d006dc137876ce4aee621eb588815702abc19b5945",
+      "spec": {
+        "template": "compare",
+        "title": "IAM user policies compared to S3 resource bucket policies",
+        "leftLabel": "IAM Policy (Principal)",
+        "rightLabel": "Bucket Policy (Resource)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bucket policies are resource based policies attached directly to buckets.",
+            "left": {
+              "code": "Attached to IAM Role",
+              "result": {
+                "text": "Identity Policy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Attached to S3 Bucket",
+              "result": {
+                "text": "Resource Policy"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "IAM policies are attached to users, groups, or roles within your account.",
+            "left": {
+              "code": "Outbound Permissions",
+              "result": {
+                "text": "IAM Scope"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Inbound Access Controls",
+              "result": {
+                "text": "Bucket Perimeter"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "IAM user policies compared to S3 resource bucket policies",
+        "leftLabel": "IAM Policy (Principal)",
+        "rightLabel": "Bucket Policy (Resource)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bucket policies are resource based policies attached directly to buckets.",
+            "left": {
+              "code": "Attached to IAM Role",
+              "result": {
+                "text": "Identity Policy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Attached to S3 Bucket",
+              "result": {
+                "text": "Resource Policy"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "IAM policies are attached to users, groups, or roles within your account.",
+            "left": {
+              "code": "Outbound Permissions",
+              "result": {
+                "text": "IAM Scope"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Inbound Access Controls",
+              "result": {
+                "text": "Bucket Perimeter"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enforcing TLS / HTTPS in Transit via Bucket Policies",
+      "codeHash": "33d2972bc01f699d3a348a3f2664aa395e7044f0374f570edbbc03ad84457ca8",
+      "spec": {
+        "template": "workflow",
+        "title": "Enforcing TLS encryption in transit via bucket policy",
+        "stages": [
+          {
+            "id": "request",
+            "name": "Inbound Request",
+            "subtext": "Client HTTPS"
+          },
+          {
+            "id": "policy",
+            "name": "Bucket Policy",
+            "subtext": "Condition Check"
+          },
+          {
+            "id": "secure",
+            "name": "Secure Transport",
+            "subtext": "TLS Confirmed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bucket policy statement explicitly denies all unencrypted HTTP requests.",
+            "activeStageId": "policy",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Condition checks whether secure transport is false rejecting HTTP requests.",
+            "activeStageId": "secure",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Enforcing TLS encryption in transit via bucket policy",
+        "stages": [
+          {
+            "id": "request",
+            "name": "Inbound Request",
+            "subtext": "Client HTTPS"
+          },
+          {
+            "id": "policy",
+            "name": "Bucket Policy",
+            "subtext": "Condition Check"
+          },
+          {
+            "id": "secure",
+            "name": "Secure Transport",
+            "subtext": "TLS Confirmed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bucket policy statement explicitly denies all unencrypted HTTP requests.",
+            "activeStageId": "policy",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Condition checks whether secure transport is false rejecting HTTP requests.",
+            "activeStageId": "secure",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Encryption at Rest: SSE-S3 vs SSE-KMS vs SSE-C",
+      "codeHash": "bf123a38a002eb0698bcf16c7528b5ffbd177cc8dfb2aa7f98543d3a62797db6",
+      "spec": {
+        "template": "table",
+        "title": "Server-side encryption options and key management models",
+        "columns": [
+          "Encryption Type",
+          "Key Ownership",
+          "CloudTrail Audit Logs"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Objects are encrypted with unique keys using advanced encryption standard.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Every encryption event is logged in CloudTrail providing an audit trail.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Server-side encryption options and key management models",
+        "columns": [
+          "Encryption Type",
+          "Key Ownership",
+          "CloudTrail Audit Logs"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Objects are encrypted with unique keys using advanced encryption standard.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Every encryption event is logged in CloudTrail providing an audit trail.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Pre-Signed URLs for Secure Temporary Client Uploads/Downloads",
+      "codeHash": "53500c271d20ba3b1d0c8de56ac1caf7aff476b0dff214bddf3be363d5beff9b",
+      "spec": {
+        "template": "sequence",
+        "title": "S3 pre-signed URL secure upload and download sequence",
+        "actors": [
+          {
+            "id": "client",
+            "name": "Web Client"
+          },
+          {
+            "id": "backend",
+            "name": "Auth Server"
+          },
+          {
+            "id": "s3",
+            "name": "S3 Storage"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Storage provides a cloud native alternative using presigned URLs.",
+            "from": "client",
+            "to": "backend",
+            "label": "Request URL",
+            "tone": "data"
+          },
+          {
+            "at": "say8",
+            "caption": "The client browser uploads the file directly to the bucket using PUT.",
+            "from": "client",
+            "to": "s3",
+            "label": "Direct PUT Upload",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "S3 pre-signed URL secure upload and download sequence",
+        "actors": [
+          {
+            "id": "client",
+            "name": "Web Client"
+          },
+          {
+            "id": "backend",
+            "name": "Auth Server"
+          },
+          {
+            "id": "s3",
+            "name": "S3 Storage"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Storage provides a cloud native alternative using presigned URLs.",
+            "from": "client",
+            "to": "backend",
+            "label": "Request URL",
+            "tone": "data"
+          },
+          {
+            "at": "say8",
+            "caption": "The client browser uploads the file directly to the bucket using PUT.",
+            "from": "client",
+            "to": "s3",
+            "label": "Direct PUT Upload",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Object Lock & Compliance Retention Modes",
+      "codeHash": "04cfaf7e3fc6d7de34354f22fc38cca1c0c3b511aa6216c53b0b76df832b4eca",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

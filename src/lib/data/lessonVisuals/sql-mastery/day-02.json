@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "CREATE TABLE: designing the shape of your data",
+      "codeHash": "a32f3c907f1be571b6962e6377cfe9fda272c2dbfc998dcc1a425342dd9f83f0",
+      "spec": {
+        "template": "compare",
+        "title": "CREATE TABLE schema definition and column types",
+        "leftLabel": "Raw Unstructured File",
+        "rightLabel": "Structured Relational Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The command CREATE TABLE specifies columns and types separated by commas.",
+            "left": {
+              "code": "raw text file",
+              "result": {
+                "text": "untyped lines"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE TABLE books",
+              "result": {
+                "text": "typed columns"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "After you create a table you add rows with INSERT to see it in action.",
+            "left": {
+              "code": "empty table",
+              "result": {
+                "text": "zero rows"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "INSERT INTO books",
+              "result": {
+                "text": "Wings of Fire"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "CREATE TABLE schema definition and column types",
+        "leftLabel": "Raw Unstructured File",
+        "rightLabel": "Structured Relational Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The command CREATE TABLE specifies columns and types separated by commas.",
+            "left": {
+              "code": "raw text file",
+              "result": "untyped lines",
+              "tone": "error",
+              "checks": [
+                "untyped lines"
+              ]
+            },
+            "right": {
+              "code": "CREATE TABLE books",
+              "result": "typed columns",
+              "tone": "ok",
+              "checks": [
+                "typed columns"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "After you create a table you add rows with INSERT to see it in action.",
+            "left": {
+              "code": "empty table",
+              "result": "zero rows",
+              "tone": "data",
+              "checks": [
+                "zero rows"
+              ]
+            },
+            "right": {
+              "code": "INSERT INTO books",
+              "result": "Wings of Fire",
+              "tone": "ok",
+              "checks": [
+                "Wings of Fire"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing data types",
+      "codeHash": "865f5b8e4644c50b0cb047e740f1608c64a83f5ae375a99d11c84505e12ce607",
+      "spec": {
+        "template": "table",
+        "title": "Expenses table column data types",
+        "columns": [
+          "item",
+          "amount",
+          "spent_on",
+          "is_paid"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "For text use text while money uses numeric to avoid rounding errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Tea"
+                  },
+                  {
+                    "text": "20.00"
+                  },
+                  {
+                    "text": "2026-09-28"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The right type protects your data and prevents invalid values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Tea"
+                  },
+                  {
+                    "text": "20.00"
+                  },
+                  {
+                    "text": "2026-09-28"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Rent"
+                  },
+                  {
+                    "text": "8000.50"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Expenses table column data types",
+        "columns": [
+          "item",
+          "amount",
+          "spent_on",
+          "is_paid"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "For text use text while money uses numeric to avoid rounding errors.",
+            "rows": [
+              {
+                "cells": [
+                  "Tea",
+                  "20.00",
+                  "2026-09-28",
+                  "true"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The right type protects your data and prevents invalid values.",
+            "rows": [
+              {
+                "cells": [
+                  "Tea",
+                  "20.00",
+                  "2026-09-28",
+                  "true"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rent",
+                  "8000.50",
+                  "2026-09-01",
+                  "false"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "NOT NULL and DEFAULT",
+      "codeHash": "b33cfcf1dda27d5e4bf26e6db0a372ad694c970916ad8822e3e18ffdf39cadf5",
+      "spec": {
+        "template": "none",
+        "reason": "NOT NULL and DEFAULT constraints rejecting missing values or supplying fallback defaults."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "NOT NULL and DEFAULT constraints rejecting missing values or supplying fallback defaults."
+      }
+    },
+    {
+      "partTitle": "Primary keys and serial ids",
+      "codeHash": "65a65d7e6988c560f71c476bf2ef308e89f282a942971b34ab2399f271267f5f",
+      "spec": {
+        "template": "table",
+        "title": "Automatic serial primary key assignment",
+        "columns": [
+          "id",
+          "name",
+          "city"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The type serial makes a whole number column that counts up automatically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Pune"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "Mumbai"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Leaving the id out lets PostgreSQL fill in the next number automatically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Pune"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "Mumbai"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "NULL"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automatic serial primary key assignment",
+        "columns": [
+          "id",
+          "name",
+          "city"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The type serial makes a whole number column that counts up automatically.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Asha",
+                  "Pune"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Ravi",
+                  "Mumbai"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Leaving the id out lets PostgreSQL fill in the next number automatically.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Asha",
+                  "Pune"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Ravi",
+                  "Mumbai"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Meera",
+                  "NULL"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "UNIQUE, and removing tables with DROP TABLE",
+      "codeHash": "889de9abe37ea765bfb0266f781348d286bc9283d171746a28b25ee74d07ab66",
+      "spec": {
+        "template": "none",
+        "reason": "UNIQUE constraint validation and DROP TABLE lifecycle management."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "UNIQUE constraint validation and DROP TABLE lifecycle management."
+      }
+    },
+    {
+      "partTitle": "Putting it together: the expenses table",
+      "codeHash": "0362f9582cacfa92e40b677efacb321aa5815a3c1cc8a53350eb21b3069b9a66",
+      "spec": {
+        "template": "table",
+        "title": "Expenses table records with defaults",
+        "columns": [
+          "id",
+          "item",
+          "amount",
+          "category",
+          "spent_today"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The item must always be there and amount is numeric with serial primary key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Rent"
+                  },
+                  {
+                    "text": "8000.00"
+                  },
+                  {
+                    "text": "home"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "We insert two expenses with date values and read them back with SELECT.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Rent"
+                  },
+                  {
+                    "text": "8000.00"
+                  },
+                  {
+                    "text": "home"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Tea"
+                  },
+                  {
+                    "text": "20.00"
+                  },
+                  {
+                    "text": "NULL"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Expenses table records with defaults",
+        "columns": [
+          "id",
+          "item",
+          "amount",
+          "category",
+          "spent_today"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The item must always be there and amount is numeric with serial primary key.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Rent",
+                  "8000.00",
+                  "home",
+                  "false"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "We insert two expenses with date values and read them back with SELECT.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Rent",
+                  "8000.00",
+                  "home",
+                  "false"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Tea",
+                  "20.00",
+                  "NULL",
+                  "true"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

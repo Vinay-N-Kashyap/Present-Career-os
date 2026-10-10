@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 9,
+  "promptSha": "f7a3948bab1972acc4e128bc96a1e437e32896dba1e97db4912a6774004cff06",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "S3 Foundations: Buckets, Keys, and Object Immutability",
+      "codeHash": "fe73c67310480ea9f54094ba972bbf89e29fbf10028d2e39c512297392db0a12",
+      "spec": {
+        "template": "workflow",
+        "title": "S3 object storage architecture and bucket keys",
+        "stages": [
+          {
+            "id": "bucket",
+            "name": "Global Bucket",
+            "subtext": "Unique Namespace"
+          },
+          {
+            "id": "key",
+            "name": "Object Key",
+            "subtext": "Path Identifier"
+          },
+          {
+            "id": "payload",
+            "name": "Payload",
+            "subtext": "Immutable Bytes"
+          },
+          {
+            "id": "meta",
+            "name": "Metadata",
+            "subtext": "System Headers"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Storage stores data as immutable objects within unique bucket namespaces.",
+            "activeStageId": "bucket",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Each object consists of file data, unique key, and system metadata.",
+            "activeStageId": "payload",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "S3 object storage architecture and bucket keys",
+        "stages": [
+          {
+            "id": "bucket",
+            "name": "Global Bucket",
+            "subtext": "Unique Namespace"
+          },
+          {
+            "id": "key",
+            "name": "Object Key",
+            "subtext": "Path Identifier"
+          },
+          {
+            "id": "payload",
+            "name": "Payload",
+            "subtext": "Immutable Bytes"
+          },
+          {
+            "id": "meta",
+            "name": "Metadata",
+            "subtext": "System Headers"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Storage stores data as immutable objects within unique bucket namespaces.",
+            "activeStageId": "bucket",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Each object consists of file data, unique key, and system metadata.",
+            "activeStageId": "payload",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Storage Classes: Standard, Intelligent-Tiering, and Glacier",
+      "codeHash": "dc2189507e3d1cb1f50e2e852cf1271d4f4a3ce96c5a05fe7d2e5df6c7ee16c3",
+      "spec": {
+        "template": "table",
+        "title": "S3 storage class cost and latency comparison",
+        "columns": [
+          "Storage Class",
+          "Availability Latency",
+          "Cost Profile",
+          "Retrieval SLA"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standard storage provides low latency for frequently accessed data.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Glacier delivers low cost archival storage for compliance records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "S3 storage class cost and latency comparison",
+        "columns": [
+          "Storage Class",
+          "Availability Latency",
+          "Cost Profile",
+          "Retrieval SLA"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standard storage provides low latency for frequently accessed data.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Glacier delivers low cost archival storage for compliance records.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Intelligent-Tiering: Automatic Cost Optimization",
+      "codeHash": "c8e04f499c2e33e09f112bf0269dd8a77906be49efcba75efc3a17e6d9b401f7",
+      "spec": {
+        "template": "states",
+        "title": "S3 Intelligent-Tiering automatic tier movement states",
+        "states": [
+          {
+            "id": "frequent",
+            "label": "Frequent Access Tier"
+          },
+          {
+            "id": "infrequent",
+            "label": "Infrequent Access Tier"
+          },
+          {
+            "id": "archive",
+            "label": "Archive Instant Tier"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Intelligent tiering delivers cost savings with zero operational risk.",
+            "active": "frequent"
+          },
+          {
+            "at": "say8",
+            "caption": "Unaccessed objects move to infrequent access tiers automatically.",
+            "active": "infrequent"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "S3 Intelligent-Tiering automatic tier movement states",
+        "states": [
+          {
+            "id": "frequent",
+            "label": "Frequent Access Tier"
+          },
+          {
+            "id": "infrequent",
+            "label": "Infrequent Access Tier"
+          },
+          {
+            "id": "archive",
+            "label": "Archive Instant Tier"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Intelligent tiering delivers cost savings with zero operational risk.",
+            "active": "frequent"
+          },
+          {
+            "at": "say8",
+            "caption": "Unaccessed objects move to infrequent access tiers automatically.",
+            "active": "infrequent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lifecycle Management Transition & Expiration Policies",
+      "codeHash": "4afe9d19aabca004420c4c7e9fcc6f4104f569597bac4d343d38cc324987ff8e",
+      "spec": {
+        "template": "sequence",
+        "title": "S3 lifecycle rule transition and expiration workflow",
+        "actors": [
+          {
+            "id": "bucket",
+            "name": "S3 Bucket"
+          },
+          {
+            "id": "lifecycle",
+            "name": "Lifecycle Policy"
+          },
+          {
+            "id": "vault",
+            "name": "Glacier Vault"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lifecycle rules automatically transition objects across tiers over time.",
+            "from": "bucket",
+            "to": "lifecycle",
+            "label": "Evaluate Age",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Expiration rules permanently purge temporary log objects saving storage.",
+            "from": "lifecycle",
+            "to": "vault",
+            "label": "Transition Object",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "S3 lifecycle rule transition and expiration workflow",
+        "actors": [
+          {
+            "id": "bucket",
+            "name": "S3 Bucket"
+          },
+          {
+            "id": "lifecycle",
+            "name": "Lifecycle Policy"
+          },
+          {
+            "id": "vault",
+            "name": "Glacier Vault"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lifecycle rules automatically transition objects across tiers over time.",
+            "from": "bucket",
+            "to": "lifecycle",
+            "label": "Evaluate Age",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Expiration rules permanently purge temporary log objects saving storage.",
+            "from": "lifecycle",
+            "to": "vault",
+            "label": "Transition Object",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Versioning and MFA Delete Protection",
+      "codeHash": "e0a44d58246cb189e70c406b9f25bc9e166d5ebafb74706a041481f6a687b004",
+      "spec": {
+        "template": "compare",
+        "title": "Unversioned bucket compared to versioned S3 bucket",
+        "leftLabel": "Unversioned Bucket",
+        "rightLabel": "Versioned Bucket (MFA Delete)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Versioning protects objects against accidental overwrites and deletions.",
+            "left": {
+              "code": "Overwrite Erases Data",
+              "result": {
+                "text": "Permanent Loss"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Version Retained Intact",
+              "result": {
+                "text": "Version ID Assigned"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "MFA delete requires authentication tokens to permanently erase versions.",
+            "left": {
+              "code": "Direct Delete Allowed",
+              "result": {
+                "text": "Unprotected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Token Required to Purge",
+              "result": {
+                "text": "MFA Protected"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unversioned bucket compared to versioned S3 bucket",
+        "leftLabel": "Unversioned Bucket",
+        "rightLabel": "Versioned Bucket (MFA Delete)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Versioning protects objects against accidental overwrites and deletions.",
+            "left": {
+              "code": "Overwrite Erases Data",
+              "result": {
+                "text": "Permanent Loss"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Version Retained Intact",
+              "result": {
+                "text": "Version ID Assigned"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "MFA delete requires authentication tokens to permanently erase versions.",
+            "left": {
+              "code": "Direct Delete Allowed",
+              "result": {
+                "text": "Unprotected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Token Required to Purge",
+              "result": {
+                "text": "MFA Protected"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Multipart Upload & Transfer Acceleration",
+      "codeHash": "40ec98c2849c9853be9b989cc790d709828179febaecd06d33241999bc92d57b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

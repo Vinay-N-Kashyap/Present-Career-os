@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 20,
+  "promptSha": "f721359c747123b0654f0db2c611d20a2e21664b69894b7643cb8e80c38d16b2",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Prompt Injection Signatures & Adversarial Taxonomy",
+      "codeHash": "f721359c747123b0654f0db2c611d20a2e21664b69894b7643cb8e80c38d16b2",
+      "spec": {
+        "template": "table",
+        "title": "Prompt Injection Signature Taxonomy",
+        "columns": [
+          "Pattern Name",
+          "Detection Signature",
+          "Threat Category"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The first line of defense is heuristic signature scanning for triggers.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions inspect incoming text for phrases like ignore previous instructions.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Adversarial prompts matching signatures are flagged with suspicion.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Prompt Injection Signature Taxonomy",
+        "columns": [
+          "Pattern Name",
+          "Detection Signature",
+          "Threat Category"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The first line of defense is heuristic signature scanning for triggers.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions inspect incoming text for phrases like ignore previous instructions.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Adversarial prompts matching signatures are flagged with suspicion.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Level Risk Scoring & Input Quarantine Gate",
+      "codeHash": "fa3de45283a81efdb0c0687b840a77098cb844cc40fa0b1924d61f60d86af585",
+      "spec": {
+        "template": "states",
+        "title": "Multi-Tiered Injection Risk Scoring States",
+        "states": [
+          {
+            "id": "low",
+            "label": "Low Risk Level"
+          },
+          {
+            "id": "medium",
+            "label": "Medium Risk Level"
+          },
+          {
+            "id": "high",
+            "label": "High Risk Level"
+          },
+          {
+            "id": "quarantined",
+            "label": "Quarantined Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Risk scoring functions evaluate multiple regex patterns with varying weights.",
+            "current": "low",
+            "visited": [
+              "low"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Multiple hits trigger high risk classification quarantining the request.",
+            "current": "high",
+            "visited": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Tiered architectures apply progressive friction rather than blanket bans.",
+            "current": "quarantined",
+            "visited": [
+              "low",
+              "medium",
+              "high",
+              "quarantined"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Multi-Tiered Injection Risk Scoring States",
+        "states": [
+          {
+            "id": "low",
+            "label": "Low Risk Level"
+          },
+          {
+            "id": "medium",
+            "label": "Medium Risk Level"
+          },
+          {
+            "id": "high",
+            "label": "High Risk Level"
+          },
+          {
+            "id": "quarantined",
+            "label": "Quarantined Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Risk scoring functions evaluate multiple regex patterns with varying weights.",
+            "current": "low",
+            "visited": [
+              "low"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Multiple hits trigger high risk classification quarantining the request.",
+            "current": "high",
+            "visited": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Tiered architectures apply progressive friction rather than blanket bans.",
+            "current": "quarantined",
+            "visited": [
+              "low",
+              "medium",
+              "high",
+              "quarantined"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PII Redaction: Email Addresses & Phone Numbers",
+      "codeHash": "d4d6ef612f28f4ab4b5fd7181375e5c92fc77566b6967fd3327eae49db314004",
+      "spec": {
+        "template": "flow",
+        "title": "Email Redaction Pipeline Flow",
+        "nodes": [
+          {
+            "id": "raw",
+            "label": "Raw Inbound Text",
+            "tappable": false
+          },
+          {
+            "id": "regex",
+            "label": "Email Regex Matcher",
+            "tappable": false
+          },
+          {
+            "id": "mask",
+            "label": "Redacted Email Masking",
+            "tappable": false
+          },
+          {
+            "id": "clean",
+            "label": "Sanitized Output Text",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "raw",
+            "to": "regex"
+          },
+          {
+            "from": "regex",
+            "to": "mask"
+          },
+          {
+            "from": "mask",
+            "to": "clean"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Transmitting customer email addresses to external providers risks fines.",
+            "activeNodes": [
+              "raw"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Redaction functions apply standard email regular expressions across text.",
+            "activeNodes": [
+              "regex"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Corporate emails are replaced while preserving surrounding sentence structure.",
+            "activeNodes": [
+              "mask",
+              "clean"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Email Redaction Pipeline Flow",
+        "nodes": [
+          {
+            "id": "raw",
+            "label": "Raw Inbound Text",
+            "tappable": false
+          },
+          {
+            "id": "regex",
+            "label": "Email Regex Matcher",
+            "tappable": false
+          },
+          {
+            "id": "mask",
+            "label": "Redacted Email Masking",
+            "tappable": false
+          },
+          {
+            "id": "clean",
+            "label": "Sanitized Output Text",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "raw",
+            "to": "regex"
+          },
+          {
+            "from": "regex",
+            "to": "mask"
+          },
+          {
+            "from": "mask",
+            "to": "clean"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Transmitting customer email addresses to external providers risks fines.",
+            "activeNodes": [
+              "raw"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Redaction functions apply standard email regular expressions across text.",
+            "activeNodes": [
+              "regex"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Corporate emails are replaced while preserving surrounding sentence structure.",
+            "activeNodes": [
+              "mask",
+              "clean"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PII Redaction: Social Security Numbers & Credit Card Numbers",
+      "codeHash": "bc814a385fb627ee0402e30f884f576b65a18580c850253f1ec69e3caea35a89",
+      "spec": {
+        "template": "compare",
+        "title": "Raw Identifiers vs Masked Privacy Records",
+        "leftLabel": "Unmasked Raw Record",
+        "rightLabel": "Redacted Clean Record",
+        "leftItems": [
+          "Applicant SSN 000-12-3456",
+          "Direct phone 800-555-0199",
+          "Plaintext exposure risks"
+        ],
+        "rightItems": [
+          "Masked [REDACTED_SSN]",
+          "Masked [REDACTED_PHONE]",
+          "Zero unmasked identifiers"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Boundary regular expressions prevent false matches against arbitrary numbers.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say4",
+            "caption": "Masking substitutes Social Security Numbers with explicit placeholders.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Masking unmasked identifiers prevents catastrophic regulatory penalties.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw Identifiers vs Masked Privacy Records",
+        "leftLabel": "Unmasked Raw Record",
+        "rightLabel": "Redacted Clean Record",
+        "leftItems": [
+          "Applicant SSN 000-12-3456",
+          "Direct phone 800-555-0199",
+          "Plaintext exposure risks"
+        ],
+        "rightItems": [
+          "Masked [REDACTED_SSN]",
+          "Masked [REDACTED_PHONE]",
+          "Zero unmasked identifiers"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Boundary regular expressions prevent false matches against arbitrary numbers.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say4",
+            "caption": "Masking substitutes Social Security Numbers with explicit placeholders.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Masking unmasked identifiers prevents catastrophic regulatory penalties.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bidirectional Guardrail Pipeline (Inbound & Outbound)",
+      "codeHash": "63597d344e6c4748c25f54b7c6da6ccb6adf8a124f02c3a73bf799baaed36e29",
+      "spec": {
+        "template": "workflow",
+        "title": "Bidirectional Guardrail Pipeline Lifecycle",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Inbound Ingress",
+            "subtext": "Receive client prompt"
+          },
+          {
+            "id": "screen",
+            "name": "Injection Screen",
+            "subtext": "Inspect adversarial input"
+          },
+          {
+            "id": "inference",
+            "name": "Model Inference",
+            "subtext": "Execute model generation"
+          },
+          {
+            "id": "scrub",
+            "name": "Outbound Egress Scrub",
+            "subtext": "Redact sensitive PII"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bidirectional architectures inspect both directions of inference lifecycles.",
+            "activeStageId": "ingress"
+          },
+          {
+            "at": "say5",
+            "caption": "Input prompts are screened for adversarial injection instructions.",
+            "activeStageId": "screen"
+          },
+          {
+            "at": "say6",
+            "caption": "Output responses are scrubbed for PII before client delivery.",
+            "activeStageId": "scrub"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Bidirectional Guardrail Pipeline Lifecycle",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Inbound Ingress",
+            "subtext": "Receive client prompt"
+          },
+          {
+            "id": "screen",
+            "name": "Injection Screen",
+            "subtext": "Inspect adversarial input"
+          },
+          {
+            "id": "inference",
+            "name": "Model Inference",
+            "subtext": "Execute model generation"
+          },
+          {
+            "id": "scrub",
+            "name": "Outbound Egress Scrub",
+            "subtext": "Redact sensitive PII"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bidirectional architectures inspect both directions of inference lifecycles.",
+            "activeStageId": "ingress"
+          },
+          {
+            "at": "say5",
+            "caption": "Input prompts are screened for adversarial injection instructions.",
+            "activeStageId": "screen"
+          },
+          {
+            "at": "say6",
+            "caption": "Output responses are scrubbed for PII before client delivery.",
+            "activeStageId": "scrub"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise AI Gateway Safety Interceptor Middleware",
+      "codeHash": "b77d2aeb87cbb62502b70c7a781d32f2fbc1934ab16afcee091d2ba605e2b7c2",
+      "spec": {
+        "template": "none",
+        "reason": "Enterprise AI Gateway Safety Interceptor Middleware capstone synthesizing injection scanning, risk gates, PII scrubbing, and bidirectional auditing"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Enterprise AI Gateway Safety Interceptor Middleware capstone synthesizing injection scanning, risk gates, PII scrubbing, and bidirectional auditing"
+      }
+    }
+  ]
+}

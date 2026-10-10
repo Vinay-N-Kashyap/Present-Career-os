@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 24,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Alignment Problem: SFT vs RLHF vs Direct Preference Optimization",
+      "codeHash": "5480a138d651bc417ec6bda40a69b714294d4acb0b06a85ee5f8de5eea754ca9",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to RLHF reward modeling versus DPO closed-form loss"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to RLHF reward modeling versus DPO closed-form loss"
+      }
+    },
+    {
+      "partTitle": "Preference Dataset Schema: Prompt, Chosen, and Rejected Pairs",
+      "codeHash": "c4979db138268e422fe18a26c29baf3ca089833be7aae39cc92f49d4046d46ce",
+      "spec": {
+        "template": "table",
+        "title": "Pairwise contrastive preference dataset schema and alignment criteria",
+        "columns": [
+          "Prompt Query",
+          "Chosen Winner Completion",
+          "Rejected Loser Completion",
+          "Alignment Criteria"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each training record consists of a prompt with chosen and rejected completions.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Data hygiene is paramount to ensure training signals avoid noisy thrashing.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pairwise contrastive preference dataset schema and alignment criteria",
+        "columns": [
+          "Prompt Query",
+          "Chosen Winner Completion",
+          "Rejected Loser Completion",
+          "Alignment Criteria"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each training record consists of a prompt with chosen and rejected completions.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Data hygiene is paramount to ensure training signals avoid noisy thrashing.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mathematical Foundations of DPO Loss Formulation",
+      "codeHash": "922fe7bcf7a04e179a7008e2bc7ae2b6be1733eba1c97a4108c07b34e97730e5",
+      "spec": {
+        "template": "flow",
+        "title": "Closed-form DPO implicit reward computation and loss optimization",
+        "nodes": [
+          {
+            "id": "promptInput",
+            "label": "Prompt Input X",
+            "tappable": false
+          },
+          {
+            "id": "activePolicy",
+            "label": "Active Policy Pi-Theta",
+            "tappable": false
+          },
+          {
+            "id": "frozenRef",
+            "label": "Frozen Reference Pi-Ref",
+            "tappable": false
+          },
+          {
+            "id": "implicitReward",
+            "label": "Implicit Reward Log Ratio",
+            "tappable": false
+          },
+          {
+            "id": "dpoLoss",
+            "label": "DPO Loss Sigmoid Objective",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "promptInput",
+            "to": "activePolicy",
+            "label": "Evaluate Token Probabilities"
+          },
+          {
+            "from": "promptInput",
+            "to": "frozenRef",
+            "label": "Evaluate Baseline Probabilities"
+          },
+          {
+            "from": "activePolicy",
+            "to": "implicitReward",
+            "label": "Log Probability Ratio"
+          },
+          {
+            "from": "frozenRef",
+            "to": "implicitReward",
+            "label": "KL Divergence Anchor"
+          },
+          {
+            "from": "implicitReward",
+            "to": "dpoLoss",
+            "label": "Compute Sigmoid Margin Loss"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The implicit reward is expressed analytically using active and reference models.",
+            "activeNodes": [
+              "activePolicy",
+              "frozenRef",
+              "implicitReward"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Loss rewards increasing preferred probabilities while reducing rejected ones.",
+            "activeNodes": [
+              "implicitReward",
+              "dpoLoss"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Closed-form DPO implicit reward computation and loss optimization",
+        "nodes": [
+          {
+            "id": "promptInput",
+            "label": "Prompt Input X",
+            "tappable": false
+          },
+          {
+            "id": "activePolicy",
+            "label": "Active Policy Pi-Theta",
+            "tappable": false
+          },
+          {
+            "id": "frozenRef",
+            "label": "Frozen Reference Pi-Ref",
+            "tappable": false
+          },
+          {
+            "id": "implicitReward",
+            "label": "Implicit Reward Log Ratio",
+            "tappable": false
+          },
+          {
+            "id": "dpoLoss",
+            "label": "DPO Loss Sigmoid Objective",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "promptInput",
+            "to": "activePolicy",
+            "label": "Evaluate Token Probabilities"
+          },
+          {
+            "from": "promptInput",
+            "to": "frozenRef",
+            "label": "Evaluate Baseline Probabilities"
+          },
+          {
+            "from": "activePolicy",
+            "to": "implicitReward",
+            "label": "Log Probability Ratio"
+          },
+          {
+            "from": "frozenRef",
+            "to": "implicitReward",
+            "label": "KL Divergence Anchor"
+          },
+          {
+            "from": "implicitReward",
+            "to": "dpoLoss",
+            "label": "Compute Sigmoid Margin Loss"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The implicit reward is expressed analytically using active and reference models.",
+            "activeNodes": [
+              "activePolicy",
+              "frozenRef",
+              "implicitReward"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Loss rewards increasing preferred probabilities while reducing rejected ones.",
+            "activeNodes": [
+              "implicitReward",
+              "dpoLoss"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Critical Role of the Frozen Reference Model & Temperature Beta",
+      "codeHash": "eba9bb3ef227897bcad744095937aa63217067242e0fd7f41ffedec85b8a954d",
+      "spec": {
+        "template": "boxes",
+        "title": "DPO policy stability anchors and temperature beta regularization",
+        "boxes": [
+          {
+            "id": "frozenRefBox",
+            "title": "Frozen Reference Policy",
+            "items": [
+              "Fixed base model copy",
+              "Prevents mode collapse",
+              "Preserves fluent language"
+            ]
+          },
+          {
+            "id": "klDivergenceBox",
+            "title": "Implicit KL Constraint",
+            "items": [
+              "Pulls toward reference",
+              "Bounds distribution drift",
+              "Enforces safety boundary"
+            ]
+          },
+          {
+            "id": "betaTempBox",
+            "title": "Beta Temperature Factor",
+            "items": [
+              "Governs conservatism",
+              "Higher beta keeps anchor",
+              "Lower beta pushes preference"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The reference model is an exact copy frozen at the end of SFT training.",
+            "activeBoxId": "frozenRefBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "It pulls the active policy toward the reference distribution for fluency.",
+            "activeBoxId": "klDivergenceBox",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "DPO policy stability anchors and temperature beta regularization",
+        "boxes": [
+          {
+            "id": "frozenRefBox",
+            "title": "Frozen Reference Policy",
+            "items": [
+              "Fixed base model copy",
+              "Prevents mode collapse",
+              "Preserves fluent language"
+            ]
+          },
+          {
+            "id": "klDivergenceBox",
+            "title": "Implicit KL Constraint",
+            "items": [
+              "Pulls toward reference",
+              "Bounds distribution drift",
+              "Enforces safety boundary"
+            ]
+          },
+          {
+            "id": "betaTempBox",
+            "title": "Beta Temperature Factor",
+            "items": [
+              "Governs conservatism",
+              "Higher beta keeps anchor",
+              "Lower beta pushes preference"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The reference model is an exact copy frozen at the end of SFT training.",
+            "activeBoxId": "frozenRefBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "It pulls the active policy toward the reference distribution for fluency.",
+            "activeBoxId": "klDivergenceBox",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting & Countering Length Bias in Alignment",
+      "codeHash": "4a6cda6319c5336ac2a7962d5b9d26e507baf79b2ca45122b50a50a533e5c174",
+      "spec": {
+        "template": "compare",
+        "title": "Unnormalized verbosity exploit versus length-normalized DPO alignment",
+        "left": {
+          "title": "Verbosity Exploit Vulnerability",
+          "items": [
+            "Reward hack by padding fluff",
+            "Longer answers favored unfairly",
+            "Bloated inference token costs",
+            "Sluggish user response times"
+          ]
+        },
+        "right": {
+          "title": "Length-Normalized DPO",
+          "items": [
+            "Divides log probs by length",
+            "Penalizes redundant padding",
+            "Rewards informational density",
+            "Lean and concise completions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Models discover reward hacks by adding wordy fluff to increase length.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Length normalization forces policies to compete on informational density.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Verbosity Exploit Vulnerability",
+        "rightLabel": "Length-Normalized DPO"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unnormalized verbosity exploit versus length-normalized DPO alignment",
+        "left": {
+          "title": "Verbosity Exploit Vulnerability",
+          "items": [
+            "Reward hack by padding fluff",
+            "Longer answers favored unfairly",
+            "Bloated inference token costs",
+            "Sluggish user response times"
+          ]
+        },
+        "right": {
+          "title": "Length-Normalized DPO",
+          "items": [
+            "Divides log probs by length",
+            "Penalizes redundant padding",
+            "Rewards informational density",
+            "Lean and concise completions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Models discover reward hacks by adding wordy fluff to increase length.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Length normalization forces policies to compete on informational density.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Verbosity Exploit Vulnerability",
+        "rightLabel": "Length-Normalized DPO"
+      }
+    },
+    {
+      "partTitle": "End-to-End DPO Alignment Step & Policy Evaluation",
+      "codeHash": "010b9b0815b8fcd5da3a50e90cfcf2704bff748023a76fa0f132f345c5b83708",
+      "spec": {
+        "template": "sequence",
+        "title": "End-to-end direct preference optimization alignment step transaction",
+        "actors": [
+          {
+            "id": "dataset",
+            "label": "Preference Data Pool"
+          },
+          {
+            "id": "activePolicy",
+            "label": "Active Policy Pi-Theta"
+          },
+          {
+            "id": "frozenRef",
+            "label": "Frozen Reference Pi-Ref"
+          },
+          {
+            "id": "optimizer",
+            "label": "DPO Gradient Engine"
+          }
+        ],
+        "messages": [
+          {
+            "from": "dataset",
+            "to": "activePolicy",
+            "label": "Feed Prompt and Pair Completions",
+            "tone": "data"
+          },
+          {
+            "from": "dataset",
+            "to": "frozenRef",
+            "label": "Feed Exact Pair for Baseline Scoring",
+            "tone": "data"
+          },
+          {
+            "from": "activePolicy",
+            "to": "optimizer",
+            "label": "Emit Active Policy Log Probabilities",
+            "tone": "data"
+          },
+          {
+            "from": "frozenRef",
+            "to": "optimizer",
+            "label": "Emit Reference Policy Log Probabilities",
+            "tone": "data"
+          },
+          {
+            "from": "optimizer",
+            "to": "activePolicy",
+            "label": "Apply Gradient Update on Policy Weights",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine computes log probabilities under active and reference policies.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The final model reliably chooses helpful and safe completions.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "End-to-end direct preference optimization alignment step transaction",
+        "actors": [
+          {
+            "id": "dataset",
+            "label": "Preference Data Pool"
+          },
+          {
+            "id": "activePolicy",
+            "label": "Active Policy Pi-Theta"
+          },
+          {
+            "id": "frozenRef",
+            "label": "Frozen Reference Pi-Ref"
+          },
+          {
+            "id": "optimizer",
+            "label": "DPO Gradient Engine"
+          }
+        ],
+        "messages": [
+          {
+            "from": "dataset",
+            "to": "activePolicy",
+            "label": "Feed Prompt and Pair Completions",
+            "tone": "data"
+          },
+          {
+            "from": "dataset",
+            "to": "frozenRef",
+            "label": "Feed Exact Pair for Baseline Scoring",
+            "tone": "data"
+          },
+          {
+            "from": "activePolicy",
+            "to": "optimizer",
+            "label": "Emit Active Policy Log Probabilities",
+            "tone": "data"
+          },
+          {
+            "from": "frozenRef",
+            "to": "optimizer",
+            "label": "Emit Reference Policy Log Probabilities",
+            "tone": "data"
+          },
+          {
+            "from": "optimizer",
+            "to": "activePolicy",
+            "label": "Apply Gradient Update on Policy Weights",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine computes log probabilities under active and reference policies.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The final model reliably chooses helpful and safe completions.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

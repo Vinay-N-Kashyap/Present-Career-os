@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What market impact is",
+      "codeHash": "141229d7e03de27c3ab2b2eaab11ad6d93db3d1e9d7de11fd56952d04f54e1c9",
+      "spec": {
+        "template": "table",
+        "title": "Market impact mechanics and square root scaling",
+        "columns": [
+          "shares",
+          "daily_volume"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Market impact shifts prices when aggressive trading consumes order book depth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "daily_volume"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Impact constitutes the largest execution expense for institutional investors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "daily_volume"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "volatility_bps"
+                  },
+                  {
+                    "text": "impact_bps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Temporary impact fades while permanent price shifts persist indefinitely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "daily_volume"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "volatility_bps"
+                  },
+                  {
+                    "text": "impact_bps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example applies square root impact scaling across varying order sizes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "daily_volume"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "volatility_bps"
+                  },
+                  {
+                    "text": "impact_bps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Market impact mechanics and square root scaling",
+        "columns": [
+          "shares",
+          "daily_volume"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Market impact shifts prices when aggressive trading consumes order book depth.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "daily_volume"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Impact constitutes the largest execution expense for institutional investors.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "daily_volume"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "volatility_bps",
+                  "impact_bps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Temporary impact fades while permanent price shifts persist indefinitely.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "daily_volume"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "volatility_bps",
+                  "impact_bps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example applies square root impact scaling across varying order sizes.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "daily_volume"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "volatility_bps",
+                  "impact_bps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "shares",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Almgren-Chriss model",
+      "codeHash": "fb275120b65ec59d75ec22db655b49dc6566b1bf186e8925de441e56fb8056fe",
+      "spec": {
+        "template": "table",
+        "title": "Almgren-Chriss permanent and temporary cost decomposition",
+        "columns": [
+          "permanent",
+          "temporary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optimal execution models balance impact expenses against timing exposure risks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "permanent"
+                  },
+                  {
+                    "text": "temporary"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Permanent impact cost accumulates quadratically with total traded shares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "permanent"
+                  },
+                  {
+                    "text": "temporary"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "shares"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Temporary impact expands linearly as trading velocity increases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "permanent"
+                  },
+                  {
+                    "text": "temporary"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "shares"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "eta"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows how costs respond when execution trading accelerates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "permanent"
+                  },
+                  {
+                    "text": "temporary"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "shares"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "eta"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "impact_cost"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Almgren-Chriss permanent and temporary cost decomposition",
+        "columns": [
+          "permanent",
+          "temporary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optimal execution models balance impact expenses against timing exposure risks.",
+            "rows": [
+              {
+                "cells": [
+                  "permanent",
+                  "temporary"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Permanent impact cost accumulates quadratically with total traded shares.",
+            "rows": [
+              {
+                "cells": [
+                  "permanent",
+                  "temporary"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "shares"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Temporary impact expands linearly as trading velocity increases.",
+            "rows": [
+              {
+                "cells": [
+                  "permanent",
+                  "temporary"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "shares"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "eta",
+                  "rate"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows how costs respond when execution trading accelerates.",
+            "rows": [
+              {
+                "cells": [
+                  "permanent",
+                  "temporary"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "shares"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "eta",
+                  "rate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "impact_cost",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Speed versus risk",
+      "codeHash": "3aa6c6e69c02aa6763cbbe69f159c89f1df57c06add0998c7cbf15f38b60538a",
+      "spec": {
+        "template": "table",
+        "title": "Execution trajectory optimization and risk aversion frontier",
+        "columns": [
+          "impact",
+          "risk"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading slowly lowers impact but invites adverse random price movements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "risk"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Timing risk expands across exposure horizons driven by underlying volatility.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "risk"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Higher risk aversion parameters demand faster front-loaded schedules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "risk"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "risk_aversion"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example identifies optimal trade-off horizons along the total curve.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "risk"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "risk_aversion"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Execution trajectory optimization and risk aversion frontier",
+        "columns": [
+          "impact",
+          "risk"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading slowly lowers impact but invites adverse random price movements.",
+            "rows": [
+              {
+                "cells": [
+                  "impact",
+                  "risk"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Timing risk expands across exposure horizons driven by underlying volatility.",
+            "rows": [
+              {
+                "cells": [
+                  "impact",
+                  "risk"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shares",
+                  "minutes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Higher risk aversion parameters demand faster front-loaded schedules.",
+            "rows": [
+              {
+                "cells": [
+                  "impact",
+                  "risk"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shares",
+                  "minutes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "risk_aversion",
+                  "sigma"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example identifies optimal trade-off horizons along the total curve.",
+            "rows": [
+              {
+                "cells": [
+                  "impact",
+                  "risk"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shares",
+                  "minutes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "risk_aversion",
+                  "sigma"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "total",
+                  "best"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Slippage",
+      "codeHash": "ee0c0cb65bffa72037c8a1e568b5a210dfc0398849a99a6a5cffdc8bc3c5eafa",
+      "spec": {
+        "template": "table",
+        "title": "Implementation shortfall and arrival slippage benchmarking",
+        "columns": [
+          "decision",
+          "fill"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Slippage measures execution performance against initial benchmark price.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "fill"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Negative slippage occurs when price moves favourably during execution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "fill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "BUY"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Implementation shortfall captures total execution quality and price gap.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "fill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "BUY"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "diff"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes slippage metrics across buy and sell executions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "fill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "BUY"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "diff"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "slippage_bps"
+                  },
+                  {
+                    "text": "SELL"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Implementation shortfall and arrival slippage benchmarking",
+        "columns": [
+          "decision",
+          "fill"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Slippage measures execution performance against initial benchmark price.",
+            "rows": [
+              {
+                "cells": [
+                  "decision",
+                  "fill"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Negative slippage occurs when price moves favourably during execution.",
+            "rows": [
+              {
+                "cells": [
+                  "decision",
+                  "fill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "BUY"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Implementation shortfall captures total execution quality and price gap.",
+            "rows": [
+              {
+                "cells": [
+                  "decision",
+                  "fill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "BUY"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "diff",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes slippage metrics across buy and sell executions.",
+            "rows": [
+              {
+                "cells": [
+                  "decision",
+                  "fill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "BUY"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "diff",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "slippage_bps",
+                  "SELL"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transaction cost analysis",
+      "codeHash": "a7aede8075d590bc8823845d4f36f0a70f3d99d4d40a235c4256d4d7557f6c2c",
+      "spec": {
+        "template": "none",
+        "reason": "Post-trade transaction cost analysis and venue reporting."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: costs and slippage",
+      "codeHash": "b5c796aca1c635421b0756c5ca43e30de0366ca482f90e4a2e22fae2fb5e19e1",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: impact cost models and basis point slippage."
+      },
+      "filled": {}
+    }
+  ]
+}

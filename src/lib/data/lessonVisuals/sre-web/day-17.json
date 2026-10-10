@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 17,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why Averages Lie: The Mathematics of Tail Latency",
+      "codeHash": "baf49d6d609c695c3c997e08a42855bb4643913cc76837ce456a7015e615d825",
+      "spec": {
+        "template": "compare",
+        "title": "Arithmetic average distortion versus tail percentile precision",
+        "left": {
+          "title": "Arithmetic Average (Mean)",
+          "items": [
+            "Sums observations divided by total count",
+            "Dilutes severe latency spikes",
+            "Masks tail outages behind low numbers",
+            "Assumes normal Gaussian distribution"
+          ]
+        },
+        "right": {
+          "title": "Tail Percentiles (p95, p99)",
+          "items": [
+            "Isolates slowest tail observations",
+            "Reveals database lock timeouts",
+            "Measures true worst-case experience",
+            "Accurately reflects Pareto distributions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Arithmetic mean sums observations and treats every request with equal weight.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Relying on percentiles rather than averages establishes honest customer SLOs.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Arithmetic Average (Mean)",
+        "rightLabel": "Tail Percentiles (p95, p99)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Arithmetic average distortion versus tail percentile precision",
+        "left": {
+          "title": "Arithmetic Average (Mean)",
+          "items": [
+            "Sums observations divided by total count",
+            "Dilutes severe latency spikes",
+            "Masks tail outages behind low numbers",
+            "Assumes normal Gaussian distribution"
+          ]
+        },
+        "right": {
+          "title": "Tail Percentiles (p95, p99)",
+          "items": [
+            "Isolates slowest tail observations",
+            "Reveals database lock timeouts",
+            "Measures true worst-case experience",
+            "Accurately reflects Pareto distributions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Arithmetic mean sums observations and treats every request with equal weight.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Relying on percentiles rather than averages establishes honest customer SLOs.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Arithmetic Average (Mean)",
+        "rightLabel": "Tail Percentiles (p95, p99)"
+      }
+    },
+    {
+      "partTitle": "Exact Percentile Calculation (Nearest Rank & Linear Interpolation)",
+      "codeHash": "59a11f804e9ce1ea7ac8bbd53aceb89c8042ded85af9e984ae66c861b883dfc5",
+      "spec": {
+        "template": "table",
+        "title": "Percentile rank indices and sorted latency boundary matrix",
+        "columns": [
+          "Percentile Tier",
+          "Mathematical Rank",
+          "Sorted Latency",
+          "Operational Significance"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The median tier represents middle observations when all values are sorted.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tail percentiles isolate the slowest requests hitting system bottlenecks.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Percentile rank indices and sorted latency boundary matrix",
+        "columns": [
+          "Percentile Tier",
+          "Mathematical Rank",
+          "Sorted Latency",
+          "Operational Significance"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The median tier represents middle observations when all values are sorted.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tail percentiles isolate the slowest requests hitting system bottlenecks.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cumulative Distribution Functions (CDF) & Quantile Ranking",
+      "codeHash": "8c75633268d1072eeb88f70b203d3c3813fb0c8a38e8213d884f671abc9b7322",
+      "spec": {
+        "template": "bars",
+        "title": "Cumulative distribution function traffic percentile coverage",
+        "bars": [
+          {
+            "id": "p20",
+            "label": "Fast Tier (<=20ms)",
+            "value": 20
+          },
+          {
+            "id": "p60",
+            "label": "Median Tier (<=60ms)",
+            "value": 60
+          },
+          {
+            "id": "p100",
+            "label": "Full Fleet (<=1200ms)",
+            "value": 100
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The distribution curve rises monotonically from zero to full fleet coverage.",
+            "activeBars": [
+              "p20",
+              "p60"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A long dragged tail reveals systemic latency outliers and tail degradation.",
+            "activeBars": [
+              "p20",
+              "p60",
+              "p100"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Cumulative distribution function traffic percentile coverage",
+        "bars": [
+          {
+            "id": "p20",
+            "label": "Fast Tier (<=20ms)",
+            "value": 20
+          },
+          {
+            "id": "p60",
+            "label": "Median Tier (<=60ms)",
+            "value": 60
+          },
+          {
+            "id": "p100",
+            "label": "Full Fleet (<=1200ms)",
+            "value": 100
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The distribution curve rises monotonically from zero to full fleet coverage.",
+            "activeBars": [
+              "p20",
+              "p60"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A long dragged tail reveals systemic latency outliers and tail degradation.",
+            "activeBars": [
+              "p20",
+              "p60",
+              "p100"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Estimating Percentiles from Histogram Buckets (Prometheus histogram_quantile)",
+      "codeHash": "84dc6d1aaf0ec6e659df6b11c671792917151357c999aa6065b90e1f6ff258b9",
+      "spec": {
+        "template": "workflow",
+        "title": "Prometheus histogram quantile bucket interpolation workflow",
+        "nodes": [
+          {
+            "id": "query",
+            "label": "Quantile Query Ingress"
+          },
+          {
+            "id": "locate",
+            "label": "Locate Enclosing Bucket"
+          },
+          {
+            "id": "bounds",
+            "label": "Extract Lower and Upper Bounds"
+          },
+          {
+            "id": "interp",
+            "label": "Linear Interpolation Math"
+          },
+          {
+            "id": "estimate",
+            "label": "Estimated Quantile Output"
+          }
+        ],
+        "edges": [
+          {
+            "from": "query",
+            "to": "locate",
+            "label": "Find Rank"
+          },
+          {
+            "from": "locate",
+            "to": "bounds",
+            "label": "Bucket Bounds"
+          },
+          {
+            "from": "bounds",
+            "to": "interp",
+            "label": "Interpolate"
+          },
+          {
+            "from": "interp",
+            "to": "estimate",
+            "label": "Result"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Linear interpolation estimates latency values between lower and upper bounds.",
+            "activeNodes": [
+              "query",
+              "locate",
+              "bounds"
+            ],
+            "activeEdges": [
+              "query->locate",
+              "locate->bounds"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Interpolation delivers fast percentile approximations with minimal memory.",
+            "activeNodes": [
+              "bounds",
+              "interp",
+              "estimate"
+            ],
+            "activeEdges": [
+              "bounds->interp",
+              "interp->estimate"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Prometheus histogram quantile bucket interpolation workflow",
+        "nodes": [
+          {
+            "id": "query",
+            "label": "Quantile Query Ingress"
+          },
+          {
+            "id": "locate",
+            "label": "Locate Enclosing Bucket"
+          },
+          {
+            "id": "bounds",
+            "label": "Extract Lower and Upper Bounds"
+          },
+          {
+            "id": "interp",
+            "label": "Linear Interpolation Math"
+          },
+          {
+            "id": "estimate",
+            "label": "Estimated Quantile Output"
+          }
+        ],
+        "edges": [
+          {
+            "from": "query",
+            "to": "locate",
+            "label": "Find Rank"
+          },
+          {
+            "from": "locate",
+            "to": "bounds",
+            "label": "Bucket Bounds"
+          },
+          {
+            "from": "bounds",
+            "to": "interp",
+            "label": "Interpolate"
+          },
+          {
+            "from": "interp",
+            "to": "estimate",
+            "label": "Result"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Linear interpolation estimates latency values between lower and upper bounds.",
+            "activeNodes": [
+              "query",
+              "locate",
+              "bounds"
+            ],
+            "activeEdges": [
+              "query->locate",
+              "locate->bounds"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Interpolation delivers fast percentile approximations with minimal memory.",
+            "activeNodes": [
+              "bounds",
+              "interp",
+              "estimate"
+            ],
+            "activeEdges": [
+              "bounds->interp",
+              "interp->estimate"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Dynamic-Range (HDR) Histograms & Memory Trade-offs",
+      "codeHash": "97cff83298bb5adb43f0b528c3d21a67d5929f6758dd4568192e9adfe2c667f6",
+      "spec": {
+        "template": "states",
+        "title": "Compact logarithmic histogram dynamic range state tracking",
+        "states": [
+          {
+            "id": "low",
+            "label": "Sub-millisecond Precision"
+          },
+          {
+            "id": "medium",
+            "label": "Interactive Range (10ms-100ms)"
+          },
+          {
+            "id": "high",
+            "label": "Outlier Range (1000ms+)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "HDR histograms use logarithmic sub bucket indexing to maintain precision.",
+            "activeStateId": "medium",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Correcting for coordinated omission accurately records true client latency.",
+            "activeStateId": "high",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Compact logarithmic histogram dynamic range state tracking",
+        "states": [
+          {
+            "id": "low",
+            "label": "Sub-millisecond Precision"
+          },
+          {
+            "id": "medium",
+            "label": "Interactive Range (10ms-100ms)"
+          },
+          {
+            "id": "high",
+            "label": "Outlier Range (1000ms+)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "HDR histograms use logarithmic sub bucket indexing to maintain precision.",
+            "activeStateId": "medium",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Correcting for coordinated omission accurately records true client latency.",
+            "activeStateId": "high",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Latency Percentile Engine & Tail Latency SLO Evaluator",
+      "codeHash": "45db9c1c914dbfe7a54dc88d09637935b73a61f73cf61cc21357ed3842fb649f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

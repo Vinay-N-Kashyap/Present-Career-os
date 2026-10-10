@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a checkpoint contains",
+      "codeHash": "a3276f9a166a4b8af4e60ee6f9cfb2805be46ea7018f2295f1a35141f5d57c0e",
+      "spec": {
+        "template": "table",
+        "title": "Components and state saved inside a training checkpoint",
+        "columns": [
+          "step",
+          "weights",
+          "optimizer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A checkpoint must hold everything needed to continue training smoothly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "optimizer"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "optimizer"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "For training checkpoints optimizer states are often larger than the weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "optimizer"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Components and state saved inside a training checkpoint",
+        "columns": [
+          "step",
+          "weights",
+          "optimizer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A checkpoint must hold everything needed to continue training smoothly.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "optimizer"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "optimizer"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "For training checkpoints optimizer states are often larger than the weights.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "optimizer"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Saving and loading safely",
+      "codeHash": "aa22960721ac339f5acb5ca4a4895d96bf9e14c6b4175d6ce478e99f22112ffa",
+      "spec": {
+        "template": "table",
+        "title": "Deterministic serialization and safe deserialization validation",
+        "columns": [
+          "step",
+          "weights",
+          "loaded"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Saving turns the checkpoint dictionary into bytes while loading restores it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "loaded"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "loaded"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deterministic output ensures identical states produce identical files.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "loaded"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deterministic serialization and safe deserialization validation",
+        "columns": [
+          "step",
+          "weights",
+          "loaded"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Saving turns the checkpoint dictionary into bytes while loading restores it.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "loaded"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "loaded"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deterministic output ensures identical states produce identical files.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "loaded"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "step",
+                  "weights",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sharded checkpoints",
+      "codeHash": "36ff16a98f3dd06d72002cd1b1a289e8050d5666613df59120cedb664406c2a0",
+      "spec": {
+        "template": "table",
+        "title": "Distributed sharded checkpoint validation across ranks",
+        "columns": [
+          "step",
+          "written",
+          "reason"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "With FSDP or ZeRO no single GPU holds the model so each rank saves its shard.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "written"
+                  },
+                  {
+                    "text": "reason"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "written"
+                  },
+                  {
+                    "text": "reason"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Saving shards in parallel is much faster than gathering everything first.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "written"
+                  },
+                  {
+                    "text": "reason"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "written"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed sharded checkpoint validation across ranks",
+        "columns": [
+          "step",
+          "written",
+          "reason"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "With FSDP or ZeRO no single GPU holds the model so each rank saves its shard.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "written",
+                  "reason"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "written",
+                  "reason"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Saving shards in parallel is much faster than gathering everything first.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "written",
+                  "reason"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "step",
+                  "written",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How often to checkpoint",
+      "codeHash": "e225c09709672aead324d14f7c830e0890a6f2f5f477a417b02b11d9b3ed8076",
+      "spec": {
+        "template": "table",
+        "title": "Optimal checkpoint interval balancing save time and failure rate",
+        "columns": [
+          "gpus",
+          "save_minutes",
+          "interval"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Checkpointing too rarely means a failure loses many hours of work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "save_minutes"
+                  },
+                  {
+                    "text": "interval"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "save_minutes"
+                  },
+                  {
+                    "text": "interval"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Large clusters fail more often because more hardware brings higher risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "save_minutes"
+                  },
+                  {
+                    "text": "interval"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "save_minutes"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Optimal checkpoint interval balancing save time and failure rate",
+        "columns": [
+          "gpus",
+          "save_minutes",
+          "interval"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Checkpointing too rarely means a failure loses many hours of work.",
+            "rows": [
+              {
+                "cells": [
+                  "gpus",
+                  "save_minutes",
+                  "interval"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpus",
+                  "save_minutes",
+                  "interval"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Large clusters fail more often because more hardware brings higher risk.",
+            "rows": [
+              {
+                "cells": [
+                  "gpus",
+                  "save_minutes",
+                  "interval"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpus",
+                  "save_minutes",
+                  "gpus"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resuming exactly",
+      "codeHash": "f83ece10742efb896db5b82fb5fcca91b7dde70a39ff45bea33afef755ce292a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: checkpoints",
+      "codeHash": "dfc19383915f16871d8522d015bac7fc93a8dc713038ec3137139fb2b3cce000",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

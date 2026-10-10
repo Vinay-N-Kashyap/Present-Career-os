@@ -9,6 +9,8 @@ export interface PythonRunResult {
   stdout: string;
   error?: string;
   durationMs: number;
+  events?: Array<[number, number, Record<string, unknown>]>;
+  truncated?: boolean;
 }
 
 let worker: Worker | null = null;
@@ -24,7 +26,11 @@ function resetWorker() {
   worker = null;
 }
 
-export function runPythonInBrowser(code: string, timeoutMs = 20000): Promise<PythonRunResult> {
+export function runPythonInBrowser(
+  code: string,
+  timeoutMs = 20000,
+  options?: { trace?: boolean; tracerSource?: string }
+): Promise<PythonRunResult> {
   const started = Date.now();
   if (typeof window === 'undefined' || typeof Worker === 'undefined') {
     return Promise.resolve({ success: false, stdout: '', error: 'Python can only run in the browser.', durationMs: 0 });
@@ -42,7 +48,14 @@ export function runPythonInBrowser(code: string, timeoutMs = 20000): Promise<Pyt
       if (data.id !== id) return;
       clearTimeout(timer);
       w.removeEventListener('message', onMessage);
-      resolve({ success: Boolean(data.ok), stdout: data.stdout || '', error: data.error, durationMs: Date.now() - started });
+      resolve({
+        success: Boolean(data.ok),
+        stdout: data.stdout || '',
+        error: data.error,
+        events: data.events,
+        truncated: data.truncated,
+        durationMs: Date.now() - started,
+      });
     }
     w.addEventListener('message', onMessage);
     w.addEventListener('error', () => {
@@ -50,6 +63,6 @@ export function runPythonInBrowser(code: string, timeoutMs = 20000): Promise<Pyt
       resetWorker();
       resolve({ success: false, stdout: '', error: 'Python could not start. Check your internet connection and try again.', durationMs: Date.now() - started });
     }, { once: true });
-    w.postMessage({ id, code });
+    w.postMessage({ id, code, trace: options?.trace, tracerSource: options?.tracerSource });
   });
 }

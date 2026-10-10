@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 17,
+  "promptSha": "2e0f7f423193c9e61ba4f941e39c75a88e33c08d8a581141ebf1056c21375227",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Kubernetes Network Model (IP-per-Pod Invariant)",
+      "codeHash": "ed46abbcf455a46d0962eeab902c85bfa3abb2e5e17178c2b585d103cd6b15a5",
+      "spec": {
+        "template": "compare",
+        "title": "Cross-node IP-per-pod network overlay allocation",
+        "leftLabel": "Worker Node 01 Pod",
+        "rightLabel": "Worker Node 02 Pod",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Every pod receives unique routable address within cluster address space.",
+            "left": {
+              "code": "podName: 'auth-service-pod-1'",
+              "result": {
+                "text": "auth-service-pod-1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "podName: 'cart-service-pod-1'",
+              "result": {
+                "text": "cart-service-pod-1"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Direct routing connects pods across nodes without address translation.",
+            "left": {
+              "code": "nodeName: 'worker-node-01'",
+              "result": {
+                "text": "worker-node-01"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "nodeName: 'worker-node-02'",
+              "result": {
+                "text": "worker-node-02"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cross-node IP-per-pod network overlay allocation",
+        "leftLabel": "Worker Node 01 Pod",
+        "rightLabel": "Worker Node 02 Pod",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Every pod receives unique routable address within cluster address space.",
+            "left": {
+              "code": "podName: 'auth-service-pod-1'",
+              "result": {
+                "text": "auth-service-pod-1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "podName: 'cart-service-pod-1'",
+              "result": {
+                "text": "cart-service-pod-1"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Direct routing connects pods across nodes without address translation.",
+            "left": {
+              "code": "nodeName: 'worker-node-01'",
+              "result": {
+                "text": "worker-node-01"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "nodeName: 'worker-node-02'",
+              "result": {
+                "text": "worker-node-02"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ClusterIP Services: Internal Discovery & Virtual IPs",
+      "codeHash": "3901f49bb683a4a9775c32724f7b663bc1c1801b2125f56205feef7746cea0db",
+      "spec": {
+        "template": "compare",
+        "title": "ClusterIP stable virtual IP versus internal CoreDNS discovery",
+        "leftLabel": "Stable Virtual IP",
+        "rightLabel": "CoreDNS Internal FQDN",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "ClusterIP services provide stable virtual addresses solving pod churn.",
+            "left": {
+              "code": "name: 'payment-api'",
+              "result": {
+                "text": "payment-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "namespace: 'production'",
+              "result": {
+                "text": "production"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Internal DNS records resolve service names reliably across cluster workloads.",
+            "left": {
+              "code": "targetPort: 8080",
+              "result": {
+                "text": "payment-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "dnsFqdn",
+              "result": {
+                "text": "svc.cluster.local"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "ClusterIP stable virtual IP versus internal CoreDNS discovery",
+        "leftLabel": "Stable Virtual IP",
+        "rightLabel": "CoreDNS Internal FQDN",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "ClusterIP services provide stable virtual addresses solving pod churn.",
+            "left": {
+              "code": "name: 'payment-api'",
+              "result": {
+                "text": "payment-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "namespace: 'production'",
+              "result": {
+                "text": "production"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Internal DNS records resolve service names reliably across cluster workloads.",
+            "left": {
+              "code": "targetPort: 8080",
+              "result": {
+                "text": "payment-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "dnsFqdn",
+              "result": {
+                "text": "svc.cluster.local"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kube-Proxy Internals: iptables vs IPVS vs eBPF",
+      "codeHash": "2ee3461f3af9227e42bc726cfd7e9d993a0720740e46105ad16a03f7cd21d819",
+      "spec": {
+        "template": "compare",
+        "title": "Kube-proxy kernel netfilter chain interception rules",
+        "leftLabel": "Netfilter Virtual IP Match",
+        "rightLabel": "Destination NAT Rewriting",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Proxy watches endpoints writing kernel netfilter interception chains.",
+            "left": {
+              "code": "chain: 'KUBE-SVC-PAYMENT'",
+              "result": {
+                "text": "KUBE-SVC-PAYMENT"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "generateKubeProxyRules",
+              "result": {
+                "text": "generateKubeProxyRules"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Netfilter rewrites packet destination address directing traffic to pod.",
+            "left": {
+              "code": "matchDestination",
+              "result": {
+                "text": "KUBE-SVC-PAYMENT"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "dnatTarget",
+              "result": {
+                "text": "generateKubeProxyRules"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kube-proxy kernel netfilter chain interception rules",
+        "leftLabel": "Netfilter Virtual IP Match",
+        "rightLabel": "Destination NAT Rewriting",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Proxy watches endpoints writing kernel netfilter interception chains.",
+            "left": {
+              "code": "chain: 'KUBE-SVC-PAYMENT'",
+              "result": {
+                "text": "KUBE-SVC-PAYMENT"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "generateKubeProxyRules",
+              "result": {
+                "text": "generateKubeProxyRules"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Netfilter rewrites packet destination address directing traffic to pod.",
+            "left": {
+              "code": "matchDestination",
+              "result": {
+                "text": "KUBE-SVC-PAYMENT"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "dnatTarget",
+              "result": {
+                "text": "generateKubeProxyRules"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "NodePort Services: Static Port Bindings on Every Node",
+      "codeHash": "971e480dec5760485069ec6df52de1e35b55452cbe2745147e7694624c9c016f",
+      "spec": {
+        "template": "compare",
+        "title": "NodePort static cluster range allocation across worker instances",
+        "leftLabel": "Assigned NodePort",
+        "rightLabel": "Cluster Port Range",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Kubernetes allocates static port within dedicated cluster numeric boundary.",
+            "left": {
+              "code": "serviceName: 'monitoring-grafana'",
+              "result": {
+                "text": "monitoring-grafana"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "allocateNodePort",
+              "result": {
+                "text": "allocateNodePort"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Assigned port binds across every worker node in cluster network.",
+            "left": {
+              "code": "accessibleOnAllNodes: true",
+              "result": {
+                "text": "monitoring-grafana"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "validRange",
+              "result": {
+                "text": "allocateNodePort"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "NodePort static cluster range allocation across worker instances",
+        "leftLabel": "Assigned NodePort",
+        "rightLabel": "Cluster Port Range",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Kubernetes allocates static port within dedicated cluster numeric boundary.",
+            "left": {
+              "code": "serviceName: 'monitoring-grafana'",
+              "result": {
+                "text": "monitoring-grafana"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "allocateNodePort",
+              "result": {
+                "text": "allocateNodePort"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Assigned port binds across every worker node in cluster network.",
+            "left": {
+              "code": "accessibleOnAllNodes: true",
+              "result": {
+                "text": "monitoring-grafana"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "validRange",
+              "result": {
+                "text": "allocateNodePort"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LoadBalancer Services & Cloud Provider Integration",
+      "codeHash": "6c060450034a54fa956310b4d98584100de973a46d4ef27bc4ea2a8ed0faf027",
+      "spec": {
+        "template": "flow",
+        "title": "Cloud load balancer external traffic routing traversal flow",
+        "nodes": [
+          {
+            "id": "user",
+            "label": "Internet"
+          },
+          {
+            "id": "clb",
+            "label": "provisionCloudBalancer"
+          },
+          {
+            "id": "node",
+            "label": "NodePort"
+          },
+          {
+            "id": "pod",
+            "label": "Pod"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cloud controller automatically provisions cloud load balancer infrastructure.",
+            "values": {
+              "user": {
+                "text": "AWS"
+              },
+              "clb": {
+                "text": "AWS"
+              }
+            },
+            "arrows": [
+              [
+                "user",
+                "clb"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Incoming traffic flows from balancer across node ports to pod endpoints.",
+            "values": {
+              "node": {
+                "text": "GCP"
+              },
+              "pod": {
+                "text": "GCP"
+              }
+            },
+            "arrows": [
+              [
+                "node",
+                "pod"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Cloud load balancer external traffic routing traversal flow",
+        "nodes": [
+          {
+            "id": "user",
+            "label": "Internet"
+          },
+          {
+            "id": "clb",
+            "label": "provisionCloudBalancer"
+          },
+          {
+            "id": "node",
+            "label": "NodePort"
+          },
+          {
+            "id": "pod",
+            "label": "Pod"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cloud controller automatically provisions cloud load balancer infrastructure.",
+            "values": {
+              "user": {
+                "text": "AWS"
+              },
+              "clb": {
+                "text": "AWS"
+              }
+            },
+            "arrows": [
+              [
+                "user",
+                "clb"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Incoming traffic flows from balancer across node ports to pod endpoints.",
+            "values": {
+              "node": {
+                "text": "GCP"
+              },
+              "pod": {
+                "text": "GCP"
+              }
+            },
+            "arrows": [
+              [
+                "node",
+                "pod"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Endpoints & EndpointSlices: Dynamic Target Tracking",
+      "codeHash": "0e93b9214f67842030691ac8f30f70f4d2f784291e5e49a5da8071502cfe8592",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

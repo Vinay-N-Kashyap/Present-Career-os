@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 11,
+  "promptSha": "d0ee8b9480b85e51366f61ba9a36a31f5783d68a3e71aebd0ce51a39eb7c83bf",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Base Case vs Recursive Step Invariants",
+      "codeHash": "5bf1091c4442f29b52c4a9e7fb1f81983e1cd3583688706e9d4c8b193f3063fe",
+      "spec": {
+        "template": "compare",
+        "title": "Base case vs recursive step invariants",
+        "left": {
+          "title": "Base Case Stop",
+          "items": [
+            {
+              "label": "Condition",
+              "value": "n <= 1"
+            },
+            {
+              "label": "Return",
+              "value": "1"
+            }
+          ]
+        },
+        "right": {
+          "title": "Recursive Step",
+          "items": [
+            {
+              "label": "Shrink Step",
+              "value": "n - 1"
+            },
+            {
+              "label": "Multiply",
+              "value": "n * factorial"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Recursive function defines base case and recursive step.",
+            "left": {
+              "code": "n <= 1",
+              "result": "1",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "n - 1",
+              "result": "shrink",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Recursive step reduces problem size toward reachable base case.",
+            "left": {
+              "code": "n <= 1",
+              "result": "1",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "n - 1",
+              "result": "shrink",
+              "tone": "data"
+            }
+          }
+        ],
+        "leftLabel": "Base Case Stop",
+        "rightLabel": "Recursive Step"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Base case vs recursive step invariants",
+        "left": {
+          "title": "Base Case Stop",
+          "items": [
+            {
+              "label": "Condition",
+              "value": "n <= 1"
+            },
+            {
+              "label": "Return",
+              "value": "1"
+            }
+          ]
+        },
+        "right": {
+          "title": "Recursive Step",
+          "items": [
+            {
+              "label": "Shrink Step",
+              "value": "n - 1"
+            },
+            {
+              "label": "Multiply",
+              "value": "n * factorial"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Recursive function defines base case and recursive step.",
+            "left": {
+              "code": "n <= 1",
+              "result": "1",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "n - 1",
+              "result": "shrink",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Recursive step reduces problem size toward reachable base case.",
+            "left": {
+              "code": "n <= 1",
+              "result": "1",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "n - 1",
+              "result": "shrink",
+              "tone": "data"
+            }
+          }
+        ],
+        "leftLabel": "Base Case Stop",
+        "rightLabel": "Recursive Step"
+      }
+    },
+    {
+      "partTitle": "Call Stack Memory Growth & Stack Overflow Defense",
+      "codeHash": "9b74842475815e4e10bcb539a3691b779fe7e478a78d922f4a60eb2e93706f55",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Call stack frame memory growth",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Runtime allocates memory chunk called activation record or stack frame.",
+            "action": "push",
+            "actionItem": {
+              "text": "Entering frame 1"
+            },
+            "items": [
+              {
+                "text": "Entering frame 1"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stack frames coexist simultaneously in allocated call stack memory space.",
+            "action": "push",
+            "actionItem": {
+              "text": "Entering frame 2"
+            },
+            "items": [
+              {
+                "text": "Entering frame 1"
+              },
+              {
+                "text": "Entering frame 2"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Call stack frame memory growth",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Runtime allocates memory chunk called activation record or stack frame.",
+            "action": "push",
+            "actionItem": "Entering frame 1",
+            "items": [
+              "Entering frame 1"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stack frames coexist simultaneously in allocated call stack memory space.",
+            "action": "push",
+            "actionItem": "Entering frame 2",
+            "items": [
+              "Entering frame 1",
+              "Entering frame 2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Branching Recursion & Exponential State Trees",
+      "codeHash": "9521af932c7c48554c2c48f1c8dbfb8e5c7cce7831d915f96cbf05fea86ce591",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Branching Fibonacci call state tree",
+        "nodes": [
+          {
+            "id": "f5",
+            "label": "fib5"
+          },
+          {
+            "id": "f4",
+            "label": "fib4"
+          },
+          {
+            "id": "f3",
+            "label": "fib3"
+          }
+        ],
+        "edges": [
+          [
+            "f5",
+            "f4"
+          ],
+          [
+            "f5",
+            "f3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Branching recursion invokes itself multiple times spawning state tree.",
+            "activeNodeId": "f5",
+            "visitedNodeIds": [
+              "f5"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Branching tree recalculates overlapping subproblems across branches.",
+            "activeNodeId": "f3",
+            "visitedNodeIds": [
+              "f5",
+              "f4",
+              "f3"
+            ],
+            "activeEdge": [
+              "f5",
+              "f3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Branching Fibonacci call state tree",
+        "nodes": [
+          {
+            "id": "f5",
+            "label": "fib5"
+          },
+          {
+            "id": "f4",
+            "label": "fib4"
+          },
+          {
+            "id": "f3",
+            "label": "fib3"
+          }
+        ],
+        "edges": [
+          [
+            "f5",
+            "f4"
+          ],
+          [
+            "f5",
+            "f3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Branching recursion invokes itself multiple times spawning state tree.",
+            "activeNodeId": "f5",
+            "visitedNodeIds": [
+              "f5"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Branching tree recalculates overlapping subproblems across branches.",
+            "activeNodeId": "f3",
+            "visitedNodeIds": [
+              "f5",
+              "f4",
+              "f3"
+            ],
+            "activeEdge": [
+              "f5",
+              "f3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Backtracking Search Mechanics (Subsets & Combinations)",
+      "codeHash": "df7f1dfd822e3204e6a9151f39b9ca498224b68f3a5cf8daa7cb67bcd7d0b8b5",
+      "spec": {
+        "template": "cells",
+        "title": "Backtracking subsets state transitions",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Backtracking chooses option and unchooses to revert state.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Generating subsets makes binary choice to include or exclude element.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Backtracking subsets state transitions",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Backtracking chooses option and unchooses to revert state.",
+            "items": [
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Generating subsets makes binary choice to include or exclude element.",
+            "items": [
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pruning Search Branches (Bounding & Early Termination)",
+      "codeHash": "a0006b996a239d5128beb03cc4609486056619030d030921d8771f1748aae996",
+      "spec": {
+        "template": "compare",
+        "title": "Branch pruning early constraint check",
+        "left": {
+          "title": "Feasible Branch",
+          "items": [
+            {
+              "label": "Remaining",
+              "value": "5"
+            },
+            {
+              "label": "Action",
+              "value": "Continue"
+            }
+          ]
+        },
+        "right": {
+          "title": "Pruned Branch",
+          "items": [
+            {
+              "label": "Exceeds Target",
+              "value": "break"
+            },
+            {
+              "label": "Action",
+              "value": "Terminate"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Branch pruning abandons search branches early upon constraint failure.",
+            "left": {
+              "code": "candidates[i]",
+              "result": "2",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "break",
+              "result": "prune",
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sorted candidate ordering eliminates wasted recursive operations.",
+            "left": {
+              "code": "candidates[i]",
+              "result": "2",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "break",
+              "result": "prune",
+              "tone": "error"
+            }
+          }
+        ],
+        "leftLabel": "Feasible Branch",
+        "rightLabel": "Pruned Branch"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Branch pruning early constraint check",
+        "left": {
+          "title": "Feasible Branch",
+          "items": [
+            {
+              "label": "Remaining",
+              "value": "5"
+            },
+            {
+              "label": "Action",
+              "value": "Continue"
+            }
+          ]
+        },
+        "right": {
+          "title": "Pruned Branch",
+          "items": [
+            {
+              "label": "Exceeds Target",
+              "value": "break"
+            },
+            {
+              "label": "Action",
+              "value": "Terminate"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Branch pruning abandons search branches early upon constraint failure.",
+            "left": {
+              "code": "candidates[i]",
+              "result": "2",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "break",
+              "result": "prune",
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sorted candidate ordering eliminates wasted recursive operations.",
+            "left": {
+              "code": "candidates[i]",
+              "result": "2",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "break",
+              "result": "prune",
+              "tone": "error"
+            }
+          }
+        ],
+        "leftLabel": "Feasible Branch",
+        "rightLabel": "Pruned Branch"
+      }
+    },
+    {
+      "partTitle": "Production Permutation Generator with In-Place Swapping",
+      "codeHash": "7d588ec7074162ea8eb8157713b0144746a8cb4dd8efd3320f95a94dc479f640",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

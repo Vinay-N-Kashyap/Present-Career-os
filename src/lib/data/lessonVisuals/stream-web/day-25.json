@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 25,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Architecture of a Fault-Tolerant Stateful Stream Processor",
+      "codeHash": "e70589c50a66b7909bf8184e7c34a7dd1860a636547b113ae45be34e8289fe22",
+      "spec": {
+        "template": "flow",
+        "title": "ResilientProcessorCore coupling Ingestion, localState Map, and changelogLog",
+        "nodes": [
+          {
+            "id": "ingestNode",
+            "label": "Ingestion Pipeline (offsets 0..2)",
+            "tappable": false
+          },
+          {
+            "id": "localStore",
+            "label": "localState (sensor-A:25, sensor-B:25)",
+            "tappable": false
+          },
+          {
+            "id": "changelogNode",
+            "label": "changelogLog (3 replicated entries)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingestNode",
+            "to": "localStore",
+            "label": "processRecord"
+          },
+          {
+            "from": "localStore",
+            "to": "changelogNode",
+            "label": "replicate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An Embedded Local State Store maintains running aggregates in memory.",
+            "activeNodes": [
+              "ingestNode",
+              "localStore"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "A Durable Changelog Stream persists state mutations to remote storage.",
+            "activeNodes": [
+              "localStore",
+              "changelogNode"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "ResilientProcessorCore coupling Ingestion, localState Map, and changelogLog",
+        "nodes": [
+          {
+            "id": "ingestNode",
+            "label": "Ingestion Pipeline (offsets 0..2)",
+            "tappable": false
+          },
+          {
+            "id": "localStore",
+            "label": "localState (sensor-A:25, sensor-B:25)",
+            "tappable": false
+          },
+          {
+            "id": "changelogNode",
+            "label": "changelogLog (3 replicated entries)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingestNode",
+            "to": "localStore",
+            "label": "processRecord"
+          },
+          {
+            "from": "localStore",
+            "to": "changelogNode",
+            "label": "replicate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An Embedded Local State Store maintains running aggregates in memory.",
+            "activeNodes": [
+              "ingestNode",
+              "localStore"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "A Durable Changelog Stream persists state mutations to remote storage.",
+            "activeNodes": [
+              "localStore",
+              "changelogNode"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Periodic Checkpointing Protocol",
+      "codeHash": "dcbe12bc57fa7dd83987080d841bbafe7b4ec9a63099031614b55fb98117b78c",
+      "spec": {
+        "template": "sequence",
+        "title": "CheckpointManager(2) triggering cp-1 snapshot and committing offset 11",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Stream Records"
+          },
+          {
+            "id": "cpManager",
+            "label": "CheckpointManager"
+          },
+          {
+            "id": "blobStore",
+            "label": "Durable Storage"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The checkpointing protocol executes periodically every 2 processed records.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "cpManager",
+                "label": "process(10, 'k1', 50) -> triggered: false"
+              },
+              {
+                "from": "stream",
+                "to": "cpManager",
+                "label": "process(11, 'k2', 30) -> triggered: true"
+              }
+            ],
+            "activeActorId": "cpManager"
+          },
+          {
+            "at": "say8",
+            "caption": "Atomically pairing the snapshot with committed offset 11 guides recovery.",
+            "messages": [
+              {
+                "from": "cpManager",
+                "to": "blobStore",
+                "label": "createCheckpoint(11) -> cp-1 {k1:50, k2:30}"
+              }
+            ],
+            "activeActorId": "blobStore"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "CheckpointManager(2) triggering cp-1 snapshot and committing offset 11",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Stream Records"
+          },
+          {
+            "id": "cpManager",
+            "label": "CheckpointManager"
+          },
+          {
+            "id": "blobStore",
+            "label": "Durable Storage"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The checkpointing protocol executes periodically every 2 processed records.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "cpManager",
+                "label": "process(10, 'k1', 50) -> triggered: false"
+              },
+              {
+                "from": "stream",
+                "to": "cpManager",
+                "label": "process(11, 'k2', 30) -> triggered: true"
+              }
+            ],
+            "activeActorId": "cpManager"
+          },
+          {
+            "at": "say8",
+            "caption": "Atomically pairing the snapshot with committed offset 11 guides recovery.",
+            "messages": [
+              {
+                "from": "cpManager",
+                "to": "blobStore",
+                "label": "createCheckpoint(11) -> cp-1 {k1:50, k2:30}"
+              }
+            ],
+            "activeActorId": "blobStore"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Simulating Node Crashes & Chaos Engineering",
+      "codeHash": "47d3e825923ee47682f9cf1b8db93566cdad0b1f38a532e0c7dfb5f3671b6a94",
+      "spec": {
+        "template": "states",
+        "title": "CrashableNode chaos injection wiping volatile memoryState on crashAndWipe()",
+        "states": [
+          {
+            "id": "aliveActive",
+            "label": "isAlive: true (A:100, B:250)"
+          },
+          {
+            "id": "sigkillWiped",
+            "label": "isAlive: false (memoryState: {})"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "We ingest a stream of records into memory before terminating the instance.",
+            "activeState": "aliveActive"
+          },
+          {
+            "at": "say5",
+            "caption": "When the process terminates, all volatile RAM state is wiped clean.",
+            "activeState": "sigkillWiped",
+            "transition": {
+              "from": "aliveActive",
+              "to": "sigkillWiped",
+              "label": "crashAndWipe()"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "CrashableNode chaos injection wiping volatile memoryState on crashAndWipe()",
+        "states": [
+          {
+            "id": "aliveActive",
+            "label": "isAlive: true (A:100, B:250)"
+          },
+          {
+            "id": "sigkillWiped",
+            "label": "isAlive: false (memoryState: {})"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "We ingest a stream of records into memory before terminating the instance.",
+            "activeState": "aliveActive"
+          },
+          {
+            "at": "say5",
+            "caption": "When the process terminates, all volatile RAM state is wiped clean.",
+            "activeState": "sigkillWiped",
+            "transition": {
+              "from": "aliveActive",
+              "to": "sigkillWiped",
+              "label": "crashAndWipe()"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State Restoration: Snapshot Plus Tail Changelog Replay",
+      "codeHash": "e8f3e50d25133b7a909c01b602527ff44e33a8d8a85db4c9e506484568d95466",
+      "spec": {
+        "template": "cells",
+        "title": "recoverProcessorState skipping offsets <= 100 and replaying tail offsets 101 and 102",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The snapshot restores the state that existed as of lastOffset = 100.",
+            "items": [
+              {
+                "text": "Snap #100 (A:50, B:80)"
+              },
+              {
+                "text": "#99 A+10 (Skip)"
+              },
+              {
+                "text": "#100 B+20 (Skip)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "base:100",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Phase 2 replays only tail changelog records with offset > 100 (#101, #102).",
+            "items": [
+              {
+                "text": "Snap #100 (A:50, B:80)"
+              },
+              {
+                "text": "#101 A+15 -> 65"
+              },
+              {
+                "text": "#102 C+40 -> 40"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "replayed:2",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "recoverProcessorState skipping offsets <= 100 and replaying tail offsets 101 and 102",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The snapshot restores the state that existed as of lastOffset = 100.",
+            "items": [
+              "Snap #100 (A:50, B:80)",
+              "#99 A+10 (Skip)",
+              "#100 B+20 (Skip)"
+            ],
+            "pointers": [
+              {
+                "name": "base:100",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Phase 2 replays only tail changelog records with offset > 100 (#101, #102).",
+            "items": [
+              "Snap #100 (A:50, B:80)",
+              "#101 A+15 -> 65",
+              "#102 C+40 -> 40"
+            ],
+            "pointers": [
+              {
+                "name": "replayed:2",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Exactly-Once Processing Guarantees",
+      "codeHash": "a4461bb77e27482dde24b26e283d04ef751f88690b920afa3a0f634591de76bc",
+      "spec": {
+        "template": "table",
+        "title": "ExactlyOnceTransferEngine deduplicating retry of tx-771 ($150 from acc-A to acc-B)",
+        "columns": [
+          "Attempt",
+          "Transaction ID",
+          "Status",
+          "acc-A / acc-B Balance"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Using idempotent message IDs ensures re-consumed records do not duplicate.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Transactions are neither lost during crashes nor processed twice on replay.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ExactlyOnceTransferEngine deduplicating retry of tx-771 ($150 from acc-A to acc-B)",
+        "columns": [
+          "Attempt",
+          "Transaction ID",
+          "Status",
+          "acc-A / acc-B Balance"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Using idempotent message IDs ensures re-consumed records do not duplicate.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Transactions are neither lost during crashes nor processed twice on replay.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building Milestone 4: The Fault-Tolerant Engine",
+      "codeHash": "2fe24dd917a68207be801842566b00e465d87528517a3714188adf0269424977",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

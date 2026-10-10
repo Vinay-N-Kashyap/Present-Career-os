@@ -1,0 +1,777 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 17,
+  "promptSha": "c54e76d7e60625c5205d33f15631582f49fdf55c35154a6edab3463253114b3c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cosine Similarity Vector Space Geometry",
+      "codeHash": "c54e76d7e60625c5205d33f15631582f49fdf55c35154a6edab3463253114b3c",
+      "spec": {
+        "template": "bars",
+        "title": "Cosine Similarity Alignment Scores (%)",
+        "bars": [
+          {
+            "label": "Identical (v1-v1)",
+            "value": {
+              "text": "100"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "45-Deg Angle (v1-v2)",
+            "value": {
+              "text": "71"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Orthogonal (v1-v3)",
+            "value": {
+              "text": "0"
+            },
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cosine similarity evaluates directional orientation in vector spaces.",
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": {
+                  "text": "71"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Comparing vectors to themselves yields identical alignment.",
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": {
+                  "text": "71"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Orthogonal vectors yield zero reflecting no shared semantic components.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": {
+                  "text": "71"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Cosine Similarity Alignment Scores (%)",
+        "bars": [
+          {
+            "label": "Identical (v1-v1)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "45-Deg Angle (v1-v2)",
+            "value": 71,
+            "tone": "data"
+          },
+          {
+            "label": "Orthogonal (v1-v3)",
+            "value": 0,
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cosine similarity evaluates directional orientation in vector spaces.",
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Comparing vectors to themselves yields identical alignment.",
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Orthogonal vectors yield zero reflecting no shared semantic components.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Memory Top-K Candidate Retrieval",
+      "codeHash": "fa16135541b853a655416a50704230a766ab9279f6cb368b1b9ca2a50e2e44c5",
+      "spec": {
+        "template": "table",
+        "title": "Top-K Scored Candidates vs Query Vector",
+        "columns": [
+          "Document ID",
+          "Vector Coordinates",
+          "Dot Score",
+          "Selection Status"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Candidates are scored using dot products against normalized vectors.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Scored arrays sort descending by score to slice the top K elements.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Top-K filtering protects downstream context windows from clutter.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top-K Scored Candidates vs Query Vector",
+        "columns": [
+          "Document ID",
+          "Vector Coordinates",
+          "Dot Score",
+          "Selection Status"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Candidates are scored using dot products against normalized vectors.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Scored arrays sort descending by score to slice the top K elements.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Top-K filtering protects downstream context windows from clutter.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reciprocal Rank Fusion (RRF) Algorithm",
+      "codeHash": "8fa0492ab7ed30cd07cbd58403aaaf68ab4a1b82b03318eda57537ee7dfbc4e5",
+      "spec": {
+        "template": "flow",
+        "title": "Reciprocal Rank Fusion Architecture",
+        "nodes": [
+          {
+            "id": "dense",
+            "label": "Dense Vector Rank",
+            "tappable": false
+          },
+          {
+            "id": "sparse",
+            "label": "Sparse BM25 Rank",
+            "tappable": false
+          },
+          {
+            "id": "rrf",
+            "label": "RRF Sum 1 / (60 + r)",
+            "tappable": false
+          },
+          {
+            "id": "fused",
+            "label": "Fused Candidate Top",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "dense",
+            "to": "rrf"
+          },
+          {
+            "from": "sparse",
+            "to": "rrf"
+          },
+          {
+            "from": "rrf",
+            "to": "fused"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "RRF operates purely on ordinal ranks avoiding uncalibrated score skew.",
+            "activeNodes": [
+              "dense",
+              "sparse"
+            ],
+            "statusBadge": "ranking"
+          },
+          {
+            "at": "say6",
+            "caption": "Document rank contributes reciprocal scores to cumulative totals.",
+            "activeNodes": [
+              "dense",
+              "sparse",
+              "rrf"
+            ],
+            "statusBadge": "fusing"
+          },
+          {
+            "at": "say9",
+            "caption": "Reciprocal Rank Fusion delivers ranking stability across modalities.",
+            "activeNodes": [
+              "rrf",
+              "fused"
+            ],
+            "statusBadge": "fused"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Reciprocal Rank Fusion Architecture",
+        "nodes": [
+          {
+            "id": "dense",
+            "label": "Dense Vector Rank",
+            "tappable": false
+          },
+          {
+            "id": "sparse",
+            "label": "Sparse BM25 Rank",
+            "tappable": false
+          },
+          {
+            "id": "rrf",
+            "label": "RRF Sum 1 / (60 + r)",
+            "tappable": false
+          },
+          {
+            "id": "fused",
+            "label": "Fused Candidate Top",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "dense",
+            "to": "rrf"
+          },
+          {
+            "from": "sparse",
+            "to": "rrf"
+          },
+          {
+            "from": "rrf",
+            "to": "fused"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "RRF operates purely on ordinal ranks avoiding uncalibrated score skew.",
+            "activeNodes": [
+              "dense",
+              "sparse"
+            ],
+            "statusBadge": "ranking"
+          },
+          {
+            "at": "say6",
+            "caption": "Document rank contributes reciprocal scores to cumulative totals.",
+            "activeNodes": [
+              "dense",
+              "sparse",
+              "rrf"
+            ],
+            "statusBadge": "fusing"
+          },
+          {
+            "at": "say9",
+            "caption": "Reciprocal Rank Fusion delivers ranking stability across modalities.",
+            "activeNodes": [
+              "rrf",
+              "fused"
+            ],
+            "statusBadge": "fused"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid Search: Dense Vector + Keyword BM25 Merging",
+      "codeHash": "7fabdd9439fcbc475e26a6e3475f6c6c18b5a148a81a8bc04fcb5612a809426d",
+      "spec": {
+        "template": "compare",
+        "title": "Dense Vector Retrieval vs Keyword BM25 Search",
+        "leftLabel": "Dense Vector Retrieval",
+        "rightLabel": "BM25 Keyword Search",
+        "leftItems": [
+          "Captures semantic concepts and synonyms",
+          "Matches 'car' to 'automobile' seamlessly",
+          "Struggles with exact SKUs and IDs",
+          "Continuous high-dimensional coordinates"
+        ],
+        "rightItems": [
+          "Exact token and character inverted index",
+          "Pins technical IDs and exact part numbers",
+          "Misses paraphrases and semantic synonyms",
+          "Term frequency inverse document frequency"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Vector search struggles with exact identifiers, codes, and terminology.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "BM25 keyword search misses semantic paraphrases across synonyms.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dense Vector Retrieval vs Keyword BM25 Search",
+        "leftLabel": "Dense Vector Retrieval",
+        "rightLabel": "BM25 Keyword Search",
+        "leftItems": [
+          "Captures semantic concepts and synonyms",
+          "Matches 'car' to 'automobile' seamlessly",
+          "Struggles with exact SKUs and IDs",
+          "Continuous high-dimensional coordinates"
+        ],
+        "rightItems": [
+          "Exact token and character inverted index",
+          "Pins technical IDs and exact part numbers",
+          "Misses paraphrases and semantic synonyms",
+          "Term frequency inverse document frequency"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Vector search struggles with exact identifiers, codes, and terminology.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "BM25 keyword search misses semantic paraphrases across synonyms.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Context Deduplication & Content Hash Collapsing",
+      "codeHash": "87b671e13c922ca5d562752c159489477f06a089a9b4528c9b69a0037101d006",
+      "spec": {
+        "template": "states",
+        "title": "Content Hash Deduplication Lifecycle",
+        "states": [
+          {
+            "id": "ingest",
+            "label": "Candidate Ingested"
+          },
+          {
+            "id": "lookup",
+            "label": "Hash Set Lookup"
+          },
+          {
+            "id": "seen",
+            "label": "Duplicate Skipped"
+          },
+          {
+            "id": "unique",
+            "label": "Unique Passage Retained"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Deduplication functions track unique content hashes within sets.",
+            "current": "lookup",
+            "visited": [
+              "ingest",
+              "lookup"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Entries matching observed hashes are skipped to avoid redundant tokens.",
+            "current": "seen",
+            "visited": [
+              "ingest",
+              "lookup",
+              "seen"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Hash collapsing prevents duplicate passages from saturating context.",
+            "current": "unique",
+            "visited": [
+              "ingest",
+              "lookup",
+              "unique"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Content Hash Deduplication Lifecycle",
+        "states": [
+          {
+            "id": "ingest",
+            "label": "Candidate Ingested"
+          },
+          {
+            "id": "lookup",
+            "label": "Hash Set Lookup"
+          },
+          {
+            "id": "seen",
+            "label": "Duplicate Skipped"
+          },
+          {
+            "id": "unique",
+            "label": "Unique Passage Retained"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Deduplication functions track unique content hashes within sets.",
+            "current": "lookup",
+            "visited": [
+              "ingest",
+              "lookup"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Entries matching observed hashes are skipped to avoid redundant tokens.",
+            "current": "seen",
+            "visited": [
+              "ingest",
+              "lookup",
+              "seen"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Hash collapsing prevents duplicate passages from saturating context.",
+            "current": "unique",
+            "visited": [
+              "ingest",
+              "lookup",
+              "unique"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complete Retrieval & Context Budget Compactor",
+      "codeHash": "b59bfd5bcfe87560e17662c08b19cf94a8f6a3a41d528144d548d9278e153271",
+      "spec": {
+        "template": "none",
+        "reason": "Complete Retrieval & Context Budget Compactor capstone synthesizing cosine distance, top-K search, RRF fusion, deduplication, and budget packing"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Complete Retrieval & Context Budget Compactor capstone synthesizing cosine distance, top-K search, RRF fusion, deduplication, and budget packing"
+      }
+    }
+  ]
+}

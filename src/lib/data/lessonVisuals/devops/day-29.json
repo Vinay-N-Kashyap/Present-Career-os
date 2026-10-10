@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 29,
+  "promptSha": "4653eb0782835e261b30725885159f62b0f4dd82a37f5ce19ef07c428175a47b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Challenge of Zero-Downtime Database Schema Changes",
+      "codeHash": "942687082ccdd0794df3cbbb05eed4cd61f7b68bf14c973b69fae21e9b507cbf",
+      "spec": {
+        "template": "compare",
+        "title": "Zero downtime database migrations and schema change decoupling",
+        "leftLabel": "Breaking Schema Change Risk",
+        "rightLabel": "Decoupled Migration Pattern",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Breaking database schema changes cause rolling updates to fail unexpectedly.",
+            "left": {
+              "code": "schemaBreakingChange",
+              "result": {
+                "text": "breaking"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "rollingUpdatesFailure",
+              "result": {
+                "text": "updates"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Decoupling application deployments from schema migration eliminates downtime.",
+            "left": {
+              "code": "decoupledDeployment",
+              "result": {
+                "text": "decouple"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "zeroDowntimePattern",
+              "result": {
+                "text": "migration"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Zero downtime database migrations and schema change decoupling",
+        "leftLabel": "Breaking Schema Change Risk",
+        "rightLabel": "Decoupled Migration Pattern",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Breaking database schema changes cause rolling updates to fail unexpectedly.",
+            "left": {
+              "code": "schemaBreakingChange",
+              "result": {
+                "text": "breaking"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "rollingUpdatesFailure",
+              "result": {
+                "text": "updates"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Decoupling application deployments from schema migration eliminates downtime.",
+            "left": {
+              "code": "decoupledDeployment",
+              "result": {
+                "text": "decouple"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "zeroDowntimePattern",
+              "result": {
+                "text": "migration"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Expand Phase: Additive Non-Breaking Schema Changes",
+      "codeHash": "d7454c15c091ab4b8bd2466fa22c52dbf151c384a993578e34713d920c37001e",
+      "spec": {
+        "template": "compare",
+        "title": "The expand phase additive non-breaking schema changes",
+        "leftLabel": "Additive Schema Column",
+        "rightLabel": "Preserved Legacy Column",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Expand phase introduces additive non breaking database objects safely.",
+            "left": {
+              "code": "expandPhase",
+              "result": {
+                "text": "Expand"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "additiveObjects",
+              "result": {
+                "text": "additive"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Legacy columns remain completely untouched during initial schema evolution.",
+            "left": {
+              "code": "untouchedColumn",
+              "result": {
+                "text": "untouched"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "backwardCompatibility",
+              "result": {
+                "text": "completely"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "The expand phase additive non-breaking schema changes",
+        "leftLabel": "Additive Schema Column",
+        "rightLabel": "Preserved Legacy Column",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Expand phase introduces additive non breaking database objects safely.",
+            "left": {
+              "code": "expandPhase",
+              "result": {
+                "text": "Expand"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "additiveObjects",
+              "result": {
+                "text": "additive"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Legacy columns remain completely untouched during initial schema evolution.",
+            "left": {
+              "code": "untouchedColumn",
+              "result": {
+                "text": "untouched"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "backwardCompatibility",
+              "result": {
+                "text": "completely"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Transition Phase: Dual-Writing & Fallback Reads",
+      "codeHash": "7752f22cb1ff63457c9087c2c603c3cc5140572629d62bdcf3d11ea29a29069f",
+      "spec": {
+        "template": "compare",
+        "title": "The transition phase dual-writing and fallback reads",
+        "leftLabel": "Application Dual Write",
+        "rightLabel": "Fallback Read Resolver",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Transition phase activates dual writing across modified records.",
+            "left": {
+              "code": "dualWriting",
+              "result": {
+                "text": "Dual-Writing"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "activePhase",
+              "result": {
+                "text": "phase"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Dual writing ensures emergency rollback continues functioning seamlessly.",
+            "left": {
+              "code": "rollbackSupport",
+              "result": {
+                "text": "rollback"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "safetyGuarantee",
+              "result": {
+                "text": "forces"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "The transition phase dual-writing and fallback reads",
+        "leftLabel": "Application Dual Write",
+        "rightLabel": "Fallback Read Resolver",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Transition phase activates dual writing across modified records.",
+            "left": {
+              "code": "dualWriting",
+              "result": {
+                "text": "Dual-Writing"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "activePhase",
+              "result": {
+                "text": "phase"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Dual writing ensures emergency rollback continues functioning seamlessly.",
+            "left": {
+              "code": "rollbackSupport",
+              "result": {
+                "text": "rollback"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "safetyGuarantee",
+              "result": {
+                "text": "forces"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Background Data Backfilling & Throttled Cursor Pagination",
+      "codeHash": "5e8f0ad65a42821b772c2ad9bc731197aef3f5de87181a1e37212918ae5d5e78",
+      "spec": {
+        "template": "compare",
+        "title": "Background data backfilling and throttled cursor pagination",
+        "leftLabel": "Batch Chunk Processing",
+        "rightLabel": "Throttled Sleep Delay",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Historical records migrate via asynchronous background backfill workers.",
+            "left": {
+              "code": "backgroundBackfill",
+              "result": {
+                "text": "backfill"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "migratedRecords",
+              "result": {
+                "text": "asynchronous"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Worker introduces artificial sleep delay between successive batch operations.",
+            "left": {
+              "code": "sleepDelay",
+              "result": {
+                "text": "artificial"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "batchThrottle",
+              "result": {
+                "text": "sleep"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Background data backfilling and throttled cursor pagination",
+        "leftLabel": "Batch Chunk Processing",
+        "rightLabel": "Throttled Sleep Delay",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Historical records migrate via asynchronous background backfill workers.",
+            "left": {
+              "code": "backgroundBackfill",
+              "result": {
+                "text": "backfill"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "migratedRecords",
+              "result": {
+                "text": "asynchronous"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Worker introduces artificial sleep delay between successive batch operations.",
+            "left": {
+              "code": "sleepDelay",
+              "result": {
+                "text": "artificial"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "batchThrottle",
+              "result": {
+                "text": "sleep"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Contract Phase: Retiring Legacy Schema & Adding Constraints",
+      "codeHash": "95dd334d5a15e4ad9499134332666170bf1b04b067f712b54d22ed71d74b9181",
+      "spec": {
+        "template": "compare",
+        "title": "The contract phase retiring legacy schema and adding constraints",
+        "leftLabel": "Legacy Schema Retirement",
+        "rightLabel": "Strict Column Constraints",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Application stops writing to legacy columns switching to modern fields.",
+            "left": {
+              "code": "legacyColumn",
+              "result": {
+                "text": "legacy"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "writeRetired",
+              "result": {
+                "text": "stops"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Finally you issue alter table drop column to retire the legacy field.",
+            "left": {
+              "code": "dropColumn",
+              "result": {
+                "text": "DROP"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status",
+              "result": {
+                "text": "TABLE"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "The contract phase retiring legacy schema and adding constraints",
+        "leftLabel": "Legacy Schema Retirement",
+        "rightLabel": "Strict Column Constraints",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Application stops writing to legacy columns switching to modern fields.",
+            "left": {
+              "code": "legacyColumn",
+              "result": {
+                "text": "legacy"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "writeRetired",
+              "result": {
+                "text": "stops"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Finally you issue alter table drop column to retire the legacy field.",
+            "left": {
+              "code": "dropColumn",
+              "result": {
+                "text": "DROP"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status",
+              "result": {
+                "text": "TABLE"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Migration CI/CD Pipelines & Lock Timeout Safeguards",
+      "codeHash": "ca5029c3f7e26a19c5441c91f7d41c8c8a4b770755a87caebb91c00ea5381e6c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

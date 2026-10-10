@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 2,
+  "promptSha": "cf5c1bf039f3467bea85378093eecbd943e224c597f80706ba84c6a84fff08eb",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The PID 1 Problem in Linux Containers",
+      "codeHash": "189858bed4e98a8d0b627b3b8f1c5e38f4d2b4d721551392fc8b8233ffa3c126",
+      "spec": {
+        "template": "workflow",
+        "title": "PID one orphaned zombie process reaping",
+        "stages": [
+          {
+            "id": "kernel",
+            "name": "Kernel",
+            "subtext": "Bootloader"
+          },
+          {
+            "id": "pid1",
+            "name": "PID-1",
+            "subtext": "Init Daemon"
+          },
+          {
+            "id": "child",
+            "name": "Child",
+            "subtext": "Worker Process"
+          },
+          {
+            "id": "zombie",
+            "name": "Zombie",
+            "subtext": "Defunct Entry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Init process bears responsibilities reaping orphaned zombie processes.",
+            "activeStageId": "pid1",
+            "statusBadge": "init"
+          },
+          {
+            "at": "say4",
+            "caption": "Kernel automatically re-parents orphaned processes to clear table.",
+            "activeStageId": "zombie",
+            "statusBadge": "reaped"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "PID one orphaned zombie process reaping",
+        "stages": [
+          {
+            "id": "kernel",
+            "name": "Kernel",
+            "subtext": "Bootloader"
+          },
+          {
+            "id": "pid1",
+            "name": "PID-1",
+            "subtext": "Init Daemon"
+          },
+          {
+            "id": "child",
+            "name": "Child",
+            "subtext": "Worker Process"
+          },
+          {
+            "id": "zombie",
+            "name": "Zombie",
+            "subtext": "Defunct Entry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Init process bears responsibilities reaping orphaned zombie processes.",
+            "activeStageId": "pid1",
+            "statusBadge": "init"
+          },
+          {
+            "at": "say4",
+            "caption": "Kernel automatically re-parents orphaned processes to clear table.",
+            "activeStageId": "zombie",
+            "statusBadge": "reaped"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "POSIX Signals: SIGTERM, SIGKILL & SIGHUP",
+      "codeHash": "d31cac773e9a18cc3854d328754c83cb28065b6ee25ebafc6533b9bf1db4c0e2",
+      "spec": {
+        "template": "states",
+        "title": "POSIX termination and reload signal handling",
+        "states": [
+          {
+            "id": "running",
+            "label": "Running"
+          },
+          {
+            "id": "reloading",
+            "label": "Reloading"
+          },
+          {
+            "id": "draining",
+            "label": "Draining"
+          },
+          {
+            "id": "killed",
+            "label": "Killed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Docker stop command sends termination signal during grace period.",
+            "currentState": "running",
+            "transition": {
+              "from": "running",
+              "to": "draining",
+              "label": "SIGTERM"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Kernel immediately destroys process memory space upon kill signal.",
+            "currentState": "draining",
+            "transition": {
+              "from": "draining",
+              "to": "killed",
+              "label": "SIGKILL"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "POSIX termination and reload signal handling",
+        "states": [
+          {
+            "id": "running",
+            "label": "Running"
+          },
+          {
+            "id": "reloading",
+            "label": "Reloading"
+          },
+          {
+            "id": "draining",
+            "label": "Draining"
+          },
+          {
+            "id": "killed",
+            "label": "Killed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Docker stop command sends termination signal during grace period.",
+            "currentState": "running",
+            "transition": {
+              "from": "running",
+              "to": "draining",
+              "label": "SIGTERM"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Kernel immediately destroys process memory space upon kill signal.",
+            "currentState": "draining",
+            "transition": {
+              "from": "draining",
+              "to": "killed",
+              "label": "SIGKILL"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Standard Streams & Output Redirection",
+      "codeHash": "49068d0989f49045f8481a5675831ec0ec0b49508cd48092c16524550692d4cb",
+      "spec": {
+        "template": "sequence",
+        "title": "Standard streams and logging driver forwarding",
+        "actors": [
+          "AppProcess",
+          "StdoutFD",
+          "StderrFD",
+          "LogDriver"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Applications write unbuffered event stream to standard descriptors.",
+            "messages": [
+              {
+                "from": "AppProcess",
+                "to": "StdoutFD",
+                "label": "info log event"
+              }
+            ],
+            "activeActor": "AppProcess"
+          },
+          {
+            "at": "say7",
+            "caption": "Container engine captures streams and forwards to logging driver.",
+            "messages": [
+              {
+                "from": "StdoutFD",
+                "to": "LogDriver",
+                "label": "forward stream"
+              },
+              {
+                "from": "StderrFD",
+                "to": "LogDriver",
+                "label": "forward error"
+              }
+            ],
+            "activeActor": "LogDriver"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Standard streams and logging driver forwarding",
+        "actors": [
+          "AppProcess",
+          "StdoutFD",
+          "StderrFD",
+          "LogDriver"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Applications write unbuffered event stream to standard descriptors.",
+            "messages": [
+              {
+                "from": "AppProcess",
+                "to": "StdoutFD",
+                "label": "info log event"
+              }
+            ],
+            "activeActor": "AppProcess"
+          },
+          {
+            "at": "say7",
+            "caption": "Container engine captures streams and forwards to logging driver.",
+            "messages": [
+              {
+                "from": "StdoutFD",
+                "to": "LogDriver",
+                "label": "forward stream"
+              },
+              {
+                "from": "StderrFD",
+                "to": "LogDriver",
+                "label": "forward error"
+              }
+            ],
+            "activeActor": "LogDriver"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linux Permissions, UIDs & The Principle of Least Privilege",
+      "codeHash": "40e98231251e6216347b51e5f9aed5c2ccbd977d7806cb08834568e33a2466e6",
+      "spec": {
+        "template": "compare",
+        "title": "Linux user privilege and file permission audit",
+        "leftLabel": "Insecure Root (UID 0)",
+        "rightLabel": "Unprivileged User (UID 10001)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Running as root inside container introduces physical host security risk.",
+            "left": {
+              "code": "USER root (UID 0)",
+              "result": {
+                "text": "HIGH_RISK"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "USER appuser (UID 10001)",
+              "result": {
+                "text": "ISOLATED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Principle of least privilege mandates processes run with minimum access.",
+            "left": {
+              "code": "chmod 777 /app",
+              "result": {
+                "text": "WORLD_WRITABLE"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "chmod 755 /app",
+              "result": {
+                "text": "RESTRICTED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Linux user privilege and file permission audit",
+        "leftLabel": "Insecure Root (UID 0)",
+        "rightLabel": "Unprivileged User (UID 10001)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Running as root inside container introduces physical host security risk.",
+            "left": {
+              "code": "USER root (UID 0)",
+              "result": {
+                "text": "HIGH_RISK"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "USER appuser (UID 10001)",
+              "result": {
+                "text": "ISOLATED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Principle of least privilege mandates processes run with minimum access.",
+            "left": {
+              "code": "chmod 777 /app",
+              "result": {
+                "text": "WORLD_WRITABLE"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "chmod 755 /app",
+              "result": {
+                "text": "RESTRICTED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Daemon Supervision & Systemd Unit Declarations",
+      "codeHash": "18128dec9a51c8ae3c2e2ea44307ea8a9cb3c811b1c86608b16313621a5ef5a7",
+      "spec": {
+        "template": "workflow",
+        "title": "Systemd service unit file declaration hierarchy",
+        "stages": [
+          {
+            "id": "unit",
+            "name": "Unit",
+            "subtext": "Metadata"
+          },
+          {
+            "id": "service",
+            "name": "Service",
+            "subtext": "ExecStart"
+          },
+          {
+            "id": "install",
+            "name": "Install",
+            "subtext": "WantedBy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Service unit file defines three main sections for systemd.",
+            "activeStageId": "unit",
+            "statusBadge": "metadata"
+          },
+          {
+            "at": "say7",
+            "caption": "Directives instruct systemd to resurrect service if process crashes.",
+            "activeStageId": "service",
+            "statusBadge": "restart"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Systemd service unit file declaration hierarchy",
+        "stages": [
+          {
+            "id": "unit",
+            "name": "Unit",
+            "subtext": "Metadata"
+          },
+          {
+            "id": "service",
+            "name": "Service",
+            "subtext": "ExecStart"
+          },
+          {
+            "id": "install",
+            "name": "Install",
+            "subtext": "WantedBy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Service unit file defines three main sections for systemd.",
+            "activeStageId": "unit",
+            "statusBadge": "metadata"
+          },
+          {
+            "at": "say7",
+            "caption": "Directives instruct systemd to resurrect service if process crashes.",
+            "activeStageId": "service",
+            "statusBadge": "restart"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linux Process Exit Codes & Diagnostic Triage",
+      "codeHash": "d4f158ae85ac2c401471b8af367354a68278497d55defad2e2b33d36be370e89",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

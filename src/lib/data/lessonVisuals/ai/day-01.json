@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 1,
+  "promptSha": "a9f48a4bc4b01638c26b9eb4bb087538f320d498f80ced56af13a13ce1ebb125",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Transformer Revolution & Decoder-Only Architecture",
+      "codeHash": "e4e571e8777f1c6afa2d2502b9820461959e929d2f70ce18774e0b3ff0ae1b57",
+      "spec": {
+        "template": "compare",
+        "title": "Sequential recurrent network bottlenecks versus parallel transformer attention",
+        "left": {
+          "title": "Recurrent Sequential Models",
+          "items": [
+            "Processes tokens strictly left to right",
+            "Sequential processing creates GPU bottlenecks",
+            "Suffers from vanishing gradients over time",
+            "Context memory degrades on long documents"
+          ]
+        },
+        "right": {
+          "title": "Transformer Decoder Stack",
+          "items": [
+            "Attends to all tokens simultaneously in parallel",
+            "Multi-head self-attention mechanisms",
+            "Residual skip connections and RMSNorm layers",
+            "Scales efficiently across thousands of GPU cores"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sequential recurrent models process text sequentially from left to right.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "The transformer eliminates recurrence with parallel attention mechanisms.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Recurrent Sequential Models",
+        "rightLabel": "Transformer Decoder Stack"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Sequential recurrent network bottlenecks versus parallel transformer attention",
+        "left": {
+          "title": "Recurrent Sequential Models",
+          "items": [
+            "Processes tokens strictly left to right",
+            "Sequential processing creates GPU bottlenecks",
+            "Suffers from vanishing gradients over time",
+            "Context memory degrades on long documents"
+          ]
+        },
+        "right": {
+          "title": "Transformer Decoder Stack",
+          "items": [
+            "Attends to all tokens simultaneously in parallel",
+            "Multi-head self-attention mechanisms",
+            "Residual skip connections and RMSNorm layers",
+            "Scales efficiently across thousands of GPU cores"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sequential recurrent models process text sequentially from left to right.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "The transformer eliminates recurrence with parallel attention mechanisms.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Recurrent Sequential Models",
+        "rightLabel": "Transformer Decoder Stack"
+      }
+    },
+    {
+      "partTitle": "Scaled Dot-Product Attention: Query, Key, and Value Vectors",
+      "codeHash": "abdd26514ada97a685cb9e91a3b7853300f414739d589aaf397aba2494c55749",
+      "spec": {
+        "template": "flow",
+        "title": "Scaled dot-product attention calculation and value vector aggregation",
+        "nodes": [
+          {
+            "id": "tokenInput",
+            "label": "Token Embedding Input",
+            "tappable": false
+          },
+          {
+            "id": "qkvProjection",
+            "label": "Query Key Value Projection",
+            "tappable": false
+          },
+          {
+            "id": "dotProduct",
+            "label": "Scaled Dot Product Matrix",
+            "tappable": false
+          },
+          {
+            "id": "contextVector",
+            "label": "Weighted Value Output Vector",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "tokenInput",
+            "to": "qkvProjection",
+            "label": "Linear Weights"
+          },
+          {
+            "from": "qkvProjection",
+            "to": "dotProduct",
+            "label": "Calculate Alignment"
+          },
+          {
+            "from": "dotProduct",
+            "to": "contextVector",
+            "label": "Multiply Values"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Learned linear weight matrices project input tokens into query and key vectors.",
+            "activeNodes": [
+              "tokenInput",
+              "qkvProjection"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Dot products determine semantic relevance between query and key tokens.",
+            "activeNodes": [
+              "dotProduct",
+              "contextVector"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Scaled dot-product attention calculation and value vector aggregation",
+        "nodes": [
+          {
+            "id": "tokenInput",
+            "label": "Token Embedding Input",
+            "tappable": false
+          },
+          {
+            "id": "qkvProjection",
+            "label": "Query Key Value Projection",
+            "tappable": false
+          },
+          {
+            "id": "dotProduct",
+            "label": "Scaled Dot Product Matrix",
+            "tappable": false
+          },
+          {
+            "id": "contextVector",
+            "label": "Weighted Value Output Vector",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "tokenInput",
+            "to": "qkvProjection",
+            "label": "Linear Weights"
+          },
+          {
+            "from": "qkvProjection",
+            "to": "dotProduct",
+            "label": "Calculate Alignment"
+          },
+          {
+            "from": "dotProduct",
+            "to": "contextVector",
+            "label": "Multiply Values"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Learned linear weight matrices project input tokens into query and key vectors.",
+            "activeNodes": [
+              "tokenInput",
+              "qkvProjection"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Dot products determine semantic relevance between query and key tokens.",
+            "activeNodes": [
+              "dotProduct",
+              "contextVector"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Softmax Normalization & Attention Weight Distribution",
+      "codeHash": "5b3730d7ea32fdcd18bf1685b7f789fc4c48745166803b813c3da416b7f123a0",
+      "spec": {
+        "template": "table",
+        "title": "Scaled dot-product logits softmax exponentiation and probability distribution",
+        "columns": [
+          "Token Position",
+          "Raw Alignment Logit",
+          "Exponentiated Score",
+          "Softmax Probability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The softmax function converts scaled scores into positive probabilities.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Causal attention masks set future token scores to negative infinity.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Scaled dot-product logits softmax exponentiation and probability distribution",
+        "columns": [
+          "Token Position",
+          "Raw Alignment Logit",
+          "Exponentiated Score",
+          "Softmax Probability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The softmax function converts scaled scores into positive probabilities.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Causal attention masks set future token scores to negative infinity.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Head Attention (MHA) & Subspace Representations",
+      "codeHash": "3cb53d2be18871693e5d97f80a2946957384f83e23791ec2d49bf28b11fd05ce",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Positional Embeddings: Absolute, Sinusoidal & Rotary Position Embeddings (RoPE)",
+      "codeHash": "f0d868f604c39e873d9d22c9f00e26e78bd7078ba228583f25625389adfb158f",
+      "spec": {
+        "template": "sequence",
+        "title": "Rotary position embedding orthogonal coordinate rotation across tokens",
+        "actors": [
+          {
+            "id": "tokenA",
+            "label": "Token Vector Zero"
+          },
+          {
+            "id": "ropeEngine",
+            "label": "RoPE Rotation Core"
+          },
+          {
+            "id": "tokenB",
+            "label": "Token Vector One"
+          }
+        ],
+        "messages": [
+          {
+            "from": "tokenA",
+            "to": "ropeEngine",
+            "label": "Pass Dimension Vector Pair",
+            "tone": "data"
+          },
+          {
+            "from": "ropeEngine",
+            "to": "tokenA",
+            "label": "Apply Base Angle Rotation",
+            "tone": "success"
+          },
+          {
+            "from": "tokenB",
+            "to": "ropeEngine",
+            "label": "Apply Relative Frequency Rotation",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Positional embeddings encode token sequence order in continuous space.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Rotating query and key vectors encodes relative token positions.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Rotary position embedding orthogonal coordinate rotation across tokens",
+        "actors": [
+          {
+            "id": "tokenA",
+            "label": "Token Vector Zero"
+          },
+          {
+            "id": "ropeEngine",
+            "label": "RoPE Rotation Core"
+          },
+          {
+            "id": "tokenB",
+            "label": "Token Vector One"
+          }
+        ],
+        "messages": [
+          {
+            "from": "tokenA",
+            "to": "ropeEngine",
+            "label": "Pass Dimension Vector Pair",
+            "tone": "data"
+          },
+          {
+            "from": "ropeEngine",
+            "to": "tokenA",
+            "label": "Apply Base Angle Rotation",
+            "tone": "success"
+          },
+          {
+            "from": "tokenB",
+            "to": "ropeEngine",
+            "label": "Apply Relative Frequency Rotation",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Positional embeddings encode token sequence order in continuous space.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Rotating query and key vectors encodes relative token positions.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Implementing Self-Attention in Pure TypeScript",
+      "codeHash": "63ccdd431597a4882c5e8a7680b800f76d9fe93f25e644c10e0626e86f0dad08",
+      "spec": {
+        "template": "compare",
+        "title": "High semantic relevance alignment versus orthogonal query key matching",
+        "left": {
+          "title": "Semantic Alignment Match",
+          "items": [
+            "Query and key point in identical direction",
+            "High positive dot product magnitude",
+            "Receives dominant softmax attention probability",
+            "Context vector inherits primary value content"
+          ]
+        },
+        "right": {
+          "title": "Orthogonal Unrelated Match",
+          "items": [
+            "Query and key are mathematically orthogonal",
+            "Dot product evaluates near zero or negative",
+            "Softmax normalizes weight close to zero",
+            "Minimal value vector contribution"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attention engines scale raw dot products and evaluate softmax weights.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Tokens with identical semantic alignment receive maximum attention weight.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Semantic Alignment Match",
+        "rightLabel": "Orthogonal Unrelated Match"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "High semantic relevance alignment versus orthogonal query key matching",
+        "left": {
+          "title": "Semantic Alignment Match",
+          "items": [
+            "Query and key point in identical direction",
+            "High positive dot product magnitude",
+            "Receives dominant softmax attention probability",
+            "Context vector inherits primary value content"
+          ]
+        },
+        "right": {
+          "title": "Orthogonal Unrelated Match",
+          "items": [
+            "Query and key are mathematically orthogonal",
+            "Dot product evaluates near zero or negative",
+            "Softmax normalizes weight close to zero",
+            "Minimal value vector contribution"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Attention engines scale raw dot products and evaluate softmax weights.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Tokens with identical semantic alignment receive maximum attention weight.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Semantic Alignment Match",
+        "rightLabel": "Orthogonal Unrelated Match"
+      }
+    }
+  ]
+}

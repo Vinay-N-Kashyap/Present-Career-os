@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Three delivery guarantees",
+      "codeHash": "2abaf29ccc3f09afd731850da6d5ddfa3f6df06a619db5fdc088c09144923019",
+      "spec": {
+        "template": "none",
+        "reason": "Comparison of delivery guarantees at-most-once at-least-once and exactly-once."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Why duplicates hurt",
+      "codeHash": "ba8762782a1f358777778a84d1b888e456ea7c8e90ec7c0dfbf1d124df7cd8b0",
+      "spec": {
+        "template": "compare",
+        "title": "Idempotent email update versus non-idempotent credit comparison",
+        "leftLabel": "Naturally Idempotent",
+        "rightLabel": "Non-Idempotent Credit",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Setting a user email to the same value twice changes nothing.",
+            "left": {
+              "code": "set_email(profile, email)",
+              "result": {
+                "text": "asha@example.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "credit(amount)",
+              "result": {
+                "text": "asha"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Adding money twice results in incorrect doubled balance.",
+            "left": {
+              "code": "repeat set_email twice",
+              "result": {
+                "text": "asha@example.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "repeat credit twice",
+              "result": {
+                "text": "1000"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Operations should be naturally idempotent or skip repeats.",
+            "left": {
+              "code": "profile email intact",
+              "result": {
+                "text": "asha@example.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "duplicate balance corrupt",
+              "result": {
+                "text": "500"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Idempotent email update versus non-idempotent credit comparison",
+        "leftLabel": "Naturally Idempotent",
+        "rightLabel": "Non-Idempotent Credit",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Setting a user email to the same value twice changes nothing.",
+            "left": {
+              "code": "set_email(profile, email)",
+              "result": "asha@example.com",
+              "tone": "ok",
+              "checks": [
+                "asha@example.com"
+              ]
+            },
+            "right": {
+              "code": "credit(amount)",
+              "result": "asha",
+              "tone": "error",
+              "checks": [
+                "asha"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Adding money twice results in incorrect doubled balance.",
+            "left": {
+              "code": "repeat set_email twice",
+              "result": "asha@example.com",
+              "tone": "ok",
+              "checks": [
+                "asha@example.com"
+              ]
+            },
+            "right": {
+              "code": "repeat credit twice",
+              "result": "1000",
+              "tone": "error",
+              "checks": [
+                "1000"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Operations should be naturally idempotent or skip repeats.",
+            "left": {
+              "code": "profile email intact",
+              "result": "asha@example.com",
+              "tone": "ok",
+              "checks": [
+                "asha@example.com"
+              ]
+            },
+            "right": {
+              "code": "duplicate balance corrupt",
+              "result": "500",
+              "tone": "error",
+              "checks": [
+                "500"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Processing each message once",
+      "codeHash": "2bce49a0eee0221cf41c4c388cf11d56d20ac65b03492fb69adeff8c076f8ed0",
+      "spec": {
+        "template": "table",
+        "title": "Deduplication store message hash tracking and idempotency check",
+        "columns": [
+          "message_id",
+          "payload_hash",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function process_once saves hash and result in store.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "msg-1"
+                  },
+                  {
+                    "text": "h-abc"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If the id was seen before return duplicate with saved result.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "msg-1"
+                  },
+                  {
+                    "text": "h-abc"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "msg-1"
+                  },
+                  {
+                    "text": "h-abc"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Different hash returns PAYLOAD_MISMATCH for reused id.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "msg-1"
+                  },
+                  {
+                    "text": "h-abc"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "msg-1"
+                  },
+                  {
+                    "text": "h-abc"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "msg-1"
+                  },
+                  {
+                    "text": "h-xyz"
+                  },
+                  {
+                    "text": "PAYLOAD_MISMATCH"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deduplication store message hash tracking and idempotency check",
+        "columns": [
+          "message_id",
+          "payload_hash",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function process_once saves hash and result in store.",
+            "rows": [
+              {
+                "cells": [
+                  "msg-1",
+                  "h-abc",
+                  "False"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If the id was seen before return duplicate with saved result.",
+            "rows": [
+              {
+                "cells": [
+                  "msg-1",
+                  "h-abc",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "msg-1",
+                  "h-abc",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Different hash returns PAYLOAD_MISMATCH for reused id.",
+            "rows": [
+              {
+                "cells": [
+                  "msg-1",
+                  "h-abc",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "msg-1",
+                  "h-abc",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "msg-1",
+                  "h-xyz",
+                  "PAYLOAD_MISMATCH"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotency keys in APIs",
+      "codeHash": "5e8b632613e1773bc8219396a945a392c358d18276c7397d0f23725c8ea29bf1",
+      "spec": {
+        "template": "none",
+        "reason": "Client-side idempotency keys and API replay semantics."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Exactly-once processing in practice",
+      "codeHash": "ed65dc29d29467f2c3353cdfdf9d501f661fefd561c5b479447a58d065d3e9e9",
+      "spec": {
+        "template": "table",
+        "title": "Atomic database balance updates paired with deduplication sets",
+        "columns": [
+          "balance",
+          "processed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The dedupe store and business change must update together.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "m1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Database transaction writes both business change and record.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "m1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "m1"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Delivery may repeat while the business effect does not.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "m1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "m1"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "m2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Atomic database balance updates paired with deduplication sets",
+        "columns": [
+          "balance",
+          "processed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The dedupe store and business change must update together.",
+            "rows": [
+              {
+                "cells": [
+                  "1000",
+                  "m1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Database transaction writes both business change and record.",
+            "rows": [
+              {
+                "cells": [
+                  "1000",
+                  "m1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "500",
+                  "m1"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Delivery may repeat while the business effect does not.",
+            "rows": [
+              {
+                "cells": [
+                  "1000",
+                  "m1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "500",
+                  "m1"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "500",
+                  "m2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing naturally idempotent operations",
+      "codeHash": "2765542ab6cc49e15c496bfd98084ec2bc4afbf255a5a9b5a737ce77d51c277b",
+      "spec": {
+        "template": "compare",
+        "title": "Naturally idempotent upsert versus duplicate plain insert comparison",
+        "leftLabel": "Idempotent Upsert",
+        "rightLabel": "Non-Idempotent Plain Insert",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prefer operations that are safe by design.",
+            "left": {
+              "code": "upsert_order(order_id, status)",
+              "result": {
+                "text": "PLACED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "insert_order(rows, order_id, status)",
+              "result": {
+                "text": "PLACED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Upserts overwrite by unique key so repeated create adds no row.",
+            "left": {
+              "code": "second run updates key",
+              "result": {
+                "text": "order-7"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "second run inserts duplicate",
+              "result": {
+                "text": "order-7"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Unique constraint in database ensures only one insert succeeds.",
+            "left": {
+              "code": "single row remains",
+              "result": {
+                "text": "PLACED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "duplicate rows created",
+              "result": {
+                "text": "PLACED"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Naturally idempotent upsert versus duplicate plain insert comparison",
+        "leftLabel": "Idempotent Upsert",
+        "rightLabel": "Non-Idempotent Plain Insert",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prefer operations that are safe by design.",
+            "left": {
+              "code": "upsert_order(order_id, status)",
+              "result": "PLACED",
+              "tone": "ok",
+              "checks": [
+                "PLACED"
+              ]
+            },
+            "right": {
+              "code": "insert_order(rows, order_id, status)",
+              "result": "PLACED",
+              "tone": "ok",
+              "checks": [
+                "PLACED"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Upserts overwrite by unique key so repeated create adds no row.",
+            "left": {
+              "code": "second run updates key",
+              "result": "order-7",
+              "tone": "ok",
+              "checks": [
+                "order-7"
+              ]
+            },
+            "right": {
+              "code": "second run inserts duplicate",
+              "result": "order-7",
+              "tone": "error",
+              "checks": [
+                "order-7"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Unique constraint in database ensures only one insert succeeds.",
+            "left": {
+              "code": "single row remains",
+              "result": "PLACED",
+              "tone": "ok",
+              "checks": [
+                "PLACED"
+              ]
+            },
+            "right": {
+              "code": "duplicate rows created",
+              "result": "PLACED",
+              "tone": "error",
+              "checks": [
+                "PLACED"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

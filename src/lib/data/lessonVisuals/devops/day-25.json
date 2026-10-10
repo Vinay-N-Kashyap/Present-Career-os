@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 25,
+  "promptSha": "1d5d37cf9dee859976e36aaef961a538c9f2adf25928e7c1db5034ca902a21b0",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Three Pillars of Observability (Metrics, Logs, Traces)",
+      "codeHash": "98dbad1bdbce1539faa08af73df976ee9a90f6f7f8bd9886969b3104a2668b4a",
+      "spec": {
+        "template": "compare",
+        "title": "Three pillars of observability metrics logs and traces",
+        "leftLabel": "Numeric Aggregations (Metrics)",
+        "rightLabel": "Event Journey Records (Traces)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Metrics provide early detection answering what is broken across services.",
+            "left": {
+              "code": "pillar: 'Metrics'",
+              "result": {
+                "text": "Metrics"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "leadingTool: 'Prometheus / Datadog'",
+              "result": {
+                "text": "Prometheus / Datadog"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Traces isolate bottlenecked operations tracking end to end request flows.",
+            "left": {
+              "code": "pillar: 'Traces'",
+              "result": {
+                "text": "Traces"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "leadingTool: 'OpenTelemetry / Jaeger / Tempo'",
+              "result": {
+                "text": "OpenTelemetry / Jaeger / Tempo"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Three pillars of observability metrics logs and traces",
+        "leftLabel": "Numeric Aggregations (Metrics)",
+        "rightLabel": "Event Journey Records (Traces)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Metrics provide early detection answering what is broken across services.",
+            "left": {
+              "code": "pillar: 'Metrics'",
+              "result": {
+                "text": "Metrics"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "leadingTool: 'Prometheus / Datadog'",
+              "result": {
+                "text": "Prometheus / Datadog"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Traces isolate bottlenecked operations tracking end to end request flows.",
+            "left": {
+              "code": "pillar: 'Traces'",
+              "result": {
+                "text": "Traces"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "leadingTool: 'OpenTelemetry / Jaeger / Tempo'",
+              "result": {
+                "text": "OpenTelemetry / Jaeger / Tempo"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OpenTelemetry (OTel) Industry Standard & SDKs",
+      "codeHash": "d8b0c34ad04bd1176098851ca967a5f4e60363457ab51a3badd1f75ae49ec31d",
+      "spec": {
+        "template": "compare",
+        "title": "OpenTelemetry collector pipeline and multi vendor exporters",
+        "leftLabel": "Instrumented Application Client",
+        "rightLabel": "Downstream Storage Exporter",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Unified developer libraries standardize telemetry collection across stacks.",
+            "left": {
+              "code": "serviceName: 'checkout-api'",
+              "result": {
+                "text": "checkout-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "protocol: 'grpc'",
+              "result": {
+                "text": "grpc"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Collector proxy receives processes and routes spans to chosen storage.",
+            "left": {
+              "code": "collectorEndpoint: 'otel-collector.monitoring.svc:4317'",
+              "result": {
+                "text": "otel-collector.monitoring.svc:4317"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "activeExporters: ['Jaeger (Traces)']",
+              "result": {
+                "text": "Jaeger (Traces)"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "OpenTelemetry collector pipeline and multi vendor exporters",
+        "leftLabel": "Instrumented Application Client",
+        "rightLabel": "Downstream Storage Exporter",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Unified developer libraries standardize telemetry collection across stacks.",
+            "left": {
+              "code": "serviceName: 'checkout-api'",
+              "result": {
+                "text": "checkout-api"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "protocol: 'grpc'",
+              "result": {
+                "text": "grpc"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Collector proxy receives processes and routes spans to chosen storage.",
+            "left": {
+              "code": "collectorEndpoint: 'otel-collector.monitoring.svc:4317'",
+              "result": {
+                "text": "otel-collector.monitoring.svc:4317"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "activeExporters: ['Jaeger (Traces)']",
+              "result": {
+                "text": "Jaeger (Traces)"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "W3C Trace Context Standard & traceparent Header",
+      "codeHash": "bac3498a98497e8a9f0fe171a2a9cb0a0d9c8eb97071b5b1652a754a5c9df035",
+      "spec": {
+        "template": "compare",
+        "title": "W3C distributed trace context header format propagation",
+        "leftLabel": "Global Trace Identifier",
+        "rightLabel": "Caller Parent Span ID",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Standardized header format specifies version trace parent and flags.",
+            "left": {
+              "code": "version: '00'",
+              "result": {
+                "text": "00"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "traceId: '4bf92f3577b34da6a3ce929d0e0e4736'",
+              "result": {
+                "text": "4bf92f3577b34da6a3ce929d0e0e4736"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Caller span identifier links parent work units within downstream services.",
+            "left": {
+              "code": "parentId: '00f067aa0ba902b7'",
+              "result": {
+                "text": "00f067aa0ba902b7"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "sampled: true",
+              "result": {
+                "text": "sampled"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "W3C distributed trace context header format propagation",
+        "leftLabel": "Global Trace Identifier",
+        "rightLabel": "Caller Parent Span ID",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Standardized header format specifies version trace parent and flags.",
+            "left": {
+              "code": "version: '00'",
+              "result": {
+                "text": "00"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "traceId: '4bf92f3577b34da6a3ce929d0e0e4736'",
+              "result": {
+                "text": "4bf92f3577b34da6a3ce929d0e0e4736"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Caller span identifier links parent work units within downstream services.",
+            "left": {
+              "code": "parentId: '00f067aa0ba902b7'",
+              "result": {
+                "text": "00f067aa0ba902b7"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "sampled: true",
+              "result": {
+                "text": "sampled"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Spans, Parent-Child Hierarchies & Trace Trees",
+      "codeHash": "c0cf83fc0cdbddae23fd4753714afcafa04928fb9c0e953d5aa2542d014a2ae2",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed span hierarchies and parent child relationships",
+        "leftLabel": "Root Span Entrypoint",
+        "rightLabel": "Child Operation Span",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Root span creates child spans when calling external services or storage.",
+            "left": {
+              "code": "name: 'HTTP POST /checkout'",
+              "result": {
+                "text": "spanId"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "parentSpanId",
+              "result": {
+                "text": "parentSpanId"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Relationships form directed graphs revealing granular operation timing.",
+            "left": {
+              "code": "durationMs",
+              "result": {
+                "text": "durationMs"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "service",
+              "result": {
+                "text": "service"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed span hierarchies and parent child relationships",
+        "leftLabel": "Root Span Entrypoint",
+        "rightLabel": "Child Operation Span",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Root span creates child spans when calling external services or storage.",
+            "left": {
+              "code": "name: 'HTTP POST /checkout'",
+              "result": {
+                "text": "spanId"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "parentSpanId",
+              "result": {
+                "text": "parentSpanId"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Relationships form directed graphs revealing granular operation timing.",
+            "left": {
+              "code": "durationMs",
+              "result": {
+                "text": "durationMs"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "service",
+              "result": {
+                "text": "service"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Visualizing Traces with Jaeger & Grafana Tempo",
+      "codeHash": "39ed67004e82448f700c65f15ab493da641249a4ced68a7e6b16c1436c414a63",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed tracing backend engines storage architecture",
+        "leftLabel": "Grafana Tempo (Object Storage)",
+        "rightLabel": "Jaeger Tracing Backend",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Object storage architecture significantly reduces tracing cluster expenses.",
+            "left": {
+              "code": "name: 'Grafana Tempo'",
+              "result": {
+                "text": "Grafana Tempo"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "storageBackend: 'S3 / GCS Object Storage (No index required)'",
+              "result": {
+                "text": "S3 / GCS Object Storage (No index required)"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Prometheus latency spikes link directly to relevant tempo trace spans.",
+            "left": {
+              "code": "name: 'Jaeger'",
+              "result": {
+                "text": "Jaeger"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "grafanaIntegration: 'Native'",
+              "result": {
+                "text": "Native"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed tracing backend engines storage architecture",
+        "leftLabel": "Grafana Tempo (Object Storage)",
+        "rightLabel": "Jaeger Tracing Backend",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Object storage architecture significantly reduces tracing cluster expenses.",
+            "left": {
+              "code": "name: 'Grafana Tempo'",
+              "result": {
+                "text": "Grafana Tempo"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "storageBackend: 'S3 / GCS Object Storage (No index required)'",
+              "result": {
+                "text": "S3 / GCS Object Storage (No index required)"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Prometheus latency spikes link directly to relevant tempo trace spans.",
+            "left": {
+              "code": "name: 'Jaeger'",
+              "result": {
+                "text": "Jaeger"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "grafanaIntegration: 'Native'",
+              "result": {
+                "text": "Native"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building Unified Grafana Dashboards Correlating Telemetry",
+      "codeHash": "ea3501d771338237400b3e1162c905388ebf9b3379ca184964ff882d8e843973",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

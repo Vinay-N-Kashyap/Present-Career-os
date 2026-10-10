@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why cache LLM answers",
+      "codeHash": "486bb0627bdad1b49b695ef55f3776f20d301a169bbfc3222166250645ea078d",
+      "spec": {
+        "template": "none",
+        "reason": "Economic and latency benefits of LLM response caching during traffic surges."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Exact caching",
+      "codeHash": "86fe10b865d1dd6b5fb3ab1a8587408ba505e0bdc61c2bc57bc5d832934355cf",
+      "spec": {
+        "template": "table",
+        "title": "Normalized SHA-256 key generation for exact query caching",
+        "columns": [
+          "input_query",
+          "cache_status",
+          "cached_answer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An exact cache maps question to answer and never returns wrong match.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "  what are your OPENING hours? "
+                  },
+                  {
+                    "text": "What are your opening hours?"
+                  },
+                  {
+                    "text": "We are open 9 am to 9 pm."
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "When do you open?"
+                  },
+                  {
+                    "text": "MISS"
+                  },
+                  {
+                    "text": "MISS"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Normalise the key first by trimming spaces so queries share entry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "  what are your OPENING hours? "
+                  },
+                  {
+                    "text": "What are your opening hours?"
+                  },
+                  {
+                    "text": "We are open 9 am to 9 pm."
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "When do you open?"
+                  },
+                  {
+                    "text": "MISS"
+                  },
+                  {
+                    "text": "MISS"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Include model name and prompt version in the key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "  what are your OPENING hours? "
+                  },
+                  {
+                    "text": "What are your opening hours?"
+                  },
+                  {
+                    "text": "We are open 9 am to 9 pm."
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "When do you open?"
+                  },
+                  {
+                    "text": "MISS"
+                  },
+                  {
+                    "text": "MISS"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Normalized SHA-256 key generation for exact query caching",
+        "columns": [
+          "input_query",
+          "cache_status",
+          "cached_answer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An exact cache maps question to answer and never returns wrong match.",
+            "rows": [
+              {
+                "cells": [
+                  "  what are your OPENING hours? ",
+                  "What are your opening hours?",
+                  "We are open 9 am to 9 pm."
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "When do you open?",
+                  "MISS",
+                  "MISS"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Normalise the key first by trimming spaces so queries share entry.",
+            "rows": [
+              {
+                "cells": [
+                  "  what are your OPENING hours? ",
+                  "What are your opening hours?",
+                  "We are open 9 am to 9 pm."
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "When do you open?",
+                  "MISS",
+                  "MISS"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Include model name and prompt version in the key.",
+            "rows": [
+              {
+                "cells": [
+                  "  what are your OPENING hours? ",
+                  "What are your opening hours?",
+                  "We are open 9 am to 9 pm."
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "When do you open?",
+                  "MISS",
+                  "MISS"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Semantic caching",
+      "codeHash": "3af5997fb1a3c2edf622faa5942365bd194848bb92fc88a068fde1082064bcd3",
+      "spec": {
+        "template": "compare",
+        "title": "Cosine similarity threshold impact on semantic cache retrieval",
+        "leftLabel": "Threshold 0.90",
+        "rightLabel": "Threshold 0.97",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A semantic cache compares cosine similarity with stored embeddings.",
+            "left": {
+              "code": "score >= 0.9 threshold match",
+              "result": {
+                "text": "9 am to 9 pm."
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "score < 0.97 threshold miss",
+              "result": {
+                "text": "MISS"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "When match is above threshold return its answer.",
+            "left": {
+              "code": "When do you open? matches stored hours",
+              "result": {
+                "text": "9 am to 9 pm."
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "stricter tolerance rejects marginal match",
+              "result": {
+                "text": "MISS"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The threshold is critical so different questions do not share answers.",
+            "left": {
+              "code": "low threshold risk of spurious match",
+              "result": {
+                "text": "9 am to 9 pm."
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "safe conservative miss triggers fresh call",
+              "result": {
+                "text": "MISS"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cosine similarity threshold impact on semantic cache retrieval",
+        "leftLabel": "Threshold 0.90",
+        "rightLabel": "Threshold 0.97",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A semantic cache compares cosine similarity with stored embeddings.",
+            "left": {
+              "code": "score >= 0.9 threshold match",
+              "result": "9 am to 9 pm.",
+              "tone": "ok",
+              "checks": [
+                "9 am to 9 pm."
+              ]
+            },
+            "right": {
+              "code": "score < 0.97 threshold miss",
+              "result": "MISS",
+              "tone": "error",
+              "checks": [
+                "MISS"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "When match is above threshold return its answer.",
+            "left": {
+              "code": "When do you open? matches stored hours",
+              "result": "9 am to 9 pm.",
+              "tone": "ok",
+              "checks": [
+                "9 am to 9 pm."
+              ]
+            },
+            "right": {
+              "code": "stricter tolerance rejects marginal match",
+              "result": "MISS",
+              "tone": "error",
+              "checks": [
+                "MISS"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The threshold is critical so different questions do not share answers.",
+            "left": {
+              "code": "low threshold risk of spurious match",
+              "result": "9 am to 9 pm.",
+              "tone": "ok",
+              "checks": [
+                "9 am to 9 pm."
+              ]
+            },
+            "right": {
+              "code": "safe conservative miss triggers fresh call",
+              "result": "MISS",
+              "tone": "error",
+              "checks": [
+                "MISS"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exact first, then semantic",
+      "codeHash": "dd0b6a4c671a49bfe8fa2a7d0d0b1a715ed1afe19c04c4bd981bdf67311a2d9a",
+      "spec": {
+        "template": "flow",
+        "title": "Two-tier cache lookup hierarchy routing exact then semantic queries",
+        "nodes": [
+          {
+            "id": "query",
+            "label": "query"
+          },
+          {
+            "id": "exact",
+            "label": "cached_response"
+          },
+          {
+            "id": "cosine",
+            "label": "cosine"
+          }
+        ],
+        "edges": [
+          {
+            "from": "query",
+            "to": "exact"
+          },
+          {
+            "from": "exact",
+            "to": "cosine"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Check exact cache first and if found return type EXACT.",
+            "values": {
+              "query": {
+                "text": "opening hours"
+              },
+              "exact": {
+                "text": "EXACT"
+              },
+              "cosine": {
+                "text": "SEMANTIC"
+              }
+            },
+            "tones": {
+              "query": "data",
+              "exact": "ok",
+              "cosine": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Look through semantic store and return first entry meeting threshold.",
+            "values": {
+              "query": {
+                "text": "opening hours"
+              },
+              "exact": {
+                "text": "EXACT"
+              },
+              "cosine": {
+                "text": "SEMANTIC"
+              }
+            },
+            "tones": {
+              "query": "data",
+              "exact": "idle",
+              "cosine": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Checking exact first is cheaper and always correct.",
+            "values": {
+              "query": {
+                "text": "opening hours"
+              },
+              "exact": {
+                "text": "EXACT"
+              },
+              "cosine": {
+                "text": "SEMANTIC"
+              }
+            },
+            "tones": {
+              "query": "ok",
+              "exact": "ok",
+              "cosine": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Two-tier cache lookup hierarchy routing exact then semantic queries",
+        "nodes": [
+          {
+            "id": "query",
+            "label": "query"
+          },
+          {
+            "id": "exact",
+            "label": "cached_response"
+          },
+          {
+            "id": "cosine",
+            "label": "cosine"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Check exact cache first and if found return type EXACT.",
+            "values": {
+              "query": "opening hours",
+              "exact": "EXACT",
+              "cosine": "SEMANTIC"
+            },
+            "tones": {
+              "query": "data",
+              "exact": "ok",
+              "cosine": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Look through semantic store and return first entry meeting threshold.",
+            "values": {
+              "query": "opening hours",
+              "exact": "EXACT",
+              "cosine": "SEMANTIC"
+            },
+            "tones": {
+              "query": "data",
+              "exact": "idle",
+              "cosine": "ok"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say4",
+            "caption": "Checking exact first is cheaper and always correct.",
+            "values": {
+              "query": "opening hours",
+              "exact": "EXACT",
+              "cosine": "SEMANTIC"
+            },
+            "tones": {
+              "query": "ok",
+              "exact": "ok",
+              "cosine": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring hit rate and savings",
+      "codeHash": "4f5c40b0a5c5a496eef2b3343ae5fdbd09c16083710e4122b1d82d8b7f2ccbfa",
+      "spec": {
+        "template": "bars",
+        "title": "Distribution of cache traffic between exact hits semantic hits and misses",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hit rate returns percentage of hits over total requests.",
+            "bars": [
+              {
+                "label": "exact_hits",
+                "value": {
+                  "text": "1200"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "semantic_hits",
+                "value": {
+                  "text": "900"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "misses",
+                "value": {
+                  "text": "5900"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Track hits and misses per cache type per day.",
+            "bars": [
+              {
+                "label": "exact_hits",
+                "value": {
+                  "text": "1200"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "semantic_hits",
+                "value": {
+                  "text": "900"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "misses",
+                "value": {
+                  "text": "5900"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Estimate savings from hits times average cost per model call.",
+            "bars": [
+              {
+                "label": "exact_hits",
+                "value": {
+                  "text": "1200"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "semantic_hits",
+                "value": {
+                  "text": "900"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "misses",
+                "value": {
+                  "text": "5900"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Distribution of cache traffic between exact hits semantic hits and misses",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hit rate returns percentage of hits over total requests.",
+            "bars": [
+              {
+                "label": "exact_hits",
+                "value": 1200,
+                "tone": "ok"
+              },
+              {
+                "label": "semantic_hits",
+                "value": 900,
+                "tone": "ok"
+              },
+              {
+                "label": "misses",
+                "value": 5900,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Track hits and misses per cache type per day.",
+            "bars": [
+              {
+                "label": "exact_hits",
+                "value": 1200,
+                "tone": "ok"
+              },
+              {
+                "label": "semantic_hits",
+                "value": 900,
+                "tone": "ok"
+              },
+              {
+                "label": "misses",
+                "value": 5900,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Estimate savings from hits times average cost per model call.",
+            "bars": [
+              {
+                "label": "exact_hits",
+                "value": 1200,
+                "tone": "ok"
+              },
+              {
+                "label": "semantic_hits",
+                "value": 900,
+                "tone": "ok"
+              },
+              {
+                "label": "misses",
+                "value": 5900,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stale, personal and unsafe cache entries",
+      "codeHash": "56ce613240aab0b7348807952ce4bb8561e9778f63ed34e171eda4b9382cc155",
+      "spec": {
+        "template": "none",
+        "reason": "Cache invalidation policies TTL expiration and multi-tenant user isolation."
+      },
+      "filled": {}
+    }
+  ]
+}

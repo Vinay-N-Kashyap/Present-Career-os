@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A queue: first in, first out",
+      "codeHash": "b1b418ecf23ff2a610ee2d8dec365672e322c3dfda606fb1dacbc5b56f26aba3",
+      "spec": {
+        "template": "stack-queue",
+        "title": "FIFO queue operations",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Items join at back and leave from front in FIFO order.",
+            "items": [
+              {
+                "text": "T101"
+              },
+              {
+                "text": "T102"
+              }
+            ],
+            "action": "enqueue",
+            "actionItem": {
+              "text": "T103"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Append adds at back while popleft removes from front in constant time.",
+            "items": [
+              {
+                "text": "T102"
+              },
+              {
+                "text": "T103"
+              }
+            ],
+            "action": "dequeue",
+            "actionItem": {
+              "text": "T101"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "FIFO queue operations",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Items join at back and leave from front in FIFO order.",
+            "mode": "queue",
+            "items": [
+              "T101",
+              "T102"
+            ],
+            "action": "enqueue",
+            "actionItem": "T103"
+          },
+          {
+            "at": "say3",
+            "caption": "Append adds at back while popleft removes from front in constant time.",
+            "mode": "queue",
+            "items": [
+              "T102",
+              "T103"
+            ],
+            "action": "dequeue",
+            "actionItem": "T101"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why deque beats a list for queues",
+      "codeHash": "8864824fc75d17e0d4c0ddd673b7c93d65a60d5dedb6c0708ddc7164e123d7ab",
+      "spec": {
+        "template": "compare",
+        "title": "Shifting cost comparison",
+        "leftLabel": "List pop(0)",
+        "rightLabel": "Deque popleft()",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Removing front item from list moves every other item left.",
+            "left": {
+              "code": "list.pop(0)",
+              "result": {
+                "text": "O(N) shifts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "deque.popleft()",
+              "result": {
+                "text": "O(1) pointer"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Deque removes from front by advancing pointer with zero shifting.",
+            "left": {
+              "code": "100,000 items",
+              "result": {
+                "text": "5B moves"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "100,000 items",
+              "result": {
+                "text": "0 moves"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Shifting cost comparison",
+        "leftLabel": "List pop(0)",
+        "rightLabel": "Deque popleft()",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Removing front item from list moves every other item left.",
+            "left": {
+              "code": "list.pop(0)",
+              "result": "O(N) shifts",
+              "tone": "error",
+              "checks": [
+                "O(N) shifts"
+              ]
+            },
+            "right": {
+              "code": "deque.popleft()",
+              "result": "O(1) pointer",
+              "tone": "ok",
+              "checks": [
+                "O(1) pointer"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Deque removes from front by advancing pointer with zero shifting.",
+            "left": {
+              "code": "100,000 items",
+              "result": "5B moves",
+              "tone": "error",
+              "checks": [
+                "5B moves"
+              ]
+            },
+            "right": {
+              "code": "100,000 items",
+              "result": "0 moves",
+              "tone": "ok",
+              "checks": [
+                "0 moves"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A ring buffer: a queue of fixed size",
+      "codeHash": "bbcdc8e613e342947bbdd92632086e9460947c1b42fc93971891e0321a48ac2c",
+      "spec": {
+        "template": "cells",
+        "title": "Circular ring buffer modulo wrapping",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Modulo makes back index wrap around to start like clock hands.",
+            "items": [
+              {
+                "text": "a"
+              },
+              {
+                "text": "b"
+              },
+              {
+                "text": "c"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dequeue moves head forward while count tracks occupied slots.",
+            "items": [
+              {
+                "text": "d"
+              },
+              {
+                "text": "b"
+              },
+              {
+                "text": "c"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Circular ring buffer modulo wrapping",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Modulo makes back index wrap around to start like clock hands.",
+            "items": [
+              "a",
+              "b",
+              "c"
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dequeue moves head forward while count tracks occupied slots.",
+            "items": [
+              "d",
+              "b",
+              "c"
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "deque with a maximum length",
+      "codeHash": "d228cc3fed0eef2b0a5987612a7653bc5a6e5bc69905e8b1a9df16951bf9f122",
+      "spec": {
+        "template": "none",
+        "reason": "Fixed length deque and moving average calculation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Fixed length deque and moving average calculation."
+      }
+    },
+    {
+      "partTitle": "Building a stack from a queue",
+      "codeHash": "278b6308b1e366dd2f332e9f8f11993c92864053f04cec08e766933378abc4b8",
+      "spec": {
+        "template": "none",
+        "reason": "Stack rotation algorithm using queue primitives."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Stack rotation algorithm using queue primitives."
+      }
+    },
+    {
+      "partTitle": "Queues in real systems",
+      "codeHash": "642b630ffe7d436d93766917316f3ab4b0630a6e93ad8565691f245df3cdae9e",
+      "spec": {
+        "template": "bars",
+        "title": "Queue backlog under burst traffic",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Messages between services queue up absorbing traffic bursts.",
+            "bars": [
+              {
+                "label": "Sec 0",
+                "value": {
+                  "text": "2 waiting"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Sec 1",
+                "value": {
+                  "text": "4 waiting"
+                },
+                "tone": "data"
+              }
+            ],
+            "max": 10
+          },
+          {
+            "at": "say3",
+            "caption": "Watching queue length tells engineers when items arrive faster.",
+            "bars": [
+              {
+                "label": "Sec 0",
+                "value": {
+                  "text": "2 waiting"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Sec 1",
+                "value": {
+                  "text": "4 waiting"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Sec 2",
+                "value": {
+                  "text": "6 waiting"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Sec 3",
+                "value": {
+                  "text": "3 waiting"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 10
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Queue backlog under burst traffic",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Messages between services queue up absorbing traffic bursts.",
+            "bars": [
+              {
+                "label": "Sec 0",
+                "value": "2 waiting",
+                "tone": "data"
+              },
+              {
+                "label": "Sec 1",
+                "value": "4 waiting",
+                "tone": "data"
+              }
+            ],
+            "max": 10
+          },
+          {
+            "at": "say3",
+            "caption": "Watching queue length tells engineers when items arrive faster.",
+            "bars": [
+              {
+                "label": "Sec 0",
+                "value": "2 waiting",
+                "tone": "data"
+              },
+              {
+                "label": "Sec 1",
+                "value": "4 waiting",
+                "tone": "data"
+              },
+              {
+                "label": "Sec 2",
+                "value": "6 waiting",
+                "tone": "error"
+              },
+              {
+                "label": "Sec 3",
+                "value": "3 waiting",
+                "tone": "ok"
+              }
+            ],
+            "max": 10
+          }
+        ]
+      }
+    }
+  ]
+}

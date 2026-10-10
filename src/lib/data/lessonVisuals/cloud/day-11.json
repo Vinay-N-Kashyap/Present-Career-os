@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 11,
+  "promptSha": "f71ef9a4eb13fd7be4e077f2ab09e50ede76bd3fb5f449b93b4a918d25e1fbf9",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Serverless Compute Model & The Lambda Lifecycle",
+      "codeHash": "b325fcef0ab8cb5bcbff4f1662d15bf2352e6017a489bfdc589c94d8c93df542",
+      "spec": {
+        "template": "workflow",
+        "title": "Serverless compute execution environment lifecycle",
+        "stages": [
+          {
+            "id": "event",
+            "name": "Event Trigger",
+            "subtext": "Inbound Invoke"
+          },
+          {
+            "id": "init",
+            "name": "Container Init",
+            "subtext": "Runtime Setup"
+          },
+          {
+            "id": "handler",
+            "name": "Handler Execution",
+            "subtext": "Business Logic"
+          },
+          {
+            "id": "freeze",
+            "name": "Warm Freeze",
+            "subtext": "Near-Zero Latency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The init phase provisions microvm environments before handler execution.",
+            "activeStageId": "init",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The shutdown phase terminates microvm resources after functions remain idle.",
+            "activeStageId": "freeze",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Serverless compute execution environment lifecycle",
+        "stages": [
+          {
+            "id": "event",
+            "name": "Event Trigger",
+            "subtext": "Inbound Invoke"
+          },
+          {
+            "id": "init",
+            "name": "Container Init",
+            "subtext": "Runtime Setup"
+          },
+          {
+            "id": "handler",
+            "name": "Handler Execution",
+            "subtext": "Business Logic"
+          },
+          {
+            "id": "freeze",
+            "name": "Warm Freeze",
+            "subtext": "Near-Zero Latency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The init phase provisions microvm environments before handler execution.",
+            "activeStageId": "init",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The shutdown phase terminates microvm resources after functions remain idle.",
+            "activeStageId": "freeze",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cold Starts vs Warm Starts & Init Optimization",
+      "codeHash": "aeed110b99dc882e95e9325dde16cd4eb356611f13187979a5a10dce28fa162e",
+      "spec": {
+        "template": "compare",
+        "title": "Cold starts compared to warm execution starts",
+        "leftLabel": "Cold Start (Init + Exec)",
+        "rightLabel": "Warm Start (Instant)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cold starts occur when no idle execution environment is available.",
+            "left": {
+              "code": "New MicroVM Provisioning",
+              "result": {
+                "text": "Cold Start Latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Warm Sandbox Reused",
+              "result": {
+                "text": "Sub-Millisecond"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Placing database connections outside handler optimizes cold start duration.",
+            "left": {
+              "code": "Inside Handler Init",
+              "result": {
+                "text": "Repeated Overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Outside Handler Cache",
+              "result": {
+                "text": "Static Reused"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cold starts compared to warm execution starts",
+        "leftLabel": "Cold Start (Init + Exec)",
+        "rightLabel": "Warm Start (Instant)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cold starts occur when no idle execution environment is available.",
+            "left": {
+              "code": "New MicroVM Provisioning",
+              "result": {
+                "text": "Cold Start Latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Warm Sandbox Reused",
+              "result": {
+                "text": "Sub-Millisecond"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Placing database connections outside handler optimizes cold start duration.",
+            "left": {
+              "code": "Inside Handler Init",
+              "result": {
+                "text": "Repeated Overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Outside Handler Cache",
+              "result": {
+                "text": "Static Reused"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory Allocation & Proportional vCPU Scaling",
+      "codeHash": "b073f0d4d8197e92cec15b1467ff371d8dab8bb151ae7e412306d5fd6e783ff0",
+      "spec": {
+        "template": "bars",
+        "title": "Memory allocation and proportional CPU compute scaling",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Memory is the single dial you adjust to configure compute power.",
+            "bars": [
+              {
+                "label": "Baseline 128MB",
+                "value": 128,
+                "max": 1024,
+                "tone": "data"
+              },
+              {
+                "label": "Proportional vCPU",
+                "value": 10,
+                "max": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Allocating more memory gives your function proportionally more CPU power.",
+            "bars": [
+              {
+                "label": "Scaled 1024MB",
+                "value": 1024,
+                "max": 1024,
+                "tone": "ok"
+              },
+              {
+                "label": "Full vCPU Power",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Memory allocation and proportional CPU compute scaling",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Memory is the single dial you adjust to configure compute power.",
+            "bars": [
+              {
+                "label": "Baseline 128MB",
+                "value": 128,
+                "max": 1024,
+                "tone": "data"
+              },
+              {
+                "label": "Proportional vCPU",
+                "value": 10,
+                "max": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Allocating more memory gives your function proportionally more CPU power.",
+            "bars": [
+              {
+                "label": "Scaled 1024MB",
+                "value": 1024,
+                "max": 1024,
+                "tone": "ok"
+              },
+              {
+                "label": "Full vCPU Power",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concurrency Limits: Reserved vs Provisioned Concurrency",
+      "codeHash": "3db2e0fdeba5839b7d5fd542cc320367c8fdf794ce5fa8b3ac4667c9fe6a7140",
+      "spec": {
+        "template": "states",
+        "title": "Concurrency allocation pools and isolation states",
+        "states": [
+          {
+            "id": "unreserved",
+            "label": "Unreserved Shared Pool"
+          },
+          {
+            "id": "reserved",
+            "label": "Reserved Concurrency Sliced"
+          },
+          {
+            "id": "throttled",
+            "label": "Throttled Limit Reached"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrency represents in-flight requests handled at any given second.",
+            "active": "unreserved"
+          },
+          {
+            "at": "say6",
+            "caption": "Reserved concurrency ensures maximum instance scaling for a function.",
+            "active": "reserved"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Concurrency allocation pools and isolation states",
+        "states": [
+          {
+            "id": "unreserved",
+            "label": "Unreserved Shared Pool"
+          },
+          {
+            "id": "reserved",
+            "label": "Reserved Concurrency Sliced"
+          },
+          {
+            "id": "throttled",
+            "label": "Throttled Limit Reached"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrency represents in-flight requests handled at any given second.",
+            "active": "unreserved"
+          },
+          {
+            "at": "say6",
+            "caption": "Reserved concurrency ensures maximum instance scaling for a function.",
+            "active": "reserved"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Error Handling, Retries, and Dead Letter Queues (DLQ)",
+      "codeHash": "e1d34df7f5f2252824e03ca84d6392e1bce6743191d2d8dffe7aaea4b8a59f85",
+      "spec": {
+        "template": "sequence",
+        "title": "Asynchronous retry handling and Dead Letter Queue forwarding",
+        "actors": [
+          {
+            "id": "caller",
+            "name": "Event Source"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Engine"
+          },
+          {
+            "id": "dlq",
+            "name": "Dead Letter SQS"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lambda handles errors differently for synchronous and asynchronous calls.",
+            "from": "caller",
+            "to": "lambda",
+            "label": "Async Invocation",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Lambda retries failed events before sending them to a dead letter queue.",
+            "from": "lambda",
+            "to": "dlq",
+            "label": "Route to DLQ",
+            "tone": "error"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Asynchronous retry handling and Dead Letter Queue forwarding",
+        "actors": [
+          {
+            "id": "caller",
+            "name": "Event Source"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Engine"
+          },
+          {
+            "id": "dlq",
+            "name": "Dead Letter SQS"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lambda handles errors differently for synchronous and asynchronous calls.",
+            "from": "caller",
+            "to": "lambda",
+            "label": "Async Invocation",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Lambda retries failed events before sending them to a dead letter queue.",
+            "from": "lambda",
+            "to": "dlq",
+            "label": "Route to DLQ",
+            "tone": "error"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lambda Function URLs & Streaming Responses",
+      "codeHash": "ba9dffe376da9229e82fbc4238ca7a62bcd299bef82c2780209b31a115b5182a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

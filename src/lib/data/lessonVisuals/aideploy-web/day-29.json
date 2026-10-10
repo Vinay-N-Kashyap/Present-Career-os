@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 29,
+  "promptSha": "10c3275b3ee3b57477982a073719a86a218b368b408665c1321b50c1ca6983b5",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Production Readiness Checklist Schema (Critical vs Non-Critical)",
+      "codeHash": "10c3275b3ee3b57477982a073719a86a218b368b408665c1321b50c1ca6983b5",
+      "spec": {
+        "template": "table",
+        "title": "Production Readiness Audit Schema",
+        "columns": [
+          "Check Name",
+          "Severity Class",
+          "Audit Verdict"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Interfaces distinguish between critical blockers and non-critical items.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Critical checks like PII Redaction cannot be bypassed under circumstances.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Differentiating blockers ensures standards are never compromised.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production Readiness Audit Schema",
+        "columns": [
+          "Check Name",
+          "Severity Class",
+          "Audit Verdict"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Interfaces distinguish between critical blockers and non-critical items.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Critical checks like PII Redaction cannot be bypassed under circumstances.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Differentiating blockers ensures standards are never compromised.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Security & Secret Auditing (Key Rotation, PII, Sanitization)",
+      "codeHash": "0ebfc4adf9f27478c53f5e513ba253c8778b9b90dbe36401ef02254d54aa5338",
+      "spec": {
+        "template": "compare",
+        "title": "Clean Security Audit vs Failed Audit",
+        "leftLabel": "Clean Audit (Sec-1)",
+        "rightLabel": "Failed Audit (Sec-2)",
+        "leftItems": [
+          "API keys rotated (< 90 days)",
+          "Secrets masked in headers",
+          "Outbound PII redaction active"
+        ],
+        "rightItems": [
+          "Keys rotated (< 90 days)",
+          "Raw auth headers in logs",
+          "Audit failed immediately"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions verify security requirements: key rotation and secret masking.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Audit two caught raw authorization headers failing the audit immediately.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Automating audits guarantees no service reaches production exposed.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Clean Security Audit vs Failed Audit",
+        "leftLabel": "Clean Audit (Sec-1)",
+        "rightLabel": "Failed Audit (Sec-2)",
+        "leftItems": [
+          "API keys rotated (< 90 days)",
+          "Secrets masked in headers",
+          "Outbound PII redaction active"
+        ],
+        "rightItems": [
+          "Keys rotated (< 90 days)",
+          "Raw auth headers in logs",
+          "Audit failed immediately"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions verify security requirements: key rotation and secret masking.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Audit two caught raw authorization headers failing the audit immediately.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Automating audits guarantees no service reaches production exposed.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reliability & Circuit Breaker Verification",
+      "codeHash": "b227086256d9dd7a71534b9c2f5614936968fdaa8e158a25dbddc98b9c1bba46",
+      "spec": {
+        "template": "workflow",
+        "title": "Reliability and Fault Tolerance Verification",
+        "stages": [
+          {
+            "id": "timeout",
+            "name": "Timeout Bounds",
+            "subtext": "Strict network timeouts"
+          },
+          {
+            "id": "retries",
+            "name": "Retry Caps",
+            "subtext": "Prevent retry storm"
+          },
+          {
+            "id": "circuit",
+            "name": "Circuit Breaker",
+            "subtext": "Active trip fallbacks"
+          },
+          {
+            "id": "certified",
+            "name": "Resilience Pass",
+            "subtext": "Ready for deployment"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions audit that timeouts are configured and retries are capped.",
+            "activeStageId": "timeout"
+          },
+          {
+            "at": "say6",
+            "caption": "Controls that failed to cap retries were rejected during audit.",
+            "activeStageId": "retries"
+          },
+          {
+            "at": "say8",
+            "caption": "Confirming circuit breakers ensures systems degrade gracefully during outages.",
+            "activeStageId": "certified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Reliability and Fault Tolerance Verification",
+        "stages": [
+          {
+            "id": "timeout",
+            "name": "Timeout Bounds",
+            "subtext": "Strict network timeouts"
+          },
+          {
+            "id": "retries",
+            "name": "Retry Caps",
+            "subtext": "Prevent retry storm"
+          },
+          {
+            "id": "circuit",
+            "name": "Circuit Breaker",
+            "subtext": "Active trip fallbacks"
+          },
+          {
+            "id": "certified",
+            "name": "Resilience Pass",
+            "subtext": "Ready for deployment"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions audit that timeouts are configured and retries are capped.",
+            "activeStageId": "timeout"
+          },
+          {
+            "at": "say6",
+            "caption": "Controls that failed to cap retries were rejected during audit.",
+            "activeStageId": "retries"
+          },
+          {
+            "at": "say8",
+            "caption": "Confirming circuit breakers ensures systems degrade gracefully during outages.",
+            "activeStageId": "certified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Endpoint Health Score & Alert Tier Classification",
+      "codeHash": "d1e9f18e391adc25c28e25fb1b797125d09a953c0de66dd77e235cc7e11ab83d",
+      "spec": {
+        "template": "bars",
+        "title": "Endpoint Health Score and Status Tiers",
+        "items": [
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Scoring functions start at a perfect baseline score of one hundred.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "High error rates and latency plummet scores triggering CRITICAL status.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Health score tiers provide instant situational awareness during deployments.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Endpoint Health Score and Status Tiers",
+        "items": [
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Scoring functions start at a perfect baseline score of one hundred.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "High error rates and latency plummet scores triggering CRITICAL status.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Health score tiers provide instant situational awareness during deployments.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Go-Live Blocker Gate & Automated Audit Decision",
+      "codeHash": "f2bf4f13c4175dd4bf3db9d7c4707ccd7448dbc14741aae0d9cff02a9daef31d",
+      "spec": {
+        "template": "states",
+        "title": "Production Go-Live Blocker Gate Flow",
+        "states": [
+          {
+            "id": "checks",
+            "label": "Audit Checks Evaluated"
+          },
+          {
+            "id": "critical_eval",
+            "label": "Critical Blockers Scan"
+          },
+          {
+            "id": "blocked",
+            "label": "Launch Blocked"
+          },
+          {
+            "id": "authorized",
+            "label": "Authorized for Go-Live"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Verifying failedCriticalChecks is completely empty before authorizing launch.",
+            "current": "critical_eval",
+            "visited": [
+              "checks",
+              "critical_eval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When all critical checks pass deployments are authorized without blockers.",
+            "current": "authorized",
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Automated go-live blockers prevent deployments until conditions are satisfied.",
+            "current": "authorized",
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Production Go-Live Blocker Gate Flow",
+        "states": [
+          {
+            "id": "checks",
+            "label": "Audit Checks Evaluated"
+          },
+          {
+            "id": "critical_eval",
+            "label": "Critical Blockers Scan"
+          },
+          {
+            "id": "blocked",
+            "label": "Launch Blocked"
+          },
+          {
+            "id": "authorized",
+            "label": "Authorized for Go-Live"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Verifying failedCriticalChecks is completely empty before authorizing launch.",
+            "current": "critical_eval",
+            "visited": [
+              "checks",
+              "critical_eval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When all critical checks pass deployments are authorized without blockers.",
+            "current": "authorized",
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Automated go-live blockers prevent deployments until conditions are satisfied.",
+            "current": "authorized",
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive 20-Point Production Readiness Audit Suite",
+      "codeHash": "d657e90f76e9843be3296760a0a0b7252b93dce67c7a2923ff686ee2492a25d7",
+      "spec": {
+        "template": "none",
+        "reason": "Comprehensive 20-Point Production Readiness Audit Suite capstone synthesizing security audits, circuit breakers, health scores, and go-live blocker gates"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Comprehensive 20-Point Production Readiness Audit Suite capstone synthesizing security audits, circuit breakers, health scores, and go-live blocker gates"
+      }
+    }
+  ]
+}

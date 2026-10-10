@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Financial Information eXchange protocol",
+      "codeHash": "0a12055d7d1314956a45da03d7b5e53007d6adb96e0d7f31d18ce73e128764fc",
+      "spec": {
+        "template": "table",
+        "title": "FIX protocol tag value message structure and semantics",
+        "columns": [
+          "MsgType",
+          "Symbol"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Financial Information eXchange standardizes messaging between brokers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MsgType"
+                  },
+                  {
+                    "text": "Symbol"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Structured message payloads encode tag value pairs separated by delimiters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MsgType"
+                  },
+                  {
+                    "text": "Symbol"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ClOrdID"
+                  },
+                  {
+                    "text": "Side"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Tags specify message symbols, order quantities, and execution prices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MsgType"
+                  },
+                  {
+                    "text": "Symbol"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ClOrdID"
+                  },
+                  {
+                    "text": "Side"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "OrderQty"
+                  },
+                  {
+                    "text": "Price"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds a readable version of a new order message.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MsgType"
+                  },
+                  {
+                    "text": "Symbol"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ClOrdID"
+                  },
+                  {
+                    "text": "Side"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "OrderQty"
+                  },
+                  {
+                    "text": "Price"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fields"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "FIX protocol tag value message structure and semantics",
+        "columns": [
+          "MsgType",
+          "Symbol"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Financial Information eXchange standardizes messaging between brokers.",
+            "rows": [
+              {
+                "cells": [
+                  "MsgType",
+                  "Symbol"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Structured message payloads encode tag value pairs separated by delimiters.",
+            "rows": [
+              {
+                "cells": [
+                  "MsgType",
+                  "Symbol"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ClOrdID",
+                  "Side"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Tags specify message symbols, order quantities, and execution prices.",
+            "rows": [
+              {
+                "cells": [
+                  "MsgType",
+                  "Symbol"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ClOrdID",
+                  "Side"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "OrderQty",
+                  "Price"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds a readable version of a new order message.",
+            "rows": [
+              {
+                "cells": [
+                  "MsgType",
+                  "Symbol"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ClOrdID",
+                  "Side"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "OrderQty",
+                  "Price"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "fields",
+                  "names"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Header, body and trailer",
+      "codeHash": "2d160298eac315fa14acdb3b395ee033434025a4b0f56bf38a4d2a08b15718c7",
+      "spec": {
+        "template": "table",
+        "title": "Header framing, body length calculation and checksum trailing",
+        "columns": [
+          "head",
+          "body"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard headers frame each transmission with BeginString and BodyLength tags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "body"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "BodyLength counts transmission characters up to the terminal checksum trailer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "body"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SOH"
+                  },
+                  {
+                    "text": "FIX.4.4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Framing fields let the receiver check integrity before acting on messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "body"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SOH"
+                  },
+                  {
+                    "text": "FIX.4.4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "checksum"
+                  },
+                  {
+                    "text": "ord"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example builds a heartbeat message and prints its constituent parts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "body"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SOH"
+                  },
+                  {
+                    "text": "FIX.4.4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "checksum"
+                  },
+                  {
+                    "text": "ord"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Header framing, body length calculation and checksum trailing",
+        "columns": [
+          "head",
+          "body"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard headers frame each transmission with BeginString and BodyLength tags.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "body"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "BodyLength counts transmission characters up to the terminal checksum trailer.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "body"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SOH",
+                  "FIX.4.4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Framing fields let the receiver check integrity before acting on messages.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "body"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SOH",
+                  "FIX.4.4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "checksum",
+                  "ord"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example builds a heartbeat message and prints its constituent parts.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "body"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SOH",
+                  "FIX.4.4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "checksum",
+                  "ord"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "msg",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating incoming messages",
+      "codeHash": "82bf36cabdc4c216aecbf77cb043af3211150a47869241337d2d770eca81dccd",
+      "spec": {
+        "template": "table",
+        "title": "Checksum verification and corrupted frame rejection",
+        "columns": [
+          "build",
+          "valid"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A receiver rejects corrupted or truncated orders before processing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "build"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reverse searching identifies trailer tokens cleanly across complex payloads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "build"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "rfind"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Invalid frames return False rather than raising unexpected program errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "build"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "rfind"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "False"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example corrupts a message and verifies that checksum catches errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "build"
+                  },
+                  {
+                    "text": "valid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "rfind"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "False"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ord"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Checksum verification and corrupted frame rejection",
+        "columns": [
+          "build",
+          "valid"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A receiver rejects corrupted or truncated orders before processing.",
+            "rows": [
+              {
+                "cells": [
+                  "build",
+                  "valid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reverse searching identifies trailer tokens cleanly across complex payloads.",
+            "rows": [
+              {
+                "cells": [
+                  "build",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "rfind"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Invalid frames return False rather than raising unexpected program errors.",
+            "rows": [
+              {
+                "cells": [
+                  "build",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "rfind"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "False",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example corrupts a message and verifies that checksum catches errors.",
+            "rows": [
+              {
+                "cells": [
+                  "build",
+                  "valid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "rfind"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "False",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ord",
+                  "len"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sessions, logon and sequence numbers",
+      "codeHash": "9ec071c702d827c6c6be9061efb2a197673ed17b09dede5aa9f70c22ad3b2735",
+      "spec": {
+        "template": "table",
+        "title": "Session lifecycle management, heartbeats and sequence gap recovery",
+        "columns": [
+          "expected",
+          "seq"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A FIX session connects two parties using registered company identifiers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "seq"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sessions initiate with Logon and maintain connection health via Heartbeats.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "seq"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "resend_requests"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Detected sequence gaps trigger ResendRequest ranges to replay lost messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "seq"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "resend_requests"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "resend_requests"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks incoming sequence numbers and builds resend requests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "seq"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "resend_requests"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "resend_requests"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "expected"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Session lifecycle management, heartbeats and sequence gap recovery",
+        "columns": [
+          "expected",
+          "seq"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A FIX session connects two parties using registered company identifiers.",
+            "rows": [
+              {
+                "cells": [
+                  "expected",
+                  "seq"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sessions initiate with Logon and maintain connection health via Heartbeats.",
+            "rows": [
+              {
+                "cells": [
+                  "expected",
+                  "seq"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "resend_requests",
+                  "append"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Detected sequence gaps trigger ResendRequest ranges to replay lost messages.",
+            "rows": [
+              {
+                "cells": [
+                  "expected",
+                  "seq"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "resend_requests",
+                  "append"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "expected",
+                  "resend_requests"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks incoming sequence numbers and builds resend requests.",
+            "rows": [
+              {
+                "cells": [
+                  "expected",
+                  "seq"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "resend_requests",
+                  "append"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "expected",
+                  "resend_requests"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "expected"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Execution reports and order state",
+      "codeHash": "3275dd5a3a809af6d1c887087408130e6fbf0b41c9b204a0a5633a61da9bff2a",
+      "spec": {
+        "template": "none",
+        "reason": "Execution reports parsing and cumulative order state transitions."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: build and validate",
+      "codeHash": "b9f978ef322353cd000b4eed4c9152fafebc91b8cc9ba36509458a6808355fc5",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: FIX framing generators and checksum validation."
+      },
+      "filled": {}
+    }
+  ]
+}

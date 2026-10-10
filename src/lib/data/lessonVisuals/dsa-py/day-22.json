@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Weighted graphs",
+      "codeHash": "57e19c38187b6e889f6c007ae03bde3ea9da1ff2878388803630e93d1e03427d",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Weighted graph edges with costs",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "Node A"
+          },
+          {
+            "id": "B",
+            "label": "Node B"
+          },
+          {
+            "id": "C",
+            "label": "Node C"
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": "w: 5"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "label": "w: 1"
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "label": "w: 2"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In a weighted graph each edge has a number like a distance or price.",
+            "highlightNodes": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dijkstra finds the cheapest route from start node to every other node.",
+            "highlightNodes": [
+              "A",
+              "C",
+              "B"
+            ],
+            "highlightEdges": [
+              "A->C",
+              "C->B"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Weighted graph edges with costs",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "Node A"
+          },
+          {
+            "id": "B",
+            "label": "Node B"
+          },
+          {
+            "id": "C",
+            "label": "Node C"
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": "w: 5"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "label": "w: 1"
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "label": "w: 2"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In a weighted graph each edge has a number like a distance or price."
+          },
+          {
+            "at": "say4",
+            "caption": "Dijkstra finds the cheapest route from start node to every other node."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The idea: always settle the closest node",
+      "codeHash": "4e444697c285b33fc4ad1a09dad4f77ecfe0e448fa0ec58b8ad8b23ce12b8ba4",
+      "spec": {
+        "template": "table",
+        "title": "Greedy distance relaxation step",
+        "columns": [
+          "Candidate Node",
+          "Current Best Distance",
+          "Relaxation Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Pick the unsettled node with the smallest known distance to settle.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Node C"
+                  },
+                  {
+                    "text": "dist: 1"
+                  },
+                  {
+                    "text": "Settle node"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Relax edges to update neighbours whenever a cheaper path is found.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Node C"
+                  },
+                  {
+                    "text": "dist: 1"
+                  },
+                  {
+                    "text": "Settle node"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node B"
+                  },
+                  {
+                    "text": "dist: 3"
+                  },
+                  {
+                    "text": "Relax edge via Node C"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Greedy distance relaxation step",
+        "columns": [
+          "Candidate Node",
+          "Current Best Distance",
+          "Relaxation Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Pick the unsettled node with the smallest known distance to settle.",
+            "rows": [
+              {
+                "cells": [
+                  "Node C",
+                  "dist: 1",
+                  "Settle node"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Relax edges to update neighbours whenever a cheaper path is found.",
+            "rows": [
+              {
+                "cells": [
+                  "Node C",
+                  "dist: 1",
+                  "Settle node"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node B",
+                  "dist: 3",
+                  "Relax edge via Node C"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dijkstra with heapq",
+      "codeHash": "0d253e02148db80d8f1bab408b2c36794b2cc070be752b9e8e1760bcbe034b72",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Dijkstra priority queue tracking minimum distances",
+        "kind": "queue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Push the start node with distance zero onto the heap queue.",
+            "items": [
+              {
+                "text": "(dist 0, Node A)"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pop smallest entry and skip if current distance is already better.",
+            "items": [
+              {
+                "text": "popped: (0, A)"
+              },
+              {
+                "text": "pushed: (1, C)"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Dijkstra priority queue tracking minimum distances",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Push the start node with distance zero onto the heap queue.",
+            "mode": "stack",
+            "items": [
+              "(dist 0, Node A)"
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pop smallest entry and skip if current distance is already better.",
+            "mode": "stack",
+            "items": [
+              "popped: (0, A)",
+              "pushed: (1, C)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recovering the actual route",
+      "codeHash": "9219ce97fca6142d8f5c2c38d44e29c6fd439c3fb50a41ac2475ee3209717029",
+      "spec": {
+        "template": "none",
+        "reason": "Parent pointer backtracking to reconstruct shortest path sequence."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Parent pointer backtracking to reconstruct shortest path sequence."
+      }
+    },
+    {
+      "partTitle": "Network delay time",
+      "codeHash": "cfdf5aa5344048fb38b470b50e386c5b1ae4da2c7b125c88cde20efd7bc3c516",
+      "spec": {
+        "template": "none",
+        "reason": "Max distance computation to determine full broadcast arrival time."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Max distance computation to determine full broadcast arrival time."
+      }
+    },
+    {
+      "partTitle": "Why negative weights break Dijkstra",
+      "codeHash": "ddf3332aa148eebe739454c98801e3567d9a374acffe23c0c14180a41226016a",
+      "spec": {
+        "template": "compare",
+        "title": "Dijkstra failure on negative edge weights vs Bellman-Ford",
+        "leftLabel": "Dijkstra Algorithm",
+        "rightLabel": "Bellman-Ford Algorithm",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Negative edges violate greedy settlement and produce incorrect answers.",
+            "left": {
+              "code": "greedy settle",
+              "result": {
+                "text": "fails on negative"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "multiple passes",
+              "result": {
+                "text": "correct"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Use Bellman-Ford for negative edge graphs relaxing edges repeatedly.",
+            "left": {
+              "code": "Dijkstra",
+              "result": {
+                "text": "O((V+E) log V)"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Bellman-Ford",
+              "result": {
+                "text": "O(V * E)"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dijkstra failure on negative edge weights vs Bellman-Ford",
+        "leftLabel": "Dijkstra Algorithm",
+        "rightLabel": "Bellman-Ford Algorithm",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Negative edges violate greedy settlement and produce incorrect answers.",
+            "left": {
+              "code": "greedy settle",
+              "result": "fails on negative",
+              "tone": "error",
+              "checks": [
+                "fails on negative"
+              ]
+            },
+            "right": {
+              "code": "multiple passes",
+              "result": "correct",
+              "tone": "ok",
+              "checks": [
+                "correct"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Use Bellman-Ford for negative edge graphs relaxing edges repeatedly.",
+            "left": {
+              "code": "Dijkstra",
+              "result": "O((V+E) log V)",
+              "tone": "data",
+              "checks": [
+                "O((V+E) log V)"
+              ]
+            },
+            "right": {
+              "code": "Bellman-Ford",
+              "result": "O(V * E)",
+              "tone": "ok",
+              "checks": [
+                "O(V * E)"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

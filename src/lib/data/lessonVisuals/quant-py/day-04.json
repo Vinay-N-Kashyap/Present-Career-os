@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why split an order?",
+      "codeHash": "4a57173175f2e92613cdb903661c021579838102376a39249b9dc783cfd3d9b2",
+      "spec": {
+        "template": "table",
+        "title": "Order slicing impact mitigation and execution tradeoffs",
+        "columns": [
+          "at_once",
+          "in_slices"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Executing large parent orders at once walks deep into market depth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "at_once"
+                  },
+                  {
+                    "text": "in_slices"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Execution algorithms slice parent orders into small child orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "at_once"
+                  },
+                  {
+                    "text": "in_slices"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "slices"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Gradual execution reduces market impact while balancing adverse price drift.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "at_once"
+                  },
+                  {
+                    "text": "in_slices"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "slices"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "tick"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares the cost of buying at once versus buying in slices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "at_once"
+                  },
+                  {
+                    "text": "in_slices"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "slices"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "impact"
+                  },
+                  {
+                    "text": "tick"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "at_once"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Order slicing impact mitigation and execution tradeoffs",
+        "columns": [
+          "at_once",
+          "in_slices"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Executing large parent orders at once walks deep into market depth.",
+            "rows": [
+              {
+                "cells": [
+                  "at_once",
+                  "in_slices"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Execution algorithms slice parent orders into small child orders.",
+            "rows": [
+              {
+                "cells": [
+                  "at_once",
+                  "in_slices"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "slices"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Gradual execution reduces market impact while balancing adverse price drift.",
+            "rows": [
+              {
+                "cells": [
+                  "at_once",
+                  "in_slices"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "slices"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "impact",
+                  "tick"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares the cost of buying at once versus buying in slices.",
+            "rows": [
+              {
+                "cells": [
+                  "at_once",
+                  "in_slices"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "slices"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "impact",
+                  "tick"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "at_once",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The VWAP benchmark",
+      "codeHash": "cddfdc41425cdd5631dbb1f445c3d1dfa988ddd4ecb4780aba26c85131b8b228",
+      "spec": {
+        "template": "table",
+        "title": "VWAP benchmark tracking and diurnal volume profiles",
+        "columns": [
+          "vwap",
+          "profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "VWAP measures volume weighted average prices over a trading session.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vwap"
+                  },
+                  {
+                    "text": "profile"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Execution pacing distributes volume proportional to market activity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vwap"
+                  },
+                  {
+                    "text": "profile"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "market_trades"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Historical trading patterns construct an expected intraday volume profile.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vwap"
+                  },
+                  {
+                    "text": "profile"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "market_trades"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example computes market VWAP across trades with a volume profile.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vwap"
+                  },
+                  {
+                    "text": "profile"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "market_trades"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vwap"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "VWAP benchmark tracking and diurnal volume profiles",
+        "columns": [
+          "vwap",
+          "profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "VWAP measures volume weighted average prices over a trading session.",
+            "rows": [
+              {
+                "cells": [
+                  "vwap",
+                  "profile"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Execution pacing distributes volume proportional to market activity.",
+            "rows": [
+              {
+                "cells": [
+                  "vwap",
+                  "profile"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "market_trades",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Historical trading patterns construct an expected intraday volume profile.",
+            "rows": [
+              {
+                "cells": [
+                  "vwap",
+                  "profile"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "market_trades",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example computes market VWAP across trades with a volume profile.",
+            "rows": [
+              {
+                "cells": [
+                  "vwap",
+                  "profile"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "market_trades",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "vwap",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a VWAP schedule",
+      "codeHash": "33eb068e66846d286a0dba182ef0896b6b37c0b6e8672991813eb8d0a56e01e5",
+      "spec": {
+        "template": "table",
+        "title": "VWAP discrete bucket allocation and remainder distribution",
+        "columns": [
+          "naive",
+          "fixed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Volume profiles dictate scheduled quantities across successive intervals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "naive"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent rounding introduces cumulative discrepancies in total shares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "naive"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "pcts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Allocating the remainder to the final interval preserves total volume.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "naive"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "pcts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "append"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows the rounding problem and the fix side by side.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "naive"
+                  },
+                  {
+                    "text": "fixed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "pcts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "append"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fixed"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "VWAP discrete bucket allocation and remainder distribution",
+        "columns": [
+          "naive",
+          "fixed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Volume profiles dictate scheduled quantities across successive intervals.",
+            "rows": [
+              {
+                "cells": [
+                  "naive",
+                  "fixed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent rounding introduces cumulative discrepancies in total shares.",
+            "rows": [
+              {
+                "cells": [
+                  "naive",
+                  "fixed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "pcts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Allocating the remainder to the final interval preserves total volume.",
+            "rows": [
+              {
+                "cells": [
+                  "naive",
+                  "fixed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "pcts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "append",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows the rounding problem and the fix side by side.",
+            "rows": [
+              {
+                "cells": [
+                  "naive",
+                  "fixed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "pcts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "append",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "fixed",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TWAP: equal slices over time",
+      "codeHash": "ce6713f8d31c6fbb33414c84681b1e171b5fbe1dac2b3d8dea7f0a6a0ab8f35d",
+      "spec": {
+        "template": "table",
+        "title": "Time-weighted uniform order distribution schedule",
+        "columns": [
+          "base",
+          "extra"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "TWAP executes equal slices at regular intervals across the order duration.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "extra"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Constant pacing provides steady execution when volume profiles are absent.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "extra"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "qty"
+                  },
+                  {
+                    "text": "duration_min"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The divmod operation calculates base slices and remaining odd shares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "extra"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "qty"
+                  },
+                  {
+                    "text": "duration_min"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "interval_min"
+                  },
+                  {
+                    "text": "divmod"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example builds TWAP schedules for discrete execution intervals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "extra"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "qty"
+                  },
+                  {
+                    "text": "duration_min"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "interval_min"
+                  },
+                  {
+                    "text": "divmod"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "twap_schedule"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Time-weighted uniform order distribution schedule",
+        "columns": [
+          "base",
+          "extra"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "TWAP executes equal slices at regular intervals across the order duration.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "extra"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Constant pacing provides steady execution when volume profiles are absent.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "extra"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "qty",
+                  "duration_min"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The divmod operation calculates base slices and remaining odd shares.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "extra"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "qty",
+                  "duration_min"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "interval_min",
+                  "divmod"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example builds TWAP schedules for discrete execution intervals.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "extra"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "qty",
+                  "duration_min"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "interval_min",
+                  "divmod"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "twap_schedule",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing and measuring an algorithm",
+      "codeHash": "5eba010cab71925b5162060e4bf08c3ba0b69be82f7a3c8ca31f6f17c6262b96",
+      "spec": {
+        "template": "none",
+        "reason": "Choosing and measuring execution algorithms."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: schedules",
+      "codeHash": "f952564b6358d6941f826c99c213ea4cd706d9c1eb55566cdc3f4c4e3d8796f6",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: schedules and shortfall simulation."
+      },
+      "filled": {}
+    }
+  ]
+}

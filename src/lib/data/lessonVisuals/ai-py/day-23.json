@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Prompting, RAG or fine-tuning?",
+      "codeHash": "ed20f3448f42d3ea49985c9276832bd0c6d69ef01264b252ce28479fbfa3fc8e",
+      "spec": {
+        "template": "none",
+        "reason": "Decision criteria taxonomy comparing prompting RAG and parameter fine-tuning."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Why full fine-tuning is expensive",
+      "codeHash": "6bcce6e0499b61230528c0fd5b0f9405ca0313354709ee0f36b46e6764c02960",
+      "spec": {
+        "template": "table",
+        "title": "Full parameter fine-tuning GPU memory requirements by model scale",
+        "columns": [
+          "model_size",
+          "weights_vram",
+          "finetune_vram"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weights alone take about fourteen gigabytes in sixteen bit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "full fine-tuning"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Training needs gradients and optimiser states taking sixteen bytes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "full fine-tuning"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Parameter efficient fine-tuning PEFT trains only small number of parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "full fine-tuning"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "GB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Full parameter fine-tuning GPU memory requirements by model scale",
+        "columns": [
+          "model_size",
+          "weights_vram",
+          "finetune_vram"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weights alone take about fourteen gigabytes in sixteen bit.",
+            "rows": [
+              {
+                "cells": [
+                  "model",
+                  "weights",
+                  "full fine-tuning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "model",
+                  "weights",
+                  "GB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Training needs gradients and optimiser states taking sixteen bytes.",
+            "rows": [
+              {
+                "cells": [
+                  "model",
+                  "weights",
+                  "full fine-tuning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "model",
+                  "weights",
+                  "GB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Parameter efficient fine-tuning PEFT trains only small number of parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "model",
+                  "weights",
+                  "full fine-tuning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "model",
+                  "weights",
+                  "GB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LoRA: small adapters",
+      "codeHash": "97dedf6bf78684c5fb7be9e9b3846e9dcaee4c8a735fe5f89db664e80dbb54a1",
+      "spec": {
+        "template": "compare",
+        "title": "Full parameter matrix update versus low-rank factorization",
+        "leftLabel": "Full Matrix",
+        "rightLabel": "LoRA Factorization",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LoRA freezes original weights and learns two thin matrices.",
+            "left": {
+              "code": "full update matrix stores 4 x 4 numbers",
+              "result": {
+                "text": "instead of"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "low rank factorization A x B stores 4 + 4 numbers",
+              "result": {
+                "text": "numbers stored:"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Product A times B is full update built from fewer numbers.",
+            "left": {
+              "code": "quadratic parameter explosion d x d",
+              "result": {
+                "text": "instead of"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "linear parameter footprint 2 x d x r",
+              "result": {
+                "text": "numbers stored:"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Adapter is small file allowing one base model to swap adapters.",
+            "left": {
+              "code": "huge duplicate base model checkpoints",
+              "result": {
+                "text": "instead of"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "tiny modular adapter weights per tenant",
+              "result": {
+                "text": "numbers stored:"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Full parameter matrix update versus low-rank factorization",
+        "leftLabel": "Full Matrix",
+        "rightLabel": "LoRA Factorization",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LoRA freezes original weights and learns two thin matrices.",
+            "left": {
+              "code": "full update matrix stores 4 x 4 numbers",
+              "result": "instead of",
+              "tone": "data",
+              "checks": [
+                "instead of"
+              ]
+            },
+            "right": {
+              "code": "low rank factorization A x B stores 4 + 4 numbers",
+              "result": "numbers stored:",
+              "tone": "ok",
+              "checks": [
+                "numbers stored:"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Product A times B is full update built from fewer numbers.",
+            "left": {
+              "code": "quadratic parameter explosion d x d",
+              "result": "instead of",
+              "tone": "data",
+              "checks": [
+                "instead of"
+              ]
+            },
+            "right": {
+              "code": "linear parameter footprint 2 x d x r",
+              "result": "numbers stored:",
+              "tone": "ok",
+              "checks": [
+                "numbers stored:"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Adapter is small file allowing one base model to swap adapters.",
+            "left": {
+              "code": "huge duplicate base model checkpoints",
+              "result": "instead of",
+              "tone": "data",
+              "checks": [
+                "instead of"
+              ]
+            },
+            "right": {
+              "code": "tiny modular adapter weights per tenant",
+              "result": "numbers stored:",
+              "tone": "ok",
+              "checks": [
+                "numbers stored:"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting LoRA parameters",
+      "codeHash": "cdba65101f561008dc2608f69aac6e2ba2e5b116045b11e3fd7948b0cd0ca87f",
+      "spec": {
+        "template": "table",
+        "title": "LoRA trainable parameter count and percentage by rank",
+        "columns": [
+          "rank_r",
+          "matrix_dim",
+          "trainable_pct"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lora parameters returns full matrix size and trainable count.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "trainable"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "percent"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Total trainable parameters are usually under one percent of the model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "trainable"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "percent"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Higher rank gives adapter more capacity at more memory.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "trainable"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "percent"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "LoRA trainable parameter count and percentage by rank",
+        "columns": [
+          "rank_r",
+          "matrix_dim",
+          "trainable_pct"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lora parameters returns full matrix size and trainable count.",
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "full",
+                  "trainable"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rank",
+                  "full",
+                  "percent"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Total trainable parameters are usually under one percent of the model.",
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "full",
+                  "trainable"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rank",
+                  "full",
+                  "percent"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Higher rank gives adapter more capacity at more memory.",
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "full",
+                  "trainable"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rank",
+                  "full",
+                  "percent"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantisation and QLoRA",
+      "codeHash": "5d341764bb5013eb65730b058f41f270a78535ac28ad3f7ea056a6b9fc591e4b",
+      "spec": {
+        "template": "bars",
+        "title": "GPU memory consumption across model precision bit widths",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quantisation stores weights with fewer bits reducing memory.",
+            "bars": [
+              {
+                "label": "bits_16",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "bits_8",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "bits_4",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "QLoRA loads frozen base model in four bit and trains LoRA adapters.",
+            "bars": [
+              {
+                "label": "bits_16",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "bits_8",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "bits_4",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Practice estimate_vram_gb calculates bytes plus overhead string.",
+            "bars": [
+              {
+                "label": "bits_16",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "bits_8",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "bits_4",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "GPU memory consumption across model precision bit widths",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quantisation stores weights with fewer bits reducing memory.",
+            "bars": [
+              {
+                "label": "bits_16",
+                "value": 16,
+                "tone": "error"
+              },
+              {
+                "label": "bits_8",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "bits_4",
+                "value": 4,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "QLoRA loads frozen base model in four bit and trains LoRA adapters.",
+            "bars": [
+              {
+                "label": "bits_16",
+                "value": 16,
+                "tone": "error"
+              },
+              {
+                "label": "bits_8",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "bits_4",
+                "value": 4,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Practice estimate_vram_gb calculates bytes plus overhead string.",
+            "bars": [
+              {
+                "label": "bits_16",
+                "value": 16,
+                "tone": "error"
+              },
+              {
+                "label": "bits_8",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "bits_4",
+                "value": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Preparing training data",
+      "codeHash": "914cb3a6e5893093eecba25232ddad07ca1e06e114e3dc6289e31dbdfc1e8c2b",
+      "spec": {
+        "template": "none",
+        "reason": "Training dataset curation JSONL format validation and train-test splits."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 18,
+  "promptSha": "5527644bcc5e3d2b36fb87de3b347c40d1a63270e6e361f9a8396037472407e4",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Ingress vs LoadBalancer Services: Cost & Architecture",
+      "codeHash": "bc16625743493cfbb22141c4949955361faa32c0a55a8eb159fef70b20a76741",
+      "spec": {
+        "template": "compare",
+        "title": "Multiple load balancer cost overhead versus shared ingress gateway",
+        "leftLabel": "Multiple Cloud LoadBalancers",
+        "rightLabel": "Single Ingress Controller",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Standard solution establishes ingress controller managing application traffic.",
+            "left": {
+              "code": "loadBalancerCost",
+              "result": {
+                "text": "serviceCount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ingressCost",
+              "result": {
+                "text": "costPerCloudLb"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Single cloud load balancer at boundary consolidates external routing.",
+            "left": {
+              "code": "monthlySavings",
+              "result": {
+                "text": "serviceCount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "compareNetworkingCosts",
+              "result": {
+                "text": "costPerCloudLb"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Multiple load balancer cost overhead versus shared ingress gateway",
+        "leftLabel": "Multiple Cloud LoadBalancers",
+        "rightLabel": "Single Ingress Controller",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Standard solution establishes ingress controller managing application traffic.",
+            "left": {
+              "code": "loadBalancerCost",
+              "result": {
+                "text": "serviceCount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ingressCost",
+              "result": {
+                "text": "costPerCloudLb"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Single cloud load balancer at boundary consolidates external routing.",
+            "left": {
+              "code": "monthlySavings",
+              "result": {
+                "text": "serviceCount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "compareNetworkingCosts",
+              "result": {
+                "text": "costPerCloudLb"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ingress Controllers: NGINX, Traefik & Envoy",
+      "codeHash": "c3599810445d51684b34224d4fd6dbb3541ea5c0d403d28e45e1bcd078b3e28e",
+      "spec": {
+        "template": "compare",
+        "title": "Ingress controller architecture NGINX versus Traefik proxies",
+        "leftLabel": "NGINX Ingress Controller",
+        "rightLabel": "Traefik Ingress Controller",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Open source controller serves as prevalent reverse proxy across clusters.",
+            "left": {
+              "code": "className: 'nginx'",
+              "result": {
+                "text": "nginx"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "coreProxy: 'NGINX'",
+              "result": {
+                "text": "NGINX"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Controller monitors manifests reloading configuration without dropping links.",
+            "left": {
+              "code": "className: 'traefik'",
+              "result": {
+                "text": "traefik"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "coreProxy: 'Traefik'",
+              "result": {
+                "text": "Traefik"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Ingress controller architecture NGINX versus Traefik proxies",
+        "leftLabel": "NGINX Ingress Controller",
+        "rightLabel": "Traefik Ingress Controller",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Open source controller serves as prevalent reverse proxy across clusters.",
+            "left": {
+              "code": "className: 'nginx'",
+              "result": {
+                "text": "nginx"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "coreProxy: 'NGINX'",
+              "result": {
+                "text": "NGINX"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Controller monitors manifests reloading configuration without dropping links.",
+            "left": {
+              "code": "className: 'traefik'",
+              "result": {
+                "text": "traefik"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "coreProxy: 'Traefik'",
+              "result": {
+                "text": "Traefik"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Host-Based & Path-Based Routing Configurations",
+      "codeHash": "41ae3db0d401a1cc47ebf9925f61b8a67131209e70ee7a60d2adaa321e8a83d2",
+      "spec": {
+        "template": "compare",
+        "title": "Host-based and path-based Layer 7 traffic routing rules",
+        "leftLabel": "Authentication Route (/v1/auth)",
+        "rightLabel": "Billing Route (/v1/billing)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Host-based routing inspects domain header directing requests to services.",
+            "left": {
+              "code": "host: 'api.pinit.com'",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetService: 'auth-service'",
+              "result": {
+                "text": "auth-service"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Path-based routing evaluates request url path matching prefix rules.",
+            "left": {
+              "code": "path: '/v1/auth'",
+              "result": {
+                "text": "auth-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetService: 'billing-service'",
+              "result": {
+                "text": "billing-service"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Host-based and path-based Layer 7 traffic routing rules",
+        "leftLabel": "Authentication Route (/v1/auth)",
+        "rightLabel": "Billing Route (/v1/billing)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Host-based routing inspects domain header directing requests to services.",
+            "left": {
+              "code": "host: 'api.pinit.com'",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetService: 'auth-service'",
+              "result": {
+                "text": "auth-service"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Path-based routing evaluates request url path matching prefix rules.",
+            "left": {
+              "code": "path: '/v1/auth'",
+              "result": {
+                "text": "auth-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetService: 'billing-service'",
+              "result": {
+                "text": "billing-service"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kubernetes TLS Secrets & SSL Termination",
+      "codeHash": "8cebb50d2c602197466303f388dc5225fb7c636d33577e2fe296fce2f46fb827",
+      "spec": {
+        "template": "compare",
+        "title": "Centralized TLS secret validation and SSL termination at ingress",
+        "leftLabel": "Kubernetes TLS Secret",
+        "rightLabel": "Domain Subject Matching",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Termination at ingress decrypts payload relieving microservice containers.",
+            "left": {
+              "code": "name: 'api-pinit-tls'",
+              "result": {
+                "text": "api-pinit-tls"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "domain: 'api.pinit.com'",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Certificates reside in dedicated secret types containing keys and chain.",
+            "left": {
+              "code": "type: 'kubernetes.io/tls'",
+              "result": {
+                "text": "kubernetes.io/tls"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "validateTlsSecret",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Centralized TLS secret validation and SSL termination at ingress",
+        "leftLabel": "Kubernetes TLS Secret",
+        "rightLabel": "Domain Subject Matching",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Termination at ingress decrypts payload relieving microservice containers.",
+            "left": {
+              "code": "name: 'api-pinit-tls'",
+              "result": {
+                "text": "api-pinit-tls"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "domain: 'api.pinit.com'",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Certificates reside in dedicated secret types containing keys and chain.",
+            "left": {
+              "code": "type: 'kubernetes.io/tls'",
+              "result": {
+                "text": "kubernetes.io/tls"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "validateTlsSecret",
+              "result": {
+                "text": "api.pinit.com"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated TLS with cert-manager & Let's Encrypt",
+      "codeHash": "c5b0be7a17bee42a7b948efdee17754d95c5e3de8b9ecd9c24dd0c35108871dd",
+      "spec": {
+        "template": "states",
+        "title": "cert-manager automated ACME certificate renewal lifecycle states",
+        "states": [
+          {
+            "id": "idle",
+            "label": "IDLE"
+          },
+          {
+            "id": "renew",
+            "label": "RENEW"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated manager supervises certificate validity and automated challenges.",
+            "currentState": "idle",
+            "transition": {
+              "from": "idle",
+              "to": "idle",
+              "label": "IDLE"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Manager initiates automated certificate renewal prior to expiration window.",
+            "currentState": "renew",
+            "transition": {
+              "from": "idle",
+              "to": "renew",
+              "label": "RENEW"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "cert-manager automated ACME certificate renewal lifecycle states",
+        "states": [
+          {
+            "id": "idle",
+            "label": "IDLE"
+          },
+          {
+            "id": "renew",
+            "label": "RENEW"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated manager supervises certificate validity and automated challenges.",
+            "currentState": "idle",
+            "transition": {
+              "from": "idle",
+              "to": "idle",
+              "label": "IDLE"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Manager initiates automated certificate renewal prior to expiration window.",
+            "currentState": "renew",
+            "transition": {
+              "from": "idle",
+              "to": "renew",
+              "label": "RENEW"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Ingress Manifest with Rate Limiting & SSL Redirects",
+      "codeHash": "c9f6dafa77c7f6c6e2bd5899a4e77ae1fdc97751f32747afb1adc2dba17c846e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 26,
+  "promptSha": "85d5a85ce55b776efb7b02a659feedb2d3f31d9c83087b3df0a38585e5c4b269",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "KMS Fundamentals & Customer Managed Key Architecture",
+      "codeHash": "66fd673e108d1ca2e187f8c84a20706b23c9476b964f865cdd0c3a42ebc87646",
+      "spec": {
+        "template": "states",
+        "title": "Customer managed key lifecycle states",
+        "states": [
+          {
+            "id": "keyEnabled",
+            "label": "CMK State Enabled (Active)"
+          },
+          {
+            "id": "keyDisabled",
+            "label": "CMK State Disabled"
+          },
+          {
+            "id": "pendingDeletion",
+            "label": "Pending Deletion (Waiting Period)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say8",
+            "caption": "Each key has fundamental properties including a unique key state.",
+            "active": "keyEnabled"
+          },
+          {
+            "at": "say9",
+            "caption": "Scheduling deletion enforces a waiting period preventing permanent loss.",
+            "active": "pendingDeletion"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Customer managed key lifecycle states",
+        "states": [
+          {
+            "id": "keyEnabled",
+            "label": "CMK State Enabled (Active)"
+          },
+          {
+            "id": "keyDisabled",
+            "label": "CMK State Disabled"
+          },
+          {
+            "id": "pendingDeletion",
+            "label": "Pending Deletion (Waiting Period)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say8",
+            "caption": "Each key has fundamental properties including a unique key state.",
+            "active": "keyEnabled"
+          },
+          {
+            "at": "say9",
+            "caption": "Scheduling deletion enforces a waiting period preventing permanent loss.",
+            "active": "pendingDeletion"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "KMS Key Policies & IAM Authorization Model",
+      "codeHash": "81e847ebd37eb1f6dbccfccb4c773cc470cd9638db770d259b65f7b0b8b8deef",
+      "spec": {
+        "template": "table",
+        "title": "KMS key policy permissions and privilege separation",
+        "columns": [
+          "Principal Role",
+          "Granted KMS Action",
+          "Authorization Scope",
+          "Privilege Separation"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The key policy document takes precedence over standard policies.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Separation of encryption and decryption privileges protects data.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "KMS key policy permissions and privilege separation",
+        "columns": [
+          "Principal Role",
+          "Granted KMS Action",
+          "Authorization Scope",
+          "Privilege Separation"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The key policy document takes precedence over standard policies.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Separation of encryption and decryption privileges protects data.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Envelope Encryption: GenerateDataKey Workflow",
+      "codeHash": "160752dee89909b3399942cf1f13c2d99dde529a70086f4860bea9b926837372",
+      "spec": {
+        "template": "workflow",
+        "title": "Envelope encryption GenerateDataKey execution stages",
+        "stages": [
+          {
+            "id": "callKms",
+            "name": "Call GenerateDataKey",
+            "subtext": "KMS CMK API"
+          },
+          {
+            "id": "keysReturned",
+            "name": "Plaintext & Ciphertext DEK",
+            "subtext": "Two Key Blobs"
+          },
+          {
+            "id": "encryptLocal",
+            "name": "Local Wire-Speed Encrypt",
+            "subtext": "Plaintext Zeroized"
+          },
+          {
+            "id": "packageEnvelope",
+            "name": "Store Data + Encrypted DEK",
+            "subtext": "Envelope Package"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Envelope encryption uses keys that generate ephemeral data keys.",
+            "activeStageId": "callKms",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The encrypted ciphertext blob is stored alongside the encrypted data.",
+            "activeStageId": "packageEnvelope",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Envelope encryption GenerateDataKey execution stages",
+        "stages": [
+          {
+            "id": "callKms",
+            "name": "Call GenerateDataKey",
+            "subtext": "KMS CMK API"
+          },
+          {
+            "id": "keysReturned",
+            "name": "Plaintext & Ciphertext DEK",
+            "subtext": "Two Key Blobs"
+          },
+          {
+            "id": "encryptLocal",
+            "name": "Local Wire-Speed Encrypt",
+            "subtext": "Plaintext Zeroized"
+          },
+          {
+            "id": "packageEnvelope",
+            "name": "Store Data + Encrypted DEK",
+            "subtext": "Envelope Package"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Envelope encryption uses keys that generate ephemeral data keys.",
+            "activeStageId": "callKms",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The encrypted ciphertext blob is stored alongside the encrypted data.",
+            "activeStageId": "packageEnvelope",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Envelope Decryption & Key Caching Strategy",
+      "codeHash": "567d555645ff49ae464e0361f9442ffbe5fbf09fd4657993ce4843dc3fba1ce9",
+      "spec": {
+        "template": "compare",
+        "title": "Direct KMS decrypt compared to in-memory data key caching",
+        "leftLabel": "Direct KMS Decrypt Per Request",
+        "rightLabel": "Data Key Caching In Memory",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The application sends only the encrypted ciphertext blob to decrypt.",
+            "left": {
+              "code": "Call KMS Every Record",
+              "result": {
+                "text": "API Rate Limit Risk"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Memory Key Cache Hit",
+              "result": {
+                "text": "Wire-Speed Decrypt"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Data key caching caches plaintext keys in memory for a configurable time.",
+            "left": {
+              "code": "kpi: \"High API Invocations\"",
+              "result": {
+                "text": "Full Latency & Cost"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "kpi: \"99% Call Reduction\"",
+              "result": {
+                "text": "Configurable TTL Cache"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Direct KMS decrypt compared to in-memory data key caching",
+        "leftLabel": "Direct KMS Decrypt Per Request",
+        "rightLabel": "Data Key Caching In Memory",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The application sends only the encrypted ciphertext blob to decrypt.",
+            "left": {
+              "code": "Call KMS Every Record",
+              "result": {
+                "text": "API Rate Limit Risk"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Memory Key Cache Hit",
+              "result": {
+                "text": "Wire-Speed Decrypt"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Data key caching caches plaintext keys in memory for a configurable time.",
+            "left": {
+              "code": "kpi: \"High API Invocations\"",
+              "result": {
+                "text": "Full Latency & Cost"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "kpi: \"99% Call Reduction\"",
+              "result": {
+                "text": "Configurable TTL Cache"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automatic Key Rotation & CloudTrail Auditing",
+      "codeHash": "37e2982caf1268068969aacb24eb4602d200a6c4e709ae293aeac79696744bc3",
+      "spec": {
+        "template": "bars",
+        "title": "Key rotation lifecycle and CloudTrail audit ingestion",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Automatic annual rotation rotates material while preserving the key alias.",
+            "bars": [
+              {
+                "label": "Rotated Key Material Versions",
+                "value": 2,
+                "max": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "Active Encryption Key Version",
+                "value": 2,
+                "max": 5,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Every KMS call is automatically logged in CloudTrail with request metadata.",
+            "bars": [
+              {
+                "label": "Audit Trail Ingestion Rate",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "CloudTrail Audit Compliance",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Key rotation lifecycle and CloudTrail audit ingestion",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Automatic annual rotation rotates material while preserving the key alias.",
+            "bars": [
+              {
+                "label": "Rotated Key Material Versions",
+                "value": 2,
+                "max": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "Active Encryption Key Version",
+                "value": 2,
+                "max": 5,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Every KMS call is automatically logged in CloudTrail with request metadata.",
+            "bars": [
+              {
+                "label": "Audit Trail Ingestion Rate",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "CloudTrail Audit Compliance",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise KMS Security Audit & Compliance Verification",
+      "codeHash": "c49e51dc8090c61c3637199430a79e8ca010f00e023008b98017547bbddb94f6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

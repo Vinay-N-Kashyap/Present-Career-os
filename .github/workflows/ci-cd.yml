@@ -1,4 +1,4 @@
-name: PinIT AI Voice System CI/CD Pipeline
+name: PinIT AI Career OS CI/CD Pipeline
 
 on:
   push:
@@ -7,49 +7,40 @@ on:
     branches: [ main, master ]
 
 jobs:
-  test-and-build:
-    name: Build, Test & Lint
+  guard:
+    name: Task Scope, Secrets & Typecheck
     runs-on: ubuntu-latest
-
-    env:
-      # Edge-TTS fallback is safe, fast, and avoids downloading 300MB model weights
-      KOKORO_REAL: "false"
+    outputs:
+      content_only: ${{ steps.task_scope.outputs.content_only }}
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
-          cache: "pip"
-          cache-dependency-path: "voice-service/requirements.txt"
+          fetch-depth: 0
 
-      - name: Install Python Dependencies
-        working-directory: voice-service
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest httpx nest-asyncio
-
-      - name: Run TTS Engine Unit Tests
-        working-directory: voice-service
-        run: pytest voice-service/tests -v
-
-      - name: Run Security & Middleware Tests
-        working-directory: voice-service
-        run: pytest voice-service/tests/test_middleware -v
-
-      - name: Run Real-Time Streaming Tests
-        working-directory: voice-service
-        run: pytest voice-service/tests/test_stream -v
-
-      - name: Set up Node.js for Frontend
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
+
+      - name: Task scope
+        id: task_scope
+        run: node scripts/ci/check-task-scope.mjs
+
+      - name: Secret scan
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz | tar -xz -C /tmp gitleaks
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"
+          elif [ -n "${{ github.event.before }}" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ] && git rev-parse --verify "${{ github.event.before }}" >/dev/null 2>&1; then
+            RANGE="${{ github.event.before }}..${{ github.sha }}"
+          else
+            RANGE="-1"
+          fi
+          echo "Scanning commits in range: $RANGE"
+          /tmp/gitleaks git --log-opts="$RANGE" --verbose --redact
 
       - name: Install Node Dependencies
         run: npm ci
@@ -57,17 +48,140 @@ jobs:
       - name: Run TypeScript Typecheck
         run: npx tsc --noEmit
 
-      - name: Run Production Build
-        run: npx next build
+  tests:
+    name: Unit & Integration Tests (Shard ${{ matrix.shard }}/4)
+    needs: guard
+    if: needs.guard.outputs.content_only != 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
 
-      - name: Run Lint
-        run: npm run lint
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Build Docker Container
-        run: docker build -t pinit-voice-service:latest voice-service/
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
 
-  web-tests:
-    name: Web app tests (database rules and API behaviour)
+      - name: Install Node Dependencies
+        run: npm ci
+
+      - name: Record Shard File List
+        run: TEST_SHARD=${{ matrix.shard }}/4 node scripts/utils/run-tests.cjs --list > shard-${{ matrix.shard }}-files.txt
+
+      - name: Upload Shard File List Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.shard }}-files
+          path: shard-${{ matrix.shard }}-files.txt
+
+      - name: Run Shard Tests
+        run: TEST_SHARD=${{ matrix.shard }}/4 npm test
+
+  tests-complete:
+    name: Verify Test Shard Completeness
+    needs: tests
+    if: always() && needs.tests.result == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Download Shard 1 List
+        uses: actions/download-artifact@v4
+        with:
+          name: shard-1-files
+          path: .
+
+      - name: Download Shard 2 List
+        uses: actions/download-artifact@v4
+        with:
+          name: shard-2-files
+          path: .
+
+      - name: Download Shard 3 List
+        uses: actions/download-artifact@v4
+        with:
+          name: shard-3-files
+          path: .
+
+      - name: Download Shard 4 List
+        uses: actions/download-artifact@v4
+        with:
+          name: shard-4-files
+          path: .
+
+      - name: Verify All Test Files Ran Exactly Once
+        run: |
+          node -e "
+            const fs = require('fs');
+            const { execSync } = require('child_process');
+
+            const fullListOutput = execSync('node scripts/utils/run-tests.cjs --list', { encoding: 'utf8' }).trim();
+            const expectedFiles = fullListOutput.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+
+            const shardFiles = [];
+            for (let i = 1; i <= 4; i++) {
+              const file = 'shard-' + i + '-files.txt';
+              if (!fs.existsSync(file)) {
+                console.error('Error: ' + file + ' not found!');
+                process.exit(1);
+              }
+              const lines = fs.readFileSync(file, 'utf8').trim().split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+              if (lines.length === 0) {
+                console.error('Error: Shard ' + i + ' has 0 files!');
+                process.exit(1);
+              }
+              shardFiles.push(...lines);
+            }
+
+            const seen = new Set();
+            for (const f of shardFiles) {
+              if (seen.has(f)) {
+                console.error('Error: Duplicate test file found across shards: ' + f);
+                process.exit(1);
+              }
+              seen.add(f);
+            }
+
+            const expectedSet = new Set(expectedFiles);
+            if (seen.size !== expectedSet.size) {
+              console.error('Error: Shards ran ' + seen.size + ' files, expected ' + expectedSet.size);
+              process.exit(1);
+            }
+
+            for (const f of expectedFiles) {
+              if (!seen.has(f)) {
+                console.error('Error: Missing test file from shards: ' + f);
+                process.exit(1);
+              }
+            }
+
+            const summaryLine = '4 shards ran ' + seen.size + ' of ' + expectedFiles.length + ' test files';
+            console.log('✅ ' + summaryLine);
+            if (process.env.GITHUB_STEP_SUMMARY) {
+              fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summaryLine + '\n');
+            }
+          "
+
+      - name: Visuals Status
+        run: npm run visuals:status
+
+  build-and-e2e:
+    name: Build & E2E Playwright Tests
+    needs: guard
+    if: needs.guard.outputs.content_only != 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -83,8 +197,87 @@ jobs:
       - name: Install Node Dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-      - name: Verify Production Build
-        run: npx next build && echo "Build successful" || (echo "Build FAILED" && exit 1)
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Normal Production Build (Test Mode Disabled)
+        run: npm run build
+
+      - name: Run Test Mode Security E2E Test (Asserts ?testMode=true redirects to /login)
+        run: npx playwright test tests/e2e/testmode-security.spec.ts
+
+      - name: CI E2E Build (With NEXT_PUBLIC_E2E_TEST_MODE=1)
+        run: NEXT_PUBLIC_E2E_TEST_MODE=1 npm run build
+
+      - name: Run Playwright Layout, Contrast & Screenshot Tests
+        run: NEXT_PUBLIC_E2E_TEST_MODE=1 npx playwright test tests/e2e/avatar-dock.spec.ts tests/e2e/mobile-layout.spec.ts tests/e2e/contrast.spec.ts tests/e2e/screenshots.spec.ts
+
+      - name: Upload Visual Screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-visual-screenshots
+          path: screenshots/*.png
+          if-no-files-found: error
+
+  content:
+    name: Content Fast Path
+    needs: guard
+    if: needs.guard.outputs.content_only == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install Node Dependencies
+        run: npm ci
+
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Check Day Visuals
+        run: |
+          if npm run | grep -q "visuals:check"; then
+            npm run visuals:check
+          fi
+
+      - name: Check Manifest
+        run: |
+          if [ -f scripts/ci/check-visual-manifest.mjs ]; then
+            node scripts/ci/check-visual-manifest.mjs
+          fi
+
+      - name: Normal Production Build
+        run: npm run build
+
+      - name: Run Screenshots
+        run: NEXT_PUBLIC_E2E_TEST_MODE=1 npm run build && NEXT_PUBLIC_E2E_TEST_MODE=1 npx playwright test tests/e2e/screenshots.spec.ts
+
+      - name: Upload Visual Screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-visual-screenshots
+          path: screenshots/*.png
+          if-no-files-found: ignore

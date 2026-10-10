@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Letting a model use your code",
+      "codeHash": "27e24cb2ced0d0a5a6a7b226f0371fdfe142f8ed6e5ac8be05663f82d54f22b6",
+      "spec": {
+        "template": "sequence",
+        "title": "Tool call dispatch and execution request loop",
+        "actors": [
+          "model",
+          "app"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The model replies with a structured tool call request for external code.",
+            "messages": [
+              {
+                "from": "model",
+                "to": "app",
+                "label": "call get_order_status(A-1042)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Your code runs the function and returns result data to the model.",
+            "messages": [
+              {
+                "from": "model",
+                "to": "app",
+                "label": "call get_order_status(A-1042)",
+                "tone": "data"
+              },
+              {
+                "from": "app",
+                "to": "model",
+                "label": "result: out for delivery",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Tool call dispatch and execution request loop",
+        "actors": [
+          "model",
+          "app"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The model replies with a structured tool call request for external code.",
+            "messages": [
+              {
+                "from": "model",
+                "to": "app",
+                "label": "call get_order_status(A-1042)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Your code runs the function and returns result data to the model.",
+            "messages": [
+              {
+                "from": "model",
+                "to": "app",
+                "label": "call get_order_status(A-1042)",
+                "tone": "data"
+              },
+              {
+                "from": "app",
+                "to": "model",
+                "label": "result: out for delivery",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Declaring a tool",
+      "codeHash": "1873b5e6d2f8c2089c5e44d74868b3cf4a07191335d122e28589faff1735ecc2",
+      "spec": {
+        "template": "table",
+        "title": "Structural elements of a valid tool declaration",
+        "columns": [
+          "field_name",
+          "field_type",
+          "purpose"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tool declaration describes name description and parameter schema details.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "string"
+                  },
+                  {
+                    "text": "action identifier"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "description"
+                  },
+                  {
+                    "text": "string"
+                  },
+                  {
+                    "text": "tool usage prompt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Valid tools must provide a name description and parameters dictionary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "string"
+                  },
+                  {
+                    "text": "action identifier"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "description"
+                  },
+                  {
+                    "text": "string"
+                  },
+                  {
+                    "text": "tool usage prompt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parameters"
+                  },
+                  {
+                    "text": "object"
+                  },
+                  {
+                    "text": "schema property constraints"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Structural elements of a valid tool declaration",
+        "columns": [
+          "field_name",
+          "field_type",
+          "purpose"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tool declaration describes name description and parameter schema details.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "string",
+                  "action identifier"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "description",
+                  "string",
+                  "tool usage prompt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Valid tools must provide a name description and parameters dictionary.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "string",
+                  "action identifier"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "description",
+                  "string",
+                  "tool usage prompt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "parameters",
+                  "object",
+                  "schema property constraints"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dispatching tool calls safely",
+      "codeHash": "342ec1f6b8339944b39c3e9f1e1eb441bc8296219d1b212c61280e8cd4c2f3c8",
+      "spec": {
+        "template": "compare",
+        "title": "Tool call dispatch routing and verification",
+        "leftLabel": "Undeclared Call",
+        "rightLabel": "Declared Tool",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dispatching checks whether the tool matches a declared handler before running.",
+            "left": {
+              "code": "call delete_all()",
+              "result": {
+                "text": "UNKNOWN_TOOL"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "call add(x=2, y=3)",
+              "result": {
+                "text": "success: 5"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Only functions explicitly mapped to handlers in code are permitted to run.",
+            "left": {
+              "code": "unmapped name",
+              "result": {
+                "text": "rejected by dispatcher"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "registered handler",
+              "result": {
+                "text": "safely executed"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Tool call dispatch routing and verification",
+        "leftLabel": "Undeclared Call",
+        "rightLabel": "Declared Tool",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dispatching checks whether the tool matches a declared handler before running.",
+            "left": {
+              "code": "call delete_all()",
+              "result": "UNKNOWN_TOOL",
+              "tone": "error",
+              "checks": [
+                "UNKNOWN_TOOL"
+              ]
+            },
+            "right": {
+              "code": "call add(x=2, y=3)",
+              "result": "success: 5",
+              "tone": "ok",
+              "checks": [
+                "success: 5"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Only functions explicitly mapped to handlers in code are permitted to run.",
+            "left": {
+              "code": "unmapped name",
+              "result": "rejected by dispatcher",
+              "tone": "error",
+              "checks": [
+                "rejected by dispatcher"
+              ]
+            },
+            "right": {
+              "code": "registered handler",
+              "result": "safely executed",
+              "tone": "ok",
+              "checks": [
+                "safely executed"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sending results back to the model",
+      "codeHash": "434e4d0480e63780f6834c72dab70ac58a608ae083fdf9fb8b8f878a09793431",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-turn assistant and tool message history reconstruction loop."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Multi-turn assistant and tool message history reconstruction loop."
+      }
+    },
+    {
+      "partTitle": "Validating arguments and staying safe",
+      "codeHash": "4dbf07af34098b4a60e45fc0b87f7c8a2034b1b8f184884cbc4e516e0ef4bc1e",
+      "spec": {
+        "template": "bars",
+        "title": "Argument schema conformance and safety gate checks",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validating arguments ensures numbers are positive and strings match format.",
+            "bars": [
+              {
+                "label": "valid_amount",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "negative_amount",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Restricting permissions gives each tool the least power needed for tasks.",
+            "bars": [
+              {
+                "label": "read_only_access",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "delete_permission",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Argument schema conformance and safety gate checks",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validating arguments ensures numbers are positive and strings match format.",
+            "bars": [
+              {
+                "label": "valid_amount",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "negative_amount",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Restricting permissions gives each tool the least power needed for tasks.",
+            "bars": [
+              {
+                "label": "read_only_access",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "delete_permission",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Many tools, one registry",
+      "codeHash": "ec18cc1b5d2d02da9fbd0b0eeb34fe4205cb6eda021bad437997273ada9e67b7",
+      "spec": {
+        "template": "none",
+        "reason": "Central registry mapping for tool declarations and execution handlers."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Central registry mapping for tool declarations and execution handlers."
+      }
+    }
+  ]
+}

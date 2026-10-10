@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 8,
+  "promptSha": "81b4d80ce0cef85cef88d2fb141da4b4421e75c17803a9c3053580d908bbd9c0",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Load Balancing Layer 7 (ALB) vs Layer 4 (NLB)",
+      "codeHash": "36ca525c93898644650c4a6fd2d0546e7fe2fb7ac7e64505c94a9a0ac388e100",
+      "spec": {
+        "template": "compare",
+        "title": "Application Load Balancer compared to Network Load Balancer",
+        "leftLabel": "ALB (Layer 7)",
+        "rightLabel": "NLB (Layer 4)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Application load balancers inspect application layer traffic and paths.",
+            "left": {
+              "code": "HTTP/HTTPS Routing",
+              "result": {
+                "text": "Layer 7 ALB"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "TCP/UDP Passthrough",
+              "result": {
+                "text": "Layer 4 NLB"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Network load balancers operate at layer four with ultra low latency.",
+            "left": {
+              "code": "Cookie & Header Parsing",
+              "result": {
+                "text": "Feature Rich"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Millions of Requests/Sec",
+              "result": {
+                "text": "Ultra-Low Latency"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Application Load Balancer compared to Network Load Balancer",
+        "leftLabel": "ALB (Layer 7)",
+        "rightLabel": "NLB (Layer 4)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Application load balancers inspect application layer traffic and paths.",
+            "left": {
+              "code": "HTTP/HTTPS Routing",
+              "result": {
+                "text": "Layer 7 ALB"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "TCP/UDP Passthrough",
+              "result": {
+                "text": "Layer 4 NLB"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Network load balancers operate at layer four with ultra low latency.",
+            "left": {
+              "code": "Cookie & Header Parsing",
+              "result": {
+                "text": "Feature Rich"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Millions of Requests/Sec",
+              "result": {
+                "text": "Ultra-Low Latency"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Target Groups and Routing Algorithms",
+      "codeHash": "c44830c86fc587de366fe0152d057db2d5afccef836c4ccbfb3ad3ab14377a05",
+      "spec": {
+        "template": "workflow",
+        "title": "Target group routing algorithms and target dispatching",
+        "stages": [
+          {
+            "id": "client",
+            "name": "HTTP Client",
+            "subtext": "Inbound Request"
+          },
+          {
+            "id": "alb",
+            "name": "ALB Listener",
+            "subtext": "Routing Rules"
+          },
+          {
+            "id": "targetGroup",
+            "name": "Target Group",
+            "subtext": "Algorithm Dispatch"
+          },
+          {
+            "id": "target",
+            "name": "EC2 Target",
+            "subtext": "Healthy Host"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Target groups route incoming requests to registered backend containers.",
+            "activeStageId": "targetGroup",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Round robin distributes requests evenly across all healthy targets.",
+            "activeStageId": "target",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Target group routing algorithms and target dispatching",
+        "stages": [
+          {
+            "id": "client",
+            "name": "HTTP Client",
+            "subtext": "Inbound Request"
+          },
+          {
+            "id": "alb",
+            "name": "ALB Listener",
+            "subtext": "Routing Rules"
+          },
+          {
+            "id": "targetGroup",
+            "name": "Target Group",
+            "subtext": "Algorithm Dispatch"
+          },
+          {
+            "id": "target",
+            "name": "EC2 Target",
+            "subtext": "Healthy Host"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Target groups route incoming requests to registered backend containers.",
+            "activeStageId": "targetGroup",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Round robin distributes requests evenly across all healthy targets.",
+            "activeStageId": "target",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Active Health Checks and Unhealthy Host Deregistration",
+      "codeHash": "185b4a253ec71130af7f49d1b764ae32f626d5d639154bce774ad436bfea727d",
+      "spec": {
+        "template": "states",
+        "title": "Active health probe checks and target status lifecycle",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "Target Healthy"
+          },
+          {
+            "id": "probing",
+            "label": "Probing Health Endpoint"
+          },
+          {
+            "id": "unhealthy",
+            "label": "Deregistered Unhealthy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Load balancers send periodic health check pings verifying availability.",
+            "active": "probing"
+          },
+          {
+            "at": "say6",
+            "caption": "Timeout defines how long ALB waits for response before counting failure.",
+            "active": "unhealthy"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Active health probe checks and target status lifecycle",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "Target Healthy"
+          },
+          {
+            "id": "probing",
+            "label": "Probing Health Endpoint"
+          },
+          {
+            "id": "unhealthy",
+            "label": "Deregistered Unhealthy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Load balancers send periodic health check pings verifying availability.",
+            "active": "probing"
+          },
+          {
+            "at": "say6",
+            "caption": "Timeout defines how long ALB waits for response before counting failure.",
+            "active": "unhealthy"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Connection Draining (Deregistration Delay)",
+      "codeHash": "4de8ce87d4ca70b74cc69155207641481bb68caae58fd22158b1edd8e5d6d928",
+      "spec": {
+        "template": "sequence",
+        "title": "Connection draining and graceful target deregistration",
+        "actors": [
+          {
+            "id": "alb",
+            "name": "Load Balancer"
+          },
+          {
+            "id": "target",
+            "name": "Deregistering Target"
+          },
+          {
+            "id": "client",
+            "name": "Active Client"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Severing active connections immediately causes broken errors for users.",
+            "from": "client",
+            "to": "target",
+            "label": "Inflight Request",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Existing transactions finish during draining window before shutdown.",
+            "from": "target",
+            "to": "alb",
+            "label": "Complete Response",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Connection draining and graceful target deregistration",
+        "actors": [
+          {
+            "id": "alb",
+            "name": "Load Balancer"
+          },
+          {
+            "id": "target",
+            "name": "Deregistering Target"
+          },
+          {
+            "id": "client",
+            "name": "Active Client"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Severing active connections immediately causes broken errors for users.",
+            "from": "client",
+            "to": "target",
+            "label": "Inflight Request",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Existing transactions finish during draining window before shutdown.",
+            "from": "target",
+            "to": "alb",
+            "label": "Complete Response",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Content-Based Routing: Host, Path, and Header Rules",
+      "codeHash": "9d3adc2b3d712e3e514f3f94d79755727be657f6c3e833ae3372412fbb9cd87d",
+      "spec": {
+        "template": "table",
+        "title": "Content-based routing path conditions and target groups",
+        "columns": [
+          "Rule Priority",
+          "Condition Match",
+          "Forward Target"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Traditional setups required dedicated load balancers multiplying costs.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Path conditions forward API requests to backend services directly.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Content-based routing path conditions and target groups",
+        "columns": [
+          "Rule Priority",
+          "Condition Match",
+          "Forward Target"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Traditional setups required dedicated load balancers multiplying costs.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Path conditions forward API requests to backend services directly.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Zone Load Balancing & TLS Termination",
+      "codeHash": "ffcd2f05129ad13afe58e86ca70f6dacc1176dc7ea07315266f8f7a70efc45fb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

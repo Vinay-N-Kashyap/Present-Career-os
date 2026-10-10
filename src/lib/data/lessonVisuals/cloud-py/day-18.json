@@ -1,0 +1,909 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why queues",
+      "codeHash": "50d506f19e20c3fc606df7b57bb10fd401bd6da1f992623a8faab264f5733257",
+      "spec": {
+        "template": "table",
+        "title": "Decoupled message producer and consumer architecture",
+        "columns": [
+          "component",
+          "role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Message queues sit between producers and consumers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "producer"
+                  },
+                  {
+                    "text": "sends work"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decoupling provides resilience and smooths traffic bursts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "producer"
+                  },
+                  {
+                    "text": "sends work"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "queue"
+                  },
+                  {
+                    "text": "messages wait safely"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Workers scale dynamically as queue depth changes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "producer"
+                  },
+                  {
+                    "text": "sends work"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "queue"
+                  },
+                  {
+                    "text": "messages wait safely"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "consumer"
+                  },
+                  {
+                    "text": "picks it up"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Managed queues scale to handle high traffic volumes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "producer"
+                  },
+                  {
+                    "text": "sends work"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "queue"
+                  },
+                  {
+                    "text": "messages wait safely"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "consumer"
+                  },
+                  {
+                    "text": "picks it up"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SQS"
+                  },
+                  {
+                    "text": "fully managed queue"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Decoupled message producer and consumer architecture",
+        "columns": [
+          "component",
+          "role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Message queues sit between producers and consumers.",
+            "rows": [
+              {
+                "cells": [
+                  "producer",
+                  "sends work"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decoupling provides resilience and smooths traffic bursts.",
+            "rows": [
+              {
+                "cells": [
+                  "producer",
+                  "sends work"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "queue",
+                  "messages wait safely"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Workers scale dynamically as queue depth changes.",
+            "rows": [
+              {
+                "cells": [
+                  "producer",
+                  "sends work"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "queue",
+                  "messages wait safely"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "consumer",
+                  "picks it up"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Managed queues scale to handle high traffic volumes.",
+            "rows": [
+              {
+                "cells": [
+                  "producer",
+                  "sends work"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "queue",
+                  "messages wait safely"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "consumer",
+                  "picks it up"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SQS",
+                  "fully managed queue"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Receive, process, delete: the visibility timeout",
+      "codeHash": "3c56cd83386b21771690526ed279387108821e7620fb2f6eae412a7a49427e81",
+      "spec": {
+        "template": "table",
+        "title": "Visibility timeout and idempotent message lifecycle",
+        "columns": [
+          "id",
+          "body"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The visibility timeout hides a message from others.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "m1"
+                  },
+                  {
+                    "text": "charge order 17"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Consumers delete processed messages explicitly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "m1"
+                  },
+                  {
+                    "text": "charge order 17"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A consumer crashes before deleting the message.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "m1"
+                  },
+                  {
+                    "text": "charge order 17"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Idempotent consumers handle occasional message redelivery.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "m1"
+                  },
+                  {
+                    "text": "charge order 17"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Visibility timeout and idempotent message lifecycle",
+        "columns": [
+          "id",
+          "body"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The visibility timeout hides a message from others.",
+            "rows": [
+              {
+                "cells": [
+                  "m1",
+                  "charge order 17"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Consumers delete processed messages explicitly.",
+            "rows": [
+              {
+                "cells": [
+                  "m1",
+                  "charge order 17"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A consumer crashes before deleting the message.",
+            "rows": [
+              {
+                "cells": [
+                  "m1",
+                  "charge order 17"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Idempotent consumers handle occasional message redelivery.",
+            "rows": [
+              {
+                "cells": [
+                  "m1",
+                  "charge order 17"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Standard and FIFO queues",
+      "codeHash": "f0262f970484b6f493cbd53c9cc36ea1e0f02bf14b3ca34f36aa024c4f7a2e46",
+      "spec": {
+        "template": "table",
+        "title": "Standard versus FIFO queue ordering comparison",
+        "columns": [
+          "kind",
+          "amount"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standard queues deliver messages with best effort ordering.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "deposit"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict FIFO queues maintain exact processing order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "deposit"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "withdraw"
+                  },
+                  {
+                    "text": "80"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Message groups preserve order while processing in parallel.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "deposit"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "withdraw"
+                  },
+                  {
+                    "text": "80"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "deposit"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows how transaction ordering prevents failure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "deposit"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "withdraw"
+                  },
+                  {
+                    "text": "80"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "deposit"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Standard versus FIFO queue ordering comparison",
+        "columns": [
+          "kind",
+          "amount"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standard queues deliver messages with best effort ordering.",
+            "rows": [
+              {
+                "cells": [
+                  "deposit",
+                  "100"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict FIFO queues maintain exact processing order.",
+            "rows": [
+              {
+                "cells": [
+                  "deposit",
+                  "100"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "withdraw",
+                  "80"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Message groups preserve order while processing in parallel.",
+            "rows": [
+              {
+                "cells": [
+                  "deposit",
+                  "100"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "withdraw",
+                  "80"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "deposit",
+                  "20"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows how transaction ordering prevents failure.",
+            "rows": [
+              {
+                "cells": [
+                  "deposit",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "withdraw",
+                  "80"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "deposit",
+                  "20"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FIFO deduplication",
+      "codeHash": "61556560b9de23b77dbb2b57384a2cc1f20e5b908af216cfd5a13593af962f29",
+      "spec": {
+        "template": "table",
+        "title": "FIFO deduplication window and duplicate rejection",
+        "columns": [
+          "dedup_id",
+          "t"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FIFO queues track unique identifiers to remove duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recent duplicate message sends are dropped silently.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deduplication protects against network timeout retries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pay-18"
+                  },
+                  {
+                    "text": "12"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example verifies that duplicated sends are dropped.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pay-18"
+                  },
+                  {
+                    "text": "12"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pay-17"
+                  },
+                  {
+                    "text": "320"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "FIFO deduplication window and duplicate rejection",
+        "columns": [
+          "dedup_id",
+          "t"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FIFO queues track unique identifiers to remove duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  "pay-17",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recent duplicate message sends are dropped silently.",
+            "rows": [
+              {
+                "cells": [
+                  "pay-17",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pay-17",
+                  "4"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deduplication protects against network timeout retries.",
+            "rows": [
+              {
+                "cells": [
+                  "pay-17",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pay-17",
+                  "4"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "pay-18",
+                  "12"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example verifies that duplicated sends are dropped.",
+            "rows": [
+              {
+                "cells": [
+                  "pay-17",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pay-17",
+                  "4"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "pay-18",
+                  "12"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pay-17",
+                  "320"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Long polling, batches and scaling consumers",
+      "codeHash": "96a9216ce43c1ae5441f1b39d776508737a3e5505038a28db14ac9f0503ed8be",
+      "spec": {
+        "template": "none",
+        "reason": "Long polling and scaling consumers."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: build the queue",
+      "codeHash": "6eb9ad814f761d31d2a497bc9fb3c516140a356228e5c7180863ea8a49cb9fd9",
+      "spec": {
+        "template": "none",
+        "reason": "Queue implementation practice."
+      },
+      "filled": {}
+    }
+  ]
+}

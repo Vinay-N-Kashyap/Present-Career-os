@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Graphs and how to store them",
+      "codeHash": "49e8c3a9d977128a3d663c7aecd3b5a88ecea2b92953b015c59aac495fb1511e",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Graph nodes connected by undirected edges",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "Node A"
+          },
+          {
+            "id": "B",
+            "label": "Node B"
+          },
+          {
+            "id": "C",
+            "label": "Node C"
+          },
+          {
+            "id": "D",
+            "label": "Node D"
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": "edge"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "label": "edge"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "label": "edge"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "label": "edge"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A graph connects a set of nodes or vertices with edges.",
+            "highlightNodes": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "An adjacency list maps each node to the list of its neighbours.",
+            "highlightNodes": [
+              "A",
+              "B",
+              "C"
+            ],
+            "highlightEdges": [
+              "A->B",
+              "A->C"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Graph nodes connected by undirected edges",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "Node A"
+          },
+          {
+            "id": "B",
+            "label": "Node B"
+          },
+          {
+            "id": "C",
+            "label": "Node C"
+          },
+          {
+            "id": "D",
+            "label": "Node D"
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": "edge"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "label": "edge"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "label": "edge"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "label": "edge"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A graph connects a set of nodes or vertices with edges."
+          },
+          {
+            "at": "say3",
+            "caption": "An adjacency list maps each node to the list of its neighbours."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BFS: shortest path in steps",
+      "codeHash": "fda0a3564371b781623522b6e69d5d261d1644eac8dc06afeab6227e159ca24f",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Breadth-first search queue tracking distance",
+        "kind": "queue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Breadth-first search explores nodes in order of distance from start.",
+            "items": [
+              {
+                "text": "start (A, dist 0)"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Use a queue of node and distance pairs alongside a visited set.",
+            "items": [
+              {
+                "text": "neighbour (B, dist 1)"
+              },
+              {
+                "text": "neighbour (C, dist 1)"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Breadth-first search queue tracking distance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Breadth-first search explores nodes in order of distance from start.",
+            "mode": "stack",
+            "items": [
+              "start (A, dist 0)"
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Use a queue of node and distance pairs alongside a visited set.",
+            "mode": "stack",
+            "items": [
+              "neighbour (B, dist 1)",
+              "neighbour (C, dist 1)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DFS: going deep",
+      "codeHash": "825a5ba180d192d4bfb8664181e5de002b1bee654bb30aa8d711aa628e4c43b7",
+      "spec": {
+        "template": "none",
+        "reason": "Depth-first recursive exploration and visited set cycle prevention."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Depth-first recursive exploration and visited set cycle prevention."
+      }
+    },
+    {
+      "partTitle": "Counting connected components",
+      "codeHash": "027acbe37683dcaae101deae1694954ea0000c8774eb60f5c03b17c17c7f3bba",
+      "spec": {
+        "template": "table",
+        "title": "Identifying disconnected components in a graph",
+        "columns": [
+          "Component ID",
+          "Discovered Nodes",
+          "Traversal Status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Count separate connected components across an undirected graph.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Group 1"
+                  },
+                  {
+                    "text": "Nodes A, B, C"
+                  },
+                  {
+                    "text": "Visited via BFS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Start traversal from each unvisited node to mark its whole group.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Group 1"
+                  },
+                  {
+                    "text": "Nodes A, B, C"
+                  },
+                  {
+                    "text": "Visited via BFS"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Group 2"
+                  },
+                  {
+                    "text": "Nodes D, E"
+                  },
+                  {
+                    "text": "Visited via BFS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Identifying disconnected components in a graph",
+        "columns": [
+          "Component ID",
+          "Discovered Nodes",
+          "Traversal Status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Count separate connected components across an undirected graph.",
+            "rows": [
+              {
+                "cells": [
+                  "Group 1",
+                  "Nodes A, B, C",
+                  "Visited via BFS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Start traversal from each unvisited node to mark its whole group.",
+            "rows": [
+              {
+                "cells": [
+                  "Group 1",
+                  "Nodes A, B, C",
+                  "Visited via BFS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Group 2",
+                  "Nodes D, E",
+                  "Visited via BFS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grids are graphs too",
+      "codeHash": "1f5fcddb217aefac6c511cdb2f4ef91330cb901396f0288474feb4dccb28209e",
+      "spec": {
+        "template": "compare",
+        "title": "Explicit adjacency graph versus 2D implicit grid",
+        "leftLabel": "Adjacency Graph",
+        "rightLabel": "Implicit Grid",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each grid cell is a node with neighbours up down left and right.",
+            "left": {
+              "code": "dict edges",
+              "result": {
+                "text": "explicit memory"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "rc bounds",
+              "result": {
+                "text": "implicit 4-way"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Counting islands runs search from every unvisited land cell.",
+            "left": {
+              "code": "components",
+              "result": {
+                "text": "graph search"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "island count",
+              "result": {
+                "text": "grid floodfill"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Explicit adjacency graph versus 2D implicit grid",
+        "leftLabel": "Adjacency Graph",
+        "rightLabel": "Implicit Grid",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each grid cell is a node with neighbours up down left and right.",
+            "left": {
+              "code": "dict edges",
+              "result": "explicit memory",
+              "tone": "data",
+              "checks": [
+                "explicit memory"
+              ]
+            },
+            "right": {
+              "code": "rc bounds",
+              "result": "implicit 4-way",
+              "tone": "ok",
+              "checks": [
+                "implicit 4-way"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Counting islands runs search from every unvisited land cell.",
+            "left": {
+              "code": "components",
+              "result": "graph search",
+              "tone": "data",
+              "checks": [
+                "graph search"
+              ]
+            },
+            "right": {
+              "code": "island count",
+              "result": "grid floodfill",
+              "tone": "ok",
+              "checks": [
+                "grid floodfill"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing BFS or DFS and planning a graph solution",
+      "codeHash": "67d374f1c22cca0ffbebacd3353c760374d467526dd2dbb670c88b964cff372e",
+      "spec": {
+        "template": "none",
+        "reason": "Decision framework choosing between BFS shortest paths and DFS reachability."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Decision framework choosing between BFS shortest paths and DFS reachability."
+      }
+    }
+  ]
+}

@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 15,
+  "promptSha": "f28e7811c8ddc8fb6b8753f013cd90dea9615e592aac61766e2e0cb7ff7c0e2c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Peak Concurrent User (PCU) & Token Generation Demands",
+      "codeHash": "f28e7811c8ddc8fb6b8753f013cd90dea9615e592aac61766e2e0cb7ff7c0e2c",
+      "spec": {
+        "template": "flow",
+        "title": "User Traffic to Token Throughput Demand Flow",
+        "nodes": [
+          {
+            "id": "pcu",
+            "label": "Peak Concurrent Users (100)",
+            "tappable": false
+          },
+          {
+            "id": "freq",
+            "label": "Query Frequency (2/min)",
+            "tappable": false
+          },
+          {
+            "id": "tokens",
+            "label": "Tokens per Query (300)",
+            "tappable": false
+          },
+          {
+            "id": "demand",
+            "label": "Aggregate Demand (1,000 tok/s)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "pcu",
+            "to": "freq"
+          },
+          {
+            "from": "freq",
+            "to": "tokens"
+          },
+          {
+            "from": "tokens",
+            "to": "demand"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Peak Concurrent Users models active users querying simultaneously.",
+            "activeNodes": [
+              "pcu"
+            ],
+            "statusBadge": "modeling"
+          },
+          {
+            "at": "say4",
+            "caption": "Multiplying concurrent users by query frequency yields token demand.",
+            "activeNodes": [
+              "pcu",
+              "freq",
+              "tokens"
+            ],
+            "statusBadge": "multiplying"
+          },
+          {
+            "at": "say7",
+            "caption": "Inference clusters must deliver aggregate token throughput continuously.",
+            "activeNodes": [
+              "demand"
+            ],
+            "statusBadge": "continuous"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "User Traffic to Token Throughput Demand Flow",
+        "nodes": [
+          {
+            "id": "pcu",
+            "label": "Peak Concurrent Users (100)",
+            "tappable": false
+          },
+          {
+            "id": "freq",
+            "label": "Query Frequency (2/min)",
+            "tappable": false
+          },
+          {
+            "id": "tokens",
+            "label": "Tokens per Query (300)",
+            "tappable": false
+          },
+          {
+            "id": "demand",
+            "label": "Aggregate Demand (1,000 tok/s)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "pcu",
+            "to": "freq"
+          },
+          {
+            "from": "freq",
+            "to": "tokens"
+          },
+          {
+            "from": "tokens",
+            "to": "demand"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Peak Concurrent Users models active users querying simultaneously.",
+            "activeNodes": [
+              "pcu"
+            ],
+            "statusBadge": "modeling"
+          },
+          {
+            "at": "say4",
+            "caption": "Multiplying concurrent users by query frequency yields token demand.",
+            "activeNodes": [
+              "pcu",
+              "freq",
+              "tokens"
+            ],
+            "statusBadge": "multiplying"
+          },
+          {
+            "at": "say7",
+            "caption": "Inference clusters must deliver aggregate token throughput continuously.",
+            "activeNodes": [
+              "demand"
+            ],
+            "statusBadge": "continuous"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Maximum Concurrent Batch Capacity per GPU Node",
+      "codeHash": "b545a056ab3d42ff47b518f1b05726c31492b44d57a9c6de5edc436d7393f33c",
+      "spec": {
+        "template": "bars",
+        "title": "GPU Physical VRAM Partitioning (GB)",
+        "bars": [
+          {
+            "label": "Total VRAM",
+            "value": {
+              "text": "24"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Weights & CUDA",
+            "value": {
+              "text": "8"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Available KV Pool",
+            "value": {
+              "text": "16"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Static weights and driver overhead reserve base GPU physical memory.",
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": {
+                  "text": "24"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Remaining memory is available for active Key-Value context streams.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": {
+                  "text": "24"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Admitting streams beyond physical limits triggers GPU memory crashes.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": {
+                  "text": "24"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "GPU Physical VRAM Partitioning (GB)",
+        "bars": [
+          {
+            "label": "Total VRAM",
+            "value": 24,
+            "tone": "data"
+          },
+          {
+            "label": "Weights & CUDA",
+            "value": 8,
+            "tone": "data"
+          },
+          {
+            "label": "Available KV Pool",
+            "value": 16,
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Static weights and driver overhead reserve base GPU physical memory.",
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": 24,
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": 16,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Remaining memory is available for active Key-Value context streams.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": 24,
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": 16,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Admitting streams beyond physical limits triggers GPU memory crashes.",
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": 24,
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": 16,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Node Throughput (Tokens/Sec) and Saturation Limits",
+      "codeHash": "8a884f2e16c37da0004a1c283a1c9dfc9e86bd2841d314da8fae6634724aa23c",
+      "spec": {
+        "template": "compare",
+        "title": "Single-Stream vs Batched Parallel Inference",
+        "leftLabel": "Single-Stream Unbatched",
+        "rightLabel": "Batched Parallel Execution",
+        "leftItems": [
+          "Generates 30 to 40 tokens per second",
+          "Leaves memory bus largely idle",
+          "Single user monopolizes GPU compute",
+          "Low overall hardware cost efficiency"
+        ],
+        "rightItems": [
+          "Processes 8 concurrent streams in parallel",
+          "Yields 238 tokens per second at 85% efficiency",
+          "Saturates high-bandwidth GPU memory bus",
+          "Multiplies throughput across user fleet"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Single unbatched inference streams generate modest tokens per second.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Concurrent batch streams process transfers in parallel multiplying throughput.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Single-Stream vs Batched Parallel Inference",
+        "leftLabel": "Single-Stream Unbatched",
+        "rightLabel": "Batched Parallel Execution",
+        "leftItems": [
+          "Generates 30 to 40 tokens per second",
+          "Leaves memory bus largely idle",
+          "Single user monopolizes GPU compute",
+          "Low overall hardware cost efficiency"
+        ],
+        "rightItems": [
+          "Processes 8 concurrent streams in parallel",
+          "Yields 238 tokens per second at 85% efficiency",
+          "Saturates high-bandwidth GPU memory bus",
+          "Multiplies throughput across user fleet"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Single unbatched inference streams generate modest tokens per second.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Concurrent batch streams process transfers in parallel multiplying throughput.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cluster Replica Scaling & Headroom Margins",
+      "codeHash": "9483a115265ad0bd01cc936e7114b199d23b3b5a64f1b1295a119500c21da862",
+      "spec": {
+        "template": "table",
+        "title": "GPU Replica Capacity Sizing Matrix",
+        "columns": [
+          "Cluster Metric",
+          "Raw Baseline",
+          "Budgeted (+25% Headroom)"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dividing demand by node throughput yields raw minimum GPU replicas needed.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Production clusters maintain an operational headroom safety buffer.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Applying safety margins increases budgeted replica counts for stability.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "GPU Replica Capacity Sizing Matrix",
+        "columns": [
+          "Cluster Metric",
+          "Raw Baseline",
+          "Budgeted (+25% Headroom)"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dividing demand by node throughput yields raw minimum GPU replicas needed.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Production clusters maintain an operational headroom safety buffer.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Applying safety margins increases budgeted replica counts for stability.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autoscaling Trigger Policies & Cooldown Windows",
+      "codeHash": "1c6393f88322db3b0dc7ae84808e8bc3c016ad7a08200a1f5f7b691b8d71229c",
+      "spec": {
+        "template": "states",
+        "title": "Horizontal Pod Autoscaler Lifecycle States",
+        "states": [
+          {
+            "id": "maintain",
+            "label": "MAINTAIN (Normal Load)"
+          },
+          {
+            "id": "scale_up",
+            "label": "SCALE_UP (Surge Detected)"
+          },
+          {
+            "id": "scale_down",
+            "label": "SCALE_DOWN (Idle Lull)"
+          },
+          {
+            "id": "cooldown",
+            "label": "Cooldown Window (5 Min)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Autoscaling signals monitor batch memory utilization and queue wait times.",
+            "current": "maintain",
+            "visited": [
+              "maintain"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exceeding utilization thresholds triggers immediate scale up actions.",
+            "current": "scale_up",
+            "visited": [
+              "maintain",
+              "scale_up"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Autoscalers enforce cooldown stabilization windows preventing flapping.",
+            "current": "cooldown",
+            "visited": [
+              "maintain",
+              "scale_up",
+              "cooldown"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Horizontal Pod Autoscaler Lifecycle States",
+        "states": [
+          {
+            "id": "maintain",
+            "label": "MAINTAIN (Normal Load)"
+          },
+          {
+            "id": "scale_up",
+            "label": "SCALE_UP (Surge Detected)"
+          },
+          {
+            "id": "scale_down",
+            "label": "SCALE_DOWN (Idle Lull)"
+          },
+          {
+            "id": "cooldown",
+            "label": "Cooldown Window (5 Min)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Autoscaling signals monitor batch memory utilization and queue wait times.",
+            "current": "maintain",
+            "visited": [
+              "maintain"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exceeding utilization thresholds triggers immediate scale up actions.",
+            "current": "scale_up",
+            "visited": [
+              "maintain",
+              "scale_up"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Autoscalers enforce cooldown stabilization windows preventing flapping.",
+            "current": "cooldown",
+            "visited": [
+              "maintain",
+              "scale_up",
+              "cooldown"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Capacity Planning Suite (Milestone 2)",
+      "codeHash": "9fd524b8fea7598597cee07136015cf849849516c9959b8432946c9e702930c9",
+      "spec": {
+        "template": "none",
+        "reason": "Production Capacity Planning Suite milestone synthesizing traffic modeling, GPU batch concurrency, throughput scaling, and monthly costs"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Capacity Planning Suite milestone synthesizing traffic modeling, GPU batch concurrency, throughput scaling, and monthly costs"
+      }
+    }
+  ]
+}

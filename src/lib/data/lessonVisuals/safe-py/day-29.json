@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why monitor in production",
+      "codeHash": "a2c2ed06abff05d264612a653bb035d53338e9268612be4981d4571114629afb",
+      "spec": {
+        "template": "table",
+        "title": "Live production safety signals and diagnostic meanings",
+        "columns": [
+          "signals",
+          "meaning"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pre release tests cannot anticipate all live production inputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "signals"
+                  },
+                  {
+                    "text": "meaning"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "signals"
+                  },
+                  {
+                    "text": "retrieval problem"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Monitoring tracks safety metrics and alerts on anomalies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "signals"
+                  },
+                  {
+                    "text": "meaning"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "signals"
+                  },
+                  {
+                    "text": "approval fatigue"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Live production safety signals and diagnostic meanings",
+        "columns": [
+          "signals",
+          "meaning"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pre release tests cannot anticipate all live production inputs.",
+            "rows": [
+              {
+                "cells": [
+                  "signals",
+                  "meaning"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "signals",
+                  "retrieval problem"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Monitoring tracks safety metrics and alerts on anomalies.",
+            "rows": [
+              {
+                "cells": [
+                  "signals",
+                  "meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "signals",
+                  "approval fatigue"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A decision dashboard",
+      "codeHash": "64ae9f0c9bc9e9c921fcb12a2e465cfba57511cf8d05287e276a6b1770de8b1c",
+      "spec": {
+        "template": "table",
+        "title": "Production decision dashboard rates and category counts",
+        "columns": [
+          "decisions",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safety dashboards aggregate guardrail decisions over time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decisions"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ALLOW"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decision counts calculate block and human review rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decisions"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "REVIEW"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production decision dashboard rates and category counts",
+        "columns": [
+          "decisions",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safety dashboards aggregate guardrail decisions over time.",
+            "rows": [
+              {
+                "cells": [
+                  "decisions",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ALLOW",
+                  "counts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decision counts calculate block and human review rates.",
+            "rows": [
+              {
+                "cells": [
+                  "decisions",
+                  "counts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "REVIEW"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Baselines",
+      "codeHash": "d1e0ffaa86116fb625a498ce8bb978a34f14889ac5f68195ad8f842fe1c97fdc",
+      "spec": {
+        "template": "table",
+        "title": "Rolling baseline calculation across metric windows",
+        "columns": [
+          "rates",
+          "window"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A baseline reflects the average value over a recent observation window.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "window"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "window"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rolling baselines dynamically adapt as the underlying system changes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "window"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "rates"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Rolling baseline calculation across metric windows",
+        "columns": [
+          "rates",
+          "window"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A baseline reflects the average value over a recent observation window.",
+            "rows": [
+              {
+                "cells": [
+                  "rates",
+                  "window"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rates",
+                  "window"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rolling baselines dynamically adapt as the underlying system changes.",
+            "rows": [
+              {
+                "cells": [
+                  "rates",
+                  "window"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "rates",
+                  "rates"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spike alerts",
+      "codeHash": "214fe84f39e0500509fb209398f48f0932adc63927f4cec28c9fa8ec0afd75ee",
+      "spec": {
+        "template": "table",
+        "title": "Spike detection and threshold multiplier evaluation",
+        "columns": [
+          "rates",
+          "spikes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A metric spike occurs when observations surge well above baseline.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "spikes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "window"
+                  },
+                  {
+                    "text": "factor"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sudden jumps in block rate signal potential attack campaigns.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "spikes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "spikes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Spike detection and threshold multiplier evaluation",
+        "columns": [
+          "rates",
+          "spikes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A metric spike occurs when observations surge well above baseline.",
+            "rows": [
+              {
+                "cells": [
+                  "rates",
+                  "spikes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "window",
+                  "factor"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sudden jumps in block rate signal potential attack campaigns.",
+            "rows": [
+              {
+                "cells": [
+                  "rates",
+                  "spikes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "rates",
+                  "spikes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Alerts people trust",
+      "codeHash": "c4df1dcd6319eb5ec47858191bfdb55bb701a9144e828ca330dc0f2f1621a812",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Monitoring in the pipeline",
+      "codeHash": "bc42bf5f71c32d42fdbfcbd505f65c7e2dcde18ce1b374a93fa1b0378683f5a4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

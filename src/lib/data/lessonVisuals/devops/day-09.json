@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 9,
+  "promptSha": "9b96ecb56f0b6d309945c3aea7cad18293c5c4da609a225532d2f1c10b8fa664",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "GitHub Actions CI Architecture & Mental Model",
+      "codeHash": "fc1a176cbdb61e7d8c4b6c85393a471dd402867989b8f96c71dc96c1eafdb540",
+      "spec": {
+        "template": "workflow",
+        "title": "Continuous integration workflow execution stages",
+        "stages": [
+          {
+            "id": "lint",
+            "name": "Lint",
+            "subtext": "lint-and-typecheck"
+          },
+          {
+            "id": "test",
+            "name": "Test",
+            "subtext": "unit-tests"
+          },
+          {
+            "id": "build",
+            "name": "Build",
+            "subtext": "build-docker-image"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automation architecture models workflows events jobs steps and runners.",
+            "activeStageId": "lint",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say8",
+            "caption": "Independent jobs inside workflow execute in parallel for rapid feedback.",
+            "activeStageId": "build",
+            "statusBadge": "passed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Continuous integration workflow execution stages",
+        "stages": [
+          {
+            "id": "lint",
+            "name": "Lint",
+            "subtext": "lint-and-typecheck"
+          },
+          {
+            "id": "test",
+            "name": "Test",
+            "subtext": "unit-tests"
+          },
+          {
+            "id": "build",
+            "name": "Build",
+            "subtext": "build-docker-image"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automation architecture models workflows events jobs steps and runners.",
+            "activeStageId": "lint",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say8",
+            "caption": "Independent jobs inside workflow execute in parallel for rapid feedback.",
+            "activeStageId": "build",
+            "statusBadge": "passed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Event Triggers & Path Filtering for Efficient Pipelines",
+      "codeHash": "07c394ab638cbc1dbfff0ff94dd366c661abb5bf5725bf98edaebde69155a72f",
+      "spec": {
+        "template": "compare",
+        "title": "Granular path filtering versus universal trigger overhead",
+        "leftLabel": "Documentation Change",
+        "rightLabel": "Application Code Change",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Running full test suites on documentation edits wastes runner minutes.",
+            "left": {
+              "code": "README.md",
+              "result": {
+                "text": "README.md"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "src/index.ts",
+              "result": {
+                "text": "push"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Path filtering ignores changes that do not affect application code.",
+            "left": {
+              "code": "pathsIgnore",
+              "result": {
+                "text": "README.md"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "paths",
+              "result": {
+                "text": "main"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Granular path filtering versus universal trigger overhead",
+        "leftLabel": "Documentation Change",
+        "rightLabel": "Application Code Change",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Running full test suites on documentation edits wastes runner minutes.",
+            "left": {
+              "code": "README.md",
+              "result": {
+                "text": "README.md"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "src/index.ts",
+              "result": {
+                "text": "push"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Path filtering ignores changes that do not affect application code.",
+            "left": {
+              "code": "pathsIgnore",
+              "result": {
+                "text": "README.md"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "paths",
+              "result": {
+                "text": "main"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Runner Environments: GitHub-Hosted vs Self-Hosted",
+      "codeHash": "1031b332d8262b5d57026de3cf081efc1ac7f0851c01242df53e1d484acee43c",
+      "spec": {
+        "template": "compare",
+        "title": "GitHub-hosted ephemeral runners versus self-hosted runners",
+        "leftLabel": "GitHub-Hosted (ubuntu-latest)",
+        "rightLabel": "Self-Hosted Runner",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Hosted runners boot up fresh and are destroyed after job completion.",
+            "left": {
+              "code": "name: 'ubuntu-latest'",
+              "result": {
+                "text": "ubuntu-latest"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'self-hosted-k8s'",
+              "result": {
+                "text": "self-hosted-k8s"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Organizations with compliance requirements operate private runners.",
+            "left": {
+              "code": "costModel: 'Per Minute'",
+              "result": {
+                "text": "ubuntu-latest"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "costModel: 'Hardware Maintenance'",
+              "result": {
+                "text": "self-hosted-k8s"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "GitHub-hosted ephemeral runners versus self-hosted runners",
+        "leftLabel": "GitHub-Hosted (ubuntu-latest)",
+        "rightLabel": "Self-Hosted Runner",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Hosted runners boot up fresh and are destroyed after job completion.",
+            "left": {
+              "code": "name: 'ubuntu-latest'",
+              "result": {
+                "text": "ubuntu-latest"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'self-hosted-k8s'",
+              "result": {
+                "text": "self-hosted-k8s"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Organizations with compliance requirements operate private runners.",
+            "left": {
+              "code": "costModel: 'Per Minute'",
+              "result": {
+                "text": "ubuntu-latest"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "costModel: 'Hardware Maintenance'",
+              "result": {
+                "text": "self-hosted-k8s"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Encrypted Secrets Store & Masking Security Invariants",
+      "codeHash": "c4016a82789151ea3ad45dc506256bdbca1ac28db150626f52e15d3cadaacf24",
+      "spec": {
+        "template": "compare",
+        "title": "Raw log secret exposure versus automatic masking in runner logs",
+        "leftLabel": "Raw Unsanitized Output",
+        "rightLabel": "Masked Runner Log Output",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Never commit sensitive credentials directly to git repositories.",
+            "left": {
+              "code": "setSecret",
+              "result": {
+                "text": "DOCKER_PASSWORD"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "interpolateAndMask",
+              "result": {
+                "text": "***"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Runner logs automatically mask referenced secret tokens replacing with stars.",
+            "left": {
+              "code": "rawLog",
+              "result": {
+                "text": "super_secret_token_99"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "maskedLog",
+              "result": {
+                "text": "***"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw log secret exposure versus automatic masking in runner logs",
+        "leftLabel": "Raw Unsanitized Output",
+        "rightLabel": "Masked Runner Log Output",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Never commit sensitive credentials directly to git repositories.",
+            "left": {
+              "code": "setSecret",
+              "result": {
+                "text": "DOCKER_PASSWORD"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "interpolateAndMask",
+              "result": {
+                "text": "***"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Runner logs automatically mask referenced secret tokens replacing with stars.",
+            "left": {
+              "code": "rawLog",
+              "result": {
+                "text": "super_secret_token_99"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "maskedLog",
+              "result": {
+                "text": "***"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Contexts, Expressions & Conditional Step Execution",
+      "codeHash": "fb616f468ebbc53117ae090838b0ebc1dd1bbb0c0f7bf75ef67235d07b9cb58a",
+      "spec": {
+        "template": "states",
+        "title": "Conditional step execution context evaluation states",
+        "states": [
+          {
+            "id": "success",
+            "label": "success"
+          },
+          {
+            "id": "failure",
+            "label": "failure"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Conditional step execution evaluates context expressions before running.",
+            "currentState": "success",
+            "transition": {
+              "from": "success",
+              "to": "success",
+              "label": "success"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Status check functions handle failure outcomes ensuring proper cleanup.",
+            "currentState": "failure",
+            "transition": {
+              "from": "success",
+              "to": "failure",
+              "label": "failure"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Conditional step execution context evaluation states",
+        "states": [
+          {
+            "id": "success",
+            "label": "success"
+          },
+          {
+            "id": "failure",
+            "label": "failure"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Conditional step execution evaluates context expressions before running.",
+            "currentState": "success",
+            "transition": {
+              "from": "success",
+              "to": "success",
+              "label": "success"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Status check functions handle failure outcomes ensuring proper cleanup.",
+            "currentState": "failure",
+            "transition": {
+              "from": "success",
+              "to": "failure",
+              "label": "failure"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Authoring a Production-Grade CI Pipeline Manifest",
+      "codeHash": "6e1e34d217f21392e373001f87411fa180cfb99210fe817d6c160a502c26bd31",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

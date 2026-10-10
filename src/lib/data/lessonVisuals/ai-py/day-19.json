@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Plan first, then act",
+      "codeHash": "27ab8dbbc6902f4310d40552f97c1596e5a8e999b5d9b432a38b362ea4ca9b63",
+      "spec": {
+        "template": "none",
+        "reason": "Plan-and-solve architecture contrast and structured JSON plan representation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Tracking progress",
+      "codeHash": "62ce4240b969c74db395bc187579755883ac56237ec03c6e9bb96f30b164c82d",
+      "spec": {
+        "template": "bars",
+        "title": "Plan progress tracking across execution milestones",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Plan progress returns percentage string of done steps.",
+            "bars": [
+              {
+                "label": "done_steps",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "empty_plan",
+                "value": {
+                  "text": "0%"
+                },
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Update step status as the agent works.",
+            "bars": [
+              {
+                "label": "done_steps",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "empty_plan",
+                "value": {
+                  "text": "0%"
+                },
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Showing progress builds trust while users wait for work.",
+            "bars": [
+              {
+                "label": "done_steps",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "empty_plan",
+                "value": {
+                  "text": "0%"
+                },
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Plan progress tracking across execution milestones",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Plan progress returns percentage string of done steps.",
+            "bars": [
+              {
+                "label": "done_steps",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "empty_plan",
+                "value": "0%",
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Update step status as the agent works.",
+            "bars": [
+              {
+                "label": "done_steps",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "empty_plan",
+                "value": "0%",
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Showing progress builds trust while users wait for work.",
+            "bars": [
+              {
+                "label": "done_steps",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "empty_plan",
+                "value": "0%",
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reflection: checking your own work",
+      "codeHash": "fbdc6de4e5f89aa6fe054c9a01ec2598bc8a6e7678ad7b904aef3f7d98f716ec",
+      "spec": {
+        "template": "compare",
+        "title": "Self-reflection feedback validation before and after revision",
+        "leftLabel": "Initial Draft",
+        "rightLabel": "Reflected Version",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Reflection asks the model to review output against the task.",
+            "left": {
+              "code": "Stay at Sea Breeze Inn in Goa, rated 4.5, near the beach.",
+              "result": {
+                "text": "price"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Stay at Sea Breeze Inn in Goa, rated 4.5, near the beach. Price: 4200 rupees.",
+              "result": {
+                "text": "all requirements met"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Second pass uses feedback to improve the answer and fix mistakes.",
+            "left": {
+              "code": "missing: price requirement",
+              "result": {
+                "text": "price"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "improved draft meets all criteria",
+              "result": {
+                "text": "all requirements met"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Reflection works best with concrete list of requirements.",
+            "left": {
+              "code": "requirements = [\"price\", \"Goa\", \"rated\"]",
+              "result": {
+                "text": "price"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "reflect(improved, requirements)",
+              "result": {
+                "text": "all requirements met"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Self-reflection feedback validation before and after revision",
+        "leftLabel": "Initial Draft",
+        "rightLabel": "Reflected Version",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Reflection asks the model to review output against the task.",
+            "left": {
+              "code": "Stay at Sea Breeze Inn in Goa, rated 4.5, near the beach.",
+              "result": "price",
+              "tone": "data",
+              "checks": [
+                "price"
+              ]
+            },
+            "right": {
+              "code": "Stay at Sea Breeze Inn in Goa, rated 4.5, near the beach. Price: 4200 rupees.",
+              "result": "all requirements met",
+              "tone": "ok",
+              "checks": [
+                "all requirements met"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Second pass uses feedback to improve the answer and fix mistakes.",
+            "left": {
+              "code": "missing: price requirement",
+              "result": "price",
+              "tone": "error",
+              "checks": [
+                "price"
+              ]
+            },
+            "right": {
+              "code": "improved draft meets all criteria",
+              "result": "all requirements met",
+              "tone": "ok",
+              "checks": [
+                "all requirements met"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Reflection works best with concrete list of requirements.",
+            "left": {
+              "code": "requirements = [\"price\", \"Goa\", \"rated\"]",
+              "result": "price",
+              "tone": "data",
+              "checks": [
+                "price"
+              ]
+            },
+            "right": {
+              "code": "reflect(improved, requirements)",
+              "result": "all requirements met",
+              "tone": "ok",
+              "checks": [
+                "all requirements met"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Repair prompts from errors",
+      "codeHash": "0cb95cb46b7d8341996e7353c754f4a667b9c3403ef2e7b6fdcb876fdd55ac00",
+      "spec": {
+        "template": "table",
+        "title": "Constructing structured repair prompts from execution errors",
+        "columns": [
+          "code_sample",
+          "error_signal",
+          "needs_correction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When an agent writes code error message provides best feedback.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "broken"
+                  },
+                  {
+                    "text": "SyntaxError: expected ':' (line 2)"
+                  },
+                  {
+                    "text": "needs_correction"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "broken"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "needs_correction"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Build prompt in exact format with error and corrected code instruction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "broken"
+                  },
+                  {
+                    "text": "SyntaxError: expected ':' (line 2)"
+                  },
+                  {
+                    "text": "needs_correction"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "broken"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "needs_correction"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Including real error text lets model target actual problem.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "broken"
+                  },
+                  {
+                    "text": "SyntaxError: expected ':' (line 2)"
+                  },
+                  {
+                    "text": "needs_correction"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "broken"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "needs_correction"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Constructing structured repair prompts from execution errors",
+        "columns": [
+          "code_sample",
+          "error_signal",
+          "needs_correction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When an agent writes code error message provides best feedback.",
+            "rows": [
+              {
+                "cells": [
+                  "broken",
+                  "SyntaxError: expected ':' (line 2)",
+                  "needs_correction"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "broken",
+                  "prompt",
+                  "needs_correction"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Build prompt in exact format with error and corrected code instruction.",
+            "rows": [
+              {
+                "cells": [
+                  "broken",
+                  "SyntaxError: expected ':' (line 2)",
+                  "needs_correction"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "broken",
+                  "prompt",
+                  "needs_correction"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Including real error text lets model target actual problem.",
+            "rows": [
+              {
+                "cells": [
+                  "broken",
+                  "SyntaxError: expected ':' (line 2)",
+                  "needs_correction"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "broken",
+                  "prompt",
+                  "needs_correction"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A write, test, repair loop",
+      "codeHash": "73e97b2d01d815559176df22453d904f05aa892ccb6db31ccf7dd8520a0406ad",
+      "spec": {
+        "template": "flow",
+        "title": "Automated code repair loop driven by test assertion feedback",
+        "nodes": [
+          {
+            "id": "body",
+            "label": "body"
+          },
+          {
+            "id": "area",
+            "label": "area"
+          },
+          {
+            "id": "error",
+            "label": "error"
+          }
+        ],
+        "edges": [
+          {
+            "from": "body",
+            "to": "area"
+          },
+          {
+            "from": "area",
+            "to": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Agent writes code, program runs tests, and error becomes repair prompt.",
+            "values": {
+              "body": {
+                "text": "return w + h"
+              },
+              "area": {
+                "text": "area"
+              },
+              "error": {
+                "text": "tests passed"
+              }
+            },
+            "tones": {
+              "body": "data",
+              "area": "idle",
+              "error": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Model returns broken version first then fixed version that passes test.",
+            "values": {
+              "body": {
+                "text": "return w + h"
+              },
+              "area": {
+                "text": "area"
+              },
+              "error": {
+                "text": "tests passed"
+              }
+            },
+            "tones": {
+              "body": "error",
+              "area": "data",
+              "error": "error"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "This loop fixes mistakes with tests as source of truth.",
+            "values": {
+              "body": {
+                "text": "return w + h"
+              },
+              "area": {
+                "text": "area"
+              },
+              "error": {
+                "text": "tests passed"
+              }
+            },
+            "tones": {
+              "body": "ok",
+              "area": "ok",
+              "error": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Automated code repair loop driven by test assertion feedback",
+        "nodes": [
+          {
+            "id": "body",
+            "label": "body"
+          },
+          {
+            "id": "area",
+            "label": "area"
+          },
+          {
+            "id": "error",
+            "label": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Agent writes code, program runs tests, and error becomes repair prompt.",
+            "values": {
+              "body": "return w + h",
+              "area": "area",
+              "error": "tests passed"
+            },
+            "tones": {
+              "body": "data",
+              "area": "idle",
+              "error": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Model returns broken version first then fixed version that passes test.",
+            "values": {
+              "body": "return w + h",
+              "area": "area",
+              "error": "tests passed"
+            },
+            "tones": {
+              "body": "error",
+              "area": "data",
+              "error": "error"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say4",
+            "caption": "This loop fixes mistakes with tests as source of truth.",
+            "values": {
+              "body": "return w + h",
+              "area": "area",
+              "error": "tests passed"
+            },
+            "tones": {
+              "body": "ok",
+              "area": "ok",
+              "error": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Balancing planning, reflection and cost",
+      "codeHash": "e131a1651608b40368b34cff49c7c21723a88e11359b5317750ae9d99a1512b9",
+      "spec": {
+        "template": "none",
+        "reason": "Cost-benefit tradeoffs across planning reflection and model execution calls."
+      },
+      "filled": {}
+    }
+  ]
+}

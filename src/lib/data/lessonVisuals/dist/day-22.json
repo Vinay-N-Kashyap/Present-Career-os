@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 22,
+  "promptSha": "cdbe90825335a7a4e4108c8b0f00911985a6d921da785071a8046e976ed6d8a5",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Decentralized Cluster Coordination vs Centralized Registries",
+      "codeHash": "2bf0ecc99732c97c51bf72f67257701484f2e26a573bf090d539aa7d185d5565",
+      "spec": {
+        "template": "workflow",
+        "title": "Decentralized peer-to-peer state dissemination workflow",
+        "workflow": [
+          {
+            "id": "peerSelect",
+            "label": "Node Randomly Selects Constant Number of Peers",
+            "status": "completed"
+          },
+          {
+            "id": "stateExchange",
+            "label": "Exchange Local Membership Table Digests",
+            "status": "active"
+          },
+          {
+            "id": "epidemicSpread",
+            "label": "Cluster State Converges Epidemically Across Network",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Decentralized gossip protocols eliminate master nodes entirely.",
+            "activeWorkflowId": "peerSelect",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "Each node periodically selects random peers to exchange state.",
+            "activeWorkflowId": "stateExchange",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Decentralized peer-to-peer state dissemination workflow",
+        "workflow": [
+          {
+            "id": "peerSelect",
+            "label": "Node Randomly Selects Constant Number of Peers",
+            "status": "completed"
+          },
+          {
+            "id": "stateExchange",
+            "label": "Exchange Local Membership Table Digests",
+            "status": "active"
+          },
+          {
+            "id": "epidemicSpread",
+            "label": "Cluster State Converges Epidemically Across Network",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Decentralized gossip protocols eliminate master nodes entirely.",
+            "activeWorkflowId": "peerSelect",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "Each node periodically selects random peers to exchange state.",
+            "activeWorkflowId": "stateExchange",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Epidemic Gossip Model: Push-Pull State Propagation",
+      "codeHash": "a19d0627b6c7c94d8bc366fb9c32daee17984d611aa0caf9374e85edad4480b6",
+      "spec": {
+        "template": "compare",
+        "title": "Push versus pull epidemic gossip propagation models",
+        "left": {
+          "title": "Push Dissemination Model",
+          "items": [
+            "Node with new state pushes to random peers",
+            "Extremely fast initial viral spread",
+            "Slow tail finish as most peers already know"
+          ]
+        },
+        "right": {
+          "title": "Pull Dissemination Model",
+          "items": [
+            "Node polls random peers for unseen versions",
+            "Rapid tail completion for lagging nodes",
+            "Higher network overhead during initial phase"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "In push gossip a node pushes new state payload to random peers.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Push pull combines both models exchanging digests and deltas.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Push Dissemination Model",
+        "rightLabel": "Pull Dissemination Model"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Push versus pull epidemic gossip propagation models",
+        "left": {
+          "title": "Push Dissemination Model",
+          "items": [
+            "Node with new state pushes to random peers",
+            "Extremely fast initial viral spread",
+            "Slow tail finish as most peers already know"
+          ]
+        },
+        "right": {
+          "title": "Pull Dissemination Model",
+          "items": [
+            "Node polls random peers for unseen versions",
+            "Rapid tail completion for lagging nodes",
+            "Higher network overhead during initial phase"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "In push gossip a node pushes new state payload to random peers.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Push pull combines both models exchanging digests and deltas.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Push Dissemination Model",
+        "rightLabel": "Pull Dissemination Model"
+      }
+    },
+    {
+      "partTitle": "SWIM Protocol Mechanics: Direct Ping & Indirect Ping-Req",
+      "codeHash": "1cbf0a27de1fd11700191e27fa45f78d5cfa73426d7698e94d54efb13a1e0ad1",
+      "spec": {
+        "template": "sequence",
+        "title": "SWIM failure detection direct probe and indirect ping-req flow",
+        "actors": [
+          {
+            "id": "prober",
+            "label": "Probing Node"
+          },
+          {
+            "id": "helperNode",
+            "label": "Helper Peer Node"
+          },
+          {
+            "id": "targetNode",
+            "label": "Target Peer Node"
+          }
+        ],
+        "messages": [
+          {
+            "from": "prober",
+            "to": "targetNode",
+            "label": "Direct Ping over UDP",
+            "tone": "data"
+          },
+          {
+            "from": "prober",
+            "to": "helperNode",
+            "label": "Send Indirect Ping-Req",
+            "tone": "data"
+          },
+          {
+            "from": "helperNode",
+            "to": "targetNode",
+            "label": "Helper Pings Target",
+            "tone": "data"
+          },
+          {
+            "from": "targetNode",
+            "to": "helperNode",
+            "label": "Return Ack to Helper",
+            "tone": "ok"
+          },
+          {
+            "from": "helperNode",
+            "to": "prober",
+            "label": "Relay Ack Back to Prober",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The node sends a direct ping to the target and waits for an ack.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The node selects random helper peers and sends an indirect ping request.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "SWIM failure detection direct probe and indirect ping-req flow",
+        "actors": [
+          {
+            "id": "prober",
+            "label": "Probing Node"
+          },
+          {
+            "id": "helperNode",
+            "label": "Helper Peer Node"
+          },
+          {
+            "id": "targetNode",
+            "label": "Target Peer Node"
+          }
+        ],
+        "messages": [
+          {
+            "from": "prober",
+            "to": "targetNode",
+            "label": "Direct Ping over UDP",
+            "tone": "data"
+          },
+          {
+            "from": "prober",
+            "to": "helperNode",
+            "label": "Send Indirect Ping-Req",
+            "tone": "data"
+          },
+          {
+            "from": "helperNode",
+            "to": "targetNode",
+            "label": "Helper Pings Target",
+            "tone": "data"
+          },
+          {
+            "from": "targetNode",
+            "to": "helperNode",
+            "label": "Return Ack to Helper",
+            "tone": "ok"
+          },
+          {
+            "from": "helperNode",
+            "to": "prober",
+            "label": "Relay Ack Back to Prober",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The node sends a direct ping to the target and waits for an ack.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The node selects random helper peers and sends an indirect ping request.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Suspicion Mechanism: Mitigating False Positives from GC Pauses",
+      "codeHash": "7756cf80f46d1b6d09ef0d46b42d4e652de8a41fdbef635ce755146aa35c5315",
+      "spec": {
+        "template": "states",
+        "title": "SWIM incarnation-based suspicion state machine transitions",
+        "states": [
+          {
+            "id": "stateAlive",
+            "label": "ALIVE: Node Participating in Cluster"
+          },
+          {
+            "id": "stateSuspect",
+            "label": "SUSPECT: Grace Period Timer Active"
+          },
+          {
+            "id": "refutationThaw",
+            "label": "REFUTED: Higher Incarnation Overrides"
+          },
+          {
+            "id": "stateDead",
+            "label": "DEAD: Permanently Evicted After Timeout"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When probes fail the target is marked suspect rather than dead.",
+            "activeStateId": "stateSuspect",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If paused the node thaws and issues an incarnation refutation.",
+            "activeStateId": "refutationThaw",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "SWIM incarnation-based suspicion state machine transitions",
+        "states": [
+          {
+            "id": "stateAlive",
+            "label": "ALIVE: Node Participating in Cluster"
+          },
+          {
+            "id": "stateSuspect",
+            "label": "SUSPECT: Grace Period Timer Active"
+          },
+          {
+            "id": "refutationThaw",
+            "label": "REFUTED: Higher Incarnation Overrides"
+          },
+          {
+            "id": "stateDead",
+            "label": "DEAD: Permanently Evicted After Timeout"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When probes fail the target is marked suspect rather than dead.",
+            "activeStateId": "stateSuspect",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If paused the node thaws and issues an incarnation refutation.",
+            "activeStateId": "refutationThaw",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Entropy & Merkle Tree Syncing in Gossip Systems",
+      "codeHash": "d3ff302d155828bc7af6aa02a27e4982f5ff989c446914bd4d2a9d7e276d2e19",
+      "spec": {
+        "template": "table",
+        "title": "Merkle tree anti-entropy reconciliation progression table",
+        "columns": [
+          "Comparison Stage",
+          "Data Payload Examined",
+          "Reconciliation Outcome",
+          "Bandwidth Efficiency"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "A merkle tree hierarchically combines parent hashes up to a root hash.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "If root hashes match then millions of keys are guaranteed identical.",
+            "highlightRow": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Merkle tree anti-entropy reconciliation progression table",
+        "columns": [
+          "Comparison Stage",
+          "Data Payload Examined",
+          "Reconciliation Outcome",
+          "Bandwidth Efficiency"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "A merkle tree hierarchically combines parent hashes up to a root hash.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "If root hashes match then millions of keys are guaranteed identical.",
+            "highlightRow": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Decentralized SWIM Cluster Simulator",
+      "codeHash": "3db193e932e970a925989d580529f28f472a33d180e28719552953ca33960482",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

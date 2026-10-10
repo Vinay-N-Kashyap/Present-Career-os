@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 12,
+  "promptSha": "bafe9a31235cd32c6a95f08367d5b5150e00ce87f7b64f8db67c91dcc0b35721",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Apache Kafka Architecture: Topics, Partitions & Append-Only Logs",
+      "codeHash": "b5c5b1fa121cbbeee1e8b79bbc1b38646f9925353a3aa29c0ae05f271de97e25",
+      "spec": {
+        "template": "cells",
+        "title": "Kafka partition append-only log with sequential message offsets",
+        "cells": [
+          {
+            "id": "off0",
+            "label": "Offset zero: Event A",
+            "tone": "ok"
+          },
+          {
+            "id": "off1",
+            "label": "Offset one: Event B",
+            "tone": "ok"
+          },
+          {
+            "id": "off2",
+            "label": "Offset two: Event C",
+            "tone": "ok"
+          },
+          {
+            "id": "off3",
+            "label": "Offset three: Event D",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each partition represents an ordered log of immutable messages.",
+            "activeCellId": "off2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Messages in a partition receive an assigned integer offset.",
+            "activeCellId": "off3",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Kafka partition append-only log with sequential message offsets",
+        "cells": [
+          {
+            "id": "off0",
+            "label": "Offset zero: Event A",
+            "tone": "ok"
+          },
+          {
+            "id": "off1",
+            "label": "Offset one: Event B",
+            "tone": "ok"
+          },
+          {
+            "id": "off2",
+            "label": "Offset two: Event C",
+            "tone": "ok"
+          },
+          {
+            "id": "off3",
+            "label": "Offset three: Event D",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each partition represents an ordered log of immutable messages.",
+            "activeCellId": "off2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Messages in a partition receive an assigned integer offset.",
+            "activeCellId": "off3",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition Key Hashing: MurmurHash & Entity Ordering Invariants",
+      "codeHash": "8986f582e095fbd9c72dc4629fb1641dc3273318633d7489afc1364d76083348",
+      "spec": {
+        "template": "workflow",
+        "title": "Partition key hashing pipeline ensuring deterministic ordering",
+        "workflow": [
+          {
+            "id": "extractKey",
+            "label": "Extract Entity Partition Key",
+            "status": "completed"
+          },
+          {
+            "id": "computeHash",
+            "label": "Compute Deterministic MurmurHash",
+            "status": "active"
+          },
+          {
+            "id": "moduloRoute",
+            "label": "Modulo Partition Count Route",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Deterministic hashing hashes the partition key to guide placement.",
+            "activeWorkflowId": "computeHash",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Identical keys map to the exact same partition for consistent order.",
+            "activeWorkflowId": "moduloRoute",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Partition key hashing pipeline ensuring deterministic ordering",
+        "workflow": [
+          {
+            "id": "extractKey",
+            "label": "Extract Entity Partition Key",
+            "status": "completed"
+          },
+          {
+            "id": "computeHash",
+            "label": "Compute Deterministic MurmurHash",
+            "status": "active"
+          },
+          {
+            "id": "moduloRoute",
+            "label": "Modulo Partition Count Route",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Deterministic hashing hashes the partition key to guide placement.",
+            "activeWorkflowId": "computeHash",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Identical keys map to the exact same partition for consistent order.",
+            "activeWorkflowId": "moduloRoute",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Groups: Horizontal Parallelism & 1-to-1 Partition Mapping",
+      "codeHash": "556d5554a8a67a06a2f1ce17f7bb7ea71617f7c31a59e5c5a50c035918f9ad3b",
+      "spec": {
+        "template": "table",
+        "title": "Consumer group partition assignment and concurrency limits",
+        "columns": [
+          "Consumer Count",
+          "Partitions Per Consumer",
+          "Idle Workers",
+          "Concurrency Level"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each partition is consumed by at most one worker in a consumer group.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Total partitions create the hard ceiling for concurrent consumer workers.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Consumer group partition assignment and concurrency limits",
+        "columns": [
+          "Consumer Count",
+          "Partitions Per Consumer",
+          "Idle Workers",
+          "Concurrency Level"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each partition is consumed by at most one worker in a consumer group.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Total partitions create the hard ceiling for concurrent consumer workers.",
+            "highlightRow": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Group Rebalancing: Eager vs Incremental Cooperative Rebalancing",
+      "codeHash": "bbcdf0b592efa8d6321bc52d504ff53be20ffadde417907d87c3769d8a648f69",
+      "spec": {
+        "template": "compare",
+        "title": "Eager rebalancing versus incremental cooperative rebalancing",
+        "left": {
+          "title": "Eager Rebalance Protocol",
+          "items": [
+            "All consumers revoke all assignments",
+            "Global stop-the-world cluster freeze",
+            "Full recalculation of partition ownership"
+          ]
+        },
+        "right": {
+          "title": "Cooperative Rebalance Protocol",
+          "items": [
+            "Consumers keep unaffected partitions",
+            "Zero global cluster downtime",
+            "Incremental handoff of specific partitions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Under eager rebalancing consumers revoke all assignments and stop.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Cooperative rebalancing allows healthy consumers to keep processing.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Eager Rebalance Protocol",
+        "rightLabel": "Cooperative Rebalance Protocol"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Eager rebalancing versus incremental cooperative rebalancing",
+        "left": {
+          "title": "Eager Rebalance Protocol",
+          "items": [
+            "All consumers revoke all assignments",
+            "Global stop-the-world cluster freeze",
+            "Full recalculation of partition ownership"
+          ]
+        },
+        "right": {
+          "title": "Cooperative Rebalance Protocol",
+          "items": [
+            "Consumers keep unaffected partitions",
+            "Zero global cluster downtime",
+            "Incremental handoff of specific partitions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Under eager rebalancing consumers revoke all assignments and stop.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Cooperative rebalancing allows healthy consumers to keep processing.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Eager Rebalance Protocol",
+        "rightLabel": "Cooperative Rebalance Protocol"
+      }
+    },
+    {
+      "partTitle": "Offset Commit Strategies: At-Least-Once vs At-Most-Once Delivery",
+      "codeHash": "5b3c68631e050d55248bcace4799c0b09055294820e5362cef4248f5a4c6e5ac",
+      "spec": {
+        "template": "states",
+        "title": "Offset commit timing states and message delivery guarantees",
+        "states": [
+          {
+            "id": "fetched",
+            "label": "Message Fetched from Kafka"
+          },
+          {
+            "id": "committedEarly",
+            "label": "Offset Committed Before Execution"
+          },
+          {
+            "id": "processingLogic",
+            "label": "Business Mutation Executing"
+          },
+          {
+            "id": "committedLate",
+            "label": "Offset Committed After Execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Consumer commits offset before processing which risks data loss.",
+            "activeStateId": "committedEarly",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Consumer commits offset only after successfully processing the message.",
+            "activeStateId": "committedLate",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Offset commit timing states and message delivery guarantees",
+        "states": [
+          {
+            "id": "fetched",
+            "label": "Message Fetched from Kafka"
+          },
+          {
+            "id": "committedEarly",
+            "label": "Offset Committed Before Execution"
+          },
+          {
+            "id": "processingLogic",
+            "label": "Business Mutation Executing"
+          },
+          {
+            "id": "committedLate",
+            "label": "Offset Committed After Execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Consumer commits offset before processing which risks data loss.",
+            "activeStateId": "committedEarly",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Consumer commits offset only after successfully processing the message.",
+            "activeStateId": "committedLate",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Partition Event Hub Simulator",
+      "codeHash": "4baa2a7db36ff922a36481dcba431ad9a536067fbe3aa8816da8849983cab047",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

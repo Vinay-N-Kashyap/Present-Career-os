@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 16,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why programs need files",
+      "codeHash": "4cb7c0abe7c8fd8f570f4e2813c0030854546cdb809f1b2e426ec296a7eb2285",
+      "spec": {
+        "template": "boxes",
+        "title": "Reading and writing files",
+        "boxes": [
+          {
+            "id": "content",
+            "label": "content"
+          },
+          {
+            "id": "mode",
+            "label": "mode"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Text files hold plain text on a disk.",
+            "values": {
+              "content": {
+                "text": "Tea,20"
+              },
+              "mode": {
+                "text": "w"
+              }
+            },
+            "tones": {
+              "content": "data",
+              "mode": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The mode says what you want to do.",
+            "values": {
+              "content": {
+                "var": "content",
+                "line": 6
+              },
+              "mode": {
+                "text": "r"
+              }
+            },
+            "tones": {
+              "content": "data",
+              "mode": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Reading and writing files",
+        "boxes": [
+          {
+            "id": "content",
+            "label": "content"
+          },
+          {
+            "id": "mode",
+            "label": "mode"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Text files hold plain text on a disk.",
+            "values": {
+              "content": "Tea,20",
+              "mode": "w"
+            },
+            "tones": {
+              "content": "data",
+              "mode": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The mode says what you want to do.",
+            "values": {
+              "content": "'Tea,20\nBus,45\n'",
+              "mode": "r"
+            },
+            "tones": {
+              "content": "data",
+              "mode": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The with statement",
+      "codeHash": "e1241b308c7a1b436acdac915935ef51e3f56e81e02a199a1cf7e8028ca8339a",
+      "spec": {
+        "template": "none",
+        "reason": "The automatic file closure semantics of the with block are verified by boolean flag prints."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Appending and reading line by line",
+      "codeHash": "b828e59012691d0e9f6427857b60b541b8fd9c0ac4bec009b57e6f5a7a27304e",
+      "spec": {
+        "template": "none",
+        "reason": "File append and iteration mechanics are demonstrated directly by sequential file reads."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Turning lines into data with split",
+      "codeHash": "5c3e6a54d5de43a5c160cf387241a6e2c199993bb7ef908ac9e788ac43ee3df8",
+      "spec": {
+        "template": "boxes",
+        "title": "Splitting line text into values",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Split cuts the text wherever it finds the separator.",
+            "values": {
+              "item": {
+                "text": "Tea"
+              },
+              "amount": {
+                "text": "20"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unpack into variables and convert to a number.",
+            "values": {
+              "item": {
+                "var": "item",
+                "line": 4
+              },
+              "amount": {
+                "var": "amount",
+                "line": 4
+              }
+            },
+            "tones": {
+              "item": "ok",
+              "amount": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Splitting line text into values",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Split cuts the text wherever it finds the separator.",
+            "values": {
+              "item": "Tea",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unpack into variables and convert to a number.",
+            "values": {
+              "item": "'Tea'",
+              "amount": "'20'"
+            },
+            "tones": {
+              "item": "ok",
+              "amount": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Saving and loading a list of records",
+      "codeHash": "6bfb88eb088e71b3787f1cbee89c908021ca8feabd4c863840f0616ff5986706",
+      "spec": {
+        "template": "boxes",
+        "title": "Round trip serialization",
+        "boxes": [
+          {
+            "id": "data",
+            "label": "data"
+          },
+          {
+            "id": "loaded",
+            "label": "loaded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Save and load functions turn data into text and back.",
+            "values": {
+              "data": {
+                "var": "data",
+                "line": 18
+              },
+              "loaded": {
+                "text": "tracker.csv"
+              }
+            },
+            "tones": {
+              "data": "data",
+              "loaded": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Check that you got the same data after loading.",
+            "values": {
+              "data": {
+                "var": "data",
+                "line": 20
+              },
+              "loaded": {
+                "var": "loaded",
+                "line": 20
+              }
+            },
+            "tones": {
+              "data": "ok",
+              "loaded": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Round trip serialization",
+        "boxes": [
+          {
+            "id": "data",
+            "label": "data"
+          },
+          {
+            "id": "loaded",
+            "label": "loaded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Save and load functions turn data into text and back.",
+            "values": {
+              "data": "[{'item': 'Tea', 'amount': 20}, {'item'…",
+              "loaded": "tracker.csv"
+            },
+            "tones": {
+              "data": "data",
+              "loaded": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Check that you got the same data after loading.",
+            "values": {
+              "data": "[{'item': 'Tea', 'amount': 20}, {'item'…",
+              "loaded": "[{'item': 'Tea', 'amount': 20}, {'item'…"
+            },
+            "tones": {
+              "data": "ok",
+              "loaded": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together: a tracker that remembers",
+      "codeHash": "c8554b024695df0a984c614c19b194cc381dd791bfe2bfe52fc5f3773e6a1238",
+      "spec": {
+        "template": "none",
+        "reason": "Two-run persistent expense tracking simulation aggregates save and load functions."
+      },
+      "filled": {}
+    }
+  ]
+}

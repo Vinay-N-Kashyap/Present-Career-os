@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 26,
+  "promptSha": "b663da6c8e2cae6f86f44c4c89391db6d48225dad38d49c13f04dedd79e1b0f5",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "0/1 Knapsack Problem Formulation & 2D State Space",
+      "codeHash": "38da69c73fe8debfcb390ea1c6aab761bdc71d25d821951213909c2e4099ca98",
+      "spec": {
+        "template": "table",
+        "title": "Knapsack state space resource allocation table",
+        "columns": [
+          "Item",
+          "Weight",
+          "Value",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "State space models maximum value achievable considering weight limit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "considered"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "three"
+                  },
+                  {
+                    "text": "four"
+                  },
+                  {
+                    "text": "considered"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Exclude item or include item gaining value within capacity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "included"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "three"
+                  },
+                  {
+                    "text": "four"
+                  },
+                  {
+                    "text": "included"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-2"
+                  },
+                  {
+                    "text": "four"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "included"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Knapsack state space resource allocation table",
+        "columns": [
+          "Item",
+          "Weight",
+          "Value",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "State space models maximum value achievable considering weight limit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "considered"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "three"
+                  },
+                  {
+                    "text": "four"
+                  },
+                  {
+                    "text": "considered"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Exclude item or include item gaining value within capacity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "item-0"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "included"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-1"
+                  },
+                  {
+                    "text": "three"
+                  },
+                  {
+                    "text": "four"
+                  },
+                  {
+                    "text": "included"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "item-2"
+                  },
+                  {
+                    "text": "four"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "included"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Space Optimization: Rolling 1D Array for 0/1 Knapsack",
+      "codeHash": "910e000d8f9cf7767b992abc04a4599d21cb4ced039f84f26a67ca1d34f66451",
+      "spec": {
+        "template": "cells",
+        "title": "Space optimized backward capacity traversal array",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Compress entire table into single array representing capacity states.",
+            "items": [
+              {
+                "text": "zero"
+              },
+              {
+                "text": "zero"
+              },
+              {
+                "text": "three"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Iterate capacity loop backward down to current weight.",
+            "items": [
+              {
+                "text": "zero"
+              },
+              {
+                "text": "zero"
+              },
+              {
+                "text": "three"
+              },
+              {
+                "text": "four"
+              },
+              {
+                "text": "seven"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Space optimized backward capacity traversal array",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Compress entire table into single array representing capacity states.",
+            "items": [
+              {
+                "text": "zero"
+              },
+              {
+                "text": "zero"
+              },
+              {
+                "text": "three"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Iterate capacity loop backward down to current weight.",
+            "items": [
+              {
+                "text": "zero"
+              },
+              {
+                "text": "zero"
+              },
+              {
+                "text": "three"
+              },
+              {
+                "text": "four"
+              },
+              {
+                "text": "seven"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unbounded Knapsack & Coin Change Combinations",
+      "codeHash": "860d613d28f200612c54b04a0e40c8d6e314b3e611ee96fbacc516bf44afe262",
+      "spec": {
+        "template": "cells",
+        "title": "Unbounded knapsack forward combination reuse array",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Unbounded knapsack intentionally iterate inner loop forward from coin.",
+            "items": [
+              {
+                "text": "coin-one"
+              },
+              {
+                "text": "coin-two"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Initialize base case with exactly one way to make zero amount.",
+            "items": [
+              {
+                "text": "base-one"
+              },
+              {
+                "text": "ways-two"
+              },
+              {
+                "text": "ways-four"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Unbounded knapsack forward combination reuse array",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Unbounded knapsack intentionally iterate inner loop forward from coin.",
+            "items": [
+              {
+                "text": "coin-one"
+              },
+              {
+                "text": "coin-two"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Initialize base case with exactly one way to make zero amount.",
+            "items": [
+              {
+                "text": "base-one"
+              },
+              {
+                "text": "ways-two"
+              },
+              {
+                "text": "ways-four"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Minimum Coins for Change (Optimal Resource Minimization)",
+      "codeHash": "4d84e8769b123e126c741f75119b276300054628b7beec8cca93b770f34ac3a0",
+      "spec": {
+        "template": "table",
+        "title": "Fewest coins optimal minimization table",
+        "columns": [
+          "Amount",
+          "Coin",
+          "MinCoins"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Define array as minimum coins needed to produce amount.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "amt-zero"
+                  },
+                  {
+                    "text": "none"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amt-one"
+                  },
+                  {
+                    "text": "coin-one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Test each coin and choose minimum coins required.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "amt-zero"
+                  },
+                  {
+                    "text": "none"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amt-one"
+                  },
+                  {
+                    "text": "coin-one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amt-two"
+                  },
+                  {
+                    "text": "coin-two"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fewest coins optimal minimization table",
+        "columns": [
+          "Amount",
+          "Coin",
+          "MinCoins"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Define array as minimum coins needed to produce amount.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "amt-zero"
+                  },
+                  {
+                    "text": "none"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amt-one"
+                  },
+                  {
+                    "text": "coin-one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Test each coin and choose minimum coins required.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "amt-zero"
+                  },
+                  {
+                    "text": "none"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amt-one"
+                  },
+                  {
+                    "text": "coin-one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amt-two"
+                  },
+                  {
+                    "text": "coin-two"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subset Sum & Partition Equal Subset Sum",
+      "codeHash": "63b7a2d2c856a483a8fba66770c950bb6941cda3480a252895a90dba6ae9c2f5",
+      "spec": {
+        "template": "cells",
+        "title": "Subset sum partition achievable target array",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Odd total sum is mathematically impossible to divide equally.",
+            "items": [
+              {
+                "text": "check-odd"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Iterate backward from target down to number to update achievable sum.",
+            "items": [
+              {
+                "text": "sum-zero"
+              },
+              {
+                "text": "sum-five"
+              },
+              {
+                "text": "target-eleven"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Subset sum partition achievable target array",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Odd total sum is mathematically impossible to divide equally.",
+            "items": [
+              {
+                "text": "check-odd"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Iterate backward from target down to number to update achievable sum.",
+            "items": [
+              {
+                "text": "sum-zero"
+              },
+              {
+                "text": "sum-five"
+              },
+              {
+                "text": "target-eleven"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Milestone 4 Optimization Engine Walkthrough",
+      "codeHash": "9086541997fac9120d6d559f9f60647a04210f2ef64c7dd2e1c7bdf30317e775",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

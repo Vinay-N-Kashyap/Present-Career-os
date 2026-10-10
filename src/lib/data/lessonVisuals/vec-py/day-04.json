@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why not just sort?",
+      "codeHash": "294a3d0c15890b3086da0768611e11f44f54d81d602ea638a64e3dd994b97a22",
+      "spec": {
+        "template": "table",
+        "title": "Algorithmic complexity comparison: full sort versus bounded heap",
+        "columns": [
+          "sort_ops",
+          "heap_ops",
+          "k"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A heap bounded to size k tracks the best candidates with fewer comparisons.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sort_ops"
+                  },
+                  {
+                    "text": "heap_ops"
+                  },
+                  {
+                    "text": "k"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sort_ops"
+                  },
+                  {
+                    "text": "heap_ops"
+                  },
+                  {
+                    "text": "k"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The binary heap module provides an efficient priority queue structure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sort_ops"
+                  },
+                  {
+                    "text": "heap_ops"
+                  },
+                  {
+                    "text": "k"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sort_ops"
+                  },
+                  {
+                    "text": "heap_ops"
+                  },
+                  {
+                    "text": "sort_ops"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Algorithmic complexity comparison: full sort versus bounded heap",
+        "columns": [
+          "sort_ops",
+          "heap_ops",
+          "k"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A heap bounded to size k tracks the best candidates with fewer comparisons.",
+            "rows": [
+              {
+                "cells": [
+                  "sort_ops",
+                  "heap_ops",
+                  "k"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sort_ops",
+                  "heap_ops",
+                  "k"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The binary heap module provides an efficient priority queue structure.",
+            "rows": [
+              {
+                "cells": [
+                  "sort_ops",
+                  "heap_ops",
+                  "k"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sort_ops",
+                  "heap_ops",
+                  "sort_ops"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Heaps in Python",
+      "codeHash": "e975c268a496238ad3c82acf8f70904fd56b9d040bff10a5dc836c09f2556cff",
+      "spec": {
+        "template": "table",
+        "title": "Min-heap streaming maintenance maintaining running top candidates",
+        "columns": [
+          "stream",
+          "heap",
+          "stream"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A binary heap keeps its smallest item at the root for rapid inspection.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stream"
+                  },
+                  {
+                    "text": "heap"
+                  },
+                  {
+                    "text": "stream"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stream"
+                  },
+                  {
+                    "text": "heap"
+                  },
+                  {
+                    "text": "stream"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A min-heap replaces the smallest score whenever higher candidates arrive.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stream"
+                  },
+                  {
+                    "text": "heap"
+                  },
+                  {
+                    "text": "stream"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stream"
+                  },
+                  {
+                    "text": "heap"
+                  },
+                  {
+                    "text": "heap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Min-heap streaming maintenance maintaining running top candidates",
+        "columns": [
+          "stream",
+          "heap",
+          "stream"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A binary heap keeps its smallest item at the root for rapid inspection.",
+            "rows": [
+              {
+                "cells": [
+                  "stream",
+                  "heap",
+                  "stream"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stream",
+                  "heap",
+                  "stream"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A min-heap replaces the smallest score whenever higher candidates arrive.",
+            "rows": [
+              {
+                "cells": [
+                  "stream",
+                  "heap",
+                  "stream"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stream",
+                  "heap",
+                  "heap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tie-breaking and determinism",
+      "codeHash": "76fa1beb7f61744c4bdd58f43b37c82918e81d4cfa4b67b06ba5002f36bce570",
+      "spec": {
+        "template": "table",
+        "title": "Deterministic tie-breaking protocols across equivalent scores",
+        "columns": [
+          "scores",
+          "lower_index",
+          "higher_index"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Higher score ranks first while lower index resolves identical ties.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "lower_index"
+                  },
+                  {
+                    "text": "higher_index"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "lower_index"
+                  },
+                  {
+                    "text": "higher_index"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Deterministic tie-breaking makes testing and debugging reproducible.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "lower_index"
+                  },
+                  {
+                    "text": "higher_index"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "lower_index"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deterministic tie-breaking protocols across equivalent scores",
+        "columns": [
+          "scores",
+          "lower_index",
+          "higher_index"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Higher score ranks first while lower index resolves identical ties.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "lower_index",
+                  "higher_index"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "lower_index",
+                  "higher_index"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Deterministic tie-breaking makes testing and debugging reproducible.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "lower_index",
+                  "higher_index"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "lower_index",
+                  "scores"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Merging shard results",
+      "codeHash": "d5807b7770182b68d181646df077d76e9384512769b2d803d7aa756c9729e306",
+      "spec": {
+        "template": "table",
+        "title": "Distributed coordinator scatter-gather shard reduction",
+        "columns": [
+          "shards",
+          "best",
+          "merged"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each shard returns its candidate set which a coordinator merges globally.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Deduplicating shard replicas ensures each document retains its best score.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed coordinator scatter-gather shard reduction",
+        "columns": [
+          "shards",
+          "best",
+          "merged"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each shard returns its candidate set which a coordinator merges globally.",
+            "rows": [
+              {
+                "cells": [
+                  "shards",
+                  "best",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shards",
+                  "best",
+                  "merged"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Deduplicating shard replicas ensures each document retains its best score.",
+            "rows": [
+              {
+                "cells": [
+                  "shards",
+                  "best",
+                  "merged"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "shards",
+                  "best",
+                  "shards"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Top-k in real systems",
+      "codeHash": "80042fac0fa0b3885d1a9be6f5f58203120ae72e109c98e6ec0cd69ff35fc795",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: top-k",
+      "codeHash": "4581a510a2775e5117e7b80691ac1a64df67a7d30101e7c3b88965debcd7a05c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

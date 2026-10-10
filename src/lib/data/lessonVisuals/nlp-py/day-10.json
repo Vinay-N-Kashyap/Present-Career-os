@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Tagging is a sequence problem",
+      "codeHash": "d909adf4c278890acdeff0d099c9d25675f4f3ba4a5e799a2532af696ada8ba0",
+      "spec": {
+        "template": "table",
+        "title": "Part of speech sequence ambiguity and context resolution",
+        "columns": [
+          "time",
+          "flies"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Part of speech tagging assigns categorical grammatical labels across words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "flies"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Individual vocabulary words frequently demonstrate syntactic ambiguity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "flies"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "arrow"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sequential context surrounding a word determines the appropriate label.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "flies"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "arrow"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NOUN"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Hidden Markov models treat sequence tags as unobserved latent states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "flies"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "arrow"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NOUN"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DET"
+                  },
+                  {
+                    "text": "ADP"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Part of speech sequence ambiguity and context resolution",
+        "columns": [
+          "time",
+          "flies"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Part of speech tagging assigns categorical grammatical labels across words.",
+            "rows": [
+              {
+                "cells": [
+                  "time",
+                  "flies"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Individual vocabulary words frequently demonstrate syntactic ambiguity.",
+            "rows": [
+              {
+                "cells": [
+                  "time",
+                  "flies"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "arrow"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sequential context surrounding a word determines the appropriate label.",
+            "rows": [
+              {
+                "cells": [
+                  "time",
+                  "flies"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "arrow"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "NOUN",
+                  "VERB"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Hidden Markov models treat sequence tags as unobserved latent states.",
+            "rows": [
+              {
+                "cells": [
+                  "time",
+                  "flies"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "arrow"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "NOUN",
+                  "VERB"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "DET",
+                  "ADP"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The hidden Markov model",
+      "codeHash": "c33725f0baf4be3c2b1e90f4dadd93a606a7a7546a2d0a8838c46dca93e6bea5",
+      "spec": {
+        "template": "table",
+        "title": "Hidden Markov model parameter distributions and joint probability",
+        "columns": [
+          "start",
+          "emit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An HMM models sequence probability via three distinct parameter distributions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "emit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transition probabilities model bigram grammatical transitions between tags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "emit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trans"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Emission probabilities measure how likely a given tag produces an observed word.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "emit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trans"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fish"
+                  },
+                  {
+                    "text": "swim"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Joint sequence probability computes the cumulative product across transitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "emit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trans"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fish"
+                  },
+                  {
+                    "text": "swim"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NOUN"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hidden Markov model parameter distributions and joint probability",
+        "columns": [
+          "start",
+          "emit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An HMM models sequence probability via three distinct parameter distributions.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "emit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transition probabilities model bigram grammatical transitions between tags.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "emit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "trans",
+                  "tags"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Emission probabilities measure how likely a given tag produces an observed word.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "emit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "trans",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fish",
+                  "swim"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Joint sequence probability computes the cumulative product across transitions.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "emit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "trans",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fish",
+                  "swim"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "NOUN",
+                  "VERB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why brute force fails",
+      "codeHash": "5a4b9476c2a71f4ad2a596a4e1146e15d8c007d6e866e4a4af4760e2d4e2ab57",
+      "spec": {
+        "template": "table",
+        "title": "Exponential search space complexity versus dynamic programming",
+        "columns": [
+          "brute",
+          "viterbi"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating all candidate sequences exhaustively tests every combination.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "brute"
+                  },
+                  {
+                    "text": "viterbi"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The number of candidate sequences grows far too many to compute.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "brute"
+                  },
+                  {
+                    "text": "viterbi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dynamic programming caches partial path results to achieve linear complexity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "brute"
+                  },
+                  {
+                    "text": "viterbi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "brute"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The Viterbi algorithm efficiently finds optimal hidden sequence paths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "brute"
+                  },
+                  {
+                    "text": "viterbi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "brute"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "viterbi"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exponential search space complexity versus dynamic programming",
+        "columns": [
+          "brute",
+          "viterbi"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating all candidate sequences exhaustively tests every combination.",
+            "rows": [
+              {
+                "cells": [
+                  "brute",
+                  "viterbi"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The number of candidate sequences grows far too many to compute.",
+            "rows": [
+              {
+                "cells": [
+                  "brute",
+                  "viterbi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tags",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dynamic programming caches partial path results to achieve linear complexity.",
+            "rows": [
+              {
+                "cells": [
+                  "brute",
+                  "viterbi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tags",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "brute",
+                  "tags"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The Viterbi algorithm efficiently finds optimal hidden sequence paths.",
+            "rows": [
+              {
+                "cells": [
+                  "brute",
+                  "viterbi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tags",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "brute",
+                  "tags"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "viterbi",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Viterbi algorithm",
+      "codeHash": "4f55b238c85df1e99a73cb9228a71f9e5d82defa8a1e2e5e92de3dd168913360",
+      "spec": {
+        "template": "table",
+        "title": "Viterbi trellis recurrence and optimal path decoding",
+        "columns": [
+          "dogs",
+          "fish"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Viterbi maintains the highest probability path arriving at each state.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dogs"
+                  },
+                  {
+                    "text": "fish"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Start computes path probability multiplying start and emit for the first word.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dogs"
+                  },
+                  {
+                    "text": "fish"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "emit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each step updates paths by taking max transition products across states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dogs"
+                  },
+                  {
+                    "text": "fish"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "emit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trans"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Backtracking from the highest final state yields the optimal tag sequence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dogs"
+                  },
+                  {
+                    "text": "fish"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "emit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trans"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Viterbi trellis recurrence and optimal path decoding",
+        "columns": [
+          "dogs",
+          "fish"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Viterbi maintains the highest probability path arriving at each state.",
+            "rows": [
+              {
+                "cells": [
+                  "dogs",
+                  "fish"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Start computes path probability multiplying start and emit for the first word.",
+            "rows": [
+              {
+                "cells": [
+                  "dogs",
+                  "fish"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "emit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each step updates paths by taking max transition products across states.",
+            "rows": [
+              {
+                "cells": [
+                  "dogs",
+                  "fish"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "emit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "trans",
+                  "best"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Backtracking from the highest final state yields the optimal tag sequence.",
+            "rows": [
+              {
+                "cells": [
+                  "dogs",
+                  "fish"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "start",
+                  "emit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "trans",
+                  "best"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "states",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From HMMs to modern taggers",
+      "codeHash": "8fcedbc857f45b223dcb189bfd565232b78aa94209a5aa861a5541f999e6f080",
+      "spec": {
+        "template": "none",
+        "reason": "Transition to CRFs and neural sequence taggers."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: Viterbi",
+      "codeHash": "d466b278095d251bc98b15b549f14de14e78a5c9ebfdef5f5a0fbb60e25a1d33",
+      "spec": {
+        "template": "none",
+        "reason": "Viterbi algorithm implementation and practice."
+      },
+      "filled": {}
+    }
+  ]
+}

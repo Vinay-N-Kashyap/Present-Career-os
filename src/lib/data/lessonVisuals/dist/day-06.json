@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 6,
+  "promptSha": "a80f0065394c633f26a286720c0bbb93734f8ec906d2a5060fc3813e7cf9c768",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Distributed Lock Dilemma & The Split-Brain Hazard",
+      "codeHash": "00490a0d6d9ceebc9a8d20aa41d911115fc59cf2cc7ab0a355e0acf05512a7d6",
+      "spec": {
+        "template": "states",
+        "title": "Distributed lock acquisition and garbage collection pause hazard states",
+        "states": [
+          {
+            "id": "heldClient1",
+            "label": "Lock Held by Client 1 (Active Lease)"
+          },
+          {
+            "id": "expiredGC",
+            "label": "Lock Expired Silently (GC Pause Freeze)"
+          },
+          {
+            "id": "acquiredClient2",
+            "label": "Lock Acquired by Client 2 (Data Hazard)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Using a central store to set a lock key introduces lease expiration risks.",
+            "activeStateId": "heldClient1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Client wakes up unaware that lock expired and corrupts shared data.",
+            "activeStateId": "acquiredClient2",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Distributed lock acquisition and garbage collection pause hazard states",
+        "states": [
+          {
+            "id": "heldClient1",
+            "label": "Lock Held by Client 1 (Active Lease)"
+          },
+          {
+            "id": "expiredGC",
+            "label": "Lock Expired Silently (GC Pause Freeze)"
+          },
+          {
+            "id": "acquiredClient2",
+            "label": "Lock Acquired by Client 2 (Data Hazard)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Using a central store to set a lock key introduces lease expiration risks.",
+            "activeStateId": "heldClient1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Client wakes up unaware that lock expired and corrupts shared data.",
+            "activeStateId": "acquiredClient2",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Redis Redlock Algorithm: Multi-Master Consensus",
+      "codeHash": "de33c2c332f70704e0cd98980015b89f5d6cb9efbbfa71a7afbbbaff957eda70",
+      "spec": {
+        "template": "workflow",
+        "title": "Redis Redlock multi-master quorum acquisition pipeline",
+        "stages": [
+          {
+            "id": "startTimer",
+            "name": "Record Timestamp",
+            "subtext": "Start Clock"
+          },
+          {
+            "id": "queryMasters",
+            "name": "Sequential Master Locks",
+            "subtext": "Query 5 Nodes"
+          },
+          {
+            "id": "quorumCheck",
+            "name": "Quorum Evaluation",
+            "subtext": "At Least 3 of 5"
+          },
+          {
+            "id": "calcValidity",
+            "name": "Remaining Validity",
+            "subtext": "TTL Minus Elapsed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Acquiring global locks requires obtaining a strict majority quorum.",
+            "activeStageId": "quorumCheck",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Failing to obtain a majority triggers immediate cleanup across instances.",
+            "activeStageId": "calcValidity",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Redis Redlock multi-master quorum acquisition pipeline",
+        "stages": [
+          {
+            "id": "startTimer",
+            "name": "Record Timestamp",
+            "subtext": "Start Clock"
+          },
+          {
+            "id": "queryMasters",
+            "name": "Sequential Master Locks",
+            "subtext": "Query 5 Nodes"
+          },
+          {
+            "id": "quorumCheck",
+            "name": "Quorum Evaluation",
+            "subtext": "At Least 3 of 5"
+          },
+          {
+            "id": "calcValidity",
+            "name": "Remaining Validity",
+            "subtext": "TTL Minus Elapsed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Acquiring global locks requires obtaining a strict majority quorum.",
+            "activeStageId": "quorumCheck",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Failing to obtain a majority triggers immediate cleanup across instances.",
+            "activeStageId": "calcValidity",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clock Drift, NTP Skew & Kleppmann's Critique of Redlock",
+      "codeHash": "f8a04fae1bc438d16b5c027a6b457c974529ea7157e17428ef069d4d88e486a2",
+      "spec": {
+        "template": "compare",
+        "title": "Synchronized monotonic clock operation compared to NTP clock drift jump",
+        "leftLabel": "Normal Synchronized Clock Operation",
+        "rightLabel": "NTP Skewed Forward Jump",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Algorithms assuming synchronous clocks face danger from quartz crystal drift.",
+            "left": {
+              "code": "Normal Clock (10000 < 10500)",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "NTP Skewed (+800ms -> 10800 > 10500)",
+              "result": {
+                "text": "false"
+              },
+              "tone": "warn"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Clock jumps prematurely expire valid leases while clients execute.",
+            "left": {
+              "code": "activeLock.leaseExpiresAt > adjustedClock",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "adjustedClock: 10800 > 10500",
+              "result": {
+                "text": "false"
+              },
+              "tone": "failed"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Synchronized monotonic clock operation compared to NTP clock drift jump",
+        "leftLabel": "Normal Synchronized Clock Operation",
+        "rightLabel": "NTP Skewed Forward Jump",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Algorithms assuming synchronous clocks face danger from quartz crystal drift.",
+            "left": {
+              "code": "Normal Clock (10000 < 10500)",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "NTP Skewed (+800ms -> 10800 > 10500)",
+              "result": {
+                "text": "false"
+              },
+              "tone": "warn"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Clock jumps prematurely expire valid leases while clients execute.",
+            "left": {
+              "code": "activeLock.leaseExpiresAt > adjustedClock",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "adjustedClock: 10800 > 10500",
+              "result": {
+                "text": "false"
+              },
+              "tone": "failed"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fencing Tokens: Monotonically Increasing Storage Guards",
+      "codeHash": "16e97137cca897d4d2b91d2fd449211cc85b46233458c484f2c14a16ad2c81da",
+      "spec": {
+        "template": "sequence",
+        "title": "Fencing tokens monotonic counter and storage protection sequence",
+        "actors": [
+          {
+            "id": "client1",
+            "label": "Client 1 (Delayed GC)"
+          },
+          {
+            "id": "client2",
+            "label": "Client 2 (Newer Lock)"
+          },
+          {
+            "id": "storage",
+            "label": "Storage Service Guard"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Lock servers increment global counters providing monotonic tokens.",
+            "messages": [
+              {
+                "from": "client2",
+                "to": "storage",
+                "label": "write(data, token=34)"
+              },
+              {
+                "from": "storage",
+                "to": "client2",
+                "label": "ACCEPTED (Updated to version 2)"
+              }
+            ],
+            "activeActorId": "storage"
+          },
+          {
+            "at": "say7",
+            "caption": "The storage engine rejects delayed writes bearing stale fencing tokens.",
+            "messages": [
+              {
+                "from": "client1",
+                "to": "storage",
+                "label": "write(staleData, token=33)"
+              },
+              {
+                "from": "storage",
+                "to": "client1",
+                "label": "REJECTED: Stale token 33 < current 34"
+              }
+            ],
+            "activeActorId": "client1"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Fencing tokens monotonic counter and storage protection sequence",
+        "actors": [
+          {
+            "id": "client1",
+            "label": "Client 1 (Delayed GC)"
+          },
+          {
+            "id": "client2",
+            "label": "Client 2 (Newer Lock)"
+          },
+          {
+            "id": "storage",
+            "label": "Storage Service Guard"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Lock servers increment global counters providing monotonic tokens.",
+            "messages": [
+              {
+                "from": "client2",
+                "to": "storage",
+                "label": "write(data, token=34)"
+              },
+              {
+                "from": "storage",
+                "to": "client2",
+                "label": "ACCEPTED (Updated to version 2)"
+              }
+            ],
+            "activeActorId": "storage"
+          },
+          {
+            "at": "say7",
+            "caption": "The storage engine rejects delayed writes bearing stale fencing tokens.",
+            "messages": [
+              {
+                "from": "client1",
+                "to": "storage",
+                "label": "write(staleData, token=33)"
+              },
+              {
+                "from": "storage",
+                "to": "client1",
+                "label": "REJECTED: Stale token 33 < current 34"
+              }
+            ],
+            "activeActorId": "client1"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Heartbeat Leases & Auto-Renewing Watchdogs",
+      "codeHash": "4e4b3714da5cf5cc32a5bfcdeb2a88d3dc985541a2bdcb267c9d5c94a1caddda",
+      "spec": {
+        "template": "table",
+        "title": "Distributed lock lease watchdog parameter guidelines",
+        "columns": [
+          "Watchdog Parameter",
+          "Operational Role",
+          "Recommended Value",
+          "Failure Mode Mitigation"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Clients solve leasing dilemmas using background heartbeat watchdog mechanisms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Healthy client processes ensure locks remain perpetually renewed.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed lock lease watchdog parameter guidelines",
+        "columns": [
+          "Watchdog Parameter",
+          "Operational Role",
+          "Recommended Value",
+          "Failure Mode Mitigation"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Clients solve leasing dilemmas using background heartbeat watchdog mechanisms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Healthy client processes ensure locks remain perpetually renewed.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Distributed Lock Manager with Fencing & Quorum Verification",
+      "codeHash": "137ca978c41824e8a4fe95856e6a9fe92da719df7d2edd306de98eaf93a76f87",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 24,
+  "promptSha": "60fedb9ebd70bfda7b8fef80b2ef8dc443bcd2b97ae8230c847ccc16d1f25496",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Deterministic Hashing with DJB2 Algorithm",
+      "codeHash": "60fedb9ebd70bfda7b8fef80b2ef8dc443bcd2b97ae8230c847ccc16d1f25496",
+      "spec": {
+        "template": "flow",
+        "title": "DJB2 Deterministic Hashing Pipeline",
+        "nodes": [
+          {
+            "id": "user",
+            "label": "User & Salt String",
+            "tappable": false
+          },
+          {
+            "id": "hash",
+            "label": "DJB2 Bitwise Hash",
+            "tappable": false
+          },
+          {
+            "id": "mod",
+            "label": "Modulo 100 Calc",
+            "tappable": false
+          },
+          {
+            "id": "bucket",
+            "label": "Assigned Bucket",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "user",
+            "to": "hash"
+          },
+          {
+            "from": "hash",
+            "to": "mod"
+          },
+          {
+            "from": "mod",
+            "to": "bucket"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Architectures use deterministic hashing algorithms like DJB2 for routing.",
+            "activeNodes": [
+              "user",
+              "hash"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hashing the exact same user string twice yields identical values.",
+            "activeNodes": [
+              "hash"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Deterministic hashing ensures users receive the exact same prompt variant.",
+            "activeNodes": [
+              "mod",
+              "bucket"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "DJB2 Deterministic Hashing Pipeline",
+        "nodes": [
+          {
+            "id": "user",
+            "label": "User & Salt String",
+            "tappable": false
+          },
+          {
+            "id": "hash",
+            "label": "DJB2 Bitwise Hash",
+            "tappable": false
+          },
+          {
+            "id": "mod",
+            "label": "Modulo 100 Calc",
+            "tappable": false
+          },
+          {
+            "id": "bucket",
+            "label": "Assigned Bucket",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "user",
+            "to": "hash"
+          },
+          {
+            "from": "hash",
+            "to": "mod"
+          },
+          {
+            "from": "mod",
+            "to": "bucket"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Architectures use deterministic hashing algorithms like DJB2 for routing.",
+            "activeNodes": [
+              "user",
+              "hash"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hashing the exact same user string twice yields identical values.",
+            "activeNodes": [
+              "hash"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Deterministic hashing ensures users receive the exact same prompt variant.",
+            "activeNodes": [
+              "mod",
+              "bucket"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Percentage-Based User Cohort Assignment (Control vs Treatment)",
+      "codeHash": "041f78c6575e288a3fa6339ee49ada9acf688c7c397da851586f0aba72b56a60",
+      "spec": {
+        "template": "compare",
+        "title": "Control Cohort vs Treatment Cohort Routing",
+        "leftLabel": "Control Cohort (Baseline)",
+        "rightLabel": "Treatment Cohort (Experimental)",
+        "leftItems": [
+          "Percentile buckets >= 50",
+          "Receives standard system prompt",
+          "Production baseline behavior"
+        ],
+        "rightItems": [
+          "Percentile buckets < 50",
+          "Receives experimental prompt",
+          "Evaluates candidate variant"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Traffic splits between control group and experimental treatment group.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Users in buckets below threshold are routed to the treatment cohort.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say9",
+            "caption": "Percentage allocations enable safe canary rollouts before full scaling.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Control Cohort vs Treatment Cohort Routing",
+        "leftLabel": "Control Cohort (Baseline)",
+        "rightLabel": "Treatment Cohort (Experimental)",
+        "leftItems": [
+          "Percentile buckets >= 50",
+          "Receives standard system prompt",
+          "Production baseline behavior"
+        ],
+        "rightItems": [
+          "Percentile buckets < 50",
+          "Receives experimental prompt",
+          "Evaluates candidate variant"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Traffic splits between control group and experimental treatment group.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Users in buckets below threshold are routed to the treatment cohort.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say9",
+            "caption": "Percentage allocations enable safe canary rollouts before full scaling.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shadow / Dark Traffic Side-by-Side Inferences",
+      "codeHash": "2a3fe177c419c47c569170bc5eefeeb5419ee5f7b73ca46a484e2b0731b6e094",
+      "spec": {
+        "template": "workflow",
+        "title": "Shadow Dark Traffic Dispatch Lifecycle",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Inbound Request",
+            "subtext": "Receive live prompt"
+          },
+          {
+            "id": "primary",
+            "name": "Primary Model Sync",
+            "subtext": "Fast user response"
+          },
+          {
+            "id": "shadow",
+            "name": "Shadow Model Async",
+            "subtext": "Candidate model test"
+          },
+          {
+            "id": "telemetry",
+            "name": "Audit Telemetry",
+            "subtext": "Compare latency & tokens"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Primary models generate responses returned to users immediately.",
+            "activeStageId": "primary"
+          },
+          {
+            "at": "say4",
+            "caption": "Prompts are asynchronously dispatched to candidate shadow models.",
+            "activeStageId": "shadow"
+          },
+          {
+            "at": "say8",
+            "caption": "Shadow deployments test experimental models under load with zero risk.",
+            "activeStageId": "telemetry"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Shadow Dark Traffic Dispatch Lifecycle",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Inbound Request",
+            "subtext": "Receive live prompt"
+          },
+          {
+            "id": "primary",
+            "name": "Primary Model Sync",
+            "subtext": "Fast user response"
+          },
+          {
+            "id": "shadow",
+            "name": "Shadow Model Async",
+            "subtext": "Candidate model test"
+          },
+          {
+            "id": "telemetry",
+            "name": "Audit Telemetry",
+            "subtext": "Compare latency & tokens"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Primary models generate responses returned to users immediately.",
+            "activeStageId": "primary"
+          },
+          {
+            "at": "say4",
+            "caption": "Prompts are asynchronously dispatched to candidate shadow models.",
+            "activeStageId": "shadow"
+          },
+          {
+            "at": "say8",
+            "caption": "Shadow deployments test experimental models under load with zero risk.",
+            "activeStageId": "telemetry"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Experiment Conversion Rate & Relative Lift Calculation",
+      "codeHash": "196e55da7599d1f6a67e768c0f6078f3c5fb6d2b452b7b187b154360e25ca344",
+      "spec": {
+        "template": "bars",
+        "title": "A/B Experiment Conversion & Lift Rates",
+        "items": [
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions calculate percentage conversion rates for both test cohorts.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Extraordinary relative lift represents meaningful gains in engagement.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Lift metrics eliminate opinion and guesswork from management decisions.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "A/B Experiment Conversion & Lift Rates",
+        "items": [
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions calculate percentage conversion rates for both test cohorts.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Extraordinary relative lift represents meaningful gains in engagement.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Lift metrics eliminate opinion and guesswork from management decisions.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statistical Significance & Sample Size Bounds",
+      "codeHash": "0b787595e66fa33e0085d0b244bafe3a8fc73142a0b0a92e00b2ddd7e5bbdfac",
+      "spec": {
+        "template": "states",
+        "title": "Experiment Statistical Power States",
+        "states": [
+          {
+            "id": "collect",
+            "label": "Traffic Collection"
+          },
+          {
+            "id": "threshold",
+            "label": "Sample Minima Check"
+          },
+          {
+            "id": "deficit",
+            "label": "Under-Powered Deficit"
+          },
+          {
+            "id": "powered",
+            "label": "Statistically Robust"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Verifying cohort sample size ensures sufficient traffic volume accumulates.",
+            "current": "collect",
+            "visited": [
+              "collect"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Under-powered experiments must continue collecting data before decisions.",
+            "current": "deficit",
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit"
+            ]
+          },
+          {
+            "at": "say11",
+            "caption": "Minimum sample sizes ensure decisions are made on statistically robust data.",
+            "current": "powered",
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit",
+              "powered"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Experiment Statistical Power States",
+        "states": [
+          {
+            "id": "collect",
+            "label": "Traffic Collection"
+          },
+          {
+            "id": "threshold",
+            "label": "Sample Minima Check"
+          },
+          {
+            "id": "deficit",
+            "label": "Under-Powered Deficit"
+          },
+          {
+            "id": "powered",
+            "label": "Statistically Robust"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Verifying cohort sample size ensures sufficient traffic volume accumulates.",
+            "current": "collect",
+            "visited": [
+              "collect"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Under-powered experiments must continue collecting data before decisions.",
+            "current": "deficit",
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit"
+            ]
+          },
+          {
+            "at": "say11",
+            "caption": "Minimum sample sizes ensure decisions are made on statistically robust data.",
+            "current": "powered",
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit",
+              "powered"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Dynamic Feature Flag & Prompt Experiment Router",
+      "codeHash": "09060f1f2d5356d81b241557a11351525ce89106bd2dc1f8dc119388dd311fac",
+      "spec": {
+        "template": "none",
+        "reason": "Production Dynamic Feature Flag & Prompt Experiment Router capstone synthesizing DJB2 hashing, cohort splits, shadow inference, and lift calculations"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Dynamic Feature Flag & Prompt Experiment Router capstone synthesizing DJB2 hashing, cohort splits, shadow inference, and lift calculations"
+      }
+    }
+  ]
+}

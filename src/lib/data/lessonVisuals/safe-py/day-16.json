@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What red-teaming is",
+      "codeHash": "504020d72a9481a51e61918c52d89ca984ec28ea710becf32c2c27d516ecef25",
+      "spec": {
+        "template": "table",
+        "title": "Red-teaming attack categories and prompt results",
+        "columns": [
+          "category",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Safety red teams probe the system for harmful actions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "category"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "injection"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "A successful attack shows a weakness before an attacker finds it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "category"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pii"
+                  },
+                  {
+                    "text": "attacks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Red-teaming attack categories and prompt results",
+        "columns": [
+          "category",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Safety red teams probe the system for harmful actions.",
+            "rows": [
+              {
+                "cells": [
+                  "category",
+                  "prompt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "injection",
+                  "prompt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "A successful attack shows a weakness before an attacker finds it.",
+            "rows": [
+              {
+                "cells": [
+                  "category",
+                  "prompt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "pii",
+                  "attacks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Attack categories",
+      "codeHash": "a1cfb8fe9dd60db33f46a8b55b0e8e9537862819b5e4cfb7897187c21683ca96",
+      "spec": {
+        "template": "table",
+        "title": "Attack category counts and distribution",
+        "columns": [
+          "attacks",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Common categories group prompt injection and harmful instructions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "attacks"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "injection"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "An unbalanced set gives a misleading picture across categories.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "attacks"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "jailbreak"
+                  },
+                  {
+                    "text": "attacks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Attack category counts and distribution",
+        "columns": [
+          "attacks",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Common categories group prompt injection and harmful instructions.",
+            "rows": [
+              {
+                "cells": [
+                  "attacks",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "injection",
+                  "counts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "An unbalanced set gives a misleading picture across categories.",
+            "rows": [
+              {
+                "cells": [
+                  "attacks",
+                  "counts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "jailbreak",
+                  "attacks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Attack success rate",
+      "codeHash": "a908f0056c0d4f2e2996cfe561bd5fe4d179ce1fad02fb47ac6b8e8627bdbd8c",
+      "spec": {
+        "template": "table",
+        "title": "Tracking attempts and wins for attack success rate",
+        "columns": [
+          "cat",
+          "attempts"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Successful attacks divided by attempts define the rate.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "attempts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "attempts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Two counters per category track attempts and successes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "attempts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "wins"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tracking attempts and wins for attack success rate",
+        "columns": [
+          "cat",
+          "attempts"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Successful attacks divided by attempts define the rate.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "attempts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cat",
+                  "attempts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Two counters per category track attempts and successes.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "attempts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "wins",
+                  "results"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Small samples are unreliable",
+      "codeHash": "de9dbb6cb17e336cd0acb3d941b5ee44e9e98e765f1040abbfbc776142aacec8",
+      "spec": {
+        "template": "table",
+        "title": "Minimum attempt threshold for ranking reliable rates",
+        "columns": [
+          "rates",
+          "reliable"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A minimum number of attempts filters extreme rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "reliable"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "rates"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Statisticians use confidence intervals to express uncertainty.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "reliable"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rates"
+                  },
+                  {
+                    "text": "rates"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Minimum attempt threshold for ranking reliable rates",
+        "columns": [
+          "rates",
+          "reliable"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A minimum number of attempts filters extreme rates.",
+            "rows": [
+              {
+                "cells": [
+                  "rates",
+                  "reliable"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rates",
+                  "rates"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Statisticians use confidence intervals to express uncertainty.",
+            "rows": [
+              {
+                "cells": [
+                  "rates",
+                  "reliable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "rates",
+                  "rates"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated red-teaming",
+      "codeHash": "6382933f754456f8b9ac0d767dd6fd9ea24e4082f097d35f5dd7c9897b291401",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Red-teaming in the pipeline",
+      "codeHash": "6157280a1ddd223cb6646f71811d46205727da95d66e89ef88b0352f9fb5cd3c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

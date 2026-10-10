@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 5,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "High-Performance Event Broker Architecture Overview",
+      "codeHash": "9a32b282f57359616812ff605b56dba21dfce176c41b7a03714516be190ba3dc",
+      "spec": {
+        "template": "flow",
+        "title": "InDiskBrokerMetadata topic coordinator for orders.v1 and payments.v1",
+        "nodes": [
+          {
+            "id": "producers",
+            "label": "Event Producers",
+            "tappable": false
+          },
+          {
+            "id": "brokerMeta",
+            "label": "InDiskBrokerMetadata Coordinator",
+            "tappable": false
+          },
+          {
+            "id": "topicLogs",
+            "label": "orders.v1 (4) & payments.v1 (2)",
+            "tappable": false
+          },
+          {
+            "id": "consumers",
+            "label": "Subscribed Consumer Groups",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "producers",
+            "to": "brokerMeta",
+            "label": "Publish"
+          },
+          {
+            "from": "brokerMeta",
+            "to": "topicLogs",
+            "label": "Route Partitions"
+          },
+          {
+            "from": "topicLogs",
+            "to": "consumers",
+            "label": "HWM Bounded Poll"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Our broker acts as a central coordinator managing multiple named topics.",
+            "activeNodes": [
+              "producers",
+              "brokerMeta",
+              "topicLogs"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Consumers register with the broker, subscribe to topics, and poll for records.",
+            "activeNodes": [
+              "topicLogs",
+              "consumers"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "InDiskBrokerMetadata topic coordinator for orders.v1 and payments.v1",
+        "nodes": [
+          {
+            "id": "producers",
+            "label": "Event Producers",
+            "tappable": false
+          },
+          {
+            "id": "brokerMeta",
+            "label": "InDiskBrokerMetadata Coordinator",
+            "tappable": false
+          },
+          {
+            "id": "topicLogs",
+            "label": "orders.v1 (4) & payments.v1 (2)",
+            "tappable": false
+          },
+          {
+            "id": "consumers",
+            "label": "Subscribed Consumer Groups",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "producers",
+            "to": "brokerMeta",
+            "label": "Publish"
+          },
+          {
+            "from": "brokerMeta",
+            "to": "topicLogs",
+            "label": "Route Partitions"
+          },
+          {
+            "from": "topicLogs",
+            "to": "consumers",
+            "label": "HWM Bounded Poll"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Our broker acts as a central coordinator managing multiple named topics.",
+            "activeNodes": [
+              "producers",
+              "brokerMeta",
+              "topicLogs"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Consumers register with the broker, subscribe to topics, and poll for records.",
+            "activeNodes": [
+              "topicLogs",
+              "consumers"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition Storage Engine with Ring Buffers and Atomic Offsets",
+      "codeHash": "2a489a9dc337a9f520968bd0425135ba861c1e1aac097ee9da0f1c839cc2d800",
+      "spec": {
+        "template": "cells",
+        "title": "BoundedPartitionLog ring buffer slot eviction and monotonic offset tracking",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A ring buffer pre-allocates fixed capacity, writing records at the head pointer.",
+            "items": [
+              {
+                "text": "#0: alpha"
+              },
+              {
+                "text": "#1: bravo"
+              },
+              {
+                "text": "#2: charlie"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "lowest:0",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "head:2",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Even when old records are reclaimed, the monotonic offset counter never resets.",
+            "items": [
+              {
+                "text": "#3: delta"
+              },
+              {
+                "text": "#1: bravo"
+              },
+              {
+                "text": "#2: charlie"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "head:3",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "lowest:1",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "BoundedPartitionLog ring buffer slot eviction and monotonic offset tracking",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A ring buffer pre-allocates fixed capacity, writing records at the head pointer.",
+            "items": [
+              "#0: alpha",
+              "#1: bravo",
+              "#2: charlie"
+            ],
+            "pointers": [
+              {
+                "name": "lowest:0",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "head:2",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Even when old records are reclaimed, the monotonic offset counter never resets.",
+            "items": [
+              "#3: delta",
+              "#1: bravo",
+              "#2: charlie"
+            ],
+            "pointers": [
+              {
+                "name": "head:3",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "lowest:1",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ingestion Pipeline: Key Hashing, Schema Validation, and Batch Commit",
+      "codeHash": "b31d31a0509884cb62fad9f800d9f7e141c670adf297fc3f1bbb77937a906b0a",
+      "spec": {
+        "template": "sequence",
+        "title": "IngestionPipeline key hashing, partition append, and RecordReceipt response",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Producer Client"
+          },
+          {
+            "id": "pipeline",
+            "label": "IngestionPipeline"
+          },
+          {
+            "id": "partitionLog",
+            "label": "Target Partition Log"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When a key is present, the ingestion pipeline maps it to the target partition.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "pipeline",
+                "label": "publish(topic: 'orders', key: 'cust-1')"
+              },
+              {
+                "from": "pipeline",
+                "to": "partitionLog",
+                "label": "Route via Hash & Append Record"
+              }
+            ],
+            "activeActorId": "pipeline"
+          },
+          {
+            "at": "say6",
+            "caption": "The broker appends the record to the log, returning a receipt to the producer.",
+            "messages": [
+              {
+                "from": "partitionLog",
+                "to": "pipeline",
+                "label": "Assigned Offset & Timestamp"
+              },
+              {
+                "from": "pipeline",
+                "to": "producer",
+                "label": "Return RecordReceipt (partition, offset)"
+              }
+            ],
+            "activeActorId": "producer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "IngestionPipeline key hashing, partition append, and RecordReceipt response",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Producer Client"
+          },
+          {
+            "id": "pipeline",
+            "label": "IngestionPipeline"
+          },
+          {
+            "id": "partitionLog",
+            "label": "Target Partition Log"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When a key is present, the ingestion pipeline maps it to the target partition.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "pipeline",
+                "label": "publish(topic: 'orders', key: 'cust-1')"
+              },
+              {
+                "from": "pipeline",
+                "to": "partitionLog",
+                "label": "Route via Hash & Append Record"
+              }
+            ],
+            "activeActorId": "pipeline"
+          },
+          {
+            "at": "say6",
+            "caption": "The broker appends the record to the log, returning a receipt to the producer.",
+            "messages": [
+              {
+                "from": "partitionLog",
+                "to": "pipeline",
+                "label": "Assigned Offset & Timestamp"
+              },
+              {
+                "from": "pipeline",
+                "to": "producer",
+                "label": "Return RecordReceipt (partition, offset)"
+              }
+            ],
+            "activeActorId": "producer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Subscription Management & Cursor Bookkeeping",
+      "codeHash": "e0abf1709e5a5b1ee7350d1129b23ae1ce2be5b769c611ad504af36763f1eafe",
+      "spec": {
+        "template": "table",
+        "title": "ConsumerGroupRegistry independent cursor bookkeeping across consumer groups",
+        "columns": [
+          "Group ID",
+          "Topic",
+          "Partition",
+          "Committed Offset"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When a consumer registers, the broker tracks its current offset cursor.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Committing the offset advances the consumer group persistent cursor.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ConsumerGroupRegistry independent cursor bookkeeping across consumer groups",
+        "columns": [
+          "Group ID",
+          "Topic",
+          "Partition",
+          "Committed Offset"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When a consumer registers, the broker tracks its current offset cursor.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Committing the offset advances the consumer group persistent cursor.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Water Mark Replication Emulation & Read Isolation",
+      "codeHash": "73d48e46d4a7d528ff5874c535334c3b1c7120c16b55bdb149246a6344c46372",
+      "spec": {
+        "template": "states",
+        "title": "ReplicatedPartitionLog High-Water Mark advancement and readCommitted isolation",
+        "states": [
+          {
+            "id": "uncommittedLEO",
+            "label": "Appended (leo: 3, hwm: -1)"
+          },
+          {
+            "id": "quorumReplicated",
+            "label": "Quorum Replicated (setHighWaterMark(1))"
+          },
+          {
+            "id": "readIsolated",
+            "label": "Consumer Reads [#0:msg-0, #1:msg-1]"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Appended records enter the log as uncommitted, advancing the Log End Offset.",
+            "activeState": "uncommittedLEO"
+          },
+          {
+            "at": "say6",
+            "caption": "The read engine bounds its scan strictly to offsets within the High-Water Mark.",
+            "activeState": "readIsolated",
+            "transition": {
+              "from": "quorumReplicated",
+              "to": "readIsolated",
+              "label": "offset <= hwm (1)"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "ReplicatedPartitionLog High-Water Mark advancement and readCommitted isolation",
+        "states": [
+          {
+            "id": "uncommittedLEO",
+            "label": "Appended (leo: 3, hwm: -1)"
+          },
+          {
+            "id": "quorumReplicated",
+            "label": "Quorum Replicated (setHighWaterMark(1))"
+          },
+          {
+            "id": "readIsolated",
+            "label": "Consumer Reads [#0:msg-0, #1:msg-1]"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Appended records enter the log as uncommitted, advancing the Log End Offset.",
+            "activeState": "uncommittedLEO"
+          },
+          {
+            "at": "say6",
+            "caption": "The read engine bounds its scan strictly to offsets within the High-Water Mark.",
+            "activeState": "readIsolated",
+            "transition": {
+              "from": "quorumReplicated",
+              "to": "readIsolated",
+              "label": "offset <= hwm (1)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Milestone 1 Verification: Multi-Partition Concurrent Streaming",
+      "codeHash": "296f6c3234bd97a1332f179adc770ca14bb4a16c59d3d78aeab21703b8589e4b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

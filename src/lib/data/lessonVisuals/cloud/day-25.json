@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 25,
+  "promptSha": "b4e4a48dd6990471658bbec9ed1a13c7f5bfe6b163eaab08240bf9893c7b0692",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cloud Observability Pillars & Amazon CloudWatch",
+      "codeHash": "f62989674d2151552218a61d3e9365c3c94cf4a2acf1e83d9c272130bffc2a26",
+      "spec": {
+        "template": "workflow",
+        "title": "Cloud observability telemetry collection pipeline",
+        "stages": [
+          {
+            "id": "metrics",
+            "name": "Numerical Metrics",
+            "subtext": "CPU & Requests"
+          },
+          {
+            "id": "logs",
+            "name": "Centralized Logs",
+            "subtext": "Structured Streams"
+          },
+          {
+            "id": "alarms",
+            "name": "Proactive Alarms",
+            "subtext": "Threshold Evaluation"
+          },
+          {
+            "id": "actions",
+            "name": "Incident Actions",
+            "subtext": "Auto Remediation"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Metrics provide quantifiable numerical measurements over time.",
+            "activeStageId": "metrics",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "CloudWatch enables developers to visualize dashboards and set alarms.",
+            "activeStageId": "alarms",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Cloud observability telemetry collection pipeline",
+        "stages": [
+          {
+            "id": "metrics",
+            "name": "Numerical Metrics",
+            "subtext": "CPU & Requests"
+          },
+          {
+            "id": "logs",
+            "name": "Centralized Logs",
+            "subtext": "Structured Streams"
+          },
+          {
+            "id": "alarms",
+            "name": "Proactive Alarms",
+            "subtext": "Threshold Evaluation"
+          },
+          {
+            "id": "actions",
+            "name": "Incident Actions",
+            "subtext": "Auto Remediation"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Metrics provide quantifiable numerical measurements over time.",
+            "activeStageId": "metrics",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "CloudWatch enables developers to visualize dashboards and set alarms.",
+            "activeStageId": "alarms",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CloudWatch Metrics, Dimensions & Metric Math",
+      "codeHash": "fef61d8fd802741d41561cd77712db93deb9cf268a100e4c0915752c47d1d0ba",
+      "spec": {
+        "template": "bars",
+        "title": "CloudWatch metric resolution intervals and metric math derivations",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Dimensions act as unique identifiers and filtering criteria for metrics.",
+            "bars": [
+              {
+                "label": "Standard Metric Interval",
+                "value": 300,
+                "max": 300,
+                "tone": "data"
+              },
+              {
+                "label": "Detailed Metric Interval",
+                "value": 60,
+                "max": 300,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Metric math allows engineers to query and combine metrics in real time.",
+            "bars": [
+              {
+                "label": "High Resolution Interval",
+                "value": 1,
+                "max": 300,
+                "tone": "idle"
+              },
+              {
+                "label": "Derived Metric Math Ratio",
+                "value": 100,
+                "max": 300,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "CloudWatch metric resolution intervals and metric math derivations",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Dimensions act as unique identifiers and filtering criteria for metrics.",
+            "bars": [
+              {
+                "label": "Standard Metric Interval",
+                "value": 300,
+                "max": 300,
+                "tone": "data"
+              },
+              {
+                "label": "Detailed Metric Interval",
+                "value": 60,
+                "max": 300,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Metric math allows engineers to query and combine metrics in real time.",
+            "bars": [
+              {
+                "label": "High Resolution Interval",
+                "value": 1,
+                "max": 300,
+                "tone": "idle"
+              },
+              {
+                "label": "Derived Metric Math Ratio",
+                "value": 100,
+                "max": 300,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CloudWatch Logs, Log Groups & Metric Filters",
+      "codeHash": "2e28343fbc33f5a113a926de8ddd450f489cc39a133b5e2df24dc83b73164e16",
+      "spec": {
+        "template": "states",
+        "title": "CloudWatch log group ingestion and metric filter transformation states",
+        "states": [
+          {
+            "id": "streamIngest",
+            "label": "Raw Log Stream Ingested"
+          },
+          {
+            "id": "filterMatched",
+            "label": "Metric Filter Pattern Matched"
+          },
+          {
+            "id": "metricCounted",
+            "label": "Custom Metric Counter Incremented"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A log group defines common retention settings for log streams.",
+            "active": "streamIngest"
+          },
+          {
+            "at": "say7",
+            "caption": "Metric filters transform unstructured log text into numerical metrics.",
+            "active": "metricCounted"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "CloudWatch log group ingestion and metric filter transformation states",
+        "states": [
+          {
+            "id": "streamIngest",
+            "label": "Raw Log Stream Ingested"
+          },
+          {
+            "id": "filterMatched",
+            "label": "Metric Filter Pattern Matched"
+          },
+          {
+            "id": "metricCounted",
+            "label": "Custom Metric Counter Incremented"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A log group defines common retention settings for log streams.",
+            "active": "streamIngest"
+          },
+          {
+            "at": "say7",
+            "caption": "Metric filters transform unstructured log text into numerical metrics.",
+            "active": "metricCounted"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CloudWatch Logs Insights SQL-Like Querying",
+      "codeHash": "62bf84b85f66377444217638336cab58e3ac3b5a76177fbc7cf3fb0040dcfcc9",
+      "spec": {
+        "template": "table",
+        "title": "Logs Insights SQL query pipeline commands and output projections",
+        "columns": [
+          "Query Command",
+          "Command Purpose",
+          "Example Query Clause",
+          "Engine Output"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Logs insights uses query syntax that allows querying log data in seconds.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The stats command calculates aggregations over grouped fields.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Logs Insights SQL query pipeline commands and output projections",
+        "columns": [
+          "Query Command",
+          "Command Purpose",
+          "Example Query Clause",
+          "Engine Output"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Logs insights uses query syntax that allows querying log data in seconds.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The stats command calculates aggregations over grouped fields.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CloudWatch Alarms, Composite Alarms & SNS Alerting",
+      "codeHash": "f3f3562f390423c2b784327a4d6c776fdeff9b2e6a0e65e9c4cefaf7bd76ea84",
+      "spec": {
+        "template": "compare",
+        "title": "Standard CloudWatch alarms compared to composite boolean alarms",
+        "leftLabel": "Standard CloudWatch Alarm",
+        "rightLabel": "Composite CloudWatch Alarm",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An alarm operates across states evaluating metrics against thresholds.",
+            "left": {
+              "code": "Single Metric Evaluation",
+              "result": {
+                "text": "Potential Alert Fatigue"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Multi-Condition AND/OR",
+              "result": {
+                "text": "Targeted Incident Alarm"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "A composite alarm combines multiple existing alarms using boolean logic.",
+            "left": {
+              "code": "state: \"ALARM\"",
+              "result": {
+                "text": "Individual Threshold Breached"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "state: \"COMPOSITE_ALARM\"",
+              "result": {
+                "text": "SNS Pager Notification"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Standard CloudWatch alarms compared to composite boolean alarms",
+        "leftLabel": "Standard CloudWatch Alarm",
+        "rightLabel": "Composite CloudWatch Alarm",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An alarm operates across states evaluating metrics against thresholds.",
+            "left": {
+              "code": "Single Metric Evaluation",
+              "result": {
+                "text": "Potential Alert Fatigue"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Multi-Condition AND/OR",
+              "result": {
+                "text": "Targeted Incident Alarm"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "A composite alarm combines multiple existing alarms using boolean logic.",
+            "left": {
+              "code": "state: \"ALARM\"",
+              "result": {
+                "text": "Individual Threshold Breached"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "state: \"COMPOSITE_ALARM\"",
+              "result": {
+                "text": "SNS Pager Notification"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Observability & Incident Response Verification",
+      "codeHash": "ece1c5ef88bffb9fb9e97942cff8b35633c0ab687d06d1e0b5e6a5889f1de58c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

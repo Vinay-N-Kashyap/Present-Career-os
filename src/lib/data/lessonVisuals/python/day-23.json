@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 23,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why plan before coding",
+      "codeHash": "5ffbb8a28585b6bbc78c1b28dbdc7996b1e69d3915603eef271dce018363abdc",
+      "spec": {
+        "template": "none",
+        "reason": "High-level project roadmap and architectural rationale are design decisions."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "User stories",
+      "codeHash": "a53fefe58247aeca36bf71c04dd6227bb965ec1444587c4ba7ed35f8ea09bf7e",
+      "spec": {
+        "template": "boxes",
+        "title": "Categorising user stories by priority",
+        "boxes": [
+          {
+            "id": "label",
+            "label": "label"
+          },
+          {
+            "id": "must",
+            "label": "must"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User story describes feature from user point of view.",
+            "values": {
+              "label": {
+                "text": "MUST"
+              },
+              "must": {
+                "text": "True"
+              }
+            },
+            "tones": {
+              "label": "data",
+              "must": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Mark each story as must-have or nice-to-have.",
+            "values": {
+              "label": {
+                "var": "label",
+                "line": 9
+              },
+              "must": {
+                "var": "must",
+                "line": 9
+              }
+            },
+            "tones": {
+              "label": "ok",
+              "must": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Categorising user stories by priority",
+        "boxes": [
+          {
+            "id": "label",
+            "label": "label"
+          },
+          {
+            "id": "must",
+            "label": "must"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User story describes feature from user point of view.",
+            "values": {
+              "label": "MUST",
+              "must": "True"
+            },
+            "tones": {
+              "label": "data",
+              "must": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Mark each story as must-have or nice-to-have.",
+            "values": {
+              "label": "'MUST'",
+              "must": "True"
+            },
+            "tones": {
+              "label": "ok",
+              "must": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing the data shape",
+      "codeHash": "60ecd6b40a6b72e7148747ca14aaa2d9c84f50970a6773881abcd568adff6771",
+      "spec": {
+        "template": "boxes",
+        "title": "Validating dictionary schema fields",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "category",
+            "label": "category"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Decide keys for item text and category lower-case text.",
+            "values": {
+              "item": {
+                "text": "Tea"
+              },
+              "category": {
+                "text": "food"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "category": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Function checks record has the right shape to catch mistakes.",
+            "values": {
+              "item": {
+                "text": "Bus"
+              },
+              "category": {
+                "text": "food"
+              }
+            },
+            "tones": {
+              "item": "ok",
+              "category": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Validating dictionary schema fields",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "category",
+            "label": "category"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Decide keys for item text and category lower-case text.",
+            "values": {
+              "item": "Tea",
+              "category": "food"
+            },
+            "tones": {
+              "item": "data",
+              "category": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Function checks record has the right shape to catch mistakes.",
+            "values": {
+              "item": "Bus",
+              "category": "food"
+            },
+            "tones": {
+              "item": "ok",
+              "category": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Breaking the program into small functions",
+      "codeHash": "f756349e69fc14bd3c212b22a106e973a6be89fbd62c0ded3e2b91522a86e4ae",
+      "spec": {
+        "template": "none",
+        "reason": "Function signature definitions and composition strategies are planning guidelines."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Planning the build order",
+      "codeHash": "aa462ab53c727956ceb5772d1f4e1dce95fcbb503e7e59acf7caa2f70bbc7ddf",
+      "spec": {
+        "template": "boxes",
+        "title": "Estimating effort across build stages",
+        "boxes": [
+          {
+            "id": "step",
+            "label": "step"
+          },
+          {
+            "id": "hours",
+            "label": "hours"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Build in thin working slices after each step.",
+            "values": {
+              "step": {
+                "text": "1"
+              },
+              "hours": {
+                "text": "2"
+              }
+            },
+            "tones": {
+              "step": "data",
+              "hours": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Estimate each step in hours and compare.",
+            "values": {
+              "step": {
+                "var": "step",
+                "line": 11
+              },
+              "hours": {
+                "var": "hours",
+                "line": 11
+              }
+            },
+            "tones": {
+              "step": "ok",
+              "hours": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Estimating effort across build stages",
+        "boxes": [
+          {
+            "id": "step",
+            "label": "step"
+          },
+          {
+            "id": "hours",
+            "label": "hours"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Build in thin working slices after each step.",
+            "values": {
+              "step": "1",
+              "hours": "2"
+            },
+            "tones": {
+              "step": "data",
+              "hours": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Estimate each step in hours and compare.",
+            "values": {
+              "step": "1",
+              "hours": "2"
+            },
+            "tones": {
+              "step": "ok",
+              "hours": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together: PLAN.md and the first functions",
+      "codeHash": "af89791efb4a7fd310bf18c14f6b45b7873b8aa5c3c68853605d69184fb3b323",
+      "spec": {
+        "template": "none",
+        "reason": "Markdown document generation and initialization steps are demonstrated in output."
+      },
+      "filled": {}
+    }
+  ]
+}

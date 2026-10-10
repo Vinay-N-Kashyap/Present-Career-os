@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "From one tool call to an agent",
+      "codeHash": "36b11b9b6c7b3cf1d8dbac7fac130bcd120955f8764a568718ba81a24dbcabdb",
+      "spec": {
+        "template": "none",
+        "reason": "ReAct pattern conceptual introduction and single tool call contrast."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Parsing a ReAct step",
+      "codeHash": "d9a157f8fc9c0556d70dca1f239e8cae07cbb1d556d45ef4280eac4c8baf6d2a",
+      "spec": {
+        "template": "compare",
+        "title": "Parsing ReAct step output into action step or final answer",
+        "leftLabel": "Action Step",
+        "rightLabel": "Final Answer",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parse ReAct step returns action step or final answer.",
+            "left": {
+              "code": "Thought: need weather\nAction: get_weather",
+              "result": {
+                "text": "ACTION_STEP"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Thought: done\nFinal Answer: It is 31 C in Chennai.",
+              "result": {
+                "text": "FINAL_ANSWER"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Trap check for action input line before action line.",
+            "left": {
+              "code": "Action Input: Chennai",
+              "result": {
+                "text": "Chennai"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Action: get_weather",
+              "result": {
+                "text": "get_weather"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Parse result type field acts on action step and stops on final answer.",
+            "left": {
+              "code": "step = {type: ACTION_STEP, action: get_weather}",
+              "result": {
+                "text": "ACTION_STEP"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "step = {type: FINAL_ANSWER, answer: Chennai}",
+              "result": {
+                "text": "FINAL_ANSWER"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Parsing ReAct step output into action step or final answer",
+        "leftLabel": "Action Step",
+        "rightLabel": "Final Answer",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parse ReAct step returns action step or final answer.",
+            "left": {
+              "code": "Thought: need weather\nAction: get_weather",
+              "result": "ACTION_STEP",
+              "tone": "data",
+              "checks": [
+                "ACTION_STEP"
+              ]
+            },
+            "right": {
+              "code": "Thought: done\nFinal Answer: It is 31 C in Chennai.",
+              "result": "FINAL_ANSWER",
+              "tone": "ok",
+              "checks": [
+                "FINAL_ANSWER"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Trap check for action input line before action line.",
+            "left": {
+              "code": "Action Input: Chennai",
+              "result": "Chennai",
+              "tone": "data",
+              "checks": [
+                "Chennai"
+              ]
+            },
+            "right": {
+              "code": "Action: get_weather",
+              "result": "get_weather",
+              "tone": "ok",
+              "checks": [
+                "get_weather"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Parse result type field acts on action step and stops on final answer.",
+            "left": {
+              "code": "step = {type: ACTION_STEP, action: get_weather}",
+              "result": "ACTION_STEP",
+              "tone": "data",
+              "checks": [
+                "ACTION_STEP"
+              ]
+            },
+            "right": {
+              "code": "step = {type: FINAL_ANSWER, answer: Chennai}",
+              "result": "FINAL_ANSWER",
+              "tone": "ok",
+              "checks": [
+                "FINAL_ANSWER"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The agent loop",
+      "codeHash": "7eae3fbb7c381d21190d2755fff1fb471dd1ea2b1e18417e03e10f9bdd7c8582",
+      "spec": {
+        "template": "flow",
+        "title": "ReAct agent dispatch loop between tool and observation scratchpad",
+        "nodes": [
+          {
+            "id": "tool",
+            "label": "tool"
+          },
+          {
+            "id": "observation",
+            "label": "observation"
+          },
+          {
+            "id": "scratchpad",
+            "label": "scratchpad"
+          }
+        ],
+        "edges": [
+          {
+            "from": "tool",
+            "to": "observation"
+          },
+          {
+            "from": "observation",
+            "to": "scratchpad"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Loop parses step runs tool and appends observation.",
+            "values": {
+              "tool": {
+                "text": "lookup"
+              },
+              "observation": {
+                "text": "rupees"
+              },
+              "scratchpad": {
+                "text": "Action"
+              }
+            },
+            "tones": {
+              "tool": "ok",
+              "observation": "data",
+              "scratchpad": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Keep scratchpad list of previous steps and observations.",
+            "values": {
+              "tool": {
+                "text": "lookup"
+              },
+              "observation": {
+                "text": "rupees"
+              },
+              "scratchpad": {
+                "text": "Action"
+              }
+            },
+            "tones": {
+              "tool": "ok",
+              "observation": "ok",
+              "scratchpad": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Unknown tool returns error observation so agent can recover.",
+            "values": {
+              "tool": {
+                "text": "lookup"
+              },
+              "observation": {
+                "text": "rupees"
+              },
+              "scratchpad": {
+                "text": "Action"
+              }
+            },
+            "tones": {
+              "tool": "ok",
+              "observation": "ok",
+              "scratchpad": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "ReAct agent dispatch loop between tool and observation scratchpad",
+        "nodes": [
+          {
+            "id": "tool",
+            "label": "tool"
+          },
+          {
+            "id": "observation",
+            "label": "observation"
+          },
+          {
+            "id": "scratchpad",
+            "label": "scratchpad"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Loop parses step runs tool and appends observation.",
+            "values": {
+              "tool": "lookup",
+              "observation": "rupees",
+              "scratchpad": "Action"
+            },
+            "tones": {
+              "tool": "ok",
+              "observation": "data",
+              "scratchpad": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Keep scratchpad list of previous steps and observations.",
+            "values": {
+              "tool": "lookup",
+              "observation": "rupees",
+              "scratchpad": "Action"
+            },
+            "tones": {
+              "tool": "ok",
+              "observation": "ok",
+              "scratchpad": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say4",
+            "caption": "Unknown tool returns error observation so agent can recover.",
+            "values": {
+              "tool": "lookup",
+              "observation": "rupees",
+              "scratchpad": "Action"
+            },
+            "tones": {
+              "tool": "ok",
+              "observation": "ok",
+              "scratchpad": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stopping runaway agents",
+      "codeHash": "0f5e9f722a87979fc3df89b4f053f6777c0d4c1fdc0ef718c64e2738132ad3ab",
+      "spec": {
+        "template": "table",
+        "title": "Runaway agent brake conditions iteration limit and cycle detection",
+        "columns": [
+          "action",
+          "condition",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Agents can loop bouncing between tools costing tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "search a"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "finished in"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "read b"
+                  },
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "finished in"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The loop checks max_iterations_reached before every step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "search a"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "finished in"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "read b"
+                  },
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "finished in"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "search a"
+                  },
+                  {
+                    "text": "seen"
+                  },
+                  {
+                    "text": "stopped: repeated action"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Add brakes detecting repeated action and token budget limit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "search a"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "finished in"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "read b"
+                  },
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "finished in"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "search a"
+                  },
+                  {
+                    "text": "seen"
+                  },
+                  {
+                    "text": "stopped: repeated action"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Runaway agent brake conditions iteration limit and cycle detection",
+        "columns": [
+          "action",
+          "condition",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Agents can loop bouncing between tools costing tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "search a",
+                  "step",
+                  "finished in"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "read b",
+                  "action",
+                  "finished in"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The loop checks max_iterations_reached before every step.",
+            "rows": [
+              {
+                "cells": [
+                  "search a",
+                  "step",
+                  "finished in"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "read b",
+                  "action",
+                  "finished in"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search a",
+                  "seen",
+                  "stopped: repeated action"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Add brakes detecting repeated action and token budget limit.",
+            "rows": [
+              {
+                "cells": [
+                  "search a",
+                  "step",
+                  "finished in"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "read b",
+                  "action",
+                  "finished in"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search a",
+                  "seen",
+                  "stopped: repeated action"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing a good agent prompt",
+      "codeHash": "9dd6b00cc508f8f9967952b0ec06f771b7a3f7276316b55407067e7fc20e9ca2",
+      "spec": {
+        "template": "none",
+        "reason": "Agent system prompt guidelines tool descriptions and format specification."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "When not to use an agent",
+      "codeHash": "e26b511410709a5422a5f764f15a807cb2dcb1d85982f239fe99837faec402b0",
+      "spec": {
+        "template": "bars",
+        "title": "Average step count comparison across agent and pipeline architectures",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed pipelines work better and cost less than agents.",
+            "bars": [
+              {
+                "label": "fixed_pipeline",
+                "value": {
+                  "text": "3.0"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "router_pipeline",
+                "value": {
+                  "text": "3.4"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A router picks fixed pipelines running known steps.",
+            "bars": [
+              {
+                "label": "fixed_pipeline",
+                "value": {
+                  "text": "3.0"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "router_pipeline",
+                "value": {
+                  "text": "3.4"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "free_agent",
+                "value": {
+                  "text": "7.8"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Measure agents on success rate average steps and cost per task.",
+            "bars": [
+              {
+                "label": "fixed_pipeline",
+                "value": {
+                  "text": "3.0"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "router_pipeline",
+                "value": {
+                  "text": "3.4"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "free_agent",
+                "value": {
+                  "text": "7.8"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Average step count comparison across agent and pipeline architectures",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed pipelines work better and cost less than agents.",
+            "bars": [
+              {
+                "label": "fixed_pipeline",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "router_pipeline",
+                "value": 3.4,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A router picks fixed pipelines running known steps.",
+            "bars": [
+              {
+                "label": "fixed_pipeline",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "router_pipeline",
+                "value": 3.4,
+                "tone": "ok"
+              },
+              {
+                "label": "free_agent",
+                "value": 7.8,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Measure agents on success rate average steps and cost per task.",
+            "bars": [
+              {
+                "label": "fixed_pipeline",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "router_pipeline",
+                "value": 3.4,
+                "tone": "ok"
+              },
+              {
+                "label": "free_agent",
+                "value": 7.8,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

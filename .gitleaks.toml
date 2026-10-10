@@ -1,0 +1,5 @@
+# Gitleaks default ruleset configuration (Task S-02)
+# Extends built-in default rules with zero allowlist entries.
+
+[extend]
+useDefault = true

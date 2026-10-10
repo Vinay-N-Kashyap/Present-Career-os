@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Functions without servers",
+      "codeHash": "7fd0e5758506a4125daf595c132f59dfa97b43c24a752d1fc014b607c421731e",
+      "spec": {
+        "template": "table",
+        "title": "Serverless event request handling and structured response attributes",
+        "columns": [
+          "field",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS Lambda runs code in response to events without managing a server.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "queryStringParameters"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lambda scales automatically by starting parallel copies of your function.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "queryStringParameters"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "statusCode"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows the shape of a Python Lambda function and invocations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "queryStringParameters"
+                  },
+                  {
+                    "text": "Asha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "statusCode"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "queryStringParameters"
+                  },
+                  {
+                    "text": "world"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Serverless event request handling and structured response attributes",
+        "columns": [
+          "field",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS Lambda runs code in response to events without managing a server.",
+            "rows": [
+              {
+                "cells": [
+                  "queryStringParameters",
+                  "Asha"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lambda scales automatically by starting parallel copies of your function.",
+            "rows": [
+              {
+                "cells": [
+                  "queryStringParameters",
+                  "Asha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "statusCode",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows the shape of a Python Lambda function and invocations.",
+            "rows": [
+              {
+                "cells": [
+                  "queryStringParameters",
+                  "Asha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "statusCode",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "queryStringParameters",
+                  "world"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How Lambda is priced",
+      "codeHash": "313d74d8eb84c1211369938586ad04540e62fc0e31cec039a65bea4e497e9284",
+      "spec": {
+        "template": "table",
+        "title": "Lambda invocation duration and memory allocation pricing dimensions",
+        "columns": [
+          "memory_mb",
+          "duration_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lambda charges for compute in gigabyte seconds based on configured memory.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "128"
+                  },
+                  {
+                    "text": "1600"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "More memory provides additional CPU allowing functions to finish faster.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "128"
+                  },
+                  {
+                    "text": "1600"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "400"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "210"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example evaluates cost tradeoffs across different memory allocations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "128"
+                  },
+                  {
+                    "text": "1600"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "400"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "210"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Lambda invocation duration and memory allocation pricing dimensions",
+        "columns": [
+          "memory_mb",
+          "duration_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lambda charges for compute in gigabyte seconds based on configured memory.",
+            "rows": [
+              {
+                "cells": [
+                  "128",
+                  "1600"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "More memory provides additional CPU allowing functions to finish faster.",
+            "rows": [
+              {
+                "cells": [
+                  "128",
+                  "1600"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "512",
+                  "400"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "210"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example evaluates cost tradeoffs across different memory allocations.",
+            "rows": [
+              {
+                "cells": [
+                  "128",
+                  "1600"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "512",
+                  "400"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "210"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cold starts and warm starts",
+      "codeHash": "5f36bd46ef396966a816052466e4bfe6195a7851b8e9d53ce7344582acb2dc34",
+      "spec": {
+        "template": "table",
+        "title": "Lambda execution environment lifecycle states across sequential calls",
+        "columns": [
+          "environment",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A cold start initializes the execution environment and runtime dependencies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "connected"
+                  },
+                  {
+                    "text": "cold"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Warm starts reuse initialized environments to handle invocations quickly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "connected"
+                  },
+                  {
+                    "text": "cold"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "connected"
+                  },
+                  {
+                    "text": "warm"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates handler execution reusing environment connections.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "connected"
+                  },
+                  {
+                    "text": "cold"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "connected"
+                  },
+                  {
+                    "text": "warm"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "connected"
+                  },
+                  {
+                    "text": "warm"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Lambda execution environment lifecycle states across sequential calls",
+        "columns": [
+          "environment",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A cold start initializes the execution environment and runtime dependencies.",
+            "rows": [
+              {
+                "cells": [
+                  "connected",
+                  "cold"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Warm starts reuse initialized environments to handle invocations quickly.",
+            "rows": [
+              {
+                "cells": [
+                  "connected",
+                  "cold"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "connected",
+                  "warm"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates handler execution reusing environment connections.",
+            "rows": [
+              {
+                "cells": [
+                  "connected",
+                  "cold"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "connected",
+                  "warm"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "connected",
+                  "warm"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concurrency",
+      "codeHash": "a98e5f374add95804e98de674a981d9848054739e1668b410d6104bf501ff1eb",
+      "spec": {
+        "template": "table",
+        "title": "Estimated concurrent function demand against regional concurrency limits",
+        "columns": [
+          "workload",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrency represents the number of function copies executing simultaneously.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "api"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Regional concurrency limits are shared across all functions in an account.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "api"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "thumbnails"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example estimates concurrency across workloads flagging throttled demand.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "api"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "thumbnails"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "black-friday api"
+                  },
+                  {
+                    "text": "THROTTLED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Estimated concurrent function demand against regional concurrency limits",
+        "columns": [
+          "workload",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrency represents the number of function copies executing simultaneously.",
+            "rows": [
+              {
+                "cells": [
+                  "api",
+                  "ok"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Regional concurrency limits are shared across all functions in an account.",
+            "rows": [
+              {
+                "cells": [
+                  "api",
+                  "ok"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "thumbnails",
+                  "ok"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example estimates concurrency across workloads flagging throttled demand.",
+            "rows": [
+              {
+                "cells": [
+                  "api",
+                  "ok"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "thumbnails",
+                  "ok"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "black-friday api",
+                  "THROTTLED"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fighting cold starts: SnapStart and provisioned concurrency",
+      "codeHash": "c9ffde95ac16e9db9a323aaa71bfc5c0114cac33aaa5cd2502729dc8e7a59faf",
+      "spec": {
+        "template": "none",
+        "reason": "SnapStart and provisioned concurrency decision logic."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: cost and cold starts",
+      "codeHash": "ed438ba42b5a3fae4a1e84f8626a2f9f755b01cae722ade04b0b2de7504e56aa",
+      "spec": {
+        "template": "none",
+        "reason": "Lambda pricing formula and cold start optimization practice."
+      },
+      "filled": {}
+    }
+  ]
+}

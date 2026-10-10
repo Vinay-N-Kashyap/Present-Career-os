@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 24,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Stream-Stream Join Semantics & Temporal Horizons",
+      "codeHash": "2ffae004a62ac131d223f7ad7eaeba3ae074ce4ac07e20c0eeaf7b6ae584a673",
+      "spec": {
+        "template": "table",
+        "title": "joinStreamStream evaluating 500ms correlation window across user-101 and user-102",
+        "columns": [
+          "Key",
+          "Impression / Purchase Ts",
+          "Time Delta",
+          "500ms Window Match"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "A stream-stream join is bounded by a temporal correlation window (500ms).",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Two events with matching keys join only if their timestamps differ <= 500ms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "joinStreamStream evaluating 500ms correlation window across user-101 and user-102",
+        "columns": [
+          "Key",
+          "Impression / Purchase Ts",
+          "Time Delta",
+          "500ms Window Match"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "A stream-stream join is bounded by a temporal correlation window (500ms).",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Two events with matching keys join only if their timestamps differ <= 500ms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Co-Partitioning Invariant: The Golden Rule of Streaming Joins",
+      "codeHash": "ff2177b44f41aa5996a2b9080fe69879f0f4dcfdb6e96afad273d5139ef4fca9",
+      "spec": {
+        "template": "table",
+        "title": "validateCoPartitioning verifying partition count (16 vs 32) and murmur3 hash alignment",
+        "columns": [
+          "Topic Pair",
+          "Partitions",
+          "Hash Algorithm",
+          "Validation Status"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Both topics must have the exact same number of partitions (16 partitions).",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Mismatched partition counts (16 vs 32) fail with PARTITION_COUNT_MISMATCH.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "validateCoPartitioning verifying partition count (16 vs 32) and murmur3 hash alignment",
+        "columns": [
+          "Topic Pair",
+          "Partitions",
+          "Hash Algorithm",
+          "Validation Status"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Both topics must have the exact same number of partitions (16 partitions).",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Mismatched partition counts (16 vs 32) fail with PARTITION_COUNT_MISMATCH.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bi-Directional State Buffering Architecture",
+      "codeHash": "fcc8b2e4c4b5709ce07220e9ab1a77ee7ab66ed1fd096853f15355727f77a4fc",
+      "spec": {
+        "template": "sequence",
+        "title": "BiDirectionalJoinBuffer(200) cross-probing LeftStore and RightStore on key order-55",
+        "actors": [
+          {
+            "id": "leftStore",
+            "label": "leftStore (Stream A)"
+          },
+          {
+            "id": "joiner",
+            "label": "BiDirectionalJoinBuffer"
+          },
+          {
+            "id": "rightStore",
+            "label": "rightStore (Stream B)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When L1 arrives, the engine stores it in LeftStore and scans RightStore.",
+            "messages": [
+              {
+                "from": "joiner",
+                "to": "leftStore",
+                "label": "push L1 (order-55, ts:100)"
+              },
+              {
+                "from": "joiner",
+                "to": "rightStore",
+                "label": "scan rightStore -> [] (no partner yet)"
+              }
+            ],
+            "activeActorId": "leftStore"
+          },
+          {
+            "at": "say6",
+            "caption": "When R1 arrives at ts=180, it stores in RightStore and matches L1 in LeftStore.",
+            "messages": [
+              {
+                "from": "joiner",
+                "to": "rightStore",
+                "label": "push R1 (order-55, ts:180)"
+              },
+              {
+                "from": "joiner",
+                "to": "leftStore",
+                "label": "scan leftStore -> MATCH Left[L1] + Right[R1]"
+              }
+            ],
+            "activeActorId": "rightStore"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "BiDirectionalJoinBuffer(200) cross-probing LeftStore and RightStore on key order-55",
+        "actors": [
+          {
+            "id": "leftStore",
+            "label": "leftStore (Stream A)"
+          },
+          {
+            "id": "joiner",
+            "label": "BiDirectionalJoinBuffer"
+          },
+          {
+            "id": "rightStore",
+            "label": "rightStore (Stream B)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When L1 arrives, the engine stores it in LeftStore and scans RightStore.",
+            "messages": [
+              {
+                "from": "joiner",
+                "to": "leftStore",
+                "label": "push L1 (order-55, ts:100)"
+              },
+              {
+                "from": "joiner",
+                "to": "rightStore",
+                "label": "scan rightStore -> [] (no partner yet)"
+              }
+            ],
+            "activeActorId": "leftStore"
+          },
+          {
+            "at": "say6",
+            "caption": "When R1 arrives at ts=180, it stores in RightStore and matches L1 in LeftStore.",
+            "messages": [
+              {
+                "from": "joiner",
+                "to": "rightStore",
+                "label": "push R1 (order-55, ts:180)"
+              },
+              {
+                "from": "joiner",
+                "to": "leftStore",
+                "label": "scan leftStore -> MATCH Left[L1] + Right[R1]"
+              }
+            ],
+            "activeActorId": "rightStore"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Join Window Expiration & State Eviction",
+      "codeHash": "92539171d7b2abde8ca4fa1f2f859873628d57c09f6c7bbc4ec5361a29b495ad",
+      "spec": {
+        "template": "cells",
+        "title": "EvictingJoinStore(100) evicting item-1 (100+100 < 220) when watermark reaches 220ms",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Once watermark advances past timestamp + windowMs (100), item-1 expires.",
+            "items": [
+              {
+                "text": "item-1 (ts:100, exp:200)"
+              },
+              {
+                "text": "item-2 (ts:150, exp:250)"
+              },
+              {
+                "text": "item-3 (ts:250, exp:350)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "expired<220",
+                "index": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "As watermark advances to 220, expired events are evicted, leaving 2 items.",
+            "items": [
+              {
+                "text": "item-2 (ts:150)"
+              },
+              {
+                "text": "item-3 (ts:250)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "retained:2",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "EvictingJoinStore(100) evicting item-1 (100+100 < 220) when watermark reaches 220ms",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Once watermark advances past timestamp + windowMs (100), item-1 expires.",
+            "items": [
+              "item-1 (ts:100, exp:200)",
+              "item-2 (ts:150, exp:250)",
+              "item-3 (ts:250, exp:350)"
+            ],
+            "pointers": [
+              {
+                "name": "expired<220",
+                "index": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "As watermark advances to 220, expired events are evicted, leaving 2 items.",
+            "items": [
+              "item-2 (ts:150)",
+              "item-3 (ts:250)"
+            ],
+            "pointers": [
+              {
+                "name": "retained:2",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Advertising Attribution Pipeline",
+      "codeHash": "b4a7874c964cabdb6b950767f9dcbc6d17ff0134169c2046be7a5c1a88e925cd",
+      "spec": {
+        "template": "flow",
+        "title": "AdAttributionEngine(1000) correlating clk-1 (100ms) and ord-88 (650ms) for u-42",
+        "nodes": [
+          {
+            "id": "clickNode",
+            "label": "AdClick clk-1 (u-42, 100ms)",
+            "tappable": false
+          },
+          {
+            "id": "purchaseNode",
+            "label": "PurchaseTx ord-88 (u-42, $120, 650ms)",
+            "tappable": false
+          },
+          {
+            "id": "attribOut",
+            "label": "AttributionRecord (summer-sale, 550ms)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "clickNode",
+            "to": "attribOut",
+            "label": "delta: 550ms <= 1000ms"
+          },
+          {
+            "from": "purchaseNode",
+            "to": "attribOut",
+            "label": "revenue: $120"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The pipeline correlates Ad Click and Order Purchase streams in a 1000ms window.",
+            "activeNodes": [
+              "clickNode",
+              "purchaseNode"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Matching pairs emit an AttributionRecord with revenue and 550ms latency.",
+            "activeNodes": [
+              "purchaseNode",
+              "attribOut"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "AdAttributionEngine(1000) correlating clk-1 (100ms) and ord-88 (650ms) for u-42",
+        "nodes": [
+          {
+            "id": "clickNode",
+            "label": "AdClick clk-1 (u-42, 100ms)",
+            "tappable": false
+          },
+          {
+            "id": "purchaseNode",
+            "label": "PurchaseTx ord-88 (u-42, $120, 650ms)",
+            "tappable": false
+          },
+          {
+            "id": "attribOut",
+            "label": "AttributionRecord (summer-sale, 550ms)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "clickNode",
+            "to": "attribOut",
+            "label": "delta: 550ms <= 1000ms"
+          },
+          {
+            "from": "purchaseNode",
+            "to": "attribOut",
+            "label": "revenue: $120"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The pipeline correlates Ad Click and Order Purchase streams in a 1000ms window.",
+            "activeNodes": [
+              "clickNode",
+              "purchaseNode"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Matching pairs emit an AttributionRecord with revenue and 550ms latency.",
+            "activeNodes": [
+              "purchaseNode",
+              "attribOut"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Co-Partitioned Partition Balancing & Key Re-Hashing",
+      "codeHash": "90397a4644a46197ee1b33c6653d2d809ec0efd7ed7690f719bda31242b3ee75",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Moderation classifiers",
+      "codeHash": "bc1f3a7da5da878472f55ef43a4e405a7b62e5f9d76edffe745ad9b24e4e3f19",
+      "spec": {
+        "template": "table",
+        "title": "Harm category classification and confidence scoring",
+        "columns": [
+          "scores",
+          "top",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A moderation classifier reads text and scores it for harm categories.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "top"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "top"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The classifier computes scores while policy code decides automated actions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "top"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "top"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Harm category classification and confidence scoring",
+        "columns": [
+          "scores",
+          "top",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A moderation classifier reads text and scores it for harm categories.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "top",
+                  "scores"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "top",
+                  "scores"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The classifier computes scores while policy code decides automated actions.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "top",
+                  "scores"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "top",
+                  "scores"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Per-category thresholds",
+      "codeHash": "1ac413398f148afd89b7c0312fb4bed0640a02e19801843fcc222675927510a4",
+      "spec": {
+        "template": "table",
+        "title": "Per-category threshold policy definitions and routing",
+        "columns": [
+          "scores",
+          "policies",
+          "flagged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A threshold defines the minimum score at which a category counts as flagged.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "policies"
+                  },
+                  {
+                    "text": "flagged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "policies"
+                  },
+                  {
+                    "text": "flagged"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Different categories deserve different thresholds based on mistake severity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "policies"
+                  },
+                  {
+                    "text": "flagged"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "policies"
+                  },
+                  {
+                    "text": "flagged"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Per-category threshold policy definitions and routing",
+        "columns": [
+          "scores",
+          "policies",
+          "flagged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A threshold defines the minimum score at which a category counts as flagged.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "policies",
+                  "flagged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "policies",
+                  "flagged"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Different categories deserve different thresholds based on mistake severity.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "policies",
+                  "flagged"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "policies",
+                  "flagged"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Four outcomes",
+      "codeHash": "30844076b7947c9ba09d28aad71fef14c9e155585ecfe5e3c575a1859a913936",
+      "spec": {
+        "template": "table",
+        "title": "Four classification outcomes on labelled benchmark datasets",
+        "columns": [
+          "examples",
+          "counts",
+          "examples"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To choose a threshold teams need labelled examples with known true labels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Predictions classify harmful items as either caught or missed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Four classification outcomes on labelled benchmark datasets",
+        "columns": [
+          "examples",
+          "counts",
+          "examples"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To choose a threshold teams need labelled examples with known true labels.",
+            "rows": [
+              {
+                "cells": [
+                  "examples",
+                  "counts",
+                  "examples"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "examples",
+                  "counts",
+                  "examples"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Predictions classify harmful items as either caught or missed.",
+            "rows": [
+              {
+                "cells": [
+                  "examples",
+                  "counts",
+                  "examples"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "examples",
+                  "counts",
+                  "examples"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The threshold trade-off",
+      "codeHash": "fa8cb4cfdcf0b50a31482e58d3fcdf10f5563778501fe523dbb5d440d4b08b72",
+      "spec": {
+        "template": "table",
+        "title": "Threshold parameter sweeps across false alarm and miss rates",
+        "columns": [
+          "examples",
+          "missed",
+          "examples"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lowering the threshold flags more content with fewer misses but false alarms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "missed"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "missed"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Raising thresholds produces fewer false alarms while increasing missed harm.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "missed"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "missed"
+                  },
+                  {
+                    "text": "examples"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Threshold parameter sweeps across false alarm and miss rates",
+        "columns": [
+          "examples",
+          "missed",
+          "examples"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lowering the threshold flags more content with fewer misses but false alarms.",
+            "rows": [
+              {
+                "cells": [
+                  "examples",
+                  "missed",
+                  "examples"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "examples",
+                  "missed",
+                  "examples"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Raising thresholds produces fewer false alarms while increasing missed harm.",
+            "rows": [
+              {
+                "cells": [
+                  "examples",
+                  "missed",
+                  "examples"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "examples",
+                  "missed",
+                  "examples"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Moderation in the pipeline",
+      "codeHash": "5cfb229a95fbb386c871cb087a164fb49cba53d8691448b84938a920c06b65d4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Where moderation goes wrong",
+      "codeHash": "a7f8c8fbfacdd3f2fdfba6258caf69aa1b296160e57986f01595587b5ab9a023",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

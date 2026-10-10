@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Tables, items and keys",
+      "codeHash": "57ec6f6bb450712085256151207872239cc6550405dd0834b2a0c88d560363e3",
+      "spec": {
+        "template": "table",
+        "title": "DynamoDB table items organized by composite partition and sort keys",
+        "columns": [
+          "partition_key",
+          "order"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Composite keys combine a partition key and sort key to store items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user#1"
+                  },
+                  {
+                    "text": "ord-7"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Items sharing the same partition key live together ordered by sort key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user#1"
+                  },
+                  {
+                    "text": "ord-7"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user#1"
+                  },
+                  {
+                    "text": "ord-9"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example queries items across composite keys within a date range.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user#1"
+                  },
+                  {
+                    "text": "ord-7"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user#1"
+                  },
+                  {
+                    "text": "ord-9"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user#2"
+                  },
+                  {
+                    "text": "ord-10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "DynamoDB table items organized by composite partition and sort keys",
+        "columns": [
+          "partition_key",
+          "order"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Composite keys combine a partition key and sort key to store items.",
+            "rows": [
+              {
+                "cells": [
+                  "user#1",
+                  "ord-7"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Items sharing the same partition key live together ordered by sort key.",
+            "rows": [
+              {
+                "cells": [
+                  "user#1",
+                  "ord-7"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "user#1",
+                  "ord-9"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example queries items across composite keys within a date range.",
+            "rows": [
+              {
+                "cells": [
+                  "user#1",
+                  "ord-7"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "user#1",
+                  "ord-9"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "user#2",
+                  "ord-10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing keys from access patterns",
+      "codeHash": "23b15a722111b2eded4a829b52bd964aab9a59704dc0aac788029e434a9851ab",
+      "spec": {
+        "template": "table",
+        "title": "Access pattern alignment evaluating partition key candidate attributes",
+        "columns": [
+          "key",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In DynamoDB list your access patterns first and design keys to serve them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "PAID"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Good partition keys feature many distinct values that distribute evenly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "PAID"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "NEW"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example evaluates candidate partition keys based on traffic spread.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "PAID"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "user"
+                  },
+                  {
+                    "text": "NEW"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Access pattern alignment evaluating partition key candidate attributes",
+        "columns": [
+          "key",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In DynamoDB list your access patterns first and design keys to serve them.",
+            "rows": [
+              {
+                "cells": [
+                  "user",
+                  "PAID"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Good partition keys feature many distinct values that distribute evenly.",
+            "rows": [
+              {
+                "cells": [
+                  "user",
+                  "PAID"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "user",
+                  "NEW"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example evaluates candidate partition keys based on traffic spread.",
+            "rows": [
+              {
+                "cells": [
+                  "user",
+                  "PAID"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "user",
+                  "NEW"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hot partitions",
+      "codeHash": "a1d765a19d567f393fe6bc20ba1beea9125f54bc2a0bd04368298c17050d5acd",
+      "spec": {
+        "template": "table",
+        "title": "Hot partition detection and write sharding mitigation strategies",
+        "columns": [
+          "pattern",
+          "impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When one partition receives excessive traffic it creates a hot partition.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "celeb"
+                  },
+                  {
+                    "text": "hot partition"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Write sharding appends randomized suffixes to distribute partition writes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "celeb"
+                  },
+                  {
+                    "text": "hot partition"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "celeb"
+                  },
+                  {
+                    "text": "write sharding"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example identifies disproportionate key access and verifies sharding.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "celeb"
+                  },
+                  {
+                    "text": "hot partition"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "celeb"
+                  },
+                  {
+                    "text": "write sharding"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hot partition detection and write sharding mitigation strategies",
+        "columns": [
+          "pattern",
+          "impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When one partition receives excessive traffic it creates a hot partition.",
+            "rows": [
+              {
+                "cells": [
+                  "celeb",
+                  "hot partition"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Write sharding appends randomized suffixes to distribute partition writes.",
+            "rows": [
+              {
+                "cells": [
+                  "celeb",
+                  "hot partition"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "celeb",
+                  "write sharding"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example identifies disproportionate key access and verifies sharding.",
+            "rows": [
+              {
+                "cells": [
+                  "celeb",
+                  "hot partition"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "celeb",
+                  "write sharding"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Global secondary indexes",
+      "codeHash": "ea0c42b79feefc7344fe62920ecea39c3fe4ed9fd332de762c1826502da0b01f",
+      "spec": {
+        "template": "table",
+        "title": "Secondary index mapping queries across alternate status attributes",
+        "columns": [
+          "status",
+          "order"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A global secondary index organizes data using an alternative partition key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "SHIPPED"
+                  },
+                  {
+                    "text": "o1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "DynamoDB automatically synchronizes secondary indexes during table writes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "SHIPPED"
+                  },
+                  {
+                    "text": "o1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PENDING"
+                  },
+                  {
+                    "text": "o2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds a secondary index by status and queries matching orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "SHIPPED"
+                  },
+                  {
+                    "text": "o1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PENDING"
+                  },
+                  {
+                    "text": "o2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PENDING"
+                  },
+                  {
+                    "text": "o3"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Secondary index mapping queries across alternate status attributes",
+        "columns": [
+          "status",
+          "order"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A global secondary index organizes data using an alternative partition key.",
+            "rows": [
+              {
+                "cells": [
+                  "SHIPPED",
+                  "o1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "DynamoDB automatically synchronizes secondary indexes during table writes.",
+            "rows": [
+              {
+                "cells": [
+                  "SHIPPED",
+                  "o1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PENDING",
+                  "o2"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds a secondary index by status and queries matching orders.",
+            "rows": [
+              {
+                "cells": [
+                  "SHIPPED",
+                  "o1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PENDING",
+                  "o2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PENDING",
+                  "o3"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capacity: RCUs and WCUs",
+      "codeHash": "3136670291bc4799a1b5d0fd5087bcab8ad1fa42b8f9c5e1318db311bc0779ec",
+      "spec": {
+        "template": "none",
+        "reason": "Read and write capacity unit calculations."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: hot keys and capacity",
+      "codeHash": "d10ed24bb072bb0a3e9c8476e7a3cb0ac7b80faa4741940cc0a9962e55a452fe",
+      "spec": {
+        "template": "none",
+        "reason": "Practice calculations for hot keys and provisioned RCU."
+      },
+      "filled": {}
+    }
+  ]
+}

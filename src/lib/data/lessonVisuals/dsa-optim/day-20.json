@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 20,
+  "promptSha": "dbca41cf2a843bfc05d7815f7c02af4318a8cb8b3a0740e6aa738d601d8e51fd",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Understanding Graph Terminology",
+      "codeHash": "bf53ecd07e5789bb12d946a11a13cff6b2d5543e7b991aec31914c043cca1554",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Undirected graph vertices and cyclic edges",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          },
+          {
+            "id": "D",
+            "label": "D"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Graph consists of vertices and connecting edges between them.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A",
+              "B"
+            ],
+            "activeEdge": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Graphs contain cyclical pathways that loop back onto themselves.",
+            "activeNodeId": "C",
+            "visitedNodeIds": [
+              "A",
+              "B",
+              "C"
+            ],
+            "activeEdge": [
+              "C",
+              "A"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Undirected graph vertices and cyclic edges",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          },
+          {
+            "id": "D",
+            "label": "D"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Graph consists of vertices and connecting edges between them.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A",
+              "B"
+            ],
+            "activeEdge": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Graphs contain cyclical pathways that loop back onto themselves.",
+            "activeNodeId": "C",
+            "visitedNodeIds": [
+              "A",
+              "B",
+              "C"
+            ],
+            "activeEdge": [
+              "C",
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Adjacency Matrix",
+      "codeHash": "54951a9ad5821786ac8872d13fad1d656f1e57104aa471c8e8885c5877efa874",
+      "spec": {
+        "template": "table",
+        "title": "Adjacency matrix connection grid",
+        "columns": [
+          "Vertex Row",
+          "Col 0",
+          "Col 1",
+          "Col 2"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Grid cells record presence of edge between row and column nodes.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Node 0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 1"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 2"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Matrix structure provides instantaneous lookup checking node connections.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Node 0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 1"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 2"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Adjacency matrix connection grid",
+        "columns": [
+          "Vertex Row",
+          "Col 0",
+          "Col 1",
+          "Col 2"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Grid cells record presence of edge between row and column nodes.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Node 0",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 1",
+                  "1",
+                  "0",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 2",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Matrix structure provides instantaneous lookup checking node connections.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Node 0",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 1",
+                  "1",
+                  "0",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 2",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Adjacency List",
+      "codeHash": "8f0565a1da63bc2f697df8269db57d1699f7bd209abb320d83f61775b6e1172f",
+      "spec": {
+        "template": "table",
+        "title": "Adjacency list sparse storage representation",
+        "columns": [
+          "Source Vertex",
+          "Adjacency List Neighbors",
+          "Storage Scaling"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Adjacency list stores neighboring vertices connected directly to node.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "Dallas, Seoul"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Dallas"
+                  },
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Adjacency list representation scales strictly with number of actual edges.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "Dallas, Seoul"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Dallas"
+                  },
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Adjacency list sparse storage representation",
+        "columns": [
+          "Source Vertex",
+          "Adjacency List Neighbors",
+          "Storage Scaling"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Adjacency list stores neighboring vertices connected directly to node.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Tokyo",
+                  "Dallas, Seoul",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dallas",
+                  "Tokyo",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Adjacency list representation scales strictly with number of actual edges.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Tokyo",
+                  "Dallas, Seoul",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dallas",
+                  "Tokyo",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graph Traversal: Depth-First Search (DFS)",
+      "codeHash": "bd7563915cdac0beec20c451a9aa732d23af6b0e7a73255cc2a0cfd430eac4ab",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Depth-first search visited set tracking",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          },
+          {
+            "id": "D",
+            "label": "D"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Depth first search dives deep down continuous path before backtracking.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tracking visited nodes prevents infinite loops during graph traversal.",
+            "activeNodeId": "B",
+            "visitedNodeIds": [
+              "A",
+              "B",
+              "C"
+            ],
+            "activeEdge": [
+              "A",
+              "B"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Depth-first search visited set tracking",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          },
+          {
+            "id": "D",
+            "label": "D"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Depth first search dives deep down continuous path before backtracking.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tracking visited nodes prevents infinite loops during graph traversal.",
+            "activeNodeId": "B",
+            "visitedNodeIds": [
+              "A",
+              "B",
+              "C"
+            ],
+            "activeEdge": [
+              "A",
+              "B"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graph Traversal: Breadth-First Search (BFS)",
+      "codeHash": "7ed17226f2d196c7387c5b7ce1d1de6b14a06eb41a0fb23bce81c5584426e9e4",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Breadth-first search queue layer-by-layer ripple",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Breadth first search visits immediate neighbors before deeper levels.",
+            "action": "push",
+            "actionItem": {
+              "text": "A"
+            },
+            "items": [
+              {
+                "text": "A"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Uniform expansion guarantees first discovery finds shortest route.",
+            "action": "pop",
+            "actionItem": {
+              "text": "A"
+            },
+            "items": [
+              {
+                "text": "B"
+              },
+              {
+                "text": "C"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Breadth-first search queue layer-by-layer ripple",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Breadth first search visits immediate neighbors before deeper levels.",
+            "action": "push",
+            "actionItem": "A",
+            "items": [
+              "A"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Uniform expansion guarantees first discovery finds shortest route.",
+            "action": "pop",
+            "actionItem": "A",
+            "items": [
+              "B",
+              "C"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Connected Components in a Graph",
+      "codeHash": "3fc3d44737335fd8a090819c4e198a798f9c1fb14a4ddc53f541e4f4af59caed",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

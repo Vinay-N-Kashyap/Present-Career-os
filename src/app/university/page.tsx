@@ -1,5 +1,5 @@
-import UniversityPlacementRoster from '@/components/university/UniversityPlacementRoster';
 'use client';
+import UniversityPlacementRoster from '@/components/university/UniversityPlacementRoster';
 // apps/web/src/app/university/page.tsx
 // Institution Dashboard — TPO / placement officer view.
 // Backend endpoints: /api/university/dashboard, /api/university/employability-report,

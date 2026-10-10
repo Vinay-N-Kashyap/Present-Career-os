@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 21,
+  "promptSha": "12e1057a277fd0ccecd25b713fad9990ff28a54bee441dc28c0fb5a2e7fbb781",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Golden Test Case Schema & Dataset Structure",
+      "codeHash": "12e1057a277fd0ccecd25b713fad9990ff28a54bee441dc28c0fb5a2e7fbb781",
+      "spec": {
+        "template": "table",
+        "title": "Golden Benchmark Dataset Schema",
+        "columns": [
+          "Case ID",
+          "Category",
+          "Input Query",
+          "Expected Output"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A golden dataset is an unchanging collection of verified input-output pairs.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Interfaces categorize test cases into domain knowledge and edge cases.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Standardized test corpus serves as benchmark for judging candidate prompt.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Golden Benchmark Dataset Schema",
+        "columns": [
+          "Case ID",
+          "Category",
+          "Input Query",
+          "Expected Output"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A golden dataset is an unchanging collection of verified input-output pairs.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Interfaces categorize test cases into domain knowledge and edge cases.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Standardized test corpus serves as benchmark for judging candidate prompt.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exact Match & Normalized String Assertions",
+      "codeHash": "1cedee8fed66054b7d80a8efe034bb982697f393d3728baec40a4874395aee9c",
+      "spec": {
+        "template": "compare",
+        "title": "Raw Candidate vs Normalized Target String",
+        "leftLabel": "Raw Candidate Output",
+        "rightLabel": "Normalized Target Answer",
+        "leftItems": [
+          "Leading/trailing whitespace",
+          "Varying capitalization",
+          "Triggers false negative fails"
+        ],
+        "rightItems": [
+          "Whitespace trimmed cleanly",
+          "Normalized lowercase form",
+          "Deterministic exact match"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Trimming whitespace and normalizes both strings to lowercase for testing.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "Exact match is the strictest evaluation metric for regression testing.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Passing exact match gives absolute mathematical certainty of correctness.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw Candidate vs Normalized Target String",
+        "leftLabel": "Raw Candidate Output",
+        "rightLabel": "Normalized Target Answer",
+        "leftItems": [
+          "Leading/trailing whitespace",
+          "Varying capitalization",
+          "Triggers false negative fails"
+        ],
+        "rightItems": [
+          "Whitespace trimmed cleanly",
+          "Normalized lowercase form",
+          "Deterministic exact match"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Trimming whitespace and normalizes both strings to lowercase for testing.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "Exact match is the strictest evaluation metric for regression testing.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Passing exact match gives absolute mathematical certainty of correctness.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Semantic Rule Assertions (MustContain / MustNotContain)",
+      "codeHash": "165a270e88f1579792bfccc3df90eccf2e896ebcfdd827e98fdcb7756d5a0a8a",
+      "spec": {
+        "template": "flow",
+        "title": "Semantic Rule Assertion Evaluation Flow",
+        "nodes": [
+          {
+            "id": "text",
+            "label": "Candidate Text",
+            "tappable": false
+          },
+          {
+            "id": "checks",
+            "label": "Contain & Length Checks",
+            "tappable": false
+          },
+          {
+            "id": "violations",
+            "label": "Violation Aggregator",
+            "tappable": false
+          },
+          {
+            "id": "result",
+            "label": "Pass/Fail Verdict",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "text",
+            "to": "checks"
+          },
+          {
+            "from": "checks",
+            "to": "violations"
+          },
+          {
+            "from": "violations",
+            "to": "result"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Assertion verification evaluates mustContain and minLength requirements.",
+            "activeNodes": [
+              "text",
+              "checks"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Forbidden words cause text to be rejected with descriptive violation logs.",
+            "activeNodes": [
+              "violations"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Assertion rules test safety and compliance constraints across queries.",
+            "activeNodes": [
+              "result"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Semantic Rule Assertion Evaluation Flow",
+        "nodes": [
+          {
+            "id": "text",
+            "label": "Candidate Text",
+            "tappable": false
+          },
+          {
+            "id": "checks",
+            "label": "Contain & Length Checks",
+            "tappable": false
+          },
+          {
+            "id": "violations",
+            "label": "Violation Aggregator",
+            "tappable": false
+          },
+          {
+            "id": "result",
+            "label": "Pass/Fail Verdict",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "text",
+            "to": "checks"
+          },
+          {
+            "from": "checks",
+            "to": "violations"
+          },
+          {
+            "from": "violations",
+            "to": "result"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Assertion verification evaluates mustContain and minLength requirements.",
+            "activeNodes": [
+              "text",
+              "checks"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Forbidden words cause text to be rejected with descriptive violation logs.",
+            "activeNodes": [
+              "violations"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Assertion rules test safety and compliance constraints across queries.",
+            "activeNodes": [
+              "result"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regex-Based Output Constraint Evaluator",
+      "codeHash": "e31f9e371946686f670e945dfac6e3a32192d8990bf99ec59c93ba3b8d7e7f81",
+      "spec": {
+        "template": "states",
+        "title": "Regex Pattern Validation States",
+        "states": [
+          {
+            "id": "raw",
+            "label": "Raw LLM Output"
+          },
+          {
+            "id": "iso",
+            "label": "ISO Date Match"
+          },
+          {
+            "id": "json",
+            "label": "JSON Micro-Schema"
+          },
+          {
+            "id": "valid",
+            "label": "Structural Passed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions apply formal regular expressions to verify syntactic conformance.",
+            "current": "raw",
+            "visited": [
+              "raw"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "An ISO date string passes cleanly while conversational date strings fail.",
+            "current": "iso",
+            "visited": [
+              "raw",
+              "iso"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Regex assertions provide fast zero-cost validation in continuous pipelines.",
+            "current": "valid",
+            "visited": [
+              "raw",
+              "iso",
+              "json",
+              "valid"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Regex Pattern Validation States",
+        "states": [
+          {
+            "id": "raw",
+            "label": "Raw LLM Output"
+          },
+          {
+            "id": "iso",
+            "label": "ISO Date Match"
+          },
+          {
+            "id": "json",
+            "label": "JSON Micro-Schema"
+          },
+          {
+            "id": "valid",
+            "label": "Structural Passed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions apply formal regular expressions to verify syntactic conformance.",
+            "current": "raw",
+            "visited": [
+              "raw"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "An ISO date string passes cleanly while conversational date strings fail.",
+            "current": "iso",
+            "visited": [
+              "raw",
+              "iso"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Regex assertions provide fast zero-cost validation in continuous pipelines.",
+            "current": "valid",
+            "visited": [
+              "raw",
+              "iso",
+              "json",
+              "valid"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Aggregated Benchmark Accuracy & Pass-Rate Reporter",
+      "codeHash": "8bb57540b508f65df88a3863492efa179595ddfed8098f126a39124b5a85fd58",
+      "spec": {
+        "template": "bars",
+        "title": "Benchmark Suite Accuracy Breakdown",
+        "items": [
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Runners count passed cases and compute aggregate accuracy percentage.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Out of three test cases two passed resulting in test suite accuracy.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Automated reporting turns AI quality into concrete measurable software metrics.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Benchmark Suite Accuracy Breakdown",
+        "items": [
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Runners count passed cases and compute aggregate accuracy percentage.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Out of three test cases two passed resulting in test suite accuracy.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Automated reporting turns AI quality into concrete measurable software metrics.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complete Automated Offline Evaluation Harness",
+      "codeHash": "e8de6b7d97c08fa827905ddc88eaa726ecc3dae3434bca975dce53845d8c3b0d",
+      "spec": {
+        "template": "none",
+        "reason": "Complete Automated Offline Evaluation Harness capstone synthesizing golden datasets, exact match normalization, regex assertions, and gate threshold decisions"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Complete Automated Offline Evaluation Harness capstone synthesizing golden datasets, exact match normalization, regex assertions, and gate threshold decisions"
+      }
+    }
+  ]
+}

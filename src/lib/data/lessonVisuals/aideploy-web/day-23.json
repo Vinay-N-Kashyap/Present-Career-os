@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 23,
+  "promptSha": "a48263ab79a87df05d9a9e380859ed71a33111ab3b09bd0934e5ac4c541bcb4f",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Quantifying Prompt Regression & Silent Breakages",
+      "codeHash": "a48263ab79a87df05d9a9e380859ed71a33111ab3b09bd0934e5ac4c541bcb4f",
+      "spec": {
+        "template": "compare",
+        "title": "Baseline vs Candidate Prompt Metrics",
+        "leftLabel": "Production Baseline (v1.0)",
+        "rightLabel": "Candidate Prompt (v1.1)",
+        "leftItems": [
+          "Benchmark score: 92.5",
+          "Edge case pass rate: 88.0%",
+          "Verified stable production baseline"
+        ],
+        "rightItems": [
+          "Benchmark score: 94.0",
+          "Edge case pass rate: 81.0%",
+          "Silent corner case regression flagged"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Silent regressions are insidious phenomena in prompt engineering.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Functions compare candidate prompt versions against production baselines.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Edge case pass rates plummeted triggering regression flags.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Baseline vs Candidate Prompt Metrics",
+        "leftLabel": "Production Baseline (v1.0)",
+        "rightLabel": "Candidate Prompt (v1.1)",
+        "leftItems": [
+          "Benchmark score: 92.5",
+          "Edge case pass rate: 88.0%",
+          "Verified stable production baseline"
+        ],
+        "rightItems": [
+          "Benchmark score: 94.0",
+          "Edge case pass rate: 81.0%",
+          "Silent corner case regression flagged"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Silent regressions are insidious phenomena in prompt engineering.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Functions compare candidate prompt versions against production baselines.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Edge case pass rates plummeted triggering regression flags.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Benchmark Accuracy Delta Evaluation Gate",
+      "codeHash": "c1d7856d2db6ac5a9e84fdad1d6c5abf6fc7d35240f631ca2f89bbfc62c11b5f",
+      "spec": {
+        "template": "states",
+        "title": "Accuracy Delta Gate Verification States",
+        "states": [
+          {
+            "id": "eval",
+            "label": "Accuracy Evaluated"
+          },
+          {
+            "id": "delta",
+            "label": "Delta Calculation"
+          },
+          {
+            "id": "tolerance",
+            "label": "Within Tolerance"
+          },
+          {
+            "id": "exceeded",
+            "label": "Regression Exceeded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Teams establish configurable tolerance budgets for allowable accuracy drops.",
+            "current": "eval",
+            "visited": [
+              "eval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate scores passing within tolerance proceed through deployment gates.",
+            "current": "tolerance",
+            "visited": [
+              "eval",
+              "delta",
+              "tolerance"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When candidate drops exceed tolerance the gate fails with regression status.",
+            "current": "exceeded",
+            "visited": [
+              "eval",
+              "delta",
+              "exceeded"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Accuracy Delta Gate Verification States",
+        "states": [
+          {
+            "id": "eval",
+            "label": "Accuracy Evaluated"
+          },
+          {
+            "id": "delta",
+            "label": "Delta Calculation"
+          },
+          {
+            "id": "tolerance",
+            "label": "Within Tolerance"
+          },
+          {
+            "id": "exceeded",
+            "label": "Regression Exceeded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Teams establish configurable tolerance budgets for allowable accuracy drops.",
+            "current": "eval",
+            "visited": [
+              "eval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate scores passing within tolerance proceed through deployment gates.",
+            "current": "tolerance",
+            "visited": [
+              "eval",
+              "delta",
+              "tolerance"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When candidate drops exceed tolerance the gate fails with regression status.",
+            "current": "exceeded",
+            "visited": [
+              "eval",
+              "delta",
+              "exceeded"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Latency & SLA P95/P99 Delta Comparison",
+      "codeHash": "57dd1c79563adfe7af84b2b2f0bd4a36721cf29d17ce375f515cb0aa83170e24",
+      "spec": {
+        "template": "bars",
+        "title": "Latency P95 SLA Delta Comparison",
+        "items": [
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions evaluate candidate P95 latency against baseline production measures.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "In trial one latency increased well within thirty millisecond ceilings.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Integrating latency checks into CI ensures performance remains predictable.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Latency P95 SLA Delta Comparison",
+        "items": [
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions evaluate candidate P95 latency against baseline production measures.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "In trial one latency increased well within thirty millisecond ceilings.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Integrating latency checks into CI ensures performance remains predictable.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost & Token Consumption Regression Bounds",
+      "codeHash": "8225a2019db4b66380afcff958374e3aebb512e0c226708d909cc2ce5476be72",
+      "spec": {
+        "template": "table",
+        "title": "Token Consumption and Cost Regression Bounds",
+        "columns": [
+          "Candidate Profile",
+          "Avg Tokens / Query",
+          "Cost / 1k Queries",
+          "Gate Verdict"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions compare cost per thousand queries between candidate profiles.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate one stayed within multiplier limits with modest token usage.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Gating builds on cost bounds protects operating margins from token bloat.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Token Consumption and Cost Regression Bounds",
+        "columns": [
+          "Candidate Profile",
+          "Avg Tokens / Query",
+          "Cost / 1k Queries",
+          "Gate Verdict"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions compare cost per thousand queries between candidate profiles.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate one stayed within multiplier limits with modest token usage.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Gating builds on cost bounds protects operating margins from token bloat.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Pull Request Merge Blocker",
+      "codeHash": "e9ce5f75f97ce5aa60213fcf32a775b41f780e74199a584dd4fe0b87b7f107f7",
+      "spec": {
+        "template": "workflow",
+        "title": "Automated Pull Request CI Gate Pipeline",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "PR Ingress",
+            "subtext": "Receive pull request commit"
+          },
+          {
+            "id": "accuracy",
+            "name": "Accuracy Check",
+            "subtext": "Verify 90.0% min threshold"
+          },
+          {
+            "id": "latency",
+            "name": "Latency SLA Check",
+            "subtext": "Verify 500ms max ceiling"
+          },
+          {
+            "id": "decision",
+            "name": "Merge Verdict",
+            "subtext": "Authorize or block merge"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Workflows execute test suites and query policy evaluators on pull requests.",
+            "activeStageId": "ingress"
+          },
+          {
+            "at": "say3",
+            "caption": "Policies enforce requirements for minimum accuracy and P95 latency limits.",
+            "activeStageId": "accuracy"
+          },
+          {
+            "at": "say7",
+            "caption": "Automated PR blocking converts quality standards into engineering guardrails.",
+            "activeStageId": "decision"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Automated Pull Request CI Gate Pipeline",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "PR Ingress",
+            "subtext": "Receive pull request commit"
+          },
+          {
+            "id": "accuracy",
+            "name": "Accuracy Check",
+            "subtext": "Verify 90.0% min threshold"
+          },
+          {
+            "id": "latency",
+            "name": "Latency SLA Check",
+            "subtext": "Verify 500ms max ceiling"
+          },
+          {
+            "id": "decision",
+            "name": "Merge Verdict",
+            "subtext": "Authorize or block merge"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Workflows execute test suites and query policy evaluators on pull requests.",
+            "activeStageId": "ingress"
+          },
+          {
+            "at": "say3",
+            "caption": "Policies enforce requirements for minimum accuracy and P95 latency limits.",
+            "activeStageId": "accuracy"
+          },
+          {
+            "at": "say7",
+            "caption": "Automated PR blocking converts quality standards into engineering guardrails.",
+            "activeStageId": "decision"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production CI/CD Regression Gate Controller",
+      "codeHash": "7095398d277e6d2829c165192c3f78ea46b5a4b7fba0c0bcbf5a5031b5274476",
+      "spec": {
+        "template": "none",
+        "reason": "Production CI/CD Regression Gate Controller capstone synthesizing prompt deltas, latency SLAs, cost budgets, and PR merge blocker automation"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production CI/CD Regression Gate Controller capstone synthesizing prompt deltas, latency SLAs, cost budgets, and PR merge blocker automation"
+      }
+    }
+  ]
+}

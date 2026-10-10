@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why a load balancer",
+      "codeHash": "f5f19e3502942af149acd54a47fc1469c5cfdadfd3cb0a7bd0292f0bb300c31c",
+      "spec": {
+        "template": "compare",
+        "title": "Architectural comparison of Application and Network Load Balancers",
+        "leftLabel": "Application Load Balancer",
+        "rightLabel": "Network Load Balancer",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Application Load Balancers inspect paths and headers at application layer.",
+            "left": {
+              "code": "Protocol level",
+              "result": {
+                "text": "HTTP/HTTPS level"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Protocol level",
+              "result": {
+                "text": "TCP/UDP level"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Network Load Balancers handle millions of connections at transport layer.",
+            "left": {
+              "code": "OSI Layer",
+              "result": {
+                "text": "layer 7"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "OSI Layer",
+              "result": {
+                "text": "layer 4"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Round robin distributes incoming calls across available targets.",
+            "left": {
+              "code": "Routing feature",
+              "result": {
+                "text": "Round robin"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Routing feature",
+              "result": {
+                "text": "Round robin"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Architectural comparison of Application and Network Load Balancers",
+        "leftLabel": "Application Load Balancer",
+        "rightLabel": "Network Load Balancer",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Application Load Balancers inspect paths and headers at application layer.",
+            "left": {
+              "code": "Protocol level",
+              "result": "HTTP/HTTPS level",
+              "tone": "ok",
+              "checks": [
+                "HTTP/HTTPS level"
+              ]
+            },
+            "right": {
+              "code": "Protocol level",
+              "result": "TCP/UDP level",
+              "tone": "data",
+              "checks": [
+                "TCP/UDP level"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Network Load Balancers handle millions of connections at transport layer.",
+            "left": {
+              "code": "OSI Layer",
+              "result": "layer 7",
+              "tone": "ok",
+              "checks": [
+                "layer 7"
+              ]
+            },
+            "right": {
+              "code": "OSI Layer",
+              "result": "layer 4",
+              "tone": "ok",
+              "checks": [
+                "layer 4"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Round robin distributes incoming calls across available targets.",
+            "left": {
+              "code": "Routing feature",
+              "result": "Round robin",
+              "tone": "ok",
+              "checks": [
+                "Round robin"
+              ]
+            },
+            "right": {
+              "code": "Routing feature",
+              "result": "Round robin",
+              "tone": "data",
+              "checks": [
+                "Round robin"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Listeners, rules and target groups",
+      "codeHash": "1748467abe0b7b7d2d9700df81f9f7488418af269c9fd616cb9545c70ab105a7",
+      "spec": {
+        "template": "table",
+        "title": "ALB listener rule evaluation and target group dispatch routing",
+        "columns": [
+          "pattern",
+          "target_group"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A rule has path pattern conditions routing to an assigned target group.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/api/v1/*"
+                  },
+                  {
+                    "text": "tg-api"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "An ALB serves a whole microservice system directing traffic across groups.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/api/v1/*"
+                  },
+                  {
+                    "text": "tg-api"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/static/*"
+                  },
+                  {
+                    "text": "tg-static"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Rules are checked in priority order where the first match forward executes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/api/v1/*"
+                  },
+                  {
+                    "text": "tg-api"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/static/*"
+                  },
+                  {
+                    "text": "tg-static"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/health"
+                  },
+                  {
+                    "text": "tg-health"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ALB listener rule evaluation and target group dispatch routing",
+        "columns": [
+          "pattern",
+          "target_group"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A rule has path pattern conditions routing to an assigned target group.",
+            "rows": [
+              {
+                "cells": [
+                  "/api/v1/*",
+                  "tg-api"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "An ALB serves a whole microservice system directing traffic across groups.",
+            "rows": [
+              {
+                "cells": [
+                  "/api/v1/*",
+                  "tg-api"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/static/*",
+                  "tg-static"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Rules are checked in priority order where the first match forward executes.",
+            "rows": [
+              {
+                "cells": [
+                  "/api/v1/*",
+                  "tg-api"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/static/*",
+                  "tg-static"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/health",
+                  "tg-health"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Health checks and thresholds",
+      "codeHash": "06450f72980aa4cb6c5a935968e2beba7b0cbd834c2b3836e8ebc242df3f8203",
+      "spec": {
+        "template": "table",
+        "title": "Target group consecutive health check threshold evaluation",
+        "columns": [
+          "result",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A load balancer verifies target endpoints before dispatching user traffic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pass"
+                  },
+                  {
+                    "text": "HEALTHY"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Targets become healthy or unhealthy after consecutive passes or failures.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pass"
+                  },
+                  {
+                    "text": "HEALTHY"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FAIL"
+                  },
+                  {
+                    "text": "UNHEALTHY"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example replays consecutive probe results updating target health states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pass"
+                  },
+                  {
+                    "text": "HEALTHY"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FAIL"
+                  },
+                  {
+                    "text": "UNHEALTHY"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Target group consecutive health check threshold evaluation",
+        "columns": [
+          "result",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A load balancer verifies target endpoints before dispatching user traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "pass",
+                  "HEALTHY"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Targets become healthy or unhealthy after consecutive passes or failures.",
+            "rows": [
+              {
+                "cells": [
+                  "pass",
+                  "HEALTHY"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "FAIL",
+                  "UNHEALTHY"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example replays consecutive probe results updating target health states.",
+            "rows": [
+              {
+                "cells": [
+                  "pass",
+                  "HEALTHY"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "FAIL",
+                  "UNHEALTHY"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTPS and TLS termination",
+      "codeHash": "010e38beeb06fd81f9cde4c851cc72dc9dcd4ce22814e625cd36ad2e93e940cf",
+      "spec": {
+        "template": "table",
+        "title": "Listener port actions for TLS termination and HTTP redirection",
+        "columns": [
+          "port",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "TLS termination decrypts incoming traffic before forwarding to targets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "443"
+                  },
+                  {
+                    "text": "FORWARD"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A common rule redirects unencrypted HTTP traffic to secure HTTPS listeners.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "80"
+                  },
+                  {
+                    "text": "REDIRECT_TO_HTTPS"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "443"
+                  },
+                  {
+                    "text": "FORWARD"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "ALBs forward original client network information preserving user addresses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "80"
+                  },
+                  {
+                    "text": "REDIRECT_TO_HTTPS"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "443"
+                  },
+                  {
+                    "text": "FORWARD"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "8080"
+                  },
+                  {
+                    "text": "connection refused"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Listener port actions for TLS termination and HTTP redirection",
+        "columns": [
+          "port",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "TLS termination decrypts incoming traffic before forwarding to targets.",
+            "rows": [
+              {
+                "cells": [
+                  "443",
+                  "FORWARD"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A common rule redirects unencrypted HTTP traffic to secure HTTPS listeners.",
+            "rows": [
+              {
+                "cells": [
+                  "80",
+                  "REDIRECT_TO_HTTPS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "443",
+                  "FORWARD"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "ALBs forward original client network information preserving user addresses.",
+            "rows": [
+              {
+                "cells": [
+                  "80",
+                  "REDIRECT_TO_HTTPS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "443",
+                  "FORWARD"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "8080",
+                  "connection refused"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sticky sessions and connection draining",
+      "codeHash": "3c3f18d12d8f62a9981ed8419ba7e8de2b4e963315bce513a8022acbdf1bfeca",
+      "spec": {
+        "template": "none",
+        "reason": "Sticky sessions and connection draining behavior."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: route and check health",
+      "codeHash": "100adaa7351966f90e3249c967042b27937666a8e38c50fc94599cdd20023b17",
+      "spec": {
+        "template": "none",
+        "reason": "Streak counting and threshold verification practice."
+      },
+      "filled": {}
+    }
+  ]
+}

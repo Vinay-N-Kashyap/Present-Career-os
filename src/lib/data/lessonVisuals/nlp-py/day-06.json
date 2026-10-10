@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Similarity as geometry",
+      "codeHash": "0f5b3bc3305819e2fbfe0583518ee41dda2604304304ed84c6632461cdaa2f72",
+      "spec": {
+        "template": "table",
+        "title": "Vector comparison measuring distance against cosine angle",
+        "columns": [
+          "short",
+          "long"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents become vectors pointing in similar directions for related topics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vector entries represent arrows where longer vectors contain more entries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Distance between arrow tips grows large when document length expands.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dist"
+                  },
+                  {
+                    "text": "other"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The angle between arrows measures topic without being skewed by length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dist"
+                  },
+                  {
+                    "text": "other"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "recipe"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector comparison measuring distance against cosine angle",
+        "columns": [
+          "short",
+          "long"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents become vectors pointing in similar directions for related topics.",
+            "rows": [
+              {
+                "cells": [
+                  "short",
+                  "long"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vector entries represent arrows where longer vectors contain more entries.",
+            "rows": [
+              {
+                "cells": [
+                  "short",
+                  "long"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cloud",
+                  "cost"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Distance between arrow tips grows large when document length expands.",
+            "rows": [
+              {
+                "cells": [
+                  "short",
+                  "long"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cloud",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dist",
+                  "other"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The angle between arrows measures topic without being skewed by length.",
+            "rows": [
+              {
+                "cells": [
+                  "short",
+                  "long"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cloud",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dist",
+                  "other"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "cos",
+                  "recipe"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The dot product and vector length",
+      "codeHash": "ead26441a8a9e043e5076ee8f4d380cea1ea9bedf5e44a2056a22ca805d2624d",
+      "spec": {
+        "template": "table",
+        "title": "Dot product and vector norm computation pipeline",
+        "columns": [
+          "dot",
+          "cosine"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The dot product multiplies matching entries across both vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dot"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Vector length equals the square root of the sum of squared elements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dot"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len_a"
+                  },
+                  {
+                    "text": "len_b"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dividing dot product by vector lengths leaves only spatial direction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dot"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len_a"
+                  },
+                  {
+                    "text": "len_b"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unit_a"
+                  },
+                  {
+                    "text": "unit_b"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Normalised vectors allow fast cosine calculation via direct dot product.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dot"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len_a"
+                  },
+                  {
+                    "text": "len_b"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unit_a"
+                  },
+                  {
+                    "text": "unit_b"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dot product and vector norm computation pipeline",
+        "columns": [
+          "dot",
+          "cosine"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The dot product multiplies matching entries across both vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "dot",
+                  "cosine"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Vector length equals the square root of the sum of squared elements.",
+            "rows": [
+              {
+                "cells": [
+                  "dot",
+                  "cosine"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "len_a",
+                  "len_b"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dividing dot product by vector lengths leaves only spatial direction.",
+            "rows": [
+              {
+                "cells": [
+                  "dot",
+                  "cosine"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "len_a",
+                  "len_b"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "unit_a",
+                  "unit_b"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Normalised vectors allow fast cosine calculation via direct dot product.",
+            "rows": [
+              {
+                "cells": [
+                  "dot",
+                  "cosine"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "len_a",
+                  "len_b"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "unit_a",
+                  "unit_b"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing cosine similarity safely",
+      "codeHash": "186bb6dee2e6670d3d6acafffc31c20e0524444bbcc1c17af4da608d7d3b79cd",
+      "spec": {
+        "template": "none",
+        "reason": "Zero-vector edge case handling in cosine formula."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Ranking by similarity",
+      "codeHash": "f630a8fa7c8c6110a5e3518debec84a87736cc711091851d06b4e151bad6ee24",
+      "spec": {
+        "template": "table",
+        "title": "Document similarity ranking and tie breaking order",
+        "columns": [
+          "query",
+          "document"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine ranking scores a collection of document vectors against a query.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "document"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Ranking returns the top similar documents ordered by score and tie identifier.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "document"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deterministic tie breaking maintains stable ordering across equal vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "document"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "baking"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Finding similar vectors provides the core foundation of semantic search.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "document"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "baking"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "zip"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document similarity ranking and tie breaking order",
+        "columns": [
+          "query",
+          "document"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine ranking scores a collection of document vectors against a query.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "document"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Ranking returns the top similar documents ordered by score and tie identifier.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "document"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vecs",
+                  "cos"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deterministic tie breaking maintains stable ordering across equal vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "document"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vecs",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "baking",
+                  "math"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Finding similar vectors provides the core foundation of semantic search.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "document"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vecs",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "baking",
+                  "math"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "zip",
+                  "sum"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TF-IDF vectors and semantic limits",
+      "codeHash": "8e7961e93dd28e97e17921529cda2dec4260c94a05f34b85988d843c825288b6",
+      "spec": {
+        "template": "table",
+        "title": "Vocabulary overlap limits and semantic representation",
+        "columns": [
+          "vocab",
+          "dot"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine evaluation with weighted vectors improves document ranking quality.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Vocabulary mismatch between synonymous words yields zero cosine overlap.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "car"
+                  },
+                  {
+                    "text": "automobile"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Orthogonal word directions ignore semantic relationships between terms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "car"
+                  },
+                  {
+                    "text": "automobile"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fast"
+                  },
+                  {
+                    "text": "quickly"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Dense embeddings resolve vocabulary limits by clustering related concepts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "car"
+                  },
+                  {
+                    "text": "automobile"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fast"
+                  },
+                  {
+                    "text": "quickly"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vocabulary overlap limits and semantic representation",
+        "columns": [
+          "vocab",
+          "dot"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine evaluation with weighted vectors improves document ranking quality.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "dot"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Vocabulary mismatch between synonymous words yields zero cosine overlap.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "dot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "car",
+                  "automobile"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Orthogonal word directions ignore semantic relationships between terms.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "dot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "car",
+                  "automobile"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "fast",
+                  "quickly"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Dense embeddings resolve vocabulary limits by clustering related concepts.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "dot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "car",
+                  "automobile"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "fast",
+                  "quickly"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "math",
+                  "split"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: similarity and ranking",
+      "codeHash": "5dcbac9546f65206ae024d8740e325cdd09eeeb46a671f01d71acd81cdb6652e",
+      "spec": {
+        "template": "none",
+        "reason": "Implementation practice for cosine and ranking."
+      },
+      "filled": {}
+    }
+  ]
+}

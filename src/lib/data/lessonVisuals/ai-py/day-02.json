@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Tokens are pieces of words",
+      "codeHash": "7e2be703b29d32f331df9a5aa0e12fd8b9a4cf8126c407492d60c27d199ae645",
+      "spec": {
+        "template": "table",
+        "title": "Character counts versus estimated token counts",
+        "columns": [
+          "sample_text",
+          "char_count",
+          "token_estimate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models read tokens representing common words or parts of text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Hello!"
+                  },
+                  {
+                    "text": "6"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Context limits and processing speed are measured in tokens rather than words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Hello!"
+                  },
+                  {
+                    "text": "6"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Summary report"
+                  },
+                  {
+                    "text": "52"
+                  },
+                  {
+                    "text": "13"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Character counts versus estimated token counts",
+        "columns": [
+          "sample_text",
+          "char_count",
+          "token_estimate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models read tokens representing common words or parts of text.",
+            "rows": [
+              {
+                "cells": [
+                  "Hello!",
+                  "6",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Context limits and processing speed are measured in tokens rather than words.",
+            "rows": [
+              {
+                "cells": [
+                  "Hello!",
+                  "6",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Summary report",
+                  "52",
+                  "13"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Byte-pair encoding: learning the pieces",
+      "codeHash": "05da8d0feafb34cb9e46847eb146a58ef83523cd9d86ab21976f9c9d7574987c",
+      "spec": {
+        "template": "bars",
+        "title": "Frequency count of adjacent character pairs",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Byte pair encoding merges the most frequent neighbouring pair into a token.",
+            "bars": [
+              {
+                "label": "(\"l\", \"o\")",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "(\"o\", \"w\")",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "(\"e\", \"r\")",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Common pairs become single merged tokens while rare pieces remain split.",
+            "bars": [
+              {
+                "label": "(\"l\", \"o\")",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "(\"o\", \"w\")",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "(\"e\", \"r\")",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "(\"w\", \"e\")",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Frequency count of adjacent character pairs",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Byte pair encoding merges the most frequent neighbouring pair into a token.",
+            "bars": [
+              {
+                "label": "(\"l\", \"o\")",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "(\"o\", \"w\")",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "(\"e\", \"r\")",
+                "value": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Common pairs become single merged tokens while rare pieces remain split.",
+            "bars": [
+              {
+                "label": "(\"l\", \"o\")",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "(\"o\", \"w\")",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "(\"e\", \"r\")",
+                "value": 2,
+                "tone": "data"
+              },
+              {
+                "label": "(\"w\", \"e\")",
+                "value": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Applying merge rules",
+      "codeHash": "949e7c830aa92809e72fb78c59cefa37176aa4e8dec7bd79211a34b4a17f103b",
+      "spec": {
+        "template": "boxes",
+        "title": "Progressive token list state during BPE merges",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "left"
+          },
+          {
+            "id": "b1",
+            "label": "right"
+          },
+          {
+            "id": "b2",
+            "label": "merged"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Matching token pairs are merged into combined pieces while walking the list.",
+            "values": {
+              "b0": {
+                "text": "lo"
+              },
+              "b1": {
+                "text": "w"
+              },
+              "b2": {
+                "text": "er"
+              }
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "data",
+              "b2": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sequential merge rule order determines how final tokens are formed.",
+            "values": {
+              "b0": {
+                "text": "low"
+              },
+              "b1": {
+                "text": "er"
+              },
+              "b2": {
+                "text": ""
+              }
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "ok",
+              "b2": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Progressive token list state during BPE merges",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "left"
+          },
+          {
+            "id": "b1",
+            "label": "right"
+          },
+          {
+            "id": "b2",
+            "label": "merged"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Matching token pairs are merged into combined pieces while walking the list.",
+            "values": {
+              "b0": "lo",
+              "b1": "w",
+              "b2": "er"
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "data",
+              "b2": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sequential merge rule order determines how final tokens are formed.",
+            "values": {
+              "b0": "low",
+              "b1": "er",
+              "b2": ""
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "ok",
+              "b2": "idle"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The context window",
+      "codeHash": "96c492261a3d1feb0ec66c98aa30b8f49e3a96fb7777b67954891c0837c7e8f1",
+      "spec": {
+        "template": "none",
+        "reason": "Message history fitting algorithm and reserved completion token budgeting logic."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Message history fitting algorithm and reserved completion token budgeting logic."
+      }
+    },
+    {
+      "partTitle": "What does a call cost?",
+      "codeHash": "d513a93e794b6d0245855fbe8831b66955360f749610bce75a1f6f91fa840830",
+      "spec": {
+        "template": "none",
+        "reason": "API cost calculations per million tokens for prompt and completion pricing."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "API cost calculations per million tokens for prompt and completion pricing."
+      }
+    },
+    {
+      "partTitle": "Context economics: spending tokens wisely",
+      "codeHash": "b8613a2df751a5562884b11c9920159152d4ecfb44a62e0844456fb22e044124",
+      "spec": {
+        "template": "compare",
+        "title": "Cost difference between large and small models",
+        "leftLabel": "Large Model",
+        "rightLabel": "Small Model",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Smaller models are cheaper and effective for basic classification tasks.",
+            "left": {
+              "code": "$2.50 in / $10.00 out",
+              "result": {
+                "text": "$20,250 / month"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "$0.15 in / $0.60 out",
+              "result": {
+                "text": "$1,215 / month"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Restricting output length cuts down expensive tokens in the reply.",
+            "left": {
+              "code": "essay output (2000 tokens)",
+              "result": {
+                "text": "high cost burden"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "json output (100 tokens)",
+              "result": {
+                "text": "minimal token cost"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cost difference between large and small models",
+        "leftLabel": "Large Model",
+        "rightLabel": "Small Model",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Smaller models are cheaper and effective for basic classification tasks.",
+            "left": {
+              "code": "$2.50 in / $10.00 out",
+              "result": "$20,250 / month",
+              "tone": "data",
+              "checks": [
+                "$20,250 / month"
+              ]
+            },
+            "right": {
+              "code": "$0.15 in / $0.60 out",
+              "result": "$1,215 / month",
+              "tone": "ok",
+              "checks": [
+                "$1,215 / month"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Restricting output length cuts down expensive tokens in the reply.",
+            "left": {
+              "code": "essay output (2000 tokens)",
+              "result": "high cost burden",
+              "tone": "error",
+              "checks": [
+                "high cost burden"
+              ]
+            },
+            "right": {
+              "code": "json output (100 tokens)",
+              "result": "minimal token cost",
+              "tone": "ok",
+              "checks": [
+                "minimal token cost"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

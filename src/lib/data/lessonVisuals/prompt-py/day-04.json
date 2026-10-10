@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Chain-of-thought prompting",
+      "codeHash": "9bcfcde97436b2f901d08c5de4d200e76b9e61e09c84c91adf5a36f61b3a33bf",
+      "spec": {
+        "template": "table",
+        "title": "Direct prompting versus step-by-step reasoning tokens",
+        "columns": [
+          "problem",
+          "direct",
+          "cot"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Intermediate reasoning steps provide valuable context for generation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "problem"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "cot"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Step by step instructions stimulate structured reasoning pathways.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "problem"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "cot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "problem"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "cot"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Chain of thought prompting resolves complex multi step logic problems.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "problem"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "cot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "problem"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "cot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "problem"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "cot"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Direct prompting versus step-by-step reasoning tokens",
+        "columns": [
+          "problem",
+          "direct",
+          "cot"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Intermediate reasoning steps provide valuable context for generation.",
+            "rows": [
+              {
+                "cells": [
+                  "problem",
+                  "direct",
+                  "cot"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Step by step instructions stimulate structured reasoning pathways.",
+            "rows": [
+              {
+                "cells": [
+                  "problem",
+                  "direct",
+                  "cot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "problem",
+                  "direct",
+                  "cot"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Chain of thought prompting resolves complex multi step logic problems.",
+            "rows": [
+              {
+                "cells": [
+                  "problem",
+                  "direct",
+                  "cot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "problem",
+                  "direct",
+                  "cot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "problem",
+                  "direct",
+                  "cot"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extracting the final answer",
+      "codeHash": "726cc0c28b692b959732397b2accaf07d84de033121a75b51f5eed40dca6c57b",
+      "spec": {
+        "template": "table",
+        "title": "Marker extraction and trailing number fallback regex",
+        "columns": [
+          "text",
+          "line",
+          "found"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standardized answer markers enable reliable regex parsing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "found"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scanning for the last marker resolves self corrected reasoning trails.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "found"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "found"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fallback numerical pattern matching extracts trailing quantities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "found"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "found"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "found"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Marker extraction and trailing number fallback regex",
+        "columns": [
+          "text",
+          "line",
+          "found"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Standardized answer markers enable reliable regex parsing.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "line",
+                  "found"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scanning for the last marker resolves self corrected reasoning trails.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "line",
+                  "found"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "line",
+                  "found"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fallback numerical pattern matching extracts trailing quantities.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "line",
+                  "found"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "line",
+                  "found"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "line",
+                  "found"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Self-consistency voting",
+      "codeHash": "5fc560232c4957192301cfd1831f1082dfbfc3988ca877ce69825593181b6baa",
+      "spec": {
+        "template": "table",
+        "title": "Self-consistency majority voting and confidence metrics",
+        "columns": [
+          "answers",
+          "norm",
+          "winner",
+          "share"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Stochastic generation yields diverse reasoning paths across repeated runs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "winner"
+                  },
+                  {
+                    "text": "share"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Majority voting across independent sample paths improves answer accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "winner"
+                  },
+                  {
+                    "text": "share"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "share"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Vote concentration provides an empirical confidence score for decisions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "winner"
+                  },
+                  {
+                    "text": "share"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "share"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "norm"
+                  },
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "share"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Self-consistency majority voting and confidence metrics",
+        "columns": [
+          "answers",
+          "norm",
+          "winner",
+          "share"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Stochastic generation yields diverse reasoning paths across repeated runs.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "norm",
+                  "winner",
+                  "share"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Majority voting across independent sample paths improves answer accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "norm",
+                  "winner",
+                  "share"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answers",
+                  "norm",
+                  "16",
+                  "share"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Vote concentration provides an empirical confidence score for decisions.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "norm",
+                  "winner",
+                  "share"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answers",
+                  "norm",
+                  "16",
+                  "share"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answers",
+                  "norm",
+                  "16",
+                  "share"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tree of thoughts",
+      "codeHash": "2abf88c5a4074843e34e4cd4ad0ed72a7e2e54c9634a244efadf08c192c48147",
+      "spec": {
+        "template": "table",
+        "title": "Tree of thoughts multi-branch evaluation and scoring",
+        "columns": [
+          "options",
+          "budget",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Branching thought trees explore multiple alternative candidate solutions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "options"
+                  },
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Systematic exploration navigates complex planning and search spaces.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "options"
+                  },
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train"
+                  },
+                  {
+                    "text": "3000"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompts propose different approaches before developing the best plan.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "options"
+                  },
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train"
+                  },
+                  {
+                    "text": "3000"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "flight"
+                  },
+                  {
+                    "text": "3000"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tree of thoughts multi-branch evaluation and scoring",
+        "columns": [
+          "options",
+          "budget",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Branching thought trees explore multiple alternative candidate solutions.",
+            "rows": [
+              {
+                "cells": [
+                  "options",
+                  "budget",
+                  "score"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Systematic exploration navigates complex planning and search spaces.",
+            "rows": [
+              {
+                "cells": [
+                  "options",
+                  "budget",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train",
+                  "3000",
+                  "score"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompts propose different approaches before developing the best plan.",
+            "rows": [
+              {
+                "cells": [
+                  "options",
+                  "budget",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train",
+                  "3000",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "flight",
+                  "3000",
+                  "score"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When reasoning prompts help",
+      "codeHash": "5b730929b203e89626133d26ff780999a2f2f2ceff70d3253db42b024968a110",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: vote and extract",
+      "codeHash": "c272081ecb47a101422a743a778573bd68b58d8c62f80f05b8bd1817129ba3a4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

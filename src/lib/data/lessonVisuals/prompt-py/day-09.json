@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why grounding matters",
+      "codeHash": "f2a15718e832a7ef135e225690de6b78bcbf74779162c342fc305b12fd3dd863",
+      "spec": {
+        "template": "table",
+        "title": "Retrieval-augmented grounding versus ungrounded hallucination",
+        "columns": [
+          "question",
+          "ungrounded",
+          "grounded"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Without grounding the model may hallucinate a plausible but wrong answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "ungrounded"
+                  },
+                  {
+                    "text": "grounded"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "ungrounded"
+                  },
+                  {
+                    "text": "grounded"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Grounded answers cite reliable sources so people can verify facts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "ungrounded"
+                  },
+                  {
+                    "text": "grounded"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "policy"
+                  },
+                  {
+                    "text": "ungrounded"
+                  },
+                  {
+                    "text": "grounded"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Retrieval-augmented grounding versus ungrounded hallucination",
+        "columns": [
+          "question",
+          "ungrounded",
+          "grounded"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Without grounding the model may hallucinate a plausible but wrong answer.",
+            "rows": [
+              {
+                "cells": [
+                  "question",
+                  "ungrounded",
+                  "grounded"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "question",
+                  "ungrounded",
+                  "grounded"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Grounded answers cite reliable sources so people can verify facts.",
+            "rows": [
+              {
+                "cells": [
+                  "question",
+                  "ungrounded",
+                  "grounded"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "policy",
+                  "ungrounded",
+                  "grounded"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chunking documents",
+      "codeHash": "686c6b19e85ef709bd4de14f75028c96a3300529d8ed43e7765c4326e3920f0e",
+      "spec": {
+        "template": "table",
+        "title": "Document chunking and source metadata retention",
+        "columns": [
+          "source",
+          "text",
+          "chunks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents are split into chunks so retrieval can find relevant parts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Retaining document metadata with each chunk supports verified citations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document chunking and source metadata retention",
+        "columns": [
+          "source",
+          "text",
+          "chunks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents are split into chunks so retrieval can find relevant parts.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "text",
+                  "chunks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "source",
+                  "text",
+                  "chunks"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Retaining document metadata with each chunk supports verified citations.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "text",
+                  "chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "source",
+                  "text",
+                  "chunks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retrieving relevant chunks",
+      "codeHash": "88e377afa12f80c9fd8a615b0d8be61d2bf2e4d9b5e15626b05f5763b3b651db",
+      "spec": {
+        "template": "table",
+        "title": "Keyword overlap scoring for chunk retrieval",
+        "columns": [
+          "chunks",
+          "words",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retrieval finds relevant chunks using keyword overlap against queries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scoring chunks by distinct shared words ranks the best candidate passages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Keyword overlap scoring for chunk retrieval",
+        "columns": [
+          "chunks",
+          "words",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retrieval finds relevant chunks using keyword overlap against queries.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "words",
+                  "scores"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "words",
+                  "scores"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scoring chunks by distinct shared words ranks the best candidate passages.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "words",
+                  "scores"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "words",
+                  "scores"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The grounded prompt",
+      "codeHash": "ad68571a3b93fbc5cacc4d1f9dfac26a436b7014b105a0df1036ff3e5345bbac",
+      "spec": {
+        "template": "table",
+        "title": "Prompt assembly with source citations and question anchoring",
+        "columns": [
+          "header",
+          "sources",
+          "question"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A grounded prompt combines clear instructions, sources, and the question.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "header"
+                  },
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "header"
+                  },
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Numbering sources makes citation verification straightforward for code.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "header"
+                  },
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "question"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Prompt assembly with source citations and question anchoring",
+        "columns": [
+          "header",
+          "sources",
+          "question"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A grounded prompt combines clear instructions, sources, and the question.",
+            "rows": [
+              {
+                "cells": [
+                  "header",
+                  "sources",
+                  "question"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "header",
+                  "sources",
+                  "question"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Numbering sources makes citation verification straightforward for code.",
+            "rows": [
+              {
+                "cells": [
+                  "header",
+                  "sources",
+                  "question"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "prompt",
+                  "sources",
+                  "question"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking citations",
+      "codeHash": "e3ba8b6604b071f7f1fec96364d023422a96fa56a25e94d71c3091b2b98ecbf7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: retrieve and check",
+      "codeHash": "7e2a4cf74fb2d51820d61d17f4e7b909ddf53332471481394e42e399f4e10eba",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

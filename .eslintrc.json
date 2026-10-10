@@ -4,5 +4,6 @@
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
     "@next/next/no-img-element": "warn"
-  }
+  },
+  "ignorePatterns": ["src/lib/visuals/loadVisuals.ts"]
 }

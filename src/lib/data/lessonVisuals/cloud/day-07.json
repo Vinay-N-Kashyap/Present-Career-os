@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 7,
+  "promptSha": "9cd3b567e984ac4aadcc328cc47742a00fec603b40286850e287709197177a44",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "EC2 Instance Families and Workload Sizing",
+      "codeHash": "9ea987d19c16d699a38c67ee45ae4d03bba69d0c2ae7138ea639de4f3e2d9c0e",
+      "spec": {
+        "template": "table",
+        "title": "EC2 instance family hardware optimization profiles",
+        "columns": [
+          "Instance Family",
+          "Hardware Profile",
+          "Target Workload"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Choosing the correct instance family achieves peak performance.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Memory optimized instances provide high memory ratios for caches and redis.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "EC2 instance family hardware optimization profiles",
+        "columns": [
+          "Instance Family",
+          "Hardware Profile",
+          "Target Workload"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Choosing the correct instance family achieves peak performance.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Memory optimized instances provide high memory ratios for caches and redis.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Burstable Performance and CPU Credits (T3/T4g Instances)",
+      "codeHash": "3eb67b603fe6e75b5399eb43114a9d87e85d89e15d29eb08bdfadcf24032f30c",
+      "spec": {
+        "template": "bars",
+        "title": "Burstable performance and CPU credit accumulation",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Burstable instances provide baseline performance with capacity to burst.",
+            "bars": [
+              {
+                "label": "Baseline CPU",
+                "value": 20,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Burst Ceiling",
+                "value": 100,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Surging workloads consume accrued credits bursting compute to maximum.",
+            "bars": [
+              {
+                "label": "Baseline CPU",
+                "value": 20,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Surge Usage",
+                "value": 85,
+                "max": 100,
+                "tone": "error"
+              },
+              {
+                "label": "Credits Remaining",
+                "value": 45,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Burstable performance and CPU credit accumulation",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Burstable instances provide baseline performance with capacity to burst.",
+            "bars": [
+              {
+                "label": "Baseline CPU",
+                "value": 20,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Burst Ceiling",
+                "value": 100,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Surging workloads consume accrued credits bursting compute to maximum.",
+            "bars": [
+              {
+                "label": "Baseline CPU",
+                "value": 20,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Surge Usage",
+                "value": 85,
+                "max": 100,
+                "tone": "error"
+              },
+              {
+                "label": "Credits Remaining",
+                "value": 45,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Purchasing Options: On-Demand, Savings Plans, and Spot",
+      "codeHash": "0a0fcfac1e19cf6e1e59af93a3e02beb6c34a93526d91cc8c45908f2b1ece1be",
+      "spec": {
+        "template": "compare",
+        "title": "On-demand instances compared to spot instances",
+        "leftLabel": "On-Demand Pricing",
+        "rightLabel": "Spot Instances Pricing",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "On demand pricing offers complete flexibility with zero commitments.",
+            "left": {
+              "code": "Full Price Compute",
+              "result": {
+                "text": "On-Demand"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Deep Discount Spare",
+              "result": {
+                "text": "Spot Instance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Spot instances offer steep discounts by selling unused spare compute.",
+            "left": {
+              "code": "No Interruption Risk",
+              "result": {
+                "text": "Guaranteed Availability"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Two-Minute Reclaim Warning",
+              "result": {
+                "text": "Interruption Notice"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "On-demand instances compared to spot instances",
+        "leftLabel": "On-Demand Pricing",
+        "rightLabel": "Spot Instances Pricing",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "On demand pricing offers complete flexibility with zero commitments.",
+            "left": {
+              "code": "Full Price Compute",
+              "result": {
+                "text": "On-Demand"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Deep Discount Spare",
+              "result": {
+                "text": "Spot Instance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Spot instances offer steep discounts by selling unused spare compute.",
+            "left": {
+              "code": "No Interruption Risk",
+              "result": {
+                "text": "Guaranteed Availability"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Two-Minute Reclaim Warning",
+              "result": {
+                "text": "Interruption Notice"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spot Fleet & Handling the 2-Minute Interruption Notice",
+      "codeHash": "6502308de4713d3495713b3c489ab2dd7d75d4c424003c745c725c5d061ab880",
+      "spec": {
+        "template": "sequence",
+        "title": "Spot instance interruption notice handling flow",
+        "actors": [
+          {
+            "id": "aws",
+            "name": "EC2 Spot Controller"
+          },
+          {
+            "id": "worker",
+            "name": "Spot Node"
+          },
+          {
+            "id": "queue",
+            "name": "Task Queue"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Service issues warning notice before terminating spare spot instances.",
+            "from": "aws",
+            "to": "worker",
+            "label": "Interruption Warning",
+            "tone": "error"
+          },
+          {
+            "at": "say5",
+            "caption": "Background listeners intercept this warning immediately to save state.",
+            "from": "worker",
+            "to": "queue",
+            "label": "Requeue Tasks",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Spot instance interruption notice handling flow",
+        "actors": [
+          {
+            "id": "aws",
+            "name": "EC2 Spot Controller"
+          },
+          {
+            "id": "worker",
+            "name": "Spot Node"
+          },
+          {
+            "id": "queue",
+            "name": "Task Queue"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Service issues warning notice before terminating spare spot instances.",
+            "from": "aws",
+            "to": "worker",
+            "label": "Interruption Warning",
+            "tone": "error"
+          },
+          {
+            "at": "say5",
+            "caption": "Background listeners intercept this warning immediately to save state.",
+            "from": "worker",
+            "to": "queue",
+            "label": "Requeue Tasks",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auto Scaling Groups (ASG) & Launch Templates",
+      "codeHash": "8def8eb905b9930a9e49e649e382ba7b38324c011e4e61944dd9ddc755de2243",
+      "spec": {
+        "template": "workflow",
+        "title": "Auto Scaling Group launch templates and target group registration",
+        "stages": [
+          {
+            "id": "template",
+            "name": "Launch Template",
+            "subtext": "AMI & UserData"
+          },
+          {
+            "id": "asg",
+            "name": "Auto Scaling Group",
+            "subtext": "Min / Max Fleet"
+          },
+          {
+            "id": "alb",
+            "name": "Load Balancer",
+            "subtext": "Target Health"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Auto scaling groups maintain application availability scaling fleets.",
+            "activeStageId": "asg",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Launch templates specify machine images, instance types, and user data.",
+            "activeStageId": "template",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Auto Scaling Group launch templates and target group registration",
+        "stages": [
+          {
+            "id": "template",
+            "name": "Launch Template",
+            "subtext": "AMI & UserData"
+          },
+          {
+            "id": "asg",
+            "name": "Auto Scaling Group",
+            "subtext": "Min / Max Fleet"
+          },
+          {
+            "id": "alb",
+            "name": "Load Balancer",
+            "subtext": "Target Health"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Auto scaling groups maintain application availability scaling fleets.",
+            "activeStageId": "asg",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Launch templates specify machine images, instance types, and user data.",
+            "activeStageId": "template",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scaling Policies: Target Tracking, Step, and Predictive",
+      "codeHash": "34b3337795a729e2c9ea26031b31137fecc7d258f10474034fc4c0252e58ac27",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

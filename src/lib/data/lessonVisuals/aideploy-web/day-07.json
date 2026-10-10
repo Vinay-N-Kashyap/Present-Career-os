@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 7,
+  "promptSha": "b0590f462444cfebae49ad00c1f5d7f1d8728bb8a89ad9ccb4f05fba41b5a747",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Throughput vs Latency Trade-Offs in AI Inference",
+      "codeHash": "b0590f462444cfebae49ad00c1f5d7f1d8728bb8a89ad9ccb4f05fba41b5a747",
+      "spec": {
+        "template": "compare",
+        "title": "Sequential 1-by-1 Calls vs Micro-Batched Invocations",
+        "leftLabel": "Sequential One-by-One Calls",
+        "rightLabel": "Micro-Batched Invocations",
+        "leftItems": [
+          "Incurs TCP handshake per request",
+          "TLS negotiation and header churn",
+          "20 requests = 2000ms total latency",
+          "Low GPU tensor core utilization"
+        ],
+        "rightItems": [
+          "Groups requests into single invocation",
+          "Amortizes network overhead across items",
+          "20 requests with batch factor 5 = 400ms",
+          "Achieves 5x speedup for background jobs"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sequential execution of individual tasks introduces massive networking overhead.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Micro-batching groups concurrent requests into a combined API invocation.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Sequential 1-by-1 Calls vs Micro-Batched Invocations",
+        "leftLabel": "Sequential One-by-One Calls",
+        "rightLabel": "Micro-Batched Invocations",
+        "leftItems": [
+          "Incurs TCP handshake per request",
+          "TLS negotiation and header churn",
+          "20 requests = 2000ms total latency",
+          "Low GPU tensor core utilization"
+        ],
+        "rightItems": [
+          "Groups requests into single invocation",
+          "Amortizes network overhead across items",
+          "20 requests with batch factor 5 = 400ms",
+          "Achieves 5x speedup for background jobs"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sequential execution of individual tasks introduces massive networking overhead.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Micro-batching groups concurrent requests into a combined API invocation.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bounded Linger Windows & Adaptive Queuing",
+      "codeHash": "98ffcf4f758c2f253bdfe17c720a4367ae79e87805e1df7819d97c30d1e7678a",
+      "spec": {
+        "template": "states",
+        "title": "Dual Trigger Batch Flushing States",
+        "states": [
+          {
+            "id": "accumulating",
+            "label": "Queue Accumulating"
+          },
+          {
+            "id": "size_flush",
+            "label": "Max Size Triggered"
+          },
+          {
+            "id": "linger_flush",
+            "label": "Linger Timer Expired"
+          },
+          {
+            "id": "flushed",
+            "label": "Batch Dispatched"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Batch engines employ dual triggering criteria for size and linger windows.",
+            "current": "accumulating",
+            "visited": [
+              "accumulating"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Linger timers trigger a batch flush when oldest items exceed deadlines.",
+            "current": "linger_flush",
+            "visited": [
+              "accumulating",
+              "linger_flush"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Bounded linger windows balance batch density and deterministic latency.",
+            "current": "flushed",
+            "visited": [
+              "accumulating",
+              "linger_flush",
+              "flushed"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Dual Trigger Batch Flushing States",
+        "states": [
+          {
+            "id": "accumulating",
+            "label": "Queue Accumulating"
+          },
+          {
+            "id": "size_flush",
+            "label": "Max Size Triggered"
+          },
+          {
+            "id": "linger_flush",
+            "label": "Linger Timer Expired"
+          },
+          {
+            "id": "flushed",
+            "label": "Batch Dispatched"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Batch engines employ dual triggering criteria for size and linger windows.",
+            "current": "accumulating",
+            "visited": [
+              "accumulating"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Linger timers trigger a batch flush when oldest items exceed deadlines.",
+            "current": "linger_flush",
+            "visited": [
+              "accumulating",
+              "linger_flush"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Bounded linger windows balance batch density and deterministic latency.",
+            "current": "flushed",
+            "visited": [
+              "accumulating",
+              "linger_flush",
+              "flushed"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asynchronous Promise Demultiplexing",
+      "codeHash": "1cf03781b0f2c56321660e94400ffe8e744d3a4c2812ad24c57fc11c77b9420d",
+      "spec": {
+        "template": "flow",
+        "title": "Promise Demultiplexing Architecture",
+        "nodes": [
+          {
+            "id": "caller",
+            "label": "Caller Promise",
+            "tappable": false
+          },
+          {
+            "id": "registry",
+            "label": "Deferred Registry",
+            "tappable": false
+          },
+          {
+            "id": "batch",
+            "label": "Unified Batch Request",
+            "tappable": false
+          },
+          {
+            "id": "results",
+            "label": "Upstream Results",
+            "tappable": false
+          },
+          {
+            "id": "resolve",
+            "label": "Demux & Resolve",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "caller",
+            "to": "registry"
+          },
+          {
+            "from": "registry",
+            "to": "batch"
+          },
+          {
+            "from": "batch",
+            "to": "results"
+          },
+          {
+            "from": "results",
+            "to": "resolve"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Gateways decouple batch collection using an asynchronous Promise demuxer.",
+            "activeNodes": [
+              "caller",
+              "registry"
+            ],
+            "statusBadge": "registered"
+          },
+          {
+            "at": "say5",
+            "caption": "Internal maps store handlers indexed by unique request correlation IDs.",
+            "activeNodes": [
+              "registry",
+              "batch"
+            ],
+            "statusBadge": "mapped"
+          },
+          {
+            "at": "say7",
+            "caption": "Demuxers resolve caller promises using correlation IDs from batch answers.",
+            "activeNodes": [
+              "results",
+              "resolve"
+            ],
+            "statusBadge": "resolved"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Promise Demultiplexing Architecture",
+        "nodes": [
+          {
+            "id": "caller",
+            "label": "Caller Promise",
+            "tappable": false
+          },
+          {
+            "id": "registry",
+            "label": "Deferred Registry",
+            "tappable": false
+          },
+          {
+            "id": "batch",
+            "label": "Unified Batch Request",
+            "tappable": false
+          },
+          {
+            "id": "results",
+            "label": "Upstream Results",
+            "tappable": false
+          },
+          {
+            "id": "resolve",
+            "label": "Demux & Resolve",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "caller",
+            "to": "registry"
+          },
+          {
+            "from": "registry",
+            "to": "batch"
+          },
+          {
+            "from": "batch",
+            "to": "results"
+          },
+          {
+            "from": "results",
+            "to": "resolve"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Gateways decouple batch collection using an asynchronous Promise demuxer.",
+            "activeNodes": [
+              "caller",
+              "registry"
+            ],
+            "statusBadge": "registered"
+          },
+          {
+            "at": "say5",
+            "caption": "Internal maps store handlers indexed by unique request correlation IDs.",
+            "activeNodes": [
+              "registry",
+              "batch"
+            ],
+            "statusBadge": "mapped"
+          },
+          {
+            "at": "say7",
+            "caption": "Demuxers resolve caller promises using correlation IDs from batch answers.",
+            "activeNodes": [
+              "results",
+              "resolve"
+            ],
+            "statusBadge": "resolved"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partial Batch Error Isolation & Fault Tolerance",
+      "codeHash": "aa8828263b0b4e51e953bf1654e2a989e8e8243da8160f3993aeb47bebde0a45",
+      "spec": {
+        "template": "table",
+        "title": "Per-Item Batch Result Partitioning",
+        "columns": [
+          "Item ID",
+          "Status",
+          "Payload / Reason",
+          "Action Taken"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Resilient batch gateways enforce strict partial batch error isolation.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Results partition into successful arrays and failed arrays for isolation.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Failed items reject only their specific promises with granular errors.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Per-Item Batch Result Partitioning",
+        "columns": [
+          "Item ID",
+          "Status",
+          "Payload / Reason",
+          "Action Taken"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Resilient batch gateways enforce strict partial batch error isolation.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Results partition into successful arrays and failed arrays for isolation.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Failed items reject only their specific promises with granular errors.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Queue Sizing & Backpressure Under Load",
+      "codeHash": "3e0bb277b4dafed108632de5c6cc2ad3bf2bb32ef9f2f543ffdd2edc813462e5",
+      "spec": {
+        "template": "workflow",
+        "title": "Backpressure Admission Control Stages",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Ingress Request",
+            "subtext": "Incoming inference task"
+          },
+          {
+            "id": "check",
+            "name": "Capacity Check",
+            "subtext": "Queue length vs max ceiling"
+          },
+          {
+            "id": "accept",
+            "name": "Queue Admission",
+            "subtext": "Added to in-memory batch"
+          },
+          {
+            "id": "reject",
+            "name": "Backpressure Signal",
+            "subtext": "HTTP 429 / fail fast"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Unbounded queues expand without limit consuming memory until process crashes.",
+            "activeStageId": "check",
+            "statusBadge": "monitoring"
+          },
+          {
+            "at": "say4",
+            "caption": "Gateways apply backpressure when queue lengths exceed maximum capacity.",
+            "activeStageId": "reject",
+            "statusBadge": "overloaded"
+          },
+          {
+            "at": "say8",
+            "caption": "Failing fast under extreme overload preserves overall service availability.",
+            "activeStageId": "reject",
+            "statusBadge": "rejected"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Backpressure Admission Control Stages",
+        "stages": [
+          {
+            "id": "ingress",
+            "name": "Ingress Request",
+            "subtext": "Incoming inference task"
+          },
+          {
+            "id": "check",
+            "name": "Capacity Check",
+            "subtext": "Queue length vs max ceiling"
+          },
+          {
+            "id": "accept",
+            "name": "Queue Admission",
+            "subtext": "Added to in-memory batch"
+          },
+          {
+            "id": "reject",
+            "name": "Backpressure Signal",
+            "subtext": "HTTP 429 / fail fast"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Unbounded queues expand without limit consuming memory until process crashes.",
+            "activeStageId": "check",
+            "statusBadge": "monitoring"
+          },
+          {
+            "at": "say4",
+            "caption": "Gateways apply backpressure when queue lengths exceed maximum capacity.",
+            "activeStageId": "reject",
+            "statusBadge": "overloaded"
+          },
+          {
+            "at": "say8",
+            "caption": "Failing fast under extreme overload preserves overall service availability.",
+            "activeStageId": "reject",
+            "statusBadge": "rejected"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Micro-Batch Ingestion Gateway",
+      "codeHash": "4fc3e40d62afe21eb73bc56fa372bfc5c3f64c31a3419244cb2f6e58c53421bb",
+      "spec": {
+        "template": "none",
+        "reason": "Production Micro-Batch Ingestion Gateway capstone synthesizing linger triggers, demuxing, error isolation, and backpressure"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Micro-Batch Ingestion Gateway capstone synthesizing linger triggers, demuxing, error isolation, and backpressure"
+      }
+    }
+  ]
+}

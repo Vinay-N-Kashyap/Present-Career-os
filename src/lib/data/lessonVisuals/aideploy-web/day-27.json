@@ -1,0 +1,801 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 27,
+  "promptSha": "952b54339cd5a8b5e43acd7e3c276a686a84bf8a9d764655e85eb185a3aa20c6",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cost Attribution Dimensions (User, Tenant, Feature, Model)",
+      "codeHash": "952b54339cd5a8b5e43acd7e3c276a686a84bf8a9d764655e85eb185a3aa20c6",
+      "spec": {
+        "template": "table",
+        "title": "Cost Attribution Dimension Schema",
+        "columns": [
+          "Attribution Dimension",
+          "Telemetry Key",
+          "FinOps Value"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Financial control requires granular cost attribution at the point of request.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Interfaces tag invocations with user ID, feature name, model tier, and cost.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Granular cost tagging enables attribution across units and product features.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cost Attribution Dimension Schema",
+        "columns": [
+          "Attribution Dimension",
+          "Telemetry Key",
+          "FinOps Value"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Financial control requires granular cost attribution at the point of request.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Interfaces tag invocations with user ID, feature name, model tier, and cost.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Granular cost tagging enables attribution across units and product features.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Aggregating Usage & Spend by Dimension",
+      "codeHash": "c1ee6775a91c5f77e5826485d24cef6416ddd30750b8d2bc3e6609591fd249a0",
+      "spec": {
+        "template": "bars",
+        "title": "Aggregated Spend by Product Feature",
+        "items": [
+          {
+            "label": "Chat Feature ($0.50)",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Search Feature ($0.25)",
+            "value": 25,
+            "tone": "ok"
+          },
+          {
+            "label": "Summary Feature ($0.05)",
+            "value": 5,
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions group records by user, feature, or model tier using memory maps.",
+            "bars": [
+              {
+                "label": "Chat Feature ($0.50)",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Search Feature ($0.25)",
+                "value": 25,
+                "tone": "ok"
+              },
+              {
+                "label": "Summary Feature ($0.05)",
+                "value": 5,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Grouping by feature immediately reveals that chat accounts for major spend.",
+            "bars": [
+              {
+                "label": "Chat Feature ($0.50)",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Search Feature ($0.25)",
+                "value": 25,
+                "tone": "ok"
+              },
+              {
+                "label": "Summary Feature ($0.05)",
+                "value": 5,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Product managers see where cloud budget is allocated across the landscape.",
+            "bars": [
+              {
+                "label": "Chat Feature ($0.50)",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Search Feature ($0.25)",
+                "value": 25,
+                "tone": "ok"
+              },
+              {
+                "label": "Summary Feature ($0.05)",
+                "value": 5,
+                "tone": "idle"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Chat Feature ($0.50)",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Search Feature ($0.25)",
+            "value": 25,
+            "tone": "ok"
+          },
+          {
+            "label": "Summary Feature ($0.05)",
+            "value": 5,
+            "tone": "idle"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Aggregated Spend by Product Feature",
+        "items": [
+          {
+            "label": "Chat Feature ($0.50)",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Search Feature ($0.25)",
+            "value": 25,
+            "tone": "ok"
+          },
+          {
+            "label": "Summary Feature ($0.05)",
+            "value": 5,
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions group records by user, feature, or model tier using memory maps.",
+            "bars": [
+              {
+                "label": "Chat Feature ($0.50)",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Search Feature ($0.25)",
+                "value": 25,
+                "tone": "ok"
+              },
+              {
+                "label": "Summary Feature ($0.05)",
+                "value": 5,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Grouping by feature immediately reveals that chat accounts for major spend.",
+            "bars": [
+              {
+                "label": "Chat Feature ($0.50)",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Search Feature ($0.25)",
+                "value": 25,
+                "tone": "ok"
+              },
+              {
+                "label": "Summary Feature ($0.05)",
+                "value": 5,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Product managers see where cloud budget is allocated across the landscape.",
+            "bars": [
+              {
+                "label": "Chat Feature ($0.50)",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Search Feature ($0.25)",
+                "value": 25,
+                "tone": "ok"
+              },
+              {
+                "label": "Summary Feature ($0.05)",
+                "value": 5,
+                "tone": "idle"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Chat Feature ($0.50)",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Search Feature ($0.25)",
+            "value": 25,
+            "tone": "ok"
+          },
+          {
+            "label": "Summary Feature ($0.05)",
+            "value": 5,
+            "tone": "idle"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost Velocity & Historical Baseline Tracking",
+      "codeHash": "b6842ff3901823e2307796abc106ffada80dd67dae1d8452d29a901cba34ddd3",
+      "spec": {
+        "template": "flow",
+        "title": "Cost Velocity Baseline Modeling Pipeline",
+        "nodes": [
+          {
+            "id": "history",
+            "label": "Daily Spend Stream",
+            "tappable": false
+          },
+          {
+            "id": "avg",
+            "label": "Moving Average Calc",
+            "tappable": false
+          },
+          {
+            "id": "peak",
+            "label": "Peak Envelope Check",
+            "tappable": false
+          },
+          {
+            "id": "baseline",
+            "label": "Baseline Velocity Model",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "history",
+            "to": "avg"
+          },
+          {
+            "from": "avg",
+            "to": "peak"
+          },
+          {
+            "from": "peak",
+            "to": "baseline"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute moving averages and peak daily spend across windows.",
+            "activeNodes": [
+              "history",
+              "avg"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tracking baseline velocity creates empirical reference points for algorithms.",
+            "activeNodes": [
+              "avg",
+              "peak"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Tracking velocity against historical averages distinguishes organic growth.",
+            "activeNodes": [
+              "baseline"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Cost Velocity Baseline Modeling Pipeline",
+        "nodes": [
+          {
+            "id": "history",
+            "label": "Daily Spend Stream",
+            "tappable": false
+          },
+          {
+            "id": "avg",
+            "label": "Moving Average Calc",
+            "tappable": false
+          },
+          {
+            "id": "peak",
+            "label": "Peak Envelope Check",
+            "tappable": false
+          },
+          {
+            "id": "baseline",
+            "label": "Baseline Velocity Model",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "history",
+            "to": "avg"
+          },
+          {
+            "from": "avg",
+            "to": "peak"
+          },
+          {
+            "from": "peak",
+            "to": "baseline"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute moving averages and peak daily spend across windows.",
+            "activeNodes": [
+              "history",
+              "avg"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tracking baseline velocity creates empirical reference points for algorithms.",
+            "activeNodes": [
+              "avg",
+              "peak"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Tracking velocity against historical averages distinguishes organic growth.",
+            "activeNodes": [
+              "baseline"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anomaly Detection for Sudden Spend Spikes (3x Velocity Multiplier)",
+      "codeHash": "7dfc89b12d0473f457c93a7a5cb4b8be521b32e9b8942c4c826fe2f0b32c5d35",
+      "spec": {
+        "template": "states",
+        "title": "Cost Velocity Anomaly State Machine",
+        "states": [
+          {
+            "id": "sample",
+            "label": "Spend Sampled"
+          },
+          {
+            "id": "ratio",
+            "label": "Velocity Ratio Calc"
+          },
+          {
+            "id": "normal",
+            "label": "Normal Variation"
+          },
+          {
+            "id": "anomaly",
+            "label": "Cost Anomaly Alert"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compare current daily spend against historical baseline averages.",
+            "current": "sample",
+            "visited": [
+              "sample"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When spend ratios exceed anomaly multipliers alerts are triggered.",
+            "current": "ratio",
+            "visited": [
+              "sample",
+              "ratio"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Automated anomaly detection acts as emergency circuit breakers for cloud spend.",
+            "current": "anomaly",
+            "visited": [
+              "sample",
+              "ratio",
+              "anomaly"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Cost Velocity Anomaly State Machine",
+        "states": [
+          {
+            "id": "sample",
+            "label": "Spend Sampled"
+          },
+          {
+            "id": "ratio",
+            "label": "Velocity Ratio Calc"
+          },
+          {
+            "id": "normal",
+            "label": "Normal Variation"
+          },
+          {
+            "id": "anomaly",
+            "label": "Cost Anomaly Alert"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compare current daily spend against historical baseline averages.",
+            "current": "sample",
+            "visited": [
+              "sample"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When spend ratios exceed anomaly multipliers alerts are triggered.",
+            "current": "ratio",
+            "visited": [
+              "sample",
+              "ratio"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Automated anomaly detection acts as emergency circuit breakers for cloud spend.",
+            "current": "anomaly",
+            "visited": [
+              "sample",
+              "ratio",
+              "anomaly"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Customer Unit Economics & Profit Margin Calculation",
+      "codeHash": "b0a92e9ba2e644dff0c2a55f5bcdcc1502738646e51a54ec96fb97416a0f3db2",
+      "spec": {
+        "template": "compare",
+        "title": "Profitable Account vs Net Loss Account",
+        "leftLabel": "Profitable Account (Tier 1)",
+        "rightLabel": "Deficit Account (Tier 2)",
+        "leftItems": [
+          "Subscription: $50 / month",
+          "AI API Cost: $12 / month",
+          "Gross Margin: +76.0% (Profitable)"
+        ],
+        "rightItems": [
+          "Subscription: $20 / month",
+          "AI API Cost: $28 / month",
+          "Gross Margin: -40.0% (Net Loss)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute net profit and gross margin percentage for accounts.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Tier two incurs API expenses exceeding monthly subscription revenue.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Tracking unit margins in real time ensures pricing tiers protect solvency.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Profitable Account vs Net Loss Account",
+        "leftLabel": "Profitable Account (Tier 1)",
+        "rightLabel": "Deficit Account (Tier 2)",
+        "leftItems": [
+          "Subscription: $50 / month",
+          "AI API Cost: $12 / month",
+          "Gross Margin: +76.0% (Profitable)"
+        ],
+        "rightItems": [
+          "Subscription: $20 / month",
+          "AI API Cost: $28 / month",
+          "Gross Margin: -40.0% (Net Loss)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute net profit and gross margin percentage for accounts.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Tier two incurs API expenses exceeding monthly subscription revenue.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Tracking unit margins in real time ensures pricing tiers protect solvency.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Real-Time Cost Metering & Alerting Dashboard",
+      "codeHash": "6a29827d5dcee6aadf57dd1b72367b49d6a2590eee1973b4ec476c7e27b0c9e3",
+      "spec": {
+        "template": "none",
+        "reason": "Production Real-Time Cost Metering & Alerting Dashboard capstone synthesizing multi-dimensional attribution, velocity anomaly detection, and customer unit economics"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Real-Time Cost Metering & Alerting Dashboard capstone synthesizing multi-dimensional attribution, velocity anomaly detection, and customer unit economics"
+      }
+    }
+  ]
+}

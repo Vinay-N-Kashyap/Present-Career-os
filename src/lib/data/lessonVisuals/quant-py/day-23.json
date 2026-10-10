@@ -1,0 +1,853 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Fragmented markets",
+      "codeHash": "f621c41febbebfefcd74c171e4372111a72d516b462d56a308a08e5967ac721f",
+      "spec": {
+        "template": "table",
+        "title": "Multivenue order books and consolidated liquidity",
+        "columns": [
+          "name",
+          "price",
+          "size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fragmented venues trade identical stocks across diverse regional books.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "NSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "300"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each venue offers distinct book liquidity and quoted price levels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "NSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "300"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Best execution rules seek optimal price and execution terms for clients.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "NSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "300"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DARK"
+                  },
+                  {
+                    "text": "99.995"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multivenue order books and consolidated liquidity",
+        "columns": [
+          "name",
+          "price",
+          "size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fragmented venues trade identical stocks across diverse regional books.",
+            "rows": [
+              {
+                "cells": [
+                  "NSE",
+                  "100.00",
+                  "300"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each venue offers distinct book liquidity and quoted price levels.",
+            "rows": [
+              {
+                "cells": [
+                  "NSE",
+                  "100.00",
+                  "300"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BSE",
+                  "100.00",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Best execution rules seek optimal price and execution terms for clients.",
+            "rows": [
+              {
+                "cells": [
+                  "NSE",
+                  "100.00",
+                  "300"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BSE",
+                  "100.00",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DARK",
+                  "99.995",
+                  "100"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fees, rebates and the maker-taker model",
+      "codeHash": "25b86d1ca1a09e9c7c7343497c19ba33c1bcbb6eea6d5952a3ab20e567454100",
+      "spec": {
+        "template": "table",
+        "title": "Exchange fee schedules, rebates and all-in costs",
+        "columns": [
+          "name",
+          "price",
+          "fee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exchange fee structures reward liquidity makers while charging takers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "NSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "0.003"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transaction fees modify effective trade execution costs per share.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "NSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "0.003"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "-0.001"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Routers rank venues by combined price plus fee totals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "NSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "0.003"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BSE"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "-0.001"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DARK"
+                  },
+                  {
+                    "text": "99.995"
+                  },
+                  {
+                    "text": "0.001"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exchange fee schedules, rebates and all-in costs",
+        "columns": [
+          "name",
+          "price",
+          "fee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exchange fee structures reward liquidity makers while charging takers.",
+            "rows": [
+              {
+                "cells": [
+                  "NSE",
+                  "100.00",
+                  "0.003"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transaction fees modify effective trade execution costs per share.",
+            "rows": [
+              {
+                "cells": [
+                  "NSE",
+                  "100.00",
+                  "0.003"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BSE",
+                  "100.00",
+                  "-0.001"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Routers rank venues by combined price plus fee totals.",
+            "rows": [
+              {
+                "cells": [
+                  "NSE",
+                  "100.00",
+                  "0.003"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BSE",
+                  "100.00",
+                  "-0.001"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DARK",
+                  "99.995",
+                  "0.001"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The smart order router",
+      "codeHash": "db7c666c2acbeafe21c30fe17b8c55672cf2359e8898f3e1abe975ca50bbe1c7",
+      "spec": {
+        "template": "table",
+        "title": "Smart order router fill allocations across order books",
+        "columns": [
+          "name",
+          "take",
+          "left",
+          "cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Smart order routers route client orders across available market venues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "DARK"
+                  },
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "left"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sorting venues by total price fills child orders sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "DARK"
+                  },
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "left"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BSE"
+                  },
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "left"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Unfilled quantity alerts trigger whenever book liquidity falls short.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "DARK"
+                  },
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "left"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BSE"
+                  },
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "left"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NSE"
+                  },
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "left"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Smart order router fill allocations across order books",
+        "columns": [
+          "name",
+          "take",
+          "left",
+          "cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Smart order routers route client orders across available market venues.",
+            "rows": [
+              {
+                "cells": [
+                  "DARK",
+                  "take",
+                  "left",
+                  "cost"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sorting venues by total price fills child orders sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  "DARK",
+                  "take",
+                  "left",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BSE",
+                  "take",
+                  "left",
+                  "cost"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Unfilled quantity alerts trigger whenever book liquidity falls short.",
+            "rows": [
+              {
+                "cells": [
+                  "DARK",
+                  "take",
+                  "left",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BSE",
+                  "take",
+                  "left",
+                  "cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "NSE",
+                  "take",
+                  "left",
+                  "cost"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dark pools and hidden liquidity",
+      "codeHash": "6af2fc113fb5dcefbaacdf31fb33379f1bc26ef16e0932b6fc42910bd2de30c4",
+      "spec": {
+        "template": "table",
+        "title": "Midpoint execution and dark pool price improvement",
+        "columns": [
+          "bid",
+          "ask",
+          "mid",
+          "shares"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dark pools match orders internally at the midpoint of public books.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "99.98"
+                  },
+                  {
+                    "text": "100.02"
+                  },
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "5000"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Institutional trading avoids revealing sizable orders that shift price.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "99.98"
+                  },
+                  {
+                    "text": "100.02"
+                  },
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "5000"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  },
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "5000"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Routers ping alternative dark pools to locate hidden book liquidity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "99.98"
+                  },
+                  {
+                    "text": "100.02"
+                  },
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "5000"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  },
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "5000"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  },
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "shares"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Midpoint execution and dark pool price improvement",
+        "columns": [
+          "bid",
+          "ask",
+          "mid",
+          "shares"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dark pools match orders internally at the midpoint of public books.",
+            "rows": [
+              {
+                "cells": [
+                  "99.98",
+                  "100.02",
+                  "mid",
+                  "5000"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Institutional trading avoids revealing sizable orders that shift price.",
+            "rows": [
+              {
+                "cells": [
+                  "99.98",
+                  "100.02",
+                  "mid",
+                  "5000"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid",
+                  "ask",
+                  "mid",
+                  "5000"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Routers ping alternative dark pools to locate hidden book liquidity.",
+            "rows": [
+              {
+                "cells": [
+                  "99.98",
+                  "100.02",
+                  "mid",
+                  "5000"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid",
+                  "ask",
+                  "mid",
+                  "5000"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid",
+                  "ask",
+                  "mid",
+                  "shares"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring execution quality",
+      "codeHash": "53d5150f3389fee22a6a25359d0e1642dbf8980a351039e1a922329e6fd2136d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: route and account",
+      "codeHash": "d9cb3fb5896c4111f43f1d86b9a229854dc64021242c53116fde1e81c166ce33",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "From scores to probabilities",
+      "codeHash": "28fa3afb128254b304ea95098f7c48bf1e623b85d2869b63835c3a674675c11a",
+      "spec": {
+        "template": "table",
+        "title": "Softmax transformation from logits to token probabilities",
+        "columns": [
+          "word",
+          "score",
+          "probability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Softmax turns raw scores into probabilities for each candidate token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sunny"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "probability"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cloudy"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "probability"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy decoding selects the top token while sampling allows variety.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sunny"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "probability"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "purple"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "probability"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Softmax transformation from logits to token probabilities",
+        "columns": [
+          "word",
+          "score",
+          "probability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Softmax turns raw scores into probabilities for each candidate token.",
+            "rows": [
+              {
+                "cells": [
+                  "sunny",
+                  "score",
+                  "probability"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cloudy",
+                  "score",
+                  "probability"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy decoding selects the top token while sampling allows variety.",
+            "rows": [
+              {
+                "cells": [
+                  "sunny",
+                  "score",
+                  "probability"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "purple",
+                  "score",
+                  "probability"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temperature",
+      "codeHash": "fa8e77ee44dd46c2ea510baa8481e1e1b1843d2f721314aeaf98b7b699221535",
+      "spec": {
+        "template": "table",
+        "title": "Temperature scaling effect on token probability distributions",
+        "columns": [
+          "temperature",
+          "sunny",
+          "cloudy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Low temperature sharpens the distribution so common tokens dominate.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "temperature"
+                  },
+                  {
+                    "text": "sunny"
+                  },
+                  {
+                    "text": "cloudy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "temperature"
+                  },
+                  {
+                    "text": "sunny"
+                  },
+                  {
+                    "text": "cloudy"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Factual answers and code benefit from lower temperature settings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "temperature"
+                  },
+                  {
+                    "text": "sunny"
+                  },
+                  {
+                    "text": "cloudy"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "temperature"
+                  },
+                  {
+                    "text": "sunny"
+                  },
+                  {
+                    "text": "cloudy"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Temperature scaling effect on token probability distributions",
+        "columns": [
+          "temperature",
+          "sunny",
+          "cloudy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Low temperature sharpens the distribution so common tokens dominate.",
+            "rows": [
+              {
+                "cells": [
+                  "temperature",
+                  "sunny",
+                  "cloudy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "temperature",
+                  "sunny",
+                  "cloudy"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Factual answers and code benefit from lower temperature settings.",
+            "rows": [
+              {
+                "cells": [
+                  "temperature",
+                  "sunny",
+                  "cloudy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "temperature",
+                  "sunny",
+                  "cloudy"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Top-p (nucleus) sampling",
+      "codeHash": "ad3ed42a0e46b26b9c936b38a2a00e2001f91426ea1cc425d6c1292e67692a53",
+      "spec": {
+        "template": "table",
+        "title": "Nucleus sampling cumulative probability threshold cutoff",
+        "columns": [
+          "token",
+          "prob",
+          "kept"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sampling keeps likely tokens whose cumulative probabilities reach the cutoff.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "token"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "token"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering avoids nonsense tokens while keeping variety across options.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "token"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "token"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Nucleus sampling cumulative probability threshold cutoff",
+        "columns": [
+          "token",
+          "prob",
+          "kept"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sampling keeps likely tokens whose cumulative probabilities reach the cutoff.",
+            "rows": [
+              {
+                "cells": [
+                  "token",
+                  "prob",
+                  "kept"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "token",
+                  "prob",
+                  "kept"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering avoids nonsense tokens while keeping variety across options.",
+            "rows": [
+              {
+                "cells": [
+                  "token",
+                  "prob",
+                  "kept"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "token",
+                  "prob",
+                  "kept"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Frequency and presence penalties",
+      "codeHash": "bb48bd001555ea5f6b1db0f0cc7fe1f6f13fd33af10b72d5c45a045617a2419f",
+      "spec": {
+        "template": "table",
+        "title": "Repetition penalty adjustments on token scores",
+        "columns": [
+          "token",
+          "scores",
+          "adjusted"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A frequency penalty grows with repeated token occurrences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "adjusted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "adjusted"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A presence penalty applies flat reduction encouraging new topics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "adjusted"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "adjusted"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Repetition penalty adjustments on token scores",
+        "columns": [
+          "token",
+          "scores",
+          "adjusted"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A frequency penalty grows with repeated token occurrences.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "scores",
+                  "adjusted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "good",
+                  "scores",
+                  "adjusted"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A presence penalty applies flat reduction encouraging new topics.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "scores",
+                  "adjusted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "good",
+                  "scores",
+                  "adjusted"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing settings for the task",
+      "codeHash": "2e870e9b06ed8d826a02234225d7fc48f3bde46a2dce632b90826d2f473a88c6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: temperature and top-p",
+      "codeHash": "ff34ad426fe8754a25818912ee772c49f8b7f310500708bbf745349250882ffd",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

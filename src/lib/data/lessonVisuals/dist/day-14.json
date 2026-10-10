@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 14,
+  "promptSha": "2222b300237af75e0240e215b21975134201aa110358be5f0e9eda1a610e674e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Poison Pill Hazard in Event Streaming Consumers",
+      "codeHash": "e477398f5938a601f2c076a9866c62231e3e23be95d0c8f60d380aaf1d25bdd4",
+      "spec": {
+        "template": "states",
+        "title": "Poison pill infinite consumer crash-loop on unhandled exception",
+        "states": [
+          {
+            "id": "reading",
+            "label": "Reading Ingested Partition Stream"
+          },
+          {
+            "id": "fatalCrash",
+            "label": "Poison Pill Exception Encountered"
+          },
+          {
+            "id": "loopingCrash",
+            "label": "Infinite Restart Crash Loop"
+          },
+          {
+            "id": "quarantined",
+            "label": "Poison Pill Isolated to DLQ"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Consumer encounters fatal validation exception on malformed payload.",
+            "activeStateId": "fatalCrash",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "An infinite crash loop halts message processing for that partition.",
+            "activeStateId": "loopingCrash",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Poison pill infinite consumer crash-loop on unhandled exception",
+        "states": [
+          {
+            "id": "reading",
+            "label": "Reading Ingested Partition Stream"
+          },
+          {
+            "id": "fatalCrash",
+            "label": "Poison Pill Exception Encountered"
+          },
+          {
+            "id": "loopingCrash",
+            "label": "Infinite Restart Crash Loop"
+          },
+          {
+            "id": "quarantined",
+            "label": "Poison Pill Isolated to DLQ"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Consumer encounters fatal validation exception on malformed payload.",
+            "activeStateId": "fatalCrash",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "An infinite crash loop halts message processing for that partition.",
+            "activeStateId": "loopingCrash",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transient vs Fatal Error Classification",
+      "codeHash": "5dd47ae0b25c4703836e40f2abd42cd698b081e425910e7b670a6198287a5df9",
+      "spec": {
+        "template": "compare",
+        "title": "Classification of transient errors versus fatal errors",
+        "left": {
+          "title": "Transient Errors",
+          "items": [
+            "Temporary socket timeout or pool exhaustion",
+            "Safe to retry with exponential backoff",
+            "Expected to recover naturally with time"
+          ]
+        },
+        "right": {
+          "title": "Fatal Errors",
+          "items": [
+            "Malformed JSON syntax or missing schema fields",
+            "Retrying causes dangerous crash loops",
+            "Must be routed directly to dead letter queue"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Transient errors should be retried with exponential backoff.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Retrying fatal errors wastes compute cycles and causes crash loops.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "Transient Errors",
+        "rightLabel": "Fatal Errors"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Classification of transient errors versus fatal errors",
+        "left": {
+          "title": "Transient Errors",
+          "items": [
+            "Temporary socket timeout or pool exhaustion",
+            "Safe to retry with exponential backoff",
+            "Expected to recover naturally with time"
+          ]
+        },
+        "right": {
+          "title": "Fatal Errors",
+          "items": [
+            "Malformed JSON syntax or missing schema fields",
+            "Retrying causes dangerous crash loops",
+            "Must be routed directly to dead letter queue"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Transient errors should be retried with exponential backoff.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Retrying fatal errors wastes compute cycles and causes crash loops.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "Transient Errors",
+        "rightLabel": "Fatal Errors"
+      }
+    },
+    {
+      "partTitle": "Exponential Backoff with Full Jitter for Message Retries",
+      "codeHash": "59c66931cab12c6c5e77e9d53b0854ea9031774b69201f759926433805d6584d",
+      "spec": {
+        "template": "table",
+        "title": "Exponential backoff progression and full jitter randomization",
+        "columns": [
+          "Retry Attempt",
+          "Delay Calculation",
+          "Delay Ceiling",
+          "Full Jitter Interval"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exponential backoff multiplies delay exponentially with each retry.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Applying jitter prevents all consumers from retrying simultaneously.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exponential backoff progression and full jitter randomization",
+        "columns": [
+          "Retry Attempt",
+          "Delay Calculation",
+          "Delay Ceiling",
+          "Full Jitter Interval"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exponential backoff multiplies delay exponentially with each retry.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Applying jitter prevents all consumers from retrying simultaneously.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dead Letter Queue (DLQ) Architecture & Isolation Strategy",
+      "codeHash": "6f16b2945880d60efa15a819616f59784c37474c65716a2f4c9beece83294b16",
+      "spec": {
+        "template": "workflow",
+        "title": "Dead letter queue quarantine pipeline and partition commit",
+        "workflow": [
+          {
+            "id": "consume",
+            "label": "Fetch Message from Primary Partition",
+            "status": "completed"
+          },
+          {
+            "id": "evaluate",
+            "label": "Retry Limit Exhausted or Fatal Error",
+            "status": "active"
+          },
+          {
+            "id": "isolate",
+            "label": "Publish Envelope to Dead Letter Queue",
+            "status": "active"
+          },
+          {
+            "id": "commitOffset",
+            "label": "Commit Offset on Primary Partition",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Consumer attaches metadata and forwards failed payload to the queue.",
+            "activeWorkflowId": "isolate",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Once published to the queue the consumer commits its primary offset.",
+            "activeWorkflowId": "commitOffset",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Dead letter queue quarantine pipeline and partition commit",
+        "workflow": [
+          {
+            "id": "consume",
+            "label": "Fetch Message from Primary Partition",
+            "status": "completed"
+          },
+          {
+            "id": "evaluate",
+            "label": "Retry Limit Exhausted or Fatal Error",
+            "status": "active"
+          },
+          {
+            "id": "isolate",
+            "label": "Publish Envelope to Dead Letter Queue",
+            "status": "active"
+          },
+          {
+            "id": "commitOffset",
+            "label": "Commit Offset on Primary Partition",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Consumer attaches metadata and forwards failed payload to the queue.",
+            "activeWorkflowId": "isolate",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Once published to the queue the consumer commits its primary offset.",
+            "activeWorkflowId": "commitOffset",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DLQ Redrive & Message Replay Mechanics",
+      "codeHash": "08d14bc01e465a03c9e956d0efe4964e6a70e350d9068114aa5cf7e479644bd8",
+      "spec": {
+        "template": "sequence",
+        "title": "DLQ redrive lifecycle and message replay mechanics",
+        "actors": [
+          {
+            "id": "engineer",
+            "label": "On-Call Engineer"
+          },
+          {
+            "id": "redriveTool",
+            "label": "Redrive Worker"
+          },
+          {
+            "id": "dlqStorage",
+            "label": "Dead Letter Queue"
+          },
+          {
+            "id": "mainQueue",
+            "label": "Primary Topic"
+          }
+        ],
+        "messages": [
+          {
+            "from": "engineer",
+            "to": "redriveTool",
+            "label": "Trigger Message Redrive Replay",
+            "tone": "data"
+          },
+          {
+            "from": "redriveTool",
+            "to": "dlqStorage",
+            "label": "Drain Quarantined Messages",
+            "tone": "data"
+          },
+          {
+            "from": "redriveTool",
+            "to": "mainQueue",
+            "label": "Reinject into Primary Topic",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The redrive process extracts messages from the queue for replay.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Consumers must remain idempotent because redriven messages arrive out of order.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "DLQ redrive lifecycle and message replay mechanics",
+        "actors": [
+          {
+            "id": "engineer",
+            "label": "On-Call Engineer"
+          },
+          {
+            "id": "redriveTool",
+            "label": "Redrive Worker"
+          },
+          {
+            "id": "dlqStorage",
+            "label": "Dead Letter Queue"
+          },
+          {
+            "id": "mainQueue",
+            "label": "Primary Topic"
+          }
+        ],
+        "messages": [
+          {
+            "from": "engineer",
+            "to": "redriveTool",
+            "label": "Trigger Message Redrive Replay",
+            "tone": "data"
+          },
+          {
+            "from": "redriveTool",
+            "to": "dlqStorage",
+            "label": "Drain Quarantined Messages",
+            "tone": "data"
+          },
+          {
+            "from": "redriveTool",
+            "to": "mainQueue",
+            "label": "Reinject into Primary Topic",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The redrive process extracts messages from the queue for replay.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Consumers must remain idempotent because redriven messages arrive out of order.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Resilient Consumer Pipeline with DLQ & Exponential Backoff",
+      "codeHash": "4f1c830f2591ab48cbbab7b2249e90659d33e1713522f51543d1dd2b3e06c9b4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

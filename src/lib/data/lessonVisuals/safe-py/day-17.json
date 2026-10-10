@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "How attackers disguise text",
+      "codeHash": "6cb4259f7f07031e13f3cbdeb03f49339b4fd4a6b2223aa5b8ee23a3ff82282f",
+      "spec": {
+        "template": "table",
+        "title": "Disguised text variants bypassing keyword filters",
+        "columns": [
+          "banned",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filters check patterns while attackers alter text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "banned"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "banned"
+                  },
+                  {
+                    "text": "password"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Turning text into a standard form normalises input before checking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "banned"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "password"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disguised text variants bypassing keyword filters",
+        "columns": [
+          "banned",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filters check patterns while attackers alter text.",
+            "rows": [
+              {
+                "cells": [
+                  "banned",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "banned",
+                  "password"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Turning text into a standard form normalises input before checking.",
+            "rows": [
+              {
+                "cells": [
+                  "banned",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "password",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unicode normalisation",
+      "codeHash": "eb7220f67f1bee2df1277442af801e5d93bbf1299bbdf2c2002c3d2cea2c9bdb",
+      "spec": {
+        "template": "table",
+        "title": "Unicode normalization with NFKC compatibility transform",
+        "columns": [
+          "text",
+          "unicodedata"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Unicode normalisation converts text into standard form.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "unicodedata"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "unicodedata"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Full width letters become normal letters after conversion.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "unicodedata"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NFKC"
+                  },
+                  {
+                    "text": "normalize"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Unicode normalization with NFKC compatibility transform",
+        "columns": [
+          "text",
+          "unicodedata"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Unicode normalisation converts text into standard form.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "unicodedata"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "unicodedata"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Full width letters become normal letters after conversion.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "unicodedata"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "NFKC",
+                  "normalize"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Undoing leetspeak",
+      "codeHash": "f0334409190e867f8c26b9ed6cc251c214624b5fc34197373262ceb4319376a9",
+      "spec": {
+        "template": "table",
+        "title": "Translating leetspeak substitutions to standard characters",
+        "columns": [
+          "LEET",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leetspeak replaces letters with lookalike symbols.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "LEET"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LEET"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Translation tables apply character substitutions in one fast pass.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "LEET"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "translate"
+                  },
+                  {
+                    "text": "lower"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Translating leetspeak substitutions to standard characters",
+        "columns": [
+          "LEET",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leetspeak replaces letters with lookalike symbols.",
+            "rows": [
+              {
+                "cells": [
+                  "LEET",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "LEET",
+                  "text"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Translation tables apply character substitutions in one fast pass.",
+            "rows": [
+              {
+                "cells": [
+                  "LEET",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "translate",
+                  "lower"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Removing spacing tricks",
+      "codeHash": "65a5d7d025b7771de20fb77e36f5dbce2db9a505885dd502bfeebdcf48bae24f",
+      "spec": {
+        "template": "table",
+        "title": "Stripping non-letter characters to eliminate spacing tricks",
+        "columns": [
+          "text",
+          "letters"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Attackers break words with spaces and punctuation dots.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "letters"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "letters"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Removing every non letter character simplifies matching.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "letters"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hack"
+                  },
+                  {
+                    "text": "lower"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Stripping non-letter characters to eliminate spacing tricks",
+        "columns": [
+          "text",
+          "letters"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Attackers break words with spaces and punctuation dots.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "letters"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "letters"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Removing every non letter character simplifies matching.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "letters"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "hack",
+                  "lower"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding banned words",
+      "codeHash": "3349976cf6a6807d20c8de5a4396735bdfcc0f3ac41689c74fc94baf3c7a1591",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Normalisation in the pipeline",
+      "codeHash": "77063e81d26dcc7de4e75aad23bc504f05134b6b469af3df26d0136534f30b27",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

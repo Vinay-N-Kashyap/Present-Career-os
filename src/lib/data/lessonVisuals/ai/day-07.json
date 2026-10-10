@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 7,
+  "promptSha": "053130ad13c80bc5fa27a944634d0df4401cbd94b1702dc7f75162e52c0b9866",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Geometric Representation of Meaning: High-Dimensional Embeddings",
+      "codeHash": "9407bd55aa3fe4d8ea281fc979e6388dc1baa57bb9fe6f852fc96a41e56638c8",
+      "spec": {
+        "template": "boxes",
+        "title": "Text semantic mapping into continuous high-dimensional geometric spaces",
+        "boxes": [
+          {
+            "id": "lexical",
+            "title": "Lexical Token Characters",
+            "items": [
+              "Exact character strings",
+              "Arbitrary ASCII integers",
+              "No semantic relationship"
+            ]
+          },
+          {
+            "id": "dense",
+            "title": "Dense Vector Embeddings",
+            "items": [
+              "Continuous float coordinates",
+              "High dimensional semantic space",
+              "Preserves conceptual meaning"
+            ]
+          },
+          {
+            "id": "algebra",
+            "title": "Vector Algebra Spaces",
+            "items": [
+              "Cosine similarity metric",
+              "Directional vector math",
+              "Nearest neighbor retrieval"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Vector embeddings project text into dense geometric coordinate space.",
+            "activeBoxId": "dense",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Vector algebra allows us to quantify conceptual similarity with precision.",
+            "activeBoxId": "algebra",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Text semantic mapping into continuous high-dimensional geometric spaces",
+        "boxes": [
+          {
+            "id": "lexical",
+            "title": "Lexical Token Characters",
+            "items": [
+              "Exact character strings",
+              "Arbitrary ASCII integers",
+              "No semantic relationship"
+            ]
+          },
+          {
+            "id": "dense",
+            "title": "Dense Vector Embeddings",
+            "items": [
+              "Continuous float coordinates",
+              "High dimensional semantic space",
+              "Preserves conceptual meaning"
+            ]
+          },
+          {
+            "id": "algebra",
+            "title": "Vector Algebra Spaces",
+            "items": [
+              "Cosine similarity metric",
+              "Directional vector math",
+              "Nearest neighbor retrieval"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Vector embeddings project text into dense geometric coordinate space.",
+            "activeBoxId": "dense",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Vector algebra allows us to quantify conceptual similarity with precision.",
+            "activeBoxId": "algebra",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vector Dot Product & Euclidean Norm Mathematics",
+      "codeHash": "ca6ee74b066df5ae9af1f693e42b6640cb374a180e6625271db3ad9f9bcaf357",
+      "spec": {
+        "template": "flow",
+        "title": "Vector dot product component multiplication and Euclidean norm length",
+        "nodes": [
+          {
+            "id": "vecInputs",
+            "label": "Vector Arrays A and B",
+            "tappable": false
+          },
+          {
+            "id": "multiply",
+            "label": "Component Multiplication",
+            "tappable": false
+          },
+          {
+            "id": "dotSum",
+            "label": "Dot Product Summation",
+            "tappable": false
+          },
+          {
+            "id": "l2Norm",
+            "label": "Euclidean L2 Norms",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "vecInputs",
+            "to": "multiply",
+            "label": "Pairwise Elements"
+          },
+          {
+            "from": "multiply",
+            "to": "dotSum",
+            "label": "Accumulate Products"
+          },
+          {
+            "from": "vecInputs",
+            "to": "l2Norm",
+            "label": "Square Root Sum of Squares"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We calculate dot products by multiplying corresponding components.",
+            "activeNodes": [
+              "vecInputs",
+              "multiply"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The norm formula computes the square root of squared components.",
+            "activeNodes": [
+              "dotSum",
+              "l2Norm"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Vector dot product component multiplication and Euclidean norm length",
+        "nodes": [
+          {
+            "id": "vecInputs",
+            "label": "Vector Arrays A and B",
+            "tappable": false
+          },
+          {
+            "id": "multiply",
+            "label": "Component Multiplication",
+            "tappable": false
+          },
+          {
+            "id": "dotSum",
+            "label": "Dot Product Summation",
+            "tappable": false
+          },
+          {
+            "id": "l2Norm",
+            "label": "Euclidean L2 Norms",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "vecInputs",
+            "to": "multiply",
+            "label": "Pairwise Elements"
+          },
+          {
+            "from": "multiply",
+            "to": "dotSum",
+            "label": "Accumulate Products"
+          },
+          {
+            "from": "vecInputs",
+            "to": "l2Norm",
+            "label": "Square Root Sum of Squares"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We calculate dot products by multiplying corresponding components.",
+            "activeNodes": [
+              "vecInputs",
+              "multiply"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The norm formula computes the square root of squared components.",
+            "activeNodes": [
+              "dotSum",
+              "l2Norm"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cosine Similarity: Directional Alignment Independent of Length",
+      "codeHash": "bb001fa8f0035d6fcd8f064478a8017a34d26f8b4ccad87f8897de7366bc87da",
+      "spec": {
+        "template": "table",
+        "title": "Geometric metric mathematical formulations and bounded output ranges",
+        "columns": [
+          "Geometric Metric",
+          "Mathematical Formulation",
+          "Output Range",
+          "Semantic Meaning"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cosine similarity normalizes dot products by vector lengths.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Positive scores indicate identical directional orientation.",
+            "activeRowIndex": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Geometric metric mathematical formulations and bounded output ranges",
+        "columns": [
+          "Geometric Metric",
+          "Mathematical Formulation",
+          "Output Range",
+          "Semantic Meaning"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Cosine similarity normalizes dot products by vector lengths.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Positive scores indicate identical directional orientation.",
+            "activeRowIndex": 0,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cosine Distance vs Euclidean Distance: Choosing the Right Metric",
+      "codeHash": "d648b2e5abcfbd0ec0274923a3b6edae60cb1bf1cd5bc1e782ae404f4319bed0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Unit Vector Normalization: Accelerating Search with Pure Dot Products",
+      "codeHash": "7431b0136541138ad747a4c858e9c3eacd68ba91f354e27c6e9c7a539850b2ff",
+      "spec": {
+        "template": "compare",
+        "title": "Raw cosine similarity calculation versus pre-normalized unit dot products",
+        "left": {
+          "title": "Raw Vector Cosine Similarity",
+          "items": [
+            "Computes dot product summation",
+            "Calculates Euclidean square root norms",
+            "Divides dot product by norm products",
+            "Higher computational overhead in loops"
+          ]
+        },
+        "right": {
+          "title": "Unit Normalized Dot Product",
+          "items": [
+            "Pre scales vectors to unit length",
+            "Vector norms equal exactly one",
+            "Cosine similarity equals raw dot product",
+            "Single hardware instruction execution"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Calculating square roots inside loops is computationally expensive.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Cosine similarity simplifies to a single hardware dot product.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Raw Vector Cosine Similarity",
+        "rightLabel": "Unit Normalized Dot Product"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw cosine similarity calculation versus pre-normalized unit dot products",
+        "left": {
+          "title": "Raw Vector Cosine Similarity",
+          "items": [
+            "Computes dot product summation",
+            "Calculates Euclidean square root norms",
+            "Divides dot product by norm products",
+            "Higher computational overhead in loops"
+          ]
+        },
+        "right": {
+          "title": "Unit Normalized Dot Product",
+          "items": [
+            "Pre scales vectors to unit length",
+            "Vector norms equal exactly one",
+            "Cosine similarity equals raw dot product",
+            "Single hardware instruction execution"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Calculating square roots inside loops is computationally expensive.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Cosine similarity simplifies to a single hardware dot product.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Raw Vector Cosine Similarity",
+        "rightLabel": "Unit Normalized Dot Product"
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete In-Memory Semantic Search Engine",
+      "codeHash": "1420601907d44205ea537b5bef50e628ea50f94a999abfbad828a65f211ff3e5",
+      "spec": {
+        "template": "sequence",
+        "title": "In-memory semantic vector search engine nearest neighbor query pipeline",
+        "actors": [
+          {
+            "id": "client",
+            "label": "User Search Client"
+          },
+          {
+            "id": "embedModel",
+            "label": "Embedding Inference Service"
+          },
+          {
+            "id": "searchIndex",
+            "label": "In-Memory Vector Engine"
+          },
+          {
+            "id": "docStore",
+            "label": "Document Knowledge Base"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "embedModel",
+            "label": "Submit Natural Language Query",
+            "tone": "data"
+          },
+          {
+            "from": "embedModel",
+            "to": "searchIndex",
+            "label": "Pass Normalized Query Vector",
+            "tone": "data"
+          },
+          {
+            "from": "searchIndex",
+            "to": "searchIndex",
+            "label": "Compute Dot Products Across Corpus",
+            "tone": "data"
+          },
+          {
+            "from": "searchIndex",
+            "to": "docStore",
+            "label": "Fetch Top Ranked Document Record",
+            "tone": "success"
+          },
+          {
+            "from": "docStore",
+            "to": "client",
+            "label": "Return Semantic Match with Score",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "We implement nearest neighbor ranking by scoring each document.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "We verify that the database recovery article ranks first with similarity.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "In-memory semantic vector search engine nearest neighbor query pipeline",
+        "actors": [
+          {
+            "id": "client",
+            "label": "User Search Client"
+          },
+          {
+            "id": "embedModel",
+            "label": "Embedding Inference Service"
+          },
+          {
+            "id": "searchIndex",
+            "label": "In-Memory Vector Engine"
+          },
+          {
+            "id": "docStore",
+            "label": "Document Knowledge Base"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "embedModel",
+            "label": "Submit Natural Language Query",
+            "tone": "data"
+          },
+          {
+            "from": "embedModel",
+            "to": "searchIndex",
+            "label": "Pass Normalized Query Vector",
+            "tone": "data"
+          },
+          {
+            "from": "searchIndex",
+            "to": "searchIndex",
+            "label": "Compute Dot Products Across Corpus",
+            "tone": "data"
+          },
+          {
+            "from": "searchIndex",
+            "to": "docStore",
+            "label": "Fetch Top Ranked Document Record",
+            "tone": "success"
+          },
+          {
+            "from": "docStore",
+            "to": "client",
+            "label": "Return Semantic Match with Score",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "We implement nearest neighbor ranking by scoring each document.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "We verify that the database recovery article ranks first with similarity.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

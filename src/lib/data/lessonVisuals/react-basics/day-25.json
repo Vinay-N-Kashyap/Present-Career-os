@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 25,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Filter tabs",
+      "codeHash": "8ab4c6598f5d4cb5bb5ee862761a6e0cdf2df6e597ebbb6c0024c8605cff2cab",
+      "spec": {
+        "template": "wireframe",
+        "title": "Filter tabs navigation and status counts",
+        "wireframe": {
+          "header": "Job Filter Navigation",
+          "sections": [
+            {
+              "id": "all",
+              "label": "All Jobs Tab",
+              "kind": "button"
+            },
+            {
+              "id": "interview",
+              "label": "Interview Tab",
+              "kind": "button"
+            },
+            {
+              "id": "offer",
+              "label": "Offer Tab",
+              "kind": "button"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clicking a filter tab restricts visible applications to that status.",
+            "focus": "all"
+          },
+          {
+            "at": "say3",
+            "caption": "Tab buttons display counts and highlight the active selection.",
+            "focus": "interview"
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Filter tabs navigation and status counts",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clicking a filter tab restricts visible applications to that status."
+          },
+          {
+            "at": "say3",
+            "caption": "Tab buttons display counts and highlight the active selection."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Search, filter and sort together",
+      "codeHash": "096cd5f6d218d65ab7e6406e42c1761956ad30bfaf61e6764c4374ad1f222596",
+      "spec": {
+        "template": "flow",
+        "title": "Sequential filtering, searching and sorting pipeline",
+        "nodes": [
+          {
+            "id": "tab",
+            "label": "tab",
+            "tappable": false
+          },
+          {
+            "id": "search",
+            "label": "search",
+            "tappable": false
+          },
+          {
+            "id": "sort",
+            "label": "sort",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chain filtering by tab, keyword search and sorting sequentially.",
+            "values": {
+              "tab": {
+                "text": "\"interview\""
+              },
+              "search": {
+                "text": "\"dev\""
+              },
+              "sort": {
+                "text": "\"newest\""
+              }
+            },
+            "tones": {
+              "tab": "data",
+              "search": "idle",
+              "sort": "idle"
+            },
+            "arrows": [
+              [
+                "tab",
+                "search"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Narrow the collection first to minimize items sorted in memory.",
+            "values": {
+              "tab": {
+                "text": "\"interview\""
+              },
+              "search": {
+                "text": "\"dev\""
+              },
+              "sort": {
+                "text": "\"newest\""
+              }
+            },
+            "tones": {
+              "tab": "idle",
+              "search": "data",
+              "sort": "ok"
+            },
+            "arrows": [
+              [
+                "tab",
+                "search"
+              ],
+              [
+                "search",
+                "sort"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Sequential filtering, searching and sorting pipeline",
+        "nodes": [
+          {
+            "id": "tab",
+            "label": "tab",
+            "tappable": false
+          },
+          {
+            "id": "search",
+            "label": "search",
+            "tappable": false
+          },
+          {
+            "id": "sort",
+            "label": "sort",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chain filtering by tab, keyword search and sorting sequentially.",
+            "values": {
+              "tab": "\"interview\"",
+              "search": "\"dev\"",
+              "sort": "\"newest\""
+            },
+            "tones": {
+              "tab": "data",
+              "search": "idle",
+              "sort": "idle"
+            },
+            "arrows": [
+              [
+                "tab",
+                "search"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Narrow the collection first to minimize items sorted in memory.",
+            "values": {
+              "tab": "\"interview\"",
+              "search": "\"dev\"",
+              "sort": "\"newest\""
+            },
+            "tones": {
+              "tab": "idle",
+              "search": "data",
+              "sort": "ok"
+            },
+            "arrows": [
+              [
+                "tab",
+                "search"
+              ],
+              [
+                "search",
+                "sort"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clean data when adding a job",
+      "codeHash": "0317076a9b99822375425c69f5d4b9c91037f23348d8ec0424a7441ed8a8846d",
+      "spec": {
+        "template": "boxes",
+        "title": "Input sanitization and default field assignment",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Store application dates using the standard year-month-day input.",
+            "values": {
+              "title": {
+                "text": "\"  React Dev \""
+              },
+              "company": {
+                "text": "\" Zoho\""
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Trim whitespace and assign default values before creating a job.",
+            "values": {
+              "title": {
+                "text": "\"applied\""
+              },
+              "company": {
+                "text": "\"\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Input sanitization and default field assignment",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Store application dates using the standard year-month-day input.",
+            "values": {
+              "title": "\"  React Dev \"",
+              "company": "\" Zoho\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Trim whitespace and assign default values before creating a job.",
+            "values": {
+              "title": "\"applied\"",
+              "company": "\"\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keeping filters in the address",
+      "codeHash": "bf30639434d191d9ea3855687f6a697eca1d1d3de1f67b1679c3c7638af517be",
+      "spec": {
+        "template": "compare",
+        "title": "Query parameter synchronization with browser URL",
+        "leftLabel": "Read Query Params",
+        "rightLabel": "Update Query Params",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When a user selects the interview tab keep it in the address.",
+            "left": {
+              "code": "console.log(params.get(\"status\"));",
+              "result": {
+                "text": "\"status=interview&sort=newest\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "params.set(\"status\", \"offer\");",
+              "result": {
+                "text": "\"offer\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Preserve filter state across browser refreshes and shareable links.",
+            "left": {
+              "code": "console.log(params.get(\"status\"));",
+              "result": {
+                "text": "\"status=interview&sort=newest\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(params.toString());",
+              "result": {
+                "text": "\"status=offer&sort=newest\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query parameter synchronization with browser URL",
+        "leftLabel": "Read Query Params",
+        "rightLabel": "Update Query Params",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When a user selects the interview tab keep it in the address.",
+            "left": {
+              "code": "console.log(params.get(\"status\"));",
+              "result": "\"status=interview&sort=newest\"",
+              "tone": "idle",
+              "checks": [
+                "\"status=interview&sort=newest\""
+              ]
+            },
+            "right": {
+              "code": "params.set(\"status\", \"offer\");",
+              "result": "\"offer\"",
+              "tone": "idle",
+              "checks": [
+                "\"offer\""
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Preserve filter state across browser refreshes and shareable links.",
+            "left": {
+              "code": "console.log(params.get(\"status\"));",
+              "result": "\"status=interview&sort=newest\"",
+              "tone": "idle",
+              "checks": [
+                "\"status=interview&sort=newest\""
+              ]
+            },
+            "right": {
+              "code": "console.log(params.toString());",
+              "result": "\"status=offer&sort=newest\"",
+              "tone": "ok",
+              "checks": [
+                "\"status=offer&sort=newest\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing your features by hand",
+      "codeHash": "c9f1ee80964cb4494a7866d3875d02e048e3fa8c8833a1abf66c24272d83b498",
+      "spec": {
+        "template": "boxes",
+        "title": "Systematic manual QA checklist validation",
+        "boxes": [
+          {
+            "id": "step",
+            "label": "step",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "passed",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Verify interactive flows systematically against a manual test checklist.",
+            "values": {
+              "step": {
+                "text": "\"Add job with spaces in title\""
+              },
+              "status": {
+                "text": "true"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Inspect boundary conditions including empty inputs and missing data.",
+            "values": {
+              "step": {
+                "text": "\"Search with no matches shows a message\""
+              },
+              "status": {
+                "text": "false"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Systematic manual QA checklist validation",
+        "boxes": [
+          {
+            "id": "step",
+            "label": "step",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "passed",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Verify interactive flows systematically against a manual test checklist.",
+            "values": {
+              "step": "\"Add job with spaces in title\"",
+              "status": "true"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Inspect boundary conditions including empty inputs and missing data.",
+            "values": {
+              "step": "\"Search with no matches shows a message\"",
+              "status": "false"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finish, commit and look back",
+      "codeHash": "c2a615a9326d1d57add2fd2c1f2f7ea9da3f192a66523f983f25da2cc0210f43",
+      "spec": {
+        "template": "none",
+        "reason": "Reviewing milestone achievements, committing final features and planning testing revisions"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Reviewing milestone achievements, committing final features and planning testing revisions"
+      }
+    }
+  ]
+}

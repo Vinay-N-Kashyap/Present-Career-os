@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 19,
+  "promptSha": "6efe34b00848b274ca36eb42fdc7104c0175644f266c86f3bfab3f9b99b116fa",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Anatomy of a Trie Node",
+      "codeHash": "fa865b95f276fbb32d61ab9df5461b2ab40041779b5a4f4ad3dfc29569a590ca",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Trie node multi-way character branching",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "a",
+            "label": "a"
+          },
+          {
+            "id": "p",
+            "label": "p"
+          },
+          {
+            "id": "n",
+            "label": "n"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "a"
+          ],
+          [
+            "a",
+            "p"
+          ],
+          [
+            "a",
+            "n"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each branch from parent to child represents single character in string.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root",
+              "a"
+            ],
+            "activeEdge": [
+              "root",
+              "a"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Trie node contains boolean flag indicating completion of valid string.",
+            "activeNodeId": "p",
+            "visitedNodeIds": [
+              "root",
+              "a",
+              "p",
+              "n"
+            ],
+            "activeEdge": [
+              "a",
+              "p"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Trie node multi-way character branching",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "a",
+            "label": "a"
+          },
+          {
+            "id": "p",
+            "label": "p"
+          },
+          {
+            "id": "n",
+            "label": "n"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "a"
+          ],
+          [
+            "a",
+            "p"
+          ],
+          [
+            "a",
+            "n"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each branch from parent to child represents single character in string.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root",
+              "a"
+            ],
+            "activeEdge": [
+              "root",
+              "a"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Trie node contains boolean flag indicating completion of valid string.",
+            "activeNodeId": "p",
+            "visitedNodeIds": [
+              "root",
+              "a",
+              "p",
+              "n"
+            ],
+            "activeEdge": [
+              "a",
+              "p"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inserting Words into a Trie",
+      "codeHash": "737a00cb0bcb942435a25d6ef5db76b28c6f419369a615510dfe8fb4a8386699",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Shared prefix path word insertion",
+        "nodes": [
+          {
+            "id": "c",
+            "label": "c"
+          },
+          {
+            "id": "a",
+            "label": "a"
+          },
+          {
+            "id": "t",
+            "label": "t*"
+          },
+          {
+            "id": "r",
+            "label": "r*"
+          }
+        ],
+        "edges": [
+          [
+            "c",
+            "a"
+          ],
+          [
+            "a",
+            "t"
+          ],
+          [
+            "a",
+            "r"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Iterative descent shares common prefix structure with existing words.",
+            "activeNodeId": "a",
+            "visitedNodeIds": [
+              "c",
+              "a"
+            ],
+            "activeEdge": [
+              "c",
+              "a"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Finishing final character flips word completion flag on target node.",
+            "activeNodeId": "t",
+            "visitedNodeIds": [
+              "c",
+              "a",
+              "t",
+              "r"
+            ],
+            "activeEdge": [
+              "a",
+              "t"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Shared prefix path word insertion",
+        "nodes": [
+          {
+            "id": "c",
+            "label": "c"
+          },
+          {
+            "id": "a",
+            "label": "a"
+          },
+          {
+            "id": "t",
+            "label": "t*"
+          },
+          {
+            "id": "r",
+            "label": "r*"
+          }
+        ],
+        "edges": [
+          [
+            "c",
+            "a"
+          ],
+          [
+            "a",
+            "t"
+          ],
+          [
+            "a",
+            "r"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Iterative descent shares common prefix structure with existing words.",
+            "activeNodeId": "a",
+            "visitedNodeIds": [
+              "c",
+              "a"
+            ],
+            "activeEdge": [
+              "c",
+              "a"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Finishing final character flips word completion flag on target node.",
+            "activeNodeId": "t",
+            "visitedNodeIds": [
+              "c",
+              "a",
+              "t",
+              "r"
+            ],
+            "activeEdge": [
+              "a",
+              "t"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Searching for Exact Words",
+      "codeHash": "a41f4860eabb0808db17bb47bebd4ee052daaecde8e2a0690e352885f7eefc9f",
+      "spec": {
+        "template": "compare",
+        "title": "Exact word search vs substring search",
+        "left": {
+          "title": "Full Word Match",
+          "items": [
+            {
+              "label": "Query",
+              "value": "apple"
+            },
+            {
+              "label": "isEndOfWord",
+              "value": "true"
+            }
+          ]
+        },
+        "right": {
+          "title": "Prefix Substring Only",
+          "items": [
+            {
+              "label": "Query",
+              "value": "app"
+            },
+            {
+              "label": "isEndOfWord",
+              "value": "false"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Missing character key breaks path and immediately returns false.",
+            "left": {
+              "code": "trie.search(\"apple\")",
+              "result": "true",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trie.search(\"app\")",
+              "result": "false",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Search requires verifying final node word completion flag is true.",
+            "left": {
+              "code": "trie.search(\"apple\")",
+              "result": "true",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trie.search(\"app\")",
+              "result": "false",
+              "tone": "data"
+            }
+          }
+        ],
+        "leftLabel": "Full Word Match",
+        "rightLabel": "Prefix Substring Only"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Exact word search vs substring search",
+        "left": {
+          "title": "Full Word Match",
+          "items": [
+            {
+              "label": "Query",
+              "value": "apple"
+            },
+            {
+              "label": "isEndOfWord",
+              "value": "true"
+            }
+          ]
+        },
+        "right": {
+          "title": "Prefix Substring Only",
+          "items": [
+            {
+              "label": "Query",
+              "value": "app"
+            },
+            {
+              "label": "isEndOfWord",
+              "value": "false"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Missing character key breaks path and immediately returns false.",
+            "left": {
+              "code": "trie.search(\"apple\")",
+              "result": "true",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trie.search(\"app\")",
+              "result": "false",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Search requires verifying final node word completion flag is true.",
+            "left": {
+              "code": "trie.search(\"apple\")",
+              "result": "true",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trie.search(\"app\")",
+              "result": "false",
+              "tone": "data"
+            }
+          }
+        ],
+        "leftLabel": "Full Word Match",
+        "rightLabel": "Prefix Substring Only"
+      }
+    },
+    {
+      "partTitle": "Searching for Prefixes",
+      "codeHash": "0b3023d515e03e756f0392a6e36448fe4fd2521b650ae8af9ccecef5d42c144c",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Fast prefix validation descent path",
+        "nodes": [
+          {
+            "id": "d",
+            "label": "d"
+          },
+          {
+            "id": "e",
+            "label": "e"
+          },
+          {
+            "id": "v",
+            "label": "v"
+          }
+        ],
+        "edges": [
+          [
+            "d",
+            "e"
+          ],
+          [
+            "e",
+            "v"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Traversing entire prefix string returns true without checking flags.",
+            "activeNodeId": "v",
+            "visitedNodeIds": [
+              "d",
+              "e",
+              "v"
+            ],
+            "activeEdge": [
+              "e",
+              "v"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Prefix search executes proportional to prefix length without scanning.",
+            "activeNodeId": "v",
+            "visitedNodeIds": [
+              "d",
+              "e",
+              "v"
+            ],
+            "activeEdge": [
+              "d",
+              "e"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Fast prefix validation descent path",
+        "nodes": [
+          {
+            "id": "d",
+            "label": "d"
+          },
+          {
+            "id": "e",
+            "label": "e"
+          },
+          {
+            "id": "v",
+            "label": "v"
+          }
+        ],
+        "edges": [
+          [
+            "d",
+            "e"
+          ],
+          [
+            "e",
+            "v"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Traversing entire prefix string returns true without checking flags.",
+            "activeNodeId": "v",
+            "visitedNodeIds": [
+              "d",
+              "e",
+              "v"
+            ],
+            "activeEdge": [
+              "e",
+              "v"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Prefix search executes proportional to prefix length without scanning.",
+            "activeNodeId": "v",
+            "visitedNodeIds": [
+              "d",
+              "e",
+              "v"
+            ],
+            "activeEdge": [
+              "d",
+              "e"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Auto-Complete Engine",
+      "codeHash": "36e3ec228e545e6f48af665c62632e0339bfac75644cd61c334e9b9c0e1598b8",
+      "spec": {
+        "template": "table",
+        "title": "Prefix auto-complete query lookup",
+        "columns": [
+          "Prefix Query",
+          "Traversed Subtree",
+          "Suggested Completions"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recursive search discovers all descendants marked with word flag.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ca"
+                  },
+                  {
+                    "text": "Trie branch ca"
+                  },
+                  {
+                    "text": "car, card, cat"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "do"
+                  },
+                  {
+                    "text": "Trie branch do"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Trie structure naturally returns suggestions in alphabetical order.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ca"
+                  },
+                  {
+                    "text": "Trie branch ca"
+                  },
+                  {
+                    "text": "car, card, cat"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "do"
+                  },
+                  {
+                    "text": "Trie branch do"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Prefix auto-complete query lookup",
+        "columns": [
+          "Prefix Query",
+          "Traversed Subtree",
+          "Suggested Completions"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recursive search discovers all descendants marked with word flag.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "ca",
+                  "Trie branch ca",
+                  "car, card, cat"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "do",
+                  "Trie branch do",
+                  "dog"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Trie structure naturally returns suggestions in alphabetical order.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "ca",
+                  "Trie branch ca",
+                  "car, card, cat"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "do",
+                  "Trie branch do",
+                  "dog"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Space Efficiency and Trade-offs",
+      "codeHash": "d1dbe014557be0607e1bf0e8f7d7910113b5984cc9cf7d22d605100d7882d370",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

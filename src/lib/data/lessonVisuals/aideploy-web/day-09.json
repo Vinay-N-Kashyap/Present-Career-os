@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 9,
+  "promptSha": "c5a71034eaa7f28271a6cb6f6d306c8721620981c6b853790c77e6e05f6ccbe6",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why Exact Hashing Fails for Natural Language Queries",
+      "codeHash": "c5a71034eaa7f28271a6cb6f6d306c8721620981c6b853790c77e6e05f6ccbe6",
+      "spec": {
+        "template": "compare",
+        "title": "Exact Key Hashing vs Vector Semantic Caching",
+        "leftLabel": "Exact String Hashing (MD5/SHA)",
+        "rightLabel": "Vector Semantic Caching",
+        "leftItems": [
+          "Fails on tiny wording differences",
+          "Plurals and spaces create hash miss",
+          "Forces unnecessary expensive LLM calls",
+          "Misses up to 40% of identical intents"
+        ],
+        "rightItems": [
+          "Embeds queries into continuous latent space",
+          "Matches questions by cosine similarity",
+          "Delivers instant sub-10ms cache hits",
+          "Captures varied phrasing of same intent"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Natural language questions share user intent despite differing characters.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say8",
+            "caption": "Semantic caching matches queries using vector embedding similarity distance.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Exact Key Hashing vs Vector Semantic Caching",
+        "leftLabel": "Exact String Hashing (MD5/SHA)",
+        "rightLabel": "Vector Semantic Caching",
+        "leftItems": [
+          "Fails on tiny wording differences",
+          "Plurals and spaces create hash miss",
+          "Forces unnecessary expensive LLM calls",
+          "Misses up to 40% of identical intents"
+        ],
+        "rightItems": [
+          "Embeds queries into continuous latent space",
+          "Matches questions by cosine similarity",
+          "Delivers instant sub-10ms cache hits",
+          "Captures varied phrasing of same intent"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Natural language questions share user intent despite differing characters.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say8",
+            "caption": "Semantic caching matches queries using vector embedding similarity distance.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Calibrating Cosine Similarity Thresholds",
+      "codeHash": "c0df9f607ed97ccf68202d5fc711c6fef3cb34bb8bd73aa2e64d2b000446a037",
+      "spec": {
+        "template": "table",
+        "title": "Cosine Similarity Threshold Calibration",
+        "columns": [
+          "Threshold Band",
+          "Cache Decision",
+          "Trade-Off Profile"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Low thresholds cause false positives returning answers to wrong questions.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Calibrated similarity thresholds represent the optimal sweet spot for caches.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Sensitive domain applications configure stricter thresholds for accuracy.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cosine Similarity Threshold Calibration",
+        "columns": [
+          "Threshold Band",
+          "Cache Decision",
+          "Trade-Off Profile"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Low thresholds cause false positives returning answers to wrong questions.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Calibrated similarity thresholds represent the optimal sweet spot for caches.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Sensitive domain applications configure stricter thresholds for accuracy.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vector Indexing & In-Memory Semantic Cache Store",
+      "codeHash": "8e3d2c56bad1e048336bdebddd9cd470f4cae308a0df400fd92d526f761caff1",
+      "spec": {
+        "template": "flow",
+        "title": "Semantic Cache Lookup and Evaluation Flow",
+        "nodes": [
+          {
+            "id": "query",
+            "label": "Incoming Query",
+            "tappable": false
+          },
+          {
+            "id": "embed",
+            "label": "Query Embedding",
+            "tappable": false
+          },
+          {
+            "id": "scan",
+            "label": "Store Dot Products",
+            "tappable": false
+          },
+          {
+            "id": "hit",
+            "label": "Cache HIT (Sub-10ms)",
+            "tappable": false
+          },
+          {
+            "id": "miss",
+            "label": "Cache MISS -> LLM",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "query",
+            "to": "embed"
+          },
+          {
+            "from": "embed",
+            "to": "scan"
+          },
+          {
+            "from": "scan",
+            "to": "hit"
+          },
+          {
+            "from": "scan",
+            "to": "miss"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Applications generate query embeddings and invoke cache store lookups.",
+            "activeNodes": [
+              "query",
+              "embed"
+            ],
+            "statusBadge": "embedding"
+          },
+          {
+            "at": "say4",
+            "caption": "Candidate embeddings meeting thresholds return cached completions immediately.",
+            "activeNodes": [
+              "embed",
+              "scan",
+              "hit"
+            ],
+            "statusBadge": "hit"
+          },
+          {
+            "at": "say5",
+            "caption": "Returning cached answers bypasses upstream models reducing latency to sub-10ms.",
+            "activeNodes": [
+              "hit"
+            ],
+            "statusBadge": "bypassed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Semantic Cache Lookup and Evaluation Flow",
+        "nodes": [
+          {
+            "id": "query",
+            "label": "Incoming Query",
+            "tappable": false
+          },
+          {
+            "id": "embed",
+            "label": "Query Embedding",
+            "tappable": false
+          },
+          {
+            "id": "scan",
+            "label": "Store Dot Products",
+            "tappable": false
+          },
+          {
+            "id": "hit",
+            "label": "Cache HIT (Sub-10ms)",
+            "tappable": false
+          },
+          {
+            "id": "miss",
+            "label": "Cache MISS -> LLM",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "query",
+            "to": "embed"
+          },
+          {
+            "from": "embed",
+            "to": "scan"
+          },
+          {
+            "from": "scan",
+            "to": "hit"
+          },
+          {
+            "from": "scan",
+            "to": "miss"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Applications generate query embeddings and invoke cache store lookups.",
+            "activeNodes": [
+              "query",
+              "embed"
+            ],
+            "statusBadge": "embedding"
+          },
+          {
+            "at": "say4",
+            "caption": "Candidate embeddings meeting thresholds return cached completions immediately.",
+            "activeNodes": [
+              "embed",
+              "scan",
+              "hit"
+            ],
+            "statusBadge": "hit"
+          },
+          {
+            "at": "say5",
+            "caption": "Returning cached answers bypasses upstream models reducing latency to sub-10ms.",
+            "activeNodes": [
+              "hit"
+            ],
+            "statusBadge": "bypassed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Eviction Policies: LRU & TTL Strategies",
+      "codeHash": "85cb9dc45f74ef2b29304634cf3431cfa28fb53afb0ac53dfb02430a39b4e84e",
+      "spec": {
+        "template": "states",
+        "title": "LRU Eviction & Lifecycle States",
+        "states": [
+          {
+            "id": "inserted",
+            "label": "Entry Stored (Most Recent)"
+          },
+          {
+            "id": "accessed",
+            "label": "Entry Promoted on Read"
+          },
+          {
+            "id": "capacity",
+            "label": "Capacity Limit Reached"
+          },
+          {
+            "id": "evicted",
+            "label": "Oldest Entry Evicted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "LRU caches promote accessed entries to the most recent position in memory.",
+            "current": "inserted",
+            "visited": [
+              "inserted"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reaching capacity ceilings triggers eviction of the least recently used key.",
+            "current": "capacity",
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Time-to-live policies purge expired entries to prevent stale cached answers.",
+            "current": "evicted",
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity",
+              "evicted"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "LRU Eviction & Lifecycle States",
+        "states": [
+          {
+            "id": "inserted",
+            "label": "Entry Stored (Most Recent)"
+          },
+          {
+            "id": "accessed",
+            "label": "Entry Promoted on Read"
+          },
+          {
+            "id": "capacity",
+            "label": "Capacity Limit Reached"
+          },
+          {
+            "id": "evicted",
+            "label": "Oldest Entry Evicted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "LRU caches promote accessed entries to the most recent position in memory.",
+            "current": "inserted",
+            "visited": [
+              "inserted"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reaching capacity ceilings triggers eviction of the least recently used key.",
+            "current": "capacity",
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Time-to-live policies purge expired entries to prevent stale cached answers.",
+            "current": "evicted",
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity",
+              "evicted"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation & Domain Partitioning",
+      "codeHash": "83131eaaa27ce0b0a26654e8fbc14eff740b847f919ca00a0067242339f26b2d",
+      "spec": {
+        "template": "workflow",
+        "title": "Domain-Partitioned Cache Invalidation",
+        "stages": [
+          {
+            "id": "tag",
+            "name": "Domain Tagging",
+            "subtext": "pricing_v1 or auth"
+          },
+          {
+            "id": "index",
+            "name": "Partitioned Storage",
+            "subtext": "Scoped vector lookup"
+          },
+          {
+            "id": "event",
+            "name": "Invalidation Hook",
+            "subtext": "Doc or price updated"
+          },
+          {
+            "id": "purge",
+            "name": "Targeted Purge",
+            "subtext": "Drop entries for tag"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Systems partition semantic caches using domain tags and tenant namespaces.",
+            "activeStageId": "tag",
+            "statusBadge": "partitioned"
+          },
+          {
+            "at": "say5",
+            "caption": "Domain updates trigger invalidation hooks purging all entries with that tag.",
+            "activeStageId": "event",
+            "statusBadge": "invalidating"
+          },
+          {
+            "at": "say6",
+            "caption": "Invalidating targeted tags purges affected domains without clearing others.",
+            "activeStageId": "purge",
+            "statusBadge": "purged"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Domain-Partitioned Cache Invalidation",
+        "stages": [
+          {
+            "id": "tag",
+            "name": "Domain Tagging",
+            "subtext": "pricing_v1 or auth"
+          },
+          {
+            "id": "index",
+            "name": "Partitioned Storage",
+            "subtext": "Scoped vector lookup"
+          },
+          {
+            "id": "event",
+            "name": "Invalidation Hook",
+            "subtext": "Doc or price updated"
+          },
+          {
+            "id": "purge",
+            "name": "Targeted Purge",
+            "subtext": "Drop entries for tag"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Systems partition semantic caches using domain tags and tenant namespaces.",
+            "activeStageId": "tag",
+            "statusBadge": "partitioned"
+          },
+          {
+            "at": "say5",
+            "caption": "Domain updates trigger invalidation hooks purging all entries with that tag.",
+            "activeStageId": "event",
+            "statusBadge": "invalidating"
+          },
+          {
+            "at": "say6",
+            "caption": "Invalidating targeted tags purges affected domains without clearing others.",
+            "activeStageId": "purge",
+            "statusBadge": "purged"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Semantic Inference Cache",
+      "codeHash": "6854022b3358169e64ca77a6b3d97fb65d66b036dd3b18e04aaf0f1a20ffb619",
+      "spec": {
+        "template": "none",
+        "reason": "Enterprise Semantic Inference Cache capstone synthesizing vector similarity lookup, threshold evaluation, and hit-rate telemetry"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Enterprise Semantic Inference Cache capstone synthesizing vector similarity lookup, threshold evaluation, and hit-rate telemetry"
+      }
+    }
+  ]
+}

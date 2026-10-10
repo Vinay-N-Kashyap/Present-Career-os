@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 27,
+  "promptSha": "638440a76bf5e44f988f8a9897490b6945180c743d9d26aed84ae9b133bfca9d",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Comparing Deployment Strategies: Recreate, Rolling, Blue-Green & Canary",
+      "codeHash": "cc4c671887934ad01433434d397f0b490f0711e50790e790fa7acd1f963e598f",
+      "spec": {
+        "template": "compare",
+        "title": "Comparing deployment rollout strategies and availability profiles",
+        "leftLabel": "Recreate Strategy (Downtime)",
+        "rightLabel": "Canary Strategy (Zero Downtime)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recreate strategy terminates existing pods causing inevitable service downtime.",
+            "left": {
+              "code": "strategy: 'Recreate'",
+              "result": {
+                "text": "Recreate"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "serviceDowntime: 'Inevitable'",
+              "result": {
+                "text": "downtime"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Canary strategy routes tiny fraction of live user traffic to new version.",
+            "left": {
+              "code": "strategy: 'Canary'",
+              "result": {
+                "text": "Canary"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trafficShare: 'Tiny fraction'",
+              "result": {
+                "text": "fraction"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Comparing deployment rollout strategies and availability profiles",
+        "leftLabel": "Recreate Strategy (Downtime)",
+        "rightLabel": "Canary Strategy (Zero Downtime)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recreate strategy terminates existing pods causing inevitable service downtime.",
+            "left": {
+              "code": "strategy: 'Recreate'",
+              "result": {
+                "text": "Recreate"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "serviceDowntime: 'Inevitable'",
+              "result": {
+                "text": "downtime"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Canary strategy routes tiny fraction of live user traffic to new version.",
+            "left": {
+              "code": "strategy: 'Canary'",
+              "result": {
+                "text": "Canary"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trafficShare: 'Tiny fraction'",
+              "result": {
+                "text": "fraction"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Blue-Green Deployment Orchestration & Traffic Switching",
+      "codeHash": "5d33700d47dd85f78c3c5fdd4bee22ead41172eeabe78ccbb0f8916a320ca10a",
+      "spec": {
+        "template": "compare",
+        "title": "Blue green deployment orchestration and traffic switching",
+        "leftLabel": "Active Live Blue Deployment",
+        "rightLabel": "Staging Green Deployment",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Blue deployment currently runs the live stable version receiving active traffic.",
+            "left": {
+              "code": "deployment: 'Blue'",
+              "result": {
+                "text": "Blue"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status: 'Live'",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Ingress gateways route incoming requests to green version in milliseconds.",
+            "left": {
+              "code": "ingressGateways",
+              "result": {
+                "text": "Ingress"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "switchTimeMs",
+              "result": {
+                "text": "Green"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Blue green deployment orchestration and traffic switching",
+        "leftLabel": "Active Live Blue Deployment",
+        "rightLabel": "Staging Green Deployment",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Blue deployment currently runs the live stable version receiving active traffic.",
+            "left": {
+              "code": "deployment: 'Blue'",
+              "result": {
+                "text": "Blue"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status: 'Live'",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Ingress gateways route incoming requests to green version in milliseconds.",
+            "left": {
+              "code": "ingressGateways",
+              "result": {
+                "text": "Ingress"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "switchTimeMs",
+              "result": {
+                "text": "Green"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Canary Deployment & Progressive Traffic Weighting",
+      "codeHash": "c3009bbce8559cf9a35e89c2787b7531b09b3a7c5b665ce3f9b542a6d632e8f7",
+      "spec": {
+        "template": "compare",
+        "title": "Canary deployment progressive traffic weighting",
+        "leftLabel": "Stable Baseline Workload",
+        "rightLabel": "Canary Target Workload",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Ingress controller assigns weighted routing rules across active versions.",
+            "left": {
+              "code": "ingressController",
+              "result": {
+                "text": "Ingress"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "routingRules",
+              "result": {
+                "text": "weighted"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Traffic progressively ramps across successive steps while error rates stay low.",
+            "left": {
+              "code": "trafficRamp",
+              "result": {
+                "text": "progressively"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "errorThreshold",
+              "result": {
+                "text": "rates"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Canary deployment progressive traffic weighting",
+        "leftLabel": "Stable Baseline Workload",
+        "rightLabel": "Canary Target Workload",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Ingress controller assigns weighted routing rules across active versions.",
+            "left": {
+              "code": "ingressController",
+              "result": {
+                "text": "Ingress"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "routingRules",
+              "result": {
+                "text": "weighted"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Traffic progressively ramps across successive steps while error rates stay low.",
+            "left": {
+              "code": "trafficRamp",
+              "result": {
+                "text": "progressively"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "errorThreshold",
+              "result": {
+                "text": "rates"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Metric Analysis: Prometheus SLO Health Gates",
+      "codeHash": "5b3ca6332b2e859d9d2d39097f18d18fb893a49897823448f5181205a0965397",
+      "spec": {
+        "template": "compare",
+        "title": "Automated metric analysis and Prometheus SLO health gates",
+        "leftLabel": "Observed Canary Telemetry",
+        "rightLabel": "Threshold Limit Constraint",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Success rate metric tracks percentage of requests returning successful status.",
+            "left": {
+              "code": "successRate",
+              "result": {
+                "text": "Success"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSuccessRate",
+              "result": {
+                "text": "percentage"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Controller halts rollout progression immediately when metrics violate limits.",
+            "left": {
+              "code": "circuitBreaker",
+              "result": {
+                "text": "halts"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "status",
+              "result": {
+                "text": "progression"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Automated metric analysis and Prometheus SLO health gates",
+        "leftLabel": "Observed Canary Telemetry",
+        "rightLabel": "Threshold Limit Constraint",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Success rate metric tracks percentage of requests returning successful status.",
+            "left": {
+              "code": "successRate",
+              "result": {
+                "text": "Success"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSuccessRate",
+              "result": {
+                "text": "percentage"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Controller halts rollout progression immediately when metrics violate limits.",
+            "left": {
+              "code": "circuitBreaker",
+              "result": {
+                "text": "halts"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "status",
+              "result": {
+                "text": "progression"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Fast-Rollbacks & Circuit Breaking",
+      "codeHash": "64db8f00f42a3be6b07d33995f90c9eeb77b010725cce745da1424526d3ef3c0",
+      "spec": {
+        "template": "compare",
+        "title": "Automated fast rollbacks and circuit breaker triggers",
+        "leftLabel": "Failing Canary Condition",
+        "rightLabel": "Restored Baseline Routing",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Automated fast rollback eliminates human latency during production incidents.",
+            "left": {
+              "code": "fastRollback",
+              "result": {
+                "text": "fast"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "latencyImpact",
+              "result": {
+                "text": "latency"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "User traffic returns immediately to healthy untouched baseline version.",
+            "left": {
+              "code": "routingDestination",
+              "result": {
+                "text": "untouched"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "baselineVersion",
+              "result": {
+                "text": "baseline"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Automated fast rollbacks and circuit breaker triggers",
+        "leftLabel": "Failing Canary Condition",
+        "rightLabel": "Restored Baseline Routing",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Automated fast rollback eliminates human latency during production incidents.",
+            "left": {
+              "code": "fastRollback",
+              "result": {
+                "text": "fast"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "latencyImpact",
+              "result": {
+                "text": "latency"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "User traffic returns immediately to healthy untouched baseline version.",
+            "left": {
+              "code": "routingDestination",
+              "result": {
+                "text": "untouched"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "baselineVersion",
+              "result": {
+                "text": "baseline"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Argo Rollouts & Flagger Custom Resource Architecture",
+      "codeHash": "e24f6b708cdd67c2a03a79a99e29fe9101e13f3e35de94fe616b0465162a728f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

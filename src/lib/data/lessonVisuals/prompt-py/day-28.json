@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why evaluate",
+      "codeHash": "3afd8b839ededd8aaedf47224c258677ff471fdc44b89192832189fa8f3d2470",
+      "spec": {
+        "template": "table",
+        "title": "Model evaluation test set and ground truth classes",
+        "columns": [
+          "delivery",
+          "billing",
+          "account"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Public benchmarks differ from classifying real support tickets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "delivery"
+                  },
+                  {
+                    "text": "billing"
+                  },
+                  {
+                    "text": "account"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "delivery"
+                  },
+                  {
+                    "text": "billing"
+                  },
+                  {
+                    "text": "account"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Evaluation runs consistent test inputs across multiple models.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "delivery"
+                  },
+                  {
+                    "text": "billing"
+                  },
+                  {
+                    "text": "account"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "delivery"
+                  },
+                  {
+                    "text": "billing"
+                  },
+                  {
+                    "text": "delivery"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model evaluation test set and ground truth classes",
+        "columns": [
+          "delivery",
+          "billing",
+          "account"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Public benchmarks differ from classifying real support tickets.",
+            "rows": [
+              {
+                "cells": [
+                  "delivery",
+                  "billing",
+                  "account"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "delivery",
+                  "billing",
+                  "account"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Evaluation runs consistent test inputs across multiple models.",
+            "rows": [
+              {
+                "cells": [
+                  "delivery",
+                  "billing",
+                  "account"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "delivery",
+                  "billing",
+                  "delivery"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scoring and leaderboards",
+      "codeHash": "38523e78341a627673ae3ae4e868fb2bb203f8cdf5f0a20f46a0a908b4a3d4d7",
+      "spec": {
+        "template": "table",
+        "title": "Evaluation leaderboard and per-model accuracy ranking",
+        "columns": [
+          "expected",
+          "outputs",
+          "rows"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Classification tasks compute accuracy against expected answers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "rows"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "rows"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A leaderboard ranks model accuracy percentages from highest to lowest.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "rows"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "expected"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "expected"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Evaluation leaderboard and per-model accuracy ranking",
+        "columns": [
+          "expected",
+          "outputs",
+          "rows"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Classification tasks compute accuracy against expected answers.",
+            "rows": [
+              {
+                "cells": [
+                  "expected",
+                  "outputs",
+                  "rows"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "expected",
+                  "outputs",
+                  "rows"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A leaderboard ranks model accuracy percentages from highest to lowest.",
+            "rows": [
+              {
+                "cells": [
+                  "expected",
+                  "outputs",
+                  "rows"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "expected",
+                  "outputs",
+                  "expected"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comparing open-ended answers",
+      "codeHash": "8a2bc12171c54972d32074d5f8a5c88132452bcb0e2a10e81fcaf2286fb3aa8e",
+      "spec": {
+        "template": "table",
+        "title": "Pairwise comparison and open-ended evaluation judgements",
+        "columns": [
+          "points",
+          "games",
+          "alpha"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Open summaries lack single correct answers and require comparison.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "games"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "games"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pairwise comparison presents two candidate answers to a judge.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "games"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "games"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pairwise comparison and open-ended evaluation judgements",
+        "columns": [
+          "points",
+          "games",
+          "alpha"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Open summaries lack single correct answers and require comparison.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "games",
+                  "alpha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "points",
+                  "games",
+                  "alpha"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pairwise comparison presents two candidate answers to a judge.",
+            "rows": [
+              {
+                "cells": [
+                  "points",
+                  "games",
+                  "alpha"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "points",
+                  "games",
+                  "points"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quality, cost and speed",
+      "codeHash": "f3cc57b6e9f241cd5fd29384d120c54beb6ec4e4a70d476155661f912b881827",
+      "spec": {
+        "template": "table",
+        "title": "Cost and latency trade-offs for model selection",
+        "columns": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Evaluate latency and operational cost alongside overall quality.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "large"
+                  },
+                  {
+                    "text": "medium"
+                  },
+                  {
+                    "text": "small"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "large"
+                  },
+                  {
+                    "text": "medium"
+                  },
+                  {
+                    "text": "small"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Routing directs simple queries to fast models and complex ones upward.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "large"
+                  },
+                  {
+                    "text": "medium"
+                  },
+                  {
+                    "text": "small"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "large"
+                  },
+                  {
+                    "text": "medium"
+                  },
+                  {
+                    "text": "large"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cost and latency trade-offs for model selection",
+        "columns": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Evaluate latency and operational cost alongside overall quality.",
+            "rows": [
+              {
+                "cells": [
+                  "large",
+                  "medium",
+                  "small"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "large",
+                  "medium",
+                  "small"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Routing directs simple queries to fast models and complex ones upward.",
+            "rows": [
+              {
+                "cells": [
+                  "large",
+                  "medium",
+                  "small"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "large",
+                  "medium",
+                  "large"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluation pitfalls",
+      "codeHash": "e0a298b54c45c4bb347ee9c893bda63c62e146a18cae4e99497589e27a96f2d2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: leaderboard and win rates",
+      "codeHash": "2a80e3727619c026d06e10ab2336a7ae31ed28a52c0966a76c80281f30a7a660",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

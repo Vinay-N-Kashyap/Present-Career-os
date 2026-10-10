@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 27,
+  "promptSha": "ff812588186b44ed234f13663c0a40e202953c4badb283923814d4d22fdfce4b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Consistency Spectrum: Safety vs Performance vs Availability",
+      "codeHash": "c8d93f5d7f795ccb2be397d3e78cb587f7d79a9d4a0a075cfc253b3f5e26ee82",
+      "spec": {
+        "template": "compare",
+        "title": "Strong linearizable consistency versus weak eventual consistency spectrum",
+        "left": {
+          "title": "Strong Linearizability",
+          "items": [
+            "Instant global real-time ordering",
+            "Universal wall-clock consistency guarantees",
+            "Requires consensus and synchronous round-trips"
+          ]
+        },
+        "right": {
+          "title": "Eventual Consistency",
+          "items": [
+            "Replicas converge asynchronously over time",
+            "Sub-millisecond write response latency",
+            "Exposes clients to transient stale reads"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Linearizability guarantees every read reflects the latest write.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Eventual consistency allows replicas to converge asynchronously over time.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Strong Linearizability",
+        "rightLabel": "Eventual Consistency"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Strong linearizable consistency versus weak eventual consistency spectrum",
+        "left": {
+          "title": "Strong Linearizability",
+          "items": [
+            "Instant global real-time ordering",
+            "Universal wall-clock consistency guarantees",
+            "Requires consensus and synchronous round-trips"
+          ]
+        },
+        "right": {
+          "title": "Eventual Consistency",
+          "items": [
+            "Replicas converge asynchronously over time",
+            "Sub-millisecond write response latency",
+            "Exposes clients to transient stale reads"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Linearizability guarantees every read reflects the latest write.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Eventual consistency allows replicas to converge asynchronously over time.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Strong Linearizability",
+        "rightLabel": "Eventual Consistency"
+      }
+    },
+    {
+      "partTitle": "Linearizability (Strict Consistency & Real-Time External Clocks)",
+      "codeHash": "3d122b7963fcdafb082d5f49287eb81a8888f3b62162f1c8b70de14689b00078",
+      "spec": {
+        "template": "states",
+        "title": "Linearizable register operation lifecycle with real-time clock synchronization",
+        "states": [
+          {
+            "id": "invoked",
+            "label": "Write Invocation Begins"
+          },
+          {
+            "id": "synchronizing",
+            "label": "Consensus Quorum Validating"
+          },
+          {
+            "id": "committed",
+            "label": "Linearization Point Committed"
+          },
+          {
+            "id": "linearRead",
+            "label": "Subsequent Read Returns Latest Value"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Operations execute atomically at an instantaneous point in time.",
+            "activeStateId": "committed",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Under linearizability stale reads are forbidden once values commit.",
+            "activeStateId": "linearRead",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Linearizable register operation lifecycle with real-time clock synchronization",
+        "states": [
+          {
+            "id": "invoked",
+            "label": "Write Invocation Begins"
+          },
+          {
+            "id": "synchronizing",
+            "label": "Consensus Quorum Validating"
+          },
+          {
+            "id": "committed",
+            "label": "Linearization Point Committed"
+          },
+          {
+            "id": "linearRead",
+            "label": "Subsequent Read Returns Latest Value"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Operations execute atomically at an instantaneous point in time.",
+            "activeStateId": "committed",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Under linearizability stale reads are forbidden once values commit.",
+            "activeStateId": "linearRead",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sequential Consistency & Causal Consistency Models",
+      "codeHash": "edc4105912f353a644562e4460db1a22926b353cb48b12b8bd6fc47851ad6226",
+      "spec": {
+        "template": "workflow",
+        "title": "Causal dependency tracking pipeline and Lamport logical clocks",
+        "workflow": [
+          {
+            "id": "causeEvent",
+            "label": "Causal Parent Event Initiated",
+            "status": "completed"
+          },
+          {
+            "id": "lamportClock",
+            "label": "Lamport Logical Clock Incremented",
+            "status": "completed"
+          },
+          {
+            "id": "dependentEvent",
+            "label": "Child Event Inherits Causal Precedence",
+            "status": "active"
+          },
+          {
+            "id": "concurrentEvent",
+            "label": "Independent Concurrent Event Arbitrated",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Every node must see the first event before the second event.",
+            "activeWorkflowId": "causeEvent",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "Causal consistency prevents inversions across distributed comment feeds.",
+            "activeWorkflowId": "dependentEvent",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Causal dependency tracking pipeline and Lamport logical clocks",
+        "workflow": [
+          {
+            "id": "causeEvent",
+            "label": "Causal Parent Event Initiated",
+            "status": "completed"
+          },
+          {
+            "id": "lamportClock",
+            "label": "Lamport Logical Clock Incremented",
+            "status": "completed"
+          },
+          {
+            "id": "dependentEvent",
+            "label": "Child Event Inherits Causal Precedence",
+            "status": "active"
+          },
+          {
+            "id": "concurrentEvent",
+            "label": "Independent Concurrent Event Arbitrated",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Every node must see the first event before the second event.",
+            "activeWorkflowId": "causeEvent",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "Causal consistency prevents inversions across distributed comment feeds.",
+            "activeWorkflowId": "dependentEvent",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Eventual Consistency & Tunable Quorums (R + W > N)",
+      "codeHash": "5d404c3c1c2b7320ab60e461557af219fbe74d045b0b1e61690c2291956d834a",
+      "spec": {
+        "template": "table",
+        "title": "Tunable quorum configurations for read and write consistency guarantees",
+        "columns": [
+          "Replication N",
+          "Read Quorum R",
+          "Write Quorum W",
+          "Guaranteed Consistency"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The quorum intersection theorem guarantees strong consistency.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Lagged replicas can return stale data under weak consistency.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tunable quorum configurations for read and write consistency guarantees",
+        "columns": [
+          "Replication N",
+          "Read Quorum R",
+          "Write Quorum W",
+          "Guaranteed Consistency"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The quorum intersection theorem guarantees strong consistency.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Lagged replicas can return stale data under weak consistency.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Read Anomalies: Dirty Reads, Non-Repeatable Reads & Phantom Reads",
+      "codeHash": "9f2abf036d8423e9aa97a50bc8957be5c20a0dc0623821575694224b5150c1a9",
+      "spec": {
+        "template": "sequence",
+        "title": "Transaction isolation level read anomalies and concurrent execution sequence",
+        "actors": [
+          {
+            "id": "txnA",
+            "label": "Transaction A"
+          },
+          {
+            "id": "dbStore",
+            "label": "Storage Engine"
+          },
+          {
+            "id": "txnB",
+            "label": "Transaction B"
+          }
+        ],
+        "messages": [
+          {
+            "from": "txnB",
+            "to": "dbStore",
+            "label": "Write Uncommitted Value Modification",
+            "tone": "data"
+          },
+          {
+            "from": "txnA",
+            "to": "dbStore",
+            "label": "Read Dirty Uncommitted Data Row",
+            "tone": "error"
+          },
+          {
+            "from": "txnB",
+            "to": "dbStore",
+            "label": "Rollback Transaction B Aborted",
+            "tone": "error"
+          },
+          {
+            "from": "txnA",
+            "to": "dbStore",
+            "label": "Repeatable Read Snapshot Preserves Isolation",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A dirty read occurs when uncommitted modifications are read.",
+            "activeMessageIndex": 1,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "Repeatable read prevents anomalies by taking a consistent snapshot.",
+            "activeMessageIndex": 3,
+            "statusBadge": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Transaction isolation level read anomalies and concurrent execution sequence",
+        "actors": [
+          {
+            "id": "txnA",
+            "label": "Transaction A"
+          },
+          {
+            "id": "dbStore",
+            "label": "Storage Engine"
+          },
+          {
+            "id": "txnB",
+            "label": "Transaction B"
+          }
+        ],
+        "messages": [
+          {
+            "from": "txnB",
+            "to": "dbStore",
+            "label": "Write Uncommitted Value Modification",
+            "tone": "data"
+          },
+          {
+            "from": "txnA",
+            "to": "dbStore",
+            "label": "Read Dirty Uncommitted Data Row",
+            "tone": "error"
+          },
+          {
+            "from": "txnB",
+            "to": "dbStore",
+            "label": "Rollback Transaction B Aborted",
+            "tone": "error"
+          },
+          {
+            "from": "txnA",
+            "to": "dbStore",
+            "label": "Repeatable Read Snapshot Preserves Isolation",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A dirty read occurs when uncommitted modifications are read.",
+            "activeMessageIndex": 1,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "Repeatable read prevents anomalies by taking a consistent snapshot.",
+            "activeMessageIndex": 3,
+            "statusBadge": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Model Consistency Storage Engine Simulator",
+      "codeHash": "a4d2276e487ec346728881183bf56c459f029e9e549b0eb174210d795be136ab",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

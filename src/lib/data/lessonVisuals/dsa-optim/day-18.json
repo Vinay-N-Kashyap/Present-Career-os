@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 18,
+  "promptSha": "81f429ec2362f736a58f9d21a63330d01c595e29c1c5efc66444ccb0baa5236b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Heap Property and Complete Trees",
+      "codeHash": "7c5ab12145b71a6723f382f6042b7e265d8afb8aa5a633e62a08d089d1dac3fe",
+      "spec": {
+        "template": "cells",
+        "title": "Binary heap flat array parent child relations",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Complete binary tree populates every level except last filled left to right.",
+            "items": [
+              {
+                "text": "root"
+              },
+              {
+                "text": "left"
+              },
+              {
+                "text": "right"
+              },
+              {
+                "text": "child"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "parent",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Min heap dictates every parent node is smaller than or equal to children.",
+            "items": [
+              {
+                "text": "root"
+              },
+              {
+                "text": "left"
+              },
+              {
+                "text": "right"
+              },
+              {
+                "text": "child"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "parent",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "child",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Binary heap flat array parent child relations",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Complete binary tree populates every level except last filled left to right.",
+            "items": [
+              "root",
+              "left",
+              "right",
+              "child"
+            ],
+            "pointers": [
+              {
+                "name": "parent",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Min heap dictates every parent node is smaller than or equal to children.",
+            "items": [
+              "root",
+              "left",
+              "right",
+              "child"
+            ],
+            "pointers": [
+              {
+                "name": "parent",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "child",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Insertion and Sift-Up",
+      "codeHash": "54030ff25f629c2a9ce0bcd14022d79c37f133ffa2f8dbad6c12495bb3f4f0c6",
+      "spec": {
+        "template": "cells",
+        "title": "Min heap insertion and sift-up restoration",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Appending new element to end of array satisfies structural property.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Comparing added element with parent triggers swap upon invariant violation.",
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "10"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Min heap insertion and sift-up restoration",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Appending new element to end of array satisfies structural property.",
+            "items": [
+              "10",
+              "5",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Comparing added element with parent triggers swap upon invariant violation.",
+            "items": [
+              "2",
+              "5",
+              "10"
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extraction and Sift-Down",
+      "codeHash": "a9bc6f87ca36fc2b8afe95db9ff3de02452c091eccf8747ca3070dc95d6e0f81",
+      "spec": {
+        "template": "cells",
+        "title": "Min heap root extraction and sift-down sink",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Transplanting last element into root position repairs tree structure.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "root",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Comparing node to children swaps with smaller child during sift down.",
+            "items": [
+              {
+                "text": "5"
+              },
+              {
+                "text": "10"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "root",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Min heap root extraction and sift-down sink",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Transplanting last element into root position repairs tree structure.",
+            "items": [
+              "10",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "root",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Comparing node to children swaps with smaller child during sift down.",
+            "items": [
+              "5",
+              "10"
+            ],
+            "pointers": [
+              {
+                "name": "root",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Heap via Heapify",
+      "codeHash": "e547b0afc20d84cce279486a9a4c0ee65cf5015ef5d9d443d392d7d32c1e75da",
+      "spec": {
+        "template": "bars",
+        "title": "Floyd bottom-up heapify tree construction",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Starting at last non leaf node calls sift down moving bottom up.",
+            "bars": [
+              {
+                "label": "9",
+                "value": {
+                  "text": "9"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "6",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "2",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Bottom up processing guarantees child subtrees are already valid heaps.",
+            "bars": [
+              {
+                "label": "2",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "4",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "6",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Floyd bottom-up heapify tree construction",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Starting at last non leaf node calls sift down moving bottom up.",
+            "bars": [
+              {
+                "label": "9",
+                "value": 9,
+                "tone": "data"
+              },
+              {
+                "label": "6",
+                "value": 6,
+                "tone": "data"
+              },
+              {
+                "label": "2",
+                "value": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Bottom up processing guarantees child subtrees are already valid heaps.",
+            "bars": [
+              {
+                "label": "2",
+                "value": 2,
+                "tone": "ok"
+              },
+              {
+                "label": "4",
+                "value": 4,
+                "tone": "ok"
+              },
+              {
+                "label": "6",
+                "value": 6,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Priority Queues in Action",
+      "codeHash": "351a25cd04a1940608ecac0ad924131d14122f7754f8a303174d986bd49a0c70",
+      "spec": {
+        "template": "table",
+        "title": "Priority queue task execution schedule",
+        "columns": [
+          "Task Name",
+          "Priority Weight",
+          "Execution Order"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Priority queue processes elements strictly by priority rather than arrival.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fix prod crash"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Processed First"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Write code"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "Processed Second"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Comparing object priority field bridges gap to practical utility.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fix prod crash"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Processed First"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Write code"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "Processed Second"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Priority queue task execution schedule",
+        "columns": [
+          "Task Name",
+          "Priority Weight",
+          "Execution Order"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Priority queue processes elements strictly by priority rather than arrival.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Fix prod crash",
+                  "1",
+                  "Processed First"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write code",
+                  "5",
+                  "Processed Second"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Comparing object priority field bridges gap to practical utility.",
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Fix prod crash",
+                  "1",
+                  "Processed First"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write code",
+                  "5",
+                  "Processed Second"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Heap Sort: Utilizing the Heap",
+      "codeHash": "aea35f4719b405ad9b9851de5fdee1bb40079fca24727f938389c585caf91912",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

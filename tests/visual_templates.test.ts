@@ -1,0 +1,187 @@
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { getVisual } from '../src/lib/visuals/loadVisuals';
+import {
+  VisualStage,
+  FlowTemplate,
+  BoxesTemplate,
+  TableTemplate,
+  LettersTemplate,
+  CompareTemplate,
+  ComponentTreeTemplate,
+  WorkflowTemplate,
+  WireframeTemplate,
+} from '../src/app/quests/lesson/components/visuals';
+
+describe('V-05: Visual Templates & VisualStage Rendering', () => {
+  it('renders all 18 visuals across all steps with no errors', () => {
+    let renderedStepsCount = 0;
+
+    const visuals: Array<{ key: string; visual: any }> = [];
+    for (let day = 1; day <= 3; day++) {
+      for (let p = 0; p < 6; p++) {
+        const v = getVisual('python', day, p);
+        assert.ok(v, `Visual python:${day}:${p} must exist`);
+        visuals.push({ key: `python:${day}:${p}`, visual: v });
+      }
+    }
+
+    for (const { key, visual } of visuals) {
+
+      for (let stepIdx = 0; stepIdx < visual.steps.length; stepIdx++) {
+        // 1. Render through VisualStage
+        const stageHtml = renderToStaticMarkup(
+          React.createElement(VisualStage, {
+            visual,
+            currentStepIndex: stepIdx,
+            onStepChange: () => {},
+            isManualOverride: false,
+            onSyncWithVoice: () => {},
+            highlightedLabel: null,
+            onShapeTap: () => {},
+          })
+        );
+
+        assert.ok(stageHtml.length > 50, `VisualStage HTML empty for ${key} step ${stepIdx}`);
+        // Escape HTML special characters for matching
+        const escapedCaption = visual.steps[stepIdx].caption
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#x27;');
+        assert.ok(
+          stageHtml.includes(escapedCaption) || stageHtml.includes(visual.steps[stepIdx].caption),
+          `Caption missing for ${key} step ${stepIdx}`
+        );
+
+        // 2. Render through specific template directly
+        let templateHtml = '';
+        if (visual.template === 'flow') {
+          templateHtml = renderToStaticMarkup(
+            React.createElement(FlowTemplate, {
+              nodes: visual.nodes,
+              step: visual.steps[stepIdx],
+              highlightedLabel: null,
+              onShapeTap: () => {},
+            })
+          );
+        } else if (visual.template === 'boxes') {
+          templateHtml = renderToStaticMarkup(
+            React.createElement(BoxesTemplate, {
+              boxes: visual.boxes,
+              step: visual.steps[stepIdx],
+              highlightedLabel: null,
+              onShapeTap: () => {},
+            })
+          );
+        } else if (visual.template === 'table') {
+          templateHtml = renderToStaticMarkup(
+            React.createElement(TableTemplate, {
+              columns: visual.columns,
+              step: visual.steps[stepIdx],
+            })
+          );
+        } else if (visual.template === 'letters') {
+          templateHtml = renderToStaticMarkup(
+            React.createElement(LettersTemplate, {
+              text: visual.text,
+              step: visual.steps[stepIdx],
+            })
+          );
+        } else if (visual.template === 'compare') {
+          templateHtml = renderToStaticMarkup(
+            React.createElement(CompareTemplate, {
+              leftLabel: visual.leftLabel,
+              rightLabel: visual.rightLabel,
+              step: visual.steps[stepIdx],
+            })
+          );
+        }
+
+        assert.ok(templateHtml.length > 20, `Template HTML empty for ${key} step ${stepIdx}`);
+        renderedStepsCount++;
+      }
+    }
+
+    assert.ok(renderedStepsCount >= 40, `Expected at least 40 steps, got ${renderedStepsCount}`);
+    console.log(`Rendered ${renderedStepsCount} visual steps successfully.`);
+  });
+
+  it('renders word-tap highlighting without error', () => {
+    const visual22 = getVisual('python', 2, 1);
+    assert.ok(visual22 && visual22.template === 'boxes');
+
+    const htmlWithHighlight = renderToStaticMarkup(
+      React.createElement(VisualStage, {
+        visual: visual22,
+        currentStepIndex: 0,
+        onStepChange: () => {},
+        isManualOverride: false,
+        onSyncWithVoice: () => {},
+        highlightedLabel: 'balance',
+        onShapeTap: () => {},
+      })
+    );
+
+    assert.ok(htmlWithHighlight.includes('balance'));
+  });
+
+  it('renders ComponentTreeTemplate, WorkflowTemplate, and WireframeTemplate without error', () => {
+    // 1. ComponentTreeTemplate
+    const compHtml = renderToStaticMarkup(
+      React.createElement(ComponentTreeTemplate, {
+        step: {
+          caption: 'App renders Header and Feed.',
+          activeId: 'Feed',
+          propsPassed: { from: 'App', to: 'Feed', propName: 'items', value: 'list' },
+          reRenderingIds: ['Feed'],
+        },
+      })
+    );
+    assert.ok(compHtml.includes('&lt;Feed /&gt;') || compHtml.includes('<Feed />'));
+    assert.ok(compHtml.includes('props: items'));
+
+    // 2. WorkflowTemplate
+    const wfHtml = renderToStaticMarkup(
+      React.createElement(WorkflowTemplate, {
+        step: {
+          caption: 'Request routes from API Gateway to App Service.',
+          activeStageId: 'service',
+          statusBadge: '200 OK',
+        },
+      })
+    );
+    assert.ok(wfHtml.includes('API Gateway'));
+    assert.ok(wfHtml.includes('App Service'));
+    assert.ok(wfHtml.includes('200 OK'));
+
+    // 3. WireframeTemplate (Box Model)
+    const boxHtml = renderToStaticMarkup(
+      React.createElement(WireframeTemplate, {
+        step: {
+          caption: 'CSS Box Model with margin, border, and padding.',
+          layoutMode: 'box-model',
+        },
+      })
+    );
+    assert.ok(boxHtml.includes('margin'));
+    assert.ok(boxHtml.includes('border'));
+    assert.ok(boxHtml.includes('padding'));
+
+    // 4. WireframeTemplate (Flexbox)
+    const flexHtml = renderToStaticMarkup(
+      React.createElement(WireframeTemplate, {
+        step: {
+          caption: 'Flex container with header, sidebar, and content.',
+          layoutMode: 'flex-row',
+          justifyContent: 'space-between',
+        },
+      })
+    );
+    assert.ok(flexHtml.includes('&lt;header&gt;') || flexHtml.includes('<header>'));
+    assert.ok(flexHtml.includes('&lt;main&gt;') || flexHtml.includes('<main>'));
+  });
+});

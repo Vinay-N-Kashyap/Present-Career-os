@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "RTO and RPO",
+      "codeHash": "bb5d7910cd5a2d9e5bbec6014a77ab817d8f1319af3bc1671e9f47b9e895f7f2",
+      "spec": {
+        "template": "table",
+        "title": "Recovery Time Objective and Recovery Point Objective metric bounds",
+        "columns": [
+          "rto",
+          "rpo"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Disaster recovery starts with two numbers defining downtime and data loss.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rto"
+                  },
+                  {
+                    "text": "rpo"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recovery Time Objective measures how long users see maintenance pages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rto"
+                  },
+                  {
+                    "text": "rpo"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "disaster_at"
+                  },
+                  {
+                    "text": "rto"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Recovery Point Objective measures orders lost before the disaster.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rto"
+                  },
+                  {
+                    "text": "rpo"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "disaster_at"
+                  },
+                  {
+                    "text": "rto"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "disaster_at"
+                  },
+                  {
+                    "text": "rpo"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tighter targets require duplicate systems running across another Region.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rto"
+                  },
+                  {
+                    "text": "rpo"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "disaster_at"
+                  },
+                  {
+                    "text": "rto"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "disaster_at"
+                  },
+                  {
+                    "text": "rpo"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rto"
+                  },
+                  {
+                    "text": "rpo"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Recovery Time Objective and Recovery Point Objective metric bounds",
+        "columns": [
+          "rto",
+          "rpo"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Disaster recovery starts with two numbers defining downtime and data loss.",
+            "rows": [
+              {
+                "cells": [
+                  "rto",
+                  "rpo"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recovery Time Objective measures how long users see maintenance pages.",
+            "rows": [
+              {
+                "cells": [
+                  "rto",
+                  "rpo"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "disaster_at",
+                  "rto"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Recovery Point Objective measures orders lost before the disaster.",
+            "rows": [
+              {
+                "cells": [
+                  "rto",
+                  "rpo"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "disaster_at",
+                  "rto"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "disaster_at",
+                  "rpo"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Tighter targets require duplicate systems running across another Region.",
+            "rows": [
+              {
+                "cells": [
+                  "rto",
+                  "rpo"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "disaster_at",
+                  "rto"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "disaster_at",
+                  "rpo"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "rto",
+                  "rpo"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The four DR strategies",
+      "codeHash": "024a85c577eba67b6407d80f93aaabd8235aebd00c3dafd793bc19ec78372604",
+      "spec": {
+        "template": "table",
+        "title": "Disaster recovery strategies comparing recovery time and relative cost",
+        "columns": [
+          "strategies",
+          "hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS describes four strategies from cheapest to most expensive.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "strategies"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Backup and restore rebuilds infrastructure from code with hours RTO.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "strategies"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Backup and restore"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Pilot light keeps core data live in the second Region.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "strategies"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Backup and restore"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pilot light"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Warm standby runs a smaller working copy ready to scale up.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "strategies"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Backup and restore"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pilot light"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Warm standby"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disaster recovery strategies comparing recovery time and relative cost",
+        "columns": [
+          "strategies",
+          "hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS describes four strategies from cheapest to most expensive.",
+            "rows": [
+              {
+                "cells": [
+                  "strategies",
+                  "hours"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Backup and restore rebuilds infrastructure from code with hours RTO.",
+            "rows": [
+              {
+                "cells": [
+                  "strategies",
+                  "hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backup and restore",
+                  "hours"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Pilot light keeps core data live in the second Region.",
+            "rows": [
+              {
+                "cells": [
+                  "strategies",
+                  "hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backup and restore",
+                  "hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pilot light",
+                  "minutes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Warm standby runs a smaller working copy ready to scale up.",
+            "rows": [
+              {
+                "cells": [
+                  "strategies",
+                  "hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backup and restore",
+                  "hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pilot light",
+                  "minutes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Warm standby",
+                  "minutes"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a strategy from targets",
+      "codeHash": "e5bd51db0a7d7a62368c9ccaedb7b0908cd74d5fb2f757076b67354c992bc329",
+      "spec": {
+        "template": "table",
+        "title": "Matching business RTO and RPO targets to disaster recovery tiers",
+        "columns": [
+          "rto",
+          "rpo"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Choose the cheapest strategy that meets both business targets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BackupAndRestore"
+                  },
+                  {
+                    "text": "BackupAndRestore"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Backup and restore handles day-level recovery while pilot light is faster.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BackupAndRestore"
+                  },
+                  {
+                    "text": "BackupAndRestore"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PilotLight"
+                  },
+                  {
+                    "text": "PilotLight"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Keep strategy tiers ordered from cheapest to most expensive in a list.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BackupAndRestore"
+                  },
+                  {
+                    "text": "BackupAndRestore"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PilotLight"
+                  },
+                  {
+                    "text": "PilotLight"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "WarmStandby"
+                  },
+                  {
+                    "text": "WarmStandby"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Both targets matter when selecting protection because lost data hurts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BackupAndRestore"
+                  },
+                  {
+                    "text": "BackupAndRestore"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PilotLight"
+                  },
+                  {
+                    "text": "PilotLight"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "WarmStandby"
+                  },
+                  {
+                    "text": "WarmStandby"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "MultiSiteActiveActive"
+                  },
+                  {
+                    "text": "MultiSiteActiveActive"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Matching business RTO and RPO targets to disaster recovery tiers",
+        "columns": [
+          "rto",
+          "rpo"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Choose the cheapest strategy that meets both business targets.",
+            "rows": [
+              {
+                "cells": [
+                  "BackupAndRestore",
+                  "BackupAndRestore"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Backup and restore handles day-level recovery while pilot light is faster.",
+            "rows": [
+              {
+                "cells": [
+                  "BackupAndRestore",
+                  "BackupAndRestore"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PilotLight",
+                  "PilotLight"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Keep strategy tiers ordered from cheapest to most expensive in a list.",
+            "rows": [
+              {
+                "cells": [
+                  "BackupAndRestore",
+                  "BackupAndRestore"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PilotLight",
+                  "PilotLight"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "WarmStandby",
+                  "WarmStandby"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Both targets matter when selecting protection because lost data hurts.",
+            "rows": [
+              {
+                "cells": [
+                  "BackupAndRestore",
+                  "BackupAndRestore"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PilotLight",
+                  "PilotLight"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "WarmStandby",
+                  "WarmStandby"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MultiSiteActiveActive",
+                  "MultiSiteActiveActive"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pricing downtime and data loss",
+      "codeHash": "3b389275a511e4744b5d64e2f070ddd2c4e7387642476833bd6016fa7ec62d95",
+      "spec": {
+        "template": "table",
+        "title": "Calculating financial costs of downtime and data loss per minute",
+        "columns": [
+          "lost_sales",
+          "lost_data"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Estimate what a disaster costs without protection to justify DR spending.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lost_sales"
+                  },
+                  {
+                    "text": "lost_data"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Downtime cost calculates orders lost during RTO minutes without sales.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lost_sales"
+                  },
+                  {
+                    "text": "lost_data"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lost_sales"
+                  },
+                  {
+                    "text": "per_minute"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Data loss cost calculates orders taken during the RPO window.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lost_sales"
+                  },
+                  {
+                    "text": "lost_data"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lost_sales"
+                  },
+                  {
+                    "text": "per_minute"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lost_data"
+                  },
+                  {
+                    "text": "per_minute"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Outage cost computes lost sales, lost data and total disaster impact.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lost_sales"
+                  },
+                  {
+                    "text": "lost_data"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lost_sales"
+                  },
+                  {
+                    "text": "per_minute"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lost_data"
+                  },
+                  {
+                    "text": "per_minute"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "per_minute"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Calculating financial costs of downtime and data loss per minute",
+        "columns": [
+          "lost_sales",
+          "lost_data"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Estimate what a disaster costs without protection to justify DR spending.",
+            "rows": [
+              {
+                "cells": [
+                  "lost_sales",
+                  "lost_data"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Downtime cost calculates orders lost during RTO minutes without sales.",
+            "rows": [
+              {
+                "cells": [
+                  "lost_sales",
+                  "lost_data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lost_sales",
+                  "per_minute"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Data loss cost calculates orders taken during the RPO window.",
+            "rows": [
+              {
+                "cells": [
+                  "lost_sales",
+                  "lost_data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lost_sales",
+                  "per_minute"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "lost_data",
+                  "per_minute"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Outage cost computes lost sales, lost data and total disaster impact.",
+            "rows": [
+              {
+                "cells": [
+                  "lost_sales",
+                  "lost_data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lost_sales",
+                  "per_minute"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "lost_data",
+                  "per_minute"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "total",
+                  "per_minute"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Backups that actually work",
+      "codeHash": "28c91f65f1dd99bd43c033b27b4d24058bc55b91554ff574d5c89f928f3882ef",
+      "spec": {
+        "template": "none",
+        "reason": "Backups that actually work."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: choose and price",
+      "codeHash": "43a199321083b5f1d8147c590f2de47e691b0071869337c840af92bcdc670393",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: choose and price."
+      },
+      "filled": {}
+    }
+  ]
+}

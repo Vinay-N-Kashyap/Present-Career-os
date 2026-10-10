@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 23,
+  "promptSha": "79bdb9fb9f21533697030e87626ffabfcfd94be01170b3345b0b0740d68e95c4",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Distributed Orchestration & AWS Step Functions",
+      "codeHash": "6f4707af7305e21a9ed0d6417da1aa028013feba0bcdbcd04ff375dfe40e7a47",
+      "spec": {
+        "template": "workflow",
+        "title": "Distributed workflow state machine execution stages",
+        "stages": [
+          {
+            "id": "validate",
+            "name": "Validate Cart",
+            "subtext": "Task State"
+          },
+          {
+            "id": "reserve",
+            "name": "Reserve Stock",
+            "subtext": "Inventory Service"
+          },
+          {
+            "id": "charge",
+            "name": "Charge Card",
+            "subtext": "Payment Engine"
+          },
+          {
+            "id": "complete",
+            "name": "Order Succeeded",
+            "subtext": "Terminal Success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Step Functions lets you define stateful serverless workflows.",
+            "activeStageId": "validate",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The visual console displays real time execution graphs.",
+            "activeStageId": "complete",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Distributed workflow state machine execution stages",
+        "stages": [
+          {
+            "id": "validate",
+            "name": "Validate Cart",
+            "subtext": "Task State"
+          },
+          {
+            "id": "reserve",
+            "name": "Reserve Stock",
+            "subtext": "Inventory Service"
+          },
+          {
+            "id": "charge",
+            "name": "Charge Card",
+            "subtext": "Payment Engine"
+          },
+          {
+            "id": "complete",
+            "name": "Order Succeeded",
+            "subtext": "Terminal Success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Step Functions lets you define stateful serverless workflows.",
+            "activeStageId": "validate",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The visual console displays real time execution graphs.",
+            "activeStageId": "complete",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amazon States Language (ASL) & State Types",
+      "codeHash": "d459c0c1c1a25cf8f3e0af2fb2b12bc5a227ae57a677a463684da58410471166",
+      "spec": {
+        "template": "table",
+        "title": "Amazon States Language state types and execution behaviors",
+        "columns": [
+          "State Name",
+          "State Type",
+          "Next Transition State",
+          "Execution Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Task states represent a unit of work executed by an AWS service.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Parallel states execute multiple independent branches concurrently.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Amazon States Language state types and execution behaviors",
+        "columns": [
+          "State Name",
+          "State Type",
+          "Next Transition State",
+          "Execution Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Task states represent a unit of work executed by an AWS service.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Parallel states execute multiple independent branches concurrently.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Distributed Saga Pattern & Compensating Transactions",
+      "codeHash": "9ef2c48121db2873d6488fc38d1384e358b0cb00c8618020bb37451950bcef42",
+      "spec": {
+        "template": "states",
+        "title": "Distributed saga execution and compensating transaction states",
+        "states": [
+          {
+            "id": "forwardExecuting",
+            "label": "Executing Forward Transaction"
+          },
+          {
+            "id": "stepFailed",
+            "label": "Failure Intercepted by Catch"
+          },
+          {
+            "id": "compensatingTriggered",
+            "label": "Compensating Undo Executed"
+          },
+          {
+            "id": "sagaRollbackComplete",
+            "label": "Distributed Consistency Restored"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A saga is a sequence of transactions where each step updates data.",
+            "active": "forwardExecuting"
+          },
+          {
+            "at": "say8",
+            "caption": "The orchestrator triggers compensating transactions when steps fail.",
+            "active": "compensatingTriggered"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Distributed saga execution and compensating transaction states",
+        "states": [
+          {
+            "id": "forwardExecuting",
+            "label": "Executing Forward Transaction"
+          },
+          {
+            "id": "stepFailed",
+            "label": "Failure Intercepted by Catch"
+          },
+          {
+            "id": "compensatingTriggered",
+            "label": "Compensating Undo Executed"
+          },
+          {
+            "id": "sagaRollbackComplete",
+            "label": "Distributed Consistency Restored"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A saga is a sequence of transactions where each step updates data.",
+            "active": "forwardExecuting"
+          },
+          {
+            "at": "say8",
+            "caption": "The orchestrator triggers compensating transactions when steps fail.",
+            "active": "compensatingTriggered"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Standard Workflows vs Express Workflows",
+      "codeHash": "fb839cc1185d397a60551b723ca9f8e793b87841e05ec9e786794f9cc4853fd7",
+      "spec": {
+        "template": "compare",
+        "title": "Standard workflows compared to Express workflows",
+        "leftLabel": "Standard Workflow",
+        "rightLabel": "Express Workflow",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Standard workflows provide exactly once execution guarantees.",
+            "left": {
+              "code": "type: \"STANDARD\"",
+              "result": {
+                "text": "Exactly-Once Guarantee"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "type: \"EXPRESS\"",
+              "result": {
+                "text": "At-Least-Once Delivery"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Express workflows support high rate executions with at least once delivery.",
+            "left": {
+              "code": "maxExecutionDuration: 1_Year",
+              "result": {
+                "text": "Audit History 90 Days"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxExecutionDuration: 5_Min",
+              "result": {
+                "text": "High-Volume Streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Standard workflows compared to Express workflows",
+        "leftLabel": "Standard Workflow",
+        "rightLabel": "Express Workflow",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Standard workflows provide exactly once execution guarantees.",
+            "left": {
+              "code": "type: \"STANDARD\"",
+              "result": {
+                "text": "Exactly-Once Guarantee"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "type: \"EXPRESS\"",
+              "result": {
+                "text": "At-Least-Once Delivery"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Express workflows support high rate executions with at least once delivery.",
+            "left": {
+              "code": "maxExecutionDuration: 1_Year",
+              "result": {
+                "text": "Audit History 90 Days"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxExecutionDuration: 5_Min",
+              "result": {
+                "text": "High-Volume Streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Error Handling, Retries & Exponential Backoff in ASL",
+      "codeHash": "3405017f3d48aa725f2ade8c69e06c35b8ad1bb8014944c671688aafbfce6de3",
+      "spec": {
+        "template": "bars",
+        "title": "ASL error retry backoff rate multiplier and attempt limits",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A retry block specifies backoff rate and maximum retry attempts.",
+            "bars": [
+              {
+                "label": "Initial Retry Interval",
+                "value": 2,
+                "max": 10,
+                "tone": "data"
+              },
+              {
+                "label": "Exponential Backoff Multiplier",
+                "value": 2,
+                "max": 10,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The catch block transitions seamlessly to a designated fallback state.",
+            "bars": [
+              {
+                "label": "Consecutive Retries Exhausted",
+                "value": 3,
+                "max": 3,
+                "tone": "error"
+              },
+              {
+                "label": "Catch Fallback Triggered",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "ASL error retry backoff rate multiplier and attempt limits",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A retry block specifies backoff rate and maximum retry attempts.",
+            "bars": [
+              {
+                "label": "Initial Retry Interval",
+                "value": 2,
+                "max": 10,
+                "tone": "data"
+              },
+              {
+                "label": "Exponential Backoff Multiplier",
+                "value": 2,
+                "max": 10,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The catch block transitions seamlessly to a designated fallback state.",
+            "bars": [
+              {
+                "label": "Consecutive Retries Exhausted",
+                "value": 3,
+                "max": 3,
+                "tone": "error"
+              },
+              {
+                "label": "Catch Fallback Triggered",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed E-Commerce Order Saga Verification",
+      "codeHash": "5f0acd964dfb5ba2d3e370803132687497bae330e66dc7077f67c50192265dd6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

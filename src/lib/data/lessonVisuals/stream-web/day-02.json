@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 2,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Horizontal Partitioning & Scaling Topic Throughput",
+      "codeHash": "fe04afddcfac4eb440b43dfec7fea52012435183ec58afeb95542df18cd17e87",
+      "spec": {
+        "template": "table",
+        "title": "Partition overview for user-telemetry topic across independent sub-logs",
+        "columns": [
+          "Topic Name",
+          "Partition ID",
+          "Total Messages",
+          "Last Offset"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Streaming systems partition topics into multiple independent sub-logs.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Partitions distribute across physical broker nodes for horizontal scalability.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Partition overview for user-telemetry topic across independent sub-logs",
+        "columns": [
+          "Topic Name",
+          "Partition ID",
+          "Total Messages",
+          "Last Offset"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Streaming systems partition topics into multiple independent sub-logs.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Partitions distribute across physical broker nodes for horizontal scalability.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Key-Based Hashing & Entity Colocation Guarantees",
+      "codeHash": "fbbd1510cb7d9240e8af4554b617c297756dee69fc82a7b8363cbe69860ef62a",
+      "spec": {
+        "template": "flow",
+        "title": "Deterministic key hashing and entity colocation on target partitions",
+        "nodes": [
+          {
+            "id": "entityKey",
+            "label": "Entity Key (cust-4821)",
+            "tappable": false
+          },
+          {
+            "id": "hashDigest",
+            "label": "Deterministic naiveHash(key)",
+            "tappable": false
+          },
+          {
+            "id": "moduloOp",
+            "label": "Modulo numPartitions (4)",
+            "tappable": false
+          },
+          {
+            "id": "colocatedLog",
+            "label": "Colocated Partition Log",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "entityKey",
+            "to": "hashDigest",
+            "label": "Encode Key"
+          },
+          {
+            "from": "hashDigest",
+            "to": "moduloOp",
+            "label": "Digest"
+          },
+          {
+            "from": "moduloOp",
+            "to": "colocatedLog",
+            "label": "GUARANTEED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The producer passes the key through a deterministic hashing function.",
+            "activeNodes": [
+              "entityKey",
+              "hashDigest",
+              "moduloOp"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Entity colocation guarantees lifecycle events process in chronological order.",
+            "activeNodes": [
+              "moduloOp",
+              "colocatedLog"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Deterministic key hashing and entity colocation on target partitions",
+        "nodes": [
+          {
+            "id": "entityKey",
+            "label": "Entity Key (cust-4821)",
+            "tappable": false
+          },
+          {
+            "id": "hashDigest",
+            "label": "Deterministic naiveHash(key)",
+            "tappable": false
+          },
+          {
+            "id": "moduloOp",
+            "label": "Modulo numPartitions (4)",
+            "tappable": false
+          },
+          {
+            "id": "colocatedLog",
+            "label": "Colocated Partition Log",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "entityKey",
+            "to": "hashDigest",
+            "label": "Encode Key"
+          },
+          {
+            "from": "hashDigest",
+            "to": "moduloOp",
+            "label": "Digest"
+          },
+          {
+            "from": "moduloOp",
+            "to": "colocatedLog",
+            "label": "GUARANTEED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The producer passes the key through a deterministic hashing function.",
+            "activeNodes": [
+              "entityKey",
+              "hashDigest",
+              "moduloOp"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Entity colocation guarantees lifecycle events process in chronological order.",
+            "activeNodes": [
+              "moduloOp",
+              "colocatedLog"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Implementing MurmurHash3 in Pure TypeScript",
+      "codeHash": "e89dfe3c918052d44c5074c41903850242e1bb61753ac1f1488a92fe4cf2d451",
+      "spec": {
+        "template": "states",
+        "title": "MurmurHash3 4-byte chunk mixing and final avalanche cascade",
+        "states": [
+          {
+            "id": "chunkRead",
+            "label": "4-Byte Chunk Read"
+          },
+          {
+            "id": "rotlMix",
+            "label": "Bitwise Rotate & Multiply"
+          },
+          {
+            "id": "tailMix",
+            "label": "Remainder Tail XOR"
+          },
+          {
+            "id": "finalAvalanche",
+            "label": "Final Avalanche Digest"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "It processes key byte buffers applying bitwise rotations and multipliers.",
+            "activeState": "rotlMix",
+            "transition": {
+              "from": "chunkRead",
+              "to": "rotlMix",
+              "label": "imul(0xcc9e2d51)"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Uniform bit distribution prevents partition skew across available partitions.",
+            "activeState": "finalAvalanche",
+            "transition": {
+              "from": "tailMix",
+              "to": "finalAvalanche",
+              "label": "h >>> 0"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "MurmurHash3 4-byte chunk mixing and final avalanche cascade",
+        "states": [
+          {
+            "id": "chunkRead",
+            "label": "4-Byte Chunk Read"
+          },
+          {
+            "id": "rotlMix",
+            "label": "Bitwise Rotate & Multiply"
+          },
+          {
+            "id": "tailMix",
+            "label": "Remainder Tail XOR"
+          },
+          {
+            "id": "finalAvalanche",
+            "label": "Final Avalanche Digest"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "It processes key byte buffers applying bitwise rotations and multipliers.",
+            "activeState": "rotlMix",
+            "transition": {
+              "from": "chunkRead",
+              "to": "rotlMix",
+              "label": "imul(0xcc9e2d51)"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Uniform bit distribution prevents partition skew across available partitions.",
+            "activeState": "finalAvalanche",
+            "transition": {
+              "from": "tailMix",
+              "to": "finalAvalanche",
+              "label": "h >>> 0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Modulo Partition Assignment & Handling Negative Hashes",
+      "codeHash": "4e6c2271c46007e9be432b1a5006aa2b275edd3de37340020bf06adafbaa3c27",
+      "spec": {
+        "template": "sequence",
+        "title": "Sign-bit masking with 0x7fffffff before modulo partition assignment",
+        "actors": [
+          {
+            "id": "hasher",
+            "label": "32-Bit Signed Hash"
+          },
+          {
+            "id": "masker",
+            "label": "Sign-Bit Mask (0x7fffffff)"
+          },
+          {
+            "id": "router",
+            "label": "Modulo Partitioner"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Executing hash modulo on a negative integer yields a negative partition index.",
+            "messages": [
+              {
+                "from": "hasher",
+                "to": "masker",
+                "label": "Signed 32-Bit Hash (Potentially Negative)"
+              }
+            ],
+            "activeActorId": "masker"
+          },
+          {
+            "at": "say6",
+            "caption": "The algorithm masks the sign bit using bitwise AND with 0x7fffffff first.",
+            "messages": [
+              {
+                "from": "masker",
+                "to": "router",
+                "label": "positiveHash = hash & 0x7fffffff"
+              },
+              {
+                "from": "router",
+                "to": "hasher",
+                "label": "Valid Index [0..2] (positiveHash % 3)"
+              }
+            ],
+            "activeActorId": "router"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Sign-bit masking with 0x7fffffff before modulo partition assignment",
+        "actors": [
+          {
+            "id": "hasher",
+            "label": "32-Bit Signed Hash"
+          },
+          {
+            "id": "masker",
+            "label": "Sign-Bit Mask (0x7fffffff)"
+          },
+          {
+            "id": "router",
+            "label": "Modulo Partitioner"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Executing hash modulo on a negative integer yields a negative partition index.",
+            "messages": [
+              {
+                "from": "hasher",
+                "to": "masker",
+                "label": "Signed 32-Bit Hash (Potentially Negative)"
+              }
+            ],
+            "activeActorId": "masker"
+          },
+          {
+            "at": "say6",
+            "caption": "The algorithm masks the sign bit using bitwise AND with 0x7fffffff first.",
+            "messages": [
+              {
+                "from": "masker",
+                "to": "router",
+                "label": "positiveHash = hash & 0x7fffffff"
+              },
+              {
+                "from": "router",
+                "to": "hasher",
+                "label": "Valid Index [0..2] (positiveHash % 3)"
+              }
+            ],
+            "activeActorId": "router"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Round-Robin vs Sticky Partitioning for Null-Keyed Messages",
+      "codeHash": "12373e5ae78024a38aa97647153bbe41bb90d8b0ad8bb071015acd8a7e4952a3",
+      "spec": {
+        "template": "cells",
+        "title": "Sticky partitioner batch accumulation and partition rotation",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Scattered consecutive messages leave producer network buffers with tiny batches.",
+            "items": [
+              {
+                "text": "P0: null-key-event-0"
+              },
+              {
+                "text": "P0: null-key-event-1"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "batch",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The sticky partitioner sticks null-keyed messages until a full batch forms.",
+            "items": [
+              {
+                "text": "P0: null-key-event-0"
+              },
+              {
+                "text": "P0: null-key-event-1"
+              },
+              {
+                "text": "P1: null-key-event-2"
+              },
+              {
+                "text": "P1: null-key-event-3"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "rotated",
+                "index": 3,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Sticky partitioner batch accumulation and partition rotation",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Scattered consecutive messages leave producer network buffers with tiny batches.",
+            "items": [
+              "P0: null-key-event-0",
+              "P0: null-key-event-1"
+            ],
+            "pointers": [
+              {
+                "name": "batch",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The sticky partitioner sticks null-keyed messages until a full batch forms.",
+            "items": [
+              "P0: null-key-event-0",
+              "P0: null-key-event-1",
+              "P1: null-key-event-2",
+              "P1: null-key-event-3"
+            ],
+            "pointers": [
+              {
+                "name": "rotated",
+                "index": 3,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Multi-Partition Producer Dispatcher",
+      "codeHash": "dc8dd0445203cac2e9c43b7813973bc304be1139593205f813b2e9a2df2b549b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

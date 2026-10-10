@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Choosing a strategy that fits",
+      "codeHash": "fb38097e9c5e846ed143df1c277ccc609c32f30e17710d20f789e942be3b9862",
+      "spec": {
+        "template": "table",
+        "title": "ZeRO stage selection and memory headroom evaluation",
+        "columns": [
+          "params",
+          "gpus",
+          "gpu_gb"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Start with plain data parallelism then escalate to ZeRO sharding stages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "gpu_gb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "gpu_gb"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Simpler strategies communicate less and are easier to debug during runs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "gpu_gb"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ZeRO stage selection and memory headroom evaluation",
+        "columns": [
+          "params",
+          "gpus",
+          "gpu_gb"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Start with plain data parallelism then escalate to ZeRO sharding stages.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "gpu_gb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "gpu_gb"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Simpler strategies communicate less and are easier to debug during runs.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "gpu_gb"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The complete plan",
+      "codeHash": "f7996442e1524221a61712a2f15acac0dd6973f7fa53bb9c8bdf4a280c89c324",
+      "spec": {
+        "template": "table",
+        "title": "Production distributed training specification document",
+        "columns": [
+          "plan",
+          "key",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A complete training plan answers standard engineering questions beforehand.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Writing comprehensive execution plans is core engineering work in AI teams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "key"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production distributed training specification document",
+        "columns": [
+          "plan",
+          "key",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A complete training plan answers standard engineering questions beforehand.",
+            "rows": [
+              {
+                "cells": [
+                  "plan",
+                  "key",
+                  "value"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "plan",
+                  "key",
+                  "value"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Writing comprehensive execution plans is core engineering work in AI teams.",
+            "rows": [
+              {
+                "cells": [
+                  "plan",
+                  "key",
+                  "value"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "plan",
+                  "key",
+                  "plan"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reporting a training run",
+      "codeHash": "d5d6d89474ece60c7e38ef825455d27c049ebd6a85cdcd6097dd69009594cb1d",
+      "spec": {
+        "template": "table",
+        "title": "Run performance report and numerical health metrics",
+        "columns": [
+          "good",
+          "loss",
+          "good"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A final report summarises what actually happened during distributed training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "good"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "good"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "NaN losses must be excluded when identifying the best validation loss.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "good"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "loss"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Run performance report and numerical health metrics",
+        "columns": [
+          "good",
+          "loss",
+          "good"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A final report summarises what actually happened during distributed training.",
+            "rows": [
+              {
+                "cells": [
+                  "good",
+                  "loss",
+                  "good"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "good",
+                  "loss",
+                  "good"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "NaN losses must be excluded when identifying the best validation loss.",
+            "rows": [
+              {
+                "cells": [
+                  "good",
+                  "loss",
+                  "good"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "good",
+                  "loss",
+                  "loss"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Everything you can now calculate",
+      "codeHash": "d403101b99884daff7ba9b76be2e71685b16143e2755da41c19595a7b9ba5bea",
+      "spec": {
+        "template": "table",
+        "title": "Calculated fundamentals across memory compute reliability and planning",
+        "columns": [
+          "toolkit",
+          "theme",
+          "tools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Learners build a comprehensive toolkit of calculations and simulations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "theme"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "theme"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Software frameworks change quickly but foundational principles stay the same.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "theme"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "toolkit"
+                  },
+                  {
+                    "text": "theme"
+                  },
+                  {
+                    "text": "toolkit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Calculated fundamentals across memory compute reliability and planning",
+        "columns": [
+          "toolkit",
+          "theme",
+          "tools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Learners build a comprehensive toolkit of calculations and simulations.",
+            "rows": [
+              {
+                "cells": [
+                  "toolkit",
+                  "theme",
+                  "tools"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "toolkit",
+                  "theme",
+                  "tools"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Software frameworks change quickly but foundational principles stay the same.",
+            "rows": [
+              {
+                "cells": [
+                  "toolkit",
+                  "theme",
+                  "tools"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "toolkit",
+                  "theme",
+                  "toolkit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where to go next",
+      "codeHash": "193872d00702983437565a5ea2a264f72158db10d82795801d1a8b99b4d46784",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Capstone practice: plan and report",
+      "codeHash": "a15087eb3c2f310c9316db3f98a3057ac947a0cb5b5283f99a2638a65eedaa1a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

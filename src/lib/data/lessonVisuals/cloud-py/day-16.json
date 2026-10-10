@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a CDN does",
+      "codeHash": "fe79513564f04e429bb5a61766cb8b3c381137befd5a746cf1f7c4930d9ef792",
+      "spec": {
+        "template": "table",
+        "title": "CloudFront edge cache hit and miss lifecycle simulation",
+        "columns": [
+          "path",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Edges return cached content on hits and fetch from origin on misses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/logo.png"
+                  },
+                  {
+                    "text": "misses"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cache hits respond rapidly while reducing data transfer and origin load.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/logo.png"
+                  },
+                  {
+                    "text": "misses"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/logo.png"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates edge cache retrieval measuring overall hit ratio.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/logo.png"
+                  },
+                  {
+                    "text": "misses"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/logo.png"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/video1.mp4"
+                  },
+                  {
+                    "text": "misses"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "CloudFront edge cache hit and miss lifecycle simulation",
+        "columns": [
+          "path",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Edges return cached content on hits and fetch from origin on misses.",
+            "rows": [
+              {
+                "cells": [
+                  "/logo.png",
+                  "misses"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cache hits respond rapidly while reducing data transfer and origin load.",
+            "rows": [
+              {
+                "cells": [
+                  "/logo.png",
+                  "misses"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "/logo.png",
+                  "hits"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates edge cache retrieval measuring overall hit ratio.",
+            "rows": [
+              {
+                "cells": [
+                  "/logo.png",
+                  "misses"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "/logo.png",
+                  "hits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/video1.mp4",
+                  "misses"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache-Control and TTL",
+      "codeHash": "abef421e1e319a0dcb69ec79e9d4562a2363eefec8ba1da4d1889cb202d70a5c",
+      "spec": {
+        "template": "table",
+        "title": "Cache-Control header directive parsing and TTL priority precedence",
+        "columns": [
+          "directive",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The s-maxage directive specifies TTL for shared caches like CloudFront.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public, max-age=3600"
+                  },
+                  {
+                    "text": "max-age="
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max-age=60, s-maxage=600"
+                  },
+                  {
+                    "text": "s-maxage="
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Directives like no-store and private prevent shared edge caching.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public, max-age=3600"
+                  },
+                  {
+                    "text": "max-age="
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max-age=60, s-maxage=600"
+                  },
+                  {
+                    "text": "s-maxage="
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "no-store"
+                  },
+                  {
+                    "text": "no-store"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Split header directives checking private before falling back to the default.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public, max-age=3600"
+                  },
+                  {
+                    "text": "max-age="
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max-age=60, s-maxage=600"
+                  },
+                  {
+                    "text": "s-maxage="
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "no-store"
+                  },
+                  {
+                    "text": "no-store"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cache-Control header directive parsing and TTL priority precedence",
+        "columns": [
+          "directive",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The s-maxage directive specifies TTL for shared caches like CloudFront.",
+            "rows": [
+              {
+                "cells": [
+                  "public, max-age=3600",
+                  "max-age="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max-age=60, s-maxage=600",
+                  "s-maxage="
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Directives like no-store and private prevent shared edge caching.",
+            "rows": [
+              {
+                "cells": [
+                  "public, max-age=3600",
+                  "max-age="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max-age=60, s-maxage=600",
+                  "s-maxage="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "no-store",
+                  "no-store"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Split header directives checking private before falling back to the default.",
+            "rows": [
+              {
+                "cells": [
+                  "public, max-age=3600",
+                  "max-age="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max-age=60, s-maxage=600",
+                  "s-maxage="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "no-store",
+                  "no-store"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache keys and hit ratio",
+      "codeHash": "2a00d15cf5f4d57661f4e448071142b7e35bbb5be3c4ca5219ec92ce140970b7",
+      "spec": {
+        "template": "table",
+        "title": "Cache key attribute dimensions and collision impact on hit ratios",
+        "columns": [
+          "field",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CloudFront uses the cache key to determine whether requests match objects.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/home"
+                  },
+                  {
+                    "text": "en"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Excessive cache key headers split cache entries collapsing the hit ratio.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/home"
+                  },
+                  {
+                    "text": "en"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/home"
+                  },
+                  {
+                    "text": "hi"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example compares cache keys demonstrating impact on overall hits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/home"
+                  },
+                  {
+                    "text": "en"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/home"
+                  },
+                  {
+                    "text": "hi"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cache key attribute dimensions and collision impact on hit ratios",
+        "columns": [
+          "field",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CloudFront uses the cache key to determine whether requests match objects.",
+            "rows": [
+              {
+                "cells": [
+                  "/home",
+                  "en"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Excessive cache key headers split cache entries collapsing the hit ratio.",
+            "rows": [
+              {
+                "cells": [
+                  "/home",
+                  "en"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/home",
+                  "hi"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example compares cache keys demonstrating impact on overall hits.",
+            "rows": [
+              {
+                "cells": [
+                  "/home",
+                  "en"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "/home",
+                  "hi"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Invalidations and versioned file names",
+      "codeHash": "d8517bccb59389318f9d557ba023b4e5186221ede5a4707c43a0a509c02fa553",
+      "spec": {
+        "template": "table",
+        "title": "Static asset cache busting comparing invalidations and content hashes",
+        "columns": [
+          "asset",
+          "version_content"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Invalidations force edges to drop cached copies when assets are updated.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "app.js"
+                  },
+                  {
+                    "text": "console-free build v1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Versioned file names embed content hashes making cache updates instantaneous.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "app.js"
+                  },
+                  {
+                    "text": "console-free build v1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "app.js"
+                  },
+                  {
+                    "text": "console-free build v2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds versioned asset names derived from file contents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "app.js"
+                  },
+                  {
+                    "text": "console-free build v1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "app.js"
+                  },
+                  {
+                    "text": "console-free build v2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Static asset cache busting comparing invalidations and content hashes",
+        "columns": [
+          "asset",
+          "version_content"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Invalidations force edges to drop cached copies when assets are updated.",
+            "rows": [
+              {
+                "cells": [
+                  "app.js",
+                  "console-free build v1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Versioned file names embed content hashes making cache updates instantaneous.",
+            "rows": [
+              {
+                "cells": [
+                  "app.js",
+                  "console-free build v1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "app.js",
+                  "console-free build v2"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds versioned asset names derived from file contents.",
+            "rows": [
+              {
+                "cells": [
+                  "app.js",
+                  "console-free build v1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "app.js",
+                  "console-free build v2"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Code at the edge",
+      "codeHash": "0928c26073b50b0cc89afb26ae822e5a8406c2685d4fa83d4356beeae394617d",
+      "spec": {
+        "template": "none",
+        "reason": "Edge compute with CloudFront Functions and Lambda@Edge."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: TTLs and cache keys",
+      "codeHash": "ac263039c03890602da414a75afee31f5e9283875a418521d34ce7012ad2e0b7",
+      "spec": {
+        "template": "none",
+        "reason": "TTL priority and cache key parameter sorting practice."
+      },
+      "filled": {}
+    }
+  ]
+}

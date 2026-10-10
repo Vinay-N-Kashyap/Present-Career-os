@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 28,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Foundations of Automated Canary Analysis (ACA)",
+      "codeHash": "5e11c6f550c6172f18075bdda3f302caebd05aefc94db075049637d1c097a851",
+      "spec": {
+        "template": "compare",
+        "title": "Manual Dashboard Guesswork versus Automated Canary Analysis",
+        "left": {
+          "title": "Manual Visual Inspection",
+          "items": [
+            "Prone to confirmation bias and fatigue",
+            "Misses subtle 5% latency regressions",
+            "Tricked by global datacenter traffic spikes",
+            "Slow manual decision bottlenecks"
+          ]
+        },
+        "right": {
+          "title": "Automated Canary Analysis (ACA)",
+          "items": [
+            "Simultaneously samples baseline and canary cohorts",
+            "Filters out concurrent environmental noise",
+            "Isolates causal delta from code changes",
+            "Replaces guesswork with statistical math"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Automated canary analysis replaces human guesswork with algorithms.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Concurrent sampling under identical traffic filters environmental noise.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Manual Visual Inspection",
+        "rightLabel": "Automated Canary Analysis (ACA)"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Manual Dashboard Guesswork versus Automated Canary Analysis",
+        "left": {
+          "title": "Manual Visual Inspection",
+          "items": [
+            "Prone to confirmation bias and fatigue",
+            "Misses subtle 5% latency regressions",
+            "Tricked by global datacenter traffic spikes",
+            "Slow manual decision bottlenecks"
+          ]
+        },
+        "right": {
+          "title": "Automated Canary Analysis (ACA)",
+          "items": [
+            "Simultaneously samples baseline and canary cohorts",
+            "Filters out concurrent environmental noise",
+            "Isolates causal delta from code changes",
+            "Replaces guesswork with statistical math"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Automated canary analysis replaces human guesswork with algorithms.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Concurrent sampling under identical traffic filters environmental noise.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Manual Visual Inspection",
+        "rightLabel": "Automated Canary Analysis (ACA)"
+      }
+    },
+    {
+      "partTitle": "Metric Deltas & Statistical Tolerance Thresholds",
+      "codeHash": "ab99d905c7264330b90754f9957666929f971edbf76a38e80b02d9bea4778d60",
+      "spec": {
+        "template": "table",
+        "title": "Canary Metric Delta Tolerance Threshold Evaluation",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Tolerance thresholds are defined across hard failures and soft deviations.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Statistical bounds prevent rollbacks on tiny fractional variations.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Metric",
+          "Max Allowed Increase",
+          "Category",
+          "Evaluation Verdict"
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Canary Metric Delta Tolerance Threshold Evaluation",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Tolerance thresholds are defined across hard failures and soft deviations.",
+            "highlightRow": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Statistical bounds prevent rollbacks on tiny fractional variations.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ],
+        "columns": [
+          "Metric",
+          "Max Allowed Increase",
+          "Category",
+          "Evaluation Verdict"
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Metric Composite Scoring & Weighted Grading",
+      "codeHash": "203684c5d470c1b57ba8412135676a9336ea2c70158e843314c9c9c49ac3f485",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Metric Composite Canary Health Score Weights",
+        "bars": [
+          {
+            "label": "Error Rate Weight",
+            "value": 40,
+            "unit": "%"
+          },
+          {
+            "label": "p95 Latency Weight",
+            "value": 30,
+            "unit": "%"
+          },
+          {
+            "label": "Resource Saturation Weight",
+            "value": 20,
+            "unit": "%"
+          },
+          {
+            "label": "Business Conversion Weight",
+            "value": 10,
+            "unit": "%"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated canary analysis compiles a composite canary health score.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Scores above eighty points trigger promotion while low scores rollback.",
+            "highlightIndex": 1,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Multi-Metric Composite Canary Health Score Weights",
+        "bars": [
+          {
+            "label": "Error Rate Weight",
+            "value": 40,
+            "unit": "%"
+          },
+          {
+            "label": "p95 Latency Weight",
+            "value": 30,
+            "unit": "%"
+          },
+          {
+            "label": "Resource Saturation Weight",
+            "value": 20,
+            "unit": "%"
+          },
+          {
+            "label": "Business Conversion Weight",
+            "value": 10,
+            "unit": "%"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated canary analysis compiles a composite canary health score.",
+            "highlightIndex": 0,
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Scores above eighty points trigger promotion while low scores rollback.",
+            "highlightIndex": 1,
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Observation Soak Windows & Sample Size Minimums",
+      "codeHash": "24e9a8384966338c01fb1a0a63c46cbe642a618f732318d86153ed1155e2311e",
+      "spec": {
+        "template": "states",
+        "title": "Canary Observation Soak and Sample Size Readiness State",
+        "states": [
+          {
+            "id": "early",
+            "label": "EARLY_SOAK"
+          },
+          {
+            "id": "low_sample",
+            "label": "OBSERVING_HOLD"
+          },
+          {
+            "id": "valid",
+            "label": "READY_FOR_EVALUATION"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "early",
+            "to": "low_sample",
+            "label": "Wait 15m"
+          },
+          {
+            "from": "low_sample",
+            "to": "valid",
+            "label": "Reach 2000 reqs"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Rigorous engines enforce minimum sample size and minimum soak duration.",
+            "activeState": "early",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Insufficient sample sizes hold the canary in an observing state.",
+            "activeState": "low_sample",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Canary Observation Soak and Sample Size Readiness State",
+        "states": [
+          {
+            "id": "early",
+            "label": "EARLY_SOAK"
+          },
+          {
+            "id": "low_sample",
+            "label": "OBSERVING_HOLD"
+          },
+          {
+            "id": "valid",
+            "label": "READY_FOR_EVALUATION"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "early",
+            "to": "low_sample",
+            "label": "Wait 15m"
+          },
+          {
+            "from": "low_sample",
+            "to": "valid",
+            "label": "Reach 2000 reqs"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Rigorous engines enforce minimum sample size and minimum soak duration.",
+            "activeState": "early",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Insufficient sample sizes hold the canary in an observing state.",
+            "activeState": "low_sample",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Canary Stage Gates & Progressive Traffic Promotion",
+      "codeHash": "c428328d739ce0c6711685d739e75fa060d3ff58e882a113cd6b474ab59b2b76",
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-Stage Canary Gate Promotion Pipeline",
+        "nodes": [
+          {
+            "id": "stage1",
+            "label": "Stage 1: 2% Traffic",
+            "description": "10m soak, min score 80"
+          },
+          {
+            "id": "stage2",
+            "label": "Stage 2: 10% Traffic",
+            "description": "15m soak, min score 80"
+          },
+          {
+            "id": "stage3",
+            "label": "Stage 3: 50% Traffic",
+            "description": "20m soak, min score 85"
+          },
+          {
+            "id": "promote",
+            "label": "100% Promotion",
+            "description": "Full production traffic release"
+          }
+        ],
+        "edges": [
+          {
+            "from": "stage1",
+            "to": "stage2",
+            "label": "Score >= 80"
+          },
+          {
+            "from": "stage2",
+            "to": "stage3",
+            "label": "Score >= 80"
+          },
+          {
+            "from": "stage3",
+            "to": "promote",
+            "label": "Score >= 85"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Deployments progress through calibrated multi-stage canary gates.",
+            "activeNode": "stage1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Controllers evaluate canary health scores before granting stage approval.",
+            "activeNode": "stage3",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Multi-Stage Canary Gate Promotion Pipeline",
+        "nodes": [
+          {
+            "id": "stage1",
+            "label": "Stage 1: 2% Traffic",
+            "description": "10m soak, min score 80"
+          },
+          {
+            "id": "stage2",
+            "label": "Stage 2: 10% Traffic",
+            "description": "15m soak, min score 80"
+          },
+          {
+            "id": "stage3",
+            "label": "Stage 3: 50% Traffic",
+            "description": "20m soak, min score 85"
+          },
+          {
+            "id": "promote",
+            "label": "100% Promotion",
+            "description": "Full production traffic release"
+          }
+        ],
+        "edges": [
+          {
+            "from": "stage1",
+            "to": "stage2",
+            "label": "Score >= 80"
+          },
+          {
+            "from": "stage2",
+            "to": "stage3",
+            "label": "Score >= 80"
+          },
+          {
+            "from": "stage3",
+            "to": "promote",
+            "label": "Score >= 85"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Deployments progress through calibrated multi-stage canary gates.",
+            "activeNode": "stage1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Controllers evaluate canary health scores before granting stage approval.",
+            "activeNode": "stage3",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Canary Promotion & Rollback Decision Pipeline",
+      "codeHash": "06d3c019b006ede2045c43a8df771be6ca861d737271d0b4e5fc51e19dda6c1d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

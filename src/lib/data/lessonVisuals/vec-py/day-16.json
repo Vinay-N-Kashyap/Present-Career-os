@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Layers like a skip list",
+      "codeHash": "4090b224a3b25f89672b48cbedd697cc963ba634f831e6baee033799260933ff",
+      "spec": {
+        "template": "table",
+        "title": "Hierarchical layers and node density scaling",
+        "columns": [
+          "level",
+          "count",
+          "level"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stacked graphs contain shrinking subsets of nodes across higher layers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "level"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "level"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Search starts at the top layer and greedily descends through finer links.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "level"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "count"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hierarchical layers and node density scaling",
+        "columns": [
+          "level",
+          "count",
+          "level"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stacked graphs contain shrinking subsets of nodes across higher layers.",
+            "rows": [
+              {
+                "cells": [
+                  "level",
+                  "count",
+                  "level"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "level",
+                  "count",
+                  "level"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Search starts at the top layer and greedily descends through finer links.",
+            "rows": [
+              {
+                "cells": [
+                  "level",
+                  "count",
+                  "level"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "count",
+                  "count"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Random levels",
+      "codeHash": "ced444cc101bfe1b7c4a35843d35115f35a8414b72bf7c5528dcae2a5bf3dffe",
+      "spec": {
+        "template": "table",
+        "title": "Exponential distribution layer selection",
+        "columns": [
+          "counts",
+          "level",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each inserted node draws its maximum level from a random distribution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "An exponential distribution creates shrinking layers without global planning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "level"
+                  },
+                  {
+                    "text": "level"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exponential distribution layer selection",
+        "columns": [
+          "counts",
+          "level",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each inserted node draws its maximum level from a random distribution.",
+            "rows": [
+              {
+                "cells": [
+                  "counts",
+                  "level",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "counts",
+                  "level",
+                  "counts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "An exponential distribution creates shrinking layers without global planning.",
+            "rows": [
+              {
+                "cells": [
+                  "counts",
+                  "level",
+                  "counts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "counts",
+                  "level",
+                  "level"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Neighbour selection",
+      "codeHash": "740b5218579e5f712805c7d6b32d48e01bf9cc7453e30a0724a116c5cc5af197",
+      "spec": {
+        "template": "table",
+        "title": "Diverse directional candidate pruning heuristic",
+        "columns": [
+          "cands",
+          "kept",
+          "cands"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The heuristic keeps a candidate only if it is closer than existing links.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "cands"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "cands"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Pruning neighbours in different directions keeps the graph navigable.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "cands"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Diverse directional candidate pruning heuristic",
+        "columns": [
+          "cands",
+          "kept",
+          "cands"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The heuristic keeps a candidate only if it is closer than existing links.",
+            "rows": [
+              {
+                "cells": [
+                  "cands",
+                  "kept",
+                  "cands"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cands",
+                  "kept",
+                  "cands"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Pruning neighbours in different directions keeps the graph navigable.",
+            "rows": [
+              {
+                "cells": [
+                  "cands",
+                  "kept",
+                  "cands"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cands",
+                  "kept",
+                  "kept"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parameters: M, efConstruction and efSearch",
+      "codeHash": "148e33917eafef96a7ad99651af1a64e4f0c338e900dd3960f6dfc51558bbb1f",
+      "spec": {
+        "template": "table",
+        "title": "Degree bounds and graph connectivity trade-offs",
+        "columns": [
+          "link_bytes",
+          "link_bytes",
+          "link_bytes"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Larger link counts improve recall and robustness at higher memory cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The query beam width provides an everyday tuning knob for recall and speed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  },
+                  {
+                    "text": "link_bytes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Degree bounds and graph connectivity trade-offs",
+        "columns": [
+          "link_bytes",
+          "link_bytes",
+          "link_bytes"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Larger link counts improve recall and robustness at higher memory cost.",
+            "rows": [
+              {
+                "cells": [
+                  "link_bytes",
+                  "link_bytes",
+                  "link_bytes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "link_bytes",
+                  "link_bytes",
+                  "link_bytes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The query beam width provides an everyday tuning knob for recall and speed.",
+            "rows": [
+              {
+                "cells": [
+                  "link_bytes",
+                  "link_bytes",
+                  "link_bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "link_bytes",
+                  "link_bytes",
+                  "link_bytes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Searching all the layers",
+      "codeHash": "b0998092419178121d14b72a1a2065ec2bcd3ed1b42e60678aa0cecc9b1e6b43",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: HNSW pieces",
+      "codeHash": "144e523652843af47fa5bd65e6de6a2c3c8d15ebb9c31427f529b018727fd2ac",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

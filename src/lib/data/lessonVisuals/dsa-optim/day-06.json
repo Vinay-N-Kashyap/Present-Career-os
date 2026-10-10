@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 6,
+  "promptSha": "7b61ad0d8ef82fd7e4de29cc9e16248e0b789220ea4e0420b5c5f4ed2d2dadf3",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "FIFO Queue Semantics & Array-Based Implementation",
+      "codeHash": "0fc49286dff002129abf01dc112f1db900605c8b427f84e8676dd066c58b91e0",
+      "spec": {
+        "template": "stack-queue",
+        "title": "FIFO queue operations",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Enqueue adds element to back of FIFO queue.",
+            "action": "push",
+            "actionItem": {
+              "text": "C"
+            },
+            "items": [
+              {
+                "text": "A"
+              },
+              {
+                "text": "B"
+              },
+              {
+                "text": "C"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dequeue removes element from front of queue.",
+            "action": "pop",
+            "actionItem": {
+              "text": "A"
+            },
+            "items": [
+              {
+                "text": "B"
+              },
+              {
+                "text": "C"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "FIFO queue operations",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Enqueue adds element to back of FIFO queue.",
+            "action": "push",
+            "actionItem": "C",
+            "items": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dequeue removes element from front of queue.",
+            "action": "pop",
+            "actionItem": "A",
+            "items": [
+              "B",
+              "C"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Circular Ring Buffer Architecture",
+      "codeHash": "6f9fb64a945abf3cd75cd5a398a2788070caef17f29b2f7600aa4abd75507945",
+      "spec": {
+        "template": "cells",
+        "title": "Circular buffer head and tail indexing",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Circular buffer maintains head and tail pointers.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "20"
+              },
+              {
+                "text": "30"
+              },
+              {
+                "text": "undefined"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "tail",
+                "index": 3,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Buffer reaches full state when tail reaches head.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "20"
+              },
+              {
+                "text": "30"
+              },
+              {
+                "text": "undefined"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "tail",
+                "index": 3,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Circular buffer head and tail indexing",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Circular buffer maintains head and tail pointers.",
+            "items": [
+              "10",
+              "20",
+              "30",
+              "undefined"
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "tail",
+                "index": 3,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Buffer reaches full state when tail reaches head.",
+            "items": [
+              "10",
+              "20",
+              "30",
+              "undefined"
+            ],
+            "pointers": [
+              {
+                "name": "head",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "tail",
+                "index": 3,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Double-Ended Queue (Deque) Operations",
+      "codeHash": "46b79d42a7e50385212bd537b6274e650eb100e498fa362c5abfdd817e58f77d",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Deque bidirectional operations",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deque supports constant time insertion at front and back.",
+            "action": "push",
+            "actionItem": {
+              "text": "0"
+            },
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deque operations support sliding window maximum algorithms.",
+            "action": "pop",
+            "actionItem": {
+              "text": "0"
+            },
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Deque bidirectional operations",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deque supports constant time insertion at front and back.",
+            "action": "push",
+            "actionItem": "0",
+            "items": [
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Deque operations support sliding window maximum algorithms.",
+            "action": "pop",
+            "actionItem": "0",
+            "items": [
+              "1",
+              "2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BFS Level-Order Traversal Using Queues",
+      "codeHash": "431d2d30e016aea7eec75db0876424e7616f8f33e6556d25b1122a1fe9ce33d1",
+      "spec": {
+        "template": "tree-graph",
+        "title": "BFS level-order graph traversal",
+        "nodes": [
+          {
+            "id": "a",
+            "label": "A"
+          },
+          {
+            "id": "b",
+            "label": "B"
+          },
+          {
+            "id": "c",
+            "label": "C"
+          },
+          {
+            "id": "d",
+            "label": "D"
+          },
+          {
+            "id": "e",
+            "label": "E"
+          }
+        ],
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "d"
+          ],
+          [
+            "c",
+            "d"
+          ],
+          [
+            "c",
+            "e"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "BFS enqueues root node and marks it visited.",
+            "activeNodeId": "a",
+            "visitedNodeIds": [
+              "a"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dequeuing front node explores unvisited neighbors.",
+            "activeNodeId": "b",
+            "visitedNodeIds": [
+              "a",
+              "b",
+              "c"
+            ],
+            "activeEdge": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "BFS level-order graph traversal",
+        "nodes": [
+          {
+            "id": "a",
+            "label": "A"
+          },
+          {
+            "id": "b",
+            "label": "B"
+          },
+          {
+            "id": "c",
+            "label": "C"
+          },
+          {
+            "id": "d",
+            "label": "D"
+          },
+          {
+            "id": "e",
+            "label": "E"
+          }
+        ],
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "d"
+          ],
+          [
+            "c",
+            "d"
+          ],
+          [
+            "c",
+            "e"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "BFS enqueues root node and marks it visited.",
+            "activeNodeId": "a",
+            "visitedNodeIds": [
+              "a"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dequeuing front node explores unvisited neighbors.",
+            "activeNodeId": "b",
+            "visitedNodeIds": [
+              "a",
+              "b",
+              "c"
+            ],
+            "activeEdge": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Priority Queue Preview & Heap Ordering Contrast",
+      "codeHash": "bfa01846c4ea839a0718a4e98f0fbf1a877cde672b723762065f340c022b48b2",
+      "spec": {
+        "template": "compare",
+        "title": "FIFO queue vs priority queue ordering",
+        "leftLabel": "FIFO Queue",
+        "rightLabel": "Priority Queue",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Priority queue dequeues highest priority item first.",
+            "left": {
+              "code": "backup",
+              "result": {
+                "text": "5"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "alert",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Binary heap provides logarithmic enqueue and dequeue.",
+            "left": {
+              "code": "report",
+              "result": {
+                "text": "3"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "alert",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "FIFO queue vs priority queue ordering",
+        "leftLabel": "FIFO Queue",
+        "rightLabel": "Priority Queue",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Priority queue dequeues highest priority item first.",
+            "left": {
+              "code": "backup",
+              "result": "5",
+              "tone": "data"
+            },
+            "right": {
+              "code": "alert",
+              "result": "1",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Binary heap provides logarithmic enqueue and dequeue.",
+            "left": {
+              "code": "report",
+              "result": "3",
+              "tone": "data"
+            },
+            "right": {
+              "code": "alert",
+              "result": "1",
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Task Scheduler with Queue Orchestration",
+      "codeHash": "0a42d36da51b25b1ed2cc65caa49c23357e1490379916929cd8f3217f8e2e386",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

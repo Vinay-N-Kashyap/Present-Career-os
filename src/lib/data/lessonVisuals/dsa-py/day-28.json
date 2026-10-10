@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Choose, explore, un-choose",
+      "codeHash": "d8860ff3f5493a6ec787e7380ada8a4ddf0fe4a3373a2a2dcd0ae210280e1767",
+      "spec": {
+        "template": "table",
+        "title": "Backtracking recursion lifecycle states",
+        "columns": [
+          "Backtracking Phase",
+          "Action on Partial Solution",
+          "State Mutation"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The pattern is always choose explore and un-choose.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Choose"
+                  },
+                  {
+                    "text": "Place queen on square"
+                  },
+                  {
+                    "text": "state.add(col)"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Depth-first search walks a tree of partial decisions towards leaves.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Choose"
+                  },
+                  {
+                    "text": "Place queen on square"
+                  },
+                  {
+                    "text": "state.add(col)"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Explore"
+                  },
+                  {
+                    "text": "Recurse to next row"
+                  },
+                  {
+                    "text": "dfs(row + 1)"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Backtracking recursion lifecycle states",
+        "columns": [
+          "Backtracking Phase",
+          "Action on Partial Solution",
+          "State Mutation"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The pattern is always choose explore and un-choose.",
+            "rows": [
+              {
+                "cells": [
+                  "Choose",
+                  "Place queen on square",
+                  "state.add(col)"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Depth-first search walks a tree of partial decisions towards leaves.",
+            "rows": [
+              {
+                "cells": [
+                  "Choose",
+                  "Place queen on square",
+                  "state.add(col)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Explore",
+                  "Recurse to next row",
+                  "dfs(row + 1)"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pruning: stop early",
+      "codeHash": "8dd073a1a201cee403c6f90f1c19dbb4e8099d11ec3a7f9f556cc6ad2f851df5",
+      "spec": {
+        "template": "compare",
+        "title": "Exhaustive permutation tree versus branch pruning",
+        "leftLabel": "Unpruned Search",
+        "rightLabel": "Pruned Backtracking",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Pruning checks constraints early abandoning paths that cannot succeed.",
+            "left": {
+              "code": "exhaustive search",
+              "result": {
+                "text": "explore every leaf"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "constraint check",
+              "result": {
+                "text": "abandon path early"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Good pruning detects bad choices early saving massive computation.",
+            "left": {
+              "code": "calls made",
+              "result": {
+                "text": "factorial calls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "calls made",
+              "result": {
+                "text": "instant answer"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Exhaustive permutation tree versus branch pruning",
+        "leftLabel": "Unpruned Search",
+        "rightLabel": "Pruned Backtracking",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Pruning checks constraints early abandoning paths that cannot succeed.",
+            "left": {
+              "code": "exhaustive search",
+              "result": "explore every leaf",
+              "tone": "error",
+              "checks": [
+                "explore every leaf"
+              ]
+            },
+            "right": {
+              "code": "constraint check",
+              "result": "abandon path early",
+              "tone": "ok",
+              "checks": [
+                "abandon path early"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Good pruning detects bad choices early saving massive computation.",
+            "left": {
+              "code": "calls made",
+              "result": "factorial calls",
+              "tone": "error",
+              "checks": [
+                "factorial calls"
+              ]
+            },
+            "right": {
+              "code": "calls made",
+              "result": "instant answer",
+              "tone": "ok",
+              "checks": [
+                "instant answer"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "N-Queens",
+      "codeHash": "1520e9a806d801a2118ef5cdb572f16a641ccbc56cd43cc60555ae1c04690c22",
+      "spec": {
+        "template": "table",
+        "title": "N-Queens attack validation sets",
+        "columns": [
+          "Attack Constraint",
+          "Mathematical Formula",
+          "Lookup Set"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Place one queen per row trying columns that are not attacked.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Column"
+                  },
+                  {
+                    "text": "col"
+                  },
+                  {
+                    "text": "cols set"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Checking attacks quickly keeps three sets for columns and diagonals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Column"
+                  },
+                  {
+                    "text": "col"
+                  },
+                  {
+                    "text": "cols set"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Diagonals"
+                  },
+                  {
+                    "text": "row - col, row + col"
+                  },
+                  {
+                    "text": "diag1, diag2 sets"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "N-Queens attack validation sets",
+        "columns": [
+          "Attack Constraint",
+          "Mathematical Formula",
+          "Lookup Set"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Place one queen per row trying columns that are not attacked.",
+            "rows": [
+              {
+                "cells": [
+                  "Column",
+                  "col",
+                  "cols set"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Checking attacks quickly keeps three sets for columns and diagonals.",
+            "rows": [
+              {
+                "cells": [
+                  "Column",
+                  "col",
+                  "cols set"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Diagonals",
+                  "row - col, row + col",
+                  "diag1, diag2 sets"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Printing a board",
+      "codeHash": "daa85ff3bf1cf5af1ebc95621e57b04bcd73ad739f40a52519bc8cc75609d389",
+      "spec": {
+        "template": "none",
+        "reason": "Rendering chessboard string representation from queen column coordinates."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Rendering chessboard string representation from queen column coordinates."
+      }
+    },
+    {
+      "partTitle": "Sudoku validation with sets",
+      "codeHash": "c476d0a56935c908b452ab71d9491822ff366930239dfc00ae53e190bcc153d4",
+      "spec": {
+        "template": "table",
+        "title": "Sudoku constraint validation using composite tuples",
+        "columns": [
+          "Board Dimension",
+          "Record Hash Tuple",
+          "Conflict Detection"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validate partly filled Sudoku board ensuring no digit is repeated.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Row Constraint"
+                  },
+                  {
+                    "text": "(\"row\", r, digit)"
+                  },
+                  {
+                    "text": "Unique per row"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Record each digit three ways in one set detecting duplicate rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Row Constraint"
+                  },
+                  {
+                    "text": "(\"row\", r, digit)"
+                  },
+                  {
+                    "text": "Unique per row"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Box Constraint"
+                  },
+                  {
+                    "text": "(\"box\", r//3, c//3, digit)"
+                  },
+                  {
+                    "text": "Unique per 3x3 box"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sudoku constraint validation using composite tuples",
+        "columns": [
+          "Board Dimension",
+          "Record Hash Tuple",
+          "Conflict Detection"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validate partly filled Sudoku board ensuring no digit is repeated.",
+            "rows": [
+              {
+                "cells": [
+                  "Row Constraint",
+                  "(\"row\", r, digit)",
+                  "Unique per row"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Record each digit three ways in one set detecting duplicate rules.",
+            "rows": [
+              {
+                "cells": [
+                  "Row Constraint",
+                  "(\"row\", r, digit)",
+                  "Unique per row"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Box Constraint",
+                  "(\"box\", r//3, c//3, digit)",
+                  "Unique per 3x3 box"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When to reach for backtracking",
+      "codeHash": "a1a9212de66888913b5faed27c41f73477d0451003598330558e4b3d03826c80",
+      "spec": {
+        "template": "none",
+        "reason": "Guidelines identifying combinatorial search versus DP and greedy approaches."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Guidelines identifying combinatorial search versus DP and greedy approaches."
+      }
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 12,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why normal variables are not enough",
+      "codeHash": "81e49a9b9ade8bb9126917a1941b3ad67eae23aacab0ae76024a1355e4809165",
+      "spec": {
+        "template": "compare",
+        "title": "Local variable re-execution versus persistent state memory",
+        "leftLabel": "Local Variable",
+        "rightLabel": "Persistent State",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A normal variable resets every time a component function runs.",
+            "left": {
+              "code": "console.log(Counter());",
+              "result": {
+                "text": "\"Count: 1\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(Counter());",
+              "result": {
+                "text": "\"Count: 1\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "State data stored by React persists across component redraws.",
+            "left": {
+              "code": "console.log(Counter());",
+              "result": {
+                "text": "\"Count: 1\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(Counter());",
+              "result": {
+                "text": "\"Count: 1\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Local variable re-execution versus persistent state memory",
+        "leftLabel": "Local Variable",
+        "rightLabel": "Persistent State",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A normal variable resets every time a component function runs.",
+            "left": {
+              "code": "console.log(Counter());",
+              "result": "\"Count: 1\"",
+              "tone": "warn",
+              "checks": [
+                "\"Count: 1\""
+              ]
+            },
+            "right": {
+              "code": "console.log(Counter());",
+              "result": "\"Count: 1\"",
+              "tone": "idle",
+              "checks": [
+                "\"Count: 1\""
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "State data stored by React persists across component redraws.",
+            "left": {
+              "code": "console.log(Counter());",
+              "result": "\"Count: 1\"",
+              "tone": "warn",
+              "checks": [
+                "\"Count: 1\""
+              ]
+            },
+            "right": {
+              "code": "console.log(Counter());",
+              "result": "\"Count: 1\"",
+              "tone": "ok",
+              "checks": [
+                "\"Count: 1\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "useState: value and setter",
+      "codeHash": "87f7d6effd2fdf87fdc73392ce5a52ea5dffeb9bb5ccac9d8ad903ac5bdaa234",
+      "spec": {
+        "template": "boxes",
+        "title": "State tuple value and updater function dispatch",
+        "boxes": [
+          {
+            "id": "val",
+            "label": "count",
+            "tappable": false
+          },
+          {
+            "id": "setter",
+            "label": "setCount",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Calling useState returns the current value and a setter function.",
+            "values": {
+              "val": {
+                "text": "0"
+              },
+              "setter": {
+                "text": "setCount"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Calling the setter function schedules a redraw with the new value.",
+            "values": {
+              "val": {
+                "text": "1"
+              },
+              "setter": {
+                "text": "setCount"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "State tuple value and updater function dispatch",
+        "boxes": [
+          {
+            "id": "val",
+            "label": "count",
+            "tappable": false
+          },
+          {
+            "id": "setter",
+            "label": "setCount",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Calling useState returns the current value and a setter function.",
+            "values": {
+              "val": "0",
+              "setter": "setCount"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Calling the setter function schedules a redraw with the new value.",
+            "values": {
+              "val": "1",
+              "setter": "setCount"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Never change state directly",
+      "codeHash": "cf9c60cada1385e3c5d7965de210d02e85fcc5291a0f51f9159bf4c1ec360c50",
+      "spec": {
+        "template": "compare",
+        "title": "Direct array mutation versus new array reference",
+        "leftLabel": "Mutation (Ignored)",
+        "rightLabel": "New Array Copy",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Never mutate state directly because React cannot detect the modification.",
+            "left": {
+              "code": "sameArray.push(\"Tester\");",
+              "result": {
+                "text": "true"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "const newArray = [...jobs, \"Designer\"];",
+              "result": {
+                "text": "false"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Spread creates a new array reference that tells React state changed.",
+            "left": {
+              "code": "console.log(sameArray === jobs);",
+              "result": {
+                "text": "true"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(newArray === jobs);",
+              "result": {
+                "text": "false"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Direct array mutation versus new array reference",
+        "leftLabel": "Mutation (Ignored)",
+        "rightLabel": "New Array Copy",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Never mutate state directly because React cannot detect the modification.",
+            "left": {
+              "code": "sameArray.push(\"Tester\");",
+              "result": "true",
+              "tone": "warn",
+              "checks": [
+                "true"
+              ]
+            },
+            "right": {
+              "code": "const newArray = [...jobs, \"Designer\"];",
+              "result": "false",
+              "tone": "ok",
+              "checks": [
+                "false"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Spread creates a new array reference that tells React state changed.",
+            "left": {
+              "code": "console.log(sameArray === jobs);",
+              "result": "true",
+              "tone": "warn",
+              "checks": [
+                "true"
+              ]
+            },
+            "right": {
+              "code": "console.log(newArray === jobs);",
+              "result": "false",
+              "tone": "ok",
+              "checks": [
+                "false"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Updating from the previous value",
+      "codeHash": "4565acb6eb7687c57d1f89f601102396ea8dc06fe09f971eb8ae8c91cb57e9f5",
+      "spec": {
+        "template": "flow",
+        "title": "Updater function pattern for queued state transitions",
+        "nodes": [
+          {
+            "id": "prev",
+            "label": "prev",
+            "tappable": false
+          },
+          {
+            "id": "fn",
+            "label": "updater",
+            "tappable": false
+          },
+          {
+            "id": "next",
+            "label": "next",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Passing a function to the setter handles dependent state calculations.",
+            "values": {
+              "prev": {
+                "text": "5"
+              },
+              "fn": {
+                "text": "c => c + 1"
+              },
+              "next": {
+                "text": "6"
+              }
+            },
+            "tones": {
+              "prev": "idle",
+              "fn": "data",
+              "next": "idle"
+            },
+            "arrows": [
+              [
+                "prev",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Queued updates each receive the latest value from previous updater.",
+            "values": {
+              "prev": {
+                "text": "5"
+              },
+              "fn": {
+                "text": "c => c + 1"
+              },
+              "next": {
+                "text": "8"
+              }
+            },
+            "tones": {
+              "prev": "idle",
+              "fn": "ok",
+              "next": "ok"
+            },
+            "arrows": [
+              [
+                "prev",
+                "fn"
+              ],
+              [
+                "fn",
+                "next"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Updater function pattern for queued state transitions",
+        "nodes": [
+          {
+            "id": "prev",
+            "label": "prev",
+            "tappable": false
+          },
+          {
+            "id": "fn",
+            "label": "updater",
+            "tappable": false
+          },
+          {
+            "id": "next",
+            "label": "next",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Passing a function to the setter handles dependent state calculations.",
+            "values": {
+              "prev": "5",
+              "fn": "c => c + 1",
+              "next": "6"
+            },
+            "tones": {
+              "prev": "idle",
+              "fn": "data",
+              "next": "idle"
+            },
+            "arrows": [
+              [
+                "prev",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Queued updates each receive the latest value from previous updater.",
+            "values": {
+              "prev": "5",
+              "fn": "c => c + 1",
+              "next": "8"
+            },
+            "tones": {
+              "prev": "idle",
+              "fn": "ok",
+              "next": "ok"
+            },
+            "arrows": [
+              [
+                "prev",
+                "fn"
+              ],
+              [
+                "fn",
+                "next"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What happens when state changes",
+      "codeHash": "207ef07cc225775eb110a3b8af82a5ae90ba9c6c0d25a63cd5af56a6a1d81a18",
+      "spec": {
+        "template": "states",
+        "title": "Lifecycle stages of component re-rendering",
+        "states": [
+          "Event Triggered",
+          "State Updated",
+          "Component Re-rendered"
+        ],
+        "activeIndex": 0,
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Calling a setter schedules a component re-render in React.",
+            "activeIndex": 1
+          },
+          {
+            "at": "say2",
+            "caption": "During re-render React recalculates JSX and updates the page.",
+            "activeIndex": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Lifecycle stages of component re-rendering",
+        "states": [
+          "Event Triggered",
+          "State Updated",
+          "Component Re-rendered"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Calling a setter schedules a component re-render in React."
+          },
+          {
+            "at": "say2",
+            "caption": "During re-render React recalculates JSX and updates the page."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Put the jobs into state",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Connecting sample job state into the Job Tracker application and observing reactive redraws"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Connecting sample job state into the Job Tracker application and observing reactive redraws"
+      }
+    }
+  ]
+}

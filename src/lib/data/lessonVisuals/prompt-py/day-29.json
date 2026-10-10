@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Open-weight models",
+      "codeHash": "6f6d0160ed763132e79d3b8bd052ddc5a76494711c18facca0f3a8bda6a1b450",
+      "spec": {
+        "template": "table",
+        "title": "Open-weight models versus cloud API trade-offs",
+        "columns": [
+          "factor",
+          "local",
+          "cloud"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Open models publish trained weights for anyone to download.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "local"
+                  },
+                  {
+                    "text": "cloud"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "local"
+                  },
+                  {
+                    "text": "cloud"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Local servers keep sensitive data under direct user control.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "local"
+                  },
+                  {
+                    "text": "cloud"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "local"
+                  },
+                  {
+                    "text": "factor"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Open-weight models versus cloud API trade-offs",
+        "columns": [
+          "factor",
+          "local",
+          "cloud"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Open models publish trained weights for anyone to download.",
+            "rows": [
+              {
+                "cells": [
+                  "factor",
+                  "local",
+                  "cloud"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "factor",
+                  "local",
+                  "cloud"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Local servers keep sensitive data under direct user control.",
+            "rows": [
+              {
+                "cells": [
+                  "factor",
+                  "local",
+                  "cloud"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "factor",
+                  "local",
+                  "factor"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running models with Ollama",
+      "codeHash": "3ed32ee6a48ce136420869d4217f542318d22af3e995ce6c7da7f55675bea162",
+      "spec": {
+        "template": "table",
+        "title": "Local inference server configuration and API schema",
+        "columns": [
+          "model",
+          "messages",
+          "options"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ollama downloads and runs open model weights with simple commands.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "messages"
+                  },
+                  {
+                    "text": "options"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "messages"
+                  },
+                  {
+                    "text": "options"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Local HTTP endpoints expose compatible formats for application calls.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "messages"
+                  },
+                  {
+                    "text": "options"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "model"
+                  },
+                  {
+                    "text": "messages"
+                  },
+                  {
+                    "text": "model"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Local inference server configuration and API schema",
+        "columns": [
+          "model",
+          "messages",
+          "options"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ollama downloads and runs open model weights with simple commands.",
+            "rows": [
+              {
+                "cells": [
+                  "model",
+                  "messages",
+                  "options"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "model",
+                  "messages",
+                  "options"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Local HTTP endpoints expose compatible formats for application calls.",
+            "rows": [
+              {
+                "cells": [
+                  "model",
+                  "messages",
+                  "options"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "model",
+                  "messages",
+                  "model"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory and hardware",
+      "codeHash": "dbb8eb0018f2848bd6cd434d6abf29bad0ba117ca772e05b5bb5462281c80fdb",
+      "spec": {
+        "template": "table",
+        "title": "GPU memory estimation and hardware sizing",
+        "columns": [
+          "params",
+          "bits",
+          "overhead"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weights must fit directly into available GPU memory to execute fast.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "overhead"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "overhead"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Parameters multiplied by precision bits determine storage requirements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "overhead"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "bits"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "GPU memory estimation and hardware sizing",
+        "columns": [
+          "params",
+          "bits",
+          "overhead"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weights must fit directly into available GPU memory to execute fast.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "overhead"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Parameters multiplied by precision bits determine storage requirements.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "overhead"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "bits",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantisation",
+      "codeHash": "5a6713fe282590658c4a98a519b195c52ca9c91047eb598f84f43d53c9084b12",
+      "spec": {
+        "template": "table",
+        "title": "Model quantisation levels and memory compression",
+        "columns": [
+          "params",
+          "vram",
+          "overhead"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quantisation shrinks memory requirements by storing weights in fewer bits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "vram"
+                  },
+                  {
+                    "text": "overhead"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "vram"
+                  },
+                  {
+                    "text": "overhead"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reduced bit depth preserves acceptable quality for everyday tasks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "vram"
+                  },
+                  {
+                    "text": "overhead"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "vram"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model quantisation levels and memory compression",
+        "columns": [
+          "params",
+          "vram",
+          "overhead"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quantisation shrinks memory requirements by storing weights in fewer bits.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "vram",
+                  "overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "vram",
+                  "overhead"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reduced bit depth preserves acceptable quality for everyday tasks.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "vram",
+                  "overhead"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "vram",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keeping up with AI",
+      "codeHash": "5b6e84ac873ec026480664629dc791f3482cf787a9a801c85e1df531287405b6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: fit and quantise",
+      "codeHash": "31dae55750be6ed01bae1e4f9ecde565892d9d207fd53622861481fb381e8731",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

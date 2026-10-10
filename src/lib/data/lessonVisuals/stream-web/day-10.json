@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 10,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 2 Overview: Achieving Exactly-Once Processing (EOS)",
+      "codeHash": "bc19177edc0324d6ee4a3ab7884530b128662d99bc1e94f555eb82f36d9fb2fb",
+      "spec": {
+        "template": "table",
+        "title": "End-to-end Exactly-Once Processing (EOS) three-layer architectural blueprint",
+        "columns": [
+          "EOS Layer",
+          "Component",
+          "Core Responsibility"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The producer must be idempotent so network retries never create duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The consumer must process messages and commit offsets atomically.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "End-to-end Exactly-Once Processing (EOS) three-layer architectural blueprint",
+        "columns": [
+          "EOS Layer",
+          "Component",
+          "Core Responsibility"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The producer must be idempotent so network retries never create duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The consumer must process messages and commit offsets atomically.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotent Producer Architecture: PID & Sequence Tracking",
+      "codeHash": "6feaf81d2503bb97e1e30cd552e407a10f2fa35f4af93fb9095fb64677534c2e",
+      "spec": {
+        "template": "sequence",
+        "title": "BrokerSequenceDeduplicator PID (pid-1) and sequence number validation",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Idempotent Producer (pid-1)"
+          },
+          {
+            "id": "broker",
+            "label": "BrokerSequenceDeduplicator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When incoming sequence equals lastSequence + 1, the broker appends records.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "append(pid-1, seq: 0, 'tx-0') -> COMMITTED"
+              },
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "append(pid-1, seq: 1, 'tx-1') -> COMMITTED"
+              }
+            ],
+            "activeActorId": "broker"
+          },
+          {
+            "at": "say7",
+            "caption": "When incoming sequence is less than or equal, the broker drops duplicates.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Retry append(pid-1, seq: 1, 'tx-1')"
+              },
+              {
+                "from": "broker",
+                "to": "producer",
+                "label": "DUPLICATE_DROPPED (seq 1 <= lastSeq 1)"
+              }
+            ],
+            "activeActorId": "broker"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "BrokerSequenceDeduplicator PID (pid-1) and sequence number validation",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Idempotent Producer (pid-1)"
+          },
+          {
+            "id": "broker",
+            "label": "BrokerSequenceDeduplicator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When incoming sequence equals lastSequence + 1, the broker appends records.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "append(pid-1, seq: 0, 'tx-0') -> COMMITTED"
+              },
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "append(pid-1, seq: 1, 'tx-1') -> COMMITTED"
+              }
+            ],
+            "activeActorId": "broker"
+          },
+          {
+            "at": "say7",
+            "caption": "When incoming sequence is less than or equal, the broker drops duplicates.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Retry append(pid-1, seq: 1, 'tx-1')"
+              },
+              {
+                "from": "broker",
+                "to": "producer",
+                "label": "DUPLICATE_DROPPED (seq 1 <= lastSeq 1)"
+              }
+            ],
+            "activeActorId": "broker"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transactional Outbox Pattern: Dual-Write Elimination",
+      "codeHash": "f166529ac6c0028a6f8fb967b7a05aee98cce66f4dc94af41416a0b3c39cfee0",
+      "spec": {
+        "template": "flow",
+        "title": "TransactionalDatabaseStore atomic state mutation and offset commit",
+        "nodes": [
+          {
+            "id": "outboxRec",
+            "label": "OutboxRecord (offset: 100, +$50)",
+            "tappable": false
+          },
+          {
+            "id": "atomicTx",
+            "label": "executeAtomicTransaction()",
+            "tappable": false
+          },
+          {
+            "id": "balanceTable",
+            "label": "balances.set('user-1', 50)",
+            "tappable": false
+          },
+          {
+            "id": "offsetTable",
+            "label": "committedOffsets.set(0, 100)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "outboxRec",
+            "to": "atomicTx",
+            "label": "Verify > 100"
+          },
+          {
+            "from": "atomicTx",
+            "to": "balanceTable",
+            "label": "State Write"
+          },
+          {
+            "from": "atomicTx",
+            "to": "offsetTable",
+            "label": "Offset Write"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "To eliminate the dual-write problem, systems implement Transactional Outbox.",
+            "activeNodes": [
+              "outboxRec",
+              "atomicTx"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Both writes occur inside the same local database transaction atomically.",
+            "activeNodes": [
+              "atomicTx",
+              "balanceTable",
+              "offsetTable"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "TransactionalDatabaseStore atomic state mutation and offset commit",
+        "nodes": [
+          {
+            "id": "outboxRec",
+            "label": "OutboxRecord (offset: 100, +$50)",
+            "tappable": false
+          },
+          {
+            "id": "atomicTx",
+            "label": "executeAtomicTransaction()",
+            "tappable": false
+          },
+          {
+            "id": "balanceTable",
+            "label": "balances.set('user-1', 50)",
+            "tappable": false
+          },
+          {
+            "id": "offsetTable",
+            "label": "committedOffsets.set(0, 100)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "outboxRec",
+            "to": "atomicTx",
+            "label": "Verify > 100"
+          },
+          {
+            "from": "atomicTx",
+            "to": "balanceTable",
+            "label": "State Write"
+          },
+          {
+            "from": "atomicTx",
+            "to": "offsetTable",
+            "label": "Offset Write"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "To eliminate the dual-write problem, systems implement Transactional Outbox.",
+            "activeNodes": [
+              "outboxRec",
+              "atomicTx"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Both writes occur inside the same local database transaction atomically.",
+            "activeNodes": [
+              "atomicTx",
+              "balanceTable",
+              "offsetTable"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding Window Message Deduplication Filter with LRU Eviction",
+      "codeHash": "aca605cd9e19b6a8ac2854786bb85278150462db83fabd00220ce2696622ba3e",
+      "spec": {
+        "template": "cells",
+        "title": "BoundedLruDeduplicator (capacity: 3) recency refresh and oldest key eviction",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Streaming consumers utilize a bounded sliding-window deduplication filter.",
+            "items": [
+              {
+                "text": "e2 (t=20)"
+              },
+              {
+                "text": "e3 (t=30)"
+              },
+              {
+                "text": "e1 (t=40)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "oldest",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "refreshed",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "When capacity is reached, inserting a new event ID evicts the oldest ID.",
+            "items": [
+              {
+                "text": "e3 (t=30)"
+              },
+              {
+                "text": "e1 (t=40)"
+              },
+              {
+                "text": "e4 (t=50)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "inserted",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "BoundedLruDeduplicator (capacity: 3) recency refresh and oldest key eviction",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Streaming consumers utilize a bounded sliding-window deduplication filter.",
+            "items": [
+              "e2 (t=20)",
+              "e3 (t=30)",
+              "e1 (t=40)"
+            ],
+            "pointers": [
+              {
+                "name": "oldest",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "refreshed",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "When capacity is reached, inserting a new event ID evicts the oldest ID.",
+            "items": [
+              "e3 (t=30)",
+              "e1 (t=40)",
+              "e4 (t=50)"
+            ],
+            "pointers": [
+              {
+                "name": "inserted",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Atomic Transaction Coordinator & Two-Phase Offset Commit",
+      "codeHash": "56f01b06a91e1bd0c11bd1cb275201369c6a63026bf25510d92cc0816011d6ec",
+      "spec": {
+        "template": "states",
+        "title": "TransactionCoordinator lifecycle for tx-100 (committed) and tx-200 (aborted)",
+        "states": [
+          {
+            "id": "beginTx",
+            "label": "beginTransaction('tx-100')"
+          },
+          {
+            "id": "bufferedTx",
+            "label": "sendInTransaction (Unvisible)"
+          },
+          {
+            "id": "committedTx",
+            "label": "commitTransaction -> Visible (2)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The read-process-write loop executes within an atomic transaction boundary.",
+            "activeState": "bufferedTx",
+            "transition": {
+              "from": "beginTx",
+              "to": "bufferedTx",
+              "label": "audit-1 & audit-2"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "The coordinator writes a COMMIT marker to all affected partitions atomically.",
+            "activeState": "committedTx",
+            "transition": {
+              "from": "bufferedTx",
+              "to": "committedTx",
+              "label": "COMMIT Marker"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "TransactionCoordinator lifecycle for tx-100 (committed) and tx-200 (aborted)",
+        "states": [
+          {
+            "id": "beginTx",
+            "label": "beginTransaction('tx-100')"
+          },
+          {
+            "id": "bufferedTx",
+            "label": "sendInTransaction (Unvisible)"
+          },
+          {
+            "id": "committedTx",
+            "label": "commitTransaction -> Visible (2)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The read-process-write loop executes within an atomic transaction boundary.",
+            "activeState": "bufferedTx",
+            "transition": {
+              "from": "beginTx",
+              "to": "bufferedTx",
+              "label": "audit-1 & audit-2"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "The coordinator writes a COMMIT marker to all affected partitions atomically.",
+            "activeState": "committedTx",
+            "transition": {
+              "from": "bufferedTx",
+              "to": "committedTx",
+              "label": "COMMIT Marker"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Milestone 2 Pipeline Verification: Exactly-Once Streaming",
+      "codeHash": "3129c8be27a17f7ec2f9fb6f248f7941babb38d849cd45bc1f36d3dd4abfe7b0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

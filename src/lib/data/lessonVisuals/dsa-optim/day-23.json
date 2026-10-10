@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 23,
+  "promptSha": "b3395f4879f8d0679b30b0763360a3342fbcf10607bd47aef099e721df257ccb",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Directed Acyclic Graphs (DAG) & Dependency Ordering",
+      "codeHash": "dd7314b6525843ae4c92aa947541304089b5317198004510c0e6ab66d66032ed",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Directed acyclic graph dependency model",
+        "nodes": [
+          {
+            "id": "Underwear",
+            "label": "Underwear"
+          },
+          {
+            "id": "Pants",
+            "label": "Pants"
+          },
+          {
+            "id": "Socks",
+            "label": "Socks"
+          },
+          {
+            "id": "Shoes",
+            "label": "Shoes"
+          }
+        ],
+        "edges": [
+          [
+            "Underwear",
+            "Pants"
+          ],
+          [
+            "Pants",
+            "Shoes"
+          ],
+          [
+            "Socks",
+            "Shoes"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Directed graph models task dependencies before downstream work.",
+            "activeNodeId": "Underwear",
+            "visitedNodeIds": [
+              "Underwear"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Topological ordering ensures every directed prerequisite comes before.",
+            "activeNodeId": "Pants",
+            "visitedNodeIds": [
+              "Underwear",
+              "Pants"
+            ],
+            "activeEdge": [
+              "Underwear",
+              "Pants"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Directed acyclic graph dependency model",
+        "nodes": [
+          {
+            "id": "Underwear",
+            "label": "Underwear"
+          },
+          {
+            "id": "Pants",
+            "label": "Pants"
+          },
+          {
+            "id": "Socks",
+            "label": "Socks"
+          },
+          {
+            "id": "Shoes",
+            "label": "Shoes"
+          }
+        ],
+        "edges": [
+          [
+            "Underwear",
+            "Pants"
+          ],
+          [
+            "Pants",
+            "Shoes"
+          ],
+          [
+            "Socks",
+            "Shoes"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Directed graph models task dependencies before downstream work.",
+            "activeNodeId": "Underwear",
+            "visitedNodeIds": [
+              "Underwear"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Topological ordering ensures every directed prerequisite comes before.",
+            "activeNodeId": "Pants",
+            "visitedNodeIds": [
+              "Underwear",
+              "Pants"
+            ],
+            "activeEdge": [
+              "Underwear",
+              "Pants"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Degree & Out-Degree Concepts",
+      "codeHash": "d9f0d893aa217fc0884da0d40618a75d3a3c8c215fe5b542a7090ed92ee41efb",
+      "spec": {
+        "template": "table",
+        "title": "In-degree prerequisite count table",
+        "columns": [
+          "Course",
+          "InDegree",
+          "Blockers"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Incoming directed edges determine in-degree count for each vertex.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CS101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Math101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Zero prerequisite blockers allows immediate execution of task.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CS101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Math101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DataStruct"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "CS101"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Algorithms"
+                  },
+                  {
+                    "text": "two"
+                  },
+                  {
+                    "text": "prereqs"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "In-degree prerequisite count table",
+        "columns": [
+          "Course",
+          "InDegree",
+          "Blockers"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Incoming directed edges determine in-degree count for each vertex.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CS101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Math101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Zero prerequisite blockers allows immediate execution of task.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CS101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Math101"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "ready"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DataStruct"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "CS101"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Algorithms"
+                  },
+                  {
+                    "text": "two"
+                  },
+                  {
+                    "text": "prereqs"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kahn's Algorithm (BFS In-Degree Reduction)",
+      "codeHash": "2336fd0513f4e018b7d414e4a8c68afdb9bd1e0c97a4fb2e786f91ba197e85e1",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Kahn algorithm BFS zero in-degree queue",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Enqueue all vertices with in-degree of zero into queue.",
+            "action": "enqueue",
+            "actionItem": {
+              "text": "A"
+            },
+            "items": [
+              {
+                "text": "A"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Simulate completion of current vertex by decrementing neighbor.",
+            "action": "dequeue",
+            "actionItem": {
+              "text": "A"
+            },
+            "items": [
+              {
+                "text": "B"
+              },
+              {
+                "text": "C"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Kahn algorithm BFS zero in-degree queue",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Enqueue all vertices with in-degree of zero into queue.",
+            "action": "enqueue",
+            "actionItem": {
+              "text": "A"
+            },
+            "items": [
+              {
+                "text": "A"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Simulate completion of current vertex by decrementing neighbor.",
+            "action": "dequeue",
+            "actionItem": {
+              "text": "A"
+            },
+            "items": [
+              {
+                "text": "B"
+              },
+              {
+                "text": "C"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cycle Detection via Topological Sort Failure",
+      "codeHash": "adb5735de95d0beb04f31d235db4f5f9a9fdd4a650de1dd0b6823998b0ef96a1",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Circular dependency deadlock cycle detection",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Graph contains directed cycle when scheduled length is deficient.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Vertices trapped inside cycle continuously wait without reaching zero.",
+            "activeNodeId": "B",
+            "visitedNodeIds": [
+              "A",
+              "B"
+            ],
+            "activeEdge": [
+              "A",
+              "B"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Circular dependency deadlock cycle detection",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Graph contains directed cycle when scheduled length is deficient.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Vertices trapped inside cycle continuously wait without reaching zero.",
+            "activeNodeId": "B",
+            "visitedNodeIds": [
+              "A",
+              "B"
+            ],
+            "activeEdge": [
+              "A",
+              "B"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Course Schedule Problem (LeetCode 207 & 210)",
+      "codeHash": "61073add5510c55c61934280ec43054e847cb437dfe89d6cd789dbb5dc99e329",
+      "spec": {
+        "template": "cells",
+        "title": "Valid linear course ordering schedule",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Adjacency list and array enqueue courses with zero in-degree.",
+            "items": [
+              {
+                "text": "Course-0"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Course array return schedule when dependencies complete.",
+            "items": [
+              {
+                "text": "Course-0"
+              },
+              {
+                "text": "Course-1"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Valid linear course ordering schedule",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Adjacency list and array enqueue courses with zero in-degree.",
+            "items": [
+              {
+                "text": "Course-0"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Course array return schedule when dependencies complete.",
+            "items": [
+              {
+                "text": "Course-0"
+              },
+              {
+                "text": "Course-1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Build Task Scheduler with Concurrency Levels",
+      "codeHash": "ab4ed7cf1e10f7462a828eec6c970ac23ef8286ebe31ba1f7456999eeb37d219",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

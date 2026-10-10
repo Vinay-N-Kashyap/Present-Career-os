@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 15,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Where should state live?",
+      "codeHash": "9b473c04a2ce5ebff9688c15a575d8d034974d43a568ec4731ab906ccdb2ccac",
+      "spec": {
+        "template": "component-tree",
+        "title": "Lifting state to closest common ancestor",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App (owner)",
+            "tone": "idle"
+          },
+          {
+            "id": "summary",
+            "name": "Summary",
+            "tone": "ok"
+          },
+          {
+            "id": "list",
+            "name": "JobList",
+            "tone": "ok"
+          },
+          {
+            "id": "form",
+            "name": "JobForm",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Shared state lives in the closest common parent component.",
+            "activeId": "app",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "Components needing access to jobs receive state from common parent App.",
+            "activeId": "list",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Lifting state to closest common ancestor",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App (owner)",
+            "tone": "idle"
+          },
+          {
+            "id": "summary",
+            "name": "Summary",
+            "tone": "ok"
+          },
+          {
+            "id": "list",
+            "name": "JobList",
+            "tone": "ok"
+          },
+          {
+            "id": "form",
+            "name": "JobForm",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Shared state lives in the closest common parent component.",
+            "activeId": "app",
+            "tone": "idle",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App (owner)",
+                "tone": "idle"
+              },
+              {
+                "id": "summary",
+                "name": "Summary",
+                "tone": "ok"
+              },
+              {
+                "id": "list",
+                "name": "JobList",
+                "tone": "ok"
+              },
+              {
+                "id": "form",
+                "name": "JobForm",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Components needing access to jobs receive state from common parent App.",
+            "activeId": "list",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App (owner)",
+                "tone": "idle"
+              },
+              {
+                "id": "summary",
+                "name": "Summary",
+                "tone": "ok"
+              },
+              {
+                "id": "list",
+                "name": "JobList",
+                "tone": "ok"
+              },
+              {
+                "id": "form",
+                "name": "JobForm",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Data down, actions up",
+      "codeHash": "f6bded0b80cffcc40a6f7c8ce229a300f05626800d4682bca2dd40f751752ebf",
+      "spec": {
+        "template": "flow",
+        "title": "Data flows down props while actions trigger upwards",
+        "nodes": [
+          {
+            "id": "parent",
+            "label": "App",
+            "tappable": false
+          },
+          {
+            "id": "props",
+            "label": "props",
+            "tappable": false
+          },
+          {
+            "id": "child",
+            "label": "JobCard",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data passes down as props while actions bubble up via callbacks.",
+            "values": {
+              "parent": {
+                "text": "App"
+              },
+              "props": {
+                "text": "jobs"
+              },
+              "child": {
+                "text": "JobCard"
+              }
+            },
+            "tones": {
+              "parent": "data",
+              "props": "idle",
+              "child": "idle"
+            },
+            "arrows": [
+              [
+                "parent",
+                "props"
+              ],
+              [
+                "props",
+                "child"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Action callbacks start with on prefix to signal event occurrences.",
+            "values": {
+              "parent": {
+                "text": "App"
+              },
+              "props": {
+                "text": "onDelete"
+              },
+              "child": {
+                "text": "JobCard"
+              }
+            },
+            "tones": {
+              "parent": "idle",
+              "props": "ok",
+              "child": "ok"
+            },
+            "arrows": [
+              [
+                "child",
+                "props"
+              ],
+              [
+                "props",
+                "parent"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Data flows down props while actions trigger upwards",
+        "nodes": [
+          {
+            "id": "parent",
+            "label": "App",
+            "tappable": false
+          },
+          {
+            "id": "props",
+            "label": "props",
+            "tappable": false
+          },
+          {
+            "id": "child",
+            "label": "JobCard",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data passes down as props while actions bubble up via callbacks.",
+            "values": {
+              "parent": "App",
+              "props": "jobs",
+              "child": "JobCard"
+            },
+            "tones": {
+              "parent": "data",
+              "props": "idle",
+              "child": "idle"
+            },
+            "arrows": [
+              [
+                "parent",
+                "props"
+              ],
+              [
+                "props",
+                "child"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Action callbacks start with on prefix to signal event occurrences.",
+            "values": {
+              "parent": "App",
+              "props": "onDelete",
+              "child": "JobCard"
+            },
+            "tones": {
+              "parent": "idle",
+              "props": "ok",
+              "child": "ok"
+            },
+            "arrows": [
+              [
+                "child",
+                "props"
+              ],
+              [
+                "props",
+                "parent"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Removing an item",
+      "codeHash": "26a23db59d509ed6125e6ea11c7e285d4ffe93f0b11465e373fe670c7f268aa0",
+      "spec": {
+        "template": "compare",
+        "title": "Immutable deletion using array filter",
+        "leftLabel": "Before Deletion",
+        "rightLabel": "After Filter",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filter removes an item by retaining every other element id.",
+            "left": {
+              "code": "const jobs = [{ id: 1 }, { id: 2 }, { id: 3 }];",
+              "result": {
+                "text": "3"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "const after = removeJob(jobs, 2);",
+              "result": {
+                "text": "after"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Generating a new array causes React to re-render the view.",
+            "left": {
+              "code": "console.log(jobs.length);",
+              "result": {
+                "text": "3"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(after.length);",
+              "result": {
+                "text": "after"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Immutable deletion using array filter",
+        "leftLabel": "Before Deletion",
+        "rightLabel": "After Filter",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filter removes an item by retaining every other element id.",
+            "left": {
+              "code": "const jobs = [{ id: 1 }, { id: 2 }, { id: 3 }];",
+              "result": "3",
+              "tone": "idle",
+              "checks": [
+                "3"
+              ]
+            },
+            "right": {
+              "code": "const after = removeJob(jobs, 2);",
+              "result": "after",
+              "tone": "ok",
+              "checks": [
+                "after"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Generating a new array causes React to re-render the view.",
+            "left": {
+              "code": "console.log(jobs.length);",
+              "result": "3",
+              "tone": "idle",
+              "checks": [
+                "3"
+              ]
+            },
+            "right": {
+              "code": "console.log(after.length);",
+              "result": "after",
+              "tone": "ok",
+              "checks": [
+                "after"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changing one item",
+      "codeHash": "ccf2ee7d96ddd15037686a7802fa6350170bd99f95997e0e84114309e3ea482d",
+      "spec": {
+        "template": "flow",
+        "title": "Modifying a single item immutably with map",
+        "nodes": [
+          {
+            "id": "list",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "map",
+            "label": "map",
+            "tappable": false
+          },
+          {
+            "id": "item",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Mapping through arrays returns an updated copy for the matching id.",
+            "values": {
+              "list": {
+                "text": "\"applied\""
+              },
+              "map": {
+                "text": "map"
+              },
+              "item": {
+                "text": "\"interview\""
+              }
+            },
+            "tones": {
+              "list": "idle",
+              "map": "data",
+              "item": "idle"
+            },
+            "arrows": [
+              [
+                "list",
+                "map"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Only the matching element creates a new object instance.",
+            "values": {
+              "list": {
+                "text": "\"applied\""
+              },
+              "map": {
+                "text": "map"
+              },
+              "item": {
+                "text": "\"interview\""
+              }
+            },
+            "tones": {
+              "list": "idle",
+              "map": "ok",
+              "item": "ok"
+            },
+            "arrows": [
+              [
+                "list",
+                "map"
+              ],
+              [
+                "map",
+                "item"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Modifying a single item immutably with map",
+        "nodes": [
+          {
+            "id": "list",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "map",
+            "label": "map",
+            "tappable": false
+          },
+          {
+            "id": "item",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Mapping through arrays returns an updated copy for the matching id.",
+            "values": {
+              "list": "\"applied\"",
+              "map": "map",
+              "item": "\"interview\""
+            },
+            "tones": {
+              "list": "idle",
+              "map": "data",
+              "item": "idle"
+            },
+            "arrows": [
+              [
+                "list",
+                "map"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Only the matching element creates a new object instance.",
+            "values": {
+              "list": "\"applied\"",
+              "map": "map",
+              "item": "\"interview\""
+            },
+            "tones": {
+              "list": "idle",
+              "map": "ok",
+              "item": "ok"
+            },
+            "arrows": [
+              [
+                "list",
+                "map"
+              ],
+              [
+                "map",
+                "item"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Derived data: calculate, do not store",
+      "codeHash": "e2d85246f4f88a2586d862a4645cf122c5d1e6a72d2d342257b616c545d9aef4",
+      "spec": {
+        "template": "boxes",
+        "title": "Calculating derived metrics on render instead of storing state",
+        "boxes": [
+          {
+            "id": "tot",
+            "label": "total",
+            "tappable": false
+          },
+          {
+            "id": "int",
+            "label": "interviews",
+            "tappable": false
+          },
+          {
+            "id": "off",
+            "label": "offers",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Avoid storing values in state that can be derived directly.",
+            "values": {
+              "tot": {
+                "text": "jobs.length"
+              },
+              "int": {
+                "text": "\"interview\""
+              },
+              "off": {
+                "text": "\"offer\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Compute statistics during render from the underlying state array.",
+            "values": {
+              "tot": {
+                "text": "jobs.length"
+              },
+              "int": {
+                "text": "\"interview\""
+              },
+              "off": {
+                "text": "\"offer\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Calculating derived metrics on render instead of storing state",
+        "boxes": [
+          {
+            "id": "tot",
+            "label": "total",
+            "tappable": false
+          },
+          {
+            "id": "int",
+            "label": "interviews",
+            "tappable": false
+          },
+          {
+            "id": "off",
+            "label": "offers",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Avoid storing values in state that can be derived directly.",
+            "values": {
+              "tot": "jobs.length",
+              "int": "\"interview\"",
+              "off": "\"offer\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Compute statistics during render from the underlying state array.",
+            "values": {
+              "tot": "jobs.length",
+              "int": "\"interview\"",
+              "off": "\"offer\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finish the core Job Tracker",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Consolidating the entire interactive Job Tracker application skeleton across components"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Consolidating the entire interactive Job Tracker application skeleton across components"
+      }
+    }
+  ]
+}

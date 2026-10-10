@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "AI as a personal planner",
+      "codeHash": "17bb1c38b11b80daae64a2e928651294c8b6d2a801ad6088b81262483964d430",
+      "spec": {
+        "template": "table",
+        "title": "Planning constraints and weekly schedule layout",
+        "columns": [
+          "work",
+          "study",
+          "sleep"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AI turns goals into a structured weekly schedule.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "work"
+                  },
+                  {
+                    "text": "study"
+                  },
+                  {
+                    "text": "sleep"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "work"
+                  },
+                  {
+                    "text": "study"
+                  },
+                  {
+                    "text": "sleep"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clear constraints prevent generic and unrealistic schedules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "work"
+                  },
+                  {
+                    "text": "study"
+                  },
+                  {
+                    "text": "sleep"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "work"
+                  },
+                  {
+                    "text": "study"
+                  },
+                  {
+                    "text": "work"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Planning constraints and weekly schedule layout",
+        "columns": [
+          "work",
+          "study",
+          "sleep"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AI turns goals into a structured weekly schedule.",
+            "rows": [
+              {
+                "cells": [
+                  "work",
+                  "study",
+                  "sleep"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "work",
+                  "study",
+                  "sleep"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clear constraints prevent generic and unrealistic schedules.",
+            "rows": [
+              {
+                "cells": [
+                  "work",
+                  "study",
+                  "sleep"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "work",
+                  "study",
+                  "work"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Meals and budgets",
+      "codeHash": "07f51b320952366bcf303e7c2d1d39c1b511fb7999d0cedffb4591e3baa5252a",
+      "spec": {
+        "template": "table",
+        "title": "Meal planning and ingredient budget allocation",
+        "columns": [
+          "budget",
+          "vegetables",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Share cooking time and kitchen items for meal planning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "vegetables"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "vegetables"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Structured shopping lists reuse ingredients to reduce waste.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "vegetables"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "vegetables"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Meal planning and ingredient budget allocation",
+        "columns": [
+          "budget",
+          "vegetables",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Share cooking time and kitchen items for meal planning.",
+            "rows": [
+              {
+                "cells": [
+                  "budget",
+                  "vegetables",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "budget",
+                  "vegetables",
+                  "total"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Structured shopping lists reuse ingredients to reduce waste.",
+            "rows": [
+              {
+                "cells": [
+                  "budget",
+                  "vegetables",
+                  "total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "budget",
+                  "vegetables",
+                  "budget"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Habits and streaks",
+      "codeHash": "5f8fa323757477195acfee33d1b537b2e341b1ae36b3a06389f4dfbadcd58776",
+      "spec": {
+        "template": "table",
+        "title": "Habit tracking and consecutive streak computation",
+        "columns": [
+          "days",
+          "runs",
+          "longest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Habit tracking is best managed with simple data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "days"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "longest"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "days"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "longest"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A streak records consecutive days of completed habits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "days"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "longest"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "days"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Habit tracking and consecutive streak computation",
+        "columns": [
+          "days",
+          "runs",
+          "longest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Habit tracking is best managed with simple data.",
+            "rows": [
+              {
+                "cells": [
+                  "days",
+                  "runs",
+                  "longest"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "days",
+                  "runs",
+                  "longest"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A streak records consecutive days of completed habits.",
+            "rows": [
+              {
+                "cells": [
+                  "days",
+                  "runs",
+                  "longest"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "days",
+                  "runs",
+                  "days"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Travel planning",
+      "codeHash": "8ce501700d46cbefd9c3ab896d3b8b17be487df5aa11ce45dfd734d03c21775c",
+      "spec": {
+        "template": "table",
+        "title": "Travel itinerary and available schedule allocation",
+        "columns": [
+          "travel",
+          "available",
+          "used"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Draft itineraries compare transport options and local customs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "travel"
+                  },
+                  {
+                    "text": "available"
+                  },
+                  {
+                    "text": "used"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "travel"
+                  },
+                  {
+                    "text": "available"
+                  },
+                  {
+                    "text": "used"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Specify relaxed or packed travel styles and mobility needs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "travel"
+                  },
+                  {
+                    "text": "available"
+                  },
+                  {
+                    "text": "used"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "travel"
+                  },
+                  {
+                    "text": "available"
+                  },
+                  {
+                    "text": "travel"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Travel itinerary and available schedule allocation",
+        "columns": [
+          "travel",
+          "available",
+          "used"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Draft itineraries compare transport options and local customs.",
+            "rows": [
+              {
+                "cells": [
+                  "travel",
+                  "available",
+                  "used"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "travel",
+                  "available",
+                  "used"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Specify relaxed or packed travel styles and mobility needs.",
+            "rows": [
+              {
+                "cells": [
+                  "travel",
+                  "available",
+                  "used"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "travel",
+                  "available",
+                  "travel"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Splitting costs fairly",
+      "codeHash": "4fff875bbd780b57493b2a8a54187de6389e93d1b36b4988f4e8d528938cc82e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: streaks and bills",
+      "codeHash": "c573175ef936f25a76f33db712e8ceda0be007b41b5c2379849b8c4fee8ebc53",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

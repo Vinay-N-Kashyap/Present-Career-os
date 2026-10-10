@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What the cloud really is",
+      "codeHash": "018644b7ddab197bbe51c7c5eb2b02f3f96ed49d5d3fb950be41dab015660ec3",
+      "spec": {
+        "template": "none",
+        "reason": "Cloud elasticity economics comparing peak buying vs dynamic renting."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "IaaS, PaaS and SaaS",
+      "codeHash": "948477b200eb91c35be06997989b4212044e65cbafd38ebaf282896d30472064",
+      "spec": {
+        "template": "table",
+        "title": "Cloud service delivery models mapping control versus operational convenience",
+        "columns": [
+          "service",
+          "model"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "IaaS provides raw infrastructure like virtual machines and network blocks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "EC2"
+                  },
+                  {
+                    "text": "IaaS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "PaaS manages underlying platforms while running database and function code.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "EC2"
+                  },
+                  {
+                    "text": "IaaS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Lambda"
+                  },
+                  {
+                    "text": "PaaS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "SaaS offers complete managed applications where users only govern data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "EC2"
+                  },
+                  {
+                    "text": "IaaS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Lambda"
+                  },
+                  {
+                    "text": "PaaS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "WorkDocs"
+                  },
+                  {
+                    "text": "SaaS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cloud service delivery models mapping control versus operational convenience",
+        "columns": [
+          "service",
+          "model"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "IaaS provides raw infrastructure like virtual machines and network blocks.",
+            "rows": [
+              {
+                "cells": [
+                  "EC2",
+                  "IaaS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "PaaS manages underlying platforms while running database and function code.",
+            "rows": [
+              {
+                "cells": [
+                  "EC2",
+                  "IaaS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Lambda",
+                  "PaaS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "SaaS offers complete managed applications where users only govern data.",
+            "rows": [
+              {
+                "cells": [
+                  "EC2",
+                  "IaaS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Lambda",
+                  "PaaS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "WorkDocs",
+                  "SaaS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The shared responsibility model",
+      "codeHash": "968aaf4cc32d66041564a750cc25e5f432a78ec4600f738fd5a3a1d4fe22f5ab",
+      "spec": {
+        "template": "table",
+        "title": "Shared responsibility model delineating provider and customer domains",
+        "columns": [
+          "layer",
+          "owner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud security divides into security of the cloud and security in the cloud.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PHYSICAL_DATACENTER"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Security of the cloud covers physical datacenters facilities and hardware.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PHYSICAL_DATACENTER"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "OS_PATCHING"
+                  },
+                  {
+                    "text": "CUSTOMER"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Customer data and access governance always remain customer responsibilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PHYSICAL_DATACENTER"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "OS_PATCHING"
+                  },
+                  {
+                    "text": "CUSTOMER"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DATA"
+                  },
+                  {
+                    "text": "CUSTOMER"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Shared responsibility model delineating provider and customer domains",
+        "columns": [
+          "layer",
+          "owner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud security divides into security of the cloud and security in the cloud.",
+            "rows": [
+              {
+                "cells": [
+                  "PHYSICAL_DATACENTER",
+                  "AWS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Security of the cloud covers physical datacenters facilities and hardware.",
+            "rows": [
+              {
+                "cells": [
+                  "PHYSICAL_DATACENTER",
+                  "AWS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "OS_PATCHING",
+                  "CUSTOMER"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Customer data and access governance always remain customer responsibilities.",
+            "rows": [
+              {
+                "cells": [
+                  "PHYSICAL_DATACENTER",
+                  "AWS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "OS_PATCHING",
+                  "CUSTOMER"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "DATA",
+                  "CUSTOMER"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Paying for what you use",
+      "codeHash": "2ea97e61df147f0627d78aa1f49f956f8ad2aa350adedbfcdbe1e3d311fc3de3",
+      "spec": {
+        "template": "table",
+        "title": "Utility cloud billing breakdown across compute storage and data transfer",
+        "columns": [
+          "name",
+          "qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud utility pricing charges per unit across compute storage and network.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "EC2 server hours"
+                  },
+                  {
+                    "text": "720"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Major bill drivers include server compute disk storage and outbound egress.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "EC2 server hours"
+                  },
+                  {
+                    "text": "720"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "S3 storage GB-months"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Setting billing alarms prevents unexpected charges on new cloud accounts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "EC2 server hours"
+                  },
+                  {
+                    "text": "720"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "S3 storage GB-months"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Data out to internet GB"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Utility cloud billing breakdown across compute storage and data transfer",
+        "columns": [
+          "name",
+          "qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud utility pricing charges per unit across compute storage and network.",
+            "rows": [
+              {
+                "cells": [
+                  "EC2 server hours",
+                  "720"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Major bill drivers include server compute disk storage and outbound egress.",
+            "rows": [
+              {
+                "cells": [
+                  "EC2 server hours",
+                  "720"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "S3 storage GB-months",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Setting billing alarms prevents unexpected charges on new cloud accounts.",
+            "rows": [
+              {
+                "cells": [
+                  "EC2 server hours",
+                  "720"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "S3 storage GB-months",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Data out to internet GB",
+                  "100"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How you talk to AWS: console, CLI and code",
+      "codeHash": "8377d6a69843995764694cae876952fcd619d808564664246b120e8b7450c3ae",
+      "spec": {
+        "template": "table",
+        "title": "Boto3 AWS describe instances API response payload state parsing",
+        "columns": [
+          "InstanceId",
+          "State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Administrators control cloud infrastructure via console CLI and program code.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "i-0a1"
+                  },
+                  {
+                    "text": "running"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Python developers use boto3 to dispatch signed API calls to cloud services.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "i-0a1"
+                  },
+                  {
+                    "text": "running"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "i-0b2"
+                  },
+                  {
+                    "text": "stopped"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Automation scripts parse nested dictionaries and lists from API responses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "i-0a1"
+                  },
+                  {
+                    "text": "running"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "i-0b2"
+                  },
+                  {
+                    "text": "stopped"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Boto3 AWS describe instances API response payload state parsing",
+        "columns": [
+          "InstanceId",
+          "State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Administrators control cloud infrastructure via console CLI and program code.",
+            "rows": [
+              {
+                "cells": [
+                  "i-0a1",
+                  "running"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Python developers use boto3 to dispatch signed API calls to cloud services.",
+            "rows": [
+              {
+                "cells": [
+                  "i-0a1",
+                  "running"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "i-0b2",
+                  "stopped"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Automation scripts parse nested dictionaries and lists from API responses.",
+            "rows": [
+              {
+                "cells": [
+                  "i-0a1",
+                  "running"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "i-0b2",
+                  "stopped"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: model the cloud in code",
+      "codeHash": "fe5e595cbcaa94e8bb3c1996cc5b2bfe5e0a7bab2efe2495faf7a0d4b6ed9e15",
+      "spec": {
+        "template": "none",
+        "reason": "Model implementation review and PaaS layer ownership demo."
+      },
+      "filled": {}
+    }
+  ]
+}

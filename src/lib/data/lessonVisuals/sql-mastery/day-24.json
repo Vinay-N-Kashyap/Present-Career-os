@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a view is",
+      "codeHash": "51db651894e6960eda03456971ffe6b2bfbc2d297bdb491f304469b7cdac6a52",
+      "spec": {
+        "template": "table",
+        "title": "Encapsulating complex joins in a named view",
+        "columns": [
+          "order_id",
+          "customer",
+          "status",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Querying a view functions just like querying a table directly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A named view simplifies queries without exposing how tables are joined.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "103"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "shipped"
+                  },
+                  {
+                    "text": "50.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "104"
+                  },
+                  {
+                    "text": "Priya"
+                  },
+                  {
+                    "text": "pending"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Encapsulating complex joins in a named view",
+        "columns": [
+          "order_id",
+          "customer",
+          "status",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Querying a view functions just like querying a table directly.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "Asha",
+                  "delivered",
+                  "280.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A named view simplifies queries without exposing how tables are joined.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "Asha",
+                  "delivered",
+                  "280.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "102",
+                  "Ravi",
+                  "delivered",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "103",
+                  "Asha",
+                  "shipped",
+                  "50.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "104",
+                  "Priya",
+                  "pending",
+                  "60.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Views always show current data",
+      "codeHash": "35b13a951f215c78cd65d20f999b47309acba19acd57f26ec5c398f568bc5af2",
+      "spec": {
+        "template": "compare",
+        "title": "Instant reflection of table modifications in views",
+        "leftLabel": "Base Table Changes",
+        "rightLabel": "Live View Results",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Changes to underlying tables appear in the view immediately.",
+            "left": {
+              "code": "INSERT Update prices, complete task 1",
+              "result": {
+                "text": "table updated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SELECT FROM open_tasks",
+              "result": {
+                "text": "shows fresh tasks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Dropping a view never deletes table data because no storage is held.",
+            "left": {
+              "code": "DROP VIEW open_tasks",
+              "result": {
+                "text": "saved query removed"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SELECT FROM tasks",
+              "result": {
+                "text": "all rows intact"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Instant reflection of table modifications in views",
+        "leftLabel": "Base Table Changes",
+        "rightLabel": "Live View Results",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Changes to underlying tables appear in the view immediately.",
+            "left": {
+              "code": "INSERT Update prices, complete task 1",
+              "result": "table updated",
+              "tone": "data",
+              "checks": [
+                "table updated"
+              ]
+            },
+            "right": {
+              "code": "SELECT FROM open_tasks",
+              "result": "shows fresh tasks",
+              "tone": "ok",
+              "checks": [
+                "shows fresh tasks"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Dropping a view never deletes table data because no storage is held.",
+            "left": {
+              "code": "DROP VIEW open_tasks",
+              "result": "saved query removed",
+              "tone": "data",
+              "checks": [
+                "saved query removed"
+              ]
+            },
+            "right": {
+              "code": "SELECT FROM tasks",
+              "result": "all rows intact",
+              "tone": "ok",
+              "checks": [
+                "all rows intact"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Views for simplicity and safety",
+      "codeHash": "bd73edd52a1243d0968ea1eebea3fe46ee45c21641688f58e770319fbda0fe98",
+      "spec": {
+        "template": "compare",
+        "title": "Restricting sensitive columns with access views",
+        "leftLabel": "Raw Customers Table",
+        "rightLabel": "Public Directory View",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Views act as a tool for privacy by leaving out sensitive columns.",
+            "left": {
+              "code": "includes private phone numbers",
+              "result": {
+                "text": "phone exposed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "customer_directory view",
+              "result": {
+                "text": "phone excluded"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A view provides a clean friendly interface translating codes into words.",
+            "left": {
+              "code": "raw status code 'a' or 'i'",
+              "result": {
+                "text": "cryptic code"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "CASE status 'active' / 'inactive'",
+              "result": {
+                "text": "friendly label"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Restricting sensitive columns with access views",
+        "leftLabel": "Raw Customers Table",
+        "rightLabel": "Public Directory View",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Views act as a tool for privacy by leaving out sensitive columns.",
+            "left": {
+              "code": "includes private phone numbers",
+              "result": "phone exposed",
+              "tone": "error",
+              "checks": [
+                "phone exposed"
+              ]
+            },
+            "right": {
+              "code": "customer_directory view",
+              "result": "phone excluded",
+              "tone": "ok",
+              "checks": [
+                "phone excluded"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A view provides a clean friendly interface translating codes into words.",
+            "left": {
+              "code": "raw status code 'a' or 'i'",
+              "result": "cryptic code",
+              "tone": "data",
+              "checks": [
+                "cryptic code"
+              ]
+            },
+            "right": {
+              "code": "CASE status 'active' / 'inactive'",
+              "result": "friendly label",
+              "tone": "ok",
+              "checks": [
+                "friendly label"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building on views",
+      "codeHash": "f18542558ed5f66a16432c3bef6cffa60a0c2626795ae2955744a329664d10e9",
+      "spec": {
+        "template": "table",
+        "title": "Multi-layer modular views computing customer value",
+        "columns": [
+          "name",
+          "lifetime_value",
+          "summary_tier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A layered view calculates each customer lifetime value from delivered totals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "PostgreSQL tracks view dependencies and refuses to drop an underlying table.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "Standard"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "0.00"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Priya"
+                  },
+                  {
+                    "text": "0.00"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-layer modular views computing customer value",
+        "columns": [
+          "name",
+          "lifetime_value",
+          "summary_tier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A layered view calculates each customer lifetime value from delivered totals.",
+            "rows": [
+              {
+                "cells": [
+                  "Ravi",
+                  "1200.00",
+                  "High"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "PostgreSQL tracks view dependencies and refuses to drop an underlying table.",
+            "rows": [
+              {
+                "cells": [
+                  "Ravi",
+                  "1200.00",
+                  "High"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Asha",
+                  "280.00",
+                  "Standard"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Meera",
+                  "0.00",
+                  "None"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Priya",
+                  "0.00",
+                  "None"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Materialized views: saved results you refresh",
+      "codeHash": "1a6945095ff1720625b28dc6fa1606b561840f087cb88fc6e9408684cd9523ac",
+      "spec": {
+        "template": "none",
+        "reason": "Materialized view persistence trade-offs, disk caching and manual refresh."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Materialized view persistence trade-offs, disk caching and manual refresh."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a reporting view for the shop",
+      "codeHash": "7e1572d412c19f9d023ccf08c757bb81427f19b480f6573996f11a6b1ba50038",
+      "spec": {
+        "template": "none",
+        "reason": "Composite reporting schema script combining multi-table join view and price calculation view."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Composite reporting schema script combining multi-table join view and price calculation view."
+      }
+    }
+  ]
+}

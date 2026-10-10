@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 18,
+  "promptSha": "d9544fab13233ee2765eed141cb08fe99a81f45579fa028a7f733f639eb1222c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Vertical vs Horizontal Scaling & The Need for Database Sharding",
+      "codeHash": "0f48170e8c8b3194915a7898b960ad6edfe66a06a0d34ad82c2f9bb54c9e32d0",
+      "spec": {
+        "template": "workflow",
+        "title": "Horizontal database sharding partitioning workflow",
+        "workflow": [
+          {
+            "id": "tableSplit",
+            "label": "Deconstruct Monolithic Table into Shards",
+            "status": "completed"
+          },
+          {
+            "id": "assignRows",
+            "label": "Distribute Rows Across Disjoint Engines",
+            "status": "active"
+          },
+          {
+            "id": "routeQueries",
+            "label": "Route Queries Directly by Shard Key",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Database sharding distributes tables across independent physical server nodes.",
+            "activeWorkflowId": "tableSplit",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "The shard key dictates how rows are distributed across cluster servers.",
+            "activeWorkflowId": "routeQueries",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Horizontal database sharding partitioning workflow",
+        "workflow": [
+          {
+            "id": "tableSplit",
+            "label": "Deconstruct Monolithic Table into Shards",
+            "status": "completed"
+          },
+          {
+            "id": "assignRows",
+            "label": "Distribute Rows Across Disjoint Engines",
+            "status": "active"
+          },
+          {
+            "id": "routeQueries",
+            "label": "Route Queries Directly by Shard Key",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Database sharding distributes tables across independent physical server nodes.",
+            "activeWorkflowId": "tableSplit",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "The shard key dictates how rows are distributed across cluster servers.",
+            "activeWorkflowId": "routeQueries",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Range Sharding: Partitioning by Contiguous Key Intervals",
+      "codeHash": "80472591743765f1aa66895ec14270f16cddceab578610053e49edc6eb230896",
+      "spec": {
+        "template": "states",
+        "title": "Range-based sharding states and hot-spot risks",
+        "states": [
+          {
+            "id": "contiguousRanges",
+            "label": "Contiguous Key Ranges Assigned to Shards"
+          },
+          {
+            "id": "rangeQueryOptimized",
+            "label": "Range Queries Routed to Single Shard"
+          },
+          {
+            "id": "hotspotOverload",
+            "label": "Active Range Shard Suffers Write Overload"
+          },
+          {
+            "id": "unevenDataSkew",
+            "label": "Severe Data Skew Across Cluster Disks"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Range queries route to a single shard when scanning contiguous bounds.",
+            "activeStateId": "rangeQueryOptimized",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Current timestamp writes hit the active month shard creating hot spots.",
+            "activeStateId": "hotspotOverload",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Range-based sharding states and hot-spot risks",
+        "states": [
+          {
+            "id": "contiguousRanges",
+            "label": "Contiguous Key Ranges Assigned to Shards"
+          },
+          {
+            "id": "rangeQueryOptimized",
+            "label": "Range Queries Routed to Single Shard"
+          },
+          {
+            "id": "hotspotOverload",
+            "label": "Active Range Shard Suffers Write Overload"
+          },
+          {
+            "id": "unevenDataSkew",
+            "label": "Severe Data Skew Across Cluster Disks"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Range queries route to a single shard when scanning contiguous bounds.",
+            "activeStateId": "rangeQueryOptimized",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Current timestamp writes hit the active month shard creating hot spots.",
+            "activeStateId": "hotspotOverload",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hash Sharding: Uniform Distribution via Hash Modulo",
+      "codeHash": "5727639a357e0fd3f7fc37fec3902cf45db061613765948da2c872f11359d488",
+      "spec": {
+        "template": "table",
+        "title": "Comparison matrix of range sharding versus hash sharding",
+        "columns": [
+          "Sharding Strategy",
+          "Distribution Uniformity",
+          "Range Query Speed",
+          "Hot Spot Vulnerability"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Hash functions scatter keys uniformly across all cluster shards.",
+            "highlightRow": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Range queries require scatter gather queries across every shard.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comparison matrix of range sharding versus hash sharding",
+        "columns": [
+          "Sharding Strategy",
+          "Distribution Uniformity",
+          "Range Query Speed",
+          "Hot Spot Vulnerability"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Hash functions scatter keys uniformly across all cluster shards.",
+            "highlightRow": 1,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Range queries require scatter gather queries across every shard.",
+            "highlightRow": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Directory-Based Sharding: Dynamic Lookup Catalogs",
+      "codeHash": "e75ce0fd4bd02d012bf1fdf8b2c3bbe85581367f5067a18edcdfda6670c6916e",
+      "spec": {
+        "template": "sequence",
+        "title": "Directory-based dynamic catalog lookup and routing sequence",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Routing Layer"
+          },
+          {
+            "id": "directory",
+            "label": "Shard Directory Catalog"
+          },
+          {
+            "id": "shardNode",
+            "label": "Target Physical Shard"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "directory",
+            "label": "Lookup Tenant Shard ID",
+            "tone": "data"
+          },
+          {
+            "from": "directory",
+            "to": "client",
+            "label": "Return Physical Shard ID",
+            "tone": "ok"
+          },
+          {
+            "from": "client",
+            "to": "shardNode",
+            "label": "Execute Targeted Query",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The routing layer queries the directory to locate the tenant shard.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Shards can be migrated dynamically by updating the directory mapping.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Directory-based dynamic catalog lookup and routing sequence",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Routing Layer"
+          },
+          {
+            "id": "directory",
+            "label": "Shard Directory Catalog"
+          },
+          {
+            "id": "shardNode",
+            "label": "Target Physical Shard"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "directory",
+            "label": "Lookup Tenant Shard ID",
+            "tone": "data"
+          },
+          {
+            "from": "directory",
+            "to": "client",
+            "label": "Return Physical Shard ID",
+            "tone": "ok"
+          },
+          {
+            "from": "client",
+            "to": "shardNode",
+            "label": "Execute Targeted Query",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The routing layer queries the directory to locate the tenant shard.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Shards can be migrated dynamically by updating the directory mapping.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Shard Queries: The Scatter-Gather Penalty",
+      "codeHash": "6d67b7f09c36a036f65181d248fa6b70c55c6e388406c0b1c0e8311d31c64f8a",
+      "spec": {
+        "template": "compare",
+        "title": "Single-shard query versus scatter-gather cluster penalty",
+        "left": {
+          "title": "Targeted Shard Query",
+          "items": [
+            "Query includes shard key in where clause",
+            "Direct single hop to specific physical host",
+            "Sub-millisecond query execution latency"
+          ]
+        },
+        "right": {
+          "title": "Scatter-Gather Query",
+          "items": [
+            "Query lacks primary shard key attribute",
+            "Broadcasts parallel requests to every shard",
+            "Governed by slowest responding tail node"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Router scatters the query in parallel across all cluster shards.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Scatter gather queries consume database connections across all nodes.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "Targeted Shard Query",
+        "rightLabel": "Scatter-Gather Query"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Single-shard query versus scatter-gather cluster penalty",
+        "left": {
+          "title": "Targeted Shard Query",
+          "items": [
+            "Query includes shard key in where clause",
+            "Direct single hop to specific physical host",
+            "Sub-millisecond query execution latency"
+          ]
+        },
+        "right": {
+          "title": "Scatter-Gather Query",
+          "items": [
+            "Query lacks primary shard key attribute",
+            "Broadcasts parallel requests to every shard",
+            "Governed by slowest responding tail node"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Router scatters the query in parallel across all cluster shards.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Scatter gather queries consume database connections across all nodes.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ],
+        "leftLabel": "Targeted Shard Query",
+        "rightLabel": "Scatter-Gather Query"
+      }
+    },
+    {
+      "partTitle": "Enterprise Distributed Sharding Engine with Routing & Rebalancing",
+      "codeHash": "5c801ad46e131a394e3892dce77487d637cf21a28c69aca4bb90fcab02435b05",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

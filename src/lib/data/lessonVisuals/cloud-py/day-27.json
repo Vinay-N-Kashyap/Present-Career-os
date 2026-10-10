@@ -1,0 +1,1017 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Threats at the front door",
+      "codeHash": "b1b1adc363f00c1b2f0979da1ab58a9e0e7b0397eb4289936ba1617232d84f38",
+      "spec": {
+        "template": "table",
+        "title": "Common web attack vectors and database injection prevention",
+        "columns": [
+          "query",
+          "params"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Anything public receives hostile traffic including bots and scrapers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "SQL injection happens when untrusted input enters a database query.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unsafe"
+                  },
+                  {
+                    "text": "user_input"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cross-site scripting sneaks JavaScript into pages other users view.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unsafe"
+                  },
+                  {
+                    "text": "user_input"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "database"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Parameterised queries and output escaping fix injection vulnerabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unsafe"
+                  },
+                  {
+                    "text": "user_input"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "database"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "firewall"
+                  },
+                  {
+                    "text": "patterns"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Common web attack vectors and database injection prevention",
+        "columns": [
+          "query",
+          "params"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Anything public receives hostile traffic including bots and scrapers.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "SQL injection happens when untrusted input enters a database query.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "params"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "unsafe",
+                  "user_input"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cross-site scripting sneaks JavaScript into pages other users view.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "params"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "unsafe",
+                  "user_input"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "database",
+                  "query"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Parameterised queries and output escaping fix injection vulnerabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "params"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "unsafe",
+                  "user_input"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "database",
+                  "query"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "firewall",
+                  "patterns"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS WAF web ACLs",
+      "codeHash": "e3c1a793a94cec7e7f6c55f80452a6ed045623e610749c6b7c64e63e32fde599",
+      "spec": {
+        "template": "table",
+        "title": "AWS WAF web ACL rule evaluation priority and actions",
+        "columns": [
+          "action",
+          "rule"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Web ACL configurations evaluate ordered rules with configured actions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "IP_BLOCK"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rules are evaluated by priority where the first matching rule wins.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "IP_BLOCK"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "SQLI"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "AWS Managed Rules give ready-made rule groups for injection defense.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "IP_BLOCK"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "SQLI"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Allow"
+                  },
+                  {
+                    "text": "core"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Roll out new rules in Count mode first before switching to Block.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "IP_BLOCK"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "SQLI"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Allow"
+                  },
+                  {
+                    "text": "core"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Count"
+                  },
+                  {
+                    "text": "BLOCK"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AWS WAF web ACL rule evaluation priority and actions",
+        "columns": [
+          "action",
+          "rule"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Web ACL configurations evaluate ordered rules with configured actions.",
+            "rows": [
+              {
+                "cells": [
+                  "BLOCK",
+                  "IP_BLOCK"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rules are evaluated by priority where the first matching rule wins.",
+            "rows": [
+              {
+                "cells": [
+                  "BLOCK",
+                  "IP_BLOCK"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "SQLI"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "AWS Managed Rules give ready-made rule groups for injection defense.",
+            "rows": [
+              {
+                "cells": [
+                  "BLOCK",
+                  "IP_BLOCK"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "SQLI"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Allow",
+                  "core"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Roll out new rules in Count mode first before switching to Block.",
+            "rows": [
+              {
+                "cells": [
+                  "BLOCK",
+                  "IP_BLOCK"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "SQLI"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Allow",
+                  "core"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Count",
+                  "BLOCK"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rate-based rules",
+      "codeHash": "44ccb3c585d24e8edb922a46863f6e8d4b8fefe5b9b3a8d48cfb29a48b811198",
+      "spec": {
+        "template": "table",
+        "title": "Rate-based rules tracking client request volume per IP address",
+        "columns": [
+          "ip",
+          "path"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rate-based rules count calls per IP address over rolling windows.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "49.36.1.2"
+                  },
+                  {
+                    "text": "/products"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When an IP goes over the limit WAF blocks it until rates fall.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "49.36.1.2"
+                  },
+                  {
+                    "text": "/products"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "203.0.113.9"
+                  },
+                  {
+                    "text": "/login"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scope-down statements count suspicious calls to login paths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "49.36.1.2"
+                  },
+                  {
+                    "text": "/products"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "203.0.113.9"
+                  },
+                  {
+                    "text": "/login"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "49.36.7.7"
+                  },
+                  {
+                    "text": "/login"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Choose limits from real traffic data comfortably above typical rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "49.36.1.2"
+                  },
+                  {
+                    "text": "/products"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "203.0.113.9"
+                  },
+                  {
+                    "text": "/login"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "49.36.7.7"
+                  },
+                  {
+                    "text": "/login"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Rate-based rules tracking client request volume per IP address",
+        "columns": [
+          "ip",
+          "path"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rate-based rules count calls per IP address over rolling windows.",
+            "rows": [
+              {
+                "cells": [
+                  "49.36.1.2",
+                  "/products"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When an IP goes over the limit WAF blocks it until rates fall.",
+            "rows": [
+              {
+                "cells": [
+                  "49.36.1.2",
+                  "/products"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "203.0.113.9",
+                  "/login"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scope-down statements count suspicious calls to login paths.",
+            "rows": [
+              {
+                "cells": [
+                  "49.36.1.2",
+                  "/products"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "203.0.113.9",
+                  "/login"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "49.36.7.7",
+                  "/login"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Choose limits from real traffic data comfortably above typical rates.",
+            "rows": [
+              {
+                "cells": [
+                  "49.36.1.2",
+                  "/products"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "203.0.113.9",
+                  "/login"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "49.36.7.7",
+                  "/login"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IP sets and CIDR validation",
+      "codeHash": "7c9bbd9d51e7671339a892bdc042aa720e4805b8d52bd13c33075c73f18a5792",
+      "spec": {
+        "template": "table",
+        "title": "Validating IP sets and network ranges against CIDR constraints",
+        "columns": [
+          "entry",
+          "net"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "IP sets define lists of addresses or ranges for firewall rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "203.0.113.0/24"
+                  },
+                  {
+                    "text": "203.0.113.0/24"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Entries require valid CIDR notation with prefix lengths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "203.0.113.0/24"
+                  },
+                  {
+                    "text": "203.0.113.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2001:db8::/32"
+                  },
+                  {
+                    "text": "2001:db8::/32"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict parsing rejects ambiguous ranges containing host bits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "203.0.113.0/24"
+                  },
+                  {
+                    "text": "203.0.113.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2001:db8::/32"
+                  },
+                  {
+                    "text": "2001:db8::/32"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.0.5/24"
+                  },
+                  {
+                    "text": "10.0.0.5/24"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Every entry must contain a slash prefix to pass validation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "203.0.113.0/24"
+                  },
+                  {
+                    "text": "203.0.113.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2001:db8::/32"
+                  },
+                  {
+                    "text": "2001:db8::/32"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.0.5/24"
+                  },
+                  {
+                    "text": "10.0.0.5/24"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.0.1"
+                  },
+                  {
+                    "text": "10.0.0.1"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Validating IP sets and network ranges against CIDR constraints",
+        "columns": [
+          "entry",
+          "net"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "IP sets define lists of addresses or ranges for firewall rules.",
+            "rows": [
+              {
+                "cells": [
+                  "203.0.113.0/24",
+                  "203.0.113.0/24"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Entries require valid CIDR notation with prefix lengths.",
+            "rows": [
+              {
+                "cells": [
+                  "203.0.113.0/24",
+                  "203.0.113.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2001:db8::/32",
+                  "2001:db8::/32"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict parsing rejects ambiguous ranges containing host bits.",
+            "rows": [
+              {
+                "cells": [
+                  "203.0.113.0/24",
+                  "203.0.113.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2001:db8::/32",
+                  "2001:db8::/32"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10.0.0.5/24",
+                  "10.0.0.5/24"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Every entry must contain a slash prefix to pass validation.",
+            "rows": [
+              {
+                "cells": [
+                  "203.0.113.0/24",
+                  "203.0.113.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2001:db8::/32",
+                  "2001:db8::/32"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10.0.0.5/24",
+                  "10.0.0.5/24"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "10.0.0.1",
+                  "10.0.0.1"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DDoS and AWS Shield",
+      "codeHash": "d0d360bb1b0f7992fa98bdeca630a5737cd7edbd43221aed71a1ca48746cbd96",
+      "spec": {
+        "template": "none",
+        "reason": "DDoS and AWS Shield."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: inspect and validate",
+      "codeHash": "33f64d61c9d0483aadeb966925424763ce3d9c5d49a15b4b6163c3da2684ec62",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: inspect and validate."
+      },
+      "filled": {}
+    }
+  ]
+}

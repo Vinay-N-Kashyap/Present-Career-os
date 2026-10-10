@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 13,
+  "promptSha": "2e75735e1aa7903a7b05ea2fc5c34d170fa6caf0e109455f943f0aaac5423ec7",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Lomuto Partitioning Mechanics",
+      "codeHash": "7aadddd03cfeae9337d75b4271550b7c50deb20fb0863d0933666c0cecd00838",
+      "spec": {
+        "template": "cells",
+        "title": "Lomuto partition boundary pointer scan",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Lomuto partition scheme selects last element as pivot.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "80"
+              },
+              {
+                "text": "30"
+              },
+              {
+                "text": "70"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "pivot",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pointer j scans array and swaps smaller elements to boundary i.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "30"
+              },
+              {
+                "text": "80"
+              },
+              {
+                "text": "70"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Lomuto partition boundary pointer scan",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Lomuto partition scheme selects last element as pivot.",
+            "items": [
+              "10",
+              "80",
+              "30",
+              "70"
+            ],
+            "pointers": [
+              {
+                "name": "pivot",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pointer j scans array and swaps smaller elements to boundary i.",
+            "items": [
+              "10",
+              "30",
+              "80",
+              "70"
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hoare Partitioning Scheme & Efficiency Comparison",
+      "codeHash": "ac6d09b7176d75845a28440bbf4616a078040c552e5236ab66391bd475e371de",
+      "spec": {
+        "template": "compare",
+        "title": "Lomuto vs Hoare partition schemes",
+        "left": {
+          "title": "Lomuto Scheme",
+          "items": [
+            {
+              "label": "Pivot",
+              "value": "Last element"
+            },
+            {
+              "label": "Scan",
+              "value": "Unidirectional"
+            }
+          ]
+        },
+        "right": {
+          "title": "Hoare Scheme",
+          "items": [
+            {
+              "label": "Pivot",
+              "value": "Midpoint"
+            },
+            {
+              "label": "Scan",
+              "value": "Two pointers converging"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Hoare scheme uses two pointers converging inward from array ends.",
+            "left": {
+              "code": "arr[hi]",
+              "result": "single",
+              "tone": "data"
+            },
+            "right": {
+              "code": "arr[i], arr[j]",
+              "result": "converge",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Converging scan scheme performs fewer element swaps than Lomuto.",
+            "left": {
+              "code": "arr[hi]",
+              "result": "single",
+              "tone": "data"
+            },
+            "right": {
+              "code": "arr[i], arr[j]",
+              "result": "3x fewer",
+              "tone": "ok"
+            }
+          }
+        ],
+        "leftLabel": "Lomuto Scheme",
+        "rightLabel": "Hoare Scheme"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Lomuto vs Hoare partition schemes",
+        "left": {
+          "title": "Lomuto Scheme",
+          "items": [
+            {
+              "label": "Pivot",
+              "value": "Last element"
+            },
+            {
+              "label": "Scan",
+              "value": "Unidirectional"
+            }
+          ]
+        },
+        "right": {
+          "title": "Hoare Scheme",
+          "items": [
+            {
+              "label": "Pivot",
+              "value": "Midpoint"
+            },
+            {
+              "label": "Scan",
+              "value": "Two pointers converging"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Hoare scheme uses two pointers converging inward from array ends.",
+            "left": {
+              "code": "arr[hi]",
+              "result": "single",
+              "tone": "data"
+            },
+            "right": {
+              "code": "arr[i], arr[j]",
+              "result": "converge",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Converging scan scheme performs fewer element swaps than Lomuto.",
+            "left": {
+              "code": "arr[hi]",
+              "result": "single",
+              "tone": "data"
+            },
+            "right": {
+              "code": "arr[i], arr[j]",
+              "result": "3x fewer",
+              "tone": "ok"
+            }
+          }
+        ],
+        "leftLabel": "Lomuto Scheme",
+        "rightLabel": "Hoare Scheme"
+      }
+    },
+    {
+      "partTitle": "Recursive Quick Sort Implementation",
+      "codeHash": "a86bd195e0ea973e8d889a9858d512e6167ff2ffaf14f3d9f086b3e261174e74",
+      "spec": {
+        "template": "bars",
+        "title": "Quick sort recursive in-place partitioning",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Quick sort performs partition work before making recursive calls.",
+            "bars": [
+              {
+                "label": "10",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "7",
+                "value": {
+                  "text": "7"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "5",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Partitioned halves sort in place with minimal call stack overhead.",
+            "bars": [
+              {
+                "label": "1",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "5",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "10",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Quick sort recursive in-place partitioning",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Quick sort performs partition work before making recursive calls.",
+            "bars": [
+              {
+                "label": "10",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "7",
+                "value": 7,
+                "tone": "data"
+              },
+              {
+                "label": "5",
+                "value": 5,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Partitioned halves sort in place with minimal call stack overhead.",
+            "bars": [
+              {
+                "label": "1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "5",
+                "value": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "10",
+                "value": 10,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pivot Selection Strategies & Randomized Quick Sort",
+      "codeHash": "f7a4fef92b0b608c0ddde0d78ad92a1a4d272e9c47e5e93b5b713aa439be6d78",
+      "spec": {
+        "template": "cells",
+        "title": "Randomized pivot selection balancing",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Randomized pivot selection protects against sorted array degradation.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "randomIdx",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Median of three inspection samples endpoints and array midpoint.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "7"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "lo",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "hi",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Randomized pivot selection balancing",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Randomized pivot selection protects against sorted array degradation.",
+            "items": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "randomIdx",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Median of three inspection samples endpoints and array midpoint.",
+            "items": [
+              "1",
+              "2",
+              "4",
+              "6",
+              "7"
+            ],
+            "pointers": [
+              {
+                "name": "lo",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "hi",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quick Select Algorithm (Kth Element in Average O(N))",
+      "codeHash": "d176d6b5a755b5d7e67a98aa77f446d7301ea1c8eafec981d0af4e598bfa1439",
+      "spec": {
+        "template": "cells",
+        "title": "Quick select average linear selection",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Quick select solves selection problem in average linear time.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "4"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "targetIdx",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Selection recurses into single partition half saving work.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "p",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "k",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Quick select average linear selection",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Quick select solves selection problem in average linear time.",
+            "items": [
+              "3",
+              "2",
+              "1",
+              "5",
+              "6",
+              "4"
+            ],
+            "pointers": [
+              {
+                "name": "targetIdx",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Selection recurses into single partition half saving work.",
+            "items": [
+              "3",
+              "2",
+              "1",
+              "4",
+              "5",
+              "6"
+            ],
+            "pointers": [
+              {
+                "name": "p",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "k",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Three-Way Partitioning (Dutch National Flag & Duplicates)",
+      "codeHash": "baf577ec924e0cc7f35207d66feac0e258b5d11ee3e841b113ed87488b561907",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

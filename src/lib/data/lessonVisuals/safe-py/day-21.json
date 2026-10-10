@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why an evaluation harness",
+      "codeHash": "05730d35cb46bc896c8341dd0174cfe02da2b7a8204cff64687a3e5f6a820069",
+      "spec": {
+        "template": "table",
+        "title": "Automated evaluation harness triggers across releases",
+        "columns": [
+          "changes",
+          "release"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluation harnesses execute tests and report results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "changes"
+                  },
+                  {
+                    "text": "release"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "changes"
+                  },
+                  {
+                    "text": "release"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Safety tests run alongside standard software tests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "changes"
+                  },
+                  {
+                    "text": "release"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "changes"
+                  },
+                  {
+                    "text": "release"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated evaluation harness triggers across releases",
+        "columns": [
+          "changes",
+          "release"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluation harnesses execute tests and report results.",
+            "rows": [
+              {
+                "cells": [
+                  "changes",
+                  "release"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "changes",
+                  "release"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Safety tests run alongside standard software tests.",
+            "rows": [
+              {
+                "cells": [
+                  "changes",
+                  "release"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "changes",
+                  "release"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Test cases with expected decisions",
+      "codeHash": "d82dc48024837585bec7dd11e53d741ee514bb8c2c31088c797fb3a0c129983c",
+      "spec": {
+        "template": "table",
+        "title": "Test cases tracking expected decision outcomes",
+        "columns": [
+          "suite",
+          "expect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safety test cases define an input and expected decision.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "suite"
+                  },
+                  {
+                    "text": "expect"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "suite"
+                  },
+                  {
+                    "text": "BLOCK"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The test suite includes attacks that must be blocked.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "suite"
+                  },
+                  {
+                    "text": "ALLOW"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "suite"
+                  },
+                  {
+                    "text": "expect"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Test cases tracking expected decision outcomes",
+        "columns": [
+          "suite",
+          "expect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safety test cases define an input and expected decision.",
+            "rows": [
+              {
+                "cells": [
+                  "suite",
+                  "expect"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "suite",
+                  "BLOCK"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The test suite includes attacks that must be blocked.",
+            "rows": [
+              {
+                "cells": [
+                  "suite",
+                  "ALLOW"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "suite",
+                  "expect"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running the suite",
+      "codeHash": "47a217269a74a27a8e54f2dc6a1f5cc2732d986f1c9adb6700cdfa0f94560ec1",
+      "spec": {
+        "template": "table",
+        "title": "Running suite and collecting failure diagnostics",
+        "columns": [
+          "suite",
+          "failures"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The runner executes the guard across every test input.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "suite"
+                  },
+                  {
+                    "text": "failures"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "guard"
+                  },
+                  {
+                    "text": "failures"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The failure list tells engineers what cases to investigate.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "suite"
+                  },
+                  {
+                    "text": "failures"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BLOCK"
+                  },
+                  {
+                    "text": "ALLOW"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Running suite and collecting failure diagnostics",
+        "columns": [
+          "suite",
+          "failures"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The runner executes the guard across every test input.",
+            "rows": [
+              {
+                "cells": [
+                  "suite",
+                  "failures"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "guard",
+                  "failures"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The failure list tells engineers what cases to investigate.",
+            "rows": [
+              {
+                "cells": [
+                  "suite",
+                  "failures"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BLOCK",
+                  "ALLOW"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regression gates",
+      "codeHash": "527cfcbb819bbe9c30aa91af23ac1a85a291108584e9d437b4f2828c87c6c095",
+      "spec": {
+        "template": "table",
+        "title": "Regression gate metrics and release blocking",
+        "columns": [
+          "baseline",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The regression gate compares current metrics against baseline.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "baseline"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "baseline"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A metric regresses when it drops lower than baseline tolerance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "baseline"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "regressed"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Regression gate metrics and release blocking",
+        "columns": [
+          "baseline",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The regression gate compares current metrics against baseline.",
+            "rows": [
+              {
+                "cells": [
+                  "baseline",
+                  "current"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "baseline",
+                  "current"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A metric regresses when it drops lower than baseline tolerance.",
+            "rows": [
+              {
+                "cells": [
+                  "baseline",
+                  "current"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "regressed",
+                  "current"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What to measure in the gate",
+      "codeHash": "07b020560bc34aaca791a4dd41fac4a24f005e20ec7fc654bd60f453c09d258a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The harness in the pipeline",
+      "codeHash": "8ad07e9973c5716bb99aecb61d0f58cba8917a981b34ca1ffe215e87ce5184a1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

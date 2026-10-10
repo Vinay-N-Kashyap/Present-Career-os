@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why activations are stored",
+      "codeHash": "35113706312b9ace0b4551de83cd4e83d8620f4a84333bc8b4b665c86d53bf1c",
+      "spec": {
+        "template": "table",
+        "title": "Activation accumulation across forward and backward passes",
+        "columns": [
+          "layers",
+          "stored",
+          "range"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forward passes store intermediate activations to compute backward gradients.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "stored"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "stored"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Activation checkpointing saves selected states and recomputes on demand.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "stored"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "stored"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Activation accumulation across forward and backward passes",
+        "columns": [
+          "layers",
+          "stored",
+          "range"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forward passes store intermediate activations to compute backward gradients.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "stored",
+                  "range"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "stored",
+                  "range"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Activation checkpointing saves selected states and recomputes on demand.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "stored",
+                  "range"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "stored",
+                  "layers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checkpointing every k layers",
+      "codeHash": "ae9915a0059ae34a98d30f521aedbce9d9cb50cf7568a719f5db5685d55d9f98",
+      "spec": {
+        "template": "table",
+        "title": "Periodic checkpointing intervals and segment memory trade-offs",
+        "columns": [
+          "layers",
+          "every",
+          "mem"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Segmented checkpointing saves only segment inputs between layer boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "every"
+                  },
+                  {
+                    "text": "mem"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "every"
+                  },
+                  {
+                    "text": "mem"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Peak activation memory shrinks to a modest fraction of uncheckpointed layers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "every"
+                  },
+                  {
+                    "text": "mem"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "every"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Periodic checkpointing intervals and segment memory trade-offs",
+        "columns": [
+          "layers",
+          "every",
+          "mem"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Segmented checkpointing saves only segment inputs between layer boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "every",
+                  "mem"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "every",
+                  "mem"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Peak activation memory shrinks to a modest fraction of uncheckpointed layers.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "every",
+                  "mem"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "every",
+                  "layers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The square-root rule",
+      "codeHash": "3f8b59c62d5e63ec3673bb26ff5a6291f694ad199b6c617f1eee57f0b3f34132",
+      "spec": {
+        "template": "table",
+        "title": "Square-root rule for optimal checkpointing segment intervals",
+        "columns": [
+          "options",
+          "cost",
+          "range"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Segment size balances best when close to the square root of layer depth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "options"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "options"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Square root memory savings render huge models trainable on limited devices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "options"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "options"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "options"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Square-root rule for optimal checkpointing segment intervals",
+        "columns": [
+          "options",
+          "cost",
+          "range"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Segment size balances best when close to the square root of layer depth.",
+            "rows": [
+              {
+                "cells": [
+                  "options",
+                  "cost",
+                  "range"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "options",
+                  "cost",
+                  "range"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Square root memory savings render huge models trainable on limited devices.",
+            "rows": [
+              {
+                "cells": [
+                  "options",
+                  "cost",
+                  "range"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "options",
+                  "cost",
+                  "options"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The compute cost",
+      "codeHash": "2ee048a0afadfaa3f41c3adb945930a2bb9d6e9f3766ba1aef8bcc7c4b92c7a2",
+      "spec": {
+        "template": "table",
+        "title": "Recomputation overhead versus activation memory savings",
+        "columns": [
+          "plain",
+          "checkpointed",
+          "forward_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recomputing activations introduces a partial second forward pass overhead.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plain"
+                  },
+                  {
+                    "text": "checkpointed"
+                  },
+                  {
+                    "text": "forward_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "plain"
+                  },
+                  {
+                    "text": "checkpointed"
+                  },
+                  {
+                    "text": "forward_ms"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Memory saved allows larger micro-batches that improve GPU efficiency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plain"
+                  },
+                  {
+                    "text": "checkpointed"
+                  },
+                  {
+                    "text": "forward_ms"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "plain"
+                  },
+                  {
+                    "text": "checkpointed"
+                  },
+                  {
+                    "text": "plain"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Recomputation overhead versus activation memory savings",
+        "columns": [
+          "plain",
+          "checkpointed",
+          "forward_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recomputing activations introduces a partial second forward pass overhead.",
+            "rows": [
+              {
+                "cells": [
+                  "plain",
+                  "checkpointed",
+                  "forward_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "plain",
+                  "checkpointed",
+                  "forward_ms"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Memory saved allows larger micro-batches that improve GPU efficiency.",
+            "rows": [
+              {
+                "cells": [
+                  "plain",
+                  "checkpointed",
+                  "forward_ms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "plain",
+                  "checkpointed",
+                  "plain"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting the memory tools together",
+      "codeHash": "e0a42b030ce2484a5ec3ffcc5039b89903c6382410dbc5ca448c0a715a6ac613",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: checkpointing",
+      "codeHash": "dd6b6cebcc4a8f4ce5896d0bbaa7b3baed8895760adc868ef7eb622dcd23304b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

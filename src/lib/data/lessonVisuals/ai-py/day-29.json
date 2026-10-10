@@ -1,0 +1,672 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "When chunk retrieval struggles",
+      "codeHash": "f8df9dec7184a318184e77460e1604a8d6d08e95dc49b196eb7d9fb3b469b756",
+      "spec": {
+        "template": "none",
+        "reason": "Relational traversal vs semantic vector similarity overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Building a graph from triples",
+      "codeHash": "bfde68bca935525a5f3b7902cb94cca0965fcca10f5d30a96eb560ab87996cda",
+      "spec": {
+        "template": "flow",
+        "title": "Knowledge graph construction from extracted entity triples",
+        "nodes": [
+          {
+            "id": "asha",
+            "label": "Asha"
+          },
+          {
+            "id": "ravi",
+            "label": "Ravi"
+          },
+          {
+            "id": "mysuru",
+            "label": "Mysuru"
+          }
+        ],
+        "edges": [
+          {
+            "from": "asha",
+            "to": "mysuru",
+            "label": "LIVES_IN"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Facts extracted as subject relation object triples form graph nodes.",
+            "values": {
+              "asha": {
+                "text": "Asha"
+              },
+              "ravi": {
+                "text": "Ravi"
+              },
+              "mysuru": {
+                "text": "Mysuru"
+              }
+            },
+            "tones": {
+              "asha": "data",
+              "ravi": "data",
+              "mysuru": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Store nodes with properties and edges with relation types.",
+            "values": {
+              "asha": {
+                "text": "Asha"
+              },
+              "ravi": {
+                "text": "Ravi"
+              },
+              "mysuru": {
+                "text": "Mysuru"
+              }
+            },
+            "tones": {
+              "asha": "ok",
+              "ravi": "ok",
+              "mysuru": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Entity resolution normalises names so variants merge into one node.",
+            "values": {
+              "asha": {
+                "text": "Asha"
+              },
+              "ravi": {
+                "text": "Ravi"
+              },
+              "mysuru": {
+                "text": "Mysuru"
+              }
+            },
+            "tones": {
+              "asha": "ok",
+              "ravi": "ok",
+              "mysuru": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Knowledge graph construction from extracted entity triples",
+        "nodes": [
+          {
+            "id": "asha",
+            "label": "Asha"
+          },
+          {
+            "id": "ravi",
+            "label": "Ravi"
+          },
+          {
+            "id": "mysuru",
+            "label": "Mysuru"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Facts extracted as subject relation object triples form graph nodes.",
+            "values": {
+              "asha": "Asha",
+              "ravi": "Ravi",
+              "mysuru": "Mysuru"
+            },
+            "tones": {
+              "asha": "data",
+              "ravi": "data",
+              "mysuru": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Store nodes with properties and edges with relation types.",
+            "values": {
+              "asha": "Asha",
+              "ravi": "Ravi",
+              "mysuru": "Mysuru"
+            },
+            "tones": {
+              "asha": "ok",
+              "ravi": "ok",
+              "mysuru": "ok"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Entity resolution normalises names so variants merge into one node.",
+            "values": {
+              "asha": "Asha",
+              "ravi": "Ravi",
+              "mysuru": "Mysuru"
+            },
+            "tones": {
+              "asha": "ok",
+              "ravi": "ok",
+              "mysuru": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Traversing a relation",
+      "codeHash": "2ccab68dcf60ed424b94df51c8f923ce54b386ead159fc95d3cc767b37899879",
+      "spec": {
+        "template": "table",
+        "title": "Graph relation traversal matching outgoing edges",
+        "columns": [
+          "from",
+          "to",
+          "type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function traverse_graph filters edges by start entity and relation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CompanyX"
+                  },
+                  {
+                    "text": "SupplierA"
+                  },
+                  {
+                    "text": "OWNS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Build lookup map to resolve target properties quickly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CompanyX"
+                  },
+                  {
+                    "text": "SupplierA"
+                  },
+                  {
+                    "text": "OWNS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CompanyX"
+                  },
+                  {
+                    "text": "SupplierZ"
+                  },
+                  {
+                    "text": "OWNS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "One hop graph query retrieves matching target edges.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CompanyX"
+                  },
+                  {
+                    "text": "SupplierA"
+                  },
+                  {
+                    "text": "OWNS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CompanyX"
+                  },
+                  {
+                    "text": "SupplierZ"
+                  },
+                  {
+                    "text": "OWNS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CompanyX"
+                  },
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "BASED_IN"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Graph relation traversal matching outgoing edges",
+        "columns": [
+          "from",
+          "to",
+          "type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function traverse_graph filters edges by start entity and relation.",
+            "rows": [
+              {
+                "cells": [
+                  "CompanyX",
+                  "SupplierA",
+                  "OWNS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Build lookup map to resolve target properties quickly.",
+            "rows": [
+              {
+                "cells": [
+                  "CompanyX",
+                  "SupplierA",
+                  "OWNS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "CompanyX",
+                  "SupplierZ",
+                  "OWNS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "One hop graph query retrieves matching target edges.",
+            "rows": [
+              {
+                "cells": [
+                  "CompanyX",
+                  "SupplierA",
+                  "OWNS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "CompanyX",
+                  "SupplierZ",
+                  "OWNS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "CompanyX",
+                  "Pune",
+                  "BASED_IN"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-hop questions",
+      "codeHash": "9208b9b2a01060d7be257298806c75784068fa073831bf3da35e3189740a2748",
+      "spec": {
+        "template": "flow",
+        "title": "Multi-hop path exploration with breadth first search",
+        "nodes": [
+          {
+            "id": "CompanyX",
+            "label": "CompanyX"
+          },
+          {
+            "id": "SupplierA",
+            "label": "SupplierA"
+          },
+          {
+            "id": "SupplierB",
+            "label": "SupplierB"
+          }
+        ],
+        "edges": [
+          {
+            "from": "CompanyX",
+            "to": "SupplierA",
+            "label": "OWNS"
+          },
+          {
+            "from": "CompanyX",
+            "to": "SupplierB",
+            "label": "OWNS"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Breadth-first search traverses multi-hop paths with hop limit.",
+            "values": {
+              "CompanyX": {
+                "text": "CompanyX"
+              },
+              "SupplierA": {
+                "text": "SupplierA"
+              },
+              "SupplierB": {
+                "text": "SupplierB"
+              }
+            },
+            "tones": {
+              "CompanyX": "ok",
+              "SupplierA": "idle",
+              "SupplierB": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Path history records hops explaining answer derivation.",
+            "values": {
+              "CompanyX": {
+                "text": "CompanyX"
+              },
+              "SupplierA": {
+                "text": "SupplierA"
+              },
+              "SupplierB": {
+                "text": "SupplierB"
+              }
+            },
+            "tones": {
+              "CompanyX": "ok",
+              "SupplierA": "ok",
+              "SupplierB": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Limit search depth to max hops avoiding unbounded traversal.",
+            "values": {
+              "CompanyX": {
+                "text": "CompanyX"
+              },
+              "SupplierA": {
+                "text": "SupplierA"
+              },
+              "SupplierB": {
+                "text": "SupplierB"
+              }
+            },
+            "tones": {
+              "CompanyX": "ok",
+              "SupplierA": "ok",
+              "SupplierB": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Multi-hop path exploration with breadth first search",
+        "nodes": [
+          {
+            "id": "CompanyX",
+            "label": "CompanyX"
+          },
+          {
+            "id": "SupplierA",
+            "label": "SupplierA"
+          },
+          {
+            "id": "SupplierB",
+            "label": "SupplierB"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Breadth-first search traverses multi-hop paths with hop limit.",
+            "values": {
+              "CompanyX": "CompanyX",
+              "SupplierA": "SupplierA",
+              "SupplierB": "SupplierB"
+            },
+            "tones": {
+              "CompanyX": "ok",
+              "SupplierA": "idle",
+              "SupplierB": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Path history records hops explaining answer derivation.",
+            "values": {
+              "CompanyX": "CompanyX",
+              "SupplierA": "SupplierA",
+              "SupplierB": "SupplierB"
+            },
+            "tones": {
+              "CompanyX": "ok",
+              "SupplierA": "ok",
+              "SupplierB": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Limit search depth to max hops avoiding unbounded traversal.",
+            "values": {
+              "CompanyX": "CompanyX",
+              "SupplierA": "SupplierA",
+              "SupplierB": "SupplierB"
+            },
+            "tones": {
+              "CompanyX": "ok",
+              "SupplierA": "ok",
+              "SupplierB": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cypher queries, safely",
+      "codeHash": "84c469b444536a22ddb1b2b1e33a04cc01b23efd26335a6f8b4c5a5fabb4ec5a",
+      "spec": {
+        "template": "compare",
+        "title": "Cypher query construction injection vulnerability and parameters",
+        "leftLabel": "Vulnerable Cypher",
+        "rightLabel": "Safe Parameterized",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cypher graph patterns describe node relationships like drawings.",
+            "left": {
+              "code": "MATCH (a)-[:OWNS]->(b)",
+              "result": {
+                "text": "OWNS"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "MATCH (a)-[:SUPPLIES]->(b)",
+              "result": {
+                "text": "SUPPLIES"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "String concatenation invites injection attacks changing queries.",
+            "left": {
+              "code": "f-string injection risk",
+              "result": {
+                "text": "CompanyX"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sanitized relations check",
+              "result": {
+                "text": "BASED_IN"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Parameters pass values separately so database executes query safely.",
+            "left": {
+              "code": "raw query string concat",
+              "result": {
+                "text": "SupplierA"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "parameter bound variable $a",
+              "result": {
+                "text": "CompanyX"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cypher query construction injection vulnerability and parameters",
+        "leftLabel": "Vulnerable Cypher",
+        "rightLabel": "Safe Parameterized",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cypher graph patterns describe node relationships like drawings.",
+            "left": {
+              "code": "MATCH (a)-[:OWNS]->(b)",
+              "result": "OWNS",
+              "tone": "ok",
+              "checks": [
+                "OWNS"
+              ]
+            },
+            "right": {
+              "code": "MATCH (a)-[:SUPPLIES]->(b)",
+              "result": "SUPPLIES",
+              "tone": "ok",
+              "checks": [
+                "SUPPLIES"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "String concatenation invites injection attacks changing queries.",
+            "left": {
+              "code": "f-string injection risk",
+              "result": "CompanyX",
+              "tone": "error",
+              "checks": [
+                "CompanyX"
+              ]
+            },
+            "right": {
+              "code": "sanitized relations check",
+              "result": "BASED_IN",
+              "tone": "ok",
+              "checks": [
+                "BASED_IN"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Parameters pass values separately so database executes query safely.",
+            "left": {
+              "code": "raw query string concat",
+              "result": "SupplierA",
+              "tone": "error",
+              "checks": [
+                "SupplierA"
+              ]
+            },
+            "right": {
+              "code": "parameter bound variable $a",
+              "result": "CompanyX",
+              "tone": "ok",
+              "checks": [
+                "CompanyX"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Combining graphs with vector search",
+      "codeHash": "265eca91621f5a47379fcc7fbc68c5f042ff13d316f5eb4fd2ed721a149cb4ba",
+      "spec": {
+        "template": "none",
+        "reason": "Hybrid GraphRAG and community summarization architecture."
+      },
+      "filled": {}
+    }
+  ]
+}

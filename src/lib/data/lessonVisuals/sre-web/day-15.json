@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 15,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Bulkhead Pattern: Ship Compartmentalization in Distributed Systems",
+      "codeHash": "b8c8eec7f7f293b7c4c2833cca7f6b19fb789946bf4944faaef22bbce8e82b50",
+      "spec": {
+        "template": "bars",
+        "title": "Bulkhead partitioned concurrency allocations across critical and noncritical services",
+        "bars": [
+          {
+            "id": "checkout",
+            "label": "Checkout Core Pool",
+            "value": 90
+          },
+          {
+            "id": "analytics",
+            "label": "Analytics Isolated Pool",
+            "value": 10
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Bulkhead patterns partition execution threads into dedicated allocations.",
+            "activeBars": [
+              "checkout",
+              "analytics"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Core checkout operations retain untouched capacity and function unimpeded.",
+            "activeBars": [
+              "checkout"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Bulkhead partitioned concurrency allocations across critical and noncritical services",
+        "bars": [
+          {
+            "id": "checkout",
+            "label": "Checkout Core Pool",
+            "value": 90
+          },
+          {
+            "id": "analytics",
+            "label": "Analytics Isolated Pool",
+            "value": 10
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Bulkhead patterns partition execution threads into dedicated allocations.",
+            "activeBars": [
+              "checkout",
+              "analytics"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Core checkout operations retain untouched capacity and function unimpeded.",
+            "activeBars": [
+              "checkout"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resource Pool Partitioning: Semaphore & Queue Bulkheads",
+      "codeHash": "091376d8594539f1d045f68280417472e3d594abd2605aa50c4f3408f40236be",
+      "spec": {
+        "template": "compare",
+        "title": "Semaphore permit counters versus dedicated thread queue bulkheads",
+        "left": {
+          "title": "Semaphore Bulkhead",
+          "items": [
+            "Atomic concurrency permit counter",
+            "Zero thread context switching overhead",
+            "Ideal for non-blocking asynchronous runtimes",
+            "Rejects immediately on permit exhaustion"
+          ]
+        },
+        "right": {
+          "title": "Thread Queue Bulkhead",
+          "items": [
+            "Dedicated thread pool per dependency",
+            "Bounded FIFO task queue buffering",
+            "Strong OS-level CPU core isolation",
+            "Higher memory footprint for thread stacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Semaphore bulkheads introduce zero context switching penalties in async runs.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Thread bulkheads provide CPU isolation and queueing with higher memory usage.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Semaphore Bulkhead",
+        "rightLabel": "Thread Queue Bulkhead"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Semaphore permit counters versus dedicated thread queue bulkheads",
+        "left": {
+          "title": "Semaphore Bulkhead",
+          "items": [
+            "Atomic concurrency permit counter",
+            "Zero thread context switching overhead",
+            "Ideal for non-blocking asynchronous runtimes",
+            "Rejects immediately on permit exhaustion"
+          ]
+        },
+        "right": {
+          "title": "Thread Queue Bulkhead",
+          "items": [
+            "Dedicated thread pool per dependency",
+            "Bounded FIFO task queue buffering",
+            "Strong OS-level CPU core isolation",
+            "Higher memory footprint for thread stacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Semaphore bulkheads introduce zero context switching penalties in async runs.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Thread bulkheads provide CPU isolation and queueing with higher memory usage.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Semaphore Bulkhead",
+        "rightLabel": "Thread Queue Bulkhead"
+      }
+    },
+    {
+      "partTitle": "Cascading Timeout Hierarchies & Deadlines",
+      "codeHash": "b24ffa5be86251fb35013e9c2b0945dd1931f51b40a8158afd3ced77bc6428f3",
+      "spec": {
+        "template": "table",
+        "title": "Cascading timeout hierarchy configuration validation matrix",
+        "columns": [
+          "Architecture Tier",
+          "Configured Timeout",
+          "Downstream Requirement",
+          "Topology Status"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Arbitrary timeouts without understanding topology cause inverted timeout traps.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Caller timeouts must always be strictly greater than callee timeout tiers.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 2,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cascading timeout hierarchy configuration validation matrix",
+        "columns": [
+          "Architecture Tier",
+          "Configured Timeout",
+          "Downstream Requirement",
+          "Topology Status"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Arbitrary timeouts without understanding topology cause inverted timeout traps.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Caller timeouts must always be strictly greater than callee timeout tiers.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 2,
+                "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Deadline Propagation with Context Headers",
+      "codeHash": "ed78c12b673f9d45a67dee98391100c0ef9dadb0a08b2dcbd9de965bc9617fb3",
+      "spec": {
+        "template": "sequence",
+        "title": "Distributed deadline timestamp propagation and remaining budget checks",
+        "actors": [
+          "Edge Gateway",
+          "Order Microservice",
+          "Postgres Database"
+        ],
+        "messages": [
+          {
+            "from": "Edge Gateway",
+            "to": "Order Microservice",
+            "label": "HTTP call with deadline header"
+          },
+          {
+            "from": "Order Microservice",
+            "to": "Order Microservice",
+            "label": "Compute remaining budget"
+          },
+          {
+            "from": "Order Microservice",
+            "to": "Postgres Database",
+            "label": "Query with remaining deadline"
+          },
+          {
+            "from": "Postgres Database",
+            "to": "Order Microservice",
+            "label": "Completed within time budget"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Edge gateways establish global deadline timestamps on request contexts.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Downstream services abort processing immediately when budgets expire.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Distributed deadline timestamp propagation and remaining budget checks",
+        "actors": [
+          "Edge Gateway",
+          "Order Microservice",
+          "Postgres Database"
+        ],
+        "messages": [
+          {
+            "from": "Edge Gateway",
+            "to": "Order Microservice",
+            "label": "HTTP call with deadline header"
+          },
+          {
+            "from": "Order Microservice",
+            "to": "Order Microservice",
+            "label": "Compute remaining budget"
+          },
+          {
+            "from": "Order Microservice",
+            "to": "Postgres Database",
+            "label": "Query with remaining deadline"
+          },
+          {
+            "from": "Postgres Database",
+            "to": "Order Microservice",
+            "label": "Completed within time budget"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Edge gateways establish global deadline timestamps on request contexts.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Downstream services abort processing immediately when budgets expire.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Layering Resilience Patterns: Retries, Breakers & Bulkheads",
+      "codeHash": "6ba8011e3c68d4709218a04058910500595c66570ce653f4fcb9ff379f4a989a",
+      "spec": {
+        "template": "workflow",
+        "title": "Defense in depth layered resilience pattern hierarchy",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Incoming Client Request"
+          },
+          {
+            "id": "bulkhead",
+            "label": "Outer Bulkhead Permit Guard"
+          },
+          {
+            "id": "breaker",
+            "label": "Middle Circuit Breaker Check"
+          },
+          {
+            "id": "retry",
+            "label": "Inner Retries with Jitter"
+          },
+          {
+            "id": "backend",
+            "label": "Downstream Target Service"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "bulkhead",
+            "label": "Concurrency Quota"
+          },
+          {
+            "from": "bulkhead",
+            "to": "breaker",
+            "label": "Permit Granted"
+          },
+          {
+            "from": "breaker",
+            "to": "retry",
+            "label": "Circuit CLOSED"
+          },
+          {
+            "from": "retry",
+            "to": "backend",
+            "label": "Execute Call"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Resilience layers compose bulkheads outside breakers and retries inside.",
+            "activeNodes": [
+              "ingress",
+              "bulkhead",
+              "breaker"
+            ],
+            "activeEdges": [
+              "ingress->bulkhead",
+              "bulkhead->breaker"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "The retry mechanism safely retries transient errors with exponential backoff.",
+            "activeNodes": [
+              "breaker",
+              "retry",
+              "backend"
+            ],
+            "activeEdges": [
+              "breaker->retry",
+              "retry->backend"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Defense in depth layered resilience pattern hierarchy",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Incoming Client Request"
+          },
+          {
+            "id": "bulkhead",
+            "label": "Outer Bulkhead Permit Guard"
+          },
+          {
+            "id": "breaker",
+            "label": "Middle Circuit Breaker Check"
+          },
+          {
+            "id": "retry",
+            "label": "Inner Retries with Jitter"
+          },
+          {
+            "id": "backend",
+            "label": "Downstream Target Service"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "bulkhead",
+            "label": "Concurrency Quota"
+          },
+          {
+            "from": "bulkhead",
+            "to": "breaker",
+            "label": "Permit Granted"
+          },
+          {
+            "from": "breaker",
+            "to": "retry",
+            "label": "Circuit CLOSED"
+          },
+          {
+            "from": "retry",
+            "to": "backend",
+            "label": "Execute Call"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Resilience layers compose bulkheads outside breakers and retries inside.",
+            "activeNodes": [
+              "ingress",
+              "bulkhead",
+              "breaker"
+            ],
+            "activeEdges": [
+              "ingress->bulkhead",
+              "bulkhead->breaker"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "The retry mechanism safely retries transient errors with exponential backoff.",
+            "activeNodes": [
+              "breaker",
+              "retry",
+              "backend"
+            ],
+            "activeEdges": [
+              "breaker->retry",
+              "retry->backend"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient Gateway Simulator: Combined Resilience Mesh",
+      "codeHash": "830088389db9934e22fad76545b336b54cbffc122409b9326a325b2664d22cb6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

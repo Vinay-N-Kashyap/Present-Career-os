@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Lost in the middle",
+      "codeHash": "3b3eb440b0e6640584cc203f12375c73b4fcad36abaa9af218facd64e546f473",
+      "spec": {
+        "template": "bars",
+        "title": "Model retrieval accuracy degradation across prompt positions",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accuracy dips significantly when information is placed in the middle.",
+            "bars": [
+              {
+                "label": "pos_1 (start)",
+                "value": {
+                  "text": "76"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "pos_10 (middle)",
+                "value": {
+                  "text": "54"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "pos_20 (end)",
+                "value": {
+                  "text": "72"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Placing relevant chunks at the edges defends against lost attention.",
+            "bars": [
+              {
+                "label": "edge_start",
+                "value": {
+                  "text": "76"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "submerged_mid",
+                "value": {
+                  "text": "54"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "edge_end",
+                "value": {
+                  "text": "72"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Model retrieval accuracy degradation across prompt positions",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accuracy dips significantly when information is placed in the middle.",
+            "bars": [
+              {
+                "label": "pos_1 (start)",
+                "value": 76,
+                "tone": "ok"
+              },
+              {
+                "label": "pos_10 (middle)",
+                "value": 54,
+                "tone": "error"
+              },
+              {
+                "label": "pos_20 (end)",
+                "value": 72,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Placing relevant chunks at the edges defends against lost attention.",
+            "bars": [
+              {
+                "label": "edge_start",
+                "value": 76,
+                "tone": "ok"
+              },
+              {
+                "label": "submerged_mid",
+                "value": 54,
+                "tone": "error"
+              },
+              {
+                "label": "edge_end",
+                "value": 72,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Arranging chunks from the outside in",
+      "codeHash": "aaae9809a52e5a30d9d09a15ad0276509eed08cb4a1f51ab65ebfc50bcb1af70",
+      "spec": {
+        "template": "boxes",
+        "title": "Outside in chunk placement reordering strategy",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "start"
+          },
+          {
+            "id": "b1",
+            "label": "middle"
+          },
+          {
+            "id": "b2",
+            "label": "end"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Reordering places the highest ranked chunks at the prompt boundaries.",
+            "values": {
+              "b0": {
+                "text": "2nd"
+              },
+              "b1": {
+                "text": "3rd"
+              },
+              "b2": {
+                "text": "best"
+              }
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "data",
+              "b2": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Two pointers distribute ranked items from the outside towards the center.",
+            "values": {
+              "b0": {
+                "text": "2nd"
+              },
+              "b1": {
+                "text": "5th"
+              },
+              "b2": {
+                "text": "best"
+              }
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "data",
+              "b2": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Outside in chunk placement reordering strategy",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "start"
+          },
+          {
+            "id": "b1",
+            "label": "middle"
+          },
+          {
+            "id": "b2",
+            "label": "end"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Reordering places the highest ranked chunks at the prompt boundaries.",
+            "values": {
+              "b0": "2nd",
+              "b1": "3rd",
+              "b2": "best"
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "data",
+              "b2": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Two pointers distribute ranked items from the outside towards the center.",
+            "values": {
+              "b0": "2nd",
+              "b1": "5th",
+              "b2": "best"
+            },
+            "tones": {
+              "b0": "ok",
+              "b1": "data",
+              "b2": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Estimating context size",
+      "codeHash": "dad40b22adba01b9b02b1c86503ffdb8d658fcb292d06c5bc9892329331026fc",
+      "spec": {
+        "template": "none",
+        "reason": "Word-to-token ratio calculation arithmetic and ceiling budgeting heuristics."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Word-to-token ratio calculation arithmetic and ceiling budgeting heuristics."
+      }
+    },
+    {
+      "partTitle": "Compressing chunks to what matters",
+      "codeHash": "d5bcbd24b65f1088af8f2ec5e255e8a2a74dc32b3fd61bcec235dca3417f1337",
+      "spec": {
+        "template": "compare",
+        "title": "Monolithic raw chunk versus extractive sentence compression",
+        "leftLabel": "Raw Chunk",
+        "rightLabel": "Compressed Sentence",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Contextual compression extracts useful sentences while removing filler text.",
+            "left": {
+              "code": "full chunk (4 sentences)",
+              "result": {
+                "text": "34 words"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "extracted sentence",
+              "result": {
+                "text": "8 words"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Extractive filtering preserves sentences sharing keywords with the question.",
+            "left": {
+              "code": "irrelevant sentences",
+              "result": {
+                "text": "parking and store hours"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "target sentence",
+              "result": {
+                "text": "UPI refunds in 2 days"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Monolithic raw chunk versus extractive sentence compression",
+        "leftLabel": "Raw Chunk",
+        "rightLabel": "Compressed Sentence",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Contextual compression extracts useful sentences while removing filler text.",
+            "left": {
+              "code": "full chunk (4 sentences)",
+              "result": "34 words",
+              "tone": "data",
+              "checks": [
+                "34 words"
+              ]
+            },
+            "right": {
+              "code": "extracted sentence",
+              "result": "8 words",
+              "tone": "ok",
+              "checks": [
+                "8 words"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Extractive filtering preserves sentences sharing keywords with the question.",
+            "left": {
+              "code": "irrelevant sentences",
+              "result": "parking and store hours",
+              "tone": "error",
+              "checks": [
+                "parking and store hours"
+              ]
+            },
+            "right": {
+              "code": "target sentence",
+              "result": "UPI refunds in 2 days",
+              "tone": "ok",
+              "checks": [
+                "UPI refunds in 2 days"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Removing near-duplicates",
+      "codeHash": "b028ec75455d9352182213cab325dbdbd86b0a8d77cd4106238cc6cb081357ff",
+      "spec": {
+        "template": "table",
+        "title": "Jaccard similarity duplicate detection and elimination",
+        "columns": [
+          "chunk_candidate",
+          "jaccard_similarity",
+          "action_taken"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Overlapping retrieval candidates often return duplicate information.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "UPI refunds arrive in 2 days"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "kept first"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Jaccard similarity compares texts as sets of words to detect duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "UPI refunds arrive in 2 days"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "kept first"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "UPI refunds arrive in 2 days."
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "dropped duplicate"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Jaccard similarity duplicate detection and elimination",
+        "columns": [
+          "chunk_candidate",
+          "jaccard_similarity",
+          "action_taken"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Overlapping retrieval candidates often return duplicate information.",
+            "rows": [
+              {
+                "cells": [
+                  "UPI refunds arrive in 2 days",
+                  "one",
+                  "kept first"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Jaccard similarity compares texts as sets of words to detect duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  "UPI refunds arrive in 2 days",
+                  "one",
+                  "kept first"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "UPI refunds arrive in 2 days.",
+                  "one",
+                  "dropped duplicate"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fitting a token budget",
+      "codeHash": "34b0bdff83534d7552fcdfd627b3b8d0446e83ede7024455ab9a50ca864ffe67",
+      "spec": {
+        "template": "none",
+        "reason": "Greedy pack token budget fitting algorithm and context truncation limits."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Greedy pack token budget fitting algorithm and context truncation limits."
+      }
+    }
+  ]
+}

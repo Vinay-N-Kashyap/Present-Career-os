@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 4,
+  "promptSha": "9633c14ede3209fbfb262de6e1af6ad207a8862d579619cb5120afc4c312a648",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Flaw of Modulo Hashing (K % N) Under Dynamic Cluster Resizing",
+      "codeHash": "1aafac57f9f26d7ae41da111300657d8eb84ceb9ab526b3eb20536adbfd67029",
+      "spec": {
+        "template": "compare",
+        "title": "Modulo hashing key redistribution compared to consistent ring partitioning",
+        "leftLabel": "Modulo Partitioning (K % N)",
+        "rightLabel": "Consistent Ring Partitioning",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Distributed production clusters scale out to handle dynamic traffic spikes.",
+            "left": {
+              "code": "Keys Remapped (4 -> 5 nodes): 78",
+              "result": {
+                "text": "78"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "Keys Remapped: 20%",
+              "result": {
+                "text": "20"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Massive key remapping invalidates cached items simultaneously across nodes.",
+            "left": {
+              "code": "Remapped Percentage: 78%",
+              "result": {
+                "text": "78%"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "Undisturbed Keys: 80%",
+              "result": {
+                "text": "80"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Modulo hashing key redistribution compared to consistent ring partitioning",
+        "leftLabel": "Modulo Partitioning (K % N)",
+        "rightLabel": "Consistent Ring Partitioning",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Distributed production clusters scale out to handle dynamic traffic spikes.",
+            "left": {
+              "code": "Keys Remapped (4 -> 5 nodes): 78",
+              "result": {
+                "text": "78"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "Keys Remapped: 20%",
+              "result": {
+                "text": "20"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Massive key remapping invalidates cached items simultaneously across nodes.",
+            "left": {
+              "code": "Remapped Percentage: 78%",
+              "result": {
+                "text": "78%"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "Undisturbed Keys: 80%",
+              "result": {
+                "text": "80"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consistent Hash Ring Architecture on [0, 2^32 - 1] Integer Circle",
+      "codeHash": "7e4c30f353d5b45849a46e9440d679b472307413906989b91726edcd3fc3d53b",
+      "spec": {
+        "template": "workflow",
+        "title": "Consistent hash ring lookup and clockwise routing workflow",
+        "stages": [
+          {
+            "id": "hashServers",
+            "name": "Hash Server Nodes",
+            "subtext": "Plot Points on Ring"
+          },
+          {
+            "id": "hashKey",
+            "name": "Hash Incoming Key",
+            "subtext": "Locate Circumference"
+          },
+          {
+            "id": "clockwiseWalk",
+            "name": "Clockwise Walk",
+            "subtext": "Nearest Node Search"
+          },
+          {
+            "id": "authoritativeNode",
+            "name": "Authoritative Owner",
+            "subtext": "Key Handled"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Consistent hashing maps data keys and server nodes onto a circular ring.",
+            "activeStageId": "hashServers",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Moving clockwise identifies the first available server node along the circle.",
+            "activeStageId": "clockwiseWalk",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Consistent hash ring lookup and clockwise routing workflow",
+        "stages": [
+          {
+            "id": "hashServers",
+            "name": "Hash Server Nodes",
+            "subtext": "Plot Points on Ring"
+          },
+          {
+            "id": "hashKey",
+            "name": "Hash Incoming Key",
+            "subtext": "Locate Circumference"
+          },
+          {
+            "id": "clockwiseWalk",
+            "name": "Clockwise Walk",
+            "subtext": "Nearest Node Search"
+          },
+          {
+            "id": "authoritativeNode",
+            "name": "Authoritative Owner",
+            "subtext": "Key Handled"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Consistent hashing maps data keys and server nodes onto a circular ring.",
+            "activeStageId": "hashServers",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Moving clockwise identifies the first available server node along the circle.",
+            "activeStageId": "clockwiseWalk",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Binary Search (Bisect) Ring Lookups in O(log N) Time",
+      "codeHash": "3865aa69db13bfec9878dc06e2066d5f267714e323140dbdf5791fc662ae29e3",
+      "spec": {
+        "template": "cells",
+        "title": "Sorted ring points binary search bisect resolution index",
+        "cells": [
+          {
+            "id": "p0",
+            "label": "Server Point 100",
+            "value": "Idx 0",
+            "tone": "idle"
+          },
+          {
+            "id": "p1",
+            "label": "Server Point 500",
+            "value": "Idx 1",
+            "tone": "idle"
+          },
+          {
+            "id": "p2",
+            "label": "Server Point 1200",
+            "value": "Idx 2 (Target for 800)",
+            "tone": "ok"
+          },
+          {
+            "id": "p3",
+            "label": "Server Point 2500",
+            "value": "Idx 3",
+            "tone": "idle"
+          },
+          {
+            "id": "p4",
+            "label": "Server Point 4000",
+            "value": "Idx 4",
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Binary search identifies the clockwise owner in logarithmic time.",
+            "highlightIds": [
+              "p2"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Consistent lookups take mere nanoseconds using binary search.",
+            "highlightIds": [
+              "p0",
+              "p2",
+              "p4"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Sorted ring points binary search bisect resolution index",
+        "cells": [
+          {
+            "id": "p0",
+            "label": "Server Point 100",
+            "value": "Idx 0",
+            "tone": "idle"
+          },
+          {
+            "id": "p1",
+            "label": "Server Point 500",
+            "value": "Idx 1",
+            "tone": "idle"
+          },
+          {
+            "id": "p2",
+            "label": "Server Point 1200",
+            "value": "Idx 2 (Target for 800)",
+            "tone": "ok"
+          },
+          {
+            "id": "p3",
+            "label": "Server Point 2500",
+            "value": "Idx 3",
+            "tone": "idle"
+          },
+          {
+            "id": "p4",
+            "label": "Server Point 4000",
+            "value": "Idx 4",
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Binary search identifies the clockwise owner in logarithmic time.",
+            "highlightIds": [
+              "p2"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Consistent lookups take mere nanoseconds using binary search.",
+            "highlightIds": [
+              "p0",
+              "p2",
+              "p4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Virtual Nodes (V-Nodes) for Non-Uniform Workload Mitigation",
+      "codeHash": "3c237a9732f269e61a8e79fcecf7ce8e894045d10699dbb227137922dafc53b0",
+      "spec": {
+        "template": "states",
+        "title": "Virtual node distribution and cluster workload uniformity states",
+        "states": [
+          {
+            "id": "naiveCluster",
+            "label": "Naive Ring (Hotspots & Non-Uniform Arcs)"
+          },
+          {
+            "id": "vnodesInterleaved",
+            "label": "Virtual Nodes Interleaved (100+ Tokens/Node)"
+          },
+          {
+            "id": "uniformWorkload",
+            "label": "Uniform Statistical Workload Balance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Architectures introduce virtual nodes to solve statistical data imbalance.",
+            "activeStateId": "vnodesInterleaved",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Interleaving virtual tokens ensures near perfect statistical uniformity.",
+            "activeStateId": "uniformWorkload",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Virtual node distribution and cluster workload uniformity states",
+        "states": [
+          {
+            "id": "naiveCluster",
+            "label": "Naive Ring (Hotspots & Non-Uniform Arcs)"
+          },
+          {
+            "id": "vnodesInterleaved",
+            "label": "Virtual Nodes Interleaved (100+ Tokens/Node)"
+          },
+          {
+            "id": "uniformWorkload",
+            "label": "Uniform Statistical Workload Balance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Architectures introduce virtual nodes to solve statistical data imbalance.",
+            "activeStateId": "vnodesInterleaved",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Interleaving virtual tokens ensures near perfect statistical uniformity.",
+            "activeStateId": "uniformWorkload",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Minimal Key Migration Math (K / N) Upon Node Join or Eviction",
+      "codeHash": "7b94e6598d3858c75d3a64fb0a19b86dc98b73604ea544c4214977b233baffe0",
+      "spec": {
+        "template": "table",
+        "title": "Cluster node scaling and key migration churn comparison",
+        "columns": [
+          "Scaling Event Scenario",
+          "Modulo Hashing Key Churn",
+          "Consistent Hashing Churn",
+          "Cluster Impact Severity"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Only a small fraction of keys migrate while existing keys remain undisturbed.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Cache hit ratios remain high during autoscaling events instead of collapsing.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cluster node scaling and key migration churn comparison",
+        "columns": [
+          "Scaling Event Scenario",
+          "Modulo Hashing Key Churn",
+          "Consistent Hashing Churn",
+          "Cluster Impact Severity"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Only a small fraction of keys migrate while existing keys remain undisturbed.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Cache hit ratios remain high during autoscaling events instead of collapsing.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Distributed Consistent Hash Ring with Replicated Virtual Nodes",
+      "codeHash": "1b51d15fa81ff87ae21bf1518f3ddcfcf66c04cb905497019b34ff9d1df7f3bd",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

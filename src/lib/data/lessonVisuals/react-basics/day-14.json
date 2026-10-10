@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 14,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why forms matter",
+      "codeHash": "95d01c634dc849e150be89665f78727db7bef94c0bc12a772d4f63a84028b0d1",
+      "spec": {
+        "template": "boxes",
+        "title": "Four essential responsibilities of web forms",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Web applications rely on forms to collect user information.",
+            "values": {
+              "title": {
+                "text": "\"\""
+              },
+              "company": {
+                "text": "\"\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A good form displays current values and checks for errors.",
+            "values": {
+              "title": {
+                "text": "\"React Developer\""
+              },
+              "company": {
+                "text": "\"\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Four essential responsibilities of web forms",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Web applications rely on forms to collect user information.",
+            "values": {
+              "title": "\"\"",
+              "company": "\"\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "A good form displays current values and checks for errors.",
+            "values": {
+              "title": "\"React Developer\"",
+              "company": "\"\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Controlled inputs",
+      "codeHash": "f09792c7268d1efebf14d9fb8a3321afd5c31c914120da49be3e614497204df8",
+      "spec": {
+        "template": "flow",
+        "title": "Two way binding loop of controlled inputs",
+        "nodes": [
+          {
+            "id": "input",
+            "label": "input",
+            "tappable": false
+          },
+          {
+            "id": "handler",
+            "label": "onChange",
+            "tappable": false
+          },
+          {
+            "id": "state",
+            "label": "title",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Controlled input values are driven directly by React component state.",
+            "values": {
+              "input": {
+                "text": "\"R\""
+              },
+              "handler": {
+                "text": "\"R\""
+              },
+              "state": {
+                "text": "\"R\""
+              }
+            },
+            "tones": {
+              "input": "data",
+              "handler": "idle",
+              "state": "idle"
+            },
+            "arrows": [
+              [
+                "input",
+                "handler"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Typing triggers onChange which updates state and repaints the input.",
+            "values": {
+              "input": {
+                "text": "\"Re\""
+              },
+              "handler": {
+                "text": "\"Re\""
+              },
+              "state": {
+                "text": "\"Re\""
+              }
+            },
+            "tones": {
+              "input": "idle",
+              "handler": "ok",
+              "state": "ok"
+            },
+            "arrows": [
+              [
+                "input",
+                "handler"
+              ],
+              [
+                "handler",
+                "state"
+              ],
+              [
+                "state",
+                "input"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Two way binding loop of controlled inputs",
+        "nodes": [
+          {
+            "id": "input",
+            "label": "input",
+            "tappable": false
+          },
+          {
+            "id": "handler",
+            "label": "onChange",
+            "tappable": false
+          },
+          {
+            "id": "state",
+            "label": "title",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Controlled input values are driven directly by React component state.",
+            "values": {
+              "input": "\"R\"",
+              "handler": "\"R\"",
+              "state": "\"R\""
+            },
+            "tones": {
+              "input": "data",
+              "handler": "idle",
+              "state": "idle"
+            },
+            "arrows": [
+              [
+                "input",
+                "handler"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Typing triggers onChange which updates state and repaints the input.",
+            "values": {
+              "input": "\"Re\"",
+              "handler": "\"Re\"",
+              "state": "\"Re\""
+            },
+            "tones": {
+              "input": "idle",
+              "handler": "ok",
+              "state": "ok"
+            },
+            "arrows": [
+              [
+                "input",
+                "handler"
+              ],
+              [
+                "handler",
+                "state"
+              ],
+              [
+                "state",
+                "input"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "One state object for the whole form",
+      "codeHash": "3d6f9062601e28f1fb7c3f9beed347e32dfd971dfa45ea07a2031b535e761429",
+      "spec": {
+        "template": "boxes",
+        "title": "Single unified state object for multiple form fields",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grouping all form fields into one state object simplifies code.",
+            "values": {
+              "title": {
+                "text": "\"\""
+              },
+              "company": {
+                "text": "\"\""
+              },
+              "status": {
+                "text": "\"applied\""
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Dynamic bracket notation updates whichever field name fired the event.",
+            "values": {
+              "title": {
+                "text": "\"React Developer\""
+              },
+              "company": {
+                "text": "\"Zoho\""
+              },
+              "status": {
+                "text": "\"applied\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Single unified state object for multiple form fields",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grouping all form fields into one state object simplifies code.",
+            "values": {
+              "title": "\"\"",
+              "company": "\"\"",
+              "status": "\"applied\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Dynamic bracket notation updates whichever field name fired the event.",
+            "values": {
+              "title": "\"React Developer\"",
+              "company": "\"Zoho\"",
+              "status": "\"applied\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking the form and showing errors",
+      "codeHash": "d42c7d0e2c5a875b6219f48395104e71ea8a255841ef8bd4e82a1c2007b663e0",
+      "spec": {
+        "template": "compare",
+        "title": "Client side validation checks and error collection",
+        "leftLabel": "Invalid Submission",
+        "rightLabel": "Valid Submission",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validation checks inspect form values and return error messages.",
+            "left": {
+              "code": "validateJobForm({ title: \"  \", company: \"\" });",
+              "result": {
+                "text": "\"Title is required\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "validateJobForm({ title: \"Dev\", company: \"TCS\" });",
+              "result": {
+                "text": "[]"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Trimming whitespace prevents empty space inputs from passing validation.",
+            "left": {
+              "code": "validateJobForm({ title: \"  \", company: \"\" });",
+              "result": {
+                "text": "\"Company is required\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "validateJobForm({ title: \"Dev\", company: \"TCS\" });",
+              "result": {
+                "text": "[]"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Client side validation checks and error collection",
+        "leftLabel": "Invalid Submission",
+        "rightLabel": "Valid Submission",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validation checks inspect form values and return error messages.",
+            "left": {
+              "code": "validateJobForm({ title: \"  \", company: \"\" });",
+              "result": "\"Title is required\"",
+              "tone": "warn",
+              "checks": [
+                "\"Title is required\""
+              ]
+            },
+            "right": {
+              "code": "validateJobForm({ title: \"Dev\", company: \"TCS\" });",
+              "result": "[]",
+              "tone": "ok",
+              "checks": [
+                "[]"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Trimming whitespace prevents empty space inputs from passing validation.",
+            "left": {
+              "code": "validateJobForm({ title: \"  \", company: \"\" });",
+              "result": "\"Company is required\"",
+              "tone": "warn",
+              "checks": [
+                "\"Company is required\""
+              ]
+            },
+            "right": {
+              "code": "validateJobForm({ title: \"Dev\", company: \"TCS\" });",
+              "result": "[]",
+              "tone": "ok",
+              "checks": [
+                "[]"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Submitting the form",
+      "codeHash": "fc6a50405d1018156595300110aff9667561598a024390172336e63d5f93b0d4",
+      "spec": {
+        "template": "flow",
+        "title": "Form submit workflow with preventDefault and reset",
+        "nodes": [
+          {
+            "id": "sub",
+            "label": "submit",
+            "tappable": false
+          },
+          {
+            "id": "prev",
+            "label": "preventDefault",
+            "tappable": false
+          },
+          {
+            "id": "save",
+            "label": "setJobs",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Calling preventDefault prevents default browser page reloads.",
+            "values": {
+              "sub": {
+                "text": "handleSubmit"
+              },
+              "prev": {
+                "text": "true"
+              },
+              "save": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "sub": "data",
+              "prev": "idle",
+              "save": "idle"
+            },
+            "arrows": [
+              [
+                "sub",
+                "prev"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Successful validation appends new jobs and clears form fields.",
+            "values": {
+              "sub": {
+                "text": "handleSubmit"
+              },
+              "prev": {
+                "text": "true"
+              },
+              "save": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "sub": "idle",
+              "prev": "ok",
+              "save": "ok"
+            },
+            "arrows": [
+              [
+                "sub",
+                "prev"
+              ],
+              [
+                "prev",
+                "save"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Form submit workflow with preventDefault and reset",
+        "nodes": [
+          {
+            "id": "sub",
+            "label": "submit",
+            "tappable": false
+          },
+          {
+            "id": "prev",
+            "label": "preventDefault",
+            "tappable": false
+          },
+          {
+            "id": "save",
+            "label": "setJobs",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Calling preventDefault prevents default browser page reloads.",
+            "values": {
+              "sub": "handleSubmit",
+              "prev": "true",
+              "save": "jobs"
+            },
+            "tones": {
+              "sub": "data",
+              "prev": "idle",
+              "save": "idle"
+            },
+            "arrows": [
+              [
+                "sub",
+                "prev"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Successful validation appends new jobs and clears form fields.",
+            "values": {
+              "sub": "handleSubmit",
+              "prev": "true",
+              "save": "jobs"
+            },
+            "tones": {
+              "sub": "idle",
+              "prev": "ok",
+              "save": "ok"
+            },
+            "arrows": [
+              [
+                "sub",
+                "prev"
+              ],
+              [
+                "prev",
+                "save"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Build the Add Job form",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Building the JobForm component with controlled fields, error alerts and reset logic"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building the JobForm component with controlled fields, error alerts and reset logic"
+      }
+    }
+  ]
+}

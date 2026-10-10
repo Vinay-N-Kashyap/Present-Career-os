@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why order and memory matter",
+      "codeHash": "c829c735501d03070c616dda10c6b13c8f74e35f3b7f142225317fe7f604e8a2",
+      "spec": {
+        "template": "table",
+        "title": "Sequential token memory and order dependent representations",
+        "columns": [
+          "words",
+          "memory"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language sequences convey distinct meanings through word order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "memory"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Recurrent networks maintain a hidden state vector summarizing past tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "memory"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "movie"
+                  },
+                  {
+                    "text": "read"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Shared recurrent weights combine the prior hidden state with current input.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "memory"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "movie"
+                  },
+                  {
+                    "text": "read"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "memory"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Weight parameter reuse enables processing arbitrary sequence lengths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "memory"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "movie"
+                  },
+                  {
+                    "text": "read"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "memory"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "read"
+                  },
+                  {
+                    "text": "memory"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sequential token memory and order dependent representations",
+        "columns": [
+          "words",
+          "memory"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language sequences convey distinct meanings through word order.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "memory"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Recurrent networks maintain a hidden state vector summarizing past tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "memory"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "movie",
+                  "read"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Shared recurrent weights combine the prior hidden state with current input.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "memory"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "movie",
+                  "read"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "memory",
+                  "words"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Weight parameter reuse enables processing arbitrary sequence lengths.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "memory"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "movie",
+                  "read"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "memory",
+                  "words"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "read",
+                  "memory"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The RNN update",
+      "codeHash": "5e91f2fe5947515111fac4ddaed320b5586d15adeabab00a457c2926cc8b8157",
+      "spec": {
+        "template": "table",
+        "title": "Recurrent hidden state update and hyperbolic tangent gating",
+        "columns": [
+          "w_hh",
+          "w_xh"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The recurrent update calculates next hidden state using tanh activation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "w_hh"
+                  },
+                  {
+                    "text": "w_xh"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Previous hidden state and current input are scaled by learned matrix weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "w_hh"
+                  },
+                  {
+                    "text": "w_xh"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "h_prev"
+                  },
+                  {
+                    "text": "rnn_step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hyperbolic tangent squashing bounds state values within stable limits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "w_hh"
+                  },
+                  {
+                    "text": "w_xh"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "h_prev"
+                  },
+                  {
+                    "text": "rnn_step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "tanh"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Backpropagation through time optimizes weight parameters across sequences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "w_hh"
+                  },
+                  {
+                    "text": "w_xh"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "h_prev"
+                  },
+                  {
+                    "text": "rnn_step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "tanh"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "w_xh"
+                  },
+                  {
+                    "text": "w_hh"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Recurrent hidden state update and hyperbolic tangent gating",
+        "columns": [
+          "w_hh",
+          "w_xh"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The recurrent update calculates next hidden state using tanh activation.",
+            "rows": [
+              {
+                "cells": [
+                  "w_hh",
+                  "w_xh"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Previous hidden state and current input are scaled by learned matrix weights.",
+            "rows": [
+              {
+                "cells": [
+                  "w_hh",
+                  "w_xh"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "h_prev",
+                  "rnn_step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hyperbolic tangent squashing bounds state values within stable limits.",
+            "rows": [
+              {
+                "cells": [
+                  "w_hh",
+                  "w_xh"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "h_prev",
+                  "rnn_step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "tanh"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Backpropagation through time optimizes weight parameters across sequences.",
+            "rows": [
+              {
+                "cells": [
+                  "w_hh",
+                  "w_xh"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "h_prev",
+                  "rnn_step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "tanh"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "w_xh",
+                  "w_hh"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running an RNN over a sequence",
+      "codeHash": "6d1bd1ed5b29bb08ae4786048ff52ed79a13be6acf9b746bf76712d8170a4543",
+      "spec": {
+        "template": "table",
+        "title": "Sequential state recurrence and temporal memory dynamics",
+        "columns": [
+          "input",
+          "hidden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To process a sentence we apply the step repeatedly feeding each input.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "input"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The terminal hidden state vector summarizes the entire processed sequence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "input"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "inputs"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sequential state dependence inhibits parallel computation on modern hardware.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "input"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "inputs"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "tanh"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Early sequence inputs gradually exert faint influence upon distant states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "input"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "inputs"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "tanh"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "w_hh"
+                  },
+                  {
+                    "text": "w_xh"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sequential state recurrence and temporal memory dynamics",
+        "columns": [
+          "input",
+          "hidden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To process a sentence we apply the step repeatedly feeding each input.",
+            "rows": [
+              {
+                "cells": [
+                  "input",
+                  "hidden"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The terminal hidden state vector summarizes the entire processed sequence.",
+            "rows": [
+              {
+                "cells": [
+                  "input",
+                  "hidden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "inputs",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sequential state dependence inhibits parallel computation on modern hardware.",
+            "rows": [
+              {
+                "cells": [
+                  "input",
+                  "hidden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "inputs",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "tanh"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Early sequence inputs gradually exert faint influence upon distant states.",
+            "rows": [
+              {
+                "cells": [
+                  "input",
+                  "hidden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "inputs",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "tanh"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "w_hh",
+                  "w_xh"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vanishing and exploding gradients",
+      "codeHash": "9b73d54e7f93f4dee357830359e940bc02867f09f717260b2df14753253a373b",
+      "spec": {
+        "template": "table",
+        "title": "Backpropagation error propagation and exponential scaling",
+        "columns": [
+          "factor",
+          "steps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Backpropagated error signals multiply across recurrent time steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Small multiplicative factors cause the error gradient to vanish exponentially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "row"
+                  },
+                  {
+                    "text": "factor"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Factors exceeding unity cause gradient updates to explode exponentially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "row"
+                  },
+                  {
+                    "text": "factor"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Gradient clipping bounds exploding updates while gated units fix vanishing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "row"
+                  },
+                  {
+                    "text": "factor"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "factor"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Backpropagation error propagation and exponential scaling",
+        "columns": [
+          "factor",
+          "steps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Backpropagated error signals multiply across recurrent time steps.",
+            "rows": [
+              {
+                "cells": [
+                  "factor",
+                  "steps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Small multiplicative factors cause the error gradient to vanish exponentially.",
+            "rows": [
+              {
+                "cells": [
+                  "factor",
+                  "steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "row",
+                  "factor"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Factors exceeding unity cause gradient updates to explode exponentially.",
+            "rows": [
+              {
+                "cells": [
+                  "factor",
+                  "steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "row",
+                  "factor"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "steps",
+                  "row"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Gradient clipping bounds exploding updates while gated units fix vanishing.",
+            "rows": [
+              {
+                "cells": [
+                  "factor",
+                  "steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "row",
+                  "factor"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "steps",
+                  "row"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "factor",
+                  "steps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gradient clipping and what comes next",
+      "codeHash": "5effb0c0bf7f14133d83623a8287eda3f4e72ec7b388a0dec7d764c7791c9e17",
+      "spec": {
+        "template": "none",
+        "reason": "Gradient clipping thresholds and architectural fixes."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: RNN steps and gradients",
+      "codeHash": "9f5db7d3cc48bf4345fed5c5e121859c612cdd3b730b2362f129865c54b3d163",
+      "spec": {
+        "template": "none",
+        "reason": "RNN step and gradient decay calculation practice."
+      },
+      "filled": {}
+    }
+  ]
+}

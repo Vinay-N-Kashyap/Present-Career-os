@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 13,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What events are",
+      "codeHash": "4cd3eb534fad30985c4751315a05b91643994f67db48b2b761e4f4986089e9be",
+      "spec": {
+        "template": "flow",
+        "title": "Unidirectional cycle of user event to screen update",
+        "nodes": [
+          {
+            "id": "evt",
+            "label": "click",
+            "tappable": false
+          },
+          {
+            "id": "state",
+            "label": "state",
+            "tappable": false
+          },
+          {
+            "id": "ui",
+            "label": "screen",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An event represents a user action like a button click.",
+            "values": {
+              "evt": {
+                "text": "\"click\""
+              },
+              "state": {
+                "text": "likes"
+              },
+              "ui": {
+                "text": "likes"
+              }
+            },
+            "tones": {
+              "evt": "data",
+              "state": "idle",
+              "ui": "idle"
+            },
+            "arrows": [
+              [
+                "evt",
+                "state"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Click events change state and trigger screen re-renders.",
+            "values": {
+              "evt": {
+                "text": "\"click\""
+              },
+              "state": {
+                "text": "likes"
+              },
+              "ui": {
+                "text": "likes"
+              }
+            },
+            "tones": {
+              "evt": "idle",
+              "state": "ok",
+              "ui": "ok"
+            },
+            "arrows": [
+              [
+                "evt",
+                "state"
+              ],
+              [
+                "state",
+                "ui"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Unidirectional cycle of user event to screen update",
+        "nodes": [
+          {
+            "id": "evt",
+            "label": "click",
+            "tappable": false
+          },
+          {
+            "id": "state",
+            "label": "state",
+            "tappable": false
+          },
+          {
+            "id": "ui",
+            "label": "screen",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An event represents a user action like a button click.",
+            "values": {
+              "evt": "\"click\"",
+              "state": "likes",
+              "ui": "likes"
+            },
+            "tones": {
+              "evt": "data",
+              "state": "idle",
+              "ui": "idle"
+            },
+            "arrows": [
+              [
+                "evt",
+                "state"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Click events change state and trigger screen re-renders.",
+            "values": {
+              "evt": "\"click\"",
+              "state": "likes",
+              "ui": "likes"
+            },
+            "tones": {
+              "evt": "idle",
+              "state": "ok",
+              "ui": "ok"
+            },
+            "arrows": [
+              [
+                "evt",
+                "state"
+              ],
+              [
+                "state",
+                "ui"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "onClick: pass the function, do not call it",
+      "codeHash": "849d83afc1cad9f0d0c2f0a6de26c8390636050574134dff461f0feea24c7ad6",
+      "spec": {
+        "template": "compare",
+        "title": "Passing callback function reference versus immediate execution",
+        "leftLabel": "Function Reference",
+        "rightLabel": "Immediate Call (Bug)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Calling a function with brackets runs immediately during page draw.",
+            "left": {
+              "code": "const good = sayHi;",
+              "result": {
+                "text": "\"function\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "const bad = sayHi();",
+              "result": {
+                "text": "\"done\""
+              },
+              "tone": "warn"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Pass the function without brackets so React calls it on click.",
+            "left": {
+              "code": "const good = sayHi;",
+              "result": {
+                "text": "\"function\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "const bad = sayHi();",
+              "result": {
+                "text": "\"done\""
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Passing callback function reference versus immediate execution",
+        "leftLabel": "Function Reference",
+        "rightLabel": "Immediate Call (Bug)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Calling a function with brackets runs immediately during page draw.",
+            "left": {
+              "code": "const good = sayHi;",
+              "result": "\"function\"",
+              "tone": "ok",
+              "checks": [
+                "\"function\""
+              ]
+            },
+            "right": {
+              "code": "const bad = sayHi();",
+              "result": "\"done\"",
+              "tone": "warn",
+              "checks": [
+                "\"done\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Pass the function without brackets so React calls it on click.",
+            "left": {
+              "code": "const good = sayHi;",
+              "result": "\"function\"",
+              "tone": "ok",
+              "checks": [
+                "\"function\""
+              ]
+            },
+            "right": {
+              "code": "const bad = sayHi();",
+              "result": "\"done\"",
+              "tone": "warn",
+              "checks": [
+                "\"done\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The event object",
+      "codeHash": "3495f1a6479bd363839f072d0dd14db05b32b124ce78fbbdb1b4a7e0f32ee6f9",
+      "spec": {
+        "template": "boxes",
+        "title": "Inspecting synthetic event target and keyboard properties",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key",
+            "tappable": false
+          },
+          {
+            "id": "val",
+            "label": "value",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The event object provides properties like target value and key.",
+            "values": {
+              "key": {
+                "text": "\"r\""
+              },
+              "val": {
+                "text": "\"r\""
+              }
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Handlers check event key values to detect Enter key presses.",
+            "values": {
+              "key": {
+                "text": "\"Enter\""
+              },
+              "val": {
+                "text": "\"react\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Inspecting synthetic event target and keyboard properties",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key",
+            "tappable": false
+          },
+          {
+            "id": "val",
+            "label": "value",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The event object provides properties like target value and key.",
+            "values": {
+              "key": "\"r\"",
+              "val": "\"r\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say4",
+            "caption": "Handlers check event key values to detect Enter key presses.",
+            "values": {
+              "key": "\"Enter\"",
+              "val": "\"react\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "onChange: reacting to typing",
+      "codeHash": "f981124dd36b9f98e9493faeec24ed061a37940433126b441b6ab4e276f49e7b",
+      "spec": {
+        "template": "flow",
+        "title": "Live search query filtering with onChange events",
+        "nodes": [
+          {
+            "id": "input",
+            "label": "onChange",
+            "tappable": false
+          },
+          {
+            "id": "query",
+            "label": "search",
+            "tappable": false
+          },
+          {
+            "id": "list",
+            "label": "shown",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Typing triggers onChange to update the search state text.",
+            "values": {
+              "input": {
+                "text": "\"d\""
+              },
+              "query": {
+                "text": "\"d\""
+              },
+              "list": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "input": "data",
+              "query": "idle",
+              "list": "idle"
+            },
+            "arrows": [
+              [
+                "input",
+                "query"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Filtering jobs by search query updates the list dynamically.",
+            "values": {
+              "input": {
+                "text": "\"dev\""
+              },
+              "query": {
+                "text": "\"dev\""
+              },
+              "list": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "input": "idle",
+              "query": "ok",
+              "list": "ok"
+            },
+            "arrows": [
+              [
+                "input",
+                "query"
+              ],
+              [
+                "query",
+                "list"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Live search query filtering with onChange events",
+        "nodes": [
+          {
+            "id": "input",
+            "label": "onChange",
+            "tappable": false
+          },
+          {
+            "id": "query",
+            "label": "search",
+            "tappable": false
+          },
+          {
+            "id": "list",
+            "label": "shown",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Typing triggers onChange to update the search state text.",
+            "values": {
+              "input": "\"d\"",
+              "query": "\"d\"",
+              "list": "jobs"
+            },
+            "tones": {
+              "input": "data",
+              "query": "idle",
+              "list": "idle"
+            },
+            "arrows": [
+              [
+                "input",
+                "query"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Filtering jobs by search query updates the list dynamically.",
+            "values": {
+              "input": "\"dev\"",
+              "query": "\"dev\"",
+              "list": "jobs"
+            },
+            "tones": {
+              "input": "idle",
+              "query": "ok",
+              "list": "ok"
+            },
+            "arrows": [
+              [
+                "input",
+                "query"
+              ],
+              [
+                "query",
+                "list"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handlers that update objects",
+      "codeHash": "bd89ecd90e20d3af19bad2fa5a6ab3b11508c6f544a1354fdee6daf31d562fc8",
+      "spec": {
+        "template": "boxes",
+        "title": "State updates using plain logic functions",
+        "boxes": [
+          {
+            "id": "liked",
+            "label": "liked",
+            "tappable": false
+          },
+          {
+            "id": "likes",
+            "label": "likes",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clicking flips liked status and updates the like count.",
+            "values": {
+              "liked": {
+                "text": "false"
+              },
+              "likes": {
+                "text": "10"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A small logic function returns a new post object.",
+            "values": {
+              "liked": {
+                "text": "true"
+              },
+              "likes": {
+                "text": "10"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "State updates using plain logic functions",
+        "boxes": [
+          {
+            "id": "liked",
+            "label": "liked",
+            "tappable": false
+          },
+          {
+            "id": "likes",
+            "label": "likes",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clicking flips liked status and updates the like count.",
+            "values": {
+              "liked": "false",
+              "likes": "10"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "A small logic function returns a new post object.",
+            "values": {
+              "liked": "true",
+              "likes": "10"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Status buttons in the Job Tracker",
+      "codeHash": "3e6d20fd817c10fb8258459e62ebb76320ecad788353cfc52d27905efaff7217",
+      "spec": {
+        "template": "none",
+        "reason": "Preview of controlled inputs and complete form architectures for next lesson"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Preview of controlled inputs and complete form architectures for next lesson"
+      }
+    }
+  ]
+}

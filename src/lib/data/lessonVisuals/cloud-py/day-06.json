@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Identity and Access Management",
+      "codeHash": "7827dcfbe95a9c1a79938fa4ad8336278ac124d8ad1f3ef22e13ee01f3ae620b",
+      "spec": {
+        "template": "table",
+        "title": "AWS Identity and Access Management policy statement specifications",
+        "columns": [
+          "Effect",
+          "Resource"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS Identity and Access Management checks every API call on each resource.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Allow"
+                  },
+                  {
+                    "text": "arn:aws:s3:::photos/*"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "JSON policy statements declare explicit Effect rules and target resources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Allow"
+                  },
+                  {
+                    "text": "arn:aws:s3:::photos/*"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Allow"
+                  },
+                  {
+                    "text": "arn:aws:s3:::photos/uploads/*"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example reads structured statement permissions using json module parsing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Allow"
+                  },
+                  {
+                    "text": "arn:aws:s3:::photos/*"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Allow"
+                  },
+                  {
+                    "text": "arn:aws:s3:::photos/uploads/*"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AWS Identity and Access Management policy statement specifications",
+        "columns": [
+          "Effect",
+          "Resource"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS Identity and Access Management checks every API call on each resource.",
+            "rows": [
+              {
+                "cells": [
+                  "Allow",
+                  "arn:aws:s3:::photos/*"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "JSON policy statements declare explicit Effect rules and target resources.",
+            "rows": [
+              {
+                "cells": [
+                  "Allow",
+                  "arn:aws:s3:::photos/*"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Allow",
+                  "arn:aws:s3:::photos/uploads/*"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example reads structured statement permissions using json module parsing.",
+            "rows": [
+              {
+                "cells": [
+                  "Allow",
+                  "arn:aws:s3:::photos/*"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Allow",
+                  "arn:aws:s3:::photos/uploads/*"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How AWS decides: explicit deny wins",
+      "codeHash": "e4e15de853f23ae8531c169140d8576abb1502d70f305007384e9cb675e8a854",
+      "spec": {
+        "template": "table",
+        "title": "IAM permission evaluation outcomes demonstrating explicit deny priority",
+        "columns": [
+          "action",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An explicit Deny in matching policy statements overrides any permission.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s3:GetObject"
+                  },
+                  {
+                    "text": "DENY"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Otherwise matching Allow permissions authorize the incoming request.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s3:GetObject"
+                  },
+                  {
+                    "text": "DENY"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3:GetObject"
+                  },
+                  {
+                    "text": "ALLOW"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example evaluates outcomes demonstrating allowed and denied requests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s3:GetObject"
+                  },
+                  {
+                    "text": "DENY"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3:GetObject"
+                  },
+                  {
+                    "text": "ALLOW"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3:PutObject"
+                  },
+                  {
+                    "text": "DENY"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "IAM permission evaluation outcomes demonstrating explicit deny priority",
+        "columns": [
+          "action",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An explicit Deny in matching policy statements overrides any permission.",
+            "rows": [
+              {
+                "cells": [
+                  "s3:GetObject",
+                  "DENY"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Otherwise matching Allow permissions authorize the incoming request.",
+            "rows": [
+              {
+                "cells": [
+                  "s3:GetObject",
+                  "DENY"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "s3:GetObject",
+                  "ALLOW"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example evaluates outcomes demonstrating allowed and denied requests.",
+            "rows": [
+              {
+                "cells": [
+                  "s3:GetObject",
+                  "DENY"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "s3:GetObject",
+                  "ALLOW"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "s3:PutObject",
+                  "DENY"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Wildcards and least privilege",
+      "codeHash": "7b78e9b1899f0144c7aac9ab2dd3ca575349dfdd4091de8217ad5e6ec5b0ce94",
+      "spec": {
+        "template": "table",
+        "title": "Policy scope classification distinguishing least privilege and broad access",
+        "columns": [
+          "policy",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Wildcards granting full administrator access pose major security risks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rushed-app"
+                  },
+                  {
+                    "text": "ADMIN!"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Least privilege limits policies strictly to necessary actions and resources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rushed-app"
+                  },
+                  {
+                    "text": "ADMIN!"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "resize-fn"
+                  },
+                  {
+                    "text": "tight"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example flags overly broad policies containing wildcards for review.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rushed-app"
+                  },
+                  {
+                    "text": "ADMIN!"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "resize-fn"
+                  },
+                  {
+                    "text": "tight"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ops-team"
+                  },
+                  {
+                    "text": "review"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Policy scope classification distinguishing least privilege and broad access",
+        "columns": [
+          "policy",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Wildcards granting full administrator access pose major security risks.",
+            "rows": [
+              {
+                "cells": [
+                  "rushed-app",
+                  "ADMIN!"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Least privilege limits policies strictly to necessary actions and resources.",
+            "rows": [
+              {
+                "cells": [
+                  "rushed-app",
+                  "ADMIN!"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "resize-fn",
+                  "tight"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example flags overly broad policies containing wildcards for review.",
+            "rows": [
+              {
+                "cells": [
+                  "rushed-app",
+                  "ADMIN!"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "resize-fn",
+                  "tight"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ops-team",
+                  "review"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Roles and temporary credentials",
+      "codeHash": "c9c2e0aaaec8a68db3b92b5de1dd355b090bfe84c4cb4ab47e653bfb8559936c",
+      "spec": {
+        "template": "table",
+        "title": "IAM role trust relationships and caller authorization validation",
+        "columns": [
+          "caller",
+          "role"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "AWS services receive temporary permissions through assigned execution roles.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lambda.amazonaws.com"
+                  },
+                  {
+                    "text": "resize-fn-role"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every role requires a trust policy specifying which identities may assume it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lambda.amazonaws.com"
+                  },
+                  {
+                    "text": "resize-fn-role"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ec2.amazonaws.com"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates assuming a role and validating temporary credentials.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lambda.amazonaws.com"
+                  },
+                  {
+                    "text": "resize-fn-role"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ec2.amazonaws.com"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "IAM role trust relationships and caller authorization validation",
+        "columns": [
+          "caller",
+          "role"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "AWS services receive temporary permissions through assigned execution roles.",
+            "rows": [
+              {
+                "cells": [
+                  "lambda.amazonaws.com",
+                  "resize-fn-role"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every role requires a trust policy specifying which identities may assume it.",
+            "rows": [
+              {
+                "cells": [
+                  "lambda.amazonaws.com",
+                  "resize-fn-role"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ec2.amazonaws.com",
+                  "None"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates assuming a role and validating temporary credentials.",
+            "rows": [
+              {
+                "cells": [
+                  "lambda.amazonaws.com",
+                  "resize-fn-role"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ec2.amazonaws.com",
+                  "None"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amazon Resource Names",
+      "codeHash": "ba7c489fc8e02950fdcccc1e857c2a0a51922dbbee4faac90ccbf38a66a01088",
+      "spec": {
+        "template": "none",
+        "reason": "ARN structure and parsing logic."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: build the policy engine",
+      "codeHash": "42a0d3d286300d80815a2c2f0363eab704a5cc2b0b575cc1b4a94461910601d7",
+      "spec": {
+        "template": "none",
+        "reason": "Policy engine evaluation algorithm and bug review."
+      },
+      "filled": {}
+    }
+  ]
+}

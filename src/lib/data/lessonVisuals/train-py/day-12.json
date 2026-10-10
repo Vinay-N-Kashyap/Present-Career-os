@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Stages and the naive pipeline",
+      "codeHash": "d18102c3da4fac495e5cd60c8f449a91c6174d5797dc8b7f1038530aa5268f05",
+      "spec": {
+        "template": "table",
+        "title": "Pipeline stage partitioning and naive sequential execution",
+        "columns": [
+          "stages",
+          "busy",
+          "idle"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In pipeline parallelism consecutive model layers partition into stages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "busy"
+                  },
+                  {
+                    "text": "idle"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "busy"
+                  },
+                  {
+                    "text": "idle"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dividing batches into micro-batches keeps pipeline stages busy simultaneously.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "busy"
+                  },
+                  {
+                    "text": "idle"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "busy"
+                  },
+                  {
+                    "text": "stages"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pipeline stage partitioning and naive sequential execution",
+        "columns": [
+          "stages",
+          "busy",
+          "idle"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In pipeline parallelism consecutive model layers partition into stages.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "busy",
+                  "idle"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "busy",
+                  "idle"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Dividing batches into micro-batches keeps pipeline stages busy simultaneously.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "busy",
+                  "idle"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "busy",
+                  "stages"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Micro-batches and the GPipe schedule",
+      "codeHash": "479cac95ba491a3af8a081422e00b126bd393240f7b1f50aecf6fe27fab38b61",
+      "spec": {
+        "template": "table",
+        "title": "GPipe timeline scheduling and pipeline bubble formation",
+        "columns": [
+          "stages",
+          "micro",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pipeline stages process successive micro-batches across consecutive ticks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Idle slots during startup and shutdown constitute the pipeline bubble.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "stages"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "GPipe timeline scheduling and pipeline bubble formation",
+        "columns": [
+          "stages",
+          "micro",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pipeline stages process successive micro-batches across consecutive ticks.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "row"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Idle slots during startup and shutdown constitute the pipeline bubble.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "row"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "stages"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The bubble fraction",
+      "codeHash": "f3b9aa4dea007fe4a78ff466459fb52b8b590b82ff58cb683a374e16036be580",
+      "spec": {
+        "template": "table",
+        "title": "Pipeline bubble fraction formula and micro-batch scaling",
+        "columns": [
+          "bubble",
+          "stages",
+          "fraction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The idle fraction depends on the ratio of micro-batches to pipeline stages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bubble"
+                  },
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bubble"
+                  },
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Increasing micro-batches relative to stages reduces overall idle fraction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bubble"
+                  },
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bubble"
+                  },
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "bubble"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pipeline bubble fraction formula and micro-batch scaling",
+        "columns": [
+          "bubble",
+          "stages",
+          "fraction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The idle fraction depends on the ratio of micro-batches to pipeline stages.",
+            "rows": [
+              {
+                "cells": [
+                  "bubble",
+                  "stages",
+                  "fraction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bubble",
+                  "stages",
+                  "fraction"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Increasing micro-batches relative to stages reduces overall idle fraction.",
+            "rows": [
+              {
+                "cells": [
+                  "bubble",
+                  "stages",
+                  "fraction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bubble",
+                  "stages",
+                  "bubble"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "1F1B and memory",
+      "codeHash": "bc5cca40bb7bcac75a07f26ceeeb770a7d5690dd133a1dfc5523341e332e8cf3",
+      "spec": {
+        "template": "table",
+        "title": "One-forward-one-backward schedule activation memory bounds",
+        "columns": [
+          "stages",
+          "micro",
+          "gpipe"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The schedule starts backward passes early to minimise stored activations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gpipe"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gpipe"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Alternating passes caps stored activations to the number of pipeline stages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gpipe"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "stages"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "One-forward-one-backward schedule activation memory bounds",
+        "columns": [
+          "stages",
+          "micro",
+          "gpipe"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The schedule starts backward passes early to minimise stored activations.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "gpipe"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "gpipe"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Alternating passes caps stored activations to the number of pipeline stages.",
+            "rows": [
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "gpipe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "micro",
+                  "stages"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Balancing stages",
+      "codeHash": "b1afb73d481a1fcf5a77ea5bafcf267cf0471efdac0a9233eeaf907a8c4ab30f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: pipelines",
+      "codeHash": "5a915a7db62c8a2d89cb4b12b8d5120a9c4d2c025dd15b6ea16b11b33748fbf8",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

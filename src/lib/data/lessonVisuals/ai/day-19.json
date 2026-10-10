@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 19,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Planning Deficit: Why Direct Generation Fails Complex Tasks",
+      "codeHash": "f61b5a760ab3ffc857ecae0f22ceeb4823c01d67f595ee740abf369e2babe461",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to agentic planning and DAG decomposition"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to agentic planning and DAG decomposition"
+      }
+    },
+    {
+      "partTitle": "Task DAG Execution & Dependency Resolution",
+      "codeHash": "bc0d3c3a14bf0a54030c62f33652d178907ce722c343afb382fa2af5d45dde52",
+      "spec": {
+        "template": "flow",
+        "title": "Topological task graph execution and dependent prerequisite resolution",
+        "nodes": [
+          {
+            "id": "taskA",
+            "label": "Task A: Database Connect",
+            "tappable": false
+          },
+          {
+            "id": "taskB",
+            "label": "Task B: Schema Introspection",
+            "tappable": false
+          },
+          {
+            "id": "taskC",
+            "label": "Task C: Data Extraction",
+            "tappable": false
+          },
+          {
+            "id": "taskD",
+            "label": "Task D: Pipeline Complete",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "taskA",
+            "to": "taskB",
+            "label": "Connection Verified"
+          },
+          {
+            "from": "taskB",
+            "to": "taskC",
+            "label": "Schema Extracted"
+          },
+          {
+            "from": "taskC",
+            "to": "taskD",
+            "label": "Records Processed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A task cannot transition until prerequisite dependency tasks are completed.",
+            "activeNodes": [
+              "taskA",
+              "taskB"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "If any subtask fails the engine halts dependent downstream tasks.",
+            "activeNodes": [
+              "taskC",
+              "taskD"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Topological task graph execution and dependent prerequisite resolution",
+        "nodes": [
+          {
+            "id": "taskA",
+            "label": "Task A: Database Connect",
+            "tappable": false
+          },
+          {
+            "id": "taskB",
+            "label": "Task B: Schema Introspection",
+            "tappable": false
+          },
+          {
+            "id": "taskC",
+            "label": "Task C: Data Extraction",
+            "tappable": false
+          },
+          {
+            "id": "taskD",
+            "label": "Task D: Pipeline Complete",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "taskA",
+            "to": "taskB",
+            "label": "Connection Verified"
+          },
+          {
+            "from": "taskB",
+            "to": "taskC",
+            "label": "Schema Extracted"
+          },
+          {
+            "from": "taskC",
+            "to": "taskD",
+            "label": "Records Processed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A task cannot transition until prerequisite dependency tasks are completed.",
+            "activeNodes": [
+              "taskA",
+              "taskB"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "If any subtask fails the engine halts dependent downstream tasks.",
+            "activeNodes": [
+              "taskC",
+              "taskD"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Execution Failure Trapping: Diagnostics & Error Payloads",
+      "codeHash": "2fa234a7fd88a3ae0ead4c7c2f689b0b40ac18b233f28e84ab9a28dce2531c80",
+      "spec": {
+        "template": "table",
+        "title": "Sandboxed runtime diagnostic error telemetry schema and payload",
+        "columns": [
+          "Diagnostic Attribute",
+          "Captured Error Data",
+          "Telemetry Source",
+          "Diagnostic Value"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The execution sandbox captures comprehensive diagnostic telemetry information.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Standard output reveals intermediate variable values before crashes occur.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sandboxed runtime diagnostic error telemetry schema and payload",
+        "columns": [
+          "Diagnostic Attribute",
+          "Captured Error Data",
+          "Telemetry Source",
+          "Diagnostic Value"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The execution sandbox captures comprehensive diagnostic telemetry information.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Standard output reveals intermediate variable values before crashes occur.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reflection & Self-Critique: Diagnosing Root Causes",
+      "codeHash": "62b54beac84e50b7827fc569d60bd800529b34ad154ab1bfca181ecf807df52a",
+      "spec": {
+        "template": "boxes",
+        "title": "Structured reflection and self-critique root cause analysis triad",
+        "boxes": [
+          {
+            "id": "intentBox",
+            "title": "Intended Goal",
+            "items": [
+              "Transform user records",
+              "Map optional metadata",
+              "Emit valid JSON"
+            ]
+          },
+          {
+            "id": "causeBox",
+            "title": "Root Cause Diagnosis",
+            "items": [
+              "Nullable user preference",
+              "Missing optional chain",
+              "Uncaught TypeError"
+            ]
+          },
+          {
+            "id": "patchBox",
+            "title": "Minimal Patch Plan",
+            "items": [
+              "Insert optional chain",
+              "Add fallback default",
+              "Preserve existing logic"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The agent invokes an explicit reflection prompt to dissect the failure mode.",
+            "activeBoxId": "intentBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The reflection step outputs a concrete repair plan proposing targeted patches.",
+            "activeBoxId": "patchBox",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Structured reflection and self-critique root cause analysis triad",
+        "boxes": [
+          {
+            "id": "intentBox",
+            "title": "Intended Goal",
+            "items": [
+              "Transform user records",
+              "Map optional metadata",
+              "Emit valid JSON"
+            ]
+          },
+          {
+            "id": "causeBox",
+            "title": "Root Cause Diagnosis",
+            "items": [
+              "Nullable user preference",
+              "Missing optional chain",
+              "Uncaught TypeError"
+            ]
+          },
+          {
+            "id": "patchBox",
+            "title": "Minimal Patch Plan",
+            "items": [
+              "Insert optional chain",
+              "Add fallback default",
+              "Preserve existing logic"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The agent invokes an explicit reflection prompt to dissect the failure mode.",
+            "activeBoxId": "intentBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The reflection step outputs a concrete repair plan proposing targeted patches.",
+            "activeBoxId": "patchBox",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Self-Correction Repair Loop: Iterative Patching with Max Retries",
+      "codeHash": "da9f5c627de54b7e7e2ac65b564090fca5f6a0e58cf4f4ae387b3834013ad0ae",
+      "spec": {
+        "template": "compare",
+        "title": "Buggy unhandled null syntax versus self-corrected surgical patch",
+        "left": {
+          "title": "Defective Source Code",
+          "items": [
+            "record.preferences.theme",
+            "Throws when preferences null",
+            "Terminates batch abruptly",
+            "Fails verification assertions"
+          ]
+        },
+        "right": {
+          "title": "Self-Corrected Patch",
+          "items": [
+            "record.preferences?.theme",
+            "Safe optional chaining",
+            "Graceful fallback handling",
+            "Passes 100% assertions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The repair loop takes buggy code and generates a surgical code patch.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The loop is bounded by a strict constraint to limit resource expenditure.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Defective Source Code",
+        "rightLabel": "Self-Corrected Patch"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Buggy unhandled null syntax versus self-corrected surgical patch",
+        "left": {
+          "title": "Defective Source Code",
+          "items": [
+            "record.preferences.theme",
+            "Throws when preferences null",
+            "Terminates batch abruptly",
+            "Fails verification assertions"
+          ]
+        },
+        "right": {
+          "title": "Self-Corrected Patch",
+          "items": [
+            "record.preferences?.theme",
+            "Safe optional chaining",
+            "Graceful fallback handling",
+            "Passes 100% assertions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The repair loop takes buggy code and generates a surgical code patch.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The loop is bounded by a strict constraint to limit resource expenditure.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Defective Source Code",
+        "rightLabel": "Self-Corrected Patch"
+      }
+    },
+    {
+      "partTitle": "Production Self-Healing Coding Agent: Zero-Human Automated Bug Repair",
+      "codeHash": "f518a6d4a1ae6a14fa6e3b1f362c85f101fcaf8542f3dadb9d052fff391e34e8",
+      "spec": {
+        "template": "sequence",
+        "title": "Autonomous zero-human self-healing code repair execution transaction",
+        "actors": [
+          {
+            "id": "controller",
+            "label": "Agent Controller"
+          },
+          {
+            "id": "sandbox",
+            "label": "Sandboxed Runtime"
+          },
+          {
+            "id": "reflection",
+            "label": "Reflection Critic"
+          },
+          {
+            "id": "patcher",
+            "label": "Code Patch Engine"
+          }
+        ],
+        "messages": [
+          {
+            "from": "controller",
+            "to": "sandbox",
+            "label": "Execute Pipeline Transformation",
+            "tone": "data"
+          },
+          {
+            "from": "sandbox",
+            "to": "reflection",
+            "label": "Capture Runtime TypeError Exception",
+            "tone": "error"
+          },
+          {
+            "from": "reflection",
+            "to": "patcher",
+            "label": "Synthesize Targeted Null Check Patch",
+            "tone": "data"
+          },
+          {
+            "from": "patcher",
+            "to": "sandbox",
+            "label": "Re-Execute Patched Code In Sandbox",
+            "tone": "ok"
+          },
+          {
+            "from": "sandbox",
+            "to": "controller",
+            "label": "Certify 100% Test Passing",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The agent catches a runtime TypeError and extracts the failure context.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The entire self-healing workflow completes without human intervention.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Autonomous zero-human self-healing code repair execution transaction",
+        "actors": [
+          {
+            "id": "controller",
+            "label": "Agent Controller"
+          },
+          {
+            "id": "sandbox",
+            "label": "Sandboxed Runtime"
+          },
+          {
+            "id": "reflection",
+            "label": "Reflection Critic"
+          },
+          {
+            "id": "patcher",
+            "label": "Code Patch Engine"
+          }
+        ],
+        "messages": [
+          {
+            "from": "controller",
+            "to": "sandbox",
+            "label": "Execute Pipeline Transformation",
+            "tone": "data"
+          },
+          {
+            "from": "sandbox",
+            "to": "reflection",
+            "label": "Capture Runtime TypeError Exception",
+            "tone": "error"
+          },
+          {
+            "from": "reflection",
+            "to": "patcher",
+            "label": "Synthesize Targeted Null Check Patch",
+            "tone": "data"
+          },
+          {
+            "from": "patcher",
+            "to": "sandbox",
+            "label": "Re-Execute Patched Code In Sandbox",
+            "tone": "ok"
+          },
+          {
+            "from": "sandbox",
+            "to": "controller",
+            "label": "Certify 100% Test Passing",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The agent catches a runtime TypeError and extracts the failure context.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The entire self-healing workflow completes without human intervention.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

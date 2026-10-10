@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 5,
+  "promptSha": "b211ab2e7ba18fe0c7954572b264a8ac94b448d69a812a9a6565f700134854dd",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The O(1) Cache Requirement: Combining Hash Map & Doubly Linked List",
+      "codeHash": "9848dde997a63e9909127f18bdaef72c8d0a494a1bbbeff7006e6e881efa578c",
+      "spec": {
+        "template": "tree-graph",
+        "title": "LRU sentinel boundary initialization",
+        "nodes": [
+          {
+            "id": "head",
+            "label": "headSentinel"
+          },
+          {
+            "id": "tail",
+            "label": "tailSentinel"
+          }
+        ],
+        "edges": [
+          [
+            "head",
+            "tail"
+          ],
+          [
+            "tail",
+            "head"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Sentinels bound cache nodes for constant time access.",
+            "activeNodeId": "head",
+            "activeEdge": [
+              "head",
+              "tail"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Hash map lookups combine with doubly linked list splicing.",
+            "activeNodeId": "tail",
+            "visitedNodeIds": [
+              "head"
+            ],
+            "activeEdge": [
+              "tail",
+              "head"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "LRU sentinel boundary initialization",
+        "nodes": [
+          {
+            "id": "head",
+            "label": "headSentinel"
+          },
+          {
+            "id": "tail",
+            "label": "tailSentinel"
+          }
+        ],
+        "edges": [
+          [
+            "head",
+            "tail"
+          ],
+          [
+            "tail",
+            "head"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Sentinels bound cache nodes for constant time access.",
+            "activeNodeId": "head",
+            "activeEdge": [
+              "head",
+              "tail"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Hash map lookups combine with doubly linked list splicing.",
+            "activeNodeId": "tail",
+            "visitedNodeIds": [
+              "head"
+            ],
+            "activeEdge": [
+              "tail",
+              "head"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "O(1) Node Addition & Removal Invariants",
+      "codeHash": "4d6e15ecf9ad27010cf8211093bda817b4448f242d9b7c94626d16a90a57e3df",
+      "spec": {
+        "template": "tree-graph",
+        "title": "LRU list node splicing and promotion",
+        "nodes": [
+          {
+            "id": "head",
+            "label": "head"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "tail",
+            "label": "tail"
+          }
+        ],
+        "edges": [
+          [
+            "head",
+            "n1"
+          ],
+          [
+            "n1",
+            "tail"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Node directly following head represents most recently used.",
+            "activeNodeId": "head",
+            "activeEdge": [
+              "head",
+              "n1"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Unlinking node bridges neighbor pointers directly.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "head"
+            ],
+            "activeEdge": [
+              "n1",
+              "tail"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "LRU list node splicing and promotion",
+        "nodes": [
+          {
+            "id": "head",
+            "label": "head"
+          },
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "tail",
+            "label": "tail"
+          }
+        ],
+        "edges": [
+          [
+            "head",
+            "n1"
+          ],
+          [
+            "n1",
+            "tail"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Node directly following head represents most recently used.",
+            "activeNodeId": "head",
+            "activeEdge": [
+              "head",
+              "n1"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Unlinking node bridges neighbor pointers directly.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "head"
+            ],
+            "activeEdge": [
+              "n1",
+              "tail"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Map Pointer Lookup & Cache Hit Promotion",
+      "codeHash": "fb72209f675cbc987b157a080b1a334c657e1e1ce80dae80e216ba8410645bbf",
+      "spec": {
+        "template": "compare",
+        "title": "Map lookup vs doubly linked list promotion",
+        "leftLabel": "Hash Map",
+        "rightLabel": "Linked List",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Map query returns direct node pointer in memory.",
+            "left": {
+              "code": "this.map.get(key)",
+              "result": {
+                "text": "DNode"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "node.val",
+              "result": {
+                "text": "10"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Hoisting promotes node directly behind dummy head.",
+            "left": {
+              "code": "this.map.set(key, newNode)",
+              "result": {
+                "text": "3"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "node.prev = this.head",
+              "result": {
+                "text": "30"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Map lookup vs doubly linked list promotion",
+        "leftLabel": "Hash Map",
+        "rightLabel": "Linked List",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Map query returns direct node pointer in memory.",
+            "left": {
+              "code": "this.map.get(key)",
+              "result": "DNode",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "node.val",
+              "result": "10",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Hoisting promotes node directly behind dummy head.",
+            "left": {
+              "code": "this.map.set(key, newNode)",
+              "result": "3",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "node.prev = this.head",
+              "result": "30",
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Eviction Policy & Boundary Testing",
+      "codeHash": "11fe00179855322f32b992c54fc91ec970c39ebf56005f18ab0f1eb4ea35d141",
+      "spec": {
+        "template": "table",
+        "title": "LRU cache access events and eviction log",
+        "columns": [
+          "Operation",
+          "Logged Event"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Updating existing key updates value without eviction.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "access('A', 1)"
+                  },
+                  {
+                    "text": "Stored A=1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('B', 2)"
+                  },
+                  {
+                    "text": "Stored B=2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('C', 3)"
+                  },
+                  {
+                    "text": "Evicted A"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exceeding capacity evicts oldest key immediately.",
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "access('A', 1)"
+                  },
+                  {
+                    "text": "Stored A=1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('B', 2)"
+                  },
+                  {
+                    "text": "Stored B=2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('C', 3)"
+                  },
+                  {
+                    "text": "Evicted A"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "LRU cache access events and eviction log",
+        "columns": [
+          "Operation",
+          "Logged Event"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Updating existing key updates value without eviction.",
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "access('A', 1)",
+                  "Stored A=1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('B', 2)",
+                  "Stored B=2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('C', 3)",
+                  "Evicted A"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exceeding capacity evicts oldest key immediately.",
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "access('A', 1)",
+                  "Stored A=1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('B', 2)",
+                  "Stored B=2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('C', 3)",
+                  "Evicted A"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concurrency, TTL Expiration & Cache Stampedes",
+      "codeHash": "68aecdb5fba142371a6222906a89776365961636cccca0961faae2f3f2a4d59d",
+      "spec": {
+        "template": "compare",
+        "title": "Valid cache hit vs expired key eviction",
+        "leftLabel": "Fresh Hit",
+        "rightLabel": "Expired Miss",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "TTL timestamp marks cached data expiration point.",
+            "left": {
+              "code": "entry.value",
+              "result": {
+                "text": "user-active"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "expiresAt",
+              "result": {
+                "text": "1000"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Expired item returns miss and clears stored key.",
+            "left": {
+              "code": "cache.get('session-1')",
+              "result": {
+                "text": "user-active"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "this.store.delete(key)",
+              "result": {
+                "text": "null"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Valid cache hit vs expired key eviction",
+        "leftLabel": "Fresh Hit",
+        "rightLabel": "Expired Miss",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "TTL timestamp marks cached data expiration point.",
+            "left": {
+              "code": "entry.value",
+              "result": "user-active",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "expiresAt",
+              "result": "1000",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Expired item returns miss and clears stored key.",
+            "left": {
+              "code": "cache.get('session-1')",
+              "result": "user-active",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "this.store.delete(key)",
+              "result": "null",
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Milestone 1 Production LRUCache Engine Walkthrough",
+      "codeHash": "b67fb7569645fd693ee1b25add8bcd659ce38f4667ec746a908efb512482aad4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 7,
+  "promptSha": "d479331c931806552bd48edeebb2c147375b2bfd13837f5a463a18281d6b698f",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Leader-Follower (Master-Replica) Topology & Single-Point-of-Failure",
+      "codeHash": "d9d89212c284950b310a2c09aed93bcb7cac40c5537b7f3230aaf0ad0b5d4842",
+      "spec": {
+        "template": "states",
+        "title": "Leader follower cluster availability and failover states",
+        "states": [
+          {
+            "id": "leaderAlive",
+            "label": "Authoritative Leader Active (Writes Allowed)"
+          },
+          {
+            "id": "leaderCrashed",
+            "label": "Leader Crashed (Cluster Read-Only)"
+          },
+          {
+            "id": "failoverElected",
+            "label": "Failover Election Concluded (New Leader Active)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A designated single leader acts as the authoritative coordinator.",
+            "activeStateId": "leaderAlive",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Clusters become read-only and unable to accept mutations without elections.",
+            "activeStateId": "leaderCrashed",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Leader follower cluster availability and failover states",
+        "states": [
+          {
+            "id": "leaderAlive",
+            "label": "Authoritative Leader Active (Writes Allowed)"
+          },
+          {
+            "id": "leaderCrashed",
+            "label": "Leader Crashed (Cluster Read-Only)"
+          },
+          {
+            "id": "failoverElected",
+            "label": "Failover Election Concluded (New Leader Active)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A designated single leader acts as the authoritative coordinator.",
+            "activeStateId": "leaderAlive",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Clusters become read-only and unable to accept mutations without elections.",
+            "activeStateId": "leaderCrashed",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Bully Algorithm: Highest Process ID Claims Leadership",
+      "codeHash": "a66f7a26afe083f051b7be04fd51ab8a921150da41f2a8087a58ebfe1746a321",
+      "spec": {
+        "template": "workflow",
+        "title": "Bully election protocol progression and coordinator assertion",
+        "stages": [
+          {
+            "id": "detectDeadLeader",
+            "name": "Timeout Detected",
+            "subtext": "Leader Unresponsive"
+          },
+          {
+            "id": "pingHigherNodes",
+            "name": "Ping Higher IDs",
+            "subtext": "Election Broadcast"
+          },
+          {
+            "id": "waitAnswers",
+            "name": "Wait Timeout",
+            "subtext": "Listen for Replies"
+          },
+          {
+            "id": "declareCoordinator",
+            "name": "Declare Coordinator",
+            "subtext": "Bully to Top"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The alive node possessing highest process identification becomes coordinator.",
+            "activeStageId": "pingHigherNodes",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The initiating node declares itself leader and broadcasts notifications.",
+            "activeStageId": "declareCoordinator",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Bully election protocol progression and coordinator assertion",
+        "stages": [
+          {
+            "id": "detectDeadLeader",
+            "name": "Timeout Detected",
+            "subtext": "Leader Unresponsive"
+          },
+          {
+            "id": "pingHigherNodes",
+            "name": "Ping Higher IDs",
+            "subtext": "Election Broadcast"
+          },
+          {
+            "id": "waitAnswers",
+            "name": "Wait Timeout",
+            "subtext": "Listen for Replies"
+          },
+          {
+            "id": "declareCoordinator",
+            "name": "Declare Coordinator",
+            "subtext": "Bully to Top"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The alive node possessing highest process identification becomes coordinator.",
+            "activeStageId": "pingHigherNodes",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The initiating node declares itself leader and broadcasts notifications.",
+            "activeStageId": "declareCoordinator",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Message Complexity & Cascading Elections in Bully Protocol",
+      "codeHash": "8628f2a6f92e6a7022be27bea5cec79bf3a0d7e1f599906d6cd76932c4b3b254",
+      "spec": {
+        "template": "compare",
+        "title": "Lowest node initiator message complexity compared to highest follower",
+        "leftLabel": "Lowest Node Initiates (Worst-Case O(N^2))",
+        "rightLabel": "Highest Follower Initiates (Best-Case O(N))",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Successive higher nodes initiate cascading elections during worst-case events.",
+            "left": {
+              "code": "Lowest Node (Index 0) Initiates: 24 messages",
+              "result": {
+                "text": "24"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "Second-Highest Node (Index 3) Initiates: 6 messages",
+              "result": {
+                "text": "6"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Rebooting nodes preempt stable leaders and trigger disruptive re-elections.",
+            "left": {
+              "code": "calculateBullyMessages(0, total)",
+              "result": {
+                "text": "24"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "calculateBullyMessages(3, total)",
+              "result": {
+                "text": "6"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Lowest node initiator message complexity compared to highest follower",
+        "leftLabel": "Lowest Node Initiates (Worst-Case O(N^2))",
+        "rightLabel": "Highest Follower Initiates (Best-Case O(N))",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Successive higher nodes initiate cascading elections during worst-case events.",
+            "left": {
+              "code": "Lowest Node (Index 0) Initiates: 24 messages",
+              "result": {
+                "text": "24"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "Second-Highest Node (Index 3) Initiates: 6 messages",
+              "result": {
+                "text": "6"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Rebooting nodes preempt stable leaders and trigger disruptive re-elections.",
+            "left": {
+              "code": "calculateBullyMessages(0, total)",
+              "result": {
+                "text": "24"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "calculateBullyMessages(3, total)",
+              "result": {
+                "text": "6"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ring Election Algorithm: Circular Token-Based Leader Selection",
+      "codeHash": "ac0677ec4fb8cbf4e364b6e028ef2007df8bfc5d1769f196345fff0f23673fd5",
+      "spec": {
+        "template": "sequence",
+        "title": "Ring election circular token passing and leader announcement sequence",
+        "actors": [
+          {
+            "id": "node101",
+            "label": "Node 101 (Initiator)"
+          },
+          {
+            "id": "node205",
+            "label": "Node 205 (Neighbor)"
+          },
+          {
+            "id": "node412",
+            "label": "Node 412 (Highest)"
+          },
+          {
+            "id": "node150",
+            "label": "Node 150 (Neighbor)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Nodes transmit election messages clockwise to reachable neighbors.",
+            "messages": [
+              {
+                "from": "node101",
+                "to": "node205",
+                "label": "Election [101]"
+              },
+              {
+                "from": "node205",
+                "to": "node412",
+                "label": "Election [101, 205]"
+              }
+            ],
+            "activeActorId": "node412"
+          },
+          {
+            "at": "say8",
+            "caption": "The initiator announces the winning coordinator around the circular ring.",
+            "messages": [
+              {
+                "from": "node412",
+                "to": "node150",
+                "label": "Election [101, 205, 412]"
+              },
+              {
+                "from": "node150",
+                "to": "node101",
+                "label": "Election Return to Initiator"
+              },
+              {
+                "from": "node101",
+                "to": "node205",
+                "label": "Coordinator Announced: 412"
+              }
+            ],
+            "activeActorId": "node101"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Ring election circular token passing and leader announcement sequence",
+        "actors": [
+          {
+            "id": "node101",
+            "label": "Node 101 (Initiator)"
+          },
+          {
+            "id": "node205",
+            "label": "Node 205 (Neighbor)"
+          },
+          {
+            "id": "node412",
+            "label": "Node 412 (Highest)"
+          },
+          {
+            "id": "node150",
+            "label": "Node 150 (Neighbor)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Nodes transmit election messages clockwise to reachable neighbors.",
+            "messages": [
+              {
+                "from": "node101",
+                "to": "node205",
+                "label": "Election [101]"
+              },
+              {
+                "from": "node205",
+                "to": "node412",
+                "label": "Election [101, 205]"
+              }
+            ],
+            "activeActorId": "node412"
+          },
+          {
+            "at": "say8",
+            "caption": "The initiator announces the winning coordinator around the circular ring.",
+            "messages": [
+              {
+                "from": "node412",
+                "to": "node150",
+                "label": "Election [101, 205, 412]"
+              },
+              {
+                "from": "node150",
+                "to": "node101",
+                "label": "Election Return to Initiator"
+              },
+              {
+                "from": "node101",
+                "to": "node205",
+                "label": "Coordinator Announced: 412"
+              }
+            ],
+            "activeActorId": "node101"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Raft Randomized Election Timeouts & Split-Vote Prevention",
+      "codeHash": "de5372597ad54ffc017c0ab654294496f0c9d825fe99a3074461694464e200e6",
+      "spec": {
+        "template": "cells",
+        "title": "Raft candidate staggered timeout intervals and election triggers",
+        "cells": [
+          {
+            "id": "c0",
+            "label": "Node B (Shortest: 165ms)",
+            "value": "Candidate First",
+            "tone": "ok"
+          },
+          {
+            "id": "c1",
+            "label": "Node E (Timer: 195ms)",
+            "value": "Follower",
+            "tone": "idle"
+          },
+          {
+            "id": "c2",
+            "label": "Node D (Timer: 210ms)",
+            "value": "Follower",
+            "tone": "idle"
+          },
+          {
+            "id": "c3",
+            "label": "Node A (Timer: 240ms)",
+            "value": "Follower",
+            "tone": "idle"
+          },
+          {
+            "id": "c4",
+            "label": "Node C (Timer: 285ms)",
+            "value": "Follower",
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Followers choose randomized timeouts between designated interval bounds.",
+            "highlightIds": [
+              "c0"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The earliest candidate broadcasts vote requests before peers awake.",
+            "highlightIds": [
+              "c0",
+              "c1",
+              "c2",
+              "c3",
+              "c4"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Raft candidate staggered timeout intervals and election triggers",
+        "cells": [
+          {
+            "id": "c0",
+            "label": "Node B (Shortest: 165ms)",
+            "value": "Candidate First",
+            "tone": "ok"
+          },
+          {
+            "id": "c1",
+            "label": "Node E (Timer: 195ms)",
+            "value": "Follower",
+            "tone": "idle"
+          },
+          {
+            "id": "c2",
+            "label": "Node D (Timer: 210ms)",
+            "value": "Follower",
+            "tone": "idle"
+          },
+          {
+            "id": "c3",
+            "label": "Node A (Timer: 240ms)",
+            "value": "Follower",
+            "tone": "idle"
+          },
+          {
+            "id": "c4",
+            "label": "Node C (Timer: 285ms)",
+            "value": "Follower",
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Followers choose randomized timeouts between designated interval bounds.",
+            "highlightIds": [
+              "c0"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The earliest candidate broadcasts vote requests before peers awake.",
+            "highlightIds": [
+              "c0",
+              "c1",
+              "c2",
+              "c3",
+              "c4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fault-Tolerant Leader Election Simulator with Quorum Verification",
+      "codeHash": "6781ed7e2a0587a43b7247d5703b5d8695b5dea8f2eab91dcf21a0fd9e37afb4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

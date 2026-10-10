@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 22,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Composable Predicate Filtering in Repositories",
+      "codeHash": "bfff68d59d78c9f4404199dc8b8a9a78f71674865f759049fbd253983d9b4347",
+      "spec": {
+        "template": "boxes",
+        "title": "Job entity predicate filter matching",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "id": "remote",
+            "label": "remote"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Composable predicate filtering passes higher order criteria functions.",
+            "values": {
+              "title": {
+                "text": "Staff Architect"
+              },
+              "remote": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "title": "data",
+              "remote": "idle"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Predicates combined using logical combinators construct dynamic filters.",
+            "values": {
+              "title": {
+                "text": "Staff Architect"
+              },
+              "remote": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "title": "data",
+              "remote": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Pure predicate functions can be tested in isolation before composition.",
+            "values": {
+              "title": {
+                "text": "Staff Architect"
+              },
+              "remote": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "title": "ok",
+              "remote": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Job entity predicate filter matching",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "id": "remote",
+            "label": "remote"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Composable predicate filtering passes higher order criteria functions.",
+            "values": {
+              "title": "Staff Architect",
+              "remote": "true"
+            },
+            "tones": {
+              "title": "data",
+              "remote": "idle"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Predicates combined using logical combinators construct dynamic filters.",
+            "values": {
+              "title": "Staff Architect",
+              "remote": "true"
+            },
+            "tones": {
+              "title": "data",
+              "remote": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Pure predicate functions can be tested in isolation before composition.",
+            "values": {
+              "title": "Staff Architect",
+              "remote": "true"
+            },
+            "tones": {
+              "title": "ok",
+              "remote": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Sorting Strategies and Comparator Functions",
+      "codeHash": "7e947f7ca2b39512ad585ffb84c482b5e7015dc6923c441bcf110211fe4c5fe7",
+      "spec": {
+        "template": "boxes",
+        "title": "Candidate ranking comparator fields",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "score",
+            "label": "score"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sorting is governed by comparator functions returning negative or positive.",
+            "values": {
+              "name": {
+                "text": "Alice"
+              },
+              "score": {
+                "text": "95"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "score": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "String fields use localeCompare to ensure international character ordering.",
+            "values": {
+              "name": {
+                "text": "Bob"
+              },
+              "score": {
+                "text": "91"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "score": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Ensuring strict tie breakers guarantees deterministic pagination orders.",
+            "values": {
+              "name": {
+                "text": "Charlie"
+              },
+              "score": {
+                "text": "88"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "score": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Candidate ranking comparator fields",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "score",
+            "label": "score"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sorting is governed by comparator functions returning negative or positive.",
+            "values": {
+              "name": "Alice",
+              "score": "95"
+            },
+            "tones": {
+              "name": "data",
+              "score": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "String fields use localeCompare to ensure international character ordering.",
+            "values": {
+              "name": "Bob",
+              "score": "91"
+            },
+            "tones": {
+              "name": "ok",
+              "score": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Ensuring strict tie breakers guarantees deterministic pagination orders.",
+            "values": {
+              "name": "Charlie",
+              "score": "88"
+            },
+            "tones": {
+              "name": "ok",
+              "score": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Slicing and Windowing Datasets for Pagination",
+      "codeHash": "2f06c128a6edfb8c240e17a99d015551230992c13c7ffbe57e6b20c2340d9531",
+      "spec": {
+        "template": "boxes",
+        "title": "Pagination window slicing parameters",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "hasMore",
+            "label": "hasMore"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A repository pagination method accepts query parameters for windowing.",
+            "values": {
+              "total": {
+                "text": "total"
+              },
+              "hasMore": {
+                "text": "hasMore"
+              }
+            },
+            "tones": {
+              "total": "data",
+              "hasMore": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The repository captures the total matching count before slicing windows.",
+            "values": {
+              "total": {
+                "text": "total"
+              },
+              "hasMore": {
+                "text": "hasMore"
+              }
+            },
+            "tones": {
+              "total": "ok",
+              "hasMore": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Returning both window slice and count supports standard pagination envelopes.",
+            "values": {
+              "total": {
+                "text": "total"
+              },
+              "hasMore": {
+                "text": "hasMore"
+              }
+            },
+            "tones": {
+              "total": "ok",
+              "hasMore": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Pagination window slicing parameters",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total"
+          },
+          {
+            "id": "hasMore",
+            "label": "hasMore"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A repository pagination method accepts query parameters for windowing.",
+            "values": {
+              "total": "total",
+              "hasMore": "hasMore"
+            },
+            "tones": {
+              "total": "data",
+              "hasMore": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The repository captures the total matching count before slicing windows.",
+            "values": {
+              "total": "total",
+              "hasMore": "hasMore"
+            },
+            "tones": {
+              "total": "ok",
+              "hasMore": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Returning both window slice and count supports standard pagination envelopes.",
+            "values": {
+              "total": "total",
+              "hasMore": "hasMore"
+            },
+            "tones": {
+              "total": "ok",
+              "hasMore": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Immutable Record Mutations and Avoiding In-Place Side Effects",
+      "codeHash": "5677282ac73884f083572acaeacd4c478ce0043194f1baf817a2cc0fde34dca3",
+      "spec": {
+        "template": "boxes",
+        "title": "Immutable user record update attributes",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "version",
+            "label": "version"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Professional repositories enforce immutable state mutations on entities.",
+            "values": {
+              "name": {
+                "text": "David"
+              },
+              "version": {
+                "text": "1"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "version": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "In TypeScript immutable updates use object spread syntax to create copies.",
+            "values": {
+              "name": {
+                "text": "David K."
+              },
+              "version": {
+                "text": "1"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "version": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Immutability simplifies debugging and guarantees reliable state auditing.",
+            "values": {
+              "name": {
+                "text": "David K."
+              },
+              "version": {
+                "text": "1"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "version": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Immutable user record update attributes",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "version",
+            "label": "version"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Professional repositories enforce immutable state mutations on entities.",
+            "values": {
+              "name": "David",
+              "version": "1"
+            },
+            "tones": {
+              "name": "data",
+              "version": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "In TypeScript immutable updates use object spread syntax to create copies.",
+            "values": {
+              "name": "David K.",
+              "version": "1"
+            },
+            "tones": {
+              "name": "ok",
+              "version": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Immutability simplifies debugging and guarantees reliable state auditing.",
+            "values": {
+              "name": "David K.",
+              "version": "1"
+            },
+            "tones": {
+              "name": "ok",
+              "version": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automatic Audit Timestamps (createdAt, updatedAt)",
+      "codeHash": "6a3d9ff1580d7db750c3af2d1725f647b6a57c2b1317415327561b9b9913f191",
+      "spec": {
+        "template": "boxes",
+        "title": "Audit timestamp manager record metadata",
+        "boxes": [
+          {
+            "id": "created",
+            "label": "createdAt"
+          },
+          {
+            "id": "updated",
+            "label": "updatedAt"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every database record should track createdAt and updatedAt timestamps.",
+            "values": {
+              "created": {
+                "text": "1000"
+              },
+              "updated": {
+                "text": "1000"
+              }
+            },
+            "tones": {
+              "created": "data",
+              "updated": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "UpdatedAt records the timestamp of the most recent modification automatically.",
+            "values": {
+              "created": {
+                "text": "1000"
+              },
+              "updated": {
+                "text": "1500"
+              }
+            },
+            "tones": {
+              "created": "data",
+              "updated": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Automated audit timestamps provide a reliable audit trail for compliance.",
+            "values": {
+              "created": {
+                "text": "1000"
+              },
+              "updated": {
+                "text": "1500"
+              }
+            },
+            "tones": {
+              "created": "ok",
+              "updated": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Audit timestamp manager record metadata",
+        "boxes": [
+          {
+            "id": "created",
+            "label": "createdAt"
+          },
+          {
+            "id": "updated",
+            "label": "updatedAt"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every database record should track createdAt and updatedAt timestamps.",
+            "values": {
+              "created": "1000",
+              "updated": "1000"
+            },
+            "tones": {
+              "created": "data",
+              "updated": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "UpdatedAt records the timestamp of the most recent modification automatically.",
+            "values": {
+              "created": "1000",
+              "updated": "1500"
+            },
+            "tones": {
+              "created": "data",
+              "updated": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Automated audit timestamps provide a reliable audit trail for compliance.",
+            "values": {
+              "created": "1000",
+              "updated": "1500"
+            },
+            "tones": {
+              "created": "ok",
+              "updated": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Advanced Queryable Repository Engine",
+      "codeHash": "bb0dead2d50a481f4b4560d7830d9e7eff4e1c5a0fc1bbdeefc24b6a5ba962f1",
+      "spec": {
+        "template": "none",
+        "reason": "Building an advanced queryable repository engine"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building an advanced queryable repository engine"
+      }
+    }
+  ]
+}

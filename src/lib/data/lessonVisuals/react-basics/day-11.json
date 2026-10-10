@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 11,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why screens change with the situation",
+      "codeHash": "23dde4f3e63c7ddd622f760b6e1cc2e8fe8ffe6a3495ad78a6c131b7b190ddf9",
+      "spec": {
+        "template": "compare",
+        "title": "Conditional rendering branches based on authentication",
+        "leftLabel": "Logged In",
+        "rightLabel": "Logged Out",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Screens display different elements depending on current situation.",
+            "left": {
+              "code": "console.log(Greeting({ name: \"Asha\" }));",
+              "result": {
+                "text": "\"Welcome back, Asha!\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(Greeting(null));",
+              "result": {
+                "text": "\"Please log in.\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional rendering shows content when a specific condition holds.",
+            "left": {
+              "code": "console.log(Greeting({ name: \"Asha\" }));",
+              "result": {
+                "text": "\"Welcome back, Asha!\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(Greeting(null));",
+              "result": {
+                "text": "\"Please log in.\""
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Conditional rendering branches based on authentication",
+        "leftLabel": "Logged In",
+        "rightLabel": "Logged Out",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Screens display different elements depending on current situation.",
+            "left": {
+              "code": "console.log(Greeting({ name: \"Asha\" }));",
+              "result": "\"Welcome back, Asha!\"",
+              "tone": "ok",
+              "checks": [
+                "\"Welcome back, Asha!\""
+              ]
+            },
+            "right": {
+              "code": "console.log(Greeting(null));",
+              "result": "\"Please log in.\"",
+              "tone": "idle",
+              "checks": [
+                "\"Please log in.\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional rendering shows content when a specific condition holds.",
+            "left": {
+              "code": "console.log(Greeting({ name: \"Asha\" }));",
+              "result": "\"Welcome back, Asha!\"",
+              "tone": "ok",
+              "checks": [
+                "\"Welcome back, Asha!\""
+              ]
+            },
+            "right": {
+              "code": "console.log(Greeting(null));",
+              "result": "\"Please log in.\"",
+              "tone": "idle",
+              "checks": [
+                "\"Please log in.\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Way 1: if with an early return",
+      "codeHash": "3a79a878765d3bc9fd0427743971c197dd1dfc73734d76e6edda6e6ba0f9f808",
+      "spec": {
+        "template": "flow",
+        "title": "Early return pattern for loading states",
+        "nodes": [
+          {
+            "id": "check",
+            "label": "loading",
+            "tappable": false
+          },
+          {
+            "id": "early",
+            "label": "return",
+            "tappable": false
+          },
+          {
+            "id": "main",
+            "label": "JobList",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An early return handles special loading situations straight away.",
+            "values": {
+              "check": {
+                "text": "loading"
+              },
+              "early": {
+                "text": "\"Loading your jobs...\""
+              },
+              "main": {
+                "text": "JobList"
+              }
+            },
+            "tones": {
+              "check": "data",
+              "early": "idle",
+              "main": "idle"
+            },
+            "arrows": [
+              [
+                "check",
+                "early"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When jobs are empty an early return keeps the main component simple.",
+            "values": {
+              "check": {
+                "text": "loading"
+              },
+              "early": {
+                "text": "\"No jobs yet. Add your first one!\""
+              },
+              "main": {
+                "text": "JobList"
+              }
+            },
+            "tones": {
+              "check": "idle",
+              "early": "ok",
+              "main": "idle"
+            },
+            "arrows": [
+              [
+                "check",
+                "early"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Early return pattern for loading states",
+        "nodes": [
+          {
+            "id": "check",
+            "label": "loading",
+            "tappable": false
+          },
+          {
+            "id": "early",
+            "label": "return",
+            "tappable": false
+          },
+          {
+            "id": "main",
+            "label": "JobList",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An early return handles special loading situations straight away.",
+            "values": {
+              "check": "loading",
+              "early": "\"Loading your jobs...\"",
+              "main": "JobList"
+            },
+            "tones": {
+              "check": "data",
+              "early": "idle",
+              "main": "idle"
+            },
+            "arrows": [
+              [
+                "check",
+                "early"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When jobs are empty an early return keeps the main component simple.",
+            "values": {
+              "check": "loading",
+              "early": "\"No jobs yet. Add your first one!\"",
+              "main": "JobList"
+            },
+            "tones": {
+              "check": "idle",
+              "early": "ok",
+              "main": "idle"
+            },
+            "arrows": [
+              [
+                "check",
+                "early"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Way 2: && to show something or nothing",
+      "codeHash": "845741336f29364b7e132263c423d4c38b7784fc5ef5794a457d7ec03751a143",
+      "spec": {
+        "template": "compare",
+        "title": "Logical AND short circuit evaluation in JSX",
+        "leftLabel": "Boolean Condition",
+        "rightLabel": "Numeric Falsy Trap",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Use logical AND to show an extra piece like a badge.",
+            "left": {
+              "code": "console.log(true && \"Offer!\");",
+              "result": {
+                "text": "\"Offer!\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(false && \"Offer!\");",
+              "result": {
+                "text": "false"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Using zero with logical AND displays zero instead of hiding content.",
+            "left": {
+              "code": "console.log(0 && \"You have jobs\");",
+              "result": {
+                "text": "0"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(0 > 0 && \"You have jobs\");",
+              "result": {
+                "text": "false"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical AND short circuit evaluation in JSX",
+        "leftLabel": "Boolean Condition",
+        "rightLabel": "Numeric Falsy Trap",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Use logical AND to show an extra piece like a badge.",
+            "left": {
+              "code": "console.log(true && \"Offer!\");",
+              "result": "\"Offer!\"",
+              "tone": "ok",
+              "checks": [
+                "\"Offer!\""
+              ]
+            },
+            "right": {
+              "code": "console.log(false && \"Offer!\");",
+              "result": "false",
+              "tone": "idle",
+              "checks": [
+                "false"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Using zero with logical AND displays zero instead of hiding content.",
+            "left": {
+              "code": "console.log(0 && \"You have jobs\");",
+              "result": "0",
+              "tone": "warn",
+              "checks": [
+                "0"
+              ]
+            },
+            "right": {
+              "code": "console.log(0 > 0 && \"You have jobs\");",
+              "result": "false",
+              "tone": "ok",
+              "checks": [
+                "false"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Way 3: ? : to choose between two things",
+      "codeHash": "9aa560a289f82f847288789785ba58838b357c89f55c9fd6e557e3afdc08b179",
+      "spec": {
+        "template": "boxes",
+        "title": "Ternary operator and dictionary lookup for status",
+        "boxes": [
+          {
+            "id": "remote",
+            "label": "remote",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The ternary operator chooses between two possible alternative values.",
+            "values": {
+              "remote": {
+                "text": "\"Office\""
+              },
+              "status": {
+                "text": "\"interview\""
+              }
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "An object lookup replaces long chains of if statements cleanly.",
+            "values": {
+              "remote": {
+                "text": "\"Remote\""
+              },
+              "status": {
+                "text": "\"blue\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Ternary operator and dictionary lookup for status",
+        "boxes": [
+          {
+            "id": "remote",
+            "label": "remote",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The ternary operator chooses between two possible alternative values.",
+            "values": {
+              "remote": "\"Office\"",
+              "status": "\"interview\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say4",
+            "caption": "An object lookup replaces long chains of if statements cleanly.",
+            "values": {
+              "remote": "\"Remote\"",
+              "status": "\"blue\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing the right way",
+      "codeHash": "582b593ca542ec3b08d2f8e4171bc67f20ab80bb2a83ac78a993e0af2bb71993",
+      "spec": {
+        "template": "flow",
+        "title": "Strategy guidelines for conditional rendering options",
+        "nodes": [
+          {
+            "id": "cond",
+            "label": "condition",
+            "tappable": false
+          },
+          {
+            "id": "early",
+            "label": "early return",
+            "tappable": false
+          },
+          {
+            "id": "ternary",
+            "label": "lookup",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Whole different screen situations recommend using an early return.",
+            "values": {
+              "cond": {
+                "text": "loading"
+              },
+              "early": {
+                "text": "return"
+              },
+              "ternary": {
+                "text": "statusLabel"
+              }
+            },
+            "tones": {
+              "cond": "idle",
+              "early": "ok",
+              "ternary": "idle"
+            },
+            "arrows": [
+              [
+                "cond",
+                "early"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Multiple situation mappings use lookup functions rather than nested ternaries.",
+            "values": {
+              "cond": {
+                "text": "status"
+              },
+              "early": {
+                "text": "return"
+              },
+              "ternary": {
+                "text": "statusLabel"
+              }
+            },
+            "tones": {
+              "cond": "idle",
+              "early": "idle",
+              "ternary": "ok"
+            },
+            "arrows": [
+              [
+                "cond",
+                "ternary"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Strategy guidelines for conditional rendering options",
+        "nodes": [
+          {
+            "id": "cond",
+            "label": "condition",
+            "tappable": false
+          },
+          {
+            "id": "early",
+            "label": "early return",
+            "tappable": false
+          },
+          {
+            "id": "ternary",
+            "label": "lookup",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Whole different screen situations recommend using an early return.",
+            "values": {
+              "cond": "loading",
+              "early": "return",
+              "ternary": "statusLabel"
+            },
+            "tones": {
+              "cond": "idle",
+              "early": "ok",
+              "ternary": "idle"
+            },
+            "arrows": [
+              [
+                "cond",
+                "early"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Multiple situation mappings use lookup functions rather than nested ternaries.",
+            "values": {
+              "cond": "status",
+              "early": "return",
+              "ternary": "statusLabel"
+            },
+            "tones": {
+              "cond": "idle",
+              "early": "idle",
+              "ternary": "ok"
+            },
+            "arrows": [
+              [
+                "cond",
+                "ternary"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Make the Job Tracker react to status",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Applying conditional status badges and offer highlights to the Job Tracker components"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Applying conditional status badges and offer highlights to the Job Tracker components"
+      }
+    }
+  ]
+}

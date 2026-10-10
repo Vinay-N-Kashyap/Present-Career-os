@@ -1,0 +1,801 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why backtests lie",
+      "codeHash": "57543202590ee66ac819443c3b0f267c2176529fa56f68ea1c6e47a8e69ff337",
+      "spec": {
+        "template": "table",
+        "title": "Backtest performance comparison and lookahead avoidance",
+        "columns": [
+          "returns",
+          "honest",
+          "cheating"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Backtesting replays market history to assess algorithmic trading viability.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "returns"
+                  },
+                  {
+                    "text": "honest"
+                  },
+                  {
+                    "text": "cheating"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Careless testing ignores hidden costs and unachievable trading edges.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "returns"
+                  },
+                  {
+                    "text": "honest"
+                  },
+                  {
+                    "text": "cheating"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "returns"
+                  },
+                  {
+                    "text": "honest"
+                  },
+                  {
+                    "text": "cheating"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Professional discipline separates robust quant models from fitted noise.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "returns"
+                  },
+                  {
+                    "text": "honest"
+                  },
+                  {
+                    "text": "cheating"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "returns"
+                  },
+                  {
+                    "text": "honest"
+                  },
+                  {
+                    "text": "cheating"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "returns"
+                  },
+                  {
+                    "text": "honest"
+                  },
+                  {
+                    "text": "cheating"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Backtest performance comparison and lookahead avoidance",
+        "columns": [
+          "returns",
+          "honest",
+          "cheating"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Backtesting replays market history to assess algorithmic trading viability.",
+            "rows": [
+              {
+                "cells": [
+                  "returns",
+                  "honest",
+                  "cheating"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Careless testing ignores hidden costs and unachievable trading edges.",
+            "rows": [
+              {
+                "cells": [
+                  "returns",
+                  "honest",
+                  "cheating"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "returns",
+                  "honest",
+                  "cheating"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Professional discipline separates robust quant models from fitted noise.",
+            "rows": [
+              {
+                "cells": [
+                  "returns",
+                  "honest",
+                  "cheating"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "returns",
+                  "honest",
+                  "cheating"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "returns",
+                  "honest",
+                  "cheating"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lookahead bias",
+      "codeHash": "36913a7de3932ee4878e5f2fd906f22179e2730455ddf27eb4a58e215a6e974e",
+      "spec": {
+        "template": "table",
+        "title": "Lookahead contamination in rolling window metrics",
+        "columns": [
+          "prices",
+          "full_mean",
+          "past"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lookahead bias occurs when future prices contaminate historical decisions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prices"
+                  },
+                  {
+                    "text": "full_mean"
+                  },
+                  {
+                    "text": "past"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Computing statistics across future datasets distorts historical spreads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prices"
+                  },
+                  {
+                    "text": "full_mean"
+                  },
+                  {
+                    "text": "past"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prices"
+                  },
+                  {
+                    "text": "full_mean"
+                  },
+                  {
+                    "text": "past"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Decisions must strictly rely on data available prior to execution time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prices"
+                  },
+                  {
+                    "text": "full_mean"
+                  },
+                  {
+                    "text": "past"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prices"
+                  },
+                  {
+                    "text": "full_mean"
+                  },
+                  {
+                    "text": "past"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prices"
+                  },
+                  {
+                    "text": "full_mean"
+                  },
+                  {
+                    "text": "past"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Lookahead contamination in rolling window metrics",
+        "columns": [
+          "prices",
+          "full_mean",
+          "past"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lookahead bias occurs when future prices contaminate historical decisions.",
+            "rows": [
+              {
+                "cells": [
+                  "prices",
+                  "full_mean",
+                  "past"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Computing statistics across future datasets distorts historical spreads.",
+            "rows": [
+              {
+                "cells": [
+                  "prices",
+                  "full_mean",
+                  "past"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prices",
+                  "full_mean",
+                  "past"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Decisions must strictly rely on data available prior to execution time.",
+            "rows": [
+              {
+                "cells": [
+                  "prices",
+                  "full_mean",
+                  "past"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prices",
+                  "full_mean",
+                  "past"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prices",
+                  "full_mean",
+                  "past"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Survivorship bias",
+      "codeHash": "90eb8f092b16b648baa1e14fdd9f42f592f6fc55d36154ebb42b4827e8524a7f",
+      "spec": {
+        "template": "table",
+        "title": "Survivorship bias in historical universe definitions",
+        "columns": [
+          "companies",
+          "survivors",
+          "avg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Survivorship bias omits failed and delisted firms from backtest histories.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "companies"
+                  },
+                  {
+                    "text": "survivors"
+                  },
+                  {
+                    "text": "avg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Selecting surviving index constituents inflates historical performance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "companies"
+                  },
+                  {
+                    "text": "survivors"
+                  },
+                  {
+                    "text": "avg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "companies"
+                  },
+                  {
+                    "text": "survivors"
+                  },
+                  {
+                    "text": "avg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Point in time universes reconstruct assets active at each past interval.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "companies"
+                  },
+                  {
+                    "text": "survivors"
+                  },
+                  {
+                    "text": "avg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "companies"
+                  },
+                  {
+                    "text": "survivors"
+                  },
+                  {
+                    "text": "avg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "companies"
+                  },
+                  {
+                    "text": "survivors"
+                  },
+                  {
+                    "text": "avg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Survivorship bias in historical universe definitions",
+        "columns": [
+          "companies",
+          "survivors",
+          "avg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Survivorship bias omits failed and delisted firms from backtest histories.",
+            "rows": [
+              {
+                "cells": [
+                  "companies",
+                  "survivors",
+                  "avg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Selecting surviving index constituents inflates historical performance.",
+            "rows": [
+              {
+                "cells": [
+                  "companies",
+                  "survivors",
+                  "avg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "companies",
+                  "survivors",
+                  "avg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Point in time universes reconstruct assets active at each past interval.",
+            "rows": [
+              {
+                "cells": [
+                  "companies",
+                  "survivors",
+                  "avg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "companies",
+                  "survivors",
+                  "avg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "companies",
+                  "survivors",
+                  "avg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Overfitting and multiple testing",
+      "codeHash": "72ed3c9f09fe8f5d8071af2c34f9168d2e817903f7fde98a7532b82ff3346c10",
+      "spec": {
+        "template": "table",
+        "title": "Statistical multiple testing and Sharpe ratio haircut",
+        "columns": [
+          "daily",
+          "sharpe",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Overfitting captures random noise rather than persistent market patterns.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "daily"
+                  },
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Testing multiple variants elevates the likelihood of false positive luck.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "daily"
+                  },
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "daily"
+                  },
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sharpe haircut adjustments discount performance for exploratory trials.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "daily"
+                  },
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "daily"
+                  },
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "daily"
+                  },
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Statistical multiple testing and Sharpe ratio haircut",
+        "columns": [
+          "daily",
+          "sharpe",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Overfitting captures random noise rather than persistent market patterns.",
+            "rows": [
+              {
+                "cells": [
+                  "daily",
+                  "sharpe",
+                  "best"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Testing multiple variants elevates the likelihood of false positive luck.",
+            "rows": [
+              {
+                "cells": [
+                  "daily",
+                  "sharpe",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "daily",
+                  "sharpe",
+                  "best"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sharpe haircut adjustments discount performance for exploratory trials.",
+            "rows": [
+              {
+                "cells": [
+                  "daily",
+                  "sharpe",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "daily",
+                  "sharpe",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "daily",
+                  "sharpe",
+                  "best"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Honest research practice",
+      "codeHash": "3aed15de94d6c7f4c30f5342933e036bac696e3c59dc8fea30415e55067c65af",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: audit and haircut",
+      "codeHash": "62ae83f48be4e59d665d35e7cfcbaacca0bc692f04e19d65030445abe6a343c9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

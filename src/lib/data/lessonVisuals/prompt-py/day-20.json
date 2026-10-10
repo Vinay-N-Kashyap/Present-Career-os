@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Privacy basics",
+      "codeHash": "02e2156b83a2b84ee6741c618553b0326cd0cd6bea6f28906d0ffc640ca6df91",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise privacy policies and prompt data leakage",
+        "columns": [
+          "never_paste",
+          "item",
+          "never_paste"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Anything you paste into an AI tool is sent and stored on remote servers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "never_paste"
+                  },
+                  {
+                    "text": "item"
+                  },
+                  {
+                    "text": "never_paste"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "never_paste"
+                  },
+                  {
+                    "text": "item"
+                  },
+                  {
+                    "text": "never_paste"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sensitive personal data and financial details require strict privacy care.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "never_paste"
+                  },
+                  {
+                    "text": "item"
+                  },
+                  {
+                    "text": "never_paste"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "never_paste"
+                  },
+                  {
+                    "text": "item"
+                  },
+                  {
+                    "text": "item"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise privacy policies and prompt data leakage",
+        "columns": [
+          "never_paste",
+          "item",
+          "never_paste"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Anything you paste into an AI tool is sent and stored on remote servers.",
+            "rows": [
+              {
+                "cells": [
+                  "never_paste",
+                  "item",
+                  "never_paste"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "never_paste",
+                  "item",
+                  "never_paste"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sensitive personal data and financial details require strict privacy care.",
+            "rows": [
+              {
+                "cells": [
+                  "never_paste",
+                  "item",
+                  "never_paste"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "never_paste",
+                  "item",
+                  "item"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Redacting personal data with Python",
+      "codeHash": "a18c228daec8d460c2d831b3314bfcc0bc350f594b59c1ab9710528943e908dd",
+      "spec": {
+        "template": "table",
+        "title": "PII masking and regex-based redaction engine",
+        "columns": [
+          "patterns",
+          "text",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Redaction replaces personal data with placeholders before sending prompts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "patterns"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "patterns"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Redacting card numbers before phone numbers avoids substring misidentifications.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "patterns"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "patterns"
+                  },
+                  {
+                    "text": "patterns"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "PII masking and regex-based redaction engine",
+        "columns": [
+          "patterns",
+          "text",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Redaction replaces personal data with placeholders before sending prompts.",
+            "rows": [
+              {
+                "cells": [
+                  "patterns",
+                  "text",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "patterns",
+                  "text",
+                  "counts"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Redacting card numbers before phone numbers avoids substring misidentifications.",
+            "rows": [
+              {
+                "cells": [
+                  "patterns",
+                  "text",
+                  "counts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "patterns",
+                  "patterns",
+                  "counts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prompt injection",
+      "codeHash": "6780d1a288673fdba9fc219e586f5840011c3123869c30998a68861ad06d418f",
+      "spec": {
+        "template": "table",
+        "title": "Direct and indirect prompt injection attack vectors",
+        "columns": [
+          "system",
+          "document",
+          "system"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prompt injection is an attack trying to override original system instructions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "system"
+                  },
+                  {
+                    "text": "document"
+                  },
+                  {
+                    "text": "system"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "system"
+                  },
+                  {
+                    "text": "document"
+                  },
+                  {
+                    "text": "system"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Indirect injection hides untrusted instructions inside external document data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "system"
+                  },
+                  {
+                    "text": "document"
+                  },
+                  {
+                    "text": "system"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "system"
+                  },
+                  {
+                    "text": "document"
+                  },
+                  {
+                    "text": "document"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Direct and indirect prompt injection attack vectors",
+        "columns": [
+          "system",
+          "document",
+          "system"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prompt injection is an attack trying to override original system instructions.",
+            "rows": [
+              {
+                "cells": [
+                  "system",
+                  "document",
+                  "system"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "system",
+                  "document",
+                  "system"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Indirect injection hides untrusted instructions inside external document data.",
+            "rows": [
+              {
+                "cells": [
+                  "system",
+                  "document",
+                  "system"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "system",
+                  "document",
+                  "document"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Jailbreaks and detection",
+      "codeHash": "b7941992100166483a13f68801dee87a2ec61d8357c58d26a4f63c6fcb049b62",
+      "spec": {
+        "template": "table",
+        "title": "Adversarial jailbreak heuristics and threat classification",
+        "columns": [
+          "phrases",
+          "hits",
+          "phrases"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Jailbreaks attempt to bypass model safety rules through role-play tactics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "phrases"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "phrases"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "phrases"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "phrases"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Known adversarial phrases flag suspicious inputs for security review.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "phrases"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "phrases"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "phrases"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Adversarial jailbreak heuristics and threat classification",
+        "columns": [
+          "phrases",
+          "hits",
+          "phrases"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Jailbreaks attempt to bypass model safety rules through role-play tactics.",
+            "rows": [
+              {
+                "cells": [
+                  "phrases",
+                  "hits",
+                  "phrases"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "phrases",
+                  "hits",
+                  "phrases"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Known adversarial phrases flag suspicious inputs for security review.",
+            "rows": [
+              {
+                "cells": [
+                  "phrases",
+                  "hits",
+                  "phrases"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "phrases",
+                  "hits",
+                  "hits"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing safer AI features",
+      "codeHash": "7c011ea58302639975ae83737e08a46e0df78c3fe24a99f3a640f1472097e38f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: redact and detect",
+      "codeHash": "7e1ef7ca108f78b543cf7b7f54e635bb825e8a48de6a84b6df42b8fdedd86110",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

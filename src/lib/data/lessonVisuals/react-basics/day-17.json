@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 17,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "APIs: how apps get data",
+      "codeHash": "fa38cab37f518424c9d49ec7d91fb34841286890e39346281ae2cfcf47d129bc",
+      "spec": {
+        "template": "flow",
+        "title": "Client requests and server data serialization",
+        "nodes": [
+          {
+            "id": "srv",
+            "label": "server",
+            "tappable": false
+          },
+          {
+            "id": "json",
+            "label": "JSON",
+            "tappable": false
+          },
+          {
+            "id": "app",
+            "label": "app",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client apps request data stored remotely on servers.",
+            "values": {
+              "srv": {
+                "text": "\"Infosys\""
+              },
+              "json": {
+                "text": "\"Zoho\""
+              },
+              "app": {
+                "text": "responseText"
+              }
+            },
+            "tones": {
+              "srv": "data",
+              "json": "idle",
+              "app": "idle"
+            },
+            "arrows": [
+              [
+                "srv",
+                "json"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The app will load companies from an API to suggest in forms.",
+            "values": {
+              "srv": {
+                "text": "\"Infosys\""
+              },
+              "json": {
+                "text": "\"Zoho\""
+              },
+              "app": {
+                "text": "responseText"
+              }
+            },
+            "tones": {
+              "srv": "idle",
+              "json": "ok",
+              "app": "ok"
+            },
+            "arrows": [
+              [
+                "srv",
+                "json"
+              ],
+              [
+                "json",
+                "app"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Client requests and server data serialization",
+        "nodes": [
+          {
+            "id": "srv",
+            "label": "server",
+            "tappable": false
+          },
+          {
+            "id": "json",
+            "label": "JSON",
+            "tappable": false
+          },
+          {
+            "id": "app",
+            "label": "app",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client apps request data stored remotely on servers.",
+            "values": {
+              "srv": "\"Infosys\"",
+              "json": "\"Zoho\"",
+              "app": "responseText"
+            },
+            "tones": {
+              "srv": "data",
+              "json": "idle",
+              "app": "idle"
+            },
+            "arrows": [
+              [
+                "srv",
+                "json"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The app will load companies from an API to suggest in forms.",
+            "values": {
+              "srv": "\"Infosys\"",
+              "json": "\"Zoho\"",
+              "app": "responseText"
+            },
+            "tones": {
+              "srv": "idle",
+              "json": "ok",
+              "app": "ok"
+            },
+            "arrows": [
+              [
+                "srv",
+                "json"
+              ],
+              [
+                "json",
+                "app"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "fetch, async and await",
+      "codeHash": "bc4c179c2baeb29596267a09755b873089f27f1f1f4ae80ccfae4aea9822dd98",
+      "spec": {
+        "template": "compare",
+        "title": "Asynchronous HTTP request execution with fetch",
+        "leftLabel": "Request Sent",
+        "rightLabel": "Data Parsed",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sending network requests with fetch takes non-blocking time.",
+            "left": {
+              "code": "console.log(names[0]);",
+              "result": {
+                "text": "\"Leanne\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(names[1]);",
+              "result": {
+                "text": "\"Ervin\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Async functions await server responses without freezing user interface.",
+            "left": {
+              "code": "console.log(names[0]);",
+              "result": {
+                "text": "\"Leanne\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(names[1]);",
+              "result": {
+                "text": "\"Ervin\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Asynchronous HTTP request execution with fetch",
+        "leftLabel": "Request Sent",
+        "rightLabel": "Data Parsed",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sending network requests with fetch takes non-blocking time.",
+            "left": {
+              "code": "console.log(names[0]);",
+              "result": "\"Leanne\"",
+              "tone": "idle",
+              "checks": [
+                "\"Leanne\""
+              ]
+            },
+            "right": {
+              "code": "console.log(names[1]);",
+              "result": "\"Ervin\"",
+              "tone": "ok",
+              "checks": [
+                "\"Ervin\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Async functions await server responses without freezing user interface.",
+            "left": {
+              "code": "console.log(names[0]);",
+              "result": "\"Leanne\"",
+              "tone": "idle",
+              "checks": [
+                "\"Leanne\""
+              ]
+            },
+            "right": {
+              "code": "console.log(names[1]);",
+              "result": "\"Ervin\"",
+              "tone": "ok",
+              "checks": [
+                "\"Ervin\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The three states of every request",
+      "codeHash": "ac4b904a61f0e5366e08c54213c32ca90de2ac46651a545afd65b26d5b3f211a",
+      "spec": {
+        "template": "states",
+        "title": "Three core states of network request lifecycle",
+        "states": [
+          "loading",
+          "success",
+          "error"
+        ],
+        "activeIndex": 0,
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every remote network request passes through distinct status phases.",
+            "activeIndex": 0
+          },
+          {
+            "at": "say2",
+            "caption": "Track request status in state to conditionally render loading screens.",
+            "activeIndex": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Three core states of network request lifecycle",
+        "states": [
+          "loading",
+          "success",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every remote network request passes through distinct status phases."
+          },
+          {
+            "at": "say2",
+            "caption": "Track request status in state to conditionally render loading screens."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling errors with try and catch",
+      "codeHash": "cc409e17965877c2e3feb654656db5ca4a3cd63fcc1416114561a69af4ee2bff",
+      "spec": {
+        "template": "compare",
+        "title": "Error trapping with try and catch blocks",
+        "leftLabel": "Invalid JSON",
+        "rightLabel": "Valid JSON",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Network failures throw errors that catch blocks handle gracefully.",
+            "left": {
+              "code": "console.log(parseCompanies(\"broken json\"));",
+              "result": {
+                "text": "\"error\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(parseCompanies('{\"data\":[\"Zoho\"]}'));",
+              "result": {
+                "text": "\"success\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Wrapping requests in try catch sets error state cleanly.",
+            "left": {
+              "code": "console.log(parseCompanies(\"broken json\"));",
+              "result": {
+                "text": "\"error\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(parseCompanies('{\"data\":[\"Zoho\"]}'));",
+              "result": {
+                "text": "\"success\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Error trapping with try and catch blocks",
+        "leftLabel": "Invalid JSON",
+        "rightLabel": "Valid JSON",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Network failures throw errors that catch blocks handle gracefully.",
+            "left": {
+              "code": "console.log(parseCompanies(\"broken json\"));",
+              "result": "\"error\"",
+              "tone": "warn",
+              "checks": [
+                "\"error\""
+              ]
+            },
+            "right": {
+              "code": "console.log(parseCompanies('{\"data\":[\"Zoho\"]}'));",
+              "result": "\"success\"",
+              "tone": "ok",
+              "checks": [
+                "\"success\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Wrapping requests in try catch sets error state cleanly.",
+            "left": {
+              "code": "console.log(parseCompanies(\"broken json\"));",
+              "result": "\"error\"",
+              "tone": "warn",
+              "checks": [
+                "\"error\""
+              ]
+            },
+            "right": {
+              "code": "console.log(parseCompanies('{\"data\":[\"Zoho\"]}'));",
+              "result": "\"success\"",
+              "tone": "ok",
+              "checks": [
+                "\"success\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Loading data in a component",
+      "codeHash": "9c8e320014faa06a525e558d37b6021a58df992097402b37a69fb0aabcca348c",
+      "spec": {
+        "template": "flow",
+        "title": "Mounting side effect request lifecycle in components",
+        "nodes": [
+          {
+            "id": "start",
+            "label": "start",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          },
+          {
+            "id": "data",
+            "label": "data",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fetch operations placed inside useEffect run once on mount.",
+            "values": {
+              "start": {
+                "text": "\"start\""
+              },
+              "status": {
+                "text": "\"loading\""
+              },
+              "data": {
+                "text": "companies"
+              }
+            },
+            "tones": {
+              "start": "data",
+              "status": "idle",
+              "data": "idle"
+            },
+            "arrows": [
+              [
+                "start",
+                "status"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Setting state inside async functions updates the component view.",
+            "values": {
+              "start": {
+                "text": "\"done\""
+              },
+              "status": {
+                "text": "\"success\""
+              },
+              "data": {
+                "text": "companies"
+              }
+            },
+            "tones": {
+              "start": "idle",
+              "status": "ok",
+              "data": "ok"
+            },
+            "arrows": [
+              [
+                "start",
+                "status"
+              ],
+              [
+                "status",
+                "data"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Mounting side effect request lifecycle in components",
+        "nodes": [
+          {
+            "id": "start",
+            "label": "start",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          },
+          {
+            "id": "data",
+            "label": "data",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fetch operations placed inside useEffect run once on mount.",
+            "values": {
+              "start": "\"start\"",
+              "status": "\"loading\"",
+              "data": "companies"
+            },
+            "tones": {
+              "start": "data",
+              "status": "idle",
+              "data": "idle"
+            },
+            "arrows": [
+              [
+                "start",
+                "status"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Setting state inside async functions updates the component view.",
+            "values": {
+              "start": "\"done\"",
+              "status": "\"success\"",
+              "data": "companies"
+            },
+            "tones": {
+              "start": "idle",
+              "status": "ok",
+              "data": "ok"
+            },
+            "arrows": [
+              [
+                "start",
+                "status"
+              ],
+              [
+                "status",
+                "data"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Use the data in the Job Tracker form",
+      "codeHash": "67a85f72104f4b18e7d509f2314ca40d2b6c55f773ba1487f2971738a765a438",
+      "spec": {
+        "template": "none",
+        "reason": "Integrating remote company suggestions datalist into the Job Tracker form"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Integrating remote company suggestions datalist into the Job Tracker form"
+      }
+    }
+  ]
+}

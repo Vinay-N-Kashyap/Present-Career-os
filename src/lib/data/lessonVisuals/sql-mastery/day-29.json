@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why backups matter",
+      "codeHash": "435af34a4bf3e7ea13e22cc19623a5a230a4597c8eae3e4c20208037dc6ea738",
+      "spec": {
+        "template": "table",
+        "title": "Table backup snapshots and recovery readiness",
+        "columns": [
+          "id",
+          "name",
+          "price",
+          "backup_state"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A backup maintains a preserved copy of database data for recovery.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "Preserved"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Tools write tables views and rules to backup files to rebuild data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "Preserved"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "Preserved"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "Preserved"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Table backup snapshots and recovery readiness",
+        "columns": [
+          "id",
+          "name",
+          "price",
+          "backup_state"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A backup maintains a preserved copy of database data for recovery.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Pen",
+                  "10.00",
+                  "Preserved"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Tools write tables views and rules to backup files to rebuild data.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Pen",
+                  "10.00",
+                  "Preserved"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Notebook",
+                  "60.00",
+                  "Preserved"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Backpack",
+                  "1200.00",
+                  "Preserved"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Copying and restoring tables",
+      "codeHash": "284889316b6727e73cb1cb4b1d1a4c3f6a81b3b62ba4ea0c95758a28cac9cfb5",
+      "spec": {
+        "template": "compare",
+        "title": "Safety tables and row restoration after unintended delete",
+        "leftLabel": "Post Accident Table",
+        "rightLabel": "Restored from Backup",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Inserting from the backup table restores missing rows after an accident.",
+            "left": {
+              "code": "DELETE FROM products",
+              "result": {
+                "text": "0 rows left"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "INSERT SELECT * FROM backup",
+              "result": {
+                "text": "3 rows restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A transaction provides a safer habit with rollback for planned changes.",
+            "left": {
+              "code": "uncommitted session work",
+              "result": {
+                "text": "isolated changes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "ROLLBACK safety escape",
+              "result": {
+                "text": "clean revert on mistake"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Safety tables and row restoration after unintended delete",
+        "leftLabel": "Post Accident Table",
+        "rightLabel": "Restored from Backup",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Inserting from the backup table restores missing rows after an accident.",
+            "left": {
+              "code": "DELETE FROM products",
+              "result": "0 rows left",
+              "tone": "error",
+              "checks": [
+                "0 rows left"
+              ]
+            },
+            "right": {
+              "code": "INSERT SELECT * FROM backup",
+              "result": "3 rows restored",
+              "tone": "ok",
+              "checks": [
+                "3 rows restored"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A transaction provides a safer habit with rollback for planned changes.",
+            "left": {
+              "code": "uncommitted session work",
+              "result": "isolated changes",
+              "tone": "data",
+              "checks": [
+                "isolated changes"
+              ]
+            },
+            "right": {
+              "code": "ROLLBACK safety escape",
+              "result": "clean revert on mistake",
+              "tone": "ok",
+              "checks": [
+                "clean revert on mistake"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Users, roles and permissions",
+      "codeHash": "5829abaa89d7dfed6382366466138a4a5d691bd339c7edac26c474e7cbe70906",
+      "spec": {
+        "template": "table",
+        "title": "Granular database access control with roles and GRANT",
+        "columns": [
+          "role_name",
+          "privilege_type",
+          "is_granted"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The GRANT statement assigns specific permissions to a designated role.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "report_reader"
+                  },
+                  {
+                    "text": "SELECT"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The principle of least privilege limits each role to essential permissions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "report_reader"
+                  },
+                  {
+                    "text": "SELECT"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "report_reader"
+                  },
+                  {
+                    "text": "INSERT"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "report_reader"
+                  },
+                  {
+                    "text": "DELETE"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Granular database access control with roles and GRANT",
+        "columns": [
+          "role_name",
+          "privilege_type",
+          "is_granted"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The GRANT statement assigns specific permissions to a designated role.",
+            "rows": [
+              {
+                "cells": [
+                  "report_reader",
+                  "SELECT",
+                  "true"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The principle of least privilege limits each role to essential permissions.",
+            "rows": [
+              {
+                "cells": [
+                  "report_reader",
+                  "SELECT",
+                  "true"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "report_reader",
+                  "INSERT",
+                  "false"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "report_reader",
+                  "DELETE",
+                  "false"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Seeing permissions in action",
+      "codeHash": "5195550bcf0a64498be2e5f621176a6a18c971c687af4c712f8810c271f6bd3b",
+      "spec": {
+        "template": "compare",
+        "title": "Role enforcement blocking unauthorized DML operations",
+        "leftLabel": "Permitted Read Operation",
+        "rightLabel": "Refused Write Operation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Switching session identity with SET ROLE tests assigned permissions directly.",
+            "left": {
+              "code": "SET ROLE report_reader",
+              "result": {
+                "text": "acting as read-only role"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SELECT sum(amount)",
+              "result": {
+                "text": "query succeeds (1200.00)"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PostgreSQL protects data with permission denied when unauthorized writes occur.",
+            "left": {
+              "code": "SELECT ON sales",
+              "result": {
+                "text": "authorized access"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "INSERT INTO sales",
+              "result": {
+                "text": "permission denied for table sales"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Role enforcement blocking unauthorized DML operations",
+        "leftLabel": "Permitted Read Operation",
+        "rightLabel": "Refused Write Operation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Switching session identity with SET ROLE tests assigned permissions directly.",
+            "left": {
+              "code": "SET ROLE report_reader",
+              "result": "acting as read-only role",
+              "tone": "data",
+              "checks": [
+                "acting as read-only role"
+              ]
+            },
+            "right": {
+              "code": "SELECT sum(amount)",
+              "result": "query succeeds (1200.00)",
+              "tone": "ok",
+              "checks": [
+                "query succeeds (1200.00)"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PostgreSQL protects data with permission denied when unauthorized writes occur.",
+            "left": {
+              "code": "SELECT ON sales",
+              "result": "authorized access",
+              "tone": "ok",
+              "checks": [
+                "authorized access"
+              ]
+            },
+            "right": {
+              "code": "INSERT INTO sales",
+              "result": "permission denied for table sales",
+              "tone": "error",
+              "checks": [
+                "permission denied for table sales"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SQL vs NoSQL",
+      "codeHash": "910de9d76d1d766834ef0dad2ad13a4722b5b9f5748c8524bf7bb0c229426b06",
+      "spec": {
+        "template": "none",
+        "reason": "Taxonomy of storage engines: relational ACID, document stores, in-memory caches."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Taxonomy of storage engines: relational ACID, document stores, in-memory caches."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a production checklist",
+      "codeHash": "fcd2ec405bcd84cc143ebd2b90219a1c7211dc91a919fe2690d43abe10f7048a",
+      "spec": {
+        "template": "none",
+        "reason": "Comprehensive production readiness verification script checking operational controls."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Comprehensive production readiness verification script checking operational controls."
+      }
+    }
+  ]
+}

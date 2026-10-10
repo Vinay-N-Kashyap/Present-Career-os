@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 30,
+  "promptSha": "e50505223451f2b0c7a1c7fd4f333bbca27c604bbdafadcbc6ab24c73cf3ce35",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture Overview: Global FinTech Banking Platform",
+      "codeHash": "467562bd97ce8a24ed48e21ae9bf14aaf12f9c1af60294941818bd3cbfec6b62",
+      "spec": {
+        "template": "workflow",
+        "title": "Global multi-region FinTech active-active platform architecture",
+        "stages": [
+          {
+            "id": "edgeRouting",
+            "name": "Route 53 & CloudFront",
+            "subtext": "Anycast DNS & Edge"
+          },
+          {
+            "id": "securityPerimeter",
+            "name": "AWS WAF & Shield",
+            "subtext": "Rate Limits & SQLi"
+          },
+          {
+            "id": "activeCompute",
+            "name": "Active Compute Tiers",
+            "subtext": "ECS Fargate & Lambda"
+          },
+          {
+            "id": "globalDatabase",
+            "name": "DynamoDB Global Tables",
+            "subtext": "Sub-Second Multi-Master"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The banking platform operates across three regions with global replication.",
+            "activeStageId": "edgeRouting",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Every tier is designed for zero downtime with multi-master data replication.",
+            "activeStageId": "globalDatabase",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Global multi-region FinTech active-active platform architecture",
+        "stages": [
+          {
+            "id": "edgeRouting",
+            "name": "Route 53 & CloudFront",
+            "subtext": "Anycast DNS & Edge"
+          },
+          {
+            "id": "securityPerimeter",
+            "name": "AWS WAF & Shield",
+            "subtext": "Rate Limits & SQLi"
+          },
+          {
+            "id": "activeCompute",
+            "name": "Active Compute Tiers",
+            "subtext": "ECS Fargate & Lambda"
+          },
+          {
+            "id": "globalDatabase",
+            "name": "DynamoDB Global Tables",
+            "subtext": "Sub-Second Multi-Master"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The banking platform operates across three regions with global replication.",
+            "activeStageId": "edgeRouting",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Every tier is designed for zero downtime with multi-master data replication.",
+            "activeStageId": "globalDatabase",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transaction Processing: Event-Driven Microservices Pipeline",
+      "codeHash": "acbf155fc1cb746f9185efbb721987cc13a678976e61f76df7b08df8a922320f",
+      "spec": {
+        "template": "sequence",
+        "title": "High-throughput transactional microservices ledger sequence",
+        "actors": [
+          {
+            "id": "ingest",
+            "name": "Ingestion API"
+          },
+          {
+            "id": "bus",
+            "name": "Banking Bus"
+          },
+          {
+            "id": "ledger",
+            "name": "Ledger Worker"
+          },
+          {
+            "id": "dynamo",
+            "name": "Global Table"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The event rule routes the event to a ledger queue in the local region.",
+            "from": "ingest",
+            "to": "bus",
+            "label": "Publish PaymentInitiated",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Atomic writes ensure that both debits and credits succeed or fail together.",
+            "from": "ledger",
+            "to": "dynamo",
+            "label": "TransactWriteItems Atomic",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "High-throughput transactional microservices ledger sequence",
+        "actors": [
+          {
+            "id": "ingest",
+            "name": "Ingestion API"
+          },
+          {
+            "id": "bus",
+            "name": "Banking Bus"
+          },
+          {
+            "id": "ledger",
+            "name": "Ledger Worker"
+          },
+          {
+            "id": "dynamo",
+            "name": "Global Table"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The event rule routes the event to a ledger queue in the local region.",
+            "from": "ingest",
+            "to": "bus",
+            "label": "Publish PaymentInitiated",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Atomic writes ensure that both debits and credits succeed or fail together.",
+            "from": "ledger",
+            "to": "dynamo",
+            "label": "TransactWriteItems Atomic",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Security Layer: WAF, KMS & Zero-Trust Access",
+      "codeHash": "1c64c3c5718e315e8a3303df3f10470e0bacb34cd17bb1c72be450e5ce83c18d",
+      "spec": {
+        "template": "table",
+        "title": "Zero-trust defense-in-depth security architecture specifications",
+        "columns": [
+          "Security Perimeter Ring",
+          "Technology Stack",
+          "Enforced Policy Control",
+          "Regulatory Compliance"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The Web ACL includes managed rule groups that block attack attempts.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Customer records are envelope encrypted using a dedicated key with rotation.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Zero-trust defense-in-depth security architecture specifications",
+        "columns": [
+          "Security Perimeter Ring",
+          "Technology Stack",
+          "Enforced Policy Control",
+          "Regulatory Compliance"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The Web ACL includes managed rule groups that block attack attempts.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Customer records are envelope encrypted using a dedicated key with rotation.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Observability & Automated Incident Response",
+      "codeHash": "1833ed964b6b49188baacd476b823cc29116555dcb5abadff9b2878c32b0c050",
+      "spec": {
+        "template": "states",
+        "title": "Platform observability and automated incident response states",
+        "states": [
+          {
+            "id": "healthyTraffic",
+            "label": "Healthy Multi-Region Operations"
+          },
+          {
+            "id": "anomalyDetected",
+            "label": "Composite Alarm Breached"
+          },
+          {
+            "id": "autoRemediation",
+            "label": "Automated Remediation Triggered"
+          },
+          {
+            "id": "trafficRedirected",
+            "label": "Route 53 Failover Completed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A composite alarm combines individual alarms to detect incident conditions.",
+            "active": "healthyTraffic"
+          },
+          {
+            "at": "say6",
+            "caption": "Automated remediation can scale capacity or trigger failover redirection.",
+            "active": "trafficRedirected"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Platform observability and automated incident response states",
+        "states": [
+          {
+            "id": "healthyTraffic",
+            "label": "Healthy Multi-Region Operations"
+          },
+          {
+            "id": "anomalyDetected",
+            "label": "Composite Alarm Breached"
+          },
+          {
+            "id": "autoRemediation",
+            "label": "Automated Remediation Triggered"
+          },
+          {
+            "id": "trafficRedirected",
+            "label": "Route 53 Failover Completed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A composite alarm combines individual alarms to detect incident conditions.",
+            "active": "healthyTraffic"
+          },
+          {
+            "at": "say6",
+            "caption": "Automated remediation can scale capacity or trigger failover redirection.",
+            "active": "trafficRedirected"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FinOps Governance & Cost Optimization",
+      "codeHash": "a391e41c947c6c4f0e789c4a3abf52be6ceb33e3c44a3d80024102fb7b20a5b9",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise FinOps governance and commitment optimization shares",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every resource across regions is tagged with mandatory cost allocation tags.",
+            "bars": [
+              {
+                "label": "Compute Savings Plan Coverage",
+                "value": 80,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "On-Demand Peak Burst Share",
+                "value": 20,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Compute savings plans cover baseline usage across compute services.",
+            "bars": [
+              {
+                "label": "FinOps Optimization Cost Savings",
+                "value": 36,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Mandatory Tagged Resource Ratio",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise FinOps governance and commitment optimization shares",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every resource across regions is tagged with mandatory cost allocation tags.",
+            "bars": [
+              {
+                "label": "Compute Savings Plan Coverage",
+                "value": 80,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "On-Demand Peak Burst Share",
+                "value": 20,
+                "max": 100,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Compute savings plans cover baseline usage across compute services.",
+            "bars": [
+              {
+                "label": "FinOps Optimization Cost Savings",
+                "value": 36,
+                "max": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Mandatory Tagged Resource Ratio",
+                "value": 100,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Final Capstone Certification: Architecture Validation",
+      "codeHash": "dd864df5dddf7ee4909bcd49b08ffa98a058fde7401f65d757ef315e2ff592f6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

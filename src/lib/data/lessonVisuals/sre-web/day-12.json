@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 12,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Three Tiers of Container Health Probes",
+      "codeHash": "20408de5f61e7b5494b10d429f1728c660e18226701f2bf6ce9b607fba367a02",
+      "spec": {
+        "template": "compare",
+        "title": "Readiness traffic gating versus liveness container restart tiers",
+        "left": {
+          "title": "Readiness Probe Gating",
+          "items": [
+            "Inspects external dependencies",
+            "Detaches from load balancer",
+            "Suppresses user error cascades",
+            "Preserves container process state"
+          ]
+        },
+        "right": {
+          "title": "Liveness Probe Restart",
+          "items": [
+            "Monitors internal heartbeat",
+            "Detects deadlock starvation",
+            "Restarts frozen containers",
+            "Ignores external dependencies"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Readiness probes determine whether containers are prepared to service requests.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Liveness probes verify whether running processes are healthy and progressing.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Readiness Probe Gating",
+        "rightLabel": "Liveness Probe Restart"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Readiness traffic gating versus liveness container restart tiers",
+        "left": {
+          "title": "Readiness Probe Gating",
+          "items": [
+            "Inspects external dependencies",
+            "Detaches from load balancer",
+            "Suppresses user error cascades",
+            "Preserves container process state"
+          ]
+        },
+        "right": {
+          "title": "Liveness Probe Restart",
+          "items": [
+            "Monitors internal heartbeat",
+            "Detects deadlock starvation",
+            "Restarts frozen containers",
+            "Ignores external dependencies"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Readiness probes determine whether containers are prepared to service requests.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Liveness probes verify whether running processes are healthy and progressing.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "Readiness Probe Gating",
+        "rightLabel": "Liveness Probe Restart"
+      }
+    },
+    {
+      "partTitle": "Startup Probes: Guarding Slow Initialization & Cache Warming",
+      "codeHash": "f12a0bd10a37231d8abf0dc7b78266d8165596de31777d52ac1da191a5e55c4c",
+      "spec": {
+        "template": "bars",
+        "title": "Container bootstrapping progress across startup probe attempts",
+        "bars": [
+          {
+            "id": "tick1",
+            "label": "Initial Schema Init",
+            "value": 35
+          },
+          {
+            "id": "tick2",
+            "label": "Connection Pool Warming",
+            "value": 75
+          },
+          {
+            "id": "tick3",
+            "label": "Boot Complete",
+            "value": 100
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Startup probes disable operational checks until bootstrapping finishes.",
+            "activeBars": [
+              "tick1"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Startup probe success allows operational probes to take over traffic checks.",
+            "activeBars": [
+              "tick1",
+              "tick2",
+              "tick3"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Container bootstrapping progress across startup probe attempts",
+        "bars": [
+          {
+            "id": "tick1",
+            "label": "Initial Schema Init",
+            "value": 35
+          },
+          {
+            "id": "tick2",
+            "label": "Connection Pool Warming",
+            "value": 75
+          },
+          {
+            "id": "tick3",
+            "label": "Boot Complete",
+            "value": 100
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Startup probes disable operational checks until bootstrapping finishes.",
+            "activeBars": [
+              "tick1"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Startup probe success allows operational probes to take over traffic checks.",
+            "activeBars": [
+              "tick1",
+              "tick2",
+              "tick3"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Readiness Probes: Dependency Verification & Traffic Gating",
+      "codeHash": "4c30df985cd2f0140d215fa403e0047025e69160fb09c1105e25dd7b9e6e211e",
+      "spec": {
+        "template": "sequence",
+        "title": "Readiness probe health evaluation and load balancer traffic detachment",
+        "actors": [
+          "Load Balancer",
+          "Service Instance",
+          "Postgres Database"
+        ],
+        "messages": [
+          {
+            "from": "Load Balancer",
+            "to": "Service Instance",
+            "label": "Periodic readiness probe"
+          },
+          {
+            "from": "Service Instance",
+            "to": "Postgres Database",
+            "label": "Health ping query"
+          },
+          {
+            "from": "Postgres Database",
+            "to": "Service Instance",
+            "label": "Connection failure timeout"
+          },
+          {
+            "from": "Service Instance",
+            "to": "Load Balancer",
+            "label": "HTTP 503 service unavailable"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Readiness probes detect offline dependencies and report failures to balancers.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Balancers drop container endpoints from routing pools without process restarts.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Readiness probe health evaluation and load balancer traffic detachment",
+        "actors": [
+          "Load Balancer",
+          "Service Instance",
+          "Postgres Database"
+        ],
+        "messages": [
+          {
+            "from": "Load Balancer",
+            "to": "Service Instance",
+            "label": "Periodic readiness probe"
+          },
+          {
+            "from": "Service Instance",
+            "to": "Postgres Database",
+            "label": "Health ping query"
+          },
+          {
+            "from": "Postgres Database",
+            "to": "Service Instance",
+            "label": "Connection failure timeout"
+          },
+          {
+            "from": "Service Instance",
+            "to": "Load Balancer",
+            "label": "HTTP 503 service unavailable"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Readiness probes detect offline dependencies and report failures to balancers.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Balancers drop container endpoints from routing pools without process restarts.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Liveness Probes: Deadlock Detection & Automated Restarts",
+      "codeHash": "15d4143db5fae94f1e780000aa24d054f52c5cb584104a369b97198b37bb809a",
+      "spec": {
+        "template": "states",
+        "title": "Liveness heartbeat lag monitoring and restart state transitions",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "HEALTHY Responsive"
+          },
+          {
+            "id": "degraded",
+            "label": "DEGRADED Heartbeat Lag"
+          },
+          {
+            "id": "restarted",
+            "label": "RESTARTED Container Replacement"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Severe software bugs cause unrecoverable thread deadlocks and starvation.",
+            "activeStateId": "degraded",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Remediation terminates deadlocked containers to launch replacements.",
+            "activeStateId": "restarted",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Liveness heartbeat lag monitoring and restart state transitions",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "HEALTHY Responsive"
+          },
+          {
+            "id": "degraded",
+            "label": "DEGRADED Heartbeat Lag"
+          },
+          {
+            "id": "restarted",
+            "label": "RESTARTED Container Replacement"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Severe software bugs cause unrecoverable thread deadlocks and starvation.",
+            "activeStateId": "degraded",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Remediation terminates deadlocked containers to launch replacements.",
+            "activeStateId": "restarted",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flapping Prevention: Failure Thresholds, Success Windows & Debouncing",
+      "codeHash": "ac268151cf9e5d7562ca1fcf146ffb7aa3a443346a528492ed6c66afcbdd4a01",
+      "spec": {
+        "template": "table",
+        "title": "Debounced health probe threshold hysteresis state matrix",
+        "columns": [
+          "Consecutive Streak",
+          "Recorded Event",
+          "Debounced State",
+          "Traffic Routing"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Debouncing thresholds prevent flapping during transient network blips.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Asymmetric hysteresis ensures stability before restoring production traffic.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Debounced health probe threshold hysteresis state matrix",
+        "columns": [
+          "Consecutive Streak",
+          "Recorded Event",
+          "Debounced State",
+          "Traffic Routing"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Debouncing thresholds prevent flapping during transient network blips.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Asymmetric hysteresis ensures stability before restoring production traffic.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Health Probe Controller with State Transitions",
+      "codeHash": "c238ac5f18d7936d64f2234762dd8248880f95e365f0b32cb655a1adc82f49fe",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

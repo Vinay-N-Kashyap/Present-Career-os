@@ -1,0 +1,611 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 20,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Three Time Domains: Event, Ingestion & Processing Time",
+      "codeHash": "57b79910441dc0e0a4459f3bf2e647afbde4ee9496b825cc61ded71d38d62a44",
+      "spec": {
+        "template": "bars",
+        "title": "analyzeTimeSkew breakdown of 450ms network lag, 750ms processing lag, and 1200ms skew",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Ingestion Time records when the event enters the broker after 450ms network lag.",
+            "bars": [
+              {
+                "label": "Network Ingestion Lag (ms)",
+                "value": {
+                  "text": "450"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Processing Lag (ms)",
+                "value": {
+                  "text": "750"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Processing time is non-deterministic as network delays skew the clock.",
+            "bars": [
+              {
+                "label": "Network Ingestion Lag (ms)",
+                "value": {
+                  "text": "450"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Processing Lag (ms)",
+                "value": {
+                  "text": "750"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Total Time Skew (ms)",
+                "value": {
+                  "text": "1200"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "analyzeTimeSkew breakdown of 450ms network lag, 750ms processing lag, and 1200ms skew",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Ingestion Time records when the event enters the broker after 450ms network lag.",
+            "bars": [
+              {
+                "label": "Network Ingestion Lag (ms)",
+                "value": 450,
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Processing Lag (ms)",
+                "value": 750,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Processing time is non-deterministic as network delays skew the clock.",
+            "bars": [
+              {
+                "label": "Network Ingestion Lag (ms)",
+                "value": 450,
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Processing Lag (ms)",
+                "value": 750,
+                "tone": "data"
+              },
+              {
+                "label": "Total Time Skew (ms)",
+                "value": 1200,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Watermark Theory & Monotonic Time Assertions",
+      "codeHash": "61717d8f1aef70d5ae4006c5ae532e231e74eb982936e0af997f50db99072e57",
+      "spec": {
+        "template": "table",
+        "title": "WatermarkTracker(200) monotonic watermark progression across out-of-order events",
+        "columns": [
+          "Arriving EventTime",
+          "Max Observed",
+          "Current Watermark",
+          "Monotonic Status"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Watermark(T) declares the engine assumes all events with eventTime <= T arrived.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Watermarks are monotonically increasing, so time never flows backward at 1100ms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "WatermarkTracker(200) monotonic watermark progression across out-of-order events",
+        "columns": [
+          "Arriving EventTime",
+          "Max Observed",
+          "Current Watermark",
+          "Monotonic Status"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Watermark(T) declares the engine assumes all events with eventTime <= T arrived.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Watermarks are monotonically increasing, so time never flows backward at 1100ms.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Periodic vs Punctuated Watermark Generators",
+      "codeHash": "a2a4694cd892cb98b8e226e851ea85a98b9cc0e264c914d6cea2f2c24dc94f52",
+      "spec": {
+        "template": "sequence",
+        "title": "PeriodicWatermarkGenerator(100) vs PunctuatedWatermarkGenerator emission triggers",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Event Stream"
+          },
+          {
+            "id": "periodicGen",
+            "label": "Periodic Generator"
+          },
+          {
+            "id": "punctuatedGen",
+            "label": "Punctuated Generator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bounded-out-of-orderness watermarks emit max(eventTime) minus allowedLateness.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "periodicGen",
+                "label": "onEvent(500), onEvent(650)"
+              },
+              {
+                "from": "periodicGen",
+                "to": "periodicGen",
+                "label": "onPeriodicEmit() -> WM: 550 (650 - 100)"
+              }
+            ],
+            "activeActorId": "periodicGen"
+          },
+          {
+            "at": "say7",
+            "caption": "When an event contains a milestone marker, a watermark is emitted immediately.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "punctuatedGen",
+                "label": "id:3 (700, marker:undefined) -> null"
+              },
+              {
+                "from": "stream",
+                "to": "punctuatedGen",
+                "label": "id:4 (700, isMilestoneMarker:true) -> WM: 700"
+              }
+            ],
+            "activeActorId": "punctuatedGen"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "PeriodicWatermarkGenerator(100) vs PunctuatedWatermarkGenerator emission triggers",
+        "actors": [
+          {
+            "id": "stream",
+            "label": "Event Stream"
+          },
+          {
+            "id": "periodicGen",
+            "label": "Periodic Generator"
+          },
+          {
+            "id": "punctuatedGen",
+            "label": "Punctuated Generator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Bounded-out-of-orderness watermarks emit max(eventTime) minus allowedLateness.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "periodicGen",
+                "label": "onEvent(500), onEvent(650)"
+              },
+              {
+                "from": "periodicGen",
+                "to": "periodicGen",
+                "label": "onPeriodicEmit() -> WM: 550 (650 - 100)"
+              }
+            ],
+            "activeActorId": "periodicGen"
+          },
+          {
+            "at": "say7",
+            "caption": "When an event contains a milestone marker, a watermark is emitted immediately.",
+            "messages": [
+              {
+                "from": "stream",
+                "to": "punctuatedGen",
+                "label": "id:3 (700, marker:undefined) -> null"
+              },
+              {
+                "from": "stream",
+                "to": "punctuatedGen",
+                "label": "id:4 (700, isMilestoneMarker:true) -> WM: 700"
+              }
+            ],
+            "activeActorId": "punctuatedGen"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Late-Arriving Event Detection & Classification",
+      "codeHash": "9922becd242eddc295293d780daab935051ad4056a21b759d389833de108f64a",
+      "spec": {
+        "template": "table",
+        "title": "EventClassifier evaluation at currentWatermark = 1000ms for tx-1 (1050) and tx-2 (950)",
+        "columns": [
+          "Event ID",
+          "EventTime",
+          "Watermark",
+          "Classification / Delta"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An event is classified as LATE when its event timestamp (950) is < watermark.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "If an event timestamp (1050) is >= the watermark (1000), it is ON_TIME.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "EventClassifier evaluation at currentWatermark = 1000ms for tx-1 (1050) and tx-2 (950)",
+        "columns": [
+          "Event ID",
+          "EventTime",
+          "Watermark",
+          "Classification / Delta"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An event is classified as LATE when its event timestamp (950) is < watermark.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "If an event timestamp (1050) is >= the watermark (1000), it is ON_TIME.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Late Event Handling: Discard, Side-Output (DLQ) & Allowed Lateness",
+      "codeHash": "5771e8b3d9d428d782d38efaf9bfeab12e845f5b3abbbf530f12ca884559356d",
+      "spec": {
+        "template": "flow",
+        "title": "LateEventPolicyManager(1000, 200) routing across On-Time, Allowed Lateness, and DLQ",
+        "nodes": [
+          {
+            "id": "router",
+            "label": "Policy Router (WM:1000, Grace:200)",
+            "tappable": false
+          },
+          {
+            "id": "winAgg",
+            "label": "WINDOW_AGGREGATE (ts:1050)",
+            "tappable": false
+          },
+          {
+            "id": "retracted",
+            "label": "RETRACTED_WINDOW_UPDATE (ts:900)",
+            "tappable": false
+          },
+          {
+            "id": "dlq",
+            "label": "DEAD_LETTER_DLQ (ts:700)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "router",
+            "to": "winAgg",
+            "label": ">= 1000ms"
+          },
+          {
+            "from": "router",
+            "to": "retracted",
+            "label": "lateness <= 200ms"
+          },
+          {
+            "from": "router",
+            "to": "dlq",
+            "label": "lateness > 200ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Side-Output branches late events beyond grace period into DEAD_LETTER_DLQ.",
+            "activeNodes": [
+              "router",
+              "dlq"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Allowed Lateness temporarily retains closed windows for an extra duration.",
+            "activeNodes": [
+              "router",
+              "winAgg",
+              "retracted"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "LateEventPolicyManager(1000, 200) routing across On-Time, Allowed Lateness, and DLQ",
+        "nodes": [
+          {
+            "id": "router",
+            "label": "Policy Router (WM:1000, Grace:200)",
+            "tappable": false
+          },
+          {
+            "id": "winAgg",
+            "label": "WINDOW_AGGREGATE (ts:1050)",
+            "tappable": false
+          },
+          {
+            "id": "retracted",
+            "label": "RETRACTED_WINDOW_UPDATE (ts:900)",
+            "tappable": false
+          },
+          {
+            "id": "dlq",
+            "label": "DEAD_LETTER_DLQ (ts:700)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "router",
+            "to": "winAgg",
+            "label": ">= 1000ms"
+          },
+          {
+            "from": "router",
+            "to": "retracted",
+            "label": "lateness <= 200ms"
+          },
+          {
+            "from": "router",
+            "to": "dlq",
+            "label": "lateness > 200ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Side-Output branches late events beyond grace period into DEAD_LETTER_DLQ.",
+            "activeNodes": [
+              "router",
+              "dlq"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Allowed Lateness temporarily retains closed windows for an extra duration.",
+            "activeNodes": [
+              "router",
+              "winAgg",
+              "retracted"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Watermark-Driven Window Emission Coordinator",
+      "codeHash": "f1e4358ced6962f591ecba087943b19beb652503e256f40a2a476e78472329ac",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

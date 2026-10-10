@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Proximity graphs",
+      "codeHash": "04cb218d02099c3cab6b5673bc32317a726e83e0c62a09352355a015693577f7",
+      "spec": {
+        "template": "table",
+        "title": "Proximity graph node adjacency representations",
+        "columns": [
+          "vectors",
+          "graph",
+          "node"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A proximity graph connects each vector to its nearest spatial neighbours.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "graph"
+                  },
+                  {
+                    "text": "node"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "graph"
+                  },
+                  {
+                    "text": "node"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Graph traversal starts at an entry node and moves along connecting edges.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "graph"
+                  },
+                  {
+                    "text": "node"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "graph"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Proximity graph node adjacency representations",
+        "columns": [
+          "vectors",
+          "graph",
+          "node"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A proximity graph connects each vector to its nearest spatial neighbours.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "graph",
+                  "node"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "graph",
+                  "node"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Graph traversal starts at an entry node and moves along connecting edges.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "graph",
+                  "node"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "graph",
+                  "vectors"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Greedy search",
+      "codeHash": "fb7399f00a64ff5517f93ebfaf6ce59b860546616e04c9cfdefee305d18f93b0",
+      "spec": {
+        "template": "table",
+        "title": "Greedy descent along decreasing distance neighbours",
+        "columns": [
+          "current",
+          "path",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Greedy search traverses towards the closest neighbour of the current node.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "path"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "path"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When no neighbour is closer to the target, the greedy search stops.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "path"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "path"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Greedy descent along decreasing distance neighbours",
+        "columns": [
+          "current",
+          "path",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Greedy search traverses towards the closest neighbour of the current node.",
+            "rows": [
+              {
+                "cells": [
+                  "current",
+                  "path",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "current",
+                  "path",
+                  "best"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When no neighbour is closer to the target, the greedy search stops.",
+            "rows": [
+              {
+                "cells": [
+                  "current",
+                  "path",
+                  "best"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "current",
+                  "path",
+                  "current"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Local minima",
+      "codeHash": "c14e660df5c41d1af3e62dc0177e127d8e648b5e447d12d61b57c80fa47ad90e",
+      "spec": {
+        "template": "table",
+        "title": "Local minimum trapping and obstacle circumvention",
+        "columns": [
+          "entry",
+          "current",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A local minimum traps greedy search when all direct neighbours are farther.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "entry"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "entry"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Better graph links and search that explores multiple paths provide the fix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "entry"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "entry"
+                  },
+                  {
+                    "text": "current"
+                  },
+                  {
+                    "text": "best"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Local minimum trapping and obstacle circumvention",
+        "columns": [
+          "entry",
+          "current",
+          "best"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A local minimum traps greedy search when all direct neighbours are farther.",
+            "rows": [
+              {
+                "cells": [
+                  "entry",
+                  "current",
+                  "best"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "entry",
+                  "current",
+                  "best"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Better graph links and search that explores multiple paths provide the fix.",
+            "rows": [
+              {
+                "cells": [
+                  "entry",
+                  "current",
+                  "best"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "entry",
+                  "current",
+                  "best"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Beam search with ef",
+      "codeHash": "06814788cd8b1d31366ff1edac43c9fb81e11b39ab2b6cd3d6f0437f2db5c4fd",
+      "spec": {
+        "template": "table",
+        "title": "Priority queue beam search and ef candidate limits",
+        "columns": [
+          "visited",
+          "cands",
+          "results"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Beam search tracks a list of candidates to explore beyond a single path.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Raising the beam width parameter trades traversal speed for higher recall.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "results"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "cands"
+                  },
+                  {
+                    "text": "visited"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Priority queue beam search and ef candidate limits",
+        "columns": [
+          "visited",
+          "cands",
+          "results"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Beam search tracks a list of candidates to explore beyond a single path.",
+            "rows": [
+              {
+                "cells": [
+                  "visited",
+                  "cands",
+                  "results"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "visited",
+                  "cands",
+                  "results"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Raising the beam width parameter trades traversal speed for higher recall.",
+            "rows": [
+              {
+                "cells": [
+                  "visited",
+                  "cands",
+                  "results"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "visited",
+                  "cands",
+                  "visited"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost and recall",
+      "codeHash": "1816b85f0e3cc5582405b55801dc3d6c8cbdc1bbc11d0bafd9a17bdb92c8fedd",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: graph search",
+      "codeHash": "25a777787513779c438acc31e5009825c8a4b569fe60eec375dac3c80cfe1397",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

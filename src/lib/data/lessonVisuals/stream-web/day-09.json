@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 9,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Spectrum of Delivery Semantics in Distributed Systems",
+      "codeHash": "3f2eca56d866ad71f04002eaa4792d8fb39ceb0b1b282ebdf8fa2421859fa029",
+      "spec": {
+        "template": "table",
+        "title": "Distributed event delivery semantics catalog and trade-off matrix",
+        "columns": [
+          "Semantic Profile",
+          "Can Lose Data",
+          "Can Duplicate",
+          "Implementation Cost"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "At-Most-Once delivery may lose messages, but never delivers more than once.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exactly-Once delivery guarantees state updates with zero loss or duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed event delivery semantics catalog and trade-off matrix",
+        "columns": [
+          "Semantic Profile",
+          "Can Lose Data",
+          "Can Duplicate",
+          "Implementation Cost"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "At-Most-Once delivery may lose messages, but never delivers more than once.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exactly-Once delivery guarantees state updates with zero loss or duplicates.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "At-Most-Once Delivery: Fast Throughput with Data Loss Hazards",
+      "codeHash": "1286e04146a3118e1c25c73fa31a4b235cff33c515dcae996340e77691c4988f",
+      "spec": {
+        "template": "cells",
+        "title": "AtMostOnceConsumer pre-processing commit and permanent loss on crash at offset 2",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When poll returns a batch, the consumer immediately commits the highest offset.",
+            "items": [
+              {
+                "text": "0: DONE"
+              },
+              {
+                "text": "1: DONE"
+              },
+              {
+                "text": "2: PENDING"
+              },
+              {
+                "text": "3: PENDING"
+              },
+              {
+                "text": "4: COMMITTED"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "committed:4",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Remaining records are never processed, resulting in permanent data loss.",
+            "items": [
+              {
+                "text": "0: DONE"
+              },
+              {
+                "text": "1: DONE"
+              },
+              {
+                "text": "2: LOST"
+              },
+              {
+                "text": "3: LOST"
+              },
+              {
+                "text": "4: LOST"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "crash:2",
+                "index": 2,
+                "tone": "error"
+              },
+              {
+                "name": "committed:4",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "AtMostOnceConsumer pre-processing commit and permanent loss on crash at offset 2",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When poll returns a batch, the consumer immediately commits the highest offset.",
+            "items": [
+              "0: DONE",
+              "1: DONE",
+              "2: PENDING",
+              "3: PENDING",
+              "4: COMMITTED"
+            ],
+            "pointers": [
+              {
+                "name": "committed:4",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Remaining records are never processed, resulting in permanent data loss.",
+            "items": [
+              "0: DONE",
+              "1: DONE",
+              "2: LOST",
+              "3: LOST",
+              "4: LOST"
+            ],
+            "pointers": [
+              {
+                "name": "crash:2",
+                "index": 2,
+                "tone": "error"
+              },
+              {
+                "name": "committed:4",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "At-Least-Once Delivery: Zero Data Loss with Duplicate Ingestion",
+      "codeHash": "dd97147c51ad62d52a915ed6111eacb038faa0fbde5639a0a15fe32053aed896",
+      "spec": {
+        "template": "sequence",
+        "title": "AtLeastOnceConsumer post-processing commit and replay after Worker 1 crash",
+        "actors": [
+          {
+            "id": "worker1",
+            "label": "Worker 1 (Crashes)"
+          },
+          {
+            "id": "broker",
+            "label": "Event Broker"
+          },
+          {
+            "id": "worker2",
+            "label": "Worker 2 (Replacement)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Only when all records in the batch are written does the consumer commit.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "worker1",
+                "label": "Deliver Batch [0: $50, 1: $30, 2: $20]"
+              },
+              {
+                "from": "worker1",
+                "to": "worker1",
+                "label": "Applies 0 & 1, Crashes at 2 (Committed: -1)"
+              }
+            ],
+            "activeActorId": "worker1"
+          },
+          {
+            "at": "say5",
+            "caption": "The replacement consumer reads the previous offset and retrieves the batch.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "worker2",
+                "label": "Replay Batch from Offset 0 (Zero Data Lost)"
+              },
+              {
+                "from": "worker2",
+                "to": "broker",
+                "label": "Process All 3 & Commit Offset 2"
+              }
+            ],
+            "activeActorId": "worker2"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "AtLeastOnceConsumer post-processing commit and replay after Worker 1 crash",
+        "actors": [
+          {
+            "id": "worker1",
+            "label": "Worker 1 (Crashes)"
+          },
+          {
+            "id": "broker",
+            "label": "Event Broker"
+          },
+          {
+            "id": "worker2",
+            "label": "Worker 2 (Replacement)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Only when all records in the batch are written does the consumer commit.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "worker1",
+                "label": "Deliver Batch [0: $50, 1: $30, 2: $20]"
+              },
+              {
+                "from": "worker1",
+                "to": "worker1",
+                "label": "Applies 0 & 1, Crashes at 2 (Committed: -1)"
+              }
+            ],
+            "activeActorId": "worker1"
+          },
+          {
+            "at": "say5",
+            "caption": "The replacement consumer reads the previous offset and retrieves the batch.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "worker2",
+                "label": "Replay Batch from Offset 0 (Zero Data Lost)"
+              },
+              {
+                "from": "worker2",
+                "to": "broker",
+                "label": "Process All 3 & Commit Offset 2"
+              }
+            ],
+            "activeActorId": "worker2"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Microservice Failure Modes Causing Duplicate Records",
+      "codeHash": "791ced8fdaa9cd828e8c0d8d07766114f0db073a3e4df6deeb404a6cf1e480fa",
+      "spec": {
+        "template": "bars",
+        "title": "Duplicate event breakdown across producer retries, crashes, and rebalances",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The producer times out waiting for the ACK and writes a duplicate record.",
+            "bars": [
+              {
+                "label": "producerRetries",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "consumerCrashes",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When a consumer breaches poll interval, the coordinator reassigns the partition.",
+            "bars": [
+              {
+                "label": "producerRetries",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "consumerCrashes",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "rebalanceTimeouts",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "totalDuplicateEvents",
+                "value": {
+                  "text": "12"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Duplicate event breakdown across producer retries, crashes, and rebalances",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The producer times out waiting for the ACK and writes a duplicate record.",
+            "bars": [
+              {
+                "label": "producerRetries",
+                "value": 3,
+                "tone": "data"
+              },
+              {
+                "label": "consumerCrashes",
+                "value": 5,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When a consumer breaches poll interval, the coordinator reassigns the partition.",
+            "bars": [
+              {
+                "label": "producerRetries",
+                "value": 3,
+                "tone": "data"
+              },
+              {
+                "label": "consumerCrashes",
+                "value": 5,
+                "tone": "error"
+              },
+              {
+                "label": "rebalanceTimeouts",
+                "value": 4,
+                "tone": "data"
+              },
+              {
+                "label": "totalDuplicateEvents",
+                "value": 12,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Idempotence: Natural Keys & State Transitions",
+      "codeHash": "3d005da93514cfb94eb24de18f7800eb42171efa2e6c04beeb4caa564317bfc0",
+      "spec": {
+        "template": "flow",
+        "title": "IdempotentAccountEngine natural eventId lookup and duplicate suppression",
+        "nodes": [
+          {
+            "id": "incomingEvt",
+            "label": "Event (evt-101, delta: $50)",
+            "tappable": false
+          },
+          {
+            "id": "dedupStore",
+            "label": "processedEventIds Set",
+            "tappable": false
+          },
+          {
+            "id": "applyDelta",
+            "label": "Apply +$50 (SUCCESS)",
+            "tappable": false
+          },
+          {
+            "id": "skipDup",
+            "label": "DUPLICATE_EVENT_SKIPPED",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "incomingEvt",
+            "to": "dedupStore",
+            "label": "Lookup evt-101"
+          },
+          {
+            "from": "dedupStore",
+            "to": "applyDelta",
+            "label": "First Seen"
+          },
+          {
+            "from": "dedupStore",
+            "to": "skipDup",
+            "label": "Already Seen"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say8",
+            "caption": "The consumer checks whether the unique identifier is in the deduplication store.",
+            "activeNodes": [
+              "incomingEvt",
+              "dedupStore",
+              "applyDelta"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "When the identifier is found, the consumer skips processing and acknowledges.",
+            "activeNodes": [
+              "dedupStore",
+              "skipDup"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "IdempotentAccountEngine natural eventId lookup and duplicate suppression",
+        "nodes": [
+          {
+            "id": "incomingEvt",
+            "label": "Event (evt-101, delta: $50)",
+            "tappable": false
+          },
+          {
+            "id": "dedupStore",
+            "label": "processedEventIds Set",
+            "tappable": false
+          },
+          {
+            "id": "applyDelta",
+            "label": "Apply +$50 (SUCCESS)",
+            "tappable": false
+          },
+          {
+            "id": "skipDup",
+            "label": "DUPLICATE_EVENT_SKIPPED",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "incomingEvt",
+            "to": "dedupStore",
+            "label": "Lookup evt-101"
+          },
+          {
+            "from": "dedupStore",
+            "to": "applyDelta",
+            "label": "First Seen"
+          },
+          {
+            "from": "dedupStore",
+            "to": "skipDup",
+            "label": "Already Seen"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say8",
+            "caption": "The consumer checks whether the unique identifier is in the deduplication store.",
+            "activeNodes": [
+              "incomingEvt",
+              "dedupStore",
+              "applyDelta"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "When the identifier is found, the consumer skips processing and acknowledges.",
+            "activeNodes": [
+              "dedupStore",
+              "skipDup"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an At-Least-Once Consumer with Duplicate Telemetry",
+      "codeHash": "2952aab7df9d18f2c1c4c67febeb61f5671b9f9990fe1a0c296f6114e26c56bb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

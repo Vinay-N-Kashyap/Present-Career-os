@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 12,
+  "promptSha": "1484c0ae32cfb558133044468a78a61498c868d9891d17d55c9b354b3fbd3afd",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Multi-Provider Redundancy Architecture",
+      "codeHash": "1484c0ae32cfb558133044468a78a61498c868d9891d17d55c9b354b3fbd3afd",
+      "spec": {
+        "template": "table",
+        "title": "Ordered Multi-Provider Redundancy Chain",
+        "columns": [
+          "Priority",
+          "Provider ID",
+          "Provider Name",
+          "Failover Role"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Architectures enforce multi-provider redundancy across platforms.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Configurations define an ordered fallback priority chain across vendors.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Gateways shift traffic seamlessly when primary providers encounter failures.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Ordered Multi-Provider Redundancy Chain",
+        "columns": [
+          "Priority",
+          "Provider ID",
+          "Provider Name",
+          "Failover Role"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Architectures enforce multi-provider redundancy across platforms.",
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Configurations define an ordered fallback priority chain across vendors.",
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Gateways shift traffic seamlessly when primary providers encounter failures.",
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Circuit Breaker State Machine: Closed, Open & Half-Open",
+      "codeHash": "88164e3ce79c415dca4b4b9f9ce72f96622826a5125713121302dafdd677dd70",
+      "spec": {
+        "template": "states",
+        "title": "Circuit Breaker Finite State Machine",
+        "states": [
+          {
+            "id": "closed",
+            "label": "CLOSED (Normal Flow)"
+          },
+          {
+            "id": "open",
+            "label": "OPEN (Fail Fast & Block)"
+          },
+          {
+            "id": "half_open",
+            "label": "HALF_OPEN (Canary Probe)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "In closed states requests flow freely while consecutive failures are tracked.",
+            "current": "closed",
+            "visited": [
+              "closed"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When failures breach configured thresholds circuits trip to open states.",
+            "current": "open",
+            "visited": [
+              "closed",
+              "open"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Circuits transition to half-open dispatching small canary probes.",
+            "current": "half_open",
+            "visited": [
+              "closed",
+              "open",
+              "half_open"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Circuit Breaker Finite State Machine",
+        "states": [
+          {
+            "id": "closed",
+            "label": "CLOSED (Normal Flow)"
+          },
+          {
+            "id": "open",
+            "label": "OPEN (Fail Fast & Block)"
+          },
+          {
+            "id": "half_open",
+            "label": "HALF_OPEN (Canary Probe)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "In closed states requests flow freely while consecutive failures are tracked.",
+            "current": "closed",
+            "visited": [
+              "closed"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When failures breach configured thresholds circuits trip to open states.",
+            "current": "open",
+            "visited": [
+              "closed",
+              "open"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Circuits transition to half-open dispatching small canary probes.",
+            "current": "half_open",
+            "visited": [
+              "closed",
+              "open",
+              "half_open"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure Thresholds & Cooldown Reset Windows",
+      "codeHash": "783ef51a9d51250730c4f73f7104fea5c587f23f7da7840b8d2b0739e03793c4",
+      "spec": {
+        "template": "workflow",
+        "title": "Circuit Breaker Cooldown and Self-Healing Stages",
+        "stages": [
+          {
+            "id": "failures",
+            "name": "Failure Tracking",
+            "subtext": "Count consecutive 5xx errors"
+          },
+          {
+            "id": "trip",
+            "name": "Trip to OPEN",
+            "subtext": "Record timestamp of opening"
+          },
+          {
+            "id": "cooldown",
+            "name": "Cooldown Window",
+            "subtext": "Block traffic for 5000ms"
+          },
+          {
+            "id": "canary",
+            "name": "Canary Evaluation",
+            "subtext": "Probe and restore CLOSED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Tripping to open captures high-resolution opening timestamps.",
+            "activeStageId": "trip",
+            "statusBadge": "opened"
+          },
+          {
+            "at": "say5",
+            "caption": "Breakers transition dynamically once cooldown windows elapse.",
+            "activeStageId": "cooldown",
+            "statusBadge": "cooldown"
+          },
+          {
+            "at": "say7",
+            "caption": "Successful canary probes restore traffic and wipe failure counters.",
+            "activeStageId": "canary",
+            "statusBadge": "restored"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Circuit Breaker Cooldown and Self-Healing Stages",
+        "stages": [
+          {
+            "id": "failures",
+            "name": "Failure Tracking",
+            "subtext": "Count consecutive 5xx errors"
+          },
+          {
+            "id": "trip",
+            "name": "Trip to OPEN",
+            "subtext": "Record timestamp of opening"
+          },
+          {
+            "id": "cooldown",
+            "name": "Cooldown Window",
+            "subtext": "Block traffic for 5000ms"
+          },
+          {
+            "id": "canary",
+            "name": "Canary Evaluation",
+            "subtext": "Probe and restore CLOSED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Tripping to open captures high-resolution opening timestamps.",
+            "activeStageId": "trip",
+            "statusBadge": "opened"
+          },
+          {
+            "at": "say5",
+            "caption": "Breakers transition dynamically once cooldown windows elapse.",
+            "activeStageId": "cooldown",
+            "statusBadge": "cooldown"
+          },
+          {
+            "at": "say7",
+            "caption": "Successful canary probes restore traffic and wipe failure counters.",
+            "activeStageId": "canary",
+            "statusBadge": "restored"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Provider Error Handling & Fallback Iteration",
+      "codeHash": "2eb3a3aed3fd843749c6b62dbc3b9b89a592f72777e53326537d65303c46eb47",
+      "spec": {
+        "template": "flow",
+        "title": "Sequential Fallback Traversal Architecture",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Inference Ingress",
+            "tappable": false
+          },
+          {
+            "id": "primary",
+            "label": "Primary API (Fails)",
+            "tappable": false
+          },
+          {
+            "id": "error",
+            "label": "Catch Exception",
+            "tappable": false
+          },
+          {
+            "id": "secondary",
+            "label": "Secondary API (Healthy)",
+            "tappable": false
+          },
+          {
+            "id": "success",
+            "label": "Success Response",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "primary"
+          },
+          {
+            "from": "primary",
+            "to": "error"
+          },
+          {
+            "from": "error",
+            "to": "secondary"
+          },
+          {
+            "from": "secondary",
+            "to": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dispatchers wrap provider chains in sequential traversal loops.",
+            "activeNodes": [
+              "ingress",
+              "primary"
+            ],
+            "statusBadge": "dispatching"
+          },
+          {
+            "at": "say4",
+            "caption": "Dispatchers record failure metrics and failover to secondary providers.",
+            "activeNodes": [
+              "primary",
+              "error",
+              "secondary"
+            ],
+            "statusBadge": "failing_over"
+          },
+          {
+            "at": "say7",
+            "caption": "Tracking servicing providers gives real-time visibility into health.",
+            "activeNodes": [
+              "secondary",
+              "success"
+            ],
+            "statusBadge": "serviced"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Sequential Fallback Traversal Architecture",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Inference Ingress",
+            "tappable": false
+          },
+          {
+            "id": "primary",
+            "label": "Primary API (Fails)",
+            "tappable": false
+          },
+          {
+            "id": "error",
+            "label": "Catch Exception",
+            "tappable": false
+          },
+          {
+            "id": "secondary",
+            "label": "Secondary API (Healthy)",
+            "tappable": false
+          },
+          {
+            "id": "success",
+            "label": "Success Response",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "primary"
+          },
+          {
+            "from": "primary",
+            "to": "error"
+          },
+          {
+            "from": "error",
+            "to": "secondary"
+          },
+          {
+            "from": "secondary",
+            "to": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dispatchers wrap provider chains in sequential traversal loops.",
+            "activeNodes": [
+              "ingress",
+              "primary"
+            ],
+            "statusBadge": "dispatching"
+          },
+          {
+            "at": "say4",
+            "caption": "Dispatchers record failure metrics and failover to secondary providers.",
+            "activeNodes": [
+              "primary",
+              "error",
+              "secondary"
+            ],
+            "statusBadge": "failing_over"
+          },
+          {
+            "at": "say7",
+            "caption": "Tracking servicing providers gives real-time visibility into health.",
+            "activeNodes": [
+              "secondary",
+              "success"
+            ],
+            "statusBadge": "serviced"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vendor Payload Format Normalization",
+      "codeHash": "99fd549aa3ed2d68ce49a065844b02268a4e14d5b3e0765304df9cd78863fb85",
+      "spec": {
+        "template": "compare",
+        "title": "OpenAI vs Anthropic Schema Compatibility",
+        "leftLabel": "OpenAI Payload Schema",
+        "rightLabel": "Anthropic Payload Schema",
+        "leftItems": [
+          "System prompt placed inside messages array",
+          "Formatted with role: 'system' object",
+          "Completions returned in choices[0].message",
+          "Universal adapter builds nested messages"
+        ],
+        "rightItems": [
+          "System prompt required as top-level property",
+          "Rejects system role inside messages array",
+          "Completions returned in content[0].text",
+          "Universal adapter maps to top-level key"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "OpenAI places system instructions inside the messages array with role system.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Anthropic requires system instructions as a top-level payload property.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "OpenAI vs Anthropic Schema Compatibility",
+        "leftLabel": "OpenAI Payload Schema",
+        "rightLabel": "Anthropic Payload Schema",
+        "leftItems": [
+          "System prompt placed inside messages array",
+          "Formatted with role: 'system' object",
+          "Completions returned in choices[0].message",
+          "Universal adapter builds nested messages"
+        ],
+        "rightItems": [
+          "System prompt required as top-level property",
+          "Rejects system role inside messages array",
+          "Completions returned in content[0].text",
+          "Universal adapter maps to top-level key"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "OpenAI places system instructions inside the messages array with role system.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Anthropic requires system instructions as a top-level payload property.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production High-Availability Model Gateway",
+      "codeHash": "47873d6c0311587fed4c603be13bc891b9473347c8a8876ef6aa223b4c95054d",
+      "spec": {
+        "template": "none",
+        "reason": "Production High-Availability Model Gateway capstone synthesizing multi-provider redundancy, circuit breakers, and payload normalization"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production High-Availability Model Gateway capstone synthesizing multi-provider redundancy, circuit breakers, and payload normalization"
+      }
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a database is, and why apps need one",
+      "codeHash": "081a582af1c1b1b6358c1373d5ad9f68463883ad69ab42cc01ef8a72a95a9b23",
+      "spec": {
+        "template": "compare",
+        "title": "Spreadsheet concurrency limits versus relational database",
+        "leftLabel": "Spreadsheet",
+        "rightLabel": "Relational Database",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A spreadsheet gets confused while a database handles many users and data.",
+            "left": {
+              "code": "concurrent writes",
+              "result": {
+                "text": "corrupted data"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "concurrent writes",
+              "result": {
+                "text": "ACID transactions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Structured Query Language asks questions reading almost like English.",
+            "left": {
+              "code": "filter query",
+              "result": {
+                "text": "manual scan"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SELECT * FROM orders",
+              "result": {
+                "text": "declarative result"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Spreadsheet concurrency limits versus relational database",
+        "leftLabel": "Spreadsheet",
+        "rightLabel": "Relational Database",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A spreadsheet gets confused while a database handles many users and data.",
+            "left": {
+              "code": "concurrent writes",
+              "result": "corrupted data",
+              "tone": "error",
+              "checks": [
+                "corrupted data"
+              ]
+            },
+            "right": {
+              "code": "concurrent writes",
+              "result": "ACID transactions",
+              "tone": "ok",
+              "checks": [
+                "ACID transactions"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Structured Query Language asks questions reading almost like English.",
+            "left": {
+              "code": "filter query",
+              "result": "manual scan",
+              "tone": "data",
+              "checks": [
+                "manual scan"
+              ]
+            },
+            "right": {
+              "code": "SELECT * FROM orders",
+              "result": "declarative result",
+              "tone": "ok",
+              "checks": [
+                "declarative result"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tables, rows and columns",
+      "codeHash": "81e19e5e1337489038db30b75991810248ab6a9116a5c8852b3a2997746c0784",
+      "spec": {
+        "template": "table",
+        "title": "Relational grid columns and typed rows",
+        "columns": [
+          "roll_number",
+          "name",
+          "city"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A table holds one kind of thing like students keeping data tidy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "roll: 101"
+                  },
+                  {
+                    "text": "Aarav"
+                  },
+                  {
+                    "text": "Pune"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each column has a name and a type specifying what value it holds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "roll: 101"
+                  },
+                  {
+                    "text": "Aarav"
+                  },
+                  {
+                    "text": "Pune"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "roll: 102"
+                  },
+                  {
+                    "text": "Diya"
+                  },
+                  {
+                    "text": "Mumbai"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Relational grid columns and typed rows",
+        "columns": [
+          "roll_number",
+          "name",
+          "city"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A table holds one kind of thing like students keeping data tidy.",
+            "rows": [
+              {
+                "cells": [
+                  "roll: 101",
+                  "Aarav",
+                  "Pune"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each column has a name and a type specifying what value it holds.",
+            "rows": [
+              {
+                "cells": [
+                  "roll: 101",
+                  "Aarav",
+                  "Pune"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "roll: 102",
+                  "Diya",
+                  "Mumbai"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Primary keys: one unique id for every row",
+      "codeHash": "2a26a48c43439d71f117b4230d930441eecc9a69f8c33795db9ba9b7b5f595a2",
+      "spec": {
+        "template": "none",
+        "reason": "Primary key uniqueness constraints and rejection of duplicate id records."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Primary key uniqueness constraints and rejection of duplicate id records."
+      }
+    },
+    {
+      "partTitle": "SELECT and FROM: reading data",
+      "codeHash": "92ac772276c36b63d4a34e1964efb74ea4448475422eb41f6f114e6fa1fe9ad6",
+      "spec": {
+        "template": "table",
+        "title": "SELECT result projection with column aliases",
+        "columns": [
+          "product",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SELECT reads data from a table listing the columns you want.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Chai"
+                  },
+                  {
+                    "text": "price: 20"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Columns come back in listed order and can use an alias with AS.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Chai"
+                  },
+                  {
+                    "text": "price: 20"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Samosa"
+                  },
+                  {
+                    "text": "price: 15"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SELECT result projection with column aliases",
+        "columns": [
+          "product",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SELECT reads data from a table listing the columns you want.",
+            "rows": [
+              {
+                "cells": [
+                  "Chai",
+                  "price: 20"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Columns come back in listed order and can use an alias with AS.",
+            "rows": [
+              {
+                "cells": [
+                  "Chai",
+                  "price: 20"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Samosa",
+                  "price: 15"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The rules of writing SQL",
+      "codeHash": "a29821faca5b3e7a6b4f286a0120d43aaefefd0dcff98976c4e7d833ccea6de1",
+      "spec": {
+        "template": "none",
+        "reason": "SQL syntax rules covering capitalization, single quotes, semicolons and comments."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "SQL syntax rules covering capitalization, single quotes, semicolons and comments."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a first look at the shop",
+      "codeHash": "dc0ee6c47bcdc8a73a729312f529905e3124962058ae86660c84a54231e5099a",
+      "spec": {
+        "template": "table",
+        "title": "Shop database customer and order summary view",
+        "columns": [
+          "Customer Name",
+          "City Location",
+          "Total Orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The shop database organizes customers products and orders in tables.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Amit"
+                  },
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "orders: 3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Clear names matter when generating reports with understandable results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Amit"
+                  },
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "orders: 3"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Neha"
+                  },
+                  {
+                    "text": "Mumbai"
+                  },
+                  {
+                    "text": "orders: 5"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Shop database customer and order summary view",
+        "columns": [
+          "Customer Name",
+          "City Location",
+          "Total Orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The shop database organizes customers products and orders in tables.",
+            "rows": [
+              {
+                "cells": [
+                  "Amit",
+                  "Pune",
+                  "orders: 3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Clear names matter when generating reports with understandable results.",
+            "rows": [
+              {
+                "cells": [
+                  "Amit",
+                  "Pune",
+                  "orders: 3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neha",
+                  "Mumbai",
+                  "orders: 5"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

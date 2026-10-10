@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "When does an order trade?",
+      "codeHash": "9ded269d18eac0398e4446b52a4da0bfd5906790ca48e6c0c82dda8392d196a1",
+      "spec": {
+        "template": "table",
+        "title": "Crossing conditions and aggressor fill pricing",
+        "columns": [
+          "best_bid",
+          "best_ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An incoming order can trade if its limit crosses the prevailing spread.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "best_bid"
+                  },
+                  {
+                    "text": "best_ask"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Crossing orders match against opposite resting orders until filled.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "best_bid"
+                  },
+                  {
+                    "text": "best_ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "crosses"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Executed trades match at the price set by the resting passive order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "best_bid"
+                  },
+                  {
+                    "text": "best_ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "crosses"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks whether several incoming orders would cross a given book.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "best_bid"
+                  },
+                  {
+                    "text": "best_ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "crosses"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "best_bid"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Crossing conditions and aggressor fill pricing",
+        "columns": [
+          "best_bid",
+          "best_ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An incoming order can trade if its limit crosses the prevailing spread.",
+            "rows": [
+              {
+                "cells": [
+                  "best_bid",
+                  "best_ask"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Crossing orders match against opposite resting orders until filled.",
+            "rows": [
+              {
+                "cells": [
+                  "best_bid",
+                  "best_ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "incoming",
+                  "crosses"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Executed trades match at the price set by the resting passive order.",
+            "rows": [
+              {
+                "cells": [
+                  "best_bid",
+                  "best_ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "incoming",
+                  "crosses"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "limit"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks whether several incoming orders would cross a given book.",
+            "rows": [
+              {
+                "cells": [
+                  "best_bid",
+                  "best_ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "incoming",
+                  "crosses"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "limit"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "best_bid",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Walking the book",
+      "codeHash": "e593d58b9d9f961643d3306a47ccb55ae67189fa85b35af90b54700c3a08d122",
+      "spec": {
+        "template": "table",
+        "title": "Order sweep execution and market impact progression",
+        "columns": [
+          "asks",
+          "trades"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Large incoming volume exhausts top levels and trades across adjacent queues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "trades"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walking the book executes sequential fills at distinct price increments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "trades"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "remaining"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Depleted orders get removed while partially filled items keep queue priority.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "trades"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "remaining"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example walks a buy order through ask levels and prints each trade.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "trades"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "remaining"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trades"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Order sweep execution and market impact progression",
+        "columns": [
+          "asks",
+          "trades"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Large incoming volume exhausts top levels and trades across adjacent queues.",
+            "rows": [
+              {
+                "cells": [
+                  "asks",
+                  "trades"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walking the book executes sequential fills at distinct price increments.",
+            "rows": [
+              {
+                "cells": [
+                  "asks",
+                  "trades"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "remaining",
+                  "limit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Depleted orders get removed while partially filled items keep queue priority.",
+            "rows": [
+              {
+                "cells": [
+                  "asks",
+                  "trades"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "remaining",
+                  "limit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "take",
+                  "append"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example walks a buy order through ask levels and prints each trade.",
+            "rows": [
+              {
+                "cells": [
+                  "asks",
+                  "trades"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "remaining",
+                  "limit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "take",
+                  "append"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trades",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Remainders rest in the book",
+      "codeHash": "7d5c01f9fd7e78dcd35e8dc412734f16ac5b283c358c166fac6f0c9c579b7dd5",
+      "spec": {
+        "template": "table",
+        "title": "Partial fill remainder retention and queue persistence",
+        "columns": [
+          "incoming",
+          "remaining"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unfilled remainder quantity rests in the book at the original limit price.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "remaining"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The remainder inserts into the queue establishing the new best price level.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "remaining"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "trades"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Correct remainder handling ensures order quantities track shares reliably.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "remaining"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "trades"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Inspecting the book before and after confirms deterministic execution rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "remaining"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "trades"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "take"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "incoming"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Partial fill remainder retention and queue persistence",
+        "columns": [
+          "incoming",
+          "remaining"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unfilled remainder quantity rests in the book at the original limit price.",
+            "rows": [
+              {
+                "cells": [
+                  "incoming",
+                  "remaining"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The remainder inserts into the queue establishing the new best price level.",
+            "rows": [
+              {
+                "cells": [
+                  "incoming",
+                  "remaining"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "trades"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Correct remainder handling ensures order quantities track shares reliably.",
+            "rows": [
+              {
+                "cells": [
+                  "incoming",
+                  "remaining"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "trades"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "take",
+                  "append"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Inspecting the book before and after confirms deterministic execution rules.",
+            "rows": [
+              {
+                "cells": [
+                  "incoming",
+                  "remaining"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "trades"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "take",
+                  "append"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "incoming",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Average fill price",
+      "codeHash": "726379daac85418f4884d9153812f79de82fd785c6ac33646bc4086fe8bc7faa",
+      "spec": {
+        "template": "table",
+        "title": "Volume weighted average fill price calculation",
+        "columns": [
+          "trades",
+          "qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiple partial executions require calculating an average fill price.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "trades"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Price aggregation must weight each fill proportional to executed quantity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "trades"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "avg"
+                  },
+                  {
+                    "text": "simple"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The formula computes volume-weighted average price across all fills.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "trades"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "avg"
+                  },
+                  {
+                    "text": "simple"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes the average fill price for trades from walking the book.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "trades"
+                  },
+                  {
+                    "text": "qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "avg"
+                  },
+                  {
+                    "text": "simple"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Volume weighted average fill price calculation",
+        "columns": [
+          "trades",
+          "qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiple partial executions require calculating an average fill price.",
+            "rows": [
+              {
+                "cells": [
+                  "trades",
+                  "qty"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Price aggregation must weight each fill proportional to executed quantity.",
+            "rows": [
+              {
+                "cells": [
+                  "trades",
+                  "qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "avg",
+                  "simple"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The formula computes volume-weighted average price across all fills.",
+            "rows": [
+              {
+                "cells": [
+                  "trades",
+                  "qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "avg",
+                  "simple"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "len"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes the average fill price for trades from walking the book.",
+            "rows": [
+              {
+                "cells": [
+                  "trades",
+                  "qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "avg",
+                  "simple"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "len"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "round",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Determinism and testing",
+      "codeHash": "37753d2c380a26fed657fbf039e0aec17d71181f21739d5bbef35522af5cc3b8",
+      "spec": {
+        "template": "none",
+        "reason": "Determinism and testing invariant assertions."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: match orders",
+      "codeHash": "71f948dceb330d0316867c6145e759046a2d41bffacf096ad88e99b1be791efc",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: match orders and book crossing."
+      },
+      "filled": {}
+    }
+  ]
+}

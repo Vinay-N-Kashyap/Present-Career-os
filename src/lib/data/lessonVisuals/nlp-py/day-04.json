@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Documents as vectors",
+      "codeHash": "086d0c90f74f5c5ca8f3d603a82bc61e09272f59640d875f8bf842137c22b292",
+      "spec": {
+        "template": "table",
+        "title": "Vector space model mapping documents into numerical coordinates",
+        "columns": [
+          "docs",
+          "vocab"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents convert into vectors to allow mathematical comparisons.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The vocabulary collects distinct corpus words sorted into fixed positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A document vector records word occurrence counts across vocabulary entries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fish"
+                  },
+                  {
+                    "text": "cat"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sparse document vectors contain mostly zero entries across large corpora.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fish"
+                  },
+                  {
+                    "text": "cat"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "vocab"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector space model mapping documents into numerical coordinates",
+        "columns": [
+          "docs",
+          "vocab"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Documents convert into vectors to allow mathematical comparisons.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "sat"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The vocabulary collects distinct corpus words sorted into fixed positions.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "sat"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dog",
+                  "sat"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A document vector records word occurrence counts across vocabulary entries.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "sat"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dog",
+                  "sat"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fish",
+                  "cat"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sparse document vectors contain mostly zero entries across large corpora.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "sat"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dog",
+                  "sat"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fish",
+                  "cat"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "vocab"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bag of words",
+      "codeHash": "d5e1b5629ed795614dc1cc474e0d6f8c46d3ecabed753a8c8f52101bde0afc23",
+      "spec": {
+        "template": "table",
+        "title": "Bag of words representation compiling word frequencies without syntax",
+        "columns": [
+          "vocab",
+          "vecs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bag of words represents documents by word counts discarding word order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Topic classification and search tasks depend primarily on word occurrences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bites"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sorted vocabularies generate aligned count vectors for every document.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bites"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Binary vectors and n-gram representations augment standard count models.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bites"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "vocab"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bag of words representation compiling word frequencies without syntax",
+        "columns": [
+          "vocab",
+          "vecs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bag of words represents documents by word counts discarding word order.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Topic classification and search tasks depend primarily on word occurrences.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bites",
+                  "dog"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sorted vocabularies generate aligned count vectors for every document.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bites",
+                  "dog"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "vecs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Binary vectors and n-gram representations augment standard count models.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bites",
+                  "dog"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "vecs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "vocab"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Term frequency",
+      "codeHash": "9fe9aa8262d82f5e186bb33b6496eeba4e83ae95313b4996348c393aac528caf",
+      "spec": {
+        "template": "table",
+        "title": "Term frequency length normalization preventing document size distortion",
+        "columns": [
+          "short",
+          "long"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw counts favor long documents over short focused text notes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Term frequency divides term count by total document length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "meeting"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dense words in short notes score higher than sparse mentions in long text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "meeting"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "savings"
+                  },
+                  {
+                    "text": "cloud"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Common words have high term frequency everywhere requiring normalization.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "meeting"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "savings"
+                  },
+                  {
+                    "text": "cloud"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "short"
+                  },
+                  {
+                    "text": "long"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Term frequency length normalization preventing document size distortion",
+        "columns": [
+          "short",
+          "long"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw counts favor long documents over short focused text notes.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "report"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Term frequency divides term count by total document length.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "report"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cost",
+                  "meeting"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dense words in short notes score higher than sparse mentions in long text.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "report"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cost",
+                  "meeting"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "savings",
+                  "cloud"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Common words have high term frequency everywhere requiring normalization.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "report"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cost",
+                  "meeting"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "savings",
+                  "cloud"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "short",
+                  "long"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inverse document frequency",
+      "codeHash": "57be2e19150d88c4b390ac7b2d6de0c68d8f3ea320e017654041dc39dad47a66",
+      "spec": {
+        "template": "table",
+        "title": "Inverse document frequency measuring word rarity across document collections",
+        "columns": [
+          "word",
+          "df"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inverse document frequency measures word rarity across the corpus.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "IDF computes the logarithm of total documents divided by document frequency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "python"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A word present in every document yields zero inverse document frequency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "python"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rare words appearing in few documents receive high informative weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "python"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cloud"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "kafka"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Inverse document frequency measuring word rarity across document collections",
+        "columns": [
+          "word",
+          "df"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inverse document frequency measures word rarity across the corpus.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "docs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "IDF computes the logarithm of total documents divided by document frequency.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "python",
+                  "docs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A word present in every document yields zero inverse document frequency.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "python",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cloud",
+                  "word"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rare words appearing in few documents receive high informative weights.",
+            "rows": [
+              {
+                "cells": [
+                  "cloud",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "python",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cloud",
+                  "word"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "kafka",
+                  "word"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TF-IDF",
+      "codeHash": "c17e1d7a529d024134c8fdbc5ea62a875efc17c9fd1d9ef045a0a8ede82ae46c",
+      "spec": {
+        "template": "none",
+        "reason": "TF-IDF."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: weights and vectors",
+      "codeHash": "aca96ba23f08bce53543501f4d113699b73c93b4b74df807f76499fb341e23ce",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: weights and vectors."
+      },
+      "filled": {}
+    }
+  ]
+}

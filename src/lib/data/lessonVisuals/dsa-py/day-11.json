@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A function that calls itself",
+      "codeHash": "0f2fd70ec5ecd85404ae8f384a340c98d10527f98a0429de03091ccac6b73f92",
+      "spec": {
+        "template": "compare",
+        "title": "Recursive step and base case condition",
+        "leftLabel": "Recursive Call",
+        "rightLabel": "Base Case",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Base case answers directly without infinite recursion.",
+            "left": {
+              "code": "factorial(1)",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "n <= 1",
+              "result": {
+                "text": "stops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Recursive step makes problem smaller trusting return value.",
+            "left": {
+              "code": "5 * factorial(4)",
+              "result": {
+                "text": "120"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "n * factorial(n-1)",
+              "result": {
+                "text": "smaller call"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Recursive step and base case condition",
+        "leftLabel": "Recursive Call",
+        "rightLabel": "Base Case",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Base case answers directly without infinite recursion.",
+            "left": {
+              "code": "factorial(1)",
+              "result": "1",
+              "tone": "ok",
+              "checks": [
+                "1"
+              ]
+            },
+            "right": {
+              "code": "n <= 1",
+              "result": "stops",
+              "tone": "ok",
+              "checks": [
+                "stops"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Recursive step makes problem smaller trusting return value.",
+            "left": {
+              "code": "5 * factorial(4)",
+              "result": "120",
+              "tone": "data",
+              "checks": [
+                "120"
+              ]
+            },
+            "right": {
+              "code": "n * factorial(n-1)",
+              "result": "smaller call",
+              "tone": "data",
+              "checks": [
+                "smaller call"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The call stack",
+      "codeHash": "5b8b1c95e3a82fa6b3cf9719af13c4a3e8a8b52487358bd9a60fbdb4823bc42b",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Call stack frame accumulation and unwinding",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function calls push stack frames storing variables.",
+            "items": [
+              {
+                "text": "factorial(1)"
+              },
+              {
+                "text": "factorial(2)"
+              }
+            ],
+            "action": "push",
+            "actionItem": {
+              "text": "factorial(3)"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Base case returns allow waiting calls to pop off.",
+            "items": [
+              {
+                "text": "factorial(3)"
+              }
+            ],
+            "action": "pop",
+            "actionItem": {
+              "text": "factorial(1)"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Call stack frame accumulation and unwinding",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function calls push stack frames storing variables.",
+            "mode": "stack",
+            "items": [
+              "factorial(1)",
+              "factorial(2)"
+            ],
+            "action": "push",
+            "actionItem": "factorial(3)"
+          },
+          {
+            "at": "say2",
+            "caption": "Base case returns allow waiting calls to pop off.",
+            "mode": "stack",
+            "items": [
+              "factorial(3)"
+            ],
+            "action": "pop",
+            "actionItem": "factorial(1)"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recursion on lists and repeated work",
+      "codeHash": "c6b0126c06fe8120a45c2184a46150e360c8de9675698969c69f28ff3974b446",
+      "spec": {
+        "template": "none",
+        "reason": "Fibonacci tree exponential explosion and memoization cache."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Fibonacci tree exponential explosion and memoization cache."
+      }
+    },
+    {
+      "partTitle": "Backtracking: choose, explore, un-choose",
+      "codeHash": "4a9a00844daa1b34409e4ab563b0a3387d4bf47739a5ffd0d87d238e38a34d39",
+      "spec": {
+        "template": "table",
+        "title": "Backtracking choose explore unchoose sequence",
+        "columns": [
+          "Action",
+          "Decision State",
+          "Subset Result"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Choose adds item while un-choose removes item after exploration.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "choose 1"
+                  },
+                  {
+                    "text": "[1]"
+                  },
+                  {
+                    "text": "[1]"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "choose 2"
+                  },
+                  {
+                    "text": "[1, 2]"
+                  },
+                  {
+                    "text": "[1, 2]"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Generating every subset branches into all combinations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "choose 1"
+                  },
+                  {
+                    "text": "[1]"
+                  },
+                  {
+                    "text": "[1]"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "choose 2"
+                  },
+                  {
+                    "text": "[1, 2]"
+                  },
+                  {
+                    "text": "[1, 2]"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "un-choose 2"
+                  },
+                  {
+                    "text": "[1]"
+                  },
+                  {
+                    "text": "[1, 3]"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Backtracking choose explore unchoose sequence",
+        "columns": [
+          "Action",
+          "Decision State",
+          "Subset Result"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Choose adds item while un-choose removes item after exploration.",
+            "rows": [
+              {
+                "cells": [
+                  "choose 1",
+                  "[1]",
+                  "[1]"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "choose 2",
+                  "[1, 2]",
+                  "[1, 2]"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Generating every subset branches into all combinations.",
+            "rows": [
+              {
+                "cells": [
+                  "choose 1",
+                  "[1]",
+                  "[1]"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "choose 2",
+                  "[1, 2]",
+                  "[1, 2]"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "un-choose 2",
+                  "[1]",
+                  "[1, 3]"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Permutations: every possible order",
+      "codeHash": "2beb5130c912ec706f212b02e76d31442425ffc2e211b43c9b7d4ca358fe7c59",
+      "spec": {
+        "template": "none",
+        "reason": "Permutation recursive decision branching with visited array."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Permutation recursive decision branching with visited array."
+      }
+    },
+    {
+      "partTitle": "Pruning: stopping early",
+      "codeHash": "c983a461ee891db93218c6f41f66aaad5cd1e7ee37caed33dc5c37df43a25d8d",
+      "spec": {
+        "template": "bars",
+        "title": "Search call count reduction via pruning",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stopping branch early prevents exploring past target.",
+            "bars": [
+              {
+                "label": "No Pruning",
+                "value": {
+                  "text": "256 calls"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Target limit",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "data"
+              }
+            ],
+            "max": 300
+          },
+          {
+            "at": "say3",
+            "caption": "Pruning turns impossible search into fast early stop.",
+            "bars": [
+              {
+                "label": "No Pruning",
+                "value": {
+                  "text": "256 calls"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "With Pruning",
+                "value": {
+                  "text": "42 calls"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 300
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Search call count reduction via pruning",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stopping branch early prevents exploring past target.",
+            "bars": [
+              {
+                "label": "No Pruning",
+                "value": "256 calls",
+                "tone": "error"
+              },
+              {
+                "label": "Target limit",
+                "value": 10,
+                "tone": "data"
+              }
+            ],
+            "max": 300
+          },
+          {
+            "at": "say3",
+            "caption": "Pruning turns impossible search into fast early stop.",
+            "bars": [
+              {
+                "label": "No Pruning",
+                "value": "256 calls",
+                "tone": "error"
+              },
+              {
+                "label": "With Pruning",
+                "value": "42 calls",
+                "tone": "ok"
+              }
+            ],
+            "max": 300
+          }
+        ]
+      }
+    }
+  ]
+}

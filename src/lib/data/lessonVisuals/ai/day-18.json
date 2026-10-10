@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 18,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why Multi-Agent Systems Outperform Monolithic Agents",
+      "codeHash": "a3ceba3e9693e1e459b7cbf33e0a001dd9b247ebb954c8250ee6781db801f4cd",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to multi-agent separation of concerns"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to multi-agent separation of concerns"
+      }
+    },
+    {
+      "partTitle": "The Shared Blackboard State Architecture",
+      "codeHash": "50c396776e140656845631c1c69f154775b3be05225ac3d5902b1b690a6d21fa",
+      "spec": {
+        "template": "boxes",
+        "title": "Centralized shared blackboard state container and immutable updates",
+        "boxes": [
+          {
+            "id": "objectiveBox",
+            "title": "Objective State",
+            "items": [
+              "User mission statement",
+              "Execution requirements",
+              "Team constraints"
+            ]
+          },
+          {
+            "id": "researchBox",
+            "title": "Research Notes",
+            "items": [
+              "Factual documentation",
+              "Algorithmic trade-offs",
+              "Synthesized guidelines"
+            ]
+          },
+          {
+            "id": "codeBox",
+            "title": "Code Artifact",
+            "items": [
+              "TypeScript source code",
+              "Unit test coverage",
+              "Exported functions"
+            ]
+          },
+          {
+            "id": "reviewBox",
+            "title": "Review Status",
+            "items": [
+              "Audit verification verdict",
+              "Performance critique",
+              "Production approval"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The blackboard is a centralized state container accessible to all agents.",
+            "activeBoxId": "objectiveBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Agents return state update objects specifying newly generated attributes.",
+            "activeBoxId": "codeBox",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Centralized shared blackboard state container and immutable updates",
+        "boxes": [
+          {
+            "id": "objectiveBox",
+            "title": "Objective State",
+            "items": [
+              "User mission statement",
+              "Execution requirements",
+              "Team constraints"
+            ]
+          },
+          {
+            "id": "researchBox",
+            "title": "Research Notes",
+            "items": [
+              "Factual documentation",
+              "Algorithmic trade-offs",
+              "Synthesized guidelines"
+            ]
+          },
+          {
+            "id": "codeBox",
+            "title": "Code Artifact",
+            "items": [
+              "TypeScript source code",
+              "Unit test coverage",
+              "Exported functions"
+            ]
+          },
+          {
+            "id": "reviewBox",
+            "title": "Review Status",
+            "items": [
+              "Audit verification verdict",
+              "Performance critique",
+              "Production approval"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The blackboard is a centralized state container accessible to all agents.",
+            "activeBoxId": "objectiveBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Agents return state update objects specifying newly generated attributes.",
+            "activeBoxId": "codeBox",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Central Supervisor: Routing via Intent Classification",
+      "codeHash": "ac45616aefdc538d2c8dcb2a765ea0f7bf8bd722874cbda1e5cc989a3e648a49",
+      "spec": {
+        "template": "flow",
+        "title": "Central supervisor agent intent classification and worker routing",
+        "nodes": [
+          {
+            "id": "supervisor",
+            "label": "Supervisor Router",
+            "tappable": false
+          },
+          {
+            "id": "researcher",
+            "label": "Research Specialist",
+            "tappable": false
+          },
+          {
+            "id": "coder",
+            "label": "Implementation Coder",
+            "tappable": false
+          },
+          {
+            "id": "reviewer",
+            "label": "Code Auditor Reviewer",
+            "tappable": false
+          },
+          {
+            "id": "finish",
+            "label": "Production Complete",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "supervisor",
+            "to": "researcher",
+            "label": "Missing Research Notes"
+          },
+          {
+            "from": "supervisor",
+            "to": "coder",
+            "label": "Missing Code Artifact"
+          },
+          {
+            "from": "supervisor",
+            "to": "reviewer",
+            "label": "Audit Pending Review"
+          },
+          {
+            "from": "supervisor",
+            "to": "finish",
+            "label": "Approval Granted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The supervisor acts as an intent classifier evaluating missing state pieces.",
+            "activeNodes": [
+              "supervisor",
+              "researcher"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When review status is approved the supervisor emits finish to complete.",
+            "activeNodes": [
+              "supervisor",
+              "finish"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Central supervisor agent intent classification and worker routing",
+        "nodes": [
+          {
+            "id": "supervisor",
+            "label": "Supervisor Router",
+            "tappable": false
+          },
+          {
+            "id": "researcher",
+            "label": "Research Specialist",
+            "tappable": false
+          },
+          {
+            "id": "coder",
+            "label": "Implementation Coder",
+            "tappable": false
+          },
+          {
+            "id": "reviewer",
+            "label": "Code Auditor Reviewer",
+            "tappable": false
+          },
+          {
+            "id": "finish",
+            "label": "Production Complete",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "supervisor",
+            "to": "researcher",
+            "label": "Missing Research Notes"
+          },
+          {
+            "from": "supervisor",
+            "to": "coder",
+            "label": "Missing Code Artifact"
+          },
+          {
+            "from": "supervisor",
+            "to": "reviewer",
+            "label": "Audit Pending Review"
+          },
+          {
+            "from": "supervisor",
+            "to": "finish",
+            "label": "Approval Granted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The supervisor acts as an intent classifier evaluating missing state pieces.",
+            "activeNodes": [
+              "supervisor",
+              "researcher"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When review status is approved the supervisor emits finish to complete.",
+            "activeNodes": [
+              "supervisor",
+              "finish"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Research Specialist Subagent",
+      "codeHash": "a0f5233b3381ea68f7c820808ad84ba82ea277120e25b47e4420c393ff456e65",
+      "spec": {
+        "template": "table",
+        "title": "Specialist subagent engineering swarm responsibilities and contracts",
+        "columns": [
+          "Specialist Agent",
+          "Core Domain Objective",
+          "Input Context",
+          "Blackboard Output"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The researcher produces technical specifications without writing code.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Research notes serve as the architectural blueprint for the coder.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Specialist subagent engineering swarm responsibilities and contracts",
+        "columns": [
+          "Specialist Agent",
+          "Core Domain Objective",
+          "Input Context",
+          "Blackboard Output"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The researcher produces technical specifications without writing code.",
+            "activeRowIndex": 0,
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Research notes serve as the architectural blueprint for the coder.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Coder & Reviewer Feedback Loop",
+      "codeHash": "9f62fc507667c041b12bfacca217d451c9542e2d8068632ba2262416dcddb9ae",
+      "spec": {
+        "template": "compare",
+        "title": "Adversarial code review critique and iterative repair feedback loop",
+        "left": {
+          "title": "First Pass Review Critique",
+          "items": [
+            "Missing edge case handling",
+            "Linear search lookup penalty",
+            "Status: CHANGES_REQUESTED",
+            "Detailed corrective feedback"
+          ]
+        },
+        "right": {
+          "title": "Repaired Approved Artifact",
+          "items": [
+            "Constant time hash map index",
+            "Complete boundary checks",
+            "Status: APPROVED",
+            "Verified for production deploy"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When the reviewer discovers issues it sets review status to changes requested.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Once constraints are verified the reviewer sets review status to approved.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "First Pass Review Critique",
+        "rightLabel": "Repaired Approved Artifact"
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Adversarial code review critique and iterative repair feedback loop",
+        "left": {
+          "title": "First Pass Review Critique",
+          "items": [
+            "Missing edge case handling",
+            "Linear search lookup penalty",
+            "Status: CHANGES_REQUESTED",
+            "Detailed corrective feedback"
+          ]
+        },
+        "right": {
+          "title": "Repaired Approved Artifact",
+          "items": [
+            "Constant time hash map index",
+            "Complete boundary checks",
+            "Status: APPROVED",
+            "Verified for production deploy"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When the reviewer discovers issues it sets review status to changes requested.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Once constraints are verified the reviewer sets review status to approved.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ],
+        "leftLabel": "First Pass Review Critique",
+        "rightLabel": "Repaired Approved Artifact"
+      }
+    },
+    {
+      "partTitle": "Production Multi-Agent Pipeline: Autonomous Orchestration",
+      "codeHash": "5ff8e67c4b0355e9e10333a6a2b0323e4c1ba2fe086a4affba33a680b1fa6e26",
+      "spec": {
+        "template": "sequence",
+        "title": "End-to-end multi-agent engineering swarm orchestration transaction",
+        "actors": [
+          {
+            "id": "operator",
+            "label": "Lead Engineer"
+          },
+          {
+            "id": "supervisor",
+            "label": "Swarm Supervisor"
+          },
+          {
+            "id": "researcher",
+            "label": "Research Specialist"
+          },
+          {
+            "id": "coder",
+            "label": "Implementation Coder"
+          }
+        ],
+        "messages": [
+          {
+            "from": "operator",
+            "to": "supervisor",
+            "label": "Submit Software Mission",
+            "tone": "data"
+          },
+          {
+            "from": "supervisor",
+            "to": "researcher",
+            "label": "Route Mission for Domain Research",
+            "tone": "data"
+          },
+          {
+            "from": "researcher",
+            "to": "supervisor",
+            "label": "Commit Technical Specification",
+            "tone": "ok"
+          },
+          {
+            "from": "supervisor",
+            "to": "coder",
+            "label": "Route Spec for TypeScript Implementation",
+            "tone": "data"
+          },
+          {
+            "from": "coder",
+            "to": "supervisor",
+            "label": "Commit Tested Code Artifact",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The supervisor routes execution to the researcher to produce specifications.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The swarm executes producing verified production code components.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "End-to-end multi-agent engineering swarm orchestration transaction",
+        "actors": [
+          {
+            "id": "operator",
+            "label": "Lead Engineer"
+          },
+          {
+            "id": "supervisor",
+            "label": "Swarm Supervisor"
+          },
+          {
+            "id": "researcher",
+            "label": "Research Specialist"
+          },
+          {
+            "id": "coder",
+            "label": "Implementation Coder"
+          }
+        ],
+        "messages": [
+          {
+            "from": "operator",
+            "to": "supervisor",
+            "label": "Submit Software Mission",
+            "tone": "data"
+          },
+          {
+            "from": "supervisor",
+            "to": "researcher",
+            "label": "Route Mission for Domain Research",
+            "tone": "data"
+          },
+          {
+            "from": "researcher",
+            "to": "supervisor",
+            "label": "Commit Technical Specification",
+            "tone": "ok"
+          },
+          {
+            "from": "supervisor",
+            "to": "coder",
+            "label": "Route Spec for TypeScript Implementation",
+            "tone": "data"
+          },
+          {
+            "from": "coder",
+            "to": "supervisor",
+            "label": "Commit Tested Code Artifact",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The supervisor routes execution to the researcher to produce specifications.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The swarm executes producing verified production code components.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

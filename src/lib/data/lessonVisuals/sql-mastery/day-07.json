@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a function is in SQL",
+      "codeHash": "34110cc908bc50f7c37703d825382d1621ecaae9d23a7d4cb8db65b87557a98e",
+      "spec": {
+        "template": "table",
+        "title": "Scalar string functions in SELECT",
+        "columns": [
+          "name",
+          "shout",
+          "letters"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The function runs once for every row appearing as a new column.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "ASHA"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Functions never change the data stored in the table during SELECT.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "ASHA"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "RAVI"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Scalar string functions in SELECT",
+        "columns": [
+          "name",
+          "shout",
+          "letters"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The function runs once for every row appearing as a new column.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "ASHA",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Functions never change the data stored in the table during SELECT.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "ASHA",
+                  "4"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Ravi",
+                  "RAVI",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Text functions",
+      "codeHash": "b783ca9c15ce9d2cc697bb015760af9f5d6c0c0892e2a4bb435d732becaf779d",
+      "spec": {
+        "template": "compare",
+        "title": "Raw messy customer strings versus cleaned formatted output",
+        "leftLabel": "Raw Input",
+        "rightLabel": "Cleaned Result",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The initcap function makes the first letter of each word a capital.",
+            "left": {
+              "code": "asha RAO",
+              "result": {
+                "text": "irregular casing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "initcap(trim(name))",
+              "result": {
+                "text": "Asha Rao"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The trim function removes spaces at the start and the end cleanly.",
+            "left": {
+              "code": "'  asha'",
+              "result": {
+                "text": "leading spaces"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "trim('  asha')",
+              "result": {
+                "text": "'asha'"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw messy customer strings versus cleaned formatted output",
+        "leftLabel": "Raw Input",
+        "rightLabel": "Cleaned Result",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The initcap function makes the first letter of each word a capital.",
+            "left": {
+              "code": "asha RAO",
+              "result": "irregular casing",
+              "tone": "error",
+              "checks": [
+                "irregular casing"
+              ]
+            },
+            "right": {
+              "code": "initcap(trim(name))",
+              "result": "Asha Rao",
+              "tone": "ok",
+              "checks": [
+                "Asha Rao"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The trim function removes spaces at the start and the end cleanly.",
+            "left": {
+              "code": "'  asha'",
+              "result": "leading spaces",
+              "tone": "error",
+              "checks": [
+                "leading spaces"
+              ]
+            },
+            "right": {
+              "code": "trim('  asha')",
+              "result": "'asha'",
+              "tone": "ok",
+              "checks": [
+                "'asha'"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Numbers: maths and rounding",
+      "codeHash": "e144bd8b75482e36e7aee95724f2011c477964684a3ab5f9410ad935232aa522",
+      "spec": {
+        "template": "table",
+        "title": "Arithmetic casting and coalesce handling",
+        "columns": [
+          "name",
+          "price",
+          "safe_price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dividing two whole numbers gives a whole number unless cast to decimal.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "8.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The coalesce function replaces NULL with a value you choose safely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "8.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Arithmetic casting and coalesce handling",
+        "columns": [
+          "name",
+          "price",
+          "safe_price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dividing two whole numbers gives a whole number unless cast to decimal.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10.00",
+                  "8.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The coalesce function replaces NULL with a value you choose safely.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10.00",
+                  "8.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00",
+                  "60.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dates: today, differences and parts",
+      "codeHash": "281df52b24772bbe6c665933a40aabbbebe1c740c754c66da3faf77321319d85",
+      "spec": {
+        "template": "none",
+        "reason": "Temporal arithmetic interval calculations and date part extraction."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Temporal arithmetic interval calculations and date part extraction."
+      }
+    },
+    {
+      "partTitle": "Formatting dates and numbers for people",
+      "codeHash": "f960668c11c072ac0d730bc5d030192c54bb2b119bd00948bf7f30ba4771d187",
+      "spec": {
+        "template": "none",
+        "reason": "Presentation to_char template masks and locale-dependent formatting."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Presentation to_char template masks and locale-dependent formatting."
+      }
+    },
+    {
+      "partTitle": "Putting it together: an invoice view of products",
+      "codeHash": "2150884216c87df7533e47c85e798886a44b36c1df4f4f9f8f0433fd06aa669f",
+      "spec": {
+        "template": "table",
+        "title": "Invoice view transformed fields",
+        "columns": [
+          "item",
+          "price_with_gst",
+          "label",
+          "days_listed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us use functions to build an invoice style product listing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PEN"
+                  },
+                  {
+                    "text": "11.80"
+                  },
+                  {
+                    "text": "Pen (Rs 10)"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The result is a table a shop manager could read directly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "HEADPHONES"
+                  },
+                  {
+                    "text": "1768.82"
+                  },
+                  {
+                    "text": "Headphones (Rs 1499)"
+                  },
+                  {
+                    "text": "27"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PEN"
+                  },
+                  {
+                    "text": "11.80"
+                  },
+                  {
+                    "text": "Pen (Rs 10)"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Invoice view transformed fields",
+        "columns": [
+          "item",
+          "price_with_gst",
+          "label",
+          "days_listed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us use functions to build an invoice style product listing.",
+            "rows": [
+              {
+                "cells": [
+                  "PEN",
+                  "11.80",
+                  "Pen (Rs 10)",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The result is a table a shop manager could read directly.",
+            "rows": [
+              {
+                "cells": [
+                  "HEADPHONES",
+                  "1768.82",
+                  "Headphones (Rs 1499)",
+                  "27"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "PEN",
+                  "11.80",
+                  "Pen (Rs 10)",
+                  "3"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

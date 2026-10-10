@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 19,
+  "promptSha": "a94d8bec8f1c7924753930cb04c6d9a8f1df4f74fc76f49308564c73907b81d1",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Decoupling Configuration in Kubernetes (12-Factor Factor III)",
+      "codeHash": "9930c0d3bc72bba7bc496d5b7ed0be5a3126a0392117314197a4c8144ecea37a",
+      "spec": {
+        "template": "compare",
+        "title": "Decoupled application configuration store loading",
+        "leftLabel": "Application Environment",
+        "rightLabel": "Operational Limits",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hardcoding configuration values into images violates immutable build rules.",
+            "left": {
+              "code": "APP_ENV: 'production'",
+              "result": {
+                "text": "production"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "LOG_LEVEL: 'warn'",
+              "result": {
+                "text": "warn"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "ConfigMaps separate environment settings from immutable container code.",
+            "left": {
+              "code": "DB_MAX_CONNECTIONS",
+              "result": {
+                "text": "APP_ENV"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "CACHE_TTL",
+              "result": {
+                "text": "LOG_LEVEL"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Decoupled application configuration store loading",
+        "leftLabel": "Application Environment",
+        "rightLabel": "Operational Limits",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hardcoding configuration values into images violates immutable build rules.",
+            "left": {
+              "code": "APP_ENV: 'production'",
+              "result": {
+                "text": "production"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "LOG_LEVEL: 'warn'",
+              "result": {
+                "text": "warn"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "ConfigMaps separate environment settings from immutable container code.",
+            "left": {
+              "code": "DB_MAX_CONNECTIONS",
+              "result": {
+                "text": "APP_ENV"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "CACHE_TTL",
+              "result": {
+                "text": "LOG_LEVEL"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Injecting ConfigMaps: env vs envFrom.configMapRef",
+      "codeHash": "a4f22e8a8a0ebf8d68dd16587a0ea5c5217983798aa509b3d02f602da021cdd4",
+      "spec": {
+        "template": "compare",
+        "title": "ConfigMap bulk injection across container environment variables",
+        "leftLabel": "Network Service Port",
+        "rightLabel": "Metrics Telemetry Flag",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Syntax supports individual mapping or bulk injection into environment.",
+            "left": {
+              "code": "key: 'PORT'",
+              "result": {
+                "text": "PORT"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "key: 'METRICS_ENABLED'",
+              "result": {
+                "text": "METRICS_ENABLED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Bulk injection imports all configuration entries as container variables.",
+            "left": {
+              "code": "key: 'WORKER_THREADS'",
+              "result": {
+                "text": "WORKER_THREADS"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "injectBulkEnvironment",
+              "result": {
+                "text": "PORT"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "ConfigMap bulk injection across container environment variables",
+        "leftLabel": "Network Service Port",
+        "rightLabel": "Metrics Telemetry Flag",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Syntax supports individual mapping or bulk injection into environment.",
+            "left": {
+              "code": "key: 'PORT'",
+              "result": {
+                "text": "PORT"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "key: 'METRICS_ENABLED'",
+              "result": {
+                "text": "METRICS_ENABLED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Bulk injection imports all configuration entries as container variables.",
+            "left": {
+              "code": "key: 'WORKER_THREADS'",
+              "result": {
+                "text": "WORKER_THREADS"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "injectBulkEnvironment",
+              "result": {
+                "text": "PORT"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mounting ConfigMaps as Filesystem Volumes",
+      "codeHash": "4d4fb26f794249f1c3567e613d2adbdad20296d8a5e8173d23faf37fc1a5850f",
+      "spec": {
+        "template": "compare",
+        "title": "Filesystem volume mount configuration mapping into container directory",
+        "leftLabel": "Mounted Target Directory",
+        "rightLabel": "ConfigMap Source Asset",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Volume mounting presents configmap directly into container filesystem.",
+            "left": {
+              "code": "mountPath: '/etc/nginx/conf.d'",
+              "result": {
+                "text": "/etc/nginx/conf.d"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "configMapName: 'nginx-proxy-config'",
+              "result": {
+                "text": "nginx-proxy-config"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Mounted keys materialize as individual configuration files in directory.",
+            "left": {
+              "code": "filesMounted: ['default.conf']",
+              "result": {
+                "text": "default.conf"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "filesMounted: ['ssl-params.conf']",
+              "result": {
+                "text": "ssl-params.conf"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Filesystem volume mount configuration mapping into container directory",
+        "leftLabel": "Mounted Target Directory",
+        "rightLabel": "ConfigMap Source Asset",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Volume mounting presents configmap directly into container filesystem.",
+            "left": {
+              "code": "mountPath: '/etc/nginx/conf.d'",
+              "result": {
+                "text": "/etc/nginx/conf.d"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "configMapName: 'nginx-proxy-config'",
+              "result": {
+                "text": "nginx-proxy-config"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Mounted keys materialize as individual configuration files in directory.",
+            "left": {
+              "code": "filesMounted: ['default.conf']",
+              "result": {
+                "text": "default.conf"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "filesMounted: ['ssl-params.conf']",
+              "result": {
+                "text": "ssl-params.conf"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kubernetes Secrets: Base64 Obfuscation vs Encryption at Rest",
+      "codeHash": "c9291283d3710d58512cc090f6027035993b6205cb1f5cfb4d0edb625b8a98c3",
+      "spec": {
+        "template": "compare",
+        "title": "Secret base64 obfuscation versus KMS envelope encryption at rest",
+        "leftLabel": "Base64 Obfuscation Only",
+        "rightLabel": "KMS Envelope Encryption",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Default secrets are simply base64 encoded strings stored in cluster database.",
+            "left": {
+              "code": "rawPassword",
+              "result": {
+                "text": "super-secret-db-password-99"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "base64Encoded",
+              "result": {
+                "text": "super-secret-db-password-99"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Encryption at rest leverages key management services for envelope protection.",
+            "left": {
+              "code": "auditSecretSecurity(false)",
+              "result": {
+                "text": "SecretAuditor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "auditSecretSecurity(true)",
+              "result": {
+                "text": "SecretAuditor"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Secret base64 obfuscation versus KMS envelope encryption at rest",
+        "leftLabel": "Base64 Obfuscation Only",
+        "rightLabel": "KMS Envelope Encryption",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Default secrets are simply base64 encoded strings stored in cluster database.",
+            "left": {
+              "code": "rawPassword",
+              "result": {
+                "text": "super-secret-db-password-99"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "base64Encoded",
+              "result": {
+                "text": "super-secret-db-password-99"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Encryption at rest leverages key management services for envelope protection.",
+            "left": {
+              "code": "auditSecretSecurity(false)",
+              "result": {
+                "text": "SecretAuditor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "auditSecretSecurity(true)",
+              "result": {
+                "text": "SecretAuditor"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "External Secrets Operator & HashiCorp Vault Integration",
+      "codeHash": "8a81639766303fe251060f235bb4c70cc0ce18751de18e6f26ceb59e42963652",
+      "spec": {
+        "template": "compare",
+        "title": "External Secrets Operator cloud vault synchronization mapping",
+        "leftLabel": "External Cloud Vault Source",
+        "rightLabel": "Managed Native Secret",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "External secrets operator synchronizes credentials from enterprise vaults.",
+            "left": {
+              "code": "vaultSource: 'AWS Secrets Manager'",
+              "result": {
+                "text": "AWS Secrets Manager"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "remotePath",
+              "result": {
+                "text": "prod/database/primary-credentials"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Operator connects securely creating native secrets with automated rotation.",
+            "left": {
+              "code": "targetK8sSecret",
+              "result": {
+                "text": "db-credentials-secret"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "autoRefreshInterval: '1h'",
+              "result": {
+                "text": "1h"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "External Secrets Operator cloud vault synchronization mapping",
+        "leftLabel": "External Cloud Vault Source",
+        "rightLabel": "Managed Native Secret",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "External secrets operator synchronizes credentials from enterprise vaults.",
+            "left": {
+              "code": "vaultSource: 'AWS Secrets Manager'",
+              "result": {
+                "text": "AWS Secrets Manager"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "remotePath",
+              "result": {
+                "text": "prod/database/primary-credentials"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Operator connects securely creating native secrets with automated rotation.",
+            "left": {
+              "code": "targetK8sSecret",
+              "result": {
+                "text": "db-credentials-secret"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "autoRefreshInterval: '1h'",
+              "result": {
+                "text": "1h"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Live Reloading Configurations vs Pod Restarts",
+      "codeHash": "aa98526104609039b72d42eb273878440c92e731be7a9afe8ede63a85dd70725",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

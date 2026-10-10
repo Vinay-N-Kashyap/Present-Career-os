@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The inverted index",
+      "codeHash": "1b65e589705e897e4ad006a64ea0f5284393fef69ef7acb114c24b88ee7b9f0f",
+      "spec": {
+        "template": "table",
+        "title": "Inverted index document posting list mapping",
+        "columns": [
+          "term",
+          "text",
+          "term"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An inverted index maps words to matching documents directly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "term"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "term"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "term"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "term"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Looking up lists finds matching documents without scanning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "term"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "term"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "term"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Inverted index document posting list mapping",
+        "columns": [
+          "term",
+          "text",
+          "term"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An inverted index maps words to matching documents directly.",
+            "rows": [
+              {
+                "cells": [
+                  "term",
+                  "text",
+                  "term"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "term",
+                  "text",
+                  "term"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Looking up lists finds matching documents without scanning.",
+            "rows": [
+              {
+                "cells": [
+                  "term",
+                  "text",
+                  "term"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "term",
+                  "text",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TF-IDF",
+      "codeHash": "d5d06589d307277b16fed9a8d3f0bde1a6e07c64bdcf773c704aac108ec14ebd",
+      "spec": {
+        "template": "table",
+        "title": "Term frequency and inverse document frequency scoring",
+        "columns": [
+          "policy",
+          "refund",
+          "shipping"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Higher term frequency suggests greater document relevance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "policy"
+                  },
+                  {
+                    "text": "refund"
+                  },
+                  {
+                    "text": "shipping"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "policy"
+                  },
+                  {
+                    "text": "refund"
+                  },
+                  {
+                    "text": "shipping"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Weighting multiplies terms to produce informative document scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "policy"
+                  },
+                  {
+                    "text": "refund"
+                  },
+                  {
+                    "text": "shipping"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "policy"
+                  },
+                  {
+                    "text": "refund"
+                  },
+                  {
+                    "text": "refund"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Term frequency and inverse document frequency scoring",
+        "columns": [
+          "policy",
+          "refund",
+          "shipping"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Higher term frequency suggests greater document relevance.",
+            "rows": [
+              {
+                "cells": [
+                  "policy",
+                  "refund",
+                  "shipping"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "policy",
+                  "refund",
+                  "shipping"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Weighting multiplies terms to produce informative document scores.",
+            "rows": [
+              {
+                "cells": [
+                  "policy",
+                  "refund",
+                  "shipping"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "policy",
+                  "refund",
+                  "refund"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BM25",
+      "codeHash": "083a9293cd34d12ac7b7c71a2a4ac7e5a71d95edde302e35fa6bb29a261ff225",
+      "spec": {
+        "template": "table",
+        "title": "Okapi BM25 term frequency saturation curves",
+        "columns": [
+          "avgdl",
+          "doc_len",
+          "avgdl"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The ranking term saturates as extra query mentions appear.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "avgdl"
+                  },
+                  {
+                    "text": "doc_len"
+                  },
+                  {
+                    "text": "avgdl"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "avgdl"
+                  },
+                  {
+                    "text": "doc_len"
+                  },
+                  {
+                    "text": "avgdl"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Specific queries remain hard to beat across many benchmarks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "avgdl"
+                  },
+                  {
+                    "text": "doc_len"
+                  },
+                  {
+                    "text": "avgdl"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "avgdl"
+                  },
+                  {
+                    "text": "doc_len"
+                  },
+                  {
+                    "text": "doc_len"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Okapi BM25 term frequency saturation curves",
+        "columns": [
+          "avgdl",
+          "doc_len",
+          "avgdl"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The ranking term saturates as extra query mentions appear.",
+            "rows": [
+              {
+                "cells": [
+                  "avgdl",
+                  "doc_len",
+                  "avgdl"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "avgdl",
+                  "doc_len",
+                  "avgdl"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Specific queries remain hard to beat across many benchmarks.",
+            "rows": [
+              {
+                "cells": [
+                  "avgdl",
+                  "doc_len",
+                  "avgdl"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "avgdl",
+                  "doc_len",
+                  "doc_len"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Length normalisation",
+      "codeHash": "a662284cacbc51db8fb9c0f63be877530752055804a1eb9c09dd94edb110d865",
+      "spec": {
+        "template": "table",
+        "title": "Document length normalisation penalties",
+        "columns": [
+          "score",
+          "length",
+          "avgdl"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dividing by relative document length avoids bias toward longer text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "avgdl"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "avgdl"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A short document scores higher because each mention is meaningful.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "avgdl"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "length"
+                  },
+                  {
+                    "text": "length"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document length normalisation penalties",
+        "columns": [
+          "score",
+          "length",
+          "avgdl"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Dividing by relative document length avoids bias toward longer text.",
+            "rows": [
+              {
+                "cells": [
+                  "score",
+                  "length",
+                  "avgdl"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "score",
+                  "length",
+                  "avgdl"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A short document scores higher because each mention is meaningful.",
+            "rows": [
+              {
+                "cells": [
+                  "score",
+                  "length",
+                  "avgdl"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "score",
+                  "length",
+                  "length"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When keywords beat vectors",
+      "codeHash": "ada0308be0bfa710150c03fa70fe131ce7b02f0611d4611201b5fb3d1548e945",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: keyword search",
+      "codeHash": "afa9a1275fa8acd06883b86d38f496f512518aa972595f36b8a7e513cbb805f0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

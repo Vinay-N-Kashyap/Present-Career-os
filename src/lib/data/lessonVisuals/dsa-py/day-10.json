@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Binary search on a sorted list",
+      "codeHash": "784c90f1f5fab025631b8d87e633617fa213f641d517dca38188916c17a8cf20",
+      "spec": {
+        "template": "cells",
+        "title": "Halving search space with middle comparisons",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Compare middle element to target and narrow bounds.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "15"
+              },
+              {
+                "text": "21"
+              },
+              {
+                "text": "42"
+              },
+              {
+                "text": "57"
+              },
+              {
+                "text": "66"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              6
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Target larger than middle shifts left bound past mid.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "15"
+              },
+              {
+                "text": "21"
+              },
+              {
+                "text": "42"
+              },
+              {
+                "text": "57"
+              },
+              {
+                "text": "66"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              4,
+              6
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Halving search space with middle comparisons",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Compare middle element to target and narrow bounds.",
+            "items": [
+              "3",
+              "8",
+              "15",
+              "21",
+              "42",
+              "57",
+              "66"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              6
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Target larger than middle shifts left bound past mid.",
+            "items": [
+              "3",
+              "8",
+              "15",
+              "21",
+              "42",
+              "57",
+              "66"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              4,
+              6
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The off-by-one traps",
+      "codeHash": "0664745f317e569ecebb5c00505c8a1e5f16b6ebd9ac2d14aa2d5200b80ea8cd",
+      "spec": {
+        "template": "none",
+        "reason": "Loop termination conditions and bisect insert positions."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Loop termination conditions and bisect insert positions."
+      }
+    },
+    {
+      "partTitle": "Searching a rotated sorted list",
+      "codeHash": "120017a66f92aef7ee954af337912165825d2a58d2149a3508c0e2f1c30b93c3",
+      "spec": {
+        "template": "cells",
+        "title": "Rotated sorted array half determination",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Identify which half of rotated array is properly sorted.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "highlightRange": [
+              0,
+              3
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Check whether target lies inside sorted half range.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "highlightRange": [
+              4,
+              6
+            ],
+            "pointers": [
+              {
+                "name": "search",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Rotated sorted array half determination",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Identify which half of rotated array is properly sorted.",
+            "items": [
+              "4",
+              "5",
+              "6",
+              "7",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              3
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Check whether target lies inside sorted half range.",
+            "items": [
+              "4",
+              "5",
+              "6",
+              "7",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "search",
+                "index": 4,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              4,
+              6
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding the smallest in a rotated list",
+      "codeHash": "42192af75f2430c3543fd95caeea89a15d2a8855899deaa260307e4ed138b894",
+      "spec": {
+        "template": "cells",
+        "title": "Rotated list minimum inflection point",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Smallest number marks where rotation order resets.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compare mid with right to locate rotation reset point.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "min",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Rotated list minimum inflection point",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Smallest number marks where rotation order resets.",
+            "items": [
+              "4",
+              "5",
+              "6",
+              "7",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "mid",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compare mid with right to locate rotation reset point.",
+            "items": [
+              "4",
+              "5",
+              "6",
+              "7",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "min",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Binary search on the answer",
+      "codeHash": "08f7fa6d987124e26578e7729bfd0a8b148dcd9d4b6a9e3b933c08b54c898d6b",
+      "spec": {
+        "template": "none",
+        "reason": "Monotonic predicate search over continuous parameter domain."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Monotonic predicate search over continuous parameter domain."
+      }
+    },
+    {
+      "partTitle": "Binary search in real life",
+      "codeHash": "71bf033007615e6baac62af0cf4341a386491161c6cb24a23678dae4d858ee41",
+      "spec": {
+        "template": "table",
+        "title": "Real world binary search applications",
+        "columns": [
+          "Problem Domain",
+          "Total Elements",
+          "Maximum Comparisons",
+          "Algorithm"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Git bisect finds buggy commit halving history log.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Git history"
+                  },
+                  {
+                    "text": "1,000 commits"
+                  },
+                  {
+                    "text": "10 tests"
+                  },
+                  {
+                    "text": "git bisect"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Database index"
+                  },
+                  {
+                    "text": "1,000,000 rows"
+                  },
+                  {
+                    "text": "20 tests"
+                  },
+                  {
+                    "text": "B-Tree search"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bisect grade lookup searches sorted cutoffs quickly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Git history"
+                  },
+                  {
+                    "text": "1,000 commits"
+                  },
+                  {
+                    "text": "10 tests"
+                  },
+                  {
+                    "text": "git bisect"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Database index"
+                  },
+                  {
+                    "text": "1,000,000 rows"
+                  },
+                  {
+                    "text": "20 tests"
+                  },
+                  {
+                    "text": "B-Tree search"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Exam grading"
+                  },
+                  {
+                    "text": "6 grade tiers"
+                  },
+                  {
+                    "text": "3 tests"
+                  },
+                  {
+                    "text": "bisect_right"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Real world binary search applications",
+        "columns": [
+          "Problem Domain",
+          "Total Elements",
+          "Maximum Comparisons",
+          "Algorithm"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Git bisect finds buggy commit halving history log.",
+            "rows": [
+              {
+                "cells": [
+                  "Git history",
+                  "1,000 commits",
+                  "10 tests",
+                  "git bisect"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Database index",
+                  "1,000,000 rows",
+                  "20 tests",
+                  "B-Tree search"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bisect grade lookup searches sorted cutoffs quickly.",
+            "rows": [
+              {
+                "cells": [
+                  "Git history",
+                  "1,000 commits",
+                  "10 tests",
+                  "git bisect"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Database index",
+                  "1,000,000 rows",
+                  "20 tests",
+                  "B-Tree search"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Exam grading",
+                  "6 grade tiers",
+                  "3 tests",
+                  "bisect_right"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

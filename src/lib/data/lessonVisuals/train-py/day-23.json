@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Throughput",
+      "codeHash": "0056503da548d6ea70792e16f11d1446474efdeb98a98a8a0428f65b404ac456",
+      "spec": {
+        "template": "table",
+        "title": "Tokens per second throughput measurement and steady state rate",
+        "columns": [
+          "tokens_per_step",
+          "step_seconds",
+          "steady"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Throughput measures tokens per second processed during cluster training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_step"
+                  },
+                  {
+                    "text": "step_seconds"
+                  },
+                  {
+                    "text": "steady"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_step"
+                  },
+                  {
+                    "text": "step_seconds"
+                  },
+                  {
+                    "text": "steady"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Throughput should be logged continuously so sudden drops are noticed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_step"
+                  },
+                  {
+                    "text": "step_seconds"
+                  },
+                  {
+                    "text": "steady"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_step"
+                  },
+                  {
+                    "text": "step_seconds"
+                  },
+                  {
+                    "text": "tokens_per_step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tokens per second throughput measurement and steady state rate",
+        "columns": [
+          "tokens_per_step",
+          "step_seconds",
+          "steady"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Throughput measures tokens per second processed during cluster training.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens_per_step",
+                  "step_seconds",
+                  "steady"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens_per_step",
+                  "step_seconds",
+                  "steady"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Throughput should be logged continuously so sudden drops are noticed.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens_per_step",
+                  "step_seconds",
+                  "steady"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tokens_per_step",
+                  "step_seconds",
+                  "tokens_per_step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Model FLOPs utilisation",
+      "codeHash": "e9a0f7fd13ed9d964699364cd220a3589b4aec2c50ce3f9ad950550c3a5de9b6",
+      "spec": {
+        "template": "table",
+        "title": "Model FLOPs utilisation accounting for useful arithmetic work",
+        "columns": [
+          "params",
+          "peak",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Model FLOPs utilisation tracks the hardware fraction spent on computation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Recomputation is omitted so that MFU measures strictly useful work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model FLOPs utilisation accounting for useful arithmetic work",
+        "columns": [
+          "params",
+          "peak",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Model FLOPs utilisation tracks the hardware fraction spent on computation.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "peak",
+                  "gpus"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "peak",
+                  "gpus"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Recomputation is omitted so that MFU measures strictly useful work.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "peak",
+                  "gpus"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "peak",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Step time statistics",
+      "codeHash": "1acbebee35656c064735f87d783787793ac177cc0418560f62cdb022bf750392",
+      "spec": {
+        "template": "table",
+        "title": "Step time distribution analysis isolating outlier iterations",
+        "columns": [
+          "steps",
+          "median",
+          "slow"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The median step time is the typical step unaffected by outlier values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "slow"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "slow"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Counting slow steps shows how often training problems happen.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "slow"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Step time distribution analysis isolating outlier iterations",
+        "columns": [
+          "steps",
+          "median",
+          "slow"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The median step time is the typical step unaffected by outlier values.",
+            "rows": [
+              {
+                "cells": [
+                  "steps",
+                  "median",
+                  "slow"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "steps",
+                  "median",
+                  "slow"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Counting slow steps shows how often training problems happen.",
+            "rows": [
+              {
+                "cells": [
+                  "steps",
+                  "median",
+                  "slow"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "steps",
+                  "median",
+                  "steps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where the missing FLOPs go",
+      "codeHash": "24c9bdd27ff978e654256b5261b608aacb495ed512d015929c81c8941a5685d5",
+      "spec": {
+        "template": "table",
+        "title": "Step breakdown decomposing matrix math and overhead sinks",
+        "columns": [
+          "step",
+          "total",
+          "useful"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Communication that is not hidden by overlap leaves GPUs idle.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "useful"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "useful"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Fused kernels combine several memory-bound operations into one.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "useful"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Step breakdown decomposing matrix math and overhead sinks",
+        "columns": [
+          "step",
+          "total",
+          "useful"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Communication that is not hidden by overlap leaves GPUs idle.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "total",
+                  "useful"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "total",
+                  "useful"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Fused kernels combine several memory-bound operations into one.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "total",
+                  "useful"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "step",
+                  "total",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reporting performance honestly",
+      "codeHash": "e9e98811112961cdc093e828cdc7d826f6b01ae5495b3b4eb5ee4d67a824be7d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: measuring speed",
+      "codeHash": "74eea377c1f98c8aa5eea0acb0e318626629dbf9b6a484fb583f4b244d619d2e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

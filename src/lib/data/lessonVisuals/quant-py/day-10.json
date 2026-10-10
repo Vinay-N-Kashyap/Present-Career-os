@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why binary feeds",
+      "codeHash": "5617aa68026d60cbfafaab07f98b881465628b93816b46a689fd36b37dc7995b",
+      "spec": {
+        "template": "table",
+        "title": "Binary market data feeds and wire efficiency advantages",
+        "columns": [
+          "text",
+          "binary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exchanges publish high volume market data streams containing orders and trades.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "binary"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fixed byte layouts eliminate string parsing overhead for incoming numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "binary"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "pack"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "TotalView ITCH organizes messages into deterministic field offsets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "binary"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "pack"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "encode"
+                  },
+                  {
+                    "text": "hex"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares payload sizes between text formats and binary encodings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "binary"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "pack"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "encode"
+                  },
+                  {
+                    "text": "hex"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Binary market data feeds and wire efficiency advantages",
+        "columns": [
+          "text",
+          "binary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exchanges publish high volume market data streams containing orders and trades.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "binary"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fixed byte layouts eliminate string parsing overhead for incoming numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "binary"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "struct",
+                  "pack"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "TotalView ITCH organizes messages into deterministic field offsets.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "binary"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "struct",
+                  "pack"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "encode",
+                  "hex"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares payload sizes between text formats and binary encodings.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "binary"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "struct",
+                  "pack"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "encode",
+                  "hex"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "len"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bytes, endianness and struct",
+      "codeHash": "5cde5a20a3e892b5d3f9283ce344ae4833e431d6a444121176f77f48fdb35a03",
+      "spec": {
+        "template": "table",
+        "title": "Multi-byte integer serialization and endianness conversion",
+        "columns": [
+          "big",
+          "little"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Endianness defines byte significance order across multi byte integers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "big"
+                  },
+                  {
+                    "text": "little"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Protocols like ITCH mandate big endian ordering to prevent decoding errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "big"
+                  },
+                  {
+                    "text": "little"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pack"
+                  },
+                  {
+                    "text": "unpack"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Matching struct unpack format patterns ensures accurate numeric parsing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "big"
+                  },
+                  {
+                    "text": "little"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pack"
+                  },
+                  {
+                    "text": "unpack"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "hex"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example demonstrates byte order packing across differing endian systems.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "big"
+                  },
+                  {
+                    "text": "little"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pack"
+                  },
+                  {
+                    "text": "unpack"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "hex"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "big"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-byte integer serialization and endianness conversion",
+        "columns": [
+          "big",
+          "little"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Endianness defines byte significance order across multi byte integers.",
+            "rows": [
+              {
+                "cells": [
+                  "big",
+                  "little"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Protocols like ITCH mandate big endian ordering to prevent decoding errors.",
+            "rows": [
+              {
+                "cells": [
+                  "big",
+                  "little"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pack",
+                  "unpack"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Matching struct unpack format patterns ensures accurate numeric parsing.",
+            "rows": [
+              {
+                "cells": [
+                  "big",
+                  "little"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pack",
+                  "unpack"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "struct",
+                  "hex"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example demonstrates byte order packing across differing endian systems.",
+            "rows": [
+              {
+                "cells": [
+                  "big",
+                  "little"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pack",
+                  "unpack"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "struct",
+                  "hex"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "big"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Decoding an Add Order message",
+      "codeHash": "9a0a8ee18e24f4251939ba26be50a9226f4e8ebd3f18861c3edefed317dce12f",
+      "spec": {
+        "template": "table",
+        "title": "ITCH binary frame parsing and field extraction",
+        "columns": [
+          "shares",
+          "stock"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Binary Add Order messages encapsulate reference, side, quantity, and price.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "stock"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The struct format unpacks fixed layout binary frames matching protocol schemas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "stock"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FORMAT"
+                  },
+                  {
+                    "text": "calcsize"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "String decoding strips padding spaces from fixed width stock ticker bytes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "stock"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FORMAT"
+                  },
+                  {
+                    "text": "calcsize"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "kind"
+                  },
+                  {
+                    "text": "ref"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds a message with pack and decodes it back via unit testing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shares"
+                  },
+                  {
+                    "text": "stock"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FORMAT"
+                  },
+                  {
+                    "text": "calcsize"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "kind"
+                  },
+                  {
+                    "text": "ref"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ITCH binary frame parsing and field extraction",
+        "columns": [
+          "shares",
+          "stock"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Binary Add Order messages encapsulate reference, side, quantity, and price.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "stock"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The struct format unpacks fixed layout binary frames matching protocol schemas.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "stock"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "FORMAT",
+                  "calcsize"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "String decoding strips padding spaces from fixed width stock ticker bytes.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "stock"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "FORMAT",
+                  "calcsize"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "kind",
+                  "ref"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example builds a message with pack and decodes it back via unit testing.",
+            "rows": [
+              {
+                "cells": [
+                  "shares",
+                  "stock"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "FORMAT",
+                  "calcsize"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "kind",
+                  "ref"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "side",
+                  "price"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixed-point prices",
+      "codeHash": "08b411d5a3a471313e017f7f8dc1eaab0f61b364639f94e7206ad918e4d10a47",
+      "spec": {
+        "template": "table",
+        "title": "Fixed-point integer representation and floating point drift",
+        "columns": [
+          "total_float",
+          "total_fixed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Direct market data feeds send prices as integers with implied decimal places.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "total_float"
+                  },
+                  {
+                    "text": "total_fixed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fixed point integers guarantee exact arithmetic without floating point errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "total_float"
+                  },
+                  {
+                    "text": "total_fixed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Internal engine pipelines represent prices as integers to avoid binary drift.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "total_float"
+                  },
+                  {
+                    "text": "total_fixed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "int"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows floating point drift and how integers avoid errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "total_float"
+                  },
+                  {
+                    "text": "total_fixed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "int"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total_fixed"
+                  },
+                  {
+                    "text": "total_float"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fixed-point integer representation and floating point drift",
+        "columns": [
+          "total_float",
+          "total_fixed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Direct market data feeds send prices as integers with implied decimal places.",
+            "rows": [
+              {
+                "cells": [
+                  "total_float",
+                  "total_fixed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fixed point integers guarantee exact arithmetic without floating point errors.",
+            "rows": [
+              {
+                "cells": [
+                  "total_float",
+                  "total_fixed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Internal engine pipelines represent prices as integers to avoid binary drift.",
+            "rows": [
+              {
+                "cells": [
+                  "total_float",
+                  "total_fixed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "int",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows floating point drift and how integers avoid errors.",
+            "rows": [
+              {
+                "cells": [
+                  "total_float",
+                  "total_fixed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "int",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "total_fixed",
+                  "total_float"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rebuilding the book from a feed",
+      "codeHash": "fb287a2aa5b052b81a51ac428a3a5d9de3666fbab69d8b2357fab28d1698fbf3",
+      "spec": {
+        "template": "none",
+        "reason": "Order book state reconstruction from granular message streams."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: decode and convert",
+      "codeHash": "42b35fe9abb98da476e237b18594d2b73d412d83f2d26474c82957c88e766b27",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: binary decoding and fixed-point arithmetic."
+      },
+      "filled": {}
+    }
+  ]
+}

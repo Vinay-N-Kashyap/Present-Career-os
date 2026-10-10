@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "k-nearest neighbours",
+      "codeHash": "0b064adde6582f6cd6006f50c31c4b8cfbbb3d795c4185f8890cae074f3838a8",
+      "spec": {
+        "template": "table",
+        "title": "Flat search baseline computing pairwise candidate similarity",
+        "columns": [
+          "vecs",
+          "q",
+          "scored"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Flat search exhaustively compares query vectors against all candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "scored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "scored"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Exact search always finds the true answer serving as our evaluation baseline.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "scored"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Flat search baseline computing pairwise candidate similarity",
+        "columns": [
+          "vecs",
+          "q",
+          "scored"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Flat search exhaustively compares query vectors against all candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "vecs",
+                  "q",
+                  "scored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vecs",
+                  "q",
+                  "scored"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Exact search always finds the true answer serving as our evaluation baseline.",
+            "rows": [
+              {
+                "cells": [
+                  "vecs",
+                  "q",
+                  "scored"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "vecs",
+                  "q",
+                  "vecs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Normalise once, dot many times",
+      "codeHash": "12399805b39e367677e4e039c9c5c986cff38ac42f9a4ec5fe9be38d8d157263",
+      "spec": {
+        "template": "table",
+        "title": "Pre-normalized dot product search accelerating query throughput",
+        "columns": [
+          "units",
+          "q",
+          "dots"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Pre-normalising stored vectors ensures each unit length equals unity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "units"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "dots"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "units"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "dots"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Normalising the query once means a plain dot product yields cosine similarity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "units"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "dots"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "units"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "units"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pre-normalized dot product search accelerating query throughput",
+        "columns": [
+          "units",
+          "q",
+          "dots"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Pre-normalising stored vectors ensures each unit length equals unity.",
+            "rows": [
+              {
+                "cells": [
+                  "units",
+                  "q",
+                  "dots"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "units",
+                  "q",
+                  "dots"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Normalising the query once means a plain dot product yields cosine similarity.",
+            "rows": [
+              {
+                "cells": [
+                  "units",
+                  "q",
+                  "dots"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "units",
+                  "q",
+                  "units"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Matrix form",
+      "codeHash": "dafa1ce947c41c9262a41812452e55a30c0d8bba7793e6fdd3b7ba65a52c9be0",
+      "spec": {
+        "template": "table",
+        "title": "Batch matrix multiplication expressing multi-query search",
+        "columns": [
+          "matrix",
+          "queries",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector search expresses scoring as matrix-vector multiplication over rows.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "matrix"
+                  },
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "matrix"
+                  },
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Batched queries formulate search as matrix-matrix multiplication.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "matrix"
+                  },
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "matrix"
+                  },
+                  {
+                    "text": "queries"
+                  },
+                  {
+                    "text": "matrix"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Batch matrix multiplication expressing multi-query search",
+        "columns": [
+          "matrix",
+          "queries",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector search expresses scoring as matrix-vector multiplication over rows.",
+            "rows": [
+              {
+                "cells": [
+                  "matrix",
+                  "queries",
+                  "scores"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "matrix",
+                  "queries",
+                  "scores"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Batched queries formulate search as matrix-matrix multiplication.",
+            "rows": [
+              {
+                "cells": [
+                  "matrix",
+                  "queries",
+                  "scores"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "matrix",
+                  "queries",
+                  "matrix"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why exact search stops scaling",
+      "codeHash": "be7290f9390d5470dad2ea5b0b83d076b861511a5f600f7de97d39ecae1c5af5",
+      "spec": {
+        "template": "table",
+        "title": "Brute-force linear scaling limits motivating approximate indexing",
+        "columns": [
+          "ops_per_sec",
+          "ms",
+          "gb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exact search costs multiplications proportional to collection dimensions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ops_per_sec"
+                  },
+                  {
+                    "text": "ms"
+                  },
+                  {
+                    "text": "gb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ops_per_sec"
+                  },
+                  {
+                    "text": "ms"
+                  },
+                  {
+                    "text": "gb"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Approximate nearest neighbour indexes trade small accuracy for speed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ops_per_sec"
+                  },
+                  {
+                    "text": "ms"
+                  },
+                  {
+                    "text": "gb"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ops_per_sec"
+                  },
+                  {
+                    "text": "ms"
+                  },
+                  {
+                    "text": "ops_per_sec"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Brute-force linear scaling limits motivating approximate indexing",
+        "columns": [
+          "ops_per_sec",
+          "ms",
+          "gb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exact search costs multiplications proportional to collection dimensions.",
+            "rows": [
+              {
+                "cells": [
+                  "ops_per_sec",
+                  "ms",
+                  "gb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ops_per_sec",
+                  "ms",
+                  "gb"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Approximate nearest neighbour indexes trade small accuracy for speed.",
+            "rows": [
+              {
+                "cells": [
+                  "ops_per_sec",
+                  "ms",
+                  "gb"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ops_per_sec",
+                  "ms",
+                  "ops_per_sec"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A tiny search service",
+      "codeHash": "b4f18ce120bbd4751088091577a80bac2c0fe34456991fb9c5d9a536fc8ae55e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: exact search",
+      "codeHash": "c9a5d7856336b10306cbf0024a42d9b533f65f182ada9a12784edc2cf87bff96",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

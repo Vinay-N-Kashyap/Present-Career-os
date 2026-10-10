@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 1,
+  "promptSha": "4e85608021b89683cf7bfbe5efbf0a8dfe85924e575548c496e9f39d42e4e9aa",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The 8 Fallacies of Distributed Computing",
+      "codeHash": "ca12e020ad070d6172bfdcd8819f4980160f2634fd1624a210605a7d5f2f50eb",
+      "spec": {
+        "template": "table",
+        "title": "Fallacies of distributed computing catalog and mitigations",
+        "columns": [
+          "Fallacy Assumption",
+          "Underlying Network Reality",
+          "Production Remedy Strategy"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Deutsch formalized common erroneous assumptions regarding network reliability.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Leaving remote communication vulnerable requires strict security protocols.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fallacies of distributed computing catalog and mitigations",
+        "columns": [
+          "Fallacy Assumption",
+          "Underlying Network Reality",
+          "Production Remedy Strategy"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Deutsch formalized common erroneous assumptions regarding network reliability.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Leaving remote communication vulnerable requires strict security protocols.",
+            "rows": [
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Partitions, Asymmetric Links & Packet Drops",
+      "codeHash": "87efed1e6d249ce022a9a751864bb9f2fc5e4ea8ad21e0047ec5bfcefd733e25",
+      "spec": {
+        "template": "states",
+        "title": "Network link connectivity and partition detection states",
+        "states": [
+          {
+            "id": "connected",
+            "label": "Bi-Directional Connected (Healthy Link)"
+          },
+          {
+            "id": "asymmetric",
+            "label": "Asymmetric Link Failure (Unidirectional)"
+          },
+          {
+            "id": "partitioned",
+            "label": "Total Network Partition (Link Severed)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Networks frequently experience asymmetric links between communicating nodes.",
+            "activeStateId": "asymmetric",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say6",
+            "caption": "Without strict timeout thresholds client threads hang indefinitely.",
+            "activeStateId": "partitioned",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Network link connectivity and partition detection states",
+        "states": [
+          {
+            "id": "connected",
+            "label": "Bi-Directional Connected (Healthy Link)"
+          },
+          {
+            "id": "asymmetric",
+            "label": "Asymmetric Link Failure (Unidirectional)"
+          },
+          {
+            "id": "partitioned",
+            "label": "Total Network Partition (Link Severed)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Networks frequently experience asymmetric links between communicating nodes.",
+            "activeStateId": "asymmetric",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say6",
+            "caption": "Without strict timeout thresholds client threads hang indefinitely.",
+            "activeStateId": "partitioned",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exponential Backoff with Full Jitter & Truncated Caps",
+      "codeHash": "470152ab2c9dffa58f445fabe939c45035e62a6dcbb80f6f91aeb467e1e1e19c",
+      "spec": {
+        "template": "workflow",
+        "title": "Exponential backoff and randomized full jitter progression",
+        "stages": [
+          {
+            "id": "failedReq",
+            "name": "Request Timeout",
+            "subtext": "Transient Failure"
+          },
+          {
+            "id": "calcBackoff",
+            "name": "Exponential Delay",
+            "subtext": "Double Ceiling"
+          },
+          {
+            "id": "applyJitter",
+            "name": "Random Full Jitter",
+            "subtext": "Uniform Desync"
+          },
+          {
+            "id": "retrySend",
+            "name": "Scheduled Retry",
+            "subtext": "Dispatched Request"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Contending clients retry in synchronized waves causing severe load spikes.",
+            "activeStageId": "calcBackoff",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Sleep duration is chosen uniformly at random beneath the calculated ceiling.",
+            "activeStageId": "applyJitter",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Exponential backoff and randomized full jitter progression",
+        "stages": [
+          {
+            "id": "failedReq",
+            "name": "Request Timeout",
+            "subtext": "Transient Failure"
+          },
+          {
+            "id": "calcBackoff",
+            "name": "Exponential Delay",
+            "subtext": "Double Ceiling"
+          },
+          {
+            "id": "applyJitter",
+            "name": "Random Full Jitter",
+            "subtext": "Uniform Desync"
+          },
+          {
+            "id": "retrySend",
+            "name": "Scheduled Retry",
+            "subtext": "Dispatched Request"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Contending clients retry in synchronized waves causing severe load spikes.",
+            "activeStageId": "calcBackoff",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Sleep duration is chosen uniformly at random beneath the calculated ceiling.",
+            "activeStageId": "applyJitter",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotency Keys & Deduplication in Unreliable Networks",
+      "codeHash": "8536d9d19c2e47882b1a72904bc819bf7e91a6acd56a30d71b38eafb654064bb",
+      "spec": {
+        "template": "sequence",
+        "title": "Idempotent request processing and duplicate retry suppression",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Web Client"
+          },
+          {
+            "id": "gateway",
+            "label": "Payment Gateway"
+          },
+          {
+            "id": "store",
+            "label": "Idempotency Store"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Enterprise systems utilize unique client generated idempotency keys.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "gateway",
+                "label": "POST /charge (Key: req_abc_123)"
+              },
+              {
+                "from": "gateway",
+                "to": "store",
+                "label": "Reserve Key req_abc_123"
+              }
+            ],
+            "activeActorId": "gateway"
+          },
+          {
+            "at": "say9",
+            "caption": "Duplicate retries bypass execution and return the cached response.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "gateway",
+                "label": "POST /charge Retry (Key: req_abc_123)"
+              },
+              {
+                "from": "gateway",
+                "to": "store",
+                "label": "Check Key Status -> COMPLETED"
+              },
+              {
+                "from": "gateway",
+                "to": "client",
+                "label": "Replay Cached Response (Replay: true)"
+              }
+            ],
+            "activeActorId": "client"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Idempotent request processing and duplicate retry suppression",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Web Client"
+          },
+          {
+            "id": "gateway",
+            "label": "Payment Gateway"
+          },
+          {
+            "id": "store",
+            "label": "Idempotency Store"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Enterprise systems utilize unique client generated idempotency keys.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "gateway",
+                "label": "POST /charge (Key: req_abc_123)"
+              },
+              {
+                "from": "gateway",
+                "to": "store",
+                "label": "Reserve Key req_abc_123"
+              }
+            ],
+            "activeActorId": "gateway"
+          },
+          {
+            "at": "say9",
+            "caption": "Duplicate retries bypass execution and return the cached response.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "gateway",
+                "label": "POST /charge Retry (Key: req_abc_123)"
+              },
+              {
+                "from": "gateway",
+                "to": "store",
+                "label": "Check Key Status -> COMPLETED"
+              },
+              {
+                "from": "gateway",
+                "to": "client",
+                "label": "Replay Cached Response (Replay: true)"
+              }
+            ],
+            "activeActorId": "client"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "At-Least-Once vs At-Most-Once vs Exactly-Once Semantics",
+      "codeHash": "4c3c69cab07f2e0ee18756ff8dee9a3ee2c3e9a109059196d31ec83bb0e028d9",
+      "spec": {
+        "template": "compare",
+        "title": "At-Least-Once delivery compared to Exactly-Once processing guarantees",
+        "leftLabel": "At-Least-Once Delivery Semantics",
+        "rightLabel": "Exactly-Once Processing Semantics",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mandating retries guarantees that outgoing messages are never lost.",
+            "left": {
+              "code": "mode: 'AT_LEAST_ONCE'",
+              "result": {
+                "text": "AT_LEAST_ONCE"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "mode: 'EXACTLY_ONCE'",
+              "result": {
+                "text": "EXACTLY_ONCE"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Modern systems achieve effective sequence deduplication.",
+            "left": {
+              "code": "duplicatePossible: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "duplicatePossible: false",
+              "result": {
+                "text": "false"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "At-Least-Once delivery compared to Exactly-Once processing guarantees",
+        "leftLabel": "At-Least-Once Delivery Semantics",
+        "rightLabel": "Exactly-Once Processing Semantics",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mandating retries guarantees that outgoing messages are never lost.",
+            "left": {
+              "code": "mode: 'AT_LEAST_ONCE'",
+              "result": {
+                "text": "AT_LEAST_ONCE"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "mode: 'EXACTLY_ONCE'",
+              "result": {
+                "text": "EXACTLY_ONCE"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Modern systems achieve effective sequence deduplication.",
+            "left": {
+              "code": "duplicatePossible: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "duplicatePossible: false",
+              "result": {
+                "text": "false"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Resilient HTTP Dispatcher with Circuit Breakers & Retries",
+      "codeHash": "12e17fed962ea97b897762628ac40d0da86dd18d86a562eed1ae39ae00796ec3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useCallback } from 'react';
+import { Suspense, useCallback, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { COURSES_REGISTRY } from '@/lib/data/coursesData';
@@ -53,24 +53,6 @@ const lessonStyles = `
     0% { box-shadow: 0 0 0 0 rgba(var(--danger-rgb),  0.5); }
     70% { box-shadow: 0 0 0 8px rgba(var(--danger-rgb),  0); }
     100% { box-shadow: 0 0 0 0 rgba(var(--danger-rgb),  0); }
-  }
-
-  .lesson-card {
-    width: 85vw;
-    height: 85vh;
-    max-width: 1440px;
-    max-height: 850px;
-    padding: 24px 32px;
-    border-radius: 24px;
-    border: 1.5px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    background: linear-gradient(135deg, var(--bg2), var(--bg3));
-    box-shadow: var(--shadow-xl);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
   }
 
   .avatar-spotlight {
@@ -133,7 +115,7 @@ const lessonStyles = `
   }
   .chat-bubble.user {
     background: var(--accent);
-    color: #ffffff;
+    color: var(--t1);
     border-bottom-right-radius: 4px;
     align-self: flex-end;
   }
@@ -153,7 +135,7 @@ const lessonStyles = `
     background: var(--bg1);
     color: var(--t2);
     font-size: 11.5px;
-    fontWeight: 700;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
   }
@@ -181,56 +163,167 @@ const lessonStyles = `
     animation: float 3s ease-in-out infinite;
   }
 
+  /* Spec v1.1 & WCAG 2 AA: High-contrast theme colors */
+  :root.light, [data-theme='light'] {
+    --accent: #026aa2;
+    --accent-hover: #0e7490;
+    --accent-btn-fg: #ffffff;
+    --success: #047857;
+    --success-btn-fg: #ffffff;
+    --info: #1d4ed8;
+    --coral: #b91c1c;
+    --text-muted: #475467;
+    --tone-data-text: #026aa2;
+    --tone-ok-text: #025a40;
+    --tone-error-text: #b91c1c;
+    --badge-visual-text: #026aa2;
+    --badge-visual-bg: #e0f2fe;
+  }
+  :root.dark, [data-theme='dark'] {
+    --accent-btn-fg: #051329;
+    --success-btn-fg: #042316;
+    --tone-data-text: #38bdf8;
+    --tone-ok-text: #34d399;
+    --tone-error-text: #f87171;
+    --badge-visual-text: #38bdf8;
+    --badge-visual-bg: rgba(56, 189, 248, 0.15);
+  }
+
+  /* Mobile-first layout: 1 column by default */
+  .classroom-page-root {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background: var(--bg1);
+  }
+
+  .classroom-return-btn {
+    display: none;
+  }
+
+  .lesson-card {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+    padding: 10px 10px 24px 10px;
+    gap: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--bg2), var(--bg3));
+    box-shadow: none;
+    position: relative;
+    overflow: visible;
+  }
+
   .interactive-container {
     display: flex;
-    gap: 20px;
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-    align-items: stretch;
+    flex-direction: column;
     width: 100%;
+    gap: 12px;
+    overflow: visible;
+    flex: 1 1 auto;
+    min-height: 0;
+    align-items: stretch;
   }
 
   .interactive-left-col {
-    flex: 1;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    max-height: 260px;
+    min-height: 0;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    min-height: 480px;
-    height: 100%;
-    width: 100%;
     overflow: hidden;
   }
 
   .interactive-right-col {
-    flex: 1.1;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
     background: var(--bg1);
     border-radius: 18px;
     border: 1.5px solid var(--border);
-    overflow: hidden;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
 
-  @media (max-width: 768px) {
-    .interactive-container {
-      flex-direction: column;
-      overflow-y: auto;
+  .interactive-right-scroll-area {
+    flex: 1 1 auto;
+    overflow-y: visible;
+    height: auto;
+    padding: 14px 14px 40px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Desktop layout: 45/55 split from 1024px up */
+  @media (min-width: 1024px) {
+    .classroom-page-root {
+      height: 100vh;
+      height: 100dvh;
+      padding: 24px;
+      overflow: hidden;
       align-items: center;
+      justify-content: center;
+    }
+    .classroom-return-btn {
+      display: flex;
+    }
+    .lesson-card {
+      width: 85vw;
+      height: 85vh;
+      max-width: 1440px;
+      max-height: 850px;
+      min-height: 0;
+      border-radius: 24px;
+      border: 1.5px solid var(--border);
+      padding: 24px 32px;
+      gap: 16px;
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+    }
+    .interactive-container {
+      display: grid;
+      grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+      gap: 20px;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .interactive-container.no-visual {
+      grid-template-columns: minmax(0, 1fr);
     }
     .interactive-left-col {
-      width: 100%;
-      min-height: 220px !important;
-      height: 220px !important;
-      flex: none !important;
+      height: 100%;
+      max-height: none;
+      overflow: hidden;
     }
     .interactive-right-col {
-      width: 100%;
-      flex: none !important;
-      min-height: 380px !important;
-      height: 380px !important;
+      height: 100%;
+      overflow: hidden;
+    }
+    .interactive-right-scroll-area {
+      overflow-y: auto;
+      padding: 18px 22px 40px 22px;
     }
   }
 `;
@@ -244,11 +337,29 @@ export default function LessonPage() {
 }
 
 function LessonPageRouter() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const questId = searchParams.get('questId') || '';
-  const { user } = useAuth();
-  const userId = user?.id || 'guest';
+  const isTestMode = process.env.NEXT_PUBLIC_E2E_TEST_MODE === '1' && searchParams.get('testMode') === 'true';
+  const { user, loading: authLoading } = useAuth();
+  const effectiveUser = user || (isTestMode ? { id: 'test-ci-student', email: 'test@ci.local' } : null);
+  const userId = effectiveUser?.id || 'guest';
   const { onboardingAnswers } = useCareerOS();
+
+  useEffect(() => {
+    if (!isTestMode && !authLoading && !user) {
+      const redirectPath = questId ? `/login?redirect=${encodeURIComponent(`/quests/lesson?questId=${questId}`)}` : '/login';
+      router.replace(redirectPath);
+    }
+  }, [isTestMode, authLoading, user, router, questId]);
+
+  if (!isTestMode && (authLoading || !user)) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg1)', color: 'var(--t1)' }}>
+        Authenticating...
+      </div>
+    );
+  }
 
   // 1. Check COURSES_REGISTRY first for authoritative course curriculum
   let questData: any = null;
@@ -376,14 +487,15 @@ function LessonPageRouter() {
     return <QuestWorkspaceClient questId={questId} />;
   }
 
-  return <LessonPageContent questId={questId} questData={questData} />;
+  return <LessonPageContent questId={questId} questData={questData} overrideUser={effectiveUser} isTestMode={isTestMode} />;
 }
 
-function LessonPageContent({ questId, questData }: { questId: string; questData: any }) {
+function LessonPageContent({ questId, questData, overrideUser, isTestMode = false }: { questId: string; questData: any; overrideUser?: any; isTestMode?: boolean }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const teacherId = searchParams.get('teacherId') || 'kashyap';
-  const { user } = useAuth();
+  const { user: authUser } = useAuth();
+  const user = overrideUser || authUser;
   const { addCompletedQuest } = useCareerOS();
 
   const teacher = TEACHER_METADATA[teacherId] || TEACHER_METADATA.kashyap;
@@ -399,8 +511,8 @@ function LessonPageContent({ questId, questData }: { questId: string; questData:
     if (state.returningRef.current) return;
     state.returningRef.current = true;
     const id = resolveQuestId();
-    // Course tests are recorded by the lesson engine once the server has marked them.
-    if (id && !parseTestQuestId(id)) {
+    // In test mode, the fake student must NEVER call progress-saving APIs.
+    if (!isTestMode && id && !parseTestQuestId(id)) {
       const authQuest = getAuthoritativeQuest(id);
       const course = COURSES_REGISTRY.find(c => (c.quests || []).some(q => q.id === id));
       const isExam = isAuthoritativeExam(id);
@@ -415,16 +527,17 @@ function LessonPageContent({ questId, questData }: { questId: string; questData:
     } else {
       window.location.assign(targetUrl);
     }
-  }, [resolveQuestId, addCompletedQuest, state.returningRef, router]);
+  }, [resolveQuestId, addCompletedQuest, state.returningRef, router, isTestMode]);
 
   const engine = useLessonEngine({
     questId,
     questData,
     teacherId,
     user,
-    addCompletedQuest,
+    addCompletedQuest: isTestMode ? () => {} : addCompletedQuest,
     state,
     finishLessonAndReturn,
+    isTestMode,
   });
 
   const syllabus: string[] = Array.isArray(questData?.syllabus) ? questData.syllabus : [];
@@ -444,11 +557,12 @@ function LessonPageContent({ questId, questData }: { questId: string; questData:
       boxSizing: 'border-box',
       overflow: 'hidden',
       position: 'relative'
-    }} className="animate-fade-in">
+    }} className="classroom-page-root animate-fade-in">
       <style>{lessonStyles}</style>
 
       {/* Return Button */}
       <button
+        className="classroom-return-btn"
         onClick={() => {
           stopSpeaking();
           if (router && typeof router.push === 'function') {
@@ -559,6 +673,10 @@ function LessonPageContent({ questId, questData }: { questId: string; questData:
             playChime={engine.playChime}
             launchConfetti={engine.launchConfetti}
             quizQuestions={engine.quizQuestions}
+            currentVisualStepIndex={state.currentVisualStepIndex}
+            isManualOverride={state.isManualOverride}
+            onVisualStepChange={engine.onVisualStepChange}
+            onSyncWithVoice={engine.onSyncWithVoice}
           />
 
           <LessonNavigationBar
@@ -576,6 +694,11 @@ function LessonPageContent({ questId, questData }: { questId: string; questData:
             slidesLength={state.slides.length || syllabus.length}
             understandingConfirmed={state.understandingConfirmed}
             setUnderstandingConfirmed={state.setUnderstandingConfirmed}
+            userId={user?.uid ? String(user.uid) : 'guest'}
+            teacherId={teacherId}
+            isPlaying={state.isPlaying}
+            speechText={engine.getSpeakerText ? engine.getSpeakerText() : ''}
+            questData={questData}
           />
         </div>
       )}
