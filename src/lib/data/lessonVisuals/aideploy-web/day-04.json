@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 4,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Input vs Output Pricing Asymmetry Mechanics",
+      "codeHash": "1bd3242cfb21e1f6a54a7099bd7f06b68cf2815bf2f1b2cb90ee30b08def751d",
+      "spec": {
+        "template": "compare",
+        "title": "Prompt Prefill vs Auto-Regressive Output Generation",
+        "leftLabel": "Input Prompt Prefill ($2.50 / 1M)",
+        "rightLabel": "Output Generation ($10.00 / 1M)",
+        "leftItems": [
+          "Parallel dense matrix multiplication (GEMM)",
+          "Saturates GPU tensor cores efficiently",
+          "2000 prompt tokens = $0.00500",
+          "Compute-bound with high throughput"
+        ],
+        "rightItems": [
+          "Sequential auto-regressive token emission",
+          "Transfers model weights from HBM per step",
+          "500 completion tokens = $0.00500 (4x rate)",
+          "Memory-bandwidth bound (1:1 cost ratio here)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prompt prefill processes input tokens in parallel using matrix multiplications.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Output token generation is auto-regressive and sequential one token at a time.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Prompt Prefill vs Auto-Regressive Output Generation",
+        "leftLabel": "Input Prompt Prefill ($2.50 / 1M)",
+        "rightLabel": "Output Generation ($10.00 / 1M)",
+        "leftItems": [
+          "Parallel dense matrix multiplication (GEMM)",
+          "Saturates GPU tensor cores efficiently",
+          "2000 prompt tokens = $0.00500",
+          "Compute-bound with high throughput"
+        ],
+        "rightItems": [
+          "Sequential auto-regressive token emission",
+          "Transfers model weights from HBM per step",
+          "500 completion tokens = $0.00500 (4x rate)",
+          "Memory-bandwidth bound (1:1 cost ratio here)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prompt prefill processes input tokens in parallel using matrix multiplications.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Output token generation is auto-regressive and sequential one token at a time.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Tier Token Pricing Registry",
+      "codeHash": "60c4948b8f9cdf880a05d46accf05039ef369d649f80f576709ea63d406662c1",
+      "spec": {
+        "template": "table",
+        "title": "PricingRegistry Multi-Tier Model Catalog (4000 in / 1000 out)",
+        "subtitle": "Centralized rate lookup across nano, balanced, and frontier tiers",
+        "columns": ["Model ID", "Tier", "Rates (In / Out per 1M)", "Query Cost (4k/1k)"],
+        "rows": [
+          ["gpt-4o-mini", "nano", "$0.15 / $0.60", "$0.00120 (1x baseline)"],
+          ["gpt-4o", "balanced", "$2.50 / $10.00", "$0.02000 (17x)"],
+          ["o1", "frontier", "$15.00 / $60.00", "$0.12000 (100x multiplier)"]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Model portfolios span fast nano, balanced general-purpose, and frontier tiers.",
+            "highlightRows": [0, 1, 2]
+          },
+          {
+            "at": "say7",
+            "caption": "Centralized Pricing Registry encapsulates pricing tables behind lookups.",
+            "highlightRows": [0, 2]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "PricingRegistry Multi-Tier Model Catalog (4000 in / 1000 out)",
+        "subtitle": "Centralized rate lookup across nano, balanced, and frontier tiers",
+        "columns": ["Model ID", "Tier", "Rates (In / Out per 1M)", "Query Cost (4k/1k)"],
+        "rows": [
+          ["gpt-4o-mini", "nano", "$0.15 / $0.60", "$0.00120 (1x baseline)"],
+          ["gpt-4o", "balanced", "$2.50 / $10.00", "$0.02000 (17x)"],
+          ["o1", "frontier", "$15.00 / $60.00", "$0.12000 (100x multiplier)"]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Model portfolios span fast nano, balanced general-purpose, and frontier tiers.",
+            "highlightRows": [0, 1, 2]
+          },
+          {
+            "at": "say7",
+            "caption": "Centralized Pricing Registry encapsulates pricing tables behind lookups.",
+            "highlightRows": [0, 2]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Per-Invocation Blended Cost Calculation & Margin Analysis",
+      "codeHash": "cbd93f0f99d30a0a8f1500b74038edc9155ffd4c2e601054ce4ebb83cd2d35c1",
+      "spec": {
+        "template": "workflow",
+        "title": "Per-Query Unit Economics & Gross Margin Pipeline (req-901)",
+        "subtitle": "Retail Price = $0.05 vs Raw Inference Cost = $0.007 -> 86% Gross Margin",
+        "stages": [
+          { "id": "s1", "name": "Input Expense", "subtext": "1200t @ $2.50/M = $0.003" },
+          { "id": "s2", "name": "Output Expense", "subtext": "400t @ $10.00/M = $0.004" },
+          { "id": "s3", "name": "Blended COGS", "subtext": "rawCost = $0.007" },
+          { "id": "s4", "name": "Gross Margin", "subtext": "$0.043 (86% Margin)" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The blended cost combines input token expense and output token expense.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Comparing raw query cost against retail revenue yields gross profit margin.",
+            "activeStageId": "s4",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Per-Query Unit Economics & Gross Margin Pipeline (req-901)",
+        "subtitle": "Retail Price = $0.05 vs Raw Inference Cost = $0.007 -> 86% Gross Margin",
+        "stages": [
+          { "id": "s1", "name": "Input Expense", "subtext": "1200t @ $2.50/M = $0.003" },
+          { "id": "s2", "name": "Output Expense", "subtext": "400t @ $10.00/M = $0.004" },
+          { "id": "s3", "name": "Blended COGS", "subtext": "rawCost = $0.007" },
+          { "id": "s4", "name": "Gross Margin", "subtext": "$0.043 (86% Margin)" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The blended cost combines input token expense and output token expense.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Comparing raw query cost against retail revenue yields gross profit margin.",
+            "activeStageId": "s4",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cumulative Spend Aggregator & Usage Metering",
+      "codeHash": "e4217f41f92d86de2a56f7f92331ef2275a814aac7cd79b71fe060ffa0b7b05e",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Tenant UsageMeter Token Accumulation",
+        "subtitle": "tenant-corp-a (2 requests, $0.022) vs tenant-corp-b (1 request, $0.002)",
+        "unit": "tokens",
+        "max": 4800,
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Usage metering tracks total prompt tokens and completion tokens per tenant.",
+            "bars": [
+              { "label": "Corp A Prompt (3500)", "value": 3500, "tone": "data" },
+              { "label": "Corp A Completion (1300)", "value": 1300, "tone": "data" },
+              { "label": "Corp B Total (600)", "value": 600, "tone": "ok" }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The usage meter increments counters atomically on every completed transaction.",
+            "bars": [
+              { "label": "Corp A Call 1 (2500t)", "value": 2500, "tone": "data" },
+              { "label": "Corp A Call 1+2 (4800t)", "value": 4800, "tone": "ok" },
+              { "label": "Corp B Call 1 (600t)", "value": 600, "tone": "ok" }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Multi-Tenant UsageMeter Token Accumulation",
+        "subtitle": "tenant-corp-a (2 requests, $0.022) vs tenant-corp-b (1 request, $0.002)",
+        "unit": "tokens",
+        "max": 4800,
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Usage metering tracks total prompt tokens and completion tokens per tenant.",
+            "bars": [
+              { "label": "Corp A Prompt (3500)", "value": 3500, "tone": "data" },
+              { "label": "Corp A Completion (1300)", "value": 1300, "tone": "data" },
+              { "label": "Corp B Total (600)", "value": 600, "tone": "ok" }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The usage meter increments counters atomically on every completed transaction.",
+            "bars": [
+              { "label": "Corp A Call 1 (2500t)", "value": 2500, "tone": "data" },
+              { "label": "Corp A Call 1+2 (4800t)", "value": 4800, "tone": "ok" },
+              { "label": "Corp B Call 1 (600t)", "value": 600, "tone": "ok" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Budget Guardrails & Financial Circuit Breakers",
+      "codeHash": "f90702bb5a4adb1ec2f6d55e5b3378730c2ee9fdc06c5b9ee29722c789e1fade",
+      "spec": {
+        "template": "states",
+        "title": "Multi-Stage Financial Circuit Breaker ($80 Soft / $100 Hard)",
+        "subtitle": "Evaluating tenant spend utilization against soft warning and hard blocking caps",
+        "states": [
+          { "id": "s1", "label": "NORMAL ($45 -> 45% util, Allowed)" },
+          { "id": "s2", "label": "WARNING_SOFT_CAP ($85.5 -> 86% util, Alert)" },
+          { "id": "s3", "label": "BLOCKED_HARD_CAP ($101.2 -> 101% util, Blocked)" }
+        ],
+        "transitions": [
+          { "from": "s1", "to": "s2", "label": "spend >= $80" },
+          { "from": "s2", "to": "s3", "label": "spend >= $100" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Entering the soft warning zone allows requests while triggering notifications.",
+            "current": "s2",
+            "visited": ["s1"]
+          },
+          {
+            "at": "say6",
+            "caption": "Breaching the hard cap trips the financial circuit breaker and blocks calls.",
+            "current": "s3",
+            "visited": ["s1", "s2"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Multi-Stage Financial Circuit Breaker ($80 Soft / $100 Hard)",
+        "subtitle": "Evaluating tenant spend utilization against soft warning and hard blocking caps",
+        "states": [
+          { "id": "s1", "label": "NORMAL ($45 -> 45% util, Allowed)" },
+          { "id": "s2", "label": "WARNING_SOFT_CAP ($85.5 -> 86% util, Alert)" },
+          { "id": "s3", "label": "BLOCKED_HARD_CAP ($101.2 -> 101% util, Blocked)" }
+        ],
+        "transitions": [
+          { "from": "s1", "to": "s2", "label": "spend >= $80" },
+          { "from": "s2", "to": "s3", "label": "spend >= $100" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Entering the soft warning zone allows requests while triggering notifications.",
+            "current": "s2",
+            "visited": ["s1"]
+          },
+          {
+            "at": "say6",
+            "caption": "Breaching the hard cap trips the financial circuit breaker and blocks calls.",
+            "current": "s3",
+            "visited": ["s1", "s2"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Inference Financial Governance Engine",
+      "codeHash": "929441ded5dc2c945209d7ba5fa9a43b63d63cc4757310ae73c251ca9854640e",
+      "spec": {
+        "template": "none",
+        "reason": "Unified FinancialGovernor combining pre-flight cost projection, hard-cap authorization, and ledger commits"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Unified FinancialGovernor combining pre-flight cost projection, hard-cap authorization, and ledger commits"
+      }
+    }
+  ]
+}
