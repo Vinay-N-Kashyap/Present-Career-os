@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 29,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "From Static Wikis to Executable Runbooks as Code",
+      "codeHash": "5fb43931ea2d6ab85c5ed60c42c25adbb708a7b7ae0c866511a6eb3272b3586e",
+      "spec": {
+        "template": "compare",
+        "title": "Static Wiki Documentation versus Executable Runbooks as Code",
+        "left": {
+          "title": "Static Wiki Documentation",
+          "items": [
+            "Drifts out of date with deprecated CLI flags",
+            "Requires manual execution at 3 AM under panic",
+            "Introduces human copy-paste operator errors",
+            "Slow recovery extending outage duration"
+          ]
+        },
+        "right": {
+          "title": "Executable Runbooks as Code",
+          "items": [
+            "Version-controlled in Git and CI validated",
+            "Defines explicit input and output verification",
+            "Executes deterministically in milliseconds",
+            "Eliminates manual panic and operator errors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Manual execution of static runbooks introduces severe human error.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Runbooks as code are version-controlled in git and tested in pipelines.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Static Wiki Documentation versus Executable Runbooks as Code",
+        "left": {
+          "title": "Static Wiki Documentation",
+          "items": [
+            "Drifts out of date with deprecated CLI flags",
+            "Requires manual execution at 3 AM under panic",
+            "Introduces human copy-paste operator errors",
+            "Slow recovery extending outage duration"
+          ]
+        },
+        "right": {
+          "title": "Executable Runbooks as Code",
+          "items": [
+            "Version-controlled in Git and CI validated",
+            "Defines explicit input and output verification",
+            "Executes deterministically in milliseconds",
+            "Eliminates manual panic and operator errors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Manual execution of static runbooks introduces severe human error.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Runbooks as code are version-controlled in git and tested in pipelines.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Decision Tree Modeling for Automated Triage & Root Cause Isolation",
+      "codeHash": "f35a743cb213b2d2b451db035b7a9b9d334800ff2f8ac762be310610a33ee324",
+      "spec": {
+        "template": "workflow",
+        "title": "Diagnostic Decision Tree for Automated Triage",
+        "nodes": [
+          {
+            "id": "cpu",
+            "label": "Check High CPU",
+            "description": "Evaluates host processor saturation"
+          },
+          {
+            "id": "zombie",
+            "label": "Check Zombie",
+            "description": "Inspects runaway process state"
+          },
+          {
+            "id": "kill",
+            "label": "Kill Zombie",
+            "description": "Terminates stuck process cleanly"
+          },
+          {
+            "id": "escalate",
+            "label": "Escalate to Dev",
+            "description": "Pages engineer when CPU nominal"
+          }
+        ],
+        "edges": [
+          {
+            "from": "cpu",
+            "to": "zombie",
+            "label": "highCpu = true"
+          },
+          {
+            "from": "zombie",
+            "to": "kill",
+            "label": "zombie = true"
+          },
+          {
+            "from": "cpu",
+            "to": "escalate",
+            "label": "highCpu = false"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Diagnostic logic is codified as a binary tree of condition nodes.",
+            "activeNode": "cpu",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Traversal terminates at a leaf node that resolves or escalates.",
+            "activeNode": "kill",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Diagnostic Decision Tree for Automated Triage",
+        "nodes": [
+          {
+            "id": "cpu",
+            "label": "Check High CPU",
+            "description": "Evaluates host processor saturation"
+          },
+          {
+            "id": "zombie",
+            "label": "Check Zombie",
+            "description": "Inspects runaway process state"
+          },
+          {
+            "id": "kill",
+            "label": "Kill Zombie",
+            "description": "Terminates stuck process cleanly"
+          },
+          {
+            "id": "escalate",
+            "label": "Escalate to Dev",
+            "description": "Pages engineer when CPU nominal"
+          }
+        ],
+        "edges": [
+          {
+            "from": "cpu",
+            "to": "zombie",
+            "label": "highCpu = true"
+          },
+          {
+            "from": "zombie",
+            "to": "kill",
+            "label": "zombie = true"
+          },
+          {
+            "from": "cpu",
+            "to": "escalate",
+            "label": "highCpu = false"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Diagnostic logic is codified as a binary tree of condition nodes.",
+            "activeNode": "cpu",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Traversal terminates at a leaf node that resolves or escalates.",
+            "activeNode": "kill",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safe Automated Remediation: Idempotency, Rate Limits & Kill Switches",
+      "codeHash": "5b17abf4f4da9346954d22a6cf103f9305f65ecd7440fa7a073a69ccc2234d74",
+      "spec": {
+        "template": "table",
+        "title": "Automated Remediation Guardrails and Safety Controls",
+        "headers": [
+          "Guardrail",
+          "Safety Mechanism",
+          "Failure Prevented"
+        ],
+        "rows": [
+          [
+            "Idempotency",
+            "Produces identical target state",
+            "Compounding side effects"
+          ],
+          [
+            "Rate Limiting",
+            "Max 2 restarts per service/hour",
+            "Infinite restart loops"
+          ],
+          [
+            "Kill Switch",
+            "Instant cluster-wide disablement",
+            "Runaway automation storms"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Remediation guardrails enforce idempotency, rate limiting, and switches.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Rate limiting restricts how frequently an action may execute per hour.",
+            "highlightRow": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated Remediation Guardrails and Safety Controls",
+        "headers": [
+          "Guardrail",
+          "Safety Mechanism",
+          "Failure Prevented"
+        ],
+        "rows": [
+          [
+            "Idempotency",
+            "Produces identical target state",
+            "Compounding side effects"
+          ],
+          [
+            "Rate Limiting",
+            "Max 2 restarts per service/hour",
+            "Infinite restart loops"
+          ],
+          [
+            "Kill Switch",
+            "Instant cluster-wide disablement",
+            "Runaway automation storms"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Remediation guardrails enforce idempotency, rate limiting, and switches.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Rate limiting restricts how frequently an action may execute per hour.",
+            "highlightRow": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Escalation Routing & Human-in-the-Loop Hand-off",
+      "codeHash": "994c87993c5861741f0c378f9c832fbf35ac29b6f0cfda9b4778a4863f5f5037",
+      "spec": {
+        "template": "sequence",
+        "title": "Human-in-the-Loop Escalation Routing with Diagnostic Context",
+        "actors": [
+          {
+            "id": "playbook",
+            "label": "Automated Playbook"
+          },
+          {
+            "id": "router",
+            "label": "Escalation Router"
+          },
+          {
+            "id": "commander",
+            "label": "Incident Commander"
+          },
+          {
+            "id": "secondary",
+            "label": "Team Lead Secondary"
+          }
+        ],
+        "messages": [
+          {
+            "from": "playbook",
+            "to": "router",
+            "label": "Handoff unmapped fault + logs"
+          },
+          {
+            "from": "router",
+            "to": "commander",
+            "label": "Page SEV1 (5m SLA)"
+          },
+          {
+            "from": "router",
+            "to": "secondary",
+            "label": "Route SEV2 (15m SLA)"
+          },
+          {
+            "from": "commander",
+            "to": "playbook",
+            "label": "Inspect pre-gathered telemetry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated engines escalate incidents to human engineers with state.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Escalation payloads include full transcripts of diagnostic actions.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Human-in-the-Loop Escalation Routing with Diagnostic Context",
+        "actors": [
+          {
+            "id": "playbook",
+            "label": "Automated Playbook"
+          },
+          {
+            "id": "router",
+            "label": "Escalation Router"
+          },
+          {
+            "id": "commander",
+            "label": "Incident Commander"
+          },
+          {
+            "id": "secondary",
+            "label": "Team Lead Secondary"
+          }
+        ],
+        "messages": [
+          {
+            "from": "playbook",
+            "to": "router",
+            "label": "Handoff unmapped fault + logs"
+          },
+          {
+            "from": "router",
+            "to": "commander",
+            "label": "Page SEV1 (5m SLA)"
+          },
+          {
+            "from": "router",
+            "to": "secondary",
+            "label": "Route SEV2 (15m SLA)"
+          },
+          {
+            "from": "commander",
+            "to": "playbook",
+            "label": "Inspect pre-gathered telemetry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated engines escalate incidents to human engineers with state.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Escalation payloads include full transcripts of diagnostic actions.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Runbook Coverage Matrix & Operational Readiness Auditing",
+      "codeHash": "83167ad7d3cb94d28be82a93d0510277f72865999049be57fec3b83b0cdf1e4a",
+      "spec": {
+        "template": "bars",
+        "title": "Runbook Automation Depth Across Incident Categories",
+        "bars": [
+          {
+            "label": "db_failover Actions",
+            "value": 4,
+            "unit": "steps"
+          },
+          {
+            "label": "disk_full Actions",
+            "value": 3,
+            "unit": "steps"
+          },
+          {
+            "label": "oom_killed Actions",
+            "value": 1,
+            "unit": "step"
+          },
+          {
+            "label": "cert_expired Unmapped",
+            "value": 0,
+            "unit": "steps"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Runbook coverage measures the percentage of mapped incident types.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Automation depth evaluates how many runbooks feature automated actions.",
+            "highlightIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Runbook Automation Depth Across Incident Categories",
+        "bars": [
+          {
+            "label": "db_failover Actions",
+            "value": 4,
+            "unit": "steps"
+          },
+          {
+            "label": "disk_full Actions",
+            "value": 3,
+            "unit": "steps"
+          },
+          {
+            "label": "oom_killed Actions",
+            "value": 1,
+            "unit": "step"
+          },
+          {
+            "label": "cert_expired Unmapped",
+            "value": 0,
+            "unit": "steps"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Runbook coverage measures the percentage of mapped incident types.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Automation depth evaluates how many runbooks feature automated actions.",
+            "highlightIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Runbook Engine: Automated Self-Healing & Remediation Playbook",
+      "codeHash": "4ff9e5a0bdc535415617b1bbd6dbb61cc4566475f4060c3b7a5b29686c017008",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
