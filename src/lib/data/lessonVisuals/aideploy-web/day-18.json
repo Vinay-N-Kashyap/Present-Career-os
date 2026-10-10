@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 18,
+  "promptSha": "097a47997fe376945d1592f1762e64fa66304a81daa12bceffa855012e385d45",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Chunk Provenance Envelopes & Source Metadata",
+      "codeHash": "097a47997fe376945d1592f1762e64fa66304a81daa12bceffa855012e385d45",
+      "spec": {
+        "template": "table",
+        "title": "Document Provenance Envelope Fields",
+        "columns": ["Metadata Key", "Sample Value", "Grounding Purpose"],
+        "rows": [
+          { "Metadata Key": { "text": "docId" }, "Sample Value": { "text": "sla-spec-2024" }, "Grounding Purpose": { "text": "Canonical document identifier" } },
+          { "Metadata Key": { "text": "title" }, "Sample Value": { "text": "Cluster SLA Specifications" }, "Grounding Purpose": { "text": "Human-readable source title" } },
+          { "Metadata Key": { "text": "page" }, "Sample Value": { "text": "14" }, "Grounding Purpose": { "text": "Exact page number for audit" } },
+          { "Metadata Key": { "text": "chunkIndex" }, "Sample Value": { "text": "3" }, "Grounding Purpose": { "text": "Deterministic chunk sequence" } }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Provenance tracking allows users to verify whether facts are real.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Provenance chunks capture document ID, title, page, and chunk index.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Structured formats allow models to cite specific pages and titles.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document Provenance Envelope Fields",
+        "columns": ["Metadata Key", "Sample Value", "Grounding Purpose"],
+        "rows": [
+          { "Metadata Key": "docId", "Sample Value": "sla-spec-2024", "Grounding Purpose": "Canonical document identifier" },
+          { "Metadata Key": "title", "Sample Value": "Cluster SLA Specifications", "Grounding Purpose": "Human-readable source title" },
+          { "Metadata Key": "page", "Sample Value": "14", "Grounding Purpose": "Exact page number for audit" },
+          { "Metadata Key": "chunkIndex", "Sample Value": "3", "Grounding Purpose": "Deterministic chunk sequence" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Provenance tracking allows users to verify whether facts are real.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Provenance chunks capture document ID, title, page, and chunk index.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Structured formats allow models to cite specific pages and titles.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Formatting Prompt Context with Citation Numerals",
+      "codeHash": "4e087f6d99020c1b22e2efd771fa321ccf0a092186fe32e1b723ebe923d7dbe8",
+      "spec": {
+        "template": "flow",
+        "title": "Numeral Citation Prompt Formatting Pipeline",
+        "nodes": [
+          { "id": "sources", "label": "Retrieved Document Chunks", "tappable": false },
+          { "id": "indexing", "label": "One-Based Index Sequence", "tappable": false },
+          { "id": "tag", "label": "Bracketed Citation Tag [N]", "tappable": false },
+          { "id": "context", "label": "Structured Grounded Prompt", "tappable": false }
+        ],
+        "edges": [
+          { "from": "sources", "to": "indexing" },
+          { "from": "indexing", "to": "tag" },
+          { "from": "tag", "to": "context" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sequential bracketed numerals guide models to cite sources accurately.",
+            "activeNodes": ["sources", "indexing"],
+            "statusBadge": "formatting"
+          },
+          {
+            "at": "say5",
+            "caption": "Numbering context passages sequentially simplifies citing evidence.",
+            "activeNodes": ["indexing", "tag"],
+            "statusBadge": "numbered"
+          },
+          {
+            "at": "say7",
+            "caption": "Predictable formatting enables programmatic verification downstream.",
+            "activeNodes": ["tag", "context"],
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Numeral Citation Prompt Formatting Pipeline",
+        "nodes": [
+          { "id": "sources", "label": "Retrieved Document Chunks", "tappable": false },
+          { "id": "indexing", "label": "One-Based Index Sequence", "tappable": false },
+          { "id": "tag", "label": "Bracketed Citation Tag [N]", "tappable": false },
+          { "id": "context", "label": "Structured Grounded Prompt", "tappable": false }
+        ],
+        "edges": [
+          { "from": "sources", "to": "indexing" },
+          { "from": "indexing", "to": "tag" },
+          { "from": "tag", "to": "context" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sequential bracketed numerals guide models to cite sources accurately.",
+            "activeNodes": ["sources", "indexing"],
+            "statusBadge": "formatting"
+          },
+          {
+            "at": "say5",
+            "caption": "Numbering context passages sequentially simplifies citing evidence.",
+            "activeNodes": ["indexing", "tag"],
+            "statusBadge": "numbered"
+          },
+          {
+            "at": "say7",
+            "caption": "Predictable formatting enables programmatic verification downstream.",
+            "activeNodes": ["tag", "context"],
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parsing Inline Citation Markers in Model Responses",
+      "codeHash": "f0e6c55c0299f5b581f0d072bd864a73e346953c7e58d4405f74e82d47e9dbda",
+      "spec": {
+        "template": "workflow",
+        "title": "Inline Citation Parsing Pipeline",
+        "stages": [
+          { "id": "text", "name": "Model Completion", "subtext": "Raw generated response" },
+          { "id": "regex", "name": "Regex Extraction", "subtext": "Match bracketed numerals" },
+          { "id": "dedup", "name": "Set Deduplication", "subtext": "Collapse repeated references" },
+          { "id": "array", "name": "Ascending Indices", "subtext": "Sorted citation array" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Regular expression matching extracts bracket numerals from text.",
+            "activeStageId": "regex",
+            "statusBadge": "matching"
+          },
+          {
+            "at": "say4",
+            "caption": "Extracting integer values into sets eliminates duplicate citations.",
+            "activeStageId": "dedup",
+            "statusBadge": "deduping"
+          },
+          {
+            "at": "say8",
+            "caption": "Parsed arrays enable dynamic bibliographies and grounding audits.",
+            "activeStageId": "array",
+            "statusBadge": "audited"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Inline Citation Parsing Pipeline",
+        "stages": [
+          { "id": "text", "name": "Model Completion", "subtext": "Raw generated response" },
+          { "id": "regex", "name": "Regex Extraction", "subtext": "Match bracketed numerals" },
+          { "id": "dedup", "name": "Set Deduplication", "subtext": "Collapse repeated references" },
+          { "id": "array", "name": "Ascending Indices", "subtext": "Sorted citation array" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Regular expression matching extracts bracket numerals from text.",
+            "activeStageId": "regex",
+            "statusBadge": "matching"
+          },
+          {
+            "at": "say4",
+            "caption": "Extracting integer values into sets eliminates duplicate citations.",
+            "activeStageId": "dedup",
+            "statusBadge": "deduping"
+          },
+          {
+            "at": "say8",
+            "caption": "Parsed arrays enable dynamic bibliographies and grounding audits.",
+            "activeStageId": "array",
+            "statusBadge": "audited"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting Ghost Citations & Hallucinated Sources",
+      "codeHash": "3d78f46d1ad2f338a716565d5dfe6b289fc50261e69ec848f307bc28b2437cc8",
+      "spec": {
+        "template": "compare",
+        "title": "Valid Grounded Citations vs Fabricated Ghost Citations",
+        "leftLabel": "Grounded In-Bounds Citations",
+        "rightLabel": "Hallucinated Ghost Citations",
+        "leftItems": [
+          "References index within 1..contextCount",
+          "Maps directly to verified passage",
+          "Passes automated grounding audit",
+          "Safe for production client presentation"
+        ],
+        "rightItems": [
+          "Cites non-existent context identifiers",
+          "Fabricates ungrounded references",
+          "Triggers automated safety filter quarantine",
+          "Fails audit with ghost indices detected"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Models invent references to sources that were never in prompt context.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say4",
+            "caption": "Auditors inspect citation numbers against valid context count ranges.",
+            "highlightSide": "left"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Valid Grounded Citations vs Fabricated Ghost Citations",
+        "leftLabel": "Grounded In-Bounds Citations",
+        "rightLabel": "Hallucinated Ghost Citations",
+        "leftItems": [
+          "References index within 1..contextCount",
+          "Maps directly to verified passage",
+          "Passes automated grounding audit",
+          "Safe for production client presentation"
+        ],
+        "rightItems": [
+          "Cites non-existent context identifiers",
+          "Fabricates ungrounded references",
+          "Triggers automated safety filter quarantine",
+          "Fails audit with ghost indices detected"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Models invent references to sources that were never in prompt context.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say4",
+            "caption": "Auditors inspect citation numbers against valid context count ranges.",
+            "highlightSide": "left"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building Grounded Bibliography Footnotes",
+      "codeHash": "f06b2d6ed6bbd5c9d6625af55bd243f9e8686fc81312b46b9c7c0dbac304cb07",
+      "spec": {
+        "template": "states",
+        "title": "Bibliography Footnote Assembly States",
+        "states": [
+          { "id": "citations", "label": "Valid Indices Extracted" },
+          { "id": "bounds", "label": "Bounds Check Passed" },
+          { "id": "joined", "label": "Document Metadata Mapped" },
+          { "id": "rendered", "label": "Footnote Entries Built" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Index mapping pairs cited numbers with source document collections.",
+            "current": "bounds",
+            "visited": ["citations", "bounds"]
+          },
+          {
+            "at": "say5",
+            "caption": "Structured entries pair citation markers with document titles and IDs.",
+            "current": "joined",
+            "visited": ["citations", "bounds", "joined"]
+          },
+          {
+            "at": "say9",
+            "caption": "Compiling bibliography footnotes satisfies regulatory requirements.",
+            "current": "rendered",
+            "visited": ["citations", "bounds", "joined", "rendered"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Bibliography Footnote Assembly States",
+        "states": [
+          { "id": "citations", "label": "Valid Indices Extracted" },
+          { "id": "bounds", "label": "Bounds Check Passed" },
+          { "id": "joined", "label": "Document Metadata Mapped" },
+          { "id": "rendered", "label": "Footnote Entries Built" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Index mapping pairs cited numbers with source document collections.",
+            "current": "bounds",
+            "visited": ["citations", "bounds"]
+          },
+          {
+            "at": "say5",
+            "caption": "Structured entries pair citation markers with document titles and IDs.",
+            "current": "joined",
+            "visited": ["citations", "bounds", "joined"]
+          },
+          {
+            "at": "say9",
+            "caption": "Compiling bibliography footnotes satisfies regulatory requirements.",
+            "current": "rendered",
+            "visited": ["citations", "bounds", "joined", "rendered"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Grounded Attribution Verification Pipeline",
+      "codeHash": "8ec53b9c3d89240bc8f584bd49ca9e15b794019677c87564b0b60ceb3e63a9a0",
+      "spec": {
+        "template": "none",
+        "reason": "End-to-End Grounded Attribution Verification Pipeline capstone synthesizing provenance metadata, numbered prompts, ghost detection, and envelopes"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "End-to-End Grounded Attribution Verification Pipeline capstone synthesizing provenance metadata, numbered prompts, ghost detection, and envelopes"
+      }
+    }
+  ]
+}
