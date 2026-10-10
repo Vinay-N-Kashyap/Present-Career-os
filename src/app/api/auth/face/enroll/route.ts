@@ -76,3 +76,24 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+export async function DELETE(req: NextRequest) {
+  try {
+    const gated = await requireUserFromRequest(req);
+    if (gated.error) return gated.error;
+
+    const targetUser = (gated.user!.email || gated.user!.id).toLowerCase();
+    faceTemplateStore.delete(targetUser);
+
+    return NextResponse.json({
+      ok: true,
+      message: 'Face enrollment removed successfully.',
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      { ok: false, error: error.message || 'Failed to remove face enrollment.' },
+      { status: 500 }
+    );
+  }
+}
+
