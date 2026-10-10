@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 20,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Alerting Crisis: Alert Fatigue & Symptom-Based Alerting",
+      "codeHash": "ac0f6a83be1de2f93b49040926c006b4b6b36a3a52e17c5d39df41a7f67a439d",
+      "spec": {
+        "template": "compare",
+        "title": "Cause-based noisy alarms versus symptom-based actionable alerts",
+        "left": {
+          "title": "Cause-Based Noisy Alarms",
+          "items": [
+            "Alerts on internal host metrics (CPU > 85%)",
+            "Fires without direct customer degradation",
+            "Induces psychological alert fatigue",
+            "Ignored during catastrophic outages"
+          ]
+        },
+        "right": {
+          "title": "Symptom-Based Actionable Alerts",
+          "items": [
+            "Measures direct customer pain (Error rate, p99)",
+            "Pages only when immediate human action is needed",
+            "Routes non-urgent issues to workhour tickets",
+            "Trusted operational safety net"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Frequent non-urgent alerts cause psychological habituation and alert fatigue.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Symptom based alerting measures direct user pain like error rates and latency.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cause-based noisy alarms versus symptom-based actionable alerts",
+        "left": {
+          "title": "Cause-Based Noisy Alarms",
+          "items": [
+            "Alerts on internal host metrics (CPU > 85%)",
+            "Fires without direct customer degradation",
+            "Induces psychological alert fatigue",
+            "Ignored during catastrophic outages"
+          ]
+        },
+        "right": {
+          "title": "Symptom-Based Actionable Alerts",
+          "items": [
+            "Measures direct customer pain (Error rate, p99)",
+            "Pages only when immediate human action is needed",
+            "Routes non-urgent issues to workhour tickets",
+            "Trusted operational safety net"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Frequent non-urgent alerts cause psychological habituation and alert fatigue.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Symptom based alerting measures direct user pain like error rates and latency.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Error Budget Burn Rate Mathematics & Thresholds",
+      "codeHash": "99ba11bc92aa89cce3f45a98348dc1126e76ed2eddb54e4585511a206d451333",
+      "spec": {
+        "template": "table",
+        "title": "Error budget burn rate multiplier and exhaustion timeline matrix",
+        "columns": [
+          "Alert Tier",
+          "Burn Multiplier",
+          "Monthly Budget Consumed",
+          "Exhaustion Window"
+        ],
+        "rows": [
+          [
+            "Critical Paging",
+            "14.4x Burn",
+            "2% Budget in 1 hour",
+            "50 Hours to Total Depletion"
+          ],
+          [
+            "Severe Warning",
+            "6.0x Burn",
+            "5% Budget in 6 hours",
+            "120 Hours to Total Depletion"
+          ],
+          [
+            "Moderate Ticket",
+            "1.0x Burn",
+            "10% Budget in 3 days",
+            "720 Hours to Total Depletion"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A critical burn rate rapidly depletes monthly error budget in one hour.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Severe burn rates consume monthly error budget rapidly over six hours.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Error budget burn rate multiplier and exhaustion timeline matrix",
+        "columns": [
+          "Alert Tier",
+          "Burn Multiplier",
+          "Monthly Budget Consumed",
+          "Exhaustion Window"
+        ],
+        "rows": [
+          [
+            "Critical Paging",
+            "14.4x Burn",
+            "2% Budget in 1 hour",
+            "50 Hours to Total Depletion"
+          ],
+          [
+            "Severe Warning",
+            "6.0x Burn",
+            "5% Budget in 6 hours",
+            "120 Hours to Total Depletion"
+          ],
+          [
+            "Moderate Ticket",
+            "1.0x Burn",
+            "10% Budget in 3 days",
+            "720 Hours to Total Depletion"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A critical burn rate rapidly depletes monthly error budget in one hour.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Severe burn rates consume monthly error budget rapidly over six hours.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Window Multi-Burn-Rate Strategy & False Alarm Suppression",
+      "codeHash": "91aacfd0e1f634d8a3b15b7c68d22a4fd03d6df7e272630c601e4492e3f9d873",
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-window multi-burn-rate dual threshold evaluation workflow",
+        "nodes": [
+          {
+            "id": "telemetry",
+            "label": "Real-Time Telemetry Stream"
+          },
+          {
+            "id": "short",
+            "label": "Short Window Check (5m)"
+          },
+          {
+            "id": "long",
+            "label": "Long Window Check (60m)"
+          },
+          {
+            "id": "suppress",
+            "label": "Suppress Page: Transient Blip"
+          },
+          {
+            "id": "page",
+            "label": "Fire Critical Page Alert"
+          }
+        ],
+        "edges": [
+          {
+            "from": "telemetry",
+            "to": "short",
+            "label": "5m Error Rate"
+          },
+          {
+            "from": "telemetry",
+            "to": "long",
+            "label": "60m Error Rate"
+          },
+          {
+            "from": "short",
+            "to": "suppress",
+            "label": "Short Only"
+          },
+          {
+            "from": "short",
+            "to": "page",
+            "label": "Both Breached"
+          },
+          {
+            "from": "long",
+            "to": "page",
+            "label": "Both Breached"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Alerts fire only when burn rate thresholds are exceeded across both windows.",
+            "activeNodes": [
+              "telemetry",
+              "short",
+              "long"
+            ],
+            "activeEdges": [
+              "telemetry->short",
+              "telemetry->long"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The long window ensures sufficient budget was consumed before paging engineers.",
+            "activeNodes": [
+              "short",
+              "long",
+              "page"
+            ],
+            "activeEdges": [
+              "short->page",
+              "long->page"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Multi-window multi-burn-rate dual threshold evaluation workflow",
+        "nodes": [
+          {
+            "id": "telemetry",
+            "label": "Real-Time Telemetry Stream"
+          },
+          {
+            "id": "short",
+            "label": "Short Window Check (5m)"
+          },
+          {
+            "id": "long",
+            "label": "Long Window Check (60m)"
+          },
+          {
+            "id": "suppress",
+            "label": "Suppress Page: Transient Blip"
+          },
+          {
+            "id": "page",
+            "label": "Fire Critical Page Alert"
+          }
+        ],
+        "edges": [
+          {
+            "from": "telemetry",
+            "to": "short",
+            "label": "5m Error Rate"
+          },
+          {
+            "from": "telemetry",
+            "to": "long",
+            "label": "60m Error Rate"
+          },
+          {
+            "from": "short",
+            "to": "suppress",
+            "label": "Short Only"
+          },
+          {
+            "from": "short",
+            "to": "page",
+            "label": "Both Breached"
+          },
+          {
+            "from": "long",
+            "to": "page",
+            "label": "Both Breached"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Alerts fire only when burn rate thresholds are exceeded across both windows.",
+            "activeNodes": [
+              "telemetry",
+              "short",
+              "long"
+            ],
+            "activeEdges": [
+              "telemetry->short",
+              "telemetry->long"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The long window ensures sufficient budget was consumed before paging engineers.",
+            "activeNodes": [
+              "short",
+              "long",
+              "page"
+            ],
+            "activeEdges": [
+              "short->page",
+              "long->page"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Alert Noise Reduction: Fingerprinting & Deduplication",
+      "codeHash": "47c2a6c61b576e74132f488e477e8fd6af8bc460c405b4932002b61181b0b967",
+      "spec": {
+        "template": "bars",
+        "title": "Alert stream condensation through deterministic fingerprint deduplication",
+        "bars": [
+          {
+            "id": "raw",
+            "label": "Raw Ingested Alerts",
+            "value": 100
+          },
+          {
+            "id": "suppressed",
+            "label": "Deduplicated Pings",
+            "value": 80
+          },
+          {
+            "id": "pages",
+            "label": "Unique Incidents Paged",
+            "value": 20
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Fingerprints are deterministic hashes generated from immutable identity labels.",
+            "activeBars": [
+              "raw",
+              "suppressed"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers receive a single clean notification instead of repetitive pings.",
+            "activeBars": [
+              "raw",
+              "suppressed",
+              "pages"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Alert stream condensation through deterministic fingerprint deduplication",
+        "bars": [
+          {
+            "id": "raw",
+            "label": "Raw Ingested Alerts",
+            "value": 100
+          },
+          {
+            "id": "suppressed",
+            "label": "Deduplicated Pings",
+            "value": 80
+          },
+          {
+            "id": "pages",
+            "label": "Unique Incidents Paged",
+            "value": 20
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Fingerprints are deterministic hashes generated from immutable identity labels.",
+            "activeBars": [
+              "raw",
+              "suppressed"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers receive a single clean notification instead of repetitive pings.",
+            "activeBars": [
+              "raw",
+              "suppressed",
+              "pages"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Alert Grouping, Inhibition Rules & Maintenance Silencing",
+      "codeHash": "c67a87f735135f89969e04c05c0a80fa25f3b4d21b0f2aea5352ab8168d30310",
+      "spec": {
+        "template": "states",
+        "title": "Alertmanager inhibition and maintenance silence routing states",
+        "states": [
+          {
+            "id": "dispatched",
+            "label": "DISPATCHED Paged to On-Call"
+          },
+          {
+            "id": "inhibited",
+            "label": "INHIBITED Upstream Suppressed"
+          },
+          {
+            "id": "silenced",
+            "label": "SILENCED Scheduled Maintenance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Inhibition mutes downstream alerts when upstream root causes are active.",
+            "activeStateId": "inhibited",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Maintenance silences allow operators to temporarily mute alert fingerprints.",
+            "activeStateId": "silenced",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Alertmanager inhibition and maintenance silence routing states",
+        "states": [
+          {
+            "id": "dispatched",
+            "label": "DISPATCHED Paged to On-Call"
+          },
+          {
+            "id": "inhibited",
+            "label": "INHIBITED Upstream Suppressed"
+          },
+          {
+            "id": "silenced",
+            "label": "SILENCED Scheduled Maintenance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Inhibition mutes downstream alerts when upstream root causes are active.",
+            "activeStateId": "inhibited",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Maintenance silences allow operators to temporarily mute alert fingerprints.",
+            "activeStateId": "silenced",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Alert Manager Engine: Burn Rate, Inhibition & Runbooks",
+      "codeHash": "ddf796bfb8dfdf096e430b2a0d928fc183936db17a299210d451ddcbeefc61f9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
