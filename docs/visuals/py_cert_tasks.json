@@ -13435,6 +13435,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-stream-web-D01",
+      "title": "stream-web day 1: Append-Only Event Logs & Sequential Offset Architecture visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 1,
+      "keys": [
+        "stream-web:1:0",
+        "stream-web:1:1",
+        "stream-web:1:2",
+        "stream-web:1:3",
+        "stream-web:1:4",
+        "stream-web:1:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D02",
+      "title": "stream-web day 2: Event Producers, Partitions & Key-Based Hashing (MurmurHash) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 2,
+      "keys": [
+        "stream-web:2:0",
+        "stream-web:2:1",
+        "stream-web:2:2",
+        "stream-web:2:3",
+        "stream-web:2:4",
+        "stream-web:2:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D03",
+      "title": "stream-web day 3: Consumer Polling Loops & High-Water Mark Offset Tracking visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 3,
+      "keys": [
+        "stream-web:3:0",
+        "stream-web:3:1",
+        "stream-web:3:2",
+        "stream-web:3:3",
+        "stream-web:3:4",
+        "stream-web:3:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D04",
+      "title": "stream-web day 4: Partition Ordering Guarantees & Total vs Partial Ordering visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 4,
+      "keys": [
+        "stream-web:4:0",
+        "stream-web:4:1",
+        "stream-web:4:2",
+        "stream-web:4:3",
+        "stream-web:4:4",
+        "stream-web:4:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D05",
+      "title": "stream-web day 5: ⭐ MILESTONE 1: High-Throughput In-Memory Partitioned Event Broker visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 5,
+      "keys": [
+        "stream-web:5:0",
+        "stream-web:5:1",
+        "stream-web:5:2",
+        "stream-web:5:3",
+        "stream-web:5:4",
+        "stream-web:5:5"
+      ]
+    },
+    {
+      "id": "R-stream-web-1-5",
+      "title": "Checkpoint stream-web days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-stream-web-D06",
+      "title": "stream-web day 6: Consumer Groups: Distributed Partition Assignment & Scalability visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 6,
+      "keys": [
+        "stream-web:6:0",
+        "stream-web:6:1",
+        "stream-web:6:2",
+        "stream-web:6:3",
+        "stream-web:6:4",
+        "stream-web:6:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D07",
+      "title": "stream-web day 7: Consumer Rebalancing Protocols: Eager vs Cooperative Sticky Rebalance visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 7,
+      "keys": [
+        "stream-web:7:0",
+        "stream-web:7:1",
+        "stream-web:7:2",
+        "stream-web:7:3",
+        "stream-web:7:4",
+        "stream-web:7:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D08",
+      "title": "stream-web day 8: Offset Commit Strategies: Auto-Commit vs Synchronous vs Async Manual Commits visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 8,
+      "keys": [
+        "stream-web:8:0",
+        "stream-web:8:1",
+        "stream-web:8:2",
+        "stream-web:8:3",
+        "stream-web:8:4",
+        "stream-web:8:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D09",
+      "title": "stream-web day 9: Delivery Semantics: At-Most-Once, At-Least-Once & Duplicate Handling visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 9,
+      "keys": [
+        "stream-web:9:0",
+        "stream-web:9:1",
+        "stream-web:9:2",
+        "stream-web:9:3",
+        "stream-web:9:4",
+        "stream-web:9:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D10",
+      "title": "stream-web day 10: ⭐ MILESTONE 2: Idempotent Producer & Exactly-Once Consumer with Deduplication visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 10,
+      "keys": [
+        "stream-web:10:0",
+        "stream-web:10:1",
+        "stream-web:10:2",
+        "stream-web:10:3",
+        "stream-web:10:4",
+        "stream-web:10:5"
+      ]
+    },
+    {
+      "id": "R-stream-web-6-10",
+      "title": "Checkpoint stream-web days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-stream-web-D11",
+      "title": "stream-web day 11: Backpressure Mechanics: Bounded Ring Buffers & Producer Throttling visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 11,
+      "keys": [
+        "stream-web:11:0",
+        "stream-web:11:1",
+        "stream-web:11:2",
+        "stream-web:11:3",
+        "stream-web:11:4",
+        "stream-web:11:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D12",
+      "title": "stream-web day 12: Producer Micro-Batching, Linger Time & Dynamic Batch Sizing visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 12,
+      "keys": [
+        "stream-web:12:0",
+        "stream-web:12:1",
+        "stream-web:12:2",
+        "stream-web:12:3",
+        "stream-web:12:4",
+        "stream-web:12:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D13",
+      "title": "stream-web day 13: Stream Compression Trade-offs: Snappy, Gzip, LZ4 & Zstandard visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 13,
+      "keys": [
+        "stream-web:13:0",
+        "stream-web:13:1",
+        "stream-web:13:2",
+        "stream-web:13:3",
+        "stream-web:13:4",
+        "stream-web:13:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D14",
+      "title": "stream-web day 14: Throughput vs Latency Mathematics & Bandwidth-Delay Product visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 14,
+      "keys": [
+        "stream-web:14:0",
+        "stream-web:14:1",
+        "stream-web:14:2",
+        "stream-web:14:3",
+        "stream-web:14:4",
+        "stream-web:14:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D15",
+      "title": "stream-web day 15: ⭐ MILESTONE 3: High-Throughput Streaming Pipeline with Dynamic Backpressure & Batching visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 15,
+      "keys": [
+        "stream-web:15:0",
+        "stream-web:15:1",
+        "stream-web:15:2",
+        "stream-web:15:3",
+        "stream-web:15:4",
+        "stream-web:15:5"
+      ]
+    },
+    {
+      "id": "R-stream-web-11-15",
+      "title": "Checkpoint stream-web days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-stream-web-D16",
+      "title": "stream-web day 16: Stateless Stream Processing: Map, Filter, FlatMap & Branching visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 16,
+      "keys": [
+        "stream-web:16:0",
+        "stream-web:16:1",
+        "stream-web:16:2",
+        "stream-web:16:3",
+        "stream-web:16:4",
+        "stream-web:16:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D17",
+      "title": "stream-web day 17: Tumbling Windows & Fixed-Interval Time Bucketing visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 17,
+      "keys": [
+        "stream-web:17:0",
+        "stream-web:17:1",
+        "stream-web:17:2",
+        "stream-web:17:3",
+        "stream-web:17:4",
+        "stream-web:17:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D18",
+      "title": "stream-web day 18: Sliding (Hopping) Windows & Overlapping Interval Analytics visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 18,
+      "keys": [
+        "stream-web:18:0",
+        "stream-web:18:1",
+        "stream-web:18:2",
+        "stream-web:18:3",
+        "stream-web:18:4",
+        "stream-web:18:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D19",
+      "title": "stream-web day 19: Session Windows & Inactivity Gap Detection visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 19,
+      "keys": [
+        "stream-web:19:0",
+        "stream-web:19:1",
+        "stream-web:19:2",
+        "stream-web:19:3",
+        "stream-web:19:4",
+        "stream-web:19:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D20",
+      "title": "stream-web day 20: Event Time, Processing Time, Watermarks & Late-Arriving Events visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 20,
+      "keys": [
+        "stream-web:20:0",
+        "stream-web:20:1",
+        "stream-web:20:2",
+        "stream-web:20:3",
+        "stream-web:20:4",
+        "stream-web:20:5"
+      ]
+    },
+    {
+      "id": "R-stream-web-16-20",
+      "title": "Checkpoint stream-web days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-stream-web-D21",
+      "title": "stream-web day 21: Local State Stores: Key-Value RocksDB & In-Memory Changelog Streams visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 21,
+      "keys": [
+        "stream-web:21:0",
+        "stream-web:21:1",
+        "stream-web:21:2",
+        "stream-web:21:3",
+        "stream-web:21:4",
+        "stream-web:21:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D22",
+      "title": "stream-web day 22: Stream-Table Duality (KStream vs KTable) & Changelog Compaction visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 22,
+      "keys": [
+        "stream-web:22:0",
+        "stream-web:22:1",
+        "stream-web:22:2",
+        "stream-web:22:3",
+        "stream-web:22:4",
+        "stream-web:22:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D23",
+      "title": "stream-web day 23: Stream-Table Joins: Real-Time Event Enrichment visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 23,
+      "keys": [
+        "stream-web:23:0",
+        "stream-web:23:1",
+        "stream-web:23:2",
+        "stream-web:23:3",
+        "stream-web:23:4",
+        "stream-web:23:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D24",
+      "title": "stream-web day 24: Stream-Stream Windowed Joins & Co-Partitioning Requirements visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 24,
+      "keys": [
+        "stream-web:24:0",
+        "stream-web:24:1",
+        "stream-web:24:2",
+        "stream-web:24:3",
+        "stream-web:24:4",
+        "stream-web:24:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D25",
+      "title": "stream-web day 25: Stream Cluster Capacity Planning & Fault-Tolerant Checkpoint Recovery visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 25,
+      "keys": [
+        "stream-web:25:0",
+        "stream-web:25:1",
+        "stream-web:25:2",
+        "stream-web:25:3",
+        "stream-web:25:4",
+        "stream-web:25:5"
+      ]
+    },
+    {
+      "id": "R-stream-web-21-25",
+      "title": "Checkpoint stream-web days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-stream-web-D26",
+      "title": "stream-web day 26: Schema Registry, Avro/Protobuf Binary Serialization & Compatibility Evolution visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 26,
+      "keys": [
+        "stream-web:26:0",
+        "stream-web:26:1",
+        "stream-web:26:2",
+        "stream-web:26:3",
+        "stream-web:26:4",
+        "stream-web:26:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D27",
+      "title": "stream-web day 27: Dead-Letter Queues (DLQ), Non-Blocking Retry Topics & Exponential Delay visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 27,
+      "keys": [
+        "stream-web:27:0",
+        "stream-web:27:1",
+        "stream-web:27:2",
+        "stream-web:27:3",
+        "stream-web:27:4",
+        "stream-web:27:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D28",
+      "title": "stream-web day 28: Historical Stream Replay, Offset Rewinding & Zero-Downtime Reprocessing visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 28,
+      "keys": [
+        "stream-web:28:0",
+        "stream-web:28:1",
+        "stream-web:28:2",
+        "stream-web:28:3",
+        "stream-web:28:4",
+        "stream-web:28:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D29",
+      "title": "stream-web day 29: Consumer Lag Monitoring, End-to-End Latency & Partition Hotspotting visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 29,
+      "keys": [
+        "stream-web:29:0",
+        "stream-web:29:1",
+        "stream-web:29:2",
+        "stream-web:29:3",
+        "stream-web:29:4",
+        "stream-web:29:5"
+      ]
+    },
+    {
+      "id": "C-stream-web-D30",
+      "title": "stream-web day 30: 🏆 FINAL CAPSTONE: Real-Time Financial Fraud Detection & Windowed Analytics Engine visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/stream-web/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "stream-web",
+      "day": 30,
+      "keys": [
+        "stream-web:30:0",
+        "stream-web:30:1",
+        "stream-web:30:2",
+        "stream-web:30:3",
+        "stream-web:30:4",
+        "stream-web:30:5"
+      ]
+    },
+    {
+      "id": "R-stream-web-26-30",
+      "title": "Checkpoint stream-web days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-stream-web",
+      "title": "Release visuals for stream-web",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
