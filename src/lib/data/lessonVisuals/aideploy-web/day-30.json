@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 30,
+  "promptSha": "2fd29f032cbd809c6f9d14a49913fc4497f4f453d7653c5adb661a0913b6865d",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Gateway Architecture Overview: Security, Caching, Routing & Auditing",
+      "codeHash": "2fd29f032cbd809c6f9d14a49913fc4497f4f453d7653c5adb661a0913b6865d",
+      "spec": {
+        "template": "workflow",
+        "title": "Enterprise Production AI Gateway Lifecycle",
+        "stages": [
+          { "id": "client", "name": "Client Ingress", "subtext": "Receive GatewayQuery" },
+          { "id": "perimeter", "name": "Security Perimeter", "subtext": "Firewall & cache lookup" },
+          { "id": "routing", "name": "Model Routing", "subtext": "Small vs Frontier dispatch" },
+          { "id": "delivery", "name": "Audited Delivery", "subtext": "GatewayResponse payload" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Gateways operate as control planes between clients and model providers.",
+            "activeStageId": "client"
+          },
+          {
+            "at": "say6",
+            "caption": "Incoming queries are represented by structured GatewayQuery interfaces.",
+            "activeStageId": "perimeter"
+          },
+          {
+            "at": "say7",
+            "caption": "The gateway responds with GatewayResponse payloads and execution status.",
+            "activeStageId": "delivery"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Enterprise Production AI Gateway Lifecycle",
+        "stages": [
+          { "id": "client", "name": "Client Ingress", "subtext": "Receive GatewayQuery" },
+          { "id": "perimeter", "name": "Security Perimeter", "subtext": "Firewall & cache lookup" },
+          { "id": "routing", "name": "Model Routing", "subtext": "Small vs Frontier dispatch" },
+          { "id": "delivery", "name": "Audited Delivery", "subtext": "GatewayResponse payload" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Gateways operate as control planes between clients and model providers.",
+            "activeStageId": "client"
+          },
+          {
+            "at": "say6",
+            "caption": "Incoming queries are represented by structured GatewayQuery interfaces.",
+            "activeStageId": "perimeter"
+          },
+          {
+            "at": "say7",
+            "caption": "The gateway responds with GatewayResponse payloads and execution status.",
+            "activeStageId": "delivery"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Layer Defensive Perimeter (Injection Guardrail + Semantic Cache)",
+      "codeHash": "7339b0f91fd69dac693247a2220c44b85c1cdcde54de3f2e96c32813156fae4d",
+      "spec": {
+        "template": "flow",
+        "title": "Multi-Layer Defensive Perimeter Architecture",
+        "nodes": [
+          { "id": "prompt", "label": "Inbound Prompt", "tappable": false },
+          { "id": "firewall", "label": "Injection Firewall", "tappable": false },
+          { "id": "cache", "label": "Semantic Cache Lookup", "tappable": false },
+          { "id": "pass", "label": "Model Routing Pass", "tappable": false }
+        ],
+        "edges": [
+          { "from": "prompt", "to": "firewall" },
+          { "from": "firewall", "to": "cache" },
+          { "from": "cache", "to": "pass" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Methods test for adversarial prompt injection signatures at the perimeter.",
+            "activeNodes": ["prompt", "firewall"]
+          },
+          {
+            "at": "say4",
+            "caption": "When attacks are detected gateways immediately return BLOCK to terminate.",
+            "activeNodes": ["firewall"]
+          },
+          {
+            "at": "say6",
+            "caption": "Cache matches return CACHE_HIT with pre-computed responses in sub-milliseconds.",
+            "activeNodes": ["cache", "pass"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Multi-Layer Defensive Perimeter Architecture",
+        "nodes": [
+          { "id": "prompt", "label": "Inbound Prompt", "tappable": false },
+          { "id": "firewall", "label": "Injection Firewall", "tappable": false },
+          { "id": "cache", "label": "Semantic Cache Lookup", "tappable": false },
+          { "id": "pass", "label": "Model Routing Pass", "tappable": false }
+        ],
+        "edges": [
+          { "from": "prompt", "to": "firewall" },
+          { "from": "firewall", "to": "cache" },
+          { "from": "cache", "to": "pass" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Methods test for adversarial prompt injection signatures at the perimeter.",
+            "activeNodes": ["prompt", "firewall"]
+          },
+          {
+            "at": "say4",
+            "caption": "When attacks are detected gateways immediately return BLOCK to terminate.",
+            "activeNodes": ["firewall"]
+          },
+          {
+            "at": "say6",
+            "caption": "Cache matches return CACHE_HIT with pre-computed responses in sub-milliseconds.",
+            "activeNodes": ["cache", "pass"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Model Tier Selection (Small vs Frontier by Complexity)",
+      "codeHash": "5ee630b979e321c0d84625cad0b546d6c408d40f97e361412be0b1077288d764",
+      "spec": {
+        "template": "compare",
+        "title": "Small vs Frontier Model Tier Routing",
+        "leftLabel": "Small Tier (ROUTED_SMALL)",
+        "rightLabel": "Frontier Tier (ROUTED_FRONTIER)",
+        "leftItems": [
+          "Short length (< 200 chars)",
+          "Routine conversational queries",
+          "Lowest token cost & fast latency"
+        ],
+        "rightItems": [
+          "Extended length (> 200 chars)",
+          "Keywords: architect, theorem",
+          "Maximum reasoning capability"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions analyze prompt length and keywords like architect for routing.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Complex reasoning prompts are directed to the frontier reasoning tier.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Complexity routers assign simple requests while reserving frontier models.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Small vs Frontier Model Tier Routing",
+        "leftLabel": "Small Tier (ROUTED_SMALL)",
+        "rightLabel": "Frontier Tier (ROUTED_FRONTIER)",
+        "leftItems": [
+          "Short length (< 200 chars)",
+          "Routine conversational queries",
+          "Lowest token cost & fast latency"
+        ],
+        "rightItems": [
+          "Extended length (> 200 chars)",
+          "Keywords: architect, theorem",
+          "Maximum reasoning capability"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions analyze prompt length and keywords like architect for routing.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Complex reasoning prompts are directed to the frontier reasoning tier.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Complexity routers assign simple requests while reserving frontier models.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Self-Healing Output Validation & Schema Repair",
+      "codeHash": "cf7a9758930298e1ec8ac103f83b749aacc71450d35e4106806d82996b5f3889",
+      "spec": {
+        "template": "states",
+        "title": "Production Gateway Query State Machine",
+        "states": [
+          { "id": "ingress", "label": "Inbound Query" },
+          { "id": "screen", "label": "Safety Screening" },
+          { "id": "cached", "label": "CACHE_HIT Served" },
+          { "id": "routed", "label": "Inference Routed" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Gateway methods orchestrate the complete request lifecycle cleanly in sequence.",
+            "current": "ingress",
+            "visited": ["ingress"]
+          },
+          {
+            "at": "say3",
+            "caption": "Pipelines screen for prompt injections and evaluate prompt complexity.",
+            "current": "screen",
+            "visited": ["ingress", "screen"]
+          },
+          {
+            "at": "say5",
+            "caption": "Execution paths return strongly typed result envelopes carrying status.",
+            "current": "routed",
+            "visited": ["ingress", "screen", "routed"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Production Gateway Query State Machine",
+        "states": [
+          { "id": "ingress", "label": "Inbound Query" },
+          { "id": "screen", "label": "Safety Screening" },
+          { "id": "cached", "label": "CACHE_HIT Served" },
+          { "id": "routed", "label": "Inference Routed" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Gateway methods orchestrate the complete request lifecycle cleanly in sequence.",
+            "current": "ingress",
+            "visited": ["ingress"]
+          },
+          {
+            "at": "say3",
+            "caption": "Pipelines screen for prompt injections and evaluate prompt complexity.",
+            "current": "screen",
+            "visited": ["ingress", "screen"]
+          },
+          {
+            "at": "say5",
+            "caption": "Execution paths return strongly typed result envelopes carrying status.",
+            "current": "routed",
+            "visited": ["ingress", "screen", "routed"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-of-Day Operational Audit & Cost Reconciliation Report",
+      "codeHash": "391c5d6afe8dcf79558de516ca0d11cb18385e28f037e2b934a56b9c9df1177b",
+      "spec": {
+        "template": "bars",
+        "title": "End-of-Day Traffic and Cost Breakdown",
+        "items": [
+          { "label": "Cache Hits (400)", "value": 40.0, "tone": "ok" },
+          { "label": "Small Model (500)", "value": 50.0, "tone": "data" },
+          { "label": "Frontier (50)", "value": 5.0, "tone": "idle" },
+          { "label": "Blocked Attacks (50)", "value": 5.0, "tone": "error" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute cache hit percentage, block percentage, and API expenses."
+          },
+          {
+            "at": "say4",
+            "caption": "Out of one thousand queries four hundred were served directly from cache."
+          },
+          {
+            "at": "say8",
+            "caption": "The gateway slashed cloud expenses while maintaining premier user experience."
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "End-of-Day Traffic and Cost Breakdown",
+        "items": [
+          { "label": "Cache Hits (400)", "value": 40.0, "tone": "ok" },
+          { "label": "Small Model (500)", "value": 50.0, "tone": "data" },
+          { "label": "Frontier (50)", "value": 5.0, "tone": "idle" },
+          { "label": "Blocked Attacks (50)", "value": 5.0, "tone": "error" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions compute cache hit percentage, block percentage, and API expenses."
+          },
+          {
+            "at": "say4",
+            "caption": "Out of one thousand queries four hundred were served directly from cache."
+          },
+          {
+            "at": "say8",
+            "caption": "The gateway slashed cloud expenses while maintaining premier user experience."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Capstone: Complete Resilient Production AI Gateway",
+      "codeHash": "129e96236438566d319b4021ff1d65e1b025ef462d5e1da98ee15c8365b904d7",
+      "spec": {
+        "template": "none",
+        "reason": "Master Capstone: Complete Resilient Production AI Gateway synthesizing perimeter security, semantic caching, complexity-based model routing, output repair, and financial audit reconciliation"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Master Capstone: Complete Resilient Production AI Gateway synthesizing perimeter security, semantic caching, complexity-based model routing, output repair, and financial audit reconciliation"
+      }
+    }
+  ]
+}
