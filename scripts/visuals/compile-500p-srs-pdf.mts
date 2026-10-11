@@ -18,6 +18,10 @@ import { IOT_MONTH_1_SPECS, IOT_MONTH_2_SPECS } from './iot-masterclass-spec';
 import { GRAPHICS_MONTH_1_SPECS, GRAPHICS_MONTH_2_SPECS } from './graphics-masterclass-spec';
 import { BLOCKCHAIN_MONTH_1_SPECS, BLOCKCHAIN_MONTH_2_SPECS } from './blockchain-masterclass-spec';
 import { IOT_NETWORK_MONTH_1_SPECS, IOT_NETWORK_MONTH_2_SPECS } from './iot-network-masterclass-spec';
+import { EDGE_AI_MONTH_1_SPECS, EDGE_AI_MONTH_2_SPECS } from './iot-edge-ai-masterclass-spec';
+import { IOT_SECURITY_MONTH_1_SPECS, IOT_SECURITY_MONTH_2_SPECS } from './iot-security-masterclass-spec';
+import { PYTHON_BACKEND_MONTH_1_SPECS, PYTHON_BACKEND_MONTH_2_SPECS } from './python-backend-masterclass-spec';
+import { QUANT_SYSTEMS_MONTH_1_SPECS, QUANT_SYSTEMS_MONTH_2_SPECS } from './quant-systems-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -130,7 +134,8 @@ function getCourseCapstoneProject(courseId: string): string {
   if (courseId.includes('dsa')) return 'AlgoCore: Lock-Free Queues & Graph Optimization Suite';
   if (courseId.includes('dist')) return 'RaftConsensus: Fault-Tolerant Distributed Key-Value Store';
   if (courseId.includes('iot-embedded')) return 'NanoRTOS: Preemptive Kernel for ARM Cortex-M';
-  if (courseId.includes('iot-edge')) return 'TinyInference: INT8 Quantized DSP Sensor Pipeline';
+  if (courseId.includes('iot-edge')) return 'ApexEdgeAI: Multi-Modal TinyML Industrial Sensor Platform';
+  if (courseId.includes('iot-security')) return 'ApexShield: Sovereign Industrial Hardware RoT Platform';
   if (courseId.includes('quant')) return 'HftMatcher: Sub-Microsecond Limit Order Book Engine';
   if (courseId.includes('graphics')) return 'ShaderForge: WebGL Deferred Rendering Engine';
   if (courseId.includes('blockchain')) return 'EVMVerify: Merkle Patricia State Trie Proof Verifier';
@@ -1597,6 +1602,237 @@ function renderIotNetworkDayCard(day: any): string {
     </div>
   `;
 }
+
+function renderEdgeAiDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #059669;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #059669; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #d1fae5; color: #065f46;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #059669; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #065f46; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #065f46;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #059669;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #047857;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #064e3b;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #166534;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #15803d;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderIotSecurityDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #dc2626;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #dc2626; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fee2e2; color: #991b1b;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #dc2626; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #991b1b; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9f1239;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #e11d48;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #be123c;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #881337;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #831843;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #9d174d;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPythonBackendDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0284c7;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0f2fe; color: #0369a1;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0284c7; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fef3c7; color: #92400e;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #dcfce7; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #166534;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #15803d;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #166534;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #14532d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #0f172a;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + ansIdx)}) ${day.situationalPuzzle.options[ansIdx]} &bull;
+        <span style="color: #0369a1;"><strong>Debrief:</strong> ${debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderQuantSystemsDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #fef3c7; color: #92400e; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #f59e0b;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0f172a; color: #f59e0b; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fef3c7; color: #92400e;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #b45309; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #047857; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fef3c7; color: #92400e;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #065f46;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #047857;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #065f46;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #064e3b;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #0f172a;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + ansIdx)}) ${day.situationalPuzzle.options[ansIdx]} &bull;
+        <span style="color: #b45309;"><strong>Debrief:</strong> ${debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 
 function renderBlockchainDayCard(day: any): string {
   const questsHtml = day.quests.map((q: any) => `
@@ -3283,6 +3519,387 @@ function buildDeepMasterclassesHtml(): string {
     </tbody>
   </table>
   `;
+
+    h += `
+  <!-- PART XXII: DEEP MASTERCLASS BLUEPRINT - EDGE AI, DSP & TINYML SYSTEMS (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXII: Deep Masterclass Blueprint &bull; Edge AI, DSP &amp; TinyML Systems (Days 1&ndash;60 / 240 Quests)</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-iot-edge-ai</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #059669; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Cortex-M SIMD &amp; NPU Hardware</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Principal Edge AI Architect Target</span>
+      </div>
+    </div>
+
+    <h2>22.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      Edge AI and TinyML require unifying continuous physics, fixed-point digital signal processing, memory-constrained neural runtimes, and low-power silicon acceleration. Running deep learning models on server GPUs with gigabytes of VRAM is trivial; deploying real-time multi-modal neural intelligence to an ARM Cortex-M or dedicated NPU with 64 KB to 512 KB of SRAM and a 20 uW to 500 mW power budget demands mastery of every electron and memory bus transaction:
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6pt; margin: 6pt 0 10pt 0;">
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #065f46; font-size: 8pt;">Stage 1: DSP, SIMD &amp; Features</strong><br>
+        <span style="font-size: 7.2pt; color: #064e3b;">Days 1&ndash;15 (60 Quests)<br>ADC Physics, Nyquist-Shannon, FIR/IIR Biquads, Radix-4 FFT, CMSIS-DSP SIMD, Q15/Q31 Fixed-Point, Welford Moments, STFT, MFCCs &amp; CWT.<br><em>Milestones 1&ndash;3</em></span>
+      </div>
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #047857; font-size: 8pt;">Stage 2: Quantization &amp; TFLM</strong><br>
+        <span style="font-size: 7.2pt; color: #064e3b;">Days 16&ndash;30 (60 Quests)<br>INT8 Quantization, PTQ vs QAT, Pruning &amp; Distillation, TFLM Static Tensor Arenas, CMSIS-NN Kernels, Anomaly Autoencoders &amp; ApexTinyML.<br><em>Milestones 4&ndash;5 + Capstone 1</em></span>
+      </div>
+      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #059669; font-size: 8pt;">Stage 3: Vision, Audio &amp; NPUs</strong><br>
+        <span style="font-size: 7.2pt; color: #064e3b;">Days 31&ndash;45 (60 Quests)<br>DVP/MIPI-CSI2 Cameras, FOMO Centroids, PDM MEMS Mics, CIC Decimation, GCC-PHAT Beamforming, ARM Ethos-U NPUs, Vela &amp; MicroTVM.<br><em>Milestones 6&ndash;8</em></span>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #475569; font-size: 8pt;">Stage 4: Sequences &amp; ApexEdgeAI</strong><br>
+        <span style="font-size: 7.2pt; color: #1e293b;">Days 46&ndash;60 (60 Quests)<br>Micro-Transformers, Dilated TCNs, State-Space Models (S4/Mamba), EWC Continual Learning, PSI Drift Gating, Differential FOTA &amp; ApexEdgeAI.<br><em>Milestones 9&ndash;10 + Master Capstone</em></span>
+      </div>
+    </div>
+
+    <h2>22.2 Edge AI, DSP &amp; TinyML Systems Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  EDGE_AI_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderEdgeAiDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXII: Edge AI Month 2 &bull; Micro-Vision, Audio Beamforming, NPU Accelerators, Sequence Models &amp; ApexEdgeAI Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-iot-edge-ai</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #059669; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Micro-Vision &amp; Neuromorphic Edge</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Principal Edge AI Architect Target</span>
+      </div>
+    </div>
+
+    <h2>22.3 Edge AI, DSP &amp; TinyML Systems Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  EDGE_AI_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderEdgeAiDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>22.4 Edge AI, DSP &amp; TinyML Systems Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>CMSIS-DSP Fixed-Point Filter &amp; Radix-4 FFT Engine</td><td>C / TypeScript fixed-point DSP pipeline featuring Q15/Q31 Biquad IIR filters, Cooley-Tukey Radix-4 FFT, and SIMD instruction cycle profiling.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Real-Time MFCC &amp; Audio Spectrogram Pipeline</td><td>High-rate audio and vibration feature extractor computing STFT spectrograms, Mel-scale triangular filterbanks, and discrete cosine transform MFCCs.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Bare-Metal Neural &amp; Classical ML Inference Engine</td><td>Zero-allocation embedded ML inference engine running fixed-point decision forests, K-Means clustering, and multi-layer perceptron forward passes with Flash LUTs.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>INT8 PTQ &amp; Structured Pruning Engine</td><td>Model optimization toolchain executing INT8 affine symmetric/asymmetric quantization, channel pruning, and teacher-student knowledge distillation.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>TFLM Static Arena &amp; CMSIS-NN Kernel Engine</td><td>Production TFLM firmware with statically allocated tensor arenas, FlatBuffer parsing, and CMSIS-NN SIMD vectorized depthwise convolution kernels.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexTinyML Autonomous Industrial Motor Anomaly Node:</strong> Integrated edge node running real-time vibration feature extraction, INT8 autoencoder anomaly detection, and oral defense before Senior Edge AI Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Micro-Vision Centroid Object Detection Pipeline</td><td>Low-memory vision pipeline interfacing DVP/MIPI-CSI2 camera sensors via DMA ping-pong buffers, executing INT8 FOMO centroid detection under 200 KB RAM.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Dual-Mic PDM Beamformer &amp; VAD Engine</td><td>Real-time acoustic frontend decimating PDM audio via CIC filters, computing GCC-PHAT direction-of-arrival, and steering delay-and-sum beamforming filters.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>AOT MicroTVM / TinyEngine NPU Compilation Engine</td><td>Ahead-of-time model compiler lowering quantized models to standalone C code, scheduling Vela command streams for ARM Ethos-U NPUs.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Dilated Causal TCN &amp; Micro-SSM Inference Engine</td><td>Dual-engine sequential model firmware executing dilated causal convolutions with circular delay buffers and recurrent state-space models with strict O(1) RAM.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>On-Device Continual Learning &amp; Delta FOTA Engine</td><td>Complete edge MLOps firmware featuring streaming PSI drift detection, Elastic Weight Consolidation (EWC) parameter anchoring, and A/B flash atomic delta swapping.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEdgeAI Autonomous Multi-Modal Industrial Predictive Maintenance Platform:</strong> Complete multi-sensor edge intelligence platform uniting vibration, acoustics, thermal IR, NPU inference, and differential MLOps under live chaos defense.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+    h += `
+  <!-- PART XXIII: DEEP MASTERCLASS BLUEPRINT - INDUSTRIAL IOT SECURITY & DEVICE LIFECYCLE (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #7f1d1d; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXIII: Deep Masterclass Blueprint &bull; Industrial IoT Security &amp; Device Lifecycle (Days 1&ndash;60 / 240 Quests)</h1>
+        <span style="font-size: 8.2pt; color: #fecdd3;">Course ID: <code>course-iot-security</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #dc2626; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Hardware RoT, Secure Boot &amp; Zero-Trust</span><br>
+        <span style="font-size: 7.5pt; color: #fda4af;">Principal IoT Security Architect Target</span>
+      </div>
+    </div>
+
+    <h2>23.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      Industrial IoT and critical infrastructure security require unifying physical silicon physics, hardware roots of trust, cryptographic verification chains, operational fieldbus segmentation, and end-to-end device lifecycle management. Unlike server security where machines reside in biometric-guarded data centers, industrial edge nodes sit physically exposed in power substations, oil pipelines, and hospital ICUs. True defense-in-depth demands mastery from microscopic silicon eFuses to automated cloud registration and post-market cryptographic sanitization:
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6pt; margin: 6pt 0 10pt 0;">
+      <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #991b1b; font-size: 8pt;">Stage 1: Hardware RoT &amp; Crypto</strong><br>
+        <span style="font-size: 7.2pt; color: #7f1d1d;">Days 1&ndash;15 (60 Quests)<br>STRIDE Threat Modeling, SRAM PUFs, eFuses, Constant-Time Math, Mask ROM Bootloaders, Ed25519 Manifests, TrustZone-M, XIP Flash Encryption &amp; DPA Masking.<br><em>Milestones 1&ndash;3</em></span>
+      </div>
+      <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #b91c1c; font-size: 8pt;">Stage 2: Identity &amp; Provisioning</strong><br>
+        <span style="font-size: 7.2pt; color: #7f1d1d;">Days 16&ndash;30 (60 Quests)<br>IEEE 802.1AR IDevID, Zero-Heap ASN.1 DER, OCSP Stapling, TLS 1.3 mTLS over ALPN, Factory HSM Injection, FDO Late-Binding, Encrypted NVS &amp; ApexSentry.<br><em>Milestones 4&ndash;5 + Capstone 1</em></span>
+      </div>
+      <div style="background: #fff1f2; border: 1px solid #fecdd3; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #be123c; font-size: 8pt;">Stage 3: Secure FOTA &amp; Fieldbuses</strong><br>
+        <span style="font-size: 7.2pt; color: #881337;">Days 31&ndash;45 (60 Quests)<br>IETF SUIT Manifests RFC 9019, Streaming Hash Chaining, Dual-Bank A/B Flash, Windowed Watchdogs, IEC 62351 Modbus, AUTOSAR SecOC CAN-FD, OPC UA &amp; Jamming Defense.<br><em>Milestones 6&ndash;8</em></span>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #475569; font-size: 8pt;">Stage 4: Runtime Defense &amp; ApexShield</strong><br>
+        <span style="font-size: 7.2pt; color: #1e293b;">Days 46&ndash;60 (60 Quests)<br>ARM Cortex-M ROP Exploits, MPU Stack Guards, Embedded HIDS Syscalls, Static ARP Gating, IEC 62443 SL3/SL4, FDA 524B, CycloneDX SBOM &amp; ApexShield Master Capstone.<br><em>Milestones 9&ndash;10 + Master Capstone</em></span>
+      </div>
+    </div>
+
+    <h2>23.2 Industrial IoT Security &amp; Device Lifecycle Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  IOT_SECURITY_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderIotSecurityDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #7f1d1d; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXIII: IoT Security Month 2 &bull; Secure FOTA, Industrial Protocols, Runtime MPU Hardening &amp; ApexShield Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #fecdd3;">Course ID: <code>course-iot-security</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #dc2626; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Fieldbus &amp; Runtime Hardening</span><br>
+        <span style="font-size: 7.5pt; color: #fda4af;">Principal IoT Security Architect Target</span>
+      </div>
+    </div>
+
+    <h2>23.3 Industrial IoT Security &amp; Device Lifecycle Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  IOT_SECURITY_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderIotSecurityDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>23.4 Industrial IoT Security &amp; Device Lifecycle Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Hardware RoT, PUF Key Derivation &amp; Constant-Time Crypto</td><td>Zero-storage cryptographic core deriving 256-bit keys from SRAM startup noise via BCH Fuzzy Extractors with irreversible eFuse burning.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Multi-Stage Secure Boot &amp; TrustZone Isolation Engine</td><td>Cryptographic chain of trust validating Ed25519 manifests against eFuse hashes and enforcing TrustZone-M SAU/NSC hardware domain isolation.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Anti-Tamper, DPA-Masked &amp; Fault-Hardened Core</td><td>Physical defense engine with address-tweaked XIP flash encryption, Boolean masked AES key expansion, and instruction-skipping glitch resilience.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>IEEE 802.1AR Device Identity &amp; Bare-Metal TLS 1.3</td><td>Zero-heap ASN.1 DER parser under 2 KB RAM, hardware-bound IDevID management, and 1-RTT TLS 1.3 mTLS client with ephemeral X25519 ECDHE.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Zero-Touch Cloud Provisioning &amp; FDO Engine</td><td>Air-gapped factory HSM key injection jig with quota licensing, FIDO Device Onboard (FDO) ownership transfer, and automated cloud JITR onboarding.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexSentry Industrial Secure Edge Sentinel:</strong> Complete silicon-to-cloud security firmware uniting PUF RoT, TrustZone, Ed25519 boot, and mTLS telemetry before Senior Security Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>IETF SUIT Manifest Resilient Dual-Bank FOTA Engine</td><td>RFC 9019 SUIT CBOR/COSE manifest parser, streaming chunked SHA-256 verifier, atomic A/B flash partitioning, and task-gated hardware watchdog rollback.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Secure Modbus TCP / SecOC CAN-FD Gateway &amp; Firewall</td><td>IEC 62351-08 Modbus mTLS wrapper, AUTOSAR SecOC CAN-FD engine with 64-bit freshness tracking and truncated CMACs, and Purdue Level 3.5 DPI filtering.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Wireless IoT Security Monitor &amp; Jamming Defense</td><td>BLE LE Secure Connections (ECDH P-256), Thread DTLS-JPAKE zero-knowledge commissioning, LoRaWAN 1.1 dual session keys, and autonomous RF jamming detection.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Embedded MPU Stack Guard &amp; HIDS Engine</td><td>Runtime defense engine with hardware TRNG stack canaries, MPU tripwire guard regions, context-aware syscall whitelisting, and static ARP network monitoring.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Automated Firmware SBOM &amp; NIST SP 800-88 Sanitization</td><td>CI/CD CycloneDX v1.5 SBOM generator with automated CVE mapping, IEC 62443 compliance evaluator, and NIST SP 800-88 crypto-shredding decommissioning engine.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexShield Sovereign Industrial IoT Security &amp; Fleet Lifecycle Platform:</strong> Complete defense-in-depth platform defending an electrical substation against simultaneous physical, fieldbus, wireless, and network cyber-attacks under live chaos defense.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- PART XXIV: DEEP MASTERCLASS BLUEPRINT - PYTHON PROGRAMMING & BACKEND SYSTEMS (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #1e3a8a; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXIV: Deep Masterclass Blueprint &bull; Python Programming &amp; Backend Systems (Days 1&ndash;60 / 240 Quests)</h1>
+        <span style="font-size: 8.2pt; color: #bfdbfe;">Course ID: <code>course-python-backend</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">CPython Physics, ASGI &amp; High-Scale Systems</span><br>
+        <span style="font-size: 7.5pt; color: #93c5fd;">Principal Python Systems Architect Target</span>
+      </div>
+    </div>
+
+    <h2>24.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      Python powers the planetary backend infrastructure of modern tech giants, from Instagram's monolithic Django to Netflix's microservices and high-throughput real-time AI gateways. However, junior developers frequently treat Python as an unoptimized scripting language, suffering from GIL contention, memory fragmentation, event loop starvation, and N+1 database queries. True enterprise engineering demands understanding Python as a high-performance C-runtime execution environment: mastering PyObject heap mechanics, PyMalloc size-class pools, compact hash table physics, non-blocking asynchronous event loops with uvloop, Rust-accelerated validation with Pydantic V2, Unit of Work transactional persistence with SQLAlchemy 2.0, distributed task queues with Celery Canvas, and enterprise SRE observability:
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6pt; margin: 6pt 0 10pt 0;">
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #1e40af; font-size: 8pt;">Stage 1: CPython &amp; Concurrency</strong><br>
+        <span style="font-size: 7.2pt; color: #1e3a8a;">Days 1&ndash;15 (60 Quests)<br>PyObject Anatomy, PyMalloc Arenas/Pools, Generational GC, Bytecode CEVAL Loop, PEP 468 Compact Dictionaries, GIL &amp; Free-Threading, Shared Memory IPC &amp; uvloop Event Loops.<br><em>Milestones 1&ndash;3</em></span>
+      </div>
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #0369a1; font-size: 8pt;">Stage 2: Metaprogramming &amp; ASGI</strong><br>
+        <span style="font-size: 7.2pt; color: #1e3a8a;">Days 16&ndash;30 (60 Quests)<br>Descriptors &amp; __slots__, Metaclasses, AST Rewriting, Type Variance, ASGI 3.0 &amp; Uvicorn, Radix Routing, Onion Middleware, orjson SIMD, TaskGroups &amp; PyCore Capstone.<br><em>Milestones 4&ndash;5 + Capstone 1</em></span>
+      </div>
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #15803d; font-size: 8pt;">Stage 3: FastAPI &amp; Async ORM</strong><br>
+        <span style="font-size: 7.2pt; color: #14532d;">Days 31&ndash;45 (60 Quests)<br>Pydantic V2 Rust Core, FastAPI Dependency DAG, WebSockets, OAuth2/JWT, SQLAlchemy 2.0 Async, Unit of Work, N+1 Elimination, Alembic Migrations &amp; Celery Canvas.<br><em>Milestones 6&ndash;8</em></span>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #334155; font-size: 8pt;">Stage 4: Distributed &amp; ApexPython</strong><br>
+        <span style="font-size: 7.2pt; color: #0f172a;">Days 46&ndash;60 (60 Quests)<br>gRPC Protobuf, aiokafka Streams, Redis XFetch, Circuit Breakers, OpenTelemetry, Prometheus RED, Fintech Ledgers, Flash Sale Engines &amp; ApexPython Master Capstone.<br><em>Milestones 9&ndash;10 + Master Capstone</em></span>
+      </div>
+    </div>
+
+    <h2>24.2 Python Programming &amp; Backend Systems Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  PYTHON_BACKEND_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderPythonBackendDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #1e3a8a; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXIV: Python Backend Month 2 &bull; FastAPI, SQLAlchemy Async, Distributed Queues &amp; ApexPython Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #bfdbfe;">Course ID: <code>course-python-backend</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Microservices &amp; Distributed Systems</span><br>
+        <span style="font-size: 7.5pt; color: #93c5fd;">Principal Python Systems Architect Target</span>
+      </div>
+    </div>
+
+    <h2>24.3 Python Programming &amp; Backend Systems Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  PYTHON_BACKEND_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderPythonBackendDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>24.4 Python Programming &amp; Backend Systems Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>CPython Bytecode VM &amp; PyMalloc Allocator Engine</td><td>Stack-based opcode evaluation loop executing compiled bytecode integrated with 256KB arenas, 4KB pools, size-class blocks, and trial-decrement cycle detection.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Compact Hash Table &amp; Streaming Generator Engine</td><td>PEP 468 compact hash table with SipHash-2-4 perturbation probing and zero-materialization lazy generator streaming pipeline maintaining O(1) memory bounds.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Async Event Loop &amp; Zero-Copy Shared Memory Engine</td><td>Non-blocking socket selector loop multiplexing thousands of concurrent coroutines with zero-copy POSIX shared memory buffers for multi-core compute offloading.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Metaprogrammed Model Validation Engine</td><td>High-speed data validation framework using __init_subclass__, __slots__ memory elimination, type-coercing data descriptors, and runtime Protocol conformance.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Production Asynchronous ASGI Web Framework Core</td><td>ASGI 3.0 protocol implementation with O(K) Radix tree router, onion middleware pipeline with contextvars context isolation, and async dependency injection.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>PyCore Asynchronous High-Throughput Micro-Framework Engine:</strong> Complete production micro-framework synthesizing memory allocators, ASGI streaming, slotted models, and TaskGroups before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>FastAPI Microservice with Pydantic V2 &amp; JWT Engine</td><td>Microservice gateway with compiled Rust schema validation, dependency injection DAG caching, real-time WebSockets with backpressure, and hardened OAuth2/JWT auth.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>High-Scale Async ORM &amp; Zero-Downtime Data Layer</td><td>SQLAlchemy 2.0 AsyncEngine repository with QueuePool, Unit of Work and Identity Map, selectinload/joinedload N+1 elimination, and Alembic zero-downtime migrations.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Distributed Task Queue &amp; Workflow Orchestration Engine</td><td>Celery/Redis background processing platform with late ACKs, Canvas chains and chords with barrier synchronization, idempotency locks, and Dead-Letter Queue isolation.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Event-Driven Microservice &amp; gRPC Gateway Engine</td><td>Microservice mesh with binary Protobuf gRPC streaming, aiokafka consumer pipeline with manual offset commits, Redis XFetch caching, and circuit breakers.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Production Observability &amp; SRE Telemetry Suite</td><td>Production observability platform integrating OpenTelemetry W3C distributed tracing, Prometheus RED method metrics, structlog JSON logging with PII masking, and Kubernetes health probes.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexPython High-Scale Distributed Microservices Backend Platform:</strong> Complete enterprise platform defending against simultaneous thundering herd flash sales, database failovers, and rolling pod restarts under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- PART XXV: DEEP MASTERCLASS BLUEPRINT - QUANTITATIVE ENGINEERING & LOW-LATENCY TRADING SYSTEMS (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #0f172a; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #f59e0b; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXV: Deep Masterclass Blueprint &bull; Quantitative Engineering &amp; Low-Latency Trading Systems (Days 1&ndash;60 / 240 Quests)</h1>
+        <span style="font-size: 8.2pt; color: #cbd5e1;">Course ID: <code>course-quant-systems</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #f59e0b; color: #0f172a; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Market Microstructure &amp; Sub-Microsecond Systems</span><br>
+        <span style="font-size: 7.5pt; color: #10b981;">Principal Quantitative Systems Architect Target</span>
+      </div>
+    </div>
+
+    <h2>25.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      In institutional electronic finance, trading is a physics problem governed by speed-of-light propagation delays, memory cache hierarchies, and mathematical market microstructure. Retail algorithmic traders rely on 1-minute candlestick bars and high-level Python libraries, remaining oblivious to the continuous double auction occurring at nanosecond timescales. True high-frequency quantitative engineering demands mastery across the entire vertical stack: decoding binary NASDAQ TotalView-ITCH 5.0 and OUCH protocols directly from optical transceivers, managing Level 3 Limit Order Books with deterministic price-time priority, executing Almgren-Chriss optimal execution models, skewing quoting spreads via Avellaneda-Stoikov inventory control, managing real-time portfolio Greeks and SABR volatility surfaces, eliminating CPU cache false sharing and dynamic heap allocations, accelerating tick-to-trade in custom FPGA silicon, disciplining distributed server clocks via IEEE 1588v2 PTP, and enforcing sub-100ns SEC Rule 15c3-5 risk gates:
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6pt; margin: 6pt 0 10pt 0;">
+      <div style="background: #fefce8; border: 1px solid #fde047; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #854d0e; font-size: 8pt;">Stage 1: Microstructure &amp; Low-Latency</strong><br>
+        <span style="font-size: 7.2pt; color: #713f12;">Days 1&ndash;15 (60 Quests)<br>L1/L2/L3 Physics, Matching Engines, Almgren-Chriss Impact, Avellaneda-Stoikov Market Making, ITCH/OUCH Binary Feeds, Cache Lines &amp; Kernel-Bypass DPDK.<br><em>Milestones 1&ndash;3</em></span>
+      </div>
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #166534; font-size: 8pt;">Stage 2: StatArb &amp; Risk Gates</strong><br>
+        <span style="font-size: 7.2pt; color: #14532d;">Days 16&ndash;30 (60 Quests)<br>VPIN Flow Toxicity, Cointegration Pairs Trading, Kalman Filters, L3 Queue Modeling, Smart Order Routing (Reg NMS), SEC 15c3-5 Pre-Trade Risk &amp; ApexTrader Capstone.<br><em>Milestones 4&ndash;5 + Capstone 1</em></span>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #334155; font-size: 8pt;">Stage 3: Options &amp; Cross-Venue Arb</strong><br>
+        <span style="font-size: 7.2pt; color: #0f172a;">Days 31&ndash;45 (60 Quests)<br>Black-Scholes &amp; Fast IV, Real-Time Greeks (Delta/Gamma/Vega/Vanna/Volga), Gamma Scalping, SABR Surfaces, Cross-Exchange Latency Arb, Inverted Fees &amp; FPGA Pipelines.<br><em>Milestones 6&ndash;8</em></span>
+      </div>
+      <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #991b1b; font-size: 8pt;">Stage 4: Enterprise Risk &amp; ApexQuant</strong><br>
+        <span style="font-size: 7.2pt; color: #7f1d1d;">Days 46&ndash;60 (60 Quests)<br>CME SPAN Margin, Fat-Tailed Expected Shortfall, HMM Regime Detection, RDTSC Telemetry, Active-Active Failover, Knight Capital/Flash Crash Post-Mortems &amp; ApexQuant Master Capstone.<br><em>Milestones 9&ndash;10 + Master Capstone</em></span>
+      </div>
+    </div>
+
+    <h2>25.2 Quantitative Engineering &amp; Low-Latency Trading Systems Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  QUANT_SYSTEMS_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderQuantSystemsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #0f172a; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #f59e0b; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXV: Quantitative Systems Month 2 &bull; Options Surfaces, Cross-Venue Arbitrage, FPGA Pipelines &amp; ApexQuant Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #cbd5e1;">Course ID: <code>course-quant-systems</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #10b981; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Hardware Acceleration &amp; Planetary Systems</span><br>
+        <span style="font-size: 7.5pt; color: #f59e0b;">Principal Quantitative Systems Architect Target</span>
+      </div>
+    </div>
+
+    <h2>25.3 Quantitative Engineering &amp; Low-Latency Trading Systems Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  QUANT_SYSTEMS_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderQuantSystemsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>25.4 Quantitative Engineering &amp; Low-Latency Trading Systems Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Deterministic LOB Matching Engine Kernel</td><td>Doubly-linked price-level bucket queue and red-black price index tree processing limit, market, and cancel events under strict deterministic price-time priority.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>NASDAQ TotalView-ITCH 5.0 Direct Binary Parser</td><td>Zero-copy direct binary parser decoding big-endian ITCH 5.0 messages off network frames and emitting structured OUCH order requests within 120 nanoseconds.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Kernel-Bypass DPDK / Solarflare Execution Core</td><td>User-space lock-free ring buffer and zero-copy packet driver eliminating Linux kernel socket overhead and context switches on pinned CPU cores.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Cointegration &amp; StatArb Pairs Trading Engine</td><td>Johansen and Engle-Granger statistical arbitrage framework with Ornstein-Uhlenbeck mean-reversion half-life estimation and Kalman filter dynamic beta hedging.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Sub-100ns SEC Rule 15c3-5 Pre-Trade Risk Gate</td><td>Deterministic pre-trade risk filter enforcing gross dollar limits, fat-finger price collars, order rate thresholds, and credit limits prior to exchange release.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexTrader Sub-Microsecond Algorithmic Market Maker:</strong> Complete sovereign high-frequency platform uniting ITCH decoding, LOB matching, Avellaneda quoting, and pre-trade risk gates defended before Senior Quantitative Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>HF Options Quoting &amp; Real-Time Greeks Engine</td><td>Analytical Black-Scholes pricer, Newton-Raphson IV solver, SABR volatility surface interpolator, real-time Greeks calculator (Delta/Gamma/Vega/Vanna/Volga), and dynamic Delta hedger.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Multi-Venue Cross-Exchange Arbitrage Platform</td><td>Smart order routing platform across 3 venues optimizing all-in maker-taker fees, modeling L3 queue position and cancellation hazard rates, and executing atomic legging unwinds.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Hardware-Accelerated FPGA Hybrid Execution Platform</td><td>Cycle-accurate FPGA pipeline emulator (ITCH parsing, hardware LOB, sub-80ns risk checks) coupled with cache-aligned pinned software event loops and IEEE 1588v2 PTP timestamps.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Enterprise Real-Time Risk &amp; CAT Surveillance Engine</td><td>CME SPAN 16-scenario margin grid calculator, fat-tailed Expected Shortfall (CVaR), HMM regime classifier, and FINRA CAT audit event generator with self-trade prevention.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Nanosecond Telemetry &amp; Exchange Chaos Testing Suite</td><td>RDTSC cycle timing profiler, active-active multi-colocation failover coordinator with fencing leases, and chaos injector recovering missing multicast sequence gaps via TCP replay.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexQuant Sovereign Institutional High-Frequency Trading &amp; Low-Latency Execution Platform:</strong> Complete enterprise trading infrastructure defending against simultaneous market flash crashes, rogue orders, packet drops, and cross-venue partitions under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
 
   return h;
 }

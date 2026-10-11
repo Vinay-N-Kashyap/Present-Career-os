@@ -265,12 +265,12 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 18: [course-iot-edge-ai] Edge AI, DSP & TinyML Systems
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** TinyInference: INT8 Quantized DSP Sensor Pipeline  
+* **GitHub Capstone Project:** ApexEdgeAI: Multi-Modal TinyML Industrial Sensor Platform  
 * **Overview:** Deploy quantized neural networks, configure DSP sampling intervals, optimize window moving averages, and validate accelerometer confidence scores.  
 
 ### Course 19: [course-iot-security] Industrial IoT Security & Device Lifecycle
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
+* **GitHub Capstone Project:** ApexShield: Sovereign Industrial Hardware RoT Platform  
 * **Overview:** Verify secure boot public key hashes, check AES IV block size constraints, prevent firmware versions downgrade rollbacks, and manage cert expiries.  
 
 ### Course 20: [course-python-backend] Python Programming & Backend Systems
