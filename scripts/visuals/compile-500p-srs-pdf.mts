@@ -16,6 +16,7 @@ import { AI_MONTH_1_SPECS, AI_MONTH_2_SPECS } from './ai-masterclass-spec';
 import { FULLSTACK_MONTH_1_SPECS, FULLSTACK_MONTH_2_SPECS } from './fullstack-masterclass-spec';
 import { IOT_MONTH_1_SPECS, IOT_MONTH_2_SPECS } from './iot-masterclass-spec';
 import { GRAPHICS_MONTH_1_SPECS, GRAPHICS_MONTH_2_SPECS } from './graphics-masterclass-spec';
+import { BLOCKCHAIN_MONTH_1_SPECS, BLOCKCHAIN_MONTH_2_SPECS } from './blockchain-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1539,6 +1540,62 @@ function renderGraphicsDayCard(day: any): string {
   `;
 }
 
+function renderBlockchainDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #d97706;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #d97706; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fef3c7; color: #92400e;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #d97706; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #b45309; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #b45309;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #d97706;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #c2410c;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #9a3412;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderFullStackDayCard(day: any): string {
   const questsHtml = day.quests.map((q: any) => `
     <div style="margin-bottom: 2px;">
@@ -2986,6 +3043,89 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Kinematic Character Controller with IK &amp; Ragdoll Engine</td><td>Rapier3D WASM kinematic character controller with slope sliding, Two-Bone Analytical Foot IK, and momentum-inheriting ragdoll physics.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Screen-Space Post-Processing &amp; SRE Watchdog Engine</td><td>Multi-pass G-buffer post-processing with SSAO, SSR, 100k GPU curl noise particles, and sub-500ms WebGL context loss recovery.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexAvatar Globally Distributed Interactive 3D Metaverse &amp; Photorealistic AI Avatar Platform:</strong> Complete virtual human and metaverse ecosystem uniting WebGL/WebGPU, VRM 1.0, FACS visemes, KCC, WebRTC spatial audio, and live chaos defense before Faculty Review Board.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- PART XX: DEEP MASTERCLASS BLUEPRINT - BLOCKCHAIN, WEB3 & SMART CONTRACTS (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #451a03; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XX: Deep Masterclass Blueprint — Blockchain, Web3 &amp; Smart Contracts</h1>
+        <span style="font-size: 8.2pt; color: #fde68a;">Course ID: <code>course-blockchain-web3</code> &bull; 60-Day Full Curriculum (Days 1–60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #d97706; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Decentralized Trust Systems</span><br>
+        <span style="font-size: 7.5pt; color: #fcd34d;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>20.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      Blockchain and smart contract engineering represent the union of asymmetric cryptography, virtual machine instruction set architectures, decentralized game-theoretic consensus, and irreversible financial state machines. In PinIT Career OS, <strong>Course 16: Blockchain, Web3 &amp; Smart Contracts</strong> elevates students into Principal Smart Contract Architects and Web3 Security Researchers across 60 intensive days:
+    </p>
+    <div class="quote-box" style="border-left-color: #d97706;">
+      &bull; <strong>Month 1 (Days 1–30 &bull; 120 Quests): Cryptographic Primitives, EVM Internals, Solidity Architecture &amp; ApexVault Capstone:</strong><br>
+      Cryptographic Primitives: SHA-256, Keccak-256, Collision Resistance &amp; Pre-Image Security, Elliptic Curve Cryptography: Secp256k1, Public Key Derivation, ECDSA Signatures &amp; Signature Malleability (EIP-2), Merkle Trees &amp; Cryptographic Proofs: Binary Trees, Inclusion Proofs, SPV Clients &amp; Logarithmic Verification, Distributed Consensus Foundations: Byzantine Fault Tolerance (BFT), Proof-of-Work (PoW), Difficulty Adjustment &amp; 51% Attack Vectors, <strong>Milestone 1: Zero-Dependency Blockchain Ledger &amp; Merkle Proof Engine</strong>, EVM Architecture Anatomy: Stack (1024 depth, 256-bit words), Volatile Memory (Quadratic Gas Expansion) &amp; Calldata, EVM Persistent Storage Layout: 2^256 Slots, 32-Byte Slot Packing, Dynamic Arrays &amp; Mapping Hash Slot Math, EVM Opcodes, Bytecode Execution &amp; Gas Metering: Instruction Counter, Gas Schedules (SSTORE/SLOAD, Warm vs Cold EIP-2929), The World State Trie: Modified Merkle Patricia Trie (MPT), Account States &amp; State Roots, <strong>Milestone 2: Bytecode-Level EVM Interpreter &amp; Merkle Patricia State Trie Engine</strong>, Solidity Type System &amp; Data Locations: Value Types, Structs, Arrays, memory vs storage vs calldata Pointers, Control Flow, Visibility &amp; Function Modifiers: external vs public Gas Costs, internal vs private, Custom Reentrancy Guards, Contract Interoperability: Low-Level Calls (call, delegatecall, staticcall), Return Data Copying &amp; Context Preservation, Events, ABI Encoding &amp; Bloom Filters: indexed Topics, Non-Indexed Data, Log Mechanics &amp; Off-Chain Indexing, <strong>Milestone 3: Gas-Optimized Decentralized Escrow &amp; Multi-Sig Vault Contract</strong>, ERC-20 Fungible Token Standard: Approvals, transferFrom, Allowance Front-Running &amp; EIP-2612 Permit (Gasless Off-Chain Signatures), ERC-721 Non-Fungible Token (NFT) Standard: safeTransferFrom, ERC721Receiver Interfaces, Token URIs &amp; Metadata Standards, ERC-1155 Multi-Token Standard: Semi-Fungible Items, Batch Transfers, Gas Efficiency &amp; Gaming Inventories, ERC-4626 Tokenized Vault Standard: Yield-Bearing Assets, Share Minting Math, Rounding Direction Exploits &amp; Slippage Protection, <strong>Milestone 4: Enterprise ERC-20/721/4626 Yield-Bearing Liquidity Vault Protocol</strong>, Reentrancy Attacks &amp; Mitigations: Classic Reentrancy (The DAO), Read-Only Reentrancy &amp; Checks-Effects-Interactions (CEI) Pattern, Integer Overflows, Arithmetic Invariants &amp; Underflows: Solidity 0.8+ Panic Codes, unchecked Gas Optimizations &amp; SafeMath, Access Control &amp; Authorization Hazards: tx.origin vs msg.sender Phishing, Ownable2Step &amp; Role-Based Access Control (RBAC), Front-Running, Sandwich Attacks &amp; Miner/Maximal Extractable Value (MEV): Mempool Sniping, Slippage Tolerances &amp; Commit-Reveal Schemes, <strong>Milestone 5: Comprehensive Security Audit &amp; Automated Exploit Penetration Engine</strong>, Modern Web3 Tooling: Foundry (Forge, Cast, Anvil) vs Hardhat, Fast Local Testing &amp; Scripted Deployments, Advanced Fuzzing &amp; Invariant Testing: Property-Based Fuzzing in Foundry, Stateful Invariant Runs &amp; Echidna Symbolic Execution, Gas Optimization Techniques: Custom Errors vs Require Strings, Bitwise Packing, Immutable/Constant Variables &amp; Yul Assembly Inlining, Web3 Client RPC Engineering: JSON-RPC Nodes, Viem vs Ethers.js, WebSocket Event Listeners &amp; Nonce Management, and the <strong>ApexVault Institutional-Grade Multi-Sig Smart Contract &amp; Security Defense Capstone Viva Gate</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31–60 &bull; 120 Quests): DeFi Protocols, L2 Rollups, Zero-Knowledge Proofs &amp; ApexDEX Master Capstone:</strong><br>
+      Automated Market Makers (AMM): Constant Product Formula (x &middot; y = k), Impermanent Loss &amp; Swap Math, Concentrated Liquidity AMMs (Uniswap v3): Ticks, Price Ranges, Tick Math &amp; Capital Efficiency, Decentralized Lending &amp; Borrowing: Collateralization Ratios, Health Factors, Liquidation Cascades &amp; Bad Debt, Flash Loans &amp; Arbitrage: Single-Transaction Borrowing, Pool Invariant Verification &amp; Arbitrage Bots, <strong>Milestone 6: Production Concentrated Liquidity AMM &amp; Flash Lending Engine</strong>, Price Oracle Architectures: On-Chain Time-Weighted Average Price (TWAP) vs Off-Chain Decentralized Oracles (Chainlink), Oracle Manipulation Attacks: Spot Price Manipulation via Flash Loans, Stale Prices &amp; Circuit Breakers, Cross-Chain Messaging &amp; Bridges: Lock-and-Mint vs Burn-and-Mint, Relayers, Merkle Light Clients &amp; Multisig Bridges (Ronin Hack Analysis), Cross-Chain Interoperability Protocol (CCIP) &amp; LayerZero: Generalized Message Passing, Nonces &amp; Replay Attack Defense, <strong>Milestone 7: Tamper-Proof Multi-Oracle Aggregator &amp; Cross-Chain Bridge Engine</strong>, Proxy Pattern Foundations: delegatecall Storage Collision Hazards &amp; The Proxy-Implementation Split, Transparent Upgradeable Proxy (TUP): Admin Fallback Collisions, ProxyAdmin Contract &amp; Function Selector Clashes, Universal Upgradeable Proxy Standard (UUPS - EIP-1822): Implementation-Side Upgrade Logic, Gas Savings &amp; Self-Destruct Risks, The Diamond Standard (ERC-2535): Multi-Facet Proxies, Function Selectors Routing &amp; Diamond Loupe Facets, <strong>Milestone 8: Production ERC-2535 Diamond Multi-Facet Modular Upgrade Engine</strong>, Blockchain Scalability Trilemma &amp; Layer 2 Taxonomy: State Channels, Sidechains, Plasma vs Rollups, Optimistic Rollups: Fraud Proofs, 7-Day Challenge Period, Interactive Dispute Games &amp; Arbitrum/Optimism Architectures, Zero-Knowledge (ZK) Rollups: Validity Proofs, Immediate Finality, State Diffs vs Calldata &amp; zkEVM (Type 1-4), Data Availability (DA) Solutions: EIP-4844 Blobspace (Proto-Danksharding), Celestia, EigenDA &amp; KZG Commitments, <strong>Milestone 9: Optimistic Fraud Proof Simulator &amp; EIP-4844 Blob Data Ingestion Engine</strong>, ZK-SNARKs &amp; ZK-STARKs Foundations: Arithmetic Circuits, R1CS (Rank-1 Constraint Systems), QAP &amp; Groth16 Proofs, Circom &amp; SnarkJS on the Web: Writing ZK Circuits, Trusted Setup Ceremonies &amp; On-Chain Verifier Contracts, Account Abstraction (ERC-4337): UserOperations, Bundlers, EntryPoint Contract &amp; Paymasters (Gas Sponsorship), 3 AM Web3 War Room &amp; Incident Triage: Bridge Drains, Compromised Admin Keys, Flash Loan Attacks &amp; Emergency Pausing, <strong>Milestone 10: ERC-4337 Smart Account with Paymaster &amp; ZK Proof Verifier Engine</strong>, Real-World Architecture Deep Dive: Uniswap v4 (Hooks Architecture, Transient Storage EIP-1153 &amp; Singleton Pool Contract), Real-World Architecture Deep Dive: Aave v3 (Isolation Mode, Siloed Borrowing, Portal Cross-Chain Liquidity), Real-World Architecture Deep Dive: PinIT Career OS On-Chain Skill Credential &amp; Verifiable Attestation Registry (EAS / ERC-5192 Soulbound Tokens), Principal Web3 Architect RFC: Monolithic L1 vs Modular Rollup Stack vs Appchain Trade-Off Analysis, and the <strong>ApexDEX Institutional-Grade Cross-Chain Decentralized Exchange &amp; ZK-Rollup Sovereign Protocol Master Capstone Viva Gate</strong>.
+    </div>
+
+    <h2>20.2 Blockchain, Web3 &amp; Smart Contracts Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  BLOCKCHAIN_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderBlockchainDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #451a03; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XX: Web3 Month 2 — DeFi Protocols, L2 Rollups, ZK Proofs, ERC-4337 &amp; ApexDEX Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #fde68a;">Course ID: <code>course-blockchain-web3</code> &bull; Days 31–60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #d97706; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced DeFi &amp; ZK Systems</span><br>
+        <span style="font-size: 7.5pt; color: #fcd34d;">Staff Web3 Architect Target</span>
+      </div>
+    </div>
+
+    <h2>20.3 Blockchain, Web3 &amp; Smart Contracts Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  BLOCKCHAIN_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderBlockchainDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>20.4 Blockchain, Web3 &amp; Smart Contracts Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Zero-Dependency Blockchain Ledger &amp; Merkle Engine</td><td>Zero-dependency TypeScript ledger with secp256k1 key generation, Merkle tree inclusion proofs, and PoW dynamic difficulty mining.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Bytecode EVM Interpreter &amp; Merkle Patricia Trie</td><td>Stack-based EVM interpreter supporting 30+ opcodes, quadratic memory gas, EIP-2929 warm/cold SLOAD, and MPT world state root persistence.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Gas-Optimized Escrow &amp; Multi-Sig Vault Contract</td><td>Audited Solidity escrow contract with EIP-712 structured data signing, SafeERC20 low-level calls, and CEI reentrancy safety.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Enterprise ERC-20/721/4626 Yield-Bearing Vault</td><td>Integrated token suite featuring EIP-2612 gasless permits, dynamic on-chain SVG position NFTs, and inflation-protected ERC-4626 share math.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Comprehensive Security Audit &amp; Penetration Engine</td><td>Automated exploit suite reproducing reentrancy, integer panic, tx.origin phishing, and front-running with 100% remediation.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexVault Institutional Multi-Sig &amp; Security Defense:</strong> Complete treasury platform uniting raw EVM bytecode, gas packing, EIP-712 multisigs, ERC-4626, and oral defense before Senior Web3 Security Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Concentrated Liquidity AMM &amp; Flash Lending Engine</td><td>Uniswap v3-style tick math exchange with Q64.96 fixed-point arithmetic, range position minting, and EIP-3156 flash loans.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Tamper-Proof Multi-Oracle &amp; Cross-Chain Bridge</td><td>Decoupled price aggregator combining Chainlink feeds, Uniswap TWAP, volatility circuit breakers, and rate-limited cross-chain bridge vaults.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ERC-2535 Diamond Modular Upgrade Engine</td><td>Modular multi-facet proxy with DiamondLoupe, AppStorage pointer alignment, hot-swappable facet functions, and timelock governance.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Optimistic Fraud Proof Simulator &amp; EIP-4844 Blob Engine</td><td>Interactive bisection dispute game narrowing execution disputes to a single opcode, One-Step Prover verification, and EIP-4844 blob ingestion.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>ERC-4337 Smart Account &amp; ZK Proof Verifier Engine</td><td>Account Abstraction smart wallet with sponsoring Paymaster, UserOperation bundler integration, and on-chain Groth16 Circom verifier.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexDEX Cross-Chain Decentralized Exchange &amp; ZK Protocol:</strong> Complete DeFi ecosystem uniting concentrated liquidity, ZK validity proofs, ERC-4337, multi-chain bridges, and live chaos defense before Faculty Review Board.</td></tr>
     </tbody>
   </table>
   `;
