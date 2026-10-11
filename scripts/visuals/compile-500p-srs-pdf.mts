@@ -29,6 +29,7 @@ import { MARKETING_BRANDING_MONTH_1_SPECS, MARKETING_BRANDING_MONTH_2_SPECS } fr
 import { DIGITAL_MARKETING_MONTH_1_SPECS, DIGITAL_MARKETING_MONTH_2_SPECS } from './digital-marketing-masterclass-spec';
 import { ECOMMERCE_DIGITAL_BIZ_MONTH_1_SPECS, ECOMMERCE_DIGITAL_BIZ_MONTH_2_SPECS } from './ecommerce-digital-biz-masterclass-spec';
 import { SUPPLY_CHAIN_OPS_MONTH_1_SPECS, SUPPLY_CHAIN_OPS_MONTH_2_SPECS } from './supply-chain-ops-masterclass-spec';
+import { VENTURE_CREATION_MONTH_1_SPECS, VENTURE_CREATION_MONTH_2_SPECS } from './venture-creation-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2217,6 +2218,71 @@ function renderSupplyChainOpsDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #064e3b;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderVentureCreationDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #fef3c7; color: #92400e; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #d97706;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #78350f; color: #fef3c7; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #78350f;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fef3c7; color: #92400e;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fde68a;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #92400e; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #b45309; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #92400e;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #78350f;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #92400e;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#fef3c7' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#d97706' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #92400e;">✓ [Optimal Venture Strategy]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #92400e; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #78350f;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -4925,6 +4991,82 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexRobotics Automated Warehouse &amp; AGV/AMR Fleet Dispatch Suite</td><td>Advanced automated warehouse control system integrating 3-tier WES/WCS middleware, LiDAR SLAM mobile robots, AutoStore cube grid 3D thermodynamics, and Conflict-Based Search (CBS) multi-agent deadlock avoidance.</td></tr>
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexTwin Enterprise Discrete-Event Simulation &amp; Digital Twin Suite</td><td>Production-grade discrete-event simulation and live digital twin engine: SimPy event calendars, Jackson network queue calculations, Kafka telemetry streaming, and 10,000-run Monte Carlo SC-VaR risk projections.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexSupplyChainOS Full-Scale Enterprise Supply Chain &amp; Operations Management Engine:</strong> Complete sovereign global enterprise supply chain operating system uniting COG/MILP Network Design, MEIO Stochastic Inventory, Autonomous Robotics Fleet Dispatch, ApexTwin Discrete-Event Simulation, LkSG/CSDDD ESG Provenance, Scope 1/2/3 GLEC Carbon Accounting, Incoterms 2020 Compliance, SAP/Manhattan Integration Middleware, and Autonomous RL Self-Healing Operations defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXIII: VENTURE CREATION & LEAN STARTUP ENGINEERING MASTERCLASS BLUEPRINT (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #78350f; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #f59e0b;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #fef3c7; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXIII: Deep Masterclass Blueprint &mdash; Venture Creation, Corporate Innovation &amp; Lean Startup Engineering (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #fde68a; font-weight: 700;"><code>course-bcom-entrepreneurship</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #fef3c7;">
+      <strong>Directorate:</strong> Senior Venture Architect, Founding Partner &amp; Chief Innovation Officer &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexVenture (M1) &amp; ApexUnicornOS (M2)
+    </p>
+  </div>
+
+  <h2>33.1 Month 1: Legal Entity Formation, Opportunity Discovery, Financial Modeling &amp; Seed Term Sheets (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes sovereign fluency across legal entity selection (C-Corp vs LLC) and corporate veil protection, bottom-up TAM/SAM/SOM market sizing, Osterwalder Business Model Canvas, Christensen Jobs-to-be-Done (JTBD) customer value architecture, Eric Ries Lean Startup and MVP archetypes, Hamilton Helmer 7 Powers competitive moats, contribution margin and break-even physics, working capital zero-cash runway projections, Y Combinator post-money SAFE cap table dilution, VC Method and Berkus valuation models, 4-year reverse vesting with 1-year cliff, PIIA intellectual property assignment, Grove/Doerr OKRs, Little's Law WIP operational throughput, Six Sigma DMAIC quality, Fitzpatrick Mom Test customer interviewing, B2B sales pipeline velocity, SaaS unit economics (LTV/CAC, Magic Number, Net Dollar Retention), venture pitch deck architecture, NVCA term sheet liquidation preferences (participating vs non-participating), integrated 3-statement financial modeling, virtual data room (VDR) due diligence, corporate ambidexterity, strategic alliances, patent FTO clearance, and crisis turnaround management.
+  </p>
+
+  ${(() => {
+    let out = '';
+    VENTURE_CREATION_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderVentureCreationDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #78350f; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #f59e0b;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #fef3c7; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXIII: Venture Creation &amp; Lean Startup Engineering &mdash; Month 2: Scale-Up Governance, Institutional Dilution, Venture Capital Operations &amp; Unicorn Architecture (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #fde68a; font-weight: 700;">Stage 4 &bull; Global Scale &amp; CIO/Founder Defense</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #fef3c7;">
+      <strong>Month 2 Scope:</strong> Series A/B Board Governance, Delaware Section 141 Fiduciary Duties, Cross-Border Delaware Flips &amp; Section 367 Traps, Multi-Round Dilution Waterfalls with Pre-Money Option Pool Shuffles, Rahul Vohra Superhuman PMF Engine, Venture Debt &amp; Negative Covenants, SOX 404 Internal Controls &amp; FCPA Compliance, M&amp;A Purchase Agreements (Asset vs Stock, Escrow, Indemnification), Secondary Tender Offers &amp; 409A Strike Price Isolation, Product-Led Growth Freemium &amp; PQL Telemetry, International Expansion (VAT/GST &amp; GDPR Data Residency), Radford Executive Headcount Compensation Bands, High-Stakes Founder Psychology &amp; War-Time Boardroom Governance, Monte Carlo Stochastic Venture Survival Modeling, SEC Regulation D Rule 506(b)/506(c) Compliance, Algorithmic Unit Economics Stress-Testing, Historic Catastrophe Case Studies (Theranos, WeWork, FTX), Corporate Venture Capital (CVC) Strategic Alignment, Chief of Staff Strategic Architecture RFC ($1B Conglomerate Blueprint), Growth Capital Markets &amp; S-1 Underwriting, Anti-Takeover Defensive Strategy, Caremark Fiduciary Oversight &amp; DGCL Section 220 Books and Records, Andy Grove Managerial Leverage, and Capstone 2: ApexUnicornOS Full-Scale Enterprise Venture Creation Master Capstone Viva Gate.
+    </p>
+  </div>
+
+  <h2>33.2 Month 2: Scale-Up Governance, Institutional Dilution, Venture Capital Operations &amp; Unicorn Architecture (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    VENTURE_CREATION_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderVentureCreationDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>33.3 Venture Creation &amp; Lean Startup Engineering Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;9 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexVenture Ideation &amp; Opportunity Sizing Engine</td><td>Validated problem-solution hypothesis engine executing bottom-up TAM/SAM/SOM calculus, Osterwalder Business Model Canvas, and Christensen JTBD value map.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexCapTable Financial Feasibility &amp; Dilution Suite</td><td>Mathematical financial modeling suite evaluating unit contribution margins, working capital zero-cash runways, and multi-SAFE post-money dilution waterfalls.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexOrg Governance &amp; Executive OKR Architecture Suite</td><td>Early-stage corporate governance suite enforcing 4-year reverse vesting with 1-year cliff, PIIA intellectual property assignment, and cascading Grove OKR trees.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>ApexMetrics SaaS Unit Economics &amp; Discovery Engine</td><td>B2B customer discovery and unit economics engine calculating LTV/CAC ratios, Net Dollar Retention, Magic Number sales efficiency, and Mom Test interview synthesis.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>ApexPitch Term Sheet &amp; Virtual Data Room Suite</td><td>Venture financing platform modeling NVCA non-participating vs participating liquidation preference waterfalls, 10-slide pitch deck architecture, and SOC 2/VDR due diligence index.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexVenture Core Startup Architecture Master Capstone:</strong> Complete sovereign seed venture platform uniting entity formation, bottom-up TAM, unit economics, SAFE cap tables, term sheet waterfalls, and Lean MVP execution defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>ApexScale Institutional Cap Table &amp; PMF Engine</td><td>Scale-up governance suite executing multi-round Series A/B dilution waterfalls with pre-money option pool shuffles, cross-border Delaware flip tax structuring, and Superhuman PMF telemetry.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>ApexTreasury Venture Debt &amp; M&amp;A Transaction Suite</td><td>Institutional capital suite modeling venture debt warrant coverage and minimum cash covenants, SOX 404 segregation of duties, definitive stock purchase agreement (SPA) escrows, and secondary tender offer 409A isolation.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexGlobal International Scaling &amp; Executive Org Suite</td><td>Global scaling platform implementing multi-jurisdiction VAT/GST taxation, GDPR cross-border transfer agreements, Radford compensation bands, and war-time crisis governance protocols.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexSimulator Stochastic Venture Survival Simulation Suite</td><td>Algorithmic venture simulation suite running 10,000-iteration Monte Carlo cash runway distributions, SEC Rule 506(b)/506(c) investor qualification ledgers, and institutional LP fund return metrics (TVPI/DPI/MOIC).</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexUnicornOS Full-Scale Enterprise Venture Creation Master Capstone:</strong> Complete sovereign global venture operating system uniting Multi-Round Institutional Cap Table Waterfalls, Superhuman PMF Telemetry, Monte Carlo Cash Runway Simulation, SOX 404 Governance, Global Entity Tax Structuring, SEC Reg D Compliance, and Chief of Staff Strategic Conglomerate RFC defended under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
