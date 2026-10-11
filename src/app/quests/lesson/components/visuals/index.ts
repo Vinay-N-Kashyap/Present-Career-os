@@ -14,6 +14,9 @@ export { StatesTemplate } from './StatesTemplate';
 export { ComponentTreeTemplate } from './ComponentTreeTemplate';
 export { WorkflowTemplate } from './WorkflowTemplate';
 export { WireframeTemplate } from './WireframeTemplate';
+export { RegisterBitsTemplate } from './RegisterBitsTemplate';
+export { LedgerSheetTemplate } from './LedgerSheetTemplate';
+export { FunnelTemplate } from './FunnelTemplate';
 export {
   getToneColor,
   getToneBg,

@@ -14,6 +14,9 @@ import { StatesTemplate } from './StatesTemplate';
 import { ComponentTreeTemplate } from './ComponentTreeTemplate';
 import { WorkflowTemplate } from './WorkflowTemplate';
 import { WireframeTemplate } from './WireframeTemplate';
+import { RegisterBitsTemplate } from './RegisterBitsTemplate';
+import { LedgerSheetTemplate } from './LedgerSheetTemplate';
+import { FunnelTemplate } from './FunnelTemplate';
 
 export interface VisualStageProps {
   visual: LessonVisual;
@@ -265,6 +268,33 @@ export function VisualStage({
         return (
           <WireframeTemplate
             boxes={(visual as any).boxes || []}
+            step={visual.steps[safeStepIndex] as any}
+            highlightedLabel={highlightedLabel}
+            onShapeTap={onShapeTap}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'register-bits':
+        return (
+          <RegisterBitsTemplate
+            step={visual.steps[safeStepIndex] as any}
+            highlightedLabel={highlightedLabel}
+            onShapeTap={onShapeTap}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'ledger-sheet':
+        return (
+          <LedgerSheetTemplate
+            step={visual.steps[safeStepIndex] as any}
+            highlightedLabel={highlightedLabel}
+            onShapeTap={onShapeTap}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'funnel':
+        return (
+          <FunnelTemplate
             step={visual.steps[safeStepIndex] as any}
             highlightedLabel={highlightedLabel}
             onShapeTap={onShapeTap}

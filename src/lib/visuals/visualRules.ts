@@ -14,6 +14,15 @@ export function getTappableLabelsForVisual(visual?: LessonVisual | null): string
   if (visual.template === 'boxes') {
     return visual.boxes.filter(b => b.tappable !== false).map(b => b.label);
   }
+  if (visual.template === 'funnel') {
+    return visual.steps[0]?.stages.map(s => s.label) || [];
+  }
+  if (visual.template === 'ledger-sheet') {
+    return visual.steps[0]?.entries.map(e => e.account) || [];
+  }
+  if (visual.template === 'register-bits') {
+    return visual.steps[0]?.bits.map(b => b.name).filter(Boolean) as string[] || [];
+  }
   // Spec v1.1: Underline nothing for table, letters or compare visuals
   return [];
 }

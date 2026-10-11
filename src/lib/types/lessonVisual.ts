@@ -499,6 +499,123 @@ export interface WireframeSpec {
   showSpaces?: boolean;
 }
 
+// --- Template 15: register-bits (Hardware, Embedded, IoT, Systems) ---
+export interface RegisterBit {
+  index: number;
+  name?: string;
+  value: 0 | 1;
+  tone?: VisualTone;
+  highlighted?: boolean;
+}
+
+export interface RegisterBitsStep extends StepBase {
+  registerName: string;
+  bitWidth?: 8 | 16 | 32;
+  bits: RegisterBit[];
+  hexValue?: string;
+  decimalValue?: number;
+  maskApplied?: string;
+}
+
+export interface RegisterBitsVisual {
+  template: 'register-bits';
+  title: string;
+  steps: RegisterBitsStep[];
+  showSpaces?: boolean;
+}
+
+export interface RegisterBitsStepSpec extends StepBaseSpec {
+  registerName: string;
+  bitWidth?: 8 | 16 | 32;
+  bits: RegisterBit[];
+  hexValue?: string;
+  decimalValue?: number;
+  maskApplied?: string;
+}
+
+export interface RegisterBitsSpec {
+  template: 'register-bits';
+  title: string;
+  steps: RegisterBitsStepSpec[];
+  showSpaces?: boolean;
+}
+
+// --- Template 16: ledger-sheet (Finance, Accounting, Double-Entry) ---
+export interface LedgerEntry {
+  id: string;
+  date?: string;
+  account: string;
+  debit?: number;
+  credit?: number;
+  balance?: number;
+  tone?: VisualTone;
+  memo?: string;
+}
+
+export interface LedgerSheetStep extends StepBase {
+  title?: string;
+  entries: LedgerEntry[];
+  totalDebit?: number;
+  totalCredit?: number;
+  isBalanced?: boolean;
+}
+
+export interface LedgerSheetVisual {
+  template: 'ledger-sheet';
+  title: string;
+  steps: LedgerSheetStep[];
+  showSpaces?: boolean;
+}
+
+export interface LedgerSheetStepSpec extends StepBaseSpec {
+  title?: string;
+  entries: LedgerEntry[];
+  totalDebit?: number;
+  totalCredit?: number;
+  isBalanced?: boolean;
+}
+
+export interface LedgerSheetSpec {
+  template: 'ledger-sheet';
+  title: string;
+  steps: LedgerSheetStepSpec[];
+  showSpaces?: boolean;
+}
+
+// --- Template 17: funnel (Marketing, Sales, Conversion Pipelines) ---
+export interface FunnelStage {
+  id: string;
+  label: string;
+  value: number;
+  percentage?: number;
+  dropoffRate?: number;
+  tone?: VisualTone;
+}
+
+export interface FunnelStep extends StepBase {
+  stages: FunnelStage[];
+  activeStageId?: string;
+}
+
+export interface FunnelVisual {
+  template: 'funnel';
+  title: string;
+  steps: FunnelStep[];
+  showSpaces?: boolean;
+}
+
+export interface FunnelStepSpec extends StepBaseSpec {
+  stages: FunnelStage[];
+  activeStageId?: string;
+}
+
+export interface FunnelSpec {
+  template: 'funnel';
+  title: string;
+  steps: FunnelStepSpec[];
+  showSpaces?: boolean;
+}
+
 // --- None template ---
 export interface NoneVisual {
   template: 'none';
@@ -510,7 +627,7 @@ export interface NoneSpec {
   reason: string;
 }
 
-// --- Filled LessonVisual (Union of all 14 filled visual templates) ---
+// --- Filled LessonVisual (Union of all 17 filled visual templates) ---
 export type LessonVisual =
   | FlowVisual
   | BoxesVisual
@@ -525,7 +642,10 @@ export type LessonVisual =
   | StatesVisual
   | ComponentTreeVisual
   | WorkflowVisual
-  | WireframeVisual;
+  | WireframeVisual
+  | RegisterBitsVisual
+  | LedgerSheetVisual
+  | FunnelVisual;
 
 // --- VisualSpec (Union of all specs with bindings) ---
 export type VisualSpec =
@@ -543,6 +663,9 @@ export type VisualSpec =
   | ComponentTreeSpec
   | WorkflowSpec
   | WireframeSpec
+  | RegisterBitsSpec
+  | LedgerSheetSpec
+  | FunnelSpec
   | NoneSpec;
 
 // --- Day-File Type (Plan C3) ---
