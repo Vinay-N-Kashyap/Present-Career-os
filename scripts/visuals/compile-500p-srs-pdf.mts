@@ -17,6 +17,7 @@ import { FULLSTACK_MONTH_1_SPECS, FULLSTACK_MONTH_2_SPECS } from './fullstack-ma
 import { IOT_MONTH_1_SPECS, IOT_MONTH_2_SPECS } from './iot-masterclass-spec';
 import { GRAPHICS_MONTH_1_SPECS, GRAPHICS_MONTH_2_SPECS } from './graphics-masterclass-spec';
 import { BLOCKCHAIN_MONTH_1_SPECS, BLOCKCHAIN_MONTH_2_SPECS } from './blockchain-masterclass-spec';
+import { IOT_NETWORK_MONTH_1_SPECS, IOT_NETWORK_MONTH_2_SPECS } from './iot-network-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1528,6 +1529,63 @@ function renderGraphicsDayCard(day: any): string {
         <em>"${day.situationalPuzzle.scenario}"</em><br>
         <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
         <span style="color: #5b21b6;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+function renderIotNetworkDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0891b2;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0891b2; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #cffafe; color: #0e7490;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0891b2; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0e7490; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #0e7490;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0891b2;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #0e7490;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #166534;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #15803d;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
       </div>
 
       <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
@@ -3126,6 +3184,102 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Optimistic Fraud Proof Simulator &amp; EIP-4844 Blob Engine</td><td>Interactive bisection dispute game narrowing execution disputes to a single opcode, One-Step Prover verification, and EIP-4844 blob ingestion.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>ERC-4337 Smart Account &amp; ZK Proof Verifier Engine</td><td>Account Abstraction smart wallet with sponsoring Paymaster, UserOperation bundler integration, and on-chain Groth16 Circom verifier.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexDEX Cross-Chain Decentralized Exchange &amp; ZK Protocol:</strong> Complete DeFi ecosystem uniting concentrated liquidity, ZK validity proofs, ERC-4337, multi-chain bridges, and live chaos defense before Faculty Review Board.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+    h += `
+  <!-- PART XXI: DEEP MASTERCLASS BLUEPRINT - IOT WIRELESS NETWORKS & PROTOCOLS (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #083344; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXI: Deep Masterclass Blueprint &bull; IoT Wireless Networks &amp; Protocols (Days 1&ndash;60 / 240 Quests)</h1>
+        <span style="font-size: 8.2pt; color: #a5f3fc;">Course ID: <code>course-iot-network</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0891b2; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Low-Power Mesh &amp; Wireless RF</span><br>
+        <span style="font-size: 7.5pt; color: #67e8f9;">Staff IoT Network Architect Target</span>
+      </div>
+    </div>
+
+    <h2>21.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p style="font-size: 8.2pt; line-height: 1.45; color: #334155; margin-bottom: 8pt;">
+      <strong>Course 17: IoT Wireless Networks &amp; Protocols</strong> takes students from the immutable physics of the electromagnetic spectrum, Friis path loss, antenna impedance matching, and IEEE 802.15.4 CSMA/CA MAC framing; up through the complete Bluetooth Low Energy (BLE 5.x) stack (GAP, ATT, GATT, MTU exchange, high-throughput notifications, and L2CAP credit-based channels); deep into Sub-GHz long-range LoRa Chirp Spread Spectrum physics, Semtech airtime formulations, ETSI 1% duty cycle regulation, OTAA activation, AES-128 dual-key cryptography, and Class A/C downlinks in the <strong>ApexLink Industrial Gateway Capstone</strong>; across embedded Wi-Fi station/SoftAP provisioning, zero-copy LwIP socket pipelines, and enterprise MQTT QoS 2 resilient queuing; into 6LoWPAN IPv6 header compression, RPL DODAG self-healing mesh routing, and Thread border routing with Matter; and across cellular LPWAN (NB-IoT/LTE-M) Power Saving Mode (PSM) timers, asynchronous AT command pipelines, and Direct-to-Cell LEO satellite Doppler compensation in the <strong>ApexMesh Sovereign Master Capstone Viva Gate</strong>.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6pt; margin-bottom: 10pt;">
+      <div style="background: #f0fdfa; border: 1px solid #99f6e4; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #0d9488; font-size: 8pt;">Stage 1: RF Physics &amp; 802.15.4</strong><br>
+        <span style="font-size: 7.2pt; color: #115e59;">Days 1&ndash;15 (60 Quests)<br>Friis FSPL, GFSK, VSWR, Rayleigh Fading, 802.15.4 DSSS, CSMA/CA, BLE PHYs (1M/2M/Coded), GAP Roles &amp; AFH.<br><em>Milestones 1&ndash;3</em></span>
+      </div>
+      <div style="background: #ecfeff; border: 1px solid #a5f3fc; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #0891b2; font-size: 8pt;">Stage 2: GATT, LoRa &amp; ApexLink</strong><br>
+        <span style="font-size: 7.2pt; color: #155e75;">Days 16&ndash;30 (60 Quests)<br>ATT Handles, GATT Hierarchy, CCCD, MTU 517B, L2CAP CoC, LoRa CSS (SF7-12), ToA, ETSI 1%, OTAA, Class A/C &amp; ApexLink Capstone.<br><em>Milestones 4&ndash;5 + Capstone 1</em></span>
+      </div>
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #16a34a; font-size: 8pt;">Stage 3: Wi-Fi, LwIP, MQTT &amp; CoAP</strong><br>
+        <span style="font-size: 7.2pt; color: #14532d;">Days 31&ndash;45 (60 Quests)<br>Wi-Fi PSM/TWT, BLE Provisioning, LwIP pbufs, TCP_NODELAY, MQTT QoS 2 Handshake, In-Flight PID, LWT, CoAP ARQ, Block1/Block2 &amp; Observe.<br><em>Milestones 6&ndash;8</em></span>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #475569; font-size: 8pt;">Stage 4: Mesh, Cellular &amp; ApexMesh</strong><br>
+        <span style="font-size: 7.2pt; color: #1e293b;">Days 46&ndash;60 (60 Quests)<br>6LoWPAN IPHC, RPL MRHOF/ETX, Thread/Matter OTBR, NB-IoT/LTE-M PSM, AT CMUX, Satellite NTN Doppler &amp; ApexMesh Master Capstone.<br><em>Milestones 9&ndash;10 + Master Capstone</em></span>
+      </div>
+    </div>
+
+    <h2>21.2 IoT Wireless Networks &amp; Protocols Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  IOT_NETWORK_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderIotNetworkDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #083344; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXI: IoT Wireless Month 2 &bull; IP Stacks, MQTT, CoAP, Thread Mesh, Cellular LPWAN &amp; ApexMesh Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #a5f3fc;">Course ID: <code>course-iot-network</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0891b2; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Heterogeneous Mesh &amp; Cloud Gateway</span><br>
+        <span style="font-size: 7.5pt; color: #67e8f9;">Staff IoT Network Architect Target</span>
+      </div>
+    </div>
+
+    <h2>21.3 IoT Wireless Networks &amp; Protocols Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  IOT_NETWORK_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderIotNetworkDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>21.4 IoT Wireless Networks &amp; Protocols Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>RF Link Budget &amp; Propagation Simulator</td><td>TypeScript RF engine modeling Friis FSPL, log-distance shadow fading, antenna gains, VSWR, and Rayleigh multipath fade margins.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>IEEE 802.15.4 Frame Parser &amp; CSMA/CA Engine</td><td>Binary MPDU parser with FCF bitfield extraction, CRC-16, and unslotted CSMA/CA state machine with exponential backoff and CCA.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Multi-Role BLE Link Layer State Machine</td><td>Link layer engine managing Central/Peripheral states, CONNECT_IND generation, AFH channel mapping, and synchronized Instant parameter switching.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Production BLE GATT Server &amp; Streamer</td><td>Asynchronous GATT server with dynamic ATT database, per-client CCCD state tracking, MTU 517B exchange, and backpressure-aware streaming.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>LoRa Modulation &amp; Duty-Cycle Engine</td><td>Chirp Spread Spectrum simulator, Semtech Time-on-Air calculation, LDRO auto-activation, and rolling 1-hour ETSI 1% duty-cycle throttling.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexLink Industrial Multi-Radio Gateway:</strong> Integrated edge node ingesting high-frequency BLE GATT sensor streams, packing encrypted LoRaWAN OTAA frames, and bridging field telemetry across 15km before Senior Wireless Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>LwIP Zero-Copy Sockets &amp; Provisioning Engine</td><td>Zero-copy pbuf buffer chaining with reference counting, TCP_NODELAY streaming, and authenticated X25519 BLE-to-Wi-Fi onboarding state machine.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Resilient MQTT QoS 2 &amp; Offline Queuing Engine</td><td>Binary MQTT v3.1.1/v5.0 client with 4-way QoS 2 handshake, in-flight PID recycle windowing, persistent flash buffer, and LWT presence tracking.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Asynchronous CoAP Block-Wise &amp; Observe Engine</td><td>RFC 7252 CoAP engine with Stop-and-Wait ARQ, NSTART=1 congestion control, RFC 7959 Block1/Block2 slicing, and RFC 7641 Observe subscriptions.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>6LoWPAN Compression &amp; Thread Mesh Simulator</td><td>RFC 6282 IPHC header compressor down to 2B, RPL MRHOF ETX loop-free routing, and Thread mesh simulator with autonomous Leader re-election.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Cellular LPWAN Driver &amp; PSM Lifecycle Engine</td><td>Asynchronous AT command pipeline with URC decoupling, hardware RTS/CTS flow control, 3GPP T3324/T3412 timers, and <3uA PSM sleep transitions.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexMesh Sovereign Multi-Radio Wireless Mesh &amp; Cloud Gateway Platform:</strong> Complete heterogeneous industrial ecosystem uniting BLE, LoRaWAN, Thread 6LoWPAN, and Cellular/Satellite NTN with zero-loss failover under live chaos defense.</td></tr>
     </tbody>
   </table>
   `;
