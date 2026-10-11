@@ -305,12 +305,12 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 26: [course-digital-marketing] Digital Marketing & Growth Strategy (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
+* **GitHub Capstone Project:** ApexEnterpriseGitOps: Sovereign Distributed Version Control & Enterprise Release Engineering Suite  
 * **Overview:** University-grade foundation curriculum covering customer journeys, SEO, content strategy, paid performance advertising, email automation, CRO analytics, growth hacking systems, and AI marketing tools.  
 
 ### Course 27: [course-ecommerce-digital-biz] E-Commerce & Digital Business (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
+* **GitHub Capstone Project:** ApexEnterpriseGitOps: Sovereign Distributed Version Control & Enterprise Release Engineering Suite  
 * **Overview:** University-grade foundation curriculum covering digital business models, product catalog management, pricing, online store UX, payment gateways, logistics fulfillment, customer support, e-commerce analytics, and AI commerce.  
 
 ### Course 28: [course-entrepreneurship-biz-mgmt] Entrepreneurship & Business Management (B.Com / BBA / MBA)
@@ -330,7 +330,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 31: [course-ai-digital-transformation] AI & Digital Transformation for Business (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
+* **GitHub Capstone Project:** ApexEnterpriseGitOps: Sovereign Distributed Version Control & Enterprise Release Engineering Suite  
 * **Overview:** University-grade foundation curriculum covering AI literacy, prompt engineering for business, functional AI (Finance, HR, Marketing, Ops), business intelligence & predictive analytics, Robotic Process Automation (RPA), enterprise ERP/CRM AI systems, AI governance/ethics/security, and AI leadership.  
 
 ### Course 32: [course-computer-fundamentals] Computer Literacy, Digital Productivity & OS Fundamentals
@@ -350,7 +350,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 35: [course-git-version-control] Git, GitHub & Version Control Basics
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
+* **GitHub Capstone Project:** ApexEnterpriseGitOps: Sovereign Distributed Version Control & Enterprise Release Engineering Suite  
 * **Overview:** Essential collaboration skills for tech and digital teams. Master Git repositories, commits, branches, merge conflicts, pull requests, and GitHub project management.  
 
 ### Course 36: [course-softskills-communication] Professional Tech Communication & Interview Mastery

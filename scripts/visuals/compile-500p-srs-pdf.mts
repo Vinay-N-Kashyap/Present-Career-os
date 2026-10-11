@@ -35,6 +35,7 @@ import { AI_TRANSFORM_MONTH_1_SPECS, AI_TRANSFORM_MONTH_2_SPECS } from './ai-tra
 import { COMPUTER_FUNDAMENTALS_MONTH_1_SPECS, COMPUTER_FUNDAMENTALS_MONTH_2_SPECS } from './computer-fundamentals-masterclass-spec';
 import { AI_PROMPT_MONTH_1_SPECS, AI_PROMPT_MONTH_2_SPECS } from './ai-prompt-masterclass-spec';
 import { EXCEL_DATA_VIZ_MONTH_1_SPECS, EXCEL_DATA_VIZ_MONTH_2_SPECS } from './excel-data-viz-masterclass-spec';
+import { GIT_VERSION_CONTROL_MONTH_1_SPECS, GIT_VERSION_CONTROL_MONTH_2_SPECS } from './git-version-control-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -155,7 +156,7 @@ function getCourseCapstoneProject(courseId: string): string {
   if (courseId.includes('accounting')) return 'LedgerCore: Immutable Double-Entry Accounting Engine';
   if (courseId.includes('taxation')) return 'TaxCascade: Real-Time Multi-Tier GST Reconciliation';
   if (courseId.includes('finance')) return 'ValuationEngine: Monte Carlo DCF Cash Flow Simulator';
-  if (courseId.includes('git')) return 'GitInternals: Content-Addressable DAG Object Database';
+  if (courseId.includes('git')) return 'ApexEnterpriseGitOps: Sovereign Distributed Version Control & Enterprise Release Engineering Suite';
   if (courseId.includes('ai-prompt') || courseId.includes('prompt-literacy')) return 'ApexPromptEnterprise: Sovereign Enterprise Prompt Architecture & Cognitive Systems Suite';
   if (courseId.includes('excel') || courseId.includes('data-viz')) return 'ApexEnterpriseAnalytics: Full-Scale Financial Engineering & Enterprise Data Modeling Suite';
   return 'SystemCore: Industrial Enterprise Subsystem Component';
@@ -2615,6 +2616,71 @@ function renderExcelDataVizDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #065f46;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderGitVersionControlDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #c2410c; color: #ffedd5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #9a3412;">${day.title}</strong>
+          <span class="stage-pill" style="background: #ffedd5; color: #c2410c;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fff7ed; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fed7aa;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #9a3412; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #c2410c; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #7c2d12;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#ffedd5' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#ea580c' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #9a3412;">✓ [Optimal Systems Architecture Decision]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #9a3412; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #9a3412;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -5776,6 +5842,81 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 6</strong></td><td>Day 45</td><td>ApexAnalytics Statistical Testing &amp; Time-Series Forecasting Suite</td><td>Econometric analytics engine featuring descriptive skewness/kurtosis profiling, ANOVA hypothesis testing, OLS regression with residual diagnostics, and ETS seasonality forecasts.</td></tr>
       <tr><td><strong>Milestone 7</strong></td><td>Day 50</td><td>ApexAutomate Enterprise VBA &amp; TypeScript Office Scripts Automation Suite</td><td>Dual-engine enterprise automation platform combining memory-buffered VBA COM batch controllers with cloud-native TypeScript Office Scripts and recursive LAMBDAs.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseAnalytics Full-Scale Financial Engineering &amp; Enterprise Data Modeling Master Capstone:</strong> Complete enterprise financial architecture platform uniting 3-Statement Modeling, Star Schemas, DAX Intelligence, TypeScript Cloud Flows, Python ML Churn Prediction, EuSpRIG Compliance, and Principal Architect Modernization RFC defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXIX: GIT, GITHUB & VERSION CONTROL BASICS (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #ea580c;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ffedd5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXIX: Deep Masterclass Blueprint &mdash; Git, GitHub &amp; Version Control Basics (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #fdba74; font-weight: 700;"><code>course-git-version-control</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #ffedd5;">
+      <strong>Directorate:</strong> Principal Release Systems Engineer, Chief Open Source Architect &amp; VP of Developer Platform Infrastructure &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexGitOps (M1) &amp; ApexEnterpriseGitOps (M2)
+    </p>
+  </div>
+
+  <h2>39.1 Month 1: Content-Addressable Storage, Plumbing Internals, Branching DAGs, Collaborative Remotes &amp; Release Workflows (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes foundational and architectural mastery across the Git content-addressable storage model and developer workflows: SHA-1 and SHA-256 cryptographic hashing, internal object graph topology (.git/objects blobs, trees, commits, annotated tags), zlib compression, loose objects and staging index binary physics (.git/index cache tree format), working tree state transitions, configuration hierarchy (.gitconfig system, global, local, worktree) and identity attestation, atomic commit creation and semantic commit formatting, log inspection and forensic formatting (oneline, graph, stat, patch), relative revision arithmetic (HEAD~N, HEAD^N), graphical DAG inspection, deterministic branch divergence and pointer movement, fast-forward vs three-way merge algorithms, recursive merge strategy and conflict marker mechanics, interactive rebase internals and history rewriting, cherry-picking atomic commits, reflog disaster recovery and detached HEAD rescue, stash mechanics and stash stack indexing, cryptographic commit and tag signing with GPG/SSH, remote repository topology (protocols: HTTPS, SSH, file), remote tracking branch synchronization (fetch, pull, push, upstream tracking), merge conflicts across remote branches, pull request and code review engineering workflows, GitHub branch protection rules and CODEOWNERS review enforcement, Git Large File Storage (Git-LFS) pointer architecture and smudge/clean filters, and Capstone 1: ApexGitOps Sovereign Collaborative Repository Architecture Master Capstone Viva Gate.
+  </p>
+
+  ${(() => {
+    let out = '';
+    GIT_VERSION_CONTROL_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderGitVersionControlDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #ea580c;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ffedd5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXIX: Git, GitHub &amp; Version Control Basics &mdash; Month 2: Distributed Topology, Monorepo Scale, Enterprise Release Engineering, Hook Automation &amp; Governance (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #fdba74; font-weight: 700;">Stage 4 &bull; Global Scale &amp; Principal Systems Architect Viva Gate</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #ffedd5;">
+      <strong>Month 2 Scope:</strong> Low-level Git plumbing tool suite and tree traversal (hash-object, cat-file, mktree, commit-tree, write-tree), Packfile format internals (.pack and .idx binary fanout tables), delta compression window heuristics and repacking physics, reachability bitmaps and commit-graph accelerated traversal, repository garbage collection mechanics (git gc, prune, pack-redundant) and dangling object salvage, monorepo scale bottlenecks and virtual filesystem layers, Git sparse-checkout cone mode patterns, multiple worktree orchestration (git worktree add/prune/lock), submodule pointer management and detached HEAD traps, git subtree vendoring and bi-directional cherry-picking, forensic history excavation with git log pickaxes (-S, -G, -L trace), automated root-cause localization with git bisect run and test scripts, catastrophic secret eradication with git-filter-repo and BFG Repo-Cleaner, client-side hook architecture (pre-commit, commit-msg, prepare-commit-msg), server-side push validation hooks (pre-receive, update), enterprise CI/CD integration with GitHub Actions (matrix builds, artifact caching, reusable workflows, OIDC cloud identity federation), GitOps declarative infrastructure patterns with ArgoCD/Flux and reconciliation loops, semantic versioning and release automation (Conventional Commits, release-please, automated changelog generation), SLSA Level 3 supply chain security (cosign artifact signing, software bill of materials [SBOM] attestation, signed git tags), SHA-1 to SHA-256 repository migration strategies, The Principal Release Platform Architect Migration RFC ($10M enterprise VCS modernization proposal), and Capstone 2: ApexEnterpriseGitOps Sovereign Distributed Version Control &amp; Enterprise Release Engineering Suite Master Capstone Viva Gate.
+    </p>
+  </div>
+
+  <h2>39.2 Month 2: Distributed Topology, Monorepo Scale, Enterprise Release Engineering, Hook Automation &amp; Governance (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    GIT_VERSION_CONTROL_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderGitVersionControlDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>39.3 Git, GitHub &amp; Version Control Basics Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;7 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexStorage Content-Addressable Storage &amp; Hash Integrity Suite</td><td>Direct blob, tree, and commit object serialization engine verifying SHA-1/SHA-256 integrity and zlib compression.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexMerge Fast-Forward &amp; Three-Way Merge Engine Suite</td><td>Deterministic branch divergence resolution platform with recursive 3-way merge algorithms and conflict marker isolation.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexRescue Reflog Disaster Recovery &amp; Rebase Engine Suite</td><td>Zero-data-loss commit recovery engine leveraging reflog traversal, interactive rebasing, and detached HEAD re-anchoring.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 22</td><td>ApexFlow Protected Branching &amp; Review Policy Suite</td><td>Institutional pull request governance engine enforcing required status checks, CODEOWNERS approval gates, and signed commit attestation.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexGitOps Sovereign Collaborative Repository Architecture Master Capstone:</strong> Complete multi-engineer version control repository featuring automated trunk-based flows, Git-LFS asset tracking, zero-downtime hotfix rebasing, and signed cryptographic release tags defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 4 (M2)</strong></td><td>Day 35</td><td>ApexPlumbing Custom Git Engine &amp; Tree Traversal Suite</td><td>Low-level C/Python/TypeScript Git plumbing tool suite inspecting object packfiles, delta compression windows, and commit reachability bitmaps.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 40</td><td>ApexScale Sparse Checkout &amp; Multi-Worktree Orchestrator Suite</td><td>Terabyte-scale monorepo development platform utilizing Git sparse-checkout cone mode, multi-worktree parallel branching, and scalar performance optimizations.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 45</td><td>ApexAudit Forensic History Reconstruction &amp; Secret Redaction Suite</td><td>Forensic repository auditing suite leveraging <code>git log -S/-G</code> pickaxes, automated <code>git bisect run</code> bug locator scripts, and <code>git-filter-repo</code> credential eradication.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 50</td><td>ApexAutomate Pre-Receive Hook &amp; Enterprise GitHub Actions CI/CD Platform</td><td>Sovereign server-side push validation hook suite and multi-stage GitHub Actions pipeline enforcing OIDC cloud authentication, SBOM generation, and cosign image signing.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseGitOps Sovereign Distributed Version Control &amp; Enterprise Release Engineering Suite Master Capstone:</strong> Institutional monorepo release engineering and governance platform unifying SHA-256 migration, multi-tenant submodules/subtrees, GitOps reconciliation with ArgoCD/Flux, SLSA Level 3 provenance attestation, and disaster recovery RFC defended under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
