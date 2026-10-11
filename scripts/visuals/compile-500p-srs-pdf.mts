@@ -22,6 +22,7 @@ import { EDGE_AI_MONTH_1_SPECS, EDGE_AI_MONTH_2_SPECS } from './iot-edge-ai-mast
 import { IOT_SECURITY_MONTH_1_SPECS, IOT_SECURITY_MONTH_2_SPECS } from './iot-security-masterclass-spec';
 import { PYTHON_BACKEND_MONTH_1_SPECS, PYTHON_BACKEND_MONTH_2_SPECS } from './python-backend-masterclass-spec';
 import { QUANT_SYSTEMS_MONTH_1_SPECS, QUANT_SYSTEMS_MONTH_2_SPECS } from './quant-systems-masterclass-spec';
+import { DIGITAL_ACCOUNTING_MONTH_1_SPECS, DIGITAL_ACCOUNTING_MONTH_2_SPECS } from './digital-accounting-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1832,6 +1833,66 @@ function renderQuantSystemsDayCard(day: any): string {
     </div>
   `;
 }
+
+function renderDigitalAccountingDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ecfdf5; color: #047857; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #059669;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #064e3b; color: #34d399; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #ecfdf5; color: #047857;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #047857; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0f766e; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fef3c7; color: #92400e;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #166534;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #15803d;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #166534;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #14532d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #0f172a;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + ansIdx)}) ${day.situationalPuzzle.options[ansIdx]} &bull;
+        <span style="color: #047857;"><strong>Debrief:</strong> ${debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 
 
 function renderBlockchainDayCard(day: any): string {
@@ -3899,6 +3960,102 @@ function buildDeepMasterclassesHtml(): string {
     </tbody>
   </table>
   `;
+
+  h += `
+  <!-- PART XXVI: DEEP MASTERCLASS BLUEPRINT - DIGITAL ACCOUNTING & TAXATION (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #34d399; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXVI: Deep Masterclass Blueprint &bull; Digital Accounting &amp; Taxation (Days 1&ndash;60 / 240 Quests)</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-digital-accounting</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #10b981; color: #064e3b; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Corporate Finance, GST &amp; Direct Tax Architecture</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Principal Financial Controller Target</span>
+      </div>
+    </div>
+
+    <h2>26.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      In corporate enterprise finance, accounting is not mere historical bookkeeping; it is the mathematical backbone of corporate solvency, regulatory compliance, and statutory integrity. In India and across global markets, businesses operate under an intricate web of statutory mandates: the fundamental accounting equation Assets = Liabilities + Equity, the MCA Section 143(3)(j) Audit Trail mandate requiring non-disableable edit logs, the Goods and Services Tax (GST) framework demanding real-time E-Invoicing Schema v1.1 and E-Way Bill logistics, corporate income tax under Section 115BAA/BAB and Section 115JB Minimum Alternate Tax (MAT), Tax Deducted at Source (TDS/TCS) with Section 206AB penal rates, labour compliance (EPF, ESI, Gratuity), international transfer pricing under the arm's length principle, and Schedule III Division II Ind AS financial statements with Ind AS 7 cash flow reconciliations:
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6pt; margin: 6pt 0 10pt 0;">
+      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #065f46; font-size: 8pt;">Stage 1: Accounting Core &amp; ERP</strong><br>
+        <span style="font-size: 7.2pt; color: #064e3b;">Days 1&ndash;15 (60 Quests)<br>Double-Entry Duality, COA Tree Engineering, Gapless Vouchers, BRS 2-Way Matching, FAR Depreciation, Ind AS 21 Forex &amp; FIFO COGS.<br><em>Milestones 1&ndash;3</em></span>
+      </div>
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #166534; font-size: 8pt;">Stage 2: Audit Trails &amp; GST Core</strong><br>
+        <span style="font-size: 7.2pt; color: #14532d;">Days 16&ndash;30 (60 Quests)<br>MCA Hash-Chained Audit Trails, Benford Fraud Detection, 3-Way Match, GST E-Invoicing v1.1, EWB Logistics, GSTR-2B Matching &amp; ApexLedger Capstone.<br><em>Milestones 4&ndash;5 + Capstone 1</em></span>
+      </div>
+      <div style="background: #fffbeb; border: 1px solid #fef3c7; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #92400e; font-size: 8pt;">Stage 3: Direct Tax &amp; Payroll</strong><br>
+        <span style="font-size: 7.2pt; color: #78350f;">Days 31&ndash;45 (60 Quests)<br>POEM Nexus, PGBP Disallowances, Section 115BAA/BAB, Section 115JB MAT, TDS/TCS Withholding, 206AB Non-Filers, EPF/ESI Labour &amp; Form 16.<br><em>Milestones 6&ndash;8</em></span>
+      </div>
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 6pt; border-radius: 3pt;">
+        <strong style="color: #1e40af; font-size: 8pt;">Stage 4: International &amp; ApexTax</strong><br>
+        <span style="font-size: 7.2pt; color: #1e3a8a;">Days 46&ndash;60 (60 Quests)<br>Advance Tax 234B/C, DTAA Form 15CA/CB, TNMM Transfer Pricing, Equalisation Levy, Schedule III Ind AS, Ind AS 7 Cash Flows &amp; ApexTax Master Capstone.<br><em>Milestones 9&ndash;10 + Master Capstone</em></span>
+      </div>
+    </div>
+
+    <h2>26.2 Digital Accounting &amp; Taxation Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DIGITAL_ACCOUNTING_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderDigitalAccountingDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #34d399; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXVI: Digital Accounting Month 2 &bull; Direct Taxation, Transfer Pricing, Ind AS Financial Statements &amp; ApexTax Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-digital-accounting</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #10b981; color: #064e3b; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Corporate Direct Tax &amp; Statutory Close</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Principal Financial Controller Target</span>
+      </div>
+    </div>
+
+    <h2>26.3 Digital Accounting &amp; Taxation Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DIGITAL_ACCOUNTING_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderDigitalAccountingDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>26.4 Digital Accounting &amp; Taxation Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Enterprise Double-Entry Ledger Core</td><td>Double-entry voucher ingestion engine with gapless sequence locks, hierarchical COA tree aggregation, sub-ledger synchronization, and balanced trial balance generation.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Automated BRS &amp; Fixed Asset Platform</td><td>Treasury operations suite combining 2-way fuzzy bank reconciliation matching, petty cash imprest float validation, and Schedule II SLM/WDV asset depreciation.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Global ERP Bridge &amp; Multi-Currency Engine</td><td>Idempotent ERP integration gateway supporting Tally XML and SAP JSON payloads, Ind AS 21 foreign exchange revaluation, and FIFO inventory COGS relief.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Immutable Audit Trail &amp; Forensic Detector</td><td>Statutory governance platform featuring MCA Section 143(3)(j) SHA-256 hash chaining, Benford's Law transaction screening, 3-way matching, and period-locked year-end close.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Automated E-Invoice &amp; E-Way Bill Pipeline</td><td>Taxation compliance pipeline validating Rule 46 fields, generating Schema v1.1 JSON with 64-character IRN hashes and signed QR codes, and distance-based E-Way Bills.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexLedger Enterprise Digital Accounting &amp; GST Compliance Engine:</strong> Complete corporate accounting platform uniting double-entry ledgers, MCA audit trails, E-Invoicing, and GSTR-2B fuzzy reconcilers defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Corporate PGBP &amp; Concessional Regime Engine</td><td>Corporate tax computation platform calculating PGBP disallowances (Sec 40/40A/43B), Section 115JB MAT book profits, and Section 115BAA/BAB 22%/15% regime optimization.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Enterprise TDS/TCS &amp; Quarterly Return Suite</td><td>Automated withholding engine resolving Section 194C/J/I/Q and 206C rules, enforcing Section 206AB non-filer 5% penal rates, Challan 281 OLTAS matching, and Form 26Q filing.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Enterprise Payroll &amp; Labour Compliance Platform</td><td>Workforce compensation engine calculating CTC structures, Rule 2A HRA exemptions, EPF 12% with EPS 1,250 cap and ECR generation, ESI, Gratuity, PT, and Form 16 Part B.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>International Tax &amp; Transfer Pricing Suite</td><td>Cross-border tax platform forecasting Advance Tax to avoid 234B/C interest, DTAA withholding with TRC validation (Form 15CA/CB), TNMM transfer pricing, and Equalisation Levies.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Schedule III Financial Reporting &amp; Close Suite</td><td>Statutory reporting platform compiling Schedule III Division II vertical Balance Sheets and P&Ls, Ind AS 7 indirect cash flows, DuPont 5-way ROE, and close orchestration DAGs.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexTax Sovereign Corporate Financial Accounting, Multi-Regime Taxation &amp; Statutory Compliance Platform:</strong> Complete enterprise financial architecture defending against simultaneous circular trading attacks, foreign tax scrutiny, blocked credits, and direct database tampering under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
 
 
   return h;
