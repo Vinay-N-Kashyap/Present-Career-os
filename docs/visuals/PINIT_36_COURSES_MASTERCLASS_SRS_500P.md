@@ -340,7 +340,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 33: [course-ai-prompt-literacy] Everyday AI Literacy & Prompt Engineering
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
+* **GitHub Capstone Project:** ApexPromptEnterprise: Sovereign Enterprise Prompt Architecture & Cognitive Systems Suite  
 * **Overview:** Essential AI skills for every modern worker. Master ChatGPT/Claude prompt engineering, AI web research (Perplexity), automated document summarization, AI image generation, and workflow automation.  
 
 ### Course 34: [course-excel-data-viz] Excel & Data Analysis Fundamentals

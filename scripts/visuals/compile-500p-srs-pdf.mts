@@ -33,6 +33,7 @@ import { VENTURE_CREATION_MONTH_1_SPECS, VENTURE_CREATION_MONTH_2_SPECS } from '
 import { SALES_CRM_MONTH_1_SPECS, SALES_CRM_MONTH_2_SPECS } from './sales-crm-masterclass-spec';
 import { AI_TRANSFORM_MONTH_1_SPECS, AI_TRANSFORM_MONTH_2_SPECS } from './ai-transform-masterclass-spec';
 import { COMPUTER_FUNDAMENTALS_MONTH_1_SPECS, COMPUTER_FUNDAMENTALS_MONTH_2_SPECS } from './computer-fundamentals-masterclass-spec';
+import { AI_PROMPT_MONTH_1_SPECS, AI_PROMPT_MONTH_2_SPECS } from './ai-prompt-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -154,6 +155,7 @@ function getCourseCapstoneProject(courseId: string): string {
   if (courseId.includes('taxation')) return 'TaxCascade: Real-Time Multi-Tier GST Reconciliation';
   if (courseId.includes('finance')) return 'ValuationEngine: Monte Carlo DCF Cash Flow Simulator';
   if (courseId.includes('git')) return 'GitInternals: Content-Addressable DAG Object Database';
+  if (courseId.includes('ai-prompt') || courseId.includes('prompt-literacy')) return 'ApexPromptEnterprise: Sovereign Enterprise Prompt Architecture & Cognitive Systems Suite';
   return 'SystemCore: Industrial Enterprise Subsystem Component';
 }
 
@@ -2481,6 +2483,71 @@ function renderComputerFundamentalsDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #155e75;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderAiPromptDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #fef3c7; color: #92400e; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #d97706;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #b45309; color: #fef3c7; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #92400e;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fef3c7; color: #92400e;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fde68a;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #92400e; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #b45309; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #92400e;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #78350f;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #92400e;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#fef3c7' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#d97706' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #92400e;">✓ [Optimal Prompt Architecture Decision]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #92400e; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #92400e;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -5493,6 +5560,80 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexProductivity Sovereign Developer Environment &amp; Workspace Orchestrator Suite</td><td>Developer environment platform uniting declarative tmux session managers, Neovim LSP modal editing, Justfile task DAGs, modern CLI fuzzy utilities (fzf, ripgrep, jq), and GNU Stow dotfiles.</td></tr>
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexResilience Enterprise High-Availability &amp; Disaster Recovery Suite</td><td>High-availability clustering engine executing 3-node majority quorum voting, automated STONITH hardware fencing, iSCSI multipath storage, and automated DR site failover verification.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseOS Full-Scale Systems Architecture &amp; Infrastructure Engine Master Capstone:</strong> Complete sovereign enterprise infrastructure engine uniting Hardware Emulation, Virtual Memory, Inode Storage, Raw Networking, Rootless Containers, eBPF Tracing, HA Clustering, Carbon-Aware Datacenter Scheduling, and Principal Systems Architect Modernization RFC defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXVII: EVERYDAY AI LITERACY & PROMPT ENGINEERING (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #d97706;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #fef3c7; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXVII: Deep Masterclass Blueprint &mdash; Everyday AI Literacy &amp; Prompt Engineering (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #fde68a; font-weight: 700;"><code>course-ai-prompt-literacy</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #fef3c7;">
+      <strong>Directorate:</strong> Principal AI Architect, Chief Cognitive Officer &amp; VP of Applied AI &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexEverydayAI (M1) &amp; ApexPromptEnterprise (M2)
+    </p>
+  </div>
+
+  <h2>37.1 Month 1: Generative Foundations, System Prompts, In-Context Induction, RAG, Multimodal &amp; Local LLMs (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes sovereign fluency across Byte-Pair Encoding (BPE) tokenizers and unit economics, high-dimensional embedding geometry, system prompt conditioning and the C-R-E-A-T-E persona framework, in-context zero/one/few-shot exemplar induction, Chain-of-Thought (CoT) scratchpad reasoning and self-consistency consensus, decoding hyperparameters (Softmax temperature, Top-P nucleus sampling, Top-K and repetition penalties), grammar-constrained structured data generation (JSON Schema &amp; Pydantic), Chain-of-Density text distillation and executive briefings, Retrieval-Augmented Generation (RAG) chunking, vector embeddings and strict sentence-level citation grounding, deep web research and multi-source triangulation, prompt chaining Directed Acyclic Graphs (DAGs) and validation contracts, rhetorical engineering and style matching, divergent ideation via the SCAMPER framework and adversarial Devil's Advocate personas, deterministic data analysis via sandboxed Python Code Interpreter execution, multimodal vision understanding (patch projection, OCR and spatial bounding grounding), text-to-image diffusion composition grammar (lenses, lighting, and negative prompts), speech-to-text acoustic processing via Whisper and speaker diarization, ethical AI alignment and epistemic honesty ('I do not know' thresholds), prompt injection and indirect jailbreak defenses (PII redaction and structural XML delimiters), developer velocity engineering (Cursor IDE, <code>.cursorrules</code> and test-driven prompting), autonomous agent ReAct loops (Reason + Act + Observe), operations workflow automation (webhooks and Zapier/Make), Custom GPT knowledge bases and OpenAPI schemas, constraint-satisfaction personal productivity, domain-specific vertical prompting (legal contract redlines, clinical notes, financial DCF models), model evaluation and Pareto frontiers (GPT-4o vs Claude 3.5 vs Gemini 1.5 vs Llama 3), open-source local inference via Ollama and GGUF 4-bit quantization, and Capstone 1: ApexEverydayAI Sovereign Everyday AI Literacy &amp; Master Prompt Engineering Capstone Viva Gate.
+  </p>
+
+  ${(() => {
+    let out = '';
+    AI_PROMPT_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderAiPromptDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #d97706;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #fef3c7; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXVII: Everyday AI Literacy &amp; Prompt Engineering &mdash; Month 2: Production Prompt Engineering, Cognitive Architectures, Evaluation &amp; Enterprise Systems (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #fde68a; font-weight: 700;">Stage 4 &bull; Global Scale &amp; Principal AI Architect Viva Gate</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #fef3c7;">
+      <strong>Month 2 Scope:</strong> Advanced Non-Linear Reasoning (Tree-of-Thoughts [ToT] &amp; Graph-of-Thoughts [GoT] state space search with heuristic evaluation and backtracking), Directional Stimulus Prompting &amp; Meta-Prompting (Automatic Prompt Engineering [APE] and OPRO), Multi-Persona Socratic Ensembles (Condorcet jury theorem, multi-round debates and majority voting), Long-Context Window Physics (Lost-in-the-Middle phenomenon, U-shaped attention curves, Needle-in-a-Haystack profiling and context layout hygiene), Formal Language Generation (Outlines, Guidance, Deterministic Finite Automata [DFA] logit masking and regex-enforced sampling), Advanced Function Calling (asynchronous parallel tool execution, worker pools, idempotency keys and structured error recovery), Prompt Token Optimization (information entropy, LLMLingua perplexity pruning and KV cache reuse optimization), Dynamic Context Injection &amp; Hierarchical Routing (intent classifiers and tiered model serving), Adversarial Vulnerability Research (Jailbreak taxonomy: cipher attacks, character roleplay, Base64 encoding and Many-Shot in-context flooding), Indirect Prompt Injection Forensics (poisoned RAG corpora, hidden CSS/Unicode payloads and markdown image data exfiltration), Defense-in-Depth Guardrails (NVIDIA NeMo Guardrails Colang state machines, Meta Llama Guard classifiers and input canonicalization), System Prompt IP Protection (cryptographic Canary Tokens, defensive framing and automated exfiltration killswitches), Automated Model Evaluation (LLM-as-a-Judge, bidirectional positional swaps, verbosity bias mitigation and multi-attribute analytic rubrics), Quantitative Evaluation Metrics (ROUGE-L, BLEU, BERTScore, G-Eval CoT scoring, and RAG Triad faithfulness), Prompt Software Engineering &amp; CI/CD (Promptfoo, DeepEval, Golden Dataset versioning and automated GitHub Actions PR gates), Algorithmic Prompt Compilation (Stanford DSPy, declarative Signatures, BootstrapFewShot and MIPRO Bayesian optimizers), Production Multi-Agent Systems (Supervisor routing, hierarchical team delegation and typed state machines), Cognitive Memory Engineering (working memory buffers, episodic compaction and temporal semantic memory reconciliation), Human-in-the-Loop (HITL) Gateways (tiered risk scoring, durable Postgres/Redis state serialization and resumable webhook checkpoints), Low-Latency Real-Time Multimodal Streaming (Gemini Live full-duplex WebSockets, PCM audio pacing, ephemeral tokens and client/server VAD), High-Throughput Self-Hosted Serving (vLLM engine, PagedAttention virtual memory tables, continuous batching and tensor parallelism), Historic AI Catastrophes (Moffatt v. Air Canada Bereavement Precedent, Chevrolet Dealership $1 Car Injection Scandal, Samsung Semiconductor Source Code Leak), The Principal Prompt Architect Modernization RFC ($20M Enterprise Generative AI Transformation Blueprint), and Capstone 2: ApexPromptEnterprise Sovereign Enterprise Prompt Architecture &amp; Cognitive Systems Master Capstone Viva Gate.
+    </p>
+  </div>
+
+  <h2>37.2 Month 2: Production Prompt Engineering, Cognitive Architectures, Evaluation &amp; Enterprise Systems (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    AI_PROMPT_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderAiPromptDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>37.3 Everyday AI Literacy &amp; Prompt Engineering Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;7 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexPrompt AI Tokenomics, Persona Role Framing &amp; Chain-of-Thought Engine Suite</td><td>Production prompt engine unifying BPE token accounting, C-R-E-A-T-E system framing, dynamic few-shot exemplar injection, and CoT self-consistency voting.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 15</td><td>ApexStructured Complete Structured JSON, RAG Grounding &amp; Data Analysis Engine Suite</td><td>Decoupled cognitive pipeline uniting CFG-enforced JSON extraction, vector-grounded RAG with strict footnote citations, multi-stage DAG chaining, and Python Code Interpreter execution.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 21</td><td>ApexMultimodal Vision, Image Generation, Voice AI &amp; Safety Defense Suite</td><td>Multimodal sensory platform integrating visual patch document parsing, cinematographic diffusion art direction, Whisper voice transcription with diarization, and defensive prompt firewalls.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexEverydayAI Sovereign Everyday AI Literacy &amp; Master Prompt Engineering Capstone:</strong> Sovereign multimodal productivity platform unifying all Month 1 capabilities with air-gapped local Llama 3 failover defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 35</td><td>ApexCognitive Advanced Tree-of-Thoughts &amp; Socratic Multi-Persona Reasoning Suite</td><td>Non-linear deliberative reasoning engine featuring Tree-of-Thoughts state-space search with backtracking, Directional Stimulus meta-prompting, and heterogeneous Socratic debate juries.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 40</td><td>ApexStructuredGrammar Constrained Output Generation &amp; Dynamic Tool Routing Suite</td><td>High-throughput execution platform uniting DFA grammar-constrained logit masking, asynchronous parallel multi-tool worker pools, and LLMLingua prompt token pruning.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 45</td><td>ApexGuard Enterprise Prompt Red-Teaming &amp; Adversarial Guardrails Suite</td><td>Sovereign security gateway implementing input canonicalization, indirect prompt injection sandboxes, dual-gateway Llama Guard firewalls, and cryptographic canary token tripwires.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 50</td><td>ApexEval Automated Prompt CI/CD &amp; DSPy Algorithmic Optimization Suite</td><td>Continuous evaluation and optimization platform combining position-swapped LLM judges, quantitative RAG Triad scoring, GitHub Actions regression gates, and DSPy algorithmic prompt compilation.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexPromptEnterprise Sovereign Enterprise Prompt Architecture &amp; Cognitive Systems Master Capstone:</strong> Complete enterprise cognitive platform uniting ToT Reasoning, Grammar Decoding, Parallel Tools, DSPy CI/CD, Multi-Agent Supervisors, 3-Tier Memory, Resumable HITL Gateways, Real-Time WebSockets, vLLM Clusters, and Principal Architect Modernization RFC defended under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
