@@ -31,6 +31,7 @@ import { ECOMMERCE_DIGITAL_BIZ_MONTH_1_SPECS, ECOMMERCE_DIGITAL_BIZ_MONTH_2_SPEC
 import { SUPPLY_CHAIN_OPS_MONTH_1_SPECS, SUPPLY_CHAIN_OPS_MONTH_2_SPECS } from './supply-chain-ops-masterclass-spec';
 import { VENTURE_CREATION_MONTH_1_SPECS, VENTURE_CREATION_MONTH_2_SPECS } from './venture-creation-masterclass-spec';
 import { SALES_CRM_MONTH_1_SPECS, SALES_CRM_MONTH_2_SPECS } from './sales-crm-masterclass-spec';
+import { AI_TRANSFORM_MONTH_1_SPECS, AI_TRANSFORM_MONTH_2_SPECS } from './ai-transform-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2349,6 +2350,71 @@ function renderSalesCrmDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #881337;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderAiTransformDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #e0e7ff; color: #3730a3; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #6366f1;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #312e81; color: #e0e7ff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #312e81;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0e7ff; color: #3730a3;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #eef2ff; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #c7d2fe;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #3730a3; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #4338ca; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #3730a3;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #312e81;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #3730a3;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#e0e7ff' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#6366f1' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #3730a3;">✓ [Optimal Transformation Architecture Decision]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #3730a3; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #312e81;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -5209,6 +5275,82 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexExpansion NRR Optimization &amp; Account Growth Suite</td><td>Account expansion platform tracking cohort NRR/GRR curves, mapping white-space cross-sell matrices, scheduling contractual CPI price uplifts, and managing customer reference pools.</td></tr>
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexRevOps Revenue Intelligence &amp; Full-Funnel BI Suite</td><td>Enterprise RevOps platform executing Snowflake/BigQuery ELT pipelines, dbt SCD2 dimensional modeling, Markov multi-touch attribution, Erlang capacity planning, and Cox proportional hazards churn ML models.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexRevenueOS Full-Scale Enterprise GTM, Sales Engineering &amp; RevOps Master Capstone:</strong> Complete sovereign global revenue operating system uniting MEDDPICC Qualification, Deal Desk Governance, Relational CRM Architecture, Customer Health Scoring, RevOps Data Warehousing, Markov Attribution, CRO Strategic RFC, GDPR Privacy Pseudonymization, and Cialdini/Voss Negotiation Psychology defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXV: ENTERPRISE AI & DIGITAL BUSINESS TRANSFORMATION (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #312e81; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #6366f1;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #e0e7ff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXV: Deep Masterclass Blueprint &mdash; Enterprise AI &amp; Digital Business Transformation (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #c7d2fe; font-weight: 700;"><code>course-ai-digital-transformation</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #e0e7ff;">
+      <strong>Directorate:</strong> Chief Digital &amp; AI Officer (CDAO), Senior Enterprise Chief Architect &amp; VP of Digital Transformation &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexCore (M1) &amp; ApexEnterpriseAI (M2)
+    </p>
+  </div>
+
+  <h2>35.1 Month 1: Digital Maturity Models, Process Mining, Composable Architecture, Product Operating Models &amp; GRC (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes sovereign fluency across MIT CISR digital maturity indices, Henderson-Venkatraman Strategic Alignment Models, technical debt financial valuation and Strangler Fig proxies, Cloud Migration 7Rs and FinOps TCO modeling, Process Mining telemetry (XES/OCEL event schemas) and Alpha Miner Petri net synthesis, token replay conformance checking, resilient RPA selector architecture and exception queues, Intelligent Document Processing (IDP LayoutLM) pipelines, Zhamak Dehghani Data Mesh principles and data contracts, API-first composable MACH architectures, Fellegi-Sunter Master Data Management (MDM) golden record resolution, Kafka real-time operational telemetry, Kotter's 8-Step and Prosci ADKAR change management physics, Marty Cagan product operating models and Mik Kersten Flow metrics, Scaled Agile dependency bottleneck mitigation, competency matrices, NIST SP 800-207 Zero Trust BeyondCorp architectures, Third-Party Vendor Risk Management (TPVRM) and SBOM vulnerability analysis, GDPR Schrems II geo-residency data sovereignty, Chaos Engineering resilience (RTO/RPO), ASC 350-40 CapEx/OpEx software capitalization economics, Value Realization Office (VRO) ledgers, Architecture Review Board (ARB) stage-gate funding, omnichannel Customer Data Platform (CDP) synchronization, and Capstone 1: ApexCore Enterprise Digital Transformation Master Capstone Viva Gate.
+  </p>
+
+  ${(() => {
+    let out = '';
+    AI_TRANSFORM_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderAiTransformDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #312e81; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #6366f1;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #e0e7ff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXV: Enterprise AI &amp; Digital Transformation &mdash; Month 2: Cognitive Architectures, Hybrid RAG, Autonomous Multi-Agents &amp; Board Governance (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #c7d2fe; font-weight: 700;">Stage 4 &bull; Global Scale &amp; CDAO/Boardroom Viva Gate</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #e0e7ff;">
+      <strong>Month 2 Scope:</strong> Enterprise AI Cognitive Taxonomy (Predictive vs Generative vs Agentic), Systems of Record vs Systems of Intelligence mediation layers, Feast/Hopsworks feature stores and point-in-time AS-OF joins, cost-sensitive operational ML and risk-bounded dynamic pricing, industrial edge computer vision and ONNX/TensorRT quantization, sovereign open-weight LLMs (vLLM AWQ) and outbound privacy firewalls, production RAG systems (Dense-Sparse Vector/BM25 hybrid search, Reciprocal Rank Fusion, Cross-Encoder re-ranking, and layout-aware chunking), Neo4j GraphRAG multi-hop knowledge fabric and hierarchical community summaries, NVIDIA NeMo Guardrails, semantic firewalls and automated RAGAS evaluations, autonomous ReAct multi-agent loops and dynamic context window budgeting, LangGraph state machine supervisor-worker topologies and persistent HITL interrupts, autonomous back-office accounts payable three-way matching and ERP reconciliation, runtime safety circuit breakers and emergency kill switches, FAT algorithmic bias auditing and EEOC four-fifths disparate impact mitigation, EU AI Act High-Risk conformity assessments and NIST AI RMF frameworks, OWASP Top 10 for LLMs security proxies and prompt injection defense, AI FinOps tokenomics and GPTCache semantic caching, Historic Transformation Catastrophes (GE Digital $7B Predix Meltdown, Hertz vs Accenture $32M Lawsuit, BBC DMI £100M Scrap), Vertical transformation patterns (Core Banking Mainframe CDC, Retail Omnichannel CDP, Healthcare FHIR), Pipeline-to-Platform business model transitions and data network effects, the CDAO 3-Year Strategic Architecture RFC ($100M Blueprint), Board of Directors Caremark fiduciary oversight and SEC cyber/AI disclosures, Day-2 MLOps drift monitoring and shadow/canary deployments, the Ambidextrous Enterprise (Horizon 1-2-3 portfolios and sandboxes), and Capstone 2: ApexEnterpriseAI Autonomous Digital Transformation Engine Master Capstone Viva Gate.
+    </p>
+  </div>
+
+  <h2>35.2 Month 2: Cognitive Architectures, Hybrid RAG, Autonomous Multi-Agents &amp; Board Governance (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    AI_TRANSFORM_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderAiTransformDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>35.3 Enterprise AI &amp; Digital Business Transformation Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;9 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexTransform Digital Maturity &amp; Modernization Suite</td><td>Enterprise transformation platform evaluating MIT CISR 5-stage maturity, Henderson-Venkatraman alignment, Strangler Fig facade routing, and 7Rs cloud FinOps TCO.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexProcess Process Mining &amp; Intelligent Automation Suite</td><td>Business process intelligence platform ingesting XES event telemetry, synthesizing Alpha Miner Petri nets, executing token replay conformance audits, and orchestrating resilient RPA/IDP pipelines.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexData Enterprise Composable Data Mesh &amp; API Gateway Suite</td><td>Modern data architecture suite enforcing Dehghani Data Mesh data contracts, MACH API Gateway routing, Fellegi-Sunter MDM golden record matching, and Kafka streaming pipelines.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>ApexOrg Change Management &amp; Product Operating Model Suite</td><td>Organizational architecture platform executing Kotter 8-step and ADKAR change physics, Mik Kersten Flow Framework value stream metrics, and dependency-uncoupled product team topologies.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>ApexShield Enterprise GRC &amp; Digital Resilience Suite</td><td>Enterprise governance suite implementing NIST SP 800-207 Zero Trust BeyondCorp proxies, TPVRM SBOM vulnerability scanners, GDPR Schrems II geo-residency guards, and Chaos Engineering BC/DR drills.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexCore Enterprise Digital Transformation Master Capstone:</strong> Complete sovereign digital modernization platform combining Maturity Assessment, Process Mining, Composable Data Mesh, Product Operating Models, and GRC Defense defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>ApexPredict Enterprise Predictive Intelligence &amp; Operational ML Platform Suite</td><td>Predictive intelligence platform uniting Feast feature stores with point-in-time AS-OF joins, cost-sensitive industrial maintenance, bounded dynamic pricing, and edge ONNX/TensorRT defect detection.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>ApexKnowledge Enterprise Secure Hybrid RAG &amp; Knowledge Fabric Suite</td><td>Enterprise knowledge fabric platform uniting sovereign vLLM AWQ serving, dense-sparse BM25 hybrid search, Neo4j GraphRAG multi-hop reasoning, pre-retrieval ACL filtering, and NeMo safety guardrails.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexAgent Production Multi-Agent Autonomous Workflow Engine Suite</td><td>Autonomous operations engine uniting ReAct planners, LangGraph state machine supervisor-worker topologies, three-way invoice matching ERP integration, and emergency kill switches.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexGovernance Enterprise AI Safety, Compliance &amp; FinOps Gateway Suite</td><td>Enterprise AI control plane executing FAT algorithmic bias audits, EU AI Act High-Risk conformity manifests, OWASP prompt injection proxies, and GPTCache semantic FinOps token routing.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseAI Autonomous Digital Transformation Engine Master Capstone:</strong> Complete sovereign global enterprise AI operating system uniting MIT CISR Maturity, Strangler Fig Proxies, Composable Data Mesh, Feast Feature Stores, Neo4j GraphRAG, LangGraph Multi-Agents, EU AI Act Compliance, Caremark Board Fiduciary Governance, and CDAO Strategic Architecture RFC defended under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
