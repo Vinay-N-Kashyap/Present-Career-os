@@ -32,6 +32,7 @@ import { SUPPLY_CHAIN_OPS_MONTH_1_SPECS, SUPPLY_CHAIN_OPS_MONTH_2_SPECS } from '
 import { VENTURE_CREATION_MONTH_1_SPECS, VENTURE_CREATION_MONTH_2_SPECS } from './venture-creation-masterclass-spec';
 import { SALES_CRM_MONTH_1_SPECS, SALES_CRM_MONTH_2_SPECS } from './sales-crm-masterclass-spec';
 import { AI_TRANSFORM_MONTH_1_SPECS, AI_TRANSFORM_MONTH_2_SPECS } from './ai-transform-masterclass-spec';
+import { COMPUTER_FUNDAMENTALS_MONTH_1_SPECS, COMPUTER_FUNDAMENTALS_MONTH_2_SPECS } from './computer-fundamentals-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2415,6 +2416,71 @@ function renderAiTransformDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #312e81;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderComputerFundamentalsDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #cffafe; color: #155e75; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0891b2;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #155e75; color: #cffafe; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #155e75;">${day.title}</strong>
+          <span class="stage-pill" style="background: #cffafe; color: #155e75;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #ecfeff; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #a5f3fc;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #155e75; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0e7490; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #155e75;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #164e63;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #155e75;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#cffafe' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#0891b2' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #155e75;">✓ [Optimal Systems Architecture Decision]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #155e75; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #155e75;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -5351,6 +5417,82 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexAgent Production Multi-Agent Autonomous Workflow Engine Suite</td><td>Autonomous operations engine uniting ReAct planners, LangGraph state machine supervisor-worker topologies, three-way invoice matching ERP integration, and emergency kill switches.</td></tr>
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexGovernance Enterprise AI Safety, Compliance &amp; FinOps Gateway Suite</td><td>Enterprise AI control plane executing FAT algorithmic bias audits, EU AI Act High-Risk conformity manifests, OWASP prompt injection proxies, and GPTCache semantic FinOps token routing.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseAI Autonomous Digital Transformation Engine Master Capstone:</strong> Complete sovereign global enterprise AI operating system uniting MIT CISR Maturity, Strangler Fig Proxies, Composable Data Mesh, Feast Feature Stores, Neo4j GraphRAG, LangGraph Multi-Agents, EU AI Act Compliance, Caremark Board Fiduciary Governance, and CDAO Strategic Architecture RFC defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXVI: COMPUTER LITERACY, SYSTEMS ARCHITECTURE, DIGITAL PRODUCTIVITY & OS INTERNALS (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #0891b2;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #cffafe; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXVI: Deep Masterclass Blueprint &mdash; Computer Literacy, Systems Architecture, Digital Productivity &amp; OS Internals (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #a5f3fc; font-weight: 700;"><code>course-computer-fundamentals</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #cffafe;">
+      <strong>Directorate:</strong> Principal Systems Architect, Chief Infrastructure Officer &amp; VP of Core Engineering &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexSystem (M1) &amp; ApexEnterpriseOS (M2)
+    </p>
+  </div>
+
+  <h2>36.1 Month 1: Hardware Abstraction, CPU Emulation, OS Kernels, Inode Storage, Shell &amp; Networking (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes sovereign fluency across the Von Neumann architecture, CPU instruction cycles (Fetch-Decode-Execute), Two's Complement and IEEE 754 floating-point mechanics, CPU cache hierarchies (L1/L2/L3) and MESI coherence protocols, x86-64 and ARM64 assembly register conventions, CPU privilege rings (Ring 0 vs Ring 3), system call dispatching, virtual memory multi-level paging and hardware TLBs, the Linux Completely Fair Scheduler (CFS) and red-black tree task queues, concurrency mutexes, semaphores and Coffman deadlock conditions, storage physics (HDD seek latency vs NAND flash wear-leveling and NVMe queues), Unix Inode architectures and VFS abstractions, crash-consistent Write-Ahead Logging (WAL) journaling and Copy-on-Write (CoW), asynchronous event-driven I/O multiplexing (epoll/kqueue), the Unix shell philosophy and standard streams (stdin/stdout/stderr), POSIX text stream processing (grep, sed, awk), Linux process states (R/S/D/Z) and signal dispatching (SIGTERM vs SIGKILL), defensive bash scripting (<code>set -euo pipefail</code>), OSI and TCP/IP protocol encapsulation and ARP resolution, CIDR subnetting and Longest Prefix Match routing tables, transport layer TCP sliding window flow control vs UDP, DNS hierarchical resolution, HTTP/3 QUIC, TLS 1.3 cryptographic handshakes, Linux Discretionary Access Control (chmod/chown/umask) and POSIX ACLs, symmetric (AES-GCM) and asymmetric (RSA/ECC) cryptography, Ed25519 SSH keypair identity, systems attack vectors (buffer overflows, ReDoS, ransomware), seccomp sandboxing, and Capstone 1: ApexSystem Core Operating Systems &amp; Systems Architecture Master Capstone Viva Gate.
+  </p>
+
+  ${(() => {
+    let out = '';
+    COMPUTER_FUNDAMENTALS_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderComputerFundamentalsDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #0891b2;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #cffafe; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXVI: Computer Fundamentals &amp; Systems Architecture &mdash; Month 2: Virtualization, Containers, eBPF Tracing, Resilience &amp; Enterprise Infrastructure (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #a5f3fc; font-weight: 700;">Stage 4 &bull; Global Scale &amp; Principal Systems Architect Viva Gate</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #cffafe;">
+      <strong>Month 2 Scope:</strong> Hardware Virtualization (Type 1 vs Type 2 Hypervisors, Intel VT-x VMX root/non-root execution, Extended Page Tables [EPT] &amp; VM-Exit minimization), Linux Container Internals (Namespaces: PID, MNT, NET, IPC, UTS, USER &amp; cgroups v2 resource controllers), Container Storage &amp; OverlayFS Union Filesystems (lowerdir, upperdir, merged &amp; whiteout markers), Container Networking (veth pairs, Linux software bridges, iptables NAT masquerading &amp; CNI plugins), Modern Linux Tracing with eBPF (in-kernel verifier, kprobes, uprobes, tracepoints &amp; bpftrace), Brendan Gregg's USE Method (Utilization, Saturation, Errors) &amp; RED Method (Rate, Errors, Duration), Systems Profiling (Linux perf, CPU Flame Graphs, Off-CPU Profiling &amp; Hardware PMU Counters), Production Core Dump Forensics (GDB, DWARF debug symbols &amp; stack unwinding), Terminal Multiplexing &amp; Workspace Productivity (tmux client-server daemons &amp; Git-managed dotfiles with GNU Stow), High-Performance Modal Text Editing (Neovim Lua &amp; Language Server Protocol [LSP]), Build Automation &amp; Secret Hygiene (Make, Just, 12-Factor App &amp; direnv), Modern CLI Productivity (fzf, ripgrep, bat, jq &amp; zoxide), High Availability &amp; Clustering (Quorum consensus, Split-Brain prevention &amp; STONITH hardware fencing), Enterprise Storage Systems (iSCSI SAN, NFSv4 NAS, RAID arrays &amp; Reed-Solomon Erasure Coding), Infrastructure as Code (IaC declarative state, drift detection &amp; Packer Golden Images), Enterprise Disaster Recovery (RTO, RPO, 3-2-1-1-0 immutable backups &amp; automated multi-region failovers), Historic Systems Catastrophes (Knight Capital $440M Meltdown, CrowdStrike Falcon Global BSoD Crash, Cloudflare Global ReDoS Outage), Comparative Operating Systems Architecture (Linux monolithic vs Windows NT Executive vs macOS Darwin XNU), Next-Gen Distributed Platforms (Kubernetes Control Planes, AWS Firecracker MicroVMs &amp; Unikernels), The Principal Systems Architect Modernization RFC ($50M Blueprint), Enterprise Zero Trust Systems Hardening (CIS Level 2 benchmarks, kernel sysctl &amp; SELinux MAC), Chaos Engineering &amp; Failure Injection (Chaos Mesh &amp; self-healing loops), Sustainable Systems Engineering (Carbon-Aware computing, PUE &amp; energy proportionality), and Capstone 2: ApexEnterpriseOS Full-Scale Systems Architecture &amp; Infrastructure Engine Master Capstone Viva Gate.
+    </p>
+  </div>
+
+  <h2>36.2 Month 2: Virtualization, Containers, eBPF Tracing, Resilience &amp; Enterprise Infrastructure (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    COMPUTER_FUNDAMENTALS_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderComputerFundamentalsDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>36.3 Computer Literacy, Systems Architecture &amp; OS Fundamentals Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;9 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexHardware CPU Instruction Cycle &amp; Cache Emulator Suite</td><td>Cycle-accurate 8-bit CPU emulator modeling the Von Neumann fetch-decode-execute cycle, Two's Complement ALU flags, IEEE 754 conversions, and multi-tier L1/L2 cache with MESI coherence.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexOS Multi-Threaded Process Scheduler &amp; Virtual Memory Simulator Suite</td><td>Operating system kernel simulator executing user/kernel mode transitions, 4-level page tables with TLB caching, CFS process scheduling with red-black trees, and deadlock-free mutex locks.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexStorage Inode-Based File System &amp; Async I/O Engine Suite</td><td>Storage engine platform uniting NAND flash FTL simulation, an Inode-based filesystem with superblock free bitmaps, crash-consistent WAL journaling, and an epoll-based asynchronous I/O multiplexer.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>ApexShell POSIX Telemetry Harvester &amp; Incident Automation Suite</td><td>Defensive Linux automation and incident response suite built in strict POSIX shell (<code>set -euo pipefail</code>), streaming awk log parsers, process supervisors, flock locks, and signal traps.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>ApexNet Raw Packet Sniffer &amp; Subnet Routing Engine Suite</td><td>Virtual networking engine executing Layer 2 Ethernet frame encapsulation, ARP cache resolution, CIDR longest-prefix routing, stateful NAT connection tracking, and uRPF anti-spoofing filters.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexSystem Core Operating Systems &amp; Systems Architecture Master Capstone:</strong> Complete sovereign systems platform integrating CPU emulation, virtual memory, CFS scheduling, Inode storage, raw network routing, and seccomp sandboxing defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>ApexContainer Rootless Container Engine &amp; cgroups Virtualization Suite</td><td>Rootless container runtime orchestrating Linux user/pid/net/mount namespaces, cgroups v2 resource controllers, OverlayFS image layer merging, and veth virtual bridge networks.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>ApexTrace eBPF Kernel Observability &amp; Performance Profiling Suite</td><td>Unified systems observability suite combining eBPF dynamic kernel tracing, automated USE and RED performance scanners, interactive SVG Flame Graph generators, and GDB core dump crash analyzers.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexProductivity Sovereign Developer Environment &amp; Workspace Orchestrator Suite</td><td>Developer environment platform uniting declarative tmux session managers, Neovim LSP modal editing, Justfile task DAGs, modern CLI fuzzy utilities (fzf, ripgrep, jq), and GNU Stow dotfiles.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexResilience Enterprise High-Availability &amp; Disaster Recovery Suite</td><td>High-availability clustering engine executing 3-node majority quorum voting, automated STONITH hardware fencing, iSCSI multipath storage, and automated DR site failover verification.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseOS Full-Scale Systems Architecture &amp; Infrastructure Engine Master Capstone:</strong> Complete sovereign enterprise infrastructure engine uniting Hardware Emulation, Virtual Memory, Inode Storage, Raw Networking, Rootless Containers, eBPF Tracing, HA Clustering, Carbon-Aware Datacenter Scheduling, and Principal Systems Architect Modernization RFC defended under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
