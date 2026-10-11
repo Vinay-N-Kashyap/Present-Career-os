@@ -30,6 +30,7 @@ import { DIGITAL_MARKETING_MONTH_1_SPECS, DIGITAL_MARKETING_MONTH_2_SPECS } from
 import { ECOMMERCE_DIGITAL_BIZ_MONTH_1_SPECS, ECOMMERCE_DIGITAL_BIZ_MONTH_2_SPECS } from './ecommerce-digital-biz-masterclass-spec';
 import { SUPPLY_CHAIN_OPS_MONTH_1_SPECS, SUPPLY_CHAIN_OPS_MONTH_2_SPECS } from './supply-chain-ops-masterclass-spec';
 import { VENTURE_CREATION_MONTH_1_SPECS, VENTURE_CREATION_MONTH_2_SPECS } from './venture-creation-masterclass-spec';
+import { SALES_CRM_MONTH_1_SPECS, SALES_CRM_MONTH_2_SPECS } from './sales-crm-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2283,6 +2284,71 @@ function renderVentureCreationDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #78350f;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderSalesCrmDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffe4e6; color: #9f1239; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #e11d48;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #881337; color: #ffe4e6; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #881337;">${day.title}</strong>
+          <span class="stage-pill" style="background: #ffe4e6; color: #9f1239;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fff1f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecdd3;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #9f1239; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #be123c; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9f1239;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #881337;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9f1239;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#ffe4e6' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#e11d48' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #9f1239;">✓ [Optimal Revenue Architecture Decision]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #9f1239; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #881337;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -5067,6 +5133,82 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexGlobal International Scaling &amp; Executive Org Suite</td><td>Global scaling platform implementing multi-jurisdiction VAT/GST taxation, GDPR cross-border transfer agreements, Radford compensation bands, and war-time crisis governance protocols.</td></tr>
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexSimulator Stochastic Venture Survival Simulation Suite</td><td>Algorithmic venture simulation suite running 10,000-iteration Monte Carlo cash runway distributions, SEC Rule 506(b)/506(c) investor qualification ledgers, and institutional LP fund return metrics (TVPI/DPI/MOIC).</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexUnicornOS Full-Scale Enterprise Venture Creation Master Capstone:</strong> Complete sovereign global venture operating system uniting Multi-Round Institutional Cap Table Waterfalls, Superhuman PMF Telemetry, Monte Carlo Cash Runway Simulation, SOX 404 Governance, Global Entity Tax Structuring, SEC Reg D Compliance, and Chief of Staff Strategic Conglomerate RFC defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXIV: ENTERPRISE B2B SALES, CUSTOMER SUCCESS & CRM SYSTEMS ARCHITECTURE (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #881337; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #f43f5e;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ffe4e6; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXIV: Deep Masterclass Blueprint &mdash; Enterprise B2B Sales, Customer Success &amp; CRM Systems Architecture (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #fecdd3; font-weight: 700;"><code>course-sales-crm-success</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #ffe4e6;">
+      <strong>Directorate:</strong> Senior Enterprise Revenue Architect, Chief Revenue Officer &amp; VP of Customer Success &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexRevenue (M1) &amp; ApexRevenueOS (M2)
+    </p>
+  </div>
+
+  <h2>34.1 Month 1: Enterprise Pipeline Topology, MEDDPICC Qualification, Deal Desk Governance &amp; Contract Negotiation (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes sovereign fluency across deterministic pipeline stage FSMs, MEDDPICC multi-attribute qualification, buying center directed graph influence mapping, intent signal mining and trigger cadences, Socratic discovery questioning and financial pain quantification, Challenger commercial teaching, competitive battlecards and objection inversion, Cost of Inaction (COI) ROI modeling, technical solution scoping, time-boxed POC governance, backward-scheduled Mutual Action Plans (MAP), Deal Desk discount authorization matrices, Master Service Agreement (MSA) redline fallbacks, indemnification and SLA carve-outs, SOC 2 / Vendor Risk Assessments (VRA), sales forecasting velocity calculus, multi-year contract structuring, CFO CapEx vs OpEx allocation cycles, GSI co-selling dynamics, territory Gini balancing, sales compensation accelerator mechanics, executive churn multi-threading defense, post-mortem win/loss telemetry, and global multi-entity billing.
+  </p>
+
+  ${(() => {
+    let out = '';
+    SALES_CRM_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderSalesCrmDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #881337; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #f43f5e;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ffe4e6; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXIV: Enterprise B2B Sales &amp; CRM &mdash; Month 2: Relational CRM Architecture, Customer Success, RevOps Data Warehousing &amp; Enterprise GTM Engine (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #fecdd3; font-weight: 700;">Stage 4 &bull; Global Scale &amp; CRO/Executive Board Defense</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #ffe4e6;">
+      <strong>Month 2 Scope:</strong> Relational CRM Entity Graphs (Salesforce/HubSpot schemas), Fuzzy Lead-to-Account (L2A) Matching DAGs, Idempotent Cadence Webhook Orchestration, Product-Led Sales (PLS) &amp; PQL Telemetry Ingestion, Post-Sale Handoff &amp; Time-to-Value (TTV) Optimization, Multi-Signal Customer Health Scoring Matrices, Scaled Implementation SOW Change Orders, Executive QBRs &amp; Realized ROI Ledgers, Net Retention Rate (NRR) &amp; Gross Retention Rate (GRR) Cohort Decay, Land-and-Expand White-Space Matrices, Contractual CPI Price Uplift Clauses, Customer Advocacy &amp; Reference Pool Ledgers, RevOps Snowflake/BigQuery ELT Pipelines &amp; dbt SCD2 Models, Multi-Touch Markov Attribution &amp; Shapley Values, Sales Capacity Erlang Queueing, Cox Proportional Hazards Churn Modeling, Historic Sales Disasters (Vapourware POCs, Rogue Rep Comp Gaming, M&amp;A Churn Cliffs), ABM Swarm Orchestration, Enterprise CPQ Rule Engines &amp; Daily Proration, Chief Revenue Officer (CRO) Strategic RFC ($100M Blueprint), GDPR Art. 17 Erasure vs Immutable Audit Ledgers, Sales Engineering Architecture, Cialdini/Voss Behavioral Psychology, and Capstone 2: ApexRevenueOS Master Capstone Viva Gate.
+    </p>
+  </div>
+
+  <h2>34.2 Month 2: Relational CRM Architecture, Customer Success, RevOps Data Warehousing &amp; Enterprise GTM Engine (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    SALES_CRM_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderSalesCrmDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>34.3 Enterprise B2B Sales, Customer Success &amp; CRM Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;9 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexProspect Sovereign Lead Qualification &amp; Buying Center Engine</td><td>Enterprise prospecting platform integrating multi-source intent data, buying center directed graph visualization, and automated 8-vector MEDDPICC qualification gating.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexDiscovery Value Architecture &amp; ROI Calculator Suite</td><td>Diagnostic sales engineering suite linking customer pain transcripts to parameterized financial models (NPV/IRR/Payback) and Challenger commercial teaching narratives.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexDealDesk Scoping &amp; Mutual Action Plan Suite</td><td>Enterprise deal governance suite enforcing technical scoping boundary matrices, time-boxed binary POC charters, backward-scheduled MAPs, and multi-tier discount approval curves.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>ApexLegal Contract Redlining &amp; Velocity Forecasting Engine</td><td>Contract risk and revenue forecasting platform analyzing MSA/SOW redlines, capping SLA liability exposures, and generating Monte Carlo pipeline velocity projections.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>ApexComp Territory Optimization &amp; Incentive Compensation Suite</td><td>Sales operations suite optimizing territory Gini coefficients ($G \le 0.15$), calculating tiered OTE compensation with accelerators and clawbacks, and tracking margin-gated payouts.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexRevenue Core B2B Sales Execution &amp; Deal Desk Master Capstone:</strong> Complete sovereign enterprise sales execution engine combining qualification, value architecture, deal desk, contract redlining, and closing sprint governance defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>ApexCRM Enterprise Relational Data Model &amp; PQL Telemetry Suite</td><td>Revenue operations CRM engine uniting relational entity schemas, fuzzy Levenshtein/Jaro-Winkler L2A routing DAGs, idempotent cadence execution, and real-time Product-Qualified Lead (PQL) telemetry.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>ApexSuccess Customer Health &amp; Churn Rescue Engine</td><td>Enterprise retention platform executing Sales-to-CS handoff protocols, multi-signal composite health scoring ($H \in [0, 100]$), SOW scope governance, Realized ROI Ledgers, and automated Churn Rescue playbooks.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexExpansion NRR Optimization &amp; Account Growth Suite</td><td>Account expansion platform tracking cohort NRR/GRR curves, mapping white-space cross-sell matrices, scheduling contractual CPI price uplifts, and managing customer reference pools.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexRevOps Revenue Intelligence &amp; Full-Funnel BI Suite</td><td>Enterprise RevOps platform executing Snowflake/BigQuery ELT pipelines, dbt SCD2 dimensional modeling, Markov multi-touch attribution, Erlang capacity planning, and Cox proportional hazards churn ML models.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexRevenueOS Full-Scale Enterprise GTM, Sales Engineering &amp; RevOps Master Capstone:</strong> Complete sovereign global revenue operating system uniting MEDDPICC Qualification, Deal Desk Governance, Relational CRM Architecture, Customer Health Scoring, RevOps Data Warehousing, Markov Attribution, CRO Strategic RFC, GDPR Privacy Pseudonymization, and Cialdini/Voss Negotiation Psychology defended under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
