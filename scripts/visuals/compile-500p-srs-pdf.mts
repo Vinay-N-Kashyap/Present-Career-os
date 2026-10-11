@@ -23,6 +23,7 @@ import { IOT_SECURITY_MONTH_1_SPECS, IOT_SECURITY_MONTH_2_SPECS } from './iot-se
 import { PYTHON_BACKEND_MONTH_1_SPECS, PYTHON_BACKEND_MONTH_2_SPECS } from './python-backend-masterclass-spec';
 import { QUANT_SYSTEMS_MONTH_1_SPECS, QUANT_SYSTEMS_MONTH_2_SPECS } from './quant-systems-masterclass-spec';
 import { DIGITAL_ACCOUNTING_MONTH_1_SPECS, DIGITAL_ACCOUNTING_MONTH_2_SPECS } from './digital-accounting-masterclass-spec';
+import { FINANCE_INVESTMENT_MONTH_1_SPECS, FINANCE_INVESTMENT_MONTH_2_SPECS } from './finance-investment-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1826,6 +1827,72 @@ function renderQuantSystemsDayCard(day: any): string {
 
       <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
         <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+function renderFinanceInvestmentDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #eff6ff; color: #1e40af; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #2563eb;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #1e3a8a; color: #60a5fa; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #eff6ff; color: #1e40af;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #1e40af; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fef3c7; color: #92400e;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e3a8a;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #1e40af;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f5d0fe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #4a044e;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#e0f2fe' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#0284c7' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #0284c7;">✓ [Optimal Corporate Strategy]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #6b21a8; font-size: 6.8pt;"><strong>Analytical Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #0f172a;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -4055,6 +4122,90 @@ function buildDeepMasterclassesHtml(): string {
     </tbody>
   </table>
   `;
+
+  // =========================================================================
+  // PART XXVII: BUSINESS FINANCE & INVESTMENT MANAGEMENT (Days 1–60 / 240 Quests)
+  // =========================================================================
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #60a5fa; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXVII: Deep Masterclass Blueprint &bull; Business Finance &amp; Investment Management (Days 1&ndash;60 / 240 Quests)</h1>
+      <span style="font-size: 8.2pt; color: #bfdbfe;">Course ID: <code>course-finance-investment</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #2563eb; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Corporate Valuation, Portfolio Theory &amp; Derivatives</span><br>
+      <span style="font-size: 7.5pt; color: #93c5fd;">Chief Investment Officer (CIO) / Treasury Director Target</span>
+    </div>
+  </div>
+
+  <h2>27.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+  <p>
+    In global enterprise finance and capital markets, corporate strategy and asset management are bound by an unshakeable mathematical identity: the Law of One Price and Conservation of Value. Business Finance &amp; Investment Management prepares students to operate at the highest echelons of corporate treasuries, private equity firms, and quantitative investment desks. The curriculum progresses rigorously across four specialized stages:
+  </p>
+  <ul>
+    <li><strong>Stage 1: Corporate Financial Mechanics, Time Value &amp; Capital Budgeting (Days 1&ndash;15 / 60 Quests):</strong> Agency theory governance, intertemporal discounting and Effective Annual Rates (EAR), multi-period amortization curves, incremental free cash flows with tax depreciation shields, NPV value additivity and reinvestment invariants, IRR sign-reversal anomalies, Modified IRR (MIRR), Profitability Index (PI) under capital rationing, Equivalent Annual Annuity (EAA) for unequal project lifespans, financial break-even physics, real options (binomial expansion and abandonment lattices), stochastic Monte Carlo Capex modeling, marginal Cost of Debt (Kd), Cost of Equity (Ke) via Hamada leverage-unlevering, and Weighted Average Cost of Capital (WACC) hurdle rate alignment, culminating in <strong>Milestone 1: ApexCap Corporate Capital Allocation &amp; Multi-Project Budgeting Engine</strong>.</li>
+    <li><strong>Stage 2: Capital Structure, Working Capital &amp; Corporate Valuation (Days 16&ndash;30 / 60 Quests):</strong> Operating, financial, and combined leverage (DOL, DFL, DCL), EBIT-EPS indifference points, Durand's Net Income (NI) and Net Operating Income (NOI) theories, Modigliani-Miller Proposition I &amp; II in frictionless markets via homemade leverage arbitrage, MM with corporate taxes and perpetual/finite interest tax shields, static trade-off theory with financial distress and debt overhang underinvestment (Myers), Myers-Majluf pecking order information asymmetry, Cash Conversion Cycle (CCC = DIO + DSO - DPO) cash float physics, Baumol-Tobin and Miller-Orr stochastic treasury cash bounds, accounts receivable credit policy and factoring, inventory EOQ and supply chain reverse factoring, trade credit cost equations (2/10 Net 30), Walter and Gordon dividend models, MM dividend irrelevance with homemade dividends, and share buyback intrinsic value accretion physics, culminating in <strong>Capstone 1: ApexTreasury Enterprise Corporate Finance &amp; Working Capital Optimization Suite Master Capstone Viva Gate</strong>.</li>
+    <li><strong>Stage 3: Modern Portfolio Theory, Fixed Income &amp; Asset Valuation (Days 31&ndash;45 / 60 Quests):</strong> Financial market order microstructure and limit order book slippage, fixed income pricing with clean vs dirty accrued interest conventions, zero-coupon spot rate yield curve bootstrapping and forward rates, Macaulay duration, modified duration, DV01, and convexity adjustments, credit spreads and Merton structural default models, Markowitz mean-variance optimization and asymptotic diversification limits ($N \to \infty$), Capital Allocation Line (CAL) and Tobin's two-fund separation theorem, CAPM, Security Market Line (SML) and Roll's critique, Fama-French 3-factor, Carhart momentum, and Arbitrage Pricing Theory (APT), Sharpe, Treynor, Sortino, and Information ratios with Brinson-Fachler attribution, multi-stage DDM and H-Models, Free Cash Flow to Firm (FCFF) vs Free Cash Flow to Equity (FCFE) DCF architecture, perpetuity terminal value bounds with sustainable reinvestment, and relative valuation multiples (EV/EBITDA, P/E) with the Enterprise Value Bridge, culminating in <strong>Milestone 8: ApexPortfolio Multi-Asset Quantitative Portfolio Management Engine</strong>.</li>
+    <li><strong>Stage 4: Derivatives, Private Equity, Mergers &amp; Corporate Restructuring (Days 46&ndash;60 / 60 Quests):</strong> Linear derivatives, cost of carry parity, and marking-to-market margin mechanics, option moneyness and Put-Call Parity arbitrage, Cox-Ross-Rubinstein binomial option lattices with risk-neutral replication, continuous-time Black-Scholes-Merton PDE with analytical Greeks ($\\Delta, \\Gamma, \\Theta, \\mathcal{V}, \\rho$) and dynamic delta hedging, interest rate and cross-currency swaps via comparative advantage, alternative asset valuation (REITs, InvITs, and hedge fund strategies), venture capital cap tables with liquidation preference double-dipping and anti-dilution, Leveraged Buyout (LBO) multi-tranche debt waterfalls and returns bridges (IRR and MoIC), M&amp;A cost/revenue synergies, pro-forma EPS accretion/dilution, deal structuring collars, poison pill defenses, conglomerate Sum-of-the-Parts (SOTP) spin-offs and absolute priority bankruptcy waterfalls (IBC 2016 / Chapter 11), parametric, historical, and Monte Carlo Value at Risk (VaR) with Coherent Expected Shortfall (CVaR), forensic financial post-mortems (Enron, LTCM, Lehman Brothers, SVB), institutional CIO Investment Policy Statement (IPS) RFC, and <strong>Capstone 2: ApexInvest Global Multi-Asset Investment Management, Corporate Valuation, M&amp;A &amp; Sovereign Treasury Suite Master Capstone Viva Gate</strong>.</li>
+  </ul>
+
+  <h2>27.2 Business Finance &amp; Investment Management Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  `;
+
+  FINANCE_INVESTMENT_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderFinanceInvestmentDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #60a5fa; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXVII: Finance &amp; Investment Month 2 &bull; Investment Analysis, Portfolio Theory, Derivatives &amp; ApexInvest Master Capstone</h1>
+      <span style="font-size: 8.2pt; color: #bfdbfe;">Course ID: <code>course-finance-investment</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #2563eb; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Asset Pricing, M&amp;A &amp; Risk Governance</span><br>
+      <span style="font-size: 7.5pt; color: #93c5fd;">Chief Investment Officer (CIO) / Treasury Director Target</span>
+    </div>
+  </div>
+
+  <h2>27.3 Business Finance &amp; Investment Management Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  `;
+
+  FINANCE_INVESTMENT_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderFinanceInvestmentDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>27.4 Business Finance &amp; Investment Management Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>NPV Engine &amp; Discounted Cash Flow Allocator</td><td>Capital allocation engine computing free cash flows, tax depreciation shields, and proving NPV value additivity and reinvestment rate superiority over IRR.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Financial Break-Even &amp; Risk Stress-Testing Suite</td><td>Risk quantification framework computing financial break-even volumes, spider/tornado sensitivity surfaces, and correlated macro scenario stress tests.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexCap Corporate Capital Allocation &amp; WACC Engine</td><td>Enterprise hurdle rate engine computing Hamada unlevered asset betas, market-value WACCs, and integer programming knapsack capital rationing under hard budget constraints.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Capital Structure Optimization &amp; Trade-Off Solver</td><td>Capital structure platform balancing marginal interest tax shields against financial distress costs, resolving Stewart Myers debt overhang and underinvestment dilemmas.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Enterprise Cash Conversion Cycle &amp; Supply Chain Finance</td><td>Working capital optimization suite tracking DIO, DSO, and DPO, calculating liquidity liberated per day of CCC reduction, and implementing reverse factoring programs.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexTreasury Enterprise Corporate Finance &amp; Working Capital Optimization Suite:</strong> Unified treasury platform integrating capital budgeting, WACC optimization, CCC acceleration, and dividend/buyback decisions defended before Senior Evaluator Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Term Structure Bootstrapping &amp; Credit Default Engine</td><td>Fixed income risk suite bootstrapping zero-coupon spot curves, computing forward rates, Macaulay/Modified duration, convexity adjustments, and Merton structural distance-to-default.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Multi-Factor Risk Attribution &amp; SML Alpha Screener</td><td>Quantitative investment suite running Fama-French 3-factor and Carhart 4-factor regressions, computing Sharpe, Treynor, Sortino, and Brinson-Fachler sector attributions.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexPortfolio Multi-Asset Quantitative Management Engine</td><td>Multi-asset portfolio construction platform computing Ledoit-Wolf shrinkage covariance, Markowitz tangency portfolios, Smart Beta factor tilts, and Grinold Fundamental Law breadth.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Black-Scholes Greeks &amp; Dynamic Delta-Hedging Simulator</td><td>Derivatives analytics engine implementing closed-form BSM pricing, all 5 analytical Greeks, Newton-Raphson implied volatility solvers, and daily delta-neutral gamma scalping.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Strategic M&A Accretion/Dilution &amp; LBO Waterfall Suite</td><td>Corporate transaction platform modeling 5-year LBO debt waterfalls with 100% cash sweeps, M&A EPS accretion/dilution with collars, and Absolute Priority Rule bankruptcy reorganizations.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexInvest Global Multi-Asset Investment Management, Corporate Valuation, M&amp;A &amp; Sovereign Treasury Suite:</strong> Unified enterprise investment platform defending against simultaneous interest rate shocks, credit default contagion, M&amp;A antitrust blocks, and systemic liquidity runs under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
 
 
 
