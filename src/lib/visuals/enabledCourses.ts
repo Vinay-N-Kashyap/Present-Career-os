@@ -27,8 +27,13 @@
 // - 'ai': Full-Stack AI Engineering & Large Language Models (Month 9 Web Full-Stack) released via [task:L-ai]
 // - 'sre-web': Multi-Cloud Reliability & Site Reliability Engineering (Month 10 Web Full-Stack) released via [task:L-sre-web]
 // - 'stream-web': High-Throughput Streaming in TypeScript (Month 11 Web Full-Stack) released via [task:L-stream-web]
-// - 'aideploy-web': AI Deployment, Inference Optimization & Edge Systems (Month 12 Web Full-Stack) released via [task:L-aideploy-web]
-export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py', 'react-basics', 'node-web', 'dsa-optim', 'devops', 'cloud', 'dist', 'cyber', 'ai', 'sre-web', 'stream-web', 'aideploy-web'];
+export const ENABLED_COURSES: readonly string[] = [
+  'python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py',
+  'react-basics', 'node-web', 'dsa-optim', 'devops', 'cloud', 'dist', 'cyber', 'ai', 'sre-web', 'stream-web', 'aideploy-web',
+  'iot_edge', 'iot_sec', 'iot_net', 'iot_emb', 'bcom_ops', 'bcom_scrm', 'bcom_ent', 'bcom_ecom', 'bcom_dmkt', 'bcom-marketing',
+  'bcom_ana', 'bcom-finance', 'bcom-accounting', 'bcom_ait', 'quant-systems', 'g3d', 'blockchain', 'mobile', 'design',
+  'fullstack-js', 'java-basics', 'excel_viz', 'git_vcs', 'soft-skills', 'comp_fund', 'ai_prompt'
+];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {
   return ENABLED_COURSES.includes(prefix);
