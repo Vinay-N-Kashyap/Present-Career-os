@@ -19,6 +19,7 @@ import {
   InterviewSessionRecord,
   formatStageLabel,
   AVATAR_POOL,
+  ROUND_INTERVIEWERS,
   safeFormatDate,
   getAuthHeaders
 } from './interviewTypes';
@@ -141,18 +142,26 @@ export default function InterviewPage() {
   const [manualTextInput, setManualTextInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [isSendingInterviewMessage, setIsSendingInterviewMessage] = useState(false);
   const [starStep, setStarStep] = useState<number>(0);
+  const stageTransitionRef = useRef(false);
+  const [codeReviewStarted, setCodeReviewStarted] = useState(false);
+  const [codeReviewQuestionReady, setCodeReviewQuestionReady] = useState(false);
+  const [codeReviewAnswered, setCodeReviewAnswered] = useState(false);
+  const codeReviewQuestionPendingRef = useRef(false);
+  const [architectureDefenseAnswered, setArchitectureDefenseAnswered] = useState(false);
+  const architectureQuestionPendingRef = useRef(false);
+  const [codeRunFailed, setCodeRunFailed] = useState(false);
 
-  // Maintain consistent avatar across all rounds
-  const [activeTeacher, setActiveTeacher] = useState(AVATAR_POOL[0]);
+  // Interview panelists rotate by round; mentor/teaching avatars are managed elsewhere.
+  const [activeTeacher, setActiveTeacher] = useState(ROUND_INTERVIEWERS.round1_behavioral);
 
   useEffect(() => {
     preloadAvatarGLB([activeTeacher.id, 'priya', 'anish']);
   }, [activeTeacher.id]);
 
   const selectRandomTeacherForSession = useCallback(() => {
-    const randomIndex = Math.floor(Math.random() * AVATAR_POOL.length);
-    const chosen = AVATAR_POOL[randomIndex];
+    const chosen = ROUND_INTERVIEWERS.round1_behavioral;
     setActiveTeacher(chosen);
     return chosen;
   }, []);
@@ -212,10 +221,13 @@ export default function InterviewPage() {
 
   // Dynamic Generative Problem Cache
   const [dynamicProblemData, setDynamicProblemData] = useState<any>(null);
+  const [codingAttempt, setCodingAttempt] = useState(0);
   const dynamicProblemCacheRef = useRef<Map<string, any>>(new Map());
+  const dynamicProblemRequestRef = useRef(0);
 
-  const fetchDynamicProblem = useCallback(async (topicName: string, stream: string = 'tech', lang: string = 'python') => {
-    const cacheKey = `${topicName}:${stream}`;
+  const fetchDynamicProblem = useCallback(async (topicName: string, stream: string = 'tech', lang: string = 'python', variation: number = codingAttempt) => {
+    const cacheKey = `${topicName}:${stream}:${difficulty}:${variation}`;
+    const requestId = ++dynamicProblemRequestRef.current;
     if (dynamicProblemCacheRef.current.has(cacheKey)) {
       const cached = dynamicProblemCacheRef.current.get(cacheKey);
       setDynamicProblemData(cached);
@@ -226,35 +238,38 @@ export default function InterviewPage() {
       const res = await fetch('/api/interview/generate-problem', {
         method: 'POST',
         headers,
-        body: JSON.stringify({ topic: topicName, domainStream: stream, language: lang, difficulty })
+          body: JSON.stringify({ topic: topicName, domainStream: stream, language: lang, difficulty, variation })
       });
       if (res.ok) {
         const data = await res.json();
-        if (data?.title && data?.starterCode) {
+        if (data?.title && data?.starterCode && (lang !== 'sql' || (typeof data.testSuite === 'string' && data.testSuite.includes('-- CHECKS --')))) {
           dynamicProblemCacheRef.current.set(cacheKey, data);
-          setDynamicProblemData(data);
+          if (requestId === dynamicProblemRequestRef.current) setDynamicProblemData(data);
           return data;
         }
       }
     } catch {}
     const fallback = createSemanticFallbackProblem(topicName, difficulty);
     dynamicProblemCacheRef.current.set(cacheKey, fallback);
-    setDynamicProblemData(fallback);
+    if (requestId === dynamicProblemRequestRef.current) setDynamicProblemData(fallback);
     return fallback;
-  }, [difficulty]);
+  }, [difficulty, codingAttempt]);
 
   const getDynamicCodingProblem = useCallback((topic: string, lang: string) => {
-    const cached = dynamicProblemCacheRef.current.get(`${topic}:${domainStream}`);
+    const cached = dynamicProblemCacheRef.current.get(`${topic}:${domainStream}:${difficulty}:${codingAttempt}`);
     return resolveDynamicCodingProblem(topic, domainStream, lang, cached);
-  }, [domainStream]);
+  }, [domainStream, difficulty, codingAttempt]);
 
   // Round 2 Code Workspace State
   const codeModifiedRef = useRef(false);
   const codePerLangRef = useRef<Record<string, string>>({});
   const prevLangRef = useRef<'java' | 'python' | 'javascript' | 'sql'>('python');
-  const [showHint, setShowHint] = useState(false);
   const [selectedLang, setSelectedLang] = useState<'java' | 'python' | 'javascript' | 'sql'>('python');
   const [codeContent, setCodeContent] = useState('');
+  const codeContentRef = useRef(codeContent);
+  codeContentRef.current = codeContent;
+  const selectedLangRef = useRef(selectedLang);
+  selectedLangRef.current = selectedLang;
   const [terminalLogs, setTerminalLogs] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState(false);
   const [codeSubmitted, setCodeSubmitted] = useState(false);
@@ -277,7 +292,7 @@ export default function InterviewPage() {
     if (dynamicProb.starterCode) {
       setCodeContent(dynamicProb.starterCode);
     }
-  }, [activeTopicName, selectedLang, getDynamicCodingProblem, codeContent]);
+  }, [activeTopicName, selectedLang, getDynamicCodingProblem, codeContent, dynamicProblemData]);
 
   // Round 3 Whiteboard Topology State
   const [latestTopology, setLatestTopology] = useState<any>(null);
@@ -301,7 +316,48 @@ export default function InterviewPage() {
       .catch(() => {});
   }, []);
 
-  // Persistence Hook
+  const handleSendMessageWithTextRef = useRef<(text: string) => Promise<void>>((async () => {}) as any);
+  const isSendingInterviewMessageRef = useRef(false);
+  const speakWithAvatarRef = useRef<(text: string, teacherId: string, onStart: () => void, onEnd: () => void) => void>(() => {});
+
+  // Speech Recognition & TTS Hook
+  const handleFinalSpeechTranscript = useCallback((finalText: string) => {
+    handleSendMessageWithTextRef.current(finalText);
+  }, []);
+
+  const handleSilenceNudge = useCallback((nudgeMsg: string) => {
+    setMessages(prev => [...prev, { role: 'assistant', content: nudgeMsg }]);
+    speakWithAvatarRef.current(nudgeMsg, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
+  }, [activeTeacher.id]);
+
+  const {
+    isVoiceListening,
+    isAvatarSpeaking,
+    setIsAvatarSpeaking,
+    liveSpeechTranscript,
+    wpmScore,
+    fillerWordCount,
+    setFillerWordCount,
+    avatarVolume,
+    handleVolumeChange,
+    startVoiceListening,
+    stopVoiceListening,
+    speakWithAvatar,
+    interruptSpeech,
+    isSpeechSupported,
+    flushAndSubmitTranscript
+  } = useInterviewVoice({
+    isInterviewActive,
+    activeStage,
+    activeTopicName,
+    activeTeacherId: activeTeacher.id,
+    difficulty,
+    onFinalTranscript: handleFinalSpeechTranscript,
+    onSilenceNudge: handleSilenceNudge
+  });
+  speakWithAvatarRef.current = speakWithAvatar;
+
+  // Persist the live voice metrics alongside the rest of the in-progress interview draft.
   const {
     sessions,
     selectedHistorySession,
@@ -324,62 +380,25 @@ export default function InterviewPage() {
     messages,
     codeContent,
     selectedLang,
+    codingAttempt,
+    codingProblem: dynamicProblemData,
     elapsedSeconds,
-    fillerWordCount: 0,
+    fillerWordCount,
     activeTeacherId: activeTeacher.id,
     latestTopology,
     liveSessionId
   });
 
-  const handleSendMessageWithTextRef = useRef<(text: string) => Promise<void>>((async () => {}) as any);
-  const speakWithAvatarRef = useRef<(text: string, teacherId: string, onStart: () => void, onEnd: () => void) => void>(() => {});
-
-  // Speech Recognition & TTS Hook
-  const handleFinalSpeechTranscript = useCallback((finalText: string) => {
-    handleSendMessageWithTextRef.current(finalText);
-  }, []);
-
-  const handleSilenceNudge = useCallback((nudgeMsg: string) => {
-    setMessages(prev => [...prev, { role: 'assistant', content: nudgeMsg }]);
-    speakWithAvatarRef.current(nudgeMsg, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
-  }, [activeTeacher.id]);
-
-  const {
-    autoVoiceLoop,
-    setAutoVoiceLoop,
-    isVoiceListening,
-    isAvatarSpeaking,
-    setIsAvatarSpeaking,
-    liveSpeechTranscript,
-    wpmScore,
-    fillerWordCount,
-    avatarVolume,
-    handleVolumeChange,
-    startVoiceListening,
-    stopVoiceListening,
-    speakWithAvatar,
-    interruptSpeech,
-    isSpeechSupported,
-    flushAndSubmitTranscript
-  } = useInterviewVoice({
-    isInterviewActive,
-    activeStage,
-    activeTopicName,
-    activeTeacherId: activeTeacher.id,
-    difficulty,
-    onFinalTranscript: handleFinalSpeechTranscript,
-    onSilenceNudge: handleSilenceNudge
-  });
-  speakWithAvatarRef.current = speakWithAvatar;
-
   // Assist Mode State
   const [isAssistModeActive, setIsAssistModeActive] = useState(false);
   const [assistData, setAssistData] = useState<any>(null);
   const [isFetchingAssist, setIsFetchingAssist] = useState(false);
+  const assistRequestRef = useRef(0);
   const [assistScriptLevel, setAssistScriptLevel] = useState<'standard' | 'advanced'>('standard');
   const [assistTab, setAssistTab] = useState<'script' | 'bullets' | 'delivery'>('script');
 
-  const fetchAssistScript = useCallback(async (questionText: string, level?: 'standard' | 'advanced') => {
+  const fetchAssistScript = useCallback(async (questionText: string, level?: 'standard' | 'advanced', stageOverride?: Stage) => {
+    const requestId = ++assistRequestRef.current;
     setIsFetchingAssist(true);
     try {
       const headers = await getAuthHeaders();
@@ -388,7 +407,7 @@ export default function InterviewPage() {
         headers,
         body: JSON.stringify({
           question: questionText,
-          stage: activeStage,
+          stage: stageOverride || activeStage,
           topic: activeTopicName,
           domainStream,
           difficulty,
@@ -396,10 +415,17 @@ export default function InterviewPage() {
           isPractice: !isInterviewActive
         })
       });
-      const data = await res.json();
-      if (data?.script) setAssistData(data);
-    } catch {} finally {
-      setIsFetchingAssist(false);
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data?.message || `Assist request failed (${res.status}).`);
+      if (!data?.script) throw new Error('The assist service returned an empty script.');
+      if (requestId === assistRequestRef.current) setAssistData(data);
+    } catch (error) {
+      console.warn('[Interview Assist] Could not refresh the script:', error);
+      if (requestId === assistRequestRef.current) {
+        toast.error('Assist Mode could not refresh', 'Your previous script is still available. Try Regenerate again in a moment.');
+      }
+    } finally {
+      if (requestId === assistRequestRef.current) setIsFetchingAssist(false);
     }
   }, [isInterviewActive, activeStage, activeTopicName, domainStream, difficulty, assistScriptLevel]);
 
@@ -412,10 +438,27 @@ export default function InterviewPage() {
     setDifficulty(activeSessionDraft.difficulty);
     setStarStep(activeSessionDraft.starStep || 0);
     setMessages(activeSessionDraft.messages || []);
+    setFillerWordCount(activeSessionDraft.fillerWordCount || 0);
     setCodeContent(activeSessionDraft.codeContent || '');
+    setCodeSubmitted(false);
+    setArchitectureEvaluation(null);
+    setLatestTopology(activeSessionDraft.latestTopology || null);
+    codePerLangRef.current = {};
+    codeModifiedRef.current = Boolean(activeSessionDraft.codeContent);
     setSelectedLang(activeSessionDraft.selectedLang || 'python');
+    if (activeSessionDraft.activeStage === 'round2_coding') {
+      const resumedAttempt = Math.max(0, Number(activeSessionDraft.codingAttempt) || 0);
+      setCodingAttempt(resumedAttempt);
+      const savedProblem = activeSessionDraft.codingProblem;
+      if (savedProblem?.title && savedProblem?.starterCode) {
+        const cacheKey = `${activeSessionDraft.activeTopicName}:${activeSessionDraft.domainStream}:${activeSessionDraft.difficulty}:${resumedAttempt}`;
+        dynamicProblemCacheRef.current.set(cacheKey, savedProblem);
+        setDynamicProblemData(savedProblem);
+      } else {
+        void fetchDynamicProblem(activeSessionDraft.activeTopicName, activeSessionDraft.domainStream, activeSessionDraft.selectedLang || 'python', resumedAttempt);
+      }
+    }
     setElapsedSeconds(activeSessionDraft.elapsedSeconds || 0);
-    if (activeSessionDraft.latestTopology) setLatestTopology(activeSessionDraft.latestTopology);
     const resumedId = activeSessionDraft.liveSessionId ?? null;
     setLiveSessionId(resumedId);
     if (resumedId) {
@@ -433,7 +476,7 @@ export default function InterviewPage() {
     if (foundTeacher) setActiveTeacher(foundTeacher);
     setIsInterviewActive(true);
     toast.success('Interview Session Restored', `Resumed in ${activeSessionDraft.activeTopicName}`);
-  }, [activeSessionDraft, setLiveSessionId]);
+  }, [activeSessionDraft, setLiveSessionId, setFillerWordCount, fetchDynamicProblem]);
 
   const startInterview = async () => {
     stopArchetypeSoundscape();
@@ -457,15 +500,29 @@ export default function InterviewPage() {
     setActiveTopicName(topic);
     setIsInterviewActive(true);
     setActiveStage('round1_behavioral');
-    setShowHint(false);
     setCodeSubmitted(false);
     setTerminalLogs([]);
     setElapsedSeconds(0);
     setStarStep(0);
+    setCodingAttempt(0);
+    setCodeReviewStarted(false);
+    setCodeReviewQuestionReady(false);
+    setCodeReviewAnswered(false);
+    codeReviewQuestionPendingRef.current = false;
+    setArchitectureDefenseAnswered(false);
+    architectureQuestionPendingRef.current = false;
+    setCodeRunFailed(false);
     setEvaluationResult(null);
     setArchitectureEvaluation(null);
+    setLatestTopology(null);
+    setCodeSubmitted(false);
+    setCodeContent('');
+    setTerminalLogs([]);
+    codePerLangRef.current = {};
     codeModifiedRef.current = false;
     lastRecordedCodeRef.current = '';
+    dynamicProblemRequestRef.current += 1;
+    setDynamicProblemData(null);
 
     const greeting = `Welcome to your ${topic} Corporate Interview! I am ${sessionTeacher.name}, ${sessionTeacher.title}. To kick things off, please introduce yourself, tell me a bit about your academic background, and share your experience with ${topic}.`;
 
@@ -518,46 +575,58 @@ export default function InterviewPage() {
     } catch {}
   };
 
-  const proceedToNextStage = (next: Stage) => {
+  const proceedToNextStage = async (next: Stage) => {
+    if (next === 'results' || stageTransitionRef.current) return;
+    stageTransitionRef.current = true;
+    try {
+    const nextTeacher = ROUND_INTERVIEWERS[next];
+    setActiveTeacher(nextTeacher);
     setActiveStage(next);
-    setShowHint(false);
-    if (next === 'results') {
-      setIsAssistModeActive(false);
-      setAssistData(null);
+    if (next === 'round2_coding') {
+      setCodeReviewStarted(false);
+      setCodeReviewQuestionReady(false);
+      setCodeReviewAnswered(false);
+      codeReviewQuestionPendingRef.current = false;
+      setCodeRunFailed(false);
     }
+    if (next === 'round3_systems') {
+      setArchitectureDefenseAnswered(false);
+      architectureQuestionPendingRef.current = false;
+      setArchitectureEvaluation(null);
+    }
+    if (next === 'round4_star') setStarStep(0);
     let stagePrompt = '';
     if (next === 'round2_coding') {
-      const prob = getDynamicCodingProblem(activeTopicName, selectedLang);
-      stagePrompt = `Round 2: Technical Assessment for ${activeTopicName}. Challenge: "${prob.title}". Implement your solution in the Monaco editor.`;
+      const prob = await fetchDynamicProblem(activeTopicName, domainStream, selectedLang, codingAttempt);
+      stagePrompt = `Welcome to Round 2. I am ${nextTeacher.name}, your technical interviewer. Your challenge is "${prob.title}": ${prob.description} Work through it in the coding workspace. Assist Mode can offer conceptual guidance without giving you code. I will review your solution once you submit it.`;
     } else if (next === 'round3_systems') {
-      stagePrompt = `Round 3: System Architecture Canvas for ${activeTopicName}. Design a scalable architecture topology for ${activeTopicName} and evaluate nodes.`;
+      stagePrompt = `Welcome to Round 3. I am ${nextTeacher.name}, your systems interviewer. Build a system for ${activeTopicName} using the nodes and connections on the canvas. When you are ready, I will review your architecture and ask you to explain one of your design choices.`;
     } else if (next === 'round4_star') {
       const builtNodes = latestTopology?.nodes?.map((n: any) => n.label || n.type).join(', ') || 'distributed tiers';
-      stagePrompt = `Round 4: Executive Review & STAR Assessment. Looking at your system whiteboard with ${builtNodes}, what trade-offs did you prioritize for ${activeTopicName}?`;
+      stagePrompt = `Welcome to Round 4. I am ${nextTeacher.name}, your executive interviewer. I have reviewed your earlier experience, your coding challenge, and your architecture (${builtNodes}). I will connect all three: why did you choose that implementation, how does it fit the system you designed, and what measurable impact would you expect? Please use specific examples and trade-offs.`;
     }
     if (stagePrompt) {
       postLiveEvent('stage', next);
       setMessages(prev => [...prev, { role: 'assistant', content: stagePrompt }]);
-      speakWithAvatar(stagePrompt, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
+      speakWithAvatar(stagePrompt, nextTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
       if (isAssistModeActive) {
-        fetchAssistScript(stagePrompt, assistScriptLevel);
+        fetchAssistScript(stagePrompt, assistScriptLevel, next);
       }
+    }
+    } finally {
+      stageTransitionRef.current = false;
     }
   };
 
-  const skipQuestion = () => {
-    stopSpeaking();
-    const skipMsg = `Moving on to our next question for ${activeTopicName}. How do you approach reliability and edge-case handling?`;
-    postLiveEvent('skip', activeStage);
-    setMessages(prev => [...prev, { role: 'user', content: '[Candidate skipped question]' }, { role: 'assistant', content: skipMsg }]);
-    speakWithAvatar(skipMsg, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
-  };
-
   const handleSendMessageWithText = async (text: string) => {
-    if (!text.trim()) return;
+    if (!text.trim() || isSendingInterviewMessageRef.current) return;
+    const answeringCodeReview = activeStage === 'round2_coding' && codeReviewQuestionPendingRef.current;
+    const answeringArchitectureQuestion = activeStage === 'round3_systems' && architectureQuestionPendingRef.current;
+    isSendingInterviewMessageRef.current = true;
+    setIsSendingInterviewMessage(true);
+    stopVoiceListening();
     const newMsgs: Message[] = [...messages, { role: 'user', content: text.trim() }];
     setMessages(newMsgs);
-    if (activeStage === 'round4_star') setStarStep(prev => prev + 1);
 
     try {
       const headers = await getAuthHeaders();
@@ -574,10 +643,11 @@ export default function InterviewPage() {
           customTopic: activeTopicName,
           domainStream,
           domainSubTopic: activeTopicName,
+          reviewDecision: answeringCodeReview,
           telemetry: {
             eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
             wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-            fillerWords: typeof wpmScore === 'number' ? fillerWordCount : undefined
+            fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined
           }
         })
       });
@@ -587,21 +657,71 @@ export default function InterviewPage() {
         toast.error('Interview ended', data?.message || 'This interview can no longer continue. Please start a new one.');
         return;
       }
+      if (!res.ok) throw new Error(data?.message || `The interviewer request failed (${res.status}).`);
       const cleanReply = sanitizeLLMOutput(data?.reply);
-      if (cleanReply) {
-        setMessages([...newMsgs, { role: 'assistant', content: cleanReply }]);
-        speakWithAvatar(cleanReply, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
-        if (isAssistModeActive) {
-          fetchAssistScript(cleanReply, assistScriptLevel);
-        }
+      if (!cleanReply) throw new Error('The interviewer returned an empty reply.');
+      if (activeStage === 'round4_star') setStarStep(prev => prev + 1);
+      setMessages([...newMsgs, { role: 'assistant', content: cleanReply }]);
+      speakWithAvatar(cleanReply, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
+      if (isAssistModeActive) {
+        void fetchAssistScript(cleanReply, assistScriptLevel);
+      }
+      if (activeStage === 'round2_coding' && codeSubmitted && !answeringCodeReview) {
+        codeReviewQuestionPendingRef.current = true;
+        setCodeReviewQuestionReady(true);
+      }
+      if (answeringCodeReview && data?.roundVerdict === 'PASS') {
+        codeReviewQuestionPendingRef.current = false;
+        setCodeReviewQuestionReady(false);
+        setCodeReviewAnswered(true);
+      } else if (answeringCodeReview) {
+        codeReviewQuestionPendingRef.current = false;
+        setCodeReviewQuestionReady(false);
+        setCodeReviewAnswered(false);
+        setCodeReviewStarted(false);
+        setCodeRunFailed(true);
+      }
+      if (answeringArchitectureQuestion) {
+        architectureQuestionPendingRef.current = false;
+        setArchitectureDefenseAnswered(true);
       }
     } catch {
-      const fallback = `Thank you for sharing! In your work with ${activeTopicName}, how do you evaluate production trade-offs?`;
+      const fallback = answeringArchitectureQuestion
+        ? 'I could not review that defense because the connection failed. Please send your explanation again.'
+        : answeringCodeReview
+          ? 'I could not review that answer because the connection failed. Please resubmit your solution for review.'
+          : activeStage === 'round4_star'
+            ? 'I could not review that answer because the connection failed. Please send it again when you are ready.'
+            : 'I’m having trouble connecting right now. Please try your response again when the interviewer is back online.';
       setMessages([...newMsgs, { role: 'assistant', content: fallback }]);
       speakWithAvatar(fallback, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
       if (isAssistModeActive) {
         fetchAssistScript(fallback, assistScriptLevel);
       }
+      if (activeStage === 'round2_coding' && codeSubmitted) {
+        codeReviewQuestionPendingRef.current = false;
+        setCodeReviewQuestionReady(false);
+        setCodeReviewStarted(false);
+      }
+      if (answeringCodeReview) {
+        codeReviewQuestionPendingRef.current = false;
+        setCodeReviewQuestionReady(false);
+        setCodeReviewAnswered(false);
+        setCodeReviewStarted(false);
+        setCodeRunFailed(false);
+      }
+      if (answeringArchitectureQuestion) {
+        // Keep this as the pending defense question so a resubmitted explanation is
+        // evaluated as the defense response, not treated as an unrelated new turn.
+        architectureQuestionPendingRef.current = true;
+        setArchitectureDefenseAnswered(false);
+      }
+      if (activeStage === 'round4_star') {
+        toast.error('Answer was not reviewed', 'The interviewer could not connect. Please send your answer again.');
+      }
+    } finally {
+      isSendingInterviewMessageRef.current = false;
+      setIsSendingInterviewMessage(false);
     }
   };
   handleSendMessageWithTextRef.current = handleSendMessageWithText;
@@ -613,10 +733,9 @@ export default function InterviewPage() {
     const id = liveSessionIdRef.current;
     const code = codeContent.trim();
     if (!id || !code || !codeModifiedRef.current || code === lastRecordedCodeRef.current) return;
-    lastRecordedCodeRef.current = code;
     try {
       const headers = await getAuthHeaders();
-      await fetch('/api/interview/chat', {
+      const res = await fetch('/api/interview/chat', {
         method: 'POST',
         headers,
         body: JSON.stringify({
@@ -628,11 +747,18 @@ export default function InterviewPage() {
           problemTitle: dynamicProblemData?.title || getDynamicCodingProblem(activeTopicName, selectedLang).title,
         }),
       });
-    } catch {}
+      if (!res.ok) throw new Error(`Code recording failed (${res.status}).`);
+      lastRecordedCodeRef.current = code;
+    } catch (error) {
+      console.warn('[Interview] Could not record the submitted code:', error);
+    }
   };
 
   const runCodeAndTests = async () => {
+    if (isRunning) return;
     setIsRunning(true);
+    setCodeRunFailed(false);
+    setCodeSubmitted(false);
     setTerminalLogs([`[RUNNER] Compiling ${selectedLang.toUpperCase()} for ${activeTopicName}...`]);
     try {
       let fnName = dynamicProblemData?.functionName ||
@@ -644,31 +770,72 @@ export default function InterviewPage() {
       if (selectedLang === 'javascript' && fnName.includes('_')) {
         fnName = fnName.replace(/_([a-z0-9])/g, (_: string, c: string) => c.toUpperCase());
       }
-      let testCases = dynamicProblemData?.testCases || [
-        { input: '[10, 20, 30]', output: 'Optimal', name: 'Standard Case', verify: (r: any) => Boolean(r) }
-      ];
+      const generatedTestCases = Array.isArray(dynamicProblemData?.testCases) && dynamicProblemData.testCases.length > 0
+        ? dynamicProblemData.testCases
+        : null;
+      const testCases = (generatedTestCases || [
+        { input: '[10, 20, 30], 15', output: '2', name: 'Standard Case (>15)' },
+        { input: '[], 0', output: '0', name: 'Boundary Check (empty)' }
+      ]).map((testCase: any) => ({
+        ...testCase,
+        output: String(testCase.output ?? testCase.expectedOutput ?? ''),
+      }));
       const result = await runTestSuite(codeContent, selectedLang as any, {
         functionName: fnName,
         testCases,
-        sqlConfig: {
-          query: codeContent,
-          schemaSql: 'CREATE TABLE employees (id INT, salary INT); INSERT INTO employees VALUES (1, 90000);',
-          expectedColumns: ['id'],
-          expectedRows: [[1]]
-        },
+        testSuite: selectedLang === 'sql'
+          ? (dynamicProblemData?.testSuite || getDynamicCodingProblem(activeTopicName, selectedLang).testSuite)
+          : undefined,
         timeoutMs: 5000
       });
       setTerminalLogs(prev => [...prev, ...result.terminalLogs]);
       void recordCodeSubmission();
-      if (result.allPassed || result.passedTests > 0) {
+      const codeIsUnchanged = codeContentRef.current === codeContent && selectedLangRef.current === selectedLang;
+      setCodeRunFailed(!result.allPassed || !codeIsUnchanged);
+      if (result.allPassed && codeIsUnchanged) {
         setCodeSubmitted(true);
         setTerminalLogs(prev => [...prev, `\n✅ [PASSED] ${result.passedTests} tests verified!`]);
+      } else {
+        setCodeSubmitted(false);
+        if (result.allPassed) {
+          setTerminalLogs(prev => [...prev, '\n⚠️ Code or language changed during execution. Run tests again for the current solution.']);
+        }
       }
     } catch (e: any) {
+      setCodeRunFailed(true);
       setTerminalLogs(prev => [...prev, `[ERROR] Execution failed: ${e?.message || 'Syntax error'}`]);
     } finally {
       setIsRunning(false);
     }
+  };
+
+  const reviewCodingSolution = () => {
+    if (!codeSubmitted || codeReviewStarted) return;
+    setCodeReviewStarted(true);
+    setCodeReviewQuestionReady(false);
+    setCodeReviewAnswered(false);
+    codeReviewQuestionPendingRef.current = false;
+    const reviewRequest = `I have completed the ${currentCodingProb.title} challenge and all local tests passed. Here is my ${selectedLang} solution:\n\n\`\`\`${selectedLang}\n${codeContent}\n\`\`\`\n\nPlease review this code and ask me one focused question about my implementation, complexity, or an edge case. Do not provide a replacement solution.`;
+    void recordCodeSubmission();
+    void handleSendMessageWithText(reviewRequest);
+  };
+
+  const retryWithNewCodingChallenge = () => {
+    setCodeReviewStarted(false);
+    setCodeReviewQuestionReady(false);
+    setCodeReviewAnswered(false);
+    codeReviewQuestionPendingRef.current = false;
+    setCodeSubmitted(false);
+    setCodeRunFailed(false);
+    setCodeContent('');
+    setTerminalLogs([]);
+    setDynamicProblemData(null);
+    codeModifiedRef.current = false;
+    codePerLangRef.current = {};
+    lastRecordedCodeRef.current = '';
+    const nextAttempt = codingAttempt + 1;
+    setCodingAttempt(nextAttempt);
+    void fetchDynamicProblem(activeTopicName, domainStream, selectedLang, nextAttempt);
   };
 
   const analyzeSystemArchitecture = async () => {
@@ -680,25 +847,24 @@ export default function InterviewPage() {
         headers,
         body: JSON.stringify({ type: 'systems', topology: latestTopology, domainStream, domainSubTopic: activeTopicName })
       });
+      if (!res.ok) throw new Error(`Architecture review failed (${res.status}).`);
       if (res.ok) {
         const data = await res.json();
-        if (data?.evaluation) {
-          setArchitectureEvaluation(data.evaluation);
-        }
-        const spoken = data.evaluation?.spokenFeedback || `Architecture review complete. Grade: ${data.evaluation?.verdict || 'A'}.`;
+        if (!data?.evaluation) throw new Error('Architecture review returned no evaluation.');
+        setArchitectureEvaluation(data.evaluation);
+        const nodeLabels = (latestTopology?.nodes || []).map((node: any) => node.label || node.type).filter(Boolean);
+        const anchor = nodeLabels[0] || 'the main component';
+        const spoken = `${data.evaluation?.spokenFeedback || `Architecture review complete. Grade: ${data.evaluation?.verdict || 'reviewed'}.`} I noticed ${anchor} in your design. Why did you choose it, and what trade-off does it create for the rest of the system?`;
+        setArchitectureDefenseAnswered(false);
+        architectureQuestionPendingRef.current = true;
         setMessages(prev => [...prev, { role: 'assistant', content: spoken }]);
-        speakWithAvatar(spoken, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
+        speakWithAvatar(spoken, ROUND_INTERVIEWERS.round3_systems.id, () => setAnimState('talking'), () => setAnimState('idle'));
         if (isAssistModeActive) {
           fetchAssistScript(spoken, assistScriptLevel);
         }
       }
     } catch {
-      const fallback = `Architecture evaluated. To optimize ${activeTopicName}, consider adding async messaging and caching layers.`;
-      setMessages(prev => [...prev, { role: 'assistant', content: fallback }]);
-      speakWithAvatar(fallback, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
-      if (isAssistModeActive) {
-        fetchAssistScript(fallback, assistScriptLevel);
-      }
+      toast.error('Architecture review unavailable', 'Your canvas is still saved. Check your connection and try Evaluate Architecture again.');
     } finally {
       setIsAnalyzingArchitecture(false);
     }
@@ -741,7 +907,7 @@ export default function InterviewPage() {
           telemetry: {
             eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
             wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-            fillerWords: typeof wpmScore === 'number' ? fillerWordCount : undefined
+            fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined
           }
         })
       });
@@ -826,7 +992,7 @@ export default function InterviewPage() {
       telemetry: {
         eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : null,
         wpm: typeof wpmScore === 'number' ? wpmScore : null,
-        fillerWords: typeof wpmScore === 'number' ? fillerWordCount : null,
+        fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : null,
         tabSwitches: 0
       },
       messages,
@@ -920,9 +1086,6 @@ export default function InterviewPage() {
             toggleCameraPreview={toggleCameraPreview}
             isAvatarSpeaking={isAvatarSpeaking}
             interruptSpeech={interruptSpeech}
-            autoVoiceLoop={autoVoiceLoop}
-            setAutoVoiceLoop={setAutoVoiceLoop}
-            skipQuestion={skipQuestion}
             exitInterview={exitInterview}
           />
 
@@ -930,6 +1093,7 @@ export default function InterviewPage() {
           <InterviewVoiceHud
             isVoiceListening={isVoiceListening}
             isAvatarSpeaking={isAvatarSpeaking}
+            isSendingInterviewerReply={isSendingInterviewMessage}
             activeTeacher={activeTeacher}
             liveSpeechTranscript={liveSpeechTranscript}
             stopVoiceListening={stopVoiceListening}
@@ -942,6 +1106,7 @@ export default function InterviewPage() {
           {activeStage === 'round2_coding' && isAssistModeActive && (
             <AssistModeDrawer
               isScoredStage={false}
+              isCodingRound
               isAssistModeActive={isAssistModeActive}
               setIsAssistModeActive={setIsAssistModeActive}
               assistScriptLevel={assistScriptLevel}
@@ -973,10 +1138,11 @@ export default function InterviewPage() {
               isVoiceListening={isVoiceListening}
               lastInterviewerSpeech={lastInterviewerSpeech}
               onProceed={() => proceedToNextStage('round2_coding')}
+              canProceed={messages.filter(message => message.role === 'user').length >= 3}
+              isSendingInterviewMessage={isSendingInterviewMessage}
               fillerWordCount={fillerWordCount}
               messages={messages}
               messagesEndRef={messagesEndRef}
-              startVoiceListening={startVoiceListening}
               manualTextInput={manualTextInput}
               setManualTextInput={setManualTextInput}
               onSendMessage={handleSendMessageWithText}
@@ -998,20 +1164,44 @@ export default function InterviewPage() {
             <Round2Coding
               domainStream={domainStream}
               currentCodingProb={currentCodingProb}
-              showHint={showHint}
-              setShowHint={setShowHint}
               onProceed={() => proceedToNextStage('round3_systems')}
+              onReviewSolution={reviewCodingSolution}
+              onRetryChallenge={retryWithNewCodingChallenge}
+              canProceed={codeSubmitted && codeReviewAnswered}
+              codeSubmitted={codeSubmitted}
+              codeRunFailed={codeRunFailed}
+              codeReviewStarted={codeReviewStarted}
+              codeReviewQuestionReady={codeReviewQuestionReady}
+              isSendingInterviewMessage={isSendingInterviewMessage}
+              lastInterviewerSpeech={lastInterviewerSpeech}
+              manualTextInput={manualTextInput}
+              setManualTextInput={setManualTextInput}
+              onSendMessage={handleSendMessageWithText}
               selectedLang={selectedLang}
-              setSelectedLang={setSelectedLang}
+              setSelectedLang={(lang) => {
+                setSelectedLang(lang);
+                setCodeSubmitted(false);
+                setCodeRunFailed(false);
+                setCodeReviewStarted(false);
+                setCodeReviewQuestionReady(false);
+                setCodeReviewAnswered(false);
+                codeReviewQuestionPendingRef.current = false;
+              }}
               runCodeAndTests={runCodeAndTests}
               isRunning={isRunning}
               codeContent={codeContent}
-              setCodeContent={setCodeContent}
+              setCodeContent={(value) => {
+                setCodeContent(value);
+                setCodeSubmitted(false);
+                setCodeRunFailed(false);
+                setCodeReviewStarted(false);
+                setCodeReviewQuestionReady(false);
+                setCodeReviewAnswered(false);
+                codeReviewQuestionPendingRef.current = false;
+              }}
               codeModifiedRef={codeModifiedRef}
               activeTeacher={activeTeacher}
               animState={animState}
-              isVoiceListening={isVoiceListening}
-              startVoiceListening={startVoiceListening}
               terminalLogs={terminalLogs}
               setTerminalLogs={setTerminalLogs}
             />
@@ -1023,18 +1213,27 @@ export default function InterviewPage() {
               domainStream={domainStream}
               activeTopicName={activeTopicName}
               onProceed={() => proceedToNextStage('round4_star')}
-              setLatestTopology={setLatestTopology}
+              canProceed={Boolean(
+                architectureDefenseAnswered &&
+                Number(architectureEvaluation?.score) >= 60 &&
+                (latestTopology?.nodes?.length || 0) > 0
+              )}
+              setLatestTopology={(topology) => {
+                setLatestTopology(topology);
+                setArchitectureEvaluation(null);
+                setArchitectureDefenseAnswered(false);
+                architectureQuestionPendingRef.current = false;
+              }}
               analyzeSystemArchitecture={analyzeSystemArchitecture}
               isAnalyzingArchitecture={isAnalyzingArchitecture}
               activeTeacher={activeTeacher}
               animState={animState}
-              isVoiceListening={isVoiceListening}
-              startVoiceListening={startVoiceListening}
               lastInterviewerSpeech={lastInterviewerSpeech}
               architectureEvaluation={architectureEvaluation}
               manualTextInput={manualTextInput}
               setManualTextInput={setManualTextInput}
               onSendMessage={handleSendMessageWithText}
+              isSendingInterviewMessage={isSendingInterviewMessage}
               isAssistModeActive={isAssistModeActive}
               setIsAssistModeActive={setIsAssistModeActive}
               assistData={assistData}
@@ -1058,9 +1257,9 @@ export default function InterviewPage() {
               eyeContactScore={eyeContactScore}
               wpmScore={wpmScore}
               lastInterviewerSpeech={lastInterviewerSpeech}
-              isVoiceListening={isVoiceListening}
-              startVoiceListening={startVoiceListening}
               finishInterview={finishInterview}
+              canFinishInterview={starStep >= 4 && !isSendingInterviewMessage && !isAvatarSpeaking}
+              isSendingInterviewMessage={isSendingInterviewMessage}
               manualTextInput={manualTextInput}
               setManualTextInput={setManualTextInput}
               onSendMessage={handleSendMessageWithText}

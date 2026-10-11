@@ -6,6 +6,7 @@ import { AvatarTeacher } from '../interviewTypes';
 interface InterviewVoiceHudProps {
   isVoiceListening: boolean;
   isAvatarSpeaking: boolean;
+  isSendingInterviewerReply?: boolean;
   activeTeacher: AvatarTeacher;
   liveSpeechTranscript: string;
   stopVoiceListening: () => void;
@@ -17,6 +18,7 @@ interface InterviewVoiceHudProps {
 export function InterviewVoiceHud({
   isVoiceListening,
   isAvatarSpeaking,
+  isSendingInterviewerReply = false,
   activeTeacher,
   liveSpeechTranscript,
   stopVoiceListening,
@@ -46,6 +48,8 @@ export function InterviewVoiceHud({
           <div style={{ fontSize: 13, fontWeight: 900, color: 'var(--t1)' }}>
             {!isSpeechSupported
               ? 'Speech Recognition Not Supported in this Browser'
+            : isSendingInterviewerReply
+              ? 'Interviewer is thinking…'
               : isAvatarSpeaking
               ? `${activeTeacher.name} is Speaking...`
               : isVoiceListening
@@ -55,13 +59,15 @@ export function InterviewVoiceHud({
           <div style={{ fontSize: 12, color: !isSpeechSupported ? 'var(--danger-bright, #ef4444)' : isVoiceListening ? 'var(--success)' : 'var(--t2)', fontWeight: liveSpeechTranscript ? 800 : 600 }}>
             {!isSpeechSupported
               ? 'Web Speech API is not available on this browser. Please use the text input below to submit responses.'
+              : isSendingInterviewerReply
+              ? 'Your response was sent. You can keep preparing while the interviewer replies.'
               : isAvatarSpeaking
-              ? 'Listening to avatar audio response (Speak anytime to interrupt)...'
+              ? 'The interviewer is speaking. Use “Interrupt & Speak” when you’re ready to answer.'
               : liveSpeechTranscript
               ? `Hearing your voice: "${liveSpeechTranscript}"`
               : isVoiceListening
               ? '🟢 Microphone active — Speak naturally to answer (or click "Done Speaking")'
-              : 'Click "Speak to Avatar" or enable Auto Voice Loop.'}
+              : 'Start the microphone here, or let hands-free voice mode resume after the interviewer speaks.'}
           </div>
         </div>
       </div>
@@ -116,11 +122,11 @@ export function InterviewVoiceHud({
             padding: '6px 14px',
             fontSize: 12,
             fontWeight: 900,
-            cursor: !isSpeechSupported || isVoiceListening ? 'default' : 'pointer',
+            cursor: !isSpeechSupported || isVoiceListening || isAvatarSpeaking ? 'default' : 'pointer',
             opacity: !isSpeechSupported ? 0.5 : 1
           }}
         >
-          {isVoiceListening ? '🎙️ Listening...' : '🎤 Force Mic Reactivate'}
+          {isVoiceListening ? '🎙️ Listening...' : '🎤 Start microphone'}
         </button>
       </div>
     </div>

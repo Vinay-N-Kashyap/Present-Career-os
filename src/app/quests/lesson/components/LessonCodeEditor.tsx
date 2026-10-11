@@ -46,6 +46,39 @@ export function LessonCodeEditor({
   const edited = code !== codeExample;
   const rows = Math.min(Math.max(code.split('\n').length, 3), 18);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const textarea = e.currentTarget;
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const indent = '    ';
+      const newCode = code.substring(0, start) + indent + code.substring(end);
+      setCode(newCode);
+      setTimeout(() => {
+        textarea.selectionStart = textarea.selectionEnd = start + indent.length;
+      }, 0);
+    } else if (e.key === 'Enter') {
+      const textarea = e.currentTarget;
+      const start = textarea.selectionStart;
+      const lines = code.substring(0, start).split('\n');
+      const currentLine = lines[lines.length - 1];
+      const match = currentLine.match(/^(\s+)/);
+      if (match) {
+        e.preventDefault();
+        const baseIndent = match[1];
+        const trimmed = currentLine.trim();
+        const extraIndent = trimmed.endsWith(':') || trimmed.endsWith('{') ? '    ' : '';
+        const fullIndent = baseIndent + extraIndent;
+        const newCode = code.substring(0, start) + '\n' + fullIndent + code.substring(textarea.selectionEnd);
+        setCode(newCode);
+        setTimeout(() => {
+          textarea.selectionStart = textarea.selectionEnd = start + 1 + fullIndent.length;
+        }, 0);
+      }
+    }
+  };
+
   return (
     <div id="slide-code-execution-block" style={{ marginTop: 8 }}>
       <div style={{
@@ -106,6 +139,7 @@ export function LessonCodeEditor({
         data-testid="lesson-code-input"
         value={code}
         onChange={(e) => setCode(e.target.value)}
+        onKeyDown={handleKeyDown}
         spellCheck={false}
         rows={rows}
         aria-label="Lesson code. You can change it and press Run Code."

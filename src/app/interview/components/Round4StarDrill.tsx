@@ -17,9 +17,9 @@ export interface Round4StarDrillProps {
   eyeContactScore: number | null;
   wpmScore: number | null;
   lastInterviewerSpeech: string;
-  isVoiceListening: boolean;
-  startVoiceListening: () => void;
   finishInterview: () => void;
+  canFinishInterview: boolean;
+  isSendingInterviewMessage?: boolean;
   manualTextInput: string;
   setManualTextInput: (val: string) => void;
   onSendMessage: (text: string) => void;
@@ -45,9 +45,9 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
   eyeContactScore,
   wpmScore,
   lastInterviewerSpeech,
-  isVoiceListening,
-  startVoiceListening,
   finishInterview,
+  canFinishInterview,
+  isSendingInterviewMessage = false,
   manualTextInput,
   setManualTextInput,
   onSendMessage,
@@ -68,8 +68,8 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
     return new Set(liveSpeechTranscript.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean));
   }, [liveSpeechTranscript]);
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
-      <div style={{ width: '85%', height: 480, background: 'var(--bg3)', borderRadius: 20, border: '1px solid var(--border)', overflow: 'hidden', position: 'relative', boxShadow: 'var(--shadow-lg)' }}>
+    <div className="iv-round4-layout" style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
+      <div className="iv-round4-avatar" style={{ width: '85%', height: 480, background: 'var(--bg3)', borderRadius: 20, border: '1px solid var(--border)', overflow: 'hidden', position: 'relative', boxShadow: 'var(--shadow-lg)' }}>
         <VRoidInterviewAvatar teacherId={activeTeacher.id} animState={animState} zoom={1.6} />
 
         {/* Floating Candidate Camera PiP Preview (IV-UX-03: Live Eye Contact & Vocal Pace HUD) */}
@@ -99,7 +99,7 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
         </div>
       </div>
 
-      <div style={{ width: '85%', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div className="iv-round4-content" style={{ width: '85%', display: 'flex', flexDirection: 'column', gap: 10 }}>
         {/* 🌟 S-T-A-R Assessment Progression Stepper */}
         <div style={{
           display: 'grid',
@@ -141,20 +141,8 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
         </div>
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-          <button
-            onClick={startVoiceListening}
-            style={{
-              flex: 1,
-              background: isVoiceListening ? 'var(--danger)' : 'linear-gradient(135deg, var(--success) 0%, var(--success-deep) 100%)',
-              border: 'none', color: 'var(--text)', borderRadius: 12, padding: '12px', fontSize: 14, fontWeight: 900, cursor: 'pointer',
-              boxShadow: isVoiceListening ? '0 0 16px rgba(var(--danger-rgb),0.6)' : 'var(--shadow-md)'
-            }}
-          >
-            {isVoiceListening ? '🎙️ Listening to Your Voice... (Speak Now)' : '🎤 Click to Speak STAR Response'}
-          </button>
-
-          <button onClick={finishInterview} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 12, padding: '12px 18px', fontSize: 14, fontWeight: 900, cursor: 'pointer' }}>
-            View Results ➔
+          <button onClick={finishInterview} disabled={!canFinishInterview || isSendingInterviewMessage} style={{ background: canFinishInterview ? 'var(--accent)' : 'var(--bg3)', border: 'none', color: canFinishInterview ? 'var(--text)' : 'var(--t3)', borderRadius: 12, padding: '12px 18px', fontSize: 14, fontWeight: 900, cursor: canFinishInterview ? 'pointer' : 'not-allowed' }}>
+            {canFinishInterview ? 'Complete interview ➔' : starStep >= 4 ? 'Waiting for interviewer…' : `Answer ${Math.max(0, 4 - starStep)} more STAR question${4 - starStep === 1 ? '' : 's'}`}
           </button>
         </div>
 
@@ -162,7 +150,7 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if (!manualTextInput.trim()) return;
+            if (!manualTextInput.trim() || isSendingInterviewMessage) return;
             const textToSend = manualTextInput.trim();
             setManualTextInput('');
             console.log('[Interview] ⌨️ Candidate submitted typed STAR response:', textToSend);
@@ -173,6 +161,7 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
           <input
             type="text"
             value={manualTextInput}
+            disabled={isSendingInterviewMessage}
             onChange={(e) => setManualTextInput(e.target.value)}
             placeholder="Or type your STAR response (Situation, Task, Action, Result)..."
             style={{
@@ -187,7 +176,7 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
           />
           <button
             type="submit"
-            disabled={!manualTextInput.trim()}
+            disabled={!manualTextInput.trim() || isSendingInterviewMessage}
             style={{
               padding: '10px 18px',
               borderRadius: 10,
@@ -199,7 +188,7 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
               cursor: manualTextInput.trim() ? 'pointer' : 'default'
             }}
           >
-            Send ➔
+            {isSendingInterviewMessage ? 'Thinking…' : 'Send ➔'}
           </button>
         </form>
 

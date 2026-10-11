@@ -57,7 +57,7 @@ export function computeDeterministicEvaluation({
   const telemetryDiagnostics = generateTelemetryDiagnostics({
     eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
     wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-    fillerWords: typeof wpmScore === 'number' ? fillerWordCount : undefined
+    fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined
   });
 
   const perRoundScores = {
@@ -150,7 +150,7 @@ export function exportInterviewTranscriptFile({
       telemetry: {
         eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : null,
         wpm: typeof wpmScore === 'number' ? wpmScore : null,
-        fillerWords: typeof wpmScore === 'number' ? fillerWordCount : null
+        fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : null
       },
       codeSolution: codeContent,
       architectureTopology: latestTopology,

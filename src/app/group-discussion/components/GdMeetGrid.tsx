@@ -31,6 +31,7 @@ interface GdMeetGridProps {
   handRaised: boolean;
   micActive: boolean;
   callDurationSeconds: number;
+  sessionDurationMinutes: number;
 }
 
 export default function GdMeetGrid({
@@ -48,7 +49,8 @@ export default function GdMeetGrid({
   hostId,
   handRaised,
   micActive,
-  callDurationSeconds
+  callDurationSeconds,
+  sessionDurationMinutes
 }: GdMeetGridProps) {
   // WebGL & Media Cleanup on unmount (Task 4.4 guarantee)
   useEffect(() => {
@@ -87,6 +89,7 @@ export default function GdMeetGrid({
         handRaised={handRaised}
         micActive={micActive}
         callDurationSeconds={callDurationSeconds}
+        sessionDurationMinutes={sessionDurationMinutes}
       />
 
       {/* Mic Status & Visualizer footer bar */}
@@ -110,7 +113,7 @@ export default function GdMeetGrid({
             boxShadow: micActive ? '0 0 8px var(--teal)' : 'none'
           }} />
           <span style={{ fontSize: 12, fontWeight: 800, fontFamily: 'var(--font-mono)', color: 'var(--t2)' }}>
-            {micActive ? 'AUDIO STREAM ACTIVE' : 'MUTED'}
+            {isUserTurn ? (micActive ? 'YOUR TURN · LISTENING' : 'YOUR TURN · MIC OFF — TYPE OR TURN MIC ON') : activeSpeakingAvatar ? `${activeSpeakingAvatar.toUpperCase()} IS SPEAKING` : 'PANEL DISCUSSION'}
           </span>
         </div>
 

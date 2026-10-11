@@ -13,6 +13,7 @@ export interface GdHistoryRecord {
     verdict?: string;
     gapsIdentified?: string[];
     keyMoments?: string[];
+    evaluated?: boolean;
   };
   transcript?: Array<{
     sender: string;
@@ -51,6 +52,21 @@ export default function GdHistoryModal({
 }: GdHistoryModalProps) {
   if (!isOpen) return null;
 
+  const scoredSessions = historyList.filter((item) =>
+    item.report?.evaluated !== false && Number.isFinite(item.report?.score)
+  );
+  const averageScore = scoredSessions.length > 0
+    ? `${Math.round(scoredSessions.reduce((total, item) => total + item.report!.score!, 0) / scoredSessions.length)}%`
+    : '—';
+  const primaryFocusArea = historyList
+    .flatMap((item) => item.report?.gapsIdentified ?? [])
+    .find((gap) => typeof gap === 'string' && gap.trim()) || '—';
+
+  const formatScore = (record: GdHistoryRecord) =>
+    record.report?.evaluated === false || !Number.isFinite(record.report?.score)
+      ? 'Not scored'
+      : `${record.report!.score}%`;
+
   return (
     <div className="gd-modal-backdrop animate-fade-in" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="gd-modal-content">
@@ -74,22 +90,20 @@ export default function GdHistoryModal({
 
         {/* Aggregate Stats Bar */}
         {historyList.length > 0 && (
-          <div style={{ display: 'flex', gap: 12 }}>
+          <div style={{ display: 'flex', gap: 12 }} className="gd-history-stats">
             <div className="gd-stat-card">
               <span className="gd-stat-value">{historyList.length}</span>
               <span className="gd-stat-label">Total Boardrooms</span>
             </div>
             <div className="gd-stat-card">
               <span className="gd-stat-value" style={{ color: 'var(--teal)' }}>
-                {historyList.length > 0
-                  ? `${Math.round(historyList.reduce((acc, curr) => acc + (curr.report?.score || 75), 0) / historyList.length)}%`
-                  : '—'}
+                {averageScore}
               </span>
               <span className="gd-stat-label">Avg Performance Score</span>
             </div>
             <div className="gd-stat-card">
               <span className="gd-stat-value" style={{ color: 'var(--accent)', fontSize: 16.5, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {historyList[0]?.report?.gapsIdentified?.[0] || 'Lock Contention'}
+                {primaryFocusArea}
               </span>
               <span className="gd-stat-label">Primary Focus Area</span>
             </div>
@@ -97,7 +111,7 @@ export default function GdHistoryModal({
         )}
 
         {/* Search & Domain Filter Bar */}
-        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }} className="gd-history-filters">
           <input
             type="text"
             placeholder="🔍 Search past topics..."
@@ -148,7 +162,7 @@ export default function GdHistoryModal({
                   fontSize: 17.5,
                   fontWeight: 900
                 }}>
-                  Score: {selectedItem.report?.score || 75}%
+                  {formatScore(selectedItem)}
                 </div>
                 <button
                   onClick={() => onExportJSON(selectedItem)}
@@ -269,8 +283,8 @@ export default function GdHistoryModal({
                       )}
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <span style={{ fontSize: 13, fontWeight: 900, color: (record.report?.score || 75) >= 80 ? 'var(--green)' : 'var(--orange)' }}>
-                        {record.report?.score || 75}%
+                      <span style={{ fontSize: 13, fontWeight: 900, color: record.report?.evaluated === false || !Number.isFinite(record.report?.score) ? 'var(--t3)' : (record.report!.score! >= 80 ? 'var(--green)' : 'var(--orange)') }}>
+                        {formatScore(record)}
                       </span>
                       <button
                         type="button"

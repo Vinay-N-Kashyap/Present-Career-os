@@ -25,10 +25,11 @@ export interface Round1BehavioralProps {
   isVoiceListening: boolean;
   lastInterviewerSpeech: string;
   onProceed: () => void;
+  canProceed: boolean;
+  isSendingInterviewMessage?: boolean;
   fillerWordCount: number;
   messages: Message[];
   messagesEndRef: React.RefObject<HTMLDivElement>;
-  startVoiceListening: () => void;
   manualTextInput: string;
   setManualTextInput: (val: string) => void;
   onSendMessage: (text: string) => void;
@@ -55,10 +56,11 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
   isVoiceListening,
   lastInterviewerSpeech,
   onProceed,
+  canProceed,
+  isSendingInterviewMessage = false,
   fillerWordCount,
   messages,
   messagesEndRef,
-  startVoiceListening,
   manualTextInput,
   setManualTextInput,
   onSendMessage,
@@ -78,9 +80,9 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
   }, [liveSpeechTranscript]);
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '6fr 4fr', gap: 16, alignItems: 'stretch' }}>
+    <div className="iv-round-layout iv-round1-layout" style={{ display: 'grid', gridTemplateColumns: '6fr 4fr', gap: 16, alignItems: 'stretch' }}>
       {/* Left 60%: 3D VRoid Avatar Viewport */}
-      <div style={{
+      <div className="iv-round1-avatar" style={{
         height: isAssistModeActive ? 640 : 500,
         background: 'var(--bg3)',
         borderRadius: 20,
@@ -148,10 +150,12 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
             <span style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--accent-mid)' }}>ROUND 1 OF 4</span>
             <h2 style={{ fontSize: 15.5, fontWeight: 900, margin: 0, color: 'var(--t1)' }}>Behavioral & Background Intro</h2>
           </div>
-          <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
-            Proceed to Round 2 ➔
-          </button>
+          {canProceed && <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '7px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
+            Continue to coding ➔
+          </button>}
         </div>
+
+        {!canProceed && <div style={{ marginBottom: 8, fontSize: 11.5, color: 'var(--t3)' }}>Answer a few topic-specific questions to unlock the coding round.</div>}
 
         {/* Telemetry Bar */}
         <div style={{ background: 'var(--bg3)', borderRadius: 10, padding: '8px 12px', border: '1px solid var(--border)', marginBottom: 10, display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
@@ -368,23 +372,11 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
         )}
 
         <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <button
-            onClick={startVoiceListening}
-            style={{
-              width: '100%',
-              background: isVoiceListening ? 'var(--danger)' : 'linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%)',
-              border: 'none', color: 'var(--text)', borderRadius: 10, padding: '10px', fontSize: 13, fontWeight: 900, cursor: 'pointer',
-              boxShadow: isVoiceListening ? '0 0 14px rgba(var(--danger-rgb),0.7)' : 'var(--shadow-sm)'
-            }}
-          >
-            {isVoiceListening ? '🎙️ Listening to Voice... (Speak Now)' : '🎤 Click to Speak Response'}
-          </button>
-
           {/* ⌨️ Direct Typed Response Fallback for Noisy Environments */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              if (!manualTextInput.trim()) return;
+              if (!manualTextInput.trim() || isSendingInterviewMessage) return;
               const textToSend = manualTextInput.trim();
               setManualTextInput('');
               console.log('[Interview] ⌨️ Candidate submitted typed response:', textToSend);
@@ -395,6 +387,7 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
             <input
               type="text"
               value={manualTextInput}
+              disabled={isSendingInterviewMessage}
               onChange={(e) => setManualTextInput(e.target.value)}
               placeholder="Or type your response here..."
               style={{
@@ -409,7 +402,7 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
             />
             <button
               type="submit"
-              disabled={!manualTextInput.trim()}
+              disabled={!manualTextInput.trim() || isSendingInterviewMessage}
               style={{
                 padding: '8px 14px',
                 borderRadius: 8,
@@ -421,7 +414,7 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
                 cursor: manualTextInput.trim() ? 'pointer' : 'default'
               }}
             >
-              Send ➔
+              {isSendingInterviewMessage ? 'Thinking…' : 'Send ➔'}
             </button>
           </form>
         </div>

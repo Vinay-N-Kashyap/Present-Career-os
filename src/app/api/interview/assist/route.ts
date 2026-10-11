@@ -91,23 +91,17 @@ function getFallbackAssistScript(
 
   if (stage === 'round2_coding') {
     return {
-      script: `To solve this ${topic} challenge efficiently, I first identified the constraints and expected time/space complexity. Rather than using an unoptimized brute-force method, I utilized a structured single-pass algorithm to bound our time complexity to O(N). Let me walk you through the key logic lines and boundary checks.`,
+      script: `Start by restating the inputs, expected output, and constraints in your own words. Work through one small example by hand, then identify the simplest correct approach before thinking about optimization. Pay special attention to empty inputs, boundary values, and duplicate data. As you implement, keep each step easy to verify and use the tests to check your assumptions.`,
       bulletPoints: [
-        `State the baseline complexity vs optimized complexity`,
-        `Walk through boundary condition checks (e.g. empty inputs, zero division)`,
-        `Explain the algorithmic choice (e.g. hash map lookup, math formula)`
+        `Clarify inputs, output, constraints, and one worked example`,
+        `Choose a data structure that fits the operations the task needs`,
+        `Check empty, boundary, duplicate, and ordinary cases before optimizing`
       ],
       deliveryGuide: {
-        pacing: 'Deliberate, methodical pace (~115 WPM)',
-        tone: 'Analytical and precise',
-        emphasisWords: ['time complexity', 'linear O(N)', 'boundary conditions', 'edge cases'],
-        pauseCues: ['Pause when explaining formula/loop transformations', 'Speak clearly through variable names']
-      },
-      starBreakdown: {
-        situation: `Encountered performance or analytical constraint in ${topic}`,
-        task: 'Develop an algorithm with minimal time and memory footprint',
-        action: 'Refactored iteration logic into a single-pass linear evaluation',
-        result: 'Passed all unit test assertions with optimal runtime'
+        pacing: 'Work steadily; pause to test each assumption',
+        tone: 'Curious and methodical',
+        emphasisWords: ['constraints', 'worked example', 'edge cases', 'trade-offs'],
+        pauseCues: ['Explain your reasoning before optimizing', 'Describe what each test is checking']
       },
       success: true
     };
@@ -193,18 +187,21 @@ export async function POST(req: Request) {
     const stream = domainStream === 'non_tech' ? 'non_tech' : 'tech';
 
     // 2. Build Structured LLM Prompt for High-Scoring Verbal Scripts
-    const systemPrompt = `You are an elite Executive Interview Coach and Teleprompter Scriptwriter for top tech & corporate candidates.
+    const isCodingCoach = stage === 'round2_coding';
+    const systemPrompt = `You are an elite ${isCodingCoach ? 'coding coach' : 'Executive Interview Coach and Teleprompter Scriptwriter'} for top tech & corporate candidates.
 The candidate is currently in an active AI interview for "${topic}" (${stream} stream, difficulty: ${difficulty}, level: ${scriptLevel}).
 
 The AI Interviewer just asked this question:
 "${question || 'Tell me about yourself and your experience.'}"
 
-Generate a world-class, word-for-word spoken response script and vocal delivery guide that the candidate can read naturally into their microphone to score 95%+ on the rubric.
+${isCodingCoach
+    ? 'Generate concise problem-solving guidance for the side panel: what to clarify, a high-level approach to consider, useful data-structure considerations, edge cases, and how to explain trade-offs. Do not write a candidate answer.'
+    : 'Generate a natural, word-for-word spoken response script and vocal delivery guide that the candidate can adapt to their own experience.'}
 
 RULES:
-1. Write in natural, spoken first-person dialogue ("I", "my approach", "in my project").
-2. Format the script to take roughly 30 to 45 seconds to speak aloud (60-90 words).
-3. Include specific metrics, keywords, and architectural/business frameworks for ${topic}.
+1. ${isCodingCoach ? 'Never provide actual code, pseudocode, a complete algorithm, or a line-by-line solution. Coach the reasoning process only.' : 'Write in natural, spoken first-person dialogue ("I", "my approach", "in my project").'}
+2. ${isCodingCoach ? 'Keep the coaching note concise and focused on this challenge.' : 'Format the script to take roughly 30 to 45 seconds to speak aloud (60-90 words).'}
+3. Include relevant considerations for ${topic} without inventing candidate experience or results.
 4. Return ONLY valid JSON matching this exact schema:
 
 {

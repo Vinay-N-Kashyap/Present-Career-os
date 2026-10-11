@@ -16,6 +16,14 @@ interface GdReportProps {
 
 export default function GdReport({ report, transcript, onRestart }: GdReportProps) {
   const [activeTab, setActiveTab] = useState<'assessment' | 'transcript'>('assessment');
+  const score = Number.isFinite(report.score) ? report.score : null;
+  const evaluated = report.evaluated !== false && score !== null;
+  const verdict = typeof report.verdict === 'string' && report.verdict.trim()
+    ? report.verdict
+    : 'No evaluation summary is available for this session.';
+  const keyMoments = Array.isArray(report.keyMoments) ? report.keyMoments : [];
+  const gapsIdentified = Array.isArray(report.gapsIdentified) ? report.gapsIdentified : [];
+  const sessionTranscript = Array.isArray(transcript) ? transcript : [];
 
   return (
     <div style={{
@@ -28,9 +36,9 @@ export default function GdReport({ report, transcript, onRestart }: GdReportProp
       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
     }} className="animate-fade-in">
       
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }} className="gd-report-header">
         <h2 style={{ fontSize: 20, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>
-          📊 Collaborative SDE Performance Report
+          📊 Group Discussion Performance Report
         </h2>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           {/* Tab Selector */}
@@ -70,43 +78,43 @@ export default function GdReport({ report, transcript, onRestart }: GdReportProp
           </div>
 
           <div style={{
-            background: report.evaluated === false ? 'rgba(239,68,68,0.1)' : 'rgba(20,184,166,0.1)',
-            border: report.evaluated === false ? '1.5px solid var(--red, #ef4444)' : '1.5px solid var(--teal)',
+            background: evaluated ? 'rgba(20,184,166,0.1)' : 'rgba(239,68,68,0.1)',
+            border: evaluated ? '1.5px solid var(--teal)' : '1.5px solid var(--red, #ef4444)',
             borderRadius: 12,
             padding: '8px 16px',
-            color: report.evaluated === false ? 'var(--red, #ef4444)' : 'var(--teal)',
+            color: evaluated ? 'var(--teal)' : 'var(--red, #ef4444)',
             fontSize: 20,
             fontWeight: 900
           }}>
-            {report.evaluated === false
-              ? (report.score === 0 && !report.verdict.toLowerCase().includes('unavailable') ? 'Score: 0%' : 'Evaluation Offline')
-              : `Score: ${report.score}%`}
+            {evaluated ? `Score: ${score}%` : 'Evaluation Offline'}
           </div>
         </div>
       </div>
 
       {activeTab === 'assessment' ? (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="animate-fade-in">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="animate-fade-in gd-report-assessment">
           <div>
             <h3 style={{ fontSize: 14.5, fontWeight: 800, color: 'var(--t1)', marginBottom: 10 }}>Summary & Verdict</h3>
             <p style={{ fontSize: 14, color: 'var(--t2)', lineHeight: 1.5 }}>
-              {report.verdict}
+              {verdict}
             </p>
 
             <h3 style={{ fontSize: 14.5, fontWeight: 800, color: 'var(--t1)', marginTop: 20, marginBottom: 10 }}>Key Panel Highlights</h3>
             <ul style={{ fontSize: 14, color: 'var(--t2)', paddingLeft: 18, margin: 0, lineHeight: 1.6 }}>
-              {report.keyMoments.map((m, idx) => <li key={idx}>{m}</li>)}
+              {keyMoments.length > 0
+                ? keyMoments.map((m, idx) => <li key={idx}>{m}</li>)
+                : <li>No key moments were recorded.</li>}
             </ul>
           </div>
 
           <div>
             <h3 style={{ fontSize: 14.5, fontWeight: 800, color: 'var(--t1)', marginBottom: 10 }}>Target Gaps Identified</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {report.gapsIdentified.map((g, idx) => (
+              {gapsIdentified.length > 0 ? gapsIdentified.map((g, idx) => (
                 <div key={idx} style={{ background: 'var(--bg3)', border: '1.5px solid var(--border)', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: 'var(--t1)' }}>
                   🚨 {g}
                 </div>
-              ))}
+              )) : <p style={{ margin: 0, color: 'var(--t3)', fontSize: 13 }}>No specific improvement areas were returned.</p>}
             </div>
 
             <div style={{ marginTop: 24, display: 'flex', gap: 12 }}>
@@ -133,7 +141,7 @@ export default function GdReport({ report, transcript, onRestart }: GdReportProp
             flexDirection: 'column',
             gap: 12
           }}>
-            {transcript.map((msg, idx) => (
+            {sessionTranscript.map((msg, idx) => (
               <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.role === 'SDE Candidate' ? 'flex-end' : 'flex-start' }}>
                 <div style={{ display: 'flex', gap: 4, fontSize: 9.5, color: 'var(--t3)', marginBottom: 2 }}>
                   <span>{msg.emoji}</span>
@@ -153,6 +161,9 @@ export default function GdReport({ report, transcript, onRestart }: GdReportProp
                 </div>
               </div>
             ))}
+            {sessionTranscript.length === 0 && (
+              <p style={{ margin: 0, color: 'var(--t3)', fontSize: 13 }}>No transcript was saved for this session.</p>
+            )}
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

@@ -28,21 +28,22 @@ function resetWorker() {
 
 export function runPythonInBrowser(
   code: string,
-  timeoutMs = 20000,
+  timeoutMs = 4000,
   options?: { trace?: boolean; tracerSource?: string }
 ): Promise<PythonRunResult> {
   const started = Date.now();
   if (typeof window === 'undefined' || typeof Worker === 'undefined') {
     return Promise.resolve({ success: false, stdout: '', error: 'Python can only run in the browser.', durationMs: 0 });
   }
+  const effectiveTimeoutMs = Math.min(timeoutMs, 4000);
   const id = nextId++;
   const w = getWorker();
   return new Promise((resolve) => {
     const timer = setTimeout(() => {
       w.removeEventListener('message', onMessage);
       resetWorker();
-      resolve({ success: false, stdout: '', error: `Stopped after ${Math.round(timeoutMs / 1000)} seconds. Is there an endless loop?`, durationMs: Date.now() - started });
-    }, timeoutMs);
+      resolve({ success: false, stdout: '', error: `Stopped after ${Math.round(effectiveTimeoutMs / 1000)} seconds. Is there an endless loop?`, durationMs: Date.now() - started });
+    }, effectiveTimeoutMs);
     function onMessage(event: MessageEvent) {
       const data = event.data || {};
       if (data.id !== id) return;

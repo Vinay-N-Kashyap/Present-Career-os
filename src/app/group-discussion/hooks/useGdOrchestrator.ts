@@ -9,7 +9,7 @@ import {
   GD_SPEAK_MS,
   gdDisplayName,
   hostEndScript,
-  hostFiveMinuteScript,
+  hostMidpointScript,
   hostIntroScript,
   hostThirtySecondScript,
   pickRandomSpeakerPair,
@@ -79,13 +79,18 @@ export function useGdOrchestrator({
 
   // Refs
   const callTimerRef = useRef<any>(null);
+  const hostIntroTimerRef = useRef<any>(null);
+  const callDurationRef = useRef(0);
   const recognitionRef = useRef<any>(null);
+  const candidateTranscriptRef = useRef('');
   const silenceTimerRef = useRef<any>(null);
   const turnTimeoutRef = useRef<any>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const reportRef = useRef<HTMLDivElement>(null);
   const turnSequenceRef = useRef<'user' | 'avatar_first' | 'avatar_second'>('user');
+  const turnEpochRef = useRef(0);
   const isCallActiveRef = useRef(false);
+  const isEndingRef = useRef(false);
   const handRaisedRef = useRef(false);
   const preloadedAvatarBDataRef = useRef<{ avatarB_Id: string; cleanReply: string; nextMessages: GdChatMessage[] } | null>(null);
   const avatarBPromiseRef = useRef<Promise<any> | null>(null);
@@ -139,6 +144,7 @@ export function useGdOrchestrator({
   useEffect(() => {
     return () => {
       if (callTimerRef.current) clearInterval(callTimerRef.current);
+      if (hostIntroTimerRef.current) clearTimeout(hostIntroTimerRef.current);
       if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
       if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
 
@@ -203,15 +209,19 @@ export function useGdOrchestrator({
         rec.lang = 'en-US';
 
         rec.onresult = (event: any) => {
-          let currentTranscript = '';
-          for (let i = event.resultIndex; i < event.results.length; i++) {
-            currentTranscript += event.results[i][0].transcript;
-          }
+          // SpeechRecognition returns the full result list, but resultIndex marks only
+          // the changed portion. Read the whole list so earlier phrases are retained.
+          const currentTranscript = Array.from(event.results as ArrayLike<any>)
+            .map((result: any) => String(result?.[0]?.transcript || '').trim())
+            .filter(Boolean)
+            .join(' ');
+          candidateTranscriptRef.current = currentTranscript;
 
           if (currentTranscript.trim() && isCallActiveRef.current) {
             if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
             silenceTimerRef.current = setTimeout(() => {
-              const finalTranscript = currentTranscript.trim();
+              silenceTimerRef.current = null;
+              const finalTranscript = candidateTranscriptRef.current.trim();
               if (finalTranscript) {
                 try { rec.stop(); } catch {}
                 handleSendVoiceMessageRef.current(finalTranscript);
@@ -271,10 +281,12 @@ export function useGdOrchestrator({
   }, []);
 
   const startCandidateTurnPrompt = useCallback(() => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || isEndingRef.current) return;
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
     setSuggestedHelperText('');
     setIsUserTurn(true);
+    turnSequenceRef.current = 'user';
+    candidateTranscriptRef.current = '';
 
     if (handRaisedRef.current) {
       handRaisedRef.current = false;
@@ -327,8 +339,10 @@ export function useGdOrchestrator({
   }, [micActive]);
 
   const handleCandidateSilenceTimeout = () => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || isEndingRef.current) return;
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    silenceTimerRef.current = null;
     setCandidateTurnTimer(null);
     setIsUserTurn(false);
 
@@ -367,6 +381,7 @@ export function useGdOrchestrator({
   };
 
   const passFloorToCandidateAfterAvatarB = () => {
+    if (!isCallActiveRef.current || isEndingRef.current) return;
     lastPairRef.current = speakerPairRef.current;
     setCurrentAvatarARoleId(null);
     setCurrentAvatarBRoleId(null);
@@ -457,9 +472,11 @@ export function useGdOrchestrator({
     targetSpeakerName: string,
     updatedMessages?: GdChatMessage[]
   ) => {
-    if (!isCallActiveRef.current) return;
+    const expectedSequence = roleType === 'avatar_a' ? 'avatar_first' : 'avatar_second';
+    if (!isCallActiveRef.current || isEndingRef.current || turnSequenceRef.current !== expectedSequence) return;
     const nextSpeaker = AVATARS.find(a => a.id === avatarId);
     if (!nextSpeaker) return;
+    const requestEpoch = turnEpochRef.current;
 
     setLoading(true);
 
@@ -474,9 +491,11 @@ export function useGdOrchestrator({
           objective: roomDesc || selectedConcept,
           activeMentors: [avatarId],
           domain,
+          difficulty,
           roleType,
           nextSpeakerName: targetSpeakerName,
           candidateName: user?.displayName || 'Candidate',
+          speakerPersona: nextSpeaker.description,
           history: messageHistory.slice(-8).map(m => ({
             role: m.role === 'SDE Candidate' ? 'user' : 'assistant',
             content: m.content,
@@ -485,7 +504,7 @@ export function useGdOrchestrator({
         })
       });
 
-      if (response.ok && isCallActiveRef.current) {
+      if (response.ok && isCallActiveRef.current && !isEndingRef.current && turnEpochRef.current === requestEpoch) {
         const data = await response.json();
         if (data.reply) {
           const cleanReply = data.reply.replace(/\[.*?\]:\s?/, '');
@@ -519,9 +538,11 @@ export function useGdOrchestrator({
                     objective: roomDesc || selectedConcept,
                     activeMentors: [avatarB_Id],
                     domain,
+                    difficulty,
                     roleType: 'avatar_b',
                     nextSpeakerName: user?.displayName || 'Candidate',
                     candidateName: user?.displayName || 'Candidate',
+                    speakerPersona: AVATARS.find(a => a.id === avatarB_Id)?.description,
                     history: nextMessages.slice(-8).map(m => ({
                       role: m.role === 'SDE Candidate' ? 'user' : 'assistant',
                       content: m.content,
@@ -594,24 +615,29 @@ export function useGdOrchestrator({
           setActiveSpeakingAvatar(null);
           startCandidateTurnPrompt();
         }
-      } else {
+      } else if (turnEpochRef.current === requestEpoch && !isEndingRef.current) {
         setActiveSpeakingAvatar(null);
         startCandidateTurnPrompt();
       }
     } catch (err) {
       console.warn('Bot speaker reply failure:', err);
-      setActiveSpeakingAvatar(null);
-      startCandidateTurnPrompt();
+      if (turnEpochRef.current === requestEpoch && !isEndingRef.current) {
+        setActiveSpeakingAvatar(null);
+        startCandidateTurnPrompt();
+      }
     } finally {
       setLoading(false);
     }
   };
 
   const handleUserFinishSpeaking = (userText?: string) => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || turnSequenceRef.current !== 'user') return;
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    silenceTimerRef.current = null;
     setCandidateTurnTimer(null);
     setIsUserTurn(false);
+    turnSequenceRef.current = 'avatar_first';
 
     if (recognitionRef.current) {
       try { recognitionRef.current.stop(); } catch {}
@@ -621,7 +647,8 @@ export function useGdOrchestrator({
     avatarBPromiseRef.current = null;
     preloadedAvatarBDataRef.current = null;
 
-    const spokenContent = userText || inputText.trim();
+    const spokenContent = (userText || candidateTranscriptRef.current || inputText).trim();
+    candidateTranscriptRef.current = '';
     setInputText('');
 
     if (!spokenContent) {
@@ -659,7 +686,18 @@ export function useGdOrchestrator({
   };
 
   const triggerHostMidSummary = async () => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || isEndingRef.current) return;
+    turnEpochRef.current += 1;
+    turnSequenceRef.current = 'avatar_second';
+    if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    silenceTimerRef.current = null;
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch {}
+    }
+    setMicActive(false);
+    setCandidateTurnTimer(null);
+    setIsUserTurn(false);
     const hostId = hostIdRef.current;
     const hostAvatar = AVATARS.find(a => a.id === hostId) || AVATARS[0];
     const hostName = gdDisplayName(hostId);
@@ -667,7 +705,7 @@ export function useGdOrchestrator({
 
     try {
       stopSpeaking();
-      const midText = hostFiveMinuteScript(hostName, roomName);
+      const midText = hostMidpointScript(hostName, roomName);
 
       speakWithAvatar(midText, hostId,
         () => {
@@ -681,7 +719,7 @@ export function useGdOrchestrator({
           setActiveSpeakingAvatar(null);
           setMessages(prev => [...prev, {
             sender: hostName,
-            role: 'Host (5 minutes over)',
+            role: 'Host (midpoint check-in)',
             content: midText,
             emoji: hostAvatar.emoji
           }]);
@@ -701,7 +739,18 @@ export function useGdOrchestrator({
   };
 
   const triggerHostTimeWarning = async () => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || isEndingRef.current) return;
+    turnEpochRef.current += 1;
+    turnSequenceRef.current = 'avatar_second';
+    if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    silenceTimerRef.current = null;
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch {}
+    }
+    setMicActive(false);
+    setCandidateTurnTimer(null);
+    setIsUserTurn(false);
     const hostId = hostIdRef.current;
     const hostAvatar = AVATARS.find(a => a.id === hostId) || AVATARS[0];
     const hostName = gdDisplayName(hostId);
@@ -743,7 +792,21 @@ export function useGdOrchestrator({
   };
 
   const triggerHostEndSummary = async () => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || isEndingRef.current) return;
+    isEndingRef.current = true;
+    turnEpochRef.current += 1;
+    turnSequenceRef.current = 'avatar_second';
+    if (callTimerRef.current) clearInterval(callTimerRef.current);
+    if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    silenceTimerRef.current = null;
+    setCandidateTurnTimer(null);
+    setIsUserTurn(false);
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch {}
+    }
+    setMicActive(false);
+    if (hostIntroTimerRef.current) clearTimeout(hostIntroTimerRef.current);
     const hostId = hostIdRef.current;
     const hostAvatar = AVATARS.find(a => a.id === hostId) || AVATARS[0];
     const hostName = gdDisplayName(hostId);
@@ -790,13 +853,15 @@ export function useGdOrchestrator({
     const hostId = gdHostId;
     hostIdRef.current = hostId;
     setActiveHostId(hostId);
-    let activePanel = [...invitedAvatars].filter(id => id !== currentMentorId);
-    if (!activePanel.includes(hostId)) {
-      activePanel = [hostId, ...activePanel];
-    }
-    if (activePanel.filter(id => id !== hostId).length < 2) {
-      const remainingPool = filteredAvatars.map(a => a.id).filter(id => !activePanel.includes(id) && id !== currentMentorId);
-      activePanel = [...activePanel, ...remainingPool.slice(0, 2)];
+    const selectedPanelists = invitedAvatars
+      .filter(id => id !== hostId && id !== currentMentorId)
+      .slice(0, 7);
+    let activePanel = [hostId, ...selectedPanelists];
+    const missingPanelists = Math.max(0, 2 - selectedPanelists.length);
+    if (missingPanelists > 0) {
+      const remainingPool = filteredAvatars.map(a => a.id)
+        .filter(id => id !== hostId && !activePanel.includes(id) && id !== currentMentorId);
+      activePanel = [...activePanel, ...remainingPool.slice(0, missingPanelists)];
     }
     setInvitedAvatars(activePanel);
 
@@ -804,7 +869,10 @@ export function useGdOrchestrator({
     setHandRaised(false);
     setStep('call_grid');
     setCallActive(true);
+    isEndingRef.current = false;
+    turnEpochRef.current += 1;
     setCallDuration(0);
+    callDurationRef.current = 0;
     setIsUserTurn(false);
 
     if (callTimerRef.current) clearInterval(callTimerRef.current);
@@ -813,17 +881,17 @@ export function useGdOrchestrator({
     const warningSec = Math.max(totalTargetSeconds - 30, midSummarySec + 30);
 
     callTimerRef.current = setInterval(() => {
-      setCallDuration(prev => {
-        const nextSec = prev + 1;
-        if (nextSec === midSummarySec) {
-          triggerHostMidSummary();
-        } else if (nextSec === warningSec) {
-          triggerHostTimeWarning();
-        } else if (nextSec >= totalTargetSeconds) {
-          triggerHostEndSummary();
-        }
-        return nextSec;
-      });
+      const nextSec = callDurationRef.current + 1;
+      callDurationRef.current = nextSec;
+      setCallDuration(nextSec);
+      if (nextSec === midSummarySec) {
+        triggerHostMidSummary();
+      } else if (nextSec === warningSec) {
+        triggerHostTimeWarning();
+      } else if (nextSec >= totalTargetSeconds) {
+        if (callTimerRef.current) clearInterval(callTimerRef.current);
+        triggerHostEndSummary();
+      }
     }, 1000);
 
     setMessages([
@@ -843,9 +911,12 @@ export function useGdOrchestrator({
 
     const hostAvatar = AVATARS.find(a => a.id === hostId) || AVATARS[0];
     const hostName = gdDisplayName(hostId);
-    const introText = hostIntroScript(hostName, roomName, roomDesc || selectedConcept);
+    const introText = hostIntroScript(hostName, roomName, roomDesc || selectedConcept, sessionDurationMinutes);
 
-    setTimeout(() => {
+    if (hostIntroTimerRef.current) clearTimeout(hostIntroTimerRef.current);
+    hostIntroTimerRef.current = setTimeout(() => {
+      hostIntroTimerRef.current = null;
+      if (!isCallActiveRef.current || isEndingRef.current) return;
       speakWithAvatar(introText, hostId,
         () => {
           if (recognitionRef.current) {
@@ -878,7 +949,8 @@ export function useGdOrchestrator({
   };
 
   const handleInterjectImmediately = () => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || isEndingRef.current) return;
+    turnEpochRef.current += 1;
     console.log('[GD Engine] ⚡ Immediate Candidate Interjection triggered!');
 
     stopSpeaking();
@@ -894,54 +966,31 @@ export function useGdOrchestrator({
   };
 
   const handleSuggestArgument = () => {
-    const lowerTopic = roomName.toLowerCase();
-    let suggestions = [
-      "We need to evaluate the thread-safety locks and JVM memory boundaries before scaling this layout.",
-      "Our AWS Cloud Budget is going to spike. Let's keep our networking traffic strictly isolated.",
-      "Let's check the CAP theorem trade-offs here. We might need a Paxos consensus engine to prevent transactional drift.",
-      "What is our chaos engineering recovery plan if the primary node goes offline under stress?"
-    ];
-
-    if (lowerTopic.includes('database') || lowerTopic.includes('black friday') || lowerTopic.includes('spike')) {
-      suggestions = [
-        "We should implement a Redis write-behind cache buffer to absorb the transactional write spike and prevent database lock contention.",
-        "Let's enforce database connection pooling limits and spin up read-replicas dynamically during peak traffic.",
-        "I suggest query rate-limiting at the gateway level. If CPU hits 90%, we should gracefully degrade non-critical services.",
-        "We need to audit our indexes and rewrite the heavy aggregate queries to use a pre-calculated cache ledger."
-      ];
-    } else if (lowerTopic.includes('payment') || lowerTopic.includes('charging') || lowerTopic.includes('race')) {
-      suggestions = [
-        "We must use distributed locks (Redlock via Redis) mapped to the customer session ID to guarantee transaction idempotency.",
-        "Let's introduce a double-entry ledger database pattern with unique transaction hashes to block duplicate requests.",
-        "We should queue all payment transactions in RabbitMQ and process them sequentially to eliminate race conditions.",
-        "Let's implement a transactional outbox pattern to decouple payment gateway webhooks from the main database writes."
-      ];
-    } else if (lowerTopic.includes('cache') || lowerTopic.includes('stampede')) {
-      suggestions = [
-        "We should use mutual exclusion locks (single-flight pattern) so only one thread fetches from the database.",
-        "Let's add random jitter/entropy to our cache TTLs to ensure keys do not expire simultaneously.",
-        "I suggest pre-heating the cache in a background cron job before the keys hit their expiration threshold.",
-        "We need a circuit breaker that returns cached stale data if the primary database queries begin queueing."
-      ];
-    } else if (lowerTopic.includes('websocket') || lowerTopic.includes('leak') || lowerTopic.includes('connections')) {
-      suggestions = [
-        "We should configure a WebSocket connection timeout heartbeat and aggressively prune inactive sockets.",
-        "Let's delegate the connection state to an external broker (Redis Pub/Sub) and scale horizontally.",
-        "We must run heap snapshots and profile the GC behavior to identify where reference leaks occur.",
-        "I recommend implementing backpressure controls at the server level to reject messages when event loop lag exceeds 100ms."
-      ];
-    } else if (lowerTopic.includes('firmware') || lowerTopic.includes('bricking') || lowerTopic.includes('iot')) {
-      suggestions = [
-        "We must establish an A/B partition bootloader system so the device rolls back to the previous stable build on failure.",
-        "Let's halt all active OTA deployments immediately and run hardware-in-the-loop diagnostic tests.",
-        "We should decouple the network stack from the application partition so we don't lose remote access to bricked devices.",
-        "I suggest rolling out a canary deployment restricted to 0.1% of active devices with strict telemetry metrics first."
-      ];
-    }
+    const suggestionsByDomain = {
+      technical: [
+        'Which failure case would you test first, and what signal would confirm the fix?',
+        'What is the simplest safe approach, and what trade-off would the team accept?',
+        'How would this behave under peak load or a partial service outage?',
+        'What evidence would you gather before choosing between the available designs?'
+      ],
+      sales: [
+        'Which customer segment is affected most, and what evidence supports that?',
+        'How would you test this message or offer with a small customer group first?',
+        'What customer objection could block adoption, and how would you respond?',
+        'Which outcome matters most here: qualified leads, conversion, retention, or revenue?'
+      ],
+      business: [
+        'Who is affected by this decision, and what measurable outcome should improve?',
+        'Which assumption creates the biggest cost or operational risk?',
+        'What is the lowest-risk way to test this before committing more resources?',
+        'How would you balance short-term cost with long-term customer or team impact?'
+      ]
+    };
+    const suggestions = suggestionsByDomain[domain] || suggestionsByDomain.technical;
 
     const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
     setSuggestedHelperText(randomSuggestion);
-    toast.success('SDE Suggestion Generated', 'Read this point aloud into your microphone!');
+    toast.success('Prompt ready', 'Use it to shape your own point, in your own words.');
   };
 
   const handleSendVoiceMessage = (text: string) => {
@@ -962,14 +1011,16 @@ export function useGdOrchestrator({
       toast.error("Speech Recognition Unsupported", "This browser does not support the webkitSpeechRecognition API.");
       return;
     }
+    if (!isUserTurn && !micActive) {
+      toast.info('Wait for your turn', 'The microphone opens when the host gives you the floor.');
+      return;
+    }
     if (micActive) {
       if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
       recognitionRef.current.stop();
       setMicActive(false);
     } else {
       stopSpeaking();
-      if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
-      setCandidateTurnTimer(null);
 
       try {
         recognitionRef.current.start();
@@ -993,6 +1044,10 @@ export function useGdOrchestrator({
   };
 
   const handleForceExitCall = () => {
+    isEndingRef.current = true;
+    isCallActiveRef.current = false;
+    turnEpochRef.current += 1;
+    if (hostIntroTimerRef.current) clearTimeout(hostIntroTimerRef.current);
     stopSpeaking();
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
     if (callTimerRef.current) clearInterval(callTimerRef.current);
@@ -1014,6 +1069,9 @@ export function useGdOrchestrator({
   };
 
   const executeReportGeneration = async () => {
+    isEndingRef.current = true;
+    turnEpochRef.current += 1;
+    if (hostIntroTimerRef.current) clearTimeout(hostIntroTimerRef.current);
     stopSpeaking();
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
     if (callTimerRef.current) clearInterval(callTimerRef.current);
@@ -1124,6 +1182,7 @@ export function useGdOrchestrator({
   };
 
   const handleEndCall = () => {
+    if (isEndingRef.current) return;
     if (callActive) {
       triggerHostEndSummary();
     } else {

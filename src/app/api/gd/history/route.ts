@@ -1,6 +1,8 @@
 ﻿import { NextResponse } from 'next/server';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 import { createClient } from '@supabase/supabase-js';
+import { checkRateLimit } from '@/lib/server/rateLimit';
+import { isJsonObject, readBoundedJson, RequestBodyError } from '@/lib/server/readBoundedJson';
 
 function getSupabaseServer() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -16,7 +18,13 @@ export async function POST(req: Request) {
       return gated.error || NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
     const userId = gated.user.id;
-    const sessionData = await req.json();
+    const rate = checkRateLimit(`gd_history_write_${userId}`, { limit: 30, windowMs: 60_000 });
+    if (!rate.allowed) return NextResponse.json({ error: 'RATE_LIMIT' }, { status: 429 });
+
+    const sessionData = await readBoundedJson<unknown>(req, 512 * 1024);
+    if (!Array.isArray(sessionData) && !isJsonObject(sessionData)) {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: 'Invalid history payload.' }, { status: 400 });
+    }
 
     const supabase = getSupabaseServer();
     if (!supabase) {
@@ -33,6 +41,13 @@ export async function POST(req: Request) {
       fullPayload = sessionData.history_payload;
     } else if (sessionData) {
       newSession = sessionData;
+    }
+
+    if (fullPayload && (fullPayload.length > 30 || fullPayload.some((item) => !isJsonObject(item)))) {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: 'History must contain at most 30 valid records.' }, { status: 400 });
+    }
+    if (newSession && (!isJsonObject(newSession) || typeof newSession.id !== 'string' || newSession.id.length > 120)) {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: 'Invalid session record.' }, { status: 400 });
     }
 
     if (newSession) {
@@ -100,6 +115,9 @@ export async function POST(req: Request) {
     });
   } catch (err: any) {
     console.error('[GD History API Error]:', err);
+    if (err instanceof RequestBodyError) {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: err.message }, { status: err.status });
+    }
     return NextResponse.json({ error: err.message || 'Failed to record GD session history' }, { status: 500 });
   }
 }
@@ -167,9 +185,11 @@ export async function DELETE(req: Request) {
       return gated.error || NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
     const userId = gated.user.id;
+    const rate = checkRateLimit(`gd_history_delete_${userId}`, { limit: 30, windowMs: 60_000 });
+    if (!rate.allowed) return NextResponse.json({ error: 'RATE_LIMIT' }, { status: 429 });
     const url = new URL(req.url);
     const id = url.searchParams.get('id');
-    if (!id) {
+    if (!id || id.length > 120) {
       return NextResponse.json({ error: 'Missing session id' }, { status: 400 });
     }
 

@@ -16,6 +16,7 @@ interface AssistData {
 
 interface AssistModeDrawerProps {
   isScoredStage: boolean;
+  isCodingRound?: boolean;
   isAssistModeActive: boolean;
   setIsAssistModeActive: (active: boolean) => void;
   assistScriptLevel: 'standard' | 'advanced';
@@ -43,6 +44,7 @@ interface AssistModeDrawerProps {
 
 export const AssistModeDrawer: React.FC<AssistModeDrawerProps> = ({
   isScoredStage,
+  isCodingRound = false,
   isAssistModeActive,
   setIsAssistModeActive,
   assistScriptLevel,
@@ -83,15 +85,36 @@ export const AssistModeDrawer: React.FC<AssistModeDrawerProps> = ({
           <span style={{ fontSize: 17.5 }}>🪄</span>
           <div>
             <div style={{ fontSize: 14, fontWeight: 900, color: 'var(--reward-bright)', letterSpacing: 0.5 }}>
-              ASSIST MODE TELEPROMPTER &amp; VOCAL SCRIPT
+              {isCodingRound ? 'CODING COACH • HINTS ONLY' : 'ASSIST MODE • INTERVIEW COACH'}
             </div>
             <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>
-              Word-for-word spoken response script &amp; vocal coaching tailored to the current question
+              {isCodingRound ? 'Plan your approach and test your reasoning. No code or pseudocode.' : 'A tailored response outline and delivery coaching for the current question.'}
             </div>
           </div>
         </div>
 
         <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
+          <button
+            onClick={() => {
+              const lastAssistantMsg = messages.filter(m => m.role === 'assistant').slice(-1)[0]?.content;
+              fetchAssistScript(lastAssistantMsg || 'Tell me about yourself and your experience.', assistScriptLevel);
+            }}
+            disabled={isFetchingAssist}
+            style={{
+              background: 'rgba(var(--reward-rgb),0.15)',
+              border: '1px solid var(--reward)',
+              color: 'var(--reward-bright)',
+              borderRadius: 6,
+              padding: '3px 8px',
+              fontSize: 11,
+              fontWeight: 800,
+              cursor: isFetchingAssist ? 'wait' : 'pointer',
+              opacity: isFetchingAssist ? 0.6 : 1
+            }}
+          >
+            ↻ Regenerate
+          </button>
+
           <button
             onClick={() => {
               const nextLvl = assistScriptLevel === 'standard' ? 'advanced' : 'standard';
@@ -150,7 +173,7 @@ export const AssistModeDrawer: React.FC<AssistModeDrawerProps> = ({
             cursor: 'pointer'
           }}
         >
-          📝 Word-for-Word Script
+          {isCodingRound ? '🧭 Approach' : '📝 Answer outline'}
         </button>
         <button
           onClick={() => setAssistTab('bullets')}
@@ -166,7 +189,7 @@ export const AssistModeDrawer: React.FC<AssistModeDrawerProps> = ({
             cursor: 'pointer'
           }}
         >
-          🎯 Bullet Anchors
+          🎯 {isCodingRound ? 'Checklist' : 'Key points'}
         </button>
         <button
           onClick={() => setAssistTab('delivery')}
@@ -182,20 +205,21 @@ export const AssistModeDrawer: React.FC<AssistModeDrawerProps> = ({
             cursor: 'pointer'
           }}
         >
-          🗣️ How to Speak (Guide)
+          🗣️ {isCodingRound ? 'Reasoning' : 'Delivery'}
         </button>
       </div>
 
       {/* Tab Content */}
       {isFetchingAssist ? (
         <div style={{ padding: 14, textAlign: 'center', color: 'var(--reward-bright)', fontSize: 12.5, fontStyle: 'italic' }}>
-          ✨ Generating tailored high-scoring speech script...
+          {isCodingRound ? '✨ Preparing conceptual hints…' : '✨ Preparing interview coaching…'}
         </div>
       ) : assistData ? (
         <div>
           {assistTab === 'script' && (
             <div style={{ background: 'rgba(0,0,0,0.4)', borderRadius: 10, padding: '12px 14px', border: '1px solid rgba(var(--reward-rgb),0.2)' }}>
               <div style={{ fontSize: 14.5, lineHeight: 1.6, color: 'var(--text)', fontWeight: 500 }}>
+                {isCodingRound ? assistData.script : <>
                 &ldquo;
                 {assistData.script.split(' ').map((word: string, wIdx: number) => {
                   const clean = word.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -215,10 +239,11 @@ export const AssistModeDrawer: React.FC<AssistModeDrawerProps> = ({
                   );
                 })}
                 &rdquo;
+                </>}
               </div>
               <div style={{ marginTop: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 11, color: 'var(--reward-bright)' }}>
-                <span>🎙️ {liveSpeechTranscript ? '🟢 Reading detected — word matches glow green' : 'Read this script out loud into your microphone'}</span>
-                <span>Pace: {assistData.deliveryGuide?.pacing || '~125 WPM'}</span>
+                <span>{isCodingRound ? 'Use these as prompts, not a solution.' : `🎙️ ${liveSpeechTranscript ? '🟢 Reading detected — word matches glow green' : 'Adapt this outline to your own experience'}`}</span>
+                {!isCodingRound && <span>Pace: {assistData.deliveryGuide?.pacing || '~125 WPM'}</span>}
               </div>
             </div>
           )}

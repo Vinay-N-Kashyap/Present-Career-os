@@ -24,9 +24,19 @@ const MonacoEditor = dynamic(
 export interface Round2CodingProps {
   domainStream: 'tech' | 'non_tech';
   currentCodingProb: { title: string; description: string; starterCode: string };
-  showHint: boolean;
-  setShowHint: React.Dispatch<React.SetStateAction<boolean>>;
   onProceed: () => void;
+  onReviewSolution: () => void;
+  onRetryChallenge: () => void;
+  canProceed: boolean;
+  codeSubmitted: boolean;
+  codeRunFailed: boolean;
+  codeReviewStarted: boolean;
+  codeReviewQuestionReady: boolean;
+  isSendingInterviewMessage: boolean;
+  lastInterviewerSpeech: string;
+  manualTextInput: string;
+  setManualTextInput: (value: string) => void;
+  onSendMessage: (value: string) => void;
   selectedLang: 'python' | 'javascript' | 'java' | 'sql';
   setSelectedLang: (lang: 'python' | 'javascript' | 'java' | 'sql') => void;
   runCodeAndTests: () => void;
@@ -36,8 +46,6 @@ export interface Round2CodingProps {
   codeModifiedRef: React.MutableRefObject<boolean>;
   activeTeacher: { id: string; name: string; emoji: string; title: string };
   animState: AnimState;
-  isVoiceListening: boolean;
-  startVoiceListening: () => void;
   terminalLogs: string[];
   setTerminalLogs: React.Dispatch<React.SetStateAction<string[]>>;
 }
@@ -45,9 +53,19 @@ export interface Round2CodingProps {
 export const Round2Coding: React.FC<Round2CodingProps> = ({
   domainStream,
   currentCodingProb,
-  showHint,
-  setShowHint,
   onProceed,
+  onReviewSolution,
+  onRetryChallenge,
+  canProceed,
+  codeSubmitted,
+  codeRunFailed,
+  codeReviewStarted,
+  codeReviewQuestionReady,
+  isSendingInterviewMessage,
+  lastInterviewerSpeech,
+  manualTextInput,
+  setManualTextInput,
+  onSendMessage,
   selectedLang,
   setSelectedLang,
   runCodeAndTests,
@@ -57,13 +75,11 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
   codeModifiedRef,
   activeTeacher,
   animState,
-  isVoiceListening,
-  startVoiceListening,
   terminalLogs,
   setTerminalLogs,
 }) => {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 0.6fr', gap: 16, alignItems: 'stretch' }}>
+    <div className="iv-round-layout iv-round2-layout" style={{ display: 'grid', gridTemplateColumns: '1.4fr 0.6fr', gap: 16, alignItems: 'stretch' }}>
       {/* Left 70%: Code Workspace with Monaco Editor */}
       <div className="iv-panel" style={{ padding: 18, display: 'flex', flexDirection: 'column', gap: 10 }}>
         <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -77,23 +93,23 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
             </p>
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-            <button
-              onClick={() => setShowHint(h => !h)}
-              style={{ background: 'var(--amber-light)', border: '1px solid var(--amber)', color: 'var(--amber-mid)', borderRadius: 8, padding: '5px 10px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}
-            >
-              💡 {showHint ? 'Hide Hint' : 'Show Hint'}
-            </button>
-            <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
-              Proceed to Round 3 ➔
-            </button>
+            {canProceed ? <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '7px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
+              Continue to architecture ➔
+            </button> : codeRunFailed ? (
+              <button onClick={onRetryChallenge} style={{ background: 'var(--amber-light)', border: '1px solid var(--amber)', color: 'var(--amber-mid)', borderRadius: 8, padding: '7px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
+                Try a different challenge
+              </button>
+            ) : codeSubmitted && (
+              <button onClick={onReviewSolution} disabled={isSendingInterviewMessage || codeReviewStarted} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '7px 12px', fontSize: 12, fontWeight: 800, cursor: isSendingInterviewMessage || codeReviewStarted ? 'wait' : 'pointer', opacity: isSendingInterviewMessage || codeReviewStarted ? 0.7 : 1 }}>
+                {isSendingInterviewMessage || codeReviewStarted ? 'Waiting for interviewer…' : 'Submit solution for review'}
+              </button>
+            )}
           </div>
         </div>
 
-        {showHint && (
-          <div style={{ background: 'var(--amber-light)', border: '1px solid var(--amber)', borderRadius: 8, padding: '8px 12px', fontSize: 12.5, color: 'var(--t1)' }}>
-            💡 Hint: Focus on time/space complexity and verifying numerical boundary cases.
-          </div>
-        )}
+        {!canProceed && codeSubmitted && <div style={{ background: 'rgba(var(--success-rgb),0.12)', border: '1px solid var(--success)', borderRadius: 8, padding: '8px 12px', fontSize: 12.5, color: 'var(--t1)' }}>
+          {codeRunFailed ? 'The interviewer wants stronger reasoning. Try a different challenge and explain your approach.' : '✅ Tests passed. Submit your solution so the interviewer can ask about your approach.'}
+        </div>}
 
         {/* Language Selector */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -115,6 +131,7 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
 
           <button
             onClick={runCodeAndTests}
+            disabled={isRunning || isSendingInterviewMessage}
             style={{ background: 'var(--green)', border: 'none', borderRadius: 8, padding: '7px 16px', color: 'var(--text)', fontWeight: 900, fontSize: 12.5, cursor: 'pointer' }}
           >
             {isRunning ? 'Executing...' : (domainStream === 'non_tech' ? '📊 Execute Business Calculation' : '▶️ Run Code & Tests')}
@@ -152,17 +169,31 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
           </div>
         </div>
 
-        <button
-          onClick={startVoiceListening}
-          style={{
-            width: '100%',
-            background: isVoiceListening ? 'var(--danger)' : 'linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%)',
-            border: 'none', color: 'var(--text)', borderRadius: 10, padding: '9px 12px', fontSize: 12.5, fontWeight: 900, cursor: 'pointer',
-            boxShadow: isVoiceListening ? '0 0 12px rgba(var(--danger-rgb),0.7)' : 'var(--shadow-sm)'
-          }}
-        >
-          {isVoiceListening ? '🎙️ Listening... (Speak Now)' : '🎤 Speak to Interviewer'}
-        </button>
+        <div className="iv-panel" style={{ padding: 12, display: 'flex', flexDirection: 'column', gap: 8 }} aria-live="polite">
+          <div style={{ fontSize: 11, fontWeight: 800, color: 'var(--t3)', textTransform: 'uppercase' }}>Interviewer</div>
+          <div style={{ fontSize: 12.5, color: 'var(--t1)', lineHeight: 1.45 }}>{lastInterviewerSpeech}</div>
+          {codeReviewQuestionReady && !canProceed && !codeRunFailed && (
+            <form onSubmit={(event) => {
+              event.preventDefault();
+              const answer = manualTextInput.trim();
+              if (!answer || isSendingInterviewMessage) return;
+              setManualTextInput('');
+              onSendMessage(answer);
+            }} style={{ display: 'flex', gap: 6 }}>
+              <input
+                value={manualTextInput}
+                onChange={(event) => setManualTextInput(event.target.value)}
+                disabled={isSendingInterviewMessage}
+                aria-label="Your code review answer"
+                placeholder="Explain your approach or answer the reviewer…"
+                style={{ flex: 1, minWidth: 0, padding: '8px 10px', borderRadius: 7, border: '1px solid var(--border)', background: 'var(--bg3)', color: 'var(--t1)', fontSize: 12 }}
+              />
+              <button type="submit" disabled={!manualTextInput.trim() || isSendingInterviewMessage} style={{ padding: '8px 10px', borderRadius: 7, border: 0, background: 'var(--accent)', color: 'var(--text)', fontSize: 11, fontWeight: 800, cursor: isSendingInterviewMessage ? 'wait' : 'pointer' }}>
+                {isSendingInterviewMessage ? 'Sending…' : 'Send'}
+              </button>
+            </form>
+          )}
+        </div>
 
         <div style={{ flex: 1, background: '#020617', borderRadius: 14, border: '1px solid var(--border)', padding: 12, display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>

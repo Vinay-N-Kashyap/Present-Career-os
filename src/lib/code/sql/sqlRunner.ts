@@ -45,14 +45,16 @@ function send(payload: Record<string, unknown>, timeoutMs: number): Promise<any>
 }
 
 /** Runs lesson SQL and returns the text the lesson shows (tables, or "[Error] ..."). */
-export async function runSqlInBrowser(code: string, timeoutMs = 30000): Promise<string> {
-  const data = await send({ kind: 'lesson', code }, timeoutMs);
+export async function runSqlInBrowser(code: string, timeoutMs = 4000): Promise<string> {
+  const effectiveTimeoutMs = Math.min(timeoutMs, 4000);
+  const data = await send({ kind: 'lesson', code }, effectiveTimeoutMs);
   return data.ok ? data.output : `[Error] ${data.error}`;
 }
 
 /** Grades a SQL practice task: setup, then the student's SQL, then the checks. */
-export async function gradeSqlInBrowser(setup: string, code: string, checks: string, timeoutMs = 30000): Promise<SqlPracticeResult> {
-  const data = await send({ kind: 'practice', setup, code, checks }, timeoutMs);
+export async function gradeSqlInBrowser(setup: string, code: string, checks: string, timeoutMs = 8000): Promise<SqlPracticeResult> {
+  const effectiveTimeoutMs = Math.min(timeoutMs, 8000);
+  const data = await send({ kind: 'practice', setup, code, checks }, effectiveTimeoutMs);
   if (!data.ok) return { passed: false, messages: [`[Error] ${data.error}`], output: `[Error] ${data.error}` };
   return { passed: data.passed, messages: data.messages, output: data.output };
 }

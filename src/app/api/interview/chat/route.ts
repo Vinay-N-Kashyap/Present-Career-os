@@ -126,10 +126,10 @@ export function generateProgressiveFallbackQuestion(ctx: FallbackContext): strin
       `How do you monitor system health, latency SLAs, and error budgets across these distributed components in production?`
     ],
     round4_star: [
-      `Thank you. In this STAR defense round, let's establish the exact Situation and Task: What specific business objective or critical problem were you assigned in ${subTopic}?`,
-      `Now let's drill into the Action: What specific technical decisions and implementation steps did you personally drive, and what trade-offs did you accept?`,
-      `What were the quantifiable Results? What measurable metrics, business impact, or post-launch performance indicators demonstrated success?`,
-      `Looking back with 20/20 hindsight, what is one major decision in that project that you would execute differently today?`
+      `Looking across your code and the ${subTopic} architecture you designed, why does your implementation fit that system, and what trade-off would you explain to the team?`,
+      `How would your code behave at the scale of the system you designed, and what would you change first if the main service became a bottleneck?`,
+      `Connect your earlier experience to these design choices: what did you personally own, and what evidence would show that your approach worked?`,
+      `What measurable result would you expect from this design, and which part of your implementation or architecture would you revisit if that result fell short?`
     ]
   };
 
@@ -174,6 +174,7 @@ export async function POST(req: Request) {
       message,
       interviewerId,
       stage,
+      reviewDecision = false,
       history = [],
       telemetry,
       difficulty,
@@ -264,7 +265,9 @@ export async function POST(req: Request) {
         stageContext = `This is Round 1 (Behavioral). Listen to the candidate's last answer. Acknowledge one specific detail they mentioned, then ask a structured behavioral or background follow-up question related to ${subTopic}. Keep under 3 sentences.`;
       }
     } else if (stage === 'round2_coding') {
-      stageContext = `This is Round 2 (Technical Assessment & Problem Solving). Guide the candidate on algorithmic/business problem solving in ${subTopic}. If they ask for hints, provide a conceptual clue without giving away the complete solution. Keep under 3 sentences.`;
+      stageContext = reviewDecision
+        ? `This is the final code-review decision for Round 2. Assess the candidate's code and their explanation in the conversation. If both meet the bar, briefly acknowledge why and append exactly [[ROUND_VERDICT:PASS]]. If the reasoning or implementation has a substantive gap, briefly explain it and append exactly [[ROUND_VERDICT:RETRY]]. Do not ask another question. Never include the marker in spoken prose.`
+        : `This is Round 2 (Technical Assessment & Problem Solving). Review the submitted code when available and ask exactly one focused question about its logic, complexity, edge cases, or trade-offs. If they ask for hints, provide a conceptual clue without giving away code or the complete solution. Keep under 3 sentences.`;
     } else if (stage === 'round3_systems') {
       if (stream === 'non_tech') {
         stageContext = `This is Round 3 (Business Workflow Canvas). Ask about the conversion funnel, monetization loops, and bottleneck mitigations in their strategy for ${subTopic}. Keep under 3 sentences.`;
@@ -272,7 +275,7 @@ export async function POST(req: Request) {
         stageContext = `This is Round 3 (System Architecture Canvas). Ask the candidate about failure modes, load balancing, caching consistency, and database scaling trade-offs in ${subTopic}. Keep under 3 sentences.`;
       }
     } else if (stage === 'round4_star') {
-      stageContext = `This is Round 4 (Executive STAR Drill). Evaluate the candidate's Situation, Task, Action, and Result for a high-stakes scenario in ${subTopic}. Guide them to explain their core architectural and trade-off decisions. Keep under 3 sentences.`;
+      stageContext = `This is Round 4 (Executive Deep Dive). Use the candidate's actual earlier-round background, submitted code, and architecture choices from the conversation. Ask one probing question that connects at least two rounds—for example, why they chose that implementation, how it fits the system they designed, what trade-off it creates, and how they would measure its impact. Avoid generic STAR prompts when specific project evidence is present. Keep under 3 sentences.`;
     }
 
     // 5. Telemetry Context (Advisory)
@@ -293,7 +296,7 @@ ${stageContext}
 ${telemetryContext}
 RULES:
 1. Speak in first person as ${selectedInterviewer.name}.
-2. Ask exactly ONE clear, concise question per turn.
+2. ${reviewDecision ? 'For the final code-review decision, provide a concise verdict and use the required marker; do not ask a question.' : 'Ask exactly ONE clear, concise question per turn.'}
 3. Never give the complete code or answer away.
 4. Keep response under 3 sentences max for spoken voice clarity.`;
 
@@ -489,15 +492,27 @@ RULES:
     // Deterministic fallback if all external LLMs are offline
     if (!reply) {
       console.warn('[Interview Chat API] External LLMs unavailable, using contextual deterministic fallback');
-      reply = generateProgressiveFallbackQuestion({ stage: stage || 'round1_behavioral', subTopic, history: formattedHistory, difficulty: difficulty || 'normal', interviewerName: selectedInterviewer.name });
+      if (reviewDecision) {
+        const finalAnswer = [...formattedHistory].reverse().find(turn => turn.role === 'user')?.content || '';
+        const answer = finalAnswer.toLowerCase();
+        const hasReasoning = ['because', 'complexity', 'edge case', 'trade-off', 'tradeoff', 'test', 'memory', 'time'].some(term => answer.includes(term));
+        const passes = finalAnswer.trim().split(/\s+/).length >= 18 && hasReasoning;
+        reply = passes
+          ? `Your explanation connects the implementation to its complexity or edge cases. That meets the review bar. [[ROUND_VERDICT:PASS]]`
+          : `I need a clearer explanation of the reasoning behind your implementation and how it handles complexity or edge cases. [[ROUND_VERDICT:RETRY]]`;
+      } else {
+        reply = generateProgressiveFallbackQuestion({ stage: stage || 'round1_behavioral', subTopic, history: formattedHistory, difficulty: difficulty || 'normal', interviewerName: selectedInterviewer.name });
+      }
     }
 
-    const sanitizedReply = sanitizeLLMOutput(reply);
+    const verdictMatch = reviewDecision ? reply.match(/\[\[ROUND_VERDICT:(PASS|RETRY)\]\]/i) : null;
+    const roundVerdict = reviewDecision ? (verdictMatch?.[1]?.toUpperCase() === 'PASS' ? 'PASS' : 'RETRY') : undefined;
+    const sanitizedReply = sanitizeLLMOutput(reviewDecision ? reply.replace(/\[\[ROUND_VERDICT:(PASS|RETRY)\]\]/i, '').trim() : reply);
     if (live) {
       await recordTurns([liveUserTurn, clampTurn('assistant', sanitizedReply, stage)]);
-      return NextResponse.json({ reply: sanitizedReply, recorded: true });
+      return NextResponse.json({ reply: sanitizedReply, recorded: true, roundVerdict });
     }
-    return NextResponse.json({ reply: sanitizedReply });
+    return NextResponse.json({ reply: sanitizedReply, roundVerdict });
 
   } catch (err: any) {
     console.error('[Interview Chat API Critical Error]:', err);

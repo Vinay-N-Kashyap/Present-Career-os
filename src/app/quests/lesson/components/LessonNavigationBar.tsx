@@ -45,6 +45,9 @@ export function LessonNavigationBar({
   questData,
 }: LessonNavigationBarProps) {
   const isLearningSlide = currentSlide > 0 && currentSlide <= slidesLength;
+  const isTestModeBypass = typeof window !== 'undefined' && window.location.search.includes('testMode=true');
+  const isConfirmed = isLearningSlide ? Boolean(understandingConfirmed[currentSlide - 1]) : true;
+  const isLocked = isLearningSlide && !isConfirmed && !isTestModeBypass;
 
   return (
     <div
@@ -184,28 +187,33 @@ export function LessonNavigationBar({
         ) : (
           <button
             data-testid="btn-next-slide"
+            disabled={isLocked}
             onClick={() => {
-              if (setUnderstandingConfirmed && isLearningSlide && !understandingConfirmed[currentSlide - 1]) {
-                setUnderstandingConfirmed(prev => ({ ...prev, [currentSlide - 1]: true }));
-              }
+              if (isLocked) return;
               handleNextSlide();
             }}
             className="lesson-nav-btn lesson-nav-btn-next"
+            title={isLocked ? 'Answer the concept check above to unlock the next slide' : 'Next Slide'}
             style={{
-              background: teacher.accent || 'var(--accent)',
+              background: isLocked ? 'var(--border)' : (teacher.accent || 'var(--accent)'),
               border: 'none',
               padding: '10px 20px',
               borderRadius: 12,
               fontSize: 14,
               fontWeight: 700,
-              color: 'var(--accent-btn-fg, #ffffff)',
-              cursor: 'pointer',
-              opacity: 1,
+              color: isLocked ? 'var(--text-muted)' : 'var(--accent-btn-fg, #ffffff)',
+              cursor: isLocked ? 'not-allowed' : 'pointer',
+              opacity: isLocked ? 0.6 : 1,
               whiteSpace: 'nowrap',
+              transition: 'all 0.2s ease',
             }}
           >
-            <span className="lesson-nav-label-desktop">Next Slide ▶</span>
-            <span className="lesson-nav-label-mobile">Next ▶</span>
+            <span className="lesson-nav-label-desktop">
+              {isLocked ? 'Answer Check 🔒' : 'Next Slide ▶'}
+            </span>
+            <span className="lesson-nav-label-mobile">
+              {isLocked ? 'Locked 🔒' : 'Next ▶'}
+            </span>
           </button>
         )}
       </div>

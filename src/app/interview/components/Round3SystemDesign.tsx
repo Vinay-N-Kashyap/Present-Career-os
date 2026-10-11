@@ -18,18 +18,18 @@ export interface Round3SystemDesignProps {
   domainStream: 'tech' | 'non_tech';
   activeTopicName: string;
   onProceed: () => void;
+  canProceed?: boolean;
   setLatestTopology: (topo: any) => void;
   analyzeSystemArchitecture: () => void;
   isAnalyzingArchitecture: boolean;
   activeTeacher: { id: string; name: string; emoji: string; title: string };
   animState: AnimState;
-  isVoiceListening: boolean;
-  startVoiceListening: () => void;
   lastInterviewerSpeech: string;
   architectureEvaluation?: any;
   manualTextInput?: string;
   setManualTextInput?: (val: string) => void;
   onSendMessage?: (text: string) => void;
+  isSendingInterviewMessage?: boolean;
   isAssistModeActive?: boolean;
   setIsAssistModeActive?: (val: boolean) => void;
   assistData?: any;
@@ -46,18 +46,18 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
   domainStream,
   activeTopicName,
   onProceed,
+  canProceed = false,
   setLatestTopology,
   analyzeSystemArchitecture,
   isAnalyzingArchitecture,
   activeTeacher,
   animState,
-  isVoiceListening,
-  startVoiceListening,
   lastInterviewerSpeech,
   architectureEvaluation,
   manualTextInput = '',
   setManualTextInput,
   onSendMessage,
+  isSendingInterviewMessage = false,
   isAssistModeActive = false,
   setIsAssistModeActive,
   assistData,
@@ -73,7 +73,7 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
     return new Set(liveSpeechTranscript.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean));
   }, [liveSpeechTranscript]);
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '7.2fr 2.8fr', gap: 16, alignItems: 'stretch' }}>
+    <div className="iv-round-layout iv-round3-layout" style={{ display: 'grid', gridTemplateColumns: '7.2fr 2.8fr', gap: 16, alignItems: 'stretch' }}>
       <div className="iv-panel" style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
         <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
@@ -82,9 +82,9 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
               {domainStream === 'non_tech' ? 'Business Workflow Canvas:' : 'System Architecture Canvas:'} {activeTopicName}
             </h2>
           </div>
-          <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
-            Proceed to Round 4 ➔
-          </button>
+          {canProceed && <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '7px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
+            Continue to deep dive ➔
+          </button>}
         </div>
 
         <SystemDesignWhiteboard
@@ -161,18 +161,6 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
             {activeTeacher.emoji} {activeTeacher.name}
           </div>
         </div>
-
-        <button
-          onClick={startVoiceListening}
-          style={{
-            width: '100%',
-            background: isVoiceListening ? 'var(--danger)' : 'linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%)',
-            border: 'none', color: 'var(--text)', borderRadius: 10, padding: '9px 12px', fontSize: 12.5, fontWeight: 900, cursor: 'pointer',
-            boxShadow: isVoiceListening ? '0 0 12px rgba(var(--danger-rgb),0.7)' : 'var(--shadow-sm)'
-          }}
-        >
-          {isVoiceListening ? '🎙️ Listening... (Speak Now)' : '🎤 Speak Architecture Defense'}
-        </button>
 
         <div className="iv-panel" style={{ flex: 1, padding: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
           <div style={{ fontSize: 11, fontWeight: 800, color: 'var(--t3)' }}>INTERVIEWER FEEDBACK & QUESTIONS</div>
@@ -266,7 +254,7 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                if (!manualTextInput.trim()) return;
+                if (!manualTextInput.trim() || isSendingInterviewMessage) return;
                 const textToSend = manualTextInput.trim();
                 setManualTextInput('');
                 onSendMessage(textToSend);
@@ -276,6 +264,7 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
               <input
                 type="text"
                 value={manualTextInput}
+                disabled={isSendingInterviewMessage}
                 onChange={(e) => setManualTextInput(e.target.value)}
                 placeholder="Type your architecture defense..."
                 style={{
@@ -290,7 +279,7 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
               />
               <button
                 type="submit"
-                disabled={!manualTextInput.trim()}
+                disabled={!manualTextInput.trim() || isSendingInterviewMessage}
                 style={{
                   padding: '7px 12px',
                   borderRadius: 6,
@@ -302,7 +291,7 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
                   cursor: manualTextInput.trim() ? 'pointer' : 'default'
                 }}
               >
-                Send ➔
+                {isSendingInterviewMessage ? 'Reviewing…' : 'Send ➔'}
               </button>
             </form>
           )}

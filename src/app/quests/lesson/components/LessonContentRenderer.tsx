@@ -123,6 +123,22 @@ function renderWithTappableWords(
   });
 }
 
+function getSlideMcqExplanation(explanation: any): string {
+  if (!explanation) return '';
+  if (typeof explanation === 'string') return explanation;
+  if (typeof explanation === 'object') {
+    return (
+      explanation.errorExplanation ||
+      explanation.recoveryPath?.simplerExplanation ||
+      explanation.recoveryPath?.guidedFixPrompt ||
+      explanation.explanation ||
+      explanation.message ||
+      ''
+    );
+  }
+  return String(explanation);
+}
+
 export function LessonContentRenderer({
   userId,
   teacherId,
@@ -185,6 +201,8 @@ export function LessonContentRenderer({
   const tappableLabels = getTappableLabelsForVisual(currentVisual);
 
   const [highlightedLabel, setHighlightedLabel] = useState<string | null>(null);
+  const [selectedSlideAnswers, setSelectedSlideAnswers] = useState<Record<number, number>>({});
+  const [slideAnswerFeedback, setSlideAnswerFeedback] = useState<Record<number, { isCorrect: boolean; feedback: string }>>({});
   const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleTriggerHighlight = useCallback((label: string) => {
@@ -600,79 +618,285 @@ export function LessonContentRenderer({
                     </div>
                   )}
 
-                  {/* Interactive Understanding Check on content slides */}
-                  <div style={{
-                    marginTop: 12,
-                    background: 'rgba(var(--brand-rgb),  0.03)',
-                    border: '1px dashed var(--border)',
-                    borderRadius: 12,
-                    padding: '10px 14px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: 12
-                  }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--t1)' }}>
-                      ❓ Did you understand this concept?
-                    </span>
-                    {understandingConfirmed[currentSlide - 1] ? (
-                      <span style={{ color: 'var(--success)', fontSize: 12, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 4 }}>
-                        ✓ Concept Confirmed
-                      </span>
-                    ) : (
-                      <div style={{ display: 'flex', gap: 6 }}>
-                        <button
-                          data-testid="btn-confirm-understanding"
-                          onClick={() => {
-                            setUnderstandingConfirmed(prev => ({ ...prev, [currentSlide - 1]: true }));
-                            toast.success("Great!", "Understanding confirmed. Click 'Next Slide' to continue.");
-                          }}
-                          style={{
-                            background: 'var(--success)',
-                            border: 'none',
-                            color: 'var(--text)',
-                            padding: '6px 12px',
-                            borderRadius: 6,
-                            fontSize: 11.5,
-                            fontWeight: 700,
-                            cursor: 'pointer',
-                            transition: 'background 0.2s'
-                          }}
-                        >
-                          👍 Yes
-                        </button>
-                        <button
-                          onClick={async () => {
-                            setIsInteractive(true);
-                            setChatMessages([{
-                              role: 'assistant',
-                              content: "What did you not understand about this topic? Ask me for a real-world analogy, or let me know what was confusing."
-                            }]);
-                            
-                            speakWithAvatar(
-                              "What did you not understand?",
-                              teacherId,
-                              () => setIsPlaying(true),
-                              () => setIsPlaying(false)
-                            );
-                          }}
-                          style={{
-                            background: 'rgba(var(--danger-rgb),  0.08)',
-                            border: '1px solid rgba(var(--danger-rgb),  0.2)',
-                            color: 'var(--danger)',
-                            padding: '6px 12px',
-                            borderRadius: 6,
-                            fontSize: 11.5,
-                            fontWeight: 700,
-                            cursor: 'pointer',
-                            transition: 'background 0.2s'
-                          }}
-                        >
-                          👎 No, explain further
-                        </button>
+                  {/* Inline Socratic Understanding Check on content slides */}
+                  {slide.mcq && Array.isArray(slide.mcq.options) && slide.mcq.options.length > 0 ? (
+                    <div
+                      data-testid="inline-socratic-check"
+                      style={{
+                        marginTop: 14,
+                        background: 'rgba(var(--brand-rgb), 0.04)',
+                        border: '1.5px solid var(--border)',
+                        borderRadius: 14,
+                        padding: '14px 16px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 10,
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                          <span style={{ fontSize: 13, fontWeight: 900, color: teacher.accent || 'var(--accent)' }}>
+                            🧠 Quick Check
+                          </span>
+                          <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 600 }}>
+                            (Select the correct answer to unlock next slide)
+                          </span>
+                        </div>
+                        {understandingConfirmed[currentSlide - 1] && (
+                          <span
+                            data-testid="btn-confirm-understanding"
+                            style={{
+                              color: 'var(--success)',
+                              fontSize: 11.5,
+                              fontWeight: 800,
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 4,
+                              background: 'rgba(var(--success-rgb), 0.1)',
+                              padding: '2px 8px',
+                              borderRadius: 6,
+                              border: '1px solid rgba(var(--success-rgb), 0.3)',
+                            }}
+                          >
+                            ✓ Unlocked
+                          </span>
+                        )}
                       </div>
-                    )}
-                  </div>
+
+                      <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--t1)', margin: 0, lineHeight: 1.45 }}>
+                        {slide.mcq.question}
+                      </p>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                        {slide.mcq.options.map((option: string, oIdx: number) => {
+                          const slideIdx = currentSlide - 1;
+                          const selected = selectedSlideAnswers[slideIdx] === oIdx;
+                          const feedback = slideAnswerFeedback[slideIdx];
+                          const isAnswered = selectedSlideAnswers[slideIdx] !== undefined;
+                          const isRightOption = oIdx === slide.mcq.answerIndex;
+
+                          let bg = 'rgba(var(--brand-rgb), 0.02)';
+                          let border = '1px solid var(--border)';
+                          let color = 'var(--t1)';
+
+                          if (isAnswered) {
+                            if (isRightOption && (selected || feedback?.isCorrect)) {
+                              bg = 'rgba(var(--success-rgb), 0.12)';
+                              border = '1px solid var(--success)';
+                              color = 'var(--success)';
+                            } else if (selected && !feedback?.isCorrect) {
+                              bg = 'rgba(var(--danger-rgb), 0.1)';
+                              border = '1px solid var(--danger)';
+                              color = 'var(--danger)';
+                            }
+                          }
+
+                          const handleOptionClick = () => {
+                            setSelectedSlideAnswers(prev => ({ ...prev, [slideIdx]: oIdx }));
+                            const isCorrect = oIdx === slide.mcq.answerIndex;
+                            if (isCorrect) {
+                              setSlideAnswerFeedback(prev => ({
+                                ...prev,
+                                [slideIdx]: {
+                                  isCorrect: true,
+                                  feedback: getSlideMcqExplanation(slide.mcq.explanation) || 'Correct! Well done.'
+                                }
+                              }));
+                              setUnderstandingConfirmed(prev => ({ ...prev, [slideIdx]: true }));
+                              playChime();
+                              toast.success("Correct! 🎯", "Understanding confirmed. Next slide unlocked!");
+                            } else {
+                              let targeted = '';
+                              if (slide.mcq.diagnosisMap) {
+                                const candidate = slide.mcq.diagnosisMap[String(oIdx)] ||
+                                  slide.mcq.diagnosisMap[option] ||
+                                  Object.values(slide.mcq.diagnosisMap)[0];
+                                targeted = getSlideMcqExplanation(candidate);
+                              }
+                              const errorMsg = targeted || "Not quite right. Try again or ask the teacher for help!";
+                              setSlideAnswerFeedback(prev => ({
+                                ...prev,
+                                [slideIdx]: {
+                                  isCorrect: false,
+                                  feedback: errorMsg
+                                }
+                              }));
+                              toast.error("Not quite!", errorMsg);
+                            }
+                          };
+
+                          return (
+                            <button
+                              key={oIdx}
+                              type="button"
+                              data-testid={`slide-check-option-${oIdx}`}
+                              onClick={handleOptionClick}
+                              style={{
+                                padding: '8px 12px',
+                                borderRadius: 8,
+                                border,
+                                background: bg,
+                                color,
+                                fontSize: 12.5,
+                                fontWeight: selected ? 700 : 500,
+                                cursor: 'pointer',
+                                textAlign: 'left',
+                                display: 'flex',
+                                alignItems: 'flex-start',
+                                gap: 8,
+                                transition: 'all 0.15s ease',
+                              }}
+                            >
+                              <span style={{
+                                width: 18,
+                                height: 18,
+                                borderRadius: '50%',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: 10,
+                                fontWeight: 800,
+                                background: selected ? (feedback?.isCorrect ? 'var(--success)' : 'var(--danger)') : 'rgba(var(--brand-rgb), 0.1)',
+                                color: selected ? '#ffffff' : 'var(--t2)',
+                                flexShrink: 0,
+                                marginTop: 1,
+                              }}>
+                                {String.fromCharCode(65 + oIdx)}
+                              </span>
+                              <span style={{ flex: 1, lineHeight: 1.4 }}>{option}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {slideAnswerFeedback[currentSlide - 1] && (
+                        <div style={{
+                          padding: '8px 12px',
+                          borderRadius: 8,
+                          fontSize: 12,
+                          lineHeight: 1.45,
+                          background: slideAnswerFeedback[currentSlide - 1].isCorrect
+                            ? 'rgba(var(--success-rgb), 0.08)'
+                            : 'rgba(var(--danger-rgb), 0.08)',
+                          border: `1px solid ${slideAnswerFeedback[currentSlide - 1].isCorrect ? 'var(--success)' : 'var(--danger)'}`,
+                          color: slideAnswerFeedback[currentSlide - 1].isCorrect ? 'var(--success)' : 'var(--danger)',
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          justifyContent: 'space-between',
+                          gap: 8
+                        }}>
+                          <span>
+                            {slideAnswerFeedback[currentSlide - 1].isCorrect ? '✓ ' : '⚠️ '}
+                            {slideAnswerFeedback[currentSlide - 1].feedback}
+                          </span>
+                          {!slideAnswerFeedback[currentSlide - 1].isCorrect && (
+                            <button
+                              type="button"
+                              onClick={async () => {
+                                setIsInteractive(true);
+                                setChatMessages([{
+                                  role: 'assistant',
+                                  content: `Let's break down this question: "${slide.mcq.question}". What part feels confusing?`
+                                }]);
+                                speakWithAvatar(
+                                  "Let's break down this question.",
+                                  teacherId,
+                                  () => setIsPlaying(true),
+                                  () => setIsPlaying(false)
+                                );
+                              }}
+                              style={{
+                                background: 'transparent',
+                                border: 'none',
+                                color: 'var(--danger)',
+                                textDecoration: 'underline',
+                                fontSize: 11,
+                                fontWeight: 700,
+                                cursor: 'pointer',
+                                whiteSpace: 'nowrap'
+                              }}
+                            >
+                              Ask Teacher
+                            </button>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    /* Fallback confirmation for slides lacking an explicit MCQ */
+                    <div style={{
+                      marginTop: 12,
+                      background: 'rgba(var(--brand-rgb),  0.03)',
+                      border: '1px dashed var(--border)',
+                      borderRadius: 12,
+                      padding: '10px 14px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: 12
+                    }}>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--t1)' }}>
+                        ❓ Did you understand this concept?
+                      </span>
+                      {understandingConfirmed[currentSlide - 1] ? (
+                        <span style={{ color: 'var(--success)', fontSize: 12, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 4 }}>
+                          ✓ Concept Confirmed
+                        </span>
+                      ) : (
+                        <div style={{ display: 'flex', gap: 6 }}>
+                          <button
+                            data-testid="btn-confirm-understanding"
+                            onClick={() => {
+                              setUnderstandingConfirmed(prev => ({ ...prev, [currentSlide - 1]: true }));
+                              toast.success("Great!", "Understanding confirmed. Click 'Next Slide' to continue.");
+                            }}
+                            style={{
+                              background: 'var(--success)',
+                              border: 'none',
+                              color: 'var(--text)',
+                              padding: '6px 12px',
+                              borderRadius: 6,
+                              fontSize: 11.5,
+                              fontWeight: 700,
+                              cursor: 'pointer',
+                              transition: 'background 0.2s'
+                            }}
+                          >
+                            👍 Yes
+                          </button>
+                          <button
+                            onClick={async () => {
+                              setIsInteractive(true);
+                              setChatMessages([{
+                                role: 'assistant',
+                                content: "What did you not understand about this topic? Ask me for a real-world analogy, or let me know what was confusing."
+                              }]);
+                              
+                              speakWithAvatar(
+                                "What did you not understand?",
+                                teacherId,
+                                () => setIsPlaying(true),
+                                () => setIsPlaying(false)
+                              );
+                            }}
+                            style={{
+                              background: 'rgba(var(--danger-rgb),  0.08)',
+                              border: '1px solid rgba(var(--danger-rgb),  0.2)',
+                              color: 'var(--danger)',
+                              padding: '6px 12px',
+                              borderRadius: 6,
+                              fontSize: 11.5,
+                              fontWeight: 700,
+                              cursor: 'pointer',
+                              transition: 'background 0.2s'
+                            }}
+                          >
+                            👎 No, explain further
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               );
             })()}

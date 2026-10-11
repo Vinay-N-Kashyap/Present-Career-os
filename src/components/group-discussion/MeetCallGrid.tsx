@@ -27,6 +27,7 @@ interface MeetCallGridProps {
   handRaised: boolean;
   micActive?: boolean;
   callDurationSeconds?: number;
+  sessionDurationMinutes?: number;
   onInterjectImmediately?: () => void;
 }
 
@@ -45,7 +46,8 @@ export default function MeetCallGrid({
   hostId,
   handRaised,
   micActive,
-  callDurationSeconds = 0
+  callDurationSeconds = 0,
+  sessionDurationMinutes = 10
 }: MeetCallGridProps) {
   const [connecting, setConnecting] = useState(true);
 
@@ -55,8 +57,8 @@ export default function MeetCallGrid({
     return () => clearTimeout(timer);
   }, []);
 
-  // Format 10-minute countdown time remaining: 600 - callDurationSeconds
-  const remainingSeconds = Math.max(0, 600 - callDurationSeconds);
+  const totalSeconds = Math.max(60, sessionDurationMinutes * 60);
+  const remainingSeconds = Math.max(0, totalSeconds - callDurationSeconds);
   const minutes = Math.floor(remainingSeconds / 60);
   const seconds = remainingSeconds % 60;
   const formattedTimer = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
@@ -78,10 +80,10 @@ export default function MeetCallGrid({
       }} className="animate-fade-in">
         <span style={{ fontSize: 48.5, animation: 'spin 2s linear infinite' }}>⚙️</span>
         <h3 style={{ fontSize: 17.5, fontWeight: 900, color: 'white', margin: 0, letterSpacing: '0.5px' }}>
-          Initializing 9-Member Boardroom Sync...
+          Preparing your discussion room...
         </h3>
         <p style={{ fontSize: 12, color: 'var(--t3)', margin: 0 }}>
-          Calibrating audio channels and routing multi-agent streams for 10-minute session.
+          Your host and panelists are getting ready.
         </p>
       </div>
     );
@@ -90,7 +92,7 @@ export default function MeetCallGrid({
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }} className="animate-fade-in">
       
-      {/* Top Header Bar with 10-Min Countdown Timer */}
+      {/* Top Header Bar with session countdown */}
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -102,7 +104,7 @@ export default function MeetCallGrid({
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 14.5, fontWeight: 900, color: 'var(--t1)' }}>
-            🏛️ 9-Member Boardroom
+            🏛️ Group discussion
           </span>
           <span style={{ fontSize: 11, color: 'var(--t3)', background: 'var(--bg3)', padding: '2px 8px', borderRadius: 6, fontWeight: 700 }}>
             {invitedAvatars.length + 1} Participants Active
@@ -128,12 +130,9 @@ export default function MeetCallGrid({
         </div>
       </div>
 
-      {/* Boardroom Participant Grid (9 Cards) */}
-      {/* Boardroom Participant Grid (Strict 3x3 Matrix - 9 Cards) */}
+      {/* Discussion participant grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gridTemplateRows: 'repeat(3, 1fr)',
         gap: 10,
         background: '#090d16',
         borderRadius: 24,
@@ -143,7 +142,7 @@ export default function MeetCallGrid({
         border: '1.5px solid var(--border)',
         position: 'relative',
         overflow: 'hidden'
-      }}>
+      }} className="gd-live-participants">
         
         {/* Candidate / User Card */}
         <div style={{

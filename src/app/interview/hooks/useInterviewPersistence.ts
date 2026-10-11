@@ -22,6 +22,8 @@ interface UseInterviewPersistenceProps {
   messages: Message[];
   codeContent: string;
   selectedLang: 'java' | 'python' | 'javascript' | 'sql';
+  codingAttempt: number;
+  codingProblem: any;
   elapsedSeconds: number;
   fillerWordCount: number;
   activeTeacherId: string;
@@ -43,6 +45,8 @@ export function useInterviewPersistence({
   messages,
   codeContent,
   selectedLang,
+  codingAttempt,
+  codingProblem,
   elapsedSeconds,
   fillerWordCount,
   activeTeacherId,
@@ -90,6 +94,8 @@ export function useInterviewPersistence({
         messages,
         codeContent,
         selectedLang,
+        codingAttempt,
+        codingProblem,
         elapsedSeconds,
         fillerWordCount,
         activeTeacherId,
@@ -110,6 +116,8 @@ export function useInterviewPersistence({
     messages,
     codeContent,
     selectedLang,
+    codingAttempt,
+    codingProblem,
     elapsedSeconds,
     fillerWordCount,
     activeTeacherId,

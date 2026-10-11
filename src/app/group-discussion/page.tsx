@@ -18,6 +18,69 @@ import GdTranscriptDrawer from './components/GdTranscriptDrawer';
 import GdAvatarGuideModal from './components/GdAvatarGuideModal';
 import GdHistoryModal, { GdHistoryRecord } from './components/GdHistoryModal';
 
+const DISCUSSION_TOPICS_BY_DOMAIN = {
+  technical: SUGGESTED_TOPICS,
+  sales: [
+    { name: 'Recovering a Strategic Account After a Service Failure', desc: 'Agree on how to rebuild trust, coordinate a recovery plan, and measure whether the customer relationship is improving.' },
+    { name: 'Choosing a Launch Segment for a New Product', desc: 'Compare customer segments, evidence, acquisition costs, and the risks of committing the launch budget too early.' },
+    { name: 'Responding to a Competitor Price Cut', desc: 'Decide how to protect customer value and retention without reacting with an unsustainable discount.' },
+  ],
+  business: [
+    { name: 'Reducing Support Costs Without Hurting Customer Trust', desc: 'Balance service quality, staffing, automation, and measurable operating costs.' },
+    { name: 'Prioritizing Two Products With Limited Runway', desc: 'Compare expected value, execution risk, customer impact, and the cost of delaying either product.' },
+    { name: 'Expanding Into a New Region', desc: 'Assess customer demand, compliance, operating costs, and a low-risk way to test the market.' },
+  ],
+};
+
+function normalizeGdHistoryRecords(value: unknown): GdHistoryRecord[] {
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((entry): GdHistoryRecord[] => {
+    if (typeof entry !== 'object' || entry === null || Array.isArray(entry)) return [];
+    const item = entry as Record<string, unknown>;
+    if (typeof item.id !== 'string' || typeof item.topic !== 'string') return [];
+
+    const rawReport = typeof item.report === 'object' && item.report !== null && !Array.isArray(item.report)
+      ? item.report as Record<string, unknown>
+      : null;
+    const rawScore = rawReport?.score;
+    const report = rawReport ? {
+      score: typeof rawScore === 'number' && Number.isFinite(rawScore) && rawScore >= 0 && rawScore <= 100 ? rawScore : undefined,
+      verdict: typeof rawReport.verdict === 'string' ? rawReport.verdict.slice(0, 4000) : undefined,
+      gapsIdentified: Array.isArray(rawReport.gapsIdentified)
+        ? rawReport.gapsIdentified.filter((gap): gap is string => typeof gap === 'string').slice(0, 20)
+        : undefined,
+      keyMoments: Array.isArray(rawReport.keyMoments)
+        ? rawReport.keyMoments.filter((moment): moment is string => typeof moment === 'string').slice(0, 20)
+        : undefined,
+      evaluated: typeof rawReport.evaluated === 'boolean' ? rawReport.evaluated : undefined,
+    } : undefined;
+    const transcript = Array.isArray(item.transcript)
+      ? item.transcript.flatMap((message) => {
+          if (typeof message !== 'object' || message === null || Array.isArray(message)) return [];
+          const row = message as Record<string, unknown>;
+          if (typeof row.content !== 'string') return [];
+          return [{
+            sender: typeof row.sender === 'string' ? row.sender.slice(0, 100) : 'Participant',
+            role: typeof row.role === 'string' ? row.role.slice(0, 100) : 'Participant',
+            content: row.content.slice(0, 6000),
+            emoji: typeof row.emoji === 'string' ? row.emoji.slice(0, 16) : '💬',
+          }];
+        }).slice(-120)
+      : undefined;
+
+    return [{
+      id: item.id.slice(0, 120),
+      topic: item.topic.slice(0, 200),
+      objective: typeof item.objective === 'string' ? item.objective.slice(0, 1000) : undefined,
+      date: typeof item.date === 'string' ? item.date.slice(0, 80) : '',
+      domain: item.domain === 'technical' || item.domain === 'sales' || item.domain === 'business' ? item.domain : undefined,
+      report,
+      transcript,
+    }];
+  }).slice(0, 25);
+}
+
 export default function GroupDiscussionPage() {
   const { user } = useAuth();
   const cOS = useCareerOS();
@@ -56,7 +119,7 @@ export default function GroupDiscussionPage() {
     let localList: GdHistoryRecord[] = [];
     try {
       const stored = localStorage.getItem(historyKey);
-      localList = stored ? JSON.parse(stored) : [];
+      localList = normalizeGdHistoryRecords(stored ? JSON.parse(stored) : []);
       setHistoryListState(localList);
     } catch (e) {
       console.warn('Failed to load local GD history:', e);
@@ -68,10 +131,11 @@ export default function GroupDiscussionPage() {
         const res = await fetch('/api/gd/history', { headers });
         if (res.ok) {
           const data = await res.json();
-          if (Array.isArray(data.sessions) && data.sessions.length > 0) {
+          const remoteSessions = normalizeGdHistoryRecords(data.sessions);
+          if (remoteSessions.length > 0) {
             const map = new Map<string, GdHistoryRecord>();
             localList.forEach(item => map.set(item.id, item));
-            data.sessions.forEach((item: any) => map.set(item.id, item));
+            remoteSessions.forEach(item => map.set(item.id, item));
             const merged = Array.from(map.values()).slice(0, 25);
             setHistoryListState(merged);
             localStorage.setItem(historyKey, JSON.stringify(merged));
@@ -92,7 +156,7 @@ export default function GroupDiscussionPage() {
     try {
       const historyKey = `pinit_gd_history_${user?.id || 'anon'}`;
       const stored = localStorage.getItem(historyKey);
-      const list = stored ? JSON.parse(stored) : [];
+      const list = normalizeGdHistoryRecords(stored ? JSON.parse(stored) : []);
       const updated = list.filter((item: any) => item.id !== id);
       localStorage.setItem(historyKey, JSON.stringify(updated));
       setHistoryListState(updated);
@@ -177,9 +241,9 @@ export default function GroupDiscussionPage() {
       <div className="gd-header-banner">
         <div>
           <h1 style={{ fontSize: 17.5, fontWeight: 900, color: 'var(--t1)', display: 'flex', alignItems: 'center', gap: 8, margin: 0 }}>
-            🗣️ Collaborative SDE Group Boardroom
+            🗣️ Group Discussion Practice
           </h1>
-          <p style={{ fontSize: 12, color: 'var(--t3)', margin: '2px 0 0' }}>Simulate realistic group presentations and design debates with multi-agent avatars.</p>
+          <p style={{ fontSize: 12, color: 'var(--t3)', margin: '2px 0 0' }}>Practice clear, collaborative discussion with a timed host and a diverse panel.</p>
         </div>
         {step !== 'call_grid' && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -260,7 +324,7 @@ export default function GroupDiscussionPage() {
 
       {step === 'create_room' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1000, margin: '20px auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 24 }}>
+          <div className="gd-setup-column-grid">
             {/* Left Column: Boardroom Setup Form */}
             <div className="gd-setup-card animate-fade-in">
               <h2 style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', textAlign: 'center', marginBottom: 20 }}>
@@ -271,7 +335,8 @@ export default function GroupDiscussionPage() {
                   <button
                     type="button"
                     onClick={() => {
-                      const randomTopic = SUGGESTED_TOPICS[Math.floor(Math.random() * SUGGESTED_TOPICS.length)];
+                      const availableTopics = DISCUSSION_TOPICS_BY_DOMAIN[domain];
+                      const randomTopic = availableTopics[Math.floor(Math.random() * availableTopics.length)];
                       setRoomName(randomTopic.name);
                       setRoomDesc(randomTopic.desc);
                       setSelectedConcept(randomTopic.name);
@@ -291,7 +356,7 @@ export default function GroupDiscussionPage() {
                       gap: 6
                     }}
                   >
-                    🎲 Suggest Professional SDE Topic
+                    🎲 Suggest {domain.charAt(0).toUpperCase() + domain.slice(1)} Topic
                   </button>
                 </div>
 
@@ -379,9 +444,9 @@ export default function GroupDiscussionPage() {
                     })}
                   </div>
                   <p style={{ fontSize: 10.5, color: 'var(--t4)', marginTop: 6, margin: 0, textAlign: 'center' }}>
-                    {difficulty === 'easy' && '🟢 Easy Mode: Avatars speak gently. Response timer is 16 seconds.'}
-                    {difficulty === 'medium' && '🟡 Medium Mode: Standard boardroom debate. Response timer is 12 seconds.'}
-                    {difficulty === 'hard' && '🔴 Hard Mode: Aggressive critiques, fast pace. Response timer is 8 seconds.'}
+                    {difficulty === 'easy' && '🟢 Supportive questions and a gentle 25-second response window.'}
+                    {difficulty === 'medium' && '🟡 Balanced follow-ups and a 25-second response window.'}
+                    {difficulty === 'hard' && '🔴 Tougher evidence and trade-off questions; 25 seconds to respond.'}
                   </p>
                 </div>
 
@@ -437,7 +502,9 @@ export default function GroupDiscussionPage() {
                     <div key={past.id} className="gd-history-card">
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 700 }}>{past.date}</span>
-                        <span style={{ fontSize: 11, color: 'var(--teal)', fontWeight: 800 }}>Score: {past.report?.score || 75}%</span>
+                        <span style={{ fontSize: 11, color: past.report?.evaluated === false || !Number.isFinite(past.report?.score) ? 'var(--t3)' : 'var(--teal)', fontWeight: 800 }}>
+                          {past.report?.evaluated === false || !Number.isFinite(past.report?.score) ? 'Not scored' : `Score: ${past.report!.score}%`}
+                        </span>
                       </div>
                       <h4 style={{ fontSize: 13, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>{past.topic}</h4>
                       <p style={{ fontSize: 10.5, color: 'var(--t3)', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{past.objective}</p>
@@ -478,8 +545,19 @@ export default function GroupDiscussionPage() {
             Step 2: Invite Avatars & Define Focus Concept
           </h2>
           <p style={{ fontSize: 12, color: 'var(--t3)', textAlign: 'center', marginBottom: 18 }}>
-            Excludes your currently selected mentor ({AVATARS.find(a => a.id === currentMentorId)?.name || 'Priya'}).
+            Your mentor ({AVATARS.find(a => a.id === currentMentorId)?.name || 'Priya'}) stays with you. {AVATARS.find(a => a.id === gdHostId)?.name || 'Your host'} will facilitate automatically; choose up to 7 panelists.
           </p>
+
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '12px 14px', borderRadius: 14, background: 'var(--bg2)', border: '1px solid var(--border)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontSize: 24 }}>{AVATARS.find(a => a.id === gdHostId)?.emoji}</span>
+              <div>
+                <strong style={{ color: 'var(--t1)', fontSize: 13 }}>{AVATARS.find(a => a.id === gdHostId)?.name} · Host</strong>
+                <div style={{ color: 'var(--t3)', fontSize: 11 }}>Introduces the topic, keeps time, and guides turn-taking.</div>
+              </div>
+            </div>
+            <span style={{ color: 'var(--teal)', fontSize: 11, fontWeight: 800, whiteSpace: 'nowrap' }}>AUTOMATIC</span>
+          </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div>
@@ -503,16 +581,13 @@ export default function GroupDiscussionPage() {
             </div>
 
             <div>
-              <label style={{ fontSize: 12, fontWeight: 700, color: 'var(--t3)', display: 'block', marginBottom: 8 }}>SELECT INVITE PARTICIPANTS</label>
+              <label style={{ fontSize: 12, fontWeight: 700, color: 'var(--t3)', display: 'block', marginBottom: 8 }}>CHOOSE PANELISTS · {invitedAvatars.filter(id => id !== gdHostId && id !== currentMentorId).length}/7</label>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: 12, maxHeight: 320, overflowY: 'auto', paddingRight: 6 }}>
-                {filteredAvatars.map(a => {
-                  const isInvited = invitedAvatars.includes(a.id);
+                {filteredAvatars.filter(a => a.id !== gdHostId).map(a => {
+                  const isInvited = invitedAvatars.includes(a.id) && a.id !== currentMentorId;
                   return (
                     <div
                       key={a.id}
-                      onClick={() => {
-                        setInvitedAvatars(prev => isInvited ? prev.filter(x => x !== a.id) : [...prev, a.id]);
-                      }}
                       className="gd-avatar-card"
                       style={{
                         background: isInvited ? 'rgba(var(--accent-teal-rgb), 0.06)' : 'var(--bg3)',
@@ -521,9 +596,20 @@ export default function GroupDiscussionPage() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontSize: 22 }}>{a.emoji}</span>
-                        <span style={{ fontSize: 10, color: isInvited ? 'var(--teal)' : 'var(--t3)', fontWeight: 800, fontFamily: 'var(--font-mono)' }}>
-                          {isInvited ? '🟢 INVITED' : '⚪ OFF'}
-                        </span>
+                        <button
+                          type="button"
+                          aria-pressed={isInvited}
+                          onClick={() => {
+                            if (!isInvited && invitedAvatars.filter(id => id !== gdHostId && id !== currentMentorId).length >= 7) {
+                              toast.info('Panel is full', 'Choose up to seven panelists; your host joins automatically.');
+                              return;
+                            }
+                            setInvitedAvatars(prev => isInvited ? prev.filter(x => x !== a.id && x !== gdHostId) : [...prev.filter(x => x !== gdHostId && x !== currentMentorId), a.id]);
+                          }}
+                          style={{ fontSize: 10, color: isInvited ? 'var(--teal)' : 'var(--t3)', fontWeight: 800, fontFamily: 'var(--font-mono)', border: '1px solid var(--border)', borderRadius: 8, padding: '5px 8px', background: 'var(--bg2)', cursor: 'pointer' }}
+                        >
+                          {isInvited ? '✓ Added' : '+ Invite'}
+                        </button>
                       </div>
                       <div>
                         <h4 style={{ fontSize: 13, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>{a.name}</h4>
@@ -583,6 +669,7 @@ export default function GroupDiscussionPage() {
             handRaised={orch.handRaised}
             micActive={orch.micActive}
             callDurationSeconds={orch.callDuration}
+            sessionDurationMinutes={sessionDurationMinutes}
           />
 
           {/* Socratic Board Presentation Chat Log & Controls */}
@@ -590,15 +677,17 @@ export default function GroupDiscussionPage() {
             selectedConcept={selectedConcept}
             callDuration={orch.callDuration}
             candidateTurnTimer={orch.candidateTurnTimer}
+            isUserTurn={orch.isUserTurn}
+            inputText={orch.inputText}
             messages={orch.messages}
             loading={orch.loading}
             suggestedHelperText={orch.suggestedHelperText}
             micActive={orch.micActive}
-            handRaised={orch.handRaised}
             onClearHelperText={() => orch.setSuggestedHelperText('')}
+            onInputTextChange={orch.setInputText}
             onToggleMic={orch.toggleMic}
+            onSendMessage={orch.handleSendMessage}
             onSuggestArgument={orch.handleSuggestArgument}
-            onToggleRaiseHand={orch.toggleRaiseHand}
             onExportTranscript={orch.exportGdTranscript}
             bottomRef={orch.bottomRef}
           />
@@ -640,6 +729,13 @@ export default function GroupDiscussionPage() {
               orch.setGdReport(null);
               setInvitedAvatars([]);
               orch.setMessages([]);
+              orch.setInputText('');
+              orch.setSuggestedHelperText('');
+              setRoomName('');
+              setRoomDesc('');
+              setSelectedConcept('Microservices Orchestration');
+              setDifficulty('medium');
+              setSessionDurationMinutes(10);
               setDomain('technical');
             }}
           />

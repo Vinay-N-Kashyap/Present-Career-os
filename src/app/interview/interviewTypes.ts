@@ -53,6 +53,10 @@ export interface ActiveInterviewDraft {
   messages: Message[];
   codeContent: string;
   selectedLang: 'java' | 'python' | 'javascript' | 'sql';
+  /** Keeps a resumed Round 2 retry on its current challenge variation. */
+  codingAttempt?: number;
+  /** Preserves the exact prompt and tests paired with the saved code. */
+  codingProblem?: any;
   elapsedSeconds: number;
   fillerWordCount: number;
   activeTeacherId: string;
@@ -79,6 +83,14 @@ export const AVATAR_POOL: AvatarTeacher[] = [
   { id: 'vikram', name: 'Mr. Vikram', title: 'Commerce, Finance & Systems Evaluator', emoji: '👨‍⚖️' },
   { id: 'aisha', name: 'Ms. Aisha', title: 'Executive STAR & Case Evaluator', emoji: '👩‍🏫' }
 ];
+
+/** Each round has a distinct interviewer; the teaching and floating mentor avatars are separate. */
+export const ROUND_INTERVIEWERS: Record<Exclude<Stage, 'results'>, AvatarTeacher> = {
+  round1_behavioral: AVATAR_POOL[0],
+  round2_coding: AVATAR_POOL[1],
+  round3_systems: AVATAR_POOL[2],
+  round4_star: AVATAR_POOL[3],
+};
 
 export function safeFormatDate(input?: string | number | Date): { dateStr: string; isoStr: string } {
   try {

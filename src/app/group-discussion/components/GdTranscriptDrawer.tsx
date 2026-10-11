@@ -13,15 +13,17 @@ interface GdTranscriptDrawerProps {
   selectedConcept: string;
   callDuration: number;
   candidateTurnTimer: number | null;
+  isUserTurn: boolean;
+  inputText: string;
   messages: GdChatMessage[];
   loading: boolean;
   suggestedHelperText: string;
   micActive: boolean;
-  handRaised: boolean;
   onClearHelperText: () => void;
+  onInputTextChange: (value: string) => void;
   onToggleMic: () => void;
+  onSendMessage: (event: React.FormEvent) => void;
   onSuggestArgument: () => void;
-  onToggleRaiseHand: () => void;
   onExportTranscript: (format: 'markdown' | 'json') => void;
   bottomRef: React.RefObject<HTMLDivElement>;
 }
@@ -30,15 +32,17 @@ export default function GdTranscriptDrawer({
   selectedConcept,
   callDuration,
   candidateTurnTimer,
+  isUserTurn,
+  inputText,
   messages,
   loading,
   suggestedHelperText,
   micActive,
-  handRaised,
   onClearHelperText,
+  onInputTextChange,
   onToggleMic,
+  onSendMessage,
   onSuggestArgument,
-  onToggleRaiseHand,
   onExportTranscript,
   bottomRef
 }: GdTranscriptDrawerProps) {
@@ -144,7 +148,7 @@ export default function GdTranscriptDrawer({
               alignItems: 'center',
               marginBottom: 4
             }}>
-              <span>📖 SUGGESTED ARGUMENT (READ THIS ALOUD)</span>
+              <span>💡 OPTIONAL DISCUSSION PROMPT</span>
               <button
                 onClick={onClearHelperText}
                 style={{ background: 'none', border: 'none', color: 'var(--t4)', cursor: 'pointer', fontSize: 12, fontWeight: 900 }}
@@ -153,41 +157,20 @@ export default function GdTranscriptDrawer({
               </button>
             </div>
             <p style={{ margin: 0, fontSize: 12, color: 'var(--t1)', lineHeight: 1.4 }}>
-              "{suggestedHelperText}"
+              Use this as a cue, then respond in your own words: “{suggestedHelperText}”
             </p>
           </div>
         )}
 
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-          <button
-            type="button"
-            onClick={onToggleMic}
-            style={{
-              background: micActive ? 'rgba(var(--danger-rgb),  0.2)' : 'rgba(var(--accent-teal-rgb),  0.1)',
-              border: `1.5px solid ${micActive ? 'var(--coral)' : 'var(--teal)'}`,
-              borderRadius: '50%',
-              width: 34,
-              height: 34,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              fontSize: 15.5,
-              transition: 'all 0.2s',
-              outline: 'none'
-            }}
-            title={micActive ? 'Mute Microphone' : 'Unmute Microphone (Speak to Boardroom)'}
-          >
-            {micActive ? '🎙️' : '🔇'}
-          </button>
-          
-          <div style={{
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+          <div role="status" aria-live="polite" style={{
             flex: 1,
+            minWidth: 180,
             padding: '8px 12px',
             borderRadius: 16,
             border: '1px solid var(--border)',
             background: 'var(--bg2)',
-            color: micActive ? 'var(--teal)' : 'var(--t3)',
+            color: isUserTurn && micActive ? 'var(--teal)' : 'var(--t3)',
             fontSize: 11.5,
             fontWeight: 800,
             fontFamily: 'var(--font-mono)',
@@ -198,56 +181,79 @@ export default function GdTranscriptDrawer({
             <span style={{ animation: micActive ? 'pulse 1.5s infinite' : 'none' }}>
               {micActive ? '🟢' : '🔴'}
             </span>
-            {micActive ? "LIVE CAPTURE: Speak into your microphone..." : "VOICE TRANSMISSION MUTED"}
+            {isUserTurn ? (micActive ? 'Listening — speak naturally, or type below.' : 'Your turn — turn on the mic or type below.') : 'Listening to the panel discussion.'}
           </div>
 
-          <button
-            type="button"
-            onClick={onSuggestArgument}
-            style={{
-              background: 'rgba(var(--accent-teal-rgb),  0.1)',
-              border: '1.5px solid var(--teal)',
-              borderRadius: 12,
-              padding: '8px 12px',
-              color: 'var(--teal)',
-              fontSize: 11,
-              fontWeight: 800,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              whiteSpace: 'nowrap'
-            }}
-            title="Generate a technical talking point helper"
-          >
-            🎲 Suggest Point
-          </button>
-
-          <button
-            type="button"
-            onClick={onToggleRaiseHand}
-            style={{
-              background: handRaised ? 'rgba(249, 115, 22, 0.15)' : 'rgba(255, 255, 255, 0.05)',
-              border: `1.5px solid ${handRaised ? 'var(--orange)' : 'var(--border)'}`,
-              borderRadius: 12,
-              padding: '8px 12px',
-              color: handRaised ? 'var(--orange)' : 'var(--t2)',
-              fontSize: 11,
-              fontWeight: 800,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              whiteSpace: 'nowrap'
-            }}
-            title="Raise hand to request speaking in the next turn chance"
-          >
-            {handRaised ? '🙋 Hand Raised' : '🙋 Raise Hand'}
-          </button>
+          {isUserTurn && (
+            <>
+              <button
+                type="button"
+                onClick={onToggleMic}
+                aria-label={micActive ? 'Turn microphone off' : 'Turn microphone on'}
+                title={micActive ? 'Turn microphone off' : 'Turn microphone on'}
+                style={{
+                  background: micActive ? 'rgba(var(--danger-rgb), 0.2)' : 'rgba(var(--accent-teal-rgb), 0.1)',
+                  border: `1.5px solid ${micActive ? 'var(--coral)' : 'var(--teal)'}`,
+                  borderRadius: 12,
+                  minWidth: 42,
+                  height: 40,
+                  cursor: 'pointer',
+                  fontSize: 17
+                }}
+              >
+                {micActive ? '🎙️' : '🎤'}
+              </button>
+              <button
+                type="button"
+                onClick={onSuggestArgument}
+                style={{
+                  background: 'rgba(var(--accent-teal-rgb), 0.1)',
+                  border: '1.5px solid var(--teal)',
+                  borderRadius: 12,
+                  padding: '8px 12px',
+                  color: 'var(--teal)',
+                  fontSize: 11,
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap'
+                }}
+                title="Get an optional prompt to help shape your own point"
+              >
+                💡 Need an idea?
+              </button>
+            </>
+          )}
         </div>
 
-        {micActive && (
-          <div style={{ fontSize: 9.5, color: 'var(--coral)', textAlign: 'center', marginTop: 4, fontFamily: 'var(--font-mono)' }}>
-            🔴 MICROPHONE IS RECORDING IN REAL-TIME
-          </div>
+        {isUserTurn && (
+          <form onSubmit={onSendMessage} style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+            <input
+              value={inputText}
+              onChange={event => onInputTextChange(event.target.value)}
+              aria-label="Type your discussion response"
+              placeholder="Or type your response here…"
+              disabled={loading}
+              maxLength={2000}
+              style={{
+                flex: 1,
+                minWidth: 0,
+                padding: '10px 12px',
+                borderRadius: 12,
+                border: '1px solid var(--border)',
+                background: 'var(--bg2)',
+                color: 'var(--t1)',
+                fontSize: 13
+              }}
+            />
+            <button
+              type="submit"
+              disabled={!inputText.trim() || loading}
+              className="btn-primary"
+              style={{ padding: '8px 14px', borderRadius: 12, border: 'none', fontWeight: 800, opacity: !inputText.trim() || loading ? 0.5 : 1 }}
+            >
+              Send
+            </button>
+          </form>
         )}
       </div>
     </div>

@@ -1543,5 +1543,39 @@ body[data-interview-active="true"] .main-content-area {
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
+@media (max-width: 900px) {
+  .iv-round-layout.iv-round1-layout,
+  .iv-round-layout.iv-round2-layout,
+  .iv-round-layout.iv-round3-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .iv-round1-avatar {
+    height: 380px !important;
+  }
+
+  .iv-round4-avatar,
+  .iv-round4-content {
+    width: 100% !important;
+  }
+
+  .iv-round4-avatar {
+    height: 380px !important;
+  }
+
+  body[data-interview-active='true'] main,
+  body[data-interview-active='true'] .main-content-area {
+    padding: 8px 12px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .iv-round1-avatar,
+  .iv-round4-avatar {
+    height: 310px !important;
+    border-radius: 14px !important;
+  }
+}
+
 
 

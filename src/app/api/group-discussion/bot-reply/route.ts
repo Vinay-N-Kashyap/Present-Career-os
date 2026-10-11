@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
-import { executeGdTurn, GdRoleType, normalizeMentorId } from '@/lib/group-discussion/gdTurnEngine';
+import { checkRateLimit } from '@/lib/server/rateLimit';
+import { isJsonObject, readBoundedJson, RequestBodyError } from '@/lib/server/readBoundedJson';
+import { executeGdTurn, GdRoleType, gdPersonaForMentor, gdSafePanelistName, normalizeMentorId } from '@/lib/group-discussion/gdTurnEngine';
 
 let keyIndexA = 0;
 let keyIndexB = 0;
@@ -69,21 +71,65 @@ export async function POST(req: NextRequest) {
     const gated = await requireUserFromRequest(req);
     if (gated.error) return gated.error;
 
-    const body = await req.json();
-    const roleType: GdRoleType = body.roleType === 'avatar_b' ? 'avatar_b' : 'avatar_a';
-    const mentorId = normalizeMentorId((body.activeMentors && body.activeMentors[0]) || body.mentorId);
+    const rate = checkRateLimit(`gd_turn_user_${gated.user.id}`, { limit: 40, windowMs: 60_000 });
+    if (!rate.allowed) {
+      return NextResponse.json({ error: 'RATE_LIMIT', message: 'Please wait before requesting more panel replies.' }, { status: 429 });
+    }
+
+    const bodyValue = await readBoundedJson<unknown>(req, 96 * 1024);
+    if (!isJsonObject(bodyValue)) {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: 'Expected a JSON object.' }, { status: 400 });
+    }
+    const body = bodyValue;
+    if (body.roleType !== 'avatar_a' && body.roleType !== 'avatar_b') {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: 'Invalid panel role.' }, { status: 400 });
+    }
+    const roleType: GdRoleType = body.roleType;
+    const requestedMentor = Array.isArray(body.activeMentors) ? body.activeMentors[0] : body.mentorId;
+    const mentorId = normalizeMentorId(typeof requestedMentor === 'string' ? requestedMentor : undefined);
+
+    const stringField = (key: string, fallback: string, maxLength: number): string => {
+      const value = body[key];
+      if (value === undefined || value === null) return fallback;
+      if (typeof value !== 'string' || value.length > maxLength) throw new RequestBodyError(`Invalid ${key}.`, 400);
+      return value.trim();
+    };
+    const topic = stringField('roomId', stringField('topic', 'this topic', 200), 200);
+    const objective = stringField('objective', stringField('roomDesc', '', 1000), 1000);
+    const nextSpeakerName = gdSafePanelistName(stringField('nextSpeakerName', '', 80));
+    const allowedDomains = new Set(['technical', 'sales', 'business']);
+    const domain = typeof body.domain === 'string' && allowedDomains.has(body.domain) ? body.domain : 'technical';
+    const historyValue = body.history === undefined ? [] : body.history;
+    if (!Array.isArray(historyValue) || historyValue.length > 12) {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: 'Discussion context is invalid.' }, { status: 400 });
+    }
+    let totalHistoryChars = 0;
+    const history = historyValue.map((item) => {
+      if (!isJsonObject(item) || typeof item.role !== 'string' || typeof item.content !== 'string' || item.content.length > 2500) {
+        throw new RequestBodyError('Invalid discussion context.', 400);
+      }
+      const role = item.role;
+      if (!['user', 'assistant', 'Candidate', 'SDE Candidate'].includes(role)) {
+        throw new RequestBodyError('Invalid discussion context role.', 400);
+      }
+      totalHistoryChars += item.content.length;
+      if (totalHistoryChars > 20_000) throw new RequestBodyError('Discussion context is too long.', 413);
+      return { role, content: item.content };
+    });
 
     const result = await executeGdTurn(
       {
         roleType,
         mentorId,
-        topic: String(body.roomId || body.topic || 'this topic'),
-        objective: String(body.objective || body.roomDesc || ''),
-        domain: String(body.domain || 'technical'),
-        nextSpeakerName: body.nextSpeakerName ? String(body.nextSpeakerName) : undefined,
-        candidateName: body.candidateName ? String(body.candidateName) : 'Candidate',
-        history: Array.isArray(body.history) ? body.history : [],
-        candidateSilenced: Boolean(body.candidateSilenced),
+        topic,
+        objective,
+        domain,
+        difficulty: body.difficulty === 'easy' || body.difficulty === 'hard' ? body.difficulty : 'medium',
+        nextSpeakerName: nextSpeakerName || undefined,
+        candidateName: 'Candidate',
+        speakerPersona: gdPersonaForMentor(mentorId),
+        history,
+        candidateSilenced: body.candidateSilenced === true,
       },
       groqComplete
     );
@@ -91,6 +137,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(result);
   } catch (err: any) {
     console.error('[API GD Bot Reply Error]:', err);
-    return NextResponse.json({ error: 'Failed to generate boardroom reply', details: err.message }, { status: 500 });
+    if (err instanceof RequestBodyError) {
+      return NextResponse.json({ error: 'INVALID_REQUEST', message: err.message }, { status: err.status });
+    }
+    return NextResponse.json({ error: 'Failed to generate boardroom reply' }, { status: 500 });
   }
 }

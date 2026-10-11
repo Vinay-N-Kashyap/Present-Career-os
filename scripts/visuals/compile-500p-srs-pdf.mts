@@ -39,6 +39,7 @@ import { GIT_VERSION_CONTROL_MONTH_1_SPECS, GIT_VERSION_CONTROL_MONTH_2_SPECS } 
 import { SOFTSKILLS_COMMUNICATION_MONTH_1_SPECS, SOFTSKILLS_COMMUNICATION_MONTH_2_SPECS } from './softskills-communication-masterclass-spec';
 import { NLP_MONTH_1_SPECS, NLP_MONTH_2_SPECS } from './nlp-masterclass-spec';
 import { buildMasterVisualsPlanHtml, buildDualTrackTestingSrsHtml } from './visuals-master-sections';
+import { buildForensicAuditAndRemediationHtml } from './part44_forensic_audit';
 
 
 interface DayItem {
@@ -7253,6 +7254,8 @@ async function generateMasterSrsPdf() {
 
   ${buildDualTrackTestingSrsHtml()}
 
+  ${buildForensicAuditAndRemediationHtml()}
+
 </body>
 </html>`;
 
@@ -7287,13 +7290,13 @@ async function generateMasterSrsPdf() {
     displayHeaderFooter: true,
     headerTemplate: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 7.5pt; color: #64748b; width: 100%; padding: 0 14mm; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
-        <span style="font-weight: 600; color: #0f172a;">PinIT Career OS — 37 Courses Masterclass SRS, Visuals &amp; Architecture Bible (v7.0 Grand Standard)</span>
+        <span style="font-weight: 600; color: #0f172a;">PinIT Career OS — 37 Courses Masterclass SRS, Visuals, Testing &amp; 10/10 Remediation Bible (v8.0 Grand Standard)</span>
         <span>Confidential &bull; Production v6.0</span>
       </div>
     `,
     footerTemplate: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 7.5pt; color: #64748b; width: 100%; padding: 0 14mm; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-        <span>Zero-Hallucination Enforced &bull; All 37 Courses, 17 Visual Engines &amp; Testing SRS (43 Parts / 2,220 Days / 8,862 Quests)</span>
+        <span>Zero-Hallucination Enforced &bull; All 37 Courses, 17 Visual Engines, Testing SRS &amp; 10/10 Remediation Crucible (44 Parts / 2,220 Days / 8,862 Quests)</span>
         <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
       </div>
     `,

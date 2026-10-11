@@ -131,6 +131,67 @@
   }
 }
 
+@media (max-width: 700px) {
+  .gd-header-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .gd-header-banner > div:last-child {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .gd-live-participants {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: minmax(135px, auto);
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .gd-chat-panel {
+    min-height: 440px;
+  }
+
+  .gd-modal-content {
+    padding: 16px;
+  }
+
+  .gd-report-header {
+    align-items: flex-start !important;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gd-report-header > div {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .gd-report-assessment {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .gd-history-stats {
+    flex-wrap: wrap;
+  }
+
+  .gd-history-stats > * {
+    flex: 1 1 125px;
+    min-width: 0;
+  }
+
+  .gd-history-filters {
+    align-items: stretch !important;
+    flex-direction: column;
+  }
+}
+
 .gd-call-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -144,6 +205,11 @@
   border: 1.5px solid var(--border);
   position: relative;
   overflow: hidden;
+}
+
+.gd-live-participants {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 /* Participant Avatar Cards */

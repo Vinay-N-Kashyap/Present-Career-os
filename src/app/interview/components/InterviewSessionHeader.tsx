@@ -20,9 +20,6 @@ interface InterviewSessionHeaderProps {
   toggleCameraPreview: () => void;
   isAvatarSpeaking: boolean;
   interruptSpeech: () => void;
-  autoVoiceLoop: boolean;
-  setAutoVoiceLoop: React.Dispatch<React.SetStateAction<boolean>>;
-  skipQuestion: () => void;
   exitInterview: () => void;
 }
 
@@ -43,34 +40,41 @@ export function InterviewSessionHeader({
   toggleCameraPreview,
   isAvatarSpeaking,
   interruptSpeech,
-  autoVoiceLoop,
-  setAutoVoiceLoop,
-  skipQuestion,
   exitInterview
 }: InterviewSessionHeaderProps) {
+  const rounds = [
+    { id: 'round1_behavioral', label: 'Background' },
+    { id: 'round2_coding', label: 'Challenge' },
+    { id: 'round3_systems', label: 'Architecture' },
+    { id: 'round4_star', label: 'Deep dive' },
+  ];
+  const activeRoundIndex = rounds.findIndex(round => round.id === activeStage);
+  const currentRound = rounds[activeRoundIndex];
   return (
     <div style={{
       display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      flexDirection: 'column',
+      gap: 10,
       padding: '10px 18px',
       background: 'var(--bg2)',
       borderRadius: 14,
       border: '1px solid var(--border)'
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <span style={{ fontSize: 22 }}>{activeTeacher.emoji}</span>
         <div>
           <div style={{ fontSize: 14.5, fontWeight: 900, color: 'var(--t1)' }}>
             {activeTeacher.name} ({activeTeacher.title})
           </div>
           <div style={{ fontSize: 11, color: 'var(--accent-mid)' }}>
-            Topic: {activeTopicName} • Stage: {activeStage.replace('_', ' ').toUpperCase()} • ⏱️ {formatElapsed(elapsedSeconds)}
+            {currentRound ? `Round ${activeRoundIndex + 1} of ${rounds.length} · ${currentRound.label}` : 'Interview'} · {activeTopicName} · {formatElapsed(elapsedSeconds)}
           </div>
         </div>
       </div>
 
-      <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+       </div>
+       <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', display: 'inline-block' }}>
           <button
             title="Toggle AI Spoken Teleprompter Assist Mode"
@@ -155,39 +159,9 @@ export function InterviewSessionHeader({
         )}
 
         <button
-          onClick={() => setAutoVoiceLoop(a => !a)}
-          style={{
-            background: autoVoiceLoop ? 'var(--green-light)' : 'var(--bg3)',
-            border: autoVoiceLoop ? '1px solid var(--green)' : '1px solid var(--border)',
-            color: autoVoiceLoop ? 'var(--green)' : 'var(--t2)',
-            borderRadius: 8,
-            padding: '5px 12px',
-            fontSize: 12,
-            fontWeight: 800,
-            cursor: 'pointer'
+          onClick={() => {
+            if (window.confirm('Exit this interview? Your current session will end and you will return to setup.')) exitInterview();
           }}
-        >
-          {autoVoiceLoop ? '🔄 Voice Loop ACTIVE' : '⏸️ Auto Voice Paused'}
-        </button>
-
-        <button
-          onClick={skipQuestion}
-          style={{
-            background: 'var(--amber-light)',
-            border: '1px solid var(--amber)',
-            color: 'var(--amber-mid)',
-            borderRadius: 8,
-            padding: '5px 12px',
-            fontSize: 12,
-            fontWeight: 800,
-            cursor: 'pointer'
-          }}
-        >
-          ⏩ Skip Question
-        </button>
-
-        <button
-          onClick={exitInterview}
           style={{
             background: 'var(--coral-light)',
             border: '1px solid var(--coral-mid)',
@@ -201,6 +175,18 @@ export function InterviewSessionHeader({
         >
           ✕ Exit Session
         </button>
+      </div>
+      <div aria-label="Interview progress" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 6 }}>
+        {rounds.map((round, index) => {
+          const complete = activeStage === 'results' || index < activeRoundIndex;
+          const current = index === activeRoundIndex;
+          return <div key={round.id} style={{ minWidth: 0 }}>
+            <div style={{ height: 4, borderRadius: 99, background: complete || current ? 'var(--accent)' : 'var(--bg3)', opacity: current ? 1 : 0.65 }} />
+            <div style={{ marginTop: 4, fontSize: 10, fontWeight: current ? 900 : 700, color: current ? 'var(--accent-mid)' : 'var(--t3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {index + 1}. {round.label}
+            </div>
+          </div>;
+        })}
       </div>
     </div>
   );

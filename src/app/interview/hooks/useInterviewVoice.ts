@@ -28,6 +28,7 @@ export function useInterviewVoice({
   const utteranceDebounceTimerRef = useRef<any>(null);
   const [liveSpeechTranscript, setLiveSpeechTranscript] = useState<string>('');
   const accumulatedTranscriptRef = useRef<string>('');
+  const interimTranscriptRef = useRef<string>('');
   const [isVoiceListening, setIsVoiceListening] = useState(false);
   const [isAvatarSpeaking, setIsAvatarSpeaking] = useState(false);
   const isAvatarSpeakingRef = useRef<boolean>(false);
@@ -37,6 +38,7 @@ export function useInterviewVoice({
   const lastSpokenEndTimeRef = useRef<number>(0);
   const speechStartTimeRef = useRef<number>(0);
   const lastSentTranscriptRef = useRef<string>('');
+  const lastSentAtRef = useRef(0);
   const isStartingRef = useRef<boolean>(false);
   const isStoppingRef = useRef<boolean>(false);
 
@@ -70,6 +72,7 @@ export function useInterviewVoice({
       utteranceDebounceTimerRef.current = null;
     }
     accumulatedTranscriptRef.current = '';
+    interimTranscriptRef.current = '';
     setLiveSpeechTranscript('');
   }, [activeStage]);
 
@@ -85,15 +88,19 @@ export function useInterviewVoice({
       clearTimeout(utteranceDebounceTimerRef.current);
       utteranceDebounceTimerRef.current = null;
     }
-    const fullTranscript = accumulatedTranscriptRef.current.trim();
-    if (!fullTranscript || fullTranscript === lastSentTranscriptRef.current) {
+    const fullTranscript = `${accumulatedTranscriptRef.current} ${interimTranscriptRef.current}`.trim();
+    const now = Date.now();
+    if (!fullTranscript || (fullTranscript === lastSentTranscriptRef.current && now - lastSentAtRef.current < 2000)) {
       accumulatedTranscriptRef.current = '';
+      interimTranscriptRef.current = '';
       setLiveSpeechTranscript('');
       return;
     }
 
     lastSentTranscriptRef.current = fullTranscript;
+    lastSentAtRef.current = now;
     accumulatedTranscriptRef.current = '';
+    interimTranscriptRef.current = '';
     setLiveSpeechTranscript('');
 
     if (recognitionRef.current) {
@@ -229,18 +236,19 @@ export function useInterviewVoice({
           accumulatedTranscriptRef.current = (accumulatedTranscriptRef.current + ' ' + newFinalChunk).trim();
           micRetryCountRef.current = 0; // successfully received speech
         }
+        interimTranscriptRef.current = interim.trim();
 
-        const currentDisplay = (accumulatedTranscriptRef.current + (interim ? ' ' + interim : '')).trim();
+        const currentDisplay = `${accumulatedTranscriptRef.current} ${interimTranscriptRef.current}`.trim();
         if (currentDisplay) {
           setLiveSpeechTranscript(currentDisplay);
         }
 
         // Debounce before auto-submitting on natural speech completion (3.2s of silence after final word)
         // Gives the candidate natural breathing time between sentences while reading the teleprompter
-        if (accumulatedTranscriptRef.current.trim().length > 3) {
+        if (`${accumulatedTranscriptRef.current} ${interimTranscriptRef.current}`.trim().length > 3) {
           if (utteranceDebounceTimerRef.current) clearTimeout(utteranceDebounceTimerRef.current);
           utteranceDebounceTimerRef.current = setTimeout(() => {
-            if (!isAvatarSpeakingRef.current && accumulatedTranscriptRef.current.trim()) {
+            if (!isAvatarSpeakingRef.current && `${accumulatedTranscriptRef.current} ${interimTranscriptRef.current}`.trim()) {
               flushAndSubmitTranscript();
             }
           }, 3200);
@@ -294,7 +302,7 @@ export function useInterviewVoice({
         setIsVoiceListening(false);
 
         // If candidate spoke and mic stopped before debounce fired, flush immediately
-        if (accumulatedTranscriptRef.current.trim()) {
+        if (`${accumulatedTranscriptRef.current} ${interimTranscriptRef.current}`.trim()) {
           flushAndSubmitTranscript();
           return;
         }
@@ -323,7 +331,7 @@ export function useInterviewVoice({
         }, 800);
       }
     }
-  }, [activeStage, activeTopicName, onSilenceNudge, isInterviewActive, flushAndSubmitTranscript]);
+  }, [activeStage, activeTopicName, onSilenceNudge, isInterviewActive, isVoiceListening, flushAndSubmitTranscript]);
 
   const speakWithAvatar = useCallback((text: string, teacherId: string, onStart: () => void, onEnd: () => void) => {
     isAvatarSpeakingRef.current = true;
