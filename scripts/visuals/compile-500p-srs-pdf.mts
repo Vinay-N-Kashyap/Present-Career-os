@@ -7295,8 +7295,6 @@ async function generateMasterSrsPdf() {
 
   if (fs.existsSync(artifactDir)) {
     fs.copyFileSync(pdfOutPath, artifactPdfPath);
-    fs.copyFileSync(pdfOutPath, path.join(artifactDir, 'PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.pdf'));
-    fs.copyFileSync(pdfOutPath, path.resolve(process.cwd(), 'docs/visuals/PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.pdf'));
     console.log(`Successfully copied PDF to artifact path: ${artifactPdfPath}`);
   }
 
