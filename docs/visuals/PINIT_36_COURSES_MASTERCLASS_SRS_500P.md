@@ -355,7 +355,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 36: [course-softskills-communication] Professional Tech Communication & Interview Mastery
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
+* **GitHub Capstone Project:** ApexExecutiveComms: Enterprise Cross-Functional Alignment, Crisis Escalation & Principal Engineer Interview Portfolio Suite  
 * **Overview:** Essential soft skills for career acceleration. Master professional email writing, technical documentation, pitch presentations, active listening, teamwork, and interview confidence.  
 
 ### Course 37: [course-nlp] Natural Language Processing & Computational Linguistics
