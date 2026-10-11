@@ -27,6 +27,7 @@ import { FINANCE_INVESTMENT_MONTH_1_SPECS, FINANCE_INVESTMENT_MONTH_2_SPECS } fr
 import { BUSINESS_ANALYTICS_MONTH_1_SPECS, BUSINESS_ANALYTICS_MONTH_2_SPECS } from './business-analytics-masterclass-spec';
 import { MARKETING_BRANDING_MONTH_1_SPECS, MARKETING_BRANDING_MONTH_2_SPECS } from './marketing-branding-masterclass-spec';
 import { DIGITAL_MARKETING_MONTH_1_SPECS, DIGITAL_MARKETING_MONTH_2_SPECS } from './digital-marketing-masterclass-spec';
+import { ECOMMERCE_DIGITAL_BIZ_MONTH_1_SPECS, ECOMMERCE_DIGITAL_BIZ_MONTH_2_SPECS } from './ecommerce-digital-biz-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2081,6 +2082,71 @@ function renderMarketingBrandingDayCard(day: any): string {
           `).join('')}
         </div>
         <div style="margin-top: 2px; color: #9d174d; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #0f172a;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderEcommerceDigitalBizDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #fff7ed; color: #c2410c; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #c2410c; color: #ffedd5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fff7ed; color: #c2410c;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #c2410c; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #ea580c; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #c2410c;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #9a3412;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #c2410c;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#ffedd5' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#ea580c' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #c2410c;">✓ [Optimal Strategic Choice]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #c2410c; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
       </div>
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
@@ -4644,6 +4710,83 @@ function buildDeepMasterclassesHtml(): string {
     </tbody>
   </table>
   `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXI: E-COMMERCE & DIGITAL BUSINESS MASTERCLASS BLUEPRINT (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #431407; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #ea580c;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ffedd5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXI: Deep Masterclass Blueprint &mdash; E-Commerce &amp; Digital Business (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #fdba74; font-weight: 700;"><code>course-ecommerce-digital-biz</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #fed7aa;">
+      <strong>Directorate:</strong> Senior Enterprise Commerce Architect &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexCommerce (M1) &amp; ApexEnterpriseOS (M2)
+    </p>
+  </div>
+
+  <h2>31.1 Month 1: D2C Fundamentals, Headless Architecture, OMS &amp; Customer Retention (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes sovereign fluency across single-brand retail economics, PIM catalog modeling, dynamic pricing, composable Next.js edge storefronts, distributed shopping carts, Stripe/Adyen payment gateways with 3DS2, real-time OMS finite state machines, reverse logistics, AI-powered customer support RAG with financial guardrails, GA4 e-commerce telemetry, cohort retention modeling, ad attribution (mROAS), and full-funnel conversion rate optimization.
+  </p>
+
+  ${(() => {
+    let out = '';
+    ECOMMERCE_DIGITAL_BIZ_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderEcommerceDigitalBizDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #431407; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #ea580c;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ffedd5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXI: E-Commerce &amp; Digital Business &mdash; Month 2: Advanced Marketplace Dynamics, Global Logistics &amp; Composable MACH Architecture (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #fdba74; font-weight: 700;">Stage 3 &amp; Stage 4 &bull; Enterprise Scale &amp; CDO Defense</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #fed7aa;">
+      <strong>Month 2 Scope:</strong> Multi-Vendor Marketplaces, Stripe Connect Escrow, Buy Box Algorithms, Seller Governance, Digital Wallets, Margin-Gated BNPL, Subscription Dunning, Enterprise ATO Defense, TikTok/Meta Social Commerce, Live Video Streaming, Omnichannel Retail BOPIS, High-Concurrency Flash Sale Queues, Edge Workers, Headless CMS Caching, Modern Data Stack, Ocean Freight Demurrage, Multi-Currency FX Treasury, 3 Forensic Disaster Audits ($28M blast radius), Global Tax Nexus, PCI-DSS v4.0, FTC Click-to-Cancel, CDO Strategic Architecture RFC, and Capstone 2 ApexEnterpriseOS Master Defense.
+    </p>
+  </div>
+
+  <h2>31.2 Month 2: Marketplace Platform Dynamics, Scale Systems &amp; Enterprise Governance (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    ECOMMERCE_DIGITAL_BIZ_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderEcommerceDigitalBizDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>31.3 E-Commerce &amp; Digital Business Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;9 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexMerchandising Sovereign Catalog &amp; Pricing Engine</td><td>Enterprise merchandising suite enforcing GTIN-13 check digit validation, multidimensional SKU matrices, dynamic price elasticity calculus, and sticky Buy Box PDP UX.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexStorefront Composable Storefront &amp; Payment Suite</td><td>Headless Next.js edge storefront integrating Redis distributed cart synchronization, one-page checkout friction reduction, and Stripe/Adyen 3DS2 SCA authorization.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexOMS Enterprise Order Management &amp; Sourcing Engine</td><td>Production order management engine implementing strict state transition FSMs, atomic Redis Lua inventory decrement, multi-node ATP routing, and automated RMA reverse logistics.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>ApexSupport Omnichannel Customer Support &amp; Loyalty Suite</td><td>Omnichannel support and retention platform uniting Gorgias SLA tiering, grounded RAG refund agents with deterministic caps, Bayesian UGC review integrity, and ASC 606 breakage liability ledgers.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>ApexAnalytics Enterprise E-Commerce BI &amp; Retention Suite</td><td>Enterprise analytics suite processing GA4 e-commerce events, Kaplan-Meier customer retention curves, multi-touch ad attribution (mROAS), and exit-intent CRO behavioral triggers.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexCommerce Sovereign Full-Stack Storefront &amp; Fulfillment Engine:</strong> Complete sovereign D2C commerce platform uniting PIM catalog, cart, checkout, payments, real-time OMS, customer loyalty, and analytics defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>ApexMarketplace Multi-Vendor Platform &amp; Buy Box Engine</td><td>Multi-vendor platform managing Stripe Connect sub-accounts, programmatic delivery-gated escrow, multi-offer Buy Box algorithmic scoring, and seller ODR quality governance.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>ApexPay Enterprise Payment Orchestration &amp; BNPL Suite</td><td>Fintech payment orchestration engine executing 1-click biometric wallet tokens, margin-gated BNPL routing, intelligent subscription dunning with account updater, and ATO credential stuffing defense.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexSocialCommerce Live Streaming &amp; Omnichannel Retail Suite</td><td>Omnichannel social retail platform synchronizing real-time catalog feeds to TikTok/Meta, hosting low-latency live shopping WebSocket streams, managing affiliate return holds, and fulfilling BOPIS orders with POS safety buffers.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexScale High-Concurrency Flash Sale Simulator &amp; Edge Architecture</td><td>High-scale flash sale engine capable of withstanding 500k concurrent users: edge bot filtering, virtual waiting room admission metering, atomic in-memory Redis Lua reservations, edge-cached headless CMS schemas, and real-time CDP streaming.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseOS Master Capstone &amp; Senior CDO Defense:</strong> Complete sovereign global enterprise commerce operating system uniting Composable MACH storefronts, Multi-Vendor Marketplace, Real-Time Distributed OMS, Multi-Currency FX Treasury, Automated Economic Nexus Sales Tax, Cross-Border DDP Tariffs, PCI-DSS v4.0 SAQ-A, FTC Click-to-Cancel, and 500k QPS Flash Sale Concurrency defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
 
   return h;
 }
