@@ -24,6 +24,7 @@ import { PYTHON_BACKEND_MONTH_1_SPECS, PYTHON_BACKEND_MONTH_2_SPECS } from './py
 import { QUANT_SYSTEMS_MONTH_1_SPECS, QUANT_SYSTEMS_MONTH_2_SPECS } from './quant-systems-masterclass-spec';
 import { DIGITAL_ACCOUNTING_MONTH_1_SPECS, DIGITAL_ACCOUNTING_MONTH_2_SPECS } from './digital-accounting-masterclass-spec';
 import { FINANCE_INVESTMENT_MONTH_1_SPECS, FINANCE_INVESTMENT_MONTH_2_SPECS } from './finance-investment-masterclass-spec';
+import { BUSINESS_ANALYTICS_MONTH_1_SPECS, BUSINESS_ANALYTICS_MONTH_2_SPECS } from './business-analytics-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1885,6 +1886,71 @@ function renderFinanceInvestmentDayCard(day: any): string {
           ${day.situationalPuzzle.options.map((opt: string, i: number) => `
             <div style="background: ${i === ansIdx ? '#e0f2fe' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#0284c7' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
               <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #0284c7;">✓ [Optimal Corporate Strategy]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #6b21a8; font-size: 6.8pt;"><strong>Analytical Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #0f172a;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderBusinessAnalyticsDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #eef2ff; color: #4338ca; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #4f46e5;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #312e81; color: #c7d2fe; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #eef2ff; color: #4338ca;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #4338ca; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #6366f1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fef3c7; color: #92400e;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #312e81;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #4338ca;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #6b21a8;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #581c87;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#ede9fe' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#7c3aed' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #6d28d9;">✓ [Optimal Analytical Strategy]</strong>' : ''}
             </div>
           `).join('')}
         </div>
@@ -4206,8 +4272,88 @@ function buildDeepMasterclassesHtml(): string {
   </table>
   `;
 
+  // =========================================================================
+  // PART XXVIII: BUSINESS ANALYTICS, ECONOMETRICS & DECISION DASHBOARDS (Days 1–60 / 240 Quests)
+  // =========================================================================
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #a5b4fc; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXVIII: Deep Masterclass Blueprint &bull; Business Analytics, Econometrics &amp; Decision Dashboards (Days 1&ndash;60 / 240 Quests)</h1>
+      <span style="font-size: 8.2pt; color: #c7d2fe;">Course ID: <code>course-business-analytics</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #4f46e5; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Causal AI, Econometrics &amp; Prescriptive Operations</span><br>
+      <span style="font-size: 7.5pt; color: #c7d2fe;">Chief Analytics Officer (CAO) / Head of Decision Intelligence Target</span>
+    </div>
+  </div>
 
+  <h2>28.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+  <p>
+    In modern corporate leadership and high-stakes strategy, intuition is no longer a viable operating model. Business Analytics, Econometrics &amp; Decision Dashboards arms enterprise architects and quantitative decision scientists with the full mathematical, computational, and economic spectrum of decision intelligence: moving from descriptive data wrangling to causal econometric inference, predictive machine learning, and prescriptive operations research. The curriculum progresses rigorously across four specialized stages:
+  </p>
+  <ul>
+    <li><strong>Stage 1: Statistical Foundations, Data Wrangling &amp; Exploratory Business Analytics (Days 1&ndash;15 / 60 Quests):</strong> Analytics taxonomy (Descriptive, Diagnostic, Predictive, Prescriptive), Expected Value of Sample Information (EVSI), North Star Metrics vs vanity metrics, missing data imputation physics (MCAR, MAR, MNAR, MICE), outlier detection via Tukey IQR and Isolation Forests, heavy-tailed parametric distributions (Normal, Log-Normal, Poisson, Pareto 80/20 power laws), statistical hypothesis testing and Neyman-Pearson power physics (Type I vs Type II errors), enterprise A/B testing with Minimum Detectable Effect (MDE) and peeking hazards, ANOVA, multi-arm bandits (Thompson Sampling vs Epsilon-Greedy), correlation vs causal DAGs and Simpson's Paradox, OLS matrix algebra and Gauss-Markov BLUE proofs, multicollinearity (VIF &gt; 5) and White robust standard errors, non-linear specifications and Ramsey RESET diagnostics, logistic regression odds ratios and ROC-AUC / PR curves, customer RFM segmentation with K-Means silhouette optimality, cohort retention curves and Net Retention Rate (NRR) dynamics, PCA dimensionality reduction with scree plots, and Tufte data-ink ratio dashboard engineering, culminating in <strong>Milestone 1: ApexMetrics Enterprise Business Intelligence &amp; KPI Ingestion Engine</strong>.</li>
+    <li><strong>Stage 2: Econometric Time Series, Demand Forecasting &amp; Operations Analytics (Days 16&ndash;30 / 60 Quests):</strong> Temporal data decomposition (Additive vs Multiplicative models) with centered moving averages and ACF/PACF correlograms, unit root stationarity physics (ADF and KPSS tests, first-differencing), Holt-Winters Triple Exponential Smoothing with damped trends, Box-Jenkins SARIMA identification with AICc model selection, forecast error metrics (MAE, MAPE, RMSE, Hyndman's MASE) and tracking signal tripwires, Vector Autoregression (VAR) with Granger causality and Cholesky impulse response functions, panel data econometrics (Fixed Effects vs Random Effects and Hausman specification tests), Instrumental Variables (IV) and 2SLS endogeneity resolution, quasi-experimental causal inference with Difference-in-Differences (DiD) and Synthetic Controls, price elasticity of demand and Amoroso-Robinson dynamic revenue management, supply chain ABC-XYZ inventory volatility matrices, marketing attribution modeling (Shapley values and Markov Chain removal effects), probabilistic Customer Lifetime Value (BG/NBD transaction counts and Gamma-Gamma spend models), and prescriptive decision trees with Expected Value of Perfect Information (EVPI), culminating in <strong>Capstone 1: ApexForecast Enterprise Demand Forecasting &amp; Revenue Intelligence Engine Master Capstone Viva Gate</strong>.</li>
+    <li><strong>Stage 3: Machine Learning for Business, Customer Intelligence &amp; Algorithmic Marketing (Days 31&ndash;45 / 60 Quests):</strong> Supervised learning foundations and bias-variance tradeoff decomposition, strict prevention of data leakage and lookahead bias in business pipelines, regularized linear models (Ridge L2, Lasso L1, ElasticNet coordinate descent) in high-dimensional corporate data, non-linear decision trees with Gini impurity and Random Forest variance reduction via random feature subsampling ($m = \sqrt{p}$) and Out-of-Bag (OOB) scoring, Gradient Boosting Machines (XGBoost second-order Taylor expansions with Hessians $h_i$, LightGBM histogram GOSS and EFB, CatBoost ordered encoding), cost-sensitive classification and profit-optimal threshold derivation ($p^*$), Basel-compliant credit risk scorecards with monotonic Weight of Evidence (WoE), Information Value (IV), and Points to Double Odds (PDO) calibration, unstructured text mining with TF-IDF, VADER, and FinBERT financial sentiment, topic modeling for Voice of Customer (LDA Gibbs sampling and BERTopic c-TF-IDF), implicit feedback collaborative filtering and Alternating Least Squares (ALS) matrix factorization, market basket mining with Apriori downward closure and FP-Growth, unsupervised fraud anomaly detection via Isolation Forests and Local Outlier Factor (LOF), product analytics survival modeling (Kaplan-Meier right-censoring and Cox Proportional Hazards with Schoenfeld residuals), prescriptive supply chain Linear Programming (LP) with Simplex geometry and shadow price dual variables, and Explainable AI (TreeSHAP game-theoretic axioms and LIME adverse action notices), culminating in <strong>Milestone 8: ApexPredict Predictive Customer Intelligence Suite</strong>.</li>
+    <li><strong>Stage 4: Enterprise Big Data, Causal AI, Optimization &amp; Executive Decision Intelligence (Days 46&ndash;60 / 60 Quests):</strong> Distributed big data processing with PySpark (RDD lineage, Catalyst optimizer, shuffle network physics, and key salting for straggler skew mitigation), real-time streaming architectures with Kafka, Flink watermarks, event time vs processing time, and Feast online/offline dual feature stores, Mixed-Integer Linear Programming (MILP) with Branch-and-Bound, Gomory cutting planes, and MIP gap bounds for facility location and fleet dispatch, discrete-event simulation with SimPy (Little's Law $L = \lambda W$, Kendall's notation, and Kingman's utilization queue explosion), agent-based market simulation with Mesa (complex adaptive systems, emergent price wars, and tit-for-tat algorithms), observational causal inference with Rubin's Potential Outcomes, Propensity Score Matching (PSM), and Inverse Probability Weighting (IPW) under common support, Uplift Modeling for algorithmic persuasion (Two-Model vs Class-Transformation, Persuadables vs Sleeping Dogs, and Qini curves), forensic financial econometrics (Altman Z-Score MDA, Ohlson O-Score, and Beneish M-Score for earnings manipulation detection), strategic performance governance (Kaplan-Norton Balanced Scorecard, OKRs, and counter-metric pairing to defeat Goodhart's Law), executive boardroom data storytelling (Barbara Minto's Pyramid Principle, SCQA narrative structure, and MECE logic), analytics ethics and privacy (GDPR, India DPDP Act 2023, $\epsilon$-Differential Privacy Laplace mechanisms, and Disparate Impact 80% rules), forensic post-mortem 1 (p-hacking, the reproducibility crisis, and Benjamini-Hochberg False Discovery Rate control), forensic post-mortem 2 (historical catastrophes: Target teen pregnancy PR, Zillow iBuying $880M algorithm crash, and Challenger O-ring sample truncation), institutional Chief Analytics Officer (CAO) Architecture RFC authoring, and <strong>Capstone 2: ApexIntelligence Sovereign Enterprise Decision Intelligence, Econometric Causal Engine, Supply Chain Optimizer &amp; Boardroom Analytics Platform Master Capstone Viva Gate</strong>.</li>
+  </ul>
 
+  <h2>28.2 Business Analytics Month 1 Day-by-Day Masterclass Specifications (Days 1&ndash;30 / 120 Quests)</h2>
+  `;
+
+  BUSINESS_ANALYTICS_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderBusinessAnalyticsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #a5b4fc; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXVIII: Business Analytics Month 2 &bull; Machine Learning, Causal AI, Optimization &amp; ApexIntelligence Master Capstone</h1>
+      <span style="font-size: 8.2pt; color: #c7d2fe;">Course ID: <code>course-business-analytics</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #4f46e5; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Causal AI, Prescriptive Operations &amp; Boardroom Defense</span><br>
+      <span style="font-size: 7.5pt; color: #c7d2fe;">Chief Analytics Officer (CAO) / Head of Decision Intelligence Target</span>
+    </div>
+  </div>
+
+  <h2>28.3 Business Analytics Month 2 Day-by-Day Masterclass Specifications (Days 31&ndash;60 / 120 Quests)</h2>
+  `;
+
+  BUSINESS_ANALYTICS_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderBusinessAnalyticsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>28.4 Business Analytics Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Missing Data Imputation &amp; Statistical Outlier Engine</td><td>Data quality pipeline implementing MCAR/MAR/MNAR tests, iterative MICE multivariate imputation, and Tukey IQR / Isolation Forest outlier filters.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Enterprise A/B Testing &amp; Sequential Experimentation</td><td>Statistical experimentation platform computing sample sizes with MDE power calculations, detecting peeking hazards, and running Thompson Sampling bandits.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexMetrics Enterprise BI &amp; KPI Ingestion Engine</td><td>Enterprise analytics platform uniting automated DAG causal checks, robust OLS regressions, RFM segmentation, PCA scree plots, and Tufte-standard KPI dashboards.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>SARIMA Demand Forecasting &amp; Stationarity Verification</td><td>Time series engine executing classical additive/multiplicative decomposition, ADF/KPSS unit root testing, automated SARIMA parameter search, and tracking signal alerts.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Causal Price Elasticity 2SLS &amp; Dynamic Revenue Engine</td><td>Econometric pricing platform estimating price elasticity via 2SLS instrumental variables, evaluating policy interventions via DiD, and optimizing Amoroso-Robinson prices.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexForecast Enterprise Demand Forecasting &amp; Revenue Intelligence Engine:</strong> Unified forecasting platform integrating SARIMA models, 2SLS causal elasticity, Markov Chain attribution, and Newsvendor inventory optimization defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Cost-Sensitive Churn Prediction &amp; Retention Optimizer</td><td>Customer retention engine training regularized tree ensembles, constructing asymmetric cost-benefit payoff matrices, and solving profit-maximizing decision thresholds.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>E-Commerce Recommender &amp; Market Basket Association Engine</td><td>Customer intelligence suite implementing implicit ALS collaborative filtering, popularity de-biasing, FP-Growth association rule mining, and high-lift shelf-space optimization.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexPredict Predictive Customer Intelligence Suite</td><td>Machine learning decision suite integrating cost-sensitive churn models, Basel-compliant WoE credit scorecards, ALS recommendations, and TreeSHAP explainability APIs.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Real-Time Streaming Analytics &amp; PySpark Big Data Suite</td><td>High-throughput analytics infrastructure uniting 100M-row PySpark key-salted aggregations, Kafka-Flink event-time streaming, and Feast dual online/offline feature stores.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Observational Causal Inference &amp; Uplift Modeling Platform</td><td>Causal decisioning suite implementing Propensity Score Matching under common support, Uplift Modeling targeting Persuadables and suppressing Sleeping Dogs, and Altman Z distress forecasting.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexIntelligence Sovereign Enterprise Decision Intelligence, Econometric Causal Engine, Supply Chain Optimizer &amp; Boardroom Analytics Platform:</strong> Complete sovereign enterprise platform defending against simultaneous stagflationary shocks, supply bottlenecks, adverse selection in algorithmic pricing, and regulatory audits under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
 
   return h;
 }
