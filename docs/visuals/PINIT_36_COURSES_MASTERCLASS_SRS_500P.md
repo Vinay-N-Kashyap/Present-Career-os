@@ -345,7 +345,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 34: [course-excel-data-viz] Excel & Data Analysis Fundamentals
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
+* **GitHub Capstone Project:** ApexEnterpriseAnalytics: Full-Scale Financial Engineering & Enterprise Data Modeling Suite  
 * **Overview:** The universal language of business & tech. Master Excel formulas, VLOOKUP/XLOOKUP, Pivot Tables, data cleaning, charts, and executive dashboard reporting.  
 
 ### Course 35: [course-git-version-control] Git, GitHub & Version Control Basics

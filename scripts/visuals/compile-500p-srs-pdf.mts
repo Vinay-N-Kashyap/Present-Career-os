@@ -34,6 +34,7 @@ import { SALES_CRM_MONTH_1_SPECS, SALES_CRM_MONTH_2_SPECS } from './sales-crm-ma
 import { AI_TRANSFORM_MONTH_1_SPECS, AI_TRANSFORM_MONTH_2_SPECS } from './ai-transform-masterclass-spec';
 import { COMPUTER_FUNDAMENTALS_MONTH_1_SPECS, COMPUTER_FUNDAMENTALS_MONTH_2_SPECS } from './computer-fundamentals-masterclass-spec';
 import { AI_PROMPT_MONTH_1_SPECS, AI_PROMPT_MONTH_2_SPECS } from './ai-prompt-masterclass-spec';
+import { EXCEL_DATA_VIZ_MONTH_1_SPECS, EXCEL_DATA_VIZ_MONTH_2_SPECS } from './excel-data-viz-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -156,6 +157,7 @@ function getCourseCapstoneProject(courseId: string): string {
   if (courseId.includes('finance')) return 'ValuationEngine: Monte Carlo DCF Cash Flow Simulator';
   if (courseId.includes('git')) return 'GitInternals: Content-Addressable DAG Object Database';
   if (courseId.includes('ai-prompt') || courseId.includes('prompt-literacy')) return 'ApexPromptEnterprise: Sovereign Enterprise Prompt Architecture & Cognitive Systems Suite';
+  if (courseId.includes('excel') || courseId.includes('data-viz')) return 'ApexEnterpriseAnalytics: Full-Scale Financial Engineering & Enterprise Data Modeling Suite';
   return 'SystemCore: Industrial Enterprise Subsystem Component';
 }
 
@@ -2548,6 +2550,71 @@ function renderAiPromptDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #92400e;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderExcelDataVizDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ecfdf5; color: #065f46; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #059669;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #047857; color: #ecfdf5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #065f46;">${day.title}</strong>
+          <span class="stage-pill" style="background: #ecfdf5; color: #047857;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f0fdf4; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #bbf7d0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #065f46; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #047857; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #065f46;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #064e3b;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #065f46;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#ecfdf5' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#10b981' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #065f46;">✓ [Optimal Financial Engineering Choice]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #065f46; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #065f46;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -5634,6 +5701,81 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 6</strong></td><td>Day 45</td><td>ApexGuard Enterprise Prompt Red-Teaming &amp; Adversarial Guardrails Suite</td><td>Sovereign security gateway implementing input canonicalization, indirect prompt injection sandboxes, dual-gateway Llama Guard firewalls, and cryptographic canary token tripwires.</td></tr>
       <tr><td><strong>Milestone 7</strong></td><td>Day 50</td><td>ApexEval Automated Prompt CI/CD &amp; DSPy Algorithmic Optimization Suite</td><td>Continuous evaluation and optimization platform combining position-swapped LLM judges, quantitative RAG Triad scoring, GitHub Actions regression gates, and DSPy algorithmic prompt compilation.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexPromptEnterprise Sovereign Enterprise Prompt Architecture &amp; Cognitive Systems Master Capstone:</strong> Complete enterprise cognitive platform uniting ToT Reasoning, Grammar Decoding, Parallel Tools, DSPy CI/CD, Multi-Agent Supervisors, 3-Tier Memory, Resumable HITL Gateways, Real-Time WebSockets, vLLM Clusters, and Principal Architect Modernization RFC defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXVIII: EXCEL & DATA ANALYSIS FUNDAMENTALS (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #059669;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ecfdf5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXVIII: Deep Masterclass Blueprint &mdash; Excel &amp; Data Analysis Fundamentals (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #a7f3d0; font-weight: 700;"><code>course-excel-data-viz</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #ecfdf5;">
+      <strong>Directorate:</strong> Principal Financial Systems Architect, Chief Analytics Officer &amp; VP of Financial Engineering &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexOps (M1) &amp; ApexEnterpriseAnalytics (M2)
+    </p>
+  </div>
+
+  <h2>38.1 Month 1: Core Grid Mechanics, Precision Math, Modern Dynamic Lookups, Reshaping &amp; Corporate Financial Modeling (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes foundational mastery across the Excel grid architecture, coordinate systems (A1 vs R1C1), cell data typing, IEEE 754 64-bit floating-point limitations and serial date numbers, relative versus absolute reference pinning ($A$1) and 3D workbook references, core aggregations (SUM, AVERAGE, PRODUCT, ROUND), Boolean logic and conditional branching (IF, IFS, AND, OR, XOR), lookup engine evolution (VLOOKUP/HLOOKUP limitations to INDEX/MATCH), modern dynamic lookups (XLOOKUP, XMATCH with binary search modes), text manipulation and regex sanitization (TEXTSPLIT, TEXTJOIN, TRIM), business calendar date math (WORKDAY.INTL, NETWORKDAYS), Excel Structured Tables and calculated columns, dynamic array engine physics and spill mechanics (#SPILL!, FILTER, SORT, SORTBY, UNIQUE), modern matrix reshaping (CHOOSEROWS, CHOOSECOLS, TOCOL, TOROW), conditional statistical aggregations (SUMIFS, COUNTIFS, AVERAGEIFS), Pivot Table internal caching (PivotCache, slicing, timelines), advanced pivot analytics (Calculated Fields, Items and GETPIVOTDATA extraction), visualization architecture (bar, line, scatter, secondary axes, waterfall charts, treemaps, box plots), formula-driven conditional formatting rules, What-If analysis (Goal Seek numerical solvers, Scenario Manager), two-way sensitivity data tables, linear and non-linear optimization with Excel Solver (Simplex LP, GRG Nonlinear, Evolutionary), robust data validation and cascading dependent dropdowns, formula auditing diagnostics (Trace Precedents, Dependents, Watch Window), defensive error handling (IFERROR, IFNA, ISERROR), enterprise co-authoring and revision tracking, and Capstone 1: ApexOps Institutional-Grade Corporate Financial Analytics Model Master Capstone Viva Gate.
+  </p>
+
+  ${(() => {
+    let out = '';
+    EXCEL_DATA_VIZ_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderExcelDataVizDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #0f172a; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #059669;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #ecfdf5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXVIII: Excel &amp; Data Analysis Fundamentals &mdash; Month 2: Advanced Financial Modeling, Star Schemas, DAX, Automation &amp; Governance (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #a7f3d0; font-weight: 700;">Stage 4 &bull; Global Scale &amp; Principal Systems Architect Viva Gate</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #ecfdf5;">
+      <strong>Month 2 Scope:</strong> Dynamic Three-Statement Financial Modeling (integrated Income Statement, Balance Sheet and Cash Flow schedules with zero-variance checksums), Debt Sculpting and Revolver schedules with circular reference resolution and iterative calculation mechanics, Capital Budgeting and Valuation (Discounted Cash Flow [DCF], WACC and multi-tier equity waterfall distributions), Advanced Sensitivity Analysis (two-way data tables, Tornado charts and Monte Carlo simulation), Power Query M Language internals (table transformations, custom M functions and query folding optimization), Dimensional Modeling in Excel (Star Schemas, Fact vs Dimension tables, surrogate keys and relationship cardinalities), Introduction to DAX (Data Analysis Expressions, calculated columns vs explicit measures, filter context and row context), Time Intelligence in DAX (TOTALYTD, SAMEPERIODLASTYEAR, rolling moving averages and continuous calendar tables), Exploratory Data Analysis &amp; Descriptive Statistics (skewness, kurtosis, interquartile ranges and Tukey outlier detection), Inferential Statistics &amp; Hypothesis Testing (Z-tests, Student's t-tests, paired samples and one-way ANOVA F-tests), Bivariate Correlation and Ordinary Least Squares (OLS) Linear Regression (R-squared, residual diagnostics and p-values), Time-Series Forecasting &amp; Exponential Smoothing (seasonality decomposition and FORECAST.ETS), VBA COM Object Model Architecture (Application, Workbook, Worksheet and Range DOM manipulation without UI redraw), Robust VBA Error Handling &amp; Event-Driven Automation (On Error GoTo, state restoration patterns and sheet event interception), Modern Cloud Automation with TypeScript Office Scripts (Excel JavaScript API, Power Automate cloud flows and batch array manipulation), Turing-Complete Functional Programming with LAMBDA (recursive formulas, MAP, SCAN, REDUCE, BYROW and Name Manager encapsulation), European Spreadsheet Risks Interest Group (EuSpRIG) standards and model audit methodologies (structural layer separation, formula drift detection and dependency mapping), Native Python in Excel (=PY() Anaconda cloud container runtime, Pandas DataFrames and Seaborn plots), High-Density Executive Dashboards (Edward Tufte sparklines, Stephen Few bullet graphs and interactive form controls), Calculation Chain Internals &amp; Performance Tuning (directed acyclic dependency trees, volatile function elimination, multi-threaded calculation and .xlsb binary storage), Enterprise Spreadsheet Governance and SOX 404 compliance (role-based cell permissions, AllowEditRanges, AES encryption and Information Rights Management), Historic Spreadsheet Catastrophes (JPMorgan $6.2B London Whale VaR division error, Reinhart-Rogoff $200B austerity cell range omission, Fannie Mae $1.3B restatement and UK MI5 telephony truncation), The Principal Financial Systems Architect Modernization RFC ($15M enterprise lakehouse migration proposal), and Capstone 2: ApexEnterpriseAnalytics Full-Scale Financial Engineering &amp; Enterprise Data Modeling Master Capstone Viva Gate.
+    </p>
+  </div>
+
+  <h2>38.2 Month 2: Advanced Financial Modeling, Star Schemas, DAX, Automation &amp; Governance (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    EXCEL_DATA_VIZ_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderExcelDataVizDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>38.3 Excel &amp; Data Analysis Fundamentals Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;7 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexLedger Financial Grid &amp; Precision Calculation Engine Suite</td><td>Production-grade financial ledger engine with exact IEEE 754 precision management, dynamic absolute coordinate pinning, and automated balance checks.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexLookup Multi-Currency Reconciliation &amp; Cleansing Engine Suite</td><td>High-throughput reconciliation pipeline unifying modern XLOOKUP engines, wildcard text sanitization, and multi-currency exchange rate normalization.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexSpill Dynamic Matrix Analytics &amp; Real-Time Portfolio Engine Suite</td><td>Dynamic array matrix calculation engine utilizing FILTER, SORT, and matrix reshaping (CHOOSEROWS/TOCOL) with zero #SPILL! collisions.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 22</td><td>ApexViz Executive Visual Analytics &amp; Interactive BI Engine Suite</td><td>Executive visual analytics platform featuring secondary-axis variance charts, dynamic waterfall breakdowns, and formula-driven conditional formatting.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexOps Institutional-Grade Corporate Financial Analytics Model Master Capstone:</strong> Comprehensive corporate analytics platform unifying dynamic lookups, multi-table consolidations, Solver optimization, and automated audit checks defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 4 (M2)</strong></td><td>Day 35</td><td>ApexValuation Three-Statement Financial Modeling &amp; Monte Carlo DCF Suite</td><td>Fully integrated, self-balancing Three-Statement corporate model with debt revolver schedules, circularity breakers, and Monte Carlo DCF valuation.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 40</td><td>ApexModel Star Schema Data Modeling &amp; High-Performance DAX Suite</td><td>Enterprise dimensional data model in Power Pivot with strict 1-to-many relationships, continuous Date tables, and 20+ optimized DAX time intelligence measures.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 45</td><td>ApexAnalytics Statistical Testing &amp; Time-Series Forecasting Suite</td><td>Econometric analytics engine featuring descriptive skewness/kurtosis profiling, ANOVA hypothesis testing, OLS regression with residual diagnostics, and ETS seasonality forecasts.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 50</td><td>ApexAutomate Enterprise VBA &amp; TypeScript Office Scripts Automation Suite</td><td>Dual-engine enterprise automation platform combining memory-buffered VBA COM batch controllers with cloud-native TypeScript Office Scripts and recursive LAMBDAs.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexEnterpriseAnalytics Full-Scale Financial Engineering &amp; Enterprise Data Modeling Master Capstone:</strong> Complete enterprise financial architecture platform uniting 3-Statement Modeling, Star Schemas, DAX Intelligence, TypeScript Cloud Flows, Python ML Churn Prediction, EuSpRIG Compliance, and Principal Architect Modernization RFC defended under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
