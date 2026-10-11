@@ -26,6 +26,7 @@ import { DIGITAL_ACCOUNTING_MONTH_1_SPECS, DIGITAL_ACCOUNTING_MONTH_2_SPECS } fr
 import { FINANCE_INVESTMENT_MONTH_1_SPECS, FINANCE_INVESTMENT_MONTH_2_SPECS } from './finance-investment-masterclass-spec';
 import { BUSINESS_ANALYTICS_MONTH_1_SPECS, BUSINESS_ANALYTICS_MONTH_2_SPECS } from './business-analytics-masterclass-spec';
 import { MARKETING_BRANDING_MONTH_1_SPECS, MARKETING_BRANDING_MONTH_2_SPECS } from './marketing-branding-masterclass-spec';
+import { DIGITAL_MARKETING_MONTH_1_SPECS, DIGITAL_MARKETING_MONTH_2_SPECS } from './digital-marketing-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2080,6 +2081,71 @@ function renderMarketingBrandingDayCard(day: any): string {
           `).join('')}
         </div>
         <div style="margin-top: 2px; color: #9d174d; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #0f172a;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderDigitalMarketingDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f0fdfa; color: #0f766e; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0d9488;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0f766e; color: #ccfbf1; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #f0fdfa; color: #0f766e;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0f766e; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0d9488; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fef3c7; color: #92400e;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #0f766e;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #0d9488;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #0f766e;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#ccfbf1' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#0d9488' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #0f766e;">✓ [Optimal Strategic Choice]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #0f766e; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
       </div>
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
@@ -4496,6 +4562,85 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Generative AI Brand Guardrails &amp; Neuromarketing Biometrics Suite</td><td>Creative AI and neuromarketing suite enforcing computer vision CIEDE2000 brand color guardrails, DCO Thompson Sampling bandits, ABSA social crisis listening, and EEG/GSR biometric testing.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Equi-Marginal Portfolio Optimization &amp; Enterprise ABM Engine</td><td>Marketing capital allocation platform solving KKT nonlinear budget equilibrium, multi-threaded B2B ABM intent scoring, ASC 606 loyalty breakage liability ledgers, and Retail Media TACOS.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexOmni Sovereign Enterprise Brand Architecture, Global MarTech Ecosystem, Performance Growth Engine &amp; Boardroom Marketing Strategy:</strong> Complete sovereign enterprise marketing operating system uniting Brand Semiotics, Conjoint WTP, Deterministic CDPs, Bayesian MMMs, Synthetic Control Causal AI, Server-Side CAPI, ABSA Crisis Warning, and DCF Boardroom Valuation under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  // =========================================================================
+  // PART XXX: DIGITAL MARKETING & GROWTH STRATEGY (Days 1–60 / 240 Quests)
+  // =========================================================================
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #ccfbf1; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXX: Deep Masterclass Blueprint &bull; Digital Marketing &amp; Growth Strategy (Days 1&ndash;60 / 240 Quests)</h1>
+      <span style="font-size: 8.2pt; color: #99f6e4;">Course ID: <code>course-digital-marketing</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #14b8a6; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Technical SEO, Algorithmic Social, Causal MMM &amp; Sovereign CGO Strategy</span><br>
+      <span style="font-size: 7.5pt; color: #ccfbf1;">Vice President of Growth / Chief Growth Officer (CGO) Standard</span>
+    </div>
+  </div>
+
+  <h2>30.1 Course Architecture &bull; The Dual-Stage 60-Day Digital Growth &amp; Attribution Masterclass</h2>
+  <div style="background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 4pt; padding: 8pt 12pt; margin-bottom: 10pt; font-size: 7.8pt; line-height: 1.45; color: #0f766e;">
+    <strong>Strategic Pedagogical Foundation:</strong> <em>Digital Marketing &amp; Growth Strategy (course-digital-marketing)</em> transforms students into elite Vice Presidents of Growth, Performance Marketing Directors, and Chief Growth Officers (CGOs). Modern growth engineering is not intuition or vanity impressions; it is a rigorous, quantitative cybernetic loop spanning distributed search crawlers, second-price auction theory, client/server telemetry pipelines, Bayesian econometric causal inference, and boardroom capital allocation.<br>
+    &bull; <strong>Month 1 (Days 1&ndash;30 / 120 Quests):</strong> Digital Marketing Taxonomy &amp; Multi-Touch Shapley Values, Advanced SEO Keyword Intent &amp; Opportunity Scoring, Technical SEO Googlebot Indexing &amp; Edge Caching, Core Web Vitals (LCP, INP, CLS) &amp; DOM Hydration, <strong>Milestone 1: ApexOrganic Sovereign Technical SEO Suite</strong>, PageRank Random Surfer Math &amp; Link Graph Hygiene, Semantic Search Schema.org JSON-LD Entities, Content Cluster Pillar-Spoke Equity Flow, Google Helpful Content E-E-A-T Quality Rater Engineering, <strong>Milestone 2: ApexCluster Semantic Entity Engine</strong>, Local Multi-Location Google Business Profile API, International Hreflang &amp; Geo-Targeting, E-Commerce Faceted Navigation, Mobile-First Indexing &amp; PWA Service Workers, <strong>Milestone 3: ApexSEO Enterprise Crawlability Engine</strong>, Google Ads Second-Price Auction &amp; Ad Rank Economics, Match Type Query Sculpting &amp; Negative Mining, Smart Bidding (tCPA, tROAS) &amp; Learning Periods, Google Performance Max (PMax) Asset Optimization, <strong>Milestone 4: ApexSearch Enterprise Google Ads Suite</strong>, Meta Ads Total Value Equation (V = B + P + E) &amp; Advantage+, TikTok Spark Ads &amp; Creative Fatigue Velocity, LinkedIn High-ACV ABM Economics, Programmatic RTB &amp; Bot Ad Fraud, <strong>Milestone 5: ApexSocial Multi-Platform Social &amp; Programmatic Engine</strong>, YouTube TrueView &amp; Brand Lift Studies, Native Content Discovery Arbitrage, Mobile App UA (Apple Search Ads &amp; SKAdNetwork 4.0), Multi-Armed Bandit Dynamic Creative Optimization, and <strong>Capstone 1: ApexAcquisition Full-Funnel Paid Acquisition Engine Master Capstone Viva Gate</strong>.<br>
+    &bull; <strong>Month 2 (Days 31&ndash;60 / 120 Quests):</strong> Scientific CRO Funnel Analytics &amp; MECLABS Heuristics, Landing Page Value Proposition &amp; Cognitive Friction Reduction, A/B &amp; Multivariate Testing Statistics (Frequentist vs Bayesian, MDE &amp; SRM Checks), Personalization Engines &amp; Session Context, <strong>Milestone 6: ApexConvert Scientific CRO &amp; Bayesian Funnel Suite</strong>, Email/SMS Lifecycle Infrastructure (SPF, DKIM, DMARC) &amp; IP Warming, Behavioral Automations &amp; RFM Segment Scoring, Mobile Push Deep Linking &amp; Permission Priming, Product-Led Growth (PLG) Viral Loops (K-Factor &amp; Cycle Time Compression), <strong>Milestone 7: ApexRetain Enterprise Lifecycle &amp; PLG Engine</strong>, Two-Sided Referral Loops &amp; Affiliate Fraud Mitigation, Omnichannel Identity Graphs &amp; Frequency Capping, Survival Curve CLV &amp; Proactive Churn Interventions, Ambassador Advocacy Networks &amp; UGC Loops, <strong>Milestone 8: ApexGrowth Sovereign Lifecycle Suite</strong>, GA4 Event-Driven Data Model &amp; BigQuery Raw Export, Composable CDPs &amp; Deterministic Identity Graphs (Union-Find), Server-Side GTM, Meta CAPI &amp; Privacy Sandbox, Bayesian Marketing Mix Modeling (Robyn/Meridian) with Adstock &amp; Hill Saturation, <strong>Milestone 9: ApexData Enterprise MarTech Data Pipeline</strong>, Matched-Market Geo-Holdout Incrementality &amp; Synthetic Control Counterfactuals, Algorithmic Markov Chain Multi-Touch Attribution (Removal Effects), Nonlinear KKT Marketing Budget Portfolio Optimization, AI-Powered Predictive Lead Scoring &amp; Creative Audits, Forensic Growth Disaster 1 ($25M Brand Search Waste), Forensic Growth Disaster 2 ($12M Bot Ad Fraud Burnout), Forensic Growth Disaster 3 ($40M Broken Tracking Meltdown), Global Privacy Compliance (GDPR, CCPA &amp; Consent Mode v2), Executive CGO Growth Accounting RFC, and <strong>Capstone 2: ApexGrowthOS Sovereign Enterprise Growth Engine, Omnichannel MarTech Ecosystem, Predictive Incrementality &amp; Boardroom Strategy Master Capstone Viva Gate</strong>.
+  </div>
+
+  <h2>30.2 Month 1 Detailed Day-by-Day Masterclass Curriculum (Days 1&ndash;30 / 120 Quests)</h2>
+  `;
+
+  DIGITAL_MARKETING_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderDigitalMarketingDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #ccfbf1; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXX: Digital Marketing &amp; Growth Strategy Month 2 &bull; CRO, MarTech Data Pipelines, Econometric MMM &amp; ApexGrowthOS Master Capstone</h1>
+      <span style="font-size: 8.2pt; color: #99f6e4;">Course ID: <code>course-digital-marketing</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #14b8a6; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Server-Side Tracking, Synthetic Controls &amp; Boardroom CGO Defense</span><br>
+      <span style="font-size: 7.5pt; color: #ccfbf1;">Chief Growth Officer (CGO) / Growth VP Target</span>
+    </div>
+  </div>
+
+  <h2>30.3 Month 2 Detailed Day-by-Day Masterclass Curriculum (Days 31&ndash;60 / 120 Quests)</h2>
+  `;
+
+  DIGITAL_MARKETING_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderDigitalMarketingDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>30.4 Digital Marketing &amp; Growth Strategy Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexOrganic Sovereign Technical SEO Suite</td><td>Enterprise SEO audit engine verifying Googlebot crawlability, edge caching, Core Web Vitals (LCP, INP, CLS), and server-side rendering pipelines.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexCluster Semantic Entity &amp; Topic Authority Engine</td><td>Knowledge graph content architecture platform constructing Schema.org JSON-LD entities, pillar-spoke equity webs, and E-E-A-T quality audit pipelines.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexSEO Enterprise Crawlability Engine</td><td>Multi-regional search engine managing international hreflang tags, Google Business Profile multi-location APIs, and e-commerce faceted navigation indexation.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>ApexSearch Enterprise Google Ads Bidding &amp; PMax Suite</td><td>Google Ads search suite simulating GSP second-price auctions, negative query sculpting, tCPA/tROAS learning algorithms, and Performance Max asset groups.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>ApexSocial Multi-Platform Social &amp; Programmatic Engine</td><td>Paid acquisition platform executing Meta Total Value bidding, TikTok hook/hold velocity optimization, LinkedIn B2B ABM targeting, and RTB anti-fraud filtering.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexAcquisition Full-Funnel Paid Acquisition Engine:</strong> Complete paid growth platform uniting Search, Social, Programmatic RTB, CTV, ASA Mobile UA, and Multi-Armed Bandit creative optimization defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>ApexConvert Scientific CRO &amp; Bayesian Funnel Suite</td><td>Conversion rate optimization engine implementing MECLABS heuristic scoring, Bayesian A/B testing with SRM validation, and on-site behavioral personalization.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>ApexRetain Enterprise Lifecycle &amp; PLG Engine</td><td>Customer retention engine managing email/SMS deliverability (SPF/DKIM/DMARC), RFM segmentation automations, mobile push deep linking, and viral PLG K-factor loops.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexGrowth Sovereign Lifecycle Suite</td><td>Omnichannel retention platform integrating two-sided referral fraud mitigation, cross-device identity graphs, survival curve CLV modeling, and UGC advocacy flywheels.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexData Enterprise MarTech Data Pipeline</td><td>Production telemetry platform uniting GA4 BigQuery raw exports, Disjoint-Set identity graphs, server-side GTM / Meta CAPI dispatch, and Bayesian MMM econometric models.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>ApexCausal Incrementality &amp; Portfolio Optimization Engine</td><td>Causal growth platform executing Synthetic Control geo-holdouts, Markov Chain MTA removal effects, KKT nonlinear budget optimization, and brand search cannibalization audits.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexGrowthOS Sovereign Enterprise Growth Engine, Omnichannel MarTech Ecosystem, Predictive Incrementality &amp; Boardroom Strategy:</strong> Complete sovereign enterprise growth operating system uniting SEO Crawlability, Algorithmic Social, CRO Funnels, Server-Side CAPI, Bayesian MMM, Synthetic Controls, Ad Fraud Verification, Consent Mode v2, and SaaS Growth Accounting under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
