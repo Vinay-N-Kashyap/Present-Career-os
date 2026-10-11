@@ -25,6 +25,7 @@ import { QUANT_SYSTEMS_MONTH_1_SPECS, QUANT_SYSTEMS_MONTH_2_SPECS } from './quan
 import { DIGITAL_ACCOUNTING_MONTH_1_SPECS, DIGITAL_ACCOUNTING_MONTH_2_SPECS } from './digital-accounting-masterclass-spec';
 import { FINANCE_INVESTMENT_MONTH_1_SPECS, FINANCE_INVESTMENT_MONTH_2_SPECS } from './finance-investment-masterclass-spec';
 import { BUSINESS_ANALYTICS_MONTH_1_SPECS, BUSINESS_ANALYTICS_MONTH_2_SPECS } from './business-analytics-masterclass-spec';
+import { MARKETING_BRANDING_MONTH_1_SPECS, MARKETING_BRANDING_MONTH_2_SPECS } from './marketing-branding-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2018,6 +2019,71 @@ function renderDigitalAccountingDayCard(day: any): string {
 
       <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
         <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderMarketingBrandingDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #fff1f2; color: #be123c; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + q.num)}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #f43f5e;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #881337; color: #ffe4e6; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fff1f2; color: #be123c;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #be123c; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #e11d48; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fffbeb; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fef3c7; color: #92400e;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #881337;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #be123c;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9d174d;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #831843;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#fce7f3' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#db2777' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #be123c;">✓ [Optimal Strategic Choice]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #9d174d; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #0f172a;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -4351,6 +4417,85 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Real-Time Streaming Analytics &amp; PySpark Big Data Suite</td><td>High-throughput analytics infrastructure uniting 100M-row PySpark key-salted aggregations, Kafka-Flink event-time streaming, and Feast dual online/offline feature stores.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Observational Causal Inference &amp; Uplift Modeling Platform</td><td>Causal decisioning suite implementing Propensity Score Matching under common support, Uplift Modeling targeting Persuadables and suppressing Sleeping Dogs, and Altman Z distress forecasting.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexIntelligence Sovereign Enterprise Decision Intelligence, Econometric Causal Engine, Supply Chain Optimizer &amp; Boardroom Analytics Platform:</strong> Complete sovereign enterprise platform defending against simultaneous stagflationary shocks, supply bottlenecks, adverse selection in algorithmic pricing, and regulatory audits under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  // =========================================================================
+  // PART XXIX: MARKETING & BRAND MANAGEMENT (Days 1–60 / 240 Quests)
+  // =========================================================================
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #881337 0%, #be123c 50%, #e11d48 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #ffe4e6; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXIX: Deep Masterclass Blueprint &bull; Marketing &amp; Brand Management (Days 1&ndash;60 / 240 Quests)</h1>
+      <span style="font-size: 8.2pt; color: #fecdd3;">Course ID: <code>course-marketing-branding</code> &bull; 60-Day Full Curriculum &bull; <strong>240 Quests total</strong> &bull; 10 Milestone Gates + 2 Capstone Vivas</span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #e11d48; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Consumer Psychology, Econometric MarTech &amp; Sovereign Brand Architecture</span><br>
+      <span style="font-size: 7.5pt; color: #ffe4e6;">Chief Marketing Officer (CMO) / Global Brand Director Target</span>
+    </div>
+  </div>
+
+  <h2>29.1 Course Architecture &bull; The Dual-Stage 60-Day Brand &amp; Growth Masterclass</h2>
+  <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 4pt; padding: 8pt 12pt; margin-bottom: 10pt; font-size: 7.8pt; line-height: 1.45; color: #881337;">
+    <strong>Strategic Pedagogical Foundation:</strong> <em>Marketing &amp; Brand Management (course-marketing-branding)</em> bridges the chasm between human subconscious emotional desire and quantitative econometric capital allocation. Marketing is not vanity advertising or superficial graphic design; it is a closed-loop socio-technical system governed by cognitive psychology, microeconomic pricing, omnichannel distribution, algorithmic auction game theory, and boardroom corporate finance.<br>
+    &bull; <strong>Month 1 (Days 1&ndash;30 / 120 Quests):</strong> Consumer Cognitive Psychology, Dual-Process System 1/2 Thinking, Prospect Theory Loss Aversion, Conjoint Part-Worth Utilities, Keller's CBBE Equity Pyramid, Byron Sharp's Distinctive Brand Assets, Economic Value to Customer (EVC), Van Westendorp Price Sensitivity, Omnichannel Margin Stacks, IMC Message Hierarchies, and <strong>Capstone 1: ApexBrand Strategic Global Brand Architecture &amp; Market Launch Engine</strong>.<br>
+    &bull; <strong>Month 2 (Days 31&ndash;60 / 120 Quests):</strong> Full-Funnel Performance Unit Economics (Paid vs Blended CAC), Google Ads GSP Second-Price Auctions, Meta/TikTok Creative Velocity, Bayesian A/B Testing with SRM Validation, Product-Led Growth (PLG) Viral Loops, Email Deliverability Infrastructure (DKIM/SPF/DMARC) &amp; RFM Segmentation, Technical SEO Crawlability, Creator Economics &amp; FTC Rules, Deterministic CDP Identity Resolution, Bayesian Marketing Mix Modeling (MMM) with Adstock &amp; Hill Saturation, Synthetic Control Geo-Testing, Server-Side CAPI Tracking, Generative AI Brand Guardrails, DCO Thompson Sampling, Social Listening ABSA, Neuromarketing Biometrics, Equi-Marginal Portfolio Allocation, Enterprise ABM, ASC 606 Loyalty Breakage Liabilities, Retail Media Networks (RMNs), Brand Disasters Forensic Post-Mortems (New Coke, Bud Light, Tropicana), and <strong>Capstone 2: ApexOmni Sovereign Enterprise Brand Architecture, Global MarTech Ecosystem, Performance Growth Engine &amp; Boardroom Marketing Strategy Master Capstone Viva Gate</strong>.
+  </div>
+
+  <h2>29.2 Month 1 Detailed Day-by-Day Masterclass Curriculum (Days 1&ndash;30 / 120 Quests)</h2>
+  `;
+
+  MARKETING_BRANDING_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderMarketingBrandingDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <div class="part-header" style="background: linear-gradient(135deg, #881337 0%, #be123c 50%, #e11d48 100%); color: #ffffff; padding: 14pt 18pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h1 style="color: #ffe4e6; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXIX: Marketing &amp; Brand Management Month 2 &bull; Growth Engineering, MarTech, AI Governance &amp; ApexOmni Master Capstone</h1>
+      <span style="font-size: 8.2pt; color: #fecdd3;">Course ID: <code>course-marketing-branding</code> &bull; Days 31&ndash;60 &bull; <strong>120 Advanced Quests</strong></span>
+    </div>
+    <div style="text-align: right;">
+      <span style="background: #e11d48; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">MarTech Systems, Econometric Attribution &amp; Boardroom CMO Defense</span><br>
+      <span style="font-size: 7.5pt; color: #ffe4e6;">Chief Marketing Officer (CMO) / Global Brand Director Target</span>
+    </div>
+  </div>
+
+  <h2>29.3 Month 2 Detailed Day-by-Day Masterclass Curriculum (Days 31&ndash;60 / 120 Quests)</h2>
+  `;
+
+  MARKETING_BRANDING_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderMarketingBrandingDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>29.4 Marketing &amp; Brand Management Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;10 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexConsumer Behavioral Decision Matrix</td><td>Consumer cognitive modeling engine applying Dual-Process System 1/2 heuristics, Prospect Theory loss aversion value functions, and mental accounting decoys.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Quantitative Conjoint Analysis &amp; Part-Worth Utility Engine</td><td>Choice-based conjoint simulation platform estimating part-worth utilities, calculating empirical willingness-to-pay, and mapping perceptual brand positions via non-metric MDS.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexBrand Strategic Brand Positioning &amp; CBBE Equity Suite</td><td>Brand strategy suite formalizing Keller's CBBE Pyramid, Byron Sharp's Distinctive Brand Asset physical/mental availability laws, brand architecture topologies, and Moore's chasm crossing.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Economic Value to Customer (EVC) &amp; Strategic Pricing Engine</td><td>Value-based pricing engine calculating Nagle's EVC, Van Westendorp Price Sensitivity Meter boundaries, Gabor-Granger demand curves, and multi-tier SaaS price discrimination.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Omnichannel Distribution &amp; Retail Trade Promotion Suite</td><td>Distribution economics suite modeling D2C vs wholesale margin stacks, slotting allowance profitability, retailer trade promotions, and IMC media mix GRP allocation.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexBrand Strategic Global Brand Architecture &amp; Market Launch Engine:</strong> Unified enterprise brand launch platform integrating Choice-Based Conjoint WTP, Van Westendorp pricing, distribution margin stacks, IMC media mix GRPs, and ISO 10668 brand valuation defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Full-Funnel Performance Marketing &amp; Marginal CAC Engine</td><td>Growth engineering suite tracking TOFU/MOFU/BOFU conversion drop-off, calculating marginal vs blended CAC, simulating GSP search auctions, and managing social creative velocity.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Bayesian Experimentation &amp; Technical Growth Suite</td><td>Scientific experimentation suite running Bayesian A/B testing with Chi-Square SRM checks, viral PLG K-factor dynamics, email deliverability (DKIM/SPF/DMARC) with RFM triggers, and technical SEO Core Web Vitals.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexGrowth Multi-Channel Performance Marketing &amp; MarTech Suite</td><td>Enterprise growth intelligence platform uniting deterministic CDP identity graphs, Bayesian MMM Adstock/Hill curves, Synthetic Control geo-tests, and server-side CAPI event deduplication.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Generative AI Brand Guardrails &amp; Neuromarketing Biometrics Suite</td><td>Creative AI and neuromarketing suite enforcing computer vision CIEDE2000 brand color guardrails, DCO Thompson Sampling bandits, ABSA social crisis listening, and EEG/GSR biometric testing.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Equi-Marginal Portfolio Optimization &amp; Enterprise ABM Engine</td><td>Marketing capital allocation platform solving KKT nonlinear budget equilibrium, multi-threaded B2B ABM intent scoring, ASC 606 loyalty breakage liability ledgers, and Retail Media TACOS.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexOmni Sovereign Enterprise Brand Architecture, Global MarTech Ecosystem, Performance Growth Engine &amp; Boardroom Marketing Strategy:</strong> Complete sovereign enterprise marketing operating system uniting Brand Semiotics, Conjoint WTP, Deterministic CDPs, Bayesian MMMs, Synthetic Control Causal AI, Server-Side CAPI, ABSA Crisis Warning, and DCF Boardroom Valuation under live adversarial viva voce examination.</td></tr>
     </tbody>
   </table>
   `;
