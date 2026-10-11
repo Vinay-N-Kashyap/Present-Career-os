@@ -28,6 +28,7 @@ import { BUSINESS_ANALYTICS_MONTH_1_SPECS, BUSINESS_ANALYTICS_MONTH_2_SPECS } fr
 import { MARKETING_BRANDING_MONTH_1_SPECS, MARKETING_BRANDING_MONTH_2_SPECS } from './marketing-branding-masterclass-spec';
 import { DIGITAL_MARKETING_MONTH_1_SPECS, DIGITAL_MARKETING_MONTH_2_SPECS } from './digital-marketing-masterclass-spec';
 import { ECOMMERCE_DIGITAL_BIZ_MONTH_1_SPECS, ECOMMERCE_DIGITAL_BIZ_MONTH_2_SPECS } from './ecommerce-digital-biz-masterclass-spec';
+import { SUPPLY_CHAIN_OPS_MONTH_1_SPECS, SUPPLY_CHAIN_OPS_MONTH_2_SPECS } from './supply-chain-ops-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -2151,6 +2152,71 @@ function renderEcommerceDigitalBizDayCard(day: any): string {
 
       <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
         <strong style="color: #0f172a;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderSupplyChainOpsDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any, i: number) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ecfdf5; color: #047857; padding: 1px 3px; border-radius: 2px;">${q.id || ('Q' + day.day + '.' + (i + 1))}</span>
+      <strong>${q.name || q.title}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc || q.description}</span>
+    </div>
+  `).join('');
+
+  const ansIdx = day.situationalPuzzle.correctOptionIndex !== undefined ? day.situationalPuzzle.correctOptionIndex : (day.situationalPuzzle.answerIdx ?? 0);
+  const debrief = day.situationalPuzzle.explanation || day.situationalPuzzle.debrief || '';
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #059669;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #065f46; color: #d1fae5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #064e3b;">${day.title}</strong>
+          <span class="stage-pill" style="background: #ecfdf5; color: #047857;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f0fdf4; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #a7f3d0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #047857; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #059669; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #047857;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #065f46;">
+          ${day.socraticHints.map((hint: string) => `<li>${hint}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #047857;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">${day.situationalPuzzle.scenario || day.situationalPuzzle.prompt}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          ${day.situationalPuzzle.options.map((opt: string, i: number) => `
+            <div style="background: ${i === ansIdx ? '#d1fae5' : '#ffffff'}; border: 1px solid ${i === ansIdx ? '#059669' : '#e2e8f0'}; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>${String.fromCharCode(65 + i)}:</strong> ${opt} ${i === ansIdx ? '<strong style="color: #047857;">✓ [Optimal Operational Decision]</strong>' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 2px; color: #047857; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ${debrief}</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #064e3b;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
         <div style="margin-top: 2pt;">
           ${questsHtml}
         </div>
@@ -4787,6 +4853,81 @@ function buildDeepMasterclassesHtml(): string {
   </table>
   `;
 
+  h += `
+  <!-- ========================================================================= -->
+  <!-- PART XXXII: SUPPLY CHAIN & OPERATIONS MANAGEMENT MASTERCLASS BLUEPRINT (60 DAYS) -->
+  <!-- ========================================================================= -->
+  <div class="page-break"></div>
+  <div style="background: #064e3b; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #10b981;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #d1fae5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXII: Deep Masterclass Blueprint &mdash; Supply Chain &amp; Operations Management (60 Days &bull; 240 Quests)</h1>
+      <span style="font-size: 9pt; color: #6ee7b7; font-weight: 700;"><code>course-supply-chain-ops</code> &bull; Gate v2 True 9.8 Standard</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #a7f3d0;">
+      <strong>Directorate:</strong> Senior Enterprise Supply Chain Architect &amp; CSCO &bull; <strong>Pedagogical Cadence:</strong> Month 1 (Days 01&ndash;30 / 120 Quests) + Month 2 (Days 31&ndash;60 / 120 Quests) &bull; <strong>Volume:</strong> 240 Quests Total &bull; <strong>Sovereign Capstones:</strong> ApexChain (M1) &amp; ApexSupplyChainOS (M2)
+    </p>
+  </div>
+
+  <h2>32.1 Month 1: Quantitative SCM Foundations, Production Planning, Warehouse Operations &amp; Fleet Routing (Days 01&ndash;30 / 120 Quests)</h2>
+  <p style="font-size: 8.2pt; color: #475569; margin-bottom: 8pt;">
+    Month 1 establishes sovereign fluency across quantitative SCM taxonomy, EOQ and quantity discount physics, stochastic safety stock, continuous (s, Q) and periodic (R, S) control, Holt-Winters demand forecasting, aggregate S&amp;OP linear programming, MRP I BOM explosion, MRP II Drum-Buffer-Rope scheduling, warehouse racking topology, algorithmic slotting (COI index), TSP order picking, dynamic dock cross-docking, freight mode economics (weight-break bumping), Clarke-Wright VRPTW routing, cold-chain IoT Arrhenius MKT kinetics, Kraljic matrix strategic sourcing, reverse logistics 5R triage, Lean VSM/SMED, Kanban pull production, and statistical process control (SPC).
+  </p>
+
+  ${(() => {
+    let out = '';
+    SUPPLY_CHAIN_OPS_MONTH_1_SPECS.forEach((day: any) => {
+      out += renderSupplyChainOpsDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <div style="background: #064e3b; color: #ffffff; padding: 10pt 14pt; border-radius: 4pt; margin-bottom: 12pt; border-left: 6px solid #10b981;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h1 style="color: #d1fae5; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XXXII: Supply Chain &amp; Operations Management &mdash; Month 2: Advanced Network Design, Stochastic Multi-Echelon Models, Autonomous Robotics &amp; Digital Twins (Days 31&ndash;60 / 120 Quests)</h1>
+      <span style="font-size: 9pt; color: #6ee7b7; font-weight: 700;">Stage 4 &bull; Global Scale &amp; CSCO Defense</span>
+    </div>
+    <p style="margin: 4pt 0 0 0; font-size: 8.5pt; color: #a7f3d0;">
+      <strong>Month 2 Scope:</strong> Center of Gravity Ton-Mile Centroids, Capacitated Facility Location MILP, Hub-and-Spoke Topology, Maister Square Root Law, Bullwhip Effect Physics, Multi-Echelon MEIO &amp; Clark-Scarf Decomposition, VMI EDI 852/855, CPFR Joint Exceptions, WES/WCS 3-Tier Automation, AGVs vs AMRs (LiDAR SLAM), AutoStore Cube Grid Thermodynamics, Conflict-Based Search (CBS) Fleet Dispatch, Discrete-Event Simulation (DES / SimPy), Jackson Queueing Networks (Little's Law), Digital Twins &amp; Kafka Telemetry, Monte Carlo SC-VaR, Cisco 2001 $2.25B Write-Down, KFC UK 2018 Meltdown, Boeing 787 Tiered Outsourcing Disaster, German LkSG &amp; EU CSDDD ESG Provenance, Scope 1/2/3 GLEC Carbon Accounting, Omni-Channel Greenfield vs Brownfield RFC, Incoterms 2020 &amp; Customs Brokerage, SAP S/4HANA / Manhattan Active Integration, RL Self-Healing Operations, and Capstone 2 ApexSupplyChainOS Master Defense.
+    </p>
+  </div>
+
+  <h2>32.2 Month 2: Advanced Network Design, Stochastic Multi-Echelon Models, Autonomous Robotics &amp; Digital Twins (Days 31&ndash;60 / 120 Quests)</h2>
+
+  ${(() => {
+    let out = '';
+    SUPPLY_CHAIN_OPS_MONTH_2_SPECS.forEach((day: any) => {
+      out += renderSupplyChainOpsDayCard(day);
+    });
+    return out;
+  })()}
+
+  <div class="page-break"></div>
+  <h2>32.3 Supply Chain &amp; Operations Management Milestone &amp; Capstone Viva Gates (Milestones 1&ndash;9 + 2 Capstone Vivas)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>ApexInventory Replenishment &amp; Safety Stock Engine</td><td>Stochastic replenishment suite enforcing convex total cost curves, normal and log-normal lead-time variance, continuous (s, Q) and periodic (R, S) control with service-level z-factors.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>ApexPlanning S&amp;OP, Aggregate LP &amp; MRP II Suite</td><td>Enterprise planning platform executing Holt-Winters triple exponential smoothing, linear programming production leveling, MRP I BOM explosion, and Goldratt Drum-Buffer-Rope scheduling.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>ApexWMS Enterprise Warehouse Slotting &amp; TSP Routing Suite</td><td>High-velocity warehouse management suite optimizing cube-per-order index (COI) slotting, S-shape and optimal branch-and-bound picking paths, and dynamic cross-docking staging buffers.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>ApexTMS Fleet Routing (VRPTW) &amp; Freight Mode Suite</td><td>Transportation management platform solving capacitated vehicle routing with time windows (VRPTW), freight weight-break bumping, and IoT cold-chain Arrhenius kinetics tracking.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>ApexSourcing Strategic Kraljic Procurement &amp; Reverse Auction Suite</td><td>Enterprise procurement platform executing Kraljic matrix strategic categorization, Altman Z-score financial distress scoring, multi-attribute sealed-bid reverse auctions, and 5R circular reverse logistics.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexChain Core SCM Operations Master Capstone:</strong> Complete sovereign core supply chain operating platform uniting inventory replenishment, S&amp;OP production planning, WMS slotting, TMS fleet routing, strategic sourcing, and Lean Six Sigma execution defended before Senior Review Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>ApexNetwork Global Network Design &amp; Facility Location MILP Suite</td><td>Strategic network optimization suite solving Ton-Mile Center of Gravity (COG) continuous locations, Branch-and-Bound capacitated facility location MILPs, and Maister's Square Root multi-echelon safety stock pooling.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>ApexInventory Multi-Echelon Stochastic Optimization (MEIO) Suite</td><td>Multi-echelon inventory optimization platform implementing Clark-Scarf recursive decomposition, base-stock allocation, EDI 852/855 VMI synchronization, and CPFR exception-resolution workflows.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>ApexRobotics Automated Warehouse &amp; AGV/AMR Fleet Dispatch Suite</td><td>Advanced automated warehouse control system integrating 3-tier WES/WCS middleware, LiDAR SLAM mobile robots, AutoStore cube grid 3D thermodynamics, and Conflict-Based Search (CBS) multi-agent deadlock avoidance.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>ApexTwin Enterprise Discrete-Event Simulation &amp; Digital Twin Suite</td><td>Production-grade discrete-event simulation and live digital twin engine: SimPy event calendars, Jackson network queue calculations, Kafka telemetry streaming, and 10,000-run Monte Carlo SC-VaR risk projections.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexSupplyChainOS Full-Scale Enterprise Supply Chain &amp; Operations Management Engine:</strong> Complete sovereign global enterprise supply chain operating system uniting COG/MILP Network Design, MEIO Stochastic Inventory, Autonomous Robotics Fleet Dispatch, ApexTwin Discrete-Event Simulation, LkSG/CSDDD ESG Provenance, Scope 1/2/3 GLEC Carbon Accounting, Incoterms 2020 Compliance, SAP/Manhattan Integration Middleware, and Autonomous RL Self-Healing Operations defended under live adversarial viva voce examination.</td></tr>
+    </tbody>
+  </table>
+  `;
 
   return h;
 }
