@@ -15,6 +15,7 @@ import { DISTRIBUTED_MONTH_1_SPECS, DISTRIBUTED_MONTH_2_SPECS } from './distribu
 import { AI_MONTH_1_SPECS, AI_MONTH_2_SPECS } from './ai-masterclass-spec';
 import { FULLSTACK_MONTH_1_SPECS, FULLSTACK_MONTH_2_SPECS } from './fullstack-masterclass-spec';
 import { IOT_MONTH_1_SPECS, IOT_MONTH_2_SPECS } from './iot-masterclass-spec';
+import { GRAPHICS_MONTH_1_SPECS, GRAPHICS_MONTH_2_SPECS } from './graphics-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1482,6 +1483,62 @@ function renderIoTDayCard(day: any): string {
   `;
 }
 
+function renderGraphicsDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0891b2;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0891b2; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #cffafe; color: #155e75;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0891b2; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0e7490; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #0e7490;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0891b2;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #6d28d9;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #5b21b6;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderFullStackDayCard(day: any): string {
   const questsHtml = day.quests.map((q: any) => `
     <div style="margin-bottom: 2px;">
@@ -2846,6 +2903,89 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Zero-Brick Dual-Bank FOTA Firmware Update Engine</td><td>Remote firmware lifecycle engine with chunked streaming, dual-bank hardware swap, trial boot states, and automated rollback.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Real-Time 6-DOF Sensor Fusion &amp; DSP Anomaly Engine</td><td>Edge DSP pipeline integrating 1kHz IMU sampling, Madgwick quaternion attitude tracking, and CMSIS-DSP 1024-point FFTs.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexFirmware Globally Distributed Sovereign Industrial IoT &amp; Embedded RTOS Platform:</strong> Complete embedded IoT ecosystem uniting real-time control, FreeRTOS, wireless mesh, secure boot, FOTA, and live chaos defense before Faculty Review Board.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- PART XIX: DEEP MASTERCLASS BLUEPRINT - 3D INTERACTIVE GRAPHICS & AVATAR ANIMATION (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XIX: Deep Masterclass Blueprint — 3D Interactive Graphics &amp; Avatar Animation</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-3d-graphics</code> &bull; 60-Day Full Curriculum (Days 1–60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0891b2; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Core 3D Engine Systems</span><br>
+        <span style="font-size: 7.5pt; color: #7dd3fc;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>19.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      3D interactive graphics and virtual human animation constitute the apex of visual computing, bridging linear algebra, GPU hardware architectures, optical physics, and human anatomical simulation. In PinIT Career OS, <strong>Course 15: 3D Interactive Graphics &amp; Avatar Animation</strong> transforms students into Principal 3D Graphics and Digital Human Architects across 60 intensive days:
+    </p>
+    <div class="quote-box" style="border-left-color: #0891b2;">
+      &bull; <strong>Month 1 (Days 1–30 &bull; 120 Quests): WebGL 2.0 Foundations, GLSL Shaders, PBR Materials, Three.js Scene Graphs &amp; ApexRender Capstone:</strong><br>
+      Rendering Pipeline Foundations: CPU-GPU Bus, Vertex/Fragment Shaders &amp; Rasterization Physics, WebGL 2.0 Context Lifecycle: Canvas Setup, Feature Detection &amp; Context Loss/Recovery, Linear Algebra for 3D Graphics: Vectors, Dot/Cross Products &amp; Homogeneous Coordinates, 4x4 Transformation Matrices: Model, View, Projection (MVP) &amp; Camera Frustums, <strong>Milestone 1: Pure WebGL Interactive Triangle &amp; Matrix Transformation Engine</strong>, Custom GLSL Shaders: Precision Qualifiers, Varyings &amp; Procedural Color Ramps, Interleaved Vertex Buffers (VBOs) &amp; Vertex Array Objects (VAOs) with gl.drawArrays/Elements, Procedural 3D Geometry: UV Spheres, Torus Knots &amp; Signed Distance Functions (SDF) Raymarching, Camera Optics: Perspective vs Orthographic, Aspect Ratios &amp; OrbitControls, Depth Buffering Physics: Early-Z, Depth Testing/Writing, Z-Fighting &amp; Reverse-Z Buffers, <strong>Milestone 2: Custom GLSL Procedural Shader &amp; Multi-Attribute Geometry Engine</strong>, Texture Mapping Fundamentals: UV Unwrapping, Texture Coordinates &amp; Texture Units, Texture Filtering &amp; Sampling: Bilinear, Trilinear, Mipmaps &amp; 16x Anisotropic Filtering, Tangent Space Normal Mapping: TBN Orthogonalization, Bump Maps &amp; Micro-Surface Detail, Cubemaps &amp; Skyboxes: 6-Sided Environments, Seamless Seams &amp; Skybox Depth Clamping, <strong>Milestone 3: High-Fidelity PBR Texture Mapping &amp; Cubemap Reflection Engine</strong>, Three.js Core Architecture: Scene Graph Hierarchy, Object3D Transforms &amp; Matrix Caching, BufferGeometry &amp; Materials: Typed Arrays, Attribute Interleaving &amp; Three.js Mesh Internals, 3D Lighting Systems: Directional, Point, Spot, Ambient &amp; Hemispherical PBR Lights, Real-Time Shadow Mapping: Directional PCF Soft Shadows, Shadow Bias &amp; Peter Panning Elimination, Delta-Timed Kinematics &amp; Camera Rigs: RequestAnimationFrame &amp; Damped Camera Smoothing, <strong>Milestone 4: Three.js Interactive Scene Graph &amp; Dynamic Shadow Engine</strong>, Physically Based Rendering (PBR) Theory: Energy Conservation &amp; Microfacet BRDF Models, Cook-Torrance Specular BRDF: GGX Normal Distribution, Smith Geometric Shadowing &amp; Schlick Fresnel, Image-Based Lighting (IBL) &amp; HDRI Environments: Split-Sum Approximation &amp; Pre-Filtered PMREM Maps, Post-Processing Pipeline: Multi-Pass Framebuffers (FBOs), EffectComposer &amp; Fullscreen Quads, Cinematic Post-Effects: HDR Tone Mapping (ACES Filmic), Unreal Bloom &amp; sRGB Color Management, <strong>Milestone 5: Production Physically Based Rendering (PBR) &amp; Post-Processing Engine</strong>, 3D Graphics Performance Profiling: Draw Calls, Triangle Budgets &amp; Spector.js GPU Inspection, VRAM Memory Management: Texture Disposal, Geometry Cleanup &amp; Memory Leak Elimination, Massive Scale Instanced Rendering: InstancedMesh, Matrix Packing &amp; Frustum Culling, Modern 3D Formats &amp; Loading: glTF 2.0 / GLB Spec, Draco Compression &amp; KTX2 Texture Streaming, WebGPU Next-Gen Graphics Architecture: WGSL Shaders, Command Encoders &amp; WebGPU vs WebGL, and the <strong>ApexRender Real-Time WebGL/WebGPU 3D Interactive Graphics Engine Capstone Viva Gate</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31–60 &bull; 120 Quests): Skeletal Rigging, FACS 52 Blendshapes, Lip-Sync, VRM Avatars, Physics, Multi-User Worlds &amp; ApexAvatar Master Capstone:</strong><br>
+      Skeletal Rigging Anatomy: Bone Hierarchies, Bind Pose vs Rest Pose &amp; Inverse Bind Matrices (IBM), Linear Blend Skinning (LBS): Bone Indices, Weight Normalization &amp; GPU Matrix Palettes, Skinning Artifacts &amp; Dual Quaternion Skinning (DQS): Candy-Wrapper Volume Loss Mitigation, Skeletal Animation Tracks: Keyframe Interpolation, Slerp &amp; Three.js AnimationMixer Blending, <strong>Milestone 6: Dual Quaternion Skeletal Animation &amp; Joint Skinning Engine</strong>, Morph Targets Architecture: Vertex Position Deltas, Normal Deltas &amp; GPU Attribute Buffers, ARKit / FACS 52 Facial Blendshapes: Action Units, Micro-Expressions &amp; Normalization, Real-Time Audio-to-Lip-Sync (Visemes): Phoneme Classification, MFCC &amp; Speech Curves, Camera-Based Facial Tracking Integration: MediaPipe 468 Landmarks &amp; Kalman Filter Smoothing, <strong>Milestone 7: Real-Time 52-Blendshape Facial Rig &amp; Audio-Driven Lip-Sync Engine</strong>, The VRM 3D Avatar Standard: glTF Extension, Humanoid Bone Mapping &amp; First-Person Filtering, VRM Spring Bone Physics: Secondary Animation, Verlet Integration &amp; Collision Spheres, Procedural Gaze, Saccadic Eye Movements &amp; Autonomous Micro-Behaviors, Avatar Optimization &amp; LOD Simplification: Bone Pruning, Atlas Merging &amp; Mobile VRAM Budgets, <strong>Milestone 8: Production VRM Avatar Runtime &amp; Spring Bone Dynamics Engine</strong>, Rigid Body Physics on the Web: Rapier WASM, Collision Shapes &amp; Simulation Stepping, Kinematic Character Controller: Ground Detection, Slope Sliding, Stair Stepping &amp; Jump Physics, Inverse Kinematics (IK): Two-Bone Analytical IK, FABRIK &amp; Foot Placement on Uneven Terrain, Ragdoll Physics &amp; Animation Blending: Dynamic Ragdoll Transitions, Joint Limits &amp; Getting Up, <strong>Milestone 9: Kinematic Character Controller with Two-Bone IK &amp; Ragdoll Engine</strong>, Screen-Space Ambient Occlusion (SSAO): Depth/Normal Buffers &amp; Bilateral Blur Filtering, Screen-Space Reflections (SSR) &amp; Refractions: Raymarching in Screen Space &amp; Falloffs, GPU Particle Systems: Instanced Particles, WebGPU Compute Shaders &amp; Curl Noise Simulation, 3 AM 3D Graphics War Room: WebGL Context Loss, Shader Compilation Jitter &amp; Memory Leaks, <strong>Milestone 10: Screen-Space Post-Processing &amp; Autonomous Context Loss Watchdog Engine</strong>, Multi-User Collaborative 3D Virtual Worlds: Spatial Audio, Client Prediction &amp; Entity Interpolation, Real-World Architecture Deep Dive: PinIT Career OS 3D AI Interviewer Avatar Engine, Real-World Architecture Deep Dive: High-Scale 3D Product Configurator &amp; WebXR / AR Quick Look, Principal 3D Graphics Architect RFC: Custom WebGL/WebGPU vs Three.js vs Babylon.js vs PlayCanvas vs Unity WebGL, and the <strong>ApexAvatar Globally Distributed Interactive 3D Metaverse &amp; Photorealistic Autonomous AI Avatar Platform Master Capstone Viva Gate</strong>.
+    </div>
+
+    <h2>19.2 3D Interactive Graphics &amp; Avatar Animation Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  GRAPHICS_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderGraphicsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XIX: 3D Graphics Month 2 — Skeletal Rigging, FACS 52 Blendshapes, VRM Avatars, Physics &amp; ApexAvatar Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-3d-graphics</code> &bull; Days 31–60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0891b2; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Digital Human &amp; Metaverse Systems</span><br>
+        <span style="font-size: 7.5pt; color: #7dd3fc;">Staff 3D Graphics Architect Target</span>
+      </div>
+    </div>
+
+    <h2>19.3 3D Interactive Graphics &amp; Avatar Animation Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  GRAPHICS_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderGraphicsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>19.4 3D Interactive Graphics &amp; Avatar Animation Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Pure WebGL Interactive Triangle &amp; Matrix Engine</td><td>Raw WebGL 2.0 rendering engine with custom shader compilation, 4x4 MVP matrix transformations, and interactive rotation.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Custom GLSL Procedural Shader &amp; Geometry Engine</td><td>Interleaved VBO/VAO architecture with custom procedural noise fragment shaders and Raymarched SDF rendering.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>High-Fidelity PBR Texture Mapping &amp; Cubemap Engine</td><td>Multi-texture pipeline with 16x anisotropic filtering, tangent-space normal mapping (TBN), and skybox cubemaps.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Three.js Interactive Scene Graph &amp; Shadow Engine</td><td>Hierarchical scene graph with manual matrix caching, PCF soft directional shadows, and Peter Panning elimination.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Production PBR &amp; Post-Processing Engine</td><td>Cook-Torrance microfacet BRDF shader with HDR split-sum IBL, ACES filmic tone mapping, and Unreal Bloom.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>ApexRender Real-Time WebGL/WebGPU 3D Engine:</strong> Complete graphics platform uniting WebGL/WebGPU, Cook-Torrance PBR, HDR IBL, InstancedMesh (20k entities), and oral defense before Senior 3D Graphics Board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Dual Quaternion Skeletal Animation Engine</td><td>glTF 2.0 skinning engine with AnimationMixer cross-fading, upper-body masking, and Dual Quaternion Skinning (DQS) eliminating candy-wrapper volume loss.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Real-Time 52-Blendshape Facial Rig &amp; Lip-Sync Engine</td><td>GPU morph target texture arrays, ARKit 52 blendshapes, audio-driven coarticulated visemes, and MediaPipe webcam tracking.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Production VRM Avatar Runtime &amp; Spring Bone Engine</td><td>VRM 1.0 avatar runtime with standardized humanoid retargeting, Verlet secondary physics for hair/clothing, and procedural gaze saccades.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Kinematic Character Controller with IK &amp; Ragdoll Engine</td><td>Rapier3D WASM kinematic character controller with slope sliding, Two-Bone Analytical Foot IK, and momentum-inheriting ragdoll physics.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Screen-Space Post-Processing &amp; SRE Watchdog Engine</td><td>Multi-pass G-buffer post-processing with SSAO, SSR, 100k GPU curl noise particles, and sub-500ms WebGL context loss recovery.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexAvatar Globally Distributed Interactive 3D Metaverse &amp; Photorealistic AI Avatar Platform:</strong> Complete virtual human and metaverse ecosystem uniting WebGL/WebGPU, VRM 1.0, FACS visemes, KCC, WebRTC spatial audio, and live chaos defense before Faculty Review Board.</td></tr>
     </tbody>
   </table>
   `;
