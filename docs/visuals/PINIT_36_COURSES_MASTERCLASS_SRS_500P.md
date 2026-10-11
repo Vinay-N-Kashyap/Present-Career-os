@@ -360,6 +360,6 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 37: [course-nlp] Natural Language Processing & Computational Linguistics
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
-* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
+* **GitHub Capstone Project:** ApexTransformer: Sovereign Foundation Transformer Architecture, Alignment, RAG & LLMOps Engine  
 * **Overview:** Master the computational models of language: Unicode preprocessing, TF-IDF vector spaces, Word2Vec/FastText embeddings, HMM POS taggers, LSTM gated memory cells, Scaled Dot-Product Self-Attention, Multi-Head Transformers, BPE tokenization, BERT/GPT architectures, SQuAD QA, Two-Stage FAISS dense retrieval, Nucleus Top-p sampling, and LoRA PEFT parameter adaptation.  
 
