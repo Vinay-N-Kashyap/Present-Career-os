@@ -1,14 +1,15 @@
 'use client';
-import UniversityPlacementRoster from '@/components/university/UniversityPlacementRoster';
+
 // apps/web/src/app/university/page.tsx
 // Institution Dashboard — TPO / placement officer view.
 // Backend endpoints: /api/university/dashboard, /api/university/employability-report,
 //                   /api/university/skill-gaps
 
 import { useState, useEffect } from 'react';
-import { useAuth }   from '@/lib/context/AuthContext';
+import { useAuth } from '@/lib/context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { api }       from '@/lib/api/client';
+import { api } from '@/lib/api/client';
+import UniversityPlacementRoster from '@/components/university/UniversityPlacementRoster';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface PlacementStats {
@@ -213,8 +214,8 @@ export default function UniversityPage() {
             <label style={{ fontSize: 12, fontWeight: 700, color: 'var(--t2)', display: 'block', marginBottom: 4 }}>Department</label>
             <select className="form-input" style={{ width: '100%', fontSize: 13 }} value={selectedDept} onChange={e => setSelectedDept(e.target.value)}>
               <option value="all">All Departments</option>
-              <option value="Computer Science & Eng (CSE)">Computer Science & Eng (CSE)</option>
-              <option value="Electronics & Comm (ECE)">Electronics & Comm (ECE)</option>
+              <option value="Computer Science &amp; Eng (CSE)">Computer Science &amp; Eng (CSE)</option>
+              <option value="Electronics &amp; Comm (ECE)">Electronics &amp; Comm (ECE)</option>
               <option value="Mechanical Eng (ME)">Mechanical Eng (ME)</option>
             </select>
           </div>

@@ -487,7 +487,7 @@ function ArenaContent() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <span style={{ fontSize: 35 }}>⚔️</span>
             <h1 style={{ fontSize: 28.5, fontWeight: 800, color: 'var(--t1)', margin: 0, letterSpacing: '-0.5px' }}>
-              Challenging Arena & Combat Center
+              Challenging Arena &amp; Combat Center
             </h1>
           </div>
           <p style={{ margin: 0, color: 'var(--t2)', fontSize: 15.5, maxWidth: 680, lineHeight: 1.5 }}>
@@ -840,7 +840,7 @@ function ArenaContent() {
                           <option value="basic">Basic (Entry Level Algorithms)</option>
                           <option value="intermediate">Intermediate (Trees, HashMaps, Two Pointers)</option>
                           <option value="advanced">Advanced (DP, Graph Traversal, Deadlocks)</option>
-                          <option value="production">Production (High Concurrency & B-Trees)</option>
+                          <option value="production">Production (High Concurrency &amp; B-Trees)</option>
                         </select>
                       </div>
                     )}

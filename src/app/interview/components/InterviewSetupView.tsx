@@ -150,28 +150,26 @@ export const InterviewSetupView: React.FC<InterviewSetupViewProps> = ({
             </div>
 
             <div>
-              <label style={{ fontSize: 12, fontWeight: 800, color: 'var(--t2)', display: 'block', marginBottom: 6 }}>SUB-TOPIC & SPECIALIZATION</label>
+              <label style={{ fontSize: 12, fontWeight: 800, color: 'var(--t2)', display: 'block', marginBottom: 6 }}>SUB-TOPIC &amp; SPECIALIZATION</label>
               <select
                 value={domainSubTopic}
                 onChange={(e) => setDomainSubTopic(e.target.value)}
                 className="iv-select"
                 style={{ width: '100%', padding: '10px 12px', fontSize: 14, fontWeight: 700 }}
               >
-                {domainStream === 'tech' ? (
-                  <>
-                    <option value="software">Software Engineering (SDE)</option>
-                    <option value="data">Data Science & Analytics</option>
-                    <option value="systems">Cloud & Systems</option>
-                  </>
-                ) : (
-                  <>
-                    <option value="finance">Finance & Accounting (B.Com)</option>
-                    <option value="marketing">Digital Marketing & Growth</option>
-                    <option value="bba">Business Strategy & Product</option>
-                    <option value="hr">HR & Talent Management</option>
-                    <option value="operations">Supply Chain & Operations</option>
-                  </>
-                )}
+                {(domainStream === 'tech' ? [
+                  { value: 'software', label: 'Software Engineering (SDE)' },
+                  { value: 'data', label: 'Data Science & Analytics' },
+                  { value: 'systems', label: 'Cloud & Systems' }
+                ] : [
+                  { value: 'finance', label: 'Finance & Accounting (B.Com)' },
+                  { value: 'marketing', label: 'Digital Marketing & Growth' },
+                  { value: 'bba', label: 'Business Strategy & Product' },
+                  { value: 'hr', label: 'HR & Talent Management' },
+                  { value: 'operations', label: 'Supply Chain & Operations' }
+                ]).map((opt) => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
               </select>
             </div>
           </div>

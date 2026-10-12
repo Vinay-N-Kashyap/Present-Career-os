@@ -89,7 +89,7 @@ export const ReportStudentModal: React.FC<ReportStudentModalProps> = ({
             <span style={{ fontSize: 22 }}>⚠️</span>
             <div>
               <h3 style={{ margin: 0, fontSize: 18.5, color: '#f87171' }}>Report Student</h3>
-              <span style={{ fontSize: 12, color: '#94a3b8' }}>PinIT Campus Trust & Safety</span>
+              <span style={{ fontSize: 12, color: '#94a3b8' }}>PinIT Campus Trust &amp; Safety</span>
             </div>
           </div>
           <button className="drawer-close-btn" onClick={onClose}>✕</button>
@@ -132,7 +132,7 @@ export const ReportStudentModal: React.FC<ReportStudentModalProps> = ({
             </div>
 
             <div className="modal-form-group">
-              <label className="modal-form-label">Incident Details & Context (Optional)</label>
+              <label className="modal-form-label">Incident Details &amp; Context (Optional)</label>
               <textarea
                 className="modal-text-input"
                 rows={3}

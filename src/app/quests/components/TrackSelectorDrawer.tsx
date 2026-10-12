@@ -254,7 +254,7 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
           }}
         >
           <span style={{ fontSize: 20 }}>🏆</span>
-          <span>Certification & Skill Passport</span>
+          <span>Certification &amp; Skill Passport</span>
         </button>
 
         {/* Tab 2: Custom Roadmap */}
@@ -423,7 +423,7 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
                       boxShadow: '0 4px 14px rgba(var(--success-rgb),0.3)'
                     }}
                   >
-                    <span>📲</span> Share & Verify (QR)
+                    <span>📲</span> Share &amp; Verify (QR)
                   </button>
                 </>
               ) : null}
@@ -516,7 +516,7 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
                   {/* Target Role & Readiness */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                     <span style={{ fontSize: 11.5, fontWeight: 700, color: 'var(--t3)', textTransform: 'uppercase' }}>
-                      Target Role & Readiness
+                      Target Role &amp; Readiness
                     </span>
                     <div style={{ fontSize: 16, fontWeight: 900, color: 'var(--t1)' }}>
                       {roleReadiness.targetRole}
@@ -545,7 +545,7 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
                   {/* Verified Gates & Freshness */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                     <span style={{ fontSize: 11.5, fontWeight: 700, color: 'var(--t3)', textTransform: 'uppercase' }}>
-                      Verified Gates & Freshness
+                      Verified Gates &amp; Freshness
                     </span>
                     <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--t1)' }}>
                       {roleReadiness.verifiedCompetenciesCount} / {roleReadiness.totalRequiredCompetenciesCount} Verified
