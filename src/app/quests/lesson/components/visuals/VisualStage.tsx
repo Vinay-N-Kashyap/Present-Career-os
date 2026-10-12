@@ -309,6 +309,8 @@ export function VisualStage({
   return (
     <div
       className="visual-stage-root"
+      data-testid="visual-stage-root"
+      data-visual-template={visual.template}
       style={{
         width: '100%',
         height: '100%',
@@ -468,6 +470,7 @@ export function VisualStage({
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
           {/* View Mode Toggle: Diagram vs Storyboard */}
           <button
+            data-testid="visual-mode-toggle"
             onClick={() => setViewMode((prev) => (prev === 'diagram' ? 'storyboard' : 'diagram'))}
             style={{
               background: 'var(--bg2)',
@@ -488,6 +491,7 @@ export function VisualStage({
           </button>
 
           <span
+            data-testid="visual-step-counter"
             style={{
               fontFamily: 'var(--font-mono, monospace)',
               fontSize: '12px',
@@ -518,6 +522,7 @@ export function VisualStage({
       {/* Visual Canvas Body */}
       <div
         className="visual-stage-body visual-stage-canvas"
+        data-testid={`visual-template-${visual.template}`}
         style={{
           flex: 1,
           display: 'flex',
@@ -586,6 +591,7 @@ export function VisualStage({
           <button
             type="button"
             className="stage-nav-btn"
+            data-testid="visual-prev-btn"
             onClick={handlePrev}
             disabled={safeStepIndex === 0}
             aria-label="Previous step"
@@ -611,6 +617,7 @@ export function VisualStage({
             {isManualOverride && (
               <button
                 type="button"
+                data-testid="visual-sync-voice-btn"
                 onClick={onSyncWithVoice}
                 style={{
                   background: 'none',
@@ -631,6 +638,7 @@ export function VisualStage({
           <button
             type="button"
             className="stage-nav-btn"
+            data-testid="visual-next-btn"
             onClick={handleNext}
             disabled={safeStepIndex === totalSteps - 1}
             aria-label="Next step"

@@ -38,6 +38,18 @@ export function getTappableLabelsForVisual(visual?: LessonVisual | null): string
   if (visual.template === 'sequence') {
     return (visual.actors || []).filter(Boolean);
   }
+  if (visual.template === 'tree-graph') {
+    return (visual.nodes || []).map(n => n.label).filter(Boolean);
+  }
+  if (visual.template === 'bars') {
+    return (visual.steps[0]?.bars || []).map(b => b.label).filter(Boolean);
+  }
+  if (visual.template === 'stack-queue') {
+    return (visual.steps[0]?.items || []).filter(Boolean);
+  }
+  if (visual.template === 'cells') {
+    return (visual.steps[0]?.items || []).filter(Boolean);
+  }
   // Spec v1.1: Underline nothing for table, letters or compare visuals
   return [];
 }

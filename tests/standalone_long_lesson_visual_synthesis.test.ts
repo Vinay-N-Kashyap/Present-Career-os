@@ -5,18 +5,22 @@ import { synthesizeLongLessonVisual } from '../src/lib/visuals/loadVisuals';
 import { getLongLesson } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Block 37 & 38: All 28 standalone & B.Com course prefixes are enabled and synthesize 9 specialized 4-step visuals for Day 1 LongLessons', () => {
+test('Block 37, 38 & 39: All 28 standalone & B.Com course prefixes are enabled and synthesize 13 specialized 4-step visuals for Day 1 LongLessons', () => {
   const courseExpectations: Array<{
     prefix: string;
     expectedTemplate:
       | 'register-bits'
       | 'funnel'
       | 'workflow'
+      | 'bars'
+      | 'tree-graph'
       | 'ledger-sheet'
       | 'wireframe'
       | 'component-tree'
       | 'sequence'
       | 'states'
+      | 'stack-queue'
+      | 'cells'
       | 'flow';
   }> = [
     // IoT & Hardware -> register-bits
@@ -37,16 +41,20 @@ test('Block 37 & 38: All 28 standalone & B.Com course prefixes are enabled and s
     { prefix: 'git_vcs', expectedTemplate: 'workflow' },
     { prefix: 'soft-skills', expectedTemplate: 'workflow' },
 
-    // Accounting, Finance, Tax, Audit, Banking, Corporate Law, Analytics, AI Transformation & Excel -> ledger-sheet
+    // Business Analytics & Excel Visualization -> bars
+    { prefix: 'bcom_ana', expectedTemplate: 'bars' },
+    { prefix: 'excel_viz', expectedTemplate: 'bars' },
+
+    // AI Business Transformation -> tree-graph
+    { prefix: 'bcom_ait', expectedTemplate: 'tree-graph' },
+
+    // Accounting, Finance, Tax, Audit, Banking & Corporate Law -> ledger-sheet
     { prefix: 'bcom-accounting', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom-finance', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_tax', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_aud', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_ban', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_law', expectedTemplate: 'ledger-sheet' },
-    { prefix: 'bcom_ana', expectedTemplate: 'ledger-sheet' },
-    { prefix: 'bcom_ait', expectedTemplate: 'ledger-sheet' },
-    { prefix: 'excel_viz', expectedTemplate: 'ledger-sheet' },
 
     // UI/UX Design -> wireframe
     { prefix: 'design', expectedTemplate: 'wireframe' },
@@ -61,10 +69,14 @@ test('Block 37 & 38: All 28 standalone & B.Com course prefixes are enabled and s
     { prefix: 'quant-systems', expectedTemplate: 'states' },
     { prefix: 'g3d', expectedTemplate: 'states' },
 
-    // Full-Stack JS, Java & Computer Fundamentals -> flow
-    { prefix: 'fullstack-js', expectedTemplate: 'flow' },
-    { prefix: 'java-basics', expectedTemplate: 'flow' },
-    { prefix: 'comp_fund', expectedTemplate: 'flow' }
+    // Java Systems -> stack-queue
+    { prefix: 'java-basics', expectedTemplate: 'stack-queue' },
+
+    // Computer Fundamentals -> cells
+    { prefix: 'comp_fund', expectedTemplate: 'cells' },
+
+    // Full-Stack JS -> flow
+    { prefix: 'fullstack-js', expectedTemplate: 'flow' }
   ];
 
   for (const { prefix, expectedTemplate } of courseExpectations) {

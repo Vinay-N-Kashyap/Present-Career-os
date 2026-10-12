@@ -442,10 +442,119 @@ export function synthesizeLongLessonVisual(
     };
   }
 
-  // 4. Accounting, Finance, Tax, Audit, Banking, Corporate Law, Analytics & Excel -> 4-step LedgerSheetVisual
+  // 4A. Business Analytics & Excel Visualization -> 4-step BarsVisual
+  if (normPrefix === 'bcom_ana' || normPrefix === 'excel_viz') {
+    const baseVal = 60 + ((day * 3 + partIndex * 5) % 25);
+    return {
+      template: 'bars',
+      title: `${shortTitle} — Quantitative KPI Distribution`,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Step 1: Baseline KPI cohort metrics for ${shortTitle}.`),
+          max: 100,
+          bars: [
+            { label: 'Revenue Run-Rate', value: baseVal, tone: 'data' },
+            { label: 'Contribution Margin', value: Math.round(baseVal * 0.65), tone: 'idle' },
+            { label: 'Operating Cash Flow', value: Math.round(baseVal * 0.48), tone: 'idle' },
+            { label: 'Net EBITDA', value: Math.round(baseVal * 0.32), tone: 'idle' }
+          ]
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.`),
+          max: 100,
+          bars: [
+            { label: 'Revenue Run-Rate', value: baseVal + 8, tone: 'ok' },
+            { label: 'Contribution Margin', value: Math.round((baseVal + 8) * 0.72), tone: 'data' },
+            { label: 'Operating Cash Flow', value: Math.round((baseVal + 8) * 0.56), tone: 'data' },
+            { label: 'Net EBITDA', value: Math.round((baseVal + 8) * 0.38), tone: 'idle' }
+          ]
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Step 3: Apply sensitivity model and benchmark variance thresholds.`),
+          max: 100,
+          bars: [
+            { label: 'Revenue Run-Rate', value: baseVal + 12, tone: 'ok' },
+            { label: 'Contribution Margin', value: Math.round((baseVal + 12) * 0.76), tone: 'ok' },
+            { label: 'Operating Cash Flow', value: Math.round((baseVal + 12) * 0.62), tone: 'ok' },
+            { label: 'Net EBITDA', value: Math.round((baseVal + 12) * 0.45), tone: 'data' }
+          ]
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Step 4: Commit audited analytical dashboard for ${shortTitle}.`),
+          max: 100,
+          bars: [
+            { label: 'Revenue Run-Rate', value: baseVal + 15, tone: 'ok' },
+            { label: 'Contribution Margin', value: Math.round((baseVal + 15) * 0.78), tone: 'ok' },
+            { label: 'Operating Cash Flow', value: Math.round((baseVal + 15) * 0.65), tone: 'ok' },
+            { label: 'Net EBITDA', value: Math.round((baseVal + 15) * 0.48), tone: 'ok' }
+          ]
+        }
+      ]
+    };
+  }
+
+  // 4B. AI Business Transformation -> 4-step TreeGraphVisual
+  if (normPrefix === 'bcom_ait') {
+    const nodes = [
+      { id: 'n1', label: 'Context Query', tone: 'data' as const },
+      { id: 'n2', label: 'Vector Retriever', tone: 'data' as const },
+      { id: 'n3', label: 'Policy Guardrail', tone: 'ok' as const },
+      { id: 'n4', label: 'Synthesized Action', tone: 'ok' as const }
+    ];
+    const edges: [string, string][] = [
+      ['n1', 'n2'],
+      ['n1', 'n3'],
+      ['n2', 'n4'],
+      ['n3', 'n4']
+    ];
+    return {
+      template: 'tree-graph',
+      title: `${shortTitle} — Enterprise AI Decision Graph`,
+      nodes,
+      edges,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Step 1: Ingest enterprise Context Query for ${shortTitle}.`),
+          activeNodeId: 'n1',
+          visitedNodeIds: ['n1'],
+          tones: { n1: 'data', n2: 'idle', n3: 'idle', n4: 'idle' }
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Step 2: Traverse Vector Retriever for grounded domain knowledge.`),
+          activeNodeId: 'n2',
+          visitedNodeIds: ['n1', 'n2'],
+          activeEdge: ['n1', 'n2'],
+          tones: { n1: 'ok', n2: 'data', n3: 'idle', n4: 'idle' }
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Step 3: Validate compliance & hallucination bounds in Policy Guardrail.`),
+          activeNodeId: 'n3',
+          visitedNodeIds: ['n1', 'n2', 'n3'],
+          activeEdge: ['n1', 'n3'],
+          tones: { n1: 'ok', n2: 'ok', n3: 'data', n4: 'idle' }
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Step 4: Emit verified Synthesized Action with audit provenance.`),
+          activeNodeId: 'n4',
+          visitedNodeIds: ['n1', 'n2', 'n3', 'n4'],
+          activeEdge: ['n3', 'n4'],
+          tones: { n1: 'ok', n2: 'ok', n3: 'ok', n4: 'ok' }
+        }
+      ]
+    };
+  }
+
+  // 4C. Accounting, Finance, Tax, Audit, Banking & Corporate Law -> 4-step LedgerSheetVisual
   if (
     normPrefix.startsWith('bcom_') ||
-    normPrefix === 'excel_viz' ||
     /\b(ledger|journal|debit|credit|balance\s+sheet|audit|tax|gst|ifrs|npv|irr|amortization)\b/.test(titleLow)
   ) {
     const baseAmt = 2500 + (day * 150) + (partIndex * 200);
@@ -715,7 +824,100 @@ export function synthesizeLongLessonVisual(
     };
   }
 
-  // 9. Full-Stack JS, Java, Computer Fundamentals & General Engineering -> 4-step FlowVisual
+  // 9. Java Systems & Object-Oriented Engineering -> 4-step StackQueueVisual
+  if (normPrefix === 'java_basics') {
+    return {
+      template: 'stack-queue',
+      title: `${shortTitle} — JVM Call Stack & Frame Lifecycle`,
+      mode: 'stack',
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Step 1: Push root frames onto JVM execution stack for ${shortTitle}.`),
+          mode: 'stack',
+          items: ['main() Frame', 'Service.invoke()', 'Repository.query()'],
+          action: 'push',
+          actionItem: 'Repository.query()',
+          tones: ['ok', 'data', 'data']
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Step 2: Push DomainValidator.verify() onto active stack frame.`),
+          mode: 'stack',
+          items: ['main() Frame', 'Service.invoke()', 'Repository.query()', 'DomainValidator.verify()'],
+          action: 'push',
+          actionItem: 'DomainValidator.verify()',
+          tones: ['ok', 'ok', 'data', 'data']
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Step 3: Pop completed validator frame after invariant verification.`),
+          mode: 'stack',
+          items: ['main() Frame', 'Service.invoke()', 'Repository.query()'],
+          action: 'pop',
+          actionItem: 'DomainValidator.verify() -> true',
+          tones: ['ok', 'ok', 'ok']
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Step 4: Unwind stack and return verified result to main() Frame.`),
+          mode: 'stack',
+          items: ['main() Frame', 'Verified Return Value ✓'],
+          action: 'pop',
+          actionItem: 'Service.invoke() -> 200 OK',
+          tones: ['ok', 'ok']
+        }
+      ]
+    };
+  }
+
+  // 10. Computer Fundamentals & Memory Architecture -> 4-step CellsVisual
+  if (normPrefix === 'comp_fund') {
+    const items = ['0x00: OPCODE', '0x04: REG_A', '0x08: REG_B', '0x0C: ACCUM'];
+    return {
+      template: 'cells',
+      title: `${shortTitle} — Memory Address & Pointer Cells`,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Step 1: Fetch instruction cell at 0x00: OPCODE for ${shortTitle}.`),
+          items,
+          pointers: [{ name: 'PC', index: 0, tone: 'data' }],
+          highlightRange: [0, 1],
+          tones: { 0: 'data', 1: 'idle', 2: 'idle', 3: 'idle' }
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.`),
+          items,
+          pointers: [
+            { name: 'PC', index: 1, tone: 'ok' },
+            { name: 'ALU', index: 2, tone: 'data' }
+          ],
+          highlightRange: [1, 3],
+          tones: { 0: 'ok', 1: 'data', 2: 'data', 3: 'idle' }
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.`),
+          items,
+          pointers: [{ name: 'ALU', index: 3, tone: 'data' }],
+          highlightRange: [2, 4],
+          tones: { 0: 'ok', 1: 'ok', 2: 'ok', 3: 'data' }
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Step 4: Commit verified word into 0x0C: ACCUM memory cell.`),
+          items,
+          pointers: [{ name: 'COMMIT', index: 3, tone: 'ok' }],
+          highlightRange: [0, 4],
+          tones: { 0: 'ok', 1: 'ok', 2: 'ok', 3: 'ok' }
+        }
+      ]
+    };
+  }
+
+  // 11. Full-Stack JS & General Engineering -> 4-step FlowVisual
   const stageLabel = shortTitle.length > 22 ? `${shortTitle.slice(0, 19)}...` : shortTitle;
   return {
     template: 'flow',
