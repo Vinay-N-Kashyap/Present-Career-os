@@ -56,6 +56,8 @@ import { BCOM_SCRM_LONG_LESSONS } from './bcomScrmLongLessons';
 import { BCOM_ENT_LONG_LESSONS } from './bcomEntLongLessons';
 import { BCOM_ECOM_LONG_LESSONS } from './bcomEcomLongLessons';
 import { BCOM_DMKT_LONG_LESSONS } from './bcomDmktLongLessons';
+import { BCOM_BAN_LONG_LESSONS } from './bcomBanLongLessons';
+import { BCOM_LAW_LONG_LESSONS } from './bcomLawLongLessons';
 
 export interface LongLessonCheck {
   question: string;
@@ -155,6 +157,8 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   bcom_ecom: BCOM_ECOM_LONG_LESSONS,
   bcom_dmkt: BCOM_DMKT_LONG_LESSONS,
   'bcom-marketing': BCOM_DMKT_LONG_LESSONS,
+  bcom_ban: BCOM_BAN_LONG_LESSONS,
+  bcom_law: BCOM_LAW_LONG_LESSONS,
 };
 
 /** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
@@ -212,6 +216,8 @@ const LONG_LESSON_LANGUAGE: Record<string, LongLessonLanguage> = {
   bcom_ecom: 'python',
   bcom_dmkt: 'python',
   'bcom-marketing': 'python',
+  bcom_ban: 'python',
+  bcom_law: 'python',
 };
 
 export function getLongLessonLanguage(prefix: string): LongLessonLanguage {
