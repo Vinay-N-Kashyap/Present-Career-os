@@ -18,6 +18,7 @@ export function TodayCourseCard({ planTitle, summary, onStart, onOpenProject }: 
 
   return (
     <section
+      data-testid="today-course-card"
       aria-labelledby="today-course-title"
       style={{
         background: 'var(--bg2)',
@@ -32,7 +33,7 @@ export function TodayCourseCard({ planTitle, summary, onStart, onOpenProject }: 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 8 }}>
         <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--t3)' }}>{planTitle}</span>
         {day !== null && totalDays > 0 && (
-          <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--accent)' }}>Day {day} of {totalDays}</span>
+          <span data-testid="today-day-badge" style={{ fontSize: 13, fontWeight: 800, color: 'var(--accent)' }}>Day {day} of {totalDays}</span>
         )}
       </div>
 
@@ -71,7 +72,7 @@ export function TodayCourseCard({ planTitle, summary, onStart, onOpenProject }: 
       )}
 
       <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: 'var(--t3)', marginBottom: 6 }}>
+        <div data-testid="today-progress-label" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: 'var(--t3)', marginBottom: 6 }}>
           <span>{tasksDone} of {tasksTotal} tasks done</span>
           <span>{percent}%</span>
         </div>
@@ -88,7 +89,7 @@ export function TodayCourseCard({ planTitle, summary, onStart, onOpenProject }: 
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10 }}>
-        <div style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--bg1)', border: '1px solid var(--border)' }}>
+        <div data-testid="today-next-test-card" style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--bg1)', border: '1px solid var(--border)' }}>
           <div style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--t3)' }}>📝 Next test</div>
           <div style={{ fontSize: 14.5, color: 'var(--t1)', marginTop: 2 }}>
             {nextTest
@@ -98,7 +99,7 @@ export function TodayCourseCard({ planTitle, summary, onStart, onOpenProject }: 
               : 'All tests passed'}
           </div>
         </div>
-        <div style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--bg1)', border: '1px solid var(--border)' }}>
+        <div data-testid="today-final-project-card" style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--bg1)', border: '1px solid var(--border)' }}>
           <div style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--t3)' }}>🚀 Final project</div>
           {project === 'locked' ? (
             <div style={{ fontSize: 14.5, color: 'var(--t1)', marginTop: 2 }}>
@@ -107,6 +108,7 @@ export function TodayCourseCard({ planTitle, summary, onStart, onOpenProject }: 
           ) : (
             <button
               type="button"
+              data-testid="btn-today-open-project"
               onClick={onOpenProject}
               style={{ marginTop: 4, padding: 0, border: 'none', background: 'none', color: 'var(--accent)', fontSize: 14.5, fontWeight: 800, cursor: 'pointer' }}
             >

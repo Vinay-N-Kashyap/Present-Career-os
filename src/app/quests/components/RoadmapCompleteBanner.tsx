@@ -39,6 +39,7 @@ export function RoadmapCompleteBanner({ progress, onStartProject }: RoadmapCompl
       </div>
       <button
         type="button"
+        data-testid="btn-start-roadmap-project"
         onClick={onStartProject}
         style={{
           padding: '10px 18px',

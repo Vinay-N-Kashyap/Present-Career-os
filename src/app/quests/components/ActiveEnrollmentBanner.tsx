@@ -51,6 +51,7 @@ export const ActiveEnrollmentBanner: React.FC<ActiveEnrollmentBannerProps> = ({
 
   return (
     <div
+      data-testid="active-enrollment-banner"
       style={{
         background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95))',
         border: '1.5px solid rgba(99, 102, 241, 0.4)',
@@ -82,6 +83,7 @@ export const ActiveEnrollmentBanner: React.FC<ActiveEnrollmentBannerProps> = ({
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
           <span
+            data-testid="enrollment-track-badge"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -165,7 +167,7 @@ export const ActiveEnrollmentBanner: React.FC<ActiveEnrollmentBannerProps> = ({
 
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
         <div>
-          <h3 style={{ fontSize: 20, fontWeight: 900, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
+          <h3 data-testid="enrollment-plan-title" style={{ fontSize: 20, fontWeight: 900, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
             {plan.title}
           </h3>
           <p style={{ fontSize: 14.5, color: '#94a3b8', margin: '4px 0 0 0', fontWeight: 500 }}>
@@ -176,7 +178,7 @@ export const ActiveEnrollmentBanner: React.FC<ActiveEnrollmentBannerProps> = ({
           <span style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 700, textTransform: 'uppercase' }}>
             Current Milestone
           </span>
-          <div style={{ fontSize: 15, fontWeight: 800, color: '#38bdf8' }}>
+          <div data-testid="enrollment-current-sprint" style={{ fontSize: 15, fontWeight: 800, color: '#38bdf8' }}>
             {currentSprintText}
           </div>
         </div>
@@ -185,6 +187,7 @@ export const ActiveEnrollmentBanner: React.FC<ActiveEnrollmentBannerProps> = ({
       {/* Quick Action Navigation Bar */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', paddingTop: 4 }}>
         <button
+          data-testid="btn-enrollment-timeline"
           onClick={onOpenTimeline}
           style={{
             flex: 1,
@@ -208,6 +211,7 @@ export const ActiveEnrollmentBanner: React.FC<ActiveEnrollmentBannerProps> = ({
         </button>
 
         <button
+          data-testid="btn-enrollment-capstone"
           onClick={onOpenCapstonePortal}
           style={{
             flex: 1,

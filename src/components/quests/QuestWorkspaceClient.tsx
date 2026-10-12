@@ -11,7 +11,7 @@ import { useAuth } from '@/lib/context/AuthContext';
 
 import { useWorkspaceState, TEACHERS, getLangInfo } from './workspace/useWorkspaceState';
 import { WorkspaceCodeEditor } from './workspace/WorkspaceCodeEditor';
-import { WorkspaceAIHint } from './workspace/WorkspaceAIHint';
+import { WorkspaceAIHint, buildOfflineDebugTutorHint } from './workspace/WorkspaceAIHint';
 import { WorkspaceTestResults } from './workspace/WorkspaceTestResults';
 import {
   TeacherSelectScreen,
@@ -132,25 +132,28 @@ export default function QuestWorkspaceClient({ questId }: { questId: string }) {
   const isExam = category === 'exam';
 
   return (
-    <div style={{ maxWidth: 1200, margin: '0 auto', paddingBottom: 60 }} className="animate-fade-in">
+    <div data-testid="quest-workspace-root" style={{ maxWidth: 1200, margin: '0 auto', paddingBottom: 60 }} className="animate-fade-in">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
         <div>
           <Link href="/quests?tab=custom_roadmap" style={{ textDecoration: 'none', color: 'var(--t3)', fontSize: 14.5, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
             ← Return to Quests Tab
           </Link>
-          <h2 style={{ margin: '8px 0 0', fontSize: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <h2 data-testid="quest-workspace-title" style={{ margin: '8px 0 0', fontSize: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
             {isExam ? '📝 Taking Exam: ' : category === 'learning' ? '🎓 Learning Class: ' : '💻 Completing Assignment: '}
             {quest.title}
-            <span style={{
-              fontSize: 11,
-              background: isExam ? 'rgba(var(--danger-rgb), 0.1)' : category === 'learning' ? 'rgba(var(--purple-rgb, 124, 58, 237), 0.1)' : 'rgba(79,70,229,0.1)',
-              color: isExam ? 'var(--coral)' : category === 'learning' ? 'var(--reward-bright)' : 'var(--accent)',
-              padding: '2px 8px',
-              borderRadius: 6,
-              fontWeight: 800,
-              textTransform: 'uppercase',
-              fontFamily: 'var(--font-mono)'
-            }}>
+            <span
+              data-testid="quest-category-badge"
+              style={{
+                fontSize: 11,
+                background: isExam ? 'rgba(var(--danger-rgb), 0.1)' : category === 'learning' ? 'rgba(var(--purple-rgb, 124, 58, 237), 0.1)' : 'rgba(79,70,229,0.1)',
+                color: isExam ? 'var(--coral)' : category === 'learning' ? 'var(--reward-bright)' : 'var(--accent)',
+                padding: '2px 8px',
+                borderRadius: 6,
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                fontFamily: 'var(--font-mono)'
+              }}
+            >
               {isExam ? 'PROCTOR EXAM' : category === 'learning' ? 'SOCRATIC CLASS' : 'ASSIGNMENT CHALLENGE'}
             </span>
           </h2>
@@ -224,6 +227,7 @@ export default function QuestWorkspaceClient({ questId }: { questId: string }) {
                 </div>
               )}
               <button
+                data-testid="btn-toggle-socratic-mentor"
                 onClick={() => state.setShowGuidedMentor(prev => !prev)}
                 style={{
                   width: '100%',
@@ -244,7 +248,11 @@ export default function QuestWorkspaceClient({ questId }: { questId: string }) {
 
             {quest.hint && (
               <div style={{ background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: 20, padding: 24 }}>
-                <button onClick={() => state.setShowHint(h => !h)} style={{ background: 'none', border: 'none', color: 'var(--accent)', fontSize: 14, fontWeight: 700, cursor: 'pointer', padding: 0 }}>
+                <button
+                  data-testid="btn-toggle-quest-hint"
+                  onClick={() => state.setShowHint(h => !h)}
+                  style={{ background: 'none', border: 'none', color: 'var(--accent)', fontSize: 14, fontWeight: 700, cursor: 'pointer', padding: 0 }}
+                >
                   {state.showHint ? '💡 Hide Hint' : '💡 Show Hint'}
                 </button>
                 {state.showHint && (
@@ -284,6 +292,14 @@ export default function QuestWorkspaceClient({ questId }: { questId: string }) {
               onAskAiTutor={async () => {
                 state.setShowAiTutorModal(true);
                 state.setLoadingAiTutor(true);
+                const fallbackHint = buildOfflineDebugTutorHint({
+                  code: state.code,
+                  language: langInfo.language,
+                  errorMsg: state.output?.message || state.terminalLogs[state.terminalLogs.length - 1] || '',
+                  teacherName: currentTeacher.name,
+                  teacherEmoji: currentTeacher.emoji,
+                  questTitle: quest?.title || 'Coding Challenge',
+                });
                 try {
                   const res = await fetch('/api/code/debug-tutor', {
                     method: 'POST',
@@ -299,12 +315,12 @@ export default function QuestWorkspaceClient({ questId }: { questId: string }) {
                   });
                   if (res.ok) {
                     const data = await res.json();
-                    state.setAiTutorHint(data.hint);
+                    state.setAiTutorHint(data.hint || fallbackHint);
                   } else {
-                    state.setAiTutorHint(`🤖 ${currentTeacher.name} (${currentTeacher.emoji}) Socratic Debug Hint:\n\n"Examine your code logic and boundary cases for ${quest?.title || 'this challenge'}. Trace inputs carefully."`);
+                    state.setAiTutorHint(fallbackHint);
                   }
                 } catch {
-                  state.setAiTutorHint(`🤖 ${currentTeacher.name} (${currentTeacher.emoji}) Socratic Debug Hint:\n\n"Double-check your loop bounds, syntax parameters, and return statement types before re-running."`);
+                  state.setAiTutorHint(fallbackHint);
                 } finally {
                   state.setLoadingAiTutor(false);
                 }
