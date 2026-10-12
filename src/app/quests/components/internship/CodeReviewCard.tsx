@@ -24,6 +24,7 @@ export const CodeReviewCard: React.FC<CodeReviewCardProps> = ({ review }) => {
 
   return (
     <div
+      data-testid="code-review-card"
       style={{
         borderRadius: 14,
         background: 'rgba(15, 23, 42, 0.75)',
@@ -60,6 +61,7 @@ export const CodeReviewCard: React.FC<CodeReviewCardProps> = ({ review }) => {
 
       {/* Scores Grid */}
       <div
+        data-testid="code-review-scores-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
@@ -69,6 +71,7 @@ export const CodeReviewCard: React.FC<CodeReviewCardProps> = ({ review }) => {
         {scoreItems.map((item) => (
           <div
             key={item.label}
+            data-testid={`code-review-score-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
             style={{
               padding: '10px 12px',
               borderRadius: 10,
@@ -116,6 +119,7 @@ export const CodeReviewCard: React.FC<CodeReviewCardProps> = ({ review }) => {
       >
         {strengths.length > 0 && (
           <div
+            data-testid="code-review-strengths"
             style={{
               padding: '12px 14px',
               borderRadius: 10,
@@ -139,6 +143,7 @@ export const CodeReviewCard: React.FC<CodeReviewCardProps> = ({ review }) => {
 
         {improvements.length > 0 && (
           <div
+            data-testid="code-review-improvements"
             style={{
               padding: '12px 14px',
               borderRadius: 10,

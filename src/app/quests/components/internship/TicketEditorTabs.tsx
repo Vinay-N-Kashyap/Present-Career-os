@@ -137,12 +137,13 @@ export const TicketEditorTabs: React.FC<TicketEditorTabsProps> = ({
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+    <div data-testid="ticket-editor-tabs-root" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
       {/* Tab Selector & Controls */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button
             type="button"
+            data-testid="btn-tab-solution"
             onClick={() => setActiveTab('code')}
             style={{
               padding: '6px 14px',
@@ -163,6 +164,7 @@ export const TicketEditorTabs: React.FC<TicketEditorTabsProps> = ({
           </button>
           <button
             type="button"
+            data-testid="btn-tab-tests"
             onClick={() => setActiveTab('tests')}
             style={{
               padding: '6px 14px',
@@ -183,6 +185,7 @@ export const TicketEditorTabs: React.FC<TicketEditorTabsProps> = ({
           </button>
 
           <span
+            data-testid="ticket-lang-badge"
             style={{
               fontSize: 11,
               fontWeight: 800,
@@ -204,6 +207,7 @@ export const TicketEditorTabs: React.FC<TicketEditorTabsProps> = ({
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button
             type="button"
+            data-testid="btn-toggle-editor-mode"
             onClick={() => setUseMonaco(!useMonaco)}
             title="Toggle between Monaco Editor and Simple Textarea"
             style={{
@@ -225,6 +229,7 @@ export const TicketEditorTabs: React.FC<TicketEditorTabsProps> = ({
           {activeTab === 'code' && (
             <button
               type="button"
+              data-testid="btn-reset-starter-code"
               onClick={() => setCode(starterCode)}
               style={{
                 background: 'none',

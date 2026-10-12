@@ -97,8 +97,24 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
     }
   };
 
+  React.useEffect(() => {
+    if (isSubmitting || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onBack();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isSubmitting, onBack]);
+
   return (
     <div
+      data-testid="ticket-workspace-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Ticket #${task.seq}: ${task.title}`}
+      onClick={(e) => {
+        if (!isSubmitting && e.target === e.currentTarget) onBack();
+      }}
       style={{
         position: 'fixed',
         inset: 0,
@@ -131,6 +147,7 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border)', paddingBottom: 12 }}>
           <button
             type="button"
+            data-testid="btn-back-to-backlog"
             onClick={onBack}
             style={{
               background: 'transparent',
@@ -149,7 +166,7 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
             <span style={{ fontSize: 13, fontWeight: 900, color: '#818cf8' }}>
               Ticket #{task.seq}
             </span>
-            <h3 style={{ margin: 0, fontSize: 16, fontWeight: 900, color: 'var(--text)' }}>
+            <h3 data-testid="ticket-workspace-title" style={{ margin: 0, fontSize: 16, fontWeight: 900, color: 'var(--text)' }}>
               {task.title}
             </h3>
             <span
@@ -168,6 +185,8 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
           </div>
           <button
             type="button"
+            data-testid="btn-close-ticket-workspace"
+            aria-label="Close ticket workspace"
             onClick={onBack}
             style={{ background: 'none', border: 'none', fontSize: 20, color: 'var(--t3)', cursor: 'pointer' }}
           >
@@ -176,7 +195,10 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
         </div>
 
         {/* Ticket Brief */}
-        <div style={{ padding: '12px 16px', borderRadius: 12, background: 'var(--bg2)', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
+        <div
+          data-testid="ticket-workspace-brief"
+          style={{ padding: '12px 16px', borderRadius: 12, background: 'var(--bg2)', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 6 }}
+        >
           <span style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--t3)', textTransform: 'uppercase' }}>
             Engineering Brief & Requirements
           </span>
@@ -198,6 +220,7 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <button
             type="button"
+            data-testid="btn-run-visible-tests"
             onClick={handleRunVisible}
             disabled={isRunningLocal}
             style={{
@@ -219,6 +242,7 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
 
           <button
             type="button"
+            data-testid="btn-submit-ticket-solution"
             onClick={handleSubmit}
             disabled={isSubmitting}
             style={{
@@ -238,7 +262,7 @@ export const TicketWorkspace: React.FC<TicketWorkspaceProps> = ({
         </div>
 
         {submitError && (
-          <div style={{ padding: '10px 14px', borderRadius: 8, background: 'rgba(239, 68, 68, 0.12)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#f87171', fontSize: 13 }}>
+          <div data-testid="ticket-submit-error" style={{ padding: '10px 14px', borderRadius: 8, background: 'rgba(239, 68, 68, 0.12)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#f87171', fontSize: 13 }}>
             {submitError}
           </div>
         )}
