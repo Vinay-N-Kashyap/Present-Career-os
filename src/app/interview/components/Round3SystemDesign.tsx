@@ -138,15 +138,20 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
               ))}
             </div>
 
-            {/* Weaknesses / Bottlenecks & Recommendations */}
+            {/* Strengths, Weaknesses / Bottlenecks & Recommendations */}
+            {architectureEvaluation.strengths && (
+              <div style={{ fontSize: 12, color: 'var(--green-mid)', lineHeight: 1.4 }}>
+                <strong>🌟 Architectural Strengths:</strong> {Array.isArray(architectureEvaluation.strengths) ? architectureEvaluation.strengths.join('; ') : architectureEvaluation.strengths}
+              </div>
+            )}
             {architectureEvaluation.weaknesses && (
               <div style={{ fontSize: 12, color: 'var(--coral-mid)', lineHeight: 1.4 }}>
-                <strong>Bottlenecks identified:</strong> {Array.isArray(architectureEvaluation.weaknesses) ? architectureEvaluation.weaknesses.join('; ') : architectureEvaluation.weaknesses}
+                <strong>⚠️ Bottlenecks identified:</strong> {Array.isArray(architectureEvaluation.weaknesses) ? architectureEvaluation.weaknesses.join('; ') : architectureEvaluation.weaknesses}
               </div>
             )}
             {architectureEvaluation.improvements && (
               <div style={{ fontSize: 12, color: 'var(--teal-mid)', lineHeight: 1.4 }}>
-                <strong>Recommendations:</strong> {architectureEvaluation.improvements}
+                <strong>💡 Recommendations:</strong> {architectureEvaluation.improvements}
               </div>
             )}
           </div>

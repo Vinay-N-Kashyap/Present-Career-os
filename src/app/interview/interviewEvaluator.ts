@@ -136,6 +136,62 @@ export function computeDeterministicEvaluation({
   };
 }
 
+export function generateInterviewTranscriptMarkdown({
+  activeTopicName,
+  domainStream,
+  teacherName,
+  evaluationResult,
+  eyeContactScore,
+  wpmScore,
+  fillerWordCount,
+  codeContent,
+  selectedLang,
+  messages
+}: {
+  activeTopicName: string;
+  domainStream: 'tech' | 'non_tech';
+  teacherName: string;
+  evaluationResult: any;
+  eyeContactScore: number | null;
+  wpmScore: number | null;
+  fillerWordCount: number;
+  codeContent: string;
+  selectedLang: string;
+  messages: Message[];
+}): string {
+  const lines = [
+    `# Pinit Career OS — Technical Interview Report`,
+    `**Topic:** ${activeTopicName}  `,
+    `**Track:** ${domainStream === 'non_tech' ? 'Non-Technical / Product' : 'Technical / Engineering'}  `,
+    `**Interviewer:** ${teacherName}  `,
+    `**Date:** ${new Date().toLocaleDateString('en-US', { dateStyle: 'full' })}  `,
+    `**Verdict:** ${evaluationResult?.verdict || 'Completed'} (${evaluationResult?.score || 0}%)  `,
+    ...(evaluationResult?.readiness ? [`**Readiness:** ${evaluationResult.readiness}  `] : []),
+    `\n---\n`,
+    `## 1. Per-Round Performance Breakdown`,
+    `- **Round 1 (${evaluationResult?.perRoundScores?.round1?.badge || 'Behavioral'}):** ${evaluationResult?.perRoundScores?.round1?.score || 75}% — ${evaluationResult?.perRoundScores?.round1?.verdict || 'Competent'} (${evaluationResult?.perRoundScores?.round1?.metric || 'Verbal Q&A'})`,
+    `- **Round 2 (${evaluationResult?.perRoundScores?.round2?.badge || 'Coding'}):** ${evaluationResult?.perRoundScores?.round2?.score || 70}% — ${evaluationResult?.perRoundScores?.round2?.verdict || 'Working'} (${evaluationResult?.perRoundScores?.round2?.metric || 'Test assertions'})`,
+    `- **Round 3 (${evaluationResult?.perRoundScores?.round3?.badge || 'Systems'}):** ${evaluationResult?.perRoundScores?.round3?.score || 80}% — ${evaluationResult?.perRoundScores?.round3?.verdict || 'Viable'} (${evaluationResult?.perRoundScores?.round3?.metric || 'Canvas topology'})`,
+    `- **Round 4 (${evaluationResult?.perRoundScores?.round4?.badge || 'STAR'}):** ${evaluationResult?.perRoundScores?.round4?.score || 85}% — ${evaluationResult?.perRoundScores?.round4?.verdict || 'Structured'} (${evaluationResult?.perRoundScores?.round4?.metric || 'STAR criteria'})`,
+    `\n## 2. Telemetry & Delivery Diagnostics`,
+    `- **Average Eye Contact:** ${typeof eyeContactScore === 'number' ? `${eyeContactScore}%` : 'Not Tracked'}`,
+    `- **Speaking Pace:** ${typeof wpmScore === 'number' ? `${wpmScore} Words Per Minute` : 'Not Measured'}`,
+    `- **Filler Words Count:** ${typeof fillerWordCount === 'number' ? fillerWordCount : 'Not Measured'}`,
+    `\n## 3. Candidate Code Submission (${selectedLang})`,
+    '```' + selectedLang,
+    codeContent || '// No code submitted',
+    '```',
+    `\n## 4. Complete Interview Transcript\n`
+  ];
+
+  messages.forEach(m => {
+    const sender = m.role === 'user' ? 'Candidate' : teacherName;
+    lines.push(`**${sender}:** ${m.content}\n`);
+  });
+
+  return lines.join('\n');
+}
+
 export function exportInterviewTranscriptFile({
   format,
   activeTopicName,
@@ -163,6 +219,8 @@ export function exportInterviewTranscriptFile({
   latestTopology: any;
   messages: Message[];
 }) {
+  if (typeof window === 'undefined') return;
+
   if (format === 'json') {
     const payload = {
       topic: activeTopicName,
@@ -171,12 +229,15 @@ export function exportInterviewTranscriptFile({
       date: new Date().toISOString(),
       overallScore: evaluationResult?.score || 0,
       verdict: evaluationResult?.verdict || 'Recorded',
+      readiness: evaluationResult?.readiness,
+      appliedWeights: evaluationResult?.appliedWeights,
       perRoundScores: evaluationResult?.perRoundScores,
       telemetry: {
         eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : null,
         wpm: typeof wpmScore === 'number' ? wpmScore : null,
         fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : null
       },
+      selectedLanguage: selectedLang,
       codeSolution: codeContent,
       architectureTopology: latestTopology,
       transcript: messages
@@ -190,36 +251,20 @@ export function exportInterviewTranscriptFile({
     URL.revokeObjectURL(url);
     toast.success('Transcript Downloaded 📋', 'Exported full JSON interview record.');
   } else {
-    const lines = [
-      `# Pinit Career OS — Technical Interview Report`,
-      `**Topic:** ${activeTopicName}  `,
-      `**Track:** ${domainStream === 'non_tech' ? 'Non-Technical / Product' : 'Technical / Engineering'}  `,
-      `**Interviewer:** ${teacherName}  `,
-      `**Date:** ${new Date().toLocaleDateString('en-US', { dateStyle: 'full' })}  `,
-      `**Verdict:** ${evaluationResult?.verdict || 'Completed'} (${evaluationResult?.score || 0}%)  `,
-      `\n---\n`,
-      `## 1. Per-Round Performance Breakdown`,
-      `- **Round 1 (Behavioral):** ${evaluationResult?.perRoundScores?.round1?.score || 75}% — ${evaluationResult?.perRoundScores?.round1?.verdict || 'Competent'} (${evaluationResult?.perRoundScores?.round1?.metric || 'Verbal Q&A'})`,
-      `- **Round 2 (Coding):** ${evaluationResult?.perRoundScores?.round2?.score || 70}% — ${evaluationResult?.perRoundScores?.round2?.verdict || 'Working'} (${evaluationResult?.perRoundScores?.round2?.metric || 'Test assertions'})`,
-      `- **Round 3 (Systems):** ${evaluationResult?.perRoundScores?.round3?.score || 80}% — ${evaluationResult?.perRoundScores?.round3?.verdict || 'Viable'} (${evaluationResult?.perRoundScores?.round3?.metric || 'Canvas topology'})`,
-      `- **Round 4 (STAR):** ${evaluationResult?.perRoundScores?.round4?.score || 85}% — ${evaluationResult?.perRoundScores?.round4?.verdict || 'Structured'} (${evaluationResult?.perRoundScores?.round4?.metric || 'STAR criteria'})`,
-      `\n## 2. Telemetry & Delivery Diagnostics`,
-      `- **Average Eye Contact:** ${typeof eyeContactScore === 'number' ? `${eyeContactScore}%` : 'Not Tracked'}`,
-      `- **Speaking Pace:** ${typeof wpmScore === 'number' ? `${wpmScore} Words Per Minute` : 'Not Measured'}`,
-      `- **Filler Words Count:** ${typeof fillerWordCount === 'number' ? fillerWordCount : 'Not Measured'}`,
-      `\n## 3. Candidate Code Submission (${selectedLang})`,
-      '```' + selectedLang,
-      codeContent || '// No code submitted',
-      '```',
-      `\n## 4. Complete Interview Transcript\n`
-    ];
-
-    messages.forEach(m => {
-      const sender = m.role === 'user' ? 'Candidate' : teacherName;
-      lines.push(`**${sender}:** ${m.content}\n`);
+    const markdown = generateInterviewTranscriptMarkdown({
+      activeTopicName,
+      domainStream,
+      teacherName,
+      evaluationResult,
+      eyeContactScore,
+      wpmScore,
+      fillerWordCount,
+      codeContent,
+      selectedLang,
+      messages
     });
 
-    const blob = new Blob([lines.join('\n')], { type: 'text/markdown' });
+    const blob = new Blob([markdown], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;

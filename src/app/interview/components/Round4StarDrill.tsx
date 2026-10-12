@@ -89,7 +89,13 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
               <span style={{ color: eyeContactScore !== null ? (eyeContactScore >= 60 ? 'var(--success-bright)' : 'var(--warning-bright)') : 'var(--text-muted)' }}>
                 📷 {eyeContactScore !== null ? (eyeContactScore >= 60 ? 'Presence: Centered' : 'Presence: Adjust Angle') : 'Detecting...'}
               </span>
-              <span style={{ color: 'var(--info-bright)' }}>⚡ {wpmScore !== null ? `${wpmScore} WPM` : 'Mic Inactive'}</span>
+              <span style={{
+                color: wpmScore !== null
+                  ? (wpmScore >= 115 && wpmScore <= 165 ? 'var(--success-bright)' : wpmScore > 165 ? 'var(--warning-bright)' : 'var(--info-bright)')
+                  : 'var(--text-muted)'
+              }}>
+                ⚡ {wpmScore !== null ? `${wpmScore} WPM ${wpmScore > 165 ? '(Fast)' : wpmScore >= 115 ? '(Optimal)' : '(Paced)'}` : 'Mic Inactive'}
+              </span>
             </div>
           </div>
         )}
