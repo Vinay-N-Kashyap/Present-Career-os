@@ -35,7 +35,7 @@ interface Question {
 // ─────────────────────────────────────────────────────────────────────
 // Question Bank
 // ─────────────────────────────────────────────────────────────────────
-function getQuestions(track: TrackType): Question[] {
+export function getQuestions(track: TrackType): Question[] {
   const webQuestions: Question[] = [
     {
       id: 'w1', topic: 'React', difficulty: 'medium',
@@ -446,12 +446,18 @@ export default function PracticeTestQuizRunner({
 
   if (showResults) {
     return (
-      <div style={{
-        position: 'fixed', inset: 0,
-        background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        zIndex: 1000, padding: 24,
-      }} aria-modal="true" role="dialog" aria-label="Test Results">
+      <div
+        data-testid="practice-test-results"
+        style={{
+          position: 'fixed', inset: 0,
+          background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          zIndex: 1000, padding: 24,
+        }}
+        aria-modal="true"
+        role="dialog"
+        aria-label="Test Results"
+      >
         <div style={{
           maxWidth: 640, width: '100%',
           background: 'var(--bg2)', border: '1px solid var(--border)',
@@ -526,12 +532,18 @@ export default function PracticeTestQuizRunner({
   const answeredCount = Object.keys(answers).length;
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0,
-      background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      zIndex: 1000, padding: 24,
-    }} aria-modal="true" role="dialog" aria-label={testTitle}>
+    <div
+      data-testid="practice-test-runner"
+      style={{
+        position: 'fixed', inset: 0,
+        background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        zIndex: 1000, padding: 24,
+      }}
+      aria-modal="true"
+      role="dialog"
+      aria-label={testTitle}
+    >
       <div style={{
         maxWidth: 760, width: '100%',
         background: 'var(--bg2)', border: '1px solid var(--border)',
@@ -553,11 +565,14 @@ export default function PracticeTestQuizRunner({
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--t3)', textTransform: 'uppercase' }}>Time Remaining</div>
-              <div style={{
-                fontSize: 22, fontWeight: 900,
-                color: timeLeft < 120 ? '#ef4444' : '#10b981',
-                fontFamily: 'var(--font-display)',
-              }}>{formatTime(timeLeft)}</div>
+              <div
+                data-testid="practice-test-timer"
+                style={{
+                  fontSize: 22, fontWeight: 900,
+                  color: timeLeft < 120 ? '#ef4444' : '#10b981',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >{formatTime(timeLeft)}</div>
             </div>
             <button onClick={onClose} style={{
               padding: '6px 12px', borderRadius: 8,
@@ -568,7 +583,7 @@ export default function PracticeTestQuizRunner({
         </div>
 
         {/* Top Progress Bar */}
-        <div style={{ height: 4, background: 'var(--bg3)', flexShrink: 0 }}>
+        <div data-testid="practice-test-progress-bar" style={{ height: 4, background: 'var(--bg3)', flexShrink: 0 }}>
           <div style={{
             height: '100%', width: `${progressPercent}%`,
             background: 'linear-gradient(90deg, #6366f1, #8b5cf6)',
@@ -579,10 +594,13 @@ export default function PracticeTestQuizRunner({
         {/* Main Content */}
         <div style={{ flex: 1, overflow: 'auto', padding: 24, display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Question Card */}
-          <div style={{
-            padding: 20, borderRadius: 14, background: 'var(--bg3)',
-            border: '1px solid var(--border)',
-          }}>
+          <div
+            data-testid="practice-test-question-card"
+            style={{
+              padding: 20, borderRadius: 14, background: 'var(--bg3)',
+              border: '1px solid var(--border)',
+            }}
+          >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
               <span style={{
                 fontSize: 11, fontWeight: 800, textTransform: 'uppercase',
@@ -620,6 +638,7 @@ export default function PracticeTestQuizRunner({
                 return (
                   <button
                     key={opt.id}
+                    data-testid={`practice-test-option-${opt.id}`}
                     onClick={() => handleAnswer(opt.id)}
                     disabled={submitted}
                     style={{
@@ -671,6 +690,7 @@ export default function PracticeTestQuizRunner({
                 return (
                   <button
                     key={q.id}
+                    data-testid={`practice-test-nav-pill-${idx}`}
                     onClick={() => goToQuestion(idx)}
                     aria-label={`Question ${idx + 1}${isAnswered ? ' answered' : ' unanswered'}`}
                     style={{
@@ -699,6 +719,7 @@ export default function PracticeTestQuizRunner({
           background: 'var(--bg3)', flexShrink: 0,
         }}>
           <button
+            data-testid="btn-practice-prev"
             onClick={goPrev} disabled={currentIndex === 0}
             style={{
               padding: '10px 20px', borderRadius: 10,
@@ -717,6 +738,7 @@ export default function PracticeTestQuizRunner({
 
           {currentIndex === totalQuestions - 1 ? (
             <button
+              data-testid="btn-practice-submit"
               onClick={handleSubmit}
               style={{
                 padding: '10px 24px', borderRadius: 10,
@@ -730,6 +752,7 @@ export default function PracticeTestQuizRunner({
             </button>
           ) : (
             <button
+              data-testid="btn-practice-next"
               onClick={goNext}
               style={{
                 padding: '10px 20px', borderRadius: 10,

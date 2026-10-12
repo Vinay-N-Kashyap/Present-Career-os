@@ -22,16 +22,20 @@ export const InternshipTimelineTracker: React.FC<InternshipTimelineTrackerProps>
   const trainingProgressPct = Math.min(100, Math.round((completedQuestsCount / totalTrainingDays) * 100));
 
   return (
-    <div id="internship-timeline-section" style={{
-      borderRadius: 18,
-      padding: '20px 22px',
-      background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 0.95) 100%)',
-      border: '1.5px solid rgba(99, 102, 241, 0.25)',
-      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.35)',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 16
-    }}>
+    <div
+      id="internship-timeline-section"
+      data-testid="internship-timeline-tracker"
+      style={{
+        borderRadius: 18,
+        padding: '20px 22px',
+        background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 0.95) 100%)',
+        border: '1.5px solid rgba(99, 102, 241, 0.25)',
+        boxShadow: '0 8px 30px rgba(0, 0, 0, 0.35)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16
+      }}
+    >
       {/* ── Header ── */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
         <div>
@@ -46,15 +50,18 @@ export const InternshipTimelineTracker: React.FC<InternshipTimelineTrackerProps>
           </p>
         </div>
 
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 10,
-          padding: '6px 14px',
-          borderRadius: 12,
-          background: 'rgba(99, 102, 241, 0.12)',
-          border: '1px solid rgba(99, 102, 241, 0.3)'
-        }}>
+        <div
+          data-testid="timeline-current-status"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            padding: '6px 14px',
+            borderRadius: 12,
+            background: 'rgba(99, 102, 241, 0.12)',
+            border: '1px solid rgba(99, 102, 241, 0.3)'
+          }}
+        >
           <span style={{ fontSize: 12, fontWeight: 800, color: '#818cf8', textTransform: 'uppercase' }}>Current Status:</span>
           <span style={{ fontSize: 13, fontWeight: 900, color: '#ffffff' }}>Phase 1 (In Progress - {trainingProgressPct}%)</span>
         </div>
@@ -68,15 +75,18 @@ export const InternshipTimelineTracker: React.FC<InternshipTimelineTrackerProps>
         position: 'relative'
       }}>
         {/* Phase 1: Training */}
-        <div style={{
-          padding: 14,
-          borderRadius: 14,
-          background: 'rgba(99, 102, 241, 0.1)',
-          border: '1.5px solid #6366f1',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 8
-        }}>
+        <div
+          data-testid="timeline-phase-1"
+          style={{
+            padding: 14,
+            borderRadius: 14,
+            background: 'rgba(99, 102, 241, 0.1)',
+            border: '1.5px solid #6366f1',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8
+          }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <span style={{ fontSize: 11, fontWeight: 900, color: '#818cf8', textTransform: 'uppercase' }}>PHASE 1</span>
             <span style={{ fontSize: 12, fontWeight: 800, color: '#10b981' }}>● Active (1h/day)</span>
@@ -93,6 +103,7 @@ export const InternshipTimelineTracker: React.FC<InternshipTimelineTrackerProps>
           </div>
           {onOpenPracticeTest && (
             <button
+              data-testid="btn-timeline-practice-test"
               onClick={onOpenPracticeTest}
               style={{
                 marginTop: 4,
@@ -112,15 +123,18 @@ export const InternshipTimelineTracker: React.FC<InternshipTimelineTrackerProps>
         </div>
 
         {/* Phase 2: Capstone Project */}
-        <div style={{
-          padding: 14,
-          borderRadius: 14,
-          background: 'rgba(15, 23, 42, 0.6)',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 8
-        }}>
+        <div
+          data-testid="timeline-phase-2"
+          style={{
+            padding: 14,
+            borderRadius: 14,
+            background: 'rgba(15, 23, 42, 0.6)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8
+          }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <span style={{ fontSize: 11, fontWeight: 900, color: '#94a3b8', textTransform: 'uppercase' }}>PHASE 2</span>
             <span style={{ fontSize: 12, fontWeight: 700, color: '#64748b' }}>🔒 Unlocks Month {plan.trainingDurationMonths + 1}</span>
@@ -137,15 +151,18 @@ export const InternshipTimelineTracker: React.FC<InternshipTimelineTrackerProps>
         </div>
 
         {/* Phase 3: Real-Time Internship */}
-        <div style={{
-          padding: 14,
-          borderRadius: 14,
-          background: 'rgba(15, 23, 42, 0.6)',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 8
-        }}>
+        <div
+          data-testid="timeline-phase-3"
+          style={{
+            padding: 14,
+            borderRadius: 14,
+            background: 'rgba(15, 23, 42, 0.6)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8
+          }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <span style={{ fontSize: 11, fontWeight: 900, color: '#94a3b8', textTransform: 'uppercase' }}>PHASE 3</span>
             <span style={{ fontSize: 12, fontWeight: 700, color: '#64748b' }}>🏢 Industry Experience</span>
@@ -162,15 +179,18 @@ export const InternshipTimelineTracker: React.FC<InternshipTimelineTrackerProps>
         </div>
 
         {/* Phase 4: Dual Credentials */}
-        <div style={{
-          padding: 14,
-          borderRadius: 14,
-          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(6, 78, 59, 0.15))',
-          border: '1px solid rgba(16, 185, 129, 0.25)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 8
-        }}>
+        <div
+          data-testid="timeline-phase-4"
+          style={{
+            padding: 14,
+            borderRadius: 14,
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(6, 78, 59, 0.15))',
+            border: '1px solid rgba(16, 185, 129, 0.25)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8
+          }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <span style={{ fontSize: 11, fontWeight: 900, color: '#10b981', textTransform: 'uppercase' }}>PHASE 4</span>
             <span style={{ fontSize: 12, fontWeight: 800, color: '#10b981' }}>🎓 Graduation</span>

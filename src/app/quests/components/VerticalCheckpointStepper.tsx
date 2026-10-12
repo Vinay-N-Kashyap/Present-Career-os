@@ -133,6 +133,7 @@ export const VerticalCheckpointStepper: React.FC<VerticalCheckpointStepperProps>
 
   return (
     <div
+      data-testid="vertical-checkpoint-stepper"
       className="vcs-container"
       style={{
         marginTop: 8,
@@ -234,7 +235,7 @@ export const VerticalCheckpointStepper: React.FC<VerticalCheckpointStepperProps>
         />
 
         {/* ── Checkpoints 01 - 04 ── */}
-        {visibleSteps.map((step, idx) => {
+        {visibleSteps.map((step) => {
           const isActive = step.status === 'active';
           const isDone = step.status === 'completed';
           const isLocked = step.status === 'locked';
@@ -242,6 +243,7 @@ export const VerticalCheckpointStepper: React.FC<VerticalCheckpointStepperProps>
           return (
             <div
               key={step.stepNumber}
+              data-testid={`checkpoint-step-${step.key}`}
               className="vcs-step-row"
               style={{
                 position: 'relative',
@@ -252,6 +254,7 @@ export const VerticalCheckpointStepper: React.FC<VerticalCheckpointStepperProps>
             >
               {/* Circular Numbered Checkpoint Node (Inspired by Screenshot 1) */}
               <div
+                data-testid={`checkpoint-node-${step.key}`}
                 className="vcs-node"
                 style={{
                   position: 'relative',
@@ -325,15 +328,18 @@ export const VerticalCheckpointStepper: React.FC<VerticalCheckpointStepperProps>
                   <span style={{ fontSize: 12, fontWeight: 900, color: step.color, letterSpacing: '0.05em' }}>
                     {step.phaseTag}
                   </span>
-                  <span style={{
-                    fontSize: 12,
-                    fontWeight: 800,
-                    padding: '3px 10px',
-                    borderRadius: 20,
-                    background: isActive ? `${step.color}25` : isDone ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.06)',
-                    color: isActive ? step.color : isDone ? '#10b981' : '#94a3b8',
-                    border: `1px solid ${isActive ? step.color : isDone ? '#10b981' : 'rgba(255, 255, 255, 0.1)'}`
-                  }}>
+                  <span
+                    data-testid={`checkpoint-status-${step.key}`}
+                    style={{
+                      fontSize: 12,
+                      fontWeight: 800,
+                      padding: '3px 10px',
+                      borderRadius: 20,
+                      background: isActive ? `${step.color}25` : isDone ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.06)',
+                      color: isActive ? step.color : isDone ? '#10b981' : '#94a3b8',
+                      border: `1px solid ${isActive ? step.color : isDone ? '#10b981' : 'rgba(255, 255, 255, 0.1)'}`
+                    }}
+                  >
                     {step.badgeText}
                   </span>
                 </div>
@@ -401,6 +407,7 @@ export const VerticalCheckpointStepper: React.FC<VerticalCheckpointStepperProps>
                 <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 4 }}>
                   {step.primaryAction && (
                     <button
+                      data-testid={`btn-checkpoint-primary-${step.key}`}
                       onClick={step.primaryAction.onClick}
                       disabled={isLocked}
                       style={{
@@ -426,6 +433,7 @@ export const VerticalCheckpointStepper: React.FC<VerticalCheckpointStepperProps>
 
                   {step.secondaryAction && (
                     <button
+                      data-testid={`btn-checkpoint-secondary-${step.key}`}
                       onClick={step.secondaryAction.onClick}
                       disabled={isLocked && step.key !== 'graduation'}
                       style={{

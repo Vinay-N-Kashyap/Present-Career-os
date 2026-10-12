@@ -16,38 +16,58 @@ export const PracticeTestReportModal: React.FC<PracticeTestReportModalProps> = (
   testTitle = 'Comprehensive Industry Practice Assessment',
   result
 }) => {
+  React.useEffect(() => {
+    if (!isOpen || typeof window === 'undefined') return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'rgba(0, 0, 0, 0.75)',
-      backdropFilter: 'blur(8px)',
-      zIndex: 10000,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: 16
-    }}>
-      <div style={{
-        width: '100%',
-        maxWidth: 620,
-        background: 'linear-gradient(180deg, #0f172a 0%, #090d16 100%)',
-        border: '1.5px solid rgba(99, 102, 241, 0.4)',
-        borderRadius: 20,
-        padding: '24px 26px',
-        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)',
+    <div
+      data-testid="practice-report-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label={testTitle}
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(0, 0, 0, 0.75)',
+        backdropFilter: 'blur(8px)',
+        zIndex: 10000,
         display: 'flex',
-        flexDirection: 'column',
-        gap: 18,
-        position: 'relative'
-      }}>
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: '100%',
+          maxWidth: 620,
+          background: 'linear-gradient(180deg, #0f172a 0%, #090d16 100%)',
+          border: '1.5px solid rgba(99, 102, 241, 0.4)',
+          borderRadius: 20,
+          padding: '24px 26px',
+          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 18,
+          position: 'relative'
+        }}
+      >
         {/* Close Button */}
         <button
+          data-testid="practice-report-close"
           onClick={onClose}
           style={{
             position: 'absolute',
@@ -92,19 +112,19 @@ export const PracticeTestReportModal: React.FC<PracticeTestReportModalProps> = (
         }}>
           <div>
             <div style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 800 }}>Overall Score</div>
-            <div style={{ fontSize: 24, fontWeight: 900, color: '#10b981', marginTop: 2 }}>
+            <div data-testid="practice-report-score" style={{ fontSize: 24, fontWeight: 900, color: '#10b981', marginTop: 2 }}>
               {result ? `${result.score} / ${result.totalQuestions}` : '88 / 100'}
             </div>
           </div>
           <div>
             <div style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 800 }}>Accuracy</div>
-            <div style={{ fontSize: 24, fontWeight: 900, color: '#38bdf8', marginTop: 2 }}>
+            <div data-testid="practice-report-accuracy" style={{ fontSize: 24, fontWeight: 900, color: '#38bdf8', marginTop: 2 }}>
               {result ? `${result.accuracyPercent}%` : '88%'}
             </div>
           </div>
           <div>
             <div style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 800 }}>Time Taken</div>
-            <div style={{ fontSize: 24, fontWeight: 900, color: '#818cf8', marginTop: 2 }}>
+            <div data-testid="practice-report-time" style={{ fontSize: 24, fontWeight: 900, color: '#818cf8', marginTop: 2 }}>
               {(() => {
                 const s = typeof result?.timeTakenSeconds === 'number' ? Math.max(0, result.timeTakenSeconds) : 225;
                 return `${Math.floor(s / 60)}m ${s % 60}s`;
@@ -113,7 +133,7 @@ export const PracticeTestReportModal: React.FC<PracticeTestReportModalProps> = (
           </div>
           <div>
             <div style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 800 }}>Readiness</div>
-            <div style={{ fontSize: 14.5, fontWeight: 900, color: '#f59e0b', marginTop: 6 }}>
+            <div data-testid="practice-report-readiness" style={{ fontSize: 14.5, fontWeight: 900, color: '#f59e0b', marginTop: 6 }}>
               {(result?.accuracyPercent ?? 88) >= 80 ? 'Placement Ready' : (result?.accuracyPercent ?? 88) >= 60 ? 'Progressing Well' : 'Needs Practice'}
             </div>
           </div>
@@ -153,15 +173,18 @@ export const PracticeTestReportModal: React.FC<PracticeTestReportModalProps> = (
         </div>
 
         {/* Skill Gap Analysis */}
-        <div style={{
-          padding: '12px 14px',
-          borderRadius: 12,
-          background: 'rgba(245, 158, 11, 0.08)',
-          border: '1px solid rgba(245, 158, 11, 0.25)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 6
-        }}>
+        <div
+          data-testid="practice-report-skill-gaps"
+          style={{
+            padding: '12px 14px',
+            borderRadius: 12,
+            background: 'rgba(245, 158, 11, 0.08)',
+            border: '1px solid rgba(245, 158, 11, 0.25)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 6
+          }}
+        >
           <div style={{ fontSize: 12, fontWeight: 900, color: '#f59e0b', textTransform: 'uppercase' }}>
             ⚡ Detected Skill Gap & Diagnostic Feedback:
           </div>
@@ -175,6 +198,7 @@ export const PracticeTestReportModal: React.FC<PracticeTestReportModalProps> = (
         {/* Action Buttons */}
         <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
           <button
+            data-testid="btn-practice-report-continue"
             onClick={onClose}
             style={{
               flex: 1,
