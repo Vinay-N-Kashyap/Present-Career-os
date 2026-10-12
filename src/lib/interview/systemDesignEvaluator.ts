@@ -22,6 +22,8 @@ type TechArchetype =
   | 'commerce_double_entry_ledger'
   | 'vector_search_rag'
   | 'low_latency_matching_exchange'
+  | 'cybersecurity_zero_trust_mesh'
+  | 'video_streaming_webrtc'
   | 'general_distributed';
 
 interface RequirementRule {
@@ -314,6 +316,86 @@ function detectTechArchetype(topic: string): {
           matches: n => /db|postgres|sql|settlement|audit|ledger/i.test(n.type + ' ' + n.label),
           bottleneckIfMissing: 'No post-trade persistence: Trade fills risk data loss upon in-memory engine crash.',
           recommendationIfMissing: 'Asynchronously journal executed trades to a durable PostgreSQL database for clearing and regulatory audit.'
+        }
+      ]
+    };
+  }
+
+  if (/zero[- ]?trust|security|cyber|auth|identity|oauth|token|kms|vault|firewall|defense|siem|pki|bastion|mtls/i.test(lower)) {
+    return {
+      archetype: 'cybersecurity_zero_trust_mesh',
+      requirements: [
+        {
+          key: 'waf_shield',
+          label: 'WAF & DDoS Edge Shield (Cloudflare / API Shield)',
+          weight: 12,
+          matches: n => /waf|shield|firewall|cloudflare|ddos|ingress|guard/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Unshielded edge perimeter: Ingress lacks automated Web Application Firewall (WAF) filtering and volumetric DDoS mitigation.',
+          recommendationIfMissing: 'Deploy an edge WAF or API Shield (e.g. Cloudflare / AWS WAF) to filter malicious payloads, SQLi, and volumetric floods.'
+        },
+        {
+          key: 'idp_gateway',
+          label: 'Identity Provider & OAuth2 / OIDC Auth Gateway',
+          weight: 10,
+          matches: n => /auth|idp|oidc|oauth|identity|gateway|proxy|keycloak/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing centralized identity plane: Microservices cannot verify cryptographic JWT tokens or enforce RBAC/ABAC policies.',
+          recommendationIfMissing: 'Deploy a dedicated Identity Provider (OIDC/Keycloak) with an Auth Gateway validating mTLS and signed claims.'
+        },
+        {
+          key: 'kms_vault',
+          label: 'Hardware Security Module (HSM) / Secret Vault (HashiCorp Vault / KMS)',
+          weight: 10,
+          matches: n => /vault|kms|hsm|secret|key|crypto/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Unsecured secrets management: Private cryptographic keys and service credentials risk plaintext exposure.',
+          recommendationIfMissing: 'Integrate HashiCorp Vault or Cloud KMS for envelope encryption, automated secret rotation, and dynamic credentials.'
+        },
+        {
+          key: 'siem_audit',
+          label: 'Immutable SIEM Audit Log & Security Stream (Kafka / Splunk)',
+          weight: 8,
+          matches: n => /siem|audit|splunk|log|kafka|queue|stream|storage|s3/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No immutable security audit pipeline: Zero-Trust compliance requires non-repudiable logging of all authorization attempts.',
+          recommendationIfMissing: 'Stream structured security audit logs into an immutable SIEM pipeline (Kafka / S3) for continuous anomaly detection.'
+        }
+      ]
+    };
+  }
+
+  if (/webrtc|video[-_ ]conferenc|zoom|sfu|livestream|video[-_ ]stream|video[-_ ]call|broadcasting|media[-_ ]server/i.test(lower)) {
+    return {
+      archetype: 'video_streaming_webrtc',
+      requirements: [
+        {
+          key: 'sfu_media',
+          label: 'WebRTC SFU / Media Gateway (LiveKit / Mediasoup)',
+          weight: 12,
+          matches: n => /media|webrtc|sfu|gateway|stream|relay/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing WebRTC SFU: Mesh peer-to-peer topologies collapse client upstream bandwidth beyond 4 participants.',
+          recommendationIfMissing: 'Deploy a Selective Forwarding Unit (SFU like LiveKit or Mediasoup) to receive one video stream and fan out to subscribers.'
+        },
+        {
+          key: 'turn_stun',
+          label: 'NAT Traversal Relay (STUN / TURN Server)',
+          weight: 10,
+          matches: n => /turn|stun|relay|gateway|load balancer|alb/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No STUN/TURN relay: Clients behind symmetric enterprise NATs or corporate firewalls will experience black screens and connection failures.',
+          recommendationIfMissing: 'Deploy globally distributed TURN/STUN relays (coturn) to guarantee UDP/TCP fallback connection traversal.'
+        },
+        {
+          key: 'presence_signaling',
+          label: 'WebSocket Signaling & Presence State Cache (Redis)',
+          weight: 10,
+          matches: n => /redis|cache|presence|signaling|memory|queue/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No distributed signaling cache: Multi-node room coordination and SDP offer/answer exchanges will become desynchronized.',
+          recommendationIfMissing: 'Use Redis Pub/Sub for sub-millisecond SDP negotiation signaling and participant room state synchronization.'
+        },
+        {
+          key: 'transcoding_storage',
+          label: 'Adaptive Bitrate Transcoder & Recording Storage (S3)',
+          weight: 8,
+          matches: n => /worker|compute|s3|blob|storage|transcod|recording/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No archival or recording storage: Room video recordings cannot be composited or stored durably.',
+          recommendationIfMissing: 'Attach an asynchronous Transcoding Worker and Object Storage (S3) for server-side recording and playback.'
         }
       ]
     };
@@ -628,8 +710,8 @@ export function evaluateSystemTopology(
   // Dynamic Scalability & Reliability computation based on actual architectural properties
   const hasLB = Boolean(snapshot?.hasLoadBalancer) || nodes.some(n => /load balancer|alb|nginx|gateway|edge|broker/i.test(n.type + ' ' + n.label));
   const hasCache = Boolean(snapshot?.hasCachingLayer) || nodes.some(n => /redis|cache|buffer|flash/i.test(n.type + ' ' + n.label));
-  const hasQueue = Boolean(snapshot?.hasQueue) || nodes.some(n => /kafka|queue|stream|worker/i.test(n.type + ' ' + n.label));
-  const hasDB = Boolean(snapshot?.hasDatabase) || nodes.some(n => /db|postgres|sql|timescale|influx|ledger/i.test(n.type + ' ' + n.label));
+  const hasQueue = Boolean(snapshot?.hasQueue) || nodes.some(n => /kafka|queue|stream|worker|media|sfu|webrtc|disruptor|buffer/i.test(n.type + ' ' + n.label));
+  const hasPersistentStorage = Boolean(snapshot?.hasDatabase) || nodes.some(n => /db|postgres|sql|timescale|influx|ledger|s3|blob|storage|vault/i.test(n.type + ' ' + n.label));
   const hasCDN = nodes.some(n => /cdn|cloudflare/i.test(n.type + ' ' + n.label));
 
   const scalabilityRating = nodes.length === 0 ? 0 : Math.min(98, Math.round(
@@ -640,7 +722,7 @@ export function evaluateSystemTopology(
   ));
 
   const reliabilityRating = nodes.length === 0 ? 0 : Math.min(98, Math.round(
-    (hasDB ? 40 : 10) +
+    (hasPersistentStorage ? 40 : 10) +
     (hasQueue ? 28 : 10) +
     (hasLB ? 22 : 8) +
     (finalScore >= 75 ? 8 : 0)

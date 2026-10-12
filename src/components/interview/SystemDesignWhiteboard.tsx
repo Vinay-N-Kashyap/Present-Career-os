@@ -30,6 +30,8 @@ export interface SystemTopologySnapshot {
   hasQueue: boolean;
   hasVectorStore: boolean;
   hasMatchingEngine: boolean;
+  hasSecurityShield: boolean;
+  hasMediaServer: boolean;
   isFullyConnected: boolean;
 }
 
@@ -55,6 +57,9 @@ const TECH_COMPONENTS = [
   { type: 'Vector DB (pgvector / Pinecone)', category: 'storage' as const, color: '#8b5cf6', icon: '🔍' },
   { type: 'Matching Engine (LMAX / Disruptor)', category: 'compute' as const, color: '#f59e0b', icon: '⚡' },
   { type: 'IoT / MQTT Edge Gateway', category: 'gateway' as const, color: '#06b6d4', icon: '📡' },
+  { type: 'WAF / API Shield', category: 'gateway' as const, color: '#e11d48', icon: '🛡️' },
+  { type: 'Auth & KMS Vault (OIDC / Vault)', category: 'storage' as const, color: '#7c3aed', icon: '🔑' },
+  { type: 'Media Server (WebRTC / SFU)', category: 'compute' as const, color: '#0284c7', icon: '🎥' },
 ];
 
 const NON_TECH_COMPONENTS = [
@@ -125,6 +130,8 @@ export default function SystemDesignWhiteboard({
       hasQueue: currentNodes.some(n => n.type.toLowerCase().includes('kafka') || n.type.toLowerCase().includes('queue')),
       hasVectorStore: currentNodes.some(n => n.type.toLowerCase().includes('vector') || n.label.toLowerCase().includes('vector') || n.label.toLowerCase().includes('pgvector') || n.label.toLowerCase().includes('pinecone')),
       hasMatchingEngine: currentNodes.some(n => n.type.toLowerCase().includes('matching') || n.label.toLowerCase().includes('matching') || n.label.toLowerCase().includes('disruptor') || n.label.toLowerCase().includes('orderbook')),
+      hasSecurityShield: currentNodes.some(n => /waf|shield|firewall|vault|security|kms/i.test(n.type + ' ' + n.label)),
+      hasMediaServer: currentNodes.some(n => /media|webrtc|sfu|video|relay/i.test(n.type + ' ' + n.label)),
       isFullyConnected: currentNodes.length > 0 && currentLinks.length >= currentNodes.length - 1
     };
 
@@ -251,7 +258,7 @@ export default function SystemDesignWhiteboard({
   };
 
   // ─── Presets ─────────────────────────────────────────────────────────────
-  const loadPreset = (presetName: '3tier' | 'microservices' | 'rag_pipeline' | 'quant_exchange') => {
+  const loadPreset = (presetName: '3tier' | 'microservices' | 'rag_pipeline' | 'quant_exchange' | 'zero_trust_security' | 'webrtc_conferencing') => {
     if (nodes.length > 2 && typeof window !== 'undefined') {
       const confirmWipe = window.confirm('Loading a preset will replace your current whiteboard architecture. Proceed?');
       if (!confirmWipe) return;
@@ -328,6 +335,40 @@ export default function SystemDesignWhiteboard({
       ];
       setNodes(n);
       setLinks(l);
+    } else if (presetName === 'zero_trust_security') {
+      const n: BoardNode[] = [
+        { id: 'sec_1', type: 'Client App', label: 'External Client App', x: 30, y: 180, category: 'client', color: 'var(--info)' },
+        { id: 'sec_2', type: 'WAF / API Shield', label: 'Cloudflare WAF / API Shield', x: 220, y: 180, category: 'gateway', color: '#e11d48' },
+        { id: 'sec_3', type: 'API Gateway', label: 'OIDC Ingress Auth Gateway', x: 420, y: 180, category: 'gateway', color: 'var(--brand)' },
+        { id: 'sec_4', type: 'Microservice', label: 'Protected Core Microservice', x: 620, y: 100, category: 'compute', color: 'var(--success)' },
+        { id: 'sec_5', type: 'Auth & KMS Vault (OIDC / Vault)', label: 'HashiCorp Vault / KMS', x: 620, y: 260, category: 'storage', color: '#7c3aed' },
+        { id: 'sec_6', type: 'Kafka / Queue', label: 'SIEM Audit Stream', x: 820, y: 180, category: 'queue', color: '#ec4899' },
+      ];
+      const l: BoardLink[] = [
+        { id: 'sl_1', from: 'sec_1', to: 'sec_2', protocol: 'HTTPS/TLS 1.3' },
+        { id: 'sl_2', from: 'sec_2', to: 'sec_3', protocol: 'Filtered Traffic' },
+        { id: 'sl_3', from: 'sec_3', to: 'sec_4', protocol: 'mTLS JWT Token' },
+        { id: 'sl_4', from: 'sec_4', to: 'sec_5', protocol: 'Vault Envelope Key' },
+        { id: 'sl_5', from: 'sec_4', to: 'sec_6', protocol: 'Audit Pub/Sub' },
+      ];
+      setNodes(n);
+      setLinks(l);
+    } else if (presetName === 'webrtc_conferencing') {
+      const n: BoardNode[] = [
+        { id: 'rtc_1', type: 'Client App', label: 'WebRTC Video Participant', x: 30, y: 180, category: 'client', color: 'var(--info)' },
+        { id: 'rtc_2', type: 'Load Balancer', label: 'STUN / TURN Edge Relay', x: 230, y: 180, category: 'gateway', color: 'var(--reward)' },
+        { id: 'rtc_3', type: 'Media Server (WebRTC / SFU)', label: 'LiveKit SFU Media Server', x: 440, y: 180, category: 'compute', color: '#0284c7' },
+        { id: 'rtc_4', type: 'Redis Cache', label: 'Redis Room Signaling Cache', x: 650, y: 100, category: 'storage', color: 'var(--danger)' },
+        { id: 'rtc_5', type: 'Blob Storage (S3)', label: 'S3 Composite Recording Bucket', x: 650, y: 260, category: 'storage', color: '#f97316' },
+      ];
+      const l: BoardLink[] = [
+        { id: 'rl_1', from: 'rtc_1', to: 'rtc_2', protocol: 'UDP NAT Traversal' },
+        { id: 'rl_2', from: 'rtc_2', to: 'rtc_3', protocol: 'RTP Media Stream' },
+        { id: 'rl_3', from: 'rtc_3', to: 'rtc_4', protocol: 'SDP Signaling Sync' },
+        { id: 'rl_4', from: 'rtc_3', to: 'rtc_5', protocol: 'HLS Archive Store' },
+      ];
+      setNodes(n);
+      setLinks(l);
     }
   };
 
@@ -394,6 +435,14 @@ export default function SystemDesignWhiteboard({
 
           <button onClick={() => loadPreset('quant_exchange')} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t2)', borderRadius: 8, padding: '6px 10px', fontSize: 11.5, fontWeight: 800, cursor: 'pointer' }}>
             📈 Quant Exchange
+          </button>
+
+          <button onClick={() => loadPreset('zero_trust_security')} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t2)', borderRadius: 8, padding: '6px 10px', fontSize: 11.5, fontWeight: 800, cursor: 'pointer' }}>
+            🛡️ Zero-Trust Security
+          </button>
+
+          <button onClick={() => loadPreset('webrtc_conferencing')} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t2)', borderRadius: 8, padding: '6px 10px', fontSize: 11.5, fontWeight: 800, cursor: 'pointer' }}>
+            🎥 WebRTC Video
           </button>
 
           <button
