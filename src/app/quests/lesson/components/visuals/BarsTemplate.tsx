@@ -26,6 +26,7 @@ export function BarsTemplate({ step, showSpaces }: BarsTemplateProps): React.Rea
   return (
     <div
       className="visual-bars-container"
+      data-testid="bars-template-root"
       style={{
         display: 'flex',
         flexDirection: 'column',

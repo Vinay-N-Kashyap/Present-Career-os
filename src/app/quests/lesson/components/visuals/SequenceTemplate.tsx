@@ -37,6 +37,7 @@ export function SequenceTemplate({
   return (
     <div
       className="visual-sequence-container"
+      data-testid="sequence-template-root"
       style={{
         display: 'flex',
         flexDirection: 'column',

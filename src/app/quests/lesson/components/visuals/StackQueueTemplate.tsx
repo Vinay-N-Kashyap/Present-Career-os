@@ -29,6 +29,7 @@ export function StackQueueTemplate({
   return (
     <div
       className="visual-stack-queue-container"
+      data-testid="stack-queue-template-root"
       style={{
         display: 'flex',
         flexDirection: 'column',

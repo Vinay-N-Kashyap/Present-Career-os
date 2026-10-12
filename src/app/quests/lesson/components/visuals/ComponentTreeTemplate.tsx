@@ -64,6 +64,7 @@ export function ComponentTreeTemplate({
 
   return (
     <div
+      data-testid="component-tree-template-root"
       style={{
         width: '100%',
         height: '100%',

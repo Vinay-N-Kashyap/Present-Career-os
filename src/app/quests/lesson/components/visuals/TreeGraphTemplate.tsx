@@ -20,24 +20,26 @@ interface NodePos {
 }
 
 export function TreeGraphTemplate({
-  nodes,
-  edges,
+  nodes = [],
+  edges = [],
   step,
   showSpaces,
 }: TreeGraphTemplateProps): React.ReactElement {
-  const activeNodeId = step.activeNodeId;
-  const visitedNodeIds = new Set(step.visitedNodeIds || []);
-  const activeEdge = step.activeEdge;
+  const safeNodes = nodes || [];
+  const safeEdges = edges || [];
+  const activeNodeId = step?.activeNodeId;
+  const visitedNodeIds = new Set(step?.visitedNodeIds || []);
+  const activeEdge = step?.activeEdge;
 
   // Compute node layout (320 x 200 viewport)
   // Determine root/levels using in-degrees
   const inDegree = new Map<string, number>();
   const childrenMap = new Map<string, string[]>();
-  for (const n of nodes) {
+  for (const n of safeNodes) {
     inDegree.set(n.id, 0);
     childrenMap.set(n.id, []);
   }
-  for (const [from, to] of edges) {
+  for (const [from, to] of safeEdges) {
     if (inDegree.has(to)) {
       inDegree.set(to, (inDegree.get(to) || 0) + 1);
     }
@@ -47,8 +49,8 @@ export function TreeGraphTemplate({
   }
 
   // Find root nodes (inDegree === 0)
-  const roots = nodes.filter((n) => (inDegree.get(n.id) || 0) === 0);
-  const startRoots = roots.length > 0 ? roots : [nodes[0]];
+  const roots = safeNodes.filter((n) => (inDegree.get(n.id) || 0) === 0);
+  const startRoots = roots.length > 0 ? roots : (safeNodes[0] ? [safeNodes[0]] : []);
 
   // Assign levels via BFS
   const levels = new Map<string, number>();
@@ -106,6 +108,7 @@ export function TreeGraphTemplate({
   return (
     <div
       className="visual-tree-graph-container"
+      data-testid="tree-graph-template-root"
       style={{
         display: 'flex',
         flexDirection: 'column',

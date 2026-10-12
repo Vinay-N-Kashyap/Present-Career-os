@@ -37,6 +37,7 @@ export function CellsTemplate({ step, showSpaces }: CellsTemplateProps): React.R
   return (
     <div
       className="visual-cells-container"
+      data-testid="cells-template-root"
       style={{
         display: 'flex',
         flexDirection: 'column',

@@ -52,6 +52,7 @@ export function WorkflowTemplate({
 
   return (
     <div
+      data-testid="workflow-template-root"
       style={{
         width: '100%',
         height: '100%',

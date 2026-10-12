@@ -26,6 +26,7 @@ export function StatesTemplate({
   return (
     <div
       className="visual-states-container"
+      data-testid="states-template-root"
       style={{
         display: 'flex',
         flexDirection: 'column',

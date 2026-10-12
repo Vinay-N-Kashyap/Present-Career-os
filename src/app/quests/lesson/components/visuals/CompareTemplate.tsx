@@ -102,6 +102,7 @@ export function CompareTemplate({
 
   return (
     <div
+      data-testid="compare-template-root"
       style={{
         display: 'flex',
         flexDirection: 'row',

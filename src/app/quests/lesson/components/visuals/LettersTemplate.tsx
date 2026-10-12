@@ -8,14 +8,15 @@ interface LettersTemplateProps {
   showSpaces?: boolean;
 }
 
-export function LettersTemplate({ text, step, showSpaces }: LettersTemplateProps): React.ReactElement {
-  const chars = text.split('');
+export function LettersTemplate({ text = '', step, showSpaces }: LettersTemplateProps): React.ReactElement {
+  const safeText = text || '';
+  const chars = safeText.split('');
   const len = chars.length;
 
   // Resolve pointer index
   let normalizedPointerIndex: number | null = null;
   let isPointerOutOfRange = false;
-  if (step.pointer !== undefined) {
+  if (step?.pointer !== undefined) {
     if (step.pointer < 0) {
       normalizedPointerIndex = len + step.pointer;
     } else if (step.pointer < len) {
@@ -26,21 +27,22 @@ export function LettersTemplate({ text, step, showSpaces }: LettersTemplateProps
   }
 
   const isInRange = (i: number): boolean => {
-    if (!step.range) return false;
+    if (!step?.range) return false;
     const [start, stop] = step.range;
     return i >= start && i < stop;
   };
 
   const isRangeStopCell = (i: number): boolean => {
-    if (!step.range) return false;
+    if (!step?.range) return false;
     return i === step.range[1];
   };
 
   // When step.range is undefined and all cells are data (e.g. 3.3 step 3)
-  const allCellsAreData = step.range === undefined && step.tone === 'data' && step.pointer === undefined;
+  const allCellsAreData = step?.range === undefined && step?.tone === 'data' && step?.pointer === undefined;
 
   return (
     <div
+      data-testid="letters-template-root"
       style={{
         display: 'flex',
         flexDirection: 'column',

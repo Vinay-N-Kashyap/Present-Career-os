@@ -23,6 +23,7 @@ export function TableTemplate({ columns = [], step, showSpaces }: TableTemplateP
   return (
     <div
       className="visual-table-container"
+      data-testid="table-template-root"
       style={{
         width: '100%',
         maxWidth: colCount > 2 ? '620px' : '560px',
