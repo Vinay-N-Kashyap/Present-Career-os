@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { countStandupWords } from '@/lib/internships/sprints';
 
 export interface StandupModalProps {
@@ -21,6 +21,15 @@ export const StandupModal: React.FC<StandupModalProps> = ({
   const [blockers, setBlockers] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!isOpen || isSubmitting || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, isSubmitting, onClose]);
 
   if (!isOpen) return null;
 
@@ -48,6 +57,13 @@ export const StandupModal: React.FC<StandupModalProps> = ({
 
   return (
     <div
+      data-testid="standup-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Week ${week} Stand-Up`}
+      onClick={(e) => {
+        if (!isSubmitting && e.target === e.currentTarget) onClose();
+      }}
       style={{
         position: 'fixed',
         inset: 0,
@@ -85,6 +101,8 @@ export const StandupModal: React.FC<StandupModalProps> = ({
           </div>
           <button
             type="button"
+            data-testid="btn-close-standup"
+            aria-label="Close standup modal"
             onClick={onClose}
             style={{
               background: 'transparent',
@@ -105,6 +123,7 @@ export const StandupModal: React.FC<StandupModalProps> = ({
             </label>
             <textarea
               rows={3}
+              data-testid="textarea-standup-done"
               value={done}
               onChange={(e) => setDone(e.target.value)}
               placeholder="Completed patient intake validation function and wrote PostgreSQL table migration..."
@@ -128,6 +147,7 @@ export const StandupModal: React.FC<StandupModalProps> = ({
             </label>
             <textarea
               rows={3}
+              data-testid="textarea-standup-next"
               value={next}
               onChange={(e) => setNext(e.target.value)}
               placeholder="Will work on appointment booking conflicts check and submit PR to squad repository..."
@@ -151,6 +171,7 @@ export const StandupModal: React.FC<StandupModalProps> = ({
             </label>
             <input
               type="text"
+              data-testid="input-standup-blockers"
               value={blockers}
               onChange={(e) => setBlockers(e.target.value)}
               placeholder="None, tests passing smoothly."
@@ -171,6 +192,7 @@ export const StandupModal: React.FC<StandupModalProps> = ({
           {/* Word Count Indicator */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span
+              data-testid="standup-word-count"
               style={{
                 fontSize: 12,
                 fontWeight: 700,
@@ -180,12 +202,13 @@ export const StandupModal: React.FC<StandupModalProps> = ({
               Word count: {totalWords} words {totalWords < 30 ? `(need at least 30)` : `(valid)`}
             </span>
 
-            {errorMsg && <span style={{ fontSize: 12, color: '#f87171' }}>{errorMsg}</span>}
+            {errorMsg && <span data-testid="standup-error-msg" style={{ fontSize: 12, color: '#f87171' }}>{errorMsg}</span>}
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 6 }}>
             <button
               type="button"
+              data-testid="btn-cancel-standup"
               onClick={onClose}
               style={{
                 padding: '8px 16px',
@@ -201,6 +224,7 @@ export const StandupModal: React.FC<StandupModalProps> = ({
             </button>
             <button
               type="submit"
+              data-testid="btn-save-standup"
               disabled={isSubmitting || !isValidLength}
               style={{
                 padding: '8px 20px',

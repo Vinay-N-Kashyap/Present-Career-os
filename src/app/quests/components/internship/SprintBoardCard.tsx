@@ -80,6 +80,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
 
   return (
     <div
+      data-testid="sprint-board-card"
       style={{
         borderRadius: 16,
         padding: 22,
@@ -104,6 +105,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
         {activeSprint && (
           <button
             type="button"
+            data-testid="btn-open-standup"
             onClick={() => onOpenStandup(activeSprint.number)}
             style={{
               padding: '6px 14px',
@@ -130,6 +132,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
             <button
               key={sprint.id}
               type="button"
+              data-testid={`btn-select-sprint-${sprint.number}`}
               onClick={() => setSelectedSprintId(sprint.id)}
               style={{
                 borderRadius: 10,
@@ -180,7 +183,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
             <span style={{ fontSize: 11, fontWeight: 800, color: '#818cf8', textTransform: 'uppercase' }}>
               Sprint {activeSprint.number} Goal
             </span>
-            <h4 style={{ margin: '2px 0 0 0', fontSize: 14.5, fontWeight: 800, color: '#ffffff' }}>
+            <h4 data-testid="sprint-goal" style={{ margin: '2px 0 0 0', fontSize: 14.5, fontWeight: 800, color: '#ffffff' }}>
               {activeSprint.goal}
             </h4>
           </div>
@@ -193,6 +196,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               <input
                 type="url"
+                data-testid="input-pr-link"
                 placeholder="https://github.com/org/repo/pull/1"
                 value={prInput}
                 onChange={(e) => setPrInput(e.target.value)}
@@ -209,6 +213,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
               />
               <button
                 type="button"
+                data-testid="btn-record-pr"
                 onClick={handlePrSubmit}
                 disabled={isSubmittingPr || !prInput.trim()}
                 style={{
@@ -228,7 +233,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
           </div>
 
           {statusMsg && (
-            <span style={{ fontSize: 12, fontWeight: 600, color: statusMsg.error ? '#f87171' : '#34d399' }}>
+            <span data-testid="sprint-status-msg" style={{ fontSize: 12, fontWeight: 600, color: statusMsg.error ? '#f87171' : '#34d399' }}>
               {statusMsg.text}
             </span>
           )}
@@ -238,6 +243,7 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
               <button
                 type="button"
+                data-testid="btn-submit-sprint"
                 onClick={handleSprintSubmit}
                 disabled={isSubmittingSprint}
                 style={{

@@ -18,6 +18,7 @@ export const BacklogCard: React.FC<BacklogCardProps> = ({ brief, stories }) => {
 
   return (
     <div
+      data-testid="backlog-card"
       style={{
         borderRadius: 16,
         padding: 22,
@@ -34,7 +35,7 @@ export const BacklogCard: React.FC<BacklogCardProps> = ({ brief, stories }) => {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontSize: 22 }}>📋</span>
-            <h3 style={{ margin: 0, fontSize: 17, fontWeight: 900, color: '#ffffff' }}>
+            <h3 data-testid="backlog-product-name" style={{ margin: 0, fontSize: 17, fontWeight: 900, color: '#ffffff' }}>
               {brief.productName}
             </h3>
           </div>
@@ -46,6 +47,7 @@ export const BacklogCard: React.FC<BacklogCardProps> = ({ brief, stories }) => {
         <div style={{ display: 'flex', background: 'rgba(30, 41, 59, 0.6)', padding: 4, borderRadius: 10, border: '1px solid rgba(148, 163, 184, 0.2)' }}>
           <button
             type="button"
+            data-testid="btn-tab-stories"
             onClick={() => setActiveTab('stories')}
             style={{
               padding: '6px 14px',
@@ -62,6 +64,7 @@ export const BacklogCard: React.FC<BacklogCardProps> = ({ brief, stories }) => {
           </button>
           <button
             type="button"
+            data-testid="btn-tab-schema"
             onClick={() => setActiveTab('schema')}
             style={{
               padding: '6px 14px',
@@ -81,10 +84,11 @@ export const BacklogCard: React.FC<BacklogCardProps> = ({ brief, stories }) => {
 
       {/* Tab 1: Stories View */}
       {activeTab === 'stories' ? (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxHeight: 320, overflowY: 'auto' }}>
+        <div data-testid="backlog-stories-list" style={{ display: 'flex', flexDirection: 'column', gap: 10, maxHeight: 320, overflowY: 'auto' }}>
           {userStories.map((story) => (
             <div
               key={story.id}
+              data-testid={`story-card-${story.id}`}
               style={{
                 borderRadius: 10,
                 padding: '12px 16px',
@@ -122,10 +126,11 @@ export const BacklogCard: React.FC<BacklogCardProps> = ({ brief, stories }) => {
         </div>
       ) : (
         /* Tab 2: PostgreSQL Schema View */
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12, maxHeight: 320, overflowY: 'auto' }}>
+        <div data-testid="backlog-schema-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12, maxHeight: 320, overflowY: 'auto' }}>
           {brief.dataModel?.map((table) => (
             <div
               key={table.table}
+              data-testid={`schema-table-${table.table}`}
               style={{
                 borderRadius: 10,
                 padding: '12px 14px',

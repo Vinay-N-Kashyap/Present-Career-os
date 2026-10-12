@@ -72,7 +72,7 @@ export const Tier2Desk: React.FC<Tier2DeskProps> = ({
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div data-testid="tier2-desk-root" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
       {/* 1. Squad / Team Card */}
       <TeamCard
         team={team}
@@ -104,6 +104,7 @@ export const Tier2Desk: React.FC<Tier2DeskProps> = ({
 
       {/* 5. Final Demo & Oral Defense Card */}
       <div
+        data-testid="tier2-demo-card"
         style={{
           borderRadius: 16,
           padding: 22,
@@ -130,6 +131,7 @@ export const Tier2Desk: React.FC<Tier2DeskProps> = ({
           <form onSubmit={handleDemoSubmit} style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <input
               type="url"
+              data-testid="input-demo-url"
               placeholder="https://your-service.onrender.com"
               value={demoInput}
               onChange={(e) => setDemoInput(e.target.value)}
@@ -146,6 +148,7 @@ export const Tier2Desk: React.FC<Tier2DeskProps> = ({
             />
             <button
               type="submit"
+              data-testid="btn-verify-demo"
               disabled={isSubmittingDemo || !demoInput.trim()}
               style={{
                 padding: '8px 16px',
@@ -164,7 +167,7 @@ export const Tier2Desk: React.FC<Tier2DeskProps> = ({
         )}
 
         {demoMsg && (
-          <span style={{ fontSize: 12, fontWeight: 700, color: demoMsg.startsWith('✓') ? '#34d399' : '#f87171' }}>
+          <span data-testid="demo-status-msg" style={{ fontSize: 12, fontWeight: 700, color: demoMsg.startsWith('✓') ? '#34d399' : '#f87171' }}>
             {demoMsg}
           </span>
         )}
@@ -173,6 +176,7 @@ export const Tier2Desk: React.FC<Tier2DeskProps> = ({
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
             <button
               type="button"
+              data-testid="btn-launch-oral-defense"
               onClick={onStartDefense}
               style={{
                 padding: '8px 20px',

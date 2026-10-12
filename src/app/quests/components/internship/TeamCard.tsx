@@ -43,6 +43,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
 
   return (
     <div
+      data-testid="team-card"
       style={{
         borderRadius: 16,
         padding: 22,
@@ -71,6 +72,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
         </div>
 
         <span
+          data-testid="team-mode-badge"
           style={{
             fontSize: 11,
             fontWeight: 800,
@@ -88,6 +90,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
 
       {/* GitHub Repository Row */}
       <div
+        data-testid="team-repo-row"
         style={{
           borderRadius: 10,
           padding: '12px 16px',
@@ -105,6 +108,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
           <span style={{ fontSize: 13, fontWeight: 700, color: '#cbd5e1' }}>Team Repository:</span>
           {team?.repoUrl ? (
             <a
+              data-testid="team-repo-link"
               href={team.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -129,6 +133,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
           onUpdateRepo && (
             <button
               type="button"
+              data-testid="btn-edit-repo"
               onClick={() => setIsEditingRepo(true)}
               style={{
                 background: 'rgba(99, 102, 241, 0.2)',
@@ -148,6 +153,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
             <input
               type="url"
+              data-testid="input-repo"
               placeholder="https://github.com/org/repo"
               value={repoInput}
               onChange={(e) => setRepoInput(e.target.value)}
@@ -163,6 +169,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
             />
             <button
               type="button"
+              data-testid="btn-save-repo"
               onClick={handleSaveRepo}
               disabled={isSaving || !repoInput.trim()}
               style={{
@@ -180,6 +187,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
             </button>
             <button
               type="button"
+              data-testid="btn-cancel-repo"
               onClick={() => {
                 setIsEditingRepo(false);
                 setErrorMsg(null);
@@ -207,10 +215,11 @@ export const TeamCard: React.FC<TeamCardProps> = ({
         <h4 style={{ margin: '0 0 10px 0', fontSize: 13, fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase' }}>
           Roster & Task Assignment
         </h4>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
+        <div data-testid="team-members-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
           {members.map((member, idx) => (
             <div
               key={member.studentId || idx}
+              data-testid={`team-member-card-${idx + 1}`}
               style={{
                 borderRadius: 10,
                 padding: '10px 14px',
