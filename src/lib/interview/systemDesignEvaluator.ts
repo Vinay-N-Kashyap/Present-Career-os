@@ -18,6 +18,8 @@ type TechArchetype =
   | 'event_pipeline'
   | 'media_cdn'
   | 'transactional_acid'
+  | 'iot_embedded_edge'
+  | 'commerce_double_entry_ledger'
   | 'general_distributed';
 
 interface RequirementRule {
@@ -155,7 +157,87 @@ function detectTechArchetype(topic: string): {
     };
   }
 
-  if (/ecommerce|e-commerce|checkout|payment|bank|order|ledger|inventory|booking/.test(lower)) {
+  if (/ledger|double[-_ ]entry|reconciliation|accounting|journal|balance[-_ ]sheet|fiscal/i.test(lower)) {
+    return {
+      archetype: 'commerce_double_entry_ledger',
+      requirements: [
+        {
+          key: 'immutable_ledger',
+          label: 'Immutable Financial Ledger (PostgreSQL Double-Entry DB)',
+          weight: 12,
+          matches: n => /ledger|postgres|db|sql|immutable|journal/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing immutable double-entry ledger: Financial transactions risk non-deterministic balance drift and audit failure.',
+          recommendationIfMissing: 'Implement an append-only double-entry ledger table in PostgreSQL with strict Dr = Cr invariant constraints.'
+        },
+        {
+          key: 'reconciliation_worker',
+          label: 'Asynchronous Reconciliation Worker / Audit Job',
+          weight: 10,
+          matches: n => /worker|audit|reconciliation|cron|compute|service/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No asynchronous reconciliation worker: Settlement discrepancies and payment gateway drift cannot be detected or healed.',
+          recommendationIfMissing: 'Add an automated Reconciliation Worker to compare ledger journal entries with payment gateway settlements.'
+        },
+        {
+          key: 'idempotency_cache',
+          label: 'Idempotency Key & Distributed Lock (Redis)',
+          weight: 10,
+          matches: n => /redis|cache|lock|idempotent/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No distributed lock or idempotency store: Network retries risk duplicate credit/debit transaction execution.',
+          recommendationIfMissing: 'Deploy Redis for distributed lock acquisition and transaction idempotency key deduplication.'
+        },
+        {
+          key: 'audit_storage',
+          label: 'Tamper-Evident Audit Log Archive (S3 / Cold Storage)',
+          weight: 8,
+          matches: n => /s3|blob|audit|cold|lake|storage/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No immutable audit archive: Regulatory financial audit trails cannot be verified independently of the transactional database.',
+          recommendationIfMissing: 'Stream signed ledger event logs into write-once Object Storage (S3 / Blob) for regulatory compliance.'
+        }
+      ]
+    };
+  }
+
+  if (/iot|embedded|sensor|telemetry|firmware|device|mqtt|ble|hardware|gateway[-_ ]edge/i.test(lower)) {
+    return {
+      archetype: 'iot_embedded_edge',
+      requirements: [
+        {
+          key: 'edge_gateway',
+          label: 'IoT Edge Gateway / Ingestion Controller (MQTT / EMQX)',
+          weight: 12,
+          matches: n => /edge|gateway|broker|mqtt|device|controller/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing Edge Gateway: Constrained IoT devices cannot open direct connections to internal cloud services without a protocol gateway.',
+          recommendationIfMissing: 'Deploy an IoT Edge Gateway or MQTT broker (e.g. EMQX, AWS IoT Core) for lightweight telemetry ingestion.'
+        },
+        {
+          key: 'local_buffer',
+          label: 'Local Storage / Flash Buffer / Redis Cache',
+          weight: 10,
+          matches: n => /buffer|cache|flash|redis|memory|local/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No local buffer or transient cache: Intermittent network drops in edge environments will lead to lost sensor telemetry.',
+          recommendationIfMissing: 'Introduce a local buffer or Redis cache to spool metrics offline during network partitions.'
+        },
+        {
+          key: 'stream_broker',
+          label: 'Telemetry Event Bus (Kafka / Message Queue)',
+          weight: 10,
+          matches: n => /kafka|queue|stream|event|pubsub/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Unbuffered edge streaming: High-frequency sensor bursts will overload backend analytics workers.',
+          recommendationIfMissing: 'Add Kafka or a Message Queue to buffer high-frequency device telemetry streams.'
+        },
+        {
+          key: 'tsdb_storage',
+          label: 'Time-Series Database / Data Lake (TimescaleDB / InfluxDB)',
+          weight: 8,
+          matches: n => /db|postgres|timescale|influx|lake|storage|s3/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing persistent time-series storage: Historical sensor telemetry and device state cannot be analyzed.',
+          recommendationIfMissing: 'Attach a Time-Series Database (TimescaleDB / InfluxDB) or cold object storage for long-term telemetry retention.'
+        }
+      ]
+    };
+  }
+
+  if (/ecommerce|e-commerce|checkout|payment|bank|order|inventory|booking/.test(lower)) {
     return {
       archetype: 'transactional_acid',
       requirements: [
@@ -462,10 +544,10 @@ export function evaluateSystemTopology(
     finalScore >= 40 ? 'C' : 'Needs Work';
 
   // Dynamic Scalability & Reliability computation based on actual architectural properties
-  const hasLB = Boolean(snapshot?.hasLoadBalancer) || nodes.some(n => /load balancer|alb|nginx|gateway/i.test(n.type + ' ' + n.label));
-  const hasCache = Boolean(snapshot?.hasCachingLayer) || nodes.some(n => /redis|cache/i.test(n.type + ' ' + n.label));
-  const hasQueue = Boolean(snapshot?.hasQueue) || nodes.some(n => /kafka|queue/i.test(n.type + ' ' + n.label));
-  const hasDB = Boolean(snapshot?.hasDatabase) || nodes.some(n => /db|postgres|sql/i.test(n.type + ' ' + n.label));
+  const hasLB = Boolean(snapshot?.hasLoadBalancer) || nodes.some(n => /load balancer|alb|nginx|gateway|edge|broker/i.test(n.type + ' ' + n.label));
+  const hasCache = Boolean(snapshot?.hasCachingLayer) || nodes.some(n => /redis|cache|buffer|flash/i.test(n.type + ' ' + n.label));
+  const hasQueue = Boolean(snapshot?.hasQueue) || nodes.some(n => /kafka|queue|stream|worker/i.test(n.type + ' ' + n.label));
+  const hasDB = Boolean(snapshot?.hasDatabase) || nodes.some(n => /db|postgres|sql|timescale|influx|ledger/i.test(n.type + ' ' + n.label));
   const hasCDN = nodes.some(n => /cdn|cloudflare/i.test(n.type + ' ' + n.label));
 
   const scalabilityRating = nodes.length === 0 ? 0 : Math.min(98, Math.round(

@@ -23,7 +23,13 @@ const MonacoEditor = dynamic(
 
 export interface Round2CodingProps {
   domainStream: 'tech' | 'non_tech';
-  currentCodingProb: { title: string; description: string; starterCode: string };
+  currentCodingProb: {
+    title: string;
+    description: string;
+    starterCode: string;
+    testCases?: Array<{ name?: string; tier?: string; tierLabel?: string; input?: string; expectedOutput?: string }>;
+  };
+  testOutcomes?: Array<{ index: number; testCaseName?: string; passed: boolean; expectedOutput: string; actualOutput?: string; error?: string }>;
   onProceed: () => void;
   onReviewSolution: () => void;
   onRetryChallenge: () => void;
@@ -53,6 +59,7 @@ export interface Round2CodingProps {
 export const Round2Coding: React.FC<Round2CodingProps> = ({
   domainStream,
   currentCodingProb,
+  testOutcomes,
   onProceed,
   onReviewSolution,
   onRetryChallenge,
@@ -91,6 +98,52 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
             <p style={{ fontSize: 12.5, color: 'var(--t2)', margin: '4px 0 0', lineHeight: 1.4 }}>
               {currentCodingProb.description}
             </p>
+            {/* 5-Tier Boundary Testing Status Strip */}
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center', marginTop: 8 }}>
+              <span style={{ fontSize: 10.5, fontWeight: 800, color: 'var(--t3)', letterSpacing: '0.5px' }}>5-TIER BATTERY:</span>
+              {(() => {
+                const defaultTiers = [
+                  { label: 'T1: Standard', name: 'Standard Case' },
+                  { label: 'T2: Scale', name: 'Scale / Burst' },
+                  { label: 'T3: Zero/Empty', name: 'Zero / Empty' },
+                  { label: 'T4: Edge/Negative', name: 'Edge Case' },
+                  { label: 'T5: Complexity', name: 'Complexity Bounds' }
+                ];
+                const tiers = (currentCodingProb.testCases && currentCodingProb.testCases.length >= 5)
+                  ? currentCodingProb.testCases.map((tc, i) => ({
+                      label: tc.tierLabel || defaultTiers[i]?.label || `T${i + 1}`,
+                      name: tc.name || defaultTiers[i]?.name || `Test ${i + 1}`
+                    }))
+                  : defaultTiers;
+
+                return tiers.map((t, idx) => {
+                  const outcome = testOutcomes && testOutcomes[idx];
+                  const isPassed = outcome?.passed === true;
+                  const isFailed = outcome && outcome.passed === false;
+                  return (
+                    <div
+                      key={idx}
+                      title={outcome ? (isPassed ? `${t.name}: Passed` : `${t.name}: Failed`) : `${t.name}: Pending execution`}
+                      style={{
+                        padding: '3px 8px',
+                        borderRadius: 6,
+                        fontSize: 10.5,
+                        fontWeight: 700,
+                        background: isPassed ? 'rgba(34, 197, 94, 0.15)' : isFailed ? 'rgba(239, 68, 68, 0.15)' : 'var(--bg3)',
+                        color: isPassed ? 'var(--success-bright)' : isFailed ? 'var(--red)' : 'var(--t2)',
+                        border: isPassed ? '1px solid rgba(34, 197, 94, 0.4)' : isFailed ? '1px solid rgba(239, 68, 68, 0.4)' : '1px solid var(--border)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 4
+                      }}
+                    >
+                      <span>{isPassed ? '✅' : isFailed ? '❌' : '⚪'}</span>
+                      <span>{t.label}</span>
+                    </div>
+                  );
+                });
+              })()}
+            </div>
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             {canProceed ? <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '7px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>

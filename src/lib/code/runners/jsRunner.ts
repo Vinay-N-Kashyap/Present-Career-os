@@ -14,6 +14,11 @@ function parseInputArgs(raw: string): unknown[] {
       return JSON.parse('[' + trimmed.slice(1, -1) + ']');
     } catch {}
   }
+  // Comma-separated arguments without outer parens: [10, 20, 30], 15 -> [[10, 20, 30], 15]
+  try {
+    const wrapped = JSON.parse('[' + trimmed + ']');
+    if (Array.isArray(wrapped)) return wrapped;
+  } catch {}
   // Array or Object or primitive JSON: [10, 20] or "hello" or 42
   try {
     const parsed = JSON.parse(trimmed);

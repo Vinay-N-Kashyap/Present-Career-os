@@ -221,6 +221,7 @@ export default function InterviewPage() {
 
   // Dynamic Generative Problem Cache
   const [dynamicProblemData, setDynamicProblemData] = useState<any>(null);
+  const [latestTestOutcomes, setLatestTestOutcomes] = useState<any[]>([]);
   const [codingAttempt, setCodingAttempt] = useState(0);
   const dynamicProblemCacheRef = useRef<Map<string, any>>(new Map());
   const dynamicProblemRequestRef = useRef(0);
@@ -770,31 +771,48 @@ export default function InterviewPage() {
       if (selectedLang === 'javascript' && fnName.includes('_')) {
         fnName = fnName.replace(/_([a-z0-9])/g, (_: string, c: string) => c.toUpperCase());
       }
+      const resolvedProb = getDynamicCodingProblem(activeTopicName, selectedLang);
       const generatedTestCases = Array.isArray(dynamicProblemData?.testCases) && dynamicProblemData.testCases.length > 0
         ? dynamicProblemData.testCases
-        : null;
+        : (Array.isArray(resolvedProb?.testCases) && resolvedProb.testCases.length > 0 ? resolvedProb.testCases : null);
       const testCases = (generatedTestCases || [
-        { input: '[10, 20, 30], 15', output: '2', name: 'Standard Case (>15)' },
-        { input: '[], 0', output: '0', name: 'Boundary Check (empty)' }
+        { input: '([10, 20, 30, 40], 25)', output: '2', expectedOutput: '2', name: '[T1: Standard] Nominal throughput check', tier: 'standard', tierLabel: 'T1: Standard' },
+        { input: '([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], 500)', output: '5', expectedOutput: '5', name: '[T2: Scale] Throughput burst sequence', tier: 'scale', tierLabel: 'T2: Scale' },
+        { input: '([], 0)', output: '0', expectedOutput: '0', name: '[T3: Zero/Empty] Empty sequence zero-check', tier: 'zero_empty', tierLabel: 'T3: Zero/Empty' },
+        { input: '([-50, -20, 0, 10], -10)', output: '2', expectedOutput: '2', name: '[T4: Edge/Negative] Negative values boundary', tier: 'edge_case', tierLabel: 'T4: Edge/Negative' },
+        { input: '([15, 15, 15, 15], 15)', output: '0', expectedOutput: '0', name: '[T5: Complexity Bounds] Strict inequality boundary', tier: 'complexity', tierLabel: 'T5: Complexity' }
       ]).map((testCase: any) => ({
         ...testCase,
         output: String(testCase.output ?? testCase.expectedOutput ?? ''),
+        expectedOutput: String(testCase.expectedOutput ?? testCase.output ?? '')
       }));
       const result = await runTestSuite(codeContent, selectedLang as any, {
         functionName: fnName,
         testCases,
         testSuite: selectedLang === 'sql'
-          ? (dynamicProblemData?.testSuite || getDynamicCodingProblem(activeTopicName, selectedLang).testSuite)
+          ? (dynamicProblemData?.testSuite || resolvedProb.testSuite)
           : undefined,
         timeoutMs: 5000
       });
+      setLatestTestOutcomes(result.testOutcomes || []);
       setTerminalLogs(prev => [...prev, ...result.terminalLogs]);
+      if (result.testOutcomes && result.testOutcomes.length > 0) {
+        setTerminalLogs(prev => [
+          ...prev,
+          '\n--- 5-TIER BOUNDARY EVALUATION RESULTS ---',
+          ...result.testOutcomes.map((o, idx) => {
+            const mark = o.passed ? '✅' : '❌';
+            const name = o.testCaseName || `Tier ${idx + 1}`;
+            return `  ${mark} ${name}: ${o.passed ? 'PASSED' : `FAILED (Expected ${o.expectedOutput}, got ${o.actualOutput || 'error'})`}`;
+          })
+        ]);
+      }
       void recordCodeSubmission();
       const codeIsUnchanged = codeContentRef.current === codeContent && selectedLangRef.current === selectedLang;
       setCodeRunFailed(!result.allPassed || !codeIsUnchanged);
       if (result.allPassed && codeIsUnchanged) {
         setCodeSubmitted(true);
-        setTerminalLogs(prev => [...prev, `\n✅ [PASSED] ${result.passedTests} tests verified!`]);
+        setTerminalLogs(prev => [...prev, `\n✅ [PASSED] All ${result.passedTests} boundary tiers verified!`]);
       } else {
         setCodeSubmitted(false);
         if (result.allPassed) {
@@ -829,6 +847,7 @@ export default function InterviewPage() {
     setCodeRunFailed(false);
     setCodeContent('');
     setTerminalLogs([]);
+    setLatestTestOutcomes([]);
     setDynamicProblemData(null);
     codeModifiedRef.current = false;
     codePerLangRef.current = {};
@@ -1164,6 +1183,7 @@ export default function InterviewPage() {
             <Round2Coding
               domainStream={domainStream}
               currentCodingProb={currentCodingProb}
+              testOutcomes={latestTestOutcomes}
               onProceed={() => proceedToNextStage('round3_systems')}
               onReviewSolution={reviewCodingSolution}
               onRetryChallenge={retryWithNewCodingChallenge}
@@ -1185,6 +1205,7 @@ export default function InterviewPage() {
                 setCodeReviewStarted(false);
                 setCodeReviewQuestionReady(false);
                 setCodeReviewAnswered(false);
+                setLatestTestOutcomes([]);
                 codeReviewQuestionPendingRef.current = false;
               }}
               runCodeAndTests={runCodeAndTests}

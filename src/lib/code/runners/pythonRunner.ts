@@ -264,6 +264,10 @@ function parseInputArgs(raw: string): unknown[] {
     } catch {}
   }
   try {
+    const wrapped = JSON.parse('[' + trimmed + ']');
+    if (Array.isArray(wrapped)) return wrapped;
+  } catch {}
+  try {
     const parsed = JSON.parse(trimmed);
     return Array.isArray(parsed) ? [parsed] : [parsed];
   } catch {}
