@@ -16,7 +16,7 @@ const CredentialPreviewModal: React.FC<CredentialPreviewModalProps> = ({
   trackTitle = 'Full-Stack Software Architecture', tierKey = 't1_job_sim', onProceedToEnroll,
 }) => {
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || typeof window === 'undefined') return;
     const h = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
@@ -74,9 +74,9 @@ const CredentialPreviewModal: React.FC<CredentialPreviewModalProps> = ({
   const bCard = (bi:string) => ({ ...s.card, borderImage:`${bi} 1`, borderWidth:'1px' });
 
   return (
-    <div style={s.overlay} onClick={(e) => { if (e.target===e.currentTarget) onClose(); }} role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div data-testid="credential-preview-modal" style={s.overlay} onClick={(e) => { if (e.target===e.currentTarget) onClose(); }} role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div style={s.modal}>
-        <style jsx>{`@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideUp{from{opacity:0;transform:translateY(16px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}`}</style>
+        <style>{`@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideUp{from{opacity:0;transform:translateY(16px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}`}</style>
 
         <header style={s.header}>
           <div>
@@ -89,13 +89,13 @@ const CredentialPreviewModal: React.FC<CredentialPreviewModalProps> = ({
         </header>
 
         <div style={s.cards}>
-          <article style={bCard(ig)}>
+          <article data-testid="credential-project-card" style={bCard(ig)}>
             <span style={bBadge('rgba(99,102,241,0.18)','#a5b4fc','rgba(99,102,241,0.3)')}>ACCREDITED PROJECT CERTIFICATION</span>
             <h3 style={s.heading}>{track}</h3>
             <p style={s.details}>Awarded for independent execution of 1-Month production capstone with automated test passing.</p>
             <div style={s.seal}><span style={s.sealIcon('#f59e0b')}>🏅</span><span>✓ ISO-Aligned • Cryptographically Signed</span></div>
           </article>
-          {INTERNSHIP_AVAILABLE && <article style={bCard(eg)}>
+          {INTERNSHIP_AVAILABLE && <article data-testid="credential-fellowship-card" style={bCard(eg)}>
             <span style={bBadge('rgba(16,185,129,0.18)','#6ee7b7','rgba(16,185,129,0.3)')}>VENTURE APPRENTICESHIP & FELLOWSHIP</span>
             <h3 style={s.heading}>{getTierWording()}</h3>
             <p style={s.details}>Verified software development program contributing to production-grade repositories.</p>
@@ -109,8 +109,8 @@ const CredentialPreviewModal: React.FC<CredentialPreviewModalProps> = ({
         </div>
 
         <footer style={s.footer}>
-          <button onClick={onClose} style={s.secBtn} onMouseOver={(e)=>{e.currentTarget.style.background='rgba(255,255,255,0.08)'}} onMouseOut={(e)=>{e.currentTarget.style.background='rgba(255,255,255,0.04)'}}>Close Preview</button>
-          <button onClick={onProceedToEnroll} style={s.priBtn} onMouseOver={(e)=>{e.currentTarget.style.transform='translateY(-1px)';e.currentTarget.style.boxShadow='0 6px 20px rgba(99,102,241,0.45)'}} onMouseOut={(e)=>{e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.boxShadow='0 4px 14px rgba(99,102,241,0.35)'}}>Enroll & Unlock Credentials ➔</button>
+          <button data-testid="btn-close-credential-preview" onClick={onClose} style={s.secBtn} onMouseOver={(e)=>{e.currentTarget.style.background='rgba(255,255,255,0.08)'}} onMouseOut={(e)=>{e.currentTarget.style.background='rgba(255,255,255,0.04)'}}>Close Preview</button>
+          <button data-testid="btn-enroll-from-preview" onClick={onProceedToEnroll} style={s.priBtn} onMouseOver={(e)=>{e.currentTarget.style.transform='translateY(-1px)';e.currentTarget.style.boxShadow='0 6px 20px rgba(99,102,241,0.45)'}} onMouseOut={(e)=>{e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.boxShadow='0 4px 14px rgba(99,102,241,0.35)'}}>Enroll & Unlock Credentials ➔</button>
         </footer>
       </div>
     </div>

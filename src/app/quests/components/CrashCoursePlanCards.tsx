@@ -42,7 +42,7 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div data-testid="crash-plan-cards-root" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
       {/* ── Top Header & Domain Switcher ── */}
       <div style={{
         display: 'flex',
@@ -76,6 +76,7 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
           gap: 6
         }}>
           <button
+            data-testid="btn-track-web"
             onClick={() => setActiveTrack('web_fullstack')}
             style={{
               display: 'flex',
@@ -96,6 +97,7 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
           </button>
 
           <button
+            data-testid="btn-track-python"
             onClick={() => setActiveTrack('python_ai')}
             style={{
               display: 'flex',
@@ -116,6 +118,7 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
           </button>
 
           <button
+            data-testid="btn-open-36-courses"
             onClick={onOpenStandaloneCatalog}
             style={{
               display: 'flex',

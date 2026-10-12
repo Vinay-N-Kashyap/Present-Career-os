@@ -93,7 +93,7 @@ const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardProps> = 
         {['✓ Industrial Project Certificate (ISO-Aligned, Cryptographically Signed)', '✓ PinIT Tech Labs Experience Letter (Engineering Fellow)',
           '✓ SHA-256 Tamper-Proof Hash & QR Verifiable', '✓ Live Verification at pinitcareer.vercel.app/verify/[id]']
           .map((c, i) => <div key={i} style={{ fontSize: 12, color: 'var(--t2,#cbd5e1)' }}>{c}</div>)}
-        <button onClick={() => onPreviewCredentials(plan)} style={{
+        <button data-testid="btn-preview-credentials" onClick={() => onPreviewCredentials(plan)} style={{
           marginTop: 6, padding: '8px 14px', borderRadius: 10, background: 'linear-gradient(135deg, #f59e0b, #d97706)',
           border: 'none', color: '#000', fontSize: 12.5, fontWeight: 800, cursor: 'pointer',
           boxShadow: '0 4px 14px rgba(245,158,11,0.35)' }}>
@@ -104,7 +104,7 @@ const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardProps> = 
   };
 
   return (
-    <div style={wrap}>
+    <div data-testid={`crash-plan-card-${plan.id}`} style={wrap}>
       {plan.badge && (
         <div style={{ position: 'absolute' as const, top: -11, right: 16, padding: '3px 10px', borderRadius: 20,
           fontSize: 10.5, fontWeight: 900, letterSpacing: '0.04em', background: `linear-gradient(135deg, ${hc}, #6366f1)`,
@@ -154,7 +154,7 @@ const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardProps> = 
       <div style={{ display: 'flex', gap: 4, padding: 4, borderRadius: 12, background: 'rgba(0,0,0,0.25)',
         border: '1px solid rgba(255,255,255,0.05)' }}>
         {tabs.map((tab, idx) => (
-          <button key={tab} onClick={() => setActiveTab(tabs[idx])} style={pillBtn(activeTab === tabs[idx])}>
+          <button key={tab} data-testid={`plan-tab-${tab}`} onClick={() => setActiveTab(tabs[idx])} style={pillBtn(activeTab === tabs[idx])}>
             {TAB_LABELS[idx]}
           </button>
         ))}
@@ -179,7 +179,7 @@ const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardProps> = 
           <span style={{ padding: '2px 8px', borderRadius: 6, background: 'linear-gradient(135deg, #f59e0b, #d97706)',
             fontSize: 10.5, fontWeight: 900, color: '#000' }}>PINIT2026 (-₹1,000)</span>
         </div>
-        <button onClick={() => onSelectPlan(plan)} disabled={isSelected} style={ctaBtn}
+        <button data-testid={`btn-select-plan-${plan.id}`} onClick={() => onSelectPlan(plan)} disabled={isSelected} style={ctaBtn}
           onMouseOver={(e) => { if (!isSelected) { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = `0 6px 20px ${hc}55`; } }}
           onMouseOut={(e) => { if (!isSelected) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = `0 4px 14px ${hc}44`; } }}>
           {isSelected ? '✓ Currently Active Plan' : 'Select & Unlock Program ➔'}

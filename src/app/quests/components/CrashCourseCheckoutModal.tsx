@@ -87,12 +87,26 @@ function generateMockTransactionId(): string {
 // ─────────────────────────────────────────────────────────────────────
 // Helper: format INR currency
 // ─────────────────────────────────────────────────────────────────────
-function formatINR(amount: number): string {
+export function formatINR(amount: number): string {
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
     maximumFractionDigits: 0,
   }).format(amount);
+}
+
+export function calculateCheckoutPricing(baseTuition: number, promoApplied: boolean) {
+  const discount = promoApplied ? PROMO_DISCOUNT : 0;
+  const discountedSubtotal = Math.max(0, baseTuition - discount);
+  const gstAmount = Math.round(discountedSubtotal * GST_RATE);
+  const finalPayable = discountedSubtotal + gstAmount;
+  return {
+    baseTuition,
+    discount,
+    discountedSubtotal,
+    gstAmount,
+    finalPayable,
+  };
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -118,13 +132,24 @@ export default function CrashCourseCheckoutModal({
   const [isLaunchingWorkspace, setIsLaunchingWorkspace] = useState(false);
   const [confirmedEnrollment, setConfirmedEnrollment] = useState<CrashCourseEnrollment | null>(null);
 
+  React.useEffect(() => {
+    if (!isOpen || paymentState === 'processing' || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (confirmedEnrollment) {
+          onSuccessEnrollment(confirmedEnrollment, walletInfo?.newBalance ?? null);
+        } else {
+          onClose();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, paymentState, confirmedEnrollment, walletInfo, onSuccessEnrollment, onClose]);
+
   if (!isOpen || !plan) return null;
 
-  const baseTuition = plan.inrPrice;
-  const discount = promoApplied ? PROMO_DISCOUNT : 0;
-  const discountedSubtotal = Math.max(0, baseTuition - discount);
-  const gstAmount = Math.round(discountedSubtotal * GST_RATE);
-  const finalPayable = discountedSubtotal + gstAmount;
+  const { baseTuition, gstAmount, finalPayable } = calculateCheckoutPricing(plan.inrPrice, promoApplied);
   const canPayWithPins = userPins >= plan.pinsPrice;
   // What the server actually charged (the order summary above is an estimate).
   const amountPaidLabel = confirmedEnrollment
@@ -395,6 +420,8 @@ Thank you for enrolling with PinIT Career OS!
 
   return (
     <div
+      data-testid="crash-checkout-modal"
+      onClick={(e) => { if (paymentState !== 'processing' && e.target === e.currentTarget) handleClose(); }}
       style={{
         position: 'fixed',
         inset: 0,
@@ -447,6 +474,7 @@ Thank you for enrolling with PinIT Career OS!
             </p>
           </div>
           <button
+            data-testid="btn-close-checkout"
             onClick={handleClose}
             aria-label="Close checkout"
             style={{
@@ -466,7 +494,7 @@ Thank you for enrolling with PinIT Career OS!
 
         {/* ── Success State ────────────────────────────────────────── */}
         {paymentState === 'success' ? (
-          <div style={{ padding: '32px 28px', textAlign: 'center' }}>
+          <div data-testid="checkout-success-view" style={{ padding: '32px 28px', textAlign: 'center' }}>
             <div style={{
               width: 88,
               height: 88,
@@ -512,6 +540,7 @@ Thank you for enrolling with PinIT Career OS!
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <button
+                data-testid="btn-download-receipt"
                 onClick={handleDownloadReceipt}
                 style={{
                   padding: '13px 20px',
@@ -527,6 +556,7 @@ Thank you for enrolling with PinIT Career OS!
                 📄 Download Enrollment Receipt
               </button>
               <button
+                data-testid="btn-launch-workspace"
                 onClick={handleLaunchWorkspace}
                 disabled={isLaunchingWorkspace}
                 style={{
@@ -609,17 +639,17 @@ Thank you for enrolling with PinIT Career OS!
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 14 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14.5 }}>
                   <span style={{ color: 'var(--t2)' }}>Base Tuition Fee</span>
-                  <span style={{ fontWeight: 800, color: 'var(--t1)' }}>{formatINR(baseTuition)}</span>
+                  <span data-testid="checkout-base-tuition" style={{ fontWeight: 800, color: 'var(--t1)' }}>{formatINR(baseTuition)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14.5 }}>
                   <span style={{ color: 'var(--t2)' }}>Scholar Scholarship / Early Bird Promo</span>
-                  <span style={{ fontWeight: 800, color: '#10b981' }}>
+                  <span data-testid="checkout-promo-discount" style={{ fontWeight: 800, color: '#10b981' }}>
                     {promoApplied ? `− ${formatINR(PROMO_DISCOUNT)}` : 'Not applied'}
                   </span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14.5 }}>
                   <span style={{ color: 'var(--t2)' }}>18% GST</span>
-                  <span style={{ fontWeight: 800, color: 'var(--t1)' }}>{formatINR(gstAmount)}</span>
+                  <span data-testid="checkout-gst-amount" style={{ fontWeight: 800, color: 'var(--t1)' }}>{formatINR(gstAmount)}</span>
                 </div>
               </div>
 
@@ -632,6 +662,7 @@ Thank you for enrolling with PinIT Career OS!
               }}>
                 <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
                   <input
+                    data-testid="input-promo-code"
                     type="text"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
@@ -650,6 +681,7 @@ Thank you for enrolling with PinIT Career OS!
                     aria-label="Promo code"
                   />
                   <button
+                    data-testid="btn-apply-promo"
                     onClick={handleApplyPromo}
                     style={{
                       padding: '9px 16px',
@@ -680,7 +712,7 @@ Thank you for enrolling with PinIT Career OS!
                 alignItems: 'center',
               }}>
                 <span style={{ fontSize: 15.5, fontWeight: 800, color: 'var(--t1)' }}>Final Payable</span>
-                <span style={{ fontSize: 26.5, fontWeight: 900, color: '#fff', fontFamily: 'var(--font-display)' }}>
+                <span data-testid="checkout-final-payable" style={{ fontSize: 26.5, fontWeight: 900, color: '#fff', fontFamily: 'var(--font-display)' }}>
                   {formatINR(finalPayable)}
                 </span>
               </div>
@@ -699,6 +731,7 @@ Thank you for enrolling with PinIT Career OS!
                   return (
                     <button
                       key={method.id}
+                      data-testid={`btn-payment-method-${method.id}`}
                       onClick={() => setSelectedMethod(method.id as PaymentMethod)}
                       disabled={isDisabled}
                       style={{
@@ -807,6 +840,7 @@ Thank you for enrolling with PinIT Career OS!
                 <span>Payments are encrypted and secure. By enrolling, you agree to the program terms.</span>
               </div>
               <button
+                data-testid="btn-submit-checkout"
                 onClick={handlePayment}
                 disabled={paymentState === 'processing'}
                 style={{
@@ -829,7 +863,7 @@ Thank you for enrolling with PinIT Career OS!
         )}
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes confetti-fall {
           0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
           100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }

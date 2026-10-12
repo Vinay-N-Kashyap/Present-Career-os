@@ -29,7 +29,22 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
   atsScore,
   isProjectVerified
 }) => {
-  const cOS = useCareerOS();
+  let cOS: Partial<ReturnType<typeof useCareerOS>> = {};
+  try {
+    cOS = useCareerOS();
+  } catch {
+    // Resilient fallback when rendered in isolated SSR or unit tests without CareerOSProvider
+  }
+
+  React.useEffect(() => {
+    if (!node || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [node, onClose]);
+
   if (!node) return null;
 
   const effectiveCompletedQuests = completedQuests || cOS.completedQuests || [];
@@ -56,11 +71,17 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
   const isGateCleared = isTechPassed && isCommPassed && isAtsPassed && isCapstonePassed;
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0, zIndex: 1000,
-      background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24
-    }}>
+    <div
+      data-testid="career-gate-modal"
+      role="dialog"
+      aria-modal="true"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 1000,
+        background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24
+      }}
+    >
       <div style={{
         maxWidth: 500, width: '100%', background: 'var(--bg2)',
         border: `1px solid ${isGateCleared ? 'rgba(var(--success-rgb), 0.4)' : 'rgba(var(--warning-rgb), 0.4)'}`,
@@ -68,15 +89,18 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
         boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-          <span style={{
-            fontSize: 12, fontWeight: 800,
-            color: isGateCleared ? 'var(--green)' : 'var(--amber)',
-            textTransform: 'uppercase', letterSpacing: '0.5px',
-            display: 'flex', alignItems: 'center', gap: 6
-          }}>
+          <span
+            data-testid="career-gate-status"
+            style={{
+              fontSize: 12, fontWeight: 800,
+              color: isGateCleared ? 'var(--green)' : 'var(--amber)',
+              textTransform: 'uppercase', letterSpacing: '0.5px',
+              display: 'flex', alignItems: 'center', gap: 6
+            }}
+          >
             {isGateCleared ? '✓ Career Gate Cleared' : '🔒 Career Gate Audit Checkpoint'}
           </span>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 20, cursor: 'pointer' }}>✕</button>
+          <button onClick={onClose} aria-label="Close readiness audit" style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 20, cursor: 'pointer' }}>✕</button>
         </div>
 
         <h3 style={{ fontSize: 20, fontWeight: 900, color: 'var(--t1)', marginBottom: 6 }}>
@@ -90,7 +114,7 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
           {/* 1. Technical Quests */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
+          <div data-testid="gate-check-tech" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
             <div>
               <div style={{ fontWeight: 700, color: 'var(--t1)' }}>📚 Technical Quests Completion</div>
               <div style={{ fontSize: 12, color: 'var(--t3)' }}>
@@ -103,7 +127,7 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
           </div>
 
           {/* 2. Soft Skills */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
+          <div data-testid="gate-check-comm" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
             <div>
               <div style={{ fontWeight: 700, color: 'var(--t1)' }}>🗣️ Soft Skills / Communication Lab</div>
               <div style={{ fontSize: 12, color: 'var(--t3)' }}>
@@ -116,7 +140,7 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
           </div>
 
           {/* 3. ATS Resume */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
+          <div data-testid="gate-check-ats" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
             <div>
               <div style={{ fontWeight: 700, color: 'var(--t1)' }}>📄 ATS Resume Match Score</div>
               <div style={{ fontSize: 12, color: 'var(--t3)' }}>
@@ -129,7 +153,7 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
           </div>
 
           {/* 4. Capstone */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
+          <div data-testid="gate-check-capstone" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg3)', borderRadius: 12, fontSize: 14.5 }}>
             <div>
               <div style={{ fontWeight: 700, color: 'var(--t1)' }}>💻 Verified Capstone Project</div>
               <div style={{ fontSize: 12, color: 'var(--t3)' }}>
@@ -143,6 +167,7 @@ export const CareerGateModal: React.FC<CareerGateModalProps> = ({
         </div>
 
         <button
+          data-testid="btn-gate-close"
           onClick={onClose}
           style={{
             width: '100%', padding: '12px',
@@ -175,14 +200,29 @@ export const MasterJourneyModal: React.FC<MasterJourneyModalProps> = ({
   completedQuests,
   onSelectQuest
 }) => {
+  React.useEffect(() => {
+    if (!isOpen || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0, zIndex: 1000,
-      background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24
-    }}>
+    <div
+      data-testid="master-journey-modal"
+      role="dialog"
+      aria-modal="true"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 1000,
+        background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24
+      }}
+    >
       <div style={{
         maxWidth: 840, width: '100%', maxHeight: '90vh',
         background: 'var(--bg2)', border: '1px solid rgba(var(--success-rgb),0.3)',
@@ -198,23 +238,27 @@ export const MasterJourneyModal: React.FC<MasterJourneyModalProps> = ({
               {trajectory.roleTitle} — Every Quest Lined Up
             </h3>
           </div>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 24, cursor: 'pointer' }}>✕</button>
+          <button data-testid="btn-close-master-journey" onClick={onClose} aria-label="Close master syllabus" style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 24, cursor: 'pointer' }}>✕</button>
         </div>
 
         <div style={{ flex: 1, overflowY: 'auto', paddingRight: 8, display: 'flex', flexDirection: 'column', gap: 20 }}>
           {trajectory.nodes.map((node, nodeIdx) => {
             const nodeCourse = COURSES_REGISTRY.find(c => c.id === node.courseId) || COURSES_REGISTRY[0];
-            const nodeQuests = nodeCourse.quests || [];
+            const nodeQuests = nodeCourse?.quests || [];
             const nodeCompletedCount = nodeQuests.filter(q => completedQuests.includes(q.id)).length;
             const isFullyCompleted = nodeQuests.length > 0 && nodeCompletedCount === nodeQuests.length;
 
             return (
-              <div key={node.nodeId} style={{
-                padding: '20px',
-                borderRadius: 16,
-                background: 'var(--bg3)',
-                border: `1px solid ${isFullyCompleted ? 'var(--success)' : 'var(--border)'}`
-              }}>
+              <div
+                key={node.nodeId}
+                data-testid={`journey-node-${node.nodeId}`}
+                style={{
+                  padding: '20px',
+                  borderRadius: 16,
+                  background: 'var(--bg3)',
+                  border: `1px solid ${isFullyCompleted ? 'var(--success)' : 'var(--border)'}`
+                }}
+              >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                     <span style={{ fontSize: 12, fontWeight: 900, background: isFullyCompleted ? 'var(--success)' : 'var(--brand)', color: 'var(--text)', padding: '3px 9px', borderRadius: 12 }}>
@@ -264,6 +308,7 @@ export const MasterJourneyModal: React.FC<MasterJourneyModalProps> = ({
                         </div>
 
                         <button
+                          data-testid={`btn-journey-quest-${q.id}`}
                           onClick={() => onSelectQuest(q.id)}
                           style={{
                             padding: '6px 14px',
@@ -307,10 +352,25 @@ export const QrModal: React.FC<QrModalProps> = ({
   copiedLink,
   onCopyLink
 }) => {
+  React.useEffect(() => {
+    if (!isOpen || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 20 }}>
+    <div
+      data-testid="qr-modal"
+      role="dialog"
+      aria-modal="true"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 20 }}
+    >
       <div style={{ width: '100%', maxWidth: 440, background: '#0f172a', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 20, padding: 28, textAlign: 'center' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 12px', borderRadius: 20, background: 'rgba(var(--success-rgb), 0.15)', color: 'var(--success-bright)', fontSize: 12, fontWeight: 800, textTransform: 'uppercase', marginBottom: 12 }}>
           <span>🛡️</span> Cryptographic Proof
@@ -338,12 +398,16 @@ export const QrModal: React.FC<QrModalProps> = ({
           );
         })()}
 
-        <div style={{ background: 'rgba(0,0,0,0.3)', padding: '8px 12px', borderRadius: 8, fontSize: 12, fontFamily: 'monospace', color: 'var(--info-bright)', wordBreak: 'break-all', marginBottom: 16 }}>
+        <div
+          data-testid="qr-verify-url"
+          style={{ background: 'rgba(0,0,0,0.3)', padding: '8px 12px', borderRadius: 8, fontSize: 12, fontFamily: 'monospace', color: 'var(--info-bright)', wordBreak: 'break-all', marginBottom: 16 }}
+        >
           {typeof window !== 'undefined' ? `${window.location.origin}/verify/${userId}` : `/verify/${userId}`}
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <button
+            data-testid="btn-copy-verify-url"
             onClick={onCopyLink}
             style={{
               width: '100%',
@@ -361,6 +425,7 @@ export const QrModal: React.FC<QrModalProps> = ({
           </button>
 
           <button
+            data-testid="btn-close-qr-modal"
             onClick={onClose}
             style={{
               width: '100%',
@@ -424,14 +489,29 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
   trajectory,
   COURSES_REGISTRY,
 }) => {
+  React.useEffect(() => {
+    if (!isOpen || isGenerating || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, isGenerating, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0, zIndex: 1000,
-      background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20
-    }}>
+    <div
+      data-testid="custom-roadmap-modal"
+      role="dialog"
+      aria-modal="true"
+      onClick={(e) => { if (!isGenerating && e.target === e.currentTarget) onClose(); }}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 1000,
+        background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20
+      }}
+    >
       <div style={{
         maxWidth: 580, width: '100%',
         borderRadius: 24, padding: 32,
@@ -452,11 +532,11 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
               </div>
             </div>
           </div>
-          <button onClick={() => !isGenerating && onClose()} style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 22, cursor: 'pointer' }}>✕</button>
+          <button data-testid="btn-close-custom-roadmap" onClick={() => !isGenerating && onClose()} aria-label="Close custom roadmap configurator" style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 22, cursor: 'pointer' }}>✕</button>
         </div>
 
         {isGenerating ? (
-          <div style={{ padding: '30px 10px', textAlign: 'center' }}>
+          <div data-testid="custom-roadmap-generating" style={{ padding: '30px 10px', textAlign: 'center' }}>
             <div style={{ width: 60, height: 60, borderRadius: '50%', border: '4px solid rgba(var(--success-rgb),0.2)', borderTopColor: 'var(--success)', margin: '0 auto 20px auto', animation: 'spin 1s linear infinite' }} />
             
             <h4 style={{ fontSize: 17.5, fontWeight: 800, color: 'var(--t1)', marginBottom: 8 }}>
@@ -526,6 +606,7 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
                 Type your specific career goal! Combine Tech + Non-Tech skills (e.g. <i>"Full-Stack Developer launching an E-Commerce Business"</i>).
               </p>
               <input
+                data-testid="input-custom-goal"
                 type="text"
                 value={customGoal}
                 onChange={e => {
@@ -561,6 +642,7 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
               </div>
 
               <input
+                data-testid="slider-roadmap-duration"
                 type="range"
                 min={30}
                 max={365}
@@ -580,6 +662,7 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
                 ].map(p => (
                   <button
                     key={p.days}
+                    data-testid={`btn-duration-${p.days}`}
                     onClick={() => setSelectedDuration(p.days)}
                     style={{
                       padding: '6px 12px',
@@ -600,6 +683,7 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
             </div>
 
             <button
+              data-testid="btn-generate-roadmap"
               onClick={onSubmit}
               className="btn-emerald-glow"
               style={{
