@@ -20,6 +20,8 @@ type TechArchetype =
   | 'transactional_acid'
   | 'iot_embedded_edge'
   | 'commerce_double_entry_ledger'
+  | 'vector_search_rag'
+  | 'low_latency_matching_exchange'
   | 'general_distributed';
 
 interface RequirementRule {
@@ -232,6 +234,86 @@ function detectTechArchetype(topic: string): {
           matches: n => /db|postgres|timescale|influx|lake|storage|s3/i.test(n.type + ' ' + n.label),
           bottleneckIfMissing: 'Missing persistent time-series storage: Historical sensor telemetry and device state cannot be analyzed.',
           recommendationIfMissing: 'Attach a Time-Series Database (TimescaleDB / InfluxDB) or cold object storage for long-term telemetry retention.'
+        }
+      ]
+    };
+  }
+
+  if (/vector|rag|embedding|semantic|llm|ai[-_ ]search|retrieval|pinecone|milvus|qdrant|chroma/i.test(lower)) {
+    return {
+      archetype: 'vector_search_rag',
+      requirements: [
+        {
+          key: 'vector_db',
+          label: 'Vector Database / Index (pgvector / Pinecone / Milvus)',
+          weight: 12,
+          matches: n => /vector|pgvector|pinecone|milvus|qdrant|chroma|ann/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing Vector Database: Semantic vector embeddings cannot be indexed or retrieved with Approximate Nearest Neighbors (ANN).',
+          recommendationIfMissing: 'Deploy a dedicated Vector Database or pgvector index for fast high-dimensional cosine similarity lookups.'
+        },
+        {
+          key: 'embedding_worker',
+          label: 'Asynchronous Embedding Generator & Chunking Worker',
+          weight: 10,
+          matches: n => /worker|embedding|llm|inference|chunking|cron|compute/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Synchronous embedding generation: Large document ingestion will block user requests while calling embedding models.',
+          recommendationIfMissing: 'Add an asynchronous Embedding Worker to chunk documents and generate vector representations off the main request thread.'
+        },
+        {
+          key: 'document_store',
+          label: 'Raw Document Object Storage (S3 / Blob Storage)',
+          weight: 8,
+          matches: n => /s3|blob|storage|bucket|object/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing raw document storage: Original source documents and chunks cannot be retrieved for RAG context window assembly.',
+          recommendationIfMissing: 'Store full document bodies in S3 or Blob Storage, saving vector databases for vector IDs and metadata.'
+        },
+        {
+          key: 'gateway',
+          label: 'API Gateway / LLM Guardrail Ingress',
+          weight: 8,
+          matches: n => /gateway|load balancer|alb|ingress|proxy|guardrail/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Unprotected inference endpoint: Rate limiting and token budget throttling are unmanaged.',
+          recommendationIfMissing: 'Place an API Gateway at ingress to enforce prompt token budgets, rate limits, and safety filters.'
+        }
+      ]
+    };
+  }
+
+  if (/trading|exchange|matching|orderbook|order[-_ ]book|quant|disruptor|low[-_ ]latency|fix|hft|financial[-_ ]market/i.test(lower)) {
+    return {
+      archetype: 'low_latency_matching_exchange',
+      requirements: [
+        {
+          key: 'matching_engine',
+          label: 'In-Memory Order Matching Engine (Deterministic FIFO / LMAX)',
+          weight: 12,
+          matches: n => /matching|engine|orderbook|lmax|disruptor|core/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Missing in-memory matching engine: Database transactions are too slow for microsecond order book matching.',
+          recommendationIfMissing: 'Deploy a single-threaded in-memory Matching Engine with deterministic sequential order book execution.'
+        },
+        {
+          key: 'ring_buffer',
+          label: 'Lock-Free Memory Ring Buffer / Event Journal (LMAX Disruptor)',
+          weight: 10,
+          matches: n => /disruptor|ring|buffer|journal|queue|memory|kafka/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'Lock contention bottleneck: Multi-threaded locks will cause latency jitter and thread preemption.',
+          recommendationIfMissing: 'Utilize an LMAX Disruptor or lock-free circular ring buffer for zero-allocation inter-thread message passing.'
+        },
+        {
+          key: 'market_data_feed',
+          label: 'Market Data UDP/Multicast Distribution Gateway',
+          weight: 8,
+          matches: n => /feed|broadcast|multicast|udp|websocket|gateway|market/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No market data feed distribution: Market depth and trade executions cannot be broadcast to participants in real time.',
+          recommendationIfMissing: 'Add a Market Data gateway broadcasting level-2 order book updates over low-latency streams.'
+        },
+        {
+          key: 'settlement_db',
+          label: 'Durable Post-Trade Settlement & Audit Database (PostgreSQL)',
+          weight: 8,
+          matches: n => /db|postgres|sql|settlement|audit|ledger/i.test(n.type + ' ' + n.label),
+          bottleneckIfMissing: 'No post-trade persistence: Trade fills risk data loss upon in-memory engine crash.',
+          recommendationIfMissing: 'Asynchronously journal executed trades to a durable PostgreSQL database for clearing and regulatory audit.'
         }
       ]
     };

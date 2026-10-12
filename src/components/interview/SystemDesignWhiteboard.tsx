@@ -28,6 +28,8 @@ export interface SystemTopologySnapshot {
   hasCachingLayer: boolean;
   hasDatabase: boolean;
   hasQueue: boolean;
+  hasVectorStore: boolean;
+  hasMatchingEngine: boolean;
   isFullyConnected: boolean;
 }
 
@@ -50,6 +52,9 @@ const TECH_COMPONENTS = [
   { type: 'Postgres DB', category: 'storage' as const, color: '#0ea5e9', icon: '🗄️' },
   { type: 'Kafka / Queue', category: 'queue' as const, color: '#ec4899', icon: '📨' },
   { type: 'Blob Storage (S3)', category: 'storage' as const, color: '#f97316', icon: '📦' },
+  { type: 'Vector DB (pgvector / Pinecone)', category: 'storage' as const, color: '#8b5cf6', icon: '🔍' },
+  { type: 'Matching Engine (LMAX / Disruptor)', category: 'compute' as const, color: '#f59e0b', icon: '⚡' },
+  { type: 'IoT / MQTT Edge Gateway', category: 'gateway' as const, color: '#06b6d4', icon: '📡' },
 ];
 
 const NON_TECH_COMPONENTS = [
@@ -118,6 +123,8 @@ export default function SystemDesignWhiteboard({
       hasCachingLayer: currentNodes.some(n => n.type.toLowerCase().includes('redis') || n.type.toLowerCase().includes('cache')),
       hasDatabase: currentNodes.some(n => n.type.toLowerCase().includes('db') || n.type.toLowerCase().includes('postgres') || n.type.toLowerCase().includes('mongo')),
       hasQueue: currentNodes.some(n => n.type.toLowerCase().includes('kafka') || n.type.toLowerCase().includes('queue')),
+      hasVectorStore: currentNodes.some(n => n.type.toLowerCase().includes('vector') || n.label.toLowerCase().includes('vector') || n.label.toLowerCase().includes('pgvector') || n.label.toLowerCase().includes('pinecone')),
+      hasMatchingEngine: currentNodes.some(n => n.type.toLowerCase().includes('matching') || n.label.toLowerCase().includes('matching') || n.label.toLowerCase().includes('disruptor') || n.label.toLowerCase().includes('orderbook')),
       isFullyConnected: currentNodes.length > 0 && currentLinks.length >= currentNodes.length - 1
     };
 
@@ -244,7 +251,7 @@ export default function SystemDesignWhiteboard({
   };
 
   // ─── Presets ─────────────────────────────────────────────────────────────
-  const loadPreset = (presetName: '3tier' | 'microservices') => {
+  const loadPreset = (presetName: '3tier' | 'microservices' | 'rag_pipeline' | 'quant_exchange') => {
     if (nodes.length > 2 && typeof window !== 'undefined') {
       const confirmWipe = window.confirm('Loading a preset will replace your current whiteboard architecture. Proceed?');
       if (!confirmWipe) return;
@@ -284,6 +291,40 @@ export default function SystemDesignWhiteboard({
         { id: 'ml_3', from: 'm_2', to: 'm_4', protocol: 'gRPC' },
         { id: 'ml_4', from: 'm_4', to: 'm_5', protocol: 'Event Publish' },
         { id: 'ml_5', from: 'm_5', to: 'm_6', protocol: 'Event Consume' },
+      ];
+      setNodes(n);
+      setLinks(l);
+    } else if (presetName === 'rag_pipeline') {
+      const n: BoardNode[] = [
+        { id: 'rag_1', type: 'Client App', label: 'User Chat Client', x: 30, y: 180, category: 'client', color: 'var(--info)' },
+        { id: 'rag_2', type: 'API Gateway', label: 'LLM Guardrail Ingress', x: 200, y: 180, category: 'gateway', color: 'var(--brand)' },
+        { id: 'rag_3', type: 'Worker / Cron', label: 'Embedding & Chunk Worker', x: 390, y: 80, category: 'compute', color: 'var(--accent-teal)' },
+        { id: 'rag_4', type: 'Vector DB (pgvector / Pinecone)', label: 'Vector DB (Cosine ANN)', x: 620, y: 80, category: 'storage', color: '#8b5cf6' },
+        { id: 'rag_5', type: 'Blob Storage (S3)', label: 'Raw S3 Document Chunks', x: 620, y: 220, category: 'storage', color: '#f97316' },
+        { id: 'rag_6', type: 'Postgres DB', label: 'User & Auth Metadata DB', x: 620, y: 340, category: 'storage', color: '#0ea5e9' },
+      ];
+      const l: BoardLink[] = [
+        { id: 'ragl_1', from: 'rag_1', to: 'rag_2', protocol: 'HTTPS/REST' },
+        { id: 'ragl_2', from: 'rag_2', to: 'rag_3', protocol: 'Tokenized Context' },
+        { id: 'ragl_3', from: 'rag_3', to: 'rag_4', protocol: 'Cosine ANN Query' },
+        { id: 'ragl_4', from: 'rag_3', to: 'rag_5', protocol: 'Raw Chunk Hydration' },
+        { id: 'ragl_5', from: 'rag_2', to: 'rag_6', protocol: 'PostgreSQL/Auth' },
+      ];
+      setNodes(n);
+      setLinks(l);
+    } else if (presetName === 'quant_exchange') {
+      const n: BoardNode[] = [
+        { id: 'q_1', type: 'API Gateway', label: 'FIX 4.4 Ingress Gateway', x: 30, y: 180, category: 'gateway', color: 'var(--brand)' },
+        { id: 'q_2', type: 'Matching Engine (LMAX / Disruptor)', label: 'Deterministic LMAX Engine', x: 230, y: 180, category: 'compute', color: '#f59e0b' },
+        { id: 'q_3', type: 'Kafka / Queue', label: 'Disruptor Ring Buffer', x: 440, y: 180, category: 'queue', color: '#ec4899' },
+        { id: 'q_4', type: 'Microservice', label: 'UDP Market Data Feed', x: 650, y: 100, category: 'compute', color: 'var(--success)' },
+        { id: 'q_5', type: 'Postgres DB', label: 'Post-Trade Clearing DB', x: 650, y: 260, category: 'storage', color: '#0ea5e9' },
+      ];
+      const l: BoardLink[] = [
+        { id: 'ql_1', from: 'q_1', to: 'q_2', protocol: 'TCP/FIX Ingress' },
+        { id: 'ql_2', from: 'q_2', to: 'q_3', protocol: 'Lock-Free Journal' },
+        { id: 'ql_3', from: 'q_3', to: 'q_4', protocol: 'Multicast UDP' },
+        { id: 'ql_4', from: 'q_3', to: 'q_5', protocol: 'Async Audit Commit' },
       ];
       setNodes(n);
       setLinks(l);
@@ -345,6 +386,14 @@ export default function SystemDesignWhiteboard({
 
           <button onClick={() => loadPreset('microservices')} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t2)', borderRadius: 8, padding: '6px 10px', fontSize: 11.5, fontWeight: 800, cursor: 'pointer' }}>
             ⚙️ Microservices Bus
+          </button>
+
+          <button onClick={() => loadPreset('rag_pipeline')} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t2)', borderRadius: 8, padding: '6px 10px', fontSize: 11.5, fontWeight: 800, cursor: 'pointer' }}>
+            🧠 RAG AI Pipeline
+          </button>
+
+          <button onClick={() => loadPreset('quant_exchange')} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t2)', borderRadius: 8, padding: '6px 10px', fontSize: 11.5, fontWeight: 800, cursor: 'pointer' }}>
+            📈 Quant Exchange
           </button>
 
           <button
