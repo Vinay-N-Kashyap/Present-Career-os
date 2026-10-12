@@ -87,6 +87,35 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
           </button>}
         </div>
 
+        <div
+          data-testid="round3-progress-banner"
+          style={{
+            padding: '7px 12px',
+            borderRadius: 8,
+            fontSize: 12,
+            fontWeight: 700,
+            background: canProceed
+              ? 'rgba(34, 197, 94, 0.12)'
+              : architectureEvaluation && Number(architectureEvaluation.score) < 60
+              ? 'rgba(245, 158, 11, 0.12)'
+              : 'rgba(var(--brand-rgb), 0.08)',
+            border: canProceed
+              ? '1px solid rgba(34, 197, 94, 0.35)'
+              : architectureEvaluation && Number(architectureEvaluation.score) < 60
+              ? '1px solid rgba(245, 158, 11, 0.45)'
+              : '1px solid rgba(var(--brand-rgb), 0.22)',
+            color: canProceed ? 'var(--green-mid)' : 'var(--t1)'
+          }}
+        >
+          {canProceed
+            ? '✅ Architecture & Trade-Off Defense Verified — Ready for Round 4 STAR Defense!'
+            : architectureEvaluation && Number(architectureEvaluation.score) < 60
+            ? `⚠️ Topology score (${architectureEvaluation.score}/100) is below the 60/100 threshold. Address the bottlenecks below and re-evaluate.`
+            : architectureEvaluation
+            ? `💬 Step 2 of 2: Answer ${activeTeacher.name}'s architectural trade-off question on the right to unlock Round 4.`
+            : '📐 Step 1 of 2: Place components on the canvas and click "Evaluate Architecture" to inspect your topology.'}
+        </div>
+
         <SystemDesignWhiteboard
           domainStream={domainStream}
           activeTopic={activeTopicName}

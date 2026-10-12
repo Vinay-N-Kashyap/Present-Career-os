@@ -173,9 +173,38 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
           </div>
         </div>
 
-        {!canProceed && codeSubmitted && <div style={{ background: 'rgba(var(--success-rgb),0.12)', border: '1px solid var(--success)', borderRadius: 8, padding: '8px 12px', fontSize: 12.5, color: 'var(--t1)' }}>
-          {codeRunFailed ? 'The interviewer wants stronger reasoning. Try a different challenge and explain your approach.' : '✅ Tests passed. Submit your solution so the interviewer can ask about your approach.'}
-        </div>}
+        <div
+          data-testid="round2-progress-banner"
+          style={{
+            background: canProceed || (codeSubmitted && !codeRunFailed)
+              ? 'rgba(var(--success-rgb),0.12)'
+              : codeRunFailed
+              ? 'rgba(245, 158, 11, 0.12)'
+              : 'rgba(var(--brand-rgb),0.08)',
+            border: canProceed || (codeSubmitted && !codeRunFailed)
+              ? '1px solid var(--success)'
+              : codeRunFailed
+              ? '1px solid rgba(245, 158, 11, 0.45)'
+              : '1px solid rgba(var(--brand-rgb),0.22)',
+            borderRadius: 8,
+            padding: '8px 12px',
+            fontSize: 12,
+            fontWeight: 700,
+            color: 'var(--t1)'
+          }}
+        >
+          {canProceed
+            ? '✅ Code & Review Defense Verified — Click "Continue to architecture ➔" above!'
+            : codeRunFailed
+            ? '⚠️ The interviewer wants stronger reasoning or all 5 boundary tiers passing. Refine your solution or try a different challenge.'
+            : codeSubmitted && codeReviewQuestionReady
+            ? `💬 Step 2 of 2: Answer ${activeTeacher.name}'s code review question in the Interviewer panel on the right to unlock Round 3.`
+            : codeSubmitted && codeReviewStarted
+            ? `⏳ Submitting solution to ${activeTeacher.name} for code review...`
+            : codeSubmitted
+            ? '✅ Step 1 of 2 Complete: All 5 boundary tiers passed! Click "Submit solution for review" above so the interviewer can ask about your approach.'
+            : '🧪 Step 1 of 2: Implement your solution and pass all 5 boundary test tiers (Ctrl+↵), then defend your approach in code review.'}
+        </div>
 
         {/* Language Selector */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

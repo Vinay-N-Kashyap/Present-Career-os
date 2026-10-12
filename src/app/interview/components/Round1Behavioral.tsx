@@ -79,6 +79,14 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
     return new Set(liveSpeechTranscript.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean));
   }, [liveSpeechTranscript]);
 
+  const userResponseCount = React.useMemo(() => {
+    return messages.filter(m => m.role === 'user').length;
+  }, [messages]);
+
+  const wpmCadenceLabel = wpmScore !== null
+    ? `${wpmScore} WPM (${wpmScore < 115 ? 'Paced' : wpmScore <= 165 ? 'Optimal' : 'Fast'})`
+    : 'Mic Inactive';
+
   return (
     <div className="iv-round-layout iv-round1-layout" style={{ display: 'grid', gridTemplateColumns: '6fr 4fr', gap: 16, alignItems: 'stretch' }}>
       {/* Left 60%: 3D VRoid Avatar Viewport */}
@@ -111,7 +119,9 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
               <span style={{ color: eyeContactScore !== null ? (eyeContactScore >= 60 ? 'var(--success-bright)' : 'var(--warning-bright)') : 'var(--text-muted)' }}>
                 📷 {eyeContactScore !== null ? (eyeContactScore >= 60 ? 'Presence: Centered' : 'Presence: Adjust Angle') : 'Detecting...'}
               </span>
-              <span style={{ color: 'var(--info-bright)' }}>⚡ {wpmScore !== null ? `${wpmScore} WPM` : 'Mic Inactive'}</span>
+              <span style={{ color: wpmScore !== null ? (wpmScore >= 115 && wpmScore <= 165 ? 'var(--success-bright)' : 'var(--warning-bright)') : 'var(--info-bright)' }}>
+                ⚡ {wpmCadenceLabel}
+              </span>
             </div>
           </div>
         )}
@@ -155,13 +165,29 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
           </button>}
         </div>
 
-        {!canProceed && <div style={{ marginBottom: 8, fontSize: 11.5, color: 'var(--t3)' }}>Answer a few topic-specific questions to unlock the coding round.</div>}
+        <div
+          data-testid="round1-progress-pill"
+          style={{
+            marginBottom: 8,
+            padding: '6px 10px',
+            borderRadius: 8,
+            fontSize: 11.5,
+            fontWeight: 700,
+            background: canProceed ? 'rgba(34, 197, 94, 0.12)' : 'rgba(var(--brand-rgb), 0.08)',
+            border: canProceed ? '1px solid rgba(34, 197, 94, 0.35)' : '1px solid rgba(var(--brand-rgb), 0.22)',
+            color: canProceed ? 'var(--green-mid)' : 'var(--t2)'
+          }}
+        >
+          {canProceed
+            ? '✅ 3/3 Behavioral responses complete — Ready for Round 2 Coding!'
+            : `💬 Progress: ${Math.min(3, userResponseCount)}/3 responses completed — answer ${Math.max(1, 3 - userResponseCount)} more topic-specific question${3 - userResponseCount === 1 ? '' : 's'} to unlock Round 2.`}
+        </div>
 
         {/* Telemetry Bar */}
         <div style={{ background: 'var(--bg3)', borderRadius: 10, padding: '8px 12px', border: '1px solid var(--border)', marginBottom: 10, display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
           <div>👀 Eye Contact: <strong style={{ color: eyeContactScore !== null ? 'var(--green-mid)' : 'var(--t3)' }}>{eyeContactScore !== null ? `${eyeContactScore}%` : 'Cam Off'}</strong></div>
-          <div>⚡ Pace: <strong style={{ color: 'var(--accent-mid)' }}>{wpmScore !== null ? `${wpmScore} WPM` : 'Mic Off'}</strong></div>
-          <div>💬 Fillers: <strong style={{ color: 'var(--green-mid)' }}>{wpmScore !== null ? fillerWordCount : 'N/A'}</strong></div>
+          <div>⚡ Pace: <strong style={{ color: wpmScore !== null ? (wpmScore >= 115 && wpmScore <= 165 ? 'var(--green-mid)' : 'var(--amber-mid)') : 'var(--accent-mid)' }}>{wpmScore !== null ? wpmCadenceLabel : 'Mic Off'}</strong></div>
+          <div>💬 Fillers: <strong style={{ color: 'var(--green-mid)' }}>{wpmScore !== null || fillerWordCount > 0 ? fillerWordCount : 'N/A'}</strong></div>
         </div>
 
         {/* Transcript Stream */}
