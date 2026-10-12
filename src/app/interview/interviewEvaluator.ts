@@ -47,7 +47,8 @@ export function computeDeterministicEvaluation({
   const rawDimensions = {
     logic: Math.max(35, Math.min(95, solvingScore * 0.95 + (architectureScore > 70 ? 5 : 0))),
     systems: Math.max(35, Math.min(95, architectureScore > 0 ? architectureScore : 40)),
-    comms: Math.max(40, Math.min(95, 45 + userMsgCount * 8 - Math.min(15, fillerWordCount * 2))),
+    // Golden Rule 3: Speech telemetry (filler words) is purely diagnostic and does NOT penalize core comms hiring score.
+    comms: Math.max(40, Math.min(95, 45 + userMsgCount * 8)),
     solving: solvingScore,
     star: Math.max(35, Math.min(95, 40 + starStep * 15))
   };
@@ -57,8 +58,32 @@ export function computeDeterministicEvaluation({
   const telemetryDiagnostics = generateTelemetryDiagnostics({
     eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
     wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-    fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined
+    fillerWords: typeof fillerWordCount === 'number' && (userMsgCount > 0 || fillerWordCount > 0) ? fillerWordCount : undefined
   });
+
+  const round2Badge = roleKey === 'iot_embedded'
+    ? 'MCU C++ Sandbox'
+    : roleKey === 'quant_systems'
+    ? 'Low-Latency C++ Engine'
+    : roleKey === 'ai_ml'
+    ? 'Python AI Sandbox'
+    : roleKey === 'cybersecurity'
+    ? 'Secure Systems Sandbox'
+    : 'Coding';
+
+  const round3Badge = roleKey === 'iot_embedded'
+    ? 'Hardware / MMIO Architecture'
+    : roleKey === 'quant_systems'
+    ? 'LMAX / Exchange Topology'
+    : roleKey === 'ai_ml'
+    ? 'Vector RAG Architecture'
+    : roleKey === 'cybersecurity'
+    ? 'Threat Boundary Architecture'
+    : 'System Design';
+
+  const round2Metric = codeSubmitted
+    ? (roleKey === 'iot_embedded' ? 'Embedded register test suite verified' : roleKey === 'quant_systems' ? 'Order book test suite verified' : 'Test suite verified')
+    : 'Manual code submitted';
 
   const perRoundScores = {
     round1: {
@@ -72,8 +97,8 @@ export function computeDeterministicEvaluation({
       title: 'Round 2: Technical Sandbox',
       score: Math.min(100, Math.max(45, solvingScore)),
       verdict: solvingScore >= 85 ? 'Optimal Solution' : solvingScore >= 65 ? 'Working Implementation' : 'Incomplete Logic',
-      metric: codeSubmitted ? 'Test suite verified' : 'Manual code submitted',
-      badge: 'Coding'
+      metric: round2Metric,
+      badge: round2Badge
     },
     round3: {
       title: 'Round 3: System Architecture',
@@ -82,7 +107,7 @@ export function computeDeterministicEvaluation({
       metric: topologyEvaluation
         ? `${latestTopology?.nodes?.length || 0} nodes placed, Grade: ${topologyEvaluation.grade}`
         : 'Whiteboard canvas was blank',
-      badge: 'System Design'
+      badge: round3Badge
     },
     round4: {
       title: 'Round 4: Situational STAR Defense',
@@ -181,7 +206,7 @@ export function exportInterviewTranscriptFile({
       `\n## 2. Telemetry & Delivery Diagnostics`,
       `- **Average Eye Contact:** ${typeof eyeContactScore === 'number' ? `${eyeContactScore}%` : 'Not Tracked'}`,
       `- **Speaking Pace:** ${typeof wpmScore === 'number' ? `${wpmScore} Words Per Minute` : 'Not Measured'}`,
-      `- **Filler Words Count:** ${typeof wpmScore === 'number' ? fillerWordCount : 'Not Measured'}`,
+      `- **Filler Words Count:** ${typeof fillerWordCount === 'number' ? fillerWordCount : 'Not Measured'}`,
       `\n## 3. Candidate Code Submission (${selectedLang})`,
       '```' + selectedLang,
       codeContent || '// No code submitted',
