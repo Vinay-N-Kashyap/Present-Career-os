@@ -126,14 +126,16 @@ export const SprintBoardCard: React.FC<SprintBoardCardProps> = ({
       {/* Sprint Selector Tabs */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
         {sprints.map((sprint) => {
-          const isSelected = sprint.id === activeSprint?.id;
+          const sprintNum = sprint.number ?? (sprint as any).sprintNumber ?? (sprint as any).week ?? 1;
+          const sprintKey = sprint.id || `sprint-${sprintNum}`;
+          const isSelected = sprint.id ? sprint.id === activeSprint?.id : sprintNum === ((activeSprint as any)?.number ?? (activeSprint as any)?.sprintNumber ?? 1);
           const badge = getStatusBadge(sprint.status);
           return (
             <button
-              key={sprint.id}
+              key={sprintKey}
               type="button"
-              data-testid={`btn-select-sprint-${sprint.number}`}
-              onClick={() => setSelectedSprintId(sprint.id)}
+              data-testid={`btn-select-sprint-${sprintNum}`}
+              onClick={() => setSelectedSprintId(sprint.id || String(sprintNum))}
               style={{
                 borderRadius: 10,
                 padding: '10px 8px',

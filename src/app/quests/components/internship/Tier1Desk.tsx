@@ -26,7 +26,7 @@ export const Tier1Desk: React.FC<Tier1DeskProps> = ({
   onSelectTicket,
 }) => {
   return (
-    <>
+    <div data-testid="tier1-desk-root" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <InternshipDeadlineBanner
         dueAt={enrollment.dueAt}
         extended={enrollment.extended}
@@ -86,6 +86,6 @@ export const Tier1Desk: React.FC<Tier1DeskProps> = ({
         tasks={tasks}
         onSelectTicket={onSelectTicket}
       />
-    </>
+    </div>
   );
 };

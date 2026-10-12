@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { CrashCourseEnrollment } from '@/lib/services/crashCourseEnrollmentService';
+import { isCapstoneComplete } from '@/lib/courses/crashCourseProgress';
+import type { InternshipPanelState } from './InternshipStatusBanner';
 import type {
   ClientInternshipEnrollment,
   ClientInternshipTask,
@@ -9,6 +11,41 @@ import type {
   ClientInternshipTeamMember,
   ClientInternshipSprint,
 } from '@/lib/internships/types';
+
+export function resolveInternshipState(
+  loading: boolean,
+  enrollment: ClientInternshipEnrollment | null,
+  crashEnrollment: CrashCourseEnrollment | null
+): { state: InternshipPanelState; reason: string } {
+  if (loading) {
+    return { state: 'loading', reason: '' };
+  }
+  if (!enrollment) {
+    const capstoneDone = isCapstoneComplete(crashEnrollment);
+    const isEligibleTrack =
+      crashEnrollment?.track === 'python_ai' || crashEnrollment?.track === 'web_fullstack';
+
+    if (!isEligibleTrack) {
+      return {
+        state: 'not_eligible',
+        reason:
+          'The internship simulation is currently exclusive to the Python & AI Engineering and Full-Stack Web tracks.',
+      };
+    }
+    if (!capstoneDone) {
+      return {
+        state: 'not_eligible',
+        reason:
+          'Your Capstone Project Desk must be completed and approved before starting the internship simulation.',
+      };
+    }
+    return { state: 'ready_to_start', reason: '' };
+  }
+  return {
+    state: (enrollment.status as InternshipPanelState) || 'active',
+    reason: '',
+  };
+}
 
 export function useInternshipData(crashEnrollment: CrashCourseEnrollment | null) {
   const [loading, setLoading] = useState(true);

@@ -15,7 +15,7 @@ import {
 } from './InternshipStatusBanner';
 import { getTierConfig, type InternshipTrack } from '@/lib/internships/tiers';
 import type { InternshipTier } from '@/lib/data/crashPlansData';
-import { useInternshipData } from './useInternshipData';
+import { useInternshipData, resolveInternshipState } from './useInternshipData';
 
 export interface InternshipPanelProps {
   crashEnrollment: CrashCourseEnrollment | null;
@@ -25,6 +25,7 @@ export interface InternshipPanelProps {
   onSelectTicket?: (task: ClientInternshipTask) => void;
   onOpenReport?: () => void;
   onOpenCertificate?: (certificateId: string) => void;
+  initialData?: Partial<ReturnType<typeof useInternshipData>>;
 }
 
 export const InternshipPanel: React.FC<InternshipPanelProps> = ({
@@ -35,7 +36,10 @@ export const InternshipPanel: React.FC<InternshipPanelProps> = ({
   onSelectTicket,
   onOpenReport,
   onOpenCertificate,
+  initialData,
 }) => {
+  const hookData = useInternshipData(crashEnrollment);
+  const data = { ...hookData, ...initialData };
   const {
     loading,
     panelError,
@@ -60,11 +64,20 @@ export const InternshipPanel: React.FC<InternshipPanelProps> = ({
     submitSprint,
     submitStandup,
     submitDemoUrl,
-  } = useInternshipData(crashEnrollment);
+  } = data;
 
   const [activeWorkspaceTicket, setActiveWorkspaceTicket] = React.useState<ClientInternshipTask | null>(null);
   const [showReportModal, setShowReportModal] = React.useState(false);
   const [viewingCertificateId, setViewingCertificateId] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    if (activeWorkspaceTicket || showReportModal || viewingCertificateId || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeWorkspaceTicket, showReportModal, viewingCertificateId, onClose]);
 
   const track: InternshipTrack = crashEnrollment?.track === 'web_fullstack' ? 'web_fullstack' : 'python_ai';
   const isWeb = track === 'web_fullstack';
@@ -76,33 +89,22 @@ export const InternshipPanel: React.FC<InternshipPanelProps> = ({
     ? `Tier ${tier === 't2_virtual_team' ? '2' : '1'} (${tierConfig.name})`
     : (isWeb ? 'Tier 1 (Web Developer Job Simulation)' : 'Tier 1 (Simulated Python Experience)');
 
-  let state: InternshipPanelState = 'loading';
-  let notEligibleReason = '';
-
-  if (loading) {
-    state = 'loading';
-  } else if (!enrollment) {
-    const capstoneDone = isCapstoneComplete(crashEnrollment);
-    const isEligibleTrack = crashEnrollment?.track === 'python_ai' || crashEnrollment?.track === 'web_fullstack';
-
-    if (!isEligibleTrack) {
-      state = 'not_eligible';
-      notEligibleReason = 'The internship simulation is currently exclusive to the Python & AI Engineering and Full-Stack Web tracks.';
-    } else if (!capstoneDone) {
-      state = 'not_eligible';
-      notEligibleReason = 'Your Capstone Project Desk must be completed and approved before starting the internship simulation.';
-    } else {
-      state = 'ready_to_start';
-    }
-  } else {
-    state = enrollment.status as InternshipPanelState;
-  }
+  const { state, reason: notEligibleReason } = resolveInternshipState(loading, enrollment, crashEnrollment);
 
   const allTicketsPassed = tasks.length === 5 && tasks.every((t) => t.status === 'passed');
   const needsFinalReport = allTicketsPassed && !enrollment?.finalReport;
 
   return (
     <div
+      data-testid="internship-panel-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${displayTitle} · Virtual Simulation Desk`}
+      onClick={(e) => {
+        if (!activeWorkspaceTicket && !showReportModal && !viewingCertificateId && e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
       style={{
         position: 'fixed',
         inset: 0,
@@ -137,17 +139,19 @@ export const InternshipPanel: React.FC<InternshipPanelProps> = ({
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ fontSize: 24 }}>🏢</span>
-              <h2 style={{ margin: 0, fontSize: 20, fontWeight: 900, color: 'var(--text)' }}>
+              <h2 data-testid="internship-panel-title" style={{ margin: 0, fontSize: 20, fontWeight: 900, color: 'var(--text)' }}>
                 {displayTitle} · Virtual Simulation Desk
               </h2>
             </div>
-            <p style={{ margin: '4px 0 0 0', fontSize: 13, color: 'var(--t3)' }}>
+            <p data-testid="internship-engineer-info" style={{ margin: '4px 0 0 0', fontSize: 13, color: 'var(--t3)' }}>
               Assigned Engineer: <strong style={{ color: 'var(--text)' }}>{studentName}</strong> ·{' '}
               {tierLabel}
             </p>
           </div>
           <button
             type="button"
+            data-testid="btn-close-internship-panel"
+            aria-label="Close internship panel"
             onClick={onClose}
             style={{
               background: 'transparent',
@@ -164,7 +168,7 @@ export const InternshipPanel: React.FC<InternshipPanelProps> = ({
         </div>
 
         {panelError && (
-          <div style={{ padding: '12px 16px', borderRadius: 10, background: 'rgba(239, 68, 68, 0.12)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#f87171', fontSize: 13 }}>
+          <div data-testid="internship-panel-error" style={{ padding: '12px 16px', borderRadius: 10, background: 'rgba(239, 68, 68, 0.12)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#f87171', fontSize: 13 }}>
             {panelError}
           </div>
         )}
