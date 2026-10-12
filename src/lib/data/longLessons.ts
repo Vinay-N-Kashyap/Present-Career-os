@@ -150,6 +150,14 @@ const LONG_LESSON_LANGUAGE: Record<string, LongLessonLanguage> = {
   iot_edge: 'python',
   iot_net: 'python',
   iot_sec: 'python',
+  'quant-systems': 'cpp',
+  excel_viz: 'python',
+  bcom_ana: 'python',
+  ai_prompt: 'python',
+  nlp: 'python',
+  blockchain: 'typescript',
+  'fullstack-js': 'typescript',
+  mobile: 'typescript',
 };
 
 export function getLongLessonLanguage(prefix: string): LongLessonLanguage {

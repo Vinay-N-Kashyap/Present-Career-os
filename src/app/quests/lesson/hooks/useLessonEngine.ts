@@ -324,7 +324,8 @@ const RUNNER_LABELS: Record<string, string> = {
   'cyber': '🛡️ Cybersecurity Principles & Secure Systems Sandbox',
   'excel_viz': '📊 Excel & Spreadsheet Data Analysis Sandbox',
   'ai_prompt': '🤖 Everyday AI Literacy & Prompt Engineering Sandbox',
-  'comp_fund': '💻 Computer Literacy & OS Fundamentals Sandbox',
+  'comp_fund': '💻 POSIX Virtual Shell & CLI Sandbox',
+  'git_vcs': '🐙 Git & Bash Sandbox',
   'bcom_ait': '🤖 AI & Digital Transformation for Business Simulator',
   'bcom_ops': '⚙️ Operations, Supply Chain & Business Compliance Simulator',
   'bcom_tax': '📋 Corporate & Direct Tax Simulator',
@@ -339,7 +340,7 @@ const RUNNER_LABELS: Record<string, string> = {
   'bcom-marketing': '📢 Digital Marketing & Growth Simulator',
   'bcom_ana': '📊 Business Analytics & Decision Intelligence Simulator',
   'bcom-accounting': '📊 Digital Accounting & ERP Simulator',
-  'quant-systems': '📈 Quantitative Trading & Low-Latency Simulator',
+  'quant-systems': '📈 C++ Low-Latency & Quantitative Trading Simulator',
   'iot_sec': '🔒 IoT Security & Root of Trust Simulator',
   'iot_edge': '🧠 Edge AI & TinyML TFLM Simulator',
   'ai': '🤖 AI & LLM Engine Simulator',
@@ -355,11 +356,9 @@ const RUNNER_LABELS: Record<string, string> = {
   'vec-py': '🐍 Python 3 Executing',
   'safe-py': '🐍 Python 3 Executing',
   'iot_net': '📶 IoT Radio Protocol Simulator',
-  'iot_emb': '🔌 Embedded MCU Simulator',
+  'iot_emb': '🔌 Embedded MCU C++ Simulator',
   'g3d': '🔮 WebGL2 3D Shader Sandbox',
-  'blockchain': '🪙 EVM Web3 & Solidity Simulator',
-  'comp_fund': '💻 POSIX Virtual Shell & CLI Sandbox',
-  'git_vcs': '💻 Git & Bash Sandbox',
+  'blockchain': '🪙 EVM Web3 & Solidity TypeScript Simulator',
 };
 
 interface UseLessonEngineProps {
@@ -925,12 +924,14 @@ export function useLessonEngine({
     }
 
     const qLower = (questId || '').toLowerCase();
-    const isJava = coursePrefix === 'java-basics' || qLower.includes('java');
+    const targetLang = getLongLessonLanguage(coursePrefix);
+    const isJava = targetLang === 'java' || coursePrefix === 'java-basics' || qLower.includes('java');
+    const isPython = targetLang === 'python' || coursePrefix === 'python' || qLower.includes('python');
+    const isSql = targetLang === 'sql' || coursePrefix === 'sql-mastery' || qLower.includes('sql');
+    const isBash = targetLang === 'bash' || coursePrefix === 'comp_fund' || coursePrefix === 'git_vcs' || qLower.includes('bash') || qLower.includes('cli');
+    const isCpp = targetLang === 'cpp' || coursePrefix === 'iot_emb' || coursePrefix === 'quant-systems' || qLower.includes('cpp') || qLower.includes('embedded');
     const isReact = coursePrefix === 'react-basics' || qLower.includes('react') || qLower.includes('frontend');
-    const isPython = coursePrefix === 'python' || qLower.includes('python');
-    const isSql = coursePrefix === 'sql-mastery' || qLower.includes('sql');
-    const isBash = coursePrefix === 'comp_fund' || coursePrefix === 'git_vcs' || qLower.includes('bash') || qLower.includes('cli');
-    const isCpp = coursePrefix === 'iot_emb' || qLower.includes('cpp') || qLower.includes('embedded');
+    const isTs = targetLang === 'typescript' || questData?.language === 'typescript' || questData?.language === 'tsx';
     const rawSyllabus = (syllabus && syllabus.length > 0) ? syllabus : ['Core Architecture', 'Operational Invariants', 'Optimal Synthesis'];
 
     const staticSlides = rawSyllabus.map((rawTopic: string, index: number) => {
@@ -965,6 +966,8 @@ export function useLessonEngine({
         if (tLow.includes('state') || tLow.includes('hook')) {
           codeExample = `// React State Hook for ${title}\nconsole.log("Executing State Counter...");\nlet count = 0;\nfunction setCount(fn) { count = typeof fn === 'function' ? fn(count) : fn; }\nsetCount(c => c + 1);\nconsole.log("Updated count:", count);`;
         }
+      } else if (isTs) {
+        codeExample = `// TypeScript Architecture Module for ${title}\ninterface InvariantSpec {\n  step: number;\n  title: string;\n  status: 'INITIALIZED' | 'VERIFIED';\n}\n\nconst spec: InvariantSpec = {\n  step: ${index + 1},\n  title: "${title.replace(/"/g, "")}",\n  status: 'VERIFIED'\n};\n\nconsole.log(\`[TS] \${spec.title} invariant state: \${spec.status}\`);`;
       }
 
       bulletPoints.push(`Verify invariants and boundary conditions before advancing.`);
