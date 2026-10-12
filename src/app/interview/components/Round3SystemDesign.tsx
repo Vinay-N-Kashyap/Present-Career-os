@@ -271,7 +271,16 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
                 value={manualTextInput}
                 disabled={isSendingInterviewMessage}
                 onChange={(e) => setManualTextInput(e.target.value)}
-                placeholder="Type your architecture defense..."
+                onKeyDown={(e) => {
+                  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                    e.preventDefault();
+                    if (!manualTextInput.trim() || isSendingInterviewMessage) return;
+                    const textToSend = manualTextInput.trim();
+                    setManualTextInput('');
+                    onSendMessage(textToSend);
+                  }
+                }}
+                placeholder="Type your architecture defense... (Enter or Ctrl+↵ to send)"
                 style={{
                   flex: 1,
                   padding: '7px 10px',

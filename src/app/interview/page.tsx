@@ -1092,6 +1092,9 @@ export default function InterviewPage() {
             activeTeacher={activeTeacher}
             activeTopicName={activeTopicName}
             activeStage={activeStage}
+            domainStream={domainStream}
+            domainSubTopic={domainSubTopic}
+            isVoiceListening={isVoiceListening}
             elapsedSeconds={elapsedSeconds}
             formatElapsed={formatElapsed}
             isScoredStage={isScoredStage}

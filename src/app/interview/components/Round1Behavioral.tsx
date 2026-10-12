@@ -389,7 +389,17 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
               value={manualTextInput}
               disabled={isSendingInterviewMessage}
               onChange={(e) => setManualTextInput(e.target.value)}
-              placeholder="Or type your response here..."
+              onKeyDown={(e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                  e.preventDefault();
+                  if (!manualTextInput.trim() || isSendingInterviewMessage) return;
+                  const textToSend = manualTextInput.trim();
+                  setManualTextInput('');
+                  console.log('[Interview] ⌨️ Candidate submitted typed response via shortcut:', textToSend);
+                  onSendMessage(textToSend);
+                }
+              }}
+              placeholder="Or type your response here... (Enter or Ctrl+↵ to send)"
               style={{
                 flex: 1,
                 padding: '8px 12px',

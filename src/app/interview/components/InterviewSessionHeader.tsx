@@ -7,6 +7,9 @@ interface InterviewSessionHeaderProps {
   activeTeacher: AvatarTeacher;
   activeTopicName: string;
   activeStage: string;
+  domainStream?: 'tech' | 'non_tech' | string;
+  domainSubTopic?: string;
+  isVoiceListening?: boolean;
   elapsedSeconds: number;
   formatElapsed: (sec: number) => string;
   isScoredStage: boolean;
@@ -27,6 +30,9 @@ export function InterviewSessionHeader({
   activeTeacher,
   activeTopicName,
   activeStage,
+  domainStream,
+  domainSubTopic,
+  isVoiceListening = false,
   elapsedSeconds,
   formatElapsed,
   isScoredStage,
@@ -64,8 +70,57 @@ export function InterviewSessionHeader({
        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <span style={{ fontSize: 22 }}>{activeTeacher.emoji}</span>
         <div>
-          <div style={{ fontSize: 14.5, fontWeight: 900, color: 'var(--t1)' }}>
-            {activeTeacher.name} ({activeTeacher.title})
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+            <span style={{ fontSize: 14.5, fontWeight: 900, color: 'var(--t1)' }}>
+              {activeTeacher.name} ({activeTeacher.title})
+            </span>
+            {domainSubTopic && (
+              <span
+                data-testid="header-track-badge"
+                style={{
+                  fontSize: 10,
+                  fontWeight: 800,
+                  padding: '2px 8px',
+                  borderRadius: 6,
+                  background: domainStream === 'non_tech' ? 'rgba(56, 189, 248, 0.12)' : 'rgba(168, 85, 247, 0.12)',
+                  color: domainStream === 'non_tech' ? '#38bdf8' : 'var(--accent)',
+                  border: domainStream === 'non_tech' ? '1px solid rgba(56, 189, 248, 0.3)' : '1px solid rgba(168, 85, 247, 0.3)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em'
+                }}
+              >
+                🎯 {domainSubTopic.replace(/_/g, ' ')}
+              </span>
+            )}
+            <span
+              data-testid="header-voice-badge"
+              style={{
+                fontSize: 10,
+                fontWeight: 800,
+                padding: '2px 8px',
+                borderRadius: 6,
+                background: isAvatarSpeaking
+                  ? 'rgba(234, 179, 8, 0.15)'
+                  : isVoiceListening
+                  ? 'rgba(34, 197, 94, 0.15)'
+                  : 'var(--bg3)',
+                color: isAvatarSpeaking
+                  ? 'var(--warning-bright, #eab308)'
+                  : isVoiceListening
+                  ? 'var(--success-bright, #22c55e)'
+                  : 'var(--t3)',
+                border: isAvatarSpeaking
+                  ? '1px solid rgba(234, 179, 8, 0.4)'
+                  : isVoiceListening
+                  ? '1px solid rgba(34, 197, 94, 0.4)'
+                  : '1px solid var(--border)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 4
+              }}
+            >
+              {isAvatarSpeaking ? '🗣️ Speaking' : isVoiceListening ? '🎙️ Mic Live' : '💤 Mic Standby'}
+            </span>
           </div>
           <div style={{ fontSize: 11, color: 'var(--accent-mid)' }}>
             {currentRound ? `Round ${activeRoundIndex + 1} of ${rounds.length} · ${currentRound.label}` : 'Interview'} · {activeTopicName} · {formatElapsed(elapsedSeconds)}

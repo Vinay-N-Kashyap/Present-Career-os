@@ -85,6 +85,19 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
   terminalLogs,
   setTerminalLogs,
 }) => {
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        if (!isRunning && !isSendingInterviewMessage) {
+          e.preventDefault();
+          runCodeAndTests();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isRunning, isSendingInterviewMessage, runCodeAndTests]);
+
   return (
     <div className="iv-round-layout iv-round2-layout" style={{ display: 'grid', gridTemplateColumns: '1.4fr 0.6fr', gap: 16, alignItems: 'stretch' }}>
       {/* Left 70%: Code Workspace with Monaco Editor */}
@@ -185,9 +198,10 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
           <button
             onClick={runCodeAndTests}
             disabled={isRunning || isSendingInterviewMessage}
+            title="Run Code & Tests (Ctrl+Enter / ⌘+Enter)"
             style={{ background: 'var(--green)', border: 'none', borderRadius: 8, padding: '7px 16px', color: 'var(--text)', fontWeight: 900, fontSize: 12.5, cursor: 'pointer' }}
           >
-            {isRunning ? 'Executing...' : (domainStream === 'non_tech' ? '📊 Execute Business Calculation' : '▶️ Run Code & Tests')}
+            {isRunning ? 'Executing...' : (domainStream === 'non_tech' ? '📊 Run Calculation (Ctrl+↵)' : '▶️ Run Code & Tests (Ctrl+↵)')}
           </button>
         </div>
 
@@ -198,6 +212,15 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
             language={selectedLang === 'sql' ? 'sql' : selectedLang === 'python' ? 'python' : selectedLang === 'java' ? 'java' : selectedLang === 'cpp' ? 'cpp' : 'javascript'}
             theme="vs-dark"
             value={codeContent}
+            onMount={(editor: any, monaco: any) => {
+              if (editor && monaco) {
+                editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+                  if (!isRunning && !isSendingInterviewMessage) {
+                    runCodeAndTests();
+                  }
+                });
+              }
+            }}
             onChange={(val) => {
               setCodeContent(val || '');
               codeModifiedRef.current = true; // IV-03: candidate has typed — never overwrite their work
@@ -236,9 +259,18 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
               <input
                 value={manualTextInput}
                 onChange={(event) => setManualTextInput(event.target.value)}
+                onKeyDown={(event) => {
+                  if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+                    event.preventDefault();
+                    const answer = manualTextInput.trim();
+                    if (!answer || isSendingInterviewMessage) return;
+                    setManualTextInput('');
+                    onSendMessage(answer);
+                  }
+                }}
                 disabled={isSendingInterviewMessage}
                 aria-label="Your code review answer"
-                placeholder="Explain your approach or answer the reviewer…"
+                placeholder="Explain your approach or answer the reviewer… (Enter or Ctrl+↵ to send)"
                 style={{ flex: 1, minWidth: 0, padding: '8px 10px', borderRadius: 7, border: '1px solid var(--border)', background: 'var(--bg3)', color: 'var(--t1)', fontSize: 12 }}
               />
               <button type="submit" disabled={!manualTextInput.trim() || isSendingInterviewMessage} style={{ padding: '8px 10px', borderRadius: 7, border: 0, background: 'var(--accent)', color: 'var(--text)', fontSize: 11, fontWeight: 800, cursor: isSendingInterviewMessage ? 'wait' : 'pointer' }}>

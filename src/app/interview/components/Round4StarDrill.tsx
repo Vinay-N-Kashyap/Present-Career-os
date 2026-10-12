@@ -169,7 +169,17 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
             value={manualTextInput}
             disabled={isSendingInterviewMessage}
             onChange={(e) => setManualTextInput(e.target.value)}
-            placeholder="Or type your STAR response (Situation, Task, Action, Result)..."
+            onKeyDown={(e) => {
+              if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                e.preventDefault();
+                if (!manualTextInput.trim() || isSendingInterviewMessage) return;
+                const textToSend = manualTextInput.trim();
+                setManualTextInput('');
+                console.log('[Interview] ⌨️ Candidate submitted typed STAR response via shortcut:', textToSend);
+                onSendMessage(textToSend);
+              }
+            }}
+            placeholder="Or type your STAR response (Situation, Task, Action, Result)... (Enter or Ctrl+↵ to send)"
             style={{
               flex: 1,
               padding: '10px 14px',
