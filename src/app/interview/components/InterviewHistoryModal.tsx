@@ -10,22 +10,90 @@ interface InterviewHistoryModalProps {
   onClose: () => void;
 }
 
+export function formatHistorySessionMarkdown(session: InterviewSessionRecord): string {
+  const strengthsList = Array.isArray(session.strengths) ? session.strengths.filter(Boolean) : [];
+  const improvementsText = typeof session.improvements === 'string'
+    ? session.improvements.trim()
+    : Array.isArray(session.improvements)
+      ? (session.improvements as string[]).join('. ')
+      : '';
+
+  const lines = [
+    `# Past Interview Defense: ${session.type}`,
+    `**Topic / Role:** ${session.type}  `,
+    `**Date:** ${session.date}  `,
+    `**Difficulty:** ${(session.difficulty || 'normal').toUpperCase()}  `,
+    `**Score:** ${session.score}% | Verdict: ${session.verdict}  `,
+    ...(strengthsList.length > 0 ? [`\n## Demonstrated Strengths`, ...strengthsList.map(s => `- ${s}`)] : []),
+    ...(improvementsText ? [`\n## Areas for Improvement`, improvementsText] : []),
+    ...(session.telemetry ? [
+      `\n## Delivery Diagnostics`,
+      `- **Eye Contact:** ${typeof session.telemetry.eyeContact === 'number' ? `${session.telemetry.eyeContact}%` : 'Not Tracked'}`,
+      `- **Speaking Pace:** ${typeof session.telemetry.wpm === 'number' ? `${session.telemetry.wpm} WPM` : 'Not Measured'}`,
+      `- **Filler Words:** ${typeof session.telemetry.fillerWords === 'number' ? session.telemetry.fillerWords : 'Not Measured'}`
+    ] : []),
+    `\n---\n`,
+    `## Transcript\n`
+  ];
+  session.messages?.forEach((m: any) => {
+    lines.push(`**${m.role === 'user' ? 'Candidate' : 'Interviewer'}:**\n${m.content}\n`);
+  });
+  return lines.join('\n');
+}
+
 export const InterviewHistoryModal: React.FC<InterviewHistoryModalProps> = ({
   selectedHistorySession,
   onClose
 }) => {
+  React.useEffect(() => {
+    if (!selectedHistorySession || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedHistorySession, onClose]);
+
   if (!selectedHistorySession) return null;
 
+  const strengthsList = Array.isArray(selectedHistorySession.strengths)
+    ? selectedHistorySession.strengths.filter(Boolean)
+    : [];
+  const improvementsText = typeof selectedHistorySession.improvements === 'string'
+    ? selectedHistorySession.improvements.trim()
+    : Array.isArray(selectedHistorySession.improvements)
+      ? (selectedHistorySession.improvements as string[]).join('. ')
+      : '';
+  const hasTelemetry = Boolean(
+    selectedHistorySession.telemetry &&
+    (typeof selectedHistorySession.telemetry.eyeContact === 'number' ||
+     typeof selectedHistorySession.telemetry.wpm === 'number' ||
+     typeof selectedHistorySession.telemetry.fillerWords === 'number')
+  );
+
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
+    >
       <div className="iv-panel" style={{ width: '100%', maxWidth: 850, maxHeight: '90vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', boxShadow: 'var(--shadow-xl)' }}>
         
         <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg3)' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
               <span style={{ fontSize: 12, padding: '2px 8px', borderRadius: 6, background: selectedHistorySession.domainStream === 'non_tech' ? 'var(--pink-light)' : 'var(--accent-light)', color: selectedHistorySession.domainStream === 'non_tech' ? 'var(--pink)' : 'var(--accent)', fontWeight: 800 }}>
                 {selectedHistorySession.domainStream === 'non_tech' ? 'Non-Tech' : 'Tech'}
               </span>
+              {selectedHistorySession.difficulty && (
+                <span data-testid="history-difficulty-badge" style={{ fontSize: 11, padding: '2px 8px', borderRadius: 6, background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--t2)', fontWeight: 800, textTransform: 'capitalize' }}>
+                  ⚡ {selectedHistorySession.difficulty}
+                </span>
+              )}
               <h2 style={{ fontSize: 16.5, fontWeight: 900, margin: 0, color: 'var(--t1)' }}>{selectedHistorySession.type}</h2>
             </div>
             <div style={{ fontSize: 12, color: 'var(--t3)', marginTop: 4 }}>
@@ -35,6 +103,7 @@ export const InterviewHistoryModal: React.FC<InterviewHistoryModalProps> = ({
 
           <button
             onClick={onClose}
+            aria-label="Close session history modal"
             style={{ background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--t1)', borderRadius: '50%', width: 30, height: 30, fontSize: 14.5, cursor: 'pointer', fontWeight: 900 }}
           >
             ✕
@@ -55,6 +124,48 @@ export const InterviewHistoryModal: React.FC<InterviewHistoryModalProps> = ({
               <RadarChart scores={selectedHistorySession.radar || { logic: 70, systems: 65, comms: 75, solving: 70, star: 70 }} size={150} />
             </div>
           </div>
+
+          {(strengthsList.length > 0 || improvementsText) && (
+            <div style={{ display: 'grid', gridTemplateColumns: strengthsList.length > 0 && improvementsText ? '1fr 1fr' : '1fr', gap: 12 }}>
+              {strengthsList.length > 0 && (
+                <div data-testid="history-strengths-card" style={{ background: 'var(--bg3)', borderRadius: 12, padding: 14, border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--green-mid)', marginBottom: 6 }}>
+                    🌟 Demonstrated Strengths
+                  </div>
+                  <ul style={{ margin: 0, paddingLeft: 16, fontSize: 12, color: 'var(--t2)', lineHeight: 1.45 }}>
+                    {strengthsList.map((str, i) => (
+                      <li key={i}>{str}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {improvementsText && (
+                <div data-testid="history-improvements-card" style={{ background: 'var(--bg3)', borderRadius: 12, padding: 14, border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--amber-mid)', marginBottom: 6 }}>
+                    📈 Areas for Improvement
+                  </div>
+                  <p style={{ margin: 0, fontSize: 12, color: 'var(--t2)', lineHeight: 1.45 }}>
+                    {improvementsText}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
+
+          {hasTelemetry && (
+            <div data-testid="history-telemetry-card" style={{ background: 'var(--bg3)', borderRadius: 12, padding: '10px 14px', border: '1px solid var(--border)', display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', fontSize: 12 }}>
+              <span style={{ fontWeight: 800, color: 'var(--t1)' }}>📡 Delivery Diagnostics:</span>
+              {typeof selectedHistorySession.telemetry?.eyeContact === 'number' && (
+                <span style={{ color: 'var(--t2)' }}>👁️ Eye Contact: <strong>{selectedHistorySession.telemetry.eyeContact}%</strong></span>
+              )}
+              {typeof selectedHistorySession.telemetry?.wpm === 'number' && (
+                <span style={{ color: 'var(--t2)' }}>🗣️ Pace: <strong>{selectedHistorySession.telemetry.wpm} WPM</strong></span>
+              )}
+              {typeof selectedHistorySession.telemetry?.fillerWords === 'number' && (
+                <span style={{ color: 'var(--t2)' }}>🎯 Filler Words: <strong>{selectedHistorySession.telemetry.fillerWords}</strong></span>
+              )}
+            </div>
+          )}
 
           <div>
             <h3 style={{ fontSize: 14.5, fontWeight: 900, marginBottom: 10, color: 'var(--accent-mid)' }}>💬 Full Conversation Transcript</h3>
@@ -95,18 +206,8 @@ export const InterviewHistoryModal: React.FC<InterviewHistoryModalProps> = ({
         <div style={{ padding: '14px 20px', borderTop: '1px solid var(--border)', background: 'var(--bg3)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <button
             onClick={() => {
-              const lines = [
-                `# Past Interview Defense: ${selectedHistorySession.type}`,
-                `**Topic / Role:** ${selectedHistorySession.type}  `,
-                `**Date:** ${selectedHistorySession.date}  `,
-                `**Score:** ${selectedHistorySession.score}% | Verdict: ${selectedHistorySession.verdict}  `,
-                `\n---\n`,
-                `## Transcript\n`
-              ];
-              selectedHistorySession.messages?.forEach((m: any) => {
-                lines.push(`**${m.role === 'user' ? 'Candidate' : 'Interviewer'}:**\n${m.content}\n`);
-              });
-              const blob = new Blob([lines.join('\n')], { type: 'text/markdown' });
+              const md = formatHistorySessionMarkdown(selectedHistorySession);
+              const blob = new Blob([md], { type: 'text/markdown' });
               const url = URL.createObjectURL(blob);
               const a = document.createElement('a');
               a.href = url;

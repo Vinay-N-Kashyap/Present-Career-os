@@ -124,6 +124,12 @@ export function computeDeterministicEvaluation({
     }
   };
 
+  const starMetrics = {
+    stepsCompleted: Math.min(4, Math.max(0, starStep)),
+    stepsArticulated: `${starStep} STAR steps articulated`,
+    badge: round4Badge
+  };
+
   return {
     verdict: scoringResult.verdict,
     score: scoringResult.overallScore,
@@ -138,6 +144,7 @@ export function computeDeterministicEvaluation({
     coaching,
     telemetryDiagnostics,
     perRoundScores,
+    starMetrics,
     solvingScore
   };
 }
@@ -239,7 +246,7 @@ export function exportInterviewTranscriptFile({
       readiness: evaluationResult?.readiness,
       appliedWeights: evaluationResult?.appliedWeights,
       perRoundScores: evaluationResult?.perRoundScores,
-      starMetrics: {
+      starMetrics: evaluationResult?.starMetrics || {
         stepsArticulated: evaluationResult?.perRoundScores?.round4?.metric,
         badge: evaluationResult?.perRoundScores?.round4?.badge
       },

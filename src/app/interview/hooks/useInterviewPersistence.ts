@@ -62,7 +62,12 @@ export function useInterviewPersistence({
     return `pinit_active_interview_draft_${validUid}`;
   }, []);
 
-  // Check for recoverable draft on load (30-second TTL for mid-answer autosave buffer)
+  const getHistoryKey = useCallback((uid?: string) => {
+    const validUid = uid && uid !== 'guest' ? uid : 'guest';
+    return `pinit_interview_history_${validUid}`;
+  }, []);
+
+  // Check for recoverable draft on load (2-hour TTL for mid-answer autosave buffer)
   useEffect(() => {
     if (typeof window === 'undefined') return;
     try {
@@ -127,8 +132,20 @@ export function useInterviewPersistence({
     getDraftKey
   ]);
 
-  // Sessions History State (Supabase is source of truth on mount)
+  // Sessions History State (Hydrate local cache first, then sync with Supabase / API)
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const cachedRaw = localStorage.getItem(getHistoryKey(userId));
+        if (cachedRaw) {
+          const parsed = JSON.parse(cachedRaw);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setSessions(parsed.slice(0, 20));
+          }
+        }
+      } catch {}
+    }
+
     if (!userId || userId === 'guest') return;
     let isMounted = true;
 
@@ -165,6 +182,9 @@ export function useInterviewPersistence({
             };
           });
           setSessions(formatted);
+          try {
+            localStorage.setItem(getHistoryKey(userId), JSON.stringify(formatted));
+          } catch {}
           return;
         }
       } catch (err) {
@@ -179,6 +199,9 @@ export function useInterviewPersistence({
           const data = await res.json();
           if (Array.isArray(data.sessions) && data.sessions.length > 0) {
             setSessions(data.sessions);
+            try {
+              localStorage.setItem(getHistoryKey(userId), JSON.stringify(data.sessions.slice(0, 20)));
+            } catch {}
           }
         }
       } catch (e) {
@@ -188,11 +211,19 @@ export function useInterviewPersistence({
 
     loadSessionsFromSupabase();
     return () => { isMounted = false; };
-  }, [userId]);
+  }, [userId, getHistoryKey]);
 
   const saveSessionHistory = async (newSession: InterviewSessionRecord) => {
-    // 1. Optimistic UI update
-    setSessions(prev => [newSession, ...prev.filter(s => s.id !== newSession.id)].slice(0, 20));
+    // 1. Optimistic UI update + offline-resilient localStorage cache
+    setSessions(prev => {
+      const updated = [newSession, ...prev.filter(s => s.id !== newSession.id)].slice(0, 20);
+      if (typeof window !== 'undefined') {
+        try {
+          localStorage.setItem(getHistoryKey(userId), JSON.stringify(updated));
+        } catch {}
+      }
+      return updated;
+    });
 
     // 2. Persist authoritatively through server-side history API with cryptographic signature verification
     if (userId && userId !== 'guest') {
@@ -219,6 +250,9 @@ export function useInterviewPersistence({
   const clearSessionHistory = async () => {
     if (typeof window !== 'undefined' && window.confirm('Are you sure you want to clear all your interview session history?')) {
       setSessions([]);
+      try {
+        localStorage.removeItem(getHistoryKey(userId));
+      } catch {}
       if (userId && userId !== 'guest') {
         try {
           const { supabase } = await import('@/lib/supabaseClient');
