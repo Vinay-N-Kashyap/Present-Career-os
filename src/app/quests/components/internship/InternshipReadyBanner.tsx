@@ -26,6 +26,7 @@ export const InternshipReadyBanner: React.FC<InternshipReadyBannerProps> = ({
   if (state === 'generating') {
     return (
       <div
+        data-testid="internship-status-generating"
         style={{
           borderRadius: 14,
           padding: '24px 22px',
@@ -58,6 +59,7 @@ export const InternshipReadyBanner: React.FC<InternshipReadyBannerProps> = ({
   if (state === 'generation_failed') {
     return (
       <div
+        data-testid="internship-status-failed"
         style={{
           borderRadius: 14,
           padding: '20px 22px',
@@ -82,6 +84,7 @@ export const InternshipReadyBanner: React.FC<InternshipReadyBannerProps> = ({
 
         <button
           type="button"
+          data-testid="btn-retry-generation"
           onClick={onRetryGeneration}
           disabled={isRetryingGeneration}
           style={{
@@ -104,6 +107,7 @@ export const InternshipReadyBanner: React.FC<InternshipReadyBannerProps> = ({
 
   return (
     <div
+      data-testid="internship-status-ready"
       style={{
         borderRadius: 14,
         padding: '22px 24px',
@@ -135,6 +139,7 @@ export const InternshipReadyBanner: React.FC<InternshipReadyBannerProps> = ({
 
       {startError && (
         <div
+          data-testid="internship-start-error"
           style={{
             padding: '10px 14px',
             borderRadius: 8,
@@ -150,6 +155,7 @@ export const InternshipReadyBanner: React.FC<InternshipReadyBannerProps> = ({
 
       <button
         type="button"
+        data-testid="btn-start-simulation"
         onClick={onStart}
         disabled={isStarting}
         style={{

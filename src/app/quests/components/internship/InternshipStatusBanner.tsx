@@ -58,6 +58,7 @@ export const InternshipStatusBanner: React.FC<InternshipStatusBannerProps> = ({
   if (state === 'loading') {
     return (
       <div
+        data-testid="internship-status-loading"
         style={{
           borderRadius: 14,
           padding: '24px 20px',
@@ -81,6 +82,7 @@ export const InternshipStatusBanner: React.FC<InternshipStatusBannerProps> = ({
   if (state === 'not_eligible') {
     return (
       <div
+        data-testid="internship-status-not-eligible"
         style={{
           borderRadius: 14,
           padding: '20px 22px',

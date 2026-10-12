@@ -13,7 +13,7 @@ interface CareerGrowthGraphProps {
 // ─────────────────────────────────────────────────────────────────────
 // Utility: smooth catmull-rom spline points
 // ─────────────────────────────────────────────────────────────────────
-function catmullRomSpline(points: { x: number; y: number }[], segments: number = 60): string {
+export function catmullRomSpline(points: { x: number; y: number }[], segments: number = 60): string {
   if (points.length < 2) return '';
   const pathParts: string[] = [];
 
@@ -48,6 +48,34 @@ function catmullRomSpline(points: { x: number; y: number }[], segments: number =
   return pathParts.join(' ');
 }
 
+export function computeGrowthTrajectoryData(monthsCount: number, scoresHistory: number[] = []) {
+  const safeMonths = Math.max(1, monthsCount);
+  const baseline: number[] = [];
+  const current: number[] = [];
+  const target: number[] = [];
+
+  for (let i = 0; i < safeMonths; i++) {
+    const progress = (i + 1) / safeMonths;
+    baseline.push(25 + Math.min(progress * 15, 35)); // Start ~25, plateau ~40
+    current.push(scoresHistory[i] ?? (35 + progress * (55 - 35))); // Growth curve
+    target.push(60 + progress * 30); // Target: 60→90
+  }
+
+  const hireabilityIndex = Math.round(current[safeMonths - 1] ?? 88);
+  const speedFactor = Math.round(((current[safeMonths - 1] ?? 88) - (baseline[0] ?? 25)) / (baseline[safeMonths - 1] ?? 40) * 100);
+  const codeQuality = Math.round((current[safeMonths - 1] ?? 88) * 0.9);
+
+  return {
+    months: safeMonths,
+    baseline,
+    current,
+    target,
+    hireabilityIndex,
+    speedFactor,
+    codeQuality,
+  };
+}
+
 // ─────────────────────────────────────────────────────────────────────
 // Component
 // ─────────────────────────────────────────────────────────────────────
@@ -55,6 +83,7 @@ export default function CareerGrowthGraph({
   monthsCount,
   scoresHistory = [],
 }: CareerGrowthGraphProps) {
+  const safeMonths = Math.max(1, monthsCount);
   const width = 600;
   const height = 300;
   const padding = { top: 40, right: 40, bottom: 50, left: 60 };
@@ -62,27 +91,14 @@ export default function CareerGrowthGraph({
   const chartHeight = height - padding.top - padding.bottom;
 
   // Generate baseline / current / target data
-  const chartData = useMemo(() => {
-    const months = monthsCount;
-    const baseline: number[] = [];
-    const current: number[] = [];
-    const target: number[] = [];
+  const chartData = useMemo(
+    () => computeGrowthTrajectoryData(safeMonths, scoresHistory),
+    [safeMonths, scoresHistory]
+  );
 
-    // Use provided scores or generate reasonable defaults
-    for (let i = 0; i < months; i++) {
-      const progress = (i + 1) / months;
-      baseline.push(25 + Math.min(progress * 15, 35)); // Start ~25, plateau ~40
-      current.push(scoresHistory[i] ?? (35 + progress * (55 - 35))); // Growth curve
-      target.push(60 + progress * 30); // Target: 60→90
-    }
-
-    return { baseline, current, target };
-  }, [monthsCount, scoresHistory]);
-
-  const { baseline, current, target } = chartData;
+  const { baseline, current, target, hireabilityIndex, speedFactor, codeQuality } = chartData;
 
   // Build SVG points
-  const allValues = [...baseline, ...current, ...target];
   const yMin = 0;
   const yMax = 100;
 
@@ -91,31 +107,29 @@ export default function CareerGrowthGraph({
   const getY = (val: number) =>
     padding.top + chartHeight - ((val - yMin) / (yMax - yMin)) * chartHeight;
 
-  const baselinePoints = baseline.map((v, i) => ({ x: getX(i, monthsCount), y: getY(v) }));
-  const currentPoints = current.map((v, i) => ({ x: getX(i, monthsCount), y: getY(v) }));
-  const targetPoints = target.map((v, i) => ({ x: getX(i, monthsCount), y: getY(v) }));
+  const baselinePoints = baseline.map((v, i) => ({ x: getX(i, safeMonths), y: getY(v) }));
+  const currentPoints = current.map((v, i) => ({ x: getX(i, safeMonths), y: getY(v) }));
+  const targetPoints = target.map((v, i) => ({ x: getX(i, safeMonths), y: getY(v) }));
 
   const baselinePath = catmullRomSpline(baselinePoints);
   const currentPath = catmullRomSpline(currentPoints);
   const targetPath = catmullRomSpline(targetPoints);
 
-  // Metrics
-  const hireabilityIndex = Math.round(current[monthsCount - 1] ?? 88);
-  const speedFactor = Math.round(((current[monthsCount - 1] ?? 88) - (baseline[0] ?? 25)) / (baseline[monthsCount - 1] ?? 40) * 100);
-  const codeQuality = Math.round((current[monthsCount - 1] ?? 88) * 0.9);
-
   // Y-axis labels
   const yTicks = [0, 20, 40, 60, 80, 100];
 
   return (
-    <div style={{
-      padding: 24, borderRadius: 20,
-      background: 'rgba(15, 23, 42, 0.85)',
-      border: '1px solid rgba(255, 255, 255, 0.08)',
-      backdropFilter: 'blur(12px)',
-      fontFamily: 'var(--font-display)',
-      width: '100%', maxWidth: 700,
-    }}>
+    <div
+      data-testid="career-growth-graph"
+      style={{
+        padding: 24, borderRadius: 20,
+        background: 'rgba(15, 23, 42, 0.85)',
+        border: '1px solid rgba(255, 255, 255, 0.08)',
+        backdropFilter: 'blur(12px)',
+        fontFamily: 'var(--font-display)',
+        width: '100%', maxWidth: 700,
+      }}
+    >
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
         <div>
@@ -123,23 +137,26 @@ export default function CareerGrowthGraph({
             📈 Career Growth Trajectory
           </h2>
           <span style={{ fontSize: 13, color: 'var(--t3)' }}>
-            {monthsCount}-Month Crash Program • Baseline vs Current vs Industry Target
+            {safeMonths}-Month Crash Program • Baseline vs Current vs Industry Target
           </span>
         </div>
-        <span style={{
-          fontSize: 12, fontWeight: 800, padding: '4px 12px', borderRadius: 8,
-          background: 'rgba(99,102,241,0.15)', color: '#6366f1', border: '1px solid rgba(99,102,241,0.2)',
-        }}>{monthsCount} Months</span>
+        <span
+          data-testid="growth-months-badge"
+          style={{
+            fontSize: 12, fontWeight: 800, padding: '4px 12px', borderRadius: 8,
+            background: 'rgba(99,102,241,0.15)', color: '#6366f1', border: '1px solid rgba(99,102,241,0.2)',
+          }}
+        >{safeMonths} Months</span>
       </div>
 
       {/* Metrics Pills */}
       <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
         {[
-          { label: 'Hireability Index', value: `${hireabilityIndex}/100`, color: '#10b981', bg: 'rgba(16,185,129,0.12)' },
-          { label: 'Speed Factor', value: `${speedFactor}%`, color: '#6366f1', bg: 'rgba(99,102,241,0.12)' },
-          { label: 'Code Quality Rating', value: `${codeQuality}/100`, color: '#f59e0b', bg: 'rgba(245,158,11,0.12)' },
+          { testId: 'growth-metric-hireability', label: 'Hireability Index', value: `${hireabilityIndex}/100`, color: '#10b981', bg: 'rgba(16,185,129,0.12)' },
+          { testId: 'growth-metric-speed', label: 'Speed Factor', value: `${speedFactor}%`, color: '#6366f1', bg: 'rgba(99,102,241,0.12)' },
+          { testId: 'growth-metric-quality', label: 'Code Quality Rating', value: `${codeQuality}/100`, color: '#f59e0b', bg: 'rgba(245,158,11,0.12)' },
         ].map(pill => (
-          <div key={pill.label} style={{
+          <div key={pill.label} data-testid={pill.testId} style={{
             flex: 1, minWidth: 120, padding: '10px 14px', borderRadius: 12,
             background: pill.bg, border: `1px solid ${pill.color}33`,
             textAlign: 'center',
@@ -153,10 +170,11 @@ export default function CareerGrowthGraph({
       {/* SVG Chart */}
       <div style={{ width: '100%', overflow: 'auto' }}>
         <svg
+          data-testid="growth-svg-chart"
           viewBox={`0 0 ${width} ${height}`}
           style={{ width: '100%', height: 'auto', minHeight: 250 }}
           role="img"
-          aria-label={`Career growth graph showing ${monthsCount} month trajectory`}
+          aria-label={`Career growth graph showing ${safeMonths} month trajectory`}
         >
           {/* Grid lines */}
           {yTicks.map(tick => (
@@ -172,13 +190,13 @@ export default function CareerGrowthGraph({
           ))}
 
           {/* X-axis labels */}
-          {Array.from({ length: monthsCount }, (_, i) => {
+          {Array.from({ length: safeMonths }, (_, i) => {
             // For longer durations (12m/24m), skip odd intermediary labels to avoid overlap
-            if (monthsCount > 12 && i !== 0 && (i + 1) % 2 !== 0 && i !== monthsCount - 1) {
+            if (safeMonths > 12 && i !== 0 && (i + 1) % 2 !== 0 && i !== safeMonths - 1) {
               return null;
             }
             return (
-              <text key={i} x={getX(i, monthsCount)} y={height - 10} textAnchor="middle" fill="var(--t3)" fontSize="11.5" fontFamily="var(--font-display)">
+              <text key={i} x={getX(i, safeMonths)} y={height - 10} textAnchor="middle" fill="var(--t3)" fontSize="11.5" fontFamily="var(--font-display)">
                 M{i + 1}
               </text>
             );
@@ -222,7 +240,7 @@ export default function CareerGrowthGraph({
           {/* Data points — Current */}
           {currentPoints.map((p, i) => (
             <circle key={`curr-${i}`} cx={p.x} cy={p.y} r="5" fill="#10b981" stroke="var(--bg2)" strokeWidth="2">
-              {i === monthsCount - 1 && (
+              {i === safeMonths - 1 && (
                 <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" />
               )}
             </circle>
@@ -234,13 +252,13 @@ export default function CareerGrowthGraph({
           ))}
 
           {/* Final value labels */}
-          {monthsCount > 0 && (
+          {safeMonths > 0 && (
             <>
-              <text x={currentPoints[monthsCount - 1].x} y={currentPoints[monthsCount - 1].y - 12} textAnchor="middle" fill="#10b981" fontSize="13" fontWeight="800" fontFamily="var(--font-display)">
-                {current[monthsCount - 1]?.toFixed(0)}
+              <text x={currentPoints[safeMonths - 1].x} y={currentPoints[safeMonths - 1].y - 12} textAnchor="middle" fill="#10b981" fontSize="13" fontWeight="800" fontFamily="var(--font-display)">
+                {current[safeMonths - 1]?.toFixed(0)}
               </text>
-              <text x={targetPoints[monthsCount - 1].x} y={targetPoints[monthsCount - 1].y - 12} textAnchor="middle" fill="#6366f1" fontSize="13" fontWeight="800" fontFamily="var(--font-display)">
-                {target[monthsCount - 1]?.toFixed(0)}
+              <text x={targetPoints[safeMonths - 1].x} y={targetPoints[safeMonths - 1].y - 12} textAnchor="middle" fill="#6366f1" fontSize="13" fontWeight="800" fontFamily="var(--font-display)">
+                {target[safeMonths - 1]?.toFixed(0)}
               </text>
             </>
           )}
@@ -281,15 +299,15 @@ export default function CareerGrowthGraph({
       {/* Bottom Summary */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 16, flexWrap: 'wrap', gap: 8 }}>
         <div style={{ fontSize: 12, color: 'var(--t3)' }}>
-          📊 Day 1 Baseline: {baseline[0]?.toFixed(0)} → Now: {current[monthsCount - 1]?.toFixed(0)} → Target: {target[monthsCount - 1]?.toFixed(0)}
+          📊 Day 1 Baseline: {baseline[0]?.toFixed(0)} → Now: {current[safeMonths - 1]?.toFixed(0)} → Target: {target[safeMonths - 1]?.toFixed(0)}
         </div>
-        <div style={{
+        <div data-testid="growth-summary-badge" style={{
           padding: '6px 14px', borderRadius: 8,
           background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
           border: 'none', color: '#fff', fontSize: 12, fontWeight: 800,
           fontFamily: 'var(--font-display)',
         }}>
-          Growth: +{Math.round((current[monthsCount - 1] ?? 0) - (baseline[0] ?? 0))} pts
+          Growth: +{Math.round((current[safeMonths - 1] ?? 0) - (baseline[0] ?? 0))} pts
         </div>
       </div>
     </div>

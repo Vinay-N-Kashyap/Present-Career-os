@@ -31,6 +31,7 @@ export const InternshipCompletedBanner: React.FC<InternshipCompletedBannerProps>
     const canRestart = restarts < 1;
     return (
       <div
+        data-testid="internship-status-expired"
         style={{
           borderRadius: 14,
           padding: '20px 22px',
@@ -60,6 +61,7 @@ export const InternshipCompletedBanner: React.FC<InternshipCompletedBannerProps>
             </p>
             <button
               type="button"
+              data-testid="btn-restart-simulation"
               onClick={onRestart}
               disabled={isRestarting}
               style={{
@@ -77,7 +79,7 @@ export const InternshipCompletedBanner: React.FC<InternshipCompletedBannerProps>
             </button>
           </div>
         ) : (
-          <div style={{ fontSize: 12.5, color: 'var(--t3)' }}>
+          <div data-testid="internship-max-restarts-msg" style={{ fontSize: 12.5, color: 'var(--t3)' }}>
             This internship has reached the maximum permitted restarts (1). Contact an academic advisor if you require further accommodations.
           </div>
         )}
@@ -87,6 +89,7 @@ export const InternshipCompletedBanner: React.FC<InternshipCompletedBannerProps>
 
   return (
     <div
+      data-testid="internship-status-completed"
       style={{
         borderRadius: 14,
         padding: '22px 24px',
@@ -113,6 +116,7 @@ export const InternshipCompletedBanner: React.FC<InternshipCompletedBannerProps>
         {certificateId ? (
           <button
             type="button"
+            data-testid="btn-view-internship-cert"
             onClick={() => onViewCertificate?.(certificateId)}
             style={{
               padding: '10px 20px',
@@ -133,6 +137,7 @@ export const InternshipCompletedBanner: React.FC<InternshipCompletedBannerProps>
         ) : (
           <button
             type="button"
+            data-testid="btn-claim-internship-cert"
             onClick={onRequestCertificate}
             disabled={isRequestingCertificate}
             style={{
@@ -153,6 +158,7 @@ export const InternshipCompletedBanner: React.FC<InternshipCompletedBannerProps>
         {hasFinalReport && onOpenReport && (
           <button
             type="button"
+            data-testid="btn-review-standup-report"
             onClick={onOpenReport}
             style={{
               padding: '10px 18px',

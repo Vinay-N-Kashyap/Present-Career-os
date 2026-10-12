@@ -78,6 +78,15 @@ export default function CapstoneInternshipPortal({
   const [busy, setBusy] = useState(false);
   const [feedback, setFeedback] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null);
 
+  React.useEffect(() => {
+    if (busy || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [busy, onClose]);
+
   const setField = (key: keyof typeof fields) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setFields((prev) => ({ ...prev, [key]: e.target.value }));
 
@@ -134,7 +143,7 @@ export default function CapstoneInternshipPortal({
               Last attempt: {last.score}% · {last.verdict} (not passed yet)
             </div>
           )}
-          <Link href={COURSE_DEFENSE_PATH} style={{ ...primaryButton(false), textDecoration: 'none', display: 'inline-block' }}>
+          <Link data-testid="btn-start-capstone-defense" href={COURSE_DEFENSE_PATH} style={{ ...primaryButton(false), textDecoration: 'none', display: 'inline-block' }}>
             🎙️ {last ? 'Retake' : 'Start'} capstone defense →
           </Link>
         </div>
@@ -147,21 +156,21 @@ export default function CapstoneInternshipPortal({
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         {sprint === 1 && (
           <>
-            <input type="url" placeholder="https://github.com/you/your-project" value={fields.repoUrl}
+            <input data-testid="input-sprint1-repo" type="url" placeholder="https://github.com/you/your-project" value={fields.repoUrl}
               onChange={setField('repoUrl')} style={inputStyle} aria-label="GitHub repository URL" />
-            <input type="url" placeholder={fieldOf(1)?.placeholder || 'https://github.com/you/your-project/blob/main/docs/architecture.md'} value={fields.designUrl}
+            <input data-testid="input-sprint1-design" type="url" placeholder={fieldOf(1)?.placeholder || 'https://github.com/you/your-project/blob/main/docs/architecture.md'} value={fields.designUrl}
               onChange={setField('designUrl')} style={inputStyle} aria-label={`${fieldOf(1)?.label || 'Design'} file or folder URL`} />
           </>
         )}
         {sprint === 2 && (
-          <input type="url" placeholder={fieldOf(2)?.placeholder || `${milestones.sprint1RepoUrl || 'https://github.com/you/your-project'}/tree/main/src/api`}
+          <input data-testid="input-sprint2-api" type="url" placeholder={fieldOf(2)?.placeholder || `${milestones.sprint1RepoUrl || 'https://github.com/you/your-project'}/tree/main/src/api`}
             value={fields.apiUrl} onChange={setField('apiUrl')} style={inputStyle} aria-label={`${fieldOf(2)?.label || 'API code'} file or folder URL`} />
         )}
         {sprint === 3 && (
-          <input type="url" placeholder="https://your-project.vercel.app" value={fields.liveUrl}
+          <input data-testid="input-sprint3-live" type="url" placeholder="https://your-project.vercel.app" value={fields.liveUrl}
             onChange={setField('liveUrl')} style={inputStyle} aria-label="Live URL" />
         )}
-        <button onClick={() => submitSprint(sprint)} disabled={!ready || busy} style={primaryButton(!ready || busy)}>
+        <button data-testid={`btn-submit-sprint-${sprint}`} onClick={() => submitSprint(sprint)} disabled={!ready || busy} style={primaryButton(!ready || busy)}>
           {busy ? 'Checking…' : `✓ Check & submit Sprint ${sprint}`}
         </button>
       </div>
@@ -169,12 +178,19 @@ export default function CapstoneInternshipPortal({
   };
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0,
-      background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      zIndex: 1000, padding: 24,
-    }} aria-modal="true" role="dialog" aria-label={`${planTitle} Capstone`}>
+    <div
+      data-testid="capstone-internship-portal"
+      onClick={(e) => { if (!busy && e.target === e.currentTarget) onClose(); }}
+      style={{
+        position: 'fixed', inset: 0,
+        background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        zIndex: 1000, padding: 24,
+      }}
+      aria-modal="true"
+      role="dialog"
+      aria-label={`${planTitle} Capstone`}
+    >
       <div style={{
         maxWidth: 800, width: '100%',
         background: 'var(--bg2)', border: '1px solid var(--border)',
@@ -194,7 +210,7 @@ export default function CapstoneInternshipPortal({
             </h2>
             <span style={{ fontSize: 13, color: 'var(--t3)' }}>Student: {studentName}</span>
           </div>
-          <button onClick={onClose} style={{
+          <button data-testid="btn-close-capstone-portal" onClick={onClose} style={{
             padding: '6px 12px', borderRadius: 8, background: 'var(--bg3)',
             border: '1px solid var(--border)', color: 'var(--t2)', fontSize: 13, fontWeight: 600, cursor: 'pointer',
           }} aria-label="Close capstone">✕ Close</button>
@@ -212,12 +228,12 @@ export default function CapstoneInternshipPortal({
               borderRadius: 4, background: 'linear-gradient(90deg, #6366f1, #10b981)', transition: 'width 0.5s ease',
             }} />
           </div>
-          <span style={{ fontSize: 14.5, fontWeight: 800, color: 'var(--accent)' }}>{approvedCount}/{sprints.length}</span>
+          <span data-testid="capstone-approved-counter" style={{ fontSize: 14.5, fontWeight: 800, color: 'var(--accent)' }}>{approvedCount}/{sprints.length}</span>
         </div>
 
         <div style={{ flex: 1, overflow: 'auto', padding: 24, display: 'flex', flexDirection: 'column', gap: 16 }}>
           {!trainingDone && (
-            <div style={{
+            <div data-testid="capstone-locked-banner" style={{
               padding: 14, borderRadius: 12, background: 'rgba(245,158,11,0.1)',
               border: '1px solid rgba(245,158,11,0.3)', color: '#f59e0b', fontSize: 14, fontWeight: 700,
             }}>
@@ -226,7 +242,7 @@ export default function CapstoneInternshipPortal({
           )}
 
           {feedback && (
-            <div role="status" style={{
+            <div data-testid="capstone-feedback-banner" role="status" style={{
               padding: '10px 14px', borderRadius: 10, fontSize: 14, fontWeight: 700,
               background: feedback.kind === 'ok' ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.12)',
               border: `1px solid ${feedback.kind === 'ok' ? 'rgba(16,185,129,0.3)' : 'rgba(239,68,68,0.3)'}`,
@@ -240,13 +256,13 @@ export default function CapstoneInternshipPortal({
             const state: SprintState = isSprintApproved(milestones, s.sprint) ? 'approved' : current === s.sprint ? 'open' : 'locked';
             const style = STATE_STYLE[state];
             return (
-              <div key={s.sprint} style={{
+              <div key={s.sprint} data-testid={`capstone-sprint-card-${s.sprint}`} style={{
                 padding: 18, borderRadius: 14, background: 'var(--bg3)',
                 border: `1px solid ${style.border}`, opacity: state === 'locked' ? 0.6 : 1,
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4, flexWrap: 'wrap' }}>
                   <span style={{ fontSize: 15.5, fontWeight: 900, color: 'var(--t1)' }}>{s.title}</span>
-                  <span style={{
+                  <span data-testid={`capstone-sprint-status-${s.sprint}`} style={{
                     fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 6,
                     background: style.bg, border: `1px solid ${style.border}`, color: style.color,
                   }}>{style.label}</span>
@@ -272,18 +288,18 @@ export default function CapstoneInternshipPortal({
           })}
 
           {/* Certificate */}
-          <div style={{ padding: 18, borderRadius: 14, background: 'var(--bg3)', border: '1px solid var(--border)' }}>
+          <div data-testid="capstone-certificate-section" style={{ padding: 18, borderRadius: 14, background: 'var(--bg3)', border: '1px solid var(--border)' }}>
             <h3 style={{ fontSize: 15.5, fontWeight: 800, color: 'var(--t1)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
               📜 Capstone Project Certificate
             </h3>
             {certificateId ? (
-              <div style={{ display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
+              <div data-testid="capstone-certificate-issued" style={{ display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
                 <div style={{ padding: 8, borderRadius: 8, background: '#fff' }}>
                   <QRCodeSVG value={verifyUrl} size={112} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, minWidth: 0 }}>
                   <div style={{ fontSize: 13, color: 'var(--t3)' }}>Certificate ID</div>
-                  <div style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', fontFamily: 'monospace' }}>{certificateId}</div>
+                  <div data-testid="capstone-certificate-id" style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', fontFamily: 'monospace' }}>{certificateId}</div>
                   <a href={verifyPath} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 800, color: 'var(--accent)' }}>
                     Open the public verification page →
                   </a>
@@ -291,7 +307,7 @@ export default function CapstoneInternshipPortal({
                 </div>
               </div>
             ) : current === null && trainingDone ? (
-              <button onClick={getCertificate} disabled={busy} style={primaryButton(busy)}>
+              <button data-testid="btn-claim-capstone-certificate" onClick={getCertificate} disabled={busy} style={primaryButton(busy)}>
                 {busy ? 'Issuing…' : '🎓 Get my certificate'}
               </button>
             ) : (

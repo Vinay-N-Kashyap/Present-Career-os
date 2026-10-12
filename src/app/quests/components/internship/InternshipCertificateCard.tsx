@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 
 interface InternshipCertificateCardProps {
@@ -22,6 +22,15 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
 }) => {
   const [copied, setCopied] = useState(false);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   const verifyPath = `/verify/${encodeURIComponent(certificateId)}`;
   const verifyUrl = typeof window !== 'undefined'
     ? `${window.location.origin}${verifyPath}`
@@ -37,6 +46,13 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
 
   return (
     <div
+      data-testid="internship-certificate-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Official Internship Credential"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
       style={{
         position: 'fixed',
         inset: 0,
@@ -80,6 +96,8 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
           </div>
           <button
             type="button"
+            data-testid="btn-close-internship-cert"
+            aria-label="Close certificate"
             onClick={onClose}
             style={{ background: 'none', border: 'none', fontSize: 20, color: 'var(--t3)', cursor: 'pointer' }}
           >
@@ -104,10 +122,10 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
               <span style={{ fontSize: 11, fontWeight: 800, color: 'var(--t3)', textTransform: 'uppercase' }}>
                 Issued To
               </span>
-              <span style={{ fontSize: 18, fontWeight: 900, color: 'var(--text)' }}>
+              <span data-testid="internship-cert-student" style={{ fontSize: 18, fontWeight: 900, color: 'var(--text)' }}>
                 {studentName}
               </span>
-              <span style={{ fontSize: 13, color: 'var(--t2)' }}>
+              <span data-testid="internship-cert-host" style={{ fontSize: 13, color: 'var(--t2)' }}>
                 {planTitle} · Host: {companyName}
               </span>
             </div>
@@ -152,7 +170,7 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
               <span style={{ fontSize: 11, fontWeight: 800, color: 'var(--t4)', textTransform: 'uppercase' }}>
                 Credential Identifier
               </span>
-              <span style={{ fontSize: 14.5, fontWeight: 900, color: 'var(--text)', fontFamily: 'var(--font-mono)' }}>
+              <span data-testid="internship-cert-id" style={{ fontSize: 14.5, fontWeight: 900, color: 'var(--text)', fontFamily: 'var(--font-mono)' }}>
                 {certificateId}
               </span>
 
@@ -163,6 +181,7 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
               )}
 
               <a
+                data-testid="internship-cert-verify-link"
                 href={verifyPath}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -184,6 +203,7 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
           <button
             type="button"
+            data-testid="btn-copy-internship-cert"
             onClick={handleCopy}
             style={{
               padding: '10px 16px',
@@ -204,6 +224,7 @@ export const InternshipCertificateCard: React.FC<InternshipCertificateCardProps>
 
           <button
             type="button"
+            data-testid="btn-done-internship-cert"
             onClick={onClose}
             style={{
               padding: '10px 22px',
