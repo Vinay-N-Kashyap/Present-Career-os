@@ -313,7 +313,7 @@ const RUNNER_LABELS: Record<string, string> = {
   'sql-mastery': '🗄️ SQLite Engine',
   'dsa-optim': '🔢 DSA Node Sandbox',
   'dsa-py': '🐍 Python 3 Executing',
-  'fullstack-js': '🌐 Fullstack Node/Next Sandbox',
+  'fullstack-js': '🌐 Next.js App Router & Server Components Simulator',
   'cloud': '☁️ AWS Cloud Simulator',
   'devops': '🚀 DevOps Pipeline Simulator',
   'git_vcs': '🐙 Git, GitHub & Version Control Sandbox',
@@ -359,7 +359,7 @@ const RUNNER_LABELS: Record<string, string> = {
   'safe-py': '🐍 Python 3 Executing',
   'iot_net': '📶 IoT Radio Protocol Simulator',
   'iot_emb': '🔌 Embedded MCU C++ Simulator',
-  'g3d': '🔮 WebGL2 3D Shader Sandbox',
+  'g3d': '🔮 WebGL2 & GPU Shader Graphics Simulator',
   'blockchain': '🪙 EVM Web3 & Solidity TypeScript Simulator',
   'mobile': '📱 React Native & Mobile Engine Simulator',
 };

@@ -42,6 +42,8 @@ import { BLOCKCHAIN_LONG_LESSONS } from './blockchainLongLessons';
 import { MOBILE_LONG_LESSONS } from './mobileLongLessons';
 import { JAVA_BASICS_LONG_LESSONS } from './javaBasicsLongLessons';
 import { SOFT_SKILLS_LONG_LESSONS } from './softSkillsLongLessons';
+import { G3D_LONG_LESSONS } from './g3dLongLessons';
+import { FULLSTACK_JS_LONG_LESSONS } from './fullstackJsLongLessons';
 
 export interface LongLessonCheck {
   question: string;
@@ -126,6 +128,8 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   mobile: MOBILE_LONG_LESSONS,
   'java-basics': JAVA_BASICS_LONG_LESSONS,
   'soft-skills': SOFT_SKILLS_LONG_LESSONS,
+  g3d: G3D_LONG_LESSONS,
+  'fullstack-js': FULLSTACK_JS_LONG_LESSONS,
 };
 
 /** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
