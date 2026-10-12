@@ -74,6 +74,9 @@ export function LessonCompletionModal({
         }} className="animate-fade-in">
           <div
             data-testid="lesson-completion-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Lesson Completion Modal"
             style={{
               background: 'var(--bg2)',
               border: failed ? '1.5px solid var(--danger)' : '1.5px solid var(--green)',

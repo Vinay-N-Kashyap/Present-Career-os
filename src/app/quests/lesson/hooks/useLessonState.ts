@@ -115,3 +115,47 @@ export function useLessonState(teacherId: string = 'kashyap') {
 }
 
 export type LessonState = ReturnType<typeof useLessonState>;
+
+/**
+ * Pure progression calculator clamping progress between 0% and 100%.
+ */
+export function calculateLessonProgress(currentSlide: number, totalSlides: number): number {
+  if (totalSlides <= 0) return 0;
+  const raw = Math.round((currentSlide / totalSlides) * 100);
+  return Math.max(0, Math.min(100, raw));
+}
+
+/**
+ * Evaluates whether a slide index is unlocked based on highest reached slide
+ * or concept check confirmations.
+ */
+export function isSlideUnlocked(
+  slideIndex: number,
+  maxUnlockedSlide: number,
+  understandingConfirmed?: Record<number, boolean>
+): boolean {
+  if (slideIndex <= 0) return true;
+  if (slideIndex <= maxUnlockedSlide) return true;
+  if (understandingConfirmed && Boolean(understandingConfirmed[slideIndex - 1])) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Pure helper calculating quiz passing status, percentage, and formatted score text.
+ */
+export function evaluateQuizPassing(
+  correctCount: number,
+  totalQuestions: number,
+  threshold: number = 0.7
+): { passed: boolean; percentage: number; scoreText: string } {
+  const safeTotal = Math.max(1, totalQuestions);
+  const percentage = Math.round((correctCount / safeTotal) * 100);
+  const passed = percentage >= Math.round(threshold * 100);
+  return {
+    passed,
+    percentage,
+    scoreText: `${correctCount} / ${totalQuestions} (${percentage}%)`,
+  };
+}

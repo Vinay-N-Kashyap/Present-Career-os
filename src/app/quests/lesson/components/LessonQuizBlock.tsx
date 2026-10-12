@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from '@/lib/store/useAppStore';
 
-function getExplanationText(explanation: any): string {
+export function getExplanationText(explanation: any): string {
   if (!explanation) return '';
   if (typeof explanation === 'string') return explanation;
   if (typeof explanation === 'object') {
@@ -258,11 +258,11 @@ export function LessonQuizBlock({
         padding: 16,
         boxShadow: 'var(--shadow-sm)'
       }}>
-        <p style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)', marginBottom: 12 }}>
+        <p data-testid="quiz-question-text" style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)', marginBottom: 12 }}>
           ❓ {question.question}
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {question.options.map((option: string, oIdx: number) => {
+          {(question.options || []).map((option: string, oIdx: number) => {
             const isSelected = selectedMcqAnswer === oIdx;
             let stateClass = "";
             if (isSelected) stateClass = "selected";
@@ -322,7 +322,7 @@ export function LessonQuizBlock({
           <div style={{ marginTop: 12 }}>
             {mcqIsCorrect ? (
               <div>
-                <div style={{
+                <div data-testid="quiz-explanation-box" style={{
                   background: 'rgba(var(--success-rgb),  0.08)',
                   border: '1px solid rgba(var(--success-rgb),  0.3)',
                   borderRadius: 10,
@@ -356,7 +356,7 @@ export function LessonQuizBlock({
               </div>
             ) : (
               <div>
-                <div style={{
+                <div data-testid="quiz-error-box" style={{
                   background: 'rgba(var(--danger-rgb),  0.08)',
                   border: '1px solid rgba(var(--danger-rgb),  0.3)',
                   borderRadius: 10,

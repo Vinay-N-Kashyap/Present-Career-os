@@ -4,7 +4,7 @@ import { toast } from '@/lib/store/useAppStore';
 import { speakWithAvatar } from '@/lib/tts';
 import { CONCEPT_ANALOGIES_REGISTRY, findConceptAnalogy } from '@/lib/data/conceptAnalogies';
 import { LessonCodeEditor } from './LessonCodeEditor';
-import { LessonQuizBlock } from './LessonQuizBlock';
+import { LessonQuizBlock, getExplanationText } from './LessonQuizBlock';
 import { VisualStage } from './visuals';
 import type { LessonVisual } from '@/lib/types/lessonVisual';
 import {
@@ -124,19 +124,7 @@ function renderWithTappableWords(
 }
 
 function getSlideMcqExplanation(explanation: any): string {
-  if (!explanation) return '';
-  if (typeof explanation === 'string') return explanation;
-  if (typeof explanation === 'object') {
-    return (
-      explanation.errorExplanation ||
-      explanation.recoveryPath?.simplerExplanation ||
-      explanation.recoveryPath?.guidedFixPrompt ||
-      explanation.explanation ||
-      explanation.message ||
-      ''
-    );
-  }
-  return String(explanation);
+  return getExplanationText(explanation);
 }
 
 export function LessonContentRenderer({
@@ -196,6 +184,13 @@ export function LessonContentRenderer({
   onVisualStepChange,
   onSyncWithVoice,
 }: LessonContentRendererProps) {
+  const safeTeacher = teacher || {
+    name: 'Kashyap Sir',
+    avatar: '👩‍🎨',
+    color: 'rgba(var(--info-rgb), 0.1)',
+    accent: 'var(--accent)',
+    role: 'Staff Systems Architect',
+  };
   const currentSlideData = currentSlide > 0 && currentSlide <= slides.length ? slides[currentSlide - 1] : null;
   const currentVisual: LessonVisual | null = currentSlideData?.visual || null;
   const tappableLabels = getTappableLabelsForVisual(currentVisual);
@@ -270,8 +265,8 @@ export function LessonContentRenderer({
               gap: 6,
               flexShrink: 0
             }}>
-              <span>{teacher.avatar}</span>
-              <span>Socratic Chat: {teacher.name}</span>
+              <span>{safeTeacher.avatar}</span>
+              <span>Socratic Chat: {safeTeacher.name}</span>
             </div>
 
             {/* Messages Area */}
@@ -388,7 +383,7 @@ export function LessonContentRenderer({
                   data-testid="socratic-chat-input"
                   value={chatInput}
                   onChange={e => setChatInput(e.target.value)}
-                  placeholder={`Ask ${teacher.name}...`}
+                  placeholder={`Ask ${safeTeacher.name}...`}
                   disabled={chatLoading}
                   style={{
                     flex: 1,
@@ -408,7 +403,7 @@ export function LessonContentRenderer({
                   style={{
                     padding: '8px 14px',
                     borderRadius: 10,
-                    background: chatInput.trim() && !chatLoading ? teacher.accent : 'var(--bg3)',
+                    background: chatInput.trim() && !chatLoading ? (safeTeacher.accent || 'var(--accent)') : 'var(--bg3)',
                     color: chatInput.trim() && !chatLoading ? 'var(--t1)' : 'var(--t3)',
                     border: 'none',
                     fontSize: 12.5,
@@ -495,7 +490,7 @@ export function LessonContentRenderer({
               return (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, textAlign: 'left' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
-                    <h4 data-testid="lesson-slide-title" style={{ fontSize: 16.5, fontWeight: 900, color: teacher.accent, margin: 0 }}>
+                    <h4 data-testid="lesson-slide-title" style={{ fontSize: 16.5, fontWeight: 900, color: safeTeacher.accent || 'var(--accent)', margin: 0 }}>
                       {renderWithTappableWords(slide.title || 'Lesson Slide', tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
                     </h4>
                     <button
@@ -642,7 +637,7 @@ export function LessonContentRenderer({
                       <ul style={{ listStyleType: 'none', paddingLeft: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
                         {slide.codeNotes.map((n: { line: number; note: string }, i: number) => (
                           <li key={i} style={{ fontSize: 13, color: 'var(--t1)', lineHeight: 1.5 }}>
-                            <span style={{ fontFamily: 'var(--font-mono)', color: teacher.accent, fontWeight: 800 }}>Line {n.line}:</span>{' '}
+                            <span style={{ fontFamily: 'var(--font-mono)', color: safeTeacher.accent || 'var(--accent)', fontWeight: 800 }}>Line {n.line}:</span>{' '}
                             {renderWithTappableWords(n.note, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
                           </li>
                         ))}
@@ -676,7 +671,7 @@ export function LessonContentRenderer({
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                          <span style={{ fontSize: 13, fontWeight: 900, color: teacher.accent || 'var(--accent)' }}>
+                          <span style={{ fontSize: 13, fontWeight: 900, color: safeTeacher.accent || 'var(--accent)' }}>
                             🧠 Quick Check
                           </span>
                           <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 600 }}>
@@ -944,7 +939,7 @@ export function LessonContentRenderer({
 
             {isLastSlide && (
               <LessonQuizBlock
-                teacherAccent={teacher.accent}
+                teacherAccent={safeTeacher.accent || 'var(--accent)'}
                 examPassed={examPassed}
                 examFailed={examFailed}
                 setExamFailed={setExamFailed}
