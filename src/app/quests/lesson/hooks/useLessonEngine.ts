@@ -303,7 +303,7 @@ export function adaptCodeForSandbox(
 }
 
 const RUNNER_LABELS: Record<string, string> = {
-  'java-basics': '⚙️ Javac compiling',
+  'java-basics': '☕ Java 21 LTS & JVM Architecture Simulator',
   'python': '🐍 Python 3 Executing',
   'react-basics': '⚛️ React Node Sandbox',
   'node-web': '🔷 Node.js & TypeScript Sandbox',
@@ -317,7 +317,7 @@ const RUNNER_LABELS: Record<string, string> = {
   'cloud': '☁️ AWS Cloud Simulator',
   'devops': '🚀 DevOps Pipeline Simulator',
   'git_vcs': '🐙 Git, GitHub & Version Control Sandbox',
-  'soft-skills': '🗣️ Professional Tech Communication & Interview Sandbox',
+  'soft-skills': '🎙️ Executive Communication & Behavioral Leadership Simulator',
   'design': '🎨 UI/UX Design Systems & Visual Frontend Sandbox',
   'mobile': '📱 Mobile Application Development & React Native Sandbox',
   'nlp': '📚 Natural Language Processing & LLM Infrastructure Sandbox',
