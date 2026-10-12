@@ -73,6 +73,7 @@ export function resolveQuestLanguage(quest: any, qId: string = ''): CodeLanguage
     if (l === 'html') return 'html';
     if (l === 'css') return 'css';
     if (l === 'javascript' || l === 'js' || l === 'react') return 'javascript';
+    if (l === 'bash' || l === 'sh' || l === 'shell') return 'bash';
   }
 
   const starter = String(quest?.starterCode || '');
@@ -136,6 +137,9 @@ export function getLangInfo(qId: string, quest?: any): { file: string; label: st
       return { file: 'App.jsx', label: 'JS/JSX sandbox', native: true, language };
     case 'cpp':
       return { file: 'solution.cpp', label: 'C++ AST checker', native: true, language };
+    case 'bash':
+    case 'shell':
+      return { file: 'script.sh', label: 'POSIX Terminal & Shell Sandbox', native: true, language: 'bash' };
     case 'java':
     default:
       return { file: 'Solution.java', label: 'Java compiler judge', native: true, language: 'java' };

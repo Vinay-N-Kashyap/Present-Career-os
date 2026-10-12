@@ -1,7 +1,7 @@
 // src/lib/code/types.ts
 // Standardized Type Contracts for PinIT Multi-Language In-Browser Code Runner
 
-export type CodeLanguage = 'javascript' | 'python' | 'sql' | 'java' | 'cpp' | 'typescript' | 'tsx' | 'html' | 'css';
+export type CodeLanguage = 'javascript' | 'python' | 'sql' | 'java' | 'cpp' | 'typescript' | 'tsx' | 'html' | 'css' | 'bash' | 'shell';
 
 export interface TestCase {
   input: string;              // Serialized input, e.g. "[10, 20, 30]" or "(3, 5)"

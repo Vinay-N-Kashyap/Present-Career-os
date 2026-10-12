@@ -10,6 +10,8 @@ import { executeSqlSuite } from './runners/sqlRunner';
 import { executeJavaJudgeSuite } from './runners/javaJudgeRunner';
 import { executePythonJudgeSuite } from './runners/pythonJudgeRunner';
 import { executeTypeScriptTask, executeHtmlCssTask } from './runners/webTaskRunner';
+import { executeBashSuite } from './runners/bashRunner';
+import { executeCppSuite } from './runners/cppRunner';
 
 export const CODE_RUNNER_VERSION = 'v1.0';
 
@@ -75,39 +77,12 @@ export async function runTestSuite(
     case 'css':
       return executeHtmlCssTask(code, options?.testSuite || '', Math.max(timeoutMs, 8000), language);
 
-    case 'cpp': {
-      // Static AST structural checks for C++ in browser environment
-      const hasMethod = new RegExp(`(?:int|void|double|string|bool)\\s+${fnName}`, 'i').test(code) || /\w+\s+\w+\s*\(/.test(code);
-      const hasReturn = /\breturn\b/.test(code);
+    case 'bash':
+    case 'shell':
+      return executeBashSuite(code, testCases, options?.testSuite, timeoutMs);
 
-      const isPass = hasMethod && hasReturn;
-      const logs = [
-        `[STATIC ANALYZER] Validating CPP syntax tree for method '${fnName}'...`,
-        isPass
-          ? `[SUCCESS] Function signature and return structure verified for CPP.`
-          : `[FAIL] Missing valid function or return statement in CPP solution.`
-      ];
-
-      return {
-        language,
-        totalTests: 1,
-        passedTests: isPass ? 1 : 0,
-        failedTests: isPass ? 0 : 1,
-        allPassed: isPass,
-        status: isPass ? 'SUCCESS' : 'RUNTIME_ERROR',
-        totalDurationMs: 50,
-        terminalLogs: logs,
-        testOutcomes: [{
-          index: 1,
-          testCaseName: `CPP Syntax & Signature Check`,
-          input: code.slice(0, 50) + '...',
-          expectedOutput: 'Valid Signature',
-          actualOutput: isPass ? 'Valid Signature' : 'Invalid Signature',
-          passed: isPass,
-          durationMs: 50
-        }]
-      };
-    }
+    case 'cpp':
+      return executeCppSuite(code, fnName, testCases, timeoutMs);
 
     default:
       return {
