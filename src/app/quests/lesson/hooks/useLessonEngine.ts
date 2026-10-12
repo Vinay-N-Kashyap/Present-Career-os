@@ -851,6 +851,22 @@ export function useLessonEngine({
                 ]
               }]
             } as any;
+          } else if (coursePrefix.includes('scrm') || coursePrefix.includes('marketing') || coursePrefix.includes('sales') || coursePrefix.includes('dmkt') || bTitleLow.includes('funnel') || bTitleLow.includes('pipeline') || bTitleLow.includes('conversion')) {
+            visual = {
+              template: 'funnel',
+              title: `${block.title} Pipeline`,
+              steps: [{
+                at: 'intro',
+                caption: `Conversion pipeline for ${block.title}`,
+                activeStageId: 'target',
+                stages: [
+                  { id: 'top', label: 'Total Volume', value: 10000, percentage: 100 },
+                  { id: 'qual', label: 'Qualified Stage', value: 4500, percentage: 45, dropoffRate: 55 },
+                  { id: 'target', label: 'Active Processed', value: 1800, percentage: 18, dropoffRate: 60 },
+                  { id: 'final', label: 'Verified Outcome', value: 540, percentage: 5.4, dropoffRate: 70 },
+                ]
+              }]
+            } as any;
           } else if (coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance')) {
             visual = {
               template: 'ledger-sheet',
@@ -865,22 +881,6 @@ export function useLessonEngine({
                 entries: [
                   { id: 'TXN-01', account: 'Operating Account', debit: 1000, balance: 1000, tone: 'data' },
                   { id: 'TXN-02', account: 'Cash Equivalents', credit: 1000, balance: 0, tone: 'ok' },
-                ]
-              }]
-            } as any;
-          } else if (coursePrefix.includes('marketing') || coursePrefix.includes('sales') || bTitleLow.includes('funnel')) {
-            visual = {
-              template: 'funnel',
-              title: `${block.title} Pipeline`,
-              steps: [{
-                at: 'intro',
-                caption: `Conversion pipeline for ${block.title}`,
-                activeStageId: 'target',
-                stages: [
-                  { id: 'top', label: 'Total Volume', value: 10000, percentage: 100 },
-                  { id: 'qual', label: 'Qualified Stage', value: 4500, percentage: 45, dropoffRate: 55 },
-                  { id: 'target', label: 'Active Processed', value: 1800, percentage: 18, dropoffRate: 60 },
-                  { id: 'final', label: 'Verified Outcome', value: 540, percentage: 5.4, dropoffRate: 70 },
                 ]
               }]
             } as any;
@@ -1029,6 +1029,22 @@ export function useLessonEngine({
             ]
           }]
         };
+      } else if (coursePrefix.includes('scrm') || coursePrefix.includes('marketing') || coursePrefix.includes('sales') || coursePrefix.includes('dmkt') || tLow.includes('funnel') || tLow.includes('conversion') || tLow.includes('crm') || tLow.includes('pipeline')) {
+        visual = {
+          template: 'funnel',
+          title: `${title} Funnel`,
+          steps: [{
+            at: 'intro',
+            caption: `Conversion analytics pipeline for ${title}`,
+            pipelineTitle: `${title} Customer Funnel`,
+            stages: [
+              { id: 'leads', label: 'Top of Funnel Leads', value: 10000, percentage: 100 },
+              { id: 'qualified', label: 'Verified Prospects', value: 4500, percentage: 45, dropoffRate: 55 },
+              { id: 'active', label: 'Active Pipeline Deals', value: 1800, percentage: 18, dropoffRate: 60 },
+              { id: 'closed', label: 'Closed & Won Revenue', value: 540, percentage: 5.4, dropoffRate: 70 },
+            ]
+          }]
+        };
       } else if (coursePrefix === 'blockchain' || coursePrefix === 'excel_viz' || coursePrefix.includes('excel') || coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance') || tLow.includes('ledger') || tLow.includes('balance') || tLow.includes('token')) {
         visual = {
           template: 'ledger-sheet',
@@ -1042,22 +1058,6 @@ export function useLessonEngine({
             entries: [
               { id: 'tx-1', date: '2026-10-01', account: 'Cash & Reserves', debit: 50000, credit: 0, balance: 50000 },
               { id: 'tx-2', date: '2026-10-02', account: 'Operational Capital', debit: 0, credit: 50000, balance: 0 },
-            ]
-          }]
-        };
-      } else if (coursePrefix.includes('marketing') || coursePrefix.includes('sales') || tLow.includes('funnel') || tLow.includes('conversion') || tLow.includes('crm')) {
-        visual = {
-          template: 'funnel',
-          title: `${title} Funnel`,
-          steps: [{
-            at: 'intro',
-            caption: `Conversion analytics pipeline for ${title}`,
-            pipelineTitle: `${title} Customer Funnel`,
-            stages: [
-              { id: 'leads', label: 'Top of Funnel Leads', value: 10000, percentage: 100 },
-              { id: 'qualified', label: 'Verified Prospects', value: 4500, percentage: 45, dropoffRate: 55 },
-              { id: 'active', label: 'Active Pipeline Deals', value: 1800, percentage: 18, dropoffRate: 60 },
-              { id: 'closed', label: 'Closed & Won Revenue', value: 540, percentage: 5.4, dropoffRate: 70 },
             ]
           }]
         };
