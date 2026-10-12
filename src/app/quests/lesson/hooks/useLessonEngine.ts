@@ -929,6 +929,8 @@ export function useLessonEngine({
     const isReact = coursePrefix === 'react-basics' || qLower.includes('react') || qLower.includes('frontend');
     const isPython = coursePrefix === 'python' || qLower.includes('python');
     const isSql = coursePrefix === 'sql-mastery' || qLower.includes('sql');
+    const isBash = coursePrefix === 'comp_fund' || coursePrefix === 'git_vcs' || qLower.includes('bash') || qLower.includes('cli');
+    const isCpp = coursePrefix === 'iot_emb' || qLower.includes('cpp') || qLower.includes('embedded');
     const rawSyllabus = (syllabus && syllabus.length > 0) ? syllabus : ['Core Architecture', 'Operational Invariants', 'Optimal Synthesis'];
 
     const staticSlides = rawSyllabus.map((rawTopic: string, index: number) => {
@@ -954,6 +956,10 @@ export function useLessonEngine({
         codeExample = `# Python execution for ${title}\nprint("Executing verification for ${title}...")\nmetrics = [10, 20, 30]\nprint(f"Computed total: {sum(metrics)}")`;
       } else if (isSql) {
         codeExample = `-- SQL Query Schema for ${title}\nCREATE TABLE records (id INTEGER PRIMARY KEY, title TEXT NOT NULL);\nINSERT INTO records VALUES (1, '${title.replace(/'/g, "")}');\nSELECT * FROM records;`;
+      } else if (isBash) {
+        codeExample = `#!/bin/bash\n# POSIX Script for ${title}\necho "Executing CLI sequence for ${title}..."\nmkdir -p workspace/build\necho "Status: Verified" > workspace/build/status.log\ncat workspace/build/status.log`;
+      } else if (isCpp) {
+        codeExample = `#include <iostream>\n\n// Embedded Systems Routine for ${title}\nint executeRoutine() {\n    std::cout << "Routine active: ${title.replace(/"/g, "")}" << std::endl;\n    return 0;\n}\n\nint main() {\n    return executeRoutine();\n}`;
       } else if (isReact) {
         codeExample = `// React Component for ${title}\nconsole.log("Mounting component for ${title}...");\nfunction renderComponent() {\n  const state = { active: true, topic: "${title.replace(/"/g, "")}" };\n  console.log("Component state initialized:", JSON.stringify(state));\n  return state;\n}\nrenderComponent();`;
         if (tLow.includes('state') || tLow.includes('hook')) {
@@ -976,22 +982,80 @@ export function useLessonEngine({
         : [distractor1, distractor2, correctOption];
 
       const visualKey = `${coursePrefix}:${dayNum}:${index}`;
-      const visual = {
-        template: 'flow',
-        title: `${title} Architecture`,
-        nodes: [
-          { id: 's1', label: 'Principle', tappable: true },
-          { id: 's2', label: `${title.slice(0, 14)}`, tappable: true },
-          { id: 's3', label: 'Invariants', tappable: true }
-        ],
-        steps: [{
-          at: 'intro',
-          caption: `Architecture invariant pipeline for ${title}`,
-          values: { s1: 'Foundations', s2: 'Execution', s3: 'Guaranteed' },
-          tones: { s1: 'data', s2: 'data', s3: 'ok' },
-          arrows: [['s1', 's2'], ['s2', 's3']]
-        }]
-      } as any;
+      let visual: any;
+      if (coursePrefix.includes('iot') || coursePrefix.includes('sec') || tLow.includes('bit') || tLow.includes('register') || isCpp) {
+        visual = {
+          template: 'register-bits',
+          title: `${title} Registers`,
+          steps: [{
+            at: 'intro',
+            caption: `Hardware registers and flags for ${title}`,
+            registerName: `${coursePrefix.toUpperCase().slice(0, 8)}_CTRL`,
+            bitWidth: 8,
+            hexValue: '0x80',
+            decimalValue: 128,
+            bits: [
+              { index: 7, name: 'EN', value: 1, tone: 'ok' },
+              { index: 6, name: 'RDY', value: 0, tone: 'idle' },
+              { index: 5, name: 'IRQ', value: 0, tone: 'idle' },
+              { index: 4, value: 0, tone: 'idle' },
+              { index: 3, value: 0, tone: 'idle' },
+              { index: 2, value: 0, tone: 'idle' },
+              { index: 1, value: 0, tone: 'idle' },
+              { index: 0, name: 'ERR', value: 0, tone: 'idle' },
+            ]
+          }]
+        };
+      } else if (coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance') || tLow.includes('ledger') || tLow.includes('balance')) {
+        visual = {
+          template: 'ledger-sheet',
+          title: `${title} Ledger`,
+          steps: [{
+            at: 'intro',
+            caption: `Balanced ledger reconciliation for ${title}`,
+            title: `${title} General Ledger`,
+            isBalanced: true,
+            runningBalance: 50000,
+            entries: [
+              { id: 'tx-1', date: '2026-10-01', account: 'Cash & Reserves', debit: 50000, credit: 0, balance: 50000 },
+              { id: 'tx-2', date: '2026-10-02', account: 'Operational Capital', debit: 0, credit: 50000, balance: 0 },
+            ]
+          }]
+        };
+      } else if (coursePrefix.includes('marketing') || coursePrefix.includes('sales') || tLow.includes('funnel') || tLow.includes('conversion') || tLow.includes('crm')) {
+        visual = {
+          template: 'funnel',
+          title: `${title} Funnel`,
+          steps: [{
+            at: 'intro',
+            caption: `Conversion analytics pipeline for ${title}`,
+            pipelineTitle: `${title} Customer Funnel`,
+            stages: [
+              { id: 'leads', label: 'Top of Funnel Leads', value: 10000, percentage: 100 },
+              { id: 'qualified', label: 'Verified Prospects', value: 4500, percentage: 45, dropoffRate: 55 },
+              { id: 'active', label: 'Active Pipeline Deals', value: 1800, percentage: 18, dropoffRate: 60 },
+              { id: 'closed', label: 'Closed & Won Revenue', value: 540, percentage: 5.4, dropoffRate: 70 },
+            ]
+          }]
+        };
+      } else {
+        visual = {
+          template: 'flow',
+          title: `${title} Architecture`,
+          nodes: [
+            { id: 's1', label: 'Principle', tappable: true },
+            { id: 's2', label: `${title.slice(0, 14)}`, tappable: true },
+            { id: 's3', label: 'Invariants', tappable: true }
+          ],
+          steps: [{
+            at: 'intro',
+            caption: `Architecture invariant pipeline for ${title}`,
+            values: { s1: 'Foundations', s2: 'Execution', s3: 'Guaranteed' },
+            tones: { s1: 'data', s2: 'data', s3: 'ok' },
+            arrows: [['s1', 's2'], ['s2', 's3']]
+          }]
+        };
+      }
 
       return {
         title,
