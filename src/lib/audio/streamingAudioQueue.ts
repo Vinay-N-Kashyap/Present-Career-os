@@ -192,8 +192,8 @@ export class SentenceAudioQueuePlayer {
       return;
     }
 
-    callbacks?.onStart?.();
     this.isPlaying = true;
+    let hasFiredOnStart = false;
 
     // Buffer map to hold synthesized AudioBuffers; null = pending, false = failed
     const decodedBuffers: (AudioBuffer | null | false)[] = new Array(sentences.length).fill(null);
@@ -291,6 +291,14 @@ export class SentenceAudioQueuePlayer {
         }
 
         totalScheduled++;
+        if (!hasFiredOnStart) {
+          hasFiredOnStart = true;
+          try {
+            callbacks?.onStart?.();
+          } catch (e) {
+            console.warn('[SentenceAudioQueuePlayer] onStart callback error:', e);
+          }
+        }
         const now = ctx.currentTime;
         const startTime = Math.max(now + 0.03, this.scheduledPlaybackTime);
         const duration = buf.duration;

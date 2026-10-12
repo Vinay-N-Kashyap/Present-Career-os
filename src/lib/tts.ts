@@ -396,8 +396,19 @@ export async function speakWithAvatar(
     if (sentences.length > 1) {
       const startedAt = Date.now();
       let streamSucceeded = false;
+      const streamDeadlineMs = options?.startDeadlineMs ?? 3500;
+      let streamDeadlineTimer: any = null;
+
       try {
         await new Promise<void>((resolve, reject) => {
+          if (streamDeadlineMs > 0) {
+            streamDeadlineTimer = setTimeout(() => {
+              streamDeadlineTimer = null;
+              getGlobalAudioQueue().stopAll();
+              reject(new Error(`Sentence streaming start deadline exceeded (${streamDeadlineMs}ms)`));
+            }, streamDeadlineMs);
+          }
+
           getGlobalAudioQueue().playSentenceStream(
             sentences,
             {
@@ -407,13 +418,27 @@ export async function speakWithAvatar(
               minDurationMs
             },
             {
-              onStart,
+              onStart: () => {
+                if (streamDeadlineTimer) {
+                  clearTimeout(streamDeadlineTimer);
+                  streamDeadlineTimer = null;
+                }
+                onStart();
+              },
               onEnd: () => {
+                if (streamDeadlineTimer) {
+                  clearTimeout(streamDeadlineTimer);
+                  streamDeadlineTimer = null;
+                }
                 streamSucceeded = true;
                 finishAfterFloor(startedAt);
                 resolve();
               },
               onError: (err) => {
+                if (streamDeadlineTimer) {
+                  clearTimeout(streamDeadlineTimer);
+                  streamDeadlineTimer = null;
+                }
                 reject(err);
               }
             }
@@ -421,6 +446,10 @@ export async function speakWithAvatar(
         });
         if (streamSucceeded) return;
       } catch (streamErr) {
+        if (streamDeadlineTimer) {
+          clearTimeout(streamDeadlineTimer);
+          streamDeadlineTimer = null;
+        }
         console.warn('[PinIT Voice] Streaming audio queue error, falling back directly to WebSpeech:', streamErr);
         if (mySpeechId === currentSpeechId) {
           fallbackWebSpeech(
@@ -441,7 +470,7 @@ export async function speakWithAvatar(
 
     let handedToWebSpeech = false;
     let startDeadlineTimer: ReturnType<typeof setTimeout> | null = null;
-    const startDeadlineMs = options?.startDeadlineMs ?? 0;
+    const startDeadlineMs = options?.startDeadlineMs ?? 3500;
     if (startDeadlineMs > 0) {
       startDeadlineTimer = setTimeout(() => {
         startDeadlineTimer = null;

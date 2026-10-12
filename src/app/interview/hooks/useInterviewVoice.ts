@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { speakWithAvatar as speakWithAvatarRaw, stopSpeaking, getAvatarVoiceVolume, setAvatarVoiceVolume } from '@/lib/tts';
+import { pingRenderServer } from '@/lib/smartVoiceRouter';
 import { Stage } from '../interviewTypes';
 
 interface UseInterviewVoiceProps {
@@ -59,6 +60,9 @@ export function useInterviewVoice({
 
   useEffect(() => {
     isInterviewActiveRef.current = isInterviewActive;
+    if (isInterviewActive) {
+      void pingRenderServer(false);
+    }
   }, [isInterviewActive]);
 
   useEffect(() => {
@@ -365,7 +369,7 @@ export function useInterviewVoice({
           }
         }, 500);
       }
-    }, false, true, difficulty);
+    }, false, true, difficulty, 1.0, 15000, { startDeadlineMs: 3500 });
   }, [difficulty, startVoiceListening, isInterviewActive]);
 
   const interruptSpeech = useCallback(() => {
