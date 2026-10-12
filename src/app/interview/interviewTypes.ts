@@ -63,6 +63,7 @@ export interface ActiveInterviewDraft {
   latestTopology?: any;
   /** The server's record of this interview (interview_live_sessions), to continue it after a reload. */
   liveSessionId?: string | null;
+  tabSwitchCount?: number;
   timestamp: number;
 }
 

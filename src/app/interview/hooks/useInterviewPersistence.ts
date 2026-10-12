@@ -29,6 +29,7 @@ interface UseInterviewPersistenceProps {
   activeTeacherId: string;
   latestTopology: any;
   liveSessionId?: string | null;
+  tabSwitchCount?: number;
 }
 
 const DRAFT_CACHE_TTL_MS = 7_200_000; // 2-hour TTL for session recovery buffer
@@ -51,7 +52,8 @@ export function useInterviewPersistence({
   fillerWordCount,
   activeTeacherId,
   latestTopology,
-  liveSessionId
+  liveSessionId,
+  tabSwitchCount
 }: UseInterviewPersistenceProps) {
   const [sessions, setSessions] = useState<InterviewSessionRecord[]>([]);
   const [selectedHistorySession, setSelectedHistorySession] = useState<InterviewSessionRecord | null>(null);
@@ -106,6 +108,7 @@ export function useInterviewPersistence({
         activeTeacherId,
         latestTopology,
         liveSessionId: liveSessionId ?? null,
+        tabSwitchCount: tabSwitchCount || 0,
         timestamp: Date.now()
       };
       localStorage.setItem(key, JSON.stringify(draft));
@@ -128,6 +131,7 @@ export function useInterviewPersistence({
     activeTeacherId,
     latestTopology,
     liveSessionId,
+    tabSwitchCount,
     userId,
     getDraftKey
   ]);

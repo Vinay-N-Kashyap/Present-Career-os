@@ -30,7 +30,8 @@ export function formatHistorySessionMarkdown(session: InterviewSessionRecord): s
       `\n## Delivery Diagnostics`,
       `- **Eye Contact:** ${typeof session.telemetry.eyeContact === 'number' ? `${session.telemetry.eyeContact}%` : 'Not Tracked'}`,
       `- **Speaking Pace:** ${typeof session.telemetry.wpm === 'number' ? `${session.telemetry.wpm} WPM` : 'Not Measured'}`,
-      `- **Filler Words:** ${typeof session.telemetry.fillerWords === 'number' ? session.telemetry.fillerWords : 'Not Measured'}`
+      `- **Filler Words:** ${typeof session.telemetry.fillerWords === 'number' ? session.telemetry.fillerWords : 'Not Measured'}`,
+      `- **Tab Pauses:** ${session.telemetry.tabSwitches ?? 0}`
     ] : []),
     `\n---\n`,
     `## Transcript\n`
@@ -71,7 +72,8 @@ export const InterviewHistoryModal: React.FC<InterviewHistoryModalProps> = ({
     selectedHistorySession.telemetry &&
     (typeof selectedHistorySession.telemetry.eyeContact === 'number' ||
      typeof selectedHistorySession.telemetry.wpm === 'number' ||
-     typeof selectedHistorySession.telemetry.fillerWords === 'number')
+     typeof selectedHistorySession.telemetry.fillerWords === 'number' ||
+     typeof selectedHistorySession.telemetry.tabSwitches === 'number')
   );
 
   return (
@@ -163,6 +165,9 @@ export const InterviewHistoryModal: React.FC<InterviewHistoryModalProps> = ({
               )}
               {typeof selectedHistorySession.telemetry?.fillerWords === 'number' && (
                 <span style={{ color: 'var(--t2)' }}>🎯 Filler Words: <strong>{selectedHistorySession.telemetry.fillerWords}</strong></span>
+              )}
+              {typeof selectedHistorySession.telemetry?.tabSwitches === 'number' && (
+                <span data-testid="history-tab-pauses" style={{ color: 'var(--t2)' }}>⏸️ Tab Pauses: <strong>{selectedHistorySession.telemetry.tabSwitches}</strong></span>
               )}
             </div>
           )}

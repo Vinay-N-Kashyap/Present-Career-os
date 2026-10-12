@@ -493,6 +493,7 @@ export function generateTelemetryDiagnostics(telemetry?: {
   posture?: number;
   wpm?: number;
   fillerWords?: number;
+  tabSwitches?: number;
 }): {
   deliveryStatus: 'Optimal' | 'Good' | 'Needs Practice' | 'Not Assessed';
   signals: Array<{ metric: string; value: string; diagnostic: string; status: 'good' | 'warning' | 'info' }>;
@@ -501,9 +502,10 @@ export function generateTelemetryDiagnostics(telemetry?: {
   const hasEyeContact = typeof telemetry?.eyeContact === 'number' && !isNaN(telemetry.eyeContact);
   const hasWpm = typeof telemetry?.wpm === 'number' && !isNaN(telemetry.wpm) && telemetry.wpm > 0;
   const hasFillerWords = typeof telemetry?.fillerWords === 'number' && !isNaN(telemetry.fillerWords);
+  const hasTabSwitches = typeof telemetry?.tabSwitches === 'number' && !isNaN(telemetry.tabSwitches);
 
   // If no telemetry metrics were measured at all, do NOT invent fake metrics!
-  if (!hasEyeContact && !hasWpm && !hasFillerWords) {
+  if (!hasEyeContact && !hasWpm && !hasFillerWords && !hasTabSwitches) {
     return {
       deliveryStatus: 'Not Assessed',
       signals: [
@@ -637,6 +639,26 @@ export function generateTelemetryDiagnostics(telemetry?: {
       diagnostic: 'Camera off, delivery not assessed.',
       status: 'info',
     });
+  }
+
+  // Window & Tab Focus Continuity (Golden Rule 3: strictly diagnostic practice signal)
+  if (hasTabSwitches) {
+    const tabSwitches = telemetry!.tabSwitches!;
+    if (tabSwitches === 0) {
+      signals.push({
+        metric: 'Tab Focus & Window Continuity',
+        value: '0 pauses (Uninterrupted Focus)',
+        diagnostic: 'Zero tab switches detected; continuous session focus maintained.',
+        status: 'good',
+      });
+    } else {
+      signals.push({
+        metric: 'Tab Focus & Window Continuity',
+        value: `${tabSwitches} pause${tabSwitches === 1 ? '' : 's'}`,
+        diagnostic: 'Session timer and microphone were safely paused during tab switches; resumed cleanly.',
+        status: 'info',
+      });
+    }
   }
 
   const hasWarnings = signals.some(s => s.status === 'warning');

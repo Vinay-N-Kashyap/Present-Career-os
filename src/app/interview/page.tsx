@@ -169,8 +169,14 @@ export default function InterviewPage() {
 
   // Elapsed Session Timer & Tab Inactivity Sync (pauses when browser tab is hidden/blurred)
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [tabSwitchCount, setTabSwitchCount] = useState(0);
   const [isTabInactive, setIsTabInactive] = useState(false);
   const tabVisibleRef = useRef(true);
+  const isInterviewActiveRef = useRef(isInterviewActive);
+
+  useEffect(() => {
+    isInterviewActiveRef.current = isInterviewActive;
+  }, [isInterviewActive]);
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -182,6 +188,9 @@ export default function InterviewPage() {
       const isVisible = document.visibilityState === 'visible';
       tabVisibleRef.current = isVisible;
       setIsTabInactive(!isVisible);
+      if (!isVisible && isInterviewActiveRef.current) {
+        setTabSwitchCount(prev => prev + 1);
+      }
     };
     document.addEventListener('visibilitychange', onVisibilityChange);
     return () => {
@@ -411,7 +420,8 @@ export default function InterviewPage() {
     fillerWordCount,
     activeTeacherId: activeTeacher.id,
     latestTopology,
-    liveSessionId
+    liveSessionId,
+    tabSwitchCount
   });
 
   // Assist Mode State
@@ -489,6 +499,7 @@ export default function InterviewPage() {
       }
     }
     setElapsedSeconds(activeSessionDraft.elapsedSeconds || 0);
+    setTabSwitchCount(activeSessionDraft.tabSwitchCount || 0);
     const resumedId = activeSessionDraft.liveSessionId ?? null;
     setLiveSessionId(resumedId);
     if (resumedId) {
@@ -533,6 +544,7 @@ export default function InterviewPage() {
     setCodeSubmitted(false);
     setTerminalLogs([]);
     setElapsedSeconds(0);
+    setTabSwitchCount(0);
     setStarStep(0);
     setCodingAttempt(0);
     setCodeReviewStarted(false);
@@ -678,7 +690,8 @@ export default function InterviewPage() {
           telemetry: {
             eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
             wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-            fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined
+            fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined,
+            tabSwitches: tabSwitchCount
           }
         })
       });
@@ -936,7 +949,8 @@ export default function InterviewPage() {
       wpmScore,
       activeTopicName,
       domainStream,
-      archetype
+      archetype,
+      tabSwitchCount
     });
 
     // Make sure the final version of the code is in the record before it is scored.
@@ -959,7 +973,8 @@ export default function InterviewPage() {
           telemetry: {
             eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
             wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-            fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined
+            fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : undefined,
+            tabSwitches: tabSwitchCount
           }
         })
       });
@@ -1045,7 +1060,7 @@ export default function InterviewPage() {
         eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : null,
         wpm: typeof wpmScore === 'number' ? wpmScore : null,
         fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : null,
-        tabSwitches: 0
+        tabSwitches: tabSwitchCount
       },
       messages,
       summary: resultObj.summary || '',
@@ -1086,7 +1101,8 @@ export default function InterviewPage() {
       format, activeTopicName, domainStream,
       teacherName: activeTeacher.name,
       evaluationResult, eyeContactScore, wpmScore, fillerWordCount,
-      codeContent, selectedLang, latestTopology, messages
+      codeContent, selectedLang, latestTopology, messages,
+      tabSwitchCount
     });
   };
 

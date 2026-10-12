@@ -20,6 +20,7 @@ export interface EvaluationInput {
   activeTopicName: string;
   domainStream: 'tech' | 'non_tech';
   archetype: MindsetArchetype;
+  tabSwitchCount?: number;
 }
 
 export function computeDeterministicEvaluation({
@@ -32,7 +33,8 @@ export function computeDeterministicEvaluation({
   wpmScore,
   activeTopicName,
   domainStream,
-  archetype
+  archetype,
+  tabSwitchCount
 }: EvaluationInput) {
   const userMsgCount = messages.filter(m => m.role === 'user').length;
   const roleKey = normalizeRoleKey(activeTopicName, domainStream);
@@ -58,7 +60,8 @@ export function computeDeterministicEvaluation({
   const telemetryDiagnostics = generateTelemetryDiagnostics({
     eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
     wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-    fillerWords: typeof fillerWordCount === 'number' && (userMsgCount > 0 || fillerWordCount > 0) ? fillerWordCount : undefined
+    fillerWords: typeof fillerWordCount === 'number' && (userMsgCount > 0 || fillerWordCount > 0) ? fillerWordCount : undefined,
+    tabSwitches: typeof tabSwitchCount === 'number' ? tabSwitchCount : undefined
   });
 
   const round2Badge = roleKey === 'iot_embedded'
@@ -159,7 +162,8 @@ export function generateInterviewTranscriptMarkdown({
   fillerWordCount,
   codeContent,
   selectedLang,
-  messages
+  messages,
+  tabSwitchCount
 }: {
   activeTopicName: string;
   domainStream: 'tech' | 'non_tech';
@@ -171,6 +175,7 @@ export function generateInterviewTranscriptMarkdown({
   codeContent: string;
   selectedLang: string;
   messages: Message[];
+  tabSwitchCount?: number;
 }): string {
   const lines = [
     `# Pinit Career OS — Technical Interview Report`,
@@ -191,6 +196,7 @@ export function generateInterviewTranscriptMarkdown({
     `- **Average Eye Contact:** ${typeof eyeContactScore === 'number' ? `${eyeContactScore}%` : 'Not Tracked'}`,
     `- **Speaking Pace:** ${typeof wpmScore === 'number' ? `${wpmScore} Words Per Minute` : 'Not Measured'}`,
     `- **Filler Words Count:** ${typeof fillerWordCount === 'number' ? fillerWordCount : 'Not Measured'}`,
+    `- **Tab Switches / Pauses:** ${typeof tabSwitchCount === 'number' ? tabSwitchCount : 0}`,
     `\n## 3. Candidate Code Submission (${selectedLang})`,
     '```' + selectedLang,
     codeContent || '// No code submitted',
@@ -218,7 +224,8 @@ export function exportInterviewTranscriptFile({
   codeContent,
   selectedLang,
   latestTopology,
-  messages
+  messages,
+  tabSwitchCount
 }: {
   format: 'markdown' | 'json';
   activeTopicName: string;
@@ -232,6 +239,7 @@ export function exportInterviewTranscriptFile({
   selectedLang: string;
   latestTopology: any;
   messages: Message[];
+  tabSwitchCount?: number;
 }) {
   if (typeof window === 'undefined') return;
 
@@ -253,7 +261,8 @@ export function exportInterviewTranscriptFile({
       telemetry: {
         eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : null,
         wpm: typeof wpmScore === 'number' ? wpmScore : null,
-        fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : null
+        fillerWords: typeof fillerWordCount === 'number' ? fillerWordCount : null,
+        tabSwitches: typeof tabSwitchCount === 'number' ? tabSwitchCount : 0
       },
       selectedLanguage: selectedLang,
       codeSolution: codeContent,
@@ -279,7 +288,8 @@ export function exportInterviewTranscriptFile({
       fillerWordCount,
       codeContent,
       selectedLang,
-      messages
+      messages,
+      tabSwitchCount
     });
 
     const blob = new Blob([markdown], { type: 'text/markdown' });
