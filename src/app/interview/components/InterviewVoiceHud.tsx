@@ -13,6 +13,7 @@ interface InterviewVoiceHudProps {
   startVoiceListening: () => void;
   isSpeechSupported?: boolean;
   onDoneSpeaking?: () => void;
+  isTabInactive?: boolean;
 }
 
 export function InterviewVoiceHud({
@@ -24,29 +25,36 @@ export function InterviewVoiceHud({
   stopVoiceListening,
   startVoiceListening,
   isSpeechSupported = true,
-  onDoneSpeaking
+  onDoneSpeaking,
+  isTabInactive = false
 }: InterviewVoiceHudProps) {
   return (
-    <div style={{
-      background: !isSpeechSupported
-        ? 'rgba(239, 68, 68, 0.1)'
-        : isVoiceListening
-        ? 'linear-gradient(90deg, rgba(var(--success-rgb),0.15) 0%, rgba(var(--info-rgb),0.15) 100%)'
-        : 'var(--bg3)',
-      border: '1px solid ' + (!isSpeechSupported ? 'var(--danger)' : isVoiceListening ? 'var(--success)' : 'var(--border)'),
-      borderRadius: 12,
-      padding: '8px 16px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      gap: 10
-    }}>
+    <div
+      data-testid="interview-voice-hud-root"
+      style={{
+        background: isTabInactive
+          ? 'rgba(234, 179, 8, 0.12)'
+          : !isSpeechSupported
+          ? 'rgba(239, 68, 68, 0.1)'
+          : isVoiceListening
+          ? 'linear-gradient(90deg, rgba(var(--success-rgb),0.15) 0%, rgba(var(--info-rgb),0.15) 100%)'
+          : 'var(--bg3)',
+        border: '1px solid ' + (isTabInactive ? 'var(--warning, #eab308)' : !isSpeechSupported ? 'var(--danger)' : isVoiceListening ? 'var(--success)' : 'var(--border)'),
+        borderRadius: 12,
+        padding: '8px 16px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: 10
+      }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 1, minWidth: 260 }}>
-        <span style={{ fontSize: 17.5 }}>{!isSpeechSupported ? '⚠️' : isAvatarSpeaking ? '🗣️' : isVoiceListening ? '🎙️' : '🎤'}</span>
+        <span style={{ fontSize: 17.5 }}>{isTabInactive ? '⏸️' : !isSpeechSupported ? '⚠️' : isAvatarSpeaking ? '🗣️' : isVoiceListening ? '🎙️' : '🎤'}</span>
         <div>
-          <div style={{ fontSize: 13, fontWeight: 900, color: 'var(--t1)' }}>
-            {!isSpeechSupported
+          <div data-testid="interview-voice-hud-title" style={{ fontSize: 13, fontWeight: 900, color: isTabInactive ? 'var(--warning-bright, #eab308)' : 'var(--t1)' }}>
+            {isTabInactive
+              ? 'Interview Paused (Tab Inactive)'
+              : !isSpeechSupported
               ? 'Speech Recognition Not Supported in this Browser'
             : isSendingInterviewerReply
               ? 'Interviewer is thinking…'
@@ -56,8 +64,10 @@ export function InterviewVoiceHud({
               ? 'SPOKEN VOICE RECOGNITION ACTIVE'
               : 'Voice Mode Standby'}
           </div>
-          <div style={{ fontSize: 12, color: !isSpeechSupported ? 'var(--danger-bright, #ef4444)' : isVoiceListening ? 'var(--success)' : 'var(--t2)', fontWeight: liveSpeechTranscript ? 800 : 600 }}>
-            {!isSpeechSupported
+          <div data-testid="interview-voice-hud-subtitle" style={{ fontSize: 12, color: isTabInactive ? 'var(--warning-bright, #eab308)' : !isSpeechSupported ? 'var(--danger-bright, #ef4444)' : isVoiceListening ? 'var(--success)' : 'var(--t2)', fontWeight: liveSpeechTranscript || isTabInactive ? 800 : 600 }}>
+            {isTabInactive
+              ? 'Session timer and microphone are paused while this tab is backgrounded. Switching back will automatically resume.'
+              : !isSpeechSupported
               ? 'Web Speech API is not available on this browser. Please use the text input below to submit responses.'
               : isSendingInterviewerReply
               ? 'Your response was sent. You can keep preparing while the interviewer replies.'
@@ -73,7 +83,7 @@ export function InterviewVoiceHud({
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        {liveSpeechTranscript && onDoneSpeaking && (
+        {liveSpeechTranscript && onDoneSpeaking && !isTabInactive && (
           <button
             onClick={onDoneSpeaking}
             style={{
@@ -93,7 +103,7 @@ export function InterviewVoiceHud({
           </button>
         )}
 
-        {isVoiceListening && (
+        {isVoiceListening && !isTabInactive && (
           <button
             onClick={stopVoiceListening}
             style={{
@@ -112,21 +122,22 @@ export function InterviewVoiceHud({
         )}
 
         <button
+          data-testid="interview-voice-hud-action-btn"
           onClick={startVoiceListening}
-          disabled={!isSpeechSupported || isVoiceListening || isAvatarSpeaking}
+          disabled={!isSpeechSupported || isVoiceListening || isAvatarSpeaking || isTabInactive}
           style={{
-            background: isVoiceListening ? 'var(--success)' : !isSpeechSupported ? 'var(--bg2)' : 'var(--accent)',
-            border: 'none',
-            color: 'var(--text)',
+            background: isTabInactive ? 'var(--bg3)' : isVoiceListening ? 'var(--success)' : !isSpeechSupported ? 'var(--bg2)' : 'var(--accent)',
+            border: isTabInactive ? '1px solid rgba(234, 179, 8, 0.4)' : 'none',
+            color: isTabInactive ? 'var(--warning-bright, #eab308)' : 'var(--text)',
             borderRadius: 8,
             padding: '6px 14px',
             fontSize: 12,
             fontWeight: 900,
-            cursor: !isSpeechSupported || isVoiceListening || isAvatarSpeaking ? 'default' : 'pointer',
+            cursor: !isSpeechSupported || isVoiceListening || isAvatarSpeaking || isTabInactive ? 'default' : 'pointer',
             opacity: !isSpeechSupported ? 0.5 : 1
           }}
         >
-          {isVoiceListening ? '🎙️ Listening...' : '🎤 Start microphone'}
+          {isTabInactive ? '⏸️ Paused (Tab Inactive)' : isVoiceListening ? '🎙️ Listening...' : '🎤 Start microphone'}
         </button>
       </div>
     </div>

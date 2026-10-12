@@ -24,6 +24,7 @@ interface InterviewSessionHeaderProps {
   isAvatarSpeaking: boolean;
   interruptSpeech: () => void;
   exitInterview: () => void;
+  isTabInactive?: boolean;
 }
 
 export function InterviewSessionHeader({
@@ -46,7 +47,8 @@ export function InterviewSessionHeader({
   toggleCameraPreview,
   isAvatarSpeaking,
   interruptSpeech,
-  exitInterview
+  exitInterview,
+  isTabInactive = false
 }: InterviewSessionHeaderProps) {
   const rounds = [
     { id: 'round1_behavioral', label: 'Background' },
@@ -99,17 +101,23 @@ export function InterviewSessionHeader({
                 fontWeight: 800,
                 padding: '2px 8px',
                 borderRadius: 6,
-                background: isAvatarSpeaking
+                background: isTabInactive
+                  ? 'rgba(234, 179, 8, 0.15)'
+                  : isAvatarSpeaking
                   ? 'rgba(234, 179, 8, 0.15)'
                   : isVoiceListening
                   ? 'rgba(34, 197, 94, 0.15)'
                   : 'var(--bg3)',
-                color: isAvatarSpeaking
+                color: isTabInactive
+                  ? 'var(--warning-bright, #eab308)'
+                  : isAvatarSpeaking
                   ? 'var(--warning-bright, #eab308)'
                   : isVoiceListening
                   ? 'var(--success-bright, #22c55e)'
                   : 'var(--t3)',
-                border: isAvatarSpeaking
+                border: isTabInactive
+                  ? '1px solid rgba(234, 179, 8, 0.4)'
+                  : isAvatarSpeaking
                   ? '1px solid rgba(234, 179, 8, 0.4)'
                   : isVoiceListening
                   ? '1px solid rgba(34, 197, 94, 0.4)'
@@ -119,11 +127,11 @@ export function InterviewSessionHeader({
                 gap: 4
               }}
             >
-              {isAvatarSpeaking ? '🗣️ Speaking' : isVoiceListening ? '🎙️ Mic Live' : '💤 Mic Standby'}
+              {isTabInactive ? '⏸️ Paused (Tab Inactive)' : isAvatarSpeaking ? '🗣️ Speaking' : isVoiceListening ? '🎙️ Mic Live' : '💤 Mic Standby'}
             </span>
           </div>
           <div style={{ fontSize: 11, color: 'var(--accent-mid)' }}>
-            {currentRound ? `Round ${activeRoundIndex + 1} of ${rounds.length} · ${currentRound.label}` : 'Interview'} · {activeTopicName} · {formatElapsed(elapsedSeconds)}
+            {currentRound ? `Round ${activeRoundIndex + 1} of ${rounds.length} · ${currentRound.label}` : 'Interview'} · {activeTopicName} · {formatElapsed(elapsedSeconds)}{isTabInactive ? ' · ⏸️ (Paused)' : ''}
           </div>
         </div>
       </div>

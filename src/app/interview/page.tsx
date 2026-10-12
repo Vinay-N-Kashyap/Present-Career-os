@@ -167,17 +167,34 @@ export default function InterviewPage() {
     return chosen;
   }, []);
 
-  // Elapsed Session Timer (pauses when browser tab is hidden)
+  // Elapsed Session Timer & Tab Inactivity Sync (pauses when browser tab is hidden/blurred)
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [isTabInactive, setIsTabInactive] = useState(false);
   const tabVisibleRef = useRef(true);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const hidden = document.visibilityState === 'hidden';
+      tabVisibleRef.current = !hidden;
+      setIsTabInactive(hidden);
+    }
+    const onVisibilityChange = () => {
+      const isVisible = document.visibilityState === 'visible';
+      tabVisibleRef.current = isVisible;
+      setIsTabInactive(!isVisible);
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+    };
+  }, []);
+
   useEffect(() => {
     if (isInterviewActive && activeStage !== 'results') {
       const interval = setInterval(() => {
         if (tabVisibleRef.current) setElapsedSeconds(prev => prev + 1);
       }, 1000);
-      const onVisibilityChange = () => { tabVisibleRef.current = document.visibilityState === 'visible'; };
-      document.addEventListener('visibilitychange', onVisibilityChange);
-      return () => { clearInterval(interval); document.removeEventListener('visibilitychange', onVisibilityChange); };
+      return () => clearInterval(interval);
     }
   }, [isInterviewActive, activeStage]);
 
@@ -360,7 +377,8 @@ export default function InterviewPage() {
     activeTeacherId: activeTeacher.id,
     difficulty,
     onFinalTranscript: handleFinalSpeechTranscript,
-    onSilenceNudge: handleSilenceNudge
+    onSilenceNudge: handleSilenceNudge,
+    isTabInactive
   });
   speakWithAvatarRef.current = speakWithAvatar;
 
@@ -1124,7 +1142,49 @@ export default function InterviewPage() {
             isAvatarSpeaking={isAvatarSpeaking}
             interruptSpeech={interruptSpeech}
             exitInterview={exitInterview}
+            isTabInactive={isTabInactive}
           />
+
+          {/* Backgrounded Tab Paused Banner */}
+          {isTabInactive && (
+            <div
+              data-testid="interview-paused-tab-indicator"
+              style={{
+                background: 'rgba(234, 179, 8, 0.12)',
+                border: '1px solid rgba(234, 179, 8, 0.4)',
+                borderRadius: 12,
+                padding: '10px 16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 12
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ fontSize: 18 }}>⏸️</span>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 900, color: 'var(--warning-bright, #eab308)' }}>
+                    Interview Paused (Tab Inactive)
+                  </div>
+                  <div style={{ fontSize: 11.5, color: 'var(--t2)', fontWeight: 600 }}>
+                    Microphone and session timer are paused while this tab is backgrounded. Switching back will automatically resume.
+                  </div>
+                </div>
+              </div>
+              <span style={{
+                fontSize: 10.5,
+                fontWeight: 800,
+                padding: '3px 8px',
+                borderRadius: 6,
+                background: 'rgba(234, 179, 8, 0.2)',
+                color: '#eab308',
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em'
+              }}>
+                Paused
+              </span>
+            </div>
+          )}
 
           {/* Hands-Free Voice HUD Banner */}
           <InterviewVoiceHud
@@ -1137,6 +1197,7 @@ export default function InterviewPage() {
             startVoiceListening={startVoiceListening}
             isSpeechSupported={isSpeechSupported}
             onDoneSpeaking={flushAndSubmitTranscript}
+            isTabInactive={isTabInactive}
           />
 
           {/* Assist Mode Floating Teleprompter Drawer (Scoped to Round 2 Coding where there is no vertical chat column) */}

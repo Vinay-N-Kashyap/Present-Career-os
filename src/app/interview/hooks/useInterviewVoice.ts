@@ -13,6 +13,7 @@ interface UseInterviewVoiceProps {
   difficulty: 'easy' | 'normal' | 'hard';
   onFinalTranscript: (text: string) => void;
   onSilenceNudge: (text: string) => void;
+  isTabInactive?: boolean;
 }
 
 export function useInterviewVoice({
@@ -21,7 +22,8 @@ export function useInterviewVoice({
   activeTopicName,
   difficulty,
   onFinalTranscript,
-  onSilenceNudge
+  onSilenceNudge,
+  isTabInactive
 }: UseInterviewVoiceProps) {
   const [autoVoiceLoop, setAutoVoiceLoop] = useState(true);
   const autoVoiceLoopRef = useRef(true);
@@ -42,6 +44,10 @@ export function useInterviewVoice({
   const lastSentAtRef = useRef(0);
   const isStartingRef = useRef<boolean>(false);
   const isStoppingRef = useRef<boolean>(false);
+
+  const wasListeningBeforeHiddenRef = useRef<boolean>(false);
+  const [isTabInactiveState, setIsTabInactiveState] = useState<boolean>(false);
+  const isTabInactiveRef = useRef<boolean>(Boolean(isTabInactive));
 
   const isMountedRef = useRef<boolean>(true);
   const isInterviewActiveRef = useRef<boolean>(false);
@@ -150,6 +156,8 @@ export function useInterviewVoice({
 
   const startVoiceListening = useCallback(() => {
     if (typeof window === 'undefined' || !isMountedRef.current) return;
+    if (typeof document !== 'undefined' && document.visibilityState === 'hidden') return;
+    if (isTabInactiveRef.current) return;
     if (!isInterviewActiveRef.current && !isInterviewActive) return;
 
     if (isStartingRef.current || isAvatarSpeakingRef.current) return;
@@ -290,6 +298,9 @@ export function useInterviewVoice({
         }
         micRetryCountRef.current += 1;
 
+        if (typeof document !== 'undefined' && document.visibilityState === 'hidden') return;
+        if (isTabInactiveRef.current) return;
+
         if (autoVoiceLoopRef.current && !isAvatarSpeakingRef.current) {
           if (autoRestartTimerRef.current) clearTimeout(autoRestartTimerRef.current);
           autoRestartTimerRef.current = setTimeout(() => {
@@ -304,6 +315,10 @@ export function useInterviewVoice({
         isStartingRef.current = false;
         isStoppingRef.current = false;
         setIsVoiceListening(false);
+
+        // If tab is backgrounded / hidden, do not auto-restart recognition loop
+        if (typeof document !== 'undefined' && document.visibilityState === 'hidden') return;
+        if (isTabInactiveRef.current) return;
 
         // If candidate spoke and mic stopped before debounce fired, flush immediately
         if (`${accumulatedTranscriptRef.current} ${interimTranscriptRef.current}`.trim()) {
@@ -379,6 +394,78 @@ export function useInterviewVoice({
     startVoiceListening();
   }, [startVoiceListening]);
 
+  // Tab Visibility & Backgrounded Inactivity Synchronization
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    const handleVisibilityChange = () => {
+      const isHidden = document.visibilityState === 'hidden';
+      setIsTabInactiveState(isHidden);
+      isTabInactiveRef.current = Boolean(isTabInactive || isHidden);
+
+      if (isHidden) {
+        if (isVoiceListening || isStartingRef.current) {
+          wasListeningBeforeHiddenRef.current = true;
+        }
+        if (utteranceDebounceTimerRef.current) {
+          clearTimeout(utteranceDebounceTimerRef.current);
+          utteranceDebounceTimerRef.current = null;
+        }
+        if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+        if (autoRestartTimerRef.current) clearTimeout(autoRestartTimerRef.current);
+        if (recognitionRef.current) {
+          try {
+            isStoppingRef.current = true;
+            recognitionRef.current.stop();
+          } catch (e) {}
+        }
+        setIsVoiceListening(false);
+        isStartingRef.current = false;
+      } else {
+        // Foreground tab resumed
+        if (isMountedRef.current && autoVoiceLoopRef.current && !isAvatarSpeakingRef.current && (isInterviewActiveRef.current || isInterviewActive)) {
+          micRetryCountRef.current = 0;
+          const shouldResume = wasListeningBeforeHiddenRef.current || autoVoiceLoopRef.current;
+          wasListeningBeforeHiddenRef.current = false;
+          if (shouldResume) {
+            setTimeout(() => {
+              if (isMountedRef.current && !isAvatarSpeakingRef.current && (isInterviewActiveRef.current || isInterviewActive)) {
+                startVoiceListening();
+              }
+            }, 300);
+          }
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [isInterviewActive, isVoiceListening, startVoiceListening, isTabInactive]);
+
+  // Sync prop changes for isTabInactive (e.g. from parent page state)
+  useEffect(() => {
+    if (isTabInactive === undefined) return;
+    isTabInactiveRef.current = isTabInactive;
+    if (isTabInactive) {
+      if (isVoiceListening || isStartingRef.current) {
+        wasListeningBeforeHiddenRef.current = true;
+      }
+      stopVoiceListening();
+    } else {
+      if (wasListeningBeforeHiddenRef.current && !isAvatarSpeakingRef.current && (isInterviewActiveRef.current || isInterviewActive)) {
+        wasListeningBeforeHiddenRef.current = false;
+        micRetryCountRef.current = 0;
+        setTimeout(() => {
+          if (isMountedRef.current && !isAvatarSpeakingRef.current && (isInterviewActiveRef.current || isInterviewActive)) {
+            startVoiceListening();
+          }
+        }, 300);
+      }
+    }
+  }, [isTabInactive, isVoiceListening, stopVoiceListening, startVoiceListening, isInterviewActive]);
+
   useEffect(() => {
     isMountedRef.current = true;
     return () => {
@@ -417,7 +504,10 @@ export function useInterviewVoice({
     interruptSpeech,
     speechStartTimeRef,
     isSpeechSupported,
-    flushAndSubmitTranscript
+    flushAndSubmitTranscript,
+    isTabInactive: Boolean(isTabInactive || isTabInactiveState),
+    pauseVoiceListening: stopVoiceListening,
+    resumeVoiceListening: startVoiceListening
   };
 }
 

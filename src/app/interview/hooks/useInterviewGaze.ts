@@ -71,6 +71,9 @@ export function useInterviewGaze(isInterviewActive: boolean) {
     }
 
     const interval = setInterval(async () => {
+      // Pause gaze checks if tab is backgrounded
+      if (typeof document !== 'undefined' && document.visibilityState === 'hidden') return;
+
       const video = videoPreviewRef.current;
       if (!video || video.readyState < 2 || !ctx) return;
 
