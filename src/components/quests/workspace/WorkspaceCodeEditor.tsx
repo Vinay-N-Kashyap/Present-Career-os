@@ -10,6 +10,7 @@ interface WorkspaceCodeEditorProps {
   isCompleted: boolean;
   unlockRemainingSec: number;
   onExtendGrace?: () => void;
+  onSubmit?: () => void;
   userId: string;
   saveQuestCode?: (questId: string, code: string) => void;
   langInfo: { file: string; label: string; native: boolean };
@@ -25,6 +26,7 @@ export function WorkspaceCodeEditor({
   isCompleted,
   unlockRemainingSec,
   onExtendGrace,
+  onSubmit,
   userId,
   saveQuestCode,
   langInfo,
@@ -33,6 +35,14 @@ export function WorkspaceCodeEditor({
   const lineNumbers = Array.from({ length: lineCount }, (_, i) => i + 1);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      if (!editorLocked && onSubmit) {
+        onSubmit();
+      }
+      return;
+    }
+
     const textarea = e.currentTarget;
     const { selectionStart, selectionEnd, value } = textarea;
 
@@ -68,7 +78,8 @@ export function WorkspaceCodeEditor({
       const currentLine = linesStr[linesStr.length - 1];
       const indentMatch = currentLine.match(/^\s*/);
       const indent = indentMatch ? indentMatch[0] : '';
-      const extraIndent = currentLine.trim().endsWith('{') ? '    ' : '';
+      const trimmed = currentLine.trim();
+      const extraIndent = trimmed.endsWith('{') || trimmed.endsWith(':') ? '    ' : '';
       const nextValue = value.substring(0, selectionStart) + '\n' + indent + extraIndent + value.substring(selectionEnd);
       setCode(nextValue);
       setTimeout(() => {
@@ -78,23 +89,27 @@ export function WorkspaceCodeEditor({
   };
 
   return (
-    <div>
+    <div data-testid="workspace-code-editor">
       {unlockRemainingSec > 0 && unlockRemainingSec <= 300 && (
-        <div style={{
-          background: 'rgba(234, 179, 8, 0.12)',
-          border: '1px solid #eab308',
-          borderRadius: 10,
-          padding: '8px 14px',
-          marginBottom: 10,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          fontSize: 13,
-          color: '#eab308'
-        }}>
+        <div
+          data-testid="workspace-grace-banner"
+          style={{
+            background: 'rgba(234, 179, 8, 0.12)',
+            border: '1px solid #eab308',
+            borderRadius: 10,
+            padding: '8px 14px',
+            marginBottom: 10,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: 13,
+            color: '#eab308'
+          }}
+        >
           <span>⏳ Quest unlock expiring in {Math.floor(unlockRemainingSec / 60)}m {unlockRemainingSec % 60}s. Your code is safely auto-saved.</span>
           {onExtendGrace && (
             <button
+              data-testid="btn-extend-grace"
               onClick={onExtendGrace}
               style={{
                 background: '#eab308',
@@ -114,8 +129,8 @@ export function WorkspaceCodeEditor({
       )}
 
       <div style={{ display: 'flex', justifyContent: 'space-between', background: 'var(--bg3)', border: '1.5px solid var(--border)', borderBottom: 'none', padding: '8px 14px', borderRadius: '12px 12px 0 0' }}>
-        <span style={{ fontSize: 12, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>{langInfo.file} ({isExam ? 'Proctored Environment' : langInfo.label})</span>
-        <span style={{ fontSize: 12, color: editorLocked ? (examTimedOut && !isCompleted ? 'var(--coral)' : 'var(--green)') : (isExam ? 'var(--coral)' : 'var(--accent)'), fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+        <span data-testid="workspace-file-badge" style={{ fontSize: 12, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>{langInfo.file} ({isExam ? 'Proctored Environment' : langInfo.label})</span>
+        <span data-testid="workspace-env-badge" style={{ fontSize: 12, color: editorLocked ? (examTimedOut && !isCompleted ? 'var(--coral)' : 'var(--green)') : (isExam ? 'var(--coral)' : 'var(--accent)'), fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
           {isCompleted ? 'COMPLETED (READ-ONLY)' : (examTimedOut && isExam ? 'TIME EXPIRED (LOCKED)' : (isExam ? 'EXAM ENVIRONMENT' : langInfo.label.toUpperCase()))}
         </span>
       </div>
@@ -148,6 +163,7 @@ export function WorkspaceCodeEditor({
 
         {/* Textarea */}
         <textarea
+          data-testid="workspace-code-input"
           value={code}
           onChange={(e) => {
             if (editorLocked) return;

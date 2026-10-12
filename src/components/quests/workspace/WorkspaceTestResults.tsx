@@ -18,16 +18,19 @@ export function WorkspaceTestResults({
   isCompleted,
 }: WorkspaceTestResultsProps) {
   return (
-    <div>
+    <div data-testid="workspace-test-results">
       {/* Terminal Output */}
-      <div style={{
-        marginTop: 16,
-        background: '#090a0f',
-        border: '1.5px solid var(--border)',
-        borderRadius: 14,
-        overflow: 'hidden',
-        fontFamily: 'var(--font-mono)'
-      }}>
+      <div
+        data-testid="workspace-terminal"
+        style={{
+          marginTop: 16,
+          background: '#090a0f',
+          border: '1.5px solid var(--border)',
+          borderRadius: 14,
+          overflow: 'hidden',
+          fontFamily: 'var(--font-mono)'
+        }}
+      >
         {/* Terminal Bar Header */}
         <div style={{
           display: 'flex',
@@ -45,6 +48,7 @@ export function WorkspaceTestResults({
 
           {output && !output.success && (
             <button
+              data-testid="btn-ask-ai-debug"
               onClick={onAskAiTutor}
               style={{
                 background: 'linear-gradient(135deg, var(--accent), var(--purple))',
@@ -67,7 +71,7 @@ export function WorkspaceTestResults({
         </div>
 
         {/* Terminal Logs Prompt */}
-        <div style={{ padding: '12px 16px', minHeight: 100, fontSize: 13, lineHeight: 1.6, color: 'var(--text)' }}>
+        <div data-testid="workspace-terminal-logs" style={{ padding: '12px 16px', minHeight: 100, fontSize: 13, lineHeight: 1.6, color: 'var(--text)' }}>
           <div style={{ color: '#00ff66', fontWeight: 700, marginBottom: 6 }}>
             bash - pinit-compiler-v2.0 ~ $ execution-runner --lang={langFile}
           </div>
@@ -91,17 +95,21 @@ export function WorkspaceTestResults({
 
       {/* Compiler output badge */}
       {output && (
-        <div style={{
-          marginTop: 12,
-          background: output.success ? 'rgba(var(--success-deep-rgb), 0.06)' : 'rgba(var(--danger-rgb), 0.06)',
-          border: `1.5px solid ${output.success ? 'var(--green)' : 'var(--coral)'}`,
-          padding: 14,
-          borderRadius: 12,
-          fontSize: 13,
-          fontFamily: 'var(--font-mono)',
-          color: output.success ? 'var(--green)' : 'var(--coral)',
-          whiteSpace: 'pre-wrap'
-        }}>
+        <div
+          data-testid="workspace-output-badge"
+          data-status={output.success ? 'pass' : 'fail'}
+          style={{
+            marginTop: 12,
+            background: output.success ? 'rgba(var(--success-deep-rgb), 0.06)' : 'rgba(var(--danger-rgb), 0.06)',
+            border: `1.5px solid ${output.success ? 'var(--green)' : 'var(--coral)'}`,
+            padding: 14,
+            borderRadius: 12,
+            fontSize: 13,
+            fontFamily: 'var(--font-mono)',
+            color: output.success ? 'var(--green)' : 'var(--coral)',
+            whiteSpace: 'pre-wrap'
+          }}
+        >
           {output.success ? '🟢 ' : '🔴 '}
           {output.message}
         </div>

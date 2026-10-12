@@ -5,6 +5,8 @@ import { toast } from '@/lib/store/useAppStore';
 import { api } from '@/lib/api/client';
 import { supabase } from '@/lib/supabaseClient';
 import { getAuthoritativeTestSuite } from '@/lib/quests/questRegistry';
+import { parseQuestId } from '@/lib/data/curriculumEnricher';
+import { getLongLessonLanguage } from '@/lib/data/longLessons';
 import type { CodeLanguage } from '@/lib/code/types';
 
 export interface Teacher {
@@ -83,6 +85,9 @@ export function resolveQuestLanguage(quest: any, qId: string = ''): CodeLanguage
   if (starter.includes('public class') || starter.includes('class Solution') || testSuite.includes('public class')) {
     return 'java';
   }
+  if (starter.includes('#include') || testSuite.includes('#include') || starter.includes('int main(')) {
+    return 'cpp';
+  }
   // Many older courses (DevOps, Cloud, AI, ...) write their tasks in JavaScript even though the
   // course prefix suggests another language, so look at the code before the prefix.
   // PostgreSQL practice tasks: setup, the checks marker, then check queries.
@@ -98,18 +103,40 @@ export function resolveQuestLanguage(quest: any, qId: string = ''): CodeLanguage
     return 'sql';
   }
 
-  const prefixMatch = cleanId.match(/^([a-z0-9_]+)-/);
-  const prefix = prefixMatch ? prefixMatch[1] : '';
+  const parsedPrefix = parseQuestId(cleanId)?.prefix;
+  const fallbackPrefix = cleanId.split(/-(?:d\d+|day|exam|assign|test|q\d+)/i)[0] || cleanId.match(/^([a-z0-9_]+)-/)?.[1] || '';
+  const prefix = parsedPrefix || fallbackPrefix;
 
-  const PYTHON_PREFIXES = new Set(['python', 'py', 'nlp', 'quant', 'iot_edge', 'ai']);
-  const SQL_PREFIXES = new Set(['sql', 'sql-mastery', 'database']);
-  const JS_PREFIXES = new Set(['react', 'react-basics', 'fullstack', 'fullstack-js', 'mobile', 'graphics3d', 'g3d', 'blockchain', 'javascript', 'js']);
-  const JAVA_PREFIXES = new Set(['java', 'java-basics', 'dsa', 'dsa-optim', 'distributed', 'dist', 'cloud', 'cloud-native', 'devops', 'cyber', 'iot_sec', 'iot_net', 'iot_emb']);
+  const CPP_PREFIXES = new Set(['cpp', 'iot_emb']);
+  const BASH_PREFIXES = new Set(['bash', 'linux', 'git_vcs']);
+  const PYTHON_PREFIXES = new Set([
+    'python', 'py', 'dsa-py', 'ai-py', 'dist-py', 'cloud-py', 'nlp', 'nlp-py', 'quant', 'quant-py',
+    'prompt-py', 'train-py', 'vec-py', 'safe-py', 'iot_edge', 'iot_sec', 'iot_net', 'ai', 'ai_prompt',
+    'comp_fund', 'excel_viz', 'soft-skills', 'soft_skills', 'quant-systems', 'quant_systems',
+    'bcom_ops', 'bcom_scrm', 'bcom_ent', 'bcom_ecom', 'bcom_dmkt', 'bcom-marketing', 'bcom_ana',
+    'bcom-finance', 'bcom-accounting', 'bcom_ait', 'bcom_ban', 'bcom_law', 'bcom_tax', 'bcom_aud'
+  ]);
+  const SQL_PREFIXES = new Set(['sql', 'sql-mastery', 'database', 'dbms']);
+  const JS_PREFIXES = new Set([
+    'react', 'react-basics', 'node-web', 'fullstack', 'fullstack-js', 'mobile', 'graphics3d',
+    'g3d', 'blockchain', 'javascript', 'js', 'design', 'design-web', 'design_web',
+    'sre-web', 'stream-web', 'aideploy-web'
+  ]);
+  const JAVA_PREFIXES = new Set(['java', 'java-basics', 'dsa', 'dsa-optim', 'distributed', 'dist', 'cloud', 'cloud-native', 'devops', 'cyber']);
 
-  if (PYTHON_PREFIXES.has(prefix) || cleanId.startsWith('python-') || cleanId.startsWith('py-')) return 'python';
+  if (CPP_PREFIXES.has(prefix) || cleanId.startsWith('iot_emb-') || cleanId.startsWith('cpp-')) return 'cpp';
+  if (BASH_PREFIXES.has(prefix) || cleanId.startsWith('git_vcs-') || cleanId.startsWith('bash-')) return 'bash';
+  if (PYTHON_PREFIXES.has(prefix) || prefix.startsWith('bcom') || prefix.endsWith('-py') || cleanId.startsWith('python-') || cleanId.startsWith('py-')) return 'python';
   if (SQL_PREFIXES.has(prefix) || cleanId.startsWith('database-') || cleanId.startsWith('sql-')) return 'sql';
   if (JS_PREFIXES.has(prefix) || cleanId.startsWith('react-') || cleanId.startsWith('fullstack-') || cleanId.startsWith('js-')) return 'javascript';
   if (JAVA_PREFIXES.has(prefix) || cleanId.startsWith('java-') || cleanId.startsWith('dsa-')) return 'java';
+
+  if (prefix) {
+    const llLang = getLongLessonLanguage(prefix);
+    if (llLang === 'python' || llLang === 'sql' || llLang === 'cpp' || llLang === 'bash' || llLang === 'typescript') {
+      return llLang;
+    }
+  }
 
   if (/\b(python|py)\b/i.test(cleanId)) return 'python';
   if (/\b(sql|database)\b/i.test(cleanId)) return 'sql';

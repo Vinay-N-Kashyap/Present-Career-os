@@ -20,7 +20,7 @@ export function TeacherSelectScreen({
   onUnlockQuest,
 }: TeacherSelectScreenProps) {
   return (
-    <div style={{ maxWidth: 1000, margin: '0 auto', paddingBottom: 60 }} className="animate-fade-in">
+    <div data-testid="teacher-select-screen" style={{ maxWidth: 1000, margin: '0 auto', paddingBottom: 60 }} className="animate-fade-in">
       <div style={{ marginBottom: 24 }}>
         <Link href="/quests" style={{ textDecoration: 'none', color: 'var(--t3)', fontSize: 14.5, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
           ← Return to Quests Tab
@@ -37,6 +37,7 @@ export function TeacherSelectScreen({
           return (
             <div
               key={t.id}
+              data-testid={`teacher-card-${t.id}`}
               onClick={() => setSelectedTeacherId(t.id)}
               style={{
                 background: 'var(--bg2)',
@@ -119,6 +120,7 @@ export function TeacherSelectScreen({
           className="btn-primary"
           style={{ padding: '12px 32px', fontSize: 15.5 }}
           id="btn-start-quest"
+          data-testid="btn-start-quest"
         >
           Start Quest & Spend {PIN_COSTS.quest?.cost ?? 20} Pins ➔
         </button>
@@ -139,7 +141,7 @@ export function CompletionScreen({ quest, currentTeacher, category }: Completion
   const pinsReward = authQuest?.pins ?? quest?.pins ?? (category === 'exam' ? 6 : 5);
 
   return (
-    <div style={{ maxWidth: 600, margin: '60px auto', padding: '40px 24px', textAlign: 'center' }} className="animate-fade-in">
+    <div data-testid="workspace-completion-screen" style={{ maxWidth: 600, margin: '60px auto', padding: '40px 24px', textAlign: 'center' }} className="animate-fade-in">
       <div style={{
         background: 'var(--bg2)',
         border: '1.5px solid var(--green)',
@@ -167,8 +169,8 @@ export function CompletionScreen({ quest, currentTeacher, category }: Completion
           fontSize: 14.5,
           fontWeight: 700
         }}>
-          <span style={{ color: 'var(--accent)' }}>⚡ +{xpReward} XP</span>
-          <span style={{ color: 'var(--green)' }}>📌 +{pinsReward} Pins</span>
+          <span data-testid="workspace-xp-reward" style={{ color: 'var(--accent)' }}>⚡ +{xpReward} XP</span>
+          <span data-testid="workspace-pins-reward" style={{ color: 'var(--green)' }}>📌 +{pinsReward} Pins</span>
         </div>
 
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
@@ -211,8 +213,9 @@ export function SubmitButtonsBar({
   }
 
   return (
-    <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
+    <div data-testid="workspace-submit-bar" style={{ display: 'flex', gap: 10, marginTop: 16 }}>
       <button
+        data-testid="btn-submit-workspace"
         onClick={onSubmit}
         disabled={isLocked}
         className="btn-primary"
@@ -232,6 +235,7 @@ export function SubmitButtonsBar({
       </button>
       {!isLocked && (
         <button
+          data-testid="btn-reset-workspace"
           onClick={onReset}
           className="btn-ghost"
           style={{ padding: 12, fontSize: 14.5 }}

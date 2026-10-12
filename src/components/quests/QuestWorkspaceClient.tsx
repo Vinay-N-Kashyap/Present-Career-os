@@ -271,6 +271,7 @@ export default function QuestWorkspaceClient({ questId }: { questId: string }) {
                   (cOS as any).extendItemGrace(`quest:${questId}`);
                 }
               }}
+              onSubmit={state.handleVerifySolution}
               userId={userId}
               saveQuestCode={saveQuestCode}
               langInfo={langInfo}
