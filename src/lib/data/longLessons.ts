@@ -109,8 +109,8 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   'aideploy-web': AI_DEPLOY_WEB_LONG_LESSONS,
 };
 
-/** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild. */
-export type LongLessonLanguage = 'javascript' | 'python' | 'sql' | 'typescript';
+/** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
+export type LongLessonLanguage = 'javascript' | 'python' | 'sql' | 'typescript' | 'bash' | 'cpp';
 
 const LONG_LESSON_LANGUAGE: Record<string, LongLessonLanguage> = {
   'react-basics': 'javascript',
@@ -138,6 +138,12 @@ const LONG_LESSON_LANGUAGE: Record<string, LongLessonLanguage> = {
   dist: 'typescript',
   cyber: 'typescript',
   ai: 'typescript',
+  comp_fund: 'bash',
+  git_vcs: 'bash',
+  iot_emb: 'cpp',
+  iot_edge: 'python',
+  iot_net: 'python',
+  iot_sec: 'python',
 };
 
 export function getLongLessonLanguage(prefix: string): LongLessonLanguage {

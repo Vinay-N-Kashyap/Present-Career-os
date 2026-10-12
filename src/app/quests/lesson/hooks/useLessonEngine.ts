@@ -7,6 +7,8 @@ import { resolvePilotDay, parseQuestId } from '@/lib/data/curriculumEnricher';
 import { getLongLesson, getLongLessonLanguage } from '@/lib/data/longLessons';
 import { runPythonInBrowser } from '@/lib/code/python/pythonRunner';
 import { runSqlInBrowser } from '@/lib/code/sql/sqlRunner';
+import { executeBashSuite } from '@/lib/code/runners/bashRunner';
+import { executeCppSuite } from '@/lib/code/runners/cppRunner';
 import { getLessonCheck, getTestQuestions, parseTestQuestId, withAnswerAt } from '@/lib/data/courseTests';
 import { api } from '@/lib/api/client';
 import { toast } from '@/lib/store/useAppStore';
@@ -356,6 +358,8 @@ const RUNNER_LABELS: Record<string, string> = {
   'iot_emb': '🔌 Embedded MCU Simulator',
   'g3d': '🔮 WebGL2 3D Shader Sandbox',
   'blockchain': '🪙 EVM Web3 & Solidity Simulator',
+  'comp_fund': '💻 POSIX Virtual Shell & CLI Sandbox',
+  'git_vcs': '💻 Git & Bash Sandbox',
 };
 
 interface UseLessonEngineProps {
@@ -594,6 +598,25 @@ export function useLessonEngine({
         setCodeOutputs(prev => ({ ...prev, [slideIdx]: "Starting PostgreSQL... (the first run can take up to 15 seconds)" }));
         const shown = await runSqlInBrowser(codeSnippet);
         setCodeOutputs(prev => ({ ...prev, [slideIdx]: shown }));
+        return;
+      }
+
+      if (parsedId && (getLongLessonLanguage(parsedId.prefix) === 'bash' || questData?.language === 'bash' || questData?.language === 'shell')) {
+        setCodeOutputs(prev => ({ ...prev, [slideIdx]: "Executing in POSIX Virtual Shell Sandbox..." }));
+        const bashRes = await executeBashSuite(codeSnippet);
+        const shown = [
+          bashRes.stdout,
+          bashRes.stderr ? `[STDERR] ${bashRes.stderr}` : ''
+        ].filter(Boolean).join('\n');
+        setCodeOutputs(prev => ({ ...prev, [slideIdx]: shown || (bashRes.allPassed ? 'Command executed cleanly with exit code 0.' : 'Execution finished with non-zero exit code.') }));
+        return;
+      }
+
+      if (parsedId && (getLongLessonLanguage(parsedId.prefix) === 'cpp' || questData?.language === 'cpp')) {
+        setCodeOutputs(prev => ({ ...prev, [slideIdx]: "Inspecting C++ AST invariants..." }));
+        const cppRes = await executeCppSuite(codeSnippet);
+        const shown = (cppRes.terminalLogs || []).join('\n');
+        setCodeOutputs(prev => ({ ...prev, [slideIdx]: shown || (cppRes.allPassed ? 'C++ syntax and structural invariants verified.' : 'C++ structural invariants check failed.') }));
         return;
       }
 
