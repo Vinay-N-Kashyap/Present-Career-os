@@ -159,8 +159,12 @@ export const InterviewSetupView: React.FC<InterviewSetupViewProps> = ({
               >
                 {(domainStream === 'tech' ? [
                   { value: 'software', label: 'Software Engineering (SDE)' },
-                  { value: 'data', label: 'Data Science & Analytics' },
-                  { value: 'systems', label: 'Cloud & Systems' }
+                  { value: 'ai_ml', label: 'AI, Machine Learning & LLM Systems' },
+                  { value: 'systems', label: 'Cloud & Distributed Systems' },
+                  { value: 'embedded', label: 'Embedded Systems & IoT Engineering' },
+                  { value: 'cyber', label: 'Cybersecurity & Secure Systems' },
+                  { value: 'quant', label: 'Quantitative Systems & Algorithmic Trading' },
+                  { value: 'data', label: 'Data Science & Analytics' }
                 ] : [
                   { value: 'finance', label: 'Finance & Accounting (B.Com)' },
                   { value: 'marketing', label: 'Digital Marketing & Growth' },

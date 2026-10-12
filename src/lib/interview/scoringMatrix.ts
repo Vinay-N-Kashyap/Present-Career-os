@@ -21,6 +21,10 @@ export type RoleKey =
   | 'frontend'
   | 'devops'
   | 'data_analyst'
+  | 'ai_ml'
+  | 'iot_embedded'
+  | 'cybersecurity'
+  | 'quant_systems'
   | 'pm'
   | 'business_analyst'
   | 'sales_marketing'
@@ -112,6 +116,58 @@ export const ROLE_SCORING_MATRICES: Record<RoleKey, RoleScoringWeights> = {
     },
     rubricFocus: 'Prioritize quantitative reasoning, metric definitions, SQL/data modeling, and business insight delivery.',
   },
+  ai_ml: {
+    roleName: 'AI, Machine Learning & LLM Systems Engineer',
+    stream: 'tech',
+    description: 'Heavy focus on mathematical modeling, deep learning architectures, RAG pipelines, GPU inference latency, and vector search trade-offs.',
+    weights: {
+      logic: 0.35,
+      systems: 0.25,
+      solving: 0.20,
+      comms: 0.10,
+      star: 0.10,
+    },
+    rubricFocus: 'Prioritize model architectures, vector embeddings, context window management, GPU memory constraints, and quantitative evaluation.',
+  },
+  iot_embedded: {
+    roleName: 'Embedded Systems & IoT Hardware Engineer',
+    stream: 'tech',
+    description: 'Critical focus on hardware memory maps, volatile registers, bitwise masking, deterministic real-time interrupts, and bare-metal resource constraints.',
+    weights: {
+      systems: 0.35,
+      logic: 0.25,
+      solving: 0.25,
+      comms: 0.10,
+      star: 0.05,
+    },
+    rubricFocus: 'Prioritize bare-metal memory safety, MMIO register configurations, bitwise manipulation, low power states, and zero-cost C++ abstractions.',
+  },
+  cybersecurity: {
+    roleName: 'Cybersecurity, Cryptography & Secure Systems Architect',
+    stream: 'tech',
+    description: 'Heavy emphasis on threat modeling, attack surface reduction, zero-trust network boundaries, cryptographic protocols, and vulnerability defense.',
+    weights: {
+      systems: 0.35,
+      logic: 0.25,
+      solving: 0.20,
+      comms: 0.10,
+      star: 0.10,
+    },
+    rubricFocus: 'Prioritize threat vectors (OWASP Top 10), identity & access controls (RBAC), cryptographic guarantees, secure enclave design, and defense-in-depth.',
+  },
+  quant_systems: {
+    roleName: 'Quantitative Trading & Low-Latency Systems Architect',
+    stream: 'tech',
+    description: 'Ultra-low-latency distributed engineering, lock-free concurrency, market microstructure algorithms, and sub-microsecond determinism.',
+    weights: {
+      systems: 0.35,
+      logic: 0.35,
+      solving: 0.15,
+      comms: 0.08,
+      star: 0.07,
+    },
+    rubricFocus: 'Prioritize sub-microsecond LMAX ring buffers, memory bus cache locality, zero-allocation algorithms, order matching logic, and network kernel bypass.',
+  },
   pm: {
     roleName: 'Product Manager',
     stream: 'non_tech',
@@ -199,35 +255,60 @@ export function normalizeRoleKey(input?: string, stream?: string): RoleKey {
     return 'sde';
   }
 
-  // 2. Build & Release / CI/CD (must not be confused with Frontend because of 'build' or 'release')
+  // 2. Embedded Systems, IoT, Firmware & Microcontroller Architecture
+  if (/\b(embedded|iot|internet\s+of\s+things|microcontroller|firmware|\bmcu\b|rtos|arm\s+cortex|bare[\s-]metal|gpio|mmio|avr|stm32|esp32)\b/i.test(clean)) {
+    return 'iot_embedded';
+  }
+
+  // 3. Quantitative Trading, HFT & Algorithmic Systems
+  if (/\b(quant|quant_systems|quantitative\s+trading|hft|high[\s-]frequency|order\s+book|matching\s+engine|market\s+mak(?:er|ing)|arbitrage|algorithmic\s+trading)\b/i.test(clean)) {
+    return 'quant_systems';
+  }
+
+  // 4. Cybersecurity, Cryptography & Secure Systems
+  if (/\b(cybersecurity|cyber|infosec|security\s+engineer|penetration|cryptography|appsec|soc\s+analyst|ethical\s+hack(?:ing|er)|zero\s+trust|threat\s+model)\b/i.test(clean)) {
+    return 'cybersecurity';
+  }
+
+  // 5. AI, Machine Learning & LLM Systems
+  if (/\b(ai\s+engineer|machine\s+learning|\bml\b|ml\s+engineer|deep\s+learning|llm|generative\s+ai|nlp|natural\s+language|prompt\s+engineer|rag\s+pipeline|transformers?|fine[\s-]tuning|vector\s+search)\b/i.test(clean)) {
+    return 'ai_ml';
+  }
+
+  // 6. Build & Release / CI/CD (must not be confused with Frontend because of 'build' or 'release')
   if (/\b(build\s*(?:&|and)?\s*release|ci\s*[\/-]?\s*cd)\b/i.test(clean)) {
     return 'devops';
   }
 
-  // 3. Business Development (BD/BDE/BDR must not be confused with Business Analyst)
+  // 7. Business Development (BD/BDE/BDR must not be confused with Business Analyst)
   if (/\b(business\s+development|\bbde\b|\bbdr\b|\bsdr\b)\b/i.test(clean)) {
     return 'sales_marketing';
   }
 
-  // 4. Product Management (whole-word check to avoid matching inside 'development', 'programmer', etc.)
+  // 8. Product Management (whole-word check to avoid matching inside 'development', 'programmer', etc.)
   if (/\b(product\s+manag(?:er|ement)|\bpm\b|\btpm\b|\bapm\b|product\s+owner|technical\s+product\s+manag(?:er|ement)|program\s+manag(?:er|ement)|project\s+manag(?:er|ement))\b/i.test(clean)) {
     return 'pm';
   }
 
-  // 5. DevOps, Cloud, Infrastructure, Site Reliability & Security
-  if (/\b(devops|sre|site\s+reliability|cloud|infrastructure|infra|platform\s+engineer|sysadmin|system\s+administrator|kubernetes|k8s|docker|terraform|cybersecurity|infosec|security\s+engineer)\b/i.test(clean)) {
+  // 9. DevOps, Cloud, Infrastructure & Site Reliability
+  if (/\b(devops|sre|site\s+reliability|cloud|infrastructure|infra|platform\s+engineer|sysadmin|system\s+administrator|kubernetes|k8s|docker|terraform)\b/i.test(clean)) {
     return 'devops';
   }
 
-  // 6. Data Analyst, Data Science & Business Intelligence (whole-word check so 'bi' does not match 'mobile')
+  // 10. Data Analyst, Data Science & Business Intelligence (whole-word check so 'bi' does not match 'mobile')
   if (
-    /\b(data\s+analyst|data\s+analytics|data\s+scientist|data\s+science|business\s+intelligence|\bbi\b|power\s+bi|tableau|sql\s+analyst|data\s+engineer|analytics\s+engineer|machine\s+learning|\bml\b|\bai\b|deep\s+learning|nlp|computer\s+vision|quantitative\s+analyst)\b/i.test(clean) ||
+    /\b(data\s+analyst|data\s+analytics|data\s+scientist|data\s+science|business\s+intelligence|\bbi\b|power\s+bi|tableau|sql\s+analyst|data\s+engineer|analytics\s+engineer)\b/i.test(clean) ||
     (/\b(data|analytics|sql)\b/i.test(clean) && !/\bstructures?\b/i.test(clean))
   ) {
     return 'data_analyst';
   }
 
-  // 7. Frontend, UI/UX & Web Development (whole-word check so 'ui' does not match 'build' or 'fruit')
+  // 11. Full Stack Software Development
+  if (/\b(full\s*stack|fullstack)\b/i.test(clean)) {
+    return 'sde';
+  }
+
+  // 12. Frontend, UI/UX & Web Development (whole-word check so 'ui' does not match 'build' or 'fruit')
   if (/\b(frontend|front\s+end|ui\s*[\/-]?\s*ux|\bui\b|\bux\b|react|next\.?js|vue|angular|svelte|web\s+developer|web\s+development|web\s+design|css|html)\b/i.test(clean)) {
     return 'frontend';
   }
