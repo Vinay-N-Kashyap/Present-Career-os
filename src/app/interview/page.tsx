@@ -476,7 +476,7 @@ export default function InterviewPage() {
     const foundTeacher = AVATAR_POOL.find(a => a.id === activeSessionDraft.activeTeacherId);
     if (foundTeacher) setActiveTeacher(foundTeacher);
     setIsInterviewActive(true);
-    toast.success('Interview Session Restored', `Resumed in ${activeSessionDraft.activeTopicName}`);
+    toast.success('Interview Session Restored', `Resumed in ${activeSessionDraft.activeTopicName} (${formatStageLabel(activeSessionDraft.activeStage)})`);
   }, [activeSessionDraft, setLiveSessionId, setFillerWordCount, fetchDynamicProblem]);
 
   const startInterview = async () => {

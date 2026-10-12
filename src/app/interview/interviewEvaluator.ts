@@ -85,6 +85,12 @@ export function computeDeterministicEvaluation({
     ? (roleKey === 'iot_embedded' ? 'Embedded register test suite verified' : roleKey === 'quant_systems' ? 'Order book test suite verified' : 'Test suite verified')
     : 'Manual code submitted';
 
+  const round4Badge = starStep >= 4
+    ? 'STAR Master (4/4)'
+    : starStep >= 2
+    ? 'STAR Articulated'
+    : 'STAR Defense';
+
   const perRoundScores = {
     round1: {
       title: 'Round 1: Behavioral & Mindset',
@@ -114,7 +120,7 @@ export function computeDeterministicEvaluation({
       score: Math.min(100, Math.max(50, rawDimensions.star)),
       verdict: rawDimensions.star >= 80 ? 'Exemplary STAR' : rawDimensions.star >= 60 ? 'Structured Response' : 'Unstructured',
       metric: `${starStep} STAR steps articulated`,
-      badge: 'STAR Defense'
+      badge: round4Badge
     }
   };
 
@@ -167,6 +173,7 @@ export function generateInterviewTranscriptMarkdown({
     `**Date:** ${new Date().toLocaleDateString('en-US', { dateStyle: 'full' })}  `,
     `**Verdict:** ${evaluationResult?.verdict || 'Completed'} (${evaluationResult?.score || 0}%)  `,
     ...(evaluationResult?.readiness ? [`**Readiness:** ${evaluationResult.readiness}  `] : []),
+    `- **STAR Framework Coverage:** ${evaluationResult?.perRoundScores?.round4?.metric || 'Articulated'} (${evaluationResult?.perRoundScores?.round4?.badge || 'STAR'})  `,
     `\n---\n`,
     `## 1. Per-Round Performance Breakdown`,
     `- **Round 1 (${evaluationResult?.perRoundScores?.round1?.badge || 'Behavioral'}):** ${evaluationResult?.perRoundScores?.round1?.score || 75}% — ${evaluationResult?.perRoundScores?.round1?.verdict || 'Competent'} (${evaluationResult?.perRoundScores?.round1?.metric || 'Verbal Q&A'})`,
@@ -232,6 +239,10 @@ export function exportInterviewTranscriptFile({
       readiness: evaluationResult?.readiness,
       appliedWeights: evaluationResult?.appliedWeights,
       perRoundScores: evaluationResult?.perRoundScores,
+      starMetrics: {
+        stepsArticulated: evaluationResult?.perRoundScores?.round4?.metric,
+        badge: evaluationResult?.perRoundScores?.round4?.badge
+      },
       telemetry: {
         eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : null,
         wpm: typeof wpmScore === 'number' ? wpmScore : null,

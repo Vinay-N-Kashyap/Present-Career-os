@@ -122,11 +122,12 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
             { key: 'A', label: 'Action', desc: 'Execution & Decisions' },
             { key: 'R', label: 'Result', desc: 'Quantifiable Impact' },
           ].map((step, idx) => {
-            const isCurrent = (starStep % 4) === idx;
-            const isCompleted = (starStep % 4) > idx || starStep >= 4;
+            const isCompleted = starStep >= 4 || idx < starStep;
+            const isCurrent = starStep < 4 && idx === starStep;
             return (
               <div
                 key={step.key}
+                data-testid={`star-step-${step.key.toLowerCase()}`}
                 style={{
                   padding: '6px 8px',
                   borderRadius: 8,
@@ -136,7 +137,7 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
                 }}
               >
                 <div style={{ fontSize: 12, fontWeight: 900, color: isCurrent ? 'var(--accent)' : isCompleted ? 'var(--success-bright)' : 'var(--t3)' }}>
-                  {step.key} — {step.label}
+                  {isCompleted ? '✅ ' : isCurrent ? '👉 ' : ''}{step.key} — {step.label}
                 </div>
                 <div style={{ fontSize: 10.5, color: isCurrent ? 'var(--t1)' : 'var(--t3)', marginTop: 2 }}>
                   {step.desc}
@@ -144,6 +145,33 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
               </div>
             );
           })}
+        </div>
+
+        {/* Dynamic Pedagogical STAR Coaching Guidance Pill */}
+        <div
+          data-testid="star-coaching-pill"
+          style={{
+            fontSize: 11.5,
+            padding: '6px 12px',
+            borderRadius: 8,
+            background: starStep >= 4 ? 'rgba(34, 197, 94, 0.1)' : 'rgba(168, 85, 247, 0.08)',
+            border: starStep >= 4 ? '1px solid rgba(34, 197, 94, 0.3)' : '1px solid rgba(168, 85, 247, 0.25)',
+            color: starStep >= 4 ? 'var(--success-bright)' : 'var(--accent)',
+            fontWeight: 700,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 6
+          }}
+        >
+          {starStep === 0
+            ? '💡 Focus: Set the business & technical context, system scale, and primary constraints.'
+            : starStep === 1
+            ? '💡 Focus: Define your exact engineering responsibility, milestone targets, and success criteria.'
+            : starStep === 2
+            ? '💡 Focus: Explain the concrete technical actions, trade-offs, architecture choices, and teamwork.'
+            : starStep === 3
+            ? '💡 Focus: Quantify measurable impact — latency drops, uptime gains, revenue unlocked, or error reductions.'
+            : '🎉 All 4 STAR quadrants completed! Submit your defense to review your scorecard.'}
         </div>
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
