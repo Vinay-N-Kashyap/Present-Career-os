@@ -17,7 +17,7 @@ import { withLessonHelpers } from '@/lib/code/sandbox/lessonHelpers';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { LessonState } from './useLessonState';
 import { compileTs } from '@/lib/code/ts/compileTs';
-import { getVisual, loadDayFile, fetchAndCacheDayFile } from '@/lib/visuals/loadVisuals';
+import { getVisual, loadDayFile, fetchAndCacheDayFile, synthesizeLongLessonVisual } from '@/lib/visuals/loadVisuals';
 import { PYTHON_TRACER_SOURCE } from '@/lib/visuals/trace/pythonTracer';
 import { TEMPLATE_REGISTRY } from '@/lib/visuals/registry';
 import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
@@ -734,7 +734,7 @@ export function useLessonEngine({
     if (longLesson) {
       setSlides(longLesson.parts.map((part, i) => {
         const visualKey = `${coursePrefix}:${dayNum}:${i}`;
-        const visual = getVisual(coursePrefix, dayNum, i);
+        const visual = getVisual(coursePrefix, dayNum, i) || synthesizeLongLessonVisual(coursePrefix, dayNum, i, part);
 
         const speechPieces: { at: VisualAt; text: string }[] = [
           { at: 'intro' as VisualAt, text: `Part ${i + 1}: ${part.title}.` },
@@ -825,84 +825,7 @@ export function useLessonEngine({
               : (firstDiagnosis?.errorExplanation || firstDiagnosis?.recoveryPath?.simplerExplanation || 'Verified optimal industry pattern.'));
 
         const visualKey = `${coursePrefix}:${dayNum}:${blockIndex}`;
-        let visual = getVisual(coursePrefix, dayNum, blockIndex);
-        if (!visual) {
-          const bTitleLow = (block.title || '').toLowerCase();
-          if (coursePrefix.includes('iot') || coursePrefix.includes('sec') || bTitleLow.includes('bit') || bTitleLow.includes('register')) {
-            visual = {
-              template: 'register-bits',
-              title: `${block.title} Bit Architecture`,
-              steps: [{
-                at: 'intro',
-                caption: `Hardware register layout for ${block.title}`,
-                registerName: `${coursePrefix.toUpperCase()}_CTRL`,
-                bitWidth: 8,
-                hexValue: '0x80',
-                decimalValue: 128,
-                bits: [
-                  { index: 7, name: 'EN', value: 1, tone: 'ok' },
-                  { index: 6, name: 'RDY', value: 0, tone: 'idle' },
-                  { index: 5, name: 'IRQ', value: 0, tone: 'idle' },
-                  { index: 4, value: 0, tone: 'idle' },
-                  { index: 3, value: 0, tone: 'idle' },
-                  { index: 2, value: 0, tone: 'idle' },
-                  { index: 1, value: 0, tone: 'idle' },
-                  { index: 0, name: 'ERR', value: 0, tone: 'idle' },
-                ]
-              }]
-            } as any;
-          } else if (coursePrefix.includes('scrm') || coursePrefix.includes('marketing') || coursePrefix.includes('sales') || coursePrefix.includes('dmkt') || bTitleLow.includes('funnel') || bTitleLow.includes('pipeline') || bTitleLow.includes('conversion')) {
-            visual = {
-              template: 'funnel',
-              title: `${block.title} Pipeline`,
-              steps: [{
-                at: 'intro',
-                caption: `Conversion pipeline for ${block.title}`,
-                activeStageId: 'target',
-                stages: [
-                  { id: 'top', label: 'Total Volume', value: 10000, percentage: 100 },
-                  { id: 'qual', label: 'Qualified Stage', value: 4500, percentage: 45, dropoffRate: 55 },
-                  { id: 'target', label: 'Active Processed', value: 1800, percentage: 18, dropoffRate: 60 },
-                  { id: 'final', label: 'Verified Outcome', value: 540, percentage: 5.4, dropoffRate: 70 },
-                ]
-              }]
-            } as any;
-          } else if (coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance')) {
-            visual = {
-              template: 'ledger-sheet',
-              title: `${block.title} Ledger Entry`,
-              steps: [{
-                at: 'intro',
-                caption: `General ledger balances for ${block.title}`,
-                title: `${block.title} Journal`,
-                isBalanced: true,
-                totalDebit: 1000,
-                totalCredit: 1000,
-                entries: [
-                  { id: 'TXN-01', account: 'Operating Account', debit: 1000, balance: 1000, tone: 'data' },
-                  { id: 'TXN-02', account: 'Cash Equivalents', credit: 1000, balance: 0, tone: 'ok' },
-                ]
-              }]
-            } as any;
-          } else {
-            visual = {
-              template: 'flow',
-              title: `${block.title} Flow`,
-              nodes: [
-                { id: 'in', label: 'Input State', tappable: true },
-                { id: 'proc', label: `${block.title.slice(0, 16)}`, tappable: true },
-                { id: 'out', label: 'Verified State', tappable: true }
-              ],
-              steps: [{
-                at: 'intro',
-                caption: `Execution cycle for ${block.title}`,
-                values: { in: 'Data', proc: 'Process', out: 'Success' },
-                tones: { in: 'data', proc: 'data', out: 'ok' },
-                arrows: [['in', 'proc'], ['proc', 'out']]
-              }]
-            } as any;
-          }
-        }
+        const visual = getVisual(coursePrefix, dayNum, blockIndex) || synthesizeLongLessonVisual(coursePrefix, dayNum, blockIndex, { title: block.title || `Day ${dayNum} Block ${blockIndex + 1}` });
 
         return {
           title: block.title,

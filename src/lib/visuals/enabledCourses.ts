@@ -30,9 +30,14 @@
 export const ENABLED_COURSES: readonly string[] = [
   'python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py',
   'react-basics', 'node-web', 'dsa-optim', 'devops', 'cloud', 'dist', 'cyber', 'ai', 'sre-web', 'stream-web', 'aideploy-web',
-  'iot_edge', 'iot_sec', 'iot_net', 'iot_emb', 'bcom_ops', 'bcom_scrm', 'bcom_ent', 'bcom_ecom', 'bcom_dmkt', 'bcom-marketing',
-  'bcom_ana', 'bcom-finance', 'bcom-accounting', 'bcom_ait', 'quant-systems', 'g3d', 'blockchain', 'mobile', 'design',
-  'fullstack-js', 'java-basics', 'excel_viz', 'git_vcs', 'soft-skills', 'comp_fund', 'ai_prompt'
+  'iot_edge', 'iot-edge', 'iot_sec', 'iot-sec', 'iot_net', 'iot-net', 'iot_emb', 'iot-emb',
+  'bcom_ops', 'bcom-ops', 'bcom_scrm', 'bcom-scrm', 'bcom_ent', 'bcom-ent', 'bcom_ecom', 'bcom-ecom',
+  'bcom_dmkt', 'bcom-dmkt', 'bcom-marketing', 'bcom_marketing',
+  'bcom_ana', 'bcom-ana', 'bcom-finance', 'bcom_finance', 'bcom-accounting', 'bcom_accounting',
+  'bcom_ait', 'bcom-ait', 'bcom_tax', 'bcom-tax', 'bcom_aud', 'bcom-aud', 'bcom_ban', 'bcom-ban', 'bcom_law', 'bcom-law',
+  'quant-systems', 'quant_systems', 'g3d', 'blockchain', 'mobile', 'design', 'design-web', 'design_web',
+  'fullstack-js', 'fullstack_js', 'java-basics', 'java_basics', 'excel_viz', 'excel-viz',
+  'git_vcs', 'git-vcs', 'soft-skills', 'soft_skills', 'comp_fund', 'comp-fund', 'ai_prompt'
 ];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {

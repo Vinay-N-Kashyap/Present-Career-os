@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'node:fs';
 import path from 'node:path';
 import { isCourseVisualsEnabled } from '@/lib/visuals/enabledCourses';
+import { getLongLesson } from '@/lib/data/longLessons';
+import { synthesizeLongLessonVisual } from '@/lib/visuals/loadVisuals';
 
 export async function GET(req: NextRequest) {
   try {
@@ -35,6 +37,30 @@ export async function GET(req: NextRequest) {
     );
 
     if (!fs.existsSync(filePath)) {
+      const longLesson = getLongLesson(prefix, day);
+      if (longLesson && Array.isArray(longLesson.parts) && longLesson.parts.length > 0) {
+        const entries = longLesson.parts.map((part, idx) => {
+          const filled = synthesizeLongLessonVisual(prefix, day, idx, part);
+          return {
+            partTitle: part.title,
+            codeHash: `synth-${prefix}-${day}-${idx}`,
+            spec: { template: filled?.template || 'flow' },
+            filled: filled || { template: 'none', reason: 'Disabled' }
+          };
+        });
+        return NextResponse.json({
+          schemaVersion: 1,
+          prefix,
+          day,
+          promptSha: 'deterministic-synth-v1',
+          model: 'domain-visual-synthesizer',
+          entries
+        }, {
+          headers: {
+            'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+          },
+        });
+      }
       return NextResponse.json({ prefix, day, entries: [] });
     }
 
