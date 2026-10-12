@@ -99,7 +99,7 @@ export function LessonQuizBlock({
     const total = hybridExamQuestions.length;
     const pct = Math.round((examCorrectCount / (total || 1)) * 100);
     return (
-      <div style={{ textAlign: 'center', padding: '24px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <div data-testid="quiz-passed-banner" style={{ textAlign: 'center', padding: '24px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
         <span style={{ fontSize: 46 }}>🎓</span>
         <h3 style={{ fontSize: 20, fontWeight: 900, color: 'var(--green)' }}>Passed!</h3>
         <p style={{ fontSize: 14, color: 'var(--t2)', lineHeight: 1.5, maxWidth: 500, margin: '0 auto' }}>
@@ -124,7 +124,7 @@ export function LessonQuizBlock({
     const total = hybridExamQuestions.length;
     const pct = Math.round((examCorrectCount / (total || 1)) * 100);
     return (
-      <div style={{ textAlign: 'center', padding: '24px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
+      <div data-testid="quiz-failed-banner" style={{ textAlign: 'center', padding: '24px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
         <span style={{ fontSize: 46 }}>❌</span>
         <h3 style={{ fontSize: 20, fontWeight: 900, color: 'var(--danger)' }}>Not passed yet</h3>
         <p style={{ fontSize: 14, color: 'var(--t2)', lineHeight: 1.5, maxWidth: 480, margin: '0 auto' }}>
@@ -203,13 +203,52 @@ export function LessonQuizBlock({
     }
   };
 
+  const progressPct = Math.round(((examQuestionIndex + (mcqChecked ? 1 : 0)) / Math.max(1, hybridExamQuestions.length)) * 100);
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, textAlign: 'left' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h4 style={{ fontSize: 15.5, fontWeight: 900, color: teacherAccent }}>{quizTitle}</h4>
-        <span style={{ fontSize: 11.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
-          Question {examQuestionIndex + 1} of {hybridExamQuestions.length}
-        </span>
+    <div data-testid="lesson-quiz-block" style={{ display: 'flex', flexDirection: 'column', gap: 14, textAlign: 'left' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+        <h4 style={{ fontSize: 15.5, fontWeight: 900, color: teacherAccent, margin: 0 }}>{quizTitle}</h4>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span
+            data-testid="quiz-score-pill"
+            style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: 'var(--t2)',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid var(--border)',
+              borderRadius: 999,
+              padding: '3px 10px',
+              fontFamily: 'var(--font-mono)',
+            }}
+          >
+            🎯 Score: {examCorrectCount}/{examQuestionIndex} • Pass: 70%
+          </span>
+          <span style={{ fontSize: 11.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+            Question {examQuestionIndex + 1} of {hybridExamQuestions.length}
+          </span>
+        </div>
+      </div>
+
+      <div
+        data-testid="quiz-progress-bar"
+        style={{
+          width: '100%',
+          height: 6,
+          borderRadius: 999,
+          background: 'rgba(255,255,255,0.06)',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            width: `${progressPct}%`,
+            height: '100%',
+            background: teacherAccent || 'var(--accent)',
+            transition: 'width 0.25s ease',
+          }}
+        />
       </div>
 
       <div style={{

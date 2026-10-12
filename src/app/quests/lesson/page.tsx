@@ -618,6 +618,7 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
             isInteractive={state.isInteractive}
             examPassed={state.examPassed}
             maxUnlockedSlide={state.maxUnlockedSlide}
+            understandingConfirmed={state.understandingConfirmed}
             isTest={Boolean(parseTestQuestId(questId))}
           />
 

@@ -20,6 +20,8 @@ interface LessonHeaderProps {
   isInteractive: boolean;
   examPassed: boolean;
   maxUnlockedSlide?: number;
+  /** Per-slide concept check confirmation map to prevent skipping unconfirmed slides via header pills. */
+  understandingConfirmed?: Record<number, boolean>;
   /** A test after 5 days: no teaching slides, so no "skip to code". */
   isTest?: boolean;
 }
@@ -42,10 +44,11 @@ export function LessonHeader({
   isInteractive,
   examPassed,
   maxUnlockedSlide = 0,
+  understandingConfirmed,
   isTest = false,
 }: LessonHeaderProps) {
   return (
-    <div className="lesson-header-root">
+    <div className="lesson-header-root" data-testid="lesson-header-root">
       <style>{`
         .lesson-header-root {
           display: flex;
@@ -237,7 +240,7 @@ export function LessonHeader({
         )}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: 8 }}>
-          <span style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
+          <span data-testid="lesson-slide-counter" style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
             Slide {currentSlide + 1} / {totalSlides}
           </span>
           <div className="lesson-progress-pills-row">
@@ -269,6 +272,7 @@ export function LessonHeader({
               return (
                 <div
                   key={idx}
+                  data-testid={`lesson-progress-pill-${idx}`}
                   className="lesson-progress-pill"
                   title={isExam ? (isLocked ? 'Exam Locked (Complete earlier slides)' : 'Exam Stage') : isLocked ? `Slide ${idx + 1} (Locked)` : `Slide ${idx + 1}`}
                   onClick={() => {
@@ -278,6 +282,16 @@ export function LessonHeader({
                       } else {
                         toast.info("Slide Locked 🔒", "Complete earlier slides before advancing to this stage.");
                       }
+                      return;
+                    }
+                    if (
+                      idx > currentSlide &&
+                      understandingConfirmed &&
+                      currentSlide > 0 &&
+                      currentSlide < totalSlides - 1 &&
+                      !understandingConfirmed[currentSlide - 1]
+                    ) {
+                      toast.info("Concept Check Required 🔒", "Answer the concept check on the current slide before jumping ahead.");
                       return;
                     }
                     stopSpeaking();

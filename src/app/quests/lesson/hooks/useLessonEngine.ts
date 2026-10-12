@@ -1037,7 +1037,9 @@ export function useLessonEngine({
           let changed = false;
           const updated = prevSlides.map((slide, i) => {
             if (slide.visual) return slide;
-            const fetched = getVisual(prefix, dayNum, i);
+            const fetched =
+              getVisual(prefix, dayNum, i) ||
+              synthesizeLongLessonVisual(prefix, dayNum, i, { title: slide.title || `Day ${dayNum} Part ${i + 1}` });
             if (fetched) {
               changed = true;
               return { ...slide, visual: fetched };
@@ -1129,6 +1131,47 @@ export function useLessonEngine({
       }
     }
   }, [doubtCount, userId, questId]);
+
+  // Restore mid-lesson slide & concept-check progress on reload/network drop
+  useEffect(() => {
+    if (typeof window === 'undefined' || !questId || isTestMode) return;
+    try {
+      const saved = localStorage.getItem(`pinit_${userId}_lesson_progress_${questId}`);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (typeof parsed.maxUnlockedSlide === 'number' && parsed.maxUnlockedSlide > 0) {
+          setMaxUnlockedSlide(prev => Math.max(prev, parsed.maxUnlockedSlide));
+        }
+        if (parsed.understandingConfirmed && typeof parsed.understandingConfirmed === 'object') {
+          setUnderstandingConfirmed(prev => ({ ...parsed.understandingConfirmed, ...prev }));
+        }
+      }
+    } catch (e) {
+      console.error('Failed to restore lesson progress:', e);
+    }
+  }, [userId, questId, isTestMode, setMaxUnlockedSlide, setUnderstandingConfirmed]);
+
+  // Persist mid-lesson slide & concept-check progress (clear when exam passed)
+  useEffect(() => {
+    if (typeof window === 'undefined' || !questId || isTestMode) return;
+    try {
+      const storageKey = `pinit_${userId}_lesson_progress_${questId}`;
+      if (examPassed) {
+        localStorage.removeItem(storageKey);
+        return;
+      }
+      if (maxUnlockedSlide > 0 || Object.keys(understandingConfirmed).length > 0) {
+        localStorage.setItem(storageKey, JSON.stringify({
+          currentSlide,
+          maxUnlockedSlide,
+          understandingConfirmed,
+          updatedAt: Date.now(),
+        }));
+      }
+    } catch (e) {
+      console.error('Failed to persist lesson progress:', e);
+    }
+  }, [userId, questId, isTestMode, currentSlide, maxUnlockedSlide, understandingConfirmed, examPassed]);
 
   /** For course tests: the server's verdict after the student passes on screen. */
   const [testRecord, setTestRecord] = useState<{ state: 'checking' | 'recorded' | 'failed'; message?: string } | null>(null);

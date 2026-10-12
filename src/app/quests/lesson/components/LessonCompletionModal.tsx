@@ -72,20 +72,23 @@ export function LessonCompletionModal({
           justifyContent: 'center',
           padding: 20
         }} className="animate-fade-in">
-          <div style={{
-            background: 'var(--bg2)',
-            border: failed ? '1.5px solid var(--danger)' : '1.5px solid var(--green)',
-            borderRadius: 24,
-            padding: '32px 24px',
-            maxWidth: 420,
-            width: '100%',
-            textAlign: 'center',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 16
-          }}>
+          <div
+            data-testid="lesson-completion-modal"
+            style={{
+              background: 'var(--bg2)',
+              border: failed ? '1.5px solid var(--danger)' : '1.5px solid var(--green)',
+              borderRadius: 24,
+              padding: '32px 24px',
+              maxWidth: 420,
+              width: '100%',
+              textAlign: 'center',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 16
+            }}
+          >
             <span style={{ fontSize: 53, animation: checking || failed ? undefined : 'pulse 2s infinite' }}>{checking ? '⏳' : failed ? '⚠️' : '🏆'}</span>
             <h2 style={{ fontSize: 22, fontWeight: 900, color: failed ? 'var(--danger)' : 'var(--green)', fontFamily: 'var(--font-display)', margin: 0 }}>
               {checking ? 'Checking your answers…' : failed ? 'Test not recorded' : testRecord ? 'Test Passed!' : 'Syllabus Passed!'}
@@ -106,25 +109,31 @@ export function LessonCompletionModal({
               width: '100%',
               marginTop: 6
             }}>
-              <div style={{
-                flex: 1,
-                background: 'rgba(var(--success-rgb), 0.08)',
-                border: '1.5px solid rgba(var(--success-rgb), 0.2)',
-                borderRadius: 14,
-                padding: '10px 6px',
-                textAlign: 'center'
-              }}>
+              <div
+                data-testid="completion-xp-badge"
+                style={{
+                  flex: 1,
+                  background: 'rgba(var(--success-rgb), 0.08)',
+                  border: '1.5px solid rgba(var(--success-rgb), 0.2)',
+                  borderRadius: 14,
+                  padding: '10px 6px',
+                  textAlign: 'center'
+                }}
+              >
                 <div style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>XP Earned</div>
                 <div style={{ fontSize: 20, fontWeight: 900, color: 'var(--green)', marginTop: 2 }}>+{displayXp} XP</div>
               </div>
-              <div style={{
-                flex: 1,
-                background: 'rgba(234,179,8,0.08)',
-                border: '1.5px solid rgba(234,179,8,0.2)',
-                borderRadius: 14,
-                padding: '10px 6px',
-                textAlign: 'center'
-              }}>
+              <div
+                data-testid="completion-pins-badge"
+                style={{
+                  flex: 1,
+                  background: 'rgba(234,179,8,0.08)',
+                  border: '1.5px solid rgba(234,179,8,0.2)',
+                  borderRadius: 14,
+                  padding: '10px 6px',
+                  textAlign: 'center'
+                }}
+              >
                 <div style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>Pins Bonus</div>
                 <div style={{ fontSize: 20, fontWeight: 900, color: 'var(--amber)', marginTop: 2 }}>+{displayPins} Pins</div>
               </div>
@@ -132,6 +141,7 @@ export function LessonCompletionModal({
 
             {failed && onRetryTest && (
               <button
+                data-testid="completion-retry-banner"
                 onClick={onRetryTest}
                 className="btn-primary"
                 style={{ marginTop: 10, width: '100%', padding: '12px 20px', fontSize: 14.5, fontWeight: 900, borderRadius: 12, background: 'var(--accent)' }}
@@ -141,6 +151,7 @@ export function LessonCompletionModal({
             )}
             {failed && (
               <button
+                data-testid="btn-return-roadmap-failed"
                 onClick={finishLessonAndReturn}
                 style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 13, textDecoration: 'underline', cursor: 'pointer' }}
               >
@@ -149,6 +160,7 @@ export function LessonCompletionModal({
             )}
 
             {!checking && !failed && <button
+              data-testid="btn-return-roadmap"
               onClick={finishLessonAndReturn}
               className="btn-primary animate-pulse"
               style={{
