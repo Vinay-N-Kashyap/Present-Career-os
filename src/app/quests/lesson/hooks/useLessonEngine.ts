@@ -341,6 +341,8 @@ const RUNNER_LABELS: Record<string, string> = {
   'bcom_ana': '📊 Business Analytics & Decision Intelligence Simulator',
   'bcom-accounting': '📊 Digital Accounting & ERP Simulator',
   'quant-systems': '📈 C++ Low-Latency & Quantitative Trading Simulator',
+  'excel_viz': '📊 Excel & Business Analytics Python Engine',
+  'ai_prompt': '🧠 Prompt Engineering & LLM Architecture Python Engine',
   'iot_sec': '🔒 IoT Security & Root of Trust Simulator',
   'iot_edge': '🧠 Edge AI & TinyML TFLM Simulator',
   'ai': '🤖 AI & LLM Engine Simulator',
@@ -960,7 +962,8 @@ export function useLessonEngine({
       } else if (isBash) {
         codeExample = `#!/bin/bash\n# POSIX Script for ${title}\necho "Executing CLI sequence for ${title}..."\nmkdir -p workspace/build\necho "Status: Verified" > workspace/build/status.log\ncat workspace/build/status.log`;
       } else if (isCpp) {
-        codeExample = `#include <iostream>\n\n// Embedded Systems Routine for ${title}\nint executeRoutine() {\n    std::cout << "Routine active: ${title.replace(/"/g, "")}" << std::endl;\n    return 0;\n}\n\nint main() {\n    return executeRoutine();\n}`;
+        const routineDomain = coursePrefix === 'quant-systems' ? 'Low-Latency Quantitative Trading Routine' : 'Embedded Systems Routine';
+        codeExample = `#include <iostream>\n\n// ${routineDomain} for ${title}\nint executeRoutine() {\n    std::cout << "Routine active: ${title.replace(/"/g, "")}" << std::endl;\n    return 0;\n}\n\nint main() {\n    return executeRoutine();\n}`;
       } else if (isReact) {
         codeExample = `// React Component for ${title}\nconsole.log("Mounting component for ${title}...");\nfunction renderComponent() {\n  const state = { active: true, topic: "${title.replace(/"/g, "")}" };\n  console.log("Component state initialized:", JSON.stringify(state));\n  return state;\n}\nrenderComponent();`;
         if (tLow.includes('state') || tLow.includes('hook')) {
@@ -986,7 +989,23 @@ export function useLessonEngine({
 
       const visualKey = `${coursePrefix}:${dayNum}:${index}`;
       let visual: any;
-      if (coursePrefix.includes('iot') || coursePrefix.includes('sec') || tLow.includes('bit') || tLow.includes('register') || isCpp) {
+      if (coursePrefix === 'quant-systems' && (tLow.includes('book') || tLow.includes('order') || tLow.includes('trade') || tLow.includes('price') || tLow.includes('exchange'))) {
+        visual = {
+          template: 'ledger-sheet',
+          title: `${title} Order Book`,
+          steps: [{
+            at: 'intro',
+            caption: `Order book matching queue for ${title}`,
+            title: `${title} Limit Order Book`,
+            isBalanced: true,
+            runningBalance: 15025,
+            entries: [
+              { id: 'bid-1', date: '2026-10-12', account: 'Bid Depth (FIFO)', debit: 15025, credit: 0, balance: 15025 },
+              { id: 'ask-1', date: '2026-10-12', account: 'Ask Depth (FIFO)', debit: 0, credit: 15025, balance: 0 },
+            ]
+          }]
+        };
+      } else if (coursePrefix.includes('iot') || coursePrefix.includes('sec') || tLow.includes('bit') || tLow.includes('register') || (isCpp && coursePrefix !== 'quant-systems')) {
         visual = {
           template: 'register-bits',
           title: `${title} Registers`,
@@ -1009,7 +1028,7 @@ export function useLessonEngine({
             ]
           }]
         };
-      } else if (coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance') || tLow.includes('ledger') || tLow.includes('balance')) {
+      } else if (coursePrefix === 'excel_viz' || coursePrefix.includes('excel') || coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance') || tLow.includes('ledger') || tLow.includes('balance')) {
         visual = {
           template: 'ledger-sheet',
           title: `${title} Ledger`,

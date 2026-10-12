@@ -36,6 +36,8 @@ import { AI_DEPLOY_WEB_LONG_LESSONS } from './aiDeployWebLongLessons';
 import { COMP_FUND_LONG_LESSONS } from './compFundLongLessons';
 import { GIT_VCS_LONG_LESSONS } from './gitVcsLongLessons';
 import { IOT_EMB_LONG_LESSONS } from './iotEmbLongLessons';
+import { QUANT_SYSTEMS_LONG_LESSONS } from './quantSystemsLongLessons';
+import { EXCEL_VIZ_LONG_LESSONS } from './excelVizLongLessons';
 
 export interface LongLessonCheck {
   question: string;
@@ -113,6 +115,9 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   comp_fund: COMP_FUND_LONG_LESSONS,
   git_vcs: GIT_VCS_LONG_LESSONS,
   iot_emb: IOT_EMB_LONG_LESSONS,
+  'quant-systems': QUANT_SYSTEMS_LONG_LESSONS,
+  excel_viz: EXCEL_VIZ_LONG_LESSONS,
+  ai_prompt: PROMPT_PYTHON_LONG_LESSONS,
 };
 
 /** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
