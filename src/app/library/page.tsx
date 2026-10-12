@@ -458,7 +458,7 @@ export default function StudentLibrary() {
           <div className="reader-modal">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border)', paddingBottom: 12 }}>
               <div>
-                <h4 style={{ fontFamily: 'var(--font-display)', fontSize: 16.5, fontWeight: 900, color: 'var(--accent)' }}>⚡ BGS Digital Library E-Reader</h4>
+                <h4 style={{ fontFamily: 'var(--font-display)', fontSize: 16.5, fontWeight: 900, color: 'var(--accent)' }}>⚡ Digital Campus Library E-Reader</h4>
                 <div style={{ fontSize: 13, color: 'var(--t1)', fontWeight: 800, marginTop: 2 }}>{readingEbook.title}</div>
               </div>
               <button onClick={() => setReadingEbook(null)} style={{ border: 'none', background: 'none', fontSize: 20, cursor: 'pointer', color: 'var(--t2)' }}>✕</button>

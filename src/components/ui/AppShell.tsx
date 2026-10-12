@@ -348,6 +348,10 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const isStudent   = !['admin','superadmin','teacher','recruiter','parent','consultant'].includes(user?.role || '');
   const pageTitle   = PAGE_TITLES[pathname] || 'PinIT';
 
+  const ob = ((user as any)?.onboardingAnswers || (user as any)?.onboarding_answers || {}) as Record<string, any>;
+  const institutionName = (user as any)?.institutionName || (user as any)?.collegeName || ob.college || ob.university || ob.institution || 'Campus Academic';
+  const institutionInitials = (user as any)?.institutionInitials || (institutionName ? institutionName.split(' ').map((w: string) => w[0]).join('').slice(0, 4).toUpperCase() : 'HUB');
+
   useEffect(() => { 
     setMobileOpen(false); 
     setActiveAcademicTab(null);
@@ -572,12 +576,12 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           {/* Header */}
           {!rightCollapsed ? (
             <div style={{ padding: '16px 14px 12px', borderBottom: '1px solid var(--border)' }}>
-              <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)' }}>BGS Academic</div>
-              <div style={{ fontSize: 11, color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase' }}>Portal</div>
+              <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)' }}>{institutionName}</div>
+              <div style={{ fontSize: 11, color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase' }}>Services &amp; Life</div>
             </div>
           ) : (
             <div style={{ padding: '16px 0 12px', borderBottom: '1px solid var(--border)', textAlign: 'center', fontSize: 13, fontWeight: 900, color: 'var(--accent)' }}>
-              BGS
+              {institutionInitials}
             </div>
           )}
 

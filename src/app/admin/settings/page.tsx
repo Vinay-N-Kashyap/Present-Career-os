@@ -1,5 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useAuth } from '@/lib/context/AuthContext';
+import { useRouter } from 'next/navigation';
 import { api } from '@/lib/api/client';
 
 type PortalRole = 'admin' | 'recruiter' | 'consultant';
@@ -180,6 +182,20 @@ const REQUIREMENTS_DATA: Record<PortalRole, RequirementItem[]> = {
 import { Suspense } from 'react';
 
 function AdminSettingsContent() {
+  const { user, loading: authLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (authLoading) return;
+    if (!user) {
+      router.replace('/login');
+      return;
+    }
+    if (!['admin', 'superadmin'].includes(user.role)) {
+      router.replace('/dashboard');
+    }
+  }, [user, authLoading, router]);
+
   const [settingsTab, setSettingsTab] = useState<SettingsTab>('requirements');
   const [activeTab, setActiveTab] = useState<PortalRole>('admin');
 
@@ -324,6 +340,22 @@ function AdminSettingsContent() {
       prev.map(item => item.id === id ? { ...item, checked: !item.checked } : item)
     );
   };
+
+  if (authLoading) {
+    return (
+      <div style={{ padding: 40, color: 'var(--t3)', textAlign: 'center', fontFamily: 'system-ui' }}>
+        Authenticating admin session...
+      </div>
+    );
+  }
+
+  if (!user || !['admin', 'superadmin'].includes(user.role)) {
+    return (
+      <div style={{ padding: 40, color: 'var(--coral)', textAlign: 'center', fontWeight: 600 }}>
+        Access Denied: Administrative privileges required.
+      </div>
+    );
+  }
 
   return (
     <div style={{ maxWidth: 1280, margin: '0 auto', paddingBottom: 60 }} className="animate-fade-in">
