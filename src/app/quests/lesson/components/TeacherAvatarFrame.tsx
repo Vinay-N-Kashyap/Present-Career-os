@@ -47,6 +47,8 @@ export function TeacherAvatarFrame({
     <div
       className="teacher-avatar-docked-frame"
       data-testid="teacher-avatar-dock"
+      data-speech-active={isPlaying ? 'true' : 'false'}
+      title={speechText ? `${teacher.name}: "${speechText.slice(0, 160)}${speechText.length > 160 ? '…' : ''}"` : `Tutor: ${teacher.name}`}
       style={{
         position: 'relative',
         display: 'flex',
@@ -129,6 +131,7 @@ export function TeacherAvatarFrame({
       {/* Teacher Name & Status (Desktop / Tablet) */}
       <div className="teacher-avatar-docked-info">
         <span
+          data-testid="teacher-avatar-name"
           style={{
             fontSize: '11.5px',
             fontWeight: 800,
@@ -140,6 +143,7 @@ export function TeacherAvatarFrame({
           {teacher.name}
         </span>
         <span
+          data-testid="teacher-avatar-status"
           style={{
             fontSize: '9.5px',
             fontWeight: 600,

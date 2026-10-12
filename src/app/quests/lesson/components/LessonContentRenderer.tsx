@@ -254,7 +254,7 @@ export function LessonContentRenderer({
         {/* Right Column: Dynamic Panel (either Socratic Chat or Slide Lecture) */}
         <div className="interactive-right-col">
         {isInteractive ? (
-          <>
+          <div data-testid="socratic-chat-panel" style={{ display: 'flex', flexDirection: 'column', height: '100%', flex: 1 }}>
             {/* Chat Panel Header */}
             <div style={{
               padding: '10px 14px',
@@ -291,6 +291,7 @@ export function LessonContentRenderer({
                 chatMessages.map((msg, idx) => (
                   <div
                     key={idx}
+                    data-testid={`socratic-chat-msg-${idx}`}
                     className={`chat-bubble ${msg.role}`}
                   >
                     {msg.content}
@@ -324,18 +325,24 @@ export function LessonContentRenderer({
                 width: '100%'
               }}>
                 <button
+                  type="button"
+                  data-testid="socratic-suggestion-0"
                   onClick={() => setChatInput("Explain as simple as you can")}
                   className="suggestion-pill"
                 >
                   💡 explain as simple as you can
                 </button>
                 <button
+                  type="button"
+                  data-testid="socratic-suggestion-1"
                   onClick={() => setChatInput("Give me a real-world analogy")}
                   className="suggestion-pill"
                 >
                   💡 Give me a real-world analogy
                 </button>
                 <button
+                  type="button"
+                  data-testid="socratic-suggestion-2"
                   onClick={() => setChatInput("Show me another code example")}
                   className="suggestion-pill"
                 >
@@ -355,6 +362,7 @@ export function LessonContentRenderer({
               >
                 <button
                   type="button"
+                  data-testid="socratic-voice-btn"
                   onClick={startVoiceInput}
                   style={{
                     background: isRecording ? 'rgba(var(--danger-rgb),  0.15)' : 'var(--bg3)',
@@ -377,6 +385,7 @@ export function LessonContentRenderer({
                 </button>
                 <input
                   type="text"
+                  data-testid="socratic-chat-input"
                   value={chatInput}
                   onChange={e => setChatInput(e.target.value)}
                   placeholder={`Ask ${teacher.name}...`}
@@ -394,6 +403,7 @@ export function LessonContentRenderer({
                 />
                 <button
                   type="submit"
+                  data-testid="socratic-chat-send"
                   disabled={!chatInput.trim() || chatLoading}
                   style={{
                     padding: '8px 14px',
@@ -443,11 +453,11 @@ export function LessonContentRenderer({
                 </button>
               )}
             </div>
-          </>
+          </div>
         ) : (
           <div className="interactive-right-scroll-area">
             {currentSlide === 0 && (
-              <div style={{ textAlign: 'center', padding: '12px 0' }}>
+              <div data-testid="lesson-intro-card" style={{ textAlign: 'center', padding: '12px 0' }}>
                 <h3 style={{ fontSize: 15.5, fontWeight: 900, color: 'var(--t1)' }}>{questData?.title || 'Today\'s lesson'}</h3>
                 <p style={{ fontSize: 12.5, color: 'var(--t3)', marginTop: 4, lineHeight: 1.45, maxWidth: 650, margin: '4px auto 0' }}>
                   {questData?.desc && questData.desc.length < 220
@@ -484,9 +494,40 @@ export function LessonContentRenderer({
               const bulletPoints = Array.isArray(slide.bulletPoints) ? slide.bulletPoints : [];
               return (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, textAlign: 'left' }}>
-                  <h4 data-testid="lesson-slide-title" style={{ fontSize: 16.5, fontWeight: 900, color: teacher.accent, margin: 0 }}>
-                    {renderWithTappableWords(slide.title || 'Lesson Slide', tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
-                  </h4>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
+                    <h4 data-testid="lesson-slide-title" style={{ fontSize: 16.5, fontWeight: 900, color: teacher.accent, margin: 0 }}>
+                      {renderWithTappableWords(slide.title || 'Lesson Slide', tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
+                    </h4>
+                    <button
+                      type="button"
+                      data-testid="btn-read-slide"
+                      onClick={() => {
+                        const text = getSpeakerText();
+                        if (text) {
+                          speakWithAvatar(
+                            text,
+                            teacherId,
+                            () => setIsPlaying(true),
+                            () => setIsPlaying(false)
+                          );
+                        }
+                      }}
+                      title="Listen to teacher explanation"
+                      style={{
+                        background: 'rgba(255,255,255,0.06)',
+                        border: '1px solid var(--border)',
+                        borderRadius: 999,
+                        padding: '3px 10px',
+                        fontSize: 11,
+                        fontWeight: 700,
+                        color: 'var(--t2)',
+                        cursor: 'pointer',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {isPlaying ? '🔊 Speaking…' : '🔊 Listen'}
+                    </button>
+                  </div>
 
                   {/* Long-format lesson: the teacher's explanation, in plain words */}
                   {Array.isArray(slide.explain) && slide.explain.length > 0 && (
@@ -500,7 +541,7 @@ export function LessonContentRenderer({
                   )}
 
                   {slide.example && (
-                    <div style={{ padding: '12px 16px', borderRadius: 14, background: 'rgba(var(--info-rgb), 0.08)', border: '1px solid rgba(var(--info-rgb), 0.3)' }}>
+                    <div data-testid="lesson-everyday-example" style={{ padding: '12px 16px', borderRadius: 14, background: 'rgba(var(--info-rgb), 0.08)', border: '1px solid rgba(var(--info-rgb), 0.3)' }}>
                       <div style={{ fontSize: 12, fontWeight: 900, color: 'var(--info)', marginBottom: 4 }}>🌍 Everyday example</div>
                       <div style={{ fontSize: 13.5, color: 'var(--t1)', lineHeight: 1.55 }}>
                         {renderWithTappableWords(slide.example, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
@@ -596,7 +637,7 @@ export function LessonContentRenderer({
                   )}
 
                   {Array.isArray(slide.codeNotes) && slide.codeNotes.length > 0 && (
-                    <div style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--bg2)', border: '1px solid var(--border)' }}>
+                    <div data-testid="lesson-code-notes" style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--bg2)', border: '1px solid var(--border)' }}>
                       <div style={{ fontSize: 12, fontWeight: 900, color: 'var(--t2)', marginBottom: 6 }}>🔎 What the code does</div>
                       <ul style={{ listStyleType: 'none', paddingLeft: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
                         {slide.codeNotes.map((n: { line: number; note: string }, i: number) => (
@@ -610,7 +651,7 @@ export function LessonContentRenderer({
                   )}
 
                   {slide.tryIt && (
-                    <div style={{ padding: '12px 16px', borderRadius: 14, background: 'rgba(var(--success-rgb), 0.08)', border: '1px solid rgba(var(--success-rgb), 0.3)' }}>
+                    <div data-testid="lesson-try-it" style={{ padding: '12px 16px', borderRadius: 14, background: 'rgba(var(--success-rgb), 0.08)', border: '1px solid rgba(var(--success-rgb), 0.3)' }}>
                       <div style={{ fontSize: 12, fontWeight: 900, color: 'var(--success)', marginBottom: 4 }}>✍️ Your turn</div>
                       <div style={{ fontSize: 13.5, color: 'var(--t1)', lineHeight: 1.55 }}>
                         {renderWithTappableWords(slide.tryIt, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}

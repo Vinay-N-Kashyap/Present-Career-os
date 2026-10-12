@@ -48,6 +48,7 @@ export function LessonNavigationBar({
   const isTestModeBypass = typeof window !== 'undefined' && window.location.search.includes('testMode=true');
   const isConfirmed = isLearningSlide ? Boolean(understandingConfirmed[currentSlide - 1]) : true;
   const isLocked = isLearningSlide && !isConfirmed && !isTestModeBypass;
+  const confirmedCount = Object.values(understandingConfirmed || {}).filter(Boolean).length;
 
   return (
     <div
@@ -162,6 +163,25 @@ export function LessonNavigationBar({
 
       {/* Right controls */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+        {slidesLength > 0 && (
+          <span
+            data-testid="lesson-check-progress-pill"
+            className="lesson-nav-label-desktop"
+            style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: confirmedCount >= slidesLength ? 'var(--success)' : 'var(--t3)',
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid var(--border)',
+              borderRadius: 999,
+              padding: '4px 10px',
+              fontFamily: 'var(--font-mono)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            ✓ {Math.min(confirmedCount, slidesLength)}/{slidesLength} Checks
+          </span>
+        )}
         {isLastSlide ? (
           <button
             data-testid="btn-finish-quest"
