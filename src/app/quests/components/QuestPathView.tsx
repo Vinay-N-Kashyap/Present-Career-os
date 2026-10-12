@@ -71,11 +71,18 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
   return (
     <>
       {/* ── MODE 2: Dynamic Goal-Based Snake Roadmap Path ───────────────── */}
-      <div className="animate-fade-in" id="quest-roadmap-chart-section">
+      <div
+        data-testid="quest-path-view-root"
+        className="animate-fade-in"
+        id="quest-roadmap-chart-section"
+      >
         
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28, flexWrap: 'wrap', gap: 12 }}>
           <div>
-            <h2 style={{ fontSize: 22, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)', letterSpacing: '-0.3px' }}>
+            <h2
+              data-testid="quest-roadmap-title"
+              style={{ fontSize: 22, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)', letterSpacing: '-0.3px' }}
+            >
               🧭 Dynamic Career Roadmap ({COURSES_REGISTRY.find(c => c.id === activeCourseId)?.title.split('(')[0].trim() || onboardingAnswers?.role || trajectory.roleTitle})
             </h2>
             <p style={{ fontSize: 14.5, color: 'var(--t3)', marginTop: 4 }}>
@@ -85,6 +92,8 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
 
           <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
             <button
+              type="button"
+              data-testid="btn-view-detailed-journey"
               onClick={() => setShowFullJourneyModal(true)}
               style={{
                 padding: '8px 16px',

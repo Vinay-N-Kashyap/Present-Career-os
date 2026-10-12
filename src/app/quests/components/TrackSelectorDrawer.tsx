@@ -216,19 +216,24 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
   return (
     <>
       {/* ── 🌟 4 PRIMARY SUB-TABS ───────────────────────────── */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 8,
-        padding: '6px',
-        borderRadius: 16,
-        background: 'var(--bg2)',
-        border: '1px solid var(--border)',
-        marginBottom: 20,
-        overflowX: 'auto',
-      }}>
+      <div
+        data-testid="track-selector-subtabs"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          padding: '6px',
+          borderRadius: 16,
+          background: 'var(--bg2)',
+          border: '1px solid var(--border)',
+          marginBottom: 20,
+          overflowX: 'auto',
+        }}
+      >
         {/* Tab 1: Unified Certification & Skill Passport */}
         <button
+          type="button"
+          data-testid="subtab-certification-passport"
           onClick={() => handleSubTabChange('certification_passport')}
           style={{
             flex: 1,
@@ -259,6 +264,8 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
 
         {/* Tab 2: Custom Roadmap */}
         <button
+          type="button"
+          data-testid="subtab-custom-roadmap"
           onClick={() => handleSubTabChange('custom_roadmap')}
           style={{
             flex: 1,
@@ -289,6 +296,8 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
 
         {/* Tab 3: Standalone Course */}
         <button
+          type="button"
+          data-testid="subtab-standalone"
           onClick={() => handleSubTabChange('standalone')}
           style={{
             flex: 1,
@@ -319,6 +328,8 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
 
         {/* Tab 4: Global Language Academy */}
         <button
+          type="button"
+          data-testid="subtab-language"
           onClick={() => handleSubTabChange('language')}
           style={{
             flex: 1,

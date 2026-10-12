@@ -193,6 +193,12 @@ export const COURSE_TO_ROLE: Record<string, string> = {
   'course-ai-digital-transformation': 'AI & Digital Transformation Business Specialist'
 };
 
+export type QuestsSubTab = 'certification_passport' | 'custom_roadmap' | 'standalone' | 'language';
+
+export function isValidSubTab(tab: string): tab is QuestsSubTab {
+  return ['certification_passport', 'custom_roadmap', 'standalone', 'language'].includes(tab);
+}
+
 /** The roadmap-modal track a typed goal names (same matching as onboarding), or null to keep the current one. */
 export function trackKeyForGoal(goal: string): string | null {
   const matched = matchTrackFromGoal(goal);

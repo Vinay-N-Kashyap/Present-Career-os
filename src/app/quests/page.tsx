@@ -17,7 +17,7 @@ function QuestsPageContent() {
   const prog = useQuestProgression();
 
   return (
-    <div className="quests-page" style={{ paddingBottom: 60 }}>
+    <div data-testid="quests-page-root" className="quests-page" style={{ paddingBottom: 60 }}>
       {/* ── TRACK SELECTOR & COURSE DRAWER COMMAND CENTER ─────────── */}
       <TrackSelectorDrawer
         activeSubTab={prog.activeSubTab}
@@ -162,7 +162,7 @@ function QuestsPageContent() {
 
 export default function QuestsPage() {
   return (
-    <Suspense fallback={<div style={{ padding: 40, textAlign: 'center', color: 'var(--t3)' }}>Loading Quests & Career Passport...</div>}>
+    <Suspense fallback={<div data-testid="quests-page-loading" style={{ padding: 40, textAlign: 'center', color: 'var(--t3)' }}>Loading Quests & Career Passport...</div>}>
       <QuestsPageContent />
     </Suspense>
   );
