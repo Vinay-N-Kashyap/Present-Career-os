@@ -166,12 +166,17 @@ export default function InterviewPage() {
     return chosen;
   }, []);
 
-  // Elapsed Session Timer
+  // Elapsed Session Timer (pauses when browser tab is hidden)
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const tabVisibleRef = useRef(true);
   useEffect(() => {
     if (isInterviewActive && activeStage !== 'results') {
-      const interval = setInterval(() => setElapsedSeconds(prev => prev + 1), 1000);
-      return () => clearInterval(interval);
+      const interval = setInterval(() => {
+        if (tabVisibleRef.current) setElapsedSeconds(prev => prev + 1);
+      }, 1000);
+      const onVisibilityChange = () => { tabVisibleRef.current = document.visibilityState === 'visible'; };
+      document.addEventListener('visibilitychange', onVisibilityChange);
+      return () => { clearInterval(interval); document.removeEventListener('visibilitychange', onVisibilityChange); };
     }
   }, [isInterviewActive, activeStage]);
 
@@ -514,6 +519,7 @@ export default function InterviewPage() {
     architectureQuestionPendingRef.current = false;
     setCodeRunFailed(false);
     setEvaluationResult(null);
+    finishingRef.current = false;
     setArchitectureEvaluation(null);
     setLatestTopology(null);
     setCodeSubmitted(false);
@@ -889,7 +895,10 @@ export default function InterviewPage() {
     }
   };
 
+  const finishingRef = useRef(false);
   const finishInterview = async () => {
+    if (finishingRef.current) return;
+    finishingRef.current = true;
     setActiveStage('results');
     const archetype: MindsetArchetype = cOS?.onboardingAnswers?.mindset_archetype || (user as any)?.mindset_archetype || 'Pattern Hunter';
 

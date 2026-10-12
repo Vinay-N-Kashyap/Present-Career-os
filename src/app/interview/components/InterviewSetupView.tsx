@@ -198,11 +198,20 @@ export const InterviewSetupView: React.FC<InterviewSetupViewProps> = ({
               <button
                 key={d}
                 onClick={() => setDifficulty(d)}
+                aria-label={`Difficulty: ${d}`}
+                data-testid={`difficulty-${d}`}
                 style={{ flex: 1, padding: '8px', borderRadius: 8, border: difficulty === d ? '2px solid var(--accent)' : '1px solid var(--border)', background: difficulty === d ? 'var(--accent-light)' : 'var(--bg3)', color: difficulty === d ? 'var(--accent)' : 'var(--t1)', fontWeight: 800, fontSize: 12.5, textTransform: 'capitalize', cursor: 'pointer' }}
               >
                 {d}
               </button>
             ))}
+          </div>
+          <div data-testid="difficulty-hint" style={{ marginTop: 6, fontSize: 11.5, color: 'var(--t3)', lineHeight: 1.4 }}>
+            {difficulty === 'easy'
+              ? '🟢 Warm-up mode — shorter rounds, gentler follow-ups, ideal for first-timers building confidence.'
+              : difficulty === 'normal'
+              ? '🟡 Standard corporate difficulty — balanced rubric scoring with realistic hiring-panel pressure.'
+              : '🔴 Senior-level rigor — aggressive follow-ups, strict boundary evaluation, top-percentile expectation.'}
           </div>
         </div>
 

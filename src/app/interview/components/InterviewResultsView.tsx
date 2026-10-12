@@ -229,6 +229,50 @@ export const InterviewResultsView: React.FC<InterviewResultsViewProps> = ({
       </div>
 
       {/* Action Buttons Row with PDF Print & Share */}
+      {/* STAR Framework Metrics & Improvement Suggestions */}
+      {(evaluationResult?.starMetrics || evaluationResult?.improvements) && (
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+          {evaluationResult?.starMetrics && (
+            <div className="iv-panel" style={{ padding: 18 }} data-testid="star-metrics-card">
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+                <span style={{ fontSize: 16.5 }}>⭐</span>
+                <h3 style={{ fontSize: 14, fontWeight: 800, margin: 0, color: 'var(--t1)' }}>STAR Framework Metrics</h3>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {['Situation', 'Task', 'Action', 'Result'].map((step, idx) => {
+                  const covered = idx < (evaluationResult.starMetrics.stepsCompleted ?? starStep);
+                  return (
+                    <div key={step} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12.5, padding: '4px 8px', borderRadius: 6, background: covered ? 'rgba(34,197,94,0.08)' : 'var(--bg3)' }}>
+                      <span>{covered ? '✅' : '⬜'}</span>
+                      <span style={{ fontWeight: 700, color: covered ? 'var(--green-mid)' : 'var(--t3)' }}>{step}</span>
+                    </div>
+                  );
+                })}
+              </div>
+              {evaluationResult.starMetrics.badge && (
+                <div style={{ marginTop: 8, fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 6, display: 'inline-block', background: 'rgba(var(--brand-rgb),0.1)', color: 'var(--accent-mid)', border: '1px solid rgba(var(--brand-rgb),0.2)' }}>
+                  🏅 {evaluationResult.starMetrics.badge}
+                </div>
+              )}
+            </div>
+          )}
+          {evaluationResult?.improvements && (
+            <div className="iv-panel" style={{ padding: 18 }} data-testid="improvements-card">
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+                <span style={{ fontSize: 16.5 }}>📈</span>
+                <h3 style={{ fontSize: 14, fontWeight: 800, margin: 0, color: 'var(--t1)' }}>Areas for Improvement</h3>
+              </div>
+              <p style={{ fontSize: 12.5, color: 'var(--t2)', lineHeight: 1.5, margin: 0 }}>
+                {typeof evaluationResult.improvements === 'string'
+                  ? evaluationResult.improvements
+                  : Array.isArray(evaluationResult.improvements)
+                    ? evaluationResult.improvements.join('. ')
+                    : 'Keep practicing to refine your approach.'}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
         <button onClick={startInterview} style={{ padding: 12, borderRadius: 10, background: 'linear-gradient(135deg, var(--success) 0%, var(--success-deep) 100%)', border: 'none', color: 'var(--text)', fontSize: 14, fontWeight: 900, cursor: 'pointer' }}>
           🔄 Practice Round Again
