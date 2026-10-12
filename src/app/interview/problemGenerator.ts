@@ -283,7 +283,7 @@ export function resolveDynamicCodingProblem(
         tierLabel: 'T5: Complexity'
       }
     ];
-  } else if (lower.includes('ai') || lower.includes('machine learning') || lower.includes('data')) {
+  } else if (/\bai\b/.test(lower) || lower.includes('machine learning') || lower.includes('data')) {
     problemTitle = `${topic}: Cosine Similarity & Vector Matching`;
     problemDesc = `Calculate cosine similarity between query embedding vector A and candidate vector B to score relevance.`;
     selectedFnName = lang === 'javascript' ? 'cosineSimilarity' : 'cosine_similarity';
@@ -331,6 +331,218 @@ export function resolveDynamicCodingProblem(
         expectedOutput: '0.0',
         output: '0.0',
         name: '[T5: Complexity Bounds] Perfectly orthogonal vector boundary (similarity = 0.0)',
+        tier: 'complexity',
+        tierLabel: 'T5: Complexity'
+      }
+    ];
+  } else if (lower.includes('quant') || lower.includes('trading') || lower.includes('exchange') || lower.includes('order_book') || lower.includes('hft')) {
+    problemTitle = `${topic}: Limit Order Book Matcher`;
+    problemDesc = `Implement function 'match_limit_orders' to match crossing buy and sell limit orders under Price-Time Priority and return remaining unexecuted shares.`;
+    selectedFnName = lang === 'javascript' ? 'matchLimitOrders' : 'match_limit_orders';
+    starterCodeMap = {
+      python: `def match_limit_orders(orders):\n    # TODO: Process sequential limit orders. Each order is {"side": "buy"|"sell", "price": int, "qty": int}.\n    # Match crossing orders (buy price >= sell price) in Price-Time Priority.\n    # Return integer sum of remaining unexecuted quantities on the book.\n    # Example: [{"side": "buy", "price": 100, "qty": 10}, {"side": "sell", "price": 99, "qty": 4}] -> 6\n    pass`,
+      javascript: `function matchLimitOrders(orders) {\n    // TODO: Process sequential limit orders. Each order is { side: "buy"|"sell", price: number, qty: number }.\n    // Match crossing orders (buy price >= sell price) in Price-Time Priority.\n    // Return integer sum of remaining unexecuted quantities on the book.\n    // Example: [{ side: "buy", price: 100, qty: 10 }, { side: "sell", price: 99, qty: 4 }] -> 6\n}`,
+      java: `import java.util.*;\npublic class Solution {\n    public int matchLimitOrders(List<Map<String, Object>> orders) {\n        // TODO: Match crossing orders under Price-Time Priority and return unexecuted shares\n        return 0;\n    }\n}`,
+      cpp: `#include <vector>\n#include <string>\n\nstruct Order {\n    std::string side;\n    int price;\n    int qty;\n};\n\nclass Solution {\npublic:\n    int matchLimitOrders(const std::vector<Order>& orders) {\n        // TODO: Match crossing orders under Price-Time Priority and return unexecuted shares\n        return 0;\n    }\n};`,
+      sql: SQL_INTERVIEW_STARTER
+    };
+    domainTestCases = [
+      {
+        input: '([{"side": "buy", "price": 100, "qty": 10}, {"side": "sell", "price": 99, "qty": 4}])',
+        expectedOutput: '6',
+        output: '6',
+        name: '[T1: Standard] Crossing buy and sell orders leave unexecuted residual quantity (10 - 4 = 6)',
+        tier: 'standard',
+        tierLabel: 'T1: Standard'
+      },
+      {
+        input: '([{"side": "buy", "price": 105, "qty": 50}, {"side": "sell", "price": 100, "qty": 20}, {"side": "sell", "price": 102, "qty": 30}])',
+        expectedOutput: '0',
+        output: '0',
+        name: '[T2: Scale] Multi-level sweep clears buy order across deep ask ladder',
+        tier: 'scale',
+        tierLabel: 'T2: Scale'
+      },
+      {
+        input: '([])',
+        expectedOutput: '0',
+        output: '0',
+        name: '[T3: Zero/Empty] Empty order queue leaves zero unexecuted volume',
+        tier: 'zero_empty',
+        tierLabel: 'T3: Zero/Empty'
+      },
+      {
+        input: '([{"side": "buy", "price": 95, "qty": 10}, {"side": "sell", "price": 105, "qty": 10}])',
+        expectedOutput: '20',
+        output: '20',
+        name: '[T4: Edge/Negative] Wide bid-ask spread with no crossing prices preserves both orders',
+        tier: 'edge_case',
+        tierLabel: 'T4: Edge/Negative'
+      },
+      {
+        input: '([{"side": "sell", "price": 100, "qty": 10}, {"side": "sell", "price": 100, "qty": 5}, {"side": "buy", "price": 100, "qty": 12}])',
+        expectedOutput: '3',
+        output: '3',
+        name: '[T5: Complexity Bounds] FIFO Price-Time Priority consumes oldest sell first leaving residual (15 - 12 = 3)',
+        tier: 'complexity',
+        tierLabel: 'T5: Complexity'
+      }
+    ];
+  } else if (lower.includes('iot') || lower.includes('embedded') || lower.includes('firmware') || lower.includes('mcu') || lower.includes('telemetry') || lower.includes('hardware')) {
+    problemTitle = `${topic}: Hardware Telemetry Packet Decoder`;
+    problemDesc = `Implement function 'decode_sensor_packet' to validate frame sync byte (0xAA), verify XOR checksum over payload, and return decoded payload length in bytes (-1 if corrupted or invalid).`;
+    selectedFnName = lang === 'javascript' ? 'decodeSensorPacket' : 'decode_sensor_packet';
+    starterCodeMap = {
+      python: `def decode_sensor_packet(raw_bytes):\n    # TODO: Frame format: [0xAA (sync), length (1 byte), payload (N bytes), checksum (1 byte XOR of payload)].\n    # Return payload length N if header and checksum are strictly valid, else -1.\n    # Example: [170, 2, 16, 32, 48] -> 2 (since 16 ^ 32 == 48)\n    pass`,
+      javascript: `function decodeSensorPacket(rawBytes) {\n    // TODO: Frame format: [0xAA (sync), length (1 byte), payload (N bytes), checksum (1 byte XOR of payload)].\n    // Return payload length N if header and checksum are strictly valid, else -1.\n    // Example: [170, 2, 16, 32, 48] -> 2 (since 16 ^ 32 == 48)\n}`,
+      java: `public class Solution {\n    public int decodeSensorPacket(int[] rawBytes) {\n        // TODO: Validate frame sync 0xAA, length, and XOR checksum; return payload length or -1\n        return -1;\n    }\n}`,
+      cpp: `#include <vector>\n#include <cstdint>\n\nclass Solution {\npublic:\n    int decodeSensorPacket(const std::vector<uint8_t>& rawBytes) {\n        // TODO: Validate 0xAA sync, length header, and XOR payload checksum; return length or -1\n        return -1;\n    }\n};`,
+      sql: SQL_INTERVIEW_STARTER
+    };
+    domainTestCases = [
+      {
+        input: '([170, 2, 16, 32, 48])',
+        expectedOutput: '2',
+        output: '2',
+        name: '[T1: Standard] Valid sensor frame with matching XOR checksum returns payload length 2',
+        tier: 'standard',
+        tierLabel: 'T1: Standard'
+      },
+      {
+        input: '([170, 4, 1, 2, 4, 8, 15])',
+        expectedOutput: '4',
+        output: '4',
+        name: '[T2: Scale] Extended multi-byte telemetry payload successfully verified',
+        tier: 'scale',
+        tierLabel: 'T2: Scale'
+      },
+      {
+        input: '([])',
+        expectedOutput: '-1',
+        output: '-1',
+        name: '[T3: Zero/Empty] Empty byte stream returns error flag -1',
+        tier: 'zero_empty',
+        tierLabel: 'T3: Zero/Empty'
+      },
+      {
+        input: '([170, 2, 16, 32, 99])',
+        expectedOutput: '-1',
+        output: '-1',
+        name: '[T4: Edge/Negative] Corrupted CRC/XOR checksum detects bit-flip and rejects frame',
+        tier: 'edge_case',
+        tierLabel: 'T4: Edge/Negative'
+      },
+      {
+        input: '([170, 4, 16, 32])',
+        expectedOutput: '-1',
+        output: '-1',
+        name: '[T5: Complexity Bounds] Truncated buffer underflow rejects incomplete UART packet',
+        tier: 'complexity',
+        tierLabel: 'T5: Complexity'
+      }
+    ];
+  } else if (lower.includes('cyber') || lower.includes('security') || lower.includes('crypto') || lower.includes('zero_trust') || lower.includes('merkle') || lower.includes('auth')) {
+    problemTitle = `${topic}: Merkle Audit Proof Validator`;
+    problemDesc = `Implement function 'verify_merkle_proof' to verify that a transaction leaf belongs to a cryptographic Merkle root given an audit authentication path (returns 1 if valid, 0 if forged, -1 if empty).`;
+    selectedFnName = lang === 'javascript' ? 'verifyMerkleProof' : 'verify_merkle_proof';
+    starterCodeMap = {
+      python: `def verify_merkle_proof(leaf, proof, root):\n    # TODO: Verify Merkle inclusion proof.\n    # leaf is str, proof is list of [sibling_hash, is_left_sibling: bool], root is str.\n    # Return -1 if leaf is empty, 1 if valid path matches root, 0 otherwise.\n    pass`,
+      javascript: `function verifyMerkleProof(leaf, proof, root) {\n    // TODO: Verify Merkle inclusion proof.\n    // leaf is string, proof is array of [siblingHash, isLeftSibling], root is string.\n    // Return -1 if leaf is empty, 1 if valid path matches root, 0 otherwise.\n}`,
+      java: `import java.util.*;\npublic class Solution {\n    public int verifyMerkleProof(String leaf, List<Map<String, Object>> proof, String root) {\n        // TODO: Verify Merkle audit path; return 1 if valid, 0 if invalid, -1 if empty\n        return 0;\n    }\n}`,
+      cpp: `#include <string>\n#include <vector>\n#include <utility>\n\nclass Solution {\npublic:\n    int verifyMerkleProof(const std::string& leaf, const std::vector<std::pair<std::string, bool>>& proof, const std::string& root) {\n        // TODO: Compute hash path and verify against root; return 1 if valid, 0 if invalid, -1 if empty\n        return 0;\n    }\n};`,
+      sql: SQL_INTERVIEW_STARTER
+    };
+    domainTestCases = [
+      {
+        input: '("tx_alpha", [["h_beta", false]], "root_ab")',
+        expectedOutput: '1',
+        output: '1',
+        name: '[T1: Standard] Single-hop authentic Merkle branch evaluates to valid root (code 1)',
+        tier: 'standard',
+        tierLabel: 'T1: Standard'
+      },
+      {
+        input: '("leaf_0", [["h_1", false], ["h_23", false], ["h_47", false]], "root_all")',
+        expectedOutput: '1',
+        output: '1',
+        name: '[T2: Scale] Multi-tier logarithmic inclusion proof verifies depth-3 tree',
+        tier: 'scale',
+        tierLabel: 'T2: Scale'
+      },
+      {
+        input: '("", [], "root_ab")',
+        expectedOutput: '-1',
+        output: '-1',
+        name: '[T3: Zero/Empty] Empty leaf identifier rejects with malformed code -1',
+        tier: 'zero_empty',
+        tierLabel: 'T3: Zero/Empty'
+      },
+      {
+        input: '("tx_alpha", [["h_corrupted", false]], "root_ab")',
+        expectedOutput: '0',
+        output: '0',
+        name: '[T4: Edge/Negative] Tampered sibling hash fails root equality check (code 0)',
+        tier: 'edge_case',
+        tierLabel: 'T4: Edge/Negative'
+      },
+      {
+        input: '("tx_alpha", [["h_beta", true]], "root_ab")',
+        expectedOutput: '0',
+        output: '0',
+        name: '[T5: Complexity Bounds] Inverted sibling position flag prevents pre-image collision',
+        tier: 'complexity',
+        tierLabel: 'T5: Complexity'
+      }
+    ];
+  } else if (lower.includes('accounting') || lower.includes('ledger') || lower.includes('tax') || lower.includes('audit') || lower.includes('banking') || (lower.includes('finance') && !lower.includes('frontend'))) {
+    problemTitle = `${topic}: Double-Entry Ledger Trial Balance Auditor`;
+    problemDesc = `Implement function 'audit_trial_balance' to calculate total debits and credits across journal entries and return net balance variance (0.0 if balanced, positive variance if imbalanced).`;
+    selectedFnName = lang === 'javascript' ? 'auditTrialBalance' : 'audit_trial_balance';
+    starterCodeMap = {
+      python: `def audit_trial_balance(entries):\n    # TODO: Each entry is {"account": str, "debit": float, "credit": float}.\n    # Calculate sum(debits) and sum(credits).\n    # Return net posting variance round(abs(sum(debits) - sum(credits)), 2).\n    # Example: [{"account": "Cash", "debit": 1000.0, "credit": 0.0}, {"account": "Revenue", "debit": 0.0, "credit": 1000.0}] -> 0.0\n    pass`,
+      javascript: `function auditTrialBalance(entries) {\n    // TODO: Each entry is { account: string, debit: number, credit: number }.\n    // Calculate sum(debits) and sum(credits).\n    // Return net posting variance Math.round(Math.abs(sumDebits - sumCredits) * 100) / 100.\n    // Example: [{ account: "Cash", debit: 1000.0, credit: 0.0 }, { account: "Revenue", debit: 0.0, credit: 1000.0 }] -> 0.0\n}`,
+      java: `import java.util.*;\npublic class Solution {\n    public double auditTrialBalance(List<Map<String, Object>> entries) {\n        // TODO: Compute trial balance variance abs(sum(debits) - sum(credits))\n        return 0.0;\n    }\n}`,
+      cpp: `#include <vector>\n#include <string>\n#include <cmath>\n\nstruct JournalEntry {\n    std::string account;\n    double debit;\n    double credit;\n};\n\nclass Solution {\npublic:\n    double auditTrialBalance(const std::vector<JournalEntry>& entries) {\n        // TODO: Compute trial balance variance abs(sum(debits) - sum(credits))\n        return 0.0;\n    }\n};`,
+      sql: SQL_INTERVIEW_STARTER
+    };
+    domainTestCases = [
+      {
+        input: '([{"account": "Cash", "debit": 1000.0, "credit": 0.0}, {"account": "Revenue", "debit": 0.0, "credit": 1000.0}])',
+        expectedOutput: '0.0',
+        output: '0.0',
+        name: '[T1: Standard] Balanced journal entry yields zero trial balance variance (0.0)',
+        tier: 'standard',
+        tierLabel: 'T1: Standard'
+      },
+      {
+        input: '([{"account": "Cash", "debit": 5000.0, "credit": 0.0}, {"account": "AR", "debit": 2000.0, "credit": 0.0}, {"account": "Equity", "debit": 0.0, "credit": 7000.0}])',
+        expectedOutput: '0.0',
+        output: '0.0',
+        name: '[T2: Scale] Compound multi-account journal batch balances accurately',
+        tier: 'scale',
+        tierLabel: 'T2: Scale'
+      },
+      {
+        input: '([])',
+        expectedOutput: '0.0',
+        output: '0.0',
+        name: '[T3: Zero/Empty] Empty ledger journal yields zero variance (0.0)',
+        tier: 'zero_empty',
+        tierLabel: 'T3: Zero/Empty'
+      },
+      {
+        input: '([{"account": "Cash", "debit": 1500.0, "credit": 0.0}, {"account": "Revenue", "debit": 0.0, "credit": 1000.0}])',
+        expectedOutput: '500.0',
+        output: '500.0',
+        name: '[T4: Edge/Negative] Unposted entry mismatch flags exact 500.0 trial balance variance',
+        tier: 'edge_case',
+        tierLabel: 'T4: Edge/Negative'
+      },
+      {
+        input: '([{"account": "AP", "debit": 300.0, "credit": 50.0}, {"account": "Cash", "debit": 0.0, "credit": 500.0}])',
+        expectedOutput: '250.0',
+        output: '250.0',
+        name: '[T5: Complexity Bounds] Bilateral entries with contra adjustments calculate net variance 250.0',
         tier: 'complexity',
         tierLabel: 'T5: Complexity'
       }
