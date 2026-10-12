@@ -50,6 +50,8 @@ import { IOT_NET_LONG_LESSONS } from './iotNetLongLessons';
 import { BCOM_ANA_LONG_LESSONS } from './bcomAnaLongLessons';
 import { BCOM_OPS_LONG_LESSONS } from './bcomOpsLongLessons';
 import { BCOM_AIT_LONG_LESSONS } from './bcomAitLongLessons';
+import { BCOM_FINANCE_LONG_LESSONS } from './bcomFinanceLongLessons';
+import { BCOM_ACCOUNTING_LONG_LESSONS } from './bcomAccountingLongLessons';
 
 export interface LongLessonCheck {
   question: string;
@@ -142,6 +144,8 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   bcom_ana: BCOM_ANA_LONG_LESSONS,
   bcom_ops: BCOM_OPS_LONG_LESSONS,
   bcom_ait: BCOM_AIT_LONG_LESSONS,
+  'bcom-finance': BCOM_FINANCE_LONG_LESSONS,
+  'bcom-accounting': BCOM_ACCOUNTING_LONG_LESSONS,
 };
 
 /** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
@@ -192,6 +196,8 @@ const LONG_LESSON_LANGUAGE: Record<string, LongLessonLanguage> = {
   g3d: 'typescript',
   'java-basics': 'javascript',
   'soft-skills': 'javascript',
+  'bcom-finance': 'python',
+  'bcom-accounting': 'python',
 };
 
 export function getLongLessonLanguage(prefix: string): LongLessonLanguage {
