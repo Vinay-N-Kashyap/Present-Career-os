@@ -37,6 +37,7 @@ export const TicketListCard: React.FC<TicketListCardProps> = ({
 
   return (
     <div
+      data-testid="ticket-list-card"
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -53,6 +54,7 @@ export const TicketListCard: React.FC<TicketListCardProps> = ({
           </span>
         </div>
         <div
+          data-testid="ticket-passed-counter"
           style={{
             fontSize: 12,
             fontWeight: 800,
@@ -77,6 +79,7 @@ export const TicketListCard: React.FC<TicketListCardProps> = ({
           return (
             <div
               key={task.id}
+              data-testid={`ticket-card-${task.seq}`}
               onClick={() => isClickable && onSelectTicket(task)}
               style={{
                 borderRadius: 12,
@@ -129,6 +132,7 @@ export const TicketListCard: React.FC<TicketListCardProps> = ({
                       {task.title}
                     </span>
                     <span
+                      data-testid={`ticket-kind-${task.seq}`}
                       style={{
                         fontSize: 11,
                         fontWeight: 700,
@@ -192,6 +196,7 @@ export const TicketListCard: React.FC<TicketListCardProps> = ({
                 )}
 
                 <span
+                  data-testid={`ticket-status-${task.seq}`}
                   style={{
                     fontSize: 11.5,
                     fontWeight: 800,
@@ -209,6 +214,7 @@ export const TicketListCard: React.FC<TicketListCardProps> = ({
                 {isClickable && (
                   <button
                     type="button"
+                    data-testid={`btn-open-ticket-${task.seq}`}
                     style={{
                       padding: '6px 14px',
                       borderRadius: 8,

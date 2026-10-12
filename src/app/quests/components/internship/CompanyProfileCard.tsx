@@ -18,6 +18,7 @@ export const CompanyProfileCard: React.FC<CompanyProfileCardProps> = ({ profile 
 
   return (
     <div
+      data-testid="company-profile-card"
       style={{
         borderRadius: 14,
         background: 'var(--bg2)',
@@ -34,10 +35,11 @@ export const CompanyProfileCard: React.FC<CompanyProfileCardProps> = ({ profile 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <span style={{ fontSize: 20 }}>🏢</span>
-            <h3 style={{ margin: 0, fontSize: 17, fontWeight: 900, color: 'var(--text)' }}>
+            <h3 data-testid="company-profile-name" style={{ margin: 0, fontSize: 17, fontWeight: 900, color: 'var(--text)' }}>
               {name}
             </h3>
             <span
+              data-testid="company-profile-industry"
               style={{
                 fontSize: 11,
                 fontWeight: 800,
@@ -79,6 +81,7 @@ export const CompanyProfileCard: React.FC<CompanyProfileCardProps> = ({ profile 
 
       {readme && (
         <div
+          data-testid="company-profile-readme"
           style={{
             fontSize: 13,
             lineHeight: 1.6,
@@ -102,6 +105,7 @@ export const CompanyProfileCard: React.FC<CompanyProfileCardProps> = ({ profile 
           {readme.length > 200 && (
             <button
               type="button"
+              data-testid="btn-toggle-company-readme"
               onClick={() => setExpanded(!expanded)}
               style={{
                 marginTop: 6,

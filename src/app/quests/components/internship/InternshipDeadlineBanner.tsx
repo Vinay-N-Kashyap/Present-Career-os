@@ -10,25 +10,14 @@ interface InternshipDeadlineBannerProps {
   isRequestingExtension?: boolean;
 }
 
-export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> = ({
-  dueAt,
-  extended,
-  status,
-  onRequestExtension,
-  isRequestingExtension = false,
-}) => {
-  const [confirming, setConfirming] = useState(false);
-
-  if (status !== 'active' && status !== 'expired') return null;
-
+export function computeDeadlineStatus(dueAt: string | null, nowMs: number = Date.now()) {
   let timeDisplay = 'No deadline recorded';
   let isPast = false;
   let isUrgent = false;
 
   if (dueAt) {
     const dueDate = new Date(dueAt);
-    const now = Date.now();
-    const diffMs = dueDate.getTime() - now;
+    const diffMs = dueDate.getTime() - nowMs;
 
     if (diffMs <= 0) {
       isPast = true;
@@ -41,6 +30,22 @@ export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> =
     }
   }
 
+  return { timeDisplay, isPast, isUrgent };
+}
+
+export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> = ({
+  dueAt,
+  extended,
+  status,
+  onRequestExtension,
+  isRequestingExtension = false,
+}) => {
+  const [confirming, setConfirming] = useState(false);
+
+  if (status !== 'active' && status !== 'expired') return null;
+
+  const { timeDisplay, isPast, isUrgent } = computeDeadlineStatus(dueAt);
+
   const handleRequest = async () => {
     if (!onRequestExtension) return;
     setConfirming(false);
@@ -49,6 +54,7 @@ export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> =
 
   return (
     <div
+      data-testid="internship-deadline-banner"
       style={{
         borderRadius: 12,
         background: isPast
@@ -79,6 +85,7 @@ export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> =
               {isPast ? 'Deadline Expired' : 'Cohort Window:'}
             </span>
             <span
+              data-testid="deadline-time-display"
               style={{
                 fontSize: 13,
                 fontWeight: 900,
@@ -99,6 +106,7 @@ export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> =
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         {extended ? (
           <span
+            data-testid="deadline-extended-badge"
             style={{
               fontSize: 11.5,
               fontWeight: 700,
@@ -117,6 +125,7 @@ export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> =
               <span style={{ fontSize: 12, color: 'var(--t2)' }}>Add 7 days?</span>
               <button
                 type="button"
+                data-testid="btn-confirm-extension"
                 onClick={handleRequest}
                 disabled={isRequestingExtension}
                 style={{
@@ -134,6 +143,7 @@ export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> =
               </button>
               <button
                 type="button"
+                data-testid="btn-cancel-extension"
                 onClick={() => setConfirming(false)}
                 style={{
                   padding: '4px 8px',
@@ -151,6 +161,7 @@ export const InternshipDeadlineBanner: React.FC<InternshipDeadlineBannerProps> =
           ) : (
             <button
               type="button"
+              data-testid="btn-request-extension"
               onClick={() => setConfirming(true)}
               style={{
                 padding: '6px 12px',

@@ -1,12 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface FinalReportModalProps {
   enrollmentId: string;
   onClose: () => void;
   onReportAccepted: () => void;
   existingReport?: string | null;
+}
+
+export function evaluateReportWordCount(report: string) {
+  const wordCount = report.trim() ? report.trim().split(/\s+/).filter(Boolean).length : 0;
+  const isTooShort = wordCount < 100;
+  const isTooLong = wordCount > 300;
+  const isValidLength = !isTooShort && !isTooLong;
+  return { wordCount, isTooShort, isTooLong, isValidLength };
 }
 
 export const FinalReportModal: React.FC<FinalReportModalProps> = ({
@@ -20,10 +28,16 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
-  const wordCount = report.trim() ? report.trim().split(/\s+/).filter(Boolean).length : 0;
-  const isTooShort = wordCount < 100;
-  const isTooLong = wordCount > 300;
-  const isValidLength = !isTooShort && !isTooLong;
+  const { wordCount, isTooShort, isTooLong, isValidLength } = evaluateReportWordCount(report);
+
+  useEffect(() => {
+    if (isSubmitting || typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isSubmitting, onClose]);
 
   const handleSubmit = async () => {
     if (!isValidLength || isSubmitting) return;
@@ -58,6 +72,13 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
 
   return (
     <div
+      data-testid="final-report-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Final Stand-Up Report"
+      onClick={(e) => {
+        if (!isSubmitting && e.target === e.currentTarget) onClose();
+      }}
       style={{
         position: 'fixed',
         inset: 0,
@@ -100,6 +121,8 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
           </div>
           <button
             type="button"
+            data-testid="btn-close-final-report"
+            aria-label="Close report modal"
             onClick={onClose}
             style={{ background: 'none', border: 'none', fontSize: 20, color: 'var(--t3)', cursor: 'pointer' }}
           >
@@ -122,6 +145,7 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
               Your Stand-Up Summary
             </label>
             <span
+              data-testid="final-report-word-count"
               style={{
                 fontSize: 12,
                 fontWeight: 800,
@@ -133,6 +157,7 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
           </div>
 
           <textarea
+            data-testid="textarea-final-report"
             value={report}
             onChange={(e) => setReport(e.target.value)}
             disabled={!!existingReport && !errorMsg}
@@ -156,13 +181,13 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
         </div>
 
         {errorMsg && (
-          <div style={{ padding: '10px 14px', borderRadius: 8, background: 'rgba(239, 68, 68, 0.12)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#f87171', fontSize: 13 }}>
+          <div data-testid="final-report-error" style={{ padding: '10px 14px', borderRadius: 8, background: 'rgba(239, 68, 68, 0.12)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#f87171', fontSize: 13 }}>
             {errorMsg}
           </div>
         )}
 
         {successMsg && (
-          <div style={{ padding: '10px 14px', borderRadius: 8, background: 'rgba(16, 185, 129, 0.15)', border: '1px solid rgba(16, 185, 129, 0.35)', color: '#10b981', fontSize: 13, fontWeight: 800 }}>
+          <div data-testid="final-report-success" style={{ padding: '10px 14px', borderRadius: 8, background: 'rgba(16, 185, 129, 0.15)', border: '1px solid rgba(16, 185, 129, 0.35)', color: '#10b981', fontSize: 13, fontWeight: 800 }}>
             ✓ {successMsg}
           </div>
         )}
@@ -170,6 +195,7 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 4 }}>
           <button
             type="button"
+            data-testid="btn-cancel-final-report"
             onClick={onClose}
             style={{
               padding: '8px 16px',
@@ -188,6 +214,7 @@ export const FinalReportModal: React.FC<FinalReportModalProps> = ({
           {!existingReport && (
             <button
               type="button"
+              data-testid="btn-submit-final-report"
               onClick={handleSubmit}
               disabled={!isValidLength || isSubmitting}
               style={{

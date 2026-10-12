@@ -41,6 +41,7 @@ export const Tier1Desk: React.FC<Tier1DeskProps> = ({
 
       {needsFinalReport && (
         <div
+          data-testid="tier1-final-report-banner"
           style={{
             borderRadius: 12,
             padding: '16px 20px',
@@ -63,6 +64,7 @@ export const Tier1Desk: React.FC<Tier1DeskProps> = ({
           </div>
           <button
             type="button"
+            data-testid="btn-open-final-report"
             onClick={onOpenReport}
             style={{
               padding: '8px 18px',
