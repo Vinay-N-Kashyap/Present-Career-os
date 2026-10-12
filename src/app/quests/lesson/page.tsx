@@ -20,7 +20,7 @@ import { LessonCompletionModal } from './components/LessonCompletionModal';
 
 const QuestWorkspaceClient = dynamic(() => import('@/components/quests/QuestWorkspaceClient'), { ssr: false });
 
-interface Teacher {
+export interface Teacher {
   name: string;
   avatar: string;
   color: string;
@@ -28,12 +28,17 @@ interface Teacher {
   role: string;
 }
 
-const TEACHER_METADATA: Record<string, Teacher> = {
+export const TEACHER_METADATA: Record<string, Teacher> = {
   kashyap: { name: 'Kashyap Sir', avatar: '👩‍🎨', color: 'rgba(var(--info-rgb),  0.1)', accent: 'var(--accent)', role: 'Staff Systems Architect' },
   karthic: { name: 'Karthic Sir "Nega"', avatar: '👨‍🏫', color: 'rgba(var(--warning-rgb),  0.1)', accent: 'var(--amber)', role: 'Algorithmic Lead Tutor' },
   maya: { name: 'Ms. Maya', avatar: '👩‍💼', color: 'rgba(var(--danger-rgb),  0.1)', accent: 'var(--coral)', role: 'Principal Security Auditor' },
   divya: { name: 'Ms. Divya', avatar: '👨‍💼', color: 'rgba(var(--success-rgb),  0.1)', accent: 'var(--green)', role: 'Lead UX Engineer' }
 };
+
+export function resolveTeacher(teacherId?: string): Teacher {
+  const tid = teacherId && teacherId in TEACHER_METADATA ? teacherId : 'kashyap';
+  return TEACHER_METADATA[tid];
+}
 
 const lessonStyles = `
   @keyframes wave {
@@ -330,7 +335,7 @@ const lessonStyles = `
 
 export default function LessonPage() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg)', color: 'var(--t1)' }}>Loading Quest Lesson...</div>}>
+    <Suspense fallback={<div data-testid="lesson-page-loading" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg)', color: 'var(--t1)' }}>Loading Quest Lesson...</div>}>
       <LessonPageRouter />
     </Suspense>
   );
@@ -355,7 +360,7 @@ function LessonPageRouter() {
 
   if (!isTestMode && (authLoading || !user)) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg1)', color: 'var(--t1)' }}>
+      <div data-testid="lesson-auth-loading" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg1)', color: 'var(--t1)' }}>
         Authenticating...
       </div>
     );
@@ -443,7 +448,7 @@ function LessonPageRouter() {
   // Guard only on completely missing questId
   if (!questData) {
     return (
-      <div style={{
+      <div data-testid="quest-not-found" style={{
         width: '100vw',
         height: '100vh',
         display: 'flex',
@@ -462,6 +467,7 @@ function LessonPageRouter() {
           The requested lesson ID <code style={{ color: 'var(--accent)', background: 'var(--bg2)', padding: '2px 6px', borderRadius: 4 }}>{questId || 'unknown'}</code> does not exist in any registered course or curriculum.
         </p>
         <button
+          data-testid="btn-unregistered-return"
           onClick={() => {
             if (typeof window !== 'undefined') {
               window.location.assign('/quests?tab=custom_roadmap');
@@ -557,11 +563,12 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
       boxSizing: 'border-box',
       overflow: 'hidden',
       position: 'relative'
-    }} className="classroom-page-root animate-fade-in">
+    }} className="classroom-page-root animate-fade-in" data-testid="classroom-page-root">
       <style>{lessonStyles}</style>
 
       {/* Return Button */}
       <button
+        data-testid="btn-classroom-return"
         className="classroom-return-btn"
         onClick={() => {
           stopSpeaking();
@@ -595,11 +602,11 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
 
       {/* Main lesson content */}
       {!state.isHydrated ? (
-        <div style={{ minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--t2)', fontSize: 14.5, fontWeight: 700, gap: 8 }}>
+        <div data-testid="classroom-syncing" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--t2)', fontSize: 14.5, fontWeight: 700, gap: 8 }}>
           ⚡ Synchronizing Classroom Environment...
         </div>
       ) : (
-        <div className="lesson-card">
+        <div className="lesson-card" data-testid="lesson-card-root">
           <LessonHeader
             questTitle={questData.title}
             isFocusMusicEnabled={state.isFocusMusicEnabled}

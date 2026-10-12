@@ -43,12 +43,19 @@ export function TeacherAvatarFrame({
   speechText,
   questData,
 }: TeacherAvatarFrameProps): React.ReactElement {
+  const safeTeacher = teacher || {
+    name: 'Tutor',
+    avatar: '👨‍🏫',
+    accent: 'var(--accent)',
+    role: 'Instructor'
+  };
+
   return (
     <div
       className="teacher-avatar-docked-frame"
       data-testid="teacher-avatar-dock"
       data-speech-active={isPlaying ? 'true' : 'false'}
-      title={speechText ? `${teacher.name}: "${speechText.slice(0, 160)}${speechText.length > 160 ? '…' : ''}"` : `Tutor: ${teacher.name}`}
+      title={speechText ? `${safeTeacher.name}: "${speechText.slice(0, 160)}${speechText.length > 160 ? '…' : ''}"` : `Tutor: ${safeTeacher.name}`}
       style={{
         position: 'relative',
         display: 'flex',
@@ -57,7 +64,7 @@ export function TeacherAvatarFrame({
         padding: '4px 10px 4px 6px',
         borderRadius: '24px',
         background: 'var(--bg2)',
-        border: `1.5px solid ${isPlaying ? (teacher.accent || 'var(--accent)') : 'var(--border)'}`,
+        border: `1.5px solid ${isPlaying ? (safeTeacher.accent || 'var(--accent)') : 'var(--border)'}`,
         boxShadow: isPlaying
           ? '0 0 12px color-mix(in srgb, var(--accent) 25%, transparent)'
           : 'var(--shadow-sm)',
@@ -66,7 +73,7 @@ export function TeacherAvatarFrame({
         height: '42px',
         boxSizing: 'border-box',
       }}
-      aria-label={`Tutor: ${teacher.name}`}
+      aria-label={`Tutor: ${safeTeacher.name}`}
     >
       <style>{`
         .teacher-avatar-docked-info {
@@ -108,7 +115,7 @@ export function TeacherAvatarFrame({
         }}
       >
         <span style={{ fontSize: '18px', userSelect: 'none' }}>
-          {teacher.avatar || '👨‍🏫'}
+          {safeTeacher.avatar || '👨‍🏫'}
         </span>
 
         {/* Live speaking indicator dot */}
@@ -140,7 +147,7 @@ export function TeacherAvatarFrame({
             whiteSpace: 'nowrap',
           }}
         >
-          {teacher.name}
+          {safeTeacher.name}
         </span>
         <span
           data-testid="teacher-avatar-status"
@@ -173,7 +180,7 @@ export function TeacherAvatarFrame({
               style={{
                 width: '2px',
                 height: `${12 * scale}px`,
-                background: teacher.accent || 'var(--accent)',
+                background: safeTeacher.accent || 'var(--accent)',
                 borderRadius: '1px',
               }}
             />

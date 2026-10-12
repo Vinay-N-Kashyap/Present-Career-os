@@ -44,6 +44,12 @@ export function LessonNavigationBar({
   speechText,
   questData,
 }: LessonNavigationBarProps) {
+  const safeTeacher = teacher || {
+    name: 'Kashyap Sir',
+    avatar: '👩‍🎨',
+    accent: 'var(--accent)',
+    role: 'Staff Systems Architect',
+  };
   const isLearningSlide = currentSlide > 0 && currentSlide <= slidesLength;
   const isTestModeBypass = typeof window !== 'undefined' && window.location.search.includes('testMode=true');
   const isConfirmed = isLearningSlide ? Boolean(understandingConfirmed[currentSlide - 1]) : true;
@@ -134,9 +140,9 @@ export function LessonNavigationBar({
           style={{
             padding: '10px 16px',
             borderRadius: 12,
-            border: `1.5px solid ${isInteractive ? 'var(--border)' : teacher.accent || 'var(--accent)'}`,
+            border: `1.5px solid ${isInteractive ? 'var(--border)' : safeTeacher.accent || 'var(--accent)'}`,
             background: isInteractive ? 'transparent' : 'rgba(var(--brand-rgb), 0.1)',
-            color: isInteractive ? 'var(--t2)' : (teacher.accent || 'var(--accent)'),
+            color: isInteractive ? 'var(--t2)' : (safeTeacher.accent || 'var(--accent)'),
             fontSize: 13.5,
             fontWeight: 800,
             cursor: 'pointer',
@@ -155,7 +161,7 @@ export function LessonNavigationBar({
       <TeacherAvatarFrame
         userId={userId || 'guest'}
         teacherId={teacherId || 'kashyap'}
-        teacher={teacher}
+        teacher={safeTeacher}
         isPlaying={Boolean(isPlaying)}
         speechText={speechText || ''}
         questData={questData}
@@ -215,7 +221,7 @@ export function LessonNavigationBar({
             className="lesson-nav-btn lesson-nav-btn-next"
             title={isLocked ? 'Answer the concept check above to unlock the next slide' : 'Next Slide'}
             style={{
-              background: isLocked ? 'var(--border)' : (teacher.accent || 'var(--accent)'),
+              background: isLocked ? 'var(--border)' : (safeTeacher.accent || 'var(--accent)'),
               border: 'none',
               padding: '10px 20px',
               borderRadius: 12,
