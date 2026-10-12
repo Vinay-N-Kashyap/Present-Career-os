@@ -21,7 +21,7 @@ interface UseInterviewPersistenceProps {
   starStep: number;
   messages: Message[];
   codeContent: string;
-  selectedLang: 'java' | 'python' | 'javascript' | 'sql';
+  selectedLang: 'java' | 'python' | 'javascript' | 'sql' | 'cpp';
   codingAttempt: number;
   codingProblem: any;
   elapsedSeconds: number;

@@ -264,8 +264,8 @@ export default function InterviewPage() {
   // Round 2 Code Workspace State
   const codeModifiedRef = useRef(false);
   const codePerLangRef = useRef<Record<string, string>>({});
-  const prevLangRef = useRef<'java' | 'python' | 'javascript' | 'sql'>('python');
-  const [selectedLang, setSelectedLang] = useState<'java' | 'python' | 'javascript' | 'sql'>('python');
+  const prevLangRef = useRef<'java' | 'python' | 'javascript' | 'sql' | 'cpp'>('python');
+  const [selectedLang, setSelectedLang] = useState<'java' | 'python' | 'javascript' | 'sql' | 'cpp'>('python');
   const [codeContent, setCodeContent] = useState('');
   const codeContentRef = useRef(codeContent);
   codeContentRef.current = codeContent;

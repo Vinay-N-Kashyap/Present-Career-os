@@ -36,13 +36,26 @@ export const InterviewResultsView: React.FC<InterviewResultsViewProps> = ({
     <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
       <div className="iv-panel" style={{ padding: 24, display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 20, alignItems: 'center' }}>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
             <span style={{ fontSize: 11, fontWeight: 900, letterSpacing: '1px', color: 'var(--accent-mid)', textTransform: 'uppercase' }}>
               {evaluationResult?.roleName ? `ROLE: ${evaluationResult.roleName}` : `INTERVIEW REPORT: ${activeTopicName}`}
             </span>
             <span style={{ fontSize: 10, padding: '1px 6px', borderRadius: 4, background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t3)', fontFamily: 'monospace' }}>
-              v1.0 Rubric
+              {evaluationResult?.rubricVersion ? `${evaluationResult.rubricVersion} Rubric` : 'v2.0 Rigor Rubric'}
             </span>
+            {evaluationResult?.readiness && (
+              <span style={{
+                fontSize: 10,
+                padding: '2px 8px',
+                borderRadius: 999,
+                background: evaluationResult.readiness.includes('Ready') ? 'rgba(34, 197, 94, 0.15)' : 'rgba(245, 158, 11, 0.15)',
+                border: evaluationResult.readiness.includes('Ready') ? '1px solid rgba(34, 197, 94, 0.4)' : '1px solid rgba(245, 158, 11, 0.4)',
+                color: evaluationResult.readiness.includes('Ready') ? 'var(--green-mid)' : 'var(--amber-mid)',
+                fontWeight: 800
+              }}>
+                {evaluationResult.readiness}
+              </span>
+            )}
           </div>
           <h1 style={{ fontSize: 24, fontWeight: 900, margin: '6px 0', color: evaluationResult?.verdict?.includes('Hire') ? 'var(--green-mid)' : 'var(--coral-mid)' }}>
             Verdict: {evaluationResult?.verdict || 'Needs Practice'} ({evaluationResult?.score || 50}%)
@@ -54,6 +67,24 @@ export const InterviewResultsView: React.FC<InterviewResultsViewProps> = ({
           {evaluationResult?.coaching?.growthArea && (
             <div style={{ padding: '8px 12px', borderRadius: 8, background: 'rgba(var(--brand-rgb),0.08)', border: '1px solid rgba(var(--brand-rgb),0.2)', fontSize: 12.5, color: 'var(--accent-mid)', marginBottom: 8 }}>
               <strong>🎯 DNA Focus Area:</strong> {evaluationResult.coaching.growthArea}
+            </div>
+          )}
+
+          {evaluationResult?.appliedWeights && (
+            <div style={{ marginTop: 10, padding: '10px 12px', borderRadius: 8, background: 'var(--bg3)', border: '1px solid var(--border)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                <span style={{ fontSize: 11, fontWeight: 800, color: 'var(--t2)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Role-Calibrated Hiring Weights
+                </span>
+                <span style={{ fontSize: 10, color: 'var(--t3)' }}>Normalized Σ = 100%</span>
+              </div>
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', fontSize: 11 }}>
+                {Object.entries(evaluationResult.appliedWeights).map(([dim, weight]: [string, any]) => (
+                  <span key={dim} style={{ padding: '2px 6px', borderRadius: 4, background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--t1)', fontWeight: 700 }}>
+                    {dim.toUpperCase()}: {Math.round(weight * 100)}%
+                  </span>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -105,6 +136,23 @@ export const InterviewResultsView: React.FC<InterviewResultsViewProps> = ({
                   </span>
                 </div>
 
+                {roundData.badge && (
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <span style={{
+                      fontSize: 10,
+                      fontWeight: 800,
+                      padding: '2px 7px',
+                      borderRadius: 4,
+                      background: 'rgba(var(--brand-rgb),0.12)',
+                      border: '1px solid rgba(var(--brand-rgb),0.25)',
+                      color: 'var(--accent-mid)',
+                      letterSpacing: '0.3px'
+                    }}>
+                      🏷️ {roundData.badge}
+                    </span>
+                  </div>
+                )}
+
                 <div style={{ height: 6, background: 'var(--bg2)', borderRadius: 4, overflow: 'hidden', border: '1px solid var(--border)' }}>
                   <div style={{ height: '100%', width: `${roundData.score}%`, background: r.color, borderRadius: 4, transition: 'width 0.6s ease' }} />
                 </div>
@@ -129,6 +177,23 @@ export const InterviewResultsView: React.FC<InterviewResultsViewProps> = ({
           <p style={{ fontSize: 12.5, color: 'var(--t2)', lineHeight: 1.4, marginBottom: 8 }}>
             {evaluationResult?.coaching?.personaSummary || 'Tailored coaching for your mindset archetype.'}
           </p>
+
+          {evaluationResult?.strengths && evaluationResult.strengths.length > 0 && (
+            <div style={{ marginBottom: 10 }}>
+              <div style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--green-mid)', marginBottom: 4 }}>
+                🌟 Demonstrated Strengths:
+              </div>
+              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 12, color: 'var(--t2)', lineHeight: 1.4 }}>
+                {evaluationResult.strengths.map((str: string, i: number) => (
+                  <li key={i}>{str}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--accent-mid)', marginBottom: 4 }}>
+            🎯 Targeted Playbook:
+          </div>
           <ul style={{ margin: 0, paddingLeft: 16, fontSize: 12, color: 'var(--t2)', lineHeight: 1.5 }}>
             {(evaluationResult?.coaching?.coachingTips || [
               'Lead with structured STAR metrics.',

@@ -52,7 +52,7 @@ export interface ActiveInterviewDraft {
   starStep: number;
   messages: Message[];
   codeContent: string;
-  selectedLang: 'java' | 'python' | 'javascript' | 'sql';
+  selectedLang: 'java' | 'python' | 'javascript' | 'sql' | 'cpp';
   /** Keeps a resumed Round 2 retry on its current challenge variation. */
   codingAttempt?: number;
   /** Preserves the exact prompt and tests paired with the saved code. */

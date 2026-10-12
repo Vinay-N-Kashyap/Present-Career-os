@@ -43,8 +43,8 @@ export interface Round2CodingProps {
   manualTextInput: string;
   setManualTextInput: (value: string) => void;
   onSendMessage: (value: string) => void;
-  selectedLang: 'python' | 'javascript' | 'java' | 'sql';
-  setSelectedLang: (lang: 'python' | 'javascript' | 'java' | 'sql') => void;
+  selectedLang: 'python' | 'javascript' | 'java' | 'sql' | 'cpp';
+  setSelectedLang: (lang: 'python' | 'javascript' | 'java' | 'sql' | 'cpp') => void;
   runCodeAndTests: () => void;
   isRunning: boolean;
   codeContent: string;
@@ -167,7 +167,7 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
         {/* Language Selector */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: 6 }}>
-            {(['python', 'javascript', 'java', 'sql'] as const).map(lang => (
+            {(['python', 'javascript', 'java', 'cpp', 'sql'] as const).map(lang => (
               <button
                 key={lang}
                 onClick={() => setSelectedLang(lang)}
@@ -177,7 +177,7 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
                   color: selectedLang === lang ? 'var(--text)' : 'var(--t2)', border: 'none', cursor: 'pointer'
                 }}
               >
-                {lang.toUpperCase()}
+                {lang === 'cpp' ? 'C++' : lang.toUpperCase()}
               </button>
             ))}
           </div>
@@ -195,7 +195,7 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
         <div style={{ height: 340, borderRadius: 10, overflow: 'hidden', border: '1px solid var(--border)' }}>
           <MonacoEditor
             height="100%"
-            language={selectedLang === 'sql' ? 'sql' : selectedLang === 'python' ? 'python' : selectedLang === 'java' ? 'java' : 'javascript'}
+            language={selectedLang === 'sql' ? 'sql' : selectedLang === 'python' ? 'python' : selectedLang === 'java' ? 'java' : selectedLang === 'cpp' ? 'cpp' : 'javascript'}
             theme="vs-dark"
             value={codeContent}
             onChange={(val) => {
