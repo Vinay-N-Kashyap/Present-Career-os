@@ -361,6 +361,7 @@ const RUNNER_LABELS: Record<string, string> = {
   'iot_emb': '🔌 Embedded MCU C++ Simulator',
   'g3d': '🔮 WebGL2 3D Shader Sandbox',
   'blockchain': '🪙 EVM Web3 & Solidity TypeScript Simulator',
+  'mobile': '📱 React Native & Mobile Engine Simulator',
 };
 
 interface UseLessonEngineProps {
@@ -1028,7 +1029,7 @@ export function useLessonEngine({
             ]
           }]
         };
-      } else if (coursePrefix === 'excel_viz' || coursePrefix.includes('excel') || coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance') || tLow.includes('ledger') || tLow.includes('balance')) {
+      } else if (coursePrefix === 'blockchain' || coursePrefix === 'excel_viz' || coursePrefix.includes('excel') || coursePrefix.includes('bcom') || coursePrefix.includes('account') || coursePrefix.includes('finance') || tLow.includes('ledger') || tLow.includes('balance') || tLow.includes('token')) {
         visual = {
           template: 'ledger-sheet',
           title: `${title} Ledger`,
