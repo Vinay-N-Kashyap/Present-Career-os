@@ -357,7 +357,7 @@ const RUNNER_LABELS: Record<string, string> = {
   'train-py': '🐍 Python 3 Executing',
   'vec-py': '🐍 Python 3 Executing',
   'safe-py': '🐍 Python 3 Executing',
-  'iot_net': '📶 IoT Radio Protocol Simulator',
+  'iot_net': '📶 IoT Radio Protocol & 6LoWPAN Simulator',
   'iot_emb': '🔌 Embedded MCU C++ Simulator',
   'g3d': '🔮 WebGL2 & GPU Shader Graphics Simulator',
   'blockchain': '🪙 EVM Web3 & Solidity TypeScript Simulator',

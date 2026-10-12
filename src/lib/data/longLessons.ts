@@ -46,6 +46,8 @@ import { G3D_LONG_LESSONS } from './g3dLongLessons';
 import { FULLSTACK_JS_LONG_LESSONS } from './fullstackJsLongLessons';
 import { IOT_EDGE_LONG_LESSONS } from './iotEdgeLongLessons';
 import { IOT_SEC_LONG_LESSONS } from './iotSecLongLessons';
+import { IOT_NET_LONG_LESSONS } from './iotNetLongLessons';
+import { BCOM_ANA_LONG_LESSONS } from './bcomAnaLongLessons';
 
 export interface LongLessonCheck {
   question: string;
@@ -134,6 +136,8 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   'fullstack-js': FULLSTACK_JS_LONG_LESSONS,
   iot_edge: IOT_EDGE_LONG_LESSONS,
   iot_sec: IOT_SEC_LONG_LESSONS,
+  iot_net: IOT_NET_LONG_LESSONS,
+  bcom_ana: BCOM_ANA_LONG_LESSONS,
 };
 
 /** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
