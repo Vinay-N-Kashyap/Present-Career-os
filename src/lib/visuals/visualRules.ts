@@ -23,6 +23,21 @@ export function getTappableLabelsForVisual(visual?: LessonVisual | null): string
   if (visual.template === 'register-bits') {
     return visual.steps[0]?.bits.map(b => b.name).filter(Boolean) as string[] || [];
   }
+  if (visual.template === 'component-tree') {
+    return (visual.nodes || []).map(n => n.name).filter(Boolean);
+  }
+  if (visual.template === 'workflow') {
+    return (visual.stages || []).map(s => s.name).filter(Boolean);
+  }
+  if (visual.template === 'wireframe') {
+    return (visual.boxes || []).map(b => b.label).filter(Boolean);
+  }
+  if (visual.template === 'states') {
+    return (visual.states || []).map(s => s.label).filter(Boolean);
+  }
+  if (visual.template === 'sequence') {
+    return (visual.actors || []).filter(Boolean);
+  }
   // Spec v1.1: Underline nothing for table, letters or compare visuals
   return [];
 }

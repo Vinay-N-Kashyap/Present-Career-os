@@ -370,7 +370,79 @@ export function synthesizeLongLessonVisual(
     };
   }
 
-  // 3. Accounting, Finance, Tax, Audit, Banking, Corporate Law, Operations, Analytics & Excel -> 4-step LedgerSheetVisual
+  // 3. Operations, Git VCS & Executive Soft Skills -> 4-step WorkflowVisual
+  if (
+    normPrefix === 'bcom_ops' ||
+    normPrefix === 'git_vcs' ||
+    normPrefix === 'soft_skills'
+  ) {
+    const stages = normPrefix === 'git_vcs'
+      ? [
+          { id: 's1', name: 'Working Tree', subtext: 'git add', tone: 'data' as const },
+          { id: 's2', name: 'Staging Index', subtext: 'git commit', tone: 'ok' as const },
+          { id: 's3', name: 'Feature Branch', subtext: 'git rebase', tone: 'data' as const },
+          { id: 's4', name: 'Mainline CI', subtext: 'Verified Merge', tone: 'ok' as const }
+        ]
+      : normPrefix === 'bcom_ops'
+      ? [
+          { id: 's1', name: 'Demand Forecast', subtext: 'EOQ / Safety Stock', tone: 'data' as const },
+          { id: 's2', name: 'Procurement & WIP', subtext: 'Kanban Pull', tone: 'data' as const },
+          { id: 's3', name: 'Six Sigma QA', subtext: 'Control Limits', tone: 'ok' as const },
+          { id: 's4', name: 'Fulfillment SLA', subtext: 'OTIF 99.4%', tone: 'ok' as const }
+        ]
+      : [
+          { id: 's1', name: 'Context Framing', subtext: 'Stakeholder Goal', tone: 'data' as const },
+          { id: 's2', name: 'Structured Thesis', subtext: 'BLUF / Pyramid', tone: 'data' as const },
+          { id: 's3', name: 'Objection Defense', subtext: 'Data-Backed', tone: 'ok' as const },
+          { id: 's4', name: 'Executive Alignment', subtext: 'Action Plan', tone: 'ok' as const }
+        ];
+
+    return {
+      template: 'workflow',
+      title: `${shortTitle} — Operational Workflow`,
+      stages,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Stage 1 (${stages[0].name}): Initialize ${shortTitle}.`),
+          activeStageId: 's1',
+          statusBadge: 'INGRESS',
+          throughput: '100% Ready',
+          tone: 'data',
+          stages
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Stage 2 (${stages[1].name}): Process core workflow stage.`),
+          activeStageId: 's2',
+          statusBadge: 'IN_PROGRESS',
+          throughput: 'Active',
+          tone: 'data',
+          stages
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Stage 3 (${stages[2].name}): Verify quality and invariants.`),
+          activeStageId: 's3',
+          statusBadge: 'VALIDATED',
+          throughput: 'Zero Defects',
+          tone: 'ok',
+          stages
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Stage 4 (${stages[3].name}): Commit end-to-end delivery.`),
+          activeStageId: 's4',
+          statusBadge: 'COMPLETED',
+          throughput: 'SLA Met ✓',
+          tone: 'ok',
+          stages
+        }
+      ]
+    };
+  }
+
+  // 4. Accounting, Finance, Tax, Audit, Banking, Corporate Law, Analytics & Excel -> 4-step LedgerSheetVisual
   if (
     normPrefix.startsWith('bcom_') ||
     normPrefix === 'excel_viz' ||
@@ -438,7 +510,212 @@ export function synthesizeLongLessonVisual(
     };
   }
 
-  // 4. Systems, Quant, 3D Graphics, Blockchain, Mobile, Design, Full-Stack JS, Java, Git, Comp Fund, Soft Skills -> 4-step FlowVisual
+  // 5. UI/UX Design Systems -> 4-step WireframeVisual
+  if (normPrefix === 'design' || normPrefix === 'design_web') {
+    const boxes = [
+      { id: 'nav', label: 'Navigation Bar', flex: '1', tone: 'data' as const },
+      { id: 'hero', label: 'Primary Hero Viewport', flex: '2', tone: 'ok' as const },
+      { id: 'cta', label: 'Interactive CTA Card', flex: '1', tone: 'data' as const }
+    ];
+    return {
+      template: 'wireframe',
+      title: `${shortTitle} — Layout & Hierarchy Wireframe`,
+      boxes,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Step 1: Establish horizontal flex-row container for ${shortTitle}.`),
+          layoutMode: 'flex-row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          activeBoxId: 'nav',
+          tone: 'data',
+          boxes
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.`),
+          layoutMode: 'grid',
+          justifyContent: 'center',
+          alignItems: 'stretch',
+          activeBoxId: 'hero',
+          tone: 'ok',
+          boxes
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Step 3: Inspect CSS box-model padding, border, and margin tokens.`),
+          layoutMode: 'box-model',
+          activeBoxId: 'cta',
+          tone: 'data',
+          boxes
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Step 4: Verify mobile-first flex-col stacking & WCAG contrast.`),
+          layoutMode: 'flex-col',
+          justifyContent: 'flex-start',
+          alignItems: 'stretch',
+          activeBoxId: 'cta',
+          tone: 'ok',
+          boxes
+        }
+      ]
+    };
+  }
+
+  // 6. Mobile App Development -> 4-step ComponentTreeVisual
+  if (normPrefix === 'mobile') {
+    const nodes = [
+      { id: 'AppShell', name: '<MobileAppShell />', props: { theme: 'dark' }, state: { online: 'true' }, tone: 'ok' as const },
+      { id: 'NavStack', name: '<NavigationStack />', props: { route: `Day${day}` }, tone: 'data' as const },
+      { id: 'ScreenView', name: '<ScreenViewport />', state: { loading: 'false' }, tone: 'data' as const },
+      { id: 'NativeBridge', name: '<NativeSensorBridge />', props: { fps: '60' }, tone: 'ok' as const }
+    ];
+    return {
+      template: 'component-tree',
+      title: `${shortTitle} — Mobile Component Hierarchy`,
+      nodes,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Step 1: Mount root <MobileAppShell /> for ${shortTitle}.`),
+          activeId: 'AppShell',
+          tone: 'data',
+          nodes
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Step 2: Pass route params down to <NavigationStack />.`),
+          activeId: 'NavStack',
+          reRenderingIds: ['NavStack', 'ScreenView'],
+          propsPassed: { from: 'AppShell', to: 'NavStack', propName: 'route', value: `Day${day}` },
+          tone: 'data',
+          nodes
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Step 3: Render <ScreenViewport /> with reactive state bindings.`),
+          activeId: 'ScreenView',
+          reRenderingIds: ['ScreenView'],
+          propsPassed: { from: 'NavStack', to: 'ScreenView', propName: 'payload', value: 'hydrated' },
+          tone: 'ok',
+          nodes
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.`),
+          activeId: 'NativeBridge',
+          eventFired: { from: 'NativeBridge', to: 'AppShell', eventName: 'onNativeCommit' },
+          tone: 'ok',
+          nodes
+        }
+      ]
+    };
+  }
+
+  // 7. Blockchain & Web3 -> 4-step SequenceVisual
+  if (normPrefix === 'blockchain') {
+    const actors = ['Wallet Signer', 'Mempool Node', 'EVM Contract', 'Block Ledger'];
+    return {
+      template: 'sequence',
+      title: `${shortTitle} — On-Chain Transaction Sequence`,
+      actors,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`Step 1: Wallet Signer signs payload for ${shortTitle}.`),
+          activeActor: 'Wallet Signer',
+          messages: [
+            { from: 'Wallet Signer', to: 'Mempool Node', label: 'eth_sendRawTransaction(sig)', tone: 'data' }
+          ]
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.`),
+          activeActor: 'Mempool Node',
+          messages: [
+            { from: 'Wallet Signer', to: 'Mempool Node', label: 'eth_sendRawTransaction(sig)', tone: 'ok' },
+            { from: 'Mempool Node', to: 'EVM Contract', label: 'CALLDATA + Gas Check', tone: 'data' }
+          ]
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Step 3: EVM Contract verifies invariants and mutates state root.`),
+          activeActor: 'EVM Contract',
+          messages: [
+            { from: 'Wallet Signer', to: 'Mempool Node', label: 'eth_sendRawTransaction(sig)', tone: 'ok' },
+            { from: 'Mempool Node', to: 'EVM Contract', label: 'CALLDATA + Gas Check', tone: 'ok' },
+            { from: 'EVM Contract', to: 'Block Ledger', label: 'SSTORE + Emit Event', tone: 'data' }
+          ]
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Step 4: Block Ledger seals Merkle root and returns receipt.`),
+          activeActor: 'Block Ledger',
+          messages: [
+            { from: 'Wallet Signer', to: 'Mempool Node', label: 'eth_sendRawTransaction(sig)', tone: 'ok' },
+            { from: 'Mempool Node', to: 'EVM Contract', label: 'CALLDATA + Gas Check', tone: 'ok' },
+            { from: 'EVM Contract', to: 'Block Ledger', label: 'SSTORE + Emit Event', tone: 'ok' },
+            { from: 'Block Ledger', to: 'Wallet Signer', label: 'TxReceipt (Finalized ✓)', tone: 'ok' }
+          ]
+        }
+      ]
+    };
+  }
+
+  // 8. 3D Graphics & Low-Latency Quant Systems -> 4-step StatesVisual
+  if (normPrefix === 'g3d' || normPrefix === 'quant_systems') {
+    const states = normPrefix === 'g3d'
+      ? [
+          { id: 'st1', label: 'Scene Graph' },
+          { id: 'st2', label: 'Vertex Transform' },
+          { id: 'st3', label: 'Fragment Shader' },
+          { id: 'st4', label: 'Frame Buffer' }
+        ]
+      : [
+          { id: 'st1', label: 'Market Feed' },
+          { id: 'st2', label: 'Risk Gate' },
+          { id: 'st3', label: 'Limit Order Book' },
+          { id: 'st4', label: 'Execution Fill' }
+        ];
+    return {
+      template: 'states',
+      title: `${shortTitle} — Deterministic State Machine`,
+      states,
+      steps: [
+        {
+          at: 'intro',
+          caption: clipCaption(`State 1 (${states[0].label}): Initialize state for ${shortTitle}.`),
+          currentState: 'st1',
+          tone: 'data'
+        },
+        {
+          at: 'say1',
+          caption: clipCaption(`Transition to ${states[1].label} with zero-allocation buffer.`),
+          currentState: 'st2',
+          transition: { from: 'st1', to: 'st2', label: 'transform()' },
+          tone: 'data'
+        },
+        {
+          at: 'example',
+          caption: clipCaption(`Transition to ${states[2].label} and evaluate hot-path invariants.`),
+          currentState: 'st3',
+          transition: { from: 'st2', to: 'st3', label: 'evaluate()' },
+          tone: 'ok'
+        },
+        {
+          at: 'tryIt',
+          caption: clipCaption(`Commit deterministic output in ${states[3].label}.`),
+          currentState: 'st4',
+          transition: { from: 'st3', to: 'st4', label: 'commit() ✓' },
+          tone: 'ok'
+        }
+      ]
+    };
+  }
+
+  // 9. Full-Stack JS, Java, Computer Fundamentals & General Engineering -> 4-step FlowVisual
   const stageLabel = shortTitle.length > 22 ? `${shortTitle.slice(0, 19)}...` : shortTitle;
   return {
     template: 'flow',

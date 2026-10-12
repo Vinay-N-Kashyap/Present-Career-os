@@ -5,8 +5,20 @@ import { synthesizeLongLessonVisual } from '../src/lib/visuals/loadVisuals';
 import { getLongLesson } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Block 37: All 28 standalone & B.Com course prefixes are enabled and synthesize 4-step visuals for Day 1 LongLessons', () => {
-  const courseExpectations: Array<{ prefix: string; expectedTemplate: 'register-bits' | 'funnel' | 'ledger-sheet' | 'flow' }> = [
+test('Block 37 & 38: All 28 standalone & B.Com course prefixes are enabled and synthesize 9 specialized 4-step visuals for Day 1 LongLessons', () => {
+  const courseExpectations: Array<{
+    prefix: string;
+    expectedTemplate:
+      | 'register-bits'
+      | 'funnel'
+      | 'workflow'
+      | 'ledger-sheet'
+      | 'wireframe'
+      | 'component-tree'
+      | 'sequence'
+      | 'states'
+      | 'flow';
+  }> = [
     // IoT & Hardware -> register-bits
     { prefix: 'iot_emb', expectedTemplate: 'register-bits' },
     { prefix: 'iot_edge', expectedTemplate: 'register-bits' },
@@ -20,29 +32,39 @@ test('Block 37: All 28 standalone & B.Com course prefixes are enabled and synthe
     { prefix: 'bcom_ecom', expectedTemplate: 'funnel' },
     { prefix: 'bcom_ent', expectedTemplate: 'funnel' },
 
-    // Accounting, Finance, Tax, Audit, Banking, Corporate Law, Ops, Analytics, AI Transformation & Excel -> ledger-sheet
+    // Operations, Git VCS & Soft Skills -> workflow
+    { prefix: 'bcom_ops', expectedTemplate: 'workflow' },
+    { prefix: 'git_vcs', expectedTemplate: 'workflow' },
+    { prefix: 'soft-skills', expectedTemplate: 'workflow' },
+
+    // Accounting, Finance, Tax, Audit, Banking, Corporate Law, Analytics, AI Transformation & Excel -> ledger-sheet
     { prefix: 'bcom-accounting', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom-finance', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_tax', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_aud', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_ban', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_law', expectedTemplate: 'ledger-sheet' },
-    { prefix: 'bcom_ops', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_ana', expectedTemplate: 'ledger-sheet' },
     { prefix: 'bcom_ait', expectedTemplate: 'ledger-sheet' },
     { prefix: 'excel_viz', expectedTemplate: 'ledger-sheet' },
 
-    // Systems, Quant, 3D Graphics, Blockchain, Mobile, Design, Full-Stack JS, Java, Git, Comp Fund & Soft Skills -> flow
-    { prefix: 'quant-systems', expectedTemplate: 'flow' },
-    { prefix: 'g3d', expectedTemplate: 'flow' },
-    { prefix: 'blockchain', expectedTemplate: 'flow' },
-    { prefix: 'mobile', expectedTemplate: 'flow' },
-    { prefix: 'design', expectedTemplate: 'flow' },
+    // UI/UX Design -> wireframe
+    { prefix: 'design', expectedTemplate: 'wireframe' },
+
+    // Mobile Architecture -> component-tree
+    { prefix: 'mobile', expectedTemplate: 'component-tree' },
+
+    // Blockchain & Web3 -> sequence
+    { prefix: 'blockchain', expectedTemplate: 'sequence' },
+
+    // 3D Graphics & Quant Systems -> states
+    { prefix: 'quant-systems', expectedTemplate: 'states' },
+    { prefix: 'g3d', expectedTemplate: 'states' },
+
+    // Full-Stack JS, Java & Computer Fundamentals -> flow
     { prefix: 'fullstack-js', expectedTemplate: 'flow' },
     { prefix: 'java-basics', expectedTemplate: 'flow' },
-    { prefix: 'git_vcs', expectedTemplate: 'flow' },
-    { prefix: 'comp_fund', expectedTemplate: 'flow' },
-    { prefix: 'soft-skills', expectedTemplate: 'flow' }
+    { prefix: 'comp_fund', expectedTemplate: 'flow' }
   ];
 
   for (const { prefix, expectedTemplate } of courseExpectations) {
