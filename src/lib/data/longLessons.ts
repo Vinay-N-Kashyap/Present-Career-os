@@ -33,6 +33,9 @@ import { AI_WEB_LONG_LESSONS } from './aiWebLongLessons';
 import { SRE_WEB_LONG_LESSONS } from './sreWebLongLessons';
 import { STREAM_WEB_LONG_LESSONS } from './streamWebLongLessons';
 import { AI_DEPLOY_WEB_LONG_LESSONS } from './aiDeployWebLongLessons';
+import { COMP_FUND_LONG_LESSONS } from './compFundLongLessons';
+import { GIT_VCS_LONG_LESSONS } from './gitVcsLongLessons';
+import { IOT_EMB_LONG_LESSONS } from './iotEmbLongLessons';
 
 export interface LongLessonCheck {
   question: string;
@@ -107,6 +110,9 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   'sre-web': SRE_WEB_LONG_LESSONS,
   'stream-web': STREAM_WEB_LONG_LESSONS,
   'aideploy-web': AI_DEPLOY_WEB_LONG_LESSONS,
+  comp_fund: COMP_FUND_LONG_LESSONS,
+  git_vcs: GIT_VCS_LONG_LESSONS,
+  iot_emb: IOT_EMB_LONG_LESSONS,
 };
 
 /** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
