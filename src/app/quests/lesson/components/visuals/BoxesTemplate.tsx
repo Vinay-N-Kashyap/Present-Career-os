@@ -19,6 +19,7 @@ export function BoxesTemplate({
 }: BoxesTemplateProps): React.ReactElement {
   return (
     <div
+      data-testid="boxes-template-root"
       style={{
         display: 'flex',
         flexWrap: 'wrap',

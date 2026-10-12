@@ -55,6 +55,7 @@ export function WireframeTemplate({
 
   return (
     <div
+      data-testid="wireframe-template-root"
       style={{
         width: '100%',
         height: '100%',

@@ -18,7 +18,7 @@ export function FlowTemplate({
   showSpaces,
 }: FlowTemplateProps): React.ReactElement {
   const isLitArrow = (fromId: string, toId: string): boolean => {
-    return step.arrows.some(([from, to]: [string, string]) => from === fromId && to === toId);
+    return (step.arrows || []).some(([from, to]: [string, string]) => from === fromId && to === toId);
   };
 
   // Check if this is the convergent 2-row layout of 3.6
@@ -31,10 +31,10 @@ export function FlowTemplate({
       highlightedLabel !== null &&
       highlightedLabel.trim().toLowerCase() === node.label.trim().toLowerCase();
 
-    const rawTone: VisualTone = step.tones[node.id] || 'idle';
+    const rawTone: VisualTone = step.tones?.[node.id] || 'idle';
     const effectiveTone: VisualTone = isHighlighted ? 'data' : rawTone;
     const isTappable = node.tappable !== false;
-    const value = step.values[node.id] || '';
+    const value = step.values?.[node.id] || '';
 
     return (
       <div
@@ -141,6 +141,8 @@ export function FlowTemplate({
 
     return (
       <div
+        data-testid="flow-template-root"
+        data-flow-layout="convergent"
         style={{
           display: 'flex',
           flexDirection: 'row',
@@ -173,6 +175,8 @@ export function FlowTemplate({
   // Linear flow
   return (
     <div
+      data-testid="flow-template-root"
+      data-flow-layout="linear"
       style={{
         display: 'flex',
         flexDirection: 'row',

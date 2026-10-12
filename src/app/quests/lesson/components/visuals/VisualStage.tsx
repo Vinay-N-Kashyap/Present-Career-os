@@ -29,6 +29,23 @@ export interface VisualStageProps {
   fallbackNote?: string | null;
 }
 
+/**
+ * Pure helper returning whether a visual template supports interactive shape tapping.
+ */
+export function isInteractiveTemplate(template?: string): boolean {
+  if (!template) return false;
+  return [
+    'component-tree',
+    'wireframe',
+    'workflow',
+    'register-bits',
+    'ledger-sheet',
+    'funnel',
+    'flow',
+    'boxes',
+  ].includes(template);
+}
+
 export function VisualStage({
   visual,
   currentStepIndex,
@@ -42,10 +59,11 @@ export function VisualStage({
   const [isMobileCollapsed, setIsMobileCollapsed] = useState(false);
   const [viewMode, setViewMode] = useState<'diagram' | 'storyboard'>('diagram');
 
-  const totalSteps = visual.steps.length;
+  const steps = Array.isArray(visual?.steps) ? visual.steps : [];
+  const totalSteps = steps.length;
   // Ensure current step index is within bounds
-  const safeStepIndex = Math.min(Math.max(0, currentStepIndex), totalSteps - 1);
-  const currentStep = visual.steps[safeStepIndex];
+  const safeStepIndex = totalSteps > 0 ? Math.min(Math.max(0, currentStepIndex), totalSteps - 1) : 0;
+  const currentStep = steps[safeStepIndex] || null;
 
   const handlePrev = () => {
     if (safeStepIndex > 0) {
@@ -551,6 +569,7 @@ export function VisualStage({
         <div
           aria-live="polite"
           className="visual-stage-caption"
+          data-testid="visual-stage-caption"
           style={{
             fontSize: '15px',
             lineHeight: 1.4,
@@ -602,10 +621,11 @@ export function VisualStage({
           {/* Dots & Sync */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              {visual.steps.map((_step: unknown, idx: number) => (
+              {steps.map((_step: unknown, idx: number) => (
                 <button
                   key={idx}
                   type="button"
+                  data-testid={`visual-step-dot-${idx}`}
                   onClick={() => onStepChange(idx, true)}
                   className={`step-dot ${idx === safeStepIndex ? 'active' : ''}`}
                   aria-label={`Go to step ${idx + 1}`}

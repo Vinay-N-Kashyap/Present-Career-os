@@ -1,4 +1,4 @@
-export { VisualStage } from './VisualStage';
+export { VisualStage, isInteractiveTemplate } from './VisualStage';
 export type { VisualStageProps } from './VisualStage';
 export { FlowTemplate } from './FlowTemplate';
 export { BoxesTemplate } from './BoxesTemplate';
