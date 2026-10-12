@@ -132,13 +132,14 @@ export function InterviewSessionHeader({
        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', display: 'inline-block' }}>
           <button
+            data-testid="header-assist-toggle"
             title="Toggle AI Spoken Teleprompter Assist Mode"
             onClick={() => {
               const next = !isAssistModeActive;
               setIsAssistModeActive(next);
               if (next) {
                 const lastMsg = messages.filter(m => m.role === 'assistant').slice(-1)[0]?.content;
-                if (lastMsg) fetchAssistScript(lastMsg);
+                fetchAssistScript(lastMsg || `Provide structured interview coaching for ${activeTopicName} (${activeStage}).`);
               }
             }}
             style={{

@@ -35,6 +35,7 @@ import {
   InterviewResultsView,
   InterviewSetupView,
   AssistModeDrawer,
+  buildFallbackAssistData,
   InterviewHistoryModal,
   InterviewSessionHeader,
   InterviewVoiceHud
@@ -405,6 +406,8 @@ export default function InterviewPage() {
 
   const fetchAssistScript = useCallback(async (questionText: string, level?: 'standard' | 'advanced', stageOverride?: Stage) => {
     const requestId = ++assistRequestRef.current;
+    const targetStage = stageOverride || activeStage;
+    const targetLevel = level || assistScriptLevel;
     setIsFetchingAssist(true);
     try {
       const headers = await getAuthHeaders();
@@ -413,11 +416,11 @@ export default function InterviewPage() {
         headers,
         body: JSON.stringify({
           question: questionText,
-          stage: stageOverride || activeStage,
+          stage: targetStage,
           topic: activeTopicName,
           domainStream,
           difficulty,
-          scriptLevel: level || assistScriptLevel,
+          scriptLevel: targetLevel,
           isPractice: !isInterviewActive
         })
       });
@@ -428,7 +431,10 @@ export default function InterviewPage() {
     } catch (error) {
       console.warn('[Interview Assist] Could not refresh the script:', error);
       if (requestId === assistRequestRef.current) {
-        toast.error('Assist Mode could not refresh', 'Your previous script is still available. Try Regenerate again in a moment.');
+        setAssistData((prev: any) =>
+          prev || buildFallbackAssistData(targetStage, activeTopicName, targetLevel, targetStage === 'round2_coding')
+        );
+        toast.error('Assist Mode could not refresh', 'Loaded offline coaching outline. Try Regenerate again in a moment.');
       }
     } finally {
       if (requestId === assistRequestRef.current) setIsFetchingAssist(false);
