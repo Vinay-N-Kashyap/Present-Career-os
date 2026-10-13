@@ -38,8 +38,13 @@ test('Systems Long Lessons: Resolution & Structural Integrity for comp_fund, git
   assert.equal(compFundLesson2.day, 2);
   assert.equal(compFundLesson2.parts.length, 5);
 
+  const gitVcsLesson2 = getLongLesson('git_vcs', 2);
+  assert.ok(gitVcsLesson2, 'git_vcs Day 2 lesson must be resolved');
+  assert.equal(gitVcsLesson2.day, 2);
+  assert.equal(gitVcsLesson2.parts.length, 5);
+
   // Verify all check questions across all parts
-  for (const lesson of [compFundLesson, compFundLesson2, gitVcsLesson, iotEmbLesson, iotEmbLesson2]) {
+  for (const lesson of [compFundLesson, compFundLesson2, gitVcsLesson, gitVcsLesson2, iotEmbLesson, iotEmbLesson2]) {
     for (const part of lesson.parts) {
       assert.ok(part.check.question.length > 10, 'Question must be substantial');
       assert.ok(part.check.options.length >= 2, 'Options must have at least 2 choices');
@@ -94,6 +99,42 @@ test('Systems Long Lessons: comp_fund Day 2 Bash Snippets Execute Successfully i
   assert.equal(res5.allPassed, true, 'Part 5 && chain must succeed');
   assert.ok(res5.stdout?.includes('Build Success'), 'Must print Build Success');
   assert.ok(res5.stdout?.includes('bundle.js'), 'Must verify bundle artifact');
+});
+
+test('Systems Long Lessons: git_vcs Day 2 Bash Snippets Execute Successfully in POSIX Runner', async () => {
+  const gitVcsLesson2 = getLongLesson('git_vcs', 2)!;
+
+  // Part 1: Branch pointers & HEAD inspection
+  const res1 = await executeBashSuite(gitVcsLesson2.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 branch pointers must succeed');
+  assert.ok(res1.stdout?.includes('ref: refs/heads/feature-auth'), 'Must report active HEAD ref');
+  assert.ok(res1.stdout?.includes('commit_sha_101'), 'Must report branch commit SHA');
+
+  // Part 2: Fast-forward vs 3-way merge inspection
+  const res2 = await executeBashSuite(gitVcsLesson2.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 merge tree grep must succeed');
+  assert.ok(res2.stdout?.includes('main: add_nav'), 'Must report main branch state');
+  assert.ok(res2.stdout?.includes('feature: add_login'), 'Must report feature branch state');
+
+  // Part 3: Merge conflict markers
+  const res3 = await executeBashSuite(gitVcsLesson2.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 conflict markers must succeed');
+  assert.ok(res3.stdout?.includes('<<<<<<< HEAD'), 'Must include HEAD conflict marker');
+  assert.ok(res3.stdout?.includes('======='), 'Must include divider marker');
+  assert.ok(res3.stdout?.includes('>>>>>>> feature-config'), 'Must include incoming branch marker');
+
+  // Part 4: .gitignore secret prevention
+  const res4 = await executeBashSuite(gitVcsLesson2.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 gitignore must succeed');
+  assert.ok(res4.stdout?.includes('node_modules/'), 'Must ignore dependencies');
+  assert.ok(res4.stdout?.includes('.env'), 'Must ignore secret files');
+  assert.ok(res4.stdout?.includes('.env.example'), 'Must permit example template');
+
+  // Part 5: Linear rebase history & wc -l
+  const res5 = await executeBashSuite(gitVcsLesson2.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 rebase log must succeed');
+  assert.ok(res5.stdout?.includes('commit_1 (base)'), 'Must include rebased base');
+  assert.ok(res5.stdout?.includes('3'), 'Must count 3 linear commits');
 });
 
 test('Systems Long Lessons: iot_emb Day 1 C++ Snippets Pass AST Invariant Verification', async () => {
