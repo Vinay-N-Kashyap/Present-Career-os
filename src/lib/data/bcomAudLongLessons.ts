@@ -1689,5 +1689,461 @@ for f_ind in p5['forensic_spoliation_findings']:
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom_aud',
+    day: 5,
+    title: 'Milestone 1 Capstone: Enterprise Forensic Audit War Room, Corporate Fraud Trial & Senior Special Investigator Accreditation',
+    goal: 'Command a multi-million-dollar corporate financial statement fraud defense war room: synthesize Benford Chi-Square first-digit anomaly scoring, Beneish M-Score econometric manipulation detection, automated journal entry management override heuristics, EDRM cryptographic chain-of-custody electronic evidence extraction, and trial-ready expert witness testimony (Federal Rules of Evidence Rule 702 Daubert standard) to achieve comprehensive forensic audit resolution and earn Senior Certified Forensic Examiner & Special Investigator (CFE-SI) accreditation.',
+    minutes: 50,
+    recap: 'In Days 1 through 4, we engineered audit risk sampling, econometric earnings distortion detection, automated journal entry testing, and digital forensic drive acquisition. Today, in this Milestone 1 Capstone, we unite every quantitative, investigative, and evidentiary technique to prosecute a complex corporate fraud conspiracy in court.',
+    parts: [
+      {
+        title: 'Multi-Stage Forensic Ingestion, Benford Chi-Square & Beneish Econometric Manipulation Audit',
+        say: [
+          'Welcome to the executive forensic audit war room. When a whistleblower alerts the audit committee that corporate leadership has cooked the books to meet Wall Street quarterly consensus, forensic accountants do not begin by reading random emails. Instead, investigators deploy a multi-stage quantitative dragnet combining non-parametric Benford\'s Law first-digit distribution analysis with Professor Messod Beneish\'s eight-variable econometric manipulation index.',
+          'Think of Benford\'s Law as the sonic frequency of legitimate commerce: in honest ledgers, numbers starting with 1 appear roughly 30.1% of the time, while 9 appears only 4.6% of the time because numbers grow logarithmically. When corrupt managers fabricate invoices to hit target bonuses, human psychological bias leads them to invent amounts just below authorization thresholds—such as $89,500 or $94,000—causing severe statistical deviations that produce massive Chi-Square test statistics far exceeding the critical value of 15.51.',
+          'Simultaneously, the Beneish M-Score interrogates the balance sheet and income statement across Days Sales in Receivables (DSRI), Gross Margin (GMI), Asset Quality (AQI), Sales Growth (SGI), Depreciation (DEPI), SG&A Expenses (SGAI), Total Accruals to Total Assets (TATA), and Leverage (LVGI). An M-Score greater than -1.78 mathematically establishes a high probability of earnings manipulation. When both Benford Chi-Square and the Beneish M-Score trigger severe alerts, the investigation escalates from routine substantive testing to full criminal forensic prosecution.'
+        ],
+        example: 'At OmniCorp Global, analysts detect that operating disbursements are unnaturally clustered between $80,000 and $99,000, yielding a Benford Chi-Square statistic of 865.77 against the 15.51 threshold. Concurrently, OmniCorp\'s Beneish M-Score spikes to +0.97 (driven by a DSRI of 2.15 and TATA of 0.12), mathematically confirming systemic revenue inflation and triggering immediate executive suspension.',
+        code: `import math
+
+def audit_enterprise_financial_statement_manipulation(
+    ledger_amounts: list[float],
+    beneish_metrics: dict
+) -> dict:
+    observed = {d: 0 for d in range(1, 10)}
+    total_valid = 0
+    for amt in ledger_amounts:
+        amt_abs = abs(amt)
+        if amt_abs >= 1.0:
+            first_digit = int(str(f"{amt_abs:.6f}").replace(".", "").lstrip("0")[0])
+            if 1 <= first_digit <= 9:
+                observed[first_digit] += 1
+                total_valid += 1
+                
+    chi_square = 0.0
+    for d in range(1, 10):
+        expected_prob = math.log10(1.0 + 1.0 / d)
+        expected_count = total_valid * expected_prob
+        obs = observed[d]
+        chi_square += ((obs - expected_count) ** 2) / expected_count if expected_count > 0 else 0.0
+        
+    benford_anomaly = chi_square > 15.51
+    
+    m_score = (
+        -4.84
+        + 0.920 * beneish_metrics.get("dsri", 1.0)
+        + 0.528 * beneish_metrics.get("gmi", 1.0)
+        + 0.404 * beneish_metrics.get("aqi", 1.0)
+        + 0.892 * beneish_metrics.get("sgi", 1.0)
+        + 0.115 * beneish_metrics.get("depi", 1.0)
+        - 0.172 * beneish_metrics.get("sgai", 1.0)
+        + 4.037 * beneish_metrics.get("tata", 0.0)
+        + 0.0327 * beneish_metrics.get("lvgi", 1.0)
+    )
+    beneish_manipulation = m_score > -1.78
+    
+    systemic_fraud = benford_anomaly and beneish_manipulation
+    return {
+        "transactions_analyzed": total_valid,
+        "benford_chi_square": round(chi_square, 2),
+        "benford_anomaly_detected": benford_anomaly,
+        "beneish_m_score": round(m_score, 2),
+        "beneish_manipulation_flag": beneish_manipulation,
+        "audit_risk_assessment": "PERVASIVE_FINANCIAL_STATEMENT_MANIPULATION" if systemic_fraud else "LOW_MANIPULATION_RISK"
+    }
+
+mock_ledger = [
+    12500.0, 18400.0, 19200.0, 11050.0, 14200.0,
+    91000.0, 95400.0, 92100.0, 99800.0, 93200.0,
+    84000.0, 89100.0, 87500.0, 78900.0, 71200.0
+] * 20
+beneish_input = {
+    "dsri": 2.15, "gmi": 1.85, "aqi": 1.70, "sgi": 1.95,
+    "depi": 1.25, "sgai": 1.40, "tata": 0.12, "lvgi": 1.35
+}
+p1 = audit_enterprise_financial_statement_manipulation(mock_ledger, beneish_input)
+print(f"Transactions: {p1['transactions_analyzed']} | Benford Chi2: {p1['benford_chi_square']}")
+print(f"Beneish M-Score: {p1['beneish_m_score']} | Risk: {p1['audit_risk_assessment']}")`,
+        output: `Transactions: 300 | Benford Chi2: 865.77\nBeneish M-Score: 0.97 | Risk: PERVASIVE_FINANCIAL_STATEMENT_MANIPULATION`,
+        codeNotes: [
+          { line: 7, note: 'Parses leading significant digits across ledger disbursements while ignoring decimals and zeros' },
+          { line: 17, note: 'Calculates Pearson Chi-Square goodness-of-fit against logarithmic Benford probabilities' },
+          { line: 24, note: 'Computes Professor Beneish\'s eight-factor econometric earnings manipulation model' },
+          { line: 36, note: 'Flags systemic financial statement manipulation when both Chi-Square and M-Score exceed critical thresholds' }
+        ],
+        tryIt: 'Adjust beneish_input metrics (set dsri to 1.0, tata to -0.05) to see the M-Score fall below -1.78 into the clean earnings range.',
+        check: {
+          question: 'In forensic accounting, why does the combination of a Benford Chi-Square statistic > 15.51 and a Beneish M-Score > -1.78 provide overwhelming evidence of intentional accounting fraud rather than mere clerical error?',
+          options: [
+            'Benford\'s Law identifies human psychological digit fabrication in disbursement ledgers, while the Beneish M-Score econometrically proves systemic financial statement distortion across accruals and revenue.',
+            'Benford\'s Law applies exclusively to federal income tax returns, while the Beneish M-Score is required by the PCAOB for routine inventory physical counts.',
+            'The Beneish M-Score measures foreign exchange translation volatility, while Benford\'s Law guarantees that cash balances match bank confirmations.',
+            'Both metrics are required by GAAP to calculate the annual straight-line depreciation expense of corporate physical fixed assets.'
+          ],
+          answer: 0,
+          why: 'Benford\'s Law detects abnormal human fabrication in transactional populations, while the Beneish M-Score quantifies macro-level manipulation across financial statement line items. Their joint violation confirms deliberate manipulation.',
+          answerIndex: 0,
+          explanation: 'Benford\'s Law detects abnormal human fabrication in transactional populations, while the Beneish M-Score quantifies macro-level manipulation across financial statement line items. Their joint violation confirms deliberate manipulation.'
+        }
+      },
+      {
+        title: 'High-Risk Journal Entry Override Detection & Employee-Vendor Collision Graphing',
+        say: [
+          'Once macro-level manipulation is confirmed, the forensic team must identify the specific mechanisms and perpetrators. Under AICPA SAS 99 and PCAOB AS 2401, management override of internal controls represents the primary vector through which corporate executives execute financial statement fraud. Senior leaders bypass automated segregation-of-duties workflows by posting direct manual journal entries.',
+          'To isolate management overrides, forensic algorithms score every manual journal entry against high-risk heuristics: entries posted on weekends or after fiscal year-end, round-dollar transactions ($100,000, $250,000), entries prepared or authorized directly by C-suite executives, and postings debiting ambiguous suspense or goodwill accounts while crediting revenue.',
+          'Simultaneously, investigators target corrupt procurement schemes through automated employee-vendor collision graph analysis. Fraudulent executives frequently establish fictitious shell vendors, routing corporate funds to bank accounts or residential addresses registered to themselves or close associates. By cross-referencing HR payroll databases with the vendor master file, algorithms uncover direct matches in direct deposit routing numbers, tax IDs, and physical addresses, exposing kickback conspiracies.'
+        ],
+        example: 'Forensic investigators audit OmniCorp\'s general ledger and discover two post-closing manual journal entries totaling $350,000 authored directly by CFO Arthur Pendelton debiting Suspense and Goodwill. Furthermore, collision analysis reveals vendor "Apex Advisory Strategic Partners LLC" shares the exact same direct deposit bank account and home address as the CFO, unmasking $1,450,000 in diverted corporate funds.',
+        code: `def detect_management_overrides_and_vendor_collisions(
+    journal_entries: list[dict],
+    employees: list[dict],
+    vendors: list[dict]
+) -> dict:
+    flagged_entries = []
+    for je in journal_entries:
+        score = 0
+        if je.get("is_weekend_or_post_close", False):
+            score += 30
+        if je.get("amount", 0) % 10000 == 0:
+            score += 25
+        if je.get("prepared_by_exec", False):
+            score += 35
+        if je.get("debit_account", "") in ["Suspense", "Goodwill", "Miscellaneous"]:
+            score += 20
+        if score >= 50:
+            flagged_entries.append({
+                "entry_id": je["id"],
+                "amount": je["amount"],
+                "score": score,
+                "memo": je.get("memo", "")
+            })
+            
+    emp_map = {emp["bank_account"]: emp for emp in employees}
+    emp_addr_map = {emp["address"].strip().lower(): emp for emp in employees}
+    
+    collisions = []
+    fraudulent_spend = 0.0
+    for v in vendors:
+        v_bank = v.get("bank_account", "")
+        v_addr = v.get("address", "").strip().lower()
+        matched_emp = None
+        collision_type = ""
+        
+        if v_bank in emp_map:
+            matched_emp = emp_map[v_bank]
+            collision_type = "BANK_ACCOUNT_MATCH"
+        elif v_addr in emp_addr_map:
+            matched_emp = emp_addr_map[v_addr]
+            collision_type = "HOME_ADDRESS_MATCH"
+            
+        if matched_emp:
+            spend = v.get("total_spend_usd", 0.0)
+            fraudulent_spend += spend
+            collisions.append({
+                "vendor_name": v["name"],
+                "employee_name": matched_emp["name"],
+                "employee_role": matched_emp["role"],
+                "collision_type": collision_type,
+                "diverted_spend_usd": spend
+            })
+            
+    return {
+        "flagged_override_entries_count": len(flagged_entries),
+        "flagged_entries": flagged_entries,
+        "vendor_employee_collisions_count": len(collisions),
+        "collisions": collisions,
+        "total_fraudulent_vendor_spend_usd": round(fraudulent_spend, 2)
+    }
+
+mock_jes = [
+    {"id": "JE-901", "amount": 100000.0, "is_weekend_or_post_close": True, "prepared_by_exec": True, "debit_account": "Suspense", "memo": "Quarter-end reconciliation"},
+    {"id": "JE-902", "amount": 250000.0, "is_weekend_or_post_close": True, "prepared_by_exec": True, "debit_account": "Goodwill", "memo": "Asset adjustment"},
+    {"id": "JE-903", "amount": 12450.0, "is_weekend_or_post_close": False, "prepared_by_exec": False, "debit_account": "Inventory", "memo": "Standard purchase"}
+]
+mock_emps = [
+    {"name": "Arthur Pendelton", "role": "Chief Financial Officer", "address": "742 Evergreen Terrace, Springfield", "bank_account": "ACH-991204812"}
+]
+mock_vendors = [
+    {"name": "Apex Advisory Strategic Partners LLC", "address": "742 Evergreen Terrace, Springfield", "bank_account": "ACH-991204812", "total_spend_usd": 1450000.0},
+    {"name": "Standard Office Supplies Co", "address": "100 Industrial Pkwy", "bank_account": "ACH-112233445", "total_spend_usd": 35000.0}
+]
+p2 = detect_management_overrides_and_vendor_collisions(mock_jes, mock_emps, mock_vendors)
+spend_s = "$" + f"{p2['total_fraudulent_vendor_spend_usd']:,.2f}"
+print(f"Overrides Flagged: {p2['flagged_override_entries_count']} | Collisions: {p2['vendor_employee_collisions_count']}")
+print(f"Total Corrupt Spend: {spend_s}")`,
+        output: `Overrides Flagged: 2 | Collisions: 1\nTotal Corrupt Spend: $1,450,000.00`,
+        codeNotes: [
+          { line: 7, note: 'Applies cumulative risk weights to manual journal entries exhibiting override red flags' },
+          { line: 22, note: 'Indexes employee payroll master records by bank routing account and normalized residential address' },
+          { line: 31, note: 'Executes collision graph matching to detect self-dealing shell vendor entities' },
+          { line: 40, note: 'Quantifies cumulative illicit disbursements diverted through collusive vendor entities' }
+        ],
+        tryIt: 'Modify the vendor address and bank account to unique values to confirm that collisions drop to 0 and corrupt spend resets to $0.00.',
+        check: {
+          question: 'Under PCAOB AS 2401 and corporate governance internal controls, why is matching employee bank accounts against vendor masters such a devastating audit test against management fraud?',
+          options: [
+            'Corrupt managers operating shell company kickback schemes almost invariably reuse personal bank accounts or home addresses, immediately unmasking beneficial ownership.',
+            'Vendor master files are publicly traded on stock exchanges, requiring quarterly reconciliation with employee tax returns.',
+            'Matching bank accounts automatically computes the executive\'s federal payroll tax withholding liabilities under IRS Form 941.',
+            'Enterprise resource planning (ERP) systems require all employees to register as certified third-party logistics vendors.'
+          ],
+          answer: 0,
+          why: 'Beneficial ownership of shell companies is frequently revealed when dishonest employees use their personal bank accounts or residential addresses to receive illicit vendor disbursements.',
+          answerIndex: 0,
+          explanation: 'Beneficial ownership of shell companies is frequently revealed when dishonest employees use their personal bank accounts or residential addresses to receive illicit vendor disbursements.'
+        }
+      },
+      {
+        title: 'Electronic Evidence Custody (NIST SP 800-86) & Carved Volatile Memory Reconstruction',
+        say: [
+          'With corrupt transactions identified in the enterprise ledger, the investigation enters the digital forensics laboratory to seize electronic proof. In modern white-collar criminal trials, paper trails have been replaced by ephemeral electronic evidence: uncommitted RAM buffers, encrypted chat histories, and wiped hard drives.',
+          'Under the National Institute of Standards and Technology (NIST SP 800-86) protocol and Federal Rules of Evidence Rule 902(14), investigators preserve digital evidence through hardware write-blockers and bitstream disk imaging. An identical SHA-256 cryptographic hash between the physical source drive and the forensic forensic image establishes an unassailable, self-authenticating chain of custody that withstands Daubert evidentiary challenges.',
+          'Furthermore, forensic investigators execute volatile RAM memory dump analysis prior to powering down suspect workstations. While deleted files on disk can be scrubbed using anti-forensics wiping software, live RAM captures uncommitted database transactions, in-flight wire instructions, and active encrypted sockets. By carving memory dumps for structured financial payloads, investigators retrieve uncommitted offshore wire transfers before they could be erased.'
+        ],
+        example: 'Investigators execute a search warrant on CFO Arthur Pendelton\'s primary laptop, capturing a verified 64-character SHA-256 bitstream drive image and acquiring a live 32 GB volatile RAM memory dump. Carving uncommitted RAM buffers reveals an in-flight $3,200,000 wire transfer payload destined for an offshore escrow account in Panama, proving premeditated flight capital.',
+        code: `def process_forensic_digital_evidence_custody(
+    disk_evidence: dict,
+    memory_buffers: list[dict]
+) -> dict:
+    src_h = disk_evidence.get("source_sha256", "").lower()
+    img_h = disk_evidence.get("image_sha256", "").lower()
+    wb = disk_evidence.get("write_blocker_hardware_verified", False)
+    
+    custody_valid = (src_h == img_h) and wb and len(src_h) == 64
+    
+    raw_docs = disk_evidence.get("raw_document_count", 0)
+    responsive_docs = disk_evidence.get("responsive_production_count", 0)
+    cull_pct = ((raw_docs - responsive_docs) / raw_docs * 100.0) if raw_docs > 0 else 0.0
+    
+    recovered_wires = []
+    total_wire_val = 0.0
+    for buf in memory_buffers:
+        if buf.get("is_uncommitted_ram_artifact", False):
+            recovered_wires.append(buf)
+            total_wire_val += buf.get("amount_usd", 0.0)
+            
+    return {
+        "custody_chain_admissible": custody_valid,
+        "source_hash": src_h,
+        "image_hash": img_h,
+        "raw_collected_documents": raw_docs,
+        "culled_production_documents": responsive_docs,
+        "edrm_culling_efficiency_pct": round(cull_pct, 2),
+        "carved_memory_artifacts_count": len(recovered_wires),
+        "total_carved_uncommitted_wire_usd": round(total_wire_val, 2),
+        "evidentiary_status": "NIST_800_86_VERIFIED_FRE_902_ADMISSIBLE" if custody_valid else "INADMISSIBLE_EVIDENCE_SPOILAGE"
+    }
+
+h = "a" * 64
+p3 = process_forensic_digital_evidence_custody(
+    disk_evidence={
+        "source_sha256": h,
+        "image_sha256": h,
+        "write_blocker_hardware_verified": True,
+        "raw_document_count": 850000,
+        "responsive_production_count": 21250
+    },
+    memory_buffers=[
+        {"buffer_id": "RAM-CARVE-01", "is_uncommitted_ram_artifact": True, "amount_usd": 3200000.0, "payee": "Panama Holdings Corp"}
+    ]
+)
+wire_s = "$" + f"{p3['total_carved_uncommitted_wire_usd']:,.2f}"
+print(f"Custody Valid: {p3['custody_chain_admissible']} | EDRM Cull: {p3['edrm_culling_efficiency_pct']}%")
+print(f"Carved Wires: {p3['carved_memory_artifacts_count']} | Total Wire Amount: {wire_s}")`,
+        output: `Custody Valid: True | EDRM Cull: 97.5%\nCarved Wires: 1 | Total Wire Amount: $3,200,000.00`,
+        codeNotes: [
+          { line: 7, note: 'Validates 64-character SHA-256 cryptographic parity and hardware write-blocker deployment' },
+          { line: 12, note: 'Computes Electronic Discovery Reference Model (EDRM) document culling efficiency percentage' },
+          { line: 18, note: 'Extracts uncommitted transactional memory artifacts and sums illicit wire transfer values' },
+          { line: 26, note: 'Certifies self-authenticating electronic record admissibility under FRE Rule 902(14)' }
+        ],
+        tryIt: 'Change image_sha256 to a different hash string to verify that evidentiary_status immediately shifts to INADMISSIBLE_EVIDENCE_SPOILAGE.',
+        check: {
+          question: 'Why is volatile RAM memory dumping performed prior to shutting down or pulling the power plug on a seized executive workstation during a corporate fraud raid?',
+          options: [
+            'Volatile RAM contains uncommitted ERP transactions, active network socket states, and encryption keys that vanish permanently the instant power is severed.',
+            'Volatile RAM is required by the SEC to compute the company\'s quarterly return on equity (ROE).',
+            'Pulling the power plug on a server causes permanent physical damage to the liquid cooling radiator coils.',
+            'Operating systems automatically backup all RAM contents to the public cloud whenever power is lost.'
+          ],
+          answer: 0,
+          why: 'RAM is volatile memory; disconnecting power instantly wipes uncommitted buffers, encryption keys, and active socket connections that provide smoking-gun evidence.',
+          answerIndex: 0,
+          explanation: 'RAM is volatile memory; disconnecting power instantly wipes uncommitted buffers, encryption keys, and active socket connections that provide smoking-gun evidence.'
+        }
+      },
+      {
+        title: 'Forensic Net Worth Method & Illicit Wealth Restitution Quantification',
+        say: [
+          'In court, white-collar defendants frequently claim that missing corporate funds were legitimate business expenses or administrative errors. To definitively rebut this defense, the prosecution deploys the Forensic Net Worth Method—a landmark indirect method of proof originally pioneered by federal investigators in tax evasion and organized crime prosecutions.',
+          'The Net Worth Method operates on basic economic conservation: in any given year, an individual\'s total wealth accumulation plus personal consumption must equal their legitimate after-tax income plus gifts or inheritances. Any substantial discrepancy represents unexplained illicit wealth.',
+          'The forensic equation calculates: (Current Period Assets - Current Period Liabilities) - (Base Period Assets - Base Period Liabilities) = Net Worth Increase. Adding documented annual living expenses (luxury vehicles, private aviation, real estate mortgages) yields Total Wealth Accretion and Consumption. Subtracting reported legitimate W-2 and investment income leaves Unexplained Illicit Enrichment, establishing the exact dollar target for civil asset forfeiture and Sarbanes-Oxley Section 304 executive bonus clawbacks.'
+        ],
+        example: 'Over a three-year period, CFO Arthur Pendelton\'s personal net worth skyrocketed from $800,000 to $8,400,000 ($7,600,000 increase) while personal living expenditures totaled $650,000. Despite total wealth accretion of $8,250,000, his reported legitimate W-2 compensation was only $450,000, establishing $7,800,000 in unexplained illicit wealth subject to mandatory clawback and asset forfeiture.',
+        code: `def quantify_illicit_enrichment_net_worth_method(
+    custodian_financials: dict
+) -> dict:
+    assets_end = custodian_financials.get("assets_current_period", 0.0)
+    liab_end = custodian_financials.get("liabilities_current_period", 0.0)
+    net_worth_end = assets_end - liab_end
+    
+    assets_start = custodian_financials.get("assets_base_period", 0.0)
+    liab_start = custodian_financials.get("liabilities_base_period", 0.0)
+    net_worth_start = assets_start - liab_start
+    
+    net_worth_accretion = net_worth_end - net_worth_start
+    living_expenses = custodian_financials.get("annual_living_expenses", 0.0)
+    
+    total_consumed_and_accumulated = net_worth_accretion + living_expenses
+    legitimate_income = custodian_financials.get("reported_legitimate_w2_income", 0.0)
+    
+    unexplained_illicit_wealth = total_consumed_and_accumulated - legitimate_income
+    clawback_recommended = max(0.0, unexplained_illicit_wealth)
+    
+    return {
+        "base_period_net_worth_usd": round(net_worth_start, 2),
+        "current_period_net_worth_usd": round(net_worth_end, 2),
+        "net_worth_increase_usd": round(net_worth_accretion, 2),
+        "documented_personal_expenditures_usd": round(living_expenses, 2),
+        "total_wealth_accretion_and_consumption_usd": round(total_consumed_and_accumulated, 2),
+        "reported_legitimate_income_usd": round(legitimate_income, 2),
+        "unexplained_illicit_enrichment_usd": round(unexplained_illicit_wealth, 2),
+        "sox_304_clawback_target_usd": round(clawback_recommended, 2)
+    }
+
+p4 = quantify_illicit_enrichment_net_worth_method({
+    "assets_base_period": 1200000.0,
+    "liabilities_base_period": 400000.0,
+    "assets_current_period": 8500000.0,
+    "liabilities_current_period": 100000.0,
+    "annual_living_expenses": 650000.0,
+    "reported_legitimate_w2_income": 450000.0
+})
+inc_nw = "$" + f"{p4['net_worth_increase_usd']:,.2f}"
+unexp_s = "$" + f"{p4['unexplained_illicit_enrichment_usd']:,.2f}"
+print(f"Net Worth Growth: {inc_nw} | Expenses: $" + f"{p4['documented_personal_expenditures_usd']:,.2f}")
+print(f"Unexplained Enrichment: {unexp_s}")`,
+        output: `Net Worth Growth: $7,600,000.00 | Expenses: $650,000.00\nUnexplained Enrichment: $7,800,000.00`,
+        codeNotes: [
+          { line: 5, note: 'Calculates ending net worth by subtracting current liabilities from total assets' },
+          { line: 12, note: 'Determines multi-year net worth accretion over the baseline audit period' },
+          { line: 15, note: 'Sums net worth growth and documented lifestyle consumption expenditures' },
+          { line: 18, note: 'Subtracts reported legitimate earnings to establish unexplained illicit enrichment' }
+        ],
+        tryIt: 'Increase reported_legitimate_w2_income to $8,500,000.00 to observe how unexplained illicit enrichment drops to $0.00.',
+        check: {
+          question: 'In federal court, how does the Forensic Net Worth Method legally establish criminal intent and illicit enrichment when direct bribery records are hidden in offshore shell entities?',
+          options: [
+            'By proving that an executive\'s documented asset growth and luxury consumption vastly exceeded all reported legitimate income, creating an irrebuttable inference of illicit revenue.',
+            'By requiring the defendant to submit to a compulsory polygraph examination administered by the internal audit director.',
+            'By automatically forfeiting 100% of the defendant\'s 401(k) balance to the Securities and Exchange Commission without judicial review.',
+            'By converting all corporate stock options into municipal debt bonds yielding 4.5% interest.'
+          ],
+          answer: 0,
+          why: 'The Net Worth Method indirectly proves illicit revenue by showing mathematical impossibility: legitimate earnings cannot account for the executive\'s observed asset accumulation and lifestyle expenditures.',
+          answerIndex: 0,
+          explanation: 'The Net Worth Method indirectly proves illicit revenue by showing mathematical impossibility: legitimate earnings cannot account for the executive\'s observed asset accumulation and lifestyle expenditures.'
+        }
+      },
+      {
+        title: 'Milestone 1 Synthesis: Expert Witness Trial Dossier & Special Investigator Accreditation',
+        say: [
+          'Congratulations on reaching the final courtroom synthesis of Milestone 1. In this ultimate capstone module, all investigative threads converge: Benford first-digit anomalies, Beneish econometric earnings manipulation, management override manual journal entries, employee-vendor collision graph fraud, NIST-compliant digital drive images, carved volatile RAM wire buffers, and Net Worth illicit enrichment calculations.',
+          'As a Senior Forensic Expert Witness testifying under Federal Rules of Evidence Rule 702 (the Daubert standard), your report must be mathematically rigorous, methodologically validated, and completely unassailable by opposing defense counsel. The Daubert standard requires that forensic methods are peer-reviewed, possess known error rates, adhere to published standards, and have gained general acceptance within the relevant scientific community.',
+          'Your final executive synthesis compiles the trial dossier: certifying an aggregate proven fraud total of $12,450,000 ($1.45M shell vendor kickbacks, $3.2M carved RAM wire transfers, and $7.8M unexplained personal enrichment). By delivering this trial-ready dossier, you recommend criminal referral to the US Department of Justice and the SEC, successfully concluding the forensic audit and earning the prestigious Senior Certified Forensic Examiner & Special Investigator (CFE-SI) accreditation.'
+        ],
+        example: 'At the federal criminal trial of OmniCorp\'s former CFO, the special forensic audit team presents the unified trial dossier. Integrating econometric M-Score manipulation (+0.97), $1.45M in vendor bank collisions, $3.2M in carved RAM wire artifacts, and $7.8M in net worth enrichment, the court admits the testimony under FRE Rule 702, resulting in a unanimous criminal verdict and full asset restitution.',
+        code: `def generate_forensic_trial_dossier_and_accreditation(
+    case_id: str,
+    target_executive: str,
+    target_corporation: str,
+    p1_audit: dict,
+    p2_overrides: dict,
+    p3_custody: dict,
+    p4_enrichment: dict
+) -> dict:
+    total_proven_fraud_usd = (
+        p2_overrides.get("total_fraudulent_vendor_spend_usd", 0.0)
+        + p3_custody.get("total_carved_uncommitted_wire_usd", 0.0)
+        + p4_enrichment.get("unexplained_illicit_enrichment_usd", 0.0)
+    )
+    
+    court_admissible = (
+        p1_audit.get("beneish_manipulation_flag", False)
+        and p3_custody.get("custody_chain_admissible", False)
+        and (total_proven_fraud_usd > 0.0)
+    )
+    
+    return {
+        "case_id": case_id,
+        "target_executive": target_executive,
+        "target_corporation": target_corporation,
+        "fre_702_daubert_evidentiary_standard_met": court_admissible,
+        "m_score_manipulation_proven": p1_audit.get("beneish_manipulation_flag", False),
+        "shell_vendor_fraud_usd": p2_overrides.get("total_fraudulent_vendor_spend_usd", 0.0),
+        "carved_ram_wire_usd": p3_custody.get("total_carved_uncommitted_wire_usd", 0.0),
+        "executive_unexplained_enrichment_usd": p4_enrichment.get("unexplained_illicit_enrichment_usd", 0.0),
+        "aggregate_proven_fraud_total_usd": round(total_proven_fraud_usd, 2),
+        "investigator_credential": "CERTIFIED_FORENSIC_EXAMINER_SPECIAL_INVESTIGATOR_CFE_SI",
+        "final_trial_verdict": "CRIMINAL_FRAUD_PROVEN_REFERRAL_TO_DOJ_AND_SEC" if court_admissible else "INSUFFICIENT_EVIDENCE"
+    }
+
+p5 = generate_forensic_trial_dossier_and_accreditation(
+    case_id="DOJ-SEC-2026-CR-8819",
+    target_executive="Arthur Pendelton (CFO)",
+    target_corporation="OmniCorp Global Holdings Inc.",
+    p1_audit=p1,
+    p2_overrides=p2,
+    p3_custody=p3,
+    p4_enrichment=p4
+)
+tot_s = "$" + f"{p5['aggregate_proven_fraud_total_usd']:,.2f}"
+print(f"Case: {p5['case_id']} | Executive: {p5['target_executive']}")
+print(f"FRE 702 Daubert Standard Met: {p5['fre_702_daubert_evidentiary_standard_met']}")
+print(f"Proven Total Fraud: {tot_s}")
+print(f"Verdict: {p5['final_trial_verdict']} | Credential: {p5['investigator_credential']}")`,
+        output: `Case: DOJ-SEC-2026-CR-8819 | Executive: Arthur Pendelton (CFO)\nFRE 702 Daubert Standard Met: True\nProven Total Fraud: $12,450,000.00\nVerdict: CRIMINAL_FRAUD_PROVEN_REFERRAL_TO_DOJ_AND_SEC | Credential: CERTIFIED_FORENSIC_EXAMINER_SPECIAL_INVESTIGATOR_CFE_SI`,
+        codeNotes: [
+          { line: 9, note: 'Aggregates proven damages across vendor kickbacks, volatile RAM wire transfers, and net worth enrichment' },
+          { line: 15, note: 'Verifies strict satisfaction of Federal Rules of Evidence Rule 702 Daubert admissibility standards' },
+          { line: 29, note: 'Generates formal criminal referral recommendations for the US Department of Justice and SEC' },
+          { line: 30, note: 'Awards official Senior Certified Forensic Examiner & Special Investigator (CFE-SI) accreditation' }
+        ],
+        tryIt: 'Simulate an evidentiary failure by passing custody_chain_admissible as False to confirm that court admissibility fails.',
+        check: {
+          question: 'Under Federal Rules of Evidence Rule 702 and the Supreme Court Daubert standard, what four criteria must a forensic audit expert witness satisfy for financial fraud testimony to be admissible in federal court?',
+          options: [
+            'Testimony must be grounded in sufficient facts/data, based on reliable peer-reviewed principles and methods with known error rates, and the expert must have reliably applied those methods to the facts.',
+            'The expert must hold an active CPA license in all 50 states, have served at least 10 years as an FBI agent, and maintain personal insurance of at least $10M.',
+            'The expert must obtain written approval from the defendant\'s board of directors prior to testifying under cross-examination.',
+            'Testimony is admissible only if the financial damage exceeds $100M and involves publicly traded NYSE companies.'
+          ],
+          answer: 0,
+          why: 'The Daubert standard under FRE Rule 702 requires that expert testimony be grounded in sufficient facts, utilize peer-reviewed and tested methodologies with known error rates, and be reliably applied to the case facts.',
+          answerIndex: 0,
+          explanation: 'The Daubert standard under FRE Rule 702 requires that expert testimony be grounded in sufficient facts, utilize peer-reviewed and tested methodologies with known error rates, and be reliably applied to the case facts.'
+        }
+      }
+    ],
+    summary: [
+      'Executed full-spectrum forensic financial statement manipulation audits combining Benford\'s Law Chi-Square first-digit anomaly scoring (Chi2 = 865.77) with the Beneish eight-variable econometric M-Score model (+0.97), establishing systemic revenue inflation.',
+      'Audited general ledger manual journal entries against management override red flags (weekend postings, round amounts, executive authors, suspense debits) and deployed collision graph analysis between HR payroll and vendor masters to expose $1.45M in shell vendor kickbacks.',
+      'Enforced NIST SP 800-86 cryptographic chain-of-custody protocols with 64-character SHA-256 bitstream matching and EDRM 97.5% document culling, while carving volatile RAM memory dumps to recover $3.2M in uncommitted offshore wire transfer artifacts.',
+      'Quantified executive illicit wealth accretion utilizing the IRS/DOJ Forensic Net Worth Method, calculating $7.8M in unexplained personal enrichment subject to Sarbanes-Oxley Section 304 clawback and civil forfeiture.',
+      'Synthesized all evidentiary findings into an unassailable Federal Rules of Evidence Rule 702 Daubert-compliant trial dossier proving $12.45M in aggregate fraud, referring the case to DOJ/SEC and conferring Senior Certified Forensic Examiner & Special Investigator (CFE-SI) accreditation.'
+    ],
+    projectStep: {
+      title: 'Command the Enterprise Corporate Fraud Defense War Room & Trial Dossier',
+      steps: [
+        'Ingest the target enterprise general ledger disbursements and compute Benford first-digit distributions alongside the Beneish eight-variable M-Score model to detect systemic earnings distortion.',
+        'Run heuristic scoring on all manual journal entries to identify executive management overrides, and cross-reference employee banking/address records against vendor masters to identify corrupt shell company collisions.',
+        'Validate seized physical drive bitstream SHA-256 hashes under NIST SP 800-86 and carve volatile RAM memory dumps to reconstruct uncommitted wire transactions and active offshore socket connections.',
+        'Apply the indirect Net Worth Method to determine multi-year asset accretion, personal lifestyle expenditures, and unexplained illicit enrichment beyond reported legitimate earnings.',
+        'Synthesize findings into an FRE Rule 702 Daubert-admissible trial dossier, compute total criminal damages ($12.45M), issue DOJ/SEC referrals, and obtain Senior Certified Forensic Examiner & Special Investigator (CFE-SI) accreditation.'
+      ]
+    }
+  }
 
 ];
