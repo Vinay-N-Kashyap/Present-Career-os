@@ -50,6 +50,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.ok(anaLesson2, 'bcom_ana Day 2 long lesson must resolve');
   assert.equal(anaLesson2.day, 2);
   assert.equal(anaLesson2.parts.length, 5, 'bcom_ana Day 2 must contain exactly 5 parts');
+
+  const anaLesson3 = getLongLesson('bcom_ana', 3);
+  assert.ok(anaLesson3, 'bcom_ana Day 3 long lesson must resolve');
+  assert.equal(anaLesson3.day, 3);
+  assert.equal(anaLesson3.parts.length, 5, 'bcom_ana Day 3 must contain exactly 5 parts');
 });
 
 test('IoT Net Day 1: 6LoWPAN & Link Budget Python Code Snippets & Socratic Checks Verification', () => {
@@ -288,6 +293,48 @@ test('IoT Net Day 5 Capstone: Border Router, CoAP-MQTT, Resilient Buffer & Telem
   assert.ok(netLesson5.parts[3].output?.includes('CBOR VS JSON TELEMETRY SERIALIZATION EFFICIENCY'));
   assert.ok(netLesson5.parts[4].code?.includes('verify_end_to_end_mesh_telemetry_pipeline'));
   assert.ok(netLesson5.parts[4].output?.includes('CAPSTONE: END-TO-END MESH TELEMETRY PIPELINE'));
+});
+
+test('B.Com Analytics Day 3: Standard Costing, CVP Leverage, ABC & DuPont ROE Verification', () => {
+  const anaLesson3 = getLongLesson('bcom_ana', 3);
+  assert.ok(anaLesson3, 'bcom_ana Day 3 must resolve');
+  assert.equal(anaLesson3.day, 3);
+  assert.equal(anaLesson3.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(anaLesson3);
+  const totalMin = estimateLessonMinutes(anaLesson3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < anaLesson3.parts.length; i++) {
+    const part = anaLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(anaLesson3.parts[0].code?.includes('calculate_standard_costing_variances'));
+  assert.ok(anaLesson3.parts[0].output?.includes('STANDARD COSTING & FLEXIBLE BUDGET VARIANCE'));
+  assert.ok(anaLesson3.parts[1].code?.includes('calculate_multiproduct_cvp_and_operating_leverage'));
+  assert.ok(anaLesson3.parts[1].output?.includes('MULTI-PRODUCT CVP BREAK-EVEN & OPERATING LEVERAGE'));
+  assert.ok(anaLesson3.parts[2].code?.includes('simulate_activity_based_costing_allocation'));
+  assert.ok(anaLesson3.parts[2].output?.includes('ACTIVITY-BASED COSTING (ABC) ALLOCATION'));
+  assert.ok(anaLesson3.parts[3].code?.includes('evaluate_capital_budgeting_project'));
+  assert.ok(anaLesson3.parts[3].output?.includes('CAPITAL BUDGETING: NPV & PROFITABILITY INDEX'));
+  assert.ok(anaLesson3.parts[4].code?.includes('calculate_dupont_roe_decomposition'));
+  assert.ok(anaLesson3.parts[4].output?.includes('DUPONT 3-TIER ROE DECOMPOSITION ANALYSIS'));
 });
 
 

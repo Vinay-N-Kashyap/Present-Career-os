@@ -655,6 +655,426 @@ print(f"Cohort NRR: {metrics['NRR_Pct']}% | GRR: {metrics['GRR_Pct']}% -> Status
         'Size an A/B experimentation sample requirement and construct an executive NRR revenue bridge dashboard.'
       ]
     }
+  },
+{
+    day: 3,
+    coursePrefix: 'bcom_ana',
+    title: 'Standard Costing, Variance Analysis, CVP Leverage & DuPont Decomposition Engine',
+    parts: [
+      {
+        title: 'Standard Costing & Multi-Level Flexible Budget Variance Analysis Engine',
+        say: [
+          'In managerial cost accounting and enterprise performance management, relying solely on static annual master budgets leads to distorted executive judgments. When sales volume fluctuates up or down, comparing actual dollar expenditures directly against the static budget conflates operational inefficiency with changes in production volume. Standard costing resolves this dilemma by constructing flexible budgets that dynamically scale allowable costs according to actual output achieved.',
+          'A production variance engine decomposes the total static budget variance into distinct operational drivers: sales price variance, sales volume variance, direct material price variance, direct material efficiency variance, and labor rate and efficiency variances. The direct material price variance measures purchasing department efficiency: (Actual Price - Standard Price) multiplied by Actual Quantity purchased. Conversely, the direct material efficiency variance measures shop floor manufacturing productivity: (Actual Quantity used - Standard Quantity allowed) multiplied by Standard Price.',
+          'Categorizing each operational variance as Favorable (FAV) or Unfavorable (UNFAV) isolates organizational accountability. When the purchasing department acquires cheaper, lower-grade raw material, it generates a favorable price variance; however, if that inferior material causes shop floor machinery jamming and defective scrap, it triggers catastrophic unfavorable material efficiency and labor idle-time variances. Automated variance decomposition enables C-suite executives to detect these operational trade-offs immediately.'
+        ],
+        example: 'Think of standard costing like a kitchen recipe for a bakery: if you bake 1,100 cakes instead of 1,000, your static budget will complain that you used too much flour; a flexible budget adjusts the allowable flour to 1,100 cakes, cleanly distinguishing between the cost of baking more cakes versus the kitchen staff wasting flour on the floor.',
+        code: `def calculate_standard_costing_variances(standard, actual):
+    """Decomposes enterprise production variances into price and efficiency components."""
+    # 1. Sales Price Variance: (Actual Price - Standard Price) * Actual Volume
+    sales_price_var = (actual["selling_price"] - standard["selling_price"]) * actual["units_sold"]
+    
+    # 2. Sales Volume Variance: (Actual Volume - Budgeted Volume) * Standard Margin
+    std_margin = standard["selling_price"] - standard["unit_cost"]
+    sales_volume_var = (actual["units_sold"] - standard["budgeted_units"]) * std_margin
+    
+    # 3. Direct Material Price Variance: (Actual Mat Price - Standard Mat Price) * Actual Mat Qty
+    mat_price_var = (actual["material_price_per_kg"] - standard["material_price_per_kg"]) * actual["total_material_kg"]
+    
+    # 4. Direct Material Efficiency Variance: (Actual Mat Qty - Standard Mat Allowed) * Standard Mat Price
+    std_mat_allowed = actual["units_sold"] * standard["material_kg_per_unit"]
+    mat_efficiency_var = (actual["total_material_kg"] - std_mat_allowed) * standard["material_price_per_kg"]
+    
+    # 5. Direct Labor Efficiency Variance: (Actual Hours - Standard Hours Allowed) * Standard Labor Rate
+    std_hours_allowed = actual["units_sold"] * standard["labor_hrs_per_unit"]
+    labor_efficiency_var = (actual["total_labor_hours"] - std_hours_allowed) * standard["labor_rate_per_hr"]
+    
+    def tag(val, favorable_when_positive=True):
+        if val == 0:
+            return "NEUTRAL"
+        sign = "+$" if val > 0 else "-$"
+        status = "FAV" if (val > 0 if favorable_when_positive else val < 0) else "UNFAV"
+        return sign + f"{abs(val):,.2f} " + status
+
+    return {
+        "Sales_Price_Variance": tag(sales_price_var, favorable_when_positive=True),
+        "Sales_Volume_Variance": tag(sales_volume_var, favorable_when_positive=True),
+        "Material_Price_Variance": tag(mat_price_var, favorable_when_positive=False),
+        "Material_Efficiency_Variance": tag(mat_efficiency_var, favorable_when_positive=False),
+        "Labor_Efficiency_Variance": tag(labor_efficiency_var, favorable_when_positive=False)
+    }
+
+std_budget = {
+    "budgeted_units": 10000,
+    "selling_price": 50.0,
+    "unit_cost": 30.0,
+    "material_price_per_kg": 4.0,
+    "material_kg_per_unit": 3.0,
+    "labor_hrs_per_unit": 1.5,
+    "labor_rate_per_hr": 12.0
+}
+actual_results = {
+    "units_sold": 11000,
+    "selling_price": 48.0,
+    "material_price_per_kg": 4.25,
+    "total_material_kg": 31900,
+    "total_labor_hours": 17050
+}
+
+print("=== STANDARD COSTING & FLEXIBLE BUDGET VARIANCE ===")
+v = calculate_standard_costing_variances(std_budget, actual_results)
+for k, val in v.items():
+    print(f"{k}: {val}")`,
+        output: `=== STANDARD COSTING & FLEXIBLE BUDGET VARIANCE ===
+Sales_Price_Variance: -$22,000.00 UNFAV
+Sales_Volume_Variance: +$20,000.00 FAV
+Material_Price_Variance: +$7,975.00 UNFAV
+Material_Efficiency_Variance: -$4,400.00 FAV
+Labor_Efficiency_Variance: +$6,600.00 UNFAV`,
+        codeNotes: [
+          'Calculates sales price and volume variances comparing actual realization against standard unit margins.',
+          'Isolates direct material price from efficiency variance using actual quantity purchased vs standard allowed.',
+          'Evaluates direct labor efficiency by measuring actual hours worked against standard allowed hours for units produced.'
+        ],
+        tryIt: 'Lower actual material_price_per_kg to 3.80 and observe how Material_Price_Variance flips from UNFAV to FAV.',
+        check: {
+          question: 'Why must direct material price variance be evaluated separately from material quantity efficiency variance?',
+          options: [
+            'Because price variance reflects procurement purchasing negotiation, while efficiency variance reflects shop-floor manufacturing waste and conversion productivity',
+            'Because price variance is only calculated by government tax inspectors',
+            'Because efficiency variance only applies when manufacturing automobiles',
+            'Because standard costing formulas do not allow multiplying two variables together'
+          ],
+          answer: 0,
+          why: 'Separating price from quantity isolates departmental accountability: the purchasing agent controls price per kg, whereas factory plant supervisors control physical kg consumed per unit.'
+        }
+      },
+      {
+        title: 'Multi-Product Cost-Volume-Profit (CVP) & Degree of Operating Leverage (DOL)',
+        say: [
+          'Cost-Volume-Profit (CVP) analysis forms the bedrock of managerial financial modeling, determining how changes in production volume, pricing, and cost structures alter operating income. In real-world enterprise settings, businesses rarely sell a single product; they manage diverse product portfolios where each offering carries a distinct selling price, variable cost structure, and gross contribution margin.',
+          'In multi-product CVP modeling, break-even cannot be calculated on isolated individual products. Instead, analysts calculate the composite sales mix and the Weighted-Average Contribution Margin (WACM) Ratio: total contribution margin divided by total portfolio revenue. Break-Even Revenue is then computed by dividing Total Fixed Overhead Costs by the composite WACM ratio. The Margin of Safety (MOS) percentage reveals how much revenue can contract before the enterprise incurs an operating loss.',
+          'The Degree of Operating Leverage (DOL) quantifies an enterprise operating risk profile: Total Contribution Margin divided by Operating Income (EBIT). DOL measures profit sensitivity: if a firm has a DOL of 2.0x, a 10% increase in revenue yields a 20% surge in operating profit. Conversely, in a market downturn, a high DOL amplifies earnings collapses, making operating leverage a crucial metric in strategic capital allocation.'
+        ],
+        example: 'Think of operating leverage like an elevator with a mechanical pulley system: fixed overhead costs are the heavy counterweight. When revenue increases, the counterweight lifts profits upward at double speed, but if the cable slips during a recession, profits plunge with equal acceleration.',
+        code: `def calculate_multiproduct_cvp_and_operating_leverage(products, fixed_costs):
+    """Calculates composite sales mix, break-even revenue, margin of safety, and DOL."""
+    total_revenue = sum(p["price"] * p["units"] for p in products)
+    total_variable_cost = sum(p["var_cost"] * p["units"] for p in products)
+    total_cm = total_revenue - total_variable_cost
+    
+    # Weighted-Average Contribution Margin Ratio (WACM Ratio)
+    wacm_ratio = total_cm / total_revenue
+    
+    # Break-Even Revenue ($) = Fixed Costs / WACM Ratio
+    be_revenue = fixed_costs / wacm_ratio
+    
+    # Operating Income ($)
+    operating_income = total_cm - fixed_costs
+    
+    # Margin of Safety (MOS) % = (Total Revenue - Break-Even Revenue) / Total Revenue
+    mos_pct = ((total_revenue - be_revenue) / total_revenue) * 100.0
+    
+    # Degree of Operating Leverage (DOL) = Total Contribution Margin / Operating Income
+    dol = total_cm / operating_income if operating_income > 0 else 0.0
+    
+    return {
+        "Total_Revenue": round(total_revenue, 2),
+        "Contribution_Margin": round(total_cm, 2),
+        "WACM_Ratio": round(wacm_ratio, 4),
+        "Break_Even_Revenue": round(be_revenue, 2),
+        "Operating_Income": round(operating_income, 2),
+        "Margin_of_Safety_Pct": round(mos_pct, 2),
+        "Degree_of_Operating_Leverage": round(dol, 2)
+    }
+
+portfolio = [
+    {"name": "Basic SaaS", "price": 50.0, "var_cost": 10.0, "units": 8000},
+    {"name": "Enterprise Suite", "price": 200.0, "var_cost": 40.0, "units": 2000}
+]
+fixed_overhead = 320000.0
+
+print("=== MULTI-PRODUCT CVP BREAK-EVEN & OPERATING LEVERAGE ===")
+res = calculate_multiproduct_cvp_and_operating_leverage(portfolio, fixed_overhead)
+print("Revenue: $" + f"{res['Total_Revenue']:,.2f} | CM: $" + f"{res['Contribution_Margin']:,.2f} | WACM: {res['WACM_Ratio']*100:.1f}%")
+print("BE Revenue: $" + f"{res['Break_Even_Revenue']:,.2f} | EBIT: $" + f"{res['Operating_Income']:,.2f}")
+print(f"Margin of Safety: {res['Margin_of_Safety_Pct']}% | DOL: {res['Degree_of_Operating_Leverage']}x")`,
+        output: `=== MULTI-PRODUCT CVP BREAK-EVEN & OPERATING LEVERAGE ===
+Revenue: $800,000.00 | CM: $640,000.00 | WACM: 80.0%
+BE Revenue: $400,000.00 | EBIT: $320,000.00
+Margin of Safety: 50.0% | DOL: 2.0x`,
+        codeNotes: [
+          'Calculates total portfolio contribution margin across multi-tier product pricing and volume structures.',
+          'Derives the Weighted-Average Contribution Margin Ratio (80.0%) to determine composite break-even revenue.',
+          'Quantifies Degree of Operating Leverage (2.0x) and Margin of Safety (50.0%) to assess earnings volatility.'
+        ],
+        tryIt: 'Increase fixed_overhead to $480,000 and observe how Margin of Safety shrinks and DOL increases.',
+        check: {
+          question: 'If a company possesses a Degree of Operating Leverage (DOL) of 3.0x, what is the expected percentage increase in operating income if sales revenue grows by 15%?',
+          options: [
+            '45% increase (3.0 * 15%)',
+            '5% increase (15% / 3.0)',
+            '15% increase (same as revenue growth)',
+            '30% increase (2.0 * 15%)'
+          ],
+          answer: 0,
+          why: 'Degree of Operating Leverage measures the elasticity of operating profit relative to sales volume: percentage change in EBIT equals DOL multiplied by the percentage change in sales.'
+        }
+      },
+      {
+        title: 'Activity-Based Costing (ABC) Cost Pools & Cross-Subsidization Analytics',
+        say: [
+          'Traditional volume-based absorption costing allocates manufacturing overhead using a single company-wide driver, most commonly direct labor hours or machine hours. While this approach functioned adequately in labor-intensive nineteenth-century factories, it introduces catastrophic costing distortions in modern automated, multi-product manufacturing plants where indirect overhead constitutes over 60% of total product cost.',
+          'Under traditional costing, high-volume standardized products that consume vast direct labor hours are allocated massive amounts of overhead, even if they require simple long production runs with zero engineering modifications. Conversely, low-volume customized specialty products consume minimal direct labor hours but demand frequent machine recalibrations, complex setups, and extensive quality assurance testing. The result is cross-subsidization: high-volume core products are overcosted, while complex low-volume items are severely undercosted.',
+          'Activity-Based Costing (ABC) eliminates cross-subsidization by establishing discrete activity cost pools (such as machine setups, material handling, and quality inspections) and identifying measurable cost drivers for each pool. By dividing total pool costs by total driver units, ABC computes precise activity consumption rates. Products are then assigned overhead based on their actual consumption of activities, uncovering true product profitability and guiding strategic pricing decisions.'
+        ],
+        example: 'Think of splitting a restaurant dinner bill: traditional costing divides the total check evenly by the number of diners regardless of who ordered what; Activity-Based Costing calculates the exact cost of each item ordered, preventing water-and-salad diners from subsidizing steak-and-wine diners.',
+        code: `def simulate_activity_based_costing_allocation(activities, products):
+    """Compares traditional single-driver overhead allocation against multi-pool ABC."""
+    total_overhead = sum(a["cost"] for a in activities)
+    total_direct_labor_hrs = sum(p["units"] * p["dlh_per_unit"] for p in products)
+    traditional_rate = total_overhead / total_direct_labor_hrs
+    
+    # Calculate ABC Activity Driver Rates
+    activity_rates = {}
+    for a in activities:
+        activity_rates[a["name"]] = a["cost"] / a["total_driver_volume"]
+        
+    comparison = []
+    for p in products:
+        trad_overhead_per_unit = p["dlh_per_unit"] * traditional_rate
+        
+        # ABC overhead per unit
+        abc_overhead_total = sum(
+            p["driver_usage"][a_name] * activity_rates[a_name]
+            for a_name in p["driver_usage"]
+        )
+        abc_overhead_per_unit = abc_overhead_total / p["units"]
+        
+        diff_pct = round(((abc_overhead_per_unit - trad_overhead_per_unit) / trad_overhead_per_unit) * 100.0, 1)
+        distorted = "UNDERCOSTED" if abc_overhead_per_unit > trad_overhead_per_unit else "OVERCOSTED"
+        
+        comparison.append({
+            "product": p["name"],
+            "units": p["units"],
+            "trad_cost": round(trad_overhead_per_unit, 2),
+            "abc_cost": round(abc_overhead_per_unit, 2),
+            "delta_pct": diff_pct,
+            "distortion": distorted
+        })
+    return comparison
+
+activities = [
+    {"name": "Setups", "cost": 120000.0, "total_driver_volume": 40},     # 40 setups
+    {"name": "Inspections", "cost": 80000.0, "total_driver_volume": 100} # 100 inspections
+]
+products = [
+    {
+        "name": "Standard Widget",
+        "units": 10000,
+        "dlh_per_unit": 2.0, # 20,000 direct labor hours
+        "driver_usage": {"Setups": 10, "Inspections": 20}
+    },
+    {
+        "name": "Custom Component",
+        "units": 1000,
+        "dlh_per_unit": 2.0, # 2,000 direct labor hours
+        "driver_usage": {"Setups": 30, "Inspections": 80}
+    }
+]
+
+print("=== ACTIVITY-BASED COSTING (ABC) ALLOCATION ===")
+comp = simulate_activity_based_costing_allocation(activities, products)
+for c in comp:
+    print(f"Product: {c['product']} | Trad: $" + f"{c['trad_cost']} | ABC: $" + f"{c['abc_cost']} | Delta: {c['delta_pct']}% [{c['distortion']}]")`,
+        output: `=== ACTIVITY-BASED COSTING (ABC) ALLOCATION ===
+Product: Standard Widget | Trad: $18.18 | ABC: $4.6 | Delta: -74.7% [OVERCOSTED]
+Product: Custom Component | Trad: $18.18 | ABC: $154.0 | Delta: 747.0% [UNDERCOSTED]`,
+        codeNotes: [
+          'Calculates traditional plant-wide predetermined overhead rate based on direct labor hours.',
+          'Defines activity pools for machine setups and inspections, establishing separate cost driver rates.',
+          'Demonstrates severe cross-subsidization where custom components are undercosted by 747% under traditional methods.'
+        ],
+        tryIt: 'Adjust the custom component setups to 10 and observe how its ABC overhead cost per unit decreases.',
+        check: {
+          question: 'What is product cross-subsidization in traditional volume-based cost accounting systems?',
+          options: [
+            'A distortion where high-volume standardized products are allocated excessive overhead, effectively subsidizing the true operational costs of complex low-volume products',
+            'When a government agency provides tax subsidies to green technology manufacturers',
+            'When one company buys out all outstanding shares of a competing supplier',
+            'When employee payroll taxes are deducted from weekly paychecks'
+          ],
+          answer: 0,
+          why: 'Traditional volume allocations assign overhead in proportion to direct labor or machine hours, blinding managers to the reality that low-volume custom batches consume disproportionate setup, engineering, and inspection resources.'
+        }
+      },
+      {
+        title: 'Capital Budgeting Decision Engine: Net Present Value (NPV) & Profitability Index (PI)',
+        say: [
+          'Capital budgeting represents an enterprise highest-stakes strategic decision domain: allocating millions of dollars to multi-year investments such as new manufacturing facilities, enterprise software platforms, or corporate acquisitions. Because capital expenditures occur today while cash inflows materialize across future years, decision models must incorporate the time value of money and corporate hurdle rates (Weighted Average Cost of Capital, WACC).',
+          'The Net Present Value (NPV) rule stands as the gold standard of corporate finance theory: NPV equals the sum of discounted future cash inflows minus the initial capital expenditure outlay. If a project NPV is greater than zero, executing the project creates shareholder wealth exceeding the firm cost of capital. A common alternative, the Payback Period, measures liquidity risk by calculating the time required to recoup the initial investment; however, payback ignores all cash flows occurring after the cutoff date.',
+          'When an enterprise operates under Capital Rationing—possessing a finite capital budget insufficient to fund all positive-NPV opportunities—NPV alone cannot prioritize mutually exclusive projects of differing scales. In these scenarios, financial analysts deploy the Profitability Index (PI): the present value of future cash inflows divided by initial investment outlay. Ranking projects by PI maximizes total wealth generated per dollar of constrained capital invested.'
+        ],
+        example: 'Think of capital budgeting like choosing which seeds to plant in a garden with limited soil space: NPV tells you the total weight of vegetables each seed will yield, while Profitability Index tells you the yield per square inch of soil, allowing you to maximize garden output under tight space constraints.',
+        code: `def evaluate_capital_budgeting_project(cash_flows, discount_rate):
+    """Calculates Net Present Value (NPV), Payback Period, and Profitability Index (PI)."""
+    initial_investment = abs(cash_flows[0])
+    future_cfs = cash_flows[1:]
+    
+    # Net Present Value: sum(CF_t / (1 + r)^t) - CF_0
+    pv_future = sum(cf / ((1 + discount_rate) ** (t + 1)) for t, cf in enumerate(future_cfs))
+    npv = pv_future - initial_investment
+    
+    # Profitability Index (PI) = PV of Future Cash Flows / Initial Outlay
+    pi = pv_future / initial_investment
+    
+    # Discounted payback period (approximate years)
+    cumulative = 0.0
+    payback_years = None
+    for t, cf in enumerate(future_cfs, start=1):
+        cumulative += cf
+        if cumulative >= initial_investment and payback_years is None:
+            # Linear interpolation
+            prev = cumulative - cf
+            payback_years = round((t - 1) + (initial_investment - prev) / cf, 2)
+            
+    decision = "ACCEPT_PROJECT" if npv > 0 and pi > 1.0 else "REJECT_PROJECT"
+    
+    return {
+        "Initial_Investment": initial_investment,
+        "PV_Future_Cash_Flows": round(pv_future, 2),
+        "NPV": round(npv, 2),
+        "Profitability_Index": round(pi, 3),
+        "Payback_Years": payback_years,
+        "Decision": decision
+    }
+
+# Year 0: -$250,000 outlay, Years 1-4: $85,000 annual inflow
+cfs = [-250000.0, 85000.0, 95000.0, 95000.0, 80000.0]
+wacc = 0.10 # 10% hurdle rate
+
+print("=== CAPITAL BUDGETING: NPV & PROFITABILITY INDEX ===")
+res = evaluate_capital_budgeting_project(cfs, wacc)
+print("Initial: $" + f"{res['Initial_Investment']:,.2f} | PV Inflows: $" + f"{res['PV_Future_Cash_Flows']:,.2f}")
+print("NPV: $" + f"{res['NPV']:,.2f} | PI: {res['Profitability_Index']} | Payback: {res['Payback_Years']} yrs")
+print(f"Hurdle Rate Decision: {res['Decision']}")`,
+        output: `=== CAPITAL BUDGETING: NPV & PROFITABILITY INDEX ===
+Initial: $250,000.00 | PV Inflows: $281,801.11
+NPV: $31,801.11 | PI: 1.127 | Payback: 2.74 yrs
+Hurdle Rate Decision: ACCEPT_PROJECT`,
+        codeNotes: [
+          'Discounts future discrete cash inflows using compound hurdle rate (1 + discount_rate)^t.',
+          'Computes Net Present Value (NPV = $31,801.11) and Profitability Index (PI = 1.127) for capital allocation.',
+          'Calculates cumulative linear payback period (2.74 years) to evaluate investment liquidity profile.'
+        ],
+        tryIt: 'Increase discount_rate to 0.18 (18%) and observe how NPV flips negative, switching Decision to REJECT_PROJECT.',
+        check: {
+          question: 'Why is the Profitability Index (PI) superior to raw Net Present Value (NPV) when an enterprise faces capital rationing?',
+          options: [
+            'Because PI measures the efficiency of wealth generated per dollar of capital outlay, enabling optimal ranking under budget constraints',
+            'Because PI eliminates the need to calculate future cash flows',
+            'Because PI does not require an estimated hurdle rate or cost of capital',
+            'Because PI is only used for municipal government non-profit projects'
+          ],
+          answer: 0,
+          why: 'Under strict capital rationing, a $100M project with $1M NPV creates less value per dollar of scarce capital than ten $10M projects each generating $500K NPV. PI normalizes NPV by capital scale.'
+        }
+      },
+      {
+        title: 'Three-Tier DuPont Return on Equity (ROE) Decomposition & Financial Leverage Multiplier',
+        say: [
+          'Return on Equity (ROE)—net income divided by shareholders equity—is widely considered the supreme scorecard of management stewardship in public equities and private equity investments. However, evaluating ROE in isolation is inherently perilous: a high ROE of 25% can signify extraordinary pricing power and operational efficiency, or it can mask an overleveraged balance sheet hovering on the brink of insolvency.',
+          'The DuPont Identity deconstructs ROE into three multiplying operational drivers: Operating Efficiency, Asset Efficiency, and Financial Leverage. Formally: ROE = Net Profit Margin (Net Income / Revenue) multiplied by Asset Turnover (Revenue / Total Assets) multiplied by the Equity Multiplier (Total Assets / Shareholders Equity). The product of the first two ratios yields Return on Assets (ROA), isolating true unlevered operating profitability.',
+          'By performing DuPont decomposition across comparative peer companies or historical longitudinal cohorts, equity research analysts and corporate boards identify the true engine of shareholder returns. Company A generating 25% ROE through a 15% net margin and 1.25x asset turnover represents an operational powerhouse with low financial distress risk. In contrast, Company B achieving the same 25% ROE via a meager 4% margin inflated by a 5.0x debt equity multiplier is fragile and highly vulnerable to credit contraction.'
+        ],
+        example: 'Think of DuPont decomposition like diagnosing an athletic runner performance: Net Profit Margin is running technique, Asset Turnover is stride cadence, and Financial Leverage is an energy stimulant; two runners may cross the finish line in identical times, but one relied on conditioning while the other relied on dangerous chemical boosters.',
+        code: `def calculate_dupont_roe_decomposition(financials):
+    """Decomposes Return on Equity into Operating Margin, Asset Turnover, and Equity Multiplier."""
+    net_income = financials["net_income"]
+    revenue = financials["revenue"]
+    total_assets = financials["total_assets"]
+    shareholder_equity = financials["shareholder_equity"]
+    
+    # 1. Net Profit Margin = Net Income / Revenue
+    net_profit_margin = net_income / revenue
+    
+    # 2. Asset Turnover = Revenue / Total Assets
+    asset_turnover = revenue / total_assets
+    
+    # 3. Financial Leverage (Equity Multiplier) = Total Assets / Shareholder Equity
+    equity_multiplier = total_assets / shareholder_equity
+    
+    # Return on Assets (ROA) = Margin * Turnover
+    roa = net_profit_margin * asset_turnover
+    
+    # Return on Equity (ROE) = ROA * Equity Multiplier
+    roe = roa * equity_multiplier
+    
+    return {
+        "Net_Profit_Margin_Pct": round(net_profit_margin * 100.0, 2),
+        "Asset_Turnover_Ratio": round(asset_turnover, 2),
+        "Return_on_Assets_Pct": round(roa * 100.0, 2),
+        "Equity_Multiplier": round(equity_multiplier, 2),
+        "Return_on_Equity_Pct": round(roe * 100.0, 2)
+    }
+
+company_a = {
+    "name": "Alpha Tech (High Efficiency)",
+    "revenue": 1000000.0,
+    "net_income": 150000.0,
+    "total_assets": 800000.0,
+    "shareholder_equity": 600000.0
+}
+company_b = {
+    "name": "Beta Retail (High Leverage)",
+    "revenue": 2000000.0,
+    "net_income": 80000.0,
+    "total_assets": 1600000.0,
+    "shareholder_equity": 320000.0
+}
+
+print("=== DUPONT 3-TIER ROE DECOMPOSITION ANALYSIS ===")
+for c in [company_a, company_b]:
+    res = calculate_dupont_roe_decomposition(c)
+    print(f"[{c['name']}] NPM: {res['Net_Profit_Margin_Pct']}% | AT: {res['Asset_Turnover_Ratio']}x | ROA: {res['Return_on_Assets_Pct']}% | EM: {res['Equity_Multiplier']}x -> ROE: {res['Return_on_Equity_Pct']}%")`,
+        output: `=== DUPONT 3-TIER ROE DECOMPOSITION ANALYSIS ===
+[Alpha Tech (High Efficiency)] NPM: 15.0% | AT: 1.25x | ROA: 18.75% | EM: 1.33x -> ROE: 25.0%
+[Beta Retail (High Leverage)] NPM: 4.0% | AT: 1.25x | ROA: 5.0% | EM: 5.0x -> ROE: 25.0%`,
+        codeNotes: [
+          'Decomposes Return on Equity into Net Profit Margin, Asset Turnover, and Equity Multiplier.',
+          'Calculates Return on Assets (ROA = Margin * Turnover) to isolate unlevered operating performance.',
+          'Contrasts high-margin operational efficiency (Alpha Tech) against debt-inflated financial leverage (Beta Retail).'
+        ],
+        tryIt: 'Increase company_b shareholder_equity to 800000.0 and see how its ROE plummets from 25.0% to 10.0% as leverage unwinds.',
+        check: {
+          question: 'According to the DuPont Identity, what two factors multiply together to constitute Return on Assets (ROA)?',
+          options: [
+            'Net Profit Margin multiplied by Asset Turnover',
+            'Operating Income multiplied by Tax Rate',
+            'Gross Margin multiplied by Current Ratio',
+            'Inventory Turnover multiplied by Debt-to-Equity Ratio'
+          ],
+          answer: 0,
+          why: 'Return on Assets equals (Net Income / Revenue) * (Revenue / Total Assets) = Net Income / Total Assets, quantifying how effectively assets generate net profit independently of financing.'
+        }
+      }
+    ],
+    summary: [
+      'Standard costing and flexible budget variance analysis separate sales price and volume variances from direct material and labor efficiency variances.',
+      'Multi-product CVP analysis employs the Weighted-Average Contribution Margin Ratio (WACM) to establish composite break-even revenue, Margin of Safety, and Degree of Operating Leverage.',
+      'Activity-Based Costing (ABC) establishes multiple cost pools and driver consumption rates, eliminating the severe product cross-subsidization created by volume-based absorption costing.',
+      'Capital budgeting models evaluate multi-year projects using Net Present Value (NPV), Payback Period, and Profitability Index (PI) to optimize allocation under capital rationing.',
+      'The 3-tier DuPont Identity decomposes ROE into Net Profit Margin, Asset Turnover, and Equity Multiplier, distinguishing genuine operational efficiency from debt-driven financial leverage.'
+    ],
+    projectStep: {
+      title: 'Engineer a Managerial Costing, Capital Allocation & DuPont Financial Performance Engine',
+      steps: [
+        'Build a multi-level flexible budget variance engine calculating material price/efficiency and labor variances.',
+        'Calculate composite multi-product CVP metrics, break-even revenue, and Degree of Operating Leverage (DOL).',
+        'Simulate multi-pool Activity-Based Costing (ABC) and benchmark product cost distortions against traditional volume costing.',
+        'Evaluate capital investment projects using discounted cash flow NPV and Profitability Index (PI).',
+        'Implement a 3-tier DuPont decomposition engine diagnosing the underlying operational and financial leverage drivers of ROE.'
+      ]
+    }
   }
 ];
-
