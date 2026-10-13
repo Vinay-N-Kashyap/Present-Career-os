@@ -420,5 +420,374 @@ for item in report['Loan_Details']:
         'Model 30-day stressed deposit runoffs to evaluate Liquidity Coverage Ratio (LCR) compliance.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ban',
+    day: 2,
+    title: 'Credit Underwriting, DSCR Covenants & Non-Performing Loan Workouts',
+    goal: 'Master corporate and commercial credit risk underwriting: evaluating borrower debt capacity via Cash Flow Available for Debt Service (CFADS), stress-testing Debt Service Coverage (DSCR) and Fixed Charge Coverage (FCCR) against rate hikes, calculating asset-based Borrowing Base Certificates with collateral haircuts, modeling Risk-Adjusted Return on Capital (RAROC) credit pricing, and implementing IFRS 9 3-stage ECL provisioning and NPL troubled debt restructuring workouts.',
+    minutes: 42,
+    recap: 'On Day 1 we analyzed balance sheet ALM duration mismatches and regulatory Basel III capital buffers. Today we dive into the core profit engine of commercial banking: credit underwriting, calculating borrower debt coverage ratios, and resolving delinquent loan workouts.',
+    parts: [
+      {
+        title: 'The 5 Cs of Credit & CFADS Debt Capacity Underwriting',
+        say: [
+          'Commercial lending is not about gambling on equity upside; it is about asymmetric downside risk management. A lender receives a capped fixed interest rate in success, but risks losing 100% of principal in default.',
+          'Prudent credit underwriting is anchored in the classical 5 Cs of Credit: Character (integrity and payment history), Capacity (cash flow generation), Capital (borrower equity invested), Collateral (secondary asset pledge), and Conditions (macroeconomic environment).',
+          'Crucially, bankers never rely on accounting net income to service debt! Net income is distorted by non-cash depreciation accruals and working capital movements.',
+          'Instead, credit analysts calculate Cash Flow Available for Debt Service (CFADS): CFADS = EBITDA - Maintenance Capex - Cash Taxes.',
+          'In corporate underwriting, prudent leverage boundaries dictate that total debt should not exceed 3.0x to 4.0x CFADS. Any proposed loan that breaches this debt capacity ceiling poses unacceptable insolvency risk.',
+          'Collateral is strictly a secondary source of repayment; a bank that relies on seizing collateral to get repaid made a bad loan on day one.'
+        ],
+        example: 'Imagine a logistics fleet operator generating $12.5M in EBITDA. After paying $2.5M to replace worn-out trucks (maintenance capex) and $1.8M in corporate taxes, the company has $8.2M in genuine CFADS. At a conservative 3.5x leverage ceiling, the firm can support $28.7M in total debt. Since it currently owes $15.0M, the bank can safely approve an incremental $13.7M credit facility.',
+        code: `# Simulation: 5 Cs of Credit & CFADS Debt Capacity Engine
+from dataclasses import dataclass
+
+@dataclass
+class CorporateBorrower:
+    name: str
+    ebitda: float
+    maintenance_capex: float
+    cash_taxes: float
+    existing_unhedged_debt: float
+    character_score: float # 1-10
+    collateral_appraised_value: float
+
+def evaluate_debt_capacity(borrower: CorporateBorrower) -> dict:
+    # Cash Flow Available for Debt Service (CFADS)
+    cfads = borrower.ebitda - borrower.maintenance_capex - borrower.cash_taxes
+    # Standard conservative leverage ceiling (3.5x CFADS)
+    max_prudent_debt = cfads * 3.5
+    incremental_borrowing_capacity = max(0.0, max_prudent_debt - borrower.existing_unhedged_debt)
+    
+    underwrite_verdict = (
+        "APPROVED_FOR_UNDERWRITING" if borrower.character_score >= 7.0 and incremental_borrowing_capacity > 0
+        else "REJECTED_GOVERNANCE_OR_CAPACITY_LIMIT"
+    )
+
+    return {
+        "Borrower": borrower.name,
+        "CFADS_Annual": f"\${round(cfads / 1e6, 2)}M",
+        "Max_Prudent_Debt_Limit": f"\${round(max_prudent_debt / 1e6, 2)}M",
+        "Existing_Debt": f"\${round(borrower.existing_unhedged_debt / 1e6, 2)}M",
+        "Incremental_Capacity": f"\${round(incremental_borrowing_capacity / 1e6, 2)}M",
+        "Underwriting_Status": underwrite_verdict
+    }
+
+b1 = CorporateBorrower("Apex Logistics Ltd", 12500000.0, 2500000.0, 1800000.0, 15000000.0, 8.5, 22000000.0)
+res1 = evaluate_debt_capacity(b1)
+print(f"Borrower: {res1['Borrower']} | CFADS: {res1['CFADS_Annual']}")
+print(f"Incremental Capacity: {res1['Incremental_Capacity']} | Status: {res1['Underwriting_Status']}")`,
+        output: `Borrower: Apex Logistics Ltd | CFADS: $8.2M\nIncremental Capacity: $13.7M | Status: APPROVED_FOR_UNDERWRITING`,
+        codeNotes: [
+          { line: 4, note: 'CorporateBorrower encapsulates financial cash flow drivers, leverage, and qualitative character metrics' },
+          { line: 15, note: 'Calculates CFADS by deducting maintenance capital expenditures and mandatory cash taxes from EBITDA' },
+          { line: 17, note: 'Enforces conservative 3.5x leverage ceiling to establish maximum sustainable debt load' },
+          { line: 36, note: 'Confirms Apex Logistics Ltd qualifies for $13.7M in incremental debt capacity with strong character' }
+        ],
+        tryIt: 'Increase existing_unhedged_debt to $30.0M on borrower b1 to observe the engine reject the application due to exhausted debt capacity.',
+        check: {
+          question: 'Why do commercial bank credit underwriters treat collateral strictly as a secondary source of repayment rather than the primary basis for loan approval?',
+          options: [
+            'Because liquidating collateral through foreclosure is expensive, lengthy, and yields uncertain recoveries; primary loan repayment must always come from ongoing operating cash flow.',
+            'Because commercial banks are forbidden by federal law from holding physical collateral.',
+            'Because collateral always depreciates to zero value within forty-eight hours.',
+            'Because banks prefer taking operational equity stakes in defaulting companies.'
+          ],
+          answer: 0,
+          why: 'A bank is an ongoing financial intermediary, not a liquidation auctioneer. Collateral acts solely as a structural defense mechanism if operating cash flow unexpectedly fails.',
+          answerIndex: 0,
+          explanation: 'A bank is an ongoing financial intermediary, not a liquidation auctioneer. Collateral acts solely as a structural defense mechanism if operating cash flow unexpectedly fails.'
+        }
+      },
+      {
+        title: 'Debt Service Coverage Ratio (DSCR) & Sensitivity Stress Testing',
+        say: [
+          'Once a borrower\'s debt capacity is calculated, credit underwriters evaluate the ongoing solvency cushion using the Debt Service Coverage Ratio (DSCR).',
+          'DSCR measures the borrower\'s ability to pay current annual debt obligations out of operating earnings: DSCR = Net Operating Income (NOI) / Annual Debt Service (Principal + Interest).',
+          'In commercial loan documentation, lenders enforce strict financial covenants requiring the borrower to maintain a minimum DSCR — typically 1.25x for established cash-flow businesses and 1.35x for construction or specialized real estate.',
+          'A DSCR of exactly 1.0x means every dollar of operating profit goes toward debt service with zero margin for error; any slight revenue dip or supply cost increase precipitates immediate default.',
+          'Therefore, underwriters subject the borrower to dual sensitivity stress tests: modeling an operational NOI shock (e.g. 15% revenue drop) combined with an interest rate shock (e.g. +200 basis point hike).',
+          'Borrowers whose stressed DSCR holds above the covenant threshold are granted competitive interest rate margins, while vulnerable borrowers require credit enhancements such as debt service reserve accounts (DSRA).'
+        ],
+        example: 'Think of taking out a personal mortgage. If your monthly take-home pay is $6,000 and your mortgage payment is $4,000, your DSCR is 1.50x ($6,000 / $4,000). You have a $2,000 buffer. But if you take a pay cut down to $4,500 and your adjustable-rate mortgage jumps to $4,800, your DSCR plunges to 0.94x — you cannot cover your payment without drawing down savings or defaulting.',
+        code: `# Simulation: DSCR Sensitivity & Covenant Breach Scanner
+def stress_test_dscr(
+    base_noi: float,
+    annual_principal: float,
+    annual_interest: float,
+    minimum_covenant_dscr: float = 1.25,
+    noi_shock_pct: float = 15.0,
+    rate_hike_bps: int = 200 # 2.0%
+) -> dict:
+    base_debt_service = annual_principal + annual_interest
+    base_dscr = round(base_noi / base_debt_service, 2)
+
+    # Apply operational shock and interest rate shock
+    stressed_noi = base_noi * (1.0 - (noi_shock_pct / 100.0))
+    stressed_interest = annual_interest * (1.0 + (rate_hike_bps / 10000.0))
+    stressed_debt_service = annual_principal + stressed_interest
+    stressed_dscr = round(stressed_noi / stressed_debt_service, 2)
+
+    covenant_pass_base = base_dscr >= minimum_covenant_dscr
+    covenant_pass_stressed = stressed_dscr >= minimum_covenant_dscr
+
+    return {
+        "Base_NOI": f"\${round(base_noi / 1e6, 2)}M",
+        "Base_Debt_Service": f"\${round(base_debt_service / 1e6, 2)}M",
+        "Base_DSCR": f"{base_dscr}x",
+        "Base_Covenant_Status": "COMPLIANT" if covenant_pass_base else "DEFAULT_BREACH",
+        "Stressed_DSCR": f"{stressed_dscr}x",
+        "Stressed_Covenant_Status": "RESILIENT" if covenant_pass_stressed else "COVENANT_BREACH_WARNING"
+    }
+
+dscr_res = stress_test_dscr(4500000.0, 1800000.0, 1200000.0, 1.25, 15.0, 200)
+print(f"Base DSCR: {dscr_res['Base_DSCR']} ({dscr_res['Base_Covenant_Status']})")
+print(f"Stressed DSCR: {dscr_res['Stressed_DSCR']} ({dscr_res['Stressed_Covenant_Status']})")`,
+        output: `Base DSCR: 1.5x (COMPLIANT)\nStressed DSCR: 1.26x (RESILIENT)`,
+        codeNotes: [
+          { line: 9, note: 'Calculates base debt service as the sum of mandatory principal amortization and contractual interest' },
+          { line: 14, note: 'Applies simultaneous 15% revenue shock and 200 bps interest rate hike to model stressed cash flows' },
+          { line: 20, note: 'Compares stressed ratio against the 1.25x covenant hurdle to detect structural breach vulnerability' },
+          { line: 28, note: 'Confirms borrower sustains 1.26x under stress, remaining covenant-compliant with a resilient cushion' }
+        ],
+        tryIt: 'Increase noi_shock_pct from 15.0% to 25.0% to observe the stressed DSCR slip below 1.25x and trigger a COVENANT_BREACH_WARNING.',
+        check: {
+          question: 'What is the commercial significance of a loan covenant specifying a minimum DSCR of 1.25x rather than 1.00x?',
+          options: [
+            'A 1.25x covenant ensures the borrower produces a 25% cash buffer above debt service obligations to withstand operational shocks without defaulting.',
+            'A 1.25x covenant allows the bank to charge 25% additional hidden fees.',
+            'It forces the borrower to liquidate 25% of their workforce annually.',
+            'It indicates the loan interest rate will compound 25 times per year.'
+          ],
+          answer: 0,
+          why: 'The 25% excess cash flow margin provides vital headroom so that unforeseen operational setbacks (such as client loss or raw material inflation) do not trigger immediate insolvency.',
+          answerIndex: 0,
+          explanation: 'The 25% excess cash flow margin provides vital headroom so that unforeseen operational setbacks (such as client loss or raw material inflation) do not trigger immediate insolvency.'
+        }
+      },
+      {
+        title: 'Borrowing Base Certificates & Asset-Based Lending Haircuts',
+        say: [
+          'In Asset-Based Lending (ABL) and working capital revolving credit facilities, banks do not write blank checks against enterprise value.',
+          'Instead, the amount a corporate borrower can draw on any given day is strictly capped by a legal instrument known as the Borrowing Base Certificate (BBC).',
+          'The borrowing base formula aggregates eligible collateral after applying conservative liquidation "haircuts" (advance rates).',
+          'Accounts Receivable (A/R) typically receive an advance rate of 80% to 85%. However, the bank explicitly excludes ineligible receivables: invoices overdue by more than 90 days, government receivables subject to offset, concentrated customer accounts exceeding 20% of total receivables, and foreign unhedged debtors.',
+          'Inventory receives a much more punitive advance rate — typically 50% of the lower of cost or market (LOCOM) or Orderly Liquidation Value (OLV) — because seizing, transporting, and auctioning raw materials or finished goods entails substantial degradation and liquidation expense.',
+          'Borrowers must submit monthly certified BBC reports. If declining receivables cause the borrowing base to fall below the drawn revolver balance, an immediate "borrowing base deficiency" occurs, legally obligating the borrower to pay down the excess balance within 48 to 72 hours.'
+        ],
+        example: 'Think of pawning jewelry. If you bring a ring with a $1,000 retail appraisal to a pawn shop, the pawnbroker will not lend you $1,000. They might lend you $500 (a 50% advance rate) because if you fail to repay, they must auction the ring quickly at wholesale prices. That is identical to an asset-based lending collateral haircut.',
+        code: `# Simulation: Borrowing Base Certificate & Stressed Collateral Recovery Engine
+def calculate_borrowing_base(
+    gross_ar: float,
+    ineligible_ar: float, # >90 days overdue or cross-aged
+    ar_advance_rate: float, # e.g. 85%
+    gross_inventory: float,
+    slow_moving_inventory: float,
+    inventory_advance_rate: float, # e.g. 50%
+    outstanding_revolver_draw: float
+) -> dict:
+    eligible_ar = gross_ar - ineligible_ar
+    ar_availability = eligible_ar * (ar_advance_rate / 100.0)
+
+    eligible_inventory = gross_inventory - slow_moving_inventory
+    inv_availability = eligible_inventory * (inventory_advance_rate / 100.0)
+
+    total_borrowing_base = ar_availability + inv_availability
+    excess_availability = total_borrowing_base - outstanding_revolver_draw
+    borrowing_base_cushion_pct = round((excess_availability / total_borrowing_base) * 100.0, 1)
+
+    return {
+        "Eligible_AR": f"\${round(eligible_ar / 1e6, 2)}M",
+        "AR_Availability": f"\${round(ar_availability / 1e6, 2)}M",
+        "Eligible_Inventory": f"\${round(eligible_inventory / 1e6, 2)}M",
+        "Inventory_Availability": f"\${round(inv_availability / 1e6, 2)}M",
+        "Total_Borrowing_Base": f"\${round(total_borrowing_base / 1e6, 2)}M",
+        "Revolver_Drawn": f"\${round(outstanding_revolver_draw / 1e6, 2)}M",
+        "Net_Availability": f"\${round(excess_availability / 1e6, 2)}M",
+        "Cushion": f"{borrowing_base_cushion_pct}%"
+    }
+
+bbc_res = calculate_borrowing_base(8000000.0, 1200000.0, 85.0, 6000000.0, 1000000.0, 50.0, 6500000.0)
+print(f"Total Base: {bbc_res['Total_Borrowing_Base']} | Drawn: {bbc_res['Revolver_Drawn']}")
+print(f"Net Availability: {bbc_res['Net_Availability']} | Cushion: {bbc_res['Cushion']}")`,
+        output: `Total Base: $8.28M | Drawn: $6.5M\nNet Availability: $1.78M | Cushion: 21.5%`,
+        codeNotes: [
+          { line: 10, note: 'Filters out aged and ineligible receivables prior to applying contractual advance rate' },
+          { line: 13, note: 'Applies conservative 50% advance rate against eligible inventory after stripping slow-moving stock' },
+          { line: 16, note: 'Sums asset categories to calculate legal maximum credit draw ceiling (Total Borrowing Base)' },
+          { line: 31, note: 'Confirms borrower holds $1.78M in net borrowing availability with a 21.5% liquidity cushion' }
+        ],
+        tryIt: 'Increase outstanding_revolver_draw from $6.5M to $8.5M to observe a negative Net_Availability, indicating an immediate borrowing base deficiency.',
+        check: {
+          question: 'Why do commercial lenders apply a significantly lower advance rate to inventory (typically 50%) than to accounts receivable (typically 80-85%)?',
+          options: [
+            'Because liquidating physical inventory involves spoilage, obsolescence, warehousing costs, and steep wholesale liquidation discounts, whereas eligible receivables represent near-cash contractual obligations.',
+            'Because accounts receivable are backed by gold bars held in central bank vaults.',
+            'Because commercial inventory cannot be insured under standard commercial property policies.',
+            'Because accountants are legally prohibited from auditing inventory warehouses.'
+          ],
+          answer: 0,
+          why: 'Accounts receivable represent confirmed obligations from creditworthy commercial buyers, whereas unsold inventory faces severe valuation discounts and auction costs if seized during liquidation.',
+          answerIndex: 0,
+          explanation: 'Accounts receivable represent confirmed obligations from creditworthy commercial buyers, whereas unsold inventory faces severe valuation discounts and auction costs if seized during liquidation.'
+        }
+      },
+      {
+        title: 'Risk-Adjusted Return on Capital (RAROC) & Loan Pricing',
+        say: [
+          'How does a commercial bank decide what interest rate spread to charge on a multi-million-dollar corporate credit facility?',
+          'Naively undercutting competitors to win deal volume inevitably leads to catastrophic loan losses during credit downturns. Conversely, overpricing drives creditworthy borrowers to rival institutions.',
+          'To price corporate risk rationally, financial institutions deploy Risk-Adjusted Return on Capital (RAROC) models.',
+          'RAROC balances profitability against economic capital: RAROC = (Revenues - Cost of Funds - Operating Costs - Expected Loss) / Economic Capital.',
+          'Revenues comprise interest income and upfront arrangement fees. Cost of Funds reflects the bank\'s wholesale funding rate. Operating costs cover origination and servicing overhead.',
+          'Expected Loss (EL) is deducted directly from operating revenue: EL = Exposure at Default (EAD) * Probability of Default (PD) * Loss Given Default (LGD).',
+          'Crucially, the denominator is not the loan principal! It is Economic Capital — the equity buffer the bank must allocate to absorb unexpected losses at a 99.9% statistical confidence interval under Basel III.',
+          'A corporate loan is approved only if its projected RAROC clears the bank\'s internal hurdle rate (typically 12% to 15% post-tax return on equity).'
+        ],
+        example: 'Imagine lending $10M at 7.5%. The bank earns $750k in interest, pays $400k for funding (cost of funds), and spends $50k on loan servicing. It expects a baseline loss of $54k (1.2% PD * 45% LGD). That leaves $246k in net risk-adjusted return. If the bank must allocate $800k in equity capital (8% economic capital), its RAROC is $246k / $800k = 30.75% — easily clearing the 15% corporate hurdle.',
+        code: `# Simulation: Moody's-Style 10-Tier Obligor Risk Rating & RAROC Pricing Model
+def compute_raroc_and_credit_spread(
+    loan_principal: float,
+    contract_interest_rate_pct: float,
+    cost_of_funds_pct: float,
+    servicing_fee_pct: float,
+    pd_1yr_pct: float,
+    lgd_pct: float, # Loss Given Default
+    economic_capital_pct: float = 8.0 # Basel capital allocation
+) -> dict:
+    interest_income = loan_principal * (contract_interest_rate_pct / 100.0)
+    interest_expense = loan_principal * (cost_of_funds_pct / 100.0)
+    servicing_expense = loan_principal * (servicing_fee_pct / 100.0)
+    
+    # Expected Loss (EL) = EAD * PD * LGD
+    expected_loss = loan_principal * (pd_1yr_pct / 100.0) * (lgd_pct / 100.0)
+    
+    net_risk_adjusted_income = interest_income - interest_expense - servicing_expense - expected_loss
+    allocated_economic_capital = loan_principal * (economic_capital_pct / 100.0)
+    
+    raroc_pct = round((net_risk_adjusted_income / allocated_economic_capital) * 100.0, 2)
+    hurdle_rate_pct = 15.0
+
+    return {
+        "Loan_Principal": f"\${round(loan_principal / 1e6, 2)}M",
+        "Expected_Loss": f"\${round(expected_loss / 1e3, 1)}k",
+        "Net_Adjusted_Return": f"\${round(net_risk_adjusted_income / 1e3, 1)}k",
+        "Economic_Capital": f"\${round(allocated_economic_capital / 1e6, 2)}M",
+        "RAROC": f"{raroc_pct}%",
+        "Hurdle_Evaluation": "VALUE_ACCRETIVE" if raroc_pct >= hurdle_rate_pct else "BELOW_HURDLE_REPRICE"
+    }
+
+raroc_res = compute_raroc_and_credit_spread(10000000.0, 7.5, 4.0, 0.5, 1.2, 45.0, 8.0)
+print(f"Principal: {raroc_res['Loan_Principal']} | Expected Loss: {raroc_res['Expected_Loss']}")
+print(f"RAROC: {raroc_res['RAROC']} | Verdict: {raroc_res['Hurdle_Evaluation']}")`,
+        output: `Principal: $10.0M | Expected Loss: $54.0k\nRAROC: 30.75% | Verdict: VALUE_ACCRETIVE`,
+        codeNotes: [
+          { line: 15, note: 'Calculates Expected Loss (EL) as Principal * PD * LGD deducted directly from gross interest income' },
+          { line: 18, note: 'Allocates regulatory Economic Capital as equity denominator based on risk weight profile' },
+          { line: 20, note: 'Computes RAROC percentage and validates against corporate 15% hurdle rate' },
+          { line: 31, note: 'Yields 30.75% RAROC, confirming credit facility creates substantial shareholder value' }
+        ],
+        tryIt: 'Raise pd_1yr_pct from 1.2% to 6.5% to observe Expected Loss surge to $292.5k, collapsing RAROC to 1.0% (BELOW_HURDLE_REPRICE).',
+        check: {
+          question: 'In modern commercial loan portfolio management, what is the fundamental function of RAROC (Risk-Adjusted Return on Capital)?',
+          options: [
+            'To ensure that credit pricing and interest margins generate an adequate post-tax return on the bank\'s equity capital after factoring in funding costs, operating overhead, and expected credit default losses.',
+            'To eliminate all legal documentation requirements for commercial borrowers.',
+            'To allow commercial banks to print their own fiat currency without central bank approval.',
+            'To calculate the executive bonus pool regardless of whether loans are repaid.'
+          ],
+          answer: 0,
+          why: 'RAROC ensures that higher-risk loans carry compensatory credit spreads that sufficiently reward shareholders for the equity capital committed to absorb unexpected losses.',
+          answerIndex: 0,
+          explanation: 'RAROC ensures that higher-risk loans carry compensatory credit spreads that sufficiently reward shareholders for the equity capital committed to absorb unexpected losses.'
+        }
+      },
+      {
+        title: 'IFRS 9 / CECL Staging & Non-Performing Loan Workouts',
+        say: [
+          'Under previous accounting standards (IAS 39), banks recognized loan losses only after an objective default event occurred — a fatally flawed "incurred loss" model that delayed loss provisions during the 2008 financial crisis.',
+          'In response, international regulators introduced IFRS 9 and US GAAP CECL (Current Expected Credit Losses), mandating a forward-looking 3-stage impairment model.',
+          'Stage 1 (Performing): At origination, if credit risk is low, the bank provisions 12-Month Expected Credit Losses (PD_12m * LGD * EAD).',
+          'Stage 2 (Underperforming): If a Significant Increase in Credit Risk (SICR) occurs — such as payments 30+ days past due, covenant breaches, or rating downgrades — the bank must immediately recognize Lifetime Expected Credit Losses (PD_lifetime * LGD * EAD). This creates a massive, sudden provision charge on the income statement.',
+          'Stage 3 (Credit-Impaired / Non-Performing Loan NPL): When a loan is 90+ days past due or bankruptcy is probable, it enters NPL status. Interest accrual is suspended, and specific impairment provisions are written down against collateral liquidation values.',
+          'When loans reach Stage 3, the bank transfers the account to the Special Assets Workout Group. Workouts follow structured decision trees: forbearance agreements, troubled debt restructuring (TDR) with debt-to-equity conversions, refinancing, or hostile collateral liquidation.'
+        ],
+        example: 'Think of a patient visiting a doctor. Stage 1 is an annual wellness checkup: healthy, routine monitoring. Stage 2 is discovering elevated blood pressure and pre-diabetes: urgent lifestyle intervention and preventative medication before organ damage occurs. Stage 3 is a heart attack: immediate emergency room surgery and intensive care. That is the exact philosophy of IFRS 9 staging.',
+        code: `# Simulation: 3-Stage IFRS 9 ECL Provisioning & Restructuring Decision Tree
+def classify_ifrs9_staging_and_provision(
+    exposure_at_default: float,
+    days_past_due: int,
+    sicr_flag: bool,
+    annual_pd_pct: float,
+    lifetime_pd_pct: float,
+    lgd_pct: float
+) -> dict:
+    if days_past_due >= 90:
+        stage = "Stage_3_Credit_Impaired_NPL"
+        ecl_provision = exposure_at_default * 1.0 * (lgd_pct / 100.0) # Full specific impairment
+        workout_action = "Transfer to Special Assets Workout Group; Initiate Collateral Liquidation or TDR Restructuring."
+    elif days_past_due >= 30 or sicr_flag:
+        stage = "Stage_2_Underperforming_SICR"
+        ecl_provision = exposure_at_default * (lifetime_pd_pct / 100.0) * (lgd_pct / 100.0)
+        workout_action = "Watchlist Enrollment; Request Fresh Financial Disclosures & Margin Enhancement."
+    else:
+        stage = "Stage_1_Performing"
+        ecl_provision = exposure_at_default * (annual_pd_pct / 100.0) * (lgd_pct / 100.0)
+        workout_action = "Standard Routine Annual Review; Maintain Active Relationship."
+
+    provision_coverage_pct = round((ecl_provision / exposure_at_default) * 100.0, 2)
+
+    return {
+        "EAD": f"\${round(exposure_at_default / 1e6, 2)}M",
+        "Days_Past_Due": days_past_due,
+        "IFRS9_Stage": stage,
+        "ECL_Required_Provision": f"\${round(ecl_provision / 1e3, 1)}k",
+        "Coverage_Pct": f"{provision_coverage_pct}%",
+        "Workout_Action": workout_action
+    }
+
+loan_p = classify_ifrs9_staging_and_provision(5000000.0, 42, True, 1.5, 7.5, 40.0)
+print(f"Loan EAD: {loan_p['EAD']} | DPD: {loan_p['Days_Past_Due']} -> Stage: {loan_p['IFRS9_Stage']}")
+print(f"Provision: {loan_p['ECL_Required_Provision']} ({loan_p['Coverage_Pct']}) | Action: {loan_p['Workout_Action']}")`,
+        output: `Loan EAD: $5.0M | DPD: 42 -> Stage: Stage_2_Underperforming_SICR\nProvision: $150.0k (3.0%) | Action: Watchlist Enrollment; Request Fresh Financial Disclosures & Margin Enhancement.`,
+        codeNotes: [
+          { line: 9, note: 'Routes loans >= 90 days past due directly to Stage 3 with full specific impairment provisioning' },
+          { line: 13, note: 'Detects Significant Increase in Credit Risk (SICR) to escalate provision from 12-month to lifetime ECL' },
+          { line: 17, note: 'Calculates standard 12-month Expected Credit Loss for performing Stage 1 facilities' },
+          { line: 32, note: 'Classifies 42 DPD delinquent loan into Stage 2 with $150k lifetime provision and watchlist enrollment' }
+        ],
+        tryIt: 'Increase days_past_due from 42 to 95 to trigger Stage 3 Credit-Impaired NPL status and observe required provision surge to $2.0M.',
+        check: {
+          question: 'What is the critical regulatory consequence when a commercial loan transitions from Stage 1 to Stage 2 under the IFRS 9 impairment framework?',
+          options: [
+            'The required loan loss provision jumps from 12-Month Expected Credit Losses to Lifetime Expected Credit Losses, triggering an immediate and substantial provisioning expense charge against bank earnings.',
+            'The borrower is legally required to surrender their passport to the bank.',
+            'The loan interest rate automatically falls to zero percent.',
+            'The central bank immediately revokes the commercial bank\'s charter.'
+          ],
+          answer: 0,
+          why: 'The transition to Stage 2 requires provisioning for potential defaults across the entire remaining multi-year life of the loan rather than just the next 12 months, creating a steep increase in reserve requirements.',
+          answerIndex: 0,
+          explanation: 'The transition to Stage 2 requires provisioning for potential defaults across the entire remaining multi-year life of the loan rather than just the next 12 months, creating a steep increase in reserve requirements.'
+        }
+      }
+    ],
+    summary: [
+      '5 Cs of Credit: Underwrites corporate facilities via Cash Flow Available for Debt Service (CFADS = EBITDA - Capex - Taxes); leverage capped at 3.0x to 4.0x CFADS.',
+      'DSCR Covenants: Enforces minimum 1.25x DSCR; dual sensitivity stress testing evaluates simultaneous revenue dips and interest rate hikes.',
+      'Borrowing Base Certificates: Caps revolving debt availability against eligible accounts receivable (85% advance) and inventory (50% advance) with strict collateral haircuts.',
+      'RAROC Pricing: Evaluates loan profitability against allocated economic capital (RAROC = Net Income / Economic Capital); pricing must clear corporate hurdle rates.',
+      'IFRS 9 Staged Impairment: Enforces forward-looking 3-stage ECL provisioning (Stage 1: 12-month, Stage 2: Lifetime, Stage 3: Specific NPL impairment) with structured workout protocols.'
+    ],
+    projectStep: {
+      title: 'Commercial Bank Credit Underwriting Memo & Workout Model',
+      steps: [
+        'Analyze corporate financial statements to calculate CFADS and determine maximum borrowing capacity under conservative leverage ceilings.',
+        'Construct a dynamic DSCR covenant stress-test model and generate a Borrowing Base Certificate for a working capital revolver.',
+        'Model loan pricing using RAROC and execute an IFRS 9 3-stage provisioning audit with Special Assets workout action plans.'
+      ]
+    }
   }
 ];
+

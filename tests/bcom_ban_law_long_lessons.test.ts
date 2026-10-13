@@ -1,8 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getLongLesson, getLongLessonLanguage } from '../src/lib/data/longLessons';
+import {
+  getLongLesson,
+  getLongLessonLanguage,
+  estimateSpokenMinutes,
+  estimateLessonMinutes
+} from '../src/lib/data/longLessons';
 import { BCOM_BAN_LONG_LESSONS } from '../src/lib/data/bcomBanLongLessons';
 import { BCOM_LAW_LONG_LESSONS } from '../src/lib/data/bcomLawLongLessons';
+
 
 test('B.Com Commercial Banking & Corporate Law Long Lessons: Resolution & Language Invariants', () => {
   // Commercial Banking (bcom_ban)
@@ -79,3 +85,56 @@ test('B.Com Corporate Law Day 1: Contracts, Veil Piercing, Fiduciary & Antitrust
   assert.ok(lesson.parts[3].code?.includes('InsiderTradingComplianceGate'));
   assert.ok(lesson.parts[4].code?.includes('AntitrustHHIAnalyzer'));
 });
+
+test('Block 34: B.Com Commercial Banking Day 2: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_ban', 2);
+  assert.ok(lesson, 'bcom_ban Day 2 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_ban');
+  assert.equal(lesson.day, 2);
+  assert.equal(lesson.parts.length, 5, 'bcom_ban Day 2 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_ban'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 9, `Spoken minutes (${spoken}) must be at least 9 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 34: B.Com Commercial Banking Day 2: Credit Underwriting, DSCR & NPL Workout Snippets Verification', () => {
+  const lesson = BCOM_BAN_LONG_LESSONS[1];
+  assert.ok(lesson, 'BCOM_BAN_LONG_LESSONS[1] must exist');
+  assert.equal(lesson.day, 2);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have >= 3 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /5 Cs of Credit.*CFADS/i);
+  assert.ok(lesson.parts[0].code?.includes('evaluate_debt_capacity'));
+  assert.match(lesson.parts[1].title, /DSCR.*Stress Testing/i);
+  assert.ok(lesson.parts[1].code?.includes('stress_test_dscr'));
+  assert.match(lesson.parts[2].title, /Borrowing Base.*Haircuts/i);
+  assert.ok(lesson.parts[2].code?.includes('calculate_borrowing_base'));
+  assert.match(lesson.parts[3].title, /RAROC.*Pricing/i);
+  assert.ok(lesson.parts[3].code?.includes('compute_raroc_and_credit_spread'));
+  assert.match(lesson.parts[4].title, /IFRS 9.*Staging.*Workouts/i);
+  assert.ok(lesson.parts[4].code?.includes('classify_ifrs9_staging_and_provision'));
+});
+
