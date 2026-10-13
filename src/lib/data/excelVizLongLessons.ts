@@ -282,5 +282,395 @@ print("=" * 65)`,
         'Design an executive KPI scorecard with clean sparklines and variance indicators.'
       ]
     }
+  },
+  {
+    day: 2,
+    title: 'Dynamic Array Spill Engines, Monte Carlo Risk, Power Pivot DAX & Sensitivity Bridges',
+    goal: 'Master professional financial modeling and analytical architecture: dynamic array spill functions (FILTER, UNIQUE, SORT), probabilistic Monte Carlo risk distributions (P10/P50/P90), Power Pivot Star Schemas and DAX filter context, 2-way sensitivity What-If data tables, and executive EBITDA variance waterfall bridges.',
+    minutes: 30,
+    recap: 'Yesterday we established tidy data schemas, exact XLOOKUP key resolutions, and SUMIFS aggregations. Today we engineer production-grade analytical engines: dynamic array spills, probabilistic Monte Carlo distributions, Power Pivot DAX measures, What-If sensitivity grids, and executive waterfall variance bridges.',
+    parts: [
+      {
+        title: 'Dynamic Array Spill Ranges: =FILTER, =UNIQUE & =SORT Without Array Brackets',
+        say: [
+          'In legacy spreadsheet software, performing multi-cell array calculations required awkward Ctrl+Shift+Enter (CSE) key combinations, trapping formulas in rigid curly brackets and fixed bounding boxes.',
+          'Modern calculation engines implement Dynamic Arrays natively: when a single formula in cell A2 returns multiple values, it automatically spills down and across into neighboring empty cells.',
+          'If an existing value, comment, or formatting block obstructs the expansion area, the engine displays a #SPILL! error until the corridor is cleared.',
+          'Downstream formulas can reference the entire dynamic spill footprint using the spill operator (#), such as =SUM(A2#) or =COUNTA(A2#), ensuring calculations scale automatically as data grows.',
+          'Combining =SORT, =FILTER, and =UNIQUE creates reactive analytical pipelines directly in grid cells without writing macros or VBA.',
+          'Crucially, dynamic array formulas eliminate sheet corruption caused by inconsistent formula dragging, where an analyst accidentally modifies a single cell in the middle of a 10,000-row column block.',
+          'Because only the top-left anchor cell holds the formula logic, auditing and maintaining large workbooks becomes effortless and virtually error-free.'
+        ],
+        example: 'Like pouring water into an ice cube tray: pouring into the top corner automatically fills all connected pockets without having to measure each cube by hand.',
+        code: `# Modern Excel Dynamic Array Spill Engine Simulation
+transactions = [
+    {"tx_id": "TX-101", "rep": "Sarah", "region": "North", "sector": "SaaS",      "revenue": 45000},
+    {"tx_id": "TX-102", "rep": "David", "region": "South", "sector": "Hardware",  "revenue": 18000},
+    {"tx_id": "TX-103", "rep": "Sarah", "region": "North", "sector": "Services",  "revenue": 32000},
+    {"tx_id": "TX-104", "rep": "Elena", "region": "West",  "sector": "SaaS",      "revenue": 76000},
+    {"tx_id": "TX-105", "rep": "David", "region": "North", "sector": "SaaS",      "revenue": 59000},
+    {"tx_id": "TX-106", "rep": "Elena", "region": "West",  "sector": "Fintech",   "revenue": 41000},
+]
+
+def simulate_dynamic_arrays(data, target_region, min_rev):
+    # 1. FILTER: include rows matching criteria
+    filtered = [row for row in data if row["region"] == target_region and row["revenue"] >= min_rev]
+    
+    # 2. UNIQUE: distinct representatives in filtered set
+    unique_reps = sorted(list({row["rep"] for row in filtered}))
+    
+    # 3. SORT: descending order by revenue
+    sorted_records = sorted(filtered, key=lambda x: x["revenue"], reverse=True)
+    
+    return sorted_records, unique_reps
+
+region_filter = "North"
+rev_cutoff = 30000
+spill_array, distinct_reps = simulate_dynamic_arrays(transactions, region_filter, rev_cutoff)
+
+print("=== MODERN EXCEL DYNAMIC ARRAY SPILL ENGINE ===")
+print(f"Formula: =SORT(FILTER(A2:E7, (C2:C7=\\"{region_filter}\\")*(E2:E7>={rev_cutoff})), 5, -1)")
+print(f"Spill Range Dimensions: {len(spill_array)} Rows x 5 Columns (A2#)")
+print(f"Distinct Sales Reps (=UNIQUE): {', '.join(distinct_reps)}")
+print("-" * 55)
+print(f"{'TX ID':<8} | {'REP':<8} | {'REGION':<8} | {'SECTOR':<10} | {'REVENUE'}")
+print("-" * 55)
+for r in spill_array:
+    print(f"{r['tx_id']:<8} | {r['rep']:<8} | {r['region']:<8} | {r['sector']:<10} | \${r['revenue']:,}")`,
+        output: `=== MODERN EXCEL DYNAMIC ARRAY SPILL ENGINE ===\nFormula: =SORT(FILTER(A2:E7, (C2:C7="North")*(E2:E7>=30000)), 5, -1)\nSpill Range Dimensions: 3 Rows x 5 Columns (A2#)\nDistinct Sales Reps (=UNIQUE): David, Sarah\n-------------------------------------------------------\nTX ID    | REP      | REGION   | SECTOR     | REVENUE\n-------------------------------------------------------\nTX-105   | David    | North    | SaaS       | $59,000\nTX-101   | Sarah    | North    | SaaS       | $45,000\nTX-103   | Sarah    | North    | Services   | $32,000`,
+        codeNotes: [
+          { line: 12, note: 'Simulates FILTER by selecting rows fulfilling multi-column boolean conditions' },
+          { line: 16, note: 'Extracts distinct category set mirroring =UNIQUE formula semantics' },
+          { line: 19, note: 'Sorts tabular array descending by metric column mirroring =SORT' },
+          { line: 30, note: 'References spilled boundaries using the # spill operator footprint' }
+        ],
+        tryIt: 'Adjust the revenue cutoff to 50000 and observe the dynamic reduction in the spilled array output.',
+        check: {
+          question: 'What occurs when an existing non-empty cell blocks a dynamic array formula from expanding its results?',
+          options: [
+            'The formula triggers a #SPILL! error until the obstructing cell is cleared',
+            'The spreadsheet automatically deletes the obstructing data without warning',
+            'The formula truncates itself and only displays the top-left scalar value',
+            'The entire workbook file is encrypted and marked read-only'
+          ],
+          answer: 0,
+          why: 'A #SPILL! error indicates that the formula calculated multiple rows or columns but encountered an obstacle in the spill range.'
+        }
+      },
+      {
+        title: 'Monte Carlo Financial Risk Simulation & Empirical Distribution Bands (P10, P50, P90)',
+        say: [
+          'Deterministic financial models that assume fixed single-point growth rates give leadership a dangerous illusion of certainty.',
+          'Real markets suffer from supply chain friction, competitor price cuts, and macro demand volatility.',
+          'Monte Carlo simulation models replace static cell inputs with continuous statistical distributions (such as Normal or Log-Normal curves).',
+          'By simulating 2,000 to 10,000 probabilistic scenarios, financial engineers calculate empirical cumulative distribution functions (CDFs).',
+          'This surfaces key executive percentiles: P10 (bear case, 10% probability of falling below), P50 (median base case), and P90 (bull case), alongside the empirical probability of negative cash flow or default.',
+          'Beyond percentile estimates, financial engineers calculate Conditional Value at Risk (CVaR or Expected Shortfall), measuring the average severity of losses specifically when the portfolio falls below the 5th percentile.',
+          'Presenting full stochastic distributions empowers the CFO and investment committee to stress-test debt service coverage ratios (DSCR) under severe macro shocks.'
+        ],
+        example: 'Instead of estimating your daily commute as exactly 25 minutes, simulating 1,000 commutes with weather, traffic, and construction gives you the realistic 90th percentile arrival time (38 minutes).',
+        code: `# Monte Carlo Probabilistic EBITDA Risk Profile Simulation
+import random
+
+def simulate_monte_carlo(base_rev, rev_stdev, fixed_costs, var_cost_ratio, trials=2000, seed=42):
+    random.seed(seed)
+    ebitda_samples = []
+    
+    for _ in range(trials):
+        # Normal variate shock representing market revenue volatility
+        rev_shock = random.gauss(0, rev_stdev)
+        realized_rev = max(0, base_rev * (1.0 + rev_shock))
+        
+        # Variable operating costs with small operational friction variance
+        var_costs = realized_rev * var_cost_ratio * (1.0 + random.gauss(0, 0.03))
+        realized_ebitda = realized_rev - var_costs - fixed_costs
+        ebitda_samples.append(realized_ebitda)
+        
+    ebitda_samples.sort()
+    
+    p10 = ebitda_samples[int(0.10 * trials)]
+    p50 = ebitda_samples[int(0.50 * trials)]
+    p90 = ebitda_samples[int(0.90 * trials)]
+    downside_loss_prob = (sum(1 for x in ebitda_samples if x < 0) / trials) * 100.0
+    
+    return {
+        "trials": trials,
+        "mean": sum(ebitda_samples) / trials,
+        "p10": p10,
+        "p50": p50,
+        "p90": p90,
+        "prob_loss": downside_loss_prob,
+    }
+
+res = simulate_monte_carlo(base_rev=5000000, rev_stdev=0.15, fixed_costs=1800000, var_cost_ratio=0.45, trials=2000, seed=42)
+
+print("=== MONTE CARLO PROBABILISTIC EBITDA RISK PROFILE ===")
+print(f"Iterations (Trials): {res['trials']:,}")
+print(f"Expected Mean EBITDA: \${res['mean']:,.0f}")
+print("-" * 52)
+print(f"Bear Case (P10 - 10th Percentile) : \${res['p10']:,.0f}")
+print(f"Median    (P50 - 50th Percentile) : \${res['p50']:,.0f}")
+print(f"Bull Case (P90 - 90th Percentile) : \${res['p90']:,.0f}")
+print(f"Downside Risk (P(EBITDA < 0))     : {res['prob_loss']:.1f}%")`,
+        output: `=== MONTE CARLO PROBABILISTIC EBITDA RISK PROFILE ===\nIterations (Trials): 2,000\nExpected Mean EBITDA: $944,160\n----------------------------------------------------\nBear Case (P10 - 10th Percentile) : $417,737\nMedian    (P50 - 50th Percentile) : $940,992\nBull Case (P90 - 90th Percentile) : $1,474,924\nDownside Risk (P(EBITDA < 0))     : 1.0%`,
+        codeNotes: [
+          { line: 8, note: 'Generates Gaussian stochastic revenue shocks across 2,000 discrete simulation paths' },
+          { line: 14, note: 'Calculates operating leverage: fixed costs amplify revenue swings into EBITDA volatility' },
+          { line: 19, note: 'Sorts outcome array to extract empirical P10, P50, and P90 distribution percentiles' },
+          { line: 22, note: 'Computes downside tail probability of operating losses' }
+        ],
+        tryIt: 'Increase rev_stdev to 0.25 (25% volatility) and observe the widening gap between P10 and P90.',
+        check: {
+          question: 'In corporate risk planning, what does the P10 percentile metric signify in an EBITDA distribution?',
+          options: [
+            'The conservative bear case: there is only a 10% chance that actual EBITDA will fall below this level',
+            'The maximum profit achievable under ideal market conditions',
+            'The average revenue generated by the top 10 salespeople in the firm',
+            'The exact price of the company stock at year-end'
+          ],
+          answer: 0,
+          why: 'P10 indicates the 10th percentile outcome: 90% of simulation iterations performed better, establishing a rigorous downside floor for liquidity planning.'
+        }
+      },
+      {
+        title: 'Power Pivot Star Schema Architecture & DAX Calculated Measures (Filter Context vs Row Context)',
+        say: [
+          'Attempting to join dozens of data fields into a single 100-column flat table creates massive memory bloat, redundant strings, and calculation bottlenecks.',
+          'Power Pivot solves this by introducing relational Star Schemas powered by the VertiPaq in-memory columnar database.',
+          'In a Star Schema, a central Fact Table (FactSales) contains foreign keys and transactional numbers, connected via 1-to-many (1:*) relationships to surrounding Dimension Tables (DimCustomer, DimProduct, DimDate).',
+          'Data Analysis Expressions (DAX) differentiate between Row Context (iterating row-by-row in calculated columns) and Filter Context (dynamic aggregations evaluated in pivot tables).',
+          'The powerhouse DAX function =CALCULATE() evaluates measures while modifying or overriding ambient filter contexts, allowing sophisticated cohort metrics without duplicating data.',
+          'Under the hood, VertiPaq uses run-length encoding (RLE), dictionary compression, and bit-packing to compress gigabytes of transaction records down to mere megabytes in RAM.',
+          'By creating explicit one-to-many relationships across key fields, filter context naturally propagates from dimension slicing tables down into the fact table without expensive manual lookups.'
+        ],
+        example: 'Like an organized library database where a lending log contains student ID and book ID (Fact table), pointing to a student directory and book catalog (Dimension tables), rather than rewriting the author biography on every checkout slip.',
+        code: `# Power Pivot Star Schema & DAX Measure Engine Simulation
+dim_customers = {
+    "C-10": {"tier": "Enterprise", "geo": "North America"},
+    "C-20": {"tier": "SMB",        "geo": "EMEA"},
+    "C-30": {"tier": "Enterprise", "geo": "APAC"},
+}
+dim_products = {
+    "P-01": {"category": "Cloud Platform", "cogs_rate": 0.20},
+    "P-02": {"category": "Consulting",     "cogs_rate": 0.65},
+}
+# Fact Table (Transactions with Foreign Keys)
+fact_sales = [
+    {"sale_id": 1, "cust_id": "C-10", "prod_id": "P-01", "gross_rev": 120000},
+    {"sale_id": 2, "cust_id": "C-20", "prod_id": "P-01", "gross_rev": 30000},
+    {"sale_id": 3, "cust_id": "C-10", "prod_id": "P-02", "gross_rev": 50000},
+    {"sale_id": 4, "cust_id": "C-30", "prod_id": "P-01", "gross_rev": 85000},
+    {"sale_id": 5, "cust_id": "C-20", "prod_id": "P-02", "gross_rev": 15000},
+]
+
+def evaluate_star_schema_dax(facts, customers, products):
+    # Base DAX Measures: [Total Revenue] and [Total Margin]
+    total_rev = sum(row["gross_rev"] for row in facts)
+    total_cogs = sum(row["gross_rev"] * products[row["prod_id"]]["cogs_rate"] for row in facts)
+    total_margin = total_rev - total_cogs
+    margin_pct = (total_margin / total_rev) * 100.0 if total_rev > 0 else 0
+    
+    # Filter Context Modification: CALCULATE([Total Revenue], DimCustomer[Tier] == "Enterprise")
+    enterprise_rev = sum(
+        row["gross_rev"] for row in facts if customers[row["cust_id"]]["tier"] == "Enterprise"
+    )
+    enterprise_share = (enterprise_rev / total_rev) * 100.0 if total_rev > 0 else 0
+    
+    return total_rev, total_cogs, total_margin, margin_pct, enterprise_rev, enterprise_share
+
+tot_rev, tot_cogs, tot_marg, marg_pct, ent_rev, ent_share = evaluate_star_schema_dax(fact_sales, dim_customers, dim_products)
+
+print("=== POWER PIVOT STAR SCHEMA & DAX MEASURE ENGINE ===")
+print(f"Fact Table Rows: {len(fact_sales)} | Dimensions: DimCustomer, DimProduct (1:* Cardinality)")
+print("-" * 52)
+print(f"[Total Revenue]     : \${tot_rev:,.2f}")
+print(f"[Total COGS]        : \${tot_cogs:,.2f}")
+print(f"[Gross Margin]      : \${tot_marg:,.2f}")
+print(f"[Gross Margin %]    : {marg_pct:.1f}%")
+print("-" * 52)
+print(f"[Enterprise Revenue]: \${ent_rev:,.2f} ({ent_share:.1f}% of Total)")`,
+        output: `=== POWER PIVOT STAR SCHEMA & DAX MEASURE ENGINE ===\nFact Table Rows: 5 | Dimensions: DimCustomer, DimProduct (1:* Cardinality)\n----------------------------------------------------\n[Total Revenue]     : $300,000.00\n[Total COGS]        : $89,250.00\n[Gross Margin]      : $210,750.00\n[Gross Margin %]    : 70.2%\n----------------------------------------------------\n[Enterprise Revenue]: $255,000.00 (85.0% of Total)`,
+        codeNotes: [
+          { line: 2, note: 'Dimension tables store normalized entity attributes with primary keys' },
+          { line: 11, note: 'Fact table references dimension foreign keys with numeric transaction amounts' },
+          { line: 26, note: 'Simulates DAX CALCULATE by overriding ambient filter context with enterprise tier predicate' },
+          { line: 36, note: 'Evaluates dynamic aggregate measures without altering underlying tabular storage' }
+        ],
+        tryIt: 'Filter for SMB tier revenue and compute the SMB revenue share of total sales.',
+        check: {
+          question: 'Why are explicit DAX Measures preferred over Calculated Columns in Power Pivot data models?',
+          options: [
+            'Measures compute dynamically in memory at query time based on user filter context without bloating RAM or disk file size',
+            'Calculated columns can only store text and cannot perform mathematical addition',
+            'Measures bypass Excel security encryption while calculated columns require passwords',
+            'Power Pivot does not allow creating calculated columns under any circumstances'
+          ],
+          answer: 0,
+          why: 'DAX measures calculate dynamically during pivot table aggregation, consuming zero persistent memory compared to calculated columns which persist for every row.'
+        }
+      },
+      {
+        title: 'Two-Way What-If Sensitivity Analysis Data Tables: DCF Valuation Matrix',
+        say: [
+          'In corporate valuation, private equity, and investment banking, a Discounted Cash Flow (DCF) model is incomplete without sensitivity analysis.',
+          'Valuation outputs are extraordinarily sensitive to two inputs: the Weighted Average Cost of Capital (WACC / discount rate) and the Terminal Growth Rate (g).',
+          'Excel What-If Analysis Data Tables (=TABLE(Row_Input, Column_Input)) calculate a two-dimensional matrix of outcomes simultaneously.',
+          'The Gordon Growth Model determines terminal enterprise value at year n: TV = (FCF_n * (1 + g)) / (WACC - g), which is then discounted to present value.',
+          'By linking the top-left cell to the master enterprise value formula, the sensitivity table reveals the full spectrum of market valuations under bullish and bearish macroeconomic conditions.',
+          'In complex enterprise workbooks, two-variable data tables can introduce calculation latency because Excel recomputes the entire financial model for every grid intersection.',
+          'Financial analysts optimize performance by setting Excel calculation options to "Automatic Except for Data Tables", ensuring the core workbook calculates instantly while sensitivity tables update on demand.'
+        ],
+        example: 'Like testing an airplane wing in a wind tunnel across a matrix of 4 different airspeeds and 4 different wind angles to ensure stability across all flight regimes.',
+        code: `# Two-Way DCF Valuation Sensitivity Table ($M)
+def calculate_dcf_sensitivity(discrete_fcfs, wacc_rates, terminal_growths):
+    n = len(discrete_fcfs)
+    last_fcf = discrete_fcfs[-1]
+    
+    # Calculate Present Value (PV) of discrete cash flows for each discount rate
+    matrix = []
+    for wacc in wacc_rates:
+        row = []
+        pv_discrete = sum(fcf / ((1.0 + wacc) ** (t + 1)) for t, fcf in enumerate(discrete_fcfs))
+        for g in terminal_growths:
+            if wacc <= g:
+                row.append(None)
+                continue
+            # Gordon Growth Model terminal value discounted to present
+            terminal_value = (last_fcf * (1.0 + g)) / (wacc - g)
+            pv_tv = terminal_value / ((1.0 + wacc) ** n)
+            enterprise_val = (pv_discrete + pv_tv) / 1000000.0 # $ Millions
+            row.append(enterprise_val)
+        matrix.append(row)
+    return matrix
+
+cash_flows = [25000000, 28000000, 32000000, 36000000, 40000000] # 5-Year Free Cash Flow
+wacc_steps = [0.08, 0.09, 0.10, 0.11]
+growth_steps = [0.015, 0.020, 0.025, 0.030]
+
+grid = calculate_dcf_sensitivity(cash_flows, wacc_steps, growth_steps)
+
+print("=== TWO-WAY DCF VALUATION SENSITIVITY TABLE ($M) ===")
+print("What-If Matrix: WACC (Row Input) vs Terminal Growth g (Column Input)")
+print("-" * 55)
+headers = "  WACC \\\\ g  | " + " | ".join(f"{g*100:4.1f}%" for g in growth_steps)
+print(headers)
+print("-" * 55)
+for wacc, row_vals in zip(wacc_steps, grid):
+    row_str = f"   {wacc*100:4.1f}%    | " + " | ".join(f"\${v:5.1f}M" for v in row_vals)
+    print(row_str)`,
+        output: `=== TWO-WAY DCF VALUATION SENSITIVITY TABLE ($M) ===\nWhat-If Matrix: WACC (Row Input) vs Terminal Growth g (Column Input)\n-------------------------------------------------------\n  WACC \\ g  |  1.5% |  2.0% |  2.5% |  3.0%\n-------------------------------------------------------\n    8.0%    | $551.3M | $589.0M | $633.6M | $687.0M\n    9.0%    | $474.5M | $501.5M | $532.7M | $569.0M\n   10.0%    | $415.9M | $436.0M | $458.8M | $484.8M\n   11.0%    | $369.7M | $385.1M | $402.4M | $421.7M`,
+        codeNotes: [
+          { line: 2, note: 'Models DCF valuation across two independent macroeconomic variable vectors' },
+          { line: 9, note: 'Discounts discrete projection cash flows using compound interest factors' },
+          { line: 14, note: 'Evaluates Gordon Growth terminal value formula (Terminal FCF / (WACC - g))' },
+          { line: 29, note: 'Renders executive sensitivity matrix tabulating enterprise valuation outcomes' }
+        ],
+        tryIt: 'Observe how Enterprise Value expands from $369.7M at 11% WACC / 1.5% g to $687.0M at 8% WACC / 3.0% g.',
+        check: {
+          question: 'What mathematical condition must hold when calculating terminal value using the Gordon Growth Model?',
+          options: [
+            'The discount rate (WACC) must strictly exceed the perpetual growth rate (g)',
+            'The terminal growth rate must equal zero under all circumstances',
+            'The cash flow projection period must span exactly 100 years',
+            'The company must possess zero outstanding debt'
+          ],
+          answer: 0,
+          why: 'If the terminal growth rate g equals or exceeds the discount rate WACC, the denominator (WACC - g) becomes zero or negative, creating a mathematically invalid infinite valuation.'
+        }
+      },
+      {
+        title: 'Financial Waterfall Charts & Executive EBITDA Variance Attribution Bridge',
+        say: [
+          'When actual quarterly EBITDA diverges from the approved board budget, corporate leaders require an exact attribution bridge.',
+          'A simple bar chart only shows the start and end values, obscuring whether the variance was caused by volume erosion, raw material inflation, or wage increases.',
+          'Financial Waterfall charts display floating intermediate blocks connecting the starting budget to actual results.',
+          'Each block decomposes variance into standard operational buckets: Volume Expansion, Price Realization, Material Cost Inflation, and SG&A Overhead.',
+          'Using floating baseline offsets and color coding (green for favorable variance, red for unfavorable variance), executives instantly diagnose operating performance.',
+          'In multinational corporations, variance analysis further isolates foreign exchange translation effects from local currency operational price and volume dynamics.',
+          'By walking the board transparently through each discrete impact layer, financial planners build unshakeable credibility and direct strategic resources to fixing root causes.'
+        ],
+        example: 'Like a bank statement reconciliation bridge: starting balance + salary paycheck + investment dividend - rent expense - grocery costs = ending bank account balance.',
+        code: `# Executive Financial Waterfall (EBITDA Bridge) Simulation
+def render_ebitda_waterfall(budget_ebitda, variance_steps):
+    # Calculate running bridge coordinates
+    running = budget_ebitda
+    rows = [("Budget EBITDA", budget_ebitda, 0, budget_ebitda, "BASE")]
+    
+    for name, delta in variance_steps:
+        prev = running
+        running += delta
+        category = "POS" if delta >= 0 else "NEG"
+        rows.append((name, prev, delta, running, category))
+        
+    rows.append(("Actual EBITDA", running, 0, running, "FINAL"))
+    return rows
+
+budget = 12000000
+variances = [
+    ("Volume Expansion", +2400000),
+    ("Price Realization", +1100000),
+    ("Raw Material Infl", -1800000),
+    ("Headcount / SG&A",  -900000),
+]
+
+bridge = render_ebitda_waterfall(budget, variances)
+
+print("=== EXECUTIVE FINANCIAL WATERFALL (EBITDA BRIDGE) ===")
+print(f"{'STEP DRIVER':<20} | {'START':<9} | {'VARIANCE':<10} | {'ENDING':<9} | {'VISUAL'}")
+print("-" * 65)
+
+scale = 200000 # 1 bar block per $200k
+for name, start_v, delta, end_v, cat in bridge:
+    s_str = f"\${start_v/1e6:4.1f}M"
+    e_str = f"\${end_v/1e6:4.1f}M"
+    
+    if cat == "BASE" or cat == "FINAL":
+        var_str = "  ----  "
+        bars = "[=] " + "=" * int(end_v / (scale * 20))
+    elif cat == "POS":
+        var_str = f"+\${delta/1e6:3.1f}M"
+        bars = "[+] " + "+" * int(abs(delta) / (scale * 2))
+    else:
+        var_str = f"-\${abs(delta)/1e6:3.1f}M"
+        bars = "[-] " + "-" * int(abs(delta) / (scale * 2))
+        
+    print(f"{name:<20} | {s_str:<9} | {var_str:<10} | {e_str:<9} | {bars}")`,
+        output: `=== EXECUTIVE FINANCIAL WATERFALL (EBITDA BRIDGE) ===\nSTEP DRIVER          | START     | VARIANCE   | ENDING    | VISUAL\n-----------------------------------------------------------------\nBudget EBITDA        | $12.0M    |   ----     | $12.0M    | [=] ===\nVolume Expansion     | $12.0M    | +$2.4M     | $14.4M    | [+] ++++++\nPrice Realization    | $14.4M    | +$1.1M     | $15.5M    | [+] ++\nRaw Material Infl    | $15.5M    | -$1.8M     | $13.7M    | [-] ----\nHeadcount / SG&A     | $13.7M    | -$0.9M     | $12.8M    | [-] --\nActual EBITDA        | $12.8M    |   ----     | $12.8M    | [=] ===`,
+        codeNotes: [
+          { line: 2, note: 'Calculates floating vertical base offsets linking previous ending balance to next start' },
+          { line: 17, note: 'Decomposes variance drivers into operational categories (volume, price, cost inflation)' },
+          { line: 31, note: 'Categorizes step polarity (+/-) to generate directional waterfall bridge visuals' },
+          { line: 42, note: 'Reconciles starting budget of $12.0M to realized actual EBITDA of $12.8M' }
+        ],
+        tryIt: 'Add a new variance driver for supply chain logistics (-$500,000) and observe the updated bridge.',
+        check: {
+          question: 'What is the primary analytical advantage of a Waterfall Chart in executive corporate reporting?',
+          options: [
+            'It isolates and visualizes individual positive and negative variance drivers that explain the gap between budget and actual results',
+            'It automatically calculates the corporate income tax rate based on geographic IP address',
+            'It converts currency numbers into animated video clips for board presentations',
+            'It prevents unauthorized users from printing the financial report'
+          ],
+          answer: 0,
+          why: 'A waterfall chart transparently decomposes net performance changes into discrete operational drivers, providing immediate diagnostic clarity.'
+        }
+      }
+    ],
+    summary: [
+      'Modern Excel Dynamic Arrays (FILTER, UNIQUE, SORT) eliminate rigid CSE array formulas with automatic spilling and the # range operator.',
+      'Monte Carlo probabilistic simulations replace single-point guesses with continuous distributions, generating empirical P10, P50, and P90 confidence intervals.',
+      'Power Pivot Star Schemas decouple facts from dimensions, utilizing DAX measures and CALCULATE to compute metrics dynamically without memory bloat.',
+      'Two-Way What-If Sensitivity Tables evaluate multi-variable valuation landscapes across WACC discount rates and Gordon Growth terminal rates.',
+      'Executive Waterfall bridges decompose net budget variances into actionable operational drivers including volume expansion, price realization, and cost inflation.'
+    ],
+    projectStep: {
+      title: 'Engineer an Enterprise Financial Risk Model & Interactive Valuation Suite',
+      steps: [
+        'Build a dynamic array reporting engine using FILTER, UNIQUE, and SORT with spill range references (#).',
+        'Run a 2,000-trial Monte Carlo simulation to quantify portfolio EBITDA volatility and P10/P50/P90 percentile thresholds.',
+        'Construct a Power Pivot Star Schema linking sales transactions to customer/product dimensions and authoring DAX measures.',
+        'Generate a two-way WACC vs Terminal Growth DCF sensitivity matrix and render an executive EBITDA waterfall variance bridge.'
+      ]
+    }
   }
 ];

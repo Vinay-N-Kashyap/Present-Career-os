@@ -127,3 +127,48 @@ test('Quant Systems Day 2: Kernel Bypass, SIMD Vectorized VWAP, Micro-Price & FI
   assert.ok(quantLesson2.parts[4].code?.includes('calculateFixChecksum'));
 });
 
+test('Excel Viz Day 2: Dynamic Array Spill, Monte Carlo, Power Pivot DAX & Sensitivity Bridges Verification', () => {
+  const excelLesson2 = getLongLesson('excel_viz', 2);
+  assert.ok(excelLesson2, 'excel_viz Day 2 must resolve');
+  assert.equal(excelLesson2.day, 2);
+  assert.equal(excelLesson2.parts.length, 5, 'excel_viz Day 2 must contain exactly 5 parts');
+  assert.ok(excelLesson2.summary.length >= 4, 'excel_viz Day 2 must have comprehensive summary');
+  assert.ok(excelLesson2.projectStep, 'excel_viz Day 2 must have projectStep');
+  assert.ok(excelLesson2.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(excelLesson2);
+  const totalMin = estimateLessonMinutes(excelLesson2);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < excelLesson2.parts.length; i++) {
+    const part = excelLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('print('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(excelLesson2.parts[0].code?.includes('simulate_dynamic_arrays'));
+  assert.ok(excelLesson2.parts[0].output?.includes('MODERN EXCEL DYNAMIC ARRAY SPILL ENGINE'));
+  assert.ok(excelLesson2.parts[1].code?.includes('simulate_monte_carlo'));
+  assert.ok(excelLesson2.parts[1].output?.includes('MONTE CARLO PROBABILISTIC EBITDA RISK PROFILE'));
+  assert.ok(excelLesson2.parts[2].code?.includes('evaluate_star_schema_dax'));
+  assert.ok(excelLesson2.parts[2].output?.includes('POWER PIVOT STAR SCHEMA & DAX MEASURE ENGINE'));
+  assert.ok(excelLesson2.parts[3].code?.includes('calculate_dcf_sensitivity'));
+  assert.ok(excelLesson2.parts[3].output?.includes('TWO-WAY DCF VALUATION SENSITIVITY TABLE'));
+  assert.ok(excelLesson2.parts[4].code?.includes('render_ebitda_waterfall'));
+  assert.ok(excelLesson2.parts[4].output?.includes('EXECUTIVE FINANCIAL WATERFALL (EBITDA BRIDGE)'));
+});
+
