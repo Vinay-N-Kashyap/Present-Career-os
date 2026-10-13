@@ -528,5 +528,501 @@ Brand: Generic_WhiteLabel
         'Establish baseline Points-of-Parity (POPs) and defensible Points-of-Difference (PODs) across the 4 tiers of Keller\'s CBBE pyramid.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom-marketing',
+    day: 2,
+    title: 'Marketing Environment: PESTLE Analysis, Porter\'s Five Forces & Strategic Market Dynamics',
+    goal: 'Master external environmental scanning and competitive market dynamics: decomposing macro forces via PESTLE, evaluating micro industry attractiveness via Porter\'s Five Forces, calculating Cross-Price Elasticity of Demand for substitute threats, quantifying buyer and supplier bargaining leverage, and operationalizing SWOT into actionable TOWS matrix strategies.',
+    minutes: 42,
+    recap: 'Yesterday we mastered the internal foundations of marketing: organizational philosophies, customer perceived value, and brand equity. Today we look outward through the windshield at the turbulent macroeconomic and competitive terrain in which every enterprise must survive and prosper.',
+    parts: [
+      {
+        title: 'Macro-Environmental Turbulence & The Strategic PESTLE Matrix',
+        say: [
+          'Organizations do not exist in a sterile laboratory; they operate inside a dynamic, turbulent macro-environment shaped by broad societal forces that individual enterprises cannot directly control, but must proactively anticipate.',
+          'Marketers systematically categorize these macro-environmental forces using the PESTLE framework: Political, Economic, Socio-Cultural, Technological, Legal, and Environmental.',
+          'Political factors encompass government stability, tax legislation, trade tariffs, and cross-border trade restrictions. Economic factors evaluate aggregate purchasing power, interest rates, currency exchange fluctuations, disposable income distributions, and inflation trends.',
+          'Socio-Cultural forces capture shifts in demographic age pyramids, lifestyle preferences, cultural attitudes, and consumer buying habits. Technological forces represent breakthroughs in automation, artificial intelligence, digital distribution, and R&D pipelines that create new industries while obsoleting legacy ones.',
+          'Legal forces mandate strict compliance with consumer protection, advertising honesty, employment standards, and anti-trust laws. Finally, Environmental forces evaluate ecological sustainability, carbon footprint regulations, climate vulnerability, and raw material scarcity.',
+          'Strategic environmental scanning requires moving beyond superficial checklists: proactive leadership weights each PESTLE dimension by likelihood and financial severity to compute an aggregate Macro Risk Exposure Score.'
+        ],
+        example: 'Think of piloting an ocean-going cargo vessel. You cannot control oceanic storms, prevailing wind currents, or international maritime shipping laws (the PESTLE macro-environment). However, ignoring weather radar forecasts means you will sail straight into a hurricane and sink your ship.',
+        code: `# Simulation: PESTLE Macro-Environmental Risk Exposure & Impact Matrix
+from dataclasses import dataclass
+from typing import List, Dict
+
+@dataclass
+class PestleFactor:
+    category: str
+    name: str
+    likelihood: float      # 0.0 to 1.0 probability
+    impact_severity: float # 1.0 to 5.0 scale
+    trend_direction: str   # 'Favorable', 'Neutral', 'Adverse'
+
+class PestleAuditEngine:
+    def __init__(self, enterprise_sector: str, factors: List[PestleFactor]):
+        self.sector = enterprise_sector
+        self.factors = factors
+
+    def calculate_exposure(self) -> Dict:
+        total_weighted_risk = 0.0
+        adverse_count = 0
+        category_scores = {}
+
+        for f in self.factors:
+            risk_score = f.likelihood * f.impact_severity
+            category_scores[f.category] = round(risk_score, 2)
+            total_weighted_risk += risk_score
+            if f.trend_direction == 'Adverse':
+                adverse_count += 1
+
+        avg_exposure = total_weighted_risk / len(self.factors)
+        if avg_exposure >= 3.0:
+            vulnerability_level = 'CRITICAL_MACRO_EXPOSURE'
+            action = 'Immediate strategic hedge and geographic/product diversification required.'
+        elif avg_exposure >= 2.0:
+            vulnerability_level = 'MODERATE_MACRO_RISK'
+            action = 'Active scenario planning and regulatory monitoring recommended.'
+        else:
+            vulnerability_level = 'BENIGN_GROWTH_ENVIRONMENT'
+            action = 'Aggressive market expansion and capital investment favored.'
+
+        return {
+            "Sector": self.sector,
+            "Average_Risk_Exposure": round(avg_exposure, 2),
+            "Adverse_Pressure_Points": adverse_count,
+            "Vulnerability_Assessment": vulnerability_level,
+            "Category_Scores": category_scores,
+            "Recommended_Action": action
+        }
+
+factors = [
+    PestleFactor("Political", "Cross-Border Trade Tariffs", 0.8, 4.0, "Adverse"),
+    PestleFactor("Economic", "Inflation & High Interest Rates", 0.7, 3.5, "Adverse"),
+    PestleFactor("SocioCultural", "Shift to Sustainable Ethical Sourcing", 0.9, 3.0, "Favorable"),
+    PestleFactor("Technological", "Generative AI Process Automation", 0.95, 4.5, "Favorable"),
+    PestleFactor("Legal", "Stricter Data Privacy & Cookie Laws", 0.85, 3.0, "Adverse"),
+    PestleFactor("Environmental", "Mandatory Carbon Emissions Audits", 0.6, 2.5, "Neutral")
+]
+
+audit = PestleAuditEngine("Consumer Electronics", factors).calculate_exposure()
+print(f"Sector: {audit['Sector']} | Avg Risk: {audit['Average_Risk_Exposure']}/5.0")
+print(f"Status: {audit['Vulnerability_Assessment']}")
+print(f"Action: {audit['Recommended_Action']}")`,
+        output: `Sector: Consumer Electronics | Avg Risk: 2.78/5.0\nStatus: MODERATE_MACRO_RISK\nAction: Active scenario planning and regulatory monitoring recommended.`,
+        codeNotes: [
+          { line: 6, note: 'PestleFactor model captures likelihood (0-1), severity (1-5), and trend' },
+          { line: 20, note: 'Calculates expected risk score = likelihood * impact severity' },
+          { line: 27, note: 'Evaluates aggregate macro risk thresholds to prescribe corporate actions' },
+          { line: 55, note: 'Simulates corporate exposure for global consumer electronics sector' }
+        ],
+        tryIt: 'Adjust the Political factor likelihood from 0.8 to 0.2 to observe how tariff de-escalation lowers total macro exposure.',
+        check: {
+          question: 'What fundamentally distinguishes macro-environmental forces (PESTLE) from micro-environmental industry forces (such as competitors and suppliers)?',
+          options: [
+            'Macro forces are broad societal factors that individual companies cannot control or alter, whereas micro forces directly interact with the firm in its specific market.',
+            'Macro forces only affect non-profit charitable organizations.',
+            'Macro forces are completely predictable and remain constant for multiple decades.',
+            'Micro forces only exist in agricultural and manufacturing sectors.'
+          ],
+          answer: 0,
+          why: 'Macro-environmental forces (Political, Economic, Socio-Cultural, Technological, Legal, Environmental) originate at the societal level and affect all market players without being controllable by any single individual business.',
+          answerIndex: 0,
+          explanation: 'Macro-environmental forces (Political, Economic, Socio-Cultural, Technological, Legal, Environmental) originate at the societal level and affect all market players without being controllable by any single individual business.'
+        }
+      },
+      {
+        title: 'Industry Structure & Michael Porter\'s Five Competitive Forces',
+        say: [
+          'While PESTLE examines the broad macro-environment, Michael Porter\'s Five Forces model investigates the immediate micro-environment: the competitive architecture of an industry that directly governs average profitability and margins.',
+          'Porter identified that the essence of competitive strategy is coping with competition, but competition extends far beyond direct existing rivals. Five distinct structural forces determine industry attractiveness.',
+          'Force 1: Threat of New Entrants. High barriers to entry (huge capital requirements, proprietary intellectual property, economies of scale, customer switching costs) protect incumbent margins. When barriers are low, new entrants flood the market, expanding supply and driving prices down to marginal cost.',
+          'Force 2: Bargaining Power of Buyers. When buyers are concentrated, purchase in large volumes, or face zero switching costs, they dictate terms, demanding steep discounts, custom features, and aggressive payment terms.',
+          'Force 3: Bargaining Power of Suppliers. If critical inputs are controlled by a concentrated monopoly or switching suppliers incurs painful friction, suppliers capture the majority of industry profits by charging premium prices.',
+          'Force 4: Threat of Substitute Products or Services. Substitutes place a strict ceiling on the prices an industry can charge. If coffee prices double, consumers switch to tea; if airline tickets soar, businesses conduct video conferences on Zoom.',
+          'Force 5: Rivalry Among Existing Competitors. High fixed costs, sluggish industry growth, identical undifferentiated products, and high exit barriers ignite destructive price wars where value is destroyed rather than created.',
+          'The collective strength of these five forces dictates whether an industry is a high-margin oasis (like medical devices or luxury fashion) or a low-margin bloodbath (like commercial airlines or commodity grain farming).'
+        ],
+        example: 'Think of a medieval castle under siege. Rivalry is the enemy army outside the gate. But if the castle relies on a single merchant for clean water (supplier power), the surrounding villagers refuse to buy the castle\'s grain (buyer power), bandits can easily scale the outer wall (threat of entrants), and a nearby river allows ships to bypass the castle\'s toll bridge entirely (threat of substitutes), the castle will fall even without a frontal assault.',
+        code: `# Simulation: Porter's Five Forces Industry Attractiveness & Margin Evaluator
+from dataclasses import dataclass
+from typing import Dict
+
+@dataclass
+class IndustryFiveForces:
+    industry_name: str
+    threat_of_new_entrants: float       # 1 (Low) to 5 (Extremely High)
+    bargaining_power_of_buyers: float   # 1 to 5
+    bargaining_power_of_suppliers: float# 1 to 5
+    threat_of_substitutes: float        # 1 to 5
+    competitive_rivalry: float          # 1 to 5
+
+def evaluate_porter_forces(forces: IndustryFiveForces) -> Dict:
+    scores = [
+        forces.threat_of_new_entrants,
+        forces.bargaining_power_of_buyers,
+        forces.bargaining_power_of_suppliers,
+        forces.threat_of_substitutes,
+        forces.competitive_rivalry
+    ]
+    
+    avg_intensity = sum(scores) / len(scores)
+    # Industry profitability potential is inversely related to competitive intensity
+    profit_pool_margin_ceiling_pct = max(5.0, round(50.0 - (avg_intensity * 8.5), 1))
+
+    if avg_intensity <= 2.2:
+        attractiveness = 'HIGH_MARGIN_ATTRACTIVE_INDUSTRY'
+        verdict = 'High barriers to entry & pricing power protect extraordinary economic returns.'
+    elif avg_intensity <= 3.4:
+        attractiveness = 'MODERATE_PROFITABILITY_INDUSTRY'
+        verdict = 'Viable profitability achievable through strict differentiation and cost discipline.'
+    else:
+        attractiveness = 'HYPER_COMPETITIVE_COMMODITY_TRAP'
+        verdict = 'Severe margin compression; price competition destroys economic value.'
+
+    return {
+        "Industry": forces.industry_name,
+        "Average_Competitive_Intensity": round(avg_intensity, 2),
+        "Margin_Ceiling_Est_Pct": f"{profit_pool_margin_ceiling_pct}%",
+        "Attractiveness_Class": attractiveness,
+        "Strategic_Verdict": verdict
+    }
+
+luxury_watch = IndustryFiveForces("Luxury Swiss Watches", 1.5, 2.0, 2.0, 2.5, 2.0)
+res_luxury = evaluate_porter_forces(luxury_watch)
+
+airline = IndustryFiveForces("Budget Commercial Airlines", 4.0, 4.5, 4.8, 3.5, 4.8)
+res_airline = evaluate_porter_forces(airline)
+
+print(f"{res_luxury['Industry']} -> Intensity: {res_luxury['Average_Competitive_Intensity']} | Margin: {res_luxury['Margin_Ceiling_Est_Pct']} | {res_luxury['Attractiveness_Class']}")
+print(f"{res_airline['Industry']} -> Intensity: {res_airline['Average_Competitive_Intensity']} | Margin: {res_airline['Margin_Ceiling_Est_Pct']} | {res_airline['Attractiveness_Class']}")`,
+        output: `Luxury Swiss Watches -> Intensity: 2.0 | Margin: 33.0% | HIGH_MARGIN_ATTRACTIVE_INDUSTRY\nBudget Commercial Airlines -> Intensity: 4.32 | Margin: 13.3% | HYPER_COMPETITIVE_COMMODITY_TRAP`,
+        codeNotes: [
+          { line: 5, note: 'IndustryFiveForces defines ratings on a 1.0 (benign) to 5.0 (intense) scale' },
+          { line: 21, note: 'Calculates average competitive intensity across all 5 structural dimensions' },
+          { line: 23, note: 'Models economic margin ceiling as an inverse function of structural rivalry' },
+          { line: 43, note: 'Evaluates contrasting market realities: Luxury Watches vs Commercial Airlines' }
+        ],
+        tryIt: 'Lower the airline supplier power from 4.8 to 2.0 (e.g., if jet fuel and aircraft manufacturers were abundant commodities) to see the margin ceiling rebound.',
+        check: {
+          question: 'According to Michael Porter\'s Five Forces framework, what is the primary consequence when an industry exhibits low barriers to entry and negligible customer switching costs?',
+          options: [
+            'New competitors flood into the market whenever returns are positive, expanding supply and eroding industry margins down toward marginal cost.',
+            'Incumbents are legally guaranteed a monopoly by federal regulators.',
+            'Customers permanently cease purchasing all products in that category.',
+            'Suppliers are forced to distribute their raw materials free of charge.'
+          ],
+          answer: 0,
+          why: 'Low entry barriers and zero switching costs invite rapid new entrant proliferation, preventing incumbent firms from sustaining pricing power and driving economic profits down.',
+          answerIndex: 0,
+          explanation: 'Low entry barriers and zero switching costs invite rapid new entrant proliferation, preventing incumbent firms from sustaining pricing power and driving economic profits down.'
+        }
+      },
+      {
+        title: 'The Threat of Substitutes & Cross-Price Elasticity of Demand',
+        say: [
+          'The most dangerous competitors are rarely the direct rivals selling the same product down the street; they are the insidious substitutes that satisfy the same fundamental customer need through an entirely different medium, technology, or business model.',
+          'Direct competitors sell the same category: Pepsi vs. Coca-Cola, BMW vs. Mercedes-Benz. Substitutes satisfy the identical underlying "job-to-be-done" using alternative categories: bottled tap water substituting for carbonated soft drinks, or high-speed rail substituting for short-haul passenger flights.',
+          'In economic terms, the intensity of substitute pressure is quantified by Cross-Price Elasticity of Demand (Exy): the percentage change in the quantity demanded of Product X divided by the percentage change in the price of Product Y (Exy = % Change Qx / % Change Py).',
+          'When Exy > 0, the two goods are substitutes: if the price of Product Y rises by 10%, demand for Product X jumps. The higher the positive coefficient, the more violently buyers defect to the substitute whenever incumbents attempt to raise prices.',
+          'Conversely, when Exy < 0, the goods are complements (like smartphones and mobile data plans): a price increase in one dampens demand for both.',
+          'When substitute pressure is high, marketing strategists must counter by raising switching costs, bundling proprietary ecosystem services, or repositioning the brand around emotional and symbolic dimensions that functional substitutes cannot easily replicate.'
+        ],
+        example: 'Movie theaters used to consider other nearby multiplex cinemas their primary competition. Then Netflix, streaming platforms, and high-definition home theater projectors emerged as powerful substitutes. If a movie ticket rises from $12 to $20, a family of four will forgo the theater entirely and stream a movie at home with microwave popcorn, spending $15 instead of $80.',
+        code: `# Simulation: Cross-Price Elasticity of Demand & Substitute Vulnerability Analyzer
+def compute_cross_price_elasticity(
+    product_name: str,
+    substitute_name: str,
+    initial_price_sub: float,
+    new_price_sub: float,
+    initial_qty_product: int,
+    new_qty_product: int
+) -> dict:
+    delta_price_y = new_price_sub - initial_price_sub
+    avg_price_y = (initial_price_sub + new_price_sub) / 2.0
+    pct_change_price_y = (delta_price_y / avg_price_y) * 100.0
+
+    delta_qty_x = new_qty_product - initial_qty_product
+    avg_qty_x = (initial_qty_product + new_qty_product) / 2.0
+    pct_change_qty_x = (delta_qty_x / avg_qty_x) * 100.0
+
+    elasticity_xy = round(pct_change_qty_x / pct_change_price_y, 2)
+
+    if elasticity_xy > 1.5:
+        relationship = 'STRONG_CLOSE_SUBSTITUTE'
+        risk = 'SEVERE: Incumbent pricing ceiling strictly bounded by substitute.'
+    elif elasticity_xy > 0.0:
+        relationship = 'MODERATE_SUBSTITUTE'
+        risk = 'MODERATE: Partial demand leakage when price differentials widen.'
+    elif elasticity_xy == 0.0:
+        relationship = 'INDEPENDENT_GOODS'
+        risk = 'NONE: Independent demand dynamics.'
+    else:
+        relationship = 'COMPLEMENTARY_GOODS'
+        risk = 'SYNERGISTIC: Price changes in one drive inverse joint demand.'
+
+    return {
+        "Primary_Product": product_name,
+        "Substitute_Product": substitute_name,
+        "Pct_Change_Sub_Price": f"{round(pct_change_price_y, 1)}%",
+        "Pct_Change_Product_Qty": f"{round(pct_change_qty_x, 1)}%",
+        "Cross_Price_Elasticity": elasticity_xy,
+        "Relationship_Type": relationship,
+        "Strategic_Threat": risk
+    }
+
+# When Airline Short-Haul Flights raise price by +25% ($200 -> $250), High-Speed Train ridership rises from 1,000 to 1,400 (+33.3%)
+analysis = compute_cross_price_elasticity(
+    product_name="High-Speed Rail",
+    substitute_name="Short-Haul Airline Flight",
+    initial_price_sub=200.0,
+    new_price_sub=250.0,
+    initial_qty_product=1000,
+    new_qty_product=1400
+)
+
+print(f"{analysis['Primary_Product']} vs {analysis['Substitute_Product']}")
+print(f"Cross-Price Elasticity: {analysis['Cross_Price_Elasticity']} ({analysis['Relationship_Type']})")
+print(f"Threat Level: {analysis['Strategic_Threat']}")`,
+        output: `High-Speed Rail vs Short-Haul Airline Flight\nCross-Price Elasticity: 1.5 (MODERATE_SUBSTITUTE)\nThreat Level: MODERATE: Partial demand leakage when price differentials widen.`,
+        codeNotes: [
+          { line: 9, note: 'Calculates midpoint percentage change in price of substitute product Y' },
+          { line: 14, note: 'Calculates midpoint percentage change in quantity demanded of product X' },
+          { line: 17, note: 'Computes Cross-Price Elasticity (Exy = % dQx / % dPy)' },
+          { line: 19, note: 'Classifies cross-elasticity relationships into substitutes, independent, or complements' }
+        ],
+        tryIt: 'Increase new_qty_product from 1400 to 1600 to see cross-price elasticity exceed 1.5 and trigger the STRONG_CLOSE_SUBSTITUTE threshold.',
+        check: {
+          question: 'In competitive market analysis, what does a high positive Cross-Price Elasticity of Demand (Exy > 1.0) between two offerings indicate?',
+          options: [
+            'The offerings are close substitutes; price hikes in one product will cause consumers to readily defect to the alternative.',
+            'The offerings are strictly complementary goods that must always be purchased together in identical quantities.',
+            'The products operate in completely disconnected industries with zero consumer overlap.',
+            'Both offerings violate antitrust trade regulations.'
+          ],
+          answer: 0,
+          why: 'A positive cross-price elasticity signifies that when the price of one product increases, demand for the other rises, demonstrating that consumers treat them as viable functional substitutes.',
+          answerIndex: 0,
+          explanation: 'A positive cross-price elasticity signifies that when the price of one product increases, demand for the other rises, demonstrating that consumers treat them as viable functional substitutes.'
+        }
+      },
+      {
+        title: 'Buyer & Supplier Power Dynamics & Value Chain Profit Split',
+        say: [
+          'Every industry sits within an extended value chain that stretches from raw material suppliers through manufacturers, distributors, retailers, and end-user buyers.',
+          'Economic profit is not distributed evenly along this chain; it is captured by whichever link possesses the highest bargaining power and proprietary leverage.',
+          'Supplier power surges when: the supply industry is dominated by few firms (such as TSMC in advanced semiconductor manufacturing), the product is unique and differentiated with high switching costs, or suppliers can credibly threaten forward integration (such as Disney pulling content from Netflix to launch Disney+).',
+          'Buyer power surges when: buyers are large and few in number (such as Walmart or Amazon dictating terms to consumer packaged goods manufacturers), products are standardized commodities, or buyers face negligible costs to switch to an alternative vendor.',
+          'Switching costs are the secret weapon of marketing defense: they represent the total one-time financial, procedural, and emotional costs a customer incurs by terminating a relationship with an incumbent vendor and migrating to a rival.',
+          'Three distinct switching cost moats exist: Procedural Switching Costs (the time and learning curve required to master new software), Financial Switching Costs (contractual cancellation penalties or sunk hardware investments), and Relational Switching Costs (psychological comfort, personal trust, and identity alignment).'
+        ],
+        example: 'Consider the personal computer value chain in the 1990s. Companies like Dell, Gateway, HP, and Compaq manufactured the physical boxes. However, the vast majority of enterprise profits were captured by the supplier duopoly dubbed "Wintel" (Microsoft Windows operating system and Intel microprocessors). Because PC hardware was commoditized with near-zero buyer switching costs, PC makers operated on razor-thin 3% net margins while Microsoft and Intel enjoyed 30%+ profit margins.',
+        code: `# Simulation: Value Chain Bargaining Leverage & Profit Margin Split Model
+def simulate_value_chain_split(
+    retail_price: float,
+    supplier_concentration_score: float, # 1.0 to 10.0 (High = Monopoly)
+    buyer_switching_cost_score: float,   # 1.0 to 10.0 (High = Locked In)
+    retailer_channel_leverage: float     # 1.0 to 10.0 (High = Retail Giant)
+) -> dict:
+    # Base baseline margin pool: 100% of retail price
+    # Relative power weights determine economic rent capture
+    raw_weights = {
+        "Upstream_Suppliers": supplier_concentration_score * 1.2,
+        "Core_Manufacturer": buyer_switching_cost_score * 1.0,
+        "Downstream_Retailers": retailer_channel_leverage * 1.1
+    }
+    total_weight = sum(raw_weights.values())
+
+    profit_shares = {k: round((v / total_weight) * 100.0, 1) for k, v in raw_weights.items()}
+    dollar_split = {k: round((v / 100.0) * retail_price, 2) for k, v in profit_shares.items()}
+
+    # Dominant value captor
+    leader = max(profit_shares, key=profit_shares.get)
+
+    return {
+        "Total_Retail_Price": retail_price,
+        "Percentage_Profit_Split": profit_shares,
+        "Dollar_Value_Captured": dollar_split,
+        "Dominant_Value_Captor": leader,
+        "Strategic_Diagnosis": f"{leader} holds decisive bargaining leverage, capturing {profit_shares[leader]}% of value."
+    }
+
+# Case 1: Commoditized Hardware Maker squeezed by Monopolistic Supplier (Intel/Nvidia) and Retail Giant (BestBuy/Amazon)
+split = simulate_value_chain_split(
+    retail_price=1000.0,
+    supplier_concentration_score=9.0, # Monopolistic Chipmaker
+    buyer_switching_cost_score=2.0,   # Commodity PC hardware, easy to swap
+    retailer_channel_leverage=8.0     # Giant Big-Box Retailer
+)
+
+print(f"Retail Price: \${split['Total_Retail_Price']}")
+print(f"Profit Split: {split['Percentage_Profit_Split']}")
+print(f"Dominant: {split['Dominant_Value_Captor']}")
+print(f"Diagnosis: {split['Strategic_Diagnosis']}")`,
+        output: `Retail Price: $1000.0\nProfit Split: {'Upstream_Suppliers': 50.0, 'Core_Manufacturer': 9.3, 'Downstream_Retailers': 40.7}\nDominant: Upstream_Suppliers\nDiagnosis: Upstream_Suppliers holds decisive bargaining leverage, capturing 50.0% of value.`,
+        codeNotes: [
+          { line: 9, note: 'Assigns bargaining leverage weights across upstream suppliers, manufacturers, and retail channels' },
+          { line: 15, note: 'Normalizes relative weights into percentage shares of total industry economic rent' },
+          { line: 16, note: 'Calculates actual dollar value captured by each tier from final retail price' },
+          { line: 33, note: 'Models commodity manufacturer squeeze (capturing only 9.3% of the profit pool)' }
+        ],
+        tryIt: 'Raise buyer_switching_cost_score from 2.0 to 9.0 (e.g. by building proprietary software ecosystems) and observe how manufacturer profit share surges.',
+        check: {
+          question: 'Which of the following conditions most effectively shields a manufacturer from aggressive buyer and retailer pricing pressure?',
+          options: [
+            'Building high procedural, financial, and relational customer switching costs through proprietary ecosystems and strong brand differentiation.',
+            'Manufacturing identical, generic commodity goods that can be produced by dozens of competitors.',
+            'Selling 100% of all factory output to a single massive big-box discount retailer.',
+            'Refusing to patent proprietary inventions or register corporate trademarks.'
+          ],
+          answer: 0,
+          why: 'High switching costs and strong brand resonance prevent buyers and retailers from easily defecting to alternative suppliers, locking in healthy profit margins for the manufacturer.',
+          answerIndex: 0,
+          explanation: 'High switching costs and strong brand resonance prevent buyers and retailers from easily defecting to alternative suppliers, locking in healthy profit margins for the manufacturer.'
+        }
+      },
+      {
+        title: 'The Strategic SWOT Matrix Cross-Synthesis (TOWS Strategic Action Grid)',
+        say: [
+          'Most business plans compile a standard SWOT matrix: a four-quadrant bulleted list of internal Strengths and Weaknesses, alongside external Opportunities and Threats.',
+          'However, simply listing bullet points produces zero strategic momentum. A passive SWOT analysis is a static museum exhibit; to become an actionable strategy, it must be synthesized through the TOWS Strategic Matrix.',
+          'Pioneered by Professor Heinz Weihrich, the TOWS Matrix systematically crosses internal factors against external market forces to generate four actionable, offensive and defensive strategy categories.',
+          'Quadrant 1: SO Strategies (Maxi-Maxi). This is the offensive powerhouse: how can the enterprise deploy its distinctive internal Strengths to aggressively capitalize on emerging external Opportunities?',
+          'Quadrant 2: ST Strategies (Maxi-Mini). This is the strategic shield: how can the firm leverage its core internal Strengths to neutralize, bypass, or defend against dangerous external environmental Threats?',
+          'Quadrant 3: WO Strategies (Mini-Maxi). This is developmental remediation: how can the firm overcome internal Weaknesses by taking advantage of external Opportunities (e.g., forming a joint venture to acquire missing technology)?',
+          'Quadrant 4: WT Strategies (Mini-Mini). This is defensive damage control and survival: how can the organization minimize internal Weaknesses and avoid or mitigate catastrophic external Threats (e.g., retrenchment, divestment, or liquidation of vulnerable units)?',
+          'A rigorous marketing strategist evaluates every TOWS strategic proposal with a Feasibility and Expected ROI scoring model before committing capital.'
+        ],
+        example: 'Consider Apple launching the iPhone in 2007. Internal Strength: world-class industrial design, proprietary OS software, and deep music ecosystem loyalty. External Opportunity: global mobile telecom carriers desperately looking for high-bandwidth data subscribers, and mobile web browsing emerging. Apple\'s SO Strategy: cross internal OS/design strengths with mobile data carrier opportunities to build an entirely new category that dominated global consumer technology.',
+        code: `# Simulation: TOWS Strategic Action Grid & Initiative Prioritization Engine
+from dataclasses import dataclass
+from typing import List, Dict
+
+@dataclass
+class StrategicInitiative:
+    code: str
+    name: str
+    tows_quadrant: str      # 'SO_OFFENSIVE', 'ST_DEFENSIVE', 'WO_DEVELOPMENTAL', 'WT_SURVIVAL'
+    internal_strength_or_weakness: str
+    external_opportunity_or_threat: str
+    expected_revenue_impact: float # 1.0 to 10.0 scale
+    execution_feasibility: float   # 1.0 to 10.0 scale
+
+class TowsActionMatrix:
+    def __init__(self, firm_name: str, initiatives: List[StrategicInitiative]):
+        self.firm_name = firm_name
+        self.initiatives = initiatives
+
+    def prioritize_initiatives(self) -> Dict:
+        scored = []
+        for init in self.initiatives:
+            # Strategic Priority Index (SPI) = Impact * Feasibility
+            spi = round(init.expected_revenue_impact * init.execution_feasibility, 1)
+            scored.append((spi, init))
+
+        # Sort descending by priority score
+        scored.sort(key=lambda x: x[0], reverse=True)
+
+        roadmap = []
+        for rank, (spi, init) in enumerate(scored, start=1):
+            roadmap.append({
+                "Rank": rank,
+                "Code": init.code,
+                "Name": init.name,
+                "Quadrant": init.tows_quadrant,
+                "Priority_Score": spi,
+                "Rationale": f"Matches '{init.internal_strength_or_weakness}' against '{init.external_opportunity_or_threat}'"
+            })
+
+        return {
+            "Company": self.firm_name,
+            "Total_Initiatives": len(self.initiatives),
+            "Top_Priority": roadmap[0],
+            "Full_Strategic_Roadmap": roadmap
+        }
+
+initiatives = [
+    StrategicInitiative(
+        code="SO-1",
+        name="Direct-to-Consumer Digital Subscription Expansion",
+        tows_quadrant="SO_OFFENSIVE",
+        internal_strength_or_weakness="Proprietary Content Library & Fan Loyalty",
+        external_opportunity_or_threat="Surging Global Mobile High-Speed Broadband Adoption",
+        expected_revenue_impact=9.5,
+        execution_feasibility=8.5
+    ),
+    StrategicInitiative(
+        code="ST-1",
+        name="Patent Encirclement & Supply Chain Multi-Sourcing",
+        tows_quadrant="ST_DEFENSIVE",
+        internal_strength_or_weakness="Robust Cash Reserves & Legal Expertise",
+        external_opportunity_or_threat="Geopolitical Supply Chain Tariffs & Counterfeit Clones",
+        expected_revenue_impact=7.0,
+        execution_feasibility=7.5
+    ),
+    StrategicInitiative(
+        code="WO-1",
+        name="Acquire AI Computer Vision Startup",
+        tows_quadrant="WO_DEVELOPMENTAL",
+        internal_strength_or_weakness="Lacking In-House Machine Learning Talent",
+        external_opportunity_or_threat="Booming Enterprise Autonomous Inspection Market",
+        expected_revenue_impact=8.5,
+        execution_feasibility=6.0
+    ),
+    StrategicInitiative(
+        code="WT-1",
+        name="Divest Legacy Brick-and-Mortar Rental Outlets",
+        tows_quadrant="WT_SURVIVAL",
+        internal_strength_or_weakness="High Fixed Real Estate Lease Liabilities",
+        external_opportunity_or_threat="Permanent Consumer Foot Traffic Shift to E-Commerce",
+        expected_revenue_impact=6.5,
+        execution_feasibility=9.0
+    )
+]
+
+matrix = TowsActionMatrix("Apex Media Corp", initiatives).prioritize_initiatives()
+top = matrix['Top_Priority']
+print(f"Company: {matrix['Company']} | Top Initiative: {top['Code']} - {top['Name']}")
+print(f"Quadrant: {top['Quadrant']} | Priority Score: {top['Priority_Score']}/100.0")
+print(f"Rationale: {top['Rationale']}")`,
+        output: `Company: Apex Media Corp | Top Initiative: SO-1 - Direct-to-Consumer Digital Subscription Expansion\nQuadrant: SO_OFFENSIVE | Priority Score: 80.8/100.0\nRationale: Matches 'Proprietary Content Library & Fan Loyalty' against 'Surging Global Mobile High-Speed Broadband Adoption'`,
+        codeNotes: [
+          { line: 6, note: 'StrategicInitiative models cross-linkage between internal factors and external forces' },
+          { line: 20, note: 'Computes Strategic Priority Index (SPI) = Expected Impact * Execution Feasibility' },
+          { line: 24, note: 'Ranks initiative portfolio descending by SPI to produce strategic execution roadmap' },
+          { line: 40, note: 'Initializes 4 representative initiatives spanning SO, ST, WO, and WT quadrants' }
+        ],
+        tryIt: 'Adjust the WO-1 execution_feasibility from 6.0 to 9.8 (e.g. if an acqui-hire target is ready to sign immediately) and watch its ranking change.',
+        check: {
+          question: 'In the TOWS Strategic Matrix, what is the core objective of a Maxi-Mini (ST) strategy?',
+          options: [
+            'Using internal organizational Strengths to neutralize, bypass, or defend against external environmental Threats.',
+            'Liquidating all company assets and declaring commercial bankruptcy.',
+            'Borrowing money from predatory lenders to artificially inflate short-term earnings.',
+            'Using external market opportunities to mask internal accounting fraud.'
+          ],
+          answer: 0,
+          why: 'ST (Maxi-Mini) strategies mobilize the firm\'s internal strengths to shield against, deflect, or neutralize external macro and competitive threats in the marketplace.',
+          answerIndex: 0,
+          explanation: 'ST (Maxi-Mini) strategies mobilize the firm\'s internal strengths to shield against, deflect, or neutralize external macro and competitive threats in the marketplace.'
+        }
+      }
+    ],
+    summary: [
+      'PESTLE Scanning: Systematically deconstructs the macro-environment across Political, Economic, Socio-Cultural, Technological, Legal, and Environmental dimensions to calculate composite risk exposure.',
+      'Porter\'s Five Forces: Determines micro industry attractiveness: Entry Barriers, Buyer Power, Supplier Power, Substitute Threats, and Competitor Rivalry dictate industry average margin ceilings.',
+      'Substitutes & Elasticity: Cross-Price Elasticity of Demand (Exy > 0) exposes substitute vulnerability: close functional substitutes cap the maximum pricing power incumbents can sustain.',
+      'Value Chain Split: Economic rent is captured by links with highest bargaining leverage (supplier concentration vs buyer switching costs); commoditized players suffer severe margin compression.',
+      'TOWS Action Grid: Transforms static SWOT lists into four actionable corporate moves: SO (Offensive), ST (Defensive), WO (Remediation), and WT (Survival) prioritized by Strategic Priority Index.'
+    ],
+    projectStep: {
+      title: 'Month 1 Marketing Strategy Capstone Step 2: Environmental Audit & Competitive Forces Matrix',
+      steps: [
+        'Perform a weighted PESTLE macro-environmental exposure audit for your capstone enterprise.',
+        'Score all five of Porter\'s competitive forces for your target industry and calculate your sector\'s theoretical margin ceiling.',
+        'Develop a 4-quadrant TOWS matrix crossing your top 2 internal strengths/weaknesses against external opportunities/threats, prioritizing initiatives by SPI score.'
+      ]
+    }
   }
 ];
