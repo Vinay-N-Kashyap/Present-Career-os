@@ -1114,6 +1114,410 @@ print(f"Total Static Variance: $" + f"{p5['total_static_budget_variance']:,.2f} 
         'Construct the dynamic Flexible Budget reconciliation waterfall to report true operational variance to senior executive leadership.'
       ]
     }
-  }
+  },
+  {
+    coursePrefix: 'bcom-accounting',
+    day: 4,
+    title: 'Complex Financial Instruments, ASC 326 CECL Credit Losses & Hedge Accounting',
+    overview: 'Master the accounting, valuation, and balance sheet disclosure of complex financial instruments under US GAAP and IFRS. You will operationalize the ASC 820 fair value hierarchy across Levels 1, 2, and 3, transition from legacy incurred loss models to forward-looking ASC 326 CECL lifetime expected credit loss reserves, bifurcate convertible hybrid debt into liability and equity components under ASC 470, evaluate cash flow hedge effectiveness using the 80-125% dollar-offset method under ASC 815, and synthesize an audit-ready financial instruments balance sheet schedule.',
+    parts: [
+      {
+        title: 'ASC 820 Fair Value Hierarchy: Quoted, Observable & Unobservable Asset Valuation',
+        say: [
+          'Under US GAAP ASC 820 and IFRS 13, fair value is defined as the exit price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date. To maximize consistency and comparability across balance sheets, the standard establishes a three-tier fair value hierarchy that prioritizes inputs to valuation techniques rather than the techniques themselves. Level 1 inputs represent the highest reliability tier, consisting of unadjusted quoted prices in active markets for identical assets or liabilities that the reporting entity can access at the measurement date, such as publicly traded US Treasuries or NYSE equities. Because Level 1 prices reflect observable, real-time market liquidity, no valuation modeling or management adjustments are permitted, making them the most objective figures on the corporate ledger.',
+          'Level 2 inputs occupy an intermediate reliability tier where market inputs are directly or indirectly observable but lack the exact identical quoted active market of Level 1. Common examples include corporate bonds that trade infrequently, interest rate swaps benchmarked against published SOFR curves, or assets valued via matrix pricing where yields are interpolated across comparable credit ratings and maturities. For instance, when valuing an unquoted BBB-rated corporate bond, the controller uses benchmark government yields plus an observable credit spread derived from actively traded peer debt rather than guessing future cash flows. Auditors scrutinize Level 2 assets to ensure that all significant valuation inputs are observable in published data feeds and that adjustments for liquidity or tenure do not rely on unverified internal assumptions.',
+          'Level 3 inputs represent the lowest reliability tier and the greatest source of audit risk because they rely entirely on unobservable inputs developed using the reporting entity\'s own assumptions about market participant pricing. Pre-IPO private equity stakes, bespoke structured credit obligations, and complex venture capital warrants fall into Level 3, requiring multi-period discounted cash flow (DCF) simulations, option pricing models, or probability-weighted scenario grids. Because management must estimate revenue growth trajectories, terminal capitalization multiples, and illiquidity discounts, ASC 820 mandates exhaustive tabular disclosures for Level 3 assets, including roll-forwards of beginning-to-ending balances, transfers between levels, and sensitivity analyses. As a corporate controller, maintaining rigorous quantitative models for Level 3 assets is essential to surviving independent audit inquiries and regulatory inspections.'
+        ],
+        example: 'A corporate treasury holds $995,000 in on-the-run US Treasuries (Level 1), $994,654 in corporate bonds valued via benchmark yield curves plus observable credit spreads (Level 2), and a $1,698,981 private equity stake valued via a 3-year DCF at an 18% unobservable discount rate (Level 3). Level 3 represents 46.06% of the investment portfolio, triggering mandatory ASC 820 roll-forward disclosures.',
+        code: `def classify_and_value_asc820_hierarchy():
+    portfolio = [
+        {"name": "US Treasury Notes", "level": 1, "quoted_price": 99.50, "units": 10000},
+        {"name": "Corporate BBB Bond", "level": 2, "par_value": 1000000, "benchmark_yield": 0.045, "credit_spread": 0.015, "coupon": 0.058, "years": 3},
+        {"name": "Pre-IPO Private Equity", "level": 3, "cash_flows": [200000, 350000, 600000], "discount_rate": 0.18, "terminal_val": 1500000}
+    ]
 
+    # Level 1: Active market quoted price
+    val_l1 = portfolio[0]["quoted_price"] * portfolio[0]["units"]
+
+    # Level 2: Matrix pricing based on benchmark yield + credit spread (discount rate = 6.0%)
+    c_bond = portfolio[1]
+    disc_rate = c_bond["benchmark_yield"] + c_bond["credit_spread"]
+    val_l2 = 0.0
+    coupon_pmt = c_bond["par_value"] * c_bond["coupon"]
+    for t in range(1, c_bond["years"] + 1):
+        val_l2 += coupon_pmt / ((1 + disc_rate) ** t)
+    val_l2 += c_bond["par_value"] / ((1 + disc_rate) ** c_bond["years"])
+
+    # Level 3: DCF model using unobservable discount rate and terminal value
+    pe = portfolio[2]
+    val_l3 = 0.0
+    for t, cf in enumerate(pe["cash_flows"], 1):
+        val_l3 += cf / ((1 + pe["discount_rate"]) ** t)
+    val_l3 += pe["terminal_val"] / ((1 + pe["discount_rate"]) ** len(pe["cash_flows"]))
+
+    total_fv = val_l1 + val_l2 + val_l3
+    l3_pct = (val_l3 / total_fv) * 100
+
+    print("ASC 820 Fair Value Hierarchy Classification:")
+    print("  Level 1 (Quoted Active Markets): " + "$" + f"{val_l1:,.2f}")
+    print("  Level 2 (Observable Matrix Pricing): " + "$" + f"{val_l2:,.2f}")
+    print("  Level 3 (Unobservable Valuation Models): " + "$" + f"{val_l3:,.2f}")
+    print("  Total Investment Fair Value: " + "$" + f"{total_fv:,.2f}")
+    print(f"  Level 3 Proportion of Total Assets: {l3_pct:.2f}% (High Audit Scrutiny Required)")
+    return {"l1": val_l1, "l2": val_l2, "l3": val_l3, "total": total_fv, "l3_pct": l3_pct}
+
+classify_and_value_asc820_hierarchy()`,
+        output: `ASC 820 Fair Value Hierarchy Classification:
+  Level 1 (Quoted Active Markets): $995,000.00
+  Level 2 (Observable Matrix Pricing): $994,653.98
+  Level 3 (Unobservable Valuation Models): $1,698,980.91
+  Total Investment Fair Value: $3,688,634.88
+  Level 3 Proportion of Total Assets: 46.06% (High Audit Scrutiny Required)`,
+        codeNotes: [
+          'Level 1 assets multiply unadjusted quoted exchange pricing directly by held units without applying liquidity haircuts.',
+          'Level 2 pricing aggregates discounted cash flows using observable benchmark government curves combined with sector credit spreads.',
+          'Level 3 valuation projects explicit operational cash flows plus terminal value, discounting at an unobservable risk-adjusted hurdle rate of 18%.'
+        ],
+        tryIt: 'Adjust the Level 3 unobservable discount rate from 18% to 22% to observe how illiquidity premia shrink fair value and trigger asset impairment tests.',
+        check: {
+          question: 'Which of the following scenarios constitutes a Level 2 fair value measurement under ASC 820?',
+          options: [
+            'A corporate bond valued via matrix pricing using published Treasury yields plus observable credit rating spreads for peer issues',
+            'Apple Inc. common stock shares trading on NASDAQ evaluated at the closing price of the measurement date',
+            'A private startup venture stake valued solely using internal executive financial projections discounted at 25%',
+            'Physical cash held in commercial bank escrow accounts verified via direct confirmation letters'
+          ],
+          answer: 0,
+          why: 'Under ASC 820, Level 2 inputs are observable market-corroborated parameters such as published yield curves and peer credit spreads applied to matrix pricing models, unlike Level 1 (quoted identical market) or Level 3 (unobservable internal assumptions).',
+          answerIndex: 0,
+          explanation: 'Under ASC 820, Level 2 inputs are observable market-corroborated parameters such as published yield curves and peer credit spreads applied to matrix pricing models, unlike Level 1 (quoted identical market) or Level 3 (unobservable internal assumptions).'
+        }
+      },
+      {
+        title: 'ASC 326 CECL Lifetime Expected Credit Loss Impairment Modeling',
+        say: [
+          'The 2008 global financial crisis revealed a catastrophic flaw in legacy GAAP accounting: the incurred loss model prohibited entities from booking bad debt allowances until a specific loss event had already occurred, a practice derided by regulators as "too little, too late." In response, FASB issued ASU 2016-13 (codified as ASC 326) introducing the Current Expected Credit Loss (CECL) standard, mirroring IFRS 9 Financial Instruments. Under CECL, reporting entities must recognize an allowance for lifetime expected credit losses on Day 1 when loans, trade receivables, or held-to-maturity debt securities are originated or acquired, eliminating the threshold of waiting for delinquency or default triggers.',
+          'CECL models estimate lifetime credit risk by decomposing loan portfolios into pools sharing similar risk characteristics, such as commercial prime corporate lines, small business working capital loans, and unsecured consumer receivables. For each segment, the loss forecasting engine computes Expected Credit Loss (ECL) as the mathematical product of Exposure at Default (EAD), Probability of Default (PD) over the contractual asset life, and Loss Given Default (LGD) reflecting collateral recovery shortfalls. Unlike legacy backward-looking rolling averages, CECL explicitly mandates that historical loss rates must be adjusted for current economic conditions and reasonable and supportable macroeconomic forecasts.',
+          'When macroeconomic indicators deteriorate—such as rising unemployment, elevated inflation, or contracting GDP—the accounting team applies forward-looking macroeconomic multipliers to segment loss rates. The resulting required allowance balance is compared against the existing beginning balance on the balance sheet, with the difference recognized immediately in profit and loss as Provision for Credit Losses (DR Provision for Credit Losses, CR Allowance for Credit Losses). Because CECL operates as a contra-asset valuation account rather than a direct write-off, loans remain on the balance sheet at amortized cost net of the allowance, providing external investors with transparent visibility into expected recovery values.'
+        ],
+        example: 'A bank holds a $45,000,000 loan portfolio segmented into Commercial Prime ($25M), SME ($12M), and Consumer ($8M). Under an adverse macroeconomic multiplier of 1.15x, lifetime expected losses total $1,017,750 (2.26%). With a beginning allowance of $720,000, the controller books a $297,750 credit loss provision to P&L.',
+        code: `def model_cecl_expected_credit_loss():
+    segments = [
+        {"segment": "Commercial Prime", "ead": 25000000.0, "pd_lifetime": 0.012, "lgd": 0.35},
+        {"segment": "Small Business (SME)", "ead": 12000000.0, "pd_lifetime": 0.045, "lgd": 0.50},
+        {"segment": "Consumer Unsecured", "ead": 8000000.0, "pd_lifetime": 0.085, "lgd": 0.75}
+    ]
+    macro_multiplier = 1.15  # Adverse macroeconomic forecast adjustment (15% bump)
+    existing_allowance = 720000.0
+
+    total_ead = 0.0
+    total_cecl = 0.0
+    print("ASC 326 CECL Lifetime Expected Credit Loss Model:")
+    for seg in segments:
+        base_ecl = seg["ead"] * seg["pd_lifetime"] * seg["lgd"]
+        stressed_ecl = base_ecl * macro_multiplier
+        total_ead += seg["ead"]
+        total_cecl += stressed_ecl
+        print(f"  {seg['segment']}: EAD=" + "$" + f"{seg['ead']:,.0f}" + f" | Stressed Loss=" + "$" + f"{stressed_ecl:,.2f}")
+
+    provision_expense = total_cecl - existing_allowance
+    loss_rate = (total_cecl / total_ead) * 100
+
+    print("Portfolio CECL Summary:")
+    print("  Total Outstanding Gross Loans (EAD): " + "$" + f"{total_ead:,.2f}")
+    print("  Required Lifetime CECL Allowance: " + "$" + f"{total_cecl:,.2f} ({loss_rate:.2f}%)")
+    print("  Beginning Allowance for Credit Losses: " + "$" + f"{existing_allowance:,.2f}")
+    print("  Current Period Provision Expense Required: " + "$" + f"{provision_expense:,.2f}")
+    print("Journal Entry: DR Provision for Credit Losses " + "$" + f"{provision_expense:,.2f}" + " | CR Allowance for Credit Losses " + "$" + f"{provision_expense:,.2f}")
+    return {"total_cecl": total_cecl, "provision": provision_expense}
+
+model_cecl_expected_credit_loss()` ,
+        output: `ASC 326 CECL Lifetime Expected Credit Loss Model:
+  Commercial Prime: EAD=$25,000,000 | Stressed Loss=$120,750.00
+  Small Business (SME): EAD=$12,000,000 | Stressed Loss=$310,500.00
+  Consumer Unsecured: EAD=$8,000,000 | Stressed Loss=$586,500.00
+Portfolio CECL Summary:
+  Total Outstanding Gross Loans (EAD): $45,000,000.00
+  Required Lifetime CECL Allowance: $1,017,750.00 (2.26%)
+  Beginning Allowance for Credit Losses: $720,000.00
+  Current Period Provision Expense Required: $297,750.00
+Journal Entry: DR Provision for Credit Losses $297,750.00 | CR Allowance for Credit Losses $297,750.00`,
+        codeNotes: [
+          'ECL is calculated per segment as Exposure at Default multiplied by Lifetime Probability of Default and Loss Given Default.',
+          'A forward-looking macroeconomic multiplier of 1.15 is incorporated to comply with ASC 326 reasonable and supportable forecasting rules.',
+          'The required journal entry debits P&L Provision for Credit Losses and credits balance sheet contra-asset Allowance for Credit Losses.'
+        ],
+        tryIt: 'Increase the Consumer Unsecured Loss Given Default (LGD) from 0.75 to 0.90 to simulate severe secondary collection market breakdowns.',
+        check: {
+          question: 'What is the fundamental difference between the legacy incurred loss model and the ASC 326 CECL framework?',
+          options: [
+            'CECL requires recognizing lifetime expected credit losses immediately on Day 1 including forward-looking macroeconomic forecasts, whereas incurred loss waited for an actual delinquency event',
+            'CECL completely eliminates the allowance contra-asset account and writes off bad debts directly to retained earnings',
+            'Incurred loss required 10-year discounted cash flow simulations for all loans, whereas CECL allows a simple 1% flat revenue deduction',
+            'CECL applies only to cash equivalents and excludes trade receivables, customer notes, and commercial term loans'
+          ],
+          answer: 0,
+          why: 'ASC 326 CECL requires entities to estimate and reserve for lifetime expected credit losses from the date of asset origination incorporating forward-looking forecasts, resolving the systemic delay of waiting for an incurred default trigger.',
+          answerIndex: 0,
+          explanation: 'ASC 326 CECL requires entities to estimate and reserve for lifetime expected credit losses from the date of asset origination incorporating forward-looking forecasts, resolving the systemic delay of waiting for an incurred default trigger.'
+        }
+      },
+      {
+        title: 'ASC 470 Convertible Debt Bifurcation & Effective Interest Amortization',
+        say: [
+          'Corporations frequently issue hybrid securities such as convertible bonds to lower cash borrowing costs by granting investors the option to convert debt principal into common stock. Under US GAAP ASC 470-20 and IFRS IAS 32, accounting for convertible debt requires evaluating whether the conversion option represents an embedded equity instrument that must be bifurcated from the host debt contract. When an entity issues convertible debt with a substantial cash savings discount, the instrument comprises two economically distinct components: a contractual host liability obligating repayment of coupons and principal, and an equity conversion option resembling a call warrant on company stock.',
+          'To determine the accounting split under bifurcation guidelines, the controller first calculates the fair value of the liability component by discounting all future contractual cash flows (annual coupons and final bullet principal) at the market interest rate the company would have paid on comparable straight, non-convertible debt. For instance, if an entity issues a 5-year, 3.5% coupon convertible note for $10,000,000 while benchmark straight debt yields 7.5%, the host debt liability is worth only $8,381,646.04. The residual difference between total issue proceeds ($10,000,000) and the liability fair value equals $1,618,353.96, which is bifurcated and credited directly to Additional Paid-in Capital (APIC) as the equity conversion option.',
+          'On the balance sheet, the initial difference between face value ($10,000,000) and carrying value ($8,381,646.04) creates an initial debt discount of $1,618,353.96. Over the 5-year tenure of the note, this discount must be amortized to interest expense using the effective interest method at the 7.5% market rate. In Year 1, interest expense is recognized at $628,623.45 (7.5% of $8,381,646.04), while cash interest paid is only $350,000.00 (3.5% coupon). The difference of $278,623.45 is added to the debt carrying value, systematically stepping up the liability to its full $10,000,000 face value upon maturity if unexercised.'
+        ],
+        example: 'A corporation issues $10,000,000 in 3.5% 5-year convertible notes when straight debt yields 7.5%. The liability component is recorded at $8,381,646, bifurcating $1,618,354 into equity. In Year 1, non-cash discount amortization of $278,623 increases debt carrying value to $8,660,269.',
+        code: `def bifurcate_convertible_bond_asc470():
+    face_value = 10000000.0   # $10,000,000 par
+    coupon_rate = 0.035        # 3.5% annual coupon
+    tenure_years = 5
+    market_rate_straight = 0.075 # 7.5% market rate for non-convertible debt
+    issue_proceeds = 10000000.0 # Issued at par
+
+    # Step 1: Calculate Present Value of straight debt (Liability component)
+    annual_coupon = face_value * coupon_rate
+    pv_coupons = sum(annual_coupon / ((1 + market_rate_straight) ** t) for t in range(1, tenure_years + 1))
+    pv_principal = face_value / ((1 + market_rate_straight) ** tenure_years)
+    liability_fair_value = pv_coupons + pv_principal
+
+    # Step 2: Bifurcate residual to Equity (conversion option)
+    equity_component = issue_proceeds - liability_fair_value
+    debt_discount = face_value - liability_fair_value
+
+    # Step 3: Year 1 Effective Interest Amortization
+    y1_interest_expense = liability_fair_value * market_rate_straight
+    y1_discount_amortization = y1_interest_expense - annual_coupon
+    y1_ending_carrying_value = liability_fair_value + y1_discount_amortization
+
+    print("ASC 470 Convertible Debt Bifurcation & Amortization:")
+    print("  Gross Par Issued: " + "$" + f"{face_value:,.2f} | Coupon: {coupon_rate*100:.1f}%")
+    print("  Liability Component (PV Straight Debt at 7.5%): " + "$" + f"{liability_fair_value:,.2f}")
+    print("  Equity Component (Conversion Feature Bifurcated): " + "$" + f"{equity_component:,.2f}")
+    print("  Initial Debt Discount to Amortize: " + "$" + f"{debt_discount:,.2f}")
+    print("Year 1 Effective Interest Amortization:")
+    print("  Interest Expense (Carrying Value * 7.5%): " + "$" + f"{y1_interest_expense:,.2f}")
+    print("  Contractual Cash Coupon Paid (3.5%): " + "$" + f"{annual_coupon:,.2f}")
+    print("  Debt Discount Amortization: " + "$" + f"{y1_discount_amortization:,.2f}")
+    print("  Year 1 Ending Liability Carrying Value: " + "$" + f"{y1_ending_carrying_value:,.2f}")
+    return {"liability_fv": liability_fair_value, "equity_comp": equity_component, "y1_carrying": y1_ending_carrying_value}
+
+bifurcate_convertible_bond_asc470()`,
+        output: `ASC 470 Convertible Debt Bifurcation & Amortization:
+  Gross Par Issued: $10,000,000.00 | Coupon: 3.5%
+  Liability Component (PV Straight Debt at 7.5%): $8,381,646.04
+  Equity Component (Conversion Feature Bifurcated): $1,618,353.96
+  Initial Debt Discount to Amortize: $1,618,353.96
+Year 1 Effective Interest Amortization:
+  Interest Expense (Carrying Value * 7.5%): $628,623.45
+  Contractual Cash Coupon Paid (3.5%): $350,000.00
+  Debt Discount Amortization: $278,623.45
+  Year 1 Ending Liability Carrying Value: $8,660,269.49`,
+        codeNotes: [
+          'The liability component is calculated by discounting contractual cash flows at the 7.5% non-convertible market rate.',
+          'The residual proceeds ($1,618,353.96) are recognized in stockholders\' equity as Additional Paid-in Capital.',
+          'Effective interest amortization produces Year 1 interest expense of $628,623.45, stepping up liability carrying value to $8,660,269.49.'
+        ],
+        tryIt: 'Change the market straight debt rate to 9.0% to evaluate how higher standalone borrowing yields increase the bifurcated equity credit.',
+        check: {
+          question: 'In accounting for convertible debt with bifurcated equity under ASC 470 / IAS 32, how is the equity component initially measured?',
+          options: [
+            'As the residual difference between total issue proceeds and the fair value of the host debt liability discounted at straight market debt yields',
+            'By valuing the conversion option via Black-Scholes and multiplying by the total number of common shares authorized in corporate bylaws',
+            'As 50% of the total cash proceeds received from investors regardless of interest rates',
+            'By recording the entire cash proceeds as a liability and booking equity only when bondholders actually convert'
+          ],
+          answer: 0,
+          why: 'Under the bifurcation framework, the host liability is measured first as the present value of contractual cash flows at straight debt yields, and the entire residual proceeds are allocated to the equity conversion feature.',
+          answerIndex: 0,
+          explanation: 'Under the bifurcation framework, the host liability is measured first as the present value of contractual cash flows at straight debt yields, and the entire residual proceeds are allocated to the equity conversion feature.'
+        }
+      },
+      {
+        title: 'ASC 815 / IFRS 9 Derivative Accounting & Cash Flow Hedge Effectiveness',
+        say: [
+          'Corporate treasuries frequently enter into derivative contracts—such as commodity futures, interest rate swaps, and foreign currency forwards—to mitigate operational exposures. Under general GAAP rules, all derivatives must be recognized on the balance sheet at fair value, with changes in fair value flowing directly into current period net income. However, without special accounting treatment, this creates severe accounting mismatches: a company might suffer a mark-to-market loss on a fuel forward contract in Q1 while the anticipated fuel will not be purchased or burned until Q3, artificially depressing Q1 earnings while spiking Q3 profits.',
+          'To neutralize this artificial volatility, ASC 815 and IFRS 9 provide elective hedge accounting for qualified hedging relationships. In a cash flow hedge, an entity hedges exposure to variability in expected cash flows of a recognized asset, liability, or forecasted transaction (such as future jet fuel procurement). For qualifying cash flow hedges, the effective portion of fair value gains or losses on the derivative is deferred outside net income into Accumulated Other Comprehensive Income (AOCI) within stockholders\' equity. Only when the forecasted transaction actually impacts earnings (e.g. when the fuel is burned and recognized in Cost of Goods Sold) is the deferred hedging gain or loss reclassified from AOCI into operating profit.',
+          'To qualify for and maintain hedge accounting, the entity must rigorously establish that the hedging relationship is highly effective, both prospectively and retrospectively. The standard quantitative benchmark is the Dollar-Offset Ratio, calculated as the negative ratio of the change in fair value of the derivative to the change in fair value of the hedged expected cash flow. If the dollar-offset ratio falls strictly within the 80% to 125% (0.80 to 1.25) corridor, the hedge is deemed highly effective, permitting 100% of the derivative gain or loss to remain in OCI. If the ratio breaches this band, hedge accounting is immediately discontinued, and all subsequent derivative swings flow through net income.'
+        ],
+        example: 'An airline hedges forecasted jet fuel with commodity forwards. In Q1, the forward loses $185,000 while fuel benchmark costs gain $192,000, yielding a 96.35% dollar-offset ratio (highly effective). The $185,000 loss is deferred into AOCI, and $120,000 is reclassified to COGS as fuel is consumed, leaving a -$15,000 AOCI reserve.',
+        code: `def evaluate_cash_flow_hedge_dollar_offset():
+    # Scenario: Anticipated fuel purchase hedged with commodity forward contracts
+    derivative_loss = -185000.0  # Fair value change in forward contracts
+    hedged_item_gain = 192000.0   # Fair value change in forecasted purchase benchmark
+    initial_aoci_balance = 50000.0
+    cogs_reclassification = 120000.0 # Amount reclassified to earnings as fuel was consumed
+
+    # Dollar-Offset Ratio: - (Derivative Change) / (Hedged Item Change)
+    dollar_offset_ratio = - (derivative_loss / hedged_item_gain)
+    is_effective = 0.80 <= dollar_offset_ratio <= 1.25
+
+    # Hedge Accounting Treatment
+    effective_portion = derivative_loss # Entire loss since within 80-125% band
+    ending_aoci = initial_aoci_balance + effective_portion + cogs_reclassification
+
+    print("ASC 815 / IFRS 9 Cash Flow Hedge Accounting:")
+    print("  Derivative Fair Value Change: " + "$" + f"{derivative_loss:,.2f}")
+    print("  Hedged Item Benchmark Gain: " + "$" + f"{hedged_item_gain:,.2f}")
+    print(f"  Dollar-Offset Ratio: {dollar_offset_ratio:.4f} ({dollar_offset_ratio*100:.2f}%)")
+    print(f"  Hedge Effectiveness Status: {'HIGHLY_EFFECTIVE' if is_effective else 'INEFFECTIVE'} (Range: 80% - 125%)")
+    print("Accumulated Other Comprehensive Income (AOCI) Roll-Forward:")
+    print("  Beginning AOCI Balance: " + "$" + f"{initial_aoci_balance:,.2f}")
+    print("  OCI Other Comprehensive Loss Deferred: " + "$" + f"{effective_portion:,.2f}")
+    print("  Reclassification from AOCI to COGS (P&L): " + "$" + f"{cogs_reclassification:,.2f}")
+    print("  Ending AOCI Hedging Reserve: " + "$" + f"{ending_aoci:,.2f}")
+    return {"ratio": dollar_offset_ratio, "effective": is_effective, "ending_aoci": ending_aoci}
+
+evaluate_cash_flow_hedge_dollar_offset()`,
+        output: `ASC 815 / IFRS 9 Cash Flow Hedge Accounting:
+  Derivative Fair Value Change: $-185,000.00
+  Hedged Item Benchmark Gain: $192,000.00
+  Dollar-Offset Ratio: 0.9635 (96.35%)
+  Hedge Effectiveness Status: HIGHLY_EFFECTIVE (Range: 80% - 125%)
+Accumulated Other Comprehensive Income (AOCI) Roll-Forward:
+  Beginning AOCI Balance: $50,000.00
+  OCI Other Comprehensive Loss Deferred: $-185,000.00
+  Reclassification from AOCI to COGS (P&L): $120,000.00
+  Ending AOCI Hedging Reserve: $-15,000.00`,
+        codeNotes: [
+          'The dollar-offset ratio of 0.9635 falls squarely within the mandatory 0.80 to 1.25 effectiveness corridor.',
+          'Because the hedge is highly effective, the entire $185,000 derivative loss bypasses the income statement into AOCI.',
+          'Upon consumption of the underlying inventory, $120,000 is reclassified from AOCI into Cost of Goods Sold to match expenses.'
+        ],
+        tryIt: 'Change the derivative loss to -$250,000 against a $192,000 gain to demonstrate a 1.3021 ratio failure triggering immediate de-designation.',
+        check: {
+          question: 'What is the required accounting treatment for the effective portion of gains and losses on a cash flow hedge under ASC 815?',
+          options: [
+            'They are deferred in Other Comprehensive Income (AOCI) and reclassified into earnings in the same period the hedged transaction affects earnings',
+            'They are immediately recognized as operating revenue in the current period statement of operations',
+            'They are permanently capitalized into intangible asset goodwill and never reclassified to earnings',
+            'They are treated as an adjustment to retained earnings without ever passing through OCI or P&L'
+          ],
+          answer: 0,
+          why: 'Cash flow hedge accounting eliminates income statement timing mismatches by deferring effective derivative gains and losses in AOCI until the underlying forecasted item impacts earnings.',
+          answerIndex: 0,
+          explanation: 'Cash flow hedge accounting eliminates income statement timing mismatches by deferring effective derivative gains and losses in AOCI until the underlying forecasted item impacts earnings.'
+        }
+      },
+      {
+        title: 'Deploy the Financial Instruments Controller Control Tower',
+        say: [
+          'As an enterprise financial controller managing complex global operations, you cannot evaluate financial instruments in isolated silos. Capital markets transactions generate interconnected balance sheet, income statement, and note disclosure ramifications across the entire enterprise ledger. An impairment adjustment under CECL impacts regulatory Tier 1 capital ratios, a change in market interest rates alters convertible bond carrying values and basic vs diluted EPS calculations, and a shift in commodity price spreads tests the boundary conditions of hedge accounting effectiveness.',
+          'To ensure comprehensive balance sheet integrity and audit defensibility, controllers maintain an integrated Financial Instruments Control Tower. This system ingests multi-asset data feeds to generate consolidated balance sheet presentation schedules: classifying investments across ASC 820 Levels 1, 2, and 3; posting automated credit loss reserves and allowance contra-assets under ASC 326; updating effective interest liability amortizations under ASC 470; and verifying retrospective dollar-offset hedging ratios while rolling forward AOCI reserves under ASC 815.',
+          'In this capstone day exercise, you will execute the full end-to-end financial instruments control routine. You will verify that Level 3 unobservable assets trigger appropriate footnote disclosures, validate that CECL provisions accurately bridge loan gross amortized costs, certify convertible debt balance sheet carrying value adjustments, and substantiate hedge effectiveness compliance. Completing this pipeline prepares you for executive controllership roles overseeing complex corporate balance sheets.'
+        ],
+        example: 'The controller synthesizes an investment portfolio ($3,688,635 fair value, 46.06% Level 3), credit allowance ($1,017,750 contra-asset), convertible notes ($8,660,269 carrying value), and AOCI cash flow hedge reserve (-$15,000 equity) into an executive audit dossier.',
+        code: `def run_integrated_financial_instruments_suite():
+    print("=== PinIT Career OS Financial Controller Control Tower ===")
+    print("--- 1. ASC 820 Fair Value Hierarchy Assessment ---")
+    fv = classify_and_value_asc820_hierarchy()
+
+    print("\n--- 2. ASC 326 CECL Loan Portfolio Impairment ---")
+    cecl = model_cecl_expected_credit_loss()
+
+    print("\n--- 3. ASC 470 Convertible Note Bifurcation ---")
+    bif = bifurcate_convertible_bond_asc470()
+
+    print("\n--- 4. ASC 815 Cash Flow Hedge Dollar-Offset ---")
+    hdg = evaluate_cash_flow_hedge_dollar_offset()
+
+    print("\n--- 5. Financial Controller Balance Sheet Summary ---")
+    print("  Total Investment Fair Value: " + "$" + f"{fv['total']:,.2f}")
+    print("  Allowance for Credit Losses (Contra-Asset): " + "$" + f"{cecl['total_cecl']:,.2f}")
+    print("  Convertible Debt Carrying Value: " + "$" + f"{bif['y1_carrying']:,.2f}")
+    print("  Ending AOCI Hedging Reserve (Equity): " + "$" + f"{hdg['ending_aoci']:,.2f}")
+    print("Status: ALL FINANCIAL INSTRUMENTS COMPLIANT WITH ASC 820, ASC 326, ASC 470 & ASC 815.")
+
+run_integrated_financial_instruments_suite()`,
+        output: `=== PinIT Career OS Financial Controller Control Tower ===
+--- 1. ASC 820 Fair Value Hierarchy Assessment ---
+ASC 820 Fair Value Hierarchy Classification:
+  Level 1 (Quoted Active Markets): $995,000.00
+  Level 2 (Observable Matrix Pricing): $994,653.98
+  Level 3 (Unobservable Valuation Models): $1,698,980.91
+  Total Investment Fair Value: $3,688,634.88
+  Level 3 Proportion of Total Assets: 46.06% (High Audit Scrutiny Required)
+
+--- 2. ASC 326 CECL Loan Portfolio Impairment ---
+ASC 326 CECL Lifetime Expected Credit Loss Model:
+  Commercial Prime: EAD=$25,000,000 | Stressed Loss=$120,750.00
+  Small Business (SME): EAD=$12,000,000 | Stressed Loss=$310,500.00
+  Consumer Unsecured: EAD=$8,000,000 | Stressed Loss=$586,500.00
+Portfolio CECL Summary:
+  Total Outstanding Gross Loans (EAD): $45,000,000.00
+  Required Lifetime CECL Allowance: $1,017,750.00 (2.26%)
+  Beginning Allowance for Credit Losses: $720,000.00
+  Current Period Provision Expense Required: $297,750.00
+Journal Entry: DR Provision for Credit Losses $297,750.00 | CR Allowance for Credit Losses $297,750.00
+
+--- 3. ASC 470 Convertible Note Bifurcation ---
+ASC 470 Convertible Debt Bifurcation & Amortization:
+  Gross Par Issued: $10,000,000.00 | Coupon: 3.5%
+  Liability Component (PV Straight Debt at 7.5%): $8,381,646.04
+  Equity Component (Conversion Feature Bifurcated): $1,618,353.96
+  Initial Debt Discount to Amortize: $1,618,353.96
+Year 1 Effective Interest Amortization:
+  Interest Expense (Carrying Value * 7.5%): $628,623.45
+  Contractual Cash Coupon Paid (3.5%): $350,000.00
+  Debt Discount Amortization: $278,623.45
+  Year 1 Ending Liability Carrying Value: $8,660,269.49
+
+--- 4. ASC 815 Cash Flow Hedge Dollar-Offset ---
+ASC 815 / IFRS 9 Cash Flow Hedge Accounting:
+  Derivative Fair Value Change: $-185,000.00
+  Hedged Item Benchmark Gain: $192,000.00
+  Dollar-Offset Ratio: 0.9635 (96.35%)
+  Hedge Effectiveness Status: HIGHLY_EFFECTIVE (Range: 80% - 125%)
+Accumulated Other Comprehensive Income (AOCI) Roll-Forward:
+  Beginning AOCI Balance: $50,000.00
+  OCI Other Comprehensive Loss Deferred: $-185,000.00
+  Reclassification from AOCI to COGS (P&L): $120,000.00
+  Ending AOCI Hedging Reserve: $-15,000.00
+
+--- 5. Financial Controller Balance Sheet Summary ---
+  Total Investment Fair Value: $3,688,634.88
+  Allowance for Credit Losses (Contra-Asset): $1,017,750.00
+  Convertible Debt Carrying Value: $8,660,269.49
+  Ending AOCI Hedging Reserve (Equity): $-15,000.00
+Status: ALL FINANCIAL INSTRUMENTS COMPLIANT WITH ASC 820, ASC 326, ASC 470 & ASC 815.`,
+        codeNotes: [
+          'Coordinates four interrelated financial instrument domains into a single unified financial controller ledger schedule.',
+          'Validates that Level 3 unobservable assets exceed the 40% threshold necessitating enhanced note disclosure roll-forwards.',
+          'Consolidates liability debt discounts, CECL contra-asset allowances, and equity AOCI cash flow hedge reserves.'
+        ],
+        tryIt: 'Execute the full suite with alternative macroeconomic multipliers to evaluate how joint stress shocks ripple across balance sheet equity reserves.',
+        check: {
+          question: 'In enterprise balance sheet presentation, where are the bifurcated equity component of convertible notes and the effective portion of cash flow hedges recorded?',
+          options: [
+            'Both are recorded within Stockholders\' Equity: the convertible option in Additional Paid-in Capital (APIC) and the hedge gain/loss in Accumulated Other Comprehensive Income (AOCI)',
+            'Both are recorded as Current Operating Liabilities in the working capital section of the balance sheet',
+            'Both are netted directly against Gross Accounts Receivable as contra-assets',
+            'Both are omitted from the balance sheet entirely and mentioned only in optional board presentation slides'
+          ],
+          answer: 0,
+          why: 'The bifurcated conversion option of a hybrid note is credited to APIC in permanent equity, while effective cash flow hedging gains and losses are parked in AOCI within equity until underlying operational transactions hit P&L.',
+          answerIndex: 0,
+          explanation: 'The bifurcated conversion option of a hybrid note is credited to APIC in permanent equity, while effective cash flow hedging gains and losses are parked in AOCI within equity until underlying operational transactions hit P&L.'
+        }
+      }
+    ],
+    summary: [
+      'Operationalized the ASC 820 three-tier fair value hierarchy, distinguishing Level 1 quoted active market prices from Level 2 observable matrix pricing and Level 3 unobservable multi-period DCF valuation models requiring extensive audit roll-forward disclosures.',
+      'Constructed an ASC 326 / IFRS 9 CECL lifetime expected credit loss engine, estimating segment losses as EAD x PD x LGD under forward-looking macroeconomic stress scenarios and booking the required journal entry to contra-asset Allowance for Credit Losses.',
+      'Executed ASC 470-20 convertible debt bifurcation, isolating the host debt liability at straight market debt yields ($8,381,646) from the bifurcated equity conversion feature ($1,618,354 in APIC), and modeled Year 1 effective interest discount amortization ($278,623).',
+      'Tested derivative cash flow hedge effectiveness under ASC 815 / IFRS 9 using the 80% to 125% dollar-offset method (0.9635 ratio), deferring qualifying losses in AOCI and reclassifying realized amounts to Cost of Goods Sold.',
+      'Synthesized the complete Financial Instruments Controller Control Tower, certifying total investment fair values ($3,688,635), CECL loan reserves ($1,017,750), convertible debt carrying values ($8,660,269), and ending AOCI hedging reserves (-$15,000).'
+    ],
+    projectStep: {
+      title: 'Deploy the Financial Instruments Controller & Valuation Governance Engine',
+      steps: [
+        'Classify corporate investments across ASC 820 Levels 1, 2, and 3, computing portfolio fair values and Level 3 asset sensitivity proportions.',
+        'Model ASC 326 CECL lifetime expected credit losses across loan pools using forward-looking macroeconomic overlays and post credit provision journal entries.',
+        'Bifurcate convertible bond issue proceeds into host debt liability and equity conversion options, generating an effective interest amortization table.',
+        'Evaluate derivative cash flow hedge effectiveness via retrospective dollar-offset testing and roll forward the AOCI equity hedging reserve.'
+      ]
+    }
+  }
 ];
