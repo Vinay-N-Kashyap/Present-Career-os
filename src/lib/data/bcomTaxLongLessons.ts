@@ -358,5 +358,344 @@ print(f"\nTotal VAT Received by Treasury: \${total_tax_collected_by_treasury:.2f
         'Simulate multi-stage VAT supply chains and verify exact Input Tax Credit (ITC) mathematical balance.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_tax',
+    day: 2,
+    title: 'OECD Pillar Two 15% Minimum Tax, R&D Credits, GILTI & Section 382 M&A Architecture',
+    goal: 'Master advanced multinational corporate tax strategy: OECD BEPS Pillar 2 Global Anti-Base Erosion (GloBE) 15% minimum tax and top-up tax calculations with substance carve-outs, IRC Section 41 Alternative Simplified Credit (ASC) R&D calculations, TCJA GILTI inclusion and Section 250 deductions, Section 382 ownership change NOL limitation caps, and Section 338(h)(10) M&A asset basis step-up structuring.',
+    minutes: 42,
+    recap: 'Day 1 established deferred taxes (DTA/DTL), interest tax shields, and transfer pricing. Day 2 tackles multinational and transactional taxation: OECD Pillar 2 global minimum tax rules, R&D tax credits, cross-border GILTI planning, and M&A tax step-ups.',
+    parts: [
+      {
+        title: 'OECD BEPS Pillar Two & Global Anti-Base Erosion (GloBE) 15% Minimum Tax',
+        say: [
+          'Under the OECD/G20 Inclusive Framework on Base Erosion and Profit Shifting (BEPS), over 140 countries agreed to Pillar Two, establishing a historic 15% Global Minimum Corporate Tax on multinational enterprise (MNE) groups with annual consolidated revenues of €750 million or more.',
+          'Pillar Two introduces the Global Anti-Base Erosion (GloBE) rules to prevent a "race to the bottom" where multinational tech and pharmaceutical giants shift mobile profits into zero-tax or low-tax jurisdictions.',
+          'Under the GloBE rules, the multinational calculates the Effective Tax Rate (ETR) on a jurisdictional basis: ETR = Adjusted Covered Taxes / GloBE Net Income. If the jurisdictional ETR falls below 15.0%, a Top-Up Tax percentage is calculated as: Top-Up Rate = 15.0% - ETR.',
+          'Before applying the Top-Up Tax, the rules allow a Substance-Based Income Exclusion (SBIE) carve-out: a formulaic deduction based on eligible payroll costs and carrying value of eligible tangible assets located in that jurisdiction, recognizing genuine economic substance.',
+          'The resulting Top-Up Tax is collected by the ultimate parent entity\'s jurisdiction via the Income Inclusion Rule (IIR) or source countries via the Undertaxed Profits Rule (UTPR), effectively neutralizing artificial offshore tax haven strategies.'
+        ],
+        example: 'An MNE has a subsidiary in a low-tax jurisdiction earning $50,000,000 with only $2,500,000 paid in local taxes (a 5.0% ETR). The jurisdiction has $20,000,000 in tangible server assets and $10,000,000 in local payroll, generating a $1,500,000 substance carve-out. The remaining $48,500,000 excess profit is subjected to a 10.0% Top-Up Tax ($4,850,000), payable to the parent jurisdiction to reach the 15% minimum floor.',
+        code: `# Simulation: OECD BEPS Pillar Two GloBE Top-Up Tax Calculator
+from typing import Dict
+
+def calculate_pillar_two_top_up_tax(
+    jurisdiction_name: str,
+    accounting_net_income: float,
+    covered_taxes_paid: float,
+    tangible_asset_carrying_value: float,
+    eligible_payroll_costs: float
+) -> Dict:
+    # Substance-Based Income Exclusion (SBIE): 5% carve-out for payroll and tangible assets
+    sbie_payroll = eligible_payroll_costs * 0.05
+    sbie_assets = tangible_asset_carrying_value * 0.05
+    substance_carveout = sbie_payroll + sbie_assets
+
+    excess_profit = max(0.0, accounting_net_income - substance_carveout)
+
+    # Effective Tax Rate (ETR)
+    effective_tax_rate = (covered_taxes_paid / accounting_net_income) * 100.0 if accounting_net_income > 0 else 0.0
+
+    # GloBE Minimum Rate is 15.0%
+    top_up_tax_percentage = max(0.0, 15.0 - effective_tax_rate)
+    top_up_tax_payable = excess_profit * (top_up_tax_percentage / 100.0)
+
+    return {
+        "Jurisdiction": jurisdiction_name,
+        "Accounting_Profit": round(accounting_net_income, 2),
+        "Local_ETR_Pct": round(effective_tax_rate, 2),
+        "Substance_Carveout": round(substance_carveout, 2),
+        "Excess_Taxable_Profit": round(excess_profit, 2),
+        "Top_Up_Tax_Rate_Pct": round(top_up_tax_percentage, 2),
+        "Top_Up_Tax_Payable": round(top_up_tax_payable, 2)
+    }
+
+p2_res = calculate_pillar_two_top_up_tax(
+    jurisdiction_name="Cayman_Subsidiary",
+    accounting_net_income=50000000.0,
+    covered_taxes_paid=2500000.0, # 5% local ETR
+    tangible_asset_carrying_value=20000000.0,
+    eligible_payroll_costs=10000000.0
+)
+print(f"Jurisdiction: {p2_res['Jurisdiction']} | Local ETR: {p2_res['Local_ETR_Pct']}%")
+print(f"Top-Up Tax Rate: {p2_res['Top_Up_Tax_Rate_Pct']}% -> Tax Due to Parent State: \${p2_res['Top_Up_Tax_Payable']:,.2f}")`,
+        output: `Jurisdiction: Cayman_Subsidiary | Local ETR: 5.0%\nTop-Up Tax Rate: 10.0% -> Tax Due to Parent State: $4,850,000.00`,
+        tryIt: 'Increase eligible_payroll_costs to $30,000,000 and tangible_asset_carrying_value to $40,000,000 to observe how higher real local substance expands the SBIE carveout and lowers the Top-Up Tax liability.',
+        check: {
+          question: 'What is the primary operational effect of the OECD BEPS Pillar 2 Top-Up Tax mechanism on multinational tax havens?',
+          options: [
+            '(Recommended) If a low-tax jurisdiction charges an effective tax rate below 15%, the parent company country or source countries collect a Top-Up Tax on excess profits, effectively neutralizing the incentive to artificially shift profits to tax havens.',
+            'It automatically dissolves any foreign subsidiary that operates outside the European Union.',
+            'It forces multinational enterprises to pay 100% of their worldwide revenue directly to the United Nations.',
+            'It eliminates corporate income tax entirely and replaces it with a global digital transaction fee.'
+          ],
+          answer: 0,
+          why: 'Pillar Two ensures that if an affiliate pays less than 15% ETR locally, the parent company jurisdiction collects the shortfall through the Income Inclusion Rule (IIR), nullifying zero-tax haven advantages.',
+          answerIndex: 0,
+          explanation: 'Pillar Two ensures that if an affiliate pays less than 15% ETR locally, the parent company jurisdiction collects the shortfall through the Income Inclusion Rule (IIR), nullifying zero-tax haven advantages.'
+        }
+      },
+      {
+        title: 'IRC Section 41 Research & Development (R&D) Tax Credit Mechanics',
+        say: [
+          'Corporate tax planning distinguishes between tax deductions and tax credits: while a deduction reduces taxable income (saving cash equal to deduction * corporate tax rate), a tax credit provides a direct, dollar-for-dollar reduction of the company\'s tax liability.',
+          'Under Section 41 of the Internal Revenue Code, US corporations investing in domestic research, software engineering, and scientific development can claim the Credit for Increasing Research Activities (the R&D Tax Credit).',
+          'To qualify as a Qualified Research Expense (QRE), expenses must pass the 4-part IRS test: 1. Permitted Purpose (developing new or improved functionality, performance, or quality under Section 174); 2. Technological in Nature (relying on computer science, engineering, or physical/biological science); 3. Elimination of Uncertainty (technical feasibility was uncertain at project outset); 4. Process of Experimentation (systematically testing alternatives via prototyping or simulation).',
+          'Eligible expenses include US employee wages directly engaged in or supervising qualified research, engineering supplies, and 65% of third-party contractor research costs.',
+          'Under the Alternative Simplified Credit (ASC) method, the credit equals 14% of current-year QREs that exceed a base amount defined as 50% of the average QREs over the preceding three taxable years.'
+        ],
+        example: 'A technology company incurs $8,000,000 in software engineering QREs this year, compared to a prior 3-year average of $5,500,000. Under the ASC method, the 50% base threshold is $2,750,000. The incremental $5,250,000 produces an immediate $735,000 dollar-for-dollar reduction in corporate income taxes.',
+        code: `# Simulation: IRC Section 41 R&D Alternative Simplified Credit (ASC) Calculator
+from typing import Dict, List
+
+def calculate_rd_tax_credit(
+    current_year_qre: float,
+    prior_year_qres: List[float] # 3 preceding taxable years
+) -> Dict:
+    # Alternative Simplified Credit (ASC) Formula:
+    # Credit = 14% * (Current QRE - 50% * Average Prior 3-Year QRE)
+    prior_3yr_avg = sum(prior_year_qres) / len(prior_year_qres) if prior_year_qres else 0.0
+    base_amount = 0.50 * prior_3yr_avg
+    incremental_qre = max(0.0, current_year_qre - base_amount)
+    federal_rd_credit = incremental_qre * 0.14
+
+    return {
+        "Current_Year_QRE": round(current_year_qre, 2),
+        "Prior_3Yr_Average_QRE": round(prior_3yr_avg, 2),
+        "Base_Amount_Threshold": round(base_amount, 2),
+        "Incremental_QRE": round(incremental_qre, 2),
+        "Federal_RD_Tax_Credit": round(federal_rd_credit, 2)
+    }
+
+rd_res = calculate_rd_tax_credit(
+    current_year_qre=8000000.0,
+    prior_year_qres=[5000000.0, 5500000.0, 6000000.0] # Avg = $5.5M, Base = $2.75M
+)
+print(f"Current QRE: \${rd_res['Current_Year_QRE']:,.2f} | Base Threshold: \${rd_res['Base_Amount_Threshold']:,.2f}")
+print(f"Incremental QRE: \${rd_res['Incremental_QRE']:,.2f} -> Dollar-for-Dollar Credit: \${rd_res['Federal_RD_Tax_Credit']:,.2f}")`,
+        output: `Current QRE: $8,000,000.00 | Base Threshold: $2,750,000.00\nIncremental QRE: $5,250,000.00 -> Dollar-for-Dollar Credit: $735,000.00`,
+        tryIt: 'Change current_year_qre to $10,000,000 to observe how accelerated engineering investment expands the federal credit to $1,015,000.',
+        check: {
+          question: 'Why is an IRC Section 41 R&D tax credit economically more valuable to an enterprise than an ordinary business expense tax deduction?',
+          options: [
+            '(Recommended) A tax credit reduces final tax liability dollar-for-dollar, whereas a tax deduction only saves cash equal to the deduction multiplied by the corporate tax rate (e.g., $1.00 credit saves $1.00, while $1.00 deduction at 21% saves $0.21).',
+            'Because tax credits can be converted into physical gold coins issued by the US Mint.',
+            'Because deductions are subject to mandatory 50% interest penalties under the Internal Revenue Code.',
+            'Because R&D tax credits permanently exempt the company from filing quarterly IRS returns.'
+          ],
+          answer: 0,
+          why: 'Credits directly offset tax liabilities dollar-for-dollar, providing nearly 5x the cash value of a deduction at a 21% corporate tax rate.',
+          answerIndex: 0,
+          explanation: 'Credits directly offset tax liabilities dollar-for-dollar, providing nearly 5x the cash value of a deduction at a 21% corporate tax rate.'
+        }
+      },
+      {
+        title: 'GILTI Foreign Intangible Income & Section 250 Deduction Architecture',
+        say: [
+          'Enacted under the Tax Cuts and Jobs Act (TCJA) of 2017, the Global Intangible Low-Taxed Income (GILTI) regime fundamentally changed how US multinational corporations tax earnings of Controlled Foreign Corporations (CFCs).',
+          'Before GILTI, US companies could avoid domestic taxation indefinitely by shifting valuable IP (patents, software algorithms) into foreign subsidiaries and deferring dividend repatriations.',
+          'The GILTI regime assumes that tangible physical assets naturally yield a routine return: Deemed Tangible Income Return (DTIR = 10% * Qualified Business Asset Investment [QBAI]). QBAI is the quarterly average depreciable tax basis of tangible business property.',
+          'Any foreign subsidiary net tested income earned above that 10% routine tangible return is classified as Net Deemed Intangible Income (GILTI) and taxed currently in the US regardless of whether it is repatriated.',
+          'To keep US MNEs globally competitive, Section 250 grants a 50% deduction against GILTI, resulting in an effective federal corporate tax rate of 10.5% (prior to 2026), and allows an 80% foreign tax credit (FTC) offset for foreign taxes paid.'
+        ],
+        example: 'A US tech company\'s Irish subsidiary earns $12M with $20M in physical servers/data centers (QBAI). The 10% routine return is $2M, leaving $10M of GILTI deemed intangible income. With a 50% Section 250 deduction, only $5M is taxed at 21% ($1,050,000 tentative US tax). After an 80% FTC credit ($480,000 on $600k foreign tax paid), net US tax is $570,000.',
+        code: `# Simulation: TCJA GILTI Inclusion, Section 250 Deduction & FTC Engine
+from typing import Dict
+
+def calculate_gilti_inclusion_and_tax(
+    cfc_tested_income: float,
+    qbai_tangible_assets: float,
+    foreign_taxes_paid: float,
+    us_statutory_tax_rate: float = 0.21,
+    section_250_deduction_pct: float = 50.0
+) -> Dict:
+    # Deemed Tangible Income Return (DTIR) = 10% of QBAI
+    dtir = qbai_tangible_assets * 0.10
+    net_deemed_intangible_income = max(0.0, cfc_tested_income - dtir)
+
+    # Section 250 allows 50% deduction against GILTI inclusion
+    gilti_taxable_base = net_deemed_intangible_income * (1.0 - section_250_deduction_pct / 100.0)
+    tentative_us_tax = gilti_taxable_base * us_statutory_tax_rate
+
+    # Foreign Tax Credit (FTC) haircut: 80% of foreign taxes allocable to GILTI
+    ftc_allowable = min(tentative_us_tax, foreign_taxes_paid * 0.80)
+    net_us_tax_due = max(0.0, tentative_us_tax - ftc_allowable)
+
+    return {
+        "CFC_Tested_Income": round(cfc_tested_income, 2),
+        "DTIR_Routine_Return": round(dtir, 2),
+        "Net_GILTI_Inclusion": round(net_deemed_intangible_income, 2),
+        "Taxable_Base_Post_Sec250": round(gilti_taxable_base, 2),
+        "Tentative_US_Tax": round(tentative_us_tax, 2),
+        "Foreign_Tax_Credit_Offset": round(ftc_allowable, 2),
+        "Net_US_GILTI_Tax_Due": round(net_us_tax_due, 2)
+    }
+
+gilti_res = calculate_gilti_inclusion_and_tax(
+    cfc_tested_income=12000000.0,
+    qbai_tangible_assets=20000000.0, # DTIR = $2M -> GILTI = $10M
+    foreign_taxes_paid=600000.0,
+    us_statutory_tax_rate=0.21,
+    section_250_deduction_pct=50.0
+)
+print(f"CFC Income: \${gilti_res['CFC_Tested_Income']:,.2f} | DTIR Routine Return: \${gilti_res['DTIR_Routine_Return']:,.2f}")
+print(f"GILTI Inclusion: \${gilti_res['Net_GILTI_Inclusion']:,.2f} -> Net US Tax Due: \${gilti_res['Net_US_GILTI_Tax_Due']:,.2f}")`,
+        output: `CFC Income: $12,000,000.00 | DTIR Routine Return: $2,000,000.00\nGILTI Inclusion: $10,000,000.00 -> Net US Tax Due: $570,000.00`,
+        tryIt: 'Increase foreign_taxes_paid to $1,500,000 to observe how foreign tax credits completely eliminate residual US GILTI tax liability.',
+        check: {
+          question: 'What is the role of Qualified Business Asset Investment (QBAI) in the US GILTI corporate tax calculation?',
+          options: [
+            '(Recommended) A routine 10% return on tangible depreciable assets (QBAI) is exempt from GILTI, so only foreign earnings exceeding that 10% threshold are taxed as low-taxed intangible income.',
+            'QBAI determines the minimum hourly wage that must be paid to overseas factory workers.',
+            'QBAI converts all foreign debt into equity capital for US tax accounting purposes.',
+            'QBAI is a penalty fee levied on US companies that purchase foreign real estate.'
+          ],
+          answer: 0,
+          why: 'The GILTI regime assumes tangible assets naturally earn a routine 10% return; only earnings beyond that routine return (DTIR) are treated as mobile intangible profits subject to GILTI.',
+          answerIndex: 0,
+          explanation: 'The GILTI regime assumes tangible assets naturally earn a routine 10% return; only earnings beyond that routine return (DTIR) are treated as mobile intangible profits subject to GILTI.'
+        }
+      },
+      {
+        title: 'Section 382 Ownership Change & NOL Annual Utilization Cap Mechanics',
+        say: [
+          'Net Operating Losses (NOLs) are valuable corporate tax shields generated when tax-deductible expenses exceed taxable revenues. Historically, profitable companies routinely acquired bankrupt "loss shell" companies merely to buy their accumulated NOLs and eliminate corporate tax bills.',
+          'To prevent the trafficking of tax losses, Congress enacted Section 382 of the Internal Revenue Code. Section 382 imposes a strict statutory annual dollar cap on the utilization of pre-change NOLs whenever an "Ownership Change" occurs.',
+          'An Ownership Change occurs if the percentage of stock owned by one or more 5-percent shareholders increases by more than 50 percentage points over the lowest percentage owned by those shareholders during a rolling 3-year testing period (common during venture equity rounds, secondary transactions, and acquisitions).',
+          'Once triggered, the annual deduction limit is calculated as: Annual Section 382 Limit = Fair Market Value of Old Loss Corporation Immediately Before Change * Federal Long-Term Tax-Exempt Rate published monthly by the IRS.',
+          'Furthermore, under TCJA rules, post-2017 NOLs can only offset up to 80% of taxable income in any given year. Any portion of the annual Section 382 limitation not utilized in a year rolls over to increase the limitation in subsequent years.'
+        ],
+        example: 'An enterprise acquires a startup with $15,000,000 in accumulated NOLs for $25,000,000 equity value when the long-term tax-exempt rate is 3.45%. Even though the acquiring company earns $10,000,000 this year, Section 382 strictly caps annual NOL usage to $862,500 ($25M * 3.45%). The remaining $14,137,500 of NOLs carries forward to future years.',
+        code: `# Simulation: IRC Section 382 Ownership Change & NOL Annual Cap Engine
+from typing import Dict
+
+def calculate_section_382_nol_limitation(
+    loss_corporation_equity_value: float,
+    long_term_tax_exempt_rate_pct: float,
+    accumulated_nol_pool: float,
+    annual_taxable_income: float
+) -> Dict:
+    # Annual Section 382 Base Limitation = Value of Old Loss Corporation * Federal Long-Term Tax-Exempt Rate
+    annual_nol_cap = loss_corporation_equity_value * (long_term_tax_exempt_rate_pct / 100.0)
+
+    # NOL utilized cannot exceed 80% of taxable income under TCJA, nor the Section 382 annual cap
+    tcja_income_ceiling = annual_taxable_income * 0.80
+    nol_utilized_this_year = min(annual_nol_cap, tcja_income_ceiling, accumulated_nol_pool)
+    remaining_nol_pool = accumulated_nol_pool - nol_utilized_this_year
+    net_taxable_income_post_nol = annual_taxable_income - nol_utilized_this_year
+
+    return {
+        "Loss_Co_Equity_Value": round(loss_corporation_equity_value, 2),
+        "Long_Term_Tax_Exempt_Rate": f"{long_term_tax_exempt_rate_pct}%",
+        "Annual_Section_382_Limit": round(annual_nol_cap, 2),
+        "Annual_Taxable_Income": round(annual_taxable_income, 2),
+        "NOL_Utilized": round(nol_utilized_this_year, 2),
+        "Net_Taxable_Income": round(net_taxable_income_post_nol, 2),
+        "Remaining_NOL_Pool": round(remaining_nol_pool, 2)
+    }
+
+sec382_res = calculate_section_382_nol_limitation(
+    loss_corporation_equity_value=25000000.0,
+    long_term_tax_exempt_rate_pct=3.45, # $25M * 3.45% = $862,500/year cap
+    accumulated_nol_pool=15000000.0,
+    annual_taxable_income=10000000.0
+)
+print(f"Old Value: \${sec382_res['Loss_Co_Equity_Value']:,.2f} @ {sec382_res['Long_Term_Tax_Exempt_Rate']}")
+print(f"Annual 382 Limit: \${sec382_res['Annual_Section_382_Limit']:,.2f} -> NOL Utilized: \${sec382_res['NOL_Utilized']:,.2f} (Remaining: \${sec382_res['Remaining_NOL_Pool']:,.2f})")`,
+        output: `Old Value: $25,000,000.00 @ 3.45%\nAnnual 382 Limit: $862,500.00 -> NOL Utilized: $862,500.00 (Remaining: $14,137,500.00)`,
+        tryIt: 'Change loss_corporation_equity_value to $50,000,000 to observe how higher acquisition valuation expands the annual 382 deduction limit to $1,725,000.',
+        check: {
+          question: 'What triggers an IRC Section 382 limitation on a corporation\'s ability to utilize accumulated Net Operating Loss (NOL) carryforwards?',
+          options: [
+            '(Recommended) A cumulative ownership change of more than 50 percentage points by 5-percent shareholders over a rolling three-year testing period.',
+            'Whenever the corporation experiences two consecutive quarters of negative operating margin.',
+            'When the corporation changes its primary corporate bank or auditing firm.',
+            'Whenever the company issues options to more than 10 new software engineering hires.'
+          ],
+          answer: 0,
+          why: 'Section 382 is triggered specifically by a greater than 50 percentage point shift in ownership among 5% shareholders over a 3-year period, imposing an annual dollar cap based on pre-change equity value.',
+          answerIndex: 0,
+          explanation: 'Section 382 is triggered specifically by a greater than 50 percentage point shift in ownership among 5% shareholders over a 3-year period, imposing an annual dollar cap based on pre-change equity value.'
+        }
+      },
+      {
+        title: 'M&A Section 338(h)(10) Stock-as-Asset Sale Basis Step-Up Structuring',
+        say: [
+          'In corporate mergers and acquisitions (M&A), a fundamental structural conflict exists between buyers and sellers regarding tax treatment.',
+          'Buyers strongly prefer an Asset Purchase: acquiring assets directly steps up their tax basis from historical cost to the purchase price, enabling enormous future tax deductions via depreciation and Section 197 15-year intangible amortization. Sellers strongly resist asset sales because target corporations face double taxation (corporate tax on asset gain, then personal tax on liquidation).',
+          'Sellers prefer a Stock Sale: shareholders recognize only single-layer capital gains tax. However, the buyer inherits the target\'s historical low asset tax basis ("carryover basis"), sacrificing millions in potential tax depreciation.',
+          'To resolve this impasse, IRC Section 338(h)(10) allows an acquiring corporation and the target\'s shareholders (in eligible S corporations or corporate subsidiary sales) to make a joint election to treat a qualified stock purchase as a deemed asset purchase for federal income tax purposes.',
+          'Under Section 338(h)(10), the transaction is legally a clean stock sale with no operational contract assignment friction, but for tax purposes the buyer achieves a full Fair Market Value basis step-up, creating a massive lifetime cash tax shield.'
+        ],
+        example: 'A buyer acquires a corporate subsidiary for $40,000,000 whose historical tax basis in assets is only $10,000,000. Making a Section 338(h)(10) election creates a $30,000,000 basis step-up. Amortized over 15 years ($2M/year deduction) at a 25% tax rate, the buyer realizes $500,000 in cash tax savings every year, generating a $7,500,000 lifetime tax shield.',
+        code: `# Simulation: M&A IRC Section 338(h)(10) Asset Basis Step-Up Tax Shield Model
+from typing import Dict
+
+def calculate_section_338h10_basis_step_up(
+    purchase_price: float,
+    current_tax_basis_of_assets: float,
+    combined_corporate_tax_rate: float,
+    annual_asset_depreciation_years: int = 15
+) -> Dict:
+    # Basis Step-Up Amount
+    basis_step_up = max(0.0, purchase_price - current_tax_basis_of_assets)
+
+    # Future Tax Shield = Step-Up * Tax Rate
+    total_lifetime_tax_shield = basis_step_up * combined_corporate_tax_rate
+    annual_tax_amortization_deduction = basis_step_up / annual_asset_depreciation_years
+    annual_cash_tax_savings = annual_tax_amortization_deduction * combined_corporate_tax_rate
+
+    return {
+        "Purchase_Price": round(purchase_price, 2),
+        "Historical_Tax_Basis": round(current_tax_basis_of_assets, 2),
+        "Basis_Step_Up_Created": round(basis_step_up, 2),
+        "Annual_Amortization_Deduction": round(annual_tax_amortization_deduction, 2),
+        "Annual_Cash_Tax_Savings": round(annual_cash_tax_savings, 2),
+        "Total_Lifetime_Tax_Shield": round(total_lifetime_tax_shield, 2)
+    }
+
+stepup_res = calculate_section_338h10_basis_step_up(
+    purchase_price=40000000.0,
+    current_tax_basis_of_assets=10000000.0, # $30M Step-up
+    combined_corporate_tax_rate=0.25, # 25% tax rate
+    annual_asset_depreciation_years=15 # 15-year Section 197 intangible amortization
+)
+print(f"Acquisition: \${stepup_res['Purchase_Price']:,.2f} | Basis Step-Up: \${stepup_res['Basis_Step_Up_Created']:,.2f}")
+print(f"Annual Tax Savings: \${stepup_res['Annual_Cash_Tax_Savings']:,.2f}/yr -> Lifetime Tax Shield: \${stepup_res['Total_Lifetime_Tax_Shield']:,.2f}")`,
+        output: `Acquisition: $40,000,000.00 | Basis Step-Up: $30,000,000.00\nAnnual Tax Savings: $500,000.00/yr -> Lifetime Tax Shield: $7,500,000.00`,
+        tryIt: 'Change purchase_price to $50,000,000 to observe how higher purchase premiums expand the basis step-up and lifetime cash tax shield to $10,000,000.',
+        check: {
+          question: 'What is the primary tax benefit to an acquiring corporation of executing a joint IRC Section 338(h)(10) election in a stock purchase transaction?',
+          options: [
+            '(Recommended) The buyer is permitted to step up the tax basis of the target company\'s acquired assets to the purchase price, generating substantial future depreciation and amortization tax deductions.',
+            'The buyer is completely exempt from paying federal payroll taxes for the next 10 fiscal years.',
+            'The seller receives an immediate cash subsidy directly from the US Department of the Treasury.',
+            'The target company automatically becomes a non-profit entity immune from corporate audits.'
+          ],
+          answer: 0,
+          why: 'Section 338(h)(10) allows a stock acquisition to be treated as an asset sale for tax purposes, stepping up target asset basis to market value and generating millions in future depreciation tax shields.',
+          answerIndex: 0,
+          explanation: 'Section 338(h)(10) allows a stock acquisition to be treated as an asset sale for tax purposes, stepping up target asset basis to market value and generating millions in future depreciation tax shields.'
+        }
+      }
+    ],
+    summary: [
+      'OECD BEPS Pillar Two enforces a global 15% minimum corporate tax on MNEs, applying Top-Up Taxes to low-taxed foreign income exceeding substance carve-outs.',
+      'IRC Section 41 Alternative Simplified Credit (ASC) rewards incremental R&D investments with direct dollar-for-dollar tax liability offsets.',
+      'TCJA GILTI taxes foreign CFC intangible earnings above a 10% routine tangible asset return (DTIR), softened by Section 250 deductions and foreign tax credits.',
+      'Section 382 caps annual NOL deductions following a >50% ownership change to the old equity value multiplied by the federal long-term tax-exempt rate.',
+      'Joint Section 338(h)(10) M&A elections allow stock purchases to achieve asset basis step-up, unlocking substantial future depreciation and amortization tax shields.'
+    ],
+    projectStep: {
+      title: 'Multinational Corporate Tax & M&A Structuring Simulator',
+      steps: [
+        'Calculate OECD Pillar Two Top-Up Tax exposure factoring in payroll and tangible asset substance exclusions.',
+        'Model Section 41 R&D tax credit yields using the Alternative Simplified Credit 3-year trailing average formula.',
+        'Simulate GILTI foreign income inclusions and Section 250 tax liability mitigations.',
+        'Structure Section 382 NOL utilization schedules and Section 338(h)(10) basis step-up cash tax savings.'
+      ]
+    }
   }
 ];
+

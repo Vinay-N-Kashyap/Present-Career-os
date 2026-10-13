@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getLongLesson, getLongLessonLanguage } from '../src/lib/data/longLessons';
+import {
+  getLongLesson,
+  getLongLessonLanguage,
+  estimateSpokenMinutes,
+  estimateLessonMinutes
+} from '../src/lib/data/longLessons';
 import { BCOM_TAX_LONG_LESSONS } from '../src/lib/data/bcomTaxLongLessons';
 import { BCOM_AUD_LONG_LESSONS } from '../src/lib/data/bcomAudLongLessons';
 
@@ -49,6 +54,43 @@ test('B.Com Corporate Tax Day 1: DTL Reversal, Debt Shield & OECD Transfer Prici
   assert.ok(lesson.parts[2].code?.includes('TransferPricingTNMM'));
   assert.ok(lesson.parts[3].code?.includes('NolTaxShieldSimulator'));
   assert.ok(lesson.parts[4].code?.includes('VatSupplyChainNode'));
+});
+
+test('B.Com Corporate Tax Day 2: OECD Pillar Two, R&D Credits & Section 382 Snippets Verification', () => {
+  const lesson2 = BCOM_TAX_LONG_LESSONS[1];
+  assert.ok(lesson2, 'bcom_tax Day 2 lesson must be defined');
+  assert.equal(lesson2.coursePrefix, 'bcom_tax');
+  assert.equal(lesson2.day, 2);
+  assert.equal(lesson2.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson2);
+  const totalMin = estimateLessonMinutes(lesson2);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson2.parts.length; i++) {
+    const part = lesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(lesson2.parts[0].code?.includes('calculate_pillar_two_top_up_tax'));
+  assert.ok(lesson2.parts[1].code?.includes('calculate_rd_tax_credit'));
+  assert.ok(lesson2.parts[2].code?.includes('calculate_gilti_inclusion_and_tax'));
+  assert.ok(lesson2.parts[3].code?.includes('calculate_section_382_nol_limitation'));
+  assert.ok(lesson2.parts[4].code?.includes('calculate_section_338h10_basis_step_up'));
 });
 
 test('B.Com Forensic Audit Day 1: Audit Risk Model, Benford Chi-Square & MUS Snippets Verification', () => {
