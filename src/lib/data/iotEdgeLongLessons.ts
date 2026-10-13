@@ -896,7 +896,295 @@ print(f"SRAM Memory Savings:           {res5['memory_saved_pct']}% reduction")`,
         'Design an activation ping-pong memory reuse plan bounding peak SRAM consumption.'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_edge',
+    day: 4,
+    title: 'Post-Training Quantization (PTQ): Float32 to Signed INT8 Affine Mapping, Scales & Zero-Points',
+    goal: 'Master Post-Training Quantization (PTQ) mathematics and runtime execution: Affine quantization formula q = round(r / S) + Z, scale factor S = (r_max - r_min) / 255, zero-point Z = round(-r_min / S) - 128, calibration representative datasets, and per-channel convolution kernel quantization.',
+    minutes: 35,
+    recap: 'In Day 3, we mastered TFLM runtime internals: FlatBuffers, zero-allocation interpreters, static Tensor Arenas, and selective op resolvers. Today in Day 4, we examine the mathematical cornerstone of edge machine learning: Post-Training Quantization (PTQ), transforming 32-bit floating-point weights and activations into hardware-accelerated 8-bit signed integers.',
+    parts: [
+      {
+        title: 'The Mathematics of Uniform Affine Quantization: Real Float Range to Signed INT8 [-128, 127]',
+        say: [
+          'In deep learning research, neural network weights and intermediate layer activations are computed as 32-bit single-precision floating-point numbers (IEEE 754 Float32 format). While Float32 offers immense dynamic range spanning from 10^-38 to 10^38, representing numbers with 1 sign bit, 8 exponent bits, and 23 mantissa bits requires 4 bytes of memory per parameter. On an ultra-low-power ARM Cortex-M0+ or Cortex-M4 microcontroller without a hardware floating-point unit (FPU), executing floating-point math requires hundreds of software emulation cycles per multiplication.',
+          'Post-Training Quantization (PTQ) compresses continuous 32-bit floating-point numbers into discrete 8-bit signed integers (INT8) bounded within the range [-128, 127]. This reduces memory consumption by exactly 4x (a 75% reduction in Flash ROM and SRAM) while allowing integer ALU execution units to compute multiplications in a single clock cycle. The mathematical mapping between real floating-point value r and quantized integer q is governed by the Uniform Affine Quantization formula: q = round(r / S) + Z, where S is the Scale Factor and Z is the Zero Point.',
+          'The Scale Factor S is an arbitrary positive real floating-point number representing the step size between adjacent integer quantization bins. It is calculated as S = (r_max - r_min) / (q_max - q_min) = (r_max - r_min) / 255.0. The Zero Point Z is an integer offset that ensures the real value 0.0 maps exactly to a representable integer without rounding distortion: Z = round(-r_min / S) - 128. Preserving the exact representation of zero is mandatory because zero-padding in convolutional layers and zero-valued sparse weights must never incur quantization error.'
+        ],
+        example: 'Like converting an analog bathroom scale that measures weights with continuous decimal precision into an 8-bit digital readout with 256 distinct steps: each discrete notch represents exactly 0.0117 kg (Scale Factor), with notch 0 representing zero weight.',
+        code: `# Simulation: Uniform Affine Float32 to Signed INT8 Quantizer
+def quantize_affine_float32_to_int8(real_values: list[float], r_min: float, r_max: float):
+    # Scale Factor: S = (r_max - r_min) / (q_max - q_min) = (r_max - r_min) / 255.0
+    scale = (r_max - r_min) / 255.0
+    # Zero Point: Z = round(-r_min / S) - 128
+    zero_point = int(round(-r_min / scale)) - 128
+    
+    quantized_int8 = []
+    for r in real_values:
+        q = int(round(r / scale)) + zero_point
+        # Clamp to signed int8 boundary [-128, 127]
+        clamped_q = max(-128, min(127, q))
+        quantized_int8.append(clamped_q)
+        
+    return {
+        "scale": round(scale, 6),
+        "zero_point": zero_point,
+        "quantized": quantized_int8
+    }
+
+floats = [-1.5, -0.75, 0.0, 0.75, 1.5]
+res1 = quantize_affine_float32_to_int8(floats, -1.5, 1.5)
+print("=== UNIFORM AFFINE INT8 QUANTIZATION ENGINE ===")
+print(f"Computed Scale Factor (S): {res1['scale']}")
+print(f"Computed Zero Point (Z):   {res1['zero_point']}")
+print(f"Original Float32 Values:   {floats}")
+print(f"Quantized Signed INT8:     {res1['quantized']}")`,
+        output: `=== UNIFORM AFFINE INT8 QUANTIZATION ENGINE ===\nComputed Scale Factor (S): 0.011765\nComputed Zero Point (Z):   0\nOriginal Float32 Values:   [-1.5, -0.75, 0.0, 0.75, 1.5]\nQuantized Signed INT8:     [-128, -64, 0, 64, 127]`,
+        codeNotes: [
+          { line: 2, note: 'Implements standard TFLite affine quantization mapping float32 to signed int8 [-128, 127]' },
+          { line: 4, note: 'Calculates scale factor S = (1.5 - (-1.5)) / 255 = 0.011765 per discrete quantization step' },
+          { line: 21, note: 'Verifies real 0.0 maps cleanly to integer 0, with -1.5 mapping to -128 and +1.5 mapping to 127' }
+        ],
+        tryIt: 'Change r_max to 3.0 (asymmetric range [-1.5, 3.0]) and observe how the zero point shifts away from 0.',
+        check: {
+          question: 'Why is it critical that the real floating-point value 0.0 maps exactly to an integer zero-point in quantized neural networks?',
+          options: [
+            'Because convolutional zero-padding and inactive neurons must evaluate to exact zero without introducing systematic bias or non-zero noise into accumulators',
+            'Because microcontrollers cannot add negative numbers',
+            'Because integer 0 is required to reset the CPU clock',
+            'Because neural network training requires all weights to sum to zero'
+          ],
+          answer: 0,
+          why: 'In convolutional networks, edge padding uses real 0.0. If 0.0 were mapped to a non-zero integer, padding layers would inject false energy into feature maps across every convolution cycle.'
+        }
+      },
+      {
+        title: 'Symmetric vs Asymmetric Quantization: Zero-Point Alignment and ALU Optimization',
+        say: [
+          'In quantized inference pipelines, engineers choose between two primary quantization schemes: Symmetric Quantization and Asymmetric Quantization. The difference between the two schemes lies in how the real zero value is positioned relative to the integer dynamic range.',
+          'In Symmetric Quantization, the zero point is mathematically forced to zero (Z = 0). The real floating-point range is symmetrically mirrored around zero: [-r_max_abs, r_max_abs], where r_max_abs = max(|r_min|, |r_max|). The scale factor becomes S = r_max_abs / 127.0. Because Z = 0, multiplying an input tensor by a weight tensor eliminates zero-point subtraction terms entirely. In assembly code, an ARM SIMD multiply-accumulate instruction can execute raw integer multiplication without subtracting zero-point offsets from every operand, delivering maximum execution speed.',
+          'In Asymmetric Quantization, the zero point Z is allowed to float anywhere within [-128, 127]. While asymmetric quantization requires additional ALU instructions to subtract zero-point terms during matrix multiplication, it provides significantly higher precision for asymmetric distributions—such as ReLU or ReLU6 activation tensors, where all values are strictly non-negative (r >= 0). For weights, TFLM universally enforces symmetric quantization; for activations, asymmetric quantization is standard to capture non-negative dynamic range.'
+        ],
+        example: 'Like choosing a ruler: a symmetric ruler places zero dead in the center with 12 cm to the left and 12 cm to the right, whereas an asymmetric ruler starts zero at the far left edge to measure lengths from 0 to 24 cm with double the forward precision.',
+        code: `# Simulation: Symmetric vs Asymmetric Quantization Comparison
+def compare_symmetric_vs_asymmetric_quantization(r_min: float, r_max: float):
+    # Symmetric: Z = 0, Scale = max(|r_min|, |r_max|) / 127.0
+    max_abs = max(abs(r_min), abs(r_max))
+    sym_scale = max_abs / 127.0
+    sym_zp = 0
+    
+    # Asymmetric: Scale = (r_max - r_min) / 255.0, Z = round(-r_min / Asym_Scale) - 128
+    asym_scale = (r_max - r_min) / 255.0
+    asym_zp = int(round(-r_min / asym_scale)) - 128
+    
+    return {
+        "sym_scale": round(sym_scale, 6),
+        "sym_zp": sym_zp,
+        "asym_scale": round(asym_scale, 6),
+        "asym_zp": asym_zp
+    }
+
+res2 = compare_symmetric_vs_asymmetric_quantization(-0.2, 2.8) # Typical ReLU activation
+print("=== SYMMETRIC VS ASYMMETRIC QUANTIZATION ===")
+print(f"Symmetric Scale:  {res2['sym_scale']} | Zero-Point: {res2['sym_zp']} (Simpler ALU MAC)")
+print(f"Asymmetric Scale: {res2['asym_scale']} | Zero-Point: {res2['asym_zp']} (Optimal Dynamic Range)")`,
+        output: `=== SYMMETRIC VS ASYMMETRIC QUANTIZATION ===\nSymmetric Scale:  0.022047 | Zero-Point: 0 (Simpler ALU MAC)\nAsymmetric Scale: 0.011765 | Zero-Point: -111 (Optimal Dynamic Range)`,
+        codeNotes: [
+          { line: 2, note: 'Evaluates symmetric (Z=0) vs asymmetric quantization across non-negative activation ranges' },
+          { line: 4, note: 'Symmetric quantization produces scale 0.022047 due to wastefully mirroring negative range to -2.8' },
+          { line: 16, note: 'Asymmetric quantization achieves scale 0.011765 (nearly 2x finer resolution) by shifting zero-point to -111' }
+        ],
+        tryIt: 'Evaluate a perfectly balanced weight tensor with range [-1.0, 1.0] and verify both schemes produce identical scale and zero-point.',
+        check: {
+          question: 'Why is Symmetric Quantization (Z = 0) universally preferred for neural network weight tensors?',
+          options: [
+            'Because setting the zero-point to zero eliminates zero-point offset subtraction in the inner MAC loop, allowing direct single-cycle integer SIMD instructions',
+            'Because neural network weights are always positive numbers',
+            'Because symmetric quantization prevents models from forgetting data',
+            'Because asymmetric weights require a dedicated graphics card'
+          ],
+          answer: 0,
+          why: 'With Z = 0, multiplying weights by activations eliminates costly zero-point cross-term corrections in the inner loop, enabling raw single-cycle hardware multiplication.'
+        }
+      },
+      {
+        title: 'Representative Calibration Datasets: Dynamic Range Collection & Min/Max Clipping',
+        say: [
+          'While neural network weights are fixed and known at training time, the dynamic range of intermediate layer activations depends entirely on incoming runtime sensor data. Unlike weights, activation tensors cannot be quantized statically by simply inspecting the model file. If you quantize activations based on theoretical bounds, extreme outliers can stretch the dynamic range, causing 99% of normal activations to collapse into just 2 or 3 discrete integer bins.',
+          'To determine optimal scale factors and zero points for activation tensors, Post-Training Quantization requires a Representative Calibration Dataset. The machine learning engineer feeds 100 to 500 real-world sensor data samples (such as audio recordings, accelerometer sweeps, or camera frames) through the floating-point model without backpropagation.',
+          'During calibration, hooks record the distribution of activation values at every layer, computing running minimum and maximum statistics (min/max histograms). Advanced quantizers apply Percentile Clipping (e.g. clipping the 99.9th percentile) or KL Divergence Minimization to clip extreme activation outliers. Clipping outliers slightly distorts extreme values but dramatically shrinks the scale factor S, giving the vast majority of active signals much finer quantization resolution.'
+        ],
+        example: 'Like setting the exposure on a digital camera: if you adjust exposure to capture a tiny reflection of the sun, the entire landscape turns completely pitch black. By ignoring the sun outlier (clipping), you capture rich details across trees, mountains, and grass.',
+        code: `# Simulation: Representative Calibration Dataset Dynamic Range Profiler
+def calibrate_quantization_parameters(sample_activation_batches: list[list[float]]):
+    # Observe dynamic min/max across representative sample batches
+    all_values = [v for batch in sample_activation_batches for v in batch]
+    observed_min = min(all_values)
+    observed_max = max(all_values)
+    
+    # Calculate calibrated affine parameters
+    scale = (observed_max - observed_min) / 255.0
+    zero_point = int(round(-observed_min / scale)) - 128
+    
+    return {
+        "samples_evaluated": len(all_values),
+        "calibrated_min": round(observed_min, 4),
+        "calibrated_max": round(observed_max, 4),
+        "scale": round(scale, 6),
+        "zero_point": zero_point
+    }
+
+batches = [
+    [-0.85, 0.12, 1.45, -0.22],
+    [0.45, -1.15, 0.88, 2.10],
+    [-0.30, 0.75, -0.65, 1.90]
+]
+res3 = calibrate_quantization_parameters(batches)
+print("=== REPRESENTATIVE CALIBRATION DATASET AUDIT ===")
+print(f"Representative Samples: {res3['samples_evaluated']} Activation Probes")
+print(f"Dynamic Float Range:    [{res3['calibrated_min']}, {res3['calibrated_max']}]")
+print(f"Calibrated Scale:       {res3['scale']}")
+print(f"Calibrated Zero Point:  {res3['zero_point']}")`,
+        output: `=== REPRESENTATIVE CALIBRATION DATASET AUDIT ===\nRepresentative Samples: 12 Activation Probes\nDynamic Float Range:    [-1.15, 2.1]\nCalibrated Scale:       0.012745\nCalibrated Zero Point:  -38`,
+        codeNotes: [
+          { line: 2, note: 'Profiles activation distributions across representative sample inference batches' },
+          { line: 5, note: 'Captures empirical dynamic activation range [-1.15, 2.10]' },
+          { line: 17, note: 'Derives calibrated scale factor S=0.012745 and zero-point Z=-38 for runtime quantization' }
+        ],
+        tryIt: 'Add an outlier sample 10.0 to batches and observe how the scale factor broadens from 0.0127 to 0.0437.',
+        check: {
+          question: 'What is the purpose of a Representative Calibration Dataset during Post-Training Quantization (PTQ)?',
+          options: [
+            'To profile the empirical dynamic range (min/max) of runtime activations, calculating optimal scale and zero-point parameters for integer inference',
+            'To retrain all weights using stochastic gradient descent',
+            'To convert Python scripts into C++ source code',
+            'To calibrate the microcontroller crystal oscillator frequency'
+          ],
+          answer: 0,
+          why: 'Representative datasets pass realistic input data through the model to observe activation ranges across layers, ensuring scale factors map dynamic signals accurately.'
+        }
+      },
+      {
+        title: 'Per-Tensor vs Per-Channel Quantization in Convolutional Layers',
+        say: [
+          'In early quantization frameworks, a single scale factor S was assigned to an entire weight tensor—a strategy known as Per-Tensor Quantization. In a convolutional neural network layer with 32 filters, all 32 filters shared one global scale factor. However, this naive approach causes catastrophic accuracy degradation in modern vision architectures like MobileNet and MCUNet.',
+          'Convolutional filters learn specialized features: Filter 0 might detect gentle color gradients (where weights are small, e.g. [-0.1, 0.1]), while Filter 1 detects sharp high-contrast edges (where weights are large, e.g. [-2.5, 2.5]). Under Per-Tensor quantization, the global scale is dictated by Filter 1\'s extreme range (S = 5.0 / 255 = 0.0196). When Filter 0\'s tiny weights are divided by this large scale, they round to zero or -1, completely destroying the filter\'s learned feature representations—a phenomenon called Outlier Dilution.',
+          'TensorFlow Lite for Microcontrollers addresses this by standardizing on Per-Channel Quantization (also known as Per-Axis Quantization) for all convolutional weights. Instead of one global scale, a separate scale factor S_c is calculated independently for each output channel c along the filter dimension. Filter 0 receives a tiny scale S_0 = 0.00078 (capturing high precision), while Filter 1 receives S_1 = 0.0196. Per-channel quantization restores full accuracy parity with unquantized 32-bit floating-point models with zero runtime memory overhead.'
+        ],
+        example: 'Like choosing magnification lenses for a microscope: instead of setting one fixed low-magnification lens for the entire hospital, each specialist chooses the exact magnification required for their specific slide.',
+        code: `# Simulation: Per-Tensor vs Per-Channel Quantization Precision Engine
+def evaluate_per_channel_quantization_error(filter_channels: list[list[float]]):
+    # Per-Tensor applies one scale across all channels. Per-Channel calculates individual scale per output channel.
+    all_weights = [w for ch in filter_channels for w in ch]
+    global_scale = (max(all_weights) - min(all_weights)) / 255.0
+    
+    per_channel_scales = []
+    for ch in filter_channels:
+        ch_scale = (max(ch) - min(ch)) / 255.0
+        per_channel_scales.append(round(ch_scale, 6))
+        
+    return {
+        "global_per_tensor_scale": round(global_scale, 6),
+        "per_channel_scales": per_channel_scales,
+        "precision_gain": "ELIMINATES_OUTLIER_DILUTION"
+    }
+
+channels = [
+    [-0.12, 0.05, -0.08, 0.15], # Channel 1: Small magnitude weights
+    [-2.40, 1.85, -1.95, 2.50]  # Channel 2: High magnitude weights (outlier)
+]
+res4 = evaluate_per_channel_quantization_error(channels)
+print("=== PER-TENSOR VS PER-CHANNEL QUANTIZATION ===")
+print(f"Global Per-Tensor Scale:  {res4['global_per_tensor_scale']} (Dilutes Channel 1 resolution)")
+print(f"Per-Channel Scale Ch 0:   {res4['per_channel_scales'][0]} (High precision)")
+print(f"Per-Channel Scale Ch 1:   {res4['per_channel_scales'][1]} (Accommodates outlier)")
+print(f"Quantization Precision:   {res4['precision_gain']}")`,
+        output: `=== PER-TENSOR VS PER-CHANNEL QUANTIZATION ===\nGlobal Per-Tensor Scale:  0.019216 (Dilutes Channel 1 resolution)\nPer-Channel Scale Ch 0:   0.001059 (High precision)\nPer-Channel Scale Ch 1:   0.019216 (Accommodates outlier)\nQuantization Precision:   ELIMINATES_OUTLIER_DILUTION`,
+        codeNotes: [
+          { line: 2, note: 'Compares global per-tensor scaling against independent per-channel filter scaling' },
+          { line: 16, note: 'Demonstrates Channel 0 receives 18x finer resolution scale (0.001059 vs 0.019216)' },
+          { line: 20, note: 'Eliminates weight outlier dilution, preserving subtle convolutional edge filters' }
+        ],
+        tryIt: 'Add a third channel with range [-0.01, 0.01] and verify per-channel scale reaches 0.000078 without being diluted.',
+        check: {
+          question: 'Why does Per-Channel Quantization prevent accuracy degradation in convolutional neural networks?',
+          options: [
+            'It calculates an independent scale factor for each output filter channel, preventing high-magnitude outlier filters from diluting the precision of small-magnitude filters',
+            'It trains the neural network twice as fast',
+            'It replaces all convolution operations with fast matrix inverses',
+            'It converts the convolutional layer into a recurrent layer'
+          ],
+          answer: 0,
+          why: 'Different filter channels often have vastly different weight magnitudes. Giving each channel its own scale ensures small-magnitude channels retain high precision rather than collapsing to zero.'
+        }
+      },
+      {
+        title: 'Fixed-Point Integer Arithmetic: Replacing Floating Multiplication with Bit Shifts',
+        say: [
+          'In a theoretical mathematical formulation of quantized inference, the output activation of a neuron is computed as: r_out = S_input * S_weight * sum(q_in * q_w) + bias. Dividing r_out by S_output yields the quantized integer output: q_out = (S_input * S_weight / S_output) * Accumulator + Z_output.',
+          'Notice the multiplier term: M = (S_input * S_weight) / S_output. This term M is a real floating-point number (typically between 0.0 and 1.0). If a microcontroller had to execute a floating-point multiplication by M for every single neuron, integer quantization would offer no speed advantage! On low-power MCUs, floating-point math destroys real-time performance.',
+          'TFLM solves this with Fixed-Point Integer Arithmetic. Because M is in the interval (0, 1), it can be expressed as a normalized 32-bit integer multiplier M_0 multiplied by an exponent of 2: M = M_0 * 2^(-n), where M_0 is in Q31 format (between 2^30 and 2^31 - 1). During inference, the microcontroller multiplies the 32-bit accumulator by integer M_0 and right-shifts the result by n bits ((Accumulator * M_0) >> n). Multiplications and right-shifts are executed by hardware integer ALUs in 1 to 2 CPU clock cycles, achieving pure integer execution with zero floating-point operations!'
+        ],
+        example: 'Like calculating 25% of a bill without doing decimal multiplication: instead of multiplying by 0.25 on a calculator, you simply divide by 4 (a 2-bit binary right shift), which any cashier can calculate mentally in a split second.',
+        code: `# Simulation: Fixed-Point Integer Multiply-Accumulate (MAC) & Right-Shift Engine
+def simulate_fixed_point_integer_mac(input_q: int, weight_q: int, bias_int32: int, multiplier_fixed_point: int, shift_bits: int):
+    # Real-world TFLM kernel: accumulator = bias + sum(input * weight)
+    accumulator_int32 = bias_int32 + (input_q * weight_q)
+    # Multiply by fixed-point quantized multiplier (Q31 format) and right-shift
+    scaled_output = (accumulator_int32 * multiplier_fixed_point) >> shift_bits
+    clamped_int8 = max(-128, min(127, scaled_output))
+    
+    return {
+        "acc_int32": accumulator_int32,
+        "scaled_output": scaled_output,
+        "clamped_int8": clamped_int8
+    }
+
+res5 = simulate_fixed_point_integer_mac(42, -3, 15, 1073741824, 30) # Fixed-point scale ~1.0
+print("=== FIXED-POINT INTEGER MAC EXECUTION ===")
+print(f"Raw 32-Bit Accumulator:      {res5['acc_int32']}")
+print(f"Fixed-Point Scaled Output:   {res5['scaled_output']}")
+print(f"Final Clamped Signed INT8:   {res5['clamped_int8']}")`,
+        output: `=== FIXED-POINT INTEGER MAC EXECUTION ===\nRaw 32-Bit Accumulator:      -111\nFixed-Point Scaled Output:   -111\nFinal Clamped Signed INT8:   -111`,
+        codeNotes: [
+          { line: 2, note: 'Simulates production TFLM fixed-point integer scaling kernel' },
+          { line: 5, note: 'Applies Q31 integer multiplier (1073741824) and 30-bit right shift replacing floating-point multiply' },
+          { line: 15, note: 'Produces deterministic signed int8 output -111 without invoking floating-point units' }
+        ],
+        tryIt: 'Increase shift_bits to 31 (simulating a 0.5x scaling factor) and verify scaled_output drops to -55.',
+        check: {
+          question: 'How does TFLM scale integer accumulators without using floating-point multiplication instructions?',
+          options: [
+            'By converting the floating multiplier M into a normalized 32-bit fixed-point integer (Q31 format) followed by an arithmetic right bit shift',
+            'By rounding all accumulators to the nearest thousand',
+            'By sending the accumulator value to a cloud server over Wi-Fi',
+            'By discarding all fractional parts without scaling'
+          ],
+          answer: 0,
+          why: 'Expressing M as M_0 * 2^(-n) allows the microcontroller to scale accumulators using only integer multiplication and binary bit shifts, eliminating floating-point instructions.'
+        }
+      }
+    ],
+    summary: [
+      'Uniform Affine Quantization maps continuous Float32 values into discrete signed INT8 integers [-128, 127] via q = round(r / S) + Z.',
+      'Symmetric Quantization enforces Z = 0 for weight tensors, eliminating zero-point cross-term corrections in the inner MAC loop.',
+      'Representative Calibration Datasets pass 100-500 sample batches to record activation min/max histograms and clip outliers.',
+      'Per-Channel Quantization assigns individual scale factors to each convolutional filter, eliminating weight outlier dilution.',
+      'Fixed-point integer arithmetic scales 32-bit accumulators using Q31 integer multipliers and binary right bit shifts with zero FPU usage.'
+    ],
+    projectStep: {
+      title: 'Architect a Production INT8 Post-Training Quantization Engine',
+      steps: [
+        'Calculate scale factors and zero points for real floating-point dynamic ranges.',
+        'Implement symmetric vs asymmetric quantization evaluators for weights and activations.',
+        'Profile empirical activation ranges across representative calibration sample batches.',
+        'Evaluate per-channel convolution scaling factors eliminating outlier dilution.',
+        'Execute fixed-point integer multiply-accumulate (MAC) routines with binary bit shifts.'
+      ]
+    }
   }
 ];
+
 
 

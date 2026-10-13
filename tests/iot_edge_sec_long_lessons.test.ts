@@ -27,6 +27,11 @@ test('IoT Edge & IoT Sec Long Lessons: Resolution & Language Invariants', () => 
   assert.equal(edgeLesson3.day, 3);
   assert.equal(edgeLesson3.parts.length, 5, 'iot_edge Day 3 must contain exactly 5 parts');
 
+  const edgeLesson4 = getLongLesson('iot_edge', 4);
+  assert.ok(edgeLesson4, 'iot_edge Day 4 long lesson must resolve');
+  assert.equal(edgeLesson4.day, 4);
+  assert.equal(edgeLesson4.parts.length, 5, 'iot_edge Day 4 must contain exactly 5 parts');
+
   // 2. iot_sec
   const secLesson = getLongLesson('iot_sec', 1);
   assert.ok(secLesson, 'iot_sec Day 1 long lesson must resolve');
@@ -195,6 +200,49 @@ test('IoT Edge Day 3: TFLM FlatBuffers, Zero-Allocation, Static Tensor Arena & O
   assert.ok(edgeLesson3.parts[4].code?.includes('plan_activation_ping_pong_offsets'));
   assert.ok(edgeLesson3.parts[4].output?.includes('ACTIVATION PING-PONG MEMORY REUSE PLAN'));
 });
+
+test('IoT Edge Day 4: Post-Training Quantization, Affine Mapping, Scales, Zero-Points & Per-Channel Verification', () => {
+  const edgeLesson4 = getLongLesson('iot_edge', 4);
+  assert.ok(edgeLesson4, 'iot_edge Day 4 must resolve');
+  assert.equal(edgeLesson4.day, 4);
+  assert.equal(edgeLesson4.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(edgeLesson4);
+  const totalMin = estimateLessonMinutes(edgeLesson4);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < edgeLesson4.parts.length; i++) {
+    const part = edgeLesson4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(edgeLesson4.parts[0].code?.includes('quantize_affine_float32_to_int8'));
+  assert.ok(edgeLesson4.parts[0].output?.includes('UNIFORM AFFINE INT8 QUANTIZATION ENGINE'));
+  assert.ok(edgeLesson4.parts[1].code?.includes('compare_symmetric_vs_asymmetric_quantization'));
+  assert.ok(edgeLesson4.parts[1].output?.includes('SYMMETRIC VS ASYMMETRIC QUANTIZATION'));
+  assert.ok(edgeLesson4.parts[2].code?.includes('calibrate_quantization_parameters'));
+  assert.ok(edgeLesson4.parts[2].output?.includes('REPRESENTATIVE CALIBRATION DATASET AUDIT'));
+  assert.ok(edgeLesson4.parts[3].code?.includes('evaluate_per_channel_quantization_error'));
+  assert.ok(edgeLesson4.parts[3].output?.includes('PER-TENSOR VS PER-CHANNEL QUANTIZATION'));
+  assert.ok(edgeLesson4.parts[4].code?.includes('simulate_fixed_point_integer_mac'));
+  assert.ok(edgeLesson4.parts[4].output?.includes('FIXED-POINT INTEGER MAC EXECUTION'));
+});
+
 
 
 
