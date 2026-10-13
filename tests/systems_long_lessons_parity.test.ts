@@ -526,6 +526,65 @@ test('Systems Long Lessons: comp_fund Day 5 Storage Engines, Inodes, Zero-Copy &
   assert.ok(res5.stdout?.includes('CONTAINER_ISOLATION: STRICT_KERNEL_ENFORCED'), 'Must verify kernel containment');
 });
 
+test('Systems Long Lessons: git_vcs Day 5 Packfiles, fsck Disaster Recovery, ORT & Governance Verification', async () => {
+  const gitVcsD5 = getLongLesson('git_vcs', 5);
+  assert.ok(gitVcsD5, 'git_vcs Day 5 must resolve');
+  assert.equal(gitVcsD5.day, 5);
+  assert.equal(gitVcsD5.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(gitVcsD5);
+  const totalMin = estimateLessonMinutes(gitVcsD5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < gitVcsD5.parts.length; i++) {
+    const part = gitVcsD5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code must contain bash commands`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Part 1: Packfiles & Delta Compression
+  const res1 = await executeBashSuite(gitVcsD5.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 packfiles must succeed');
+  assert.ok(res1.stdout?.includes('DELTA_COMPRESSION_SAVING: 88.4%'), 'Must calculate delta compression savings');
+  assert.ok(res1.stdout?.includes('LOOSE_OBJECTS_PACKED: 14200'), 'Must track packed loose objects');
+
+  // Part 2: Disaster Recovery via git fsck
+  const res2 = await executeBashSuite(gitVcsD5.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 fsck disaster recovery must succeed');
+  assert.ok(res2.stdout?.includes('DANGLING_COMMIT_FOUND: 7a8b9c0'), 'Must discover dangling commit');
+  assert.ok(res2.stdout?.includes('SALVAGE_VERDICT: RECOVERED_INTO_REFS_HEADS_RECOVERY'), 'Must salvage commit into recovery ref');
+
+  // Part 3: Merge Engine ORT & Rerere
+  const res3 = await executeBashSuite(gitVcsD5.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 ORT merge engine must succeed');
+  assert.ok(res3.stdout?.includes('RENAME_DETECTION: 100x_SPEEDUP_OVER_RECURSIVE'), 'Must verify ORT rename speedup');
+  assert.ok(res3.stdout?.includes('RERERE_ENABLED: RECORDED_RESOLUTION_REUSED'), 'Must verify rerere automated reuse');
+
+  // Part 4: Historical Secret Purging via git-filter-repo
+  const res4 = await executeBashSuite(gitVcsD5.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 secret purging must succeed');
+  assert.ok(res4.stdout?.includes('HISTORY_REWRITTEN: 450_COMMITS_CLEANSED'), 'Must rewrite historical commits');
+  assert.ok(res4.stdout?.includes('CREDENTIAL_LEAK_STATUS: COMPLETELY_ERADICATED'), 'Must confirm leak eradication');
+
+  // Part 5: Multi-Remote Sync & Force-With-Lease
+  const res5 = await executeBashSuite(gitVcsD5.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 governance must succeed');
+  assert.ok(res5.stdout?.includes('PUSH_SAFETY: FORCE_WITH_LEASE_ENFORCED'), 'Must enforce force-with-lease safety');
+  assert.ok(res5.stdout?.includes('BRANCH_PROTECTION: TRUNK_BASED_LINEAR_HISTORY'), 'Must verify trunk-based protection');
+});
+
 
 
 

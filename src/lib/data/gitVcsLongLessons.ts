@@ -809,6 +809,214 @@ grep "INITIAL_DOWNLOAD_SAVING" /home/student/workspace/clone_perf/stats.txt`,
         'Benchmark monorepo scaling metrics comparing shallow depth clones with blobless on-demand filter clones.'
       ]
     }
+  },
+  {
+    coursePrefix: 'git_vcs',
+    day: 5,
+    title: 'Production Git Internals, Packfiles, Garbage Collection & Disaster Recovery',
+    goal: 'Master low-level Git storage internals: packfiles and delta compression, dangling commit salvage with fsync/fsck, the ORT merge engine, git-filter-repo secret purging, and multi-remote governance.',
+    minutes: 45,
+    recap: 'In Day 4, we engineered enterprise Git governance: client and server hooks, cryptographically signed commits, Git worktrees, submodules vs subtrees, and monorepo scaling with blobless clones. In Day 5, we culminate Git & Enterprise Distributed Version Control by diving into production internals: packfile binary fan-out tables, delta compression, low-level disaster recovery with git fsck, the modern ORT merge engine and rerere, historical credential eradication with git-filter-repo, and trunk-based multi-remote release governance.',
+    parts: [
+      {
+        title: 'Packfiles, Fan-Out Index Files (.idx) & Sliding-Window Delta Compression',
+        say: [
+          'In Day 1, we learned that every file version, directory tree, and commit in Git begins life as an individual "loose object" stored under .git/objects/ in zlib-compressed format. However, if a repository containing 10,000 files creates 10 commits every day, storing 100,000 loose files exhausts operating system inode limits, slows down directory scans, and consumes excessive disk space.',
+          'To solve this, Git employs the Packfile format (.pack) paired with a binary index file (.idx). When git gc (garbage collection) or git repack executes, Git scans all loose objects and groups similar files together using a sliding-window sorting algorithm. Instead of saving full duplicate file contents, Git applies directed acyclic Delta Compression: storing only the newest revision as a complete object, and storing preceding revisions as compact diff offsets (deltas) against it.',
+          'The accompanying .idx file features a 256-entry first-level fan-out table that allows Git to locate any object SHA in the multi-gigabyte packfile in O(log N) binary search time with only two disk seeks. This architecture reduces repository disk footprint by 85% to 95% while dramatically accelerating network push and fetch operations over smart HTTP and SSH protocols.'
+        ],
+        example: 'Like an author publishing a 600-page textbook. Instead of printing 10 complete 600-page hardcover books for each revision, the publisher prints the latest 10th edition in full and includes 1-page errata sheets showing small line adjustments for older editions (delta compression), referencing them in a master index table.',
+        code: `mkdir -p /home/student/workspace/git_pack
+echo "PACKFILE_NAME: pack-8f921a.pack" > /home/student/workspace/git_pack/stats.txt
+echo "INDEX_FANOUT_TABLE: pack-8f921a.idx (256-entry table)" >> /home/student/workspace/git_pack/stats.txt
+echo "LOOSE_OBJECTS_PACKED: 14200" >> /home/student/workspace/git_pack/stats.txt
+echo "DELTA_COMPRESSION_SAVING: 88.4%" >> /home/student/workspace/git_pack/stats.txt
+cat /home/student/workspace/git_pack/stats.txt
+grep "DELTA_COMPRESSION_SAVING" /home/student/workspace/git_pack/stats.txt`,
+        output: `PACKFILE_NAME: pack-8f921a.pack\nINDEX_FANOUT_TABLE: pack-8f921a.idx (256-entry table)\nLOOSE_OBJECTS_PACKED: 14200\nDELTA_COMPRESSION_SAVING: 88.4%\n\nDELTA_COMPRESSION_SAVING: 88.4%`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual git_pack storage directory' },
+          { line: 2, note: 'Records consolidated binary packfile identifier' },
+          { line: 3, note: 'Records 256-entry fan-out index file accelerating O(log N) object lookups' },
+          { line: 4, note: 'Consolidates 14,200 individual loose objects into a single archive' },
+          { line: 5, note: 'Demonstrates 88.4% storage savings via sliding-window delta compression' }
+        ],
+        tryIt: 'Filter for the packed loose object count using grep "LOOSE_OBJECTS_PACKED" /home/student/workspace/git_pack/stats.txt.',
+        check: {
+          question: 'In Git packfile delta compression, why is the newest version of a file typically stored as the full base object while older versions are stored as diff deltas?',
+          options: [
+            'Because newer versions are accessed much more frequently by developers, optimizing checkout speed for HEAD while saving space on historical revisions',
+            'Because older files are encrypted with RSA keys',
+            'Because Git cannot compress files modified within the last 24 hours',
+            'Because operating systems delete file diffs automatically'
+          ],
+          answer: 0,
+          why: 'Developers check out the latest revision (HEAD) far more often than historic versions. Storing the latest version un-deltaed allows instant retrieval without having to reconstruct multiple backward diff chains.'
+        }
+      },
+      {
+        title: 'Low-Level Disaster Recovery: git fsck & Dangling Commit Salvage',
+        say: [
+          'A common nightmare in software engineering occurs when a developer accidentally executes git reset --hard HEAD~5, deletes an un-pushed feature branch with git branch -D, or makes an erroneous interactive rebase that appears to destroy days of critical code.',
+          'Crucially, Git is designed with an append-only object database philosophy: Git almost never deletes objects immediately! Even when a branch pointer or reflog entry is removed, the underlying commit, tree, and blob objects remain physically intact inside the .git/objects directory until the garbage collector prune grace period expires (default 14 to 30 days).',
+          'The low-level diagnostic tool git fsck --lost-found (File System Check) audits the repository object graph and identifies all "dangling objects"—commits and blobs that have no branch, tag, or reflog pointing to them. Once the dangling commit SHA is discovered, the engineer can inspect its diff with git show and effortlessly resurrect the lost work back into a safe branch using git merge or git branch recovery <commit-sha>.'
+        ],
+        example: 'Like throwing a document into a recycling bin in your home office. Removing the bookmark from your desk calendar (deleting branch pointer) does not incinerate the paper. As long as the cleaning crew has not emptied the bin into the furnace (git gc --prune), you can reach into the bin and pull the paper back out unharmed.',
+        code: `mkdir -p /home/student/workspace/git_recovery
+echo "FSCK_SCAN_STATUS: COMPLETED" > /home/student/workspace/git_recovery/salvage.log
+echo "DANGLING_COMMIT_FOUND: 7a8b9c0 (feat: uncommitted_payment_engine)" >> /home/student/workspace/git_recovery/salvage.log
+echo "DANGLING_BLOB_FOUND: 4d5e6f1 (size: 4096 bytes)" >> /home/student/workspace/git_recovery/salvage.log
+echo "SALVAGE_VERDICT: RECOVERED_INTO_REFS_HEADS_RECOVERY" >> /home/student/workspace/git_recovery/salvage.log
+cat /home/student/workspace/git_recovery/salvage.log
+grep "SALVAGE_VERDICT" /home/student/workspace/git_recovery/salvage.log`,
+        output: `FSCK_SCAN_STATUS: COMPLETED\nDANGLING_COMMIT_FOUND: 7a8b9c0 (feat: uncommitted_payment_engine)\nDANGLING_BLOB_FOUND: 4d5e6f1 (size: 4096 bytes)\nSALVAGE_VERDICT: RECOVERED_INTO_REFS_HEADS_RECOVERY\n\nSALVAGE_VERDICT: RECOVERED_INTO_REFS_HEADS_RECOVERY`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual git_recovery diagnostic directory' },
+          { line: 2, note: 'Confirms completion of full object graph fsck integrity scan' },
+          { line: 3, note: 'Discovers orphaned dangling commit 7a8b9c0 containing critical feature code' },
+          { line: 4, note: 'Discovers unreferenced file blob 4d5e6f1' },
+          { line: 5, note: 'Salvation confirmed by resurrecting dangling commit into new recovery branch' }
+        ],
+        tryIt: 'Filter for the rescued dangling commit SHA using grep "DANGLING_COMMIT_FOUND" /home/student/workspace/git_recovery/salvage.log.',
+        check: {
+          question: 'What is a "dangling commit" in a Git repository object database?',
+          options: [
+            'A commit object that is valid and present in .git/objects but is not reachable from any branch ref, tag, or reflog entry',
+            'A commit that contains syntax errors in TypeScript code',
+            'A commit created on a computer with low battery',
+            'A commit that has been rejected by the GitHub pull request reviewer'
+          ],
+          answer: 0,
+          why: 'A dangling commit exists physically in the Git object store but lacks any named reference (branch, tag, or reflog) pointing to it, allowing it to be recovered via git fsck before garbage collection.'
+        }
+      },
+      {
+        title: 'Next-Gen Merge Engines: Ort (Ostensibly Recursive\'s Twin) & Rerere Reuse',
+        say: [
+          'For nearly fifteen years, Git relied on the recursive merge strategy for combining diverging branch histories. While mathematically sound, recursive suffered from major algorithmic bottlenecks in enterprise monorepos: it performed redundant file I/O operations and exhibited quadratic O(N^2) complexity when tracking file renames across thousands of commits.',
+          'In Git 2.34, the Git core team replaced recursive with the brand new ORT merge engine (Ostensibly Recursive\'s Twin). Written from scratch by Elijah Newren, ORT redesigns merge resolution around clean separation of calculation from working-tree mutation. It processes rename detection up to 100 times faster, caches directory rename invariants, and resolves complex multi-branch merges with zero unnecessary filesystem I/O.',
+          'Complementing ORT is the Git superpower rerere (Reuse Recorded Resolution). When enabled via git config --global rerere.enabled true, Git secretly records how you resolve any merge conflict. If you subsequently rebase or merge the same conflicting branch branches again (for example, during long-lived feature development or cherry-picking), Git detects the exact conflict pattern and automatically applies your previous recorded solution with zero human intervention!'
+        ],
+        example: 'Like an experienced math tutor. The first time a complex puzzle causes an argument between students, the tutor works out the solution and writes it in a master notebook (rerere). Whenever that exact identical problem appears again in future semesters, the tutor immediately applies the known answer without re-doing the work.',
+        code: `mkdir -p /home/student/workspace/git_merge_ort
+echo "MERGE_STRATEGY: ORT (Ostensibly Recursive's Twin)" > /home/student/workspace/git_merge_ort/merge.log
+echo "RENAME_DETECTION: 100x_SPEEDUP_OVER_RECURSIVE" >> /home/student/workspace/git_merge_ort/merge.log
+echo "RERERE_ENABLED: RECORDED_RESOLUTION_REUSED" >> /home/student/workspace/git_merge_ort/merge.log
+echo "CONFLICT_RESOLUTION: AUTOMATED_ZERO_TOUCH" >> /home/student/workspace/git_merge_ort/merge.log
+cat /home/student/workspace/git_merge_ort/merge.log
+grep "RERERE_ENABLED" /home/student/workspace/git_merge_ort/merge.log`,
+        output: `MERGE_STRATEGY: ORT (Ostensibly Recursive's Twin)\nRENAME_DETECTION: 100x_SPEEDUP_OVER_RECURSIVE\nRERERE_ENABLED: RECORDED_RESOLUTION_REUSED\nCONFLICT_RESOLUTION: AUTOMATED_ZERO_TOUCH\n\nRERERE_ENABLED: RECORDED_RESOLUTION_REUSED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual git_merge_ort directory' },
+          { line: 2, note: 'Logs modern default ORT merge strategy' },
+          { line: 3, note: 'Highlights 100x rename detection performance acceleration in monorepos' },
+          { line: 4, note: 'Activates rerere (Reuse Recorded Resolution) conflict cache' },
+          { line: 5, note: 'Confirms automated zero-touch resolution of recurring merge conflict' }
+        ],
+        tryIt: 'Filter for the rename detection speedup metric using grep "RENAME_DETECTION" /home/student/workspace/git_merge_ort/merge.log.',
+        check: {
+          question: 'What is the primary function of Git\'s "rerere" (Reuse Recorded Resolution) feature?',
+          options: [
+            'It records how a developer manually resolves a conflict and automatically re-applies that identical resolution if the same conflict recurs later',
+            'It rewrites Git commit authors to anonymous pseudonyms',
+            'It converts merge conflicts into pull request comments',
+            'It restarts the computer after a failed merge'
+          ],
+          answer: 0,
+          why: 'rerere stores pre-image and post-image conflict diffs. When the same conflict occurs during subsequent merges or rebases, rerere automatically applies the saved resolution.'
+        }
+      },
+      {
+        title: 'Historical Secret Purging & DAG Rewriting via git-filter-repo',
+        say: [
+          'Accidentally committing sensitive secrets—such as production database passwords, Stripe private keys, or AWS IAM secret keys—is one of the most critical security incidents an engineering organization can face. A widespread mistake made by novice developers is simply removing the secret in a new commit and pushing again. Because Git preserves all historical revisions, the secret remains completely visible and readable to anyone who clones or inspects the commit log!',
+          'To permanently eliminate leaked credentials, the entire Directed Acyclic Graph (DAG) must be rewritten to purge the file or string from every historical commit. The legacy tool git filter-branch was notoriously slow and prone to corrupting repository metadata. Modern Git standards mandate the use of git-filter-repo.',
+          'git-filter-repo operates directly over Git fast-import streams, traversing hundreds of thousands of commits in seconds. When rewriting history, it strips the offending token, recalculates cryptographic SHA hashes for all descendant tree and commit objects, updates commit author signatures, and prunes orphaned histories. Once rewritten, developers must force-push with lease and immediately rotate the compromised credential in the production cloud console.'
+        ],
+        example: 'Like removing a contaminated chemical from a municipal water supply pipe. You cannot simply turn off the faucet at your sink today (new commit); you must flush the entire underground pipeline back to the reservoir to ensure not a single trace remains in the system.',
+        code: `mkdir -p /home/student/workspace/git_filter_repo
+echo "PURGE_TARGET: AWS_SECRET_ACCESS_KEY" > /home/student/workspace/git_filter_repo/audit.log
+echo "HISTORY_REWRITTEN: 450_COMMITS_CLEANSED" >> /home/student/workspace/git_filter_repo/audit.log
+echo "NEW_ROOT_COMMIT_SHA: c108da9" >> /home/student/workspace/git_filter_repo/audit.log
+echo "CREDENTIAL_LEAK_STATUS: COMPLETELY_ERADICATED" >> /home/student/workspace/git_filter_repo/audit.log
+cat /home/student/workspace/git_filter_repo/audit.log
+grep "CREDENTIAL_LEAK_STATUS" /home/student/workspace/git_filter_repo/audit.log`,
+        output: `PURGE_TARGET: AWS_SECRET_ACCESS_KEY\nHISTORY_REWRITTEN: 450_COMMITS_CLEANSED\nNEW_ROOT_COMMIT_SHA: c108da9\nCREDENTIAL_LEAK_STATUS: COMPLETELY_ERADICATED\n\nCREDENTIAL_LEAK_STATUS: COMPLETELY_ERADICATED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual git_filter_repo security audit directory' },
+          { line: 2, note: 'Identifies leaked AWS secret access credential targeted for eradication' },
+          { line: 3, note: 'Rewrites 450 historical commits across all branches using fast-import streams' },
+          { line: 4, note: 'Generates new cryptographic commit SHAs throughout rewritten history' },
+          { line: 5, note: 'Confirms credential leak completely eradicated from repository DAG' }
+        ],
+        tryIt: 'Filter for the count of cleansed historical commits using grep "HISTORY_REWRITTEN" /home/student/workspace/git_filter_repo/audit.log.',
+        check: {
+          question: 'Why is adding a new commit that deletes a secret file insufficient for remediating an API key leak in Git?',
+          options: [
+            'Because the secret remains permanently recorded and downloadable in previous historical commit snapshots throughout the Git repository DAG',
+            'Because the delete commit will automatically be rejected by Git',
+            'Because deleting files causes merge conflicts across all branches',
+            'Because Git stores file names in plaintext DNS servers'
+          ],
+          answer: 0,
+          why: 'Git retains complete historical snapshots of every commit. Even if a file is deleted in a new commit, previous commits still contain the secret unless history is purged via git-filter-repo.'
+        }
+      },
+      {
+        title: 'Enterprise Multi-Remote Synchronization, Force-With-Lease & Branch Protection',
+        say: [
+          'In enterprise production environments, repositories rarely communicate with a single upstream server. High-availability organizations configure multi-remote architectures: a primary origin (such as GitHub Enterprise), an internal disaster recovery backup mirror (such as self-hosted GitLab), and localized regional caching mirrors.',
+          'When pushing changes after interactive rebases or emergency hotfixes, developers frequently require force pushes. However, the dangerous command git push --force acts as a blind bulldozer: if a teammate pushed three new commits to the branch while you were rebasing, --force will silently destroy and overwrite their work without warning!',
+          'Enterprise teams strictly mandate git push --force-with-lease. This flag performs a safety lease check: it only allows the force push if the remote branch ref matches your local tracking branch ref (meaning nobody has pushed new work since you last fetched). If new commits exist, the push is rejected immediately, protecting collaborative code.',
+          'Finally, Trunk-Based Development replaces complex, long-lived GitFlow branches with short-lived feature branches merged frequently into main. When paired with branch protection rules—enforcing status check gates, linear commit histories, and code review approvals—teams maintain continuous deployability with zero merge hell.'
+        ],
+        example: 'Like reserving a hotel room with a confirmation code. A standard force push is walking in and kicking whoever is in the room out without asking. Force-with-lease verifies that the room key in your hand matches the current reservation record before unlocking the door; if someone else checked in while you were away, the system pauses and alerts you.',
+        code: `mkdir -p /home/student/workspace/git_governance
+echo "PRIMARY_REMOTE: origin (github.com/org/repo)" > /home/student/workspace/git_governance/policy.log
+echo "BACKUP_MIRROR: upstream_mirror (gitlab.internal/org/repo)" >> /home/student/workspace/git_governance/policy.log
+echo "PUSH_SAFETY: FORCE_WITH_LEASE_ENFORCED" >> /home/student/workspace/git_governance/policy.log
+echo "BRANCH_PROTECTION: TRUNK_BASED_LINEAR_HISTORY" >> /home/student/workspace/git_governance/policy.log
+cat /home/student/workspace/git_governance/policy.log
+grep "PUSH_SAFETY" /home/student/workspace/git_governance/policy.log`,
+        output: `PRIMARY_REMOTE: origin (github.com/org/repo)\nBACKUP_MIRROR: upstream_mirror (gitlab.internal/org/repo)\nPUSH_SAFETY: FORCE_WITH_LEASE_ENFORCED\nBRANCH_PROTECTION: TRUNK_BASED_LINEAR_HISTORY\n\nPUSH_SAFETY: FORCE_WITH_LEASE_ENFORCED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual git_governance policy directory' },
+          { line: 2, note: 'Declares primary GitHub Enterprise upstream remote' },
+          { line: 3, note: 'Declares automated secondary disaster recovery mirror remote' },
+          { line: 4, note: 'Enforces force-with-lease safety check preventing teammate work overwrites' },
+          { line: 5, note: 'Enforces trunk-based development with linear git history protection' }
+        ],
+        tryIt: 'Filter for the branch protection policy using grep "BRANCH_PROTECTION" /home/student/workspace/git_governance/policy.log.',
+        check: {
+          question: 'Why is "git push --force-with-lease" strictly preferred over "git push --force" in collaborative team environments?',
+          options: [
+            'It checks that no other developer has updated the remote branch since your last fetch, preventing accidental destruction of teammates\' unmerged commits',
+            'It automatically pays the cloud hosting bill',
+            'It runs tests 50% faster than standard push',
+            'It converts the Git repository into an SVN repository'
+          ],
+          answer: 0,
+          why: 'force-with-lease validates that the remote ref has not moved since you last fetched, protecting against overwriting a colleague\'s work while still permitting force pushes of rebased commits.'
+        }
+      }
+    ],
+    summary: [
+      'Packfiles (.pack) and index fan-out tables (.idx) reduce repository disk footprints by 90% via sliding-window delta compression.',
+      'The git fsck --lost-found diagnostic tool discovers dangling commits and blobs, enabling disaster recovery before garbage collection pruning.',
+      'The ORT merge engine delivers 100x rename detection speedups over legacy recursive merges, while rerere automatically replays recorded conflict resolutions.',
+      'git-filter-repo rewrites commit DAG histories to permanently purge leaked credentials and sensitive tokens across all branches.',
+      'git push --force-with-lease provides atomic lease safety against team commit overwrites in Trunk-Based Development workflows.'
+    ],
+    projectStep: {
+      title: 'Architect an Enterprise Git Internals, Disaster Recovery & Governance Suite',
+      steps: [
+        'Inspect Git packfile binary archives and analyze sliding-window delta compression ratios against loose objects.',
+        'Execute a low-level git fsck diagnostic scan recovering unreferenced dangling commits and resurrecting orphaned branches.',
+        'Benchmark ORT merge engine rename detection performance and configure automated rerere conflict replay caches.',
+        'Execute a full git-filter-repo DAG rewrite eradicating sensitive leaked API credentials across entire commit histories.',
+        'Configure multi-remote synchronization policies enforcing force-with-lease push safety and trunk-based branch protections.'
+      ]
+    }
   }
 ];
 
