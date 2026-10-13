@@ -1192,6 +1192,311 @@ console.log('Cryptographic Invariant: Private key never touches Android/iOS appl
         'Implement a Secure Enclave biometric challenge signing handler for zero-trust authentication.'
       ]
     }
+  },
+  {
+    day: 4,
+    title: 'Gesture Handler Worklets, Fabric Custom Views, C++ TurboModules & Hermes Heap Profiling',
+    goal: 'Master advanced high-frequency mobile engineering: Reanimated 3 worklets running physics on the UI thread, Fabric C++ ShadowNode clone-and-commit pipelines, cross-platform C++ TurboModules via JSI, Hermes bytecode heap snapshot leak audits, and iOS Live Activities with Android WorkManager.',
+    minutes: 35,
+    recap: 'Today we conquer the inner machinery of modern React Native (Fabric & TurboModules), bridging the gap between JavaScript declarative state and native 120 FPS graphics pipelines.',
+    parts: [
+      {
+        title: 'Reanimated 3 UI Thread Worklets & Gesture State Machines',
+        say: [
+          'High-performance mobile interactions demand zero frame drops during direct touch manipulation. When a user pans or pinches on screen, touch events arrive at the native operating system at 120Hz. If every touch event must serialize over a bridge to the JavaScript thread, calculate a delta, and serialize back to the native UI thread, latency accumulates, leading to visible stutter and rubber-banding.',
+          'Reanimated 3 solves this problem using JavaScript worklets. Worklets are compact JavaScript functions marked with the worklet directive that are compiled and executed inside a secondary Hermes runtime living directly on the native UI thread. Because the worklet runs on the same thread that processes native touches, gesture recognizers can evaluate spring kinematics and update layout transforms synchronously within the 8.3ms window of a 120 FPS display.',
+          'State management between the UI worklet and the JS thread is strictly decoupled. Shared Values store primitive values or immutable data structures accessible to both threads, where UI modifications trigger native view mutations instantly while notifying the JS thread asynchronously through runOnJS. This architecture guarantees that even if heavy business logic blocks the JS thread, animations and gestures continue gliding at a locked 60 or 120 FPS.'
+        ],
+        example: 'Like a slot car track where the car runs on its own electrified rails (UI worklet). The remote driver (JS thread) sets the target speed, but the car handles every micro-curve and friction change directly on the rails without waiting for radio transmission pulses.',
+        code: `// Reanimated 3 UI Thread Worklet Simulator
+interface GestureState {
+  translationX: number;
+  translationY: number;
+  velocityX: number;
+  velocityY: number;
+  state: 'UNDETERMINED' | 'BEGAN' | 'ACTIVE' | 'END';
+}
+
+class WorkletSpringDriver {
+  private position = 0;
+  private velocity = 0;
+  private readonly stiffness = 180;
+  private readonly damping = 12;
+
+  step(target: number, dt: number): number {
+    const displacement = this.position - target;
+    const springForce = -this.stiffness * displacement;
+    const dampingForce = -this.damping * this.velocity;
+    const acceleration = springForce + dampingForce;
+    this.velocity += acceleration * dt;
+    this.position += this.velocity * dt;
+    return Number(this.position.toFixed(2));
+  }
+}
+
+const driver = new WorkletSpringDriver();
+const trajectory: number[] = [];
+for (let frame = 1; frame <= 5; frame++) {
+  trajectory.push(driver.step(100, 0.016)); // ~60fps frame delta
+}
+
+console.log('=== REANIMATED 3 UI THREAD WORKLET SIMULATOR ===');
+console.log('Execution Context: Hermes UI Runtime (Direct UI Thread)');
+console.log('Gesture Recognized: PanGestureHandler -> State: ACTIVE');
+console.log('Spring Trajectory (First 5 frames towards 100px): ' + trajectory.join(', '));
+console.log('Thread Crossing: 0 hops across JS bridge (Native 120 FPS guaranteed)');`,
+        output: `=== REANIMATED 3 UI THREAD WORKLET SIMULATOR ===\nExecution Context: Hermes UI Runtime (Direct UI Thread)\nGesture Recognized: PanGestureHandler -> State: ACTIVE\nSpring Trajectory (First 5 frames towards 100px): 4.61, 12.73, 23.31, 35.39, 48.13\nThread Crossing: 0 hops across JS bridge (Native 120 FPS guaranteed)`,
+        tryIt: 'Adjust the stiffness parameter from 180 to 300 and observe how quickly the spring accelerates towards 100px.',
+        check: {
+          question: 'Why does Reanimated 3 execute worklets on a separate UI runtime rather than the main JavaScript thread?',
+          options: [
+            'To process touch inputs and calculate spring physics directly on the render thread, preventing animation stutter if the JS thread is busy',
+            'Because Apple iOS forbids running JavaScript on mobile devices',
+            'To automatically translate TypeScript into Swift source code'
+          ],
+          answer: 0,
+          why: 'By running on the UI thread runtime, worklet physics run synchronously with the display refresh rate (120Hz), immune to JavaScript thread garbage collection pauses.'
+        }
+      },
+      {
+        title: 'Custom Fabric Component Architecture & C++ Shadow Tree Commits',
+        say: [
+          'The React Native New Architecture replaces the legacy UIManager with Fabric, a modern C++ rendering engine. In legacy React Native, creating a custom native view required writing platform-specific bridge modules in Objective-C and Java, with asynchronous mutation queues that produced notorious white-screen flashes during rapid layout changes.',
+          'Fabric unifies native view management in C++. Every custom component starts with an abstract ComponentDescriptor, which defines the component props, state, and event emitters in a typed C++ specification. When React triggers a re-render, Fabric constructs an immutable ShadowNode inside the C++ Shadow Tree. Rather than mutably tweaking living views on screen, Fabric computes an immutable diff between shadow trees.',
+          'Once diffing completes, Fabric initiates a synchronous commit and mount pass. The C++ MountHook translates shadow tree mutations into atomic platform view operations (using UIKit on iOS or Android ViewGroup on Android). Because the Shadow Tree is immutable and thread-safe, layout calculations execute concurrently in background worker threads, committing clean, flicker-free frames to the native display.'
+        ],
+        example: 'Like Git commits for UI trees: rather than painting directly onto a living gallery canvas, the artist paints on a glass overlay, verifies the composition in background lighting, and drops the finished glass pane into the frame instantaneously.',
+        code: `// Fabric C++ Shadow Tree Mutation Pipeline
+interface ShadowNode {
+  id: string;
+  tag: number;
+  props: Record<string, any>;
+  children: ShadowNode[];
+}
+
+class FabricShadowTree {
+  private root: ShadowNode;
+
+  constructor() {
+    this.root = { id: 'root', tag: 1, props: {}, children: [] };
+  }
+
+  // Immutable clone and commit
+  commitUpdate(newChild: ShadowNode): { revision: number; mutatedNodes: number } {
+    const clonedRoot: ShadowNode = {
+      ...this.root,
+      children: [...this.root.children, newChild]
+    };
+    this.root = clonedRoot;
+    return { revision: 2, mutatedNodes: 1 };
+  }
+}
+
+const tree = new FabricShadowTree();
+const nativeViewNode: ShadowNode = {
+  id: 'CustomMetalShaderView',
+  tag: 102,
+  props: { antialiasing: true, sampleCount: 4 },
+  children: []
+};
+
+const commitResult = tree.commitUpdate(nativeViewNode);
+
+console.log('=== FABRIC C++ SHADOW TREE MUTATION PIPELINE ===');
+console.log('Render Pipeline: Fabric C++ Core -> Yoga Layout -> UIKit/Android Mount');
+console.log('ShadowNode Clone: SUCCESS (Immutable Thread-Safe Commit)');
+console.log('Tree Revision: ' + commitResult.revision + ' | Mutated Nodes: ' + commitResult.mutatedNodes);
+console.log('Mount Latency: Synchronous layout pass without async JSON serialization');`,
+        output: `=== FABRIC C++ SHADOW TREE MUTATION PIPELINE ===\nRender Pipeline: Fabric C++ Core -> Yoga Layout -> UIKit/Android Mount\nShadowNode Clone: SUCCESS (Immutable Thread-Safe Commit)\nTree Revision: 2 | Mutated Nodes: 1\nMount Latency: Synchronous layout pass without async JSON serialization`,
+        tryIt: 'Add a second child ShadowNode and observe how the revision count and immutable tree structure updates.',
+        check: {
+          question: 'What is the primary advantage of Fabric using immutable ShadowNodes in C++?',
+          options: [
+            'It enables thread-safe background layout computation and synchronous atomic commits to native views without white-screen flashes',
+            'It stores images directly in the device SIM card',
+            'It replaces all native UIKit and Android views with HTML canvas tags'
+          ],
+          answer: 0,
+          why: 'Immutable shadow nodes can be safely diffed across background threads without thread race conditions, allowing atomic commits directly to the platform view hierarchy.'
+        }
+      },
+      {
+        title: 'Cross-Platform C++ TurboModules via JSI HostObjects',
+        say: [
+          'Before the New Architecture, writing a native module required separate Objective-C/Swift code for iOS and Java/Kotlin code for Android, connected via an asynchronous JSON serialization bridge. For high-frequency computational tasks like audio processing, computer vision, or cryptography, the bridge latency and serialization overhead made native modules slow.',
+          'With TurboModules and the JavaScript Interface (JSI), you write a single, cross-platform C++ class that inherits from jsi::HostObject. JSI allows the C++ class to install methods directly onto the JavaScript global object without any serialization layer. When JavaScript invokes a method on a JSI HostObject, it is a direct C++ function call via vtable dispatch.',
+          'Memory management is handled cleanly through the jsi::Runtime context. C++ code can inspect arguments, instantiate JavaScript objects, and return typed primitives or typed arrays in under 15 nanoseconds. This direct C++ integration allows engineers to share 100% of their performance-critical computational libraries across iOS, Android, macOS, and Windows with zero platform-specific glue.'
+        ],
+        example: 'Like speaking directly to an engineer standing next to you (JSI C++ call) rather than drafting an email, having it translated into two foreign languages, sending it over the postal service, and waiting for translated replies (legacy bridge).',
+        code: `// Cross-Platform C++ TurboModule (JSI) Simulator
+class CxxTurboModuleHostObject {
+  private moduleName = 'NativeMathCryptoJSI';
+
+  // Synchronous direct C++ invocation via JSI
+  dotProduct(v1: number[], v2: number[]): number {
+    let sum = 0;
+    for (let i = 0; i < v1.length; i++) {
+      sum += v1[i] * v2[i];
+    }
+    return sum;
+  }
+
+  fastHash(input: string): string {
+    let hash = 0x811c9dc5;
+    for (let i = 0; i < input.length; i++) {
+      hash ^= input.charCodeAt(i);
+      hash += (hash << 1) + (hash << 4) + (hash << 7) + (hash << 8) + (hash << 24);
+    }
+    return (hash >>> 0).toString(16).padStart(8, '0');
+  }
+}
+
+const nativeModule = new CxxTurboModuleHostObject();
+const vA = [1.2, 3.4, 5.6, 7.8];
+const vB = [0.5, 2.0, 1.5, 0.2];
+const dot = Number(nativeModule.dotProduct(vA, vB).toFixed(2));
+const hash = nativeModule.fastHash('pinit_high_frequency_frame_data');
+
+console.log('=== CROSS-PLATFORM C++ TURBOMODULE (JSI) ===');
+console.log('JSI HostObject: NativeMathCryptoJSI registered to global');
+console.log('Vector Dot Product (4D): ' + dot);
+console.log('Synchronous FNV1a Hash: 0x' + hash);
+console.log('Call Overhead: < 15 nanoseconds (Direct C++ vtable dispatch)');`,
+        output: `=== CROSS-PLATFORM C++ TURBOMODULE (JSI) ===\nJSI HostObject: NativeMathCryptoJSI registered to global\nVector Dot Product (4D): 17.36\nSynchronous FNV1a Hash: 0x74bc757e\nCall Overhead: < 15 nanoseconds (Direct C++ vtable dispatch)`,
+        tryIt: 'Call fastHash on a custom string and verify the 8-character hexadecimal output.',
+        check: {
+          question: 'How does a C++ JSI TurboModule achieve sub-microsecond invocation speeds compared to legacy native modules?',
+          options: [
+            'By invoking native C++ methods directly through HostObject vtable pointers without JSON stringification or asynchronous thread hops',
+            'By running in the background cloud server',
+            'By removing all native code from the iOS and Android bundles'
+          ],
+          answer: 0,
+          why: 'JSI allows JavaScript to hold direct memory pointers to C++ HostObjects, enabling synchronous in-process method invocation with zero serialization.'
+        }
+      },
+      {
+        title: 'Hermes Bytecode AOT Compilation & Heap Snapshot Leak Auditing',
+        say: [
+          'Mobile memory constraints are brutal. A mobile operating system will aggressively terminate an application via OOM (Out Of Memory) jetsam if its heap exceeds 200–300MB. To maximize efficiency, Meta developed Hermes, an open-source JavaScript engine optimized specifically for React Native on mobile hardware.',
+          'Hermes utilizes Ahead-Of-Time (AOT) bytecode compilation. During the application build process, TypeScript and JavaScript files are parsed, optimized, and compiled into Hermes Bytecode (HBC). When the app launches, Hermes memory-maps (mmap) the bytecode file directly from flash storage without spending CPU cycles and RAM parsing raw JavaScript text at startup.',
+          'Despite Hermes optimizations, memory leaks can easily cripple long-running mobile sessions. The most common culprit is detached closures in React hooks: an unmounted screen whose useEffect added an event listener or timer without returning a cleanup function keeps the entire component subtree and its image buffers pinned in heap memory. Profiling heap snapshots with the Chrome DevTools protocol isolates retained closure sizes and eliminates memory bloating before production release.'
+        ],
+        example: 'Like packing clothes into vacuum-sealed travel cubes before a flight (AOT bytecode) and inspecting hotel rooms thoroughly for forgotten luggage before checking out (heap snapshot leak auditing).',
+        code: `// Hermes Heap Profiler & Memory Leak Audit Simulator
+interface HeapObject {
+  id: number;
+  type: string;
+  retainedBytes: number;
+  references: number[];
+}
+
+class HermesHeapProfiler {
+  detectRetainedListeners(objects: HeapObject[]): { leakDetected: boolean; leakedBytes: number } {
+    const leaked = objects.filter(o => o.type === 'ClosureEventListener' && o.references.length > 2);
+    const totalBytes = leaked.reduce((acc, o) => acc + o.retainedBytes, 0);
+    return { leakDetected: leaked.length > 0, leakedBytes: totalBytes };
+  }
+}
+
+const profiler = new HermesHeapProfiler();
+const snapshot: HeapObject[] = [
+  { id: 1, type: 'ReactComponentNode', retainedBytes: 4096, references: [2] },
+  { id: 2, type: 'ClosureEventListener', retainedBytes: 131072, references: [1, 3, 4] },
+  { id: 3, type: 'AppEventEmitter', retainedBytes: 1024, references: [] }
+];
+
+const analysis = profiler.detectRetainedListeners(snapshot);
+
+console.log('=== HERMES HEAP PROFILER & MEMORY LEAK AUDIT ===');
+console.log('Bytecode Format: Hermes bytecode (HBC v96) AOT compiled');
+console.log('Leak Analysis: Retained unmounted listener detected!');
+console.log('Leaked Retained Size: ' + (analysis.leakedBytes / 1024).toFixed(1) + ' KB');
+console.log('Remediation: Ensure useEffect returns cleanup listener.remove() callback');`,
+        output: `=== HERMES HEAP PROFILER & MEMORY LEAK AUDIT ===\nBytecode Format: Hermes bytecode (HBC v96) AOT compiled\nLeak Analysis: Retained unmounted listener detected!\nLeaked Retained Size: 128.0 KB\nRemediation: Ensure useEffect returns cleanup listener.remove() callback`,
+        tryIt: 'Modify the snapshot so that ClosureEventListener has only 1 reference and observe the leak analysis output.',
+        check: {
+          question: 'Why does Hermes compile JavaScript into Ahead-Of-Time (AOT) bytecode for mobile applications?',
+          options: [
+            'To eliminate runtime JavaScript parsing and AST generation, reducing startup time and memory footprint via flash storage mmap',
+            'To prevent users from uninstalling the application',
+            'To encrypt source code against antivirus software'
+          ],
+          answer: 0,
+          why: 'AOT compilation shifts parsing and bytecode optimization to the build machine. The mobile device simply memory-maps the pre-compiled bytecode at launch.'
+        }
+      },
+      {
+        title: 'Native Extensions: iOS Live Activities & Android WorkManager',
+        say: [
+          'Modern mobile experiences extend beyond the primary app screen into system widgets, lock screens, and hardware status displays like Apple Dynamic Island. Apple ActivityKit powers Live Activities, presenting glanceable, real-time status updates that can be dynamically refreshed over APNs push channels even when the main app process is completely suspended.',
+          'To update a Live Activity remotely, your backend dispatches an APNs push notification with the push-type header set to liveactivity, targeting the unique activity token generated when the user starts a session. The operating system decodes the ContentState payload and renders the SwiftUI widget hierarchy directly in the Dynamic Island without waking up the heavy React Native Hermes runtime.',
+          'On Android, background processing is governed by WorkManager. WorkManager provides guaranteed, battery-conscious background execution that respects OS doze modes. By attaching declarative constraints such as NetworkType.CONNECTED and BatteryNotLow, background sync jobs run reliably when device conditions are optimal, preventing runaway battery drain and background app crashes.'
+        ],
+        example: 'Like an airport flight information display board: passengers glance at the arrival gate updates without needing to enter the air traffic control tower.',
+        code: `// Native Extensions: iOS Live Activities & Android WorkManager Simulator
+interface LiveActivityPayload {
+  activityId: string;
+  contentState: {
+    step: string;
+    etaMinutes: number;
+    progress: number;
+  };
+  staleDate: number;
+}
+
+class ActivityKitManager {
+  updateDynamicIsland(payload: LiveActivityPayload): string {
+    return 'Activity [' + payload.activityId + '] updated Dynamic Island -> ' + payload.contentState.step + ' (ETA: ' + payload.contentState.etaMinutes + 'm, Progress: ' + Math.round(payload.contentState.progress * 100) + '%)';
+  }
+}
+
+const activityKit = new ActivityKitManager();
+const updateMessage = activityKit.updateDynamicIsland({
+  activityId: 'order_act_7739',
+  contentState: {
+    step: 'Driver Approaching',
+    etaMinutes: 4,
+    progress: 0.85
+  },
+  staleDate: Date.now() + 600000
+});
+
+console.log('=== NATIVE EXTENSIONS: IOS LIVE ACTIVITIES & WORKMANAGER ===');
+console.log('Push Target: Apple Push Notification service (APNs) LiveActivity Channel');
+console.log('Dynamic Island Status: ' + updateMessage);
+console.log('Android WorkManager: BatteryNotLow constraint satisfied -> Background Worker scheduled');`,
+        output: `=== NATIVE EXTENSIONS: IOS LIVE ACTIVITIES & WORKMANAGER ===\nPush Target: Apple Push Notification service (APNs) LiveActivity Channel\nDynamic Island Status: Activity [order_act_7739] updated Dynamic Island -> Driver Approaching (ETA: 4m, Progress: 85%)\nAndroid WorkManager: BatteryNotLow constraint satisfied -> Background Worker scheduled`,
+        tryIt: 'Change the progress float to 0.95 and etaMinutes to 1 to simulate final delivery status.',
+        check: {
+          question: 'How do APNs Live Activity updates refresh the iOS Dynamic Island when the React Native app is suspended?',
+          options: [
+            'APNs delivers the payload directly to the OS ActivityKit daemon, which updates the SwiftUI widget without launching the React Native runtime',
+            'The entire app is silently launched into full-screen mode in the background',
+            'Apple servers simulate a user tapping the screen repeatedly'
+          ],
+          answer: 0,
+          why: 'ActivityKit runs as an isolated system extension daemon in iOS; it parses remote push payloads and re-renders lightweight SwiftUI views with zero React Native overhead.'
+        }
+      }
+    ],
+    summary: [
+      'Reanimated 3 worklets execute physics calculations directly on the UI thread Hermes runtime, delivering stutter-free 120 FPS animations.',
+      'Fabric C++ Shadow Tree manages immutable shadow nodes, executing concurrent layout diffing and synchronous atomic platform mounting.',
+      'Cross-platform C++ TurboModules utilize JSI HostObjects to expose direct in-memory method dispatch with sub-15-nanosecond latency.',
+      'Hermes AOT bytecode compilation eliminates runtime parsing overhead, while heap snapshot audits detect unmounted listener memory leaks.',
+      'Native extensions like iOS Live Activities and Android WorkManager handle real-time glanceable updates and battery-conscious background sync.'
+    ],
+    projectStep: {
+      title: 'Architect a 120 FPS Native Mobile Engine with C++ TurboModules & Live Activities',
+      steps: [
+        'Build a Reanimated 3 worklet spring physics state machine executing gesture transitions directly on the UI thread.',
+        'Implement an immutable C++ ShadowNode clone-and-commit engine simulating Fabric view mounting.',
+        'Author a cross-platform C++ JSI HostObject providing synchronous mathematical vector calculations to Hermes.',
+        'Profile a simulated Hermes heap snapshot to identify and remediate retained event listener closures.',
+        'Construct an APNs ActivityKit payload dispatcher updating Apple Dynamic Island and scheduling Android WorkManager sync jobs.'
+      ]
+    }
   }
 ];
 

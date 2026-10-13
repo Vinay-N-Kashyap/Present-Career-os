@@ -249,4 +249,43 @@ test('Blockchain Day 3: ERC Standards, Flash Loans, Gas Packing & Chainlink Orac
   assert.ok(blockchainLesson3.parts[4].output?.includes('CHAINLINK ORACLE STALE PRICE PROTECTION'));
 });
 
+test('Mobile Day 4: Gesture Worklets, Fabric Shadow Nodes, C++ JSI & Live Activities Verification', () => {
+  const mobileLesson4 = getLongLesson('mobile', 4);
+  assert.ok(mobileLesson4, 'mobile Day 4 must resolve');
+  assert.equal(mobileLesson4.day, 4);
+  assert.equal(mobileLesson4.parts.length, 5, 'mobile Day 4 must contain exactly 5 parts');
+  assert.ok(mobileLesson4.summary.length >= 4, 'mobile Day 4 must have comprehensive summary');
+  assert.ok(mobileLesson4.projectStep, 'mobile Day 4 must have projectStep');
+  assert.ok(mobileLesson4.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  for (let i = 0; i < mobileLesson4.parts.length; i++) {
+    const part = mobileLesson4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have >= 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(mobileLesson4.parts[0].code?.includes('WorkletSpringDriver'));
+  assert.ok(mobileLesson4.parts[0].output?.includes('REANIMATED 3 UI THREAD WORKLET SIMULATOR'));
+  assert.ok(mobileLesson4.parts[1].code?.includes('FabricShadowTree'));
+  assert.ok(mobileLesson4.parts[1].output?.includes('FABRIC C++ SHADOW TREE MUTATION PIPELINE'));
+  assert.ok(mobileLesson4.parts[2].code?.includes('CxxTurboModuleHostObject'));
+  assert.ok(mobileLesson4.parts[2].output?.includes('CROSS-PLATFORM C++ TURBOMODULE (JSI)'));
+  assert.ok(mobileLesson4.parts[3].code?.includes('HermesHeapProfiler'));
+  assert.ok(mobileLesson4.parts[3].output?.includes('HERMES HEAP PROFILER & MEMORY LEAK AUDIT'));
+  assert.ok(mobileLesson4.parts[4].code?.includes('ActivityKitManager'));
+  assert.ok(mobileLesson4.parts[4].output?.includes('NATIVE EXTENSIONS: IOS LIVE ACTIVITIES & WORKMANAGER'));
+});
+
 
