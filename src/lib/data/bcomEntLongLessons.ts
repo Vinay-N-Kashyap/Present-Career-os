@@ -423,5 +423,362 @@ print(f"Common:    \${exit_high['Common_Payout']:,}")`,
         'Simulate Series A pre-money option pool dilution and liquidation preference waterfall payouts.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ent',
+    day: 2,
+    title: 'Venture Debt, 409A Common Valuation, Secondary ROFR & Anti-Dilution Defense',
+    goal: 'Master advanced venture capital financing and corporate governance: venture debt covenants and warrant coverage algebra, IRC Section 409A common stock fair market value option strike calculations, secondary liquidity Right of First Refusal (ROFR) transfer waterfalls, down-round anti-dilution algebra (broad-based weighted average vs full ratchet), and founder equity vesting with double-trigger acceleration.',
+    minutes: 42,
+    recap: 'Day 1 mastered lean customer discovery, SAFE conversions, and Series A cap table waterfalls. Day 2 tackles mid-to-late stage financing: non-dilutive venture debt structures, 409A option pricing, secondary share transfers, and down-round anti-dilution defense.',
+    parts: [
+      {
+        title: 'Venture Debt Financing Mechanics & Warrant Coverage Algebra',
+        say: [
+          'Venture debt is a specialized loan product tailored for venture-backed startups with strong equity backing, provided by specialty banks (such as Silicon Valley Bank, Stifel, and Western Alliance) and dedicated venture debt funds (such as Runway Growth and Hercules Capital).',
+          'Unlike traditional commercial bank loans that require existing profitability and hard collateral (real estate, machinery), venture debt underwrites against the startup\'s enterprise value, intellectual property, and likelihood of raising subsequent equity rounds.',
+          'Founders use venture debt to extend their cash runway by 6 to 12 months between equity funding rounds, or as growth capital to achieve higher valuation milestones while minimizing dilution.',
+          'Venture debt carries two distinct cost components: cash interest (priced at Prime Rate / SOFR plus a margin spread, typically with a 12-to-18-month interest-only period followed by amortization) and equity warrant coverage (typically 5% to 10% of the loan principal in warrants to purchase preferred stock at the most recent equity round price).',
+          'Founders must rigorously monitor loan covenants: minimum cash liquidity covenants, trailing revenue minimums, and negative pledges on intellectual property. Breaching a covenant can trigger immediate loan acceleration and foreclosure.'
+        ],
+        example: 'A Series A SaaS company with $3,000,000 in cash borrows $2,000,000 of venture debt at 11.5% interest with 7.5% warrant coverage. During the 12-month interest-only period, monthly debt service is $19,166.67, and the lender receives warrants for 30,000 Series A shares at $5.00/share ($150,000 warrant value). The company gains 8 months of additional runway without selling 20% of the company.',
+        code: `# Simulation: Venture Debt Structure & Warrant Coverage Calculator
+from typing import Dict
+
+def calculate_venture_debt_structure(
+    loan_principal: float,
+    annual_interest_rate_pct: float,
+    warrant_coverage_pct: float,
+    preferred_strike_price: float,
+    interest_only_months: int = 12
+) -> Dict:
+    monthly_interest = (loan_principal * (annual_interest_rate_pct / 100.0)) / 12.0
+    warrant_dollar_value = loan_principal * (warrant_coverage_pct / 100.0)
+    warrant_shares_issued = int(warrant_dollar_value / preferred_strike_price)
+    annual_interest_paid = monthly_interest * interest_only_months
+
+    return {
+        "Loan_Principal": loan_principal,
+        "Monthly_IO_Payment": round(monthly_interest, 2),
+        "Total_Annual_Interest": round(annual_interest_paid, 2),
+        "Warrant_Coverage_Dollars": round(warrant_dollar_value, 2),
+        "Warrant_Shares_Issued": warrant_shares_issued,
+        "Warrant_Strike_Price": preferred_strike_price
+    }
+
+vd_res = calculate_venture_debt_structure(
+    loan_principal=2000000.0,
+    annual_interest_rate_pct=11.5,
+    warrant_coverage_pct=7.5,
+    preferred_strike_price=5.0
+)
+print(f"Loan: \${vd_res['Loan_Principal']} | Monthly IO: \${vd_res['Monthly_IO_Payment']}")
+print(f"Warrants: \${vd_res['Warrant_Coverage_Dollars']} ({vd_res['Warrant_Shares_Issued']} shares at \${vd_res['Warrant_Strike_Price']})")`,
+        output: `Loan: $2000000.0 | Monthly IO: $19166.67\nWarrants: $150000.0 (30000 shares at $5.0)`,
+        tryIt: 'Change annual_interest_rate_pct to 9.5% and warrant_coverage_pct to 5.0% to observe the reduced monthly interest payment and lower warrant share issuance.',
+        check: {
+          question: 'Why do venture debt lenders require warrant coverage (an equity kicker) in addition to charging cash interest on loans to startups?',
+          options: [
+            '(Recommended) Because venture loans bear equity-like default risk, warrants allow the lender to participate in outsized startup upside if the company becomes a unicorn.',
+            'Because federal law mandates that all corporate loans must issue voting common shares to commercial banks.',
+            'Because warrant coverage legally relieves the borrower from having to make monthly cash interest payments.',
+            'Because warrants allow the lender to replace the startup CEO if quarterly revenue drops by 2%.'
+          ],
+          answer: 0,
+          why: 'Startup borrowers often fail or burn through capital with limited physical collateral; the warrant kicker provides equity upside on winners to compensate the lender for default losses across their venture loan portfolio.',
+          answerIndex: 0,
+          explanation: 'Startup borrowers often fail or burn through capital with limited physical collateral; the warrant kicker provides equity upside on winners to compensate the lender for default losses across their venture loan portfolio.'
+        }
+      },
+      {
+        title: 'IRC Section 409A Common Stock Valuation & Lack of Marketability Discount',
+        say: [
+          'Section 409A of the United States Internal Revenue Code regulates nonqualified deferred compensation, including employee stock option grants. Under Section 409A, stock options granted to employees must be priced at or above the Fair Market Value (FMV) of the underlying common stock on the grant date.',
+          'If a private startup grants options at a strike price below FMV, the option recipient faces catastrophic tax consequences: immediate ordinary income tax on vesting plus a punitive 20% federal excise tax penalty and interest penalties.',
+          'To establish safe harbor protection against IRS penalties, startups must obtain an independent third-party appraisal (a "409A valuation") at least once every 12 months, or whenever a material financing event (such as a new priced equity round) occurs.',
+          'Common stock valuation is fundamentally different from preferred stock valuation: preferred stock carries seniority, liquidation preferences, redemption rights, and protective provisions, whereas common stock sits at the bottom of the liquidation waterfall and has no public liquidity.',
+          'Independent appraisers use Option Pricing Models (OPM) or Backsolve methods to allocate total enterprise value across capital structure liquidation preference breakpoints, applying a Discount for Lack of Marketability (DLOM, typically 20% to 35%) to calculate the FMV option strike price for common stock.'
+        ],
+        example: 'A startup raises a Series A round selling preferred shares at $10.00/share with a $15,000,000 liquidation preference. If employee options had to be priced at $10.00, employees would receive very little upside. An independent 409A valuation factors in liquidation preference seniority and lack of marketability to determine common stock FMV is $6.00/share, creating a defensible IRS safe-harbor strike price.',
+        code: `# Simulation: IRC Section 409A Common Stock FMV Strike Price Engine
+from typing import Dict
+
+def calculate_section_409a_valuation(
+    latest_preferred_price: float,
+    enterprise_value: float,
+    preferred_liquidation_preference: float,
+    lack_of_marketability_discount_pct: float = 25.0
+) -> Dict:
+    # Breakpoint equity value allocated to common stock
+    common_equity_pool = max(0.0, enterprise_value - preferred_liquidation_preference)
+    equity_coverage_ratio = common_equity_pool / enterprise_value if enterprise_value > 0 else 0.0
+
+    # Synthetic OPM discount (seniority + lack of marketability DLOM)
+    structural_seniority_discount_pct = (1.0 - equity_coverage_ratio) * 50.0
+    total_409a_discount_pct = min(80.0, structural_seniority_discount_pct + lack_of_marketability_discount_pct)
+
+    common_fmv_price = latest_preferred_price * (1.0 - total_409a_discount_pct / 100.0)
+
+    return {
+        "Preferred_Share_Price": latest_preferred_price,
+        "Common_Equity_Pool": round(common_equity_pool, 2),
+        "Total_409A_Discount_Pct": f"{round(total_409a_discount_pct, 1)}%",
+        "Common_Stock_FMV_Strike": round(common_fmv_price, 2)
+    }
+
+valuation_409a = calculate_section_409a_valuation(
+    latest_preferred_price=10.0,
+    enterprise_value=50000000.0,
+    preferred_liquidation_preference=15000000.0,
+    lack_of_marketability_discount_pct=25.0
+)
+print(f"Preferred Price: \${valuation_409a['Preferred_Share_Price']} | 409A Discount: {valuation_409a['Total_409A_Discount_Pct']}")
+print(f"Common Stock FMV Option Strike: \${valuation_409a['Common_Stock_FMV_Strike']}")`,
+        output: `Preferred Price: $10.0 | 409A Discount: 40.0%\nCommon Stock FMV Option Strike: $6.0`,
+        tryIt: 'Increase lack_of_marketability_discount_pct to 35.0% to observe how illiquidity discounts reduce the employee strike price, increasing employee upside potential.',
+        check: {
+          question: 'Why must common stock options granted to employees be priced at or above Fair Market Value (FMV) determined by an independent 409A valuation?',
+          options: [
+            '(Recommended) To comply with IRS safe harbor rules and protect employees from immediate taxable income and a punitive 20% federal excise tax penalty on unexercised options.',
+            'Because corporate law requires common stock options to be priced higher than the latest preferred stock round.',
+            'Because the SEC requires all private startup options to be registered on NASDAQ within 30 days of grant.',
+            'Because lower option strike prices increase corporate income tax liabilities for the startup.'
+          ],
+          answer: 0,
+          why: 'Under IRC Section 409A, issuing options below Fair Market Value constitutes deferred compensation without substantial risk of forfeiture, triggering immediate income recognition and a 20% excise tax penalty on the option recipient.',
+          answerIndex: 0,
+          explanation: 'Under IRC Section 409A, issuing options below Fair Market Value constitutes deferred compensation without substantial risk of forfeiture, triggering immediate income recognition and a 20% excise tax penalty on the option recipient.'
+        }
+      },
+      {
+        title: 'Secondary Share Liquidity, Company Bylaws & Right of First Refusal (ROFR)',
+        say: [
+          'As venture-backed companies remain private for a decade or longer prior to an initial public offering (IPO), early employees, advisors, and founders often face significant liquidity constraints while holding illiquid paper wealth.',
+          'Secondary transactions involve existing shareholders selling vested common shares directly to third-party secondary buyers or institutional funds, contrasting with primary financing rounds where the company creates and sells new shares to fund operations.',
+          'Startups strictly regulate private stock transfers in their Corporate Bylaws and Investors\' Rights Agreements (IRA) through Transfer Restrictions, Rights of First Refusal (ROFR), and Co-Sale (Tag-Along) agreements.',
+          'Under a standard ROFR protocol, when a shareholder receives a bona fide offer to sell shares, the company possesses Primary ROFR to match the terms and repurchase the shares into treasury. If the company declines or waives its right, Secondary ROFR passes to major preferred investors pro-rata.',
+          'If both the company and existing investors waive their rights, the transfer proceeds to the third-party buyer. ROFR mechanisms protect the startup from predatory outside funds, activist investors, or competitors acquiring cap table positions.'
+        ],
+        example: 'A founding engineer receives an offer from an outside fund to sell 20,000 shares at $4.50 ($90,000). The company lacks excess cash to buy them back, but the lead Series A VC exercises its secondary ROFR, purchasing the shares at $4.50 to increase its ownership stake without diluting other holders.',
+        code: `# Simulation: Secondary Stock Transfer & Right of First Refusal (ROFR) Router
+from typing import Dict
+
+class SecondaryShareTransactionRouter:
+    def __init__(self, company_cash_reserves: float, investor_rofr_participating: bool):
+        self.company_cash = company_cash_reserves
+        self.investor_rofr = investor_rofr_participating
+
+    def evaluate_secondary_transfer(
+        self,
+        seller_name: str,
+        shares_to_sell: int,
+        proposed_share_price: float
+    ) -> Dict:
+        total_transfer_cost = shares_to_sell * proposed_share_price
+
+        # Step 1: Company ROFR Check (Bylaws primary right to buy back)
+        if self.company_cash >= total_transfer_cost * 2.0:
+            buyer = "COMPANY_TREASURY_BUYBACK"
+            status = "EXERCISED_COMPANY_PRIMARY_ROFR"
+        elif self.investor_rofr:
+            buyer = "EXISTING_SERIES_A_LEAD_VC"
+            status = "EXERCISED_INVESTOR_SECONDARY_ROFR"
+        else:
+            buyer = "OUTSIDE_ACCREDITED_BUYER"
+            status = "ROFR_WAIVED_TRANSFERRED_TO_THIRD_PARTY"
+
+        return {
+            "Seller": seller_name,
+            "Shares": shares_to_sell,
+            "Share_Price": proposed_share_price,
+            "Total_Consideration": round(total_transfer_cost, 2),
+            "Acquiring_Party": buyer,
+            "ROFR_Status": status
+        }
+
+router = SecondaryShareTransactionRouter(company_cash_reserves=100000.0, investor_rofr_participating=True)
+sec_res = router.evaluate_secondary_transfer("Founding_Engineer_1", 20000, 4.50)
+print(f"Seller: {sec_res['Seller']} ({sec_res['Shares']} shares @ \${sec_res['Share_Price']})")
+print(f"Consideration: \${sec_res['Total_Consideration']} -> {sec_res['ROFR_Status']} by {sec_res['Acquiring_Party']}")`,
+        output: `Seller: Founding_Engineer_1 (20000 shares @ $4.5)\nConsideration: $90000.0 -> EXERCISED_INVESTOR_SECONDARY_ROFR by EXISTING_SERIES_A_LEAD_VC`,
+        tryIt: 'Set company_cash_reserves=500000.0 and rerun to observe the company treasury exercising its primary ROFR to retire the shares into company treasury.',
+        check: {
+          question: 'What is the primary corporate governance objective of enforcing a Right of First Refusal (ROFR) on private company stock transfers?',
+          options: [
+            '(Recommended) To prevent competitor or hostile third parties from entering the cap table and allow existing insiders or the company to consolidate ownership.',
+            'To guarantee that employees can never sell their shares under any circumstances prior to bankruptcy.',
+            'To force all outside buyers to purchase shares at a mandatory 50% discount to fair market value.',
+            'To automatically convert common stock into non-voting municipal bonds upon transfer.'
+          ],
+          answer: 0,
+          why: 'ROFR ensures that private companies and lead venture investors maintain control over who owns their equity, preventing activist investors or commercial competitors from acquiring cap table access.',
+          answerIndex: 0,
+          explanation: 'ROFR ensures that private companies and lead venture investors maintain control over who owns their equity, preventing activist investors or commercial competitors from acquiring cap table access.'
+        }
+      },
+      {
+        title: 'Down-Round Anti-Dilution: Broad-Based Weighted Average vs Full Ratchet',
+        say: [
+          'In economic downturns or periods of missed milestones, startups may be forced to raise an equity round at a valuation lower than their prior financing round—an event known as a "Down-Round".',
+          'Down-rounds trigger contractual anti-dilution protections negotiated by preferred stockholders in the Certificate of Incorporation, which protect investors against price-per-share devaluation by adjusting their conversion ratio into common stock.',
+          'There are two main anti-dilution formulas: Full Ratchet and Broad-Based Weighted Average.',
+          'Full Ratchet is extremely punitive to founders and employees: it retroactively reduces the investor\'s conversion price to the exact lower price per share paid in the new round, regardless of how small the new round is. This massively increases the investor\'s common share entitlement and severely dilutes common stockholders.',
+          'Broad-Based Weighted Average is the established Silicon Valley market standard: it adjusts the conversion price downward using a weighted formula that accounts for both the lower price AND the amount of capital raised relative to the total fully diluted capitalization (CP2 = CP1 * (A + B) / (A + C)). It protects investor capital while preserving critical founder equity incentives.'
+        ],
+        example: 'A venture capital firm invests in Series A at $10.00/share. In a downturn, Series B raises $5,000,000 at $5.00/share against a 10,000,000 fully diluted cap table. Full ratchet reduces Series A conversion price to $5.00 (doubling their share count and crushing founders). Broad-based weighted average adjusts the conversion price to $9.55, proportionally balancing protection and founder retention.',
+        code: `# Simulation: Down-Round Anti-Dilution Adjustment Calculator
+from typing import Dict
+
+def calculate_anti_dilution_adjustment(
+    original_conversion_price: float,
+    down_round_share_price: float,
+    pre_round_fully_diluted_shares: int,
+    new_capital_raised: float
+) -> Dict:
+    # 1. Full Ratchet: Conversion price immediately drops to new price
+    full_ratchet_cp = down_round_share_price
+
+    # 2. Broad-Based Weighted Average Formula:
+    # CP2 = CP1 * (A + B) / (A + C)
+    # A = Fully diluted shares before round
+    # B = Shares that would have been purchased at old price (New Capital / CP1)
+    # C = Shares actually issued in down round (New Capital / P2)
+    a = float(pre_round_fully_diluted_shares)
+    b = new_capital_raised / original_conversion_price
+    c = new_capital_raised / down_round_share_price
+    bb_weighted_avg_cp = original_conversion_price * ((a + b) / (a + c))
+
+    return {
+        "Original_Conversion_Price": original_conversion_price,
+        "Down_Round_Price": down_round_share_price,
+        "Full_Ratchet_Conversion_Price": round(full_ratchet_cp, 2),
+        "Broad_Based_Weighted_Average_CP": round(bb_weighted_avg_cp, 2),
+        "Full_Ratchet_Founder_Dilution_Impact": "CATASTROPHIC_FOUNDER_ERASURE",
+        "Weighted_Average_Impact": "STANDARD_BALANCED_COMPROMISE"
+    }
+
+anti_dilution = calculate_anti_dilution_adjustment(
+    original_conversion_price=10.0,
+    down_round_share_price=5.0,
+    pre_round_fully_diluted_shares=10000000,
+    new_capital_raised=5000000.0
+)
+print(f"Original CP: \${anti_dilution['Original_Conversion_Price']} | Down-Round: \${anti_dilution['Down_Round_Price']}")
+print(f"Full Ratchet CP: \${anti_dilution['Full_Ratchet_Conversion_Price']} vs Broad-Based CP: \${anti_dilution['Broad_Based_Weighted_Average_CP']}")`,
+        output: `Original CP: $10.0 | Down-Round: $5.0\nFull Ratchet CP: $5.0 vs Broad-Based CP: $9.55`,
+        tryIt: 'Increase new_capital_raised to $15,000,000 to see the broad-based conversion price adjust further downward to reflect the larger proportion of discounted equity.',
+        check: {
+          question: 'Why is Broad-Based Weighted Average anti-dilution considered far superior for company longevity compared to Full Ratchet anti-dilution?',
+          options: [
+            '(Recommended) Because it softens the dilution adjustment by factoring in the size of the round relative to total capitalization, preventing founder equity from being completely wiped out.',
+            'Because full ratchet forces the startup to immediately repay all previous venture capital in cash.',
+            'Because broad-based weighted average requires preferred investors to forfeit all board seats during a down-round.',
+            'Because full ratchet is illegal under Delaware corporate law and cannot be enforced in court.'
+          ],
+          answer: 0,
+          why: 'Broad-based weighted average accounts for the economic magnitude of the round (how much capital was actually raised at the lower price), preventing catastrophic dilution of founders and common employees that would otherwise destroy team incentives.',
+          answerIndex: 0,
+          explanation: 'Broad-based weighted average accounts for the economic magnitude of the round (how much capital was actually raised at the lower price), preventing catastrophic dilution of founders and common employees that would otherwise destroy team incentives.'
+        }
+      },
+      {
+        title: 'Founder Equity Vesting, 83(b) Tax Elections & Double-Trigger Acceleration',
+        say: [
+          'Founders must always issue their shares subject to reverse vesting agreements, typically over a 4-year period with a 1-year cliff (25% vesting after 12 months, followed by 1/48th monthly vesting). If a co-founder leaves prematurely without vesting, they would otherwise retain half the company while contributing nothing further.',
+          'Crucially, upon incorporation founders must file an IRC Section 83(b) election with the IRS within 30 days of stock issuance. By electing to be taxed on the nominal fair market value upfront ($0.0001/share), founders pay negligible taxes now and convert future equity appreciation into long-term capital gains, avoiding devastating ordinary income tax liabilities as shares vest at multimillion-dollar valuations.',
+          'During mergers and acquisitions (M&A), equity acceleration clauses determine what happens to unvested founder and executive equity.',
+          'Single-Trigger Acceleration automatically vests 100% of unvested shares upon a Change of Control (acquisition). Acquirers dislike single-trigger clauses because founders can cash out and leave immediately post-closing.',
+          'Double-Trigger Acceleration is the venture standard: it requires two distinct events: 1. A Change of Control occurs (the company is acquired), AND 2. The founder is terminated without cause (or resigns for "good reason" such as salary reduction or relocation) within 12 months post-acquisition. This aligns incentives: acquirers retain key leaders, while founders are shielded against being dismissed and deprived of their equity.'
+        ],
+        example: 'A founder with 4,000,000 shares is 2 years into a 4-year schedule (2,000,000 vested). The startup is acquired for $8.00/share and the new parent company eliminates the founder\'s role without cause. The double-trigger clause instantly accelerates the remaining 2,000,000 unvested shares, ensuring the founder receives the full $32,000,000 liquidity value.',
+        code: `# Simulation: Founder Equity Reverse Vesting & Double-Trigger Acceleration Engine
+from typing import Dict
+
+def calculate_founder_vesting_and_acceleration(
+    total_founder_shares: int,
+    months_elapsed: int,
+    company_acquired: bool,
+    founder_terminated_without_cause: bool,
+    exit_share_price: float
+) -> Dict:
+    # Standard 4-year monthly vesting with 1-year (12 month) cliff
+    if months_elapsed < 12:
+        vested_shares = 0
+    else:
+        vested_ratio = min(1.0, months_elapsed / 48.0)
+        vested_shares = int(total_founder_shares * vested_ratio)
+
+    unvested_shares = total_founder_shares - vested_shares
+
+    # Double-Trigger Acceleration Evaluation
+    # Trigger 1: Change of Control (Acquisition)
+    # Trigger 2: Involuntary Termination without Cause within 12 months
+    double_trigger_activated = company_acquired and founder_terminated_without_cause
+
+    if double_trigger_activated:
+        accelerated_shares = unvested_shares
+        final_vested_shares = total_founder_shares
+        acceleration_status = "DOUBLE_TRIGGER_EXECUTED_100_PCT_ACCELERATION"
+    else:
+        accelerated_shares = 0
+        final_vested_shares = vested_shares
+        acceleration_status = "STANDARD_MONTHLY_VESTING_PACING"
+
+    liquidity_value = final_vested_shares * exit_share_price
+
+    return {
+        "Total_Founder_Shares": total_founder_shares,
+        "Months_Elapsed": months_elapsed,
+        "Base_Vested_Shares": vested_shares,
+        "Double_Trigger_Activated": double_trigger_activated,
+        "Accelerated_Shares": accelerated_shares,
+        "Final_Payable_Shares": final_vested_shares,
+        "Total_Proceeds_Dollars": round(liquidity_value, 2),
+        "Acceleration_Status": acceleration_status
+    }
+
+vest_res = calculate_founder_vesting_and_acceleration(
+    total_founder_shares=4000000,
+    months_elapsed=24, # 50% vested base
+    company_acquired=True,
+    founder_terminated_without_cause=True,
+    exit_share_price=8.0
+)
+print(f"Months: {vest_res['Months_Elapsed']} | Base Vested: {vest_res['Base_Vested_Shares']} shares")
+print(f"Double-Trigger: {vest_res['Acceleration_Status']} -> Final: {vest_res['Final_Payable_Shares']} shares (\${vest_res['Total_Proceeds_Dollars']})")`,
+        output: `Months: 24 | Base Vested: 2000000 shares\nDouble-Trigger: DOUBLE_TRIGGER_EXECUTED_100_PCT_ACCELERATION -> Final: 4000000 shares ($32000000.0)`,
+        tryIt: 'Set founder_terminated_without_cause=False to observe standard vesting pacing without acceleration when the founder remains happily employed post-acquisition.',
+        check: {
+          question: 'Under what specific conditions does a standard Double-Trigger Equity Acceleration clause trigger 100% vesting of a founder or executive unvested stock?',
+          options: [
+            '(Recommended) Both a change of control (acquisition) occurs AND the founder is involuntarily terminated without cause (or constructive termination) within a defined post-closing window.',
+            'Only when the company completes an initial public offering (IPO) on a major global stock exchange.',
+            'Whenever the board of directors votes to replace the Chief Technology Officer during normal business operations.',
+            'Immediately upon signing a non-binding term sheet with an interested prospective acquirer.'
+          ],
+          answer: 0,
+          why: 'Double-trigger requires both Trigger 1 (Change of Control) and Trigger 2 (Involuntary termination without cause within 12-24 months), protecting the executive from being purged post-deal while reassuring acquirers that un-terminated executives will stay.',
+          answerIndex: 0,
+          explanation: 'Double-trigger requires both Trigger 1 (Change of Control) and Trigger 2 (Involuntary termination without cause within 12-24 months), protecting the executive from being purged post-deal while reassuring acquirers that un-terminated executives will stay.'
+        }
+      }
+    ],
+    summary: [
+      'Venture debt provides non-dilutive runway extension structured as senior loans with interest-only periods and 5-10% warrant coverage.',
+      'IRC Section 409A appraisals establish independent Fair Market Value strike prices for common stock options, shielding employees from 20% excise tax penalties.',
+      'Secondary stock sales are governed by Rights of First Refusal (ROFR), enabling the company and primary VCs to preserve cap table control before shares transfer to third parties.',
+      'Down-round anti-dilution adjusts conversion prices to protect early investors; Broad-Based Weighted Average cushions dilution while Full Ratchet severely erodes founder ownership.',
+      'Founder vesting with Section 83(b) tax elections and double-trigger M&A acceleration protects both company equity stability and founder exit upside.'
+    ],
+    projectStep: {
+      title: 'Advanced Venture Financing & Governance Engine',
+      steps: [
+        'Model venture debt amortizations and warrant coverage equity dilution tradeoffs.',
+        'Calculate 409A option strike prices applying lack of marketability discounts against preferred stock breakpoints.',
+        'Simulate secondary share transfer workflows through company and investor ROFR gates.',
+        'Contrast broad-based weighted average versus full ratchet dilution impacts in severe down-rounds.'
+      ]
+    }
   }
 ];
+
