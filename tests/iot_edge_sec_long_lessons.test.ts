@@ -30,6 +30,11 @@ test('IoT Edge & IoT Sec Long Lessons: Resolution & Language Invariants', () => 
   assert.ok(secLesson.summary.length >= 4, 'iot_sec Day 1 must contain comprehensive summary');
   assert.ok(secLesson.projectStep, 'iot_sec Day 1 must have a hands-on project step');
   assert.equal(getLongLessonLanguage('iot_sec'), 'python');
+
+  const secLesson2 = getLongLesson('iot_sec', 2);
+  assert.ok(secLesson2, 'iot_sec Day 2 long lesson must resolve');
+  assert.equal(secLesson2.day, 2);
+  assert.equal(secLesson2.parts.length, 5, 'iot_sec Day 2 must contain exactly 5 parts');
 });
 
 test('IoT Edge Day 1: Edge AI & INT8 Quantization Python Code Snippets & Socratic Checks Verification', () => {
@@ -107,4 +112,41 @@ test('IoT Edge Day 2: Depthwise Convolutions, Autoencoders, Pruning, MCUNet & Lo
   assert.ok(edgeLesson2.parts[3].code?.includes('calculate_peak_sram_activation_footprint'));
   assert.ok(edgeLesson2.parts[4].code?.includes('compute_log_mel_spectrogram_features'));
 });
+
+test('IoT Sec Day 2: HKDF Key Derivation, AES-GCM AEAD, DPA Masking, Tamper Zeroization & Anti-Replay Snippets Verification', () => {
+  const secLesson2 = getLongLesson('iot_sec', 2);
+  assert.ok(secLesson2, 'iot_sec Day 2 must resolve');
+  assert.equal(secLesson2.day, 2);
+  assert.equal(secLesson2.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(secLesson2);
+  const totalMin = estimateLessonMinutes(secLesson2);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < secLesson2.parts.length; i++) {
+    const part = secLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(secLesson2.parts[0].code?.includes('derive_hkdf_domain_keys'));
+  assert.ok(secLesson2.parts[1].code?.includes('simulate_aes_gcm_aead_pipeline'));
+  assert.ok(secLesson2.parts[2].code?.includes('simulate_dpa_boolean_masking'));
+  assert.ok(secLesson2.parts[3].code?.includes('evaluate_hardware_tamper_and_zeroization'));
+  assert.ok(secLesson2.parts[4].code?.includes('AntiReplaySlidingWindow'));
+});
+
 

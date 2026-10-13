@@ -318,5 +318,330 @@ print(f"Constant-Time Cycles (Wrong Last Byte):     {safe_cycles_2} cycles (DETE
         'Implement a constant-time cryptographic verification loop to prevent side-channel leaks.'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_sec',
+    day: 2,
+    title: 'Hardware Key Derivation, AES-GCM AEAD, DPA Masking & Active Zeroization',
+    goal: 'Master advanced physical and embedded cryptography: HKDF hardware key derivation from master HUKs, AES-GCM authenticated encryption against ciphertext tampering, Boolean masking against differential power analysis (DPA), active physical mesh tamper zeroization, and DTLS anti-replay sliding window verification.',
+    minutes: 45,
+    recap: 'Welcome to Day 2 of Hardware Security & Embedded Cryptography. On Day 1, we established the bedrock: silicon eFuses, Mask ROM, Secure Boot signature verification, TrustZone bus isolation, and on-the-fly flash decryption. Today, we advance into real-world cryptographic defense: deriving domain-separated session keys, preventing ciphertext forgery, masking power consumption to defeat side-channel oscilloscopes, and engineering physical zeroization circuits.',
+    parts: [
+      {
+        title: 'Silicon Key Derivation: HKDF Extract-and-Expand from Hardware Unique Keys (HUK)',
+        say: [
+          'In production IoT microcontrollers (such as STM32H5, NXP LPC55S69, or ESP32-S3), the silicon chip contains an immutable 256-bit Hardware Unique Key (HUK) generated during foundry testing or derived from a Physical Unclonable Function (PUF).',
+          'A catastrophic architectural anti-pattern is using the master HUK directly to encrypt application files, database records, or network packets. If a single session key is compromised via memory inspection or differential cryptanalysis, the master identity of the device is permanently destroyed.',
+          'To isolate cryptographic security domains, embedded microcontrollers implement RFC 5869: HMAC-based Extract-and-Expand Key Derivation Function (HKDF). HKDF operates in two formal mathematical phases: (1) HKDF-Extract compresses the master HUK and an optional non-secret silicon salt into a Pseudorandom Key (PRK) using HMAC-SHA256, and (2) HKDF-Expand takes the PRK and a domain context string (e.g., "STORAGE_ENCRYPTION_KEY" or "TLS_SESSION_SHARED_KEY") to compute mathematically independent output keying material (OKM).',
+          'Because HKDF is a cryptographically one-way transformation, compromising a derived application key reveals zero information about the parent HUK or adjacent session keys, guaranteeing strict cryptographic compartmentalization across the entire device lifecycle.'
+        ],
+        example: 'Think of a master key blank at a locksmith. The locksmith never hands you the master blank to unlock your front door. Instead, they trace the master blank against specific lock cylinder templates to grind unique keys: one for the mailbox, one for the front door, and one for the garage. If you lose your mailbox key, your house remains 100% secure.',
+        code: `import hashlib
+import hmac
+
+# Simulation: HKDF Extract-and-Expand Key Derivation (RFC 5869)
+def derive_hkdf_domain_keys(master_huk: bytes, salt: bytes, context_info: str, length: int = 16) -> str:
+    # Phase 1: HKDF-Extract: PRK = HMAC-Hash(salt, master_huk)
+    prk = hmac.new(salt, master_huk, hashlib.sha256).digest()
+    # Phase 2: HKDF-Expand: OKM = HMAC-Hash(PRK, context_info || 0x01)
+    info_bytes = context_info.encode('utf-8') + b'\\x01'
+    derived_key = hmac.new(prk, info_bytes, hashlib.sha256).digest()[:length]
+    return derived_key.hex()
+
+master_huk = bytes.fromhex("0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef")
+salt = b"FACTORY_SILICON_SALT_2026"
+
+storage_key = derive_hkdf_domain_keys(master_huk, salt, "STORAGE_ENCRYPTION_KEY", 16)
+tls_key = derive_hkdf_domain_keys(master_huk, salt, "TLS_SESSION_SHARED_KEY", 16)
+attest_key = derive_hkdf_domain_keys(master_huk, salt, "DEVICE_ATTESTATION_KEY", 16)
+
+print(f"Hardware Master HUK:     {master_huk[:8].hex()}...")
+print(f"Derived Storage Key:     {storage_key}")
+print(f"Derived TLS Session Key: {tls_key}")
+print(f"Derived Attestation Key: {attest_key}")`,
+        output: `Hardware Master HUK:     0123456789abcdef...\nDerived Storage Key:     bf37cb1f14e98d676906450175e49138\nDerived TLS Session Key: 34efac5b9cf4216183c1bff1be8b21ab\nDerived Attestation Key: 8b4eac0a51b7b6872e32794125f55ce6`,
+        tryIt: 'Change the context string to "FIRMWARE_UPDATE_DECRYPT_KEY" and observe the derivation of a new cryptographically unique 128-bit key.',
+        check: {
+          question: 'Why should microcontrollers never use their master Hardware Unique Key (HUK) directly for application encryption?',
+          options: [
+            'Because compromising a single operational key would compromise the master root key and all other subsystem domains; HKDF provides cryptographic compartmentalization',
+            'Because the HUK is stored in floating-point format and cannot perform XOR operations',
+            'Because hardware unique keys expire every 24 hours',
+            'Because microcontrollers can only execute AES operations using odd-numbered keys'
+          ],
+          answer: 0,
+          why: 'HKDF isolates application security domains. A breach of a derived communication key reveals no mathematical insight into the underlying master HUK or adjacent domain keys.',
+          answerIndex: 0,
+          explanation: 'HKDF isolates application security domains. A breach of a derived communication key reveals no mathematical insight into the underlying master HUK or adjacent domain keys.'
+        }
+      },
+      {
+        title: 'AES-GCM Authenticated Encryption with Associated Data (AEAD) & Tamper Defense',
+        say: [
+          'In embedded IoT security, confidentiality alone is insufficient. If a sensor node encrypts a telemetry packet using basic AES in Cipher Block Chaining (AES-CBC) or Counter mode (AES-CTR) without cryptographic authentication, an adversary intercepting the wireless packet can perform bit-flipping attacks.',
+          'By flipping specific bits in ciphertext over the air, an attacker predictably alters the decrypted plaintext without knowing the encryption key (for example, flipping a bit to change "VALVE:CLOSE" into "VALVE:OPEN").',
+          'To prevent ciphertext malleability and payload tampering, modern microcontrollers incorporate hardware accelerators supporting Authenticated Encryption with Associated Data (AEAD), universally standardized around AES-GCM (Galois/Counter Mode).',
+          'AES-GCM combines CTR mode encryption with a Galois Field GHASH polynomial authenticator (GMAC). It generates a 128-bit authentication tag calculated over both the ciphertext and unencrypted Additional Authenticated Data (AAD)—such as device ID, packet sequence numbers, and protocol headers. If an attacker modifies even a single bit of ciphertext or header metadata, GMAC tag verification fails completely, and the packet is discarded before execution.'
+        ],
+        example: 'Think of a tamper-evident bank deposit bag. The money inside is shielded from sight (confidentiality via AES-CTR). Across the outside of the bag, the account number and store branch are written in plain text (AAD). The bag is sealed with a serialized chemical holographic seal (GMAC tag). If someone cuts the bag or alters the account number on the envelope, the seal fractures instantly, alerting bank tellers to reject the deposit.',
+        code: `import hashlib
+import hmac
+
+# Simulation: AES-GCM AEAD Authenticated Encryption Pipeline with GMAC
+def simulate_aes_gcm_aead_pipeline(plaintext: str, aad_metadata: str, key_hex: str) -> dict:
+    key_bytes = bytes.fromhex(key_hex)
+    pt_bytes = plaintext.encode('utf-8')
+    aad_bytes = aad_metadata.encode('utf-8')
+    # Simulated keystream generation
+    keystream = hashlib.sha256(key_bytes + b"NONCE_001").digest()[:len(pt_bytes)]
+    ciphertext = bytes(p ^ k for p, k in zip(pt_bytes, keystream))
+    # Simulated GMAC polynomial authentication tag over AAD + Ciphertext
+    tag = hmac.new(key_bytes, aad_bytes + ciphertext, hashlib.sha256).hexdigest()[:16]
+    return {
+        "ciphertext_hex": ciphertext.hex(),
+        "tag_hex": tag,
+        "is_valid": True
+    }
+
+def verify_aes_gcm_tag(ciphertext_hex: str, aad_metadata: str, tag_hex: str, key_hex: str) -> bool:
+    key_bytes = bytes.fromhex(key_hex)
+    ct_bytes = bytes.fromhex(ciphertext_hex)
+    aad_bytes = aad_metadata.encode('utf-8')
+    expected_tag = hmac.new(key_bytes, aad_bytes + ct_bytes, hashlib.sha256).hexdigest()[:16]
+    return hmac.compare_digest(tag_hex, expected_tag)
+
+key = "bf37cb1f14e98d676906450175e49138"
+enc_res = simulate_aes_gcm_aead_pipeline("CMD:ACTUATE_SOLENOID_VALVE", "DEVICE_ID:TURBINE_99;SEQ:1042", key)
+valid_verify = verify_aes_gcm_tag(enc_res["ciphertext_hex"], "DEVICE_ID:TURBINE_99;SEQ:1042", enc_res["tag_hex"], key)
+tampered_verify = verify_aes_gcm_tag("00" + enc_res["ciphertext_hex"][2:], "DEVICE_ID:TURBINE_99;SEQ:1042", enc_res["tag_hex"], key)
+
+print(f"AEAD Ciphertext:  {enc_res['ciphertext_hex']}")
+print(f"Auth Tag (GMAC):  {enc_res['tag_hex']}")
+print(f"Valid Tag Check:  {valid_verify}")
+print(f"Tamper Detected:  {not tampered_verify}")`,
+        output: `AEAD Ciphertext:  f204d2b556216d569fc5805c3a9cb12c8ff77643494e6d0cbd7a\nAuth Tag (GMAC):  a47beb9c4f62a07e\nValid Tag Check:  True\nTamper Detected:  True`,
+        tryIt: 'Modify the AAD metadata sequence number from 1042 to 1043 and verify that the authentication tag validation immediately rejects the packet.',
+        check: {
+          question: 'What vulnerability does AEAD (such as AES-GCM) prevent that standard unauthenticated symmetric encryption (like AES-CBC) leaves vulnerable?',
+          options: [
+            'Bit-flipping and ciphertext malleability attacks where adversaries modify encrypted payloads or header metadata without detection',
+            'Overconsumption of microcontroller battery current during low-power sleep',
+            'Compilation errors during link-time optimization',
+            'Slow serial baud rates over UART debug pins'
+          ],
+          answer: 0,
+          why: 'Unauthenticated encryption allows attackers to predictably modify decrypted plaintext by altering ciphertext bits. AEAD binds an integrity authentication tag to both ciphertext and metadata, instantly trapping any bit modification.',
+          answerIndex: 0,
+          explanation: 'Unauthenticated encryption allows attackers to predictably modify decrypted plaintext by altering ciphertext bits. AEAD binds an integrity authentication tag to both ciphertext and metadata, instantly trapping any bit modification.'
+        }
+      },
+      {
+        title: 'Differential Power Analysis (DPA) Countermeasures & Boolean Masking',
+        say: [
+          'Even when cryptographic algorithms are mathematically unbreakable, physical CMOS microcontrollers leak private key information into the analog universe through electromagnetic emissions and instantaneous power consumption.',
+          'Differential Power Analysis (DPA) works by measuring microscopic electrical current transients across a small shunt resistor on the MCU power supply pin using a high-speed digital oscilloscope. In CMOS logic, transistors consume current predominantly when switching between logical states (charging and discharging parasitic capacitances).',
+          'Consequently, power consumption correlates directly with the Hamming Weight (number of binary 1s) of internal registers. When an AES algorithm computes S-Box byte substitutions `S(p ^ k)`, an adversary collecting 10,000 power traces can correlate power spikes with candidate key bytes to recover the entire 128-bit key in minutes!',
+          'To defeat DPA, embedded cryptographic architectures employ Boolean Masking. Every sensitive intermediate state byte $X$ is split into two or more independent random shares: $X = X_1 \\oplus X_2$, where $X_2 = M$ is a cryptographically uniform random mask generated by a hardware True Random Number Generator (TRNG) each clock cycle. The S-Box computation is performed across the masked shares. The physical power trace now correlates only with the random mask $M$, completely decorrelating electromagnetic power consumption from the secret key $K$.'
+        ],
+        example: 'Think of weighing gold coins on a balance scale while an eavesdropper watches from across the room. If you weigh each coin directly, the scale needle position reveals its exact weight (Hamming weight leak). But if you throw a random handful of lead beads onto the scale with each coin and subtract the beads mathematically on a separate sheet of paper, the scale needle shows random noise to the observer while you still calculate the exact balance.',
+        code: `# Simulation: First-Order DPA Countermeasure via Boolean Masking
+def simulate_dpa_boolean_masking(secret_sbox_input: int, random_mask: int) -> dict:
+    # 1. Unmasked hardware execution (Vulnerable to DPA Hamming weight power leak)
+    unmasked_hw = bin(secret_sbox_input).count('1')
+    
+    # 2. Boolean Masking: Split secret into 2 independent shares
+    masked_share_1 = secret_sbox_input ^ random_mask
+    masked_share_2 = random_mask
+    
+    masked_hw_1 = bin(masked_share_1).count('1')
+    masked_hw_2 = bin(masked_share_2).count('1')
+    reconstructed = masked_share_1 ^ masked_share_2
+    
+    return {
+        "unmasked_input": hex(secret_sbox_input),
+        "unmasked_hamming_weight": unmasked_hw,
+        "share_1_masked": hex(masked_share_1),
+        "share_1_hw": masked_hw_1,
+        "share_2_mask": hex(masked_share_2),
+        "share_2_hw": masked_hw_2,
+        "leakage_decorrelated": unmasked_hw != masked_hw_1,
+        "reconstructed_matches": reconstructed == secret_sbox_input
+    }
+
+mask_eval = simulate_dpa_boolean_masking(0x3B, 0x94)
+
+print(f"Secret S-Box Byte: {mask_eval['unmasked_input']} (Hamming Weight: {mask_eval['unmasked_hamming_weight']})")
+print(f"Masked Share 1:    {mask_eval['share_1_masked']} (Masked HW: {mask_eval['share_1_hw']})")
+print(f"Mask Random Share: {mask_eval['share_2_mask']} (Random HW: {mask_eval['share_2_hw']})")
+print(f"DPA Power Signal Decorrelated: {mask_eval['leakage_decorrelated']}")
+print(f"Secret Preserved in Hardware:  {mask_eval['reconstructed_matches']}")`,
+        output: `Secret S-Box Byte: 0x3b (Hamming Weight: 5)\nMasked Share 1:    0xaf (Masked HW: 6)\nMask Random Share: 0x94 (Random HW: 3)\nDPA Power Signal Decorrelated: True\nSecret Preserved in Hardware:  True`,
+        tryIt: 'Test different secret bytes and random masks to verify that the masked Hamming weight never consistently reveals the unmasked Hamming weight.',
+        check: {
+          question: 'How does Boolean Masking protect AES implementations from Differential Power Analysis (DPA) attacks?',
+          options: [
+            'It splits sensitive intermediate data into multiple XOR shares combined with random noise, decoupling physical power consumption from secret key bits',
+            'It doubles the supply voltage of the microcontroller to burn out attacker oscilloscopes',
+            'It wraps the microcontroller in lead shielding to block Wi-Fi signals',
+            'It converts AES keys into plaintext ASCII strings'
+          ],
+          answer: 0,
+          why: 'Boolean masking ensures that intermediate calculations process statistically independent random shares. An attacker measuring instantaneous current sees only the power profile of TRNG noise rather than key-dependent Hamming weights.',
+          answerIndex: 0,
+          explanation: 'Boolean masking ensures that intermediate calculations process statistically independent random shares. An attacker measuring instantaneous current sees only the power profile of TRNG noise rather than key-dependent Hamming weights.'
+        }
+      },
+      {
+        title: 'Hardware Tamper Enclosures, Environmental Probes & Active Silicon Zeroization',
+        say: [
+          'When edge devices operate in hostile physical environments (e.g., payment terminals, utility smart meters, defense sensors), attackers can attempt invasive physical reverse engineering: decapping the chip package with fuming nitric acid, drilling into the silicon die, probing internal bus lines with focused ion beams (FIB), or freezing the chip with liquid nitrogen to preserve volatile SRAM charge.',
+          'To achieve FIPS 140-3 Level 3/4 and Common Criteria EAL6+ physical security, microcontrollers incorporate active physical tamper enclosures and hardware environmental monitoring circuitry powered by a continuous microampere battery backup domain (VBAT).',
+          'Physical tamper defenses include: (1) Active Wire Meshes: fine serpentine conductive traces crisscrossing the top metal layer of the silicon die, continuously pulsed with pseudorandom signals—any laser cutting or drilling breaks the circuit; (2) Cryogenic & Thermal Probes: detecting sudden freezing below -35°C (preventing cold-boot memory retention attacks) or overheating above 105°C; and (3) Voltage Glitch Detectors: sensing sharp brownouts designed to induce instruction skips.',
+          'Upon detecting any tamper trigger, a dedicated hardware Active Zeroization circuit fires. Within nanoseconds, the zeroization hardware connects the power rails of battery-backed SRAM key registers directly to ground, pulverizing all Hardware Unique Keys and encryption secrets to permanent zeroes before physical probes can read a single bit.'
+        ],
+        example: 'Think of a self-destruct mechanism on a diplomatic briefcase. If someone cuts through the lock clasp or attempts to drill into the case with a hole saw, a canister of thermite incinerates the confidential paper documents inside in a split second, leaving the intruder with useless ash.',
+        code: `# Simulation: Physical Tamper Sensor Matrix & Active Hardware Zeroization Circuit
+def evaluate_hardware_tamper_and_zeroization(active_mesh_closed: bool, ambient_temp_c: float, supply_voltage: float, sram_keys: dict) -> dict:
+    tamper_detected = False
+    reasons = []
+    
+    # 1. Active silicon mesh continuity check (Detects die drilling / FIB milling)
+    if not active_mesh_closed:
+        tamper_detected = True
+        reasons.append("MESH_OPEN_CIRCUIT_DRILL_DETECTED")
+        
+    # 2. Environmental temperature sensor check (Detects cryogenic freezing attacks)
+    if ambient_temp_c < -35.0:
+        tamper_detected = True
+        reasons.append("CRYOGENIC_FREEZE_ATTACK_DETECTED")
+    elif ambient_temp_c > 105.0:
+        tamper_detected = True
+        reasons.append("THERMAL_OVERHEAT_ATTACK_DETECTED")
+        
+    # 3. Fast analog supply voltage glitch detector (Detects voltage brownout injection)
+    if supply_voltage < 1.62 or supply_voltage > 3.63:
+        tamper_detected = True
+        reasons.append("VOLTAGE_GLITCH_INJECTION_DETECTED")
+
+    active_keys = dict(sram_keys)
+    if tamper_detected:
+        # Hardware Zeroization Circuit: Discharges all battery-backed key SRAM to ground
+        for k in list(active_keys.keys()):
+            active_keys[k] = "0x0000000000000000"
+
+    return {
+        "tamper_detected": tamper_detected,
+        "triggers": reasons,
+        "keys_zeroized": tamper_detected,
+        "remaining_keys": active_keys
+    }
+
+initial_keys = {"HUK": "0xDEADBEEFCAFE1337", "KEK": "0x1122334455667788"}
+normal_state = evaluate_hardware_tamper_and_zeroization(True, 25.0, 3.3, initial_keys)
+tampered_state = evaluate_hardware_tamper_and_zeroization(False, -42.0, 3.3, initial_keys)
+
+print(f"Normal Operation: Zeroized={normal_state['keys_zeroized']}, HUK={normal_state['remaining_keys']['HUK']}")
+print(f"Tamper Event:     Zeroized={tampered_state['keys_zeroized']}, Triggers={tampered_state['triggers']}")
+print(f"Post-Zeroize HUK: {tampered_state['remaining_keys']['HUK']}")`,
+        output: `Normal Operation: Zeroized=False, HUK=0xDEADBEEFCAFE1337\nTamper Event:     Zeroized=True, Triggers=['MESH_OPEN_CIRCUIT_DRILL_DETECTED', 'CRYOGENIC_FREEZE_ATTACK_DETECTED']\nPost-Zeroize HUK: 0x0000000000000000`,
+        tryIt: 'Simulate a voltage spike of 4.5V and confirm that the voltage glitch detector trips zeroization under normal temperatures.',
+        check: {
+          question: 'What is the purpose of active silicon zeroization in high-assurance embedded systems?',
+          options: [
+            'Instantly erasing all cryptographic keys from volatile registers upon physical intrusion or environmental anomaly to prevent physical extraction',
+            'Resetting the microcontroller to factory default settings so new users can register',
+            'Cooling the microcontroller processor down during intensive gaming',
+            'Formatting the external SD card to free up storage space'
+          ],
+          answer: 0,
+          why: 'Active zeroization guarantees that if an attacker physically compromises the silicon enclosure or freezes the die, hardware circuitry actively grounds the key registers, destroying secrets in nanoseconds.',
+          answerIndex: 0,
+          explanation: 'Active zeroization guarantees that if an attacker physically compromises the silicon enclosure or freezes the die, hardware circuitry actively grounds the key registers, destroying secrets in nanoseconds.'
+        }
+      },
+      {
+        title: 'Monotonic Nonce Management & Anti-Replay Sliding Windows in Constrained DTLS',
+        say: [
+          'In constrained wireless IoT protocols operating over UDP (such as Datagram Transport Layer Security DTLS, CoAP with OSCORE RFC 8613, or IEEE 802.15.4 security), packets can arrive out of order, be duplicated by intermediate mesh routers, or be maliciously captured by an eavesdropper.',
+          'If an attacker captures a valid, authentically signed command packet (e.g., "UNLOCK_SMART_LOCK_DEADBOLT") transmitted yesterday, they can simply replay that exact binary packet across the radio channel today. Even with military-grade AES-GCM encryption, the receiver would validate the cryptographic tag and unlock the door!',
+          'To eradicate replay attacks without requiring expensive round-trip TCP handshakes, embedded network layers utilize Monotonic Sequence Numbers paired with an Anti-Replay Sliding Window (RFC 6479).',
+          'The sliding window maintains a right edge (highest sequence number validated) and a compact 64-bit bitmap of recently received sequence numbers. Packets older than the window width ($R - 64$) are discarded immediately. Packets falling inside the window are checked against the bitmap: if the bit is already 1, the duplicate is dropped; if 0, the bit is set and the packet is accepted. This achieves $O(1)$ constant-time, constant-memory replay protection on devices with only 2KB of RAM.'
+        ],
+        example: 'Think of movie theater ticket stubs. Each ticket has a sequential serial number. The usher marks off numbers on their 64-seat clipboard. If someone attempts to present a ticket stub that was already stamped 10 minutes ago, or a stub from last week’s film (behind the window), the usher turns them away instantly.',
+        code: `# Simulation: Monotonic Sequence Anti-Replay Sliding Window (RFC 6479)
+class AntiReplaySlidingWindow:
+    def __init__(self, window_size: int = 64):
+        self.window_size = window_size
+        self.right_edge = 0 # Highest sequence number observed
+        self.bitmap = 0     # 64-bit sliding window bitmap
+
+    def check_and_update(self, seq_num: int) -> bool:
+        if seq_num <= 0:
+            return False
+        # Case 1: Fresh packet ahead of right edge -> Advance window
+        if seq_num > self.right_edge:
+            diff = seq_num - self.right_edge
+            if diff < self.window_size:
+                self.bitmap = (self.bitmap << diff) | 1
+            else:
+                self.bitmap = 1
+            self.right_edge = seq_num
+            return True
+        # Case 2: Packet behind current window -> Too old, drop
+        diff = self.right_edge - seq_num
+        if diff >= self.window_size:
+            return False
+        # Case 3: Inside window -> Check if duplicate bit is already set
+        if (self.bitmap & (1 << diff)) != 0:
+            return False # Duplicate packet detected!
+        # Mark sequence bit as received
+        self.bitmap |= (1 << diff)
+        return True
+
+window = AntiReplaySlidingWindow(window_size=64)
+packets = [1, 2, 5, 3, 2, 70, 5, 8]
+results = []
+for p in packets:
+    accepted = window.check_and_update(p)
+    results.append((p, accepted))
+
+print("Anti-Replay Ingestion Log:")
+for seq, acc in results:
+    status = "ACCEPTED" if acc else "DROPPED (REPLAY/OLD)"
+    print(f"  Seq #{seq:02d}: {status}")`,
+        output: `Anti-Replay Ingestion Log:\n  Seq #01: ACCEPTED\n  Seq #02: ACCEPTED\n  Seq #05: ACCEPTED\n  Seq #03: ACCEPTED\n  Seq #02: DROPPED (REPLAY/OLD)\n  Seq #70: ACCEPTED\n  Seq #05: DROPPED (REPLAY/OLD)\n  Seq #08: ACCEPTED`,
+        tryIt: 'Feed packet #1 into the window after packet #70 and observe how sequence #1 is dropped for falling outside the 64-packet window.',
+        check: {
+          question: 'How does an anti-replay sliding window prevent malicious packet replay attacks in constrained UDP/DTLS IoT networks?',
+          options: [
+            'It tracks the highest sequence number and maintains a sliding bitmap of recently seen IDs, rejecting duplicates and packets older than the window width in O(1) memory',
+            'It asks the Wi-Fi router to reboot whenever a packet arrives out of order',
+            'It stores every received packet indefinitely in external Flash until memory overflows',
+            'It forces the sender to transmit each packet five times sequentially'
+          ],
+          answer: 0,
+          why: 'A 64-bit sliding window bitmap provides O(1) duplicate detection without unbounded memory consumption, ensuring replayed or delayed adversary packets are rejected immediately.',
+          answerIndex: 0,
+          explanation: 'A 64-bit sliding window bitmap provides O(1) duplicate detection without unbounded memory consumption, ensuring replayed or delayed adversary packets are rejected immediately.'
+        }
+      }
+    ],
+    summary: [
+      'HKDF Extract-and-Expand isolates application security domains, deriving cryptographically independent session keys from master Hardware Unique Keys (HUK).',
+      'AES-GCM Authenticated Encryption with Associated Data (AEAD) binds a GMAC integrity tag to both ciphertext and metadata, neutralizing bit-flipping attacks.',
+      'Boolean Masking decorrelates physical CMOS power consumption from secret key bits, neutralizing Differential Power Analysis (DPA) side-channel attacks.',
+      'Active physical wire meshes, cryogenic temperature probes, and hardware zeroization circuits instantly ground battery-backed SRAM keys upon invasive physical tamper.',
+      'Anti-replay sliding windows with monotonic sequence numbers protect constrained UDP/DTLS sensor networks from captured packet replay attacks in O(1) memory.'
+    ],
+    projectStep: {
+      title: 'Architect an End-to-End Embedded Cryptographic Security Core',
+      steps: [
+        'Derive domain-separated storage, TLS, and attestation keys from a silicon master HUK using HKDF.',
+        'Implement an AES-GCM AEAD encryption and GMAC authentication verification routine.',
+        'Simulate Boolean masking across an AES S-Box lookup to verify power signal decorrelation.',
+        'Implement an active physical tamper detection matrix with zeroization and DTLS anti-replay window.'
+      ]
+    }
   }
 ];
+
