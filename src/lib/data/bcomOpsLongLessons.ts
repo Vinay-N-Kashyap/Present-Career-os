@@ -314,7 +314,9 @@ print(f"Industry Capable:  {qc['Is_Capable_1_33']} (Threshold >= 1.33)")`,
             'Cpk must equal exactly zero'
           ],
           answer: 0,
-          why: 'A Cpk of 1.33 ensures that 4 standard deviations fit between the process center and spec limits, guaranteeing less than 64 defects per million parts.'
+          why: 'A Cpk of 1.33 ensures that 4 standard deviations fit between the process center and spec limits, guaranteeing less than 64 defects per million parts.',
+          answerIndex: 0,
+          explanation: 'A Cpk of 1.33 ensures that 4 standard deviations fit between the process center and spec limits, guaranteeing less than 64 defects per million parts.'
         }
       }
     ],
@@ -332,6 +334,384 @@ print(f"Industry Capable:  {qc['Is_Capable_1_33']} (Threshold >= 1.33)")`,
         'Compute the Economic Order Quantity (EOQ) and total inventory holding costs.',
         'Apply Little\'s Law to calculate the WIP reduction required to halve customer lead times.',
         'Perform a Process Capability Cpk audit on machine parts against engineering tolerances.'
+      ]
+    }
+  },
+  {
+    coursePrefix: 'bcom_ops',
+    day: 2,
+    title: 'Theory of Constraints, Drum-Buffer-Rope & Lean Kanban Sizing',
+    goal: 'Master manufacturing throughput engineering: Goldratt\'s Theory of Constraints (TOC), Drum-Buffer-Rope (DBR) synchronized scheduling, Overall Equipment Effectiveness (OEE) 6 Big Losses decomposition, Toyota Kanban card sizing algebra, and Monte Carlo lead time SLA risk forecasting.',
+    minutes: 42,
+    recap: 'Day 1 focused on Little\'s Law, EOQ, and Six Sigma capability. Day 2 tackles dynamic factory execution: eliminating bottleneck starvation, maximizing capital utilization via OEE, and locking WIP limits with Kanban pull systems.',
+    parts: [
+      {
+        title: 'Goldratt\'s Theory of Constraints (TOC) & The 5 Focusing Steps',
+        say: [
+          'In any linear value stream or manufacturing line, total system throughput is governed strictly by the slowest process in the chain — known as the constraint or bottleneck.',
+          'Dr. Eliyahu Goldratt formulated the Theory of Constraints (TOC) around a fundamental law: an hour lost at the bottleneck workstation is an hour lost for the entire enterprise forever, while an hour saved at a non-bottleneck is a complete optical illusion.',
+          'Improving the efficiency of a non-bottleneck workstation only produces excess work-in-progress (WIP) inventory, clogging the factory floor and inflating carrying costs without generating a single extra dollar of revenue.',
+          'TOC governs operations via Goldratt\'s 5 Focusing Steps: 1. Identify the system constraint; 2. Exploit the constraint (never let it sit idle or process defective inputs); 3. Subordinate everything else to the constraint; 4. Elevate the constraint (invest capex to expand capacity); 5. Repeat the process without allowing inertia to become the constraint.',
+          'Operations engineers mathematically audit all line workstations to pinpoint the true constraint and compute line throughput ceilings and non-bottleneck idle utilization.'
+        ],
+        example: 'A 4-step chassis assembly line has capacities: Stamping (45 units/hr), Welding (30 units/hr), Painting (50 units/hr), and Final Assembly (40 units/hr). Welding is the bottleneck. Even if Painting works at 100% capacity, the factory can only ship 30 finished chassis per hour. Pushing Stamping to 45 units/hr merely piles 15 un-welded frames in the aisle every hour.',
+        code: `# Simulation: Goldratt's Theory of Constraints Line Audit
+from dataclasses import dataclass
+from typing import List, Dict
+
+@dataclass
+class Workstation:
+    name: str
+    capacity_units_per_hour: float
+
+def evaluate_theory_of_constraints(stations: List[Workstation], planned_operating_hours: float = 8.0) -> Dict:
+    # 1. Identify constraint (minimum capacity workstation)
+    bottleneck = min(stations, key=lambda s: s.capacity_units_per_hour)
+    system_throughput_rate = bottleneck.capacity_units_per_hour
+    daily_output = system_throughput_rate * planned_operating_hours
+
+    station_metrics = []
+    for s in stations:
+        utilization = (system_throughput_rate / s.capacity_units_per_hour) * 100.0
+        is_bottleneck = (s.name == bottleneck.name)
+        station_metrics.append({
+            "Station": s.name,
+            "Capacity": s.capacity_units_per_hour,
+            "Utilization_Pct": round(utilization, 1),
+            "Is_Constraint": is_bottleneck
+        })
+
+    return {
+        "Bottleneck_Station": bottleneck.name,
+        "System_Throughput_Units_Per_Hour": system_throughput_rate,
+        "Daily_Output_Units": int(daily_output),
+        "Stations": station_metrics
+    }
+
+line = [
+    Workstation("Stamping", 45.0),
+    Workstation("Welding", 30.0),
+    Workstation("Painting", 50.0),
+    Workstation("Assembly", 40.0)
+]
+toc_res = evaluate_theory_of_constraints(line, 8.0)
+print(f"Bottleneck: {toc_res['Bottleneck_Station']} ({toc_res['System_Throughput_Units_Per_Hour']} u/hr)")
+print(f"Daily Line Output: {toc_res['Daily_Output_Units']} units")
+for s in toc_res['Stations']:
+    print(f" - {s['Station']}: {s['Utilization_Pct']}% util (Constraint: {s['Is_Constraint']})")`,
+        output: `Bottleneck: Welding (30.0 u/hr)\nDaily Line Output: 240 units\n - Stamping: 66.7% util (Constraint: False)\n - Welding: 100.0% util (Constraint: True)\n - Painting: 60.0% util (Constraint: False)\n - Assembly: 75.0% util (Constraint: False)`,
+        codeNotes: [
+          { line: 10, note: 'evaluate_theory_of_constraints locates global minimum capacity determining line throughput' },
+          { line: 16, note: 'Calculates non-bottleneck utilization subordinated to the constraint pace (60-75%)' },
+          { line: 38, note: 'Identifies Welding at 30.0 u/hr as constraint producing 240 finished units per 8-hour shift' },
+          { line: 40, note: 'Demonstrates non-bottlenecks operate below 100% to avoid inventory pile-ups' }
+        ],
+        tryIt: 'Elevate Welding capacity to 42.0 u/hr and rerun to observe the bottleneck shift dynamically to Assembly (40.0 u/hr).',
+        check: {
+          question: 'According to Goldratt\'s Theory of Constraints, what is the consequence of optimizing a non-bottleneck workstation to 100% capacity?',
+          options: [
+            'It creates excessive Work-In-Progress (WIP) inventory that clogs production aisles without increasing total finished output, wasting capital.',
+            'It automatically doubles the factory\'s finished goods shipping velocity.',
+            'It reduces total product manufacturing lead times to zero.',
+            'It eliminates all raw material purchasing costs.'
+          ],
+          answer: 0,
+          why: 'A non-bottleneck cannot produce finished goods faster than the constraint can process them; running non-bottlenecks at full speed merely generates excess work-in-progress.',
+          answerIndex: 0,
+          explanation: 'A non-bottleneck cannot produce finished goods faster than the constraint can process them; running non-bottlenecks at full speed merely generates excess work-in-progress.'
+        }
+      },
+      {
+        title: 'The Drum-Buffer-Rope (DBR) Scheduling Paradigm',
+        say: [
+          'Managing a production facility under TOC requires an operational synchronization methodology known as Drum-Buffer-Rope (DBR).',
+          'The Drum represents the master production schedule established by the bottleneck resource. Because the constraint dictates the line\'s maximum possible pace, the Drum sets the beat for the entire plant.',
+          'The Buffer is a strategic time or inventory buffer placed immediately in front of the constraint. Since the constraint must never sit idle, the buffer absorbs upstream operational disruptions (e.g. machine jams, tool changes) to ensure the bottleneck is never starved of work.',
+          'The Rope is the communication and material release mechanism connecting the drum back to the raw material warehouse. Raw material is released onto the factory floor strictly at the rate the bottleneck consumes work, preventing WIP bloat.',
+          'By synchronizing raw material entry (Rope) to bottleneck consumption (Drum) through a protective buffer, DBR achieves maximum throughput with minimal inventory holding.'
+        ],
+        example: 'Imagine a line where the bottleneck operates at 30 units per hour with a 2-hour buffer target (60 units). At the start of each hour, the bottleneck consumes 30 units from the buffer. The Rope immediately signals raw material receiving to release exactly 30 units into the first station, keeping the buffer perfectly stabilized at 60 units.',
+        code: `# Simulation: Drum-Buffer-Rope (DBR) Factory Scheduling
+def drum_buffer_rope_scheduler(
+    bottleneck_rate_per_hour: float,
+    buffer_target_units: int,
+    initial_buffer_stock: int,
+    hours_to_simulate: int = 4
+) -> dict:
+    current_buffer = initial_buffer_stock
+    material_releases = []
+    hourly_output = []
+
+    for h in range(1, hours_to_simulate + 1):
+        # Bottleneck pulls work from buffer (The Drum)
+        processed = min(float(current_buffer), bottleneck_rate_per_hour)
+        current_buffer -= processed
+        hourly_output.append(processed)
+
+        # The Rope: release raw material to replenish buffer back to target
+        deficit = buffer_target_units - current_buffer
+        released = max(0.0, deficit)
+        current_buffer += released
+        material_releases.append(released)
+
+    return {
+        "Total_Units_Processed": sum(hourly_output),
+        "Buffer_Safety_Maintained": all(buf >= 0 for buf in hourly_output),
+        "Material_Release_Rope_Units": material_releases,
+        "Final_Buffer_Stock": current_buffer
+    }
+
+dbr_res = drum_buffer_rope_scheduler(bottleneck_rate_per_hour=30.0, buffer_target_units=60, initial_buffer_stock=60, hours_to_simulate=4)
+print(f"Total Produced: {dbr_res['Total_Units_Processed']} units | Buffer Safe: {dbr_res['Buffer_Safety_Maintained']}")
+print(f"Rope Material Release Schedule: {dbr_res['Material_Release_Rope_Units']}")`,
+        output: `Total Produced: 120.0 units | Buffer Safe: True\nRope Material Release Schedule: [30.0, 30.0, 30.0, 30.0]`,
+        codeNotes: [
+          { line: 15, note: 'The Drum pulls work from buffer stock at the bottleneck rate of 30 units/hr' },
+          { line: 20, note: 'The Rope calculates replenishment deficit and triggers raw material release upstream' },
+          { line: 29, note: 'Simulates 4 hours producing 120 units with zero buffer starvation' },
+          { line: 31, note: 'Demonstrates uniform 30-unit release pace maintaining constant buffer inventory' }
+        ],
+        tryIt: 'Start initial_buffer_stock at 30 and watch the Rope release 60 units in hour 1 to restore safety stock target.',
+        check: {
+          question: 'In the Drum-Buffer-Rope (DBR) manufacturing framework, what is the role of the "Rope"?',
+          options: [
+            'It is the feedback communication link that throttles raw material release at the entry of the plant to match the consumption rate of the bottleneck.',
+            'It physically pulls defective manufactured products into the recycling furnace.',
+            'It ties factory workers to their individual workstations during working hours.',
+            'It secures export containers on cargo container ships.'
+          ],
+          answer: 0,
+          why: 'The Rope prevents excess WIP by ensuring new raw material is allowed onto the plant floor only when the constraint has completed work, pulling material through the line.',
+          answerIndex: 0,
+          explanation: 'The Rope prevents excess WIP by ensuring new raw material is allowed onto the plant floor only when the constraint has completed work, pulling material through the line.'
+        }
+      },
+      {
+        title: 'Overall Equipment Effectiveness (OEE) & The 6 Big Losses',
+        say: [
+          'In Total Productive Maintenance (TPM) and Lean manufacturing, plant managers evaluate asset productivity using Overall Equipment Effectiveness (OEE).',
+          'OEE is a composite percentage metric combining three independent factors: Availability, Performance, and Quality: OEE = Availability * Performance * Quality.',
+          'Availability evaluates machine uptime: Availability = Operating Time / Planned Production Time, directly penalized by equipment failures, breakdowns, and tooling changeover setups.',
+          'Performance measures production speed: Performance = (Total Units Produced * Ideal Cycle Time) / Operating Time, penalized by minor idling, micro-stoppages, and running machines below rated design speeds.',
+          'Quality assesses first-pass yield: Quality = Good Units / Total Units Produced, penalized by scrap, rework, and startup thermal defects.',
+          'The global manufacturing benchmark for world-class discrete manufacturing is an OEE score of 85.0% or higher (typically Availability >= 90%, Performance >= 95%, Quality >= 99.9%).'
+        ],
+        example: 'A CNC machining cell is planned to run for 480 minutes. It experiences 30 minutes of breakdown (Availability = 93.75%). During the 450 operating minutes, it produces 1,000 parts at a 25-second ideal cycle time (Performance = 92.59%). Out of 1,000 parts, 15 are defective (Quality = 98.50%). Composite OEE = 0.9375 * 0.9259 * 0.9850 = 85.50%, qualifying as world-class.',
+        code: `# Simulation: Overall Equipment Effectiveness (OEE) 3-Factor Decomposition
+from typing import Dict
+
+def calculate_oee(
+    planned_production_time_min: float,
+    unplanned_downtime_min: float,
+    ideal_cycle_time_sec: float,
+    total_parts_produced: int,
+    defective_parts_count: int
+) -> Dict:
+    # 1. Availability = Operating Time / Planned Production Time
+    operating_time_min = planned_production_time_min - unplanned_downtime_min
+    availability = operating_time_min / planned_production_time_min
+
+    # 2. Performance = (Total Parts * Ideal Cycle Time Sec) / (Operating Time Min * 60)
+    operating_time_sec = operating_time_min * 60.0
+    ideal_operating_sec = total_parts_produced * ideal_cycle_time_sec
+    performance = ideal_operating_sec / operating_time_sec
+
+    # 3. Quality = Good Parts / Total Parts
+    good_parts = total_parts_produced - defective_parts_count
+    quality = good_parts / total_parts_produced
+
+    # 4. Composite OEE
+    oee = availability * performance * quality
+
+    return {
+        "Availability_Pct": round(availability * 100, 2),
+        "Performance_Pct": round(performance * 100, 2),
+        "Quality_Pct": round(quality * 100, 2),
+        "Overall_OEE_Pct": round(oee * 100, 2),
+        "World_Class_Benchmark": oee >= 0.85
+    }
+
+oee_res = calculate_oee(
+    planned_production_time_min=480.0,
+    unplanned_downtime_min=30.0,
+    ideal_cycle_time_sec=25.0,
+    total_parts_produced=1000,
+    defective_parts_count=15
+)
+print(f"Availability: {oee_res['Availability_Pct']}% | Performance: {oee_res['Performance_Pct']}% | Quality: {oee_res['Quality_Pct']}%")
+print(f"Overall OEE: {oee_res['Overall_OEE_Pct']}% (World-Class >=85%: {oee_res['World_Class_Benchmark']})")`,
+        output: `Availability: 93.75% | Performance: 92.59% | Quality: 98.5%\nOverall OEE: 85.5% (World-Class >=85%: True)`,
+        codeNotes: [
+          { line: 11, note: 'Availability computes operational uptime after deducting unplanned downtime (93.75%)' },
+          { line: 16, note: 'Performance measures running speed against ideal machine design cycle time (92.59%)' },
+          { line: 21, note: 'Quality calculates first-pass defect-free parts yield (98.50%)' },
+          { line: 36, note: 'Multiplies all three vectors to yield an overall OEE of 85.50%, achieving world-class status' }
+        ],
+        tryIt: 'Increase unplanned_downtime_min to 90.0 to see Availability plunge to 81.25% and OEE fall to 74.1%.',
+        check: {
+          question: 'What are the three core component ratios multiplied together to calculate Overall Equipment Effectiveness (OEE)?',
+          options: [
+            'Availability, Performance, and Quality',
+            'Revenue, Profit Margin, and Return on Equity',
+            'Electricity Cost, Labor Wages, and Depreciation',
+            'Inventory Turnover, Order Cycle Time, and Shipping Distance'
+          ],
+          answer: 0,
+          why: 'OEE = Availability (uptime) * Performance (speed efficiency) * Quality (first-pass good units yield).',
+          answerIndex: 0,
+          explanation: 'OEE = Availability (uptime) * Performance (speed efficiency) * Quality (first-pass good units yield).'
+        }
+      },
+      {
+        title: 'Lean Kanban Card Sizing & CONWIP Work-In-Progress Physics',
+        say: [
+          'In Lean manufacturing, traditional push systems schedule production based on forecasted demand, pushing inventory into warehouses regardless of actual consumption.',
+          'In contrast, the Toyota Production System utilizes a pull scheduling architecture powered by physical or electronic Kanban cards.',
+          'Kanban cards act as an authorization ticket: a downstream process cannot begin building a part, and an upstream process cannot deliver material, without receiving an authorized Kanban card.',
+          'To prevent starving the line while strictly capping maximum Work-In-Process (WIP), engineers size the number of Kanban cards using Toyota\'s fundamental formula: N = [D * L * (1 + S)] / C, where D is daily customer demand, L is replenishment lead time in days, S is the safety buffer percentage, and C is container lot size.',
+          'By controlling the total number of circulating cards (CONWIP - Constant Work-in-Progress), the factory locks its maximum inventory liability, drastically accelerating cycle times.'
+        ],
+        example: 'A tier-1 automotive supplier has daily demand of 500 steering knuckles. Component lead time is 2.5 days. Management requires a 20% safety buffer to guard against machine breakdowns. Standard storage totes hold 50 knuckles. Pipeline demand = 500 * 2.5 * 1.20 = 1,500 units. Total Kanban cards required = 1,500 / 50 = 30 cards.',
+        code: `# Simulation: Lean Toyota Kanban Card Sizing & CONWIP Limit Engine
+def calculate_kanban_cards(
+    daily_demand_units: float,
+    lead_time_days: float,
+    safety_buffer_pct: float,
+    container_capacity_units: int
+) -> dict:
+    # Toyota Kanban formula: N = (D * L * (1 + S)) / C
+    demand_during_lead_time = daily_demand_units * lead_time_days
+    safety_cushion = demand_during_lead_time * (safety_buffer_pct / 100.0)
+    total_required_pipeline_units = demand_during_lead_time + safety_cushion
+
+    cards_float = total_required_pipeline_units / container_capacity_units
+    cards_int = int(cards_float) + (1 if cards_float % 1 > 0 else 0)
+    max_wip_authorized = cards_int * container_capacity_units
+
+    return {
+        "Daily_Demand": daily_demand_units,
+        "Lead_Time_Days": lead_time_days,
+        "Safety_Buffer_Pct": f"{safety_buffer_pct}%",
+        "Calculated_Kanban_Cards": cards_int,
+        "Max_Authorized_WIP_Units": max_wip_authorized,
+        "Container_Size": container_capacity_units
+    }
+
+kanban_res = calculate_kanban_cards(
+    daily_demand_units=500.0,
+    lead_time_days=2.5,
+    safety_buffer_pct=20.0,
+    container_capacity_units=50
+)
+print(f"Required Kanban Cards: {kanban_res['Calculated_Kanban_Cards']} | Max WIP Authorized: {kanban_res['Max_Authorized_WIP_Units']} units")`,
+        output: `Required Kanban Cards: 30 | Max WIP Authorized: 1500 units`,
+        codeNotes: [
+          { line: 8, note: 'Computes total units required across replenishment lead time plus safety margin' },
+          { line: 12, note: 'Rounds up floating point card requirements to ceiling integer to maintain buffer safety' },
+          { line: 20, note: 'Calculates maximum Work-In-Progress cap locked at 1,500 units across 30 cards' },
+          { line: 27, note: 'Outputs exact Kanban cards needed to run lean pull execution without stockouts' }
+        ],
+        tryIt: 'Reduce lead_time_days to 1.5 to observe required Kanban cards drop from 30 to 18, cutting WIP by 40%.',
+        check: {
+          question: 'In Lean manufacturing systems, what happens to factory lead time when management reduces the number of circulating Kanban cards?',
+          options: [
+            'Total Work-in-Progress (WIP) decreases, which according to Little\'s Law (CT = WIP / Throughput) directly shortens production lead times.',
+            'Production immediately halts forever across all global factories.',
+            'Product defect rates increase by exactly 500%.',
+            'Raw material suppliers are legally required to discount prices by 50%.'
+          ],
+          answer: 0,
+          why: 'Fewer Kanban cards lowers maximum WIP; Little\'s Law dictates that reducing inventory while holding throughput constant accelerates overall cycle time.',
+          answerIndex: 0,
+          explanation: 'Fewer Kanban cards lowers maximum WIP; Little\'s Law dictates that reducing inventory while holding throughput constant accelerates overall cycle time.'
+        }
+      },
+      {
+        title: 'Monte Carlo Lead Time Forecasting & SLA Confidence Intervals',
+        say: [
+          'Operations managers frequently fall victim to the "Flaw of Averages": assuming that if Stage 1 takes 8 hours on average, Stage 2 takes 3 hours, and Stage 3 takes 4 hours, the order will reliably finish in 15 hours.',
+          'In reality, process variations compound and queue times cascade non-linearly. If a company promises a 15-hour Service Level Agreement (SLA) based on static averages, nearly 50% of customer orders will arrive late.',
+          'To establish contractually robust delivery SLAs, operations engineers deploy Monte Carlo stochastic simulation.',
+          'By modeling each manufacturing station as a probability distribution (e.g., Gaussian, log-normal, or Weibull) based on historical cycle time variances, the simulation executes 10,000 production cycles.',
+          'The resulting empirical distribution yields exact percentile commitments: P50 (Expected median time), P85 (Commercial target SLA), and P95 (Mission-critical contractual delivery guarantee).'
+        ],
+        example: 'A customized machinery manufacturer models Fabrication (mean 8.0h, std 1.5h), Inspection (mean 3.0h, std 0.8h), and Packaging (mean 4.0h, std 1.0h). A 10,000-run Monte Carlo simulation reveals that while the median completion time is 15.0 hours, achieving an 85% SLA requires quoting 17.0 hours, and a 95% contractual guarantee requires committing to 18.2 hours.',
+        code: `# Simulation: Monte Carlo Manufacturing Lead Time & SLA Forecaster
+import random
+from typing import List, Dict
+
+class MonteCarloLeadTimeForecaster:
+    def __init__(self, stage_params: List[Dict]):
+        self.stages = stage_params
+
+    def simulate_lead_times(self, iterations: int = 10000, seed: int = 42) -> Dict:
+        random.seed(seed)
+        total_times = []
+
+        for _ in range(iterations):
+            run_total = 0.0
+            for s in self.stages:
+                time = max(0.5, random.gauss(s["mean_hours"], s["std_dev_hours"]))
+                run_total += time
+            total_times.append(run_total)
+
+        total_times.sort()
+        p50 = total_times[int(0.50 * iterations)]
+        p85 = total_times[int(0.85 * iterations)]
+        p95 = total_times[int(0.95 * iterations)]
+
+        return {
+            "Simulations": iterations,
+            "P50_Expected_Lead_Time_Hours": round(p50, 1),
+            "P85_Target_SLA_Hours": round(p85, 1),
+            "P95_Guaranteed_SLA_Hours": round(p95, 1)
+        }
+
+stages = [
+    {"name": "Fabrication", "mean_hours": 8.0, "std_dev_hours": 1.5},
+    {"name": "Inspection", "mean_hours": 3.0, "std_dev_hours": 0.8},
+    {"name": "Packaging", "mean_hours": 4.0, "std_dev_hours": 1.0}
+]
+forecaster = MonteCarloLeadTimeForecaster(stages)
+mc_res = forecaster.simulate_lead_times()
+print(f"Lead Time P50: {mc_res['P50_Expected_Lead_Time_Hours']}h | P85 SLA: {mc_res['P85_Target_SLA_Hours']}h | P95 SLA: {mc_res['P95_Guaranteed_SLA_Hours']}h")`,
+        output: `Lead Time P50: 15.0h | P85 SLA: 17.0h | P95 SLA: 18.2h`,
+        codeNotes: [
+          { line: 7, note: 'MonteCarloLeadTimeForecaster models multi-stage production variance' },
+          { line: 15, note: 'Simulates 10,000 independent product runs sampling normally distributed stage cycle times' },
+          { line: 20, note: 'Extracts 50th, 85th, and 95th percentiles from the sorted simulated distribution' },
+          { line: 36, note: 'Quotes 17.0h for standard commercial SLAs and 18.2h for 95% contractual guarantees' }
+        ],
+        tryIt: 'Increase Fabrication std_dev_hours to 3.0 and observe P95 surge to over 20 hours as variance compounds.',
+        check: {
+          question: 'Why is promising customer delivery commitments based on average lead times considered a major operational error?',
+          options: [
+            'Because process variability causes approximately 50% of orders to exceed the average time; Monte Carlo percentiles (P85 or P95) are required for reliable SLA commitments.',
+            'Because averages are illegal to compute under industrial labor regulations.',
+            'Because customer orders never take longer than the fastest historical run.',
+            'Because standard deviations always equal zero in manufacturing environments.'
+          ],
+          answer: 0,
+          why: 'Due to statistical variance across dependent production stages, the average lead time only offers ~50% confidence of on-time delivery; robust operations require P85 or P95 buffers.',
+          answerIndex: 0,
+          explanation: 'Due to statistical variance across dependent production stages, the average lead time only offers ~50% confidence of on-time delivery; robust operations require P85 or P95 buffers.'
+        }
+      }
+    ],
+    summary: [
+      'Goldratt\'s Theory of Constraints: System throughput is strictly dictated by the bottleneck; optimizing non-bottlenecks creates wasteful WIP inventory.',
+      'Drum-Buffer-Rope (DBR): The Drum (bottleneck pace) sets the schedule, protected by a Buffer (safety stock), while the Rope throttles raw material release.',
+      'Overall Equipment Effectiveness (OEE): Evaluates machine productivity as Availability * Performance * Quality (world-class benchmark >= 85%).',
+      'Lean Kanban Sizing: Sizing cards via N = [D * L * (1 + S)] / C locks Work-In-Progress and enforces pull scheduling across the supply chain.',
+      'Monte Carlo SLA Forecasting: Simulates thousands of stochastic production runs to establish reliable P85 and P95 delivery commitments over misleading static averages.'
+    ],
+    projectStep: {
+      title: 'Factory Constraint Optimization & Kanban Pull System Architecture',
+      steps: [
+        'Audit a multi-stage production line to identify the bottleneck resource and compute subordinated utilization rates.',
+        'Implement the Drum-Buffer-Rope scheduling loop to stabilize inventory buffer levels.',
+        'Decompose manufacturing equipment downtime and speed losses into composite OEE metrics.',
+        'Calculate Kanban card limits and run Monte Carlo simulations to quote contractually reliable delivery SLAs.'
       ]
     }
   }

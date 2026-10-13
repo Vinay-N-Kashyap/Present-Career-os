@@ -61,3 +61,36 @@ test('B.Com AIT Day 1: IDP OCR, Process Mining & Circuit Breaker Python Code Sni
     assert.ok(part.code.includes('print('), `Code in '${part.title}' must print results`);
   }
 });
+
+test('B.Com Ops Day 2: TOC Bottleneck, Drum-Buffer-Rope & Kanban Sizing Snippets Verification', () => {
+  const opsLesson2 = getLongLesson('bcom_ops', 2);
+  assert.ok(opsLesson2, 'bcom_ops Day 2 long lesson must resolve');
+  assert.equal(opsLesson2.day, 2);
+  assert.equal(opsLesson2.parts.length, 5, 'bcom_ops Day 2 must contain exactly 5 parts');
+  assert.ok(opsLesson2.summary.length >= 4, 'bcom_ops Day 2 must contain comprehensive summary');
+  assert.ok(opsLesson2.projectStep, 'bcom_ops Day 2 must have a hands-on project step');
+
+  for (let i = 0; i < opsLesson2.parts.length; i++) {
+    const part = opsLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(opsLesson2.parts[0].code?.includes('evaluate_theory_of_constraints'));
+  assert.ok(opsLesson2.parts[1].code?.includes('drum_buffer_rope_scheduler'));
+  assert.ok(opsLesson2.parts[2].code?.includes('calculate_oee'));
+  assert.ok(opsLesson2.parts[3].code?.includes('calculate_kanban_cards'));
+  assert.ok(opsLesson2.parts[4].code?.includes('MonteCarloLeadTimeForecaster'));
+});
