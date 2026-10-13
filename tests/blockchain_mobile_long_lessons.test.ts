@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getLongLesson, getLongLessonLanguage } from '../src/lib/data/longLessons';
+import {
+  getLongLesson,
+  getLongLessonLanguage,
+  estimateSpokenMinutes,
+  estimateLessonMinutes
+} from '../src/lib/data/longLessons';
 
 test('Blockchain & Mobile Long Lessons: Resolution & Language Invariants', () => {
   // 1. blockchain
@@ -11,6 +16,11 @@ test('Blockchain & Mobile Long Lessons: Resolution & Language Invariants', () =>
   assert.ok(blockchainLesson.summary.length >= 4, 'blockchain Day 1 must contain comprehensive summary');
   assert.ok(blockchainLesson.projectStep, 'blockchain Day 1 must have a hands-on project step');
   assert.equal(getLongLessonLanguage('blockchain'), 'typescript');
+
+  const blockchainLesson2 = getLongLesson('blockchain', 2);
+  assert.ok(blockchainLesson2, 'blockchain Day 2 long lesson must resolve');
+  assert.equal(blockchainLesson2.day, 2);
+  assert.equal(blockchainLesson2.parts.length, 5, 'blockchain Day 2 must contain exactly 5 parts');
 
   // 2. mobile
   const mobileLesson = getLongLesson('mobile', 1);
@@ -64,4 +74,49 @@ test('Mobile Day 1: React Native Architecture Code Snippets & Socratic Checks Ve
     // Structural code invariants
     assert.ok(part.code.includes('console.log('), `TypeScript code in '${part.title}' must print results`);
   }
+});
+
+test('Blockchain Day 2: AMM Constant Product, TWAP, EIP-712 Permit & Rollup Proofs Verification', () => {
+  const blockchainLesson2 = getLongLesson('blockchain', 2);
+  assert.ok(blockchainLesson2, 'blockchain Day 2 must resolve');
+  assert.equal(blockchainLesson2.day, 2);
+  assert.equal(blockchainLesson2.parts.length, 5, 'blockchain Day 2 must contain exactly 5 parts');
+  assert.ok(blockchainLesson2.summary.length >= 4, 'blockchain Day 2 must have comprehensive summary');
+  assert.ok(blockchainLesson2.projectStep, 'blockchain Day 2 must have projectStep');
+  assert.ok(blockchainLesson2.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(blockchainLesson2);
+  const totalMin = estimateLessonMinutes(blockchainLesson2);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < blockchainLesson2.parts.length; i++) {
+    const part = blockchainLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(blockchainLesson2.parts[0].code?.includes('calculateAmmSwap'));
+  assert.ok(blockchainLesson2.parts[0].output?.includes('UNISWAP V2 CONSTANT PRODUCT AMM SWAP ENGINE'));
+  assert.ok(blockchainLesson2.parts[1].code?.includes('TwapOracle'));
+  assert.ok(blockchainLesson2.parts[1].output?.includes('DECENTRALIZED TWAP ORACLE VS FLASH LOAN SKEW'));
+  assert.ok(blockchainLesson2.parts[2].code?.includes('hashEip712Permit'));
+  assert.ok(blockchainLesson2.parts[2].output?.includes('EIP-712 TYPED STRUCTURED PERMIT DIGEST'));
+  assert.ok(blockchainLesson2.parts[3].code?.includes('processRollupBatch'));
+  assert.ok(blockchainLesson2.parts[3].output?.includes('LAYER 2 ROLLUP BATCH STATE COMMITMENT ENGINE'));
+  assert.ok(blockchainLesson2.parts[4].code?.includes('UpgradeableProxy'));
+  assert.ok(blockchainLesson2.parts[4].output?.includes('ERC-1967 UPGRADEABLE PROXY STORAGE ARCHITECTURE'));
 });
