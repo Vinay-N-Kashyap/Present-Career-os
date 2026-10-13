@@ -17,6 +17,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.ok(netLesson.projectStep, 'iot_net Day 1 must have a hands-on project step');
   assert.equal(getLongLessonLanguage('iot_net'), 'python');
 
+  const netLesson2 = getLongLesson('iot_net', 2);
+  assert.ok(netLesson2, 'iot_net Day 2 long lesson must resolve');
+  assert.equal(netLesson2.day, 2);
+  assert.equal(netLesson2.parts.length, 5, 'iot_net Day 2 must contain exactly 5 parts');
+
   // 2. bcom_ana
   const anaLesson = getLongLesson('bcom_ana', 1);
   assert.ok(anaLesson, 'bcom_ana Day 1 long lesson must resolve');
@@ -107,4 +112,41 @@ test('B.Com Analytics Day 2: Logistic Credit Scoring, RFM CLV, Seasonal Forecast
   assert.ok(anaLesson2.parts[3].code?.includes('calculate_ab_test_sample_size'));
   assert.ok(anaLesson2.parts[4].code?.includes('decompose_executive_revenue_metrics'));
 });
+
+test('IoT Net Day 2: LoRa Time-on-Air, Duty Cycle, BLE Mesh, NB-IoT & RPL Snippets Verification', () => {
+  const netLesson2 = getLongLesson('iot_net', 2);
+  assert.ok(netLesson2, 'iot_net Day 2 must resolve');
+  assert.equal(netLesson2.day, 2);
+  assert.equal(netLesson2.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(netLesson2);
+  const totalMin = estimateLessonMinutes(netLesson2);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < netLesson2.parts.length; i++) {
+    const part = netLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(netLesson2.parts[0].code?.includes('calculate_lora_time_on_air'));
+  assert.ok(netLesson2.parts[1].code?.includes('evaluate_lorawan_duty_cycle'));
+  assert.ok(netLesson2.parts[2].code?.includes('simulate_ble_mesh_relay'));
+  assert.ok(netLesson2.parts[3].code?.includes('calculate_cellular_iot_battery_life'));
+  assert.ok(netLesson2.parts[4].code?.includes('evaluate_rpl_dodag_mesh_routing'));
+});
+
 
