@@ -259,4 +259,54 @@ test('Soft Skills Day 3: Domain-Specific Content Assertions', () => {
   assert.ok(ssD3.parts[4].output.includes('FUND_IMMEDIATELY'));
 });
 
+test('Java Basics Day 4: Resolution & Structural Invariants for WebFlux, Netty & R2DBC', () => {
+  const javaD4 = getLongLesson('java-basics', 4);
+  assert.ok(javaD4, 'java-basics Day 4 long lesson must resolve');
+  assert.equal(javaD4.day, 4);
+  assert.equal(javaD4.parts.length, 5, 'java-basics Day 4 must contain exactly 5 parts');
+  assert.ok(javaD4.summary.length >= 4, 'java-basics Day 4 must contain comprehensive summary');
+  assert.ok(javaD4.projectStep, 'java-basics Day 4 must have a hands-on project step');
+  assert.ok(javaD4.minutes >= 15, 'java-basics Day 4 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of javaD4.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 4: Domain-Specific Content Assertions', () => {
+  const javaD4 = getLongLesson('java-basics', 4);
+  assert.ok(javaD4);
+
+  // Part 1 – Reactive Streams Mono & Flux
+  assert.ok(javaD4.parts[0].title.includes('Mono') || javaD4.parts[0].title.includes('Flux'));
+  assert.ok(javaD4.parts[0].output.includes('ORDER_VERIFIED'));
+
+  // Part 2 – Netty EventLoop & Multiplexing
+  assert.ok(javaD4.parts[1].title.includes('Netty') || javaD4.parts[1].title.includes('EventLoop'));
+  assert.ok(javaD4.parts[1].output.includes('Active Sockets Ready for Read: 2'));
+
+  // Part 3 – Reactive Backpressure
+  assert.ok(javaD4.parts[2].title.includes('Backpressure'));
+  assert.ok(javaD4.parts[2].output.includes('DROP Strategy'));
+
+  // Part 4 – R2DBC Non-blocking DB
+  assert.ok(javaD4.parts[3].title.includes('R2DBC'));
+  assert.ok(javaD4.parts[3].output.includes('ASYNC_STREAM_SUBSCRIBED'));
+
+  // Part 5 – Distributed Tracing & W3C Context
+  assert.ok(javaD4.parts[4].title.includes('Distributed Tracing') || javaD4.parts[4].title.includes('OpenTelemetry'));
+  assert.ok(javaD4.parts[4].output.includes('00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01'));
+});
+
+
 

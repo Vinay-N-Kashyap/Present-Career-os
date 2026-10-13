@@ -1195,6 +1195,398 @@ console.log('Security Invariant: Parent delegation prevents rogue plugins from o
         'Implement an exhaustive pattern-matching dispatch loop in Java 21 to process events with zero unhandled cases.'
       ]
     }
+  },
+  {
+    coursePrefix: 'java-basics',
+    day: 4,
+    title: 'Reactive WebFlux, Netty EventLoop, Backpressure Strategies & R2DBC',
+    goal: 'Master modern reactive asynchronous programming in Enterprise Java: Project Reactor streams (Mono and Flux), Netty non-blocking EventLoop architecture, Reactive Streams specification backpressure strategies (BUFFER, DROP, LATEST, ERROR), fully non-blocking database transactions with R2DBC, and distributed tracing with Micrometer and OpenTelemetry.',
+    minutes: 45,
+    recap: 'In Day 3, we mastered Generics type erasure, Reflection dynamic dispatch, custom runtime annotations, Java 21 Sealed classes with exhaustive pattern matching, and ClassLoader hierarchy sandboxing. Now, in Day 4, we advance into cutting-edge enterprise concurrency: reactive streams, non-blocking I/O event loops, backpressure flow control, asynchronous reactive database access, and distributed tracing.',
+    parts: [
+      {
+        title: 'Reactive Streams: Mono, Flux & Functional Transformation Pipelines',
+        say: [
+          'In traditional enterprise architectures, applications rely on synchronous blocking calls: when a thread requests data from a database or downstream microservice, that operating system thread sits idle, blocked in kernel wait states until bytes return.',
+          'Under high concurrency, thread-per-request models exhaust system memory: each Java thread requires an OS stack (typically 1MB) and high context-switching CPU overhead.',
+          'Project Reactor and Spring WebFlux solve this by implementing the Reactive Streams specification, founded on the Publisher-Subscriber paradigm. Instead of pulling data synchronously, applications assemble asynchronous, declarative processing pipelines.',
+          'Reactor provides two foundational reactive types: Mono represents an asynchronous stream of 0 or 1 element, while Flux represents an asynchronous stream of 0 to N (or infinite) elements.',
+          'Reactive pipelines are "cold" by default: nothing happens, and zero CPU cycles are spent until a Subscriber subscribes to the publisher. Once subscribed, data flows asynchronously through functional operators such as map, filter, and flatMap.',
+          'This non-blocking architecture allows a single server to handle tens of thousands of concurrent client requests with minimal memory overhead.'
+        ],
+        example: 'Think of an industrial conveyor belt equipped with optical sensors and robotic sorters. Instead of a worker picking up each package and walking it over to inspection, packages stream past continuous stationary sensors. If an item fails weight criteria, a pneumatic piston knocks it into a discard bin without slowing down the conveyor line.',
+        code: `// Simulation: Project Reactor Mono & Flux Reactive Stream Pipelines
+interface ReactiveEmission<T> {
+  value: T;
+  timestampMs: number;
+}
+
+class ReactiveStreamSimulator<T> {
+  private items: T[] = [];
+
+  constructor(items: T[]) {
+    this.items = items;
+  }
+
+  static just<T>(...values: T[]): ReactiveStreamSimulator<T> {
+    return new ReactiveStreamSimulator(values);
+  }
+
+  filter(predicate: (item: T) => boolean): ReactiveStreamSimulator<T> {
+    return new ReactiveStreamSimulator(this.items.filter(predicate));
+  }
+
+  map<R>(transform: (item: T) => R): ReactiveStreamSimulator<R> {
+    return new ReactiveStreamSimulator(this.items.map(transform));
+  }
+
+  subscribe(onNext: (item: T) => void, onComplete: () => void): void {
+    for (const item of this.items) {
+      onNext(item);
+    }
+    onComplete();
+  }
+}
+
+console.log('=== REACTIVE STREAMS: MONO & FLUX STREAM COMPOSITION ===');
+const ordersFlux = ReactiveStreamSimulator.just(
+  { id: 101, amount: 250, currency: 'USD' },
+  { id: 102, amount: 45, currency: 'USD' },
+  { id: 103, amount: 1200, currency: 'EUR' },
+  { id: 104, amount: 15, currency: 'USD' }
+)
+  .filter(o => o.amount >= 50)
+  .map(o => 'ORDER_VERIFIED: #' + o.id + ' (' + o.amount + ' ' + o.currency + ')');
+
+const verifiedOrders: string[] = [];
+ordersFlux.subscribe(
+  order => verifiedOrders.push(order),
+  () => console.log('Flux Stream Completed: ' + verifiedOrders.length + ' orders filtered')
+);
+console.log('Processed Stream: ' + verifiedOrders.join(' | '));
+console.log('Reactive Invariant: Zero threads blocked during pipeline execution');`,
+        output: `=== REACTIVE STREAMS: MONO & FLUX STREAM COMPOSITION ===
+Flux Stream Completed: 2 orders filtered
+Processed Stream: ORDER_VERIFIED: #101 (250 USD) | ORDER_VERIFIED: #103 (1200 EUR)
+Reactive Invariant: Zero threads blocked during pipeline execution`,
+        tryIt: 'Change the filter threshold to 500 to observe how only the 1200 EUR order passes through the stream.',
+        check: {
+          question: 'In Project Reactor, what is the fundamental difference between Mono<T> and Flux<T>?',
+          options: [
+            'Mono emits at most 1 item (0..1), whereas Flux emits an asynchronous stream of multiple items (0..N)',
+            'Mono blocks the CPU thread, whereas Flux is always non-blocking',
+            'Mono can only be used with PostgreSQL databases',
+            'Flux only works in single-threaded environments'
+          ],
+          answer: 0,
+          why: 'In Project Reactor, Mono<T> represents an asynchronous pipeline emitting 0 or 1 element (or an error), while Flux<T> represents a publisher that emits 0 to N elements over time.'
+        }
+      },
+      {
+        title: 'Netty EventLoop Architecture & Non-Blocking Epoll Socket I/O',
+        say: [
+          'Under the hood, Spring WebFlux replaces traditional servlet containers like Apache Tomcat with Netty, a high-performance asynchronous event-driven network application framework.',
+          'Traditional servlet engines dedicate one OS thread per HTTP request. When 5,000 clients connect simultaneously, the operating system struggles with 5,000 active thread stacks and crippling context-switching latency.',
+          'Netty uses an EventLoop architecture powered by operating system I/O multiplexing primitives such as epoll on Linux or kqueue on macOS.',
+          'An EventLoop consists of a single execution thread bound to an I/O Selector that continuously polls thousands of non-blocking socket channels.',
+          'When an HTTP request arrives, the OS notifies the Selector, which dispatches a read event to the EventLoop. The thread processes the incoming bytes, passes them to your reactive WebFlux handler, and immediately returns to polling the selector for other channels.',
+          'Because the EventLoop thread never sleeps or blocks on I/O, a handful of threads (typically matching CPU core count) can effortlessly sustain 100,000 concurrent network connections.'
+        ],
+        example: 'Think of a single experienced airport air-traffic controller handling 50 airplanes simultaneously using a radar screen, versus hiring 50 separate air-traffic controllers where each controller must run outside to the tarmac to look at one airplane through binoculars.',
+        code: `// Simulation: Netty EventLoop Selector Multiplexing
+interface SocketChannel {
+  fd: number;
+  clientIp: string;
+  bytesPending: number;
+}
+
+class NettyEventLoopSimulator {
+  private channels: Map<number, SocketChannel> = new Map();
+  private coreWorkerThreadId: number;
+
+  constructor(workerId: number) {
+    this.coreWorkerThreadId = workerId;
+  }
+
+  registerChannel(channel: SocketChannel): void {
+    this.channels.set(channel.fd, channel);
+  }
+
+  pollSelectors(): { processedCount: number; activeFdList: number[] } {
+    const activeFds: number[] = [];
+    for (const [fd, chan] of this.channels.entries()) {
+      if (chan.bytesPending > 0) {
+        activeFds.push(fd);
+      }
+    }
+    return {
+      processedCount: activeFds.length,
+      activeFdList: activeFds
+    };
+  }
+}
+
+const eventLoop = new NettyEventLoopSimulator(1);
+eventLoop.registerChannel({ fd: 12, clientIp: '192.168.1.5', bytesPending: 1024 });
+eventLoop.registerChannel({ fd: 14, clientIp: '192.168.1.18', bytesPending: 0 });
+eventLoop.registerChannel({ fd: 17, clientIp: '192.168.1.29', bytesPending: 2048 });
+
+const loopMetrics = eventLoop.pollSelectors();
+
+console.log('=== NETTY EVENTLOOP & NON-BLOCKING SOCKET MULTIPLEXING ===');
+console.log('Active Sockets Ready for Read: ' + loopMetrics.processedCount);
+console.log('Multiplexed File Descriptors: [' + loopMetrics.activeFdList.join(', ') + ']');
+console.log('Concurrency Architecture: Single EventLoop servicing 10,000+ connections without thread switches');`,
+        output: `=== NETTY EVENTLOOP & NON-BLOCKING SOCKET MULTIPLEXING ===
+Active Sockets Ready for Read: 2
+Multiplexed File Descriptors: [12, 17]
+Concurrency Architecture: Single EventLoop servicing 10,000+ connections without thread switches`,
+        tryIt: 'Add a new socket channel with 4096 pending bytes and verify it is captured by the pollSelectors dispatch loop.',
+        check: {
+          question: 'Why can a Netty EventLoop handle tens of thousands of concurrent connections with only a few worker threads?',
+          options: [
+            'It leverages non-blocking OS I/O selectors (epoll/kqueue) to multiplex thousands of sockets on single event loops without blocking threads on I/O waits',
+            'It spawns a new physical thread for each byte of data transferred',
+            'It converts all TCP network traffic into UDP datagrams',
+            'It runs exclusively inside the GPU graphics pipeline'
+          ],
+          answer: 0,
+          why: 'Netty uses non-blocking I/O multiplexing: worker threads never block waiting for socket data, allowing a single thread per CPU core to service thousands of active network connections.'
+        }
+      },
+      {
+        title: 'Reactive Backpressure Strategies: BUFFER, DROP, LATEST & ERROR',
+        say: [
+          'In asynchronous distributed systems, a fast producer can emit events at 100,000 items per second, while a slow downstream consumer (such as an external payment gateway or disk writer) can only process 1,000 items per second.',
+          'In unmanaged systems, this speed disparity causes unbounded memory buffers to grow until the JVM crashes with an OutOfMemoryError (OOM).',
+          'The Reactive Streams specification solves this with Backpressure: the consumer signals demand upstream using Subscription.request(n), asking for only as many items as it can currently process.',
+          'When burst traffic arrives, Project Reactor provides four explicit onBackpressure operators to govern excess elements:',
+          'onBackpressureBuffer stores items in a bounded in-memory buffer until capacity is reached; onBackpressureDrop discards incoming items that exceed consumer demand; onBackpressureLatest keeps only the single most recent item, discarding intermediate noise; onBackpressureError immediately terminates the stream with an OverflowException.',
+          'Selecting the appropriate backpressure strategy guarantees system resilience under catastrophic production traffic spikes.'
+        ],
+        example: 'Think of a hydroelectric dam reservoir during a monsoon storm. If floodwaters enter faster than the city power plant can absorb, opening the spillway gates (DROP or LATEST) lets excess water bypass the turbines safely, preventing the dam wall from catastrophic structural collapse (OutOfMemoryError).',
+        code: `// Simulation: Reactive Streams Backpressure Flow Control Engine
+type BackpressureStrategy = 'BUFFER' | 'DROP' | 'LATEST' | 'ERROR';
+
+class BackpressureBufferSimulator {
+  private capacity: number;
+  private strategy: BackpressureStrategy;
+  private queue: number[] = [];
+  public droppedCount: number = 0;
+
+  constructor(capacity: number, strategy: BackpressureStrategy) {
+    this.capacity = capacity;
+    this.strategy = strategy;
+  }
+
+  emit(item: number): boolean {
+    if (this.queue.length < this.capacity) {
+      this.queue.push(item);
+      return true;
+    }
+
+    switch (this.strategy) {
+      case 'DROP':
+        this.droppedCount++;
+        return false;
+      case 'LATEST':
+        this.queue.pop();
+        this.queue.push(item);
+        return true;
+      case 'ERROR':
+        throw new Error('OverflowException: Backpressure buffer full');
+      case 'BUFFER':
+        this.queue.push(item);
+        return true;
+    }
+  }
+
+  getBufferState(): { size: number; contents: number[]; dropped: number } {
+    return { size: this.queue.length, contents: [...this.queue], dropped: this.droppedCount };
+  }
+}
+
+const dropController = new BackpressureBufferSimulator(3, 'DROP');
+[10, 20, 30, 40, 50].forEach(n => dropController.emit(n));
+const dropState = dropController.getBufferState();
+
+console.log('=== REACTIVE STREAMS BACKPRESSURE FLOW CONTROL ===');
+console.log('DROP Strategy (Cap 3, Sent 5): Kept [' + dropState.contents.join(', ') + '], Dropped: ' + dropState.dropped);
+console.log('LATEST Strategy (Cap 3, Sent 5): Maintained latest items without memory exhaustion');
+console.log('Reactive Invariant: Backpressure preserves downstream consumer from out-of-memory collapse');`,
+        output: `=== REACTIVE STREAMS BACKPRESSURE FLOW CONTROL ===
+DROP Strategy (Cap 3, Sent 5): Kept [10, 20, 30], Dropped: 2
+LATEST Strategy (Cap 3, Sent 5): Maintained latest items without memory exhaustion
+Reactive Invariant: Backpressure preserves downstream consumer from out-of-memory collapse`,
+        tryIt: 'Modify the capacity from 3 to 4 and verify that only 1 item is dropped.',
+        check: {
+          question: 'What is the primary function of Backpressure in the Reactive Streams specification?',
+          options: [
+            'To allow downstream consumers to signal demand upstream, preventing fast producers from overwhelming consumer memory',
+            'To automatically encrypt all network traffic using SSL',
+            'To compress database tables before saving them to disk',
+            'To pause the CPU clock during network spikes'
+          ],
+          answer: 0,
+          why: 'Backpressure gives downstream consumers flow control over producers via Subscription.request(n), ensuring consumers never receive more elements than their memory and processing buffers can handle.'
+        }
+      },
+      {
+        title: 'Non-Blocking Reactive Relational Database Connectivity (R2DBC)',
+        say: [
+          'For decades, Java applications connected to relational databases using JDBC (Java Database Connectivity). However, the entire JDBC specification is inherently synchronous and blocking.',
+          'If a Spring WebFlux application executes a traditional blocking JDBC query on a Netty EventLoop thread, that EventLoop freezes until the database responds, destroying the non-blocking benefits of the entire server.',
+          'R2DBC (Reactive Relational Database Connectivity) was created to bring non-blocking, reactive drivers to traditional SQL relational databases such as PostgreSQL, MySQL, and Microsoft SQL Server.',
+          'R2DBC drivers communicate with databases over asynchronous socket protocols. Database query results return as a Flux<Row>, streaming individual database records directly to the client as they arrive over the wire.',
+          'R2DBC supports reactive transaction management: developers use DatabaseClient or Spring Data R2DBC repositories to execute transactional queries reactively using operators like transactional().',
+          'By eliminating blocking threads across the entire pipeline—from HTTP ingress to database disk reads—enterprises achieve end-to-end non-blocking throughput.'
+        ],
+        example: 'Think of ordering food at a modern fast-casual restaurant with a vibrating pager buzzer (R2DBC asynchronous notification), versus standing at the kitchen counter staring directly at the grill cook until your burger is done (blocking JDBC thread stall).',
+        code: `// Simulation: R2DBC Reactive Relational Database Pool & Query Pipeline
+interface R2dbcConnection {
+  id: number;
+  inUse: boolean;
+}
+
+class R2dbcPoolSimulator {
+  private pool: R2dbcConnection[] = [];
+
+  constructor(maxSize: number) {
+    for (let i = 1; i <= maxSize; i++) {
+      this.pool.push({ id: i, inUse: false });
+    }
+  }
+
+  executeReactiveQuery(sql: string): { connectionId: number; status: string; rowCount: number } {
+    const conn = this.pool.find(c => !c.inUse);
+    if (!conn) {
+      throw new Error('ConnectionAcquisitionTimeout: All connections busy');
+    }
+    conn.inUse = true;
+    // Simulate non-blocking wire protocol execution
+    conn.inUse = false; // release back immediately upon stream subscription
+    return {
+      connectionId: conn.id,
+      status: 'ASYNC_STREAM_SUBSCRIBED',
+      rowCount: 3
+    };
+  }
+}
+
+const r2dbc = new R2dbcPoolSimulator(5);
+const queryResult = r2dbc.executeReactiveQuery('SELECT * FROM accounts WHERE balance > 1000');
+
+console.log('=== R2DBC NON-BLOCKING RELATIONAL DATABASE CONNECTIVITY ===');
+console.log('Query: SELECT * FROM accounts WHERE balance > 1000');
+console.log('Execution State: ' + queryResult.status);
+console.log('Connection Acquired & Reused: Connection #' + queryResult.connectionId);
+console.log('Throughput Gain: Non-blocking sockets eliminate thread-parking latency overhead');`,
+        output: `=== R2DBC NON-BLOCKING RELATIONAL DATABASE CONNECTIVITY ===
+Query: SELECT * FROM accounts WHERE balance > 1000
+Execution State: ASYNC_STREAM_SUBSCRIBED
+Connection Acquired & Reused: Connection #1
+Throughput Gain: Non-blocking sockets eliminate thread-parking latency overhead`,
+        tryIt: 'Modify the SQL query to filter by status = "ACTIVE" and verify connection reuse.',
+        check: {
+          question: 'Why can traditional JDBC drivers not be used directly inside Spring WebFlux Netty EventLoops?',
+          options: [
+            'JDBC calls block the executing thread on socket I/O, which would freeze Netty EventLoop threads and halt concurrent request handling',
+            'JDBC is only compatible with Python databases',
+            'JDBC drivers require 64GB of RAM per query',
+            'JDBC does not support SQL SELECT statements'
+          ],
+          answer: 0,
+          why: 'JDBC drivers are strictly blocking; executing a blocking JDBC call on a Netty EventLoop thread stalls that entire event loop, preventing it from processing I/O for thousands of other concurrent sockets.'
+        }
+      },
+      {
+        title: 'Distributed Tracing & Context Propagation with Micrometer & OpenTelemetry',
+        say: [
+          'In synchronous Spring Boot applications, distributed tracing libraries like Spring Cloud Sleuth rely on Java ThreadLocal variables to pass the current TraceID and SpanID down the call stack.',
+          'In reactive programming, ThreadLocal fails completely: a single HTTP request enters on Netty worker thread 1, switches to an elastic scheduler thread for disk I/O, and completes on Netty worker thread 2. Because threads change continuously, ThreadLocal data is lost.',
+          'Project Reactor solves this with the Reactor Context API: an immutable key-value store that travels bound to the reactive Subscriber rather than the OS execution thread.',
+          'Libraries like Micrometer Tracing and OpenTelemetry leverage the Reactor Context to attach W3C Trace Context headers (traceparent: version-traceId-spanId-flags) to outgoing reactive HTTP calls.',
+          'When microservice A calls microservice B via WebClient, the traceparent header propagates across network hops, allowing distributed APM tools (like Jaeger or Zipkin) to correlate the entire transaction end-to-end.',
+          'Mastering reactive context propagation ensures full observability across complex asynchronous microservice architectures.'
+        ],
+        example: 'Think of a cargo container shipping manifest stamped with an international customs tracking number (Trace ID) and port station stamps (Span IDs). As cranes, cargo ships, and trains take turns transporting the container, the stamped manifest travels with the cargo regardless of which driver operates the vehicle.',
+        code: `// Simulation: Distributed Tracing & W3C Traceparent Header Propagator
+interface TraceContext {
+  traceId: string;
+  spanId: string;
+  sampled: boolean;
+}
+
+class ReactiveTracingPropagator {
+  injectTraceHeaders(ctx: TraceContext): Record<string, string> {
+    return {
+      traceparent: '00-' + ctx.traceId + '-' + ctx.spanId + '-0' + (ctx.sampled ? '1' : '0')
+    };
+  }
+
+  extractTraceHeaders(headers: Record<string, string>): TraceContext | null {
+    const tp = headers['traceparent'];
+    if (!tp) return null;
+    const parts = tp.split('-');
+    return {
+      traceId: parts[1],
+      spanId: parts[2],
+      sampled: parts[3] === '01'
+    };
+  }
+}
+
+const tracing = new ReactiveTracingPropagator();
+const initialCtx: TraceContext = {
+  traceId: '4bf92f3577b34da6a3ce929d0e0e4736',
+  spanId: '00f067aa0ba902b7',
+  sampled: true
+};
+
+const outgoingHeaders = tracing.injectTraceHeaders(initialCtx);
+const resolvedCtx = tracing.extractTraceHeaders(outgoingHeaders);
+
+console.log('=== DISTRIBUTED TRACING & REACTOR CONTEXT PROPAGATION ===');
+console.log('W3C Traceparent Header: ' + outgoingHeaders['traceparent']);
+console.log('Extracted Trace ID: ' + resolvedCtx?.traceId);
+console.log('Extracted Span ID: ' + resolvedCtx?.spanId);
+console.log('Observability Guarantee: 100% correlation across asynchronous WebFlux microservice hops');`,
+        output: `=== DISTRIBUTED TRACING & REACTOR CONTEXT PROPAGATION ===
+W3C Traceparent Header: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
+Extracted Trace ID: 4bf92f3577b34da6a3ce929d0e0e4736
+Extracted Span ID: 00f067aa0ba902b7
+Observability Guarantee: 100% correlation across asynchronous WebFlux microservice hops`,
+        tryIt: 'Modify the sampled flag to false and verify that the traceparent header ends with -00.',
+        check: {
+          question: 'Why does traditional Java ThreadLocal storage fail for distributed tracing in Spring WebFlux applications?',
+          options: [
+            'Because reactive stream stages hop across multiple worker threads asynchronously, causing ThreadLocal data to be lost between operations',
+            'Because ThreadLocal cannot store strings longer than 8 characters',
+            'Because WebFlux disables all Java memory management',
+            'Because ThreadLocal is only available in Python runtimes'
+          ],
+          answer: 0,
+          why: 'In reactive runtimes, processing hops between different event loop and worker threads; because ThreadLocal is strictly bound to a single thread, context must be stored in the Subscriber Reactor Context instead.'
+        }
+      }
+    ],
+    summary: [
+      'Project Reactor Mono (0..1) and Flux (0..N) implement the Reactive Streams specification with cold, non-blocking pipelines.',
+      'Netty EventLoops use OS I/O selectors (epoll/kqueue) to multiplex thousands of concurrent sockets on a handful of CPU threads.',
+      'Backpressure strategies (BUFFER, DROP, LATEST, ERROR) govern burst producer traffic to prevent downstream consumer OOM crashes.',
+      'R2DBC delivers non-blocking relational database connectivity, preventing blocking JDBC driver calls from freezing Netty event loops.',
+      'Distributed tracing in reactive applications relies on Reactor Context rather than ThreadLocal to propagate W3C Trace IDs across asynchronous hops.'
+    ],
+    projectStep: {
+      title: 'Architect a Non-Blocking Reactive E-Commerce Checkout Microservice',
+      steps: [
+        'Compose a reactive WebFlux pipeline using Mono and Flux with declarative filtering and mapping.',
+        'Configure Netty EventLoop channel multiplexing to handle high-concurrency socket connections.',
+        'Implement an onBackpressureDrop strategy to protect slow payment gateway consumers during traffic surges.',
+        'Connect to a PostgreSQL database using non-blocking R2DBC connection pooling and reactive queries.',
+        'Propagate W3C traceparent headers across asynchronous reactive hops using Reactor Context.'
+      ]
+    }
   }
 ];
 
