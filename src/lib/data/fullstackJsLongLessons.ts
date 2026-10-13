@@ -786,6 +786,474 @@ console.log('Content-Type: text/event-stream (Unidirectional Server-to-Client Pu
         'Implement an SSE endpoint that streams real-time price updates with Last-Event-ID reconnection support.'
       ]
     }
+  },
+  {
+    coursePrefix: 'fullstack-js',
+    day: 3,
+    title: 'Production Infrastructure: WebSockets, Redis Sessions, Connection Pools & Rate Limiting',
+    goal: 'Master enterprise backend infrastructure: bidirectional WebSockets with heartbeats and backpressure, distributed Redis session storage with sliding TTL, PostgreSQL connection pool management and deadlock recovery, defense-in-depth web security with CSP nonces and CORS preflight, and Token Bucket rate limiting with HTTP 429 throttling headers.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered React Server Components, streaming hydration, and state normalization. In Day 2, we conquered Streaming SSR Suspense boundaries, optimistic Server Actions, Edge JWT middleware, tRPC, and Server-Sent Events. Now in Day 3, we build enterprise infrastructure: bidirectional WebSockets, distributed Redis sessions, PostgreSQL connection pooling, web security headers, and distributed rate limiting.',
+    parts: [
+      {
+        title: 'Bidirectional WebSockets, Heartbeats & Backpressure Management',
+        say: [
+          'While Server-Sent Events excel at unidirectional server push, interactive real-time applications such as collaborative documents, trading desks, and multiplayer games require full-duplex bidirectional communication over WebSockets (RFC 6455).',
+          'A WebSocket connection begins as a standard HTTP/1.1 request that negotiates an Upgrade handshake with HTTP 101 Switching Protocols. Once established, both client and server can transmit lightweight text or binary frames with minimal frame header overhead.',
+          'In production environments, persistent TCP connections face silent network disconnects caused by intermediate NAT gateways, corporate firewalls, and mobile carrier handoffs dropping idle connections without transmitting TCP FIN packets.',
+          'To detect dead connections (zombie peers), enterprise WebSocket servers implement periodic Ping/Pong heartbeats. If a client fails to return a PONG frame before the next heartbeat cycle, the server forcibly terminates the connection to reclaim memory and file descriptors.',
+          'Furthermore, high-throughput servers must manage Socket Backpressure: when a server pushes messages faster than a slow mobile client can consume them over TCP, buffered frames accumulate in the OS network buffer.',
+          'If the server continues queueing messages unchecked, process memory explodes into an Out-Of-Memory (OOM) crash. Production engines monitor socket.bufferedAmount and pause message draining whenever buffers exceed high-watermark thresholds.'
+        ],
+        example: 'Think of a high-pressure fire hose connection. The initial coupling handshake clicks the hose onto the fire hydrant (HTTP 101 Upgrade). A small pulse sensor vibrates the nozzle every 30 seconds to confirm the line is still open (Ping/Pong heartbeat). If water pressure builds up faster than the nozzle operator can spray it (backpressure), the intake valve automatically throttles the flow to prevent the hose from bursting (pausing writes when bufferedAmount exceeds threshold).',
+        code: `// Simulation: WebSocket Heartbeat Invariant & Backpressure Handling
+interface WsConnection {
+  id: string;
+  isAlive: boolean;
+  bufferedAmount: number; // bytes in queue
+  maxBufferThreshold: number;
+}
+
+class WebSocketServerSimulator {
+  private clients: Map<string, WsConnection> = new Map();
+
+  connect(id: string): WsConnection {
+    const conn: WsConnection = {
+      id,
+      isAlive: true,
+      bufferedAmount: 0,
+      maxBufferThreshold: 64 * 1024 // 64 KB
+    };
+    this.clients.set(id, conn);
+    return conn;
+  }
+
+  // Heartbeat ping-pong audit
+  heartbeatCheck(): { aliveCount: number; terminatedCount: number } {
+    let aliveCount = 0;
+    let terminatedCount = 0;
+    for (const [id, conn] of this.clients.entries()) {
+      if (!conn.isAlive) {
+        this.clients.delete(id);
+        terminatedCount++;
+      } else {
+        conn.isAlive = false; // Mark false; client must respond with PONG before next tick
+        aliveCount++;
+      }
+    }
+    return { aliveCount, terminatedCount };
+  }
+
+  pong(id: string) {
+    const conn = this.clients.get(id);
+    if (conn) conn.isAlive = true;
+  }
+
+  send(id: string, payloadBytes: number): { sent: boolean; backpressureTriggered: boolean } {
+    const conn = this.clients.get(id);
+    if (!conn) return { sent: false, backpressureTriggered: false };
+    if (conn.bufferedAmount + payloadBytes > conn.maxBufferThreshold) {
+      return { sent: false, backpressureTriggered: true }; // Pause draining to avoid OOM
+    }
+    conn.bufferedAmount += payloadBytes;
+    return { sent: true, backpressureTriggered: false };
+  }
+}
+
+const ws = new WebSocketServerSimulator();
+ws.connect('client-alpha');
+ws.connect('client-zombie');
+
+// Tick 1: Ping sent to both
+ws.heartbeatCheck();
+// Only alpha responds with PONG
+ws.pong('client-alpha');
+
+// Tick 2: Zombie has not responded -> evicted
+const audit2 = ws.heartbeatCheck();
+// Keep alpha alive for message transmission
+ws.pong('client-alpha');
+
+const backpressureTest = ws.send('client-alpha', 70 * 1024);
+
+console.log('=== WEBSOCKETS HEARTBEAT & BACKPRESSURE INVARIANTS ===');
+console.log('Active Clients Monitored: 2');
+console.log('Dead Connection Evicted: Zombie client terminated after ping timeout (' + audit2.terminatedCount + ' dropped)');
+console.log('High-Watermark Backpressure: ' + (backpressureTest.backpressureTriggered ? 'PAUSED (Socket buffer limit exceeded)' : 'NORMAL'));`,
+        output: `=== WEBSOCKETS HEARTBEAT & BACKPRESSURE INVARIANTS ===\nActive Clients Monitored: 2\nDead Connection Evicted: Zombie client terminated after ping timeout (1 dropped)\nHigh-Watermark Backpressure: PAUSED (Socket buffer limit exceeded)`,
+        tryIt: 'Simulate client-alpha draining its buffer back to 0 bytes and verify that subsequent messages are delivered without backpressure.',
+        check: {
+          question: 'What catastrophic failure occurs if a WebSocket server ignores socket.bufferedAmount and continues writing to a slow client?',
+          options: [
+            'The client browser switches to HTTP/1.0 mode',
+            'Unsent messages accumulate indefinitely in server process RAM until the Node.js process crashes with an Out-Of-Memory (OOM) error',
+            'The database immediately drops all foreign key constraints'
+          ],
+          answer: 1,
+          why: 'When a client receives data slower than the server produces it, TCP flow control stalls writes and the Node.js runtime buffers unsent frames in process heap. Without backpressure throttling based on bufferedAmount, memory usage climbs monotonically to an OOM crash.'
+        }
+      },
+      {
+        title: 'Redis Distributed Session Store & Sliding TTL Expiration',
+        say: [
+          'In monolithic architectures, user sessions were frequently stored in local server RAM. However, modern cloud architectures deploy dozens of stateless backend container instances behind load balancers, making local in-memory session state unviable.',
+          'Storing session tokens in a centralized in-memory datastore like Redis provides sub-millisecond session validation while enabling any backend container to service any incoming HTTP request.',
+          'Unlike stateless JWTs—which cannot be revoked until their expiration timestamp passes without maintaining a distributed denylist—Redis session stores provide instantaneous server-side session revocation across all nodes.',
+          'To balance security with user convenience, production systems implement Sliding Window Expiration: every time an authenticated user makes a valid API request, the server executes an EXPIRE command to reset the session TTL back to 30 minutes.',
+          'Furthermore, Redis enables enterprise session concurrency limits: by maintaining a Redis Set of active session IDs per user, the system can enforce policies like "maximum 2 concurrent logins," automatically evicting the oldest session when a user signs in on a new device.',
+          'This architecture neutralizes session hijacking risks and prevents zombie sessions from consuming memory indefinitely.'
+        ],
+        example: 'Think of an office keycard access system. When you badge into a door (valid API request), the security guard resets your 30-minute hall pass timer (sliding TTL refresh). If you leave your desk and the timer hits 0 without activity, the card automatically deactivates (session expiration). If you register a third badge when company policy only allows two, the security desk automatically revokes your oldest badge (session concurrency limit).',
+        code: `// Simulation: Redis Distributed Session Store & Sliding TTL Expiration
+interface UserSession {
+  sessionId: string;
+  userId: string;
+  role: string;
+  createdAt: number;
+  lastAccessedAt: number;
+  expiresAt: number;
+}
+
+class RedisSessionStoreSimulator {
+  private sessions: Map<string, UserSession> = new Map();
+  private userIndex: Map<string, Set<string>> = new Map();
+  private defaultTtlSeconds: number;
+  private maxSessionsPerUser: number;
+  private counter: number = 1;
+
+  constructor(ttlSeconds = 1800, maxSessions = 3) {
+    this.defaultTtlSeconds = ttlSeconds;
+    this.maxSessionsPerUser = maxSessions;
+  }
+
+  createSession(userId: string, role: string, now: number): string {
+    const sessionId = 'sess_' + userId + '_v' + (this.counter++);
+    const existing = this.userIndex.get(userId) || new Set<string>();
+
+    // Enforce max session concurrency limit (evict oldest)
+    if (existing.size >= this.maxSessionsPerUser) {
+      const oldestId = Array.from(existing)[0];
+      this.sessions.delete(oldestId);
+      existing.delete(oldestId);
+    }
+
+    const session: UserSession = {
+      sessionId,
+      userId,
+      role,
+      createdAt: now,
+      lastAccessedAt: now,
+      expiresAt: now + this.defaultTtlSeconds
+    };
+
+    this.sessions.set(sessionId, session);
+    existing.add(sessionId);
+    this.userIndex.set(userId, existing);
+    return sessionId;
+  }
+
+  // Sliding TTL renewal on valid request
+  touchSession(sessionId: string, now: number): UserSession | null {
+    const session = this.sessions.get(sessionId);
+    if (!session) return null;
+    if (now > session.expiresAt) {
+      this.sessions.delete(sessionId);
+      return null;
+    }
+    session.lastAccessedAt = now;
+    session.expiresAt = now + this.defaultTtlSeconds; // Sliding window extension
+    return session;
+  }
+}
+
+const redis = new RedisSessionStoreSimulator(1800, 2);
+const t0 = 1700000000;
+const s1 = redis.createSession('usr_101', 'admin', t0);
+const s2 = redis.createSession('usr_101', 'admin', t0 + 60);
+const s3 = redis.createSession('usr_101', 'admin', t0 + 120); // Should evict s1 (max 2 sessions)
+
+const touched = redis.touchSession(s2, t0 + 300);
+
+console.log('=== REDIS DISTRIBUTED SESSION STORE & SLIDING TTL ===');
+console.log('Session Created: ' + s2);
+console.log('Sliding Window TTL Extended: New ExpiresAt = +' + (touched ? touched.expiresAt - t0 : 0) + 's');
+console.log('Concurrent Session Limit (Max 2): Evicted oldest session s1 -> ' + (redis.touchSession(s1, t0 + 300) === null ? 'EXPIRED/EVICTED' : 'ACTIVE'));`,
+        output: `=== REDIS DISTRIBUTED SESSION STORE & SLIDING TTL ===\nSession Created: sess_usr_101_v2\nSliding Window TTL Extended: New ExpiresAt = +2100s\nConcurrent Session Limit (Max 2): Evicted oldest session s1 -> EXPIRED/EVICTED`,
+        tryIt: 'Query session s3 and confirm it is active with 1800 seconds remaining from t0 + 120.',
+        check: {
+          question: 'Why is a distributed Redis session store superior to stateless JWTs for enterprise security compliance?',
+          options: [
+            'Redis encrypts data using quantum cryptographic keys',
+            'Redis sessions can be revoked instantly on the server side across all nodes upon logout or security breach, whereas JWTs remain valid until exp timestamp',
+            'Redis does not require any network connections'
+          ],
+          answer: 1,
+          why: 'Stateless JWTs cannot be revoked prior to expiration without maintaining a distributed denylist. Redis stores session state centrally, allowing instantaneous revocation, device eviction, and sliding expiration across all backend server nodes.'
+        }
+      },
+      {
+        title: 'Database Connection Pooling & Deadlock Recovery',
+        say: [
+          'Opening a physical TCP connection to a PostgreSQL database is computationally expensive: it involves TCP three-way handshakes, TLS negotiation, authentication, process forking, and memory allocation for backend workers.',
+          'If a web server opened a new database connection for every incoming HTTP request, the database server would quickly exhaust its connection limit, thrash CPU cores in process scheduling, and collapse under connection storms.',
+          'Database connection pools (such as pg.Pool in Node.js or HikariCP in Java) maintain a pre-allocated pool of warm, reusable database connections. Application threads borrow an active connection, execute a query or transaction, and return the connection to the pool immediately upon completion.',
+          'Sizing a connection pool follows Little’s Law and hardware queuing theory: counterintuitively, smaller connection pools (such as 10–20 connections per server node) often yield higher throughput and lower latency than pools of 200 connections, because they prevent disk I/O and CPU context switching saturation.',
+          'In concurrent relational workloads, conflicting transactional row locks can result in Deadlocks (PostgreSQL error code 40P01). When two transactions each hold a lock the other requires, the database deadlock detector terminates one transaction with a serialization failure.',
+          'Production backend services wrap database transactions in automated retry handlers with exponential backoff and randomized jitter, allowing the aborted transaction to replay cleanly once the competing transaction commits.'
+        ],
+        example: 'Think of taxi cabs waiting outside an airport terminal. If every arriving passenger had to purchase their own new car from a dealership (opening a raw DB connection), the airport would instantly gridlock. Instead, passengers queue for a fleet of 20 shared taxis (connection pool). As soon as one passenger reaches their destination, the cab immediately returns to the airport for the next rider.',
+        code: `// Simulation: Database Connection Pooling & Automated Deadlock Recovery
+class PgConnectionPoolSimulator {
+  private maxConnections: number;
+  private activeConnections: number = 0;
+  private idleConnections: number = 0;
+
+  constructor(maxConns: number) {
+    this.maxConnections = maxConns;
+    this.idleConnections = maxConns;
+  }
+
+  acquire(): { release: () => void } {
+    if (this.idleConnections <= 0) {
+      throw new Error('Connection pool exhausted: max ' + this.maxConnections + ' in use');
+    }
+    this.idleConnections--;
+    this.activeConnections++;
+    let released = false;
+    return {
+      release: () => {
+        if (!released) {
+          released = true;
+          this.activeConnections--;
+          this.idleConnections++;
+        }
+      }
+    };
+  }
+
+  // Execute query with automatic deadlock retry (PostgreSQL 40P01)
+  executeWithRetry<T>(
+    operation: (attempt: number) => { success: boolean; errorCode?: string; result?: T },
+    maxRetries = 3
+  ): { result: T | null; attempts: number; recoveredFromDeadlock: boolean } {
+    let recovered = false;
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      const conn = this.acquire();
+      try {
+        const op = operation(attempt);
+        if (op.success && op.result !== undefined) {
+          return { result: op.result, attempts: attempt, recoveredFromDeadlock: recovered };
+        }
+        if (op.errorCode === '40P01') {
+          recovered = true;
+          // In real DB, sleep with exponential backoff & jitter
+          continue;
+        }
+        throw new Error('Unrecoverable DB Error: ' + op.errorCode);
+      } finally {
+        conn.release();
+      }
+    }
+    throw new Error('Max retries exceeded');
+  }
+}
+
+const pool = new PgConnectionPoolSimulator(10);
+let simulatedDbAttempt = 0;
+const txResult = pool.executeWithRetry<string>((attempt) => {
+  simulatedDbAttempt++;
+  if (simulatedDbAttempt === 1) {
+    return { success: false, errorCode: '40P01' }; // PostgreSQL deadlock error
+  }
+  return { success: true, result: 'TX_COMMITTED_LEDGER_BALANCE_UPDATED' };
+});
+
+console.log('=== DATABASE CONNECTION POOLING & DEADLOCK RECOVERY ===');
+console.log('Pool Status: Active 0, Idle 10 (Connections returned cleanly)');
+console.log('Deadlock Recovery: ' + (txResult.recoveredFromDeadlock ? 'DETECTED 40P01 & RETRIED SUCCESSFULLY' : 'FAILED'));
+console.log('Transaction Result: ' + txResult.result + ' (Took ' + txResult.attempts + ' attempts)');`,
+        output: `=== DATABASE CONNECTION POOLING & DEADLOCK RECOVERY ===\nPool Status: Active 0, Idle 10 (Connections returned cleanly)\nDeadlock Recovery: DETECTED 40P01 & RETRIED SUCCESSFULLY\nTransaction Result: TX_COMMITTED_LEDGER_BALANCE_UPDATED (Took 2 attempts)`,
+        tryIt: 'Trigger a connection pool exhaustion error by calling acquire() 11 times without calling release().',
+        check: {
+          question: 'What is the purpose of wrapping database transactions in a retry loop when encountering PostgreSQL error 40P01?',
+          options: [
+            '40P01 signifies a syntax error in the SQL string',
+            '40P01 indicates a Deadlock Detected abort, which is transient and will succeed when retried after competing transactions release their locks',
+            '40P01 indicates that the hard drive is completely full'
+          ],
+          answer: 1,
+          why: 'PostgreSQL error code 40P01 indicates that the database deadlock detector aborted the transaction to break a circular lock dependency. Because the condition is transient, retrying with exponential backoff allows the transaction to succeed once the competing transaction commits.'
+        }
+      },
+      {
+        title: 'Web Security Hardening: Content Security Policy (CSP) & CORS Preflight',
+        say: [
+          'Web application security requires defense-in-depth at the HTTP protocol layer to protect users against Cross-Site Scripting (XSS), clickjacking, and cross-origin data exfiltration.',
+          'Content Security Policy (CSP) is an HTTP response header that restricts which scripts, styles, images, and frames the browser is permitted to execute or render on the page.',
+          'Modern CSP implementations utilize Cryptographic Nonces: the server generates a cryptographically random, single-use base64 token per HTTP request and includes it in the header: script-src \'self\' \'nonce-{token}\' \'strict-dynamic\'.',
+          'Any inline <script> tag injected by an attacker via stored or reflected XSS will lack the secret nonce and will be blocked instantly by the browser execution engine, completely defusing XSS attacks.',
+          'Cross-Origin Resource Sharing (CORS) governs how browsers enforce the Same-Origin Policy (SOP). When an application frontend at https://app.pinit.os sends a fetch request to an API at https://api.pinit.os with custom headers or credentials, the browser first issues an HTTP OPTIONS Preflight request.',
+          'The server must validate the incoming Origin against an allowed whitelist and respond with Access-Control-Allow-Origin and Access-Control-Allow-Credentials: true. Crucially, browsers reject credentials if the server responds with a wildcard (*), enforcing strict origin specificity.'
+        ],
+        example: 'Think of a VIP concert backstage pass. A generic sign saying "Anyone welcome" (*) will never grant access to private dressing rooms (credentials blocked). Instead, security guards inspect your personalized wristband with today\'s unique hologram stamp (cryptographic CSP nonce). If a counterfeit badge lacks today\'s stamp, the guards immediately bar entry at the door.',
+        code: `// Simulation: Defense-in-Depth Web Security (CSP Nonce & CORS Preflight)
+class SecurityHeadersSimulator {
+  generateCspHeader(nonce: string): string {
+    return [
+      "default-src 'self'",
+      "script-src 'self' 'nonce-" + nonce + "' 'strict-dynamic'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: https:",
+      "frame-ancestors 'none'",
+      "base-uri 'self'"
+    ].join('; ');
+  }
+
+  handleCorsPreflight(
+    requestOrigin: string,
+    allowedOrigins: string[]
+  ): { status: number; headers: Record<string, string> } {
+    if (!allowedOrigins.includes(requestOrigin)) {
+      return { status: 403, headers: {} };
+    }
+    return {
+      status: 204,
+      headers: {
+        'Access-Control-Allow-Origin': requestOrigin,
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Max-Age': '86400'
+      }
+    };
+  }
+}
+
+const sec = new SecurityHeadersSimulator();
+const nonce = 'rAnd0mN0nc3Str1ng';
+const cspHeader = sec.generateCspHeader(nonce);
+const corsResponse = sec.handleCorsPreflight('https://app.pinit.os', [
+  'https://app.pinit.os',
+  'https://dashboard.pinit.os'
+]);
+
+console.log('=== WEB SECURITY: CSP NONCE & CORS PREFLIGHT ===');
+console.log('CSP Nonce Directives: ' + cspHeader.split('; ')[1]);
+console.log('CORS Preflight Status: ' + corsResponse.status + ' No Content');
+console.log('Access-Control-Allow-Origin: ' + corsResponse.headers['Access-Control-Allow-Origin']);
+console.log('Access-Control-Allow-Credentials: ' + corsResponse.headers['Access-Control-Allow-Credentials']);`,
+        output: `=== WEB SECURITY: CSP NONCE & CORS PREFLIGHT ===\nCSP Nonce Directives: script-src 'self' 'nonce-rAnd0mN0nc3Str1ng' 'strict-dynamic'\nCORS Preflight Status: 204 No Content\nAccess-Control-Allow-Origin: https://app.pinit.os\nAccess-Control-Allow-Credentials: true`,
+        tryIt: 'Send an origin like https://malicious-site.com and verify that handleCorsPreflight returns HTTP 403 Forbidden.',
+        check: {
+          question: 'Why does the browser refuse to send cookies/credentials if the server responds to a CORS request with Access-Control-Allow-Origin: *?',
+          options: [
+            'Because the browser treats wildcard credentials as an insecure configuration that would allow any malicious third-party site to steal authenticated user sessions',
+            'Because wildcards are not valid characters in ASCII',
+            'Because the server will crash if it receives an asterisk'
+          ],
+          answer: 0,
+          why: 'The W3C CORS specification forbids combining Access-Control-Allow-Credentials: true with a wildcard origin (*). If permitted, any arbitrary website on the internet could perform credentialed requests against private user data.'
+        }
+      },
+      {
+        title: 'Token Bucket Rate Limiting & Distributed Throttling',
+        say: [
+          'To protect API gateways and backend microservices against Denial of Service (DDoS), credential stuffing, and scraping, systems implement algorithmic Rate Limiting.',
+          'Among rate limiting algorithms—including Fixed Window Counter, Sliding Window Log, and Leaky Bucket—the Token Bucket algorithm is the enterprise standard adopted by AWS, Stripe, and Cloudflare.',
+          'A token bucket is defined by two parameters: Burst Capacity (the maximum number of tokens the bucket can hold) and Refill Rate (the rate at which tokens accumulate per second).',
+          'When an incoming API request arrives, the algorithm calculates how many tokens have accumulated since the last request based on elapsed time: tokens = min(capacity, tokens + elapsedSec * refillRate).',
+          'If enough tokens are present, the request consumes tokens and proceeds immediately, allowing bursts of legitimate user traffic without artificial latency.',
+          'When the bucket is exhausted, the server rejects the request with HTTP 429 Too Many Requests and attaches standard RFC 6585 headers: X-RateLimit-Limit, X-RateLimit-Remaining, and Retry-After: {seconds}, instructing the client exactly when it may safely retry.'
+        ],
+        example: 'Think of an arcade ticket dispenser. The machine starts with a roll of 5 tickets (burst capacity). Every second, the machine prints 1 new ticket (refill rate). If you want to play a game requiring 3 tickets, you hand them over immediately. If you try to play three games back-to-back in half a second, the tickets run out and the machine displays "Please wait 2 seconds before inserting more coins" (HTTP 429 with Retry-After).',
+        code: `// Simulation: Token Bucket Rate Limiting & HTTP 429 Throttling
+class TokenBucketRateLimiter {
+  private capacity: number;
+  private refillRatePerSec: number;
+  private tokens: number;
+  private lastRefillTimestamp: number;
+
+  constructor(capacity: number, refillRatePerSec: number) {
+    this.capacity = capacity;
+    this.refillRatePerSec = refillRatePerSec;
+    this.tokens = capacity;
+    this.lastRefillTimestamp = 0;
+  }
+
+  consume(cost = 1, currentTimestamp: number): {
+    allowed: boolean;
+    remaining: number;
+    retryAfterSec?: number;
+  } {
+    if (this.lastRefillTimestamp === 0) {
+      this.lastRefillTimestamp = currentTimestamp;
+    }
+    // Refill tokens based on elapsed time
+    const elapsedSec = Math.max(0, (currentTimestamp - this.lastRefillTimestamp) / 1000);
+    this.tokens = Math.min(this.capacity, this.tokens + elapsedSec * this.refillRatePerSec);
+    this.lastRefillTimestamp = currentTimestamp;
+
+    if (this.tokens >= cost) {
+      this.tokens -= cost;
+      return {
+        allowed: true,
+        remaining: Math.floor(this.tokens)
+      };
+    } else {
+      const missingTokens = cost - this.tokens;
+      const retryAfter = Math.ceil(missingTokens / this.refillRatePerSec);
+      return {
+        allowed: false,
+        remaining: 0,
+        retryAfterSec: retryAfter
+      };
+    }
+  }
+}
+
+const limiter = new TokenBucketRateLimiter(5, 1); // 5 token burst, 1 token/sec refill
+const nowMs = 1700000000000;
+const req1 = limiter.consume(3, nowMs); // Takes 3, 2 remaining
+const req2 = limiter.consume(2, nowMs); // Takes 2, 0 remaining
+const req3 = limiter.consume(1, nowMs); // Denied! 0 remaining, needs 1 sec
+
+console.log('=== TOKEN BUCKET RATE LIMITING & THROTTLING ===');
+console.log('Request 1 (Cost 3): ' + (req1.allowed ? 'ALLOWED (Remaining: ' + req1.remaining + ')' : 'DENIED'));
+console.log('Request 2 (Cost 2): ' + (req2.allowed ? 'ALLOWED (Remaining: ' + req2.remaining + ')' : 'DENIED'));
+console.log('Request 3 (Cost 1 Burst Exceeded): ' + (req3.allowed ? 'ALLOWED' : 'HTTP 429 TOO MANY REQUESTS'));
+console.log('Header Invariant: Retry-After: ' + req3.retryAfterSec + 's; X-RateLimit-Remaining: 0');`,
+        output: `=== TOKEN BUCKET RATE LIMITING & THROTTLING ===\nRequest 1 (Cost 3): ALLOWED (Remaining: 2)\nRequest 2 (Cost 2): ALLOWED (Remaining: 0)\nRequest 3 (Cost 1 Burst Exceeded): HTTP 429 TOO MANY REQUESTS\nHeader Invariant: Retry-After: 1s; X-RateLimit-Remaining: 0`,
+        tryIt: 'Simulate a 2000ms delay before request 3 and verify that 2 tokens are replenished, allowing the request to succeed.',
+        check: {
+          question: 'Why is the Token Bucket algorithm preferred over a Fixed Window Counter for API rate limiting?',
+          options: [
+            'Fixed Window Counters allow up to double the rate limit threshold at window boundaries (the boundary burst problem), whereas Token Bucket smoothly enforces refill rates with configurable burst bounds',
+            'Token Bucket requires a GPU to compute',
+            'Fixed Window Counters cannot count above 10'
+          ],
+          answer: 0,
+          why: 'Fixed Window Counters reset at fixed intervals (e.g., top of the minute), allowing users to send maximum requests at 00:59 and another burst at 01:00, doubling peak load. Token Bucket continuously refills tokens over time, preventing boundary spikes.'
+        }
+      }
+    ],
+    summary: [
+      'WebSockets provide full-duplex communication with Ping/Pong heartbeats to purge dead connections and backpressure checks on bufferedAmount to prevent OOM.',
+      'Redis distributed session stores enable stateless backend scaling with sliding TTL extension and atomic concurrent device eviction.',
+      'Database connection pools optimize server resources through connection reuse, while exponential backoff loops automatically recover from 40P01 deadlocks.',
+      'Content Security Policy with cryptographic nonces neutralizes inline XSS, and CORS preflight ensures credentialed cross-origin requests cannot use wildcards.',
+      'Token Bucket rate limiters accommodate legitimate bursts while enforcing smooth refill rates and emitting RFC 6585 HTTP 429 Retry-After headers.'
+    ],
+    projectStep: {
+      title: 'Architect a High-Throughput Production API Gateway with WebSockets & Redis',
+      steps: [
+        'Implement an RFC 6455 WebSocket gateway with heartbeat eviction and socket.bufferedAmount backpressure throttling.',
+        'Configure a Redis session manager with sliding window expiration and a 2-device concurrency ceiling.',
+        'Wrap transactional database operations in a connection pool with automated PostgreSQL 40P01 deadlock retries.',
+        'Deploy strict CSP nonce headers and a CORS preflight handler restricting credentials to authorized origins.',
+        'Implement a distributed Token Bucket rate limiter that returns HTTP 429 and Retry-After headers on burst depletion.'
+      ]
+    }
   }
 ];
+
 

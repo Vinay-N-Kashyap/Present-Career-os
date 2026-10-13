@@ -159,3 +159,53 @@ test('Fullstack-JS Day 2: Domain-Specific Content Assertions', () => {
   assert.ok(fsD2.parts[4].title.includes('Server-Sent Events') || fsD2.parts[4].title.includes('SSE'));
   assert.ok(fsD2.parts[4].output.includes('Last-Event-ID'));
 });
+
+test('Fullstack-JS Day 3: Resolution & Structural Invariants for WebSockets, Redis Sessions & Rate Limiting', () => {
+  const fsD3 = getLongLesson('fullstack-js', 3);
+  assert.ok(fsD3, 'fullstack-js Day 3 long lesson must resolve');
+  assert.equal(fsD3.day, 3);
+  assert.equal(fsD3.parts.length, 5, 'fullstack-js Day 3 must contain exactly 5 parts');
+  assert.ok(fsD3.summary.length >= 4, 'fullstack-js Day 3 must contain comprehensive summary');
+  assert.ok(fsD3.projectStep, 'fullstack-js Day 3 must have a hands-on project step');
+  assert.ok(fsD3.minutes >= 15, 'fullstack-js Day 3 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of fsD3.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Fullstack-JS Day 3: Domain-Specific Content Assertions', () => {
+  const fsD3 = getLongLesson('fullstack-js', 3);
+  assert.ok(fsD3);
+
+  // Part 1 – Bidirectional WebSockets, Heartbeats & Backpressure
+  assert.ok(fsD3.parts[0].title.includes('WebSockets') || fsD3.parts[0].title.includes('Backpressure'));
+  assert.ok(fsD3.parts[0].output.includes('Zombie client terminated after ping timeout'));
+
+  // Part 2 – Redis Distributed Session Store & Sliding TTL
+  assert.ok(fsD3.parts[1].title.includes('Redis') || fsD3.parts[1].title.includes('Session'));
+  assert.ok(fsD3.parts[1].output.includes('Concurrent Session Limit (Max 2): Evicted oldest session'));
+
+  // Part 3 – Database Connection Pooling & Deadlock Recovery
+  assert.ok(fsD3.parts[2].title.includes('Connection Pooling') || fsD3.parts[2].title.includes('Deadlock'));
+  assert.ok(fsD3.parts[2].output.includes('DETECTED 40P01 & RETRIED SUCCESSFULLY'));
+
+  // Part 4 – CSP Nonce & CORS Preflight
+  assert.ok(fsD3.parts[3].title.includes('CSP') || fsD3.parts[3].title.includes('CORS'));
+  assert.ok(fsD3.parts[3].output.includes("script-src 'self' 'nonce-"));
+
+  // Part 5 – Token Bucket Rate Limiting
+  assert.ok(fsD3.parts[4].title.includes('Rate Limiting') || fsD3.parts[4].title.includes('Token Bucket'));
+  assert.ok(fsD3.parts[4].output.includes('HTTP 429 TOO MANY REQUESTS'));
+});
+
