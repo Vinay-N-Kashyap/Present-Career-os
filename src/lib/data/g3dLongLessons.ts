@@ -1078,6 +1078,324 @@ console.log('Algorithmic Acceleration: O(log N) tree traversal vs O(N) brute for
         'Construct a BVH ray-AABB slab intersection traverser accelerating spatial queries to O(log N).'
       ]
     }
+  },
+  {
+    day: 4,
+    title: 'Advanced WebGPU Multi-Pass Render Pipelines, Clustered Shading & Compute Physics',
+    goal: 'Master advanced graphics engineering with WebGPU and WGSL: multi-pass deferred rendering with G-Buffers, clustered forward / tiled light culling in compute shaders, Cook-Torrance GGX microfacet specular BRDF with energy conservation, GPU particle physics with spatial grid broadphase in storage buffers, and hardware mipmapping with anisotropic texture filtering.',
+    minutes: 36,
+    recap: 'Welcome to Advanced WebGPU Architecture & Modern Shading Pipelines. Today we harness WebGPU’s explicit multi-queue command encoders, compute passes, and cluster-based lighting engines.',
+    parts: [
+      {
+        title: 'Multi-Pass Deferred Shading & WebGPU G-Buffer Architecture',
+        say: [
+          'In traditional Forward Rendering, every triangle in the scene executes lighting calculations for every active light source. If a scene contains 50,000 polygons and 50 point lights, the fragment shader computes 2.5 million lighting operations, even if 80% of those fragments are ultimately occluded by foreground geometry. This creates an unscalable bottleneck.',
+          'Deferred Shading solves this by splitting rendering into two explicit passes. In Pass 1 (Geometry Pass), the rasterizer renders all geometry without evaluating lighting, writing geometric surface properties into Multi-Render-Target (MRT) textures known as the Geometry Buffer (G-Buffer). A modern WebGPU G-buffer binds four render attachments: Albedo RGB (RGBA8Unorm), World-space Normals (RGBA16Float), Roughness/Metallic (RG8Unorm), and Linear Depth (Depth32Float).',
+          'In Pass 2 (Lighting Pass), a single screen-filling quad is rendered. The fragment shader reads the G-Buffer textures pixel-by-pixel, reconstructing world positions from depth and applying lighting equations only to the visible surface pixels. This reduces lighting complexity from O(geometry * lights) to O(screen_pixels * lights), enabling hundreds of dynamic lights in dense game scenes.'
+        ],
+        example: 'Like an artist preparing a composite painting: first drawing all character outlines, textures, and heights onto separate clear plastic film layers (G-buffer), and then shining colored spotlights onto the composite sheets in a single final exposure.',
+        code: `// Multi-Pass Deferred Shading & WebGPU G-Buffer Simulator
+interface GBufferPixel {
+  albedo: [number, number, number];
+  normal: [number, number, number];
+  roughness: number;
+  metallic: number;
+  depth: number;
+}
+
+class DeferredLightingPipeline {
+  // Pass 1: G-Buffer Generation (MRT attachments)
+  sampleGBuffer(): GBufferPixel {
+    return {
+      albedo: [0.8, 0.2, 0.2], // Red base color
+      normal: [0, 0, 1], // Facing camera (+Z)
+      roughness: 0.3,
+      metallic: 0.1,
+      depth: 0.85
+    };
+  }
+
+  // Pass 2: Screen-space lighting pass
+  evaluateDirectLight(pixel: GBufferPixel, lightDir: [number, number, number], lightColor: [number, number, number]): [number, number, number] {
+    // Lambertian diffuse: max(dot(N, L), 0)
+    const nDotL = Math.max(0, pixel.normal[0] * lightDir[0] + pixel.normal[1] * lightDir[1] + pixel.normal[2] * lightDir[2]);
+    return [
+      Number((pixel.albedo[0] * lightColor[0] * nDotL).toFixed(3)),
+      Number((pixel.albedo[1] * lightColor[1] * nDotL).toFixed(3)),
+      Number((pixel.albedo[2] * lightColor[2] * nDotL).toFixed(3))
+    ];
+  }
+}
+
+const pipeline = new DeferredLightingPipeline();
+const gbuf = pipeline.sampleGBuffer();
+const lightDirection: [number, number, number] = [0, 0, 1]; // Direct frontal light
+const lightColor: [number, number, number] = [1.0, 1.0, 1.0];
+const litRadiance = pipeline.evaluateDirectLight(gbuf, lightDirection, lightColor);
+
+console.log('=== MULTI-PASS DEFERRED SHADING & WEBGPU G-BUFFER ===');
+console.log('MRT Attachments: Albedo (RGBA8), Normal (RGBA16F), Roughness/Metallic (RG8), Depth (D32F)');
+console.log('Pass 1 (G-Buffer Raster): Stored surface geometry with 0 lighting calculations');
+console.log('Pass 2 (Deferred Composite): Lit Pixel Radiance RGB: [' + litRadiance.join(', ') + ']');
+console.log('Efficiency Win: Shading complexity decoupled from scene geometry count');`,
+        output: `=== MULTI-PASS DEFERRED SHADING & WEBGPU G-BUFFER ===\nMRT Attachments: Albedo (RGBA8), Normal (RGBA16F), Roughness/Metallic (RG8), Depth (D32F)\nPass 1 (G-Buffer Raster): Stored surface geometry with 0 lighting calculations\nPass 2 (Deferred Composite): Lit Pixel Radiance RGB: [0.8, 0.2, 0.2]\nEfficiency Win: Shading complexity decoupled from scene geometry count`,
+        tryIt: 'Change lightDirection to [0, 1, 0] perpendicular to the normal and observe that litRadiance drops to [0, 0, 0].',
+        check: {
+          question: 'What is the primary algorithmic advantage of Deferred Shading over Forward Rendering?',
+          options: [
+            'It decouples lighting calculations from geometric triangle density, computing lighting only once per visible screen pixel',
+            'It enables 3D graphics to run on monochrome e-ink monitors',
+            'It eliminates the need for vertex buffers entirely'
+          ],
+          answer: 0,
+          why: 'By rendering geometry into G-buffer textures first, occluded pixels are naturally discarded, ensuring lighting calculations execute only for visible surfaces.'
+        }
+      },
+      {
+        title: 'Clustered Forward & Tiled Light Culling with Compute Shaders',
+        say: [
+          'While Deferred Shading handles high light counts efficiently, it has two major limitations: it cannot natively handle transparent surfaces (such as stained glass, smoke, or water), and hardware Multi-Sample Anti-Aliasing (MSAA) becomes prohibitively memory-intensive. Clustered Forward Shading unites the benefits of both paradigms.',
+          'In Clustered Forward Shading, the view camera frustum is subdivided along X, Y, and Z into a 3D grid of spatial clusters (for example, 16 horizontal bins x 9 vertical bins x 24 logarithmic depth slices, yielding 3,456 cluster bounding boxes). Before rendering the scene, a WebGPU Compute Shader pass runs across all active point lights in the scene.',
+          'The compute shader tests each light bounding sphere against cluster AABBs and writes the list of overlapping light IDs into a GPU storage buffer. When the forward fragment shader renders transparent and opaque meshes, each pixel calculates which cluster it occupies in screen-depth space and loops only through the subset of lights intersecting that cluster. This enables thousands of dynamic lights with full support for transparency and hardware MSAA.'
+        ],
+        example: 'Like sorting mail packages into a grid of neighborhood cubbies before delivery drivers depart: each driver only carries and inspects packages intended for their designated street grid.',
+        code: `// Clustered Forward & Tiled Light Culling (WGSL) Simulator
+interface PointLight {
+  id: number;
+  pos: [number, number, number];
+  radius: number;
+}
+
+class ClusteredLightCuller {
+  // Frustum cluster grid: 16x9x24 clusters
+  cullLightsForCluster(clusterMinZ: number, clusterMaxZ: number, lights: PointLight[]): number[] {
+    const activeIds: number[] = [];
+    for (const light of lights) {
+      const lightMinZ = light.pos[2] - light.radius;
+      const lightMaxZ = light.pos[2] + light.radius;
+      // 1D depth overlap check
+      if (lightMaxZ >= clusterMinZ && lightMinZ <= clusterMaxZ) {
+        activeIds.push(light.id);
+      }
+    }
+    return activeIds;
+  }
+}
+
+const culler = new ClusteredLightCuller();
+const testLights: PointLight[] = [
+  { id: 1, pos: [0, 0, 5], radius: 2 },   // Z range: [3, 7]
+  { id: 2, pos: [0, 0, 15], radius: 3 },  // Z range: [12, 18]
+  { id: 3, pos: [0, 0, 50], radius: 10 }  // Z range: [40, 60]
+];
+
+const clusterNearLights = culler.cullLightsForCluster(2, 8, testLights);
+const clusterFarLights = culler.cullLightsForCluster(30, 45, testLights);
+
+console.log('=== CLUSTERED FORWARD & TILED LIGHT CULLING (WGSL) ===');
+console.log('Grid Volume: 16x9x24 Frustum Clusters (3,456 spatial cluster bins)');
+console.log('Cluster Near (Z: 2-8m) Active Lights: ' + clusterNearLights.length + ' (Light IDs: [' + clusterNearLights.join(', ') + '])');
+console.log('Cluster Far (Z: 30-45m) Active Lights: ' + clusterFarLights.length + ' (Light IDs: [' + clusterFarLights.join(', ') + '])');
+console.log('Forward Pipeline Benefit: Supports transparency & MSAA with 1,000+ dynamic lights');`,
+        output: `=== CLUSTERED FORWARD & TILED LIGHT CULLING (WGSL) ===\nGrid Volume: 16x9x24 Frustum Clusters (3,456 spatial cluster bins)\nCluster Near (Z: 2-8m) Active Lights: 1 (Light IDs: [1])\nCluster Far (Z: 30-45m) Active Lights: 1 (Light IDs: [3])\nForward Pipeline Benefit: Supports transparency & MSAA with 1,000+ dynamic lights`,
+        tryIt: 'Add a new light at Z=5 with radius 10 and verify that it appears in both near and mid cluster bins.',
+        check: {
+          question: 'Why does Clustered Forward Shading support transparent materials better than Deferred Shading?',
+          options: [
+            'Because forward fragment shaders evaluate lighting in order directly during mesh rasterization, whereas deferred shading can only store one depth layer per pixel in the G-Buffer',
+            'Because transparent shaders do not use GPU memory',
+            'Because WebGPU only supports transparency on Tuesday'
+          ],
+          answer: 0,
+          why: 'Deferred G-Buffers store a single surface depth per pixel, making multi-layered blending impossible. Clustered forward computes forward lighting using pre-culled cluster light lists.'
+        }
+      },
+      {
+        title: 'Cook-Torrance GGX Specular BRDF & Energy Conservation',
+        say: [
+          'Physically Based Rendering (PBR) simulates the interaction of light and matter based on real-world physics. The industry standard model for opaque materials is the Cook-Torrance microfacet Bidirectional Reflectance Distribution Function (BRDF).',
+          'The specular component is governed by three terms: D * G * F / (4 * (N.V) * (N.L)). D is the GGX Normal Distribution Function, describing the statistical orientation of microscopic surface microfacets based on roughness. G is the Schlick-Smith Geometric shadowing function, accounting for microfacets occluding each other. F is the Fresnel-Schlick equation, representing how reflectance increases at glancing grazing angles.',
+          'A fundamental law of physics is energy conservation: a material cannot reflect more photon energy than it receives. In the Cook-Torrance model, incoming light is partitioned into specular reflection (Ks) and diffuse refraction (Kd). Because metallic materials have free conduction electrons that absorb all refracted light, metallic surfaces have Kd = 0. Enforcing Kd = (1 - Ks) * (1 - metallic) guarantees that Kd + Ks <= 1.0, preventing blown-out highlights.'
+        ],
+        example: 'Like polishing rough wood versus a chrome bumper: smooth chrome reflects sharp specular glints while matte wood scatters light in soft diffuse glows, but neither surface can emit more light than the lamp shining on it.',
+        code: `// Cook-Torrance GGX Specular BRDF & Energy Conservation Simulator
+class CookTorrancePbrBrdf {
+  // GGX Normal Distribution Function D
+  distributionGgx(nDotH: number, roughness: number): number {
+    const a = roughness * roughness;
+    const a2 = a * a;
+    const d = (nDotH * nDotH * (a2 - 1.0) + 1.0);
+    return a2 / (Math.PI * d * d);
+  }
+
+  // Fresnel-Schlick approximation F
+  fresnelSchlick(vDotH: number, f0: number): number {
+    return f0 + (1.0 - f0) * Math.pow(1.0 - vDotH, 5);
+  }
+
+  evaluateRadiance(roughness: number, metallic: number): { kd: number; ks: number; energyConserved: boolean } {
+    const f0 = 0.04 * (1.0 - metallic) + metallic; // Dielectric vs metallic base reflectance
+    const ks = this.fresnelSchlick(0.707, f0); // Specular reflection weight
+    const kd = (1.0 - ks) * (1.0 - metallic); // Diffuse weight (metals have 0 diffuse)
+    return {
+      kd: Number(kd.toFixed(3)),
+      ks: Number(ks.toFixed(3)),
+      energyConserved: (kd + ks) <= 1.0
+    };
+  }
+}
+
+const pbr = new CookTorrancePbrBrdf();
+const dielectric = pbr.evaluateRadiance(0.4, 0.0);
+const metal = pbr.evaluateRadiance(0.2, 1.0);
+
+console.log('=== COOK-TORRANCE GGX SPECULAR BRDF & ENERGY CONSERVATION ===');
+console.log('Dielectric Surface (Plastic/Wood): Kd=' + dielectric.kd + ' | Ks=' + dielectric.ks + ' (Total: ' + (dielectric.kd + dielectric.ks) + ')');
+console.log('Metallic Surface (Gold/Brass): Kd=' + metal.kd + ' | Ks=' + metal.ks + ' (Metals absorb all diffuse)');
+console.log('Energy Conservation Invariant: Kd + Ks <= 1.0 -> ' + (dielectric.energyConserved && metal.energyConserved ? 'STRICTLY ENFORCED' : 'VIOLATED'));
+console.log('Visual Fidelity: Photorealistic highlights without over-bright burning artifacts');`,
+        output: `=== COOK-TORRANCE GGX SPECULAR BRDF & ENERGY CONSERVATION ===\nDielectric Surface (Plastic/Wood): Kd=0.958 | Ks=0.042 (Total: 1)\nMetallic Surface (Gold/Brass): Kd=0 | Ks=1 (Metals absorb all diffuse)\nEnergy Conservation Invariant: Kd + Ks <= 1.0 -> STRICTLY ENFORCED\nVisual Fidelity: Photorealistic highlights without over-bright burning artifacts`,
+        tryIt: 'Adjust the dielectric f0 base reflectance and verify that Kd automatically adjusts to conserve energy.',
+        check: {
+          question: 'Why must pure metallic materials have diffuse reflection Kd equal to zero in physically based rendering?',
+          options: [
+            'Because conductive metals absorb all refracted light inside their electron sea, converting it to heat rather than diffuse subsurface scattering',
+            'Because metals are always colored pitch black in real life',
+            'Because the graphics driver throws an error if metals have diffuse color'
+          ],
+          answer: 0,
+          why: 'In physics, metals possess free conduction electrons that immediately absorb refracted light energy, leaving only specular surface reflectance.'
+        }
+      },
+      {
+        title: 'WebGPU Compute Broadphase & Spatial Hash Grid Physics',
+        say: [
+          'Simulating 100,000 colliding rigid bodies or fluid particles on the CPU is impossible due to memory transfer latency and single-threaded bottlenecks. Even on the GPU, evaluating all pairs among 100,000 particles requires 10 billion comparisons per frame ($O(N^2)$), causing immediate GPU timeouts.',
+          'Real-time GPU physics requires a broadphase spatial partitioning acceleration structure. The modern WebGPU pattern is the Spatial Hash Grid. The simulation bounds are divided into uniform 3D grid cells matching the particle interaction radius. In a first compute pass, each particle computes its 3D cell coordinate and hashes it into a 1D cell index using large prime numbers.',
+          'A second compute pass executes a parallel Bitonic Sort on the particle index array sorted by cell hash. Once sorted, all particles residing in the same spatial cell are contiguously aligned in memory. A third compute pass dispatches workgroups (@workgroup_size(64, 1, 1)) where each thread inspects only the contiguous particles in its cell and the 26 immediate neighboring cells, reducing broadphase complexity to O(N).'
+        ],
+        example: 'Like organizing marathon runners into designated corral pens by bib number: to check if runners bumped into each other, you only check inside corral pen 4 and adjacent pen 5, rather than testing every runner against all 50,000 participants.',
+        code: `// WebGPU Compute Broadphase & Spatial Hash Grid Simulator
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  z: number;
+}
+
+class GpuSpatialHashGrid {
+  private cellSize = 2.0;
+
+  hashCoord(x: number, y: number, z: number): number {
+    const xi = Math.floor(x / this.cellSize);
+    const yi = Math.floor(y / this.cellSize);
+    const zi = Math.floor(z / this.cellSize);
+    // Large prime spatial hash
+    return Math.abs((xi * 73856093) ^ (yi * 19349663) ^ (zi * 83492791)) % 1024;
+  }
+
+  detectCellCollisions(particles: Particle[]): Map<number, number[]> {
+    const buckets = new Map<number, number[]>();
+    for (const p of particles) {
+      const hash = this.hashCoord(p.x, p.y, p.z);
+      if (!buckets.has(hash)) buckets.set(hash, []);
+      buckets.get(hash)!.push(p.id);
+    }
+    return buckets;
+  }
+}
+
+const grid = new GpuSpatialHashGrid();
+const particles: Particle[] = [
+  { id: 1, x: 1.1, y: 1.2, z: 0.5 },
+  { id: 2, x: 1.4, y: 1.5, z: 0.7 }, // Same cell as #1
+  { id: 3, x: 15.0, y: 22.0, z: 9.0 } // Far away cell
+];
+
+const collisionBuckets = grid.detectCellCollisions(particles);
+let sharedCellFound = false;
+for (const [hash, ids] of collisionBuckets.entries()) {
+  if (ids.length > 1) sharedCellFound = true;
+}
+
+console.log('=== WEBGPU COMPUTE BROADPHASE & SPATIAL HASH GRID ===');
+console.log('Simulation Scale: 100,000 Particle Physics in VRAM Storage Buffers');
+console.log('Workgroup Size: @workgroup_size(64, 1, 1) parallel dispatch');
+console.log('Broadphase Clustered Pairs: ' + (sharedCellFound ? 'Particles #1 and #2 isolated to identical cell bucket' : 'None'));
+console.log('Algorithmic Speedup: Narrowphase tests reduced from O(N^2) to O(N) local lookups');`,
+        output: `=== WEBGPU COMPUTE BROADPHASE & SPATIAL HASH GRID ===\nSimulation Scale: 100,000 Particle Physics in VRAM Storage Buffers\nWorkgroup Size: @workgroup_size(64, 1, 1) parallel dispatch\nBroadphase Clustered Pairs: Particles #1 and #2 isolated to identical cell bucket\nAlgorithmic Speedup: Narrowphase tests reduced from O(N^2) to O(N) local lookups`,
+        tryIt: 'Move particle #3 close to particle #1 (e.g. x: 1.2, y: 1.3, z: 0.6) and verify it joins the shared bucket.',
+        check: {
+          question: 'How does sorting particle indices by spatial cell hash accelerate GPU physics simulations?',
+          options: [
+            'It groups spatially neighboring particles into contiguous GPU memory buffers, maximizing L1/L2 texture cache hits and eliminating O(N^2) pair checks',
+            'It renders particle velocities onto the computer desktop wallpaper',
+            'It prevents particles from entering negative Z coordinates'
+          ],
+          answer: 0,
+          why: 'Contiguous memory layout ensures threads in a GPU warp/workgroup read adjacent memory addresses, avoiding memory bank conflicts and cache misses.'
+        }
+      },
+      {
+        title: 'Mipmap Generation & Anisotropic Texture Filtering in WebGPU',
+        say: [
+          'When high-resolution textures are applied to surfaces receding into the distance, a single screen pixel covers dozens or hundreds of surface texels. Sampling only one texel causes severe high-frequency aliasing, visual noise, and shimmering during camera movement, while evicting GPU texture caches.',
+          'Mipmapping precomputes a pyramid of progressively downsampled textures (Level 0: 1024x1024, Level 1: 512x512, down to Level 10: 1x1). While legacy WebGL provided gl.generateMipmap(), WebGPU intentionally leaves mipmap generation to the application developer to allow optimized compute shader or render pass downsampling pipelines.',
+          'At steep oblique viewing angles (such as looking down an expansive tiled floor or asphalt road), standard bilinear or trilinear mipmapping averages square texel regions, causing unnatural blurriness along the direction of perspective compression. Anisotropic filtering samples multiple texels along the projected elliptical footprint on the surface, preserving crystal-clear sharpness and fine detail at grazing angles up to 16x sampling.'
+        ],
+        example: 'Like looking down a straight railway track: nearby ties are wide and sharp, while distant ties recede into tight perspective. Scaling down the texture prevents glittering artifacts, while anisotropic sampling preserves distinct railway tie lines without muddy blur.',
+        code: `// WebGPU Mipmap Generation & Anisotropic Texture Filtering Simulator
+class MipmapLodCalculator {
+  calculateMipLevel(distance: number, baseRes: number): { lod: number; currentRes: number } {
+    // Mip level doubles distance step
+    const lod = Math.min(8, Math.max(0, Math.floor(Math.log2(Math.max(1, distance / 5)))));
+    const res = Math.max(1, Math.floor(baseRes / Math.pow(2, lod)));
+    return { lod, currentRes: res };
+  }
+}
+
+const lodCalc = new MipmapLodCalculator();
+const nearMip = lodCalc.calculateMipLevel(5, 1024);
+const midMip = lodCalc.calculateMipLevel(20, 1024);
+const farMip = lodCalc.calculateMipLevel(80, 1024);
+
+console.log('=== WEBGPU MIPMAPPING & ANISOTROPIC TEXTURE FILTERING ===');
+console.log('Texture Base: 1024x1024 RGBA8Unorm (Mip Levels: 11 down to 1x1)');
+console.log('Near Sample (Dist: 5m): Mip LOD ' + nearMip.lod + ' (' + nearMip.currentRes + 'x' + nearMip.currentRes + ' texels)');
+console.log('Mid Sample (Dist: 20m): Mip LOD ' + midMip.lod + ' (' + midMip.currentRes + 'x' + midMip.currentRes + ' texels)');
+console.log('Far Sample (Dist: 80m): Mip LOD ' + farMip.lod + ' (' + farMip.currentRes + 'x' + farMip.currentRes + ' texels)');
+console.log('Anti-Aliasing Guarantee: Eliminates high-frequency texture shimmer and cache thrashing');`,
+        output: `=== WEBGPU MIPMAPPING & ANISOTROPIC TEXTURE FILTERING ===\nTexture Base: 1024x1024 RGBA8Unorm (Mip Levels: 11 down to 1x1)\nNear Sample (Dist: 5m): Mip LOD 0 (1024x1024 texels)\nMid Sample (Dist: 20m): Mip LOD 2 (256x256 texels)\nFar Sample (Dist: 80m): Mip LOD 4 (64x64 texels)\nAnti-Aliasing Guarantee: Eliminates high-frequency texture shimmer and cache thrashing`,
+        tryIt: 'Increase the distance to 320m and observe how the mip level reaches LOD 6 (16x16 texels).',
+        check: {
+          question: 'Why is Anisotropic Filtering preferred over standard Trilinear Filtering for floor planes viewed at grazing angles?',
+          options: [
+            'Because anisotropic filtering samples along the non-square elliptical footprint of the projected pixel, preventing blur in the direction of perspective compression',
+            'Because trilinear filtering only renders in 256 colors',
+            'Because anisotropic filtering increases display refresh rate to 360Hz'
+          ],
+          answer: 0,
+          why: 'At grazing angles, a pixel covers an elongated ellipse on the texture surface. Anisotropic filtering samples multiple points along the major axis to retain razor-sharp details without blur.'
+        }
+      }
+    ],
+    summary: [
+      'Multi-pass Deferred Shading splits geometry rasterization into G-Buffer textures, reducing lighting complexity to O(screen_pixels * lights).',
+      'Clustered Forward Shading bins camera frustums into 3D clusters in compute shaders, supporting transparency with thousands of lights.',
+      'Cook-Torrance GGX microfacet BRDF balances specular and diffuse reflections, strictly enforcing energy conservation (Kd + Ks <= 1.0).',
+      'WebGPU spatial hash grids group 100,000 particles into contiguous memory cells, reducing physics broadphase collision checks from O(N^2) to O(N).',
+      'Mipmapping and Anisotropic filtering eliminate aliasing shimmer and texture blur at grazing angles up to 16x sampling.'
+    ],
+    projectStep: {
+      title: 'Architect a Production WebGPU Clustered Deferred Rendering Engine',
+      steps: [
+        'Construct a Multi-Render-Target (MRT) G-Buffer rasterization pass capturing albedo, normals, roughness, metallic, and linear depth.',
+        'Implement a WebGPU Compute Shader clustered light culling pass binning 1,000 point lights into 16x9x24 frustum clusters.',
+        'Author a Cook-Torrance GGX microfacet specular BRDF shader enforcing strict energy conservation.',
+        'Develop a GPU spatial hash grid broadphase compute pass simulating 100,000 colliding particles in VRAM storage buffers.',
+        'Create a multi-level mipmap generator and 16x anisotropic sampler pipeline for high-fidelity ground textures.'
+      ]
+    }
   }
 ];
 
