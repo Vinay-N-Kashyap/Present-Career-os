@@ -1309,5 +1309,385 @@ print(f"Verdict: {p5['forensic_verdict']}")`,
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom_aud',
+    day: 4,
+    title: 'Digital Forensics, E-Discovery (EDRM), Cryptographic Evidence Custody & Memory Carving',
+    goal: 'Master enterprise digital forensic investigation for financial statement fraud: forensic physical disk acquisition and NIST SP 800-86 cryptographic chain of custody (SHA-256 verification), Electronic Discovery Reference Model (EDRM) deduplication and boolean keyword culling, live volatile RAM memory carving for uncommitted ERP transaction buffers, RFC 5322 email MIME header authentication and BCC exfiltration tracking, and anti-forensics timestomping detection via NTFS $STANDARD_INFORMATION vs $FILE_NAME attributes.',
+    minutes: 45,
+    recap: 'In Day 3, we engineered automated journal entry testing, robust MAD outlier detection, intercompany phantom eliminations, and FCPA third-party corruption screening. Today, we enter the digital crime scene: securing bitstream drive images, parsing volatile memory dumps, and recovering doctored contracts.',
+    parts: [
+      {
+        title: 'Forensic Bitstream Disk Imaging, Write Blockers & Cryptographic Chain of Custody (NIST SP 800-86)',
+        say: [
+          'When corporate investigators seize a laptop or server from an executive suspected of accounting fraud, the single most critical evidentiary rule is: never boot the machine into its operating system. Turning on a computer modifies hundreds of registry entries, alters file access timestamps, and overwrites unallocated space where deleted spreadsheets reside, rendering the evidence inadmissible under Federal Rules of Evidence Rule 902(14).',
+          'Under the National Institute of Standards and Technology (NIST SP 800-86) guidelines, digital forensics begins with hardware write-blockers. A hardware write-blocker intercepts all operating system write commands at the controller level, allowing read-only access while guaranteeing that not a single bit on the suspect physical drive is altered.',
+          'Investigators create an exact, physical bitstream image (such as an Expert Witness E01 or raw DD file) capturing every sector, including slack space and unallocated clusters. Prior to and immediately following acquisition, cryptographic hash algorithms (SHA-256 and MD5) compute digital fingerprints of the physical media; an exact cryptographic hash match mathematically proves that the forensic copy is identical to the original seized hardware.'
+        ],
+        example: 'Federal forensic investigators seize the primary workstation of a CFO accused of inflating revenue. Utilizing a Tableau hardware write-blocker, investigators image 1,953,525,168 physical sectors (1 TB) to an E01 image container. Pre-acquisition and post-acquisition SHA-256 hashes match perfectly (e3b0c442...), establishing an unassailable cryptographic chain of custody admissible in federal court.',
+        code: `def verify_forensic_disk_image_chain_of_custody(
+    source_drive_serial: str,
+    total_physical_sectors: int,
+    source_sha256: str,
+    image_sha256: str,
+    write_blocker_hardware_verified: bool
+) -> dict:
+    hashes_match = (source_sha256.lower() == image_sha256.lower())
+    custody_valid = hashes_match and write_blocker_hardware_verified
+    
+    status = "FORENSICALLY_SOUND_FRE_902_ADMISSIBLE" if custody_valid else "EVIDENCE_SPOILED_INADMISSIBLE"
+    
+    return {
+        "drive_serial": source_drive_serial,
+        "sectors_imaged": total_physical_sectors,
+        "write_blocker_active": write_blocker_hardware_verified,
+        "source_sha256": source_sha256,
+        "image_sha256": image_sha256,
+        "hash_verification_passed": hashes_match,
+        "evidentiary_status": status
+    }
+
+h_src = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+p1 = verify_forensic_disk_image_chain_of_custody(
+    source_drive_serial="WD-WCC4N1298451",
+    total_physical_sectors=1953525168,
+    source_sha256=h_src,
+    image_sha256=h_src,
+    write_blocker_hardware_verified=True
+)
+print(f"Drive Serial: {p1['drive_serial']} | Sectors: {p1['sectors_imaged']:,}")
+print(f"Hash Match: {p1['hash_verification_passed']} | Status: {p1['evidentiary_status']}")`,
+        output: `Drive Serial: WD-WCC4N1298451 | Sectors: 1,953,525,168\nHash Match: True | Status: FORENSICALLY_SOUND_FRE_902_ADMISSIBLE`,
+        codeNotes: [
+          { line: 8, note: 'Compares pre-acquisition physical drive SHA-256 hash against post-acquisition forensic image hash' },
+          { line: 9, note: 'Validates hardware write-blocker deployment guaranteeing read-only forensic disk access' },
+          { line: 11, note: 'Awards FRE Rule 902(14) self-authenticating electronic evidence legal admissibility certification' },
+          { line: 26, note: 'Confirms bitstream fidelity across all 1.95 billion physical drive sectors' }
+        ],
+        tryIt: 'Set write_blocker_hardware_verified to False to observe how failure to use write blockers results in EVIDENCE_SPOILED_INADMISSIBLE.',
+        check: {
+          question: 'Under Federal Rules of Evidence Rule 902(14) and NIST SP 800-86, why is an identical SHA-256 cryptographic hash match required between the physical source drive and the forensic disk image?',
+          options: [
+            'It mathematically proves that not a single bit of digital data was modified during acquisition, establishing a tamper-proof chain of custody.',
+            'It automatically decrypts corporate email passwords stored on the computer.',
+            'It reduces the file size of the disk image by 90% for cloud storage upload.',
+            'It serves as an automated digital signature from the presiding federal bankruptcy judge.'
+          ],
+          answer: 0,
+          why: 'A matching cryptographic hash between source drive and forensic image proves the copy is an exact, bit-for-bit duplicate, ensuring evidence admissibility in court.',
+          answerIndex: 0,
+          explanation: 'A matching cryptographic hash between source drive and forensic image proves the copy is an exact, bit-for-bit duplicate, ensuring evidence admissibility in court.'
+        }
+      },
+      {
+        title: 'E-Discovery Reference Model (EDRM): Boolean Culling, De-NISTing & Custodian Deduplication',
+        say: [
+          'In major corporate fraud litigations, corporate email archives, cloud storage drives, and laptop backups generate terabytes of unstructured data containing millions of individual files. Handing 1,000,000 raw documents directly to external forensic attorneys at $2.50 to $5.00 per document would cost upwards of $2,500,000 for preliminary legal review alone.',
+          'To streamline discovery defensibly, forensic examiners execute the Electronic Discovery Reference Model (EDRM) processing pipeline. The first phase is De-NISTing: matching file MD5 hashes against the National Software Reference Library (NSRL) maintained by NIST, safely eliminating hundreds of thousands of standard operating system DLLs and application binaries that contain zero user communications.',
+          'The second phase executes Global MD5 Deduplication, collapsing identical files and attachments shared across multiple custodians into a single review instance. Finally, targeted Boolean search syntax (combining accounting keywords, offshore accounts, and specific temporal fiscal windows) isolates the responsive production set, reducing review populations by over 95% while slashing multi-million dollar legal review expenditures.'
+        ],
+        example: 'In a corporate embezzlement investigation collecting 1,000,000 raw files ($2.5M raw review estimate), De-NISTing eliminates 350,000 operating system files, global deduplication removes 250,000 redundant attachments, and Boolean keyword filtering isolates 25,000 responsive documents. The EDRM pipeline achieves a 97.5% reduction, collapsing legal review costs from $2,500,000 down to $62,500 and saving $2,437,500.',
+        code: `def execute_edrm_document_culling_pipeline(
+    raw_document_count: int,
+    known_system_files_de_nist: int,
+    duplicate_hash_files: int,
+    keyword_responsive_files: int,
+    review_cost_per_doc_usd: float = 2.50
+) -> dict:
+    post_denist = raw_document_count - known_system_files_de_nist
+    post_dedup = post_denist - duplicate_hash_files
+    final_production_set = min(post_dedup, keyword_responsive_files)
+    
+    initial_review_cost = raw_document_count * review_cost_per_doc_usd
+    culled_review_cost = final_production_set * review_cost_per_doc_usd
+    cost_saved = initial_review_cost - culled_review_cost
+    reduction_pct = ((raw_document_count - final_production_set) / raw_document_count) * 100.0 if raw_document_count > 0 else 0.0
+    
+    return {
+        "raw_collected_documents": raw_document_count,
+        "de_nist_culled_system_files": known_system_files_de_nist,
+        "deduplicated_identical_files": duplicate_hash_files,
+        "final_responsive_production_set": final_production_set,
+        "culling_reduction_pct": round(reduction_pct, 2),
+        "initial_projected_cost_usd": round(initial_review_cost, 2),
+        "optimized_review_cost_usd": round(culled_review_cost, 2),
+        "cost_savings_usd": round(cost_saved, 2)
+    }
+
+p2 = execute_edrm_document_culling_pipeline(
+    raw_document_count=1000000,
+    known_system_files_de_nist=350000,
+    duplicate_hash_files=250000,
+    keyword_responsive_files=25000,
+    review_cost_per_doc_usd=2.50
+)
+cost_init = "$" + f"{p2['initial_projected_cost_usd']:,.2f}"
+cost_opt = "$" + f"{p2['optimized_review_cost_usd']:,.2f}"
+cost_save = "$" + f"{p2['cost_savings_usd']:,.2f}"
+print(f"Raw Docs: {p2['raw_collected_documents']:,} -> Production Set: {p2['final_responsive_production_set']:,} (Reduced: {p2['culling_reduction_pct']}%)")
+print(f"Cost: {cost_init} -> {cost_opt} | Savings: {cost_save}")`,
+        output: `Raw Docs: 1,000,000 -> Production Set: 25,000 (Reduced: 97.5%)\nCost: $2,500,000.00 -> $62,500.00 | Savings: $2,437,500.00`,
+        codeNotes: [
+          { line: 8, note: 'Filters out NSRL known operating system files (De-NISTing) eliminating non-evidentiary files' },
+          { line: 9, note: 'Executes global MD5 deduplication across custodian mailboxes collapsing identical attachments' },
+          { line: 10, note: 'Applies targeted Boolean keyword criteria isolating responsive documents for legal discovery' },
+          { line: 15, note: 'Calculates $2,437,500 in direct legal document review cost savings through 97.5% population culling' }
+        ],
+        tryIt: 'Adjust keyword_responsive_files to 50,000 to observe how culling reduction and legal costs scale dynamically.',
+        check: {
+          question: 'In the Electronic Discovery Reference Model (EDRM) processing phase, what is the primary purpose of "De-NISTing" a raw collection of seized digital files?',
+          options: [
+            'Filtering out millions of known operating system files and software binaries using the NIST National Software Reference Library hash list.',
+            'Converting all corporate spreadsheets into physical paper printouts for courtroom display.',
+            'Erasing all emails that contain negative comments about company executives.',
+            'Permanently encrypting corporate financial databases before handing them to auditors.'
+          ],
+          answer: 0,
+          why: 'De-NISTing cross-references collected files against NIST\'s NSRL hash list to eliminate standard system files (DLLs, EXE files) that contain no user data, drastically reducing legal review volume.',
+          answerIndex: 0,
+          explanation: 'De-NISTing cross-references collected files against NIST\'s NSRL hash list to eliminate standard system files (DLLs, EXE files) that contain no user data, drastically reducing legal review volume.'
+        }
+      },
+      {
+        title: 'Volatile RAM Memory Dump Analysis & Uncommitted Transaction Carving',
+        say: [
+          'Modern financial fraudsters increasingly employ ephemeral tools—utilizing encrypted in-memory communications, web-based banking portals running in incognito sessions, or executing uncompiled memory-resident scripts—to ensure zero artifacts are written to the physical storage disk.',
+          'Under the Order of Volatility defined in RFC 3227, random-access memory (RAM) is the most volatile digital evidence. If an investigator pulls the power plug before acquiring RAM, all active network sockets, decrypted encryption keys, and uncommitted database buffers vanish instantly.',
+          'Forensic memory analysis (utilizing frameworks like Volatility) dumps physical RAM and analyzes the kernel process table. Investigators detect malicious process injection (such as code injected into legitimate system binaries like svchost.exe), inspect active TCP sockets transmitting data to offshore servers, and carve raw memory buffers to recover uncommitted wire transfers before they are purged.'
+        ],
+        example: 'A live memory dump captured from a suspect treasury workstation reveals an unlinked process (excel_hidden.exe) executing injected shellcode, establishing an active network socket on port 4444 to an IP address in the Seychelles. Plaintext buffer carving recovers an uncommitted $2,500,000 wire transfer authorization to an offshore escrow entity, providing conclusive proof of an embezzlement attempt.',
+        code: `def analyze_volatile_memory_dump_artifacts(
+    running_processes: list,
+    network_sockets: list,
+    uncommitted_buffers: list
+) -> dict:
+    flagged_artifacts = []
+    
+    for proc in running_processes:
+        if proc.get("is_unlinked_from_peb", False) or proc.get("injected_code_detected", False):
+            flagged_artifacts.append(f"MALICIOUS_PROCESS_INJECTION: {proc['name']} (PID: {proc['pid']})")
+            
+    for sock in network_sockets:
+        if sock.get("destination_port", 0) in [4444, 8888, 9001] or sock.get("country", "") in ["Cayman", "Seychelles"]:
+            flagged_artifacts.append(f"SUSPICIOUS_EXFILTRATION_SOCKET: {sock['remote_ip']}:{sock['destination_port']}")
+            
+    recovered_transactions = []
+    for buf in uncommitted_buffers:
+        if "UNCOMMITTED_PAYMENT" in buf.get("payload_tag", ""):
+            recovered_transactions.append({
+                "buffer_id": buf["buffer_id"],
+                "wire_amount_usd": buf["amount"],
+                "payee": buf["payee"]
+            })
+            
+    memory_tampering = len(flagged_artifacts) > 0 or len(recovered_transactions) > 0
+    return {
+        "processes_audited": len(running_processes),
+        "network_connections_audited": len(network_sockets),
+        "volatility_exceptions_flagged": len(flagged_artifacts),
+        "recovered_uncommitted_wires_count": len(recovered_transactions),
+        "flagged_evidence": flagged_artifacts,
+        "carved_transactions": recovered_transactions,
+        "live_memory_audit_verdict": "VOLATILE_EVIDENCE_RECOVERED_CRIMINAL_INTENT" if memory_tampering else "CLEAN_VOLATILE_MEMORY"
+    }
+
+p3 = analyze_volatile_memory_dump_artifacts(
+    running_processes=[
+        {"name": "svchost.exe", "pid": 892, "is_unlinked_from_peb": False, "injected_code_detected": False},
+        {"name": "excel_hidden.exe", "pid": 4112, "is_unlinked_from_peb": True, "injected_code_detected": True}
+    ],
+    network_sockets=[
+        {"remote_ip": "194.165.16.42", "destination_port": 4444, "country": "Seychelles"}
+    ],
+    uncommitted_buffers=[
+        {"buffer_id": "RAM-BUF-901", "payload_tag": "UNCOMMITTED_PAYMENT", "amount": 2500000.0, "payee": "Offshore Cayman Escrow Ltd"}
+    ]
+)
+print(f"Processes: {p3['processes_audited']} | Sockets: {p3['network_connections_audited']}")
+print(f"Recovered Wires: {p3['recovered_uncommitted_wires_count']} | Verdict: {p3['live_memory_audit_verdict']}")
+for wire in p3['carved_transactions']:
+    amt_s = "$" + f"{wire['wire_amount_usd']:,.2f}"
+    print(f"  Recovered Buffer: {amt_s} to {wire['payee']}")`,
+        output: `Processes: 2 | Sockets: 1\nRecovered Wires: 1 | Verdict: VOLATILE_EVIDENCE_RECOVERED_CRIMINAL_INTENT\n  Recovered Buffer: $2,500,000.00 to Offshore Cayman Escrow Ltd`,
+        codeNotes: [
+          { line: 10, note: 'Inspects Windows process environment block (PEB) unlinking indicating memory-resident malware' },
+          { line: 14, note: 'Scans live network socket tables detecting connections to unauthorized offshore tax havens' },
+          { line: 20, note: 'Carves plaintext volatile memory buffers recovering $2.5M uncommitted wire transfer payload' },
+          { line: 31, note: 'Issues Volatile Evidence Recovered criminal verdict for courtroom presentation' }
+        ],
+        tryIt: 'Remove the injected process and uncommitted wire to observe volatile memory evaluate to CLEAN_VOLATILE_MEMORY.',
+        check: {
+          question: 'Under the Order of Volatility in RFC 3227 and digital forensic standards, why must volatile physical RAM be acquired before powering down a computer seized in a fraud investigation?',
+          options: [
+            'Because shutting down the power cuts electrical current to RAM chips, permanently erasing all active encryption keys, network connections, and uncommitted memory buffers.',
+            'Because pulling the power plug automatically re-formats the physical solid-state drive.',
+            'Because computer monitors cannot display forensic reports without uninterrupted power.',
+            'Because federal law mandates that corporate servers run 24 hours a day without maintenance.'
+          ],
+          answer: 0,
+          why: 'RAM is volatile memory; cutting power immediately purges all transient data, destroying running processes, decrypted keys, and in-memory communications.',
+          answerIndex: 0,
+          explanation: 'RAM is volatile memory; cutting power immediately purges all transient data, destroying running processes, decrypted keys, and in-memory communications.'
+        }
+      },
+      {
+        title: 'Email Thread Reconstruction, Metadata Header Analysis & Custodian Network Mapping',
+        say: [
+          'In corporate fraud investigations, proving wrongful intent (mens rea) requires establishing the exact timeline of executive communications. Fraudsters frequently defend themselves by claiming emails were spoofed, that they never received specific warnings, or that critical attachments were inserted after the fact.',
+          'Forensic email examiners authenticate communications by inspecting RFC 5322 MIME transport headers. Investigators verify DomainKeys Identified Mail (DKIM) cryptographic signatures, which mathematically prove that the email originated from the legitimate corporate domain and was not altered during transmission.',
+          'Furthermore, analyzing the Received: from hops and originating client IP addresses identifies whether messages were sent from corporate headquarters or routed through anonymizing Tor exit nodes or commercial VPNs. Reconstructing conversation threads also detects BCC exfiltration, exposing executives who covertly carbon-copied confidential corporate trade secrets or off-the-books accounting spreadsheets to personal encrypted webmail accounts.'
+        ],
+        example: 'During an earnings manipulation inquiry, investigators analyze an email sent from cfo@nexuscorp.com titled "Confidential Q3 Channel Stuffing Instructions". Header analysis reveals an invalid DKIM signature, transmission through a Tor anonymizing exit node, and a covert BCC exfiltration to personal_cfo_vault@proton.me, establishing conclusive proof of intentional corporate wrongdoing.',
+        code: `def audit_email_mime_headers_and_custodian_thread(
+    email_data: dict
+) -> dict:
+    red_flags = []
+    
+    dkim_valid = email_data.get("dkim_signature_verified", False)
+    if not dkim_valid:
+        red_flags.append("DKIM_SIGNATURE_INVALID_OR_SPOOFED")
+        
+    client_ip = email_data.get("originating_client_ip", "")
+    is_vpn_or_tor = email_data.get("is_anonymizing_proxy", False)
+    if is_vpn_or_tor:
+        red_flags.append("ORIGINATING_FROM_ANONYMIZING_PROXY_OR_TOR")
+        
+    bcc_recipients = email_data.get("bcc_list", [])
+    for bcc in bcc_recipients:
+        if any(domain in bcc.lower() for domain in ["gmail.com", "proton.me", "yahoo.com"]):
+            red_flags.append(f"BCC_EXFILTRATION_TO_PERSONAL_WEBMAIL: {bcc}")
+            
+    is_suspicious = len(red_flags) > 0
+    return {
+        "message_id": email_data.get("message_id", ""),
+        "sender": email_data.get("from_address", ""),
+        "subject": email_data.get("subject", ""),
+        "dkim_verified": dkim_valid,
+        "header_audit_flags": red_flags,
+        "email_authenticity_verdict": "TAMPERED_OR_EXFILTRATED_EVIDENCE" if is_suspicious else "RFC5322_AUTHENTICATED_COMPLIANT"
+    }
+
+p4 = audit_email_mime_headers_and_custodian_thread({
+    "message_id": "<20261013.88192@nexuscorp.com>",
+    "from_address": "cfo@nexuscorp.com",
+    "subject": "Confidential Q3 Channel Stuffing Instructions",
+    "dkim_signature_verified": False,
+    "originating_client_ip": "185.220.101.5",
+    "is_anonymizing_proxy": True,
+    "bcc_list": ["personal_cfo_vault@proton.me"]
+})
+print(f"Message ID: {p4['message_id']} | DKIM Valid: {p4['dkim_verified']}")
+print(f"Verdict: {p4['email_authenticity_verdict']} | Flags: {len(p4['header_audit_flags'])}")
+for fl in p4['header_audit_flags']:
+    print(f"  Flag: {fl}")`,
+        output: `Message ID: <20261013.88192@nexuscorp.com> | DKIM Valid: False\nVerdict: TAMPERED_OR_EXFILTRATED_EVIDENCE | Flags: 3\n  Flag: DKIM_SIGNATURE_INVALID_OR_SPOOFED\n  Flag: ORIGINATING_FROM_ANONYMIZING_PROXY_OR_TOR\n  Flag: BCC_EXFILTRATION_TO_PERSONAL_WEBMAIL: personal_cfo_vault@proton.me`,
+        codeNotes: [
+          { line: 8, note: 'Verifies cryptographic DKIM signature proving whether sender domain was spoofed or genuine' },
+          { line: 14, note: 'Inspects originating IP address detecting anonymizing proxy and Tor exit node usage' },
+          { line: 19, note: 'Identifies unauthorized BCC exfiltration routing confidential files to personal encrypted webmail' },
+          { line: 29, note: 'Classifies message as tampered or exfiltrated evidentiary material for court litigation' }
+        ],
+        tryIt: 'Set dkim_signature_verified to True and clear the bcc_list to observe email evaluate to RFC5322_AUTHENTICATED_COMPLIANT.',
+        check: {
+          question: 'In forensic digital investigation, what does a cryptographic DKIM (DomainKeys Identified Mail) signature failure in an email header indicate?',
+          options: [
+            'The message contents or sender header were modified in transit or spoofed by an unauthorized sending mail server.',
+            'The recipient\'s computer is completely out of disk storage space.',
+            'The email was drafted in an unsupported foreign language.',
+            'The sender forgot to type a closing salutation.'
+          ],
+          answer: 0,
+          why: 'DKIM uses public-key cryptography to sign email headers. A signature validation failure proves the message was tampered with in transit or did not originate from the asserted domain server.',
+          answerIndex: 0,
+          explanation: 'DKIM uses public-key cryptography to sign email headers. A signature validation failure proves the message was tampered with in transit or did not originate from the asserted domain server.'
+        }
+      },
+      {
+        title: 'Anti-Forensics Detection: Timestomping & Secure File Deletion Artifacts',
+        say: [
+          'When targets of a corporate fraud investigation realize an audit is underway, they often resort to anti-forensics techniques in an attempt to destroy evidence or fabricate alibis. Two common anti-forensic tactics are secure wiping (overwriting files with zeros or pseudorandom patterns) and timestomping (falsifying file creation dates to make recently fabricated contracts appear years old).',
+          'Fortunately for forensic examiners, modern file systems like NTFS maintain multiple redundant timestamp attributes within the Master File Table (MFT). NTFS records timestamps in two separate structures: $STANDARD_INFORMATION (which can be altered by user-level Windows APIs) and $FILE_NAME (which is maintained and updated exclusively by the operating system kernel).',
+          'When a fraudster uses an anti-forensic timestomping utility to backdate a contract from 2026 to 2023, the tool alters $STANDARD_INFORMATION but cannot access the kernel-level $FILE_NAME attribute. Comparing these two MFT structures exposes the discrepancy immediately. In federal court, detecting timestomping or secure wiping constitutes conclusive proof of intentional evidence spoliation, triggering devastating legal sanctions and adverse inferences against the perpetrator.'
+        ],
+        example: 'A CFO submits a contract titled "Backdated_Supply_Agreement_2023.docx" claiming it was signed in January 2023. MFT parsing reveals that $STANDARD_INFORMATION reports a creation date of 2023-01-15, but $FILE_NAME records the true kernel creation date as 2026-09-20. The script confirms timestomping and unallocated cluster zero-filling, issuing a Criminal Spoliation of Evidence finding.',
+        code: `def detect_anti_forensics_timestomping_and_wiping(
+    mft_record: dict
+) -> dict:
+    si_created = mft_record["standard_information_created_timestamp"]
+    fn_created = mft_record["file_name_created_timestamp"]
+    
+    is_timestomped = (si_created < fn_created) or mft_record.get("si_subsecond_precision_zeroed", False)
+    wiping_detected = mft_record.get("unallocated_cluster_zero_fill_pattern", False)
+    
+    spoliation_flags = []
+    if is_timestomped:
+        spoliation_flags.append("TIMESTOMPING_DETECTED: $STANDARD_INFORMATION backdated prior to $FILE_NAME kernel creation")
+    if wiping_detected:
+        spoliation_flags.append("SECURE_WIPING_DETECTED: Overwrite patterns (DoD 5220.22-M / Gutmann) identified in unallocated space")
+        
+    spoliation_confirmed = len(spoliation_flags) > 0
+    return {
+        "file_name": mft_record["file_name"],
+        "standard_info_created": si_created,
+        "file_name_created": fn_created,
+        "timestomping_proven": is_timestomped,
+        "secure_wiping_proven": wiping_detected,
+        "evidence_spoliation_verdict": "CRIMINAL_SPOLIATION_OF_EVIDENCE_SANCTION" if spoliation_confirmed else "NTFS_METADATA_INTEGRITY_VERIFIED",
+        "forensic_spoliation_findings": spoliation_flags
+    }
+
+p5 = detect_anti_forensics_timestomping_and_wiping({
+    "file_name": "Backdated_Supply_Agreement_2023.docx",
+    "standard_information_created_timestamp": "2023-01-15 10:00:00",
+    "file_name_created_timestamp": "2026-09-20 18:45:12",
+    "si_subsecond_precision_zeroed": True,
+    "unallocated_cluster_zero_fill_pattern": True
+})
+print(f"File: {p5['file_name']}")
+print(f"Timestomping: {p5['timestomping_proven']} | Wiping: {p5['secure_wiping_proven']}")
+print(f"Verdict: {p5['evidence_spoliation_verdict']}")
+for f_ind in p5['forensic_spoliation_findings']:
+    print(f"  Finding: {f_ind}")`,
+        output: `File: Backdated_Supply_Agreement_2023.docx\nTimestomping: True | Wiping: True\nVerdict: CRIMINAL_SPOLIATION_OF_EVIDENCE_SANCTION\n  Finding: TIMESTOMPING_DETECTED: $STANDARD_INFORMATION backdated prior to $FILE_NAME kernel creation\n  Finding: SECURE_WIPING_DETECTED: Overwrite patterns (DoD 5220.22-M / Gutmann) identified in unallocated space`,
+        codeNotes: [
+          { line: 7, note: 'Compares user-modifiable $STANDARD_INFORMATION against kernel-protected $FILE_NAME attribute' },
+          { line: 8, note: 'Detects secure wiping overwrite signatures (zero-fill or DoD patterns) in unallocated clusters' },
+          { line: 12, note: 'Isolates timestomping evidence tampering proving fraudulent backdating of corporate agreements' },
+          { line: 23, note: 'Issues formal Criminal Spoliation of Evidence legal sanction verdict under FRCP Rule 37(e)' }
+        ],
+        tryIt: 'Set si_created equal to fn_created and wiping to False to observe file metadata verify cleanly.',
+        check: {
+          question: 'How do digital forensic investigators mathematically prove that a suspect backdated a fraudulent corporate agreement on an NTFS file system ("timestomping")?',
+          options: [
+            'By comparing the $STANDARD_INFORMATION attribute against the $FILE_NAME attribute in the Master File Table (MFT), revealing that the kernel-level creation date is subsequent to the user-altered date.',
+            'By checking whether the font in the document is Times New Roman or Calibri.',
+            'By measuring the physical temperature of the computer\'s hard drive.',
+            'By verifying whether the word count exceeds 1,000 words.'
+          ],
+          answer: 0,
+          why: 'User-mode timestomping utilities can alter $STANDARD_INFORMATION timestamps, but cannot modify the $FILE_NAME attribute, which is controlled exclusively by the NTFS file system kernel.',
+          answerIndex: 0,
+          explanation: 'User-mode timestomping utilities can alter $STANDARD_INFORMATION timestamps, but cannot modify the $FILE_NAME attribute, which is controlled exclusively by the NTFS file system kernel.'
+        }
+      }
+    ],
+    summary: [
+      'Digital evidence acquisition requires hardware write-blockers and matching SHA-256 cryptographic hashes to satisfy FRE Rule 902(14) chain of custody.',
+      'The EDRM pipeline utilizes De-NISTing, global MD5 deduplication, and targeted Boolean culling to reduce document review populations by >95%.',
+      'Volatile RAM memory dumps (RFC 3227) recover injected processes, unauthorized offshore network sockets, and uncommitted ERP wire transfer buffers.',
+      'RFC 5322 MIME email header forensics authenticates DKIM cryptographic signatures, originating IP addresses, and unauthorized BCC exfiltration.',
+      'NTFS Master File Table (MFT) comparison of $STANDARD_INFORMATION and $FILE_NAME attributes exposes timestomping and criminal spoliation of evidence.'
+    ],
+    projectStep: {
+      title: 'Digital Forensic Investigation & Electronic Discovery Engine',
+      steps: [
+        'Verify forensic disk bitstream images using SHA-256 hash matching and hardware write-blocker logs.',
+        'Implement EDRM De-NISTing and global deduplication to optimize litigation document review sets.',
+        'Analyze volatile memory dumps to carve uncommitted ERP transaction buffers and detect injected shellcode.',
+        'Authenticate email MIME transport headers and compare NTFS MFT attributes to expose anti-forensic timestomping.'
+      ]
+    }
+  }
 
 ];
