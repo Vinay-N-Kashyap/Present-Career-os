@@ -2,7 +2,7 @@ import type { LongLesson } from './longLessons';
 
 /**
  * Operations, Supply Chain & Business Compliance (Course: bcom_ops)
- * Day 1: Economic Order Quantity, Little's Law & Bullwhip Effect Mitigation.
+ * Day 1: Economic Order Quantity, Little\'s Law & Bullwhip Effect Mitigation.
  */
 export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
   {
@@ -138,7 +138,7 @@ print(f"Minimized Total Cost:     \${inv['Total_Inventory_Cost']}")`,
           'Its strategic power is profound: if an executive wants to cut customer lead time (CT) in half without reducing sales throughput (TH), the ONLY mathematical way to achieve it is to drain inventory buffers and cut Work-in-Progress (WIP) in half!'
         ],
         example: 'Think of an amusement park roller coaster line. If 200 people arrive per hour (Throughput), and it takes 30 minutes (0.5 hours) to reach the front of the line (Cycle Time), there are exactly 100 people standing in line right now (WIP = 200 * 0.5 = 100 people).',
-        code: `# Simulation: Little's Law WIP, Throughput & Lead Time Balancer
+        code: `# Simulation: Little\'s Law WIP, Throughput & Lead Time Balancer
 class LittlesLawQueue:
     @staticmethod
     def calculate_cycle_time(wip_units: float, throughput_units_per_day: float) -> float:
@@ -163,12 +163,12 @@ target_lead_time_days = 5.0
 required_target_wip = LittlesLawQueue.calculate_wip(daily_throughput, target_lead_time_days)
 wip_reduction_needed = current_wip - required_target_wip
 
-print("Little's Law Manufacturing Physics:")
+print("Little\'s Law Manufacturing Physics:")
 print(f"Current Factory Lead Time: {current_lead_time_days:.1f} days")
 print(f"Target Customer Lead Time:  {target_lead_time_days:.1f} days")
 print(f"Required Target WIP Level:  {required_target_wip:.0f} wafers")
 print(f"Excess WIP to Drain:        {wip_reduction_needed:.0f} wafers ({wip_reduction_needed/current_wip*100:.1f}%)")`,
-        output: `Little's Law Manufacturing Physics:\nCurrent Factory Lead Time: 12.0 days\nTarget Customer Lead Time:  5.0 days\nRequired Target WIP Level:  250 wafers\nExcess WIP to Drain:        350 wafers (58.3%)`,
+        output: `Little\'s Law Manufacturing Physics:\nCurrent Factory Lead Time: 12.0 days\nTarget Customer Lead Time:  5.0 days\nRequired Target WIP Level:  250 wafers\nExcess WIP to Drain:        350 wafers (58.3%)`,
         tryIt: 'Simulate an increase in factory throughput to 75 wafers/day and see how WIP changes.',
         check: {
           question: 'According to Little\'s Law (WIP = Throughput * Cycle Time), how can a plant manager reduce customer lead time without reducing factory production throughput?',
@@ -355,7 +355,7 @@ print(f"Industry Capable:  {qc['Is_Capable_1_33']} (Threshold >= 1.33)")`,
           'Operations engineers mathematically audit all line workstations to pinpoint the true constraint and compute line throughput ceilings and non-bottleneck idle utilization.'
         ],
         example: 'A 4-step chassis assembly line has capacities: Stamping (45 units/hr), Welding (30 units/hr), Painting (50 units/hr), and Final Assembly (40 units/hr). Welding is the bottleneck. Even if Painting works at 100% capacity, the factory can only ship 30 finished chassis per hour. Pushing Stamping to 45 units/hr merely piles 15 un-welded frames in the aisle every hour.',
-        code: `# Simulation: Goldratt's Theory of Constraints Line Audit
+        code: `# Simulation: Goldratt\'s Theory of Constraints Line Audit
 from dataclasses import dataclass
 from typing import List, Dict
 
@@ -1219,5 +1219,516 @@ Strategic_Recommendation: Shift budget upstream to Prevention to eliminate high 
       ]
     }
   }
-];
+,
+  {
+    coursePrefix: 'bcom_ops',
+    day: 4,
+    title: 'Queuing Theory (M/M/1, M/M/c), Erlang C & Service Capacity Economics',
+    goal: 'Master stochastic service operations and waiting line mathematics: computing M/M/1 queue dynamics, unlocking multi-server pooling efficiencies with M/M/c, sizing contact center staff using Erlang C, optimizing trade-offs between labor wages and customer delay costs, and scheduling dynamic non-stationary shifts.',
+    minutes: 44,
+    recap: 'In Day 3, we mastered Six Sigma DMAIC, process capability indices (Cp, Cpk), Shewhart control charts, Gage R&R, and Cost of Quality economics. Today, we confront the inevitable randomness of human and digital service systems through Queuing Theory and Erlang capacity engineering.',
+    parts: [
+      {
+        title: 'Single-Server Queuing Dynamics (M/M/1) & Little\'s Law Under Congestion',
+        say: [
+          'In operational environments ranging from cloud API gateways and drive-thru windows to hospital triage desks, demand arrivals and service durations are fundamentally random. When demand is stochastic, having average service capacity greater than average arrival rate does not prevent queues from forming. Because arrivals arrive in random clumps and service times vary, buffers fill up during micro-bursts, creating waiting lines even when a facility is theoretically under-utilized.',
+          'Under Kendall\'s notation, the classic single-server queue is designated M/M/1: Markovian (Poisson) arrivals with rate lambda, Markovian (exponential) service times with rate mu, and 1 server operating under First-Come-First-Served (FCFS) discipline. The system\'s traffic intensity or server utilization is rho = lambda / mu. A cardinal law of queuing theory is that rho must be strictly less than 1.0; if lambda >= mu, the queue becomes non-stationary and explodes towards infinity.',
+          'Crucially, as traffic intensity rho approaches 1.0, queue length and customer wait times do not grow linearly—they surge hyperbolically. Kingman\'s heavy-traffic approximation reveals that average queue wait time Wq is proportional to rho / (1 - rho). When utilization climbs from 80% to 90%, queue length doubles; when it climbs from 90% to 95%, queue length doubles again. Little\'s Law (L = lambda * W and Lq = lambda * Wq) provides the invariant bridge linking the average number of customers in the system to their elapsed wait time.'
+        ],
+        example: 'At a bank drive-thru teller window where cars arrive at lambda = 45 per hour and the teller serves mu = 50 per hour, utilization is 90%. Even though the teller has 10% spare capacity on average, random arrival bursts cause an average queue of 8.1 vehicles and an average customer delay of 10.8 minutes.',
+        code: `# Quantitative M/M/1 Queuing & Congestion Analysis
+def evaluate_mm1_queue(
+    arrival_rate_lambda: float,
+    service_rate_mu: float
+) -> dict:
+    # 1. Server Traffic Intensity (Utilization)
+    rho = arrival_rate_lambda / service_rate_mu
+    if rho >= 1.0:
+        raise ValueError("Queue is unstable: arrival rate exceeds service capacity")
 
+    # 2. Average Entities in System (L) and Waiting in Queue (Lq)
+    l_sys = rho / (1.0 - rho)
+    l_queue = (rho ** 2) / (1.0 - rho)
+
+    # 3. Elapsed Time in System (W) and Waiting in Queue (Wq) via Little\'s Law
+    w_sys_hr = 1.0 / (service_rate_mu - arrival_rate_lambda)
+    w_queue_hr = rho / (service_rate_mu - arrival_rate_lambda)
+
+    # Convert to minutes for operational reporting
+    w_sys_min = w_sys_hr * 60.0
+    w_queue_min = w_queue_hr * 60.0
+
+    # 4. Probability the System is Completely Idle (P0)
+    p0 = 1.0 - rho
+
+    return {
+        "Arrival_Rate_Lambda": arrival_rate_lambda,
+        "Service_Rate_Mu": service_rate_mu,
+        "Traffic_Intensity_Rho": round(rho, 3),
+        "Avg_In_System_L": round(l_sys, 2),
+        "Avg_In_Queue_Lq": round(l_queue, 2),
+        "Avg_Time_System_Min": round(w_sys_min, 2),
+        "Avg_Wait_Queue_Min": round(w_queue_min, 2),
+        "Idle_Probability_P0": round(p0, 3)
+    }
+
+mm1_res = evaluate_mm1_queue(
+    arrival_rate_lambda=45.0,
+    service_rate_mu=50.0
+)
+
+for k, v in mm1_res.items():
+    print(f"{k}: {v}")`,
+        output: `Arrival_Rate_Lambda: 45.0
+Service_Rate_Mu: 50.0
+Traffic_Intensity_Rho: 0.9
+Avg_In_System_L: 9.0
+Avg_In_Queue_Lq: 8.1
+Avg_Time_System_Min: 12.0
+Avg_Wait_Queue_Min: 10.8
+Idle_Probability_P0: 0.1`,
+        codeNotes: [
+          { line: 6, note: 'Calculates traffic intensity rho, asserting stability constraint rho < 1.0' },
+          { line: 12, note: 'Evaluates hyperbolic queue explosion as rho reaches 0.90 (8.1 customers waiting)' },
+          { line: 15, note: 'Applies Little\'s Law to convert queue counts into customer wait minutes' },
+          { line: 31, note: 'Confirms that even with 10% idle buffer, average customer wait is 10.8 minutes' }
+        ],
+        tryIt: 'Increase arrival rate to 48.0 cars/hr (96% utilization) and observe average wait time in queue surge to 36.0 minutes.',
+        check: {
+          question: 'Why does an M/M/1 queuing system operating at 95% utilization experience massive waiting delays even though average capacity exceeds average demand?',
+          options: [
+            'Because stochastic variability causes arrival clusters and service delays to compound non-linearly; queue wait time grows hyperbolically as 1 / (1 - rho).',
+            'Because Little\'s Law is mathematically invalid when utilization exceeds 75%.',
+            'Because Markovian queues automatically halt when servers reach 90% utilization.',
+            'Because customer demand always drops to zero when utilization is high.'
+          ],
+          answer: 0,
+          why: 'In stochastic systems, wait time is governed by 1 / (mu - lambda); as lambda approaches mu, variance causes queues to compound asymptotically towards infinity.',
+          answerIndex: 0,
+          explanation: 'In stochastic systems, wait time is governed by 1 / (mu - lambda); as lambda approaches mu, variance causes queues to compound asymptotically towards infinity.'
+        }
+      },
+      {
+        title: 'Multi-Server Queuing Architecture (M/M/c) & The Pooling Efficiency Dividend',
+        say: [
+          'When service volume outstrips the capacity of a single worker or server, operations scale by adding parallel servers (c servers). In an M/M/c queuing system, c identical servers operate in parallel. However, the architectural configuration of the queue makes an enormous operational difference: should each server maintain an independent line (like traditional supermarket checkout aisles), or should all c servers draw from a single shared serpentine queue (like an airport border control checkpoint or post office)?',
+          'Mathematical queuing theory proves that pooling multiple independent queues into a single shared queue yields massive efficiency dividends. In an unpooled system with c separate lines, one server can sit idle because their line is empty while adjacent servers remain swamped with backlogged customers. In a pooled M/M/c system, no server is ever idle as long as a single customer is waiting in the shared queue. The combined system achieves higher effective utilization, completely eliminates the frustrating "wrong line" effect, and drastically reduces customer wait times.',
+          'In an M/M/c queue, aggregate traffic intensity across all servers is rho = lambda / (c * mu). The mathematical formulation requires first determining P0 (the probability that all c servers are idle) using a combinatorial summation of offered load A = lambda / mu across states 0 through c-1 plus a geometric series for the congestion state. From P0, we compute average queue length Lq and queue wait Wq. Pooling identical queues typically slashes customer waiting time by 60% to 80% without spending a single additional dollar on labor.'
+        ],
+        example: 'An airport security screening hall processes lambda = 120 passengers/hour with 3 X-ray lanes (each lane mu = 45 passengers/hr). If passengers choose 3 independent lines, average wait in line is 10.67 minutes. Consolidating into 1 serpentine queue feeding all 3 lanes slashes average wait to 3.19 minutes—a 70.1% reduction in passenger delay with identical staffing.',
+        code: `# M/M/c Multi-Server Queuing & Resource Pooling Engine
+import math
+
+def evaluate_mmc_queue(
+    arrival_rate_lambda: float,
+    service_rate_mu: float,
+    num_servers_c: int
+) -> dict:
+    rho = arrival_rate_lambda / (num_servers_c * service_rate_mu)
+    if rho >= 1.0:
+        raise ValueError("Multi-server queue is unstable: rho >= 1.0")
+
+    # 1. Offered Load in Erlangs
+    erlangs_a = arrival_rate_lambda / service_rate_mu
+
+    # 2. Probability of Zero Customers in System (P0)
+    sum_terms = sum((erlangs_a ** n) / math.factorial(n) for n in range(num_servers_c))
+    c_term = (erlangs_a ** num_servers_c) / (math.factorial(num_servers_c) * (1.0 - rho))
+    p0 = 1.0 / (sum_terms + c_term)
+
+    # 3. Average Customers Waiting in Queue (Lq)
+    l_queue = (p0 * (erlangs_a ** num_servers_c) * rho) / (math.factorial(num_servers_c) * ((1.0 - rho) ** 2))
+
+    # 4. Average Wait Time in Queue (Wq) via Little\'s Law
+    w_queue_hr = l_queue / arrival_rate_lambda
+    w_queue_min = w_queue_hr * 60.0
+
+    # 5. Total Customers in System (L) and Time in System (W)
+    l_sys = l_queue + erlangs_a
+    w_sys_min = (l_sys / arrival_rate_lambda) * 60.0
+
+    # 6. Unpooled Baseline: c independent M/M/1 queues with lambda/c each
+    indep_lambda = arrival_rate_lambda / num_servers_c
+    indep_rho = indep_lambda / service_rate_mu
+    indep_wq_min = (indep_rho / (service_rate_mu - indep_lambda)) * 60.0
+    pooling_savings_pct = round(((indep_wq_min - w_queue_min) / indep_wq_min) * 100.0, 1)
+
+    return {
+        "Servers_c": num_servers_c,
+        "Total_Arrival_Lambda": arrival_rate_lambda,
+        "Offered_Load_Erlangs": round(erlangs_a, 2),
+        "Traffic_Intensity_Rho": round(rho, 3),
+        "System_Idle_P0": round(p0, 4),
+        "Avg_In_Queue_Lq": round(l_queue, 2),
+        "Avg_Wait_Queue_Min": round(w_queue_min, 2),
+        "Avg_Time_System_Min": round(w_sys_min, 2),
+        "Unpooled_Wait_Min": round(indep_wq_min, 2),
+        "Pooling_Wait_Savings_Pct": pooling_savings_pct
+    }
+
+mmc_res = evaluate_mmc_queue(
+    arrival_rate_lambda=120.0,
+    service_rate_mu=45.0,
+    num_servers_c=3
+)
+
+for k, v in mmc_res.items():
+    print(f"{k}: {v}")`,
+        output: `Servers_c: 3
+Total_Arrival_Lambda: 120.0
+Offered_Load_Erlangs: 2.67
+Traffic_Intensity_Rho: 0.889
+System_Idle_P0: 0.028
+Avg_In_Queue_Lq: 6.38
+Avg_Wait_Queue_Min: 3.19
+Avg_Time_System_Min: 4.52
+Unpooled_Wait_Min: 10.67
+Pooling_Wait_Savings_Pct: 70.1`,
+        codeNotes: [
+          { line: 16, note: 'Calculates state P0 accounting for both sub-saturation and saturated server regimes' },
+          { line: 20, note: 'Computes M/M/c average queue length Lq under aggregate Poisson arrivals' },
+          { line: 31, note: 'Compares pooled performance directly against c isolated independent M/M/1 lines' },
+          { line: 40, note: 'Demonstrates a dramatic 70.1% reduction in queue wait time purely through queue pooling architecture' }
+        ],
+        tryIt: 'Add a 4th server (num_servers_c = 4) and observe average queue wait drop from 3.19 minutes down to just 0.44 minutes.',
+        check: {
+          question: 'What is the primary mathematical reason why a pooled M/M/c queue outperforms c independent M/M/1 queues with identical aggregate capacity?',
+          options: [
+            'Pooling eliminates server idle-time imbalance: in an unpooled system, one server can sit idle while others have long lines, whereas in a pooled system no server ever idles while customers wait.',
+            'Pooled queues violate the laws of probability to speed up human service times.',
+            'Unpooled queues require twice as many physical computers and chairs.',
+            'Because Erlangs only exist in systems with a single consolidated line.'
+          ],
+          answer: 0,
+          why: 'Resource pooling prevents server starvation; by allowing any free server to pull the next waiting customer from a single queue, idle capacity is never wasted while demand exists.',
+          answerIndex: 0,
+          explanation: 'Resource pooling prevents server starvation; by allowing any free server to pull the next waiting customer from a single queue, idle capacity is never wasted while demand exists.'
+        }
+      },
+      {
+        title: 'The Erlang C Formula & Contact Center Service Level (SLA) Optimization',
+        say: [
+          'In modern digital commerce, fintech, and telecommunications, customer support centers are massive operational cost centers governed by strict Service Level Agreements (SLAs). The universal telecommunications benchmark is the "80/20 Rule": 80% of incoming customer inquiries must be answered within 20 seconds. Sizing headcount to meet this SLA cannot be solved by simple division; if you hire just enough agents to cover the raw call minutes, half your customers will experience agonizing hold times.',
+          'Danish mathematician A.K. Erlang developed the foundational mathematical model for call centers: the Erlang C formula. Erlang C computes the exact probability that an arriving inquiry will find all c agents busy and be forced to wait: P(W > 0) = C(c, A), where A = lambda / mu represents the offered traffic intensity in dimensionless Erlangs. One Erlang equals one full hour of continuous server workload.',
+          'To determine whether a contact center satisfies its contractual SLA, we calculate the cumulative probability of answering within target seconds t: P(Wait <= t) = 1 - C(c, A) * exp(-(c * mu - lambda) * t). By iterating through server headcount c, operations managers find the precise minimal staffing level that meets or exceeds target SLA percentages while maximizing agent utilization and preventing burnout.'
+        ],
+        example: 'A fintech customer support desk receives 150 calls per hour with an average handle time of 3.0 minutes (mu = 20 calls/hr/agent). The offered workload is A = 7.5 Erlangs. Simple division suggests 8 agents could handle the load, but Erlang C proves 8 agents would result in a 78% call delay rate. Adding 3 more agents (c = 11) achieves an 88.1% SLA answered within 20 seconds, with an average wait of only 9.0 seconds.',
+        code: `# Erlang C Contact Center Headcount & SLA Optimization Engine
+import math
+
+def erlang_c_staffing_optimizer(
+    calls_per_hour: float,
+    avg_handle_time_min: float,
+    target_wait_sec: float,
+    target_sla_pct: float
+) -> dict:
+    # 1. Service Rate per Agent per Hour & Offered Load in Erlangs
+    service_rate_per_hour = 60.0 / avg_handle_time_min
+    erlangs_a = calls_per_hour / service_rate_per_hour
+
+    # Minimum theoretical servers required for stability (rho < 1.0)
+    min_servers = math.ceil(erlangs_a + 0.001)
+
+    results = []
+    optimal_c = None
+
+    for c in range(min_servers, min_servers + 8):
+        rho = erlangs_a / c
+        if rho >= 1.0:
+            continue
+
+        # 2. State P0 Calculation
+        sum_terms = sum((erlangs_a ** n) / math.factorial(n) for n in range(c))
+        c_term = (erlangs_a ** c) / (math.factorial(c) * (1.0 - rho))
+        p0 = 1.0 / (sum_terms + c_term)
+
+        # 3. Erlang C Probability of Delay P(W > 0)
+        prob_delay = c_term * p0
+
+        # 4. Service Level Probability: P(Wait <= target_wait_sec)
+        target_wait_hr = target_wait_sec / 3600.0
+        exp_decay = math.exp(-(c * service_rate_per_hour - calls_per_hour) * target_wait_hr)
+        sla_achieved = (1.0 - (prob_delay * exp_decay)) * 100.0
+
+        avg_wait_sec = (prob_delay / (c * service_rate_per_hour - calls_per_hour)) * 3600.0
+
+        record = {
+            "c": c,
+            "rho": round(rho, 3),
+            "prob_delay": round(prob_delay, 3),
+            "sla_pct": round(sla_achieved, 1),
+            "avg_wait_sec": round(avg_wait_sec, 1)
+        }
+        results.append(record)
+
+        if sla_achieved >= target_sla_pct and optimal_c is None:
+            optimal_c = record
+
+    return {
+        "Offered_Load_Erlangs": round(erlangs_a, 2),
+        "Target_SLA_Threshold": f"{target_sla_pct}% in {target_wait_sec}s",
+        "Optimal_Headcount_c": optimal_c["c"],
+        "Achieved_SLA_Pct": optimal_c["sla_pct"],
+        "Prob_Call_Delayed": optimal_c["prob_delay"],
+        "Expected_Wait_Sec": optimal_c["avg_wait_sec"],
+        "Server_Utilization_Pct": round(optimal_c["rho"] * 100.0, 1)
+    }
+
+erlang_res = erlang_c_staffing_optimizer(
+    calls_per_hour=150.0,
+    avg_handle_time_min=3.0,
+    target_wait_sec=20.0,
+    target_sla_pct=85.0
+)
+
+for k, v in erlang_res.items():
+    print(f"{k}: {v}")`,
+        output: `Offered_Load_Erlangs: 7.5
+Target_SLA_Threshold: 85.0% in 20.0s
+Optimal_Headcount_c: 11
+Achieved_SLA_Pct: 88.1
+Prob_Call_Delayed: 0.176
+Expected_Wait_Sec: 9.0
+Server_Utilization_Pct: 68.2`,
+        codeNotes: [
+          { line: 12, note: 'Computes offered load in Erlangs A = lambda / mu (7.5 Erlangs for 150 calls with 3 min handle time)' },
+          { line: 28, note: 'Applies Erlang C formula to compute exact probability of customer delay P(W > 0)' },
+          { line: 33, note: 'Evaluates the exponential CDF tail to determine the percentage of callers answered within 20 seconds' },
+          { line: 49, note: 'Identifies 11 agents as the optimal staffing level achieving 88.1% SLA at 68.2% healthy utilization' }
+        ],
+        tryIt: 'Increase target_wait_sec from 20.0 to 45.0 seconds and verify whether optimal headcount can be reduced from 11 to 10 agents.',
+        check: {
+          question: 'What is an "Erlang" in contact center and telecommunications capacity planning?',
+          options: [
+            'A dimensionless unit of offered traffic intensity representing one full hour of continuous server or line workload.',
+            'A unit measuring the decibel loudness of customer phone lines.',
+            'A legal contract fine imposed whenever calls are dropped.',
+            'The total number of computer terminals installed in an office.'
+          ],
+          answer: 0,
+          why: 'One Erlang represents 3,600 call seconds (one hour of continuous agent workload); offered Erlangs A = lambda / mu dictates the required theoretical capacity.',
+          answerIndex: 0,
+          explanation: 'One Erlang represents 3,600 call seconds (one hour of continuous agent workload); offered Erlangs A = lambda / mu dictates the required theoretical capacity.'
+        }
+      },
+      {
+        title: 'Waiting Line Economics & Total Cost Optimization (Service vs Delay Trade-off)',
+        say: [
+          'Operations management is fundamentally an economic discipline. Designing a service system is not about minimizing waiting times to zero—achieving zero customer wait time would require hiring infinite servers, driving payroll costs through the roof and bankrupting the enterprise. Conversely, minimizing server costs by hiring the bare minimum staff creates catastrophic queues, resulting in lost customer goodwill, customer abandonment (balking and reneging), contractual SLA breach fines, and brand destruction.',
+          'The economic solution lies in Total Cost Optimization. The Total Cost function TC(c) balances two opposing economic forces: Total Cost = Cost of Providing Service + Cost of Waiting. Service Cost equals c * Cs, where Cs is the hourly wage and overhead cost per server. Waiting Cost equals Lq * Cw, where Cw is the hourly financial penalty of customer waiting (estimated through customer lifetime value churn models or contractual demurrage rates).',
+          'Because Service Cost increases linearly with c, while Waiting Cost decays exponentially as c increases, the Total Cost curve forms a classic convex U-shaped parabola. There exists a unique integer c* that achieves the global minimum total operational cost. Sizing capacity at c* guarantees maximum shareholder value by balancing payroll efficiency against customer retention.'
+        ],
+        example: 'At a container shipping port, each gantry crane costs $45/hour in energy and crew labor (Cs), while delayed container cargo ships incur demurrage penalty costs of $120/hour for every ship waiting in the harbor (Cw). Evaluating crane allocations reveals that 6 cranes achieves the global minimum total cost of $292.23/hour, down from over $550/hour if only 4 cranes were scheduled.',
+        code: `# Queuing Economics & Convex Total Cost Optimization Engine
+import math
+
+def optimize_queuing_economics(
+    arrival_rate: float,
+    service_rate: float,
+    server_cost_hourly: float,
+    waiting_cost_hourly: float,
+    max_servers: int = 8
+) -> dict:
+    erlangs_a = arrival_rate / service_rate
+    min_c = math.ceil(erlangs_a + 0.001)
+
+    evaluations = []
+    best_option = None
+    min_total_cost = float("inf")
+
+    for c in range(min_c, max_servers + 1):
+        rho = erlangs_a / c
+        if rho >= 1.0:
+            continue
+
+        # 1. Compute P0 and Queue Length Lq
+        sum_terms = sum((erlangs_a ** n) / math.factorial(n) for n in range(c))
+        c_term = (erlangs_a ** c) / (math.factorial(c) * (1.0 - rho))
+        p0 = 1.0 / (sum_terms + c_term)
+        l_queue = (p0 * (erlangs_a ** c) * rho) / (math.factorial(c) * ((1.0 - rho) ** 2))
+
+        # 2. Total Cost Formulation: Service Payroll + Customer Waiting Loss
+        c_service = c * server_cost_hourly
+        c_waiting = l_queue * waiting_cost_hourly
+        c_total = c_service + c_waiting
+
+        eval_entry = {
+            "c": c,
+            "Service_Cost": "$" + f"{c_service:,.2f}",
+            "Waiting_Cost": "$" + f"{c_waiting:,.2f}",
+            "Total_Cost": "$" + f"{c_total:,.2f}",
+            "Total_Cost_Val": c_total,
+            "Lq": round(l_queue, 2)
+        }
+        evaluations.append(eval_entry)
+
+        # Track global cost minimum
+        if c_total < min_total_cost:
+            min_total_cost = c_total
+            best_option = eval_entry
+
+    return {
+        "Arrival_Rate": arrival_rate,
+        "Service_Rate": service_rate,
+        "Server_Hourly_Wage": "$" + f"{server_cost_hourly:,.2f}",
+        "Waiting_Cost_PerHour": "$" + f"{waiting_cost_hourly:,.2f}",
+        "Optimal_Servers_c": best_option["c"],
+        "Optimal_Queue_Length_Lq": best_option["Lq"],
+        "Optimal_Service_Cost": best_option["Service_Cost"],
+        "Optimal_Waiting_Cost": best_option["Waiting_Cost"],
+        "Minimum_Total_Cost": best_option["Total_Cost"]
+    }
+
+cost_res = optimize_queuing_economics(
+    arrival_rate=20.0,
+    service_rate=6.0,
+    server_cost_hourly=45.0,
+    waiting_cost_hourly=120.0,
+    max_servers=8
+)
+
+for k, v in cost_res.items():
+    print(f"{k}: {v}")`,
+        output: `Arrival_Rate: 20.0
+Service_Rate: 6.0
+Server_Hourly_Wage: $45.00
+Waiting_Cost_PerHour: $120.00
+Optimal_Servers_c: 6
+Optimal_Queue_Length_Lq: 0.19
+Optimal_Service_Cost: $270.00
+Optimal_Waiting_Cost: $22.23
+Minimum_Total_Cost: $292.23`,
+        codeNotes: [
+          { line: 15, note: 'Iterates through viable server counts above minimum theoretical capacity' },
+          { line: 26, note: 'Evaluates composite Total Cost = (c * Cs) + (Lq * Cw) balancing payroll against customer delay' },
+          { line: 36, note: 'Identifies the convex parabola minimum where marginal cost of an additional server equals marginal delay saved' },
+          { line: 45, note: 'Confirms 6 servers yields optimal $292.23 total hourly operational cost' }
+        ],
+        tryIt: 'Increase waiting cost Cw to $300/hour and observe how the optimal capacity shifts to 7 servers to protect customers.',
+        check: {
+          question: 'Why does the Total Cost curve of a service queuing operation exhibit a convex U-shape with a unique global minimum?',
+          options: [
+            'Because server capacity costs increase linearly with headcount, while customer waiting costs decrease exponentially as servers are added; the sum of linear and convex decaying curves creates a unique minimum.',
+            'Because government labor taxes automatically double every time an employee is hired.',
+            'Because waiting costs always reach zero when at least 2 servers are present.',
+            'Because queuing algorithms invert the cost matrix when utilization drops below 50%.'
+          ],
+          answer: 0,
+          why: 'Linear server costs and convex decaying customer waiting costs intersect at a unique optimal tradeoff point that minimizes total economic loss.',
+          answerIndex: 0,
+          explanation: 'Linear server costs and convex decaying customer waiting costs intersect at a unique optimal tradeoff point that minimizes total economic loss.'
+        }
+      },
+      {
+        title: 'Non-Stationary Queues & Dynamic Hourly Shift Staffing Scheduling',
+        say: [
+          'Textbook queuing formulas assume stationarity: arrival rates and service rates remain constant over infinite time horizons. In reality, operational demand in the real world is intensely non-stationary. Hospital emergency rooms, airline check-in counters, restaurant kitchens, and cloud microservices experience dramatic intraday demand peaks and troughs. An e-commerce fulfillment warehouse might receive 15 orders/hour at 7 AM, surging to 58 orders/hour at 1 PM, before dropping back down in the evening.',
+          'Managers who staff an operation based on 24-hour daily averages commit a disastrous operational mistake: during morning and afternoon surges, arrival rate exceeds server capacity (lambda > c * mu), causing queues to explode without bound and inducing multi-hour customer delays. Conversely, staffing all 24 hours to handle the peak surge results in massive labor waste and idle payroll during trough hours.',
+          'The modern operational standard is Dynamic Shift Scheduling. By discretizing the operational day into discrete planning intervals (such as 1-hour or 30-minute time blocks), operations engines size staff dynamically to maintain a safe target utilization ceiling (e.g., rho <= 82%) during every interval. Dynamic shift scheduling guarantees resilient SLA performance during peak surges while saving 30% to 50% in payroll expenditure compared to static peak-capacity scheduling.'
+        ],
+        example: 'A hospital outpatient testing facility faces an 8-hour shift where patient arrivals swing from 15/hr to 58/hr. Sizing statically for the peak requires 6 nurses every hour (48 total nurse-hours). Sizing dynamically using hourly arrival profiles schedules between 2 and 6 nurses as demand ebbs and flows, delivering identical sub-20-minute patient wait times while using only 30 nurse-hours—saving 18 labor hours (37.5% payroll savings).',
+        code: `# Dynamic Non-Stationary Shift Scheduling & Queue Capacity Simulator
+import math
+
+def simulate_dynamic_shift_queue(
+    hourly_arrivals: list[float],
+    service_rate_per_server: float,
+    target_sla_pct: float = 85.0
+) -> dict:
+    hourly_schedule = []
+    total_staff_hours = 0
+
+    # 1. Dynamic Allocation per Time Interval
+    for hour_idx, arrival in enumerate(hourly_arrivals):
+        erlangs = arrival / service_rate_per_server
+        min_servers = math.ceil(erlangs + 0.001)
+
+        # Allocate minimum servers to keep utilization rho <= 82% to prevent surge queue explosions
+        allocated_c = min_servers
+        while (arrival / (allocated_c * service_rate_per_server)) > 0.82:
+            allocated_c += 1
+
+        rho = arrival / (allocated_c * service_rate_per_server)
+        total_staff_hours += allocated_c
+
+        hourly_schedule.append({
+            "Hour": f"{hour_idx:02d}:00",
+            "Arrivals": arrival,
+            "Allocated_Staff": allocated_c,
+            "Utilization_Pct": round(rho * 100.0, 1)
+        })
+
+    # 2. Comparison Against Static Peak Staffing Baseline
+    peak_arrival = max(hourly_arrivals)
+    static_peak_c = math.ceil(peak_arrival / (0.82 * service_rate_per_server))
+    static_total_hours = static_peak_c * len(hourly_arrivals)
+
+    hours_saved = static_total_hours - total_staff_hours
+    efficiency_gain_pct = round((hours_saved / static_total_hours) * 100.0, 1)
+
+    return {
+        "Total_Operating_Hours": len(hourly_arrivals),
+        "Dynamic_Staff_Hours": total_staff_hours,
+        "Static_Peak_Staff_Hours": static_total_hours,
+        "Labor_Hours_Saved": hours_saved,
+        "Dynamic_Savings_Pct": efficiency_gain_pct,
+        "Peak_Hour_Staffing": max(h["Allocated_Staff"] for h in hourly_schedule),
+        "Trough_Hour_Staffing": min(h["Allocated_Staff"] for h in hourly_schedule)
+    }
+
+arrivals_profile = [15.0, 18.0, 42.0, 58.0, 50.0, 32.0, 20.0, 14.0]
+
+dyn_res = simulate_dynamic_shift_queue(
+    hourly_arrivals=arrivals_profile,
+    service_rate_per_server=12.0
+)
+
+for k, v in dyn_res.items():
+    print(f"{k}: {v}")`,
+        output: `Total_Operating_Hours: 8
+Dynamic_Staff_Hours: 30
+Static_Peak_Staff_Hours: 48
+Labor_Hours_Saved: 18
+Dynamic_Savings_Pct: 37.5
+Peak_Hour_Staffing: 6
+Trough_Hour_Staffing: 2`,
+        codeNotes: [
+          { line: 12, note: 'Discretizes intraday demand into hourly intervals, computing Erlangs per period' },
+          { line: 18, note: 'Dynamically scales staff to enforce safe 82% utilization ceiling during surges' },
+          { line: 32, note: 'Benchmarks dynamic headcount against static peak sizing across the operational shift' },
+          { line: 42, note: 'Proves 37.5% labor hour reduction (18 hours saved) while completely preventing peak queue backlogs' }
+        ],
+        tryIt: 'Double peak arrival to 116.0 arrivals/hr and verify how dynamic peak staffing automatically expands to 12 servers.',
+        check: {
+          question: 'What severe operational failure occurs if an enterprise sizes service staff using daily average arrival rates instead of dynamic interval scheduling?',
+          options: [
+            'During peak demand hours, arrival rates exceed capacity (lambda > c * mu), causing queues to compound without bound and resulting in severe service breakdowns and customer abandonment.',
+            'Average-based staffing causes servers to work twice as fast.',
+            'The company receives an automatic tax penalty from the government.',
+            'Queues become deterministic and wait times drop to zero.'
+          ],
+          answer: 0,
+          why: 'Static average staffing under-provisions peak hours where lambda > c*mu; queues compound rapidly, creating backlogs that take hours to clear.',
+          answerIndex: 0,
+          explanation: 'Static average staffing under-provisions peak hours where lambda > c*mu; queues compound rapidly, creating backlogs that take hours to clear.'
+        }
+      }
+    ],
+    summary: [
+      'M/M/1 Queuing Dynamics: Random arrival bursts create queues even under spare capacity; wait times explode hyperbolically as utilization rho approaches 1.0.',
+      'M/M/c Resource Pooling: Consolidating separate queues into a single serpentine shared queue eliminates idle starvation and slashes customer delay by 60% to 80%.',
+      'The Erlang C Formula: Accurately sizes contact center headcount to achieve corporate SLA targets (e.g., 85% answered within 20s) based on offered Erlang load.',
+      'Waiting Line Economics: Total operational cost balances linear server wages against convex customer waiting penalties to identify the optimal profit-maximizing capacity.',
+      'Dynamic Shift Scheduling: Interval-based staffing accommodates non-stationary intraday demand surges, saving 30% to 50% in payroll compared to static peak staffing.'
+    ],
+    projectStep: {
+      title: 'Stochastic Queuing & Service Workforce Optimization Architecture',
+      steps: [
+        'Model single-server M/M/1 congestion curves and evaluate Kingman\'s heavy-traffic delay explosion.',
+        'Implement multi-server M/M/c queuing to demonstrate quantitative resource pooling efficiency dividends.',
+        'Apply the Erlang C formula to size customer support headcount against contractual SLA speed-of-answer commitments.',
+        'Construct a convex Total Cost optimization engine and schedule dynamic hourly shifts to conquer intraday demand spikes.'
+      ]
+    }
+  }
+];

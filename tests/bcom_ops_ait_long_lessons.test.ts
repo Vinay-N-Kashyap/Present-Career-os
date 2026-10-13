@@ -162,3 +162,36 @@ test('B.Com Ops Day 3: Lean Six Sigma DMAIC, Process Capability & SPC Control Ch
   assert.ok(opsLesson3.parts[4].code?.includes('analyze_cost_of_quality'));
 });
 
+test('B.Com Ops Day 4: Queuing Theory, Erlang C & Capacity Economics Snippets Verification', () => {
+  const opsLesson4 = getLongLesson('bcom_ops', 4);
+  assert.ok(opsLesson4, 'bcom_ops Day 4 long lesson must resolve');
+  assert.equal(opsLesson4.day, 4);
+  assert.equal(opsLesson4.parts.length, 5, 'bcom_ops Day 4 must contain exactly 5 parts');
+  assert.ok(opsLesson4.summary.length >= 4, 'bcom_ops Day 4 must contain comprehensive summary');
+  assert.ok(opsLesson4.projectStep, 'bcom_ops Day 4 must have a hands-on project step');
+
+  for (let i = 0; i < opsLesson4.parts.length; i++) {
+    const part = opsLesson4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(opsLesson4.parts[0].code?.includes('evaluate_mm1_queue'));
+  assert.ok(opsLesson4.parts[1].code?.includes('evaluate_mmc_queue'));
+  assert.ok(opsLesson4.parts[2].code?.includes('erlang_c_staffing_optimizer'));
+  assert.ok(opsLesson4.parts[3].code?.includes('optimize_queuing_economics'));
+  assert.ok(opsLesson4.parts[4].code?.includes('simulate_dynamic_shift_queue'));
+});
+
