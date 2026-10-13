@@ -388,5 +388,65 @@ test('Blockchain Day 5: Zero-Knowledge Groth16, ERC-4337, Rollups, GMP & MEV-Boo
   assert.ok(blockchainLesson5.parts[4].output?.includes('Validator MEV Reward: 0.68 ETH'));
 });
 
+test('Mobile Day 5: Cold Start TTID, OTA Compatibility, SQLite WAL & Fastlane CI/CD Verification', () => {
+  const mobileLesson5 = getLongLesson('mobile', 5);
+  assert.ok(mobileLesson5, 'mobile Day 5 must resolve');
+  assert.equal(mobileLesson5.day, 5);
+  assert.equal(mobileLesson5.parts.length, 5, 'mobile Day 5 must contain exactly 5 parts');
+  assert.ok(mobileLesson5.summary.length >= 4, 'mobile Day 5 must have comprehensive summary');
+  assert.ok(mobileLesson5.projectStep, 'mobile Day 5 must have projectStep');
+  assert.ok(mobileLesson5.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(mobileLesson5);
+  const totalMin = estimateLessonMinutes(mobileLesson5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < mobileLesson5.parts.length; i++) {
+    const part = mobileLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have >= 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  // Part 1: Cold Start Profiler
+  assert.ok(mobileLesson5.parts[0].code?.includes('MobileColdStartProfiler'));
+  assert.ok(mobileLesson5.parts[0].output?.includes('Time To Initial Display (TTID): 320 ms'));
+  assert.ok(mobileLesson5.parts[0].output?.includes('TIER_1_OPTIMAL_COLD_START'));
+
+  // Part 2: OTA Compatibility
+  assert.ok(mobileLesson5.parts[1].code?.includes('OtaUpdateSafetyGuard'));
+  assert.ok(mobileLesson5.parts[1].output?.includes('OTA_UPDATE_APPROVED_FOR_RELEASE'));
+  assert.ok(mobileLesson5.parts[1].output?.includes('COMPATIBLE_BINARY_MATCH'));
+  assert.ok(mobileLesson5.parts[1].output?.includes('ACTIVE_ARMED'));
+
+  // Part 3: Offline SQLite WAL & Delta Sync
+  assert.ok(mobileLesson5.parts[2].code?.includes('MobileOfflineSyncEngine'));
+  assert.ok(mobileLesson5.parts[2].output?.includes('WRITE_AHEAD_LOGGING_ACTIVE'));
+  assert.ok(mobileLesson5.parts[2].output?.includes('OFFLINE_DELTAS_MERGED_ATOMICALLY'));
+
+  // Part 4: Mobile Security Armor
+  assert.ok(mobileLesson5.parts[3].code?.includes('MobileSecurityAuditor'));
+  assert.ok(mobileLesson5.parts[3].output?.includes('ZERO_TRUST_DEVICE_VERIFIED'));
+  assert.ok(mobileLesson5.parts[3].output?.includes('ALL_CHECKS_PASSED'));
+
+  // Part 5: Fastlane CI/CD & Phased Releases
+  assert.ok(mobileLesson5.parts[4].code?.includes('FastlaneReleasePipeline'));
+  assert.ok(mobileLesson5.parts[4].output?.includes('FASTLANE_AUTOMATED_DEPLOYMENT_COMPLETE'));
+  assert.ok(mobileLesson5.parts[4].output?.includes('10% Active User Traffic'));
+  assert.ok(mobileLesson5.parts[4].output?.includes('DSYMS_MAPPED_TO_SENTRY'));
+});
+
 
 
