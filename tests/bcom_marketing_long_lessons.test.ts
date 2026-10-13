@@ -199,3 +199,49 @@ test('Block 32: bcom-marketing Day 4 parts uphold strict code, output, and check
   assert.match(lesson.parts[4].title, /Delphi Method.*Expert Consensus/i);
 });
 
+test('Block 33: bcom-marketing Day 5 long lesson resolves with 5 in-depth parts', () => {
+  const lesson = getLongLesson('bcom-marketing', 5);
+  assert.ok(lesson, 'bcom-marketing Day 5 must resolve');
+  assert.equal(lesson.day, 5);
+  assert.equal(lesson.parts.length, 5, 'Must contain exactly 5 in-depth parts');
+
+  // Verify alias resolution for bcom_mkt Day 5
+  const aliased = getLongLesson('bcom_mkt', 5);
+  assert.ok(aliased, 'bcom_mkt alias Day 5 must resolve');
+  assert.equal(aliased.title, lesson.title);
+
+  // Assert realistic lesson length
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 9, `Spoken minutes (${spoken}) must be at least 9 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 33: bcom-marketing Day 5 parts uphold strict code, output, and check question invariants', () => {
+  const lesson = getLongLesson('bcom-marketing', 5)!;
+
+  lesson.parts.forEach((part, idx) => {
+    assert.ok(part.title, `Day 5 Part ${idx + 1} must have a title`);
+    assert.ok(Array.isArray(part.say) && part.say.length >= 3, `Day 5 Part ${idx + 1} must have detailed teaching paragraphs`);
+    assert.ok(part.example, `Day 5 Part ${idx + 1} must include an everyday example`);
+    assert.ok(part.code, `Day 5 Part ${idx + 1} must include executable Python code`);
+    assert.ok(part.output, `Day 5 Part ${idx + 1} must include expected console output`);
+    assert.ok(part.tryIt, `Day 5 Part ${idx + 1} must include a tryIt interactive challenge`);
+
+    // Check quiz contract
+    assert.ok(part.check.question, `Day 5 Part ${idx + 1} check must have question text`);
+    assert.ok(Array.isArray(part.check.options) && part.check.options.length >= 3, `Day 5 Part ${idx + 1} check must have >= 3 options`);
+    assert.equal(typeof part.check.answer, 'number', `Day 5 Part ${idx + 1} check must have numerical answer`);
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Day 5 Part ${idx + 1} answer must be in options range`);
+    assert.ok(part.check.why, `Day 5 Part ${idx + 1} check must have educational rationale`);
+  });
+
+  // Verify specific Day 5 concepts
+  assert.match(lesson.parts[0].title, /STP Paradigm.*4 Primary Segmentation Vectors/i);
+  assert.match(lesson.parts[1].title, /Kotler.*MASDA Criteria/i);
+  assert.match(lesson.parts[2].title, /4 Classical Targeting Strategies/i);
+  assert.match(lesson.parts[3].title, /Segment Unit Economics.*CLV.*CAC Payback/i);
+  assert.match(lesson.parts[4].title, /K-Means Behavioral Clustering.*Centroid Assignment/i);
+});
+
+

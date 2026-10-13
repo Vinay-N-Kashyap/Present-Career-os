@@ -1823,5 +1823,407 @@ print(f"Status: {delphi_res['Consensus_Status']} | Final Consensus: {delphi_res[
         'Construct a bottom-up TAM/SAM/SOM market sizing model and project Year 1 quarterly demand using Exponential Smoothing with MAPE error bounds.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom-marketing',
+    day: 5,
+    title: 'Market Segmentation, Targeting Strategies & Behavioral Clustering',
+    goal: 'Master strategic market segmentation: decomposing heterogeneous mass markets across geographic, demographic, psychographic, and behavioral vectors; auditing segment viability against Kotler\'s MASDA criteria; evaluating Porter\'s 4 targeting postures (Undifferentiated, Differentiated, Concentrated/Niche, Micromarketing); modeling segment unit economics (CLV, CAC Payback, Gross Margin Contribution); and implementing unsupervised K-Means customer behavioral clustering with centroid assignment.',
+    minutes: 45,
+    recap: 'Yesterday we engineered marketing research plans, Cochran sample size math, and quantitative exponential smoothing demand forecasts. Today we pivot into segmentation science: grouping customers by behavioral vectors, gating viable cohorts via MASDA, selecting optimal targeting strategies, and executing K-Means clustering.',
+    parts: [
+      {
+        title: 'The STP Paradigm & 4 Primary Segmentation Vectors',
+        say: [
+          'A company cannot be everything to everyone; attempting to serve an entire national or global population with a monolithic, one-size-fits-all product offering inevitably results in bland commodities that resonate deeply with nobody.',
+          'Strategic market segmentation is the foundational discipline of dividing an aggregate, heterogeneous market into distinct, identifiable subsets of buyers who share homogeneous needs, characteristics, or behaviors and require tailored value propositions.',
+          'Segmentation operates across four fundamental dimensions: Geographic, Demographic, Psychographic, and Behavioral.',
+          'Vector 1: Geographic Segmentation divides markets by regional boundaries, urban vs rural population density, climate zones, and local language idioms.',
+          'Vector 2: Demographic Segmentation groups buyers by observable biographical variables: age cohorts (Gen Z, Millennials, Boomers), household income, educational attainment, occupation, and family life cycle stages. While straightforward to quantify, demographic variables alone often fail to predict actual purchasing motivation.',
+          'Vector 3: Psychographic Segmentation dives beneath demographic surfaces into social class, psychological lifestyles, core philosophical values, and self-identity aspirations (such as the VALS Values and Lifestyles framework).',
+          'Vector 4: Behavioral Segmentation examines actual commercial conduct: purchase occasions (routine vs festive), user status (first-time, regular, churned), usage rate (the Pareto 80/20 rule of heavy buyers), brand loyalty tiers, and buyer readiness stage.',
+          'Modern marketing science conclusively proves that Behavioral Segmentation delivers the highest return on marketing investment because past behavioral data is the single most predictive indicator of future purchasing intent.'
+        ],
+        example: 'Consider consumer footwear. Geographic targeting stocks insulated snow boots in alpine regions and flip-flops in coastal towns. Demographic targeting pitches sneakers to college students. Psychographic targeting addresses eco-conscious vegans seeking plant-based leather. But behavioral targeting identifies ultramarathon runners who replace premium carbon-plated racing shoes every 400 miles regardless of price.',
+        code: `# Simulation: 4-Dimensional Multi-Vector Customer Segmentation Scorer
+from dataclasses import dataclass
+
+@dataclass
+class CustomerProfile:
+    customer_id: str
+    region_density: str # 'Urban', 'Suburban', 'Rural'
+    age_cohort: str     # 'Gen_Z', 'Millennial', 'Gen_X', 'Boomer'
+    lifestyle_trait: str # 'Eco_Conscious', 'Tech_Enthusiast', 'Value_Seeker'
+    annual_visits: int
+    cart_conversion_pct: float
+
+def classify_customer_segment(profile: CustomerProfile) -> dict:
+    # Behavioral weighting dominates scoring
+    is_heavy_user = profile.annual_visits >= 24
+    is_high_intent = profile.cart_conversion_pct >= 8.0
+    
+    if is_heavy_user and is_high_intent:
+        behavioral_tier = "VIP_Power_Buyer"
+        tailored_channel = "Direct Account Concierge & VIP Early-Access Drops"
+    elif is_heavy_user and not is_high_intent:
+        behavioral_tier = "Window_Shopper_High_Engagement"
+        tailored_channel = "Cart-Abandonment Retargeting with Limited Discount"
+    elif profile.annual_visits <= 3:
+        behavioral_tier = "Occasional_New_Shopper"
+        tailored_channel = "Welcome Nurture Email Onboarding Sequence"
+    else:
+        behavioral_tier = "Regular_Steady_Shopper"
+        tailored_channel = "Personalized Cross-Sell Product Recommendations"
+        
+    return {
+        "CustomerID": profile.customer_id,
+        "Geographic": profile.region_density,
+        "Demographic": profile.age_cohort,
+        "Psychographic": profile.lifestyle_trait,
+        "Behavioral_Cohort": behavioral_tier,
+        "Tailored_Campaign": tailored_channel
+    }
+
+cust1 = CustomerProfile("CUST_9021", "Urban", "Millennial", "Eco_Conscious", 32, 11.5)
+res1 = classify_customer_segment(cust1)
+print(f"Customer: {res1['CustomerID']} | Cohort: {res1['Behavioral_Cohort']}")
+print(f"Strategy: {res1['Tailored_Campaign']}")`,
+        output: `Customer: CUST_9021 | Cohort: VIP_Power_Buyer\nStrategy: Direct Account Concierge & VIP Early-Access Drops`,
+        codeNotes: [
+          { line: 4, note: 'CustomerProfile models multi-dimensional geographic, demographic, psychographic, and behavioral attributes' },
+          { line: 14, note: 'Prioritizes behavioral engagement metrics (annual visits and conversion intent) over passive demographic traits' },
+          { line: 17, note: 'Classifies high-frequency, high-intent buyers into VIP_Power_Buyer status for concierge engagement' },
+          { line: 36, note: 'Demonstrates profile CUST_9021 qualifying for dedicated early-access drops based on 32 annual store visits' }
+        ],
+        tryIt: 'Modify annual_visits to 2 on cust1 to observe the engine classify them as an Occasional_New_Shopper and route them to a welcome nurture sequence.',
+        check: {
+          question: 'Why does Behavioral Segmentation typically generate significantly higher marketing conversion rates compared to demographic segmentation alone?',
+          options: [
+            'Because actual observed purchasing actions, product usage frequencies, and buying recency are far more predictive of future commercial intent than broad biographical labels like age or gender.',
+            'Because demographic surveys are illegal under federal trade guidelines.',
+            'Because behavioral segmentation only requires consulting astronomical horoscopes.',
+            'Because demographic data changes every five seconds.'
+          ],
+          answer: 0,
+          why: 'Past behavioral patterns (frequency, spend, basket additions) reflect genuine revealed preferences and immediate purchasing readiness, whereas demographic attributes merely suggest broad probabilities.',
+          answerIndex: 0,
+          explanation: 'Past behavioral patterns (frequency, spend, basket additions) reflect genuine revealed preferences and immediate purchasing readiness, whereas demographic attributes merely suggest broad probabilities.'
+        }
+      },
+      {
+        title: 'Kotler\'s MASDA Criteria for Commercially Viable Segments',
+        say: [
+          'A marketing analytics team can theoretically slice a customer database into hundreds of microscopic clusters based on endless combinations of attributes.',
+          'However, identifying an empirical pattern in data does not mean a company should build an organizational business unit around it! Every targeted segment demands dedicated product development, distinct packaging, separate advertising spend, and custom sales channels.',
+          'To prevent firms from burning capital on unprofitable micro-segments, Philip Kotler established the 5 rigorous MASDA criteria: Measurable, Accessible, Substantial, Differentiable, and Actionable.',
+          'Measurable: The size, purchasing power, and demographic profile of the candidate segment must be quantifiable with statistical precision.',
+          'Accessible: The segment must be effectively reached and served through identifiable distribution channels, physical logistics, and communication media.',
+          'Substantial: The segment must be large or profitable enough to justify custom tooling, dedicated inventory, and ongoing marketing overhead. A segment should be the largest possible homogeneous group worth going after with a tailored marketing program.',
+          'Differentiable: The candidate segments must be conceptually distinguishable and respond differently to different marketing mix elements. If married and unmarried engineers respond identically to a sales promotion for an electric vehicle, they constitute a single segment, not two!',
+          'Actionable: The firm must possess the organizational capability, capital reserves, and talent necessary to design and execute effective programs that attract and serve the segment.'
+        ],
+        example: 'Imagine an entrepreneur proposing a business model catering exclusively to "left-handed vegetarians who only buy green footwear on rainy Tuesdays". While measurable in theory, this cohort fails the Substantial and Actionable criteria — creating an entire manufacturing and retail distribution operation for such an infinitesimal group guarantees rapid commercial bankruptcy.',
+        code: `# Simulation: Kotler MASDA Segment Viability Multi-Criteria Decision Gate
+def evaluate_masda_viability(
+    segment_name: str,
+    market_size_est_known: bool,
+    purchasing_power_quantifiable: bool,
+    distribution_channels_reachable: bool,
+    projected_margin_dollars: float,
+    minimum_margin_hurdle: float,
+    distinct_price_sensitivity: bool,
+    team_operational_capability: bool
+) -> dict:
+    measurable = market_size_est_known and purchasing_power_quantifiable
+    accessible = distribution_channels_reachable
+    substantial = projected_margin_dollars >= minimum_margin_hurdle
+    differentiable = distinct_price_sensitivity
+    actionable = team_operational_capability
+
+    all_passed = measurable and accessible and substantial and differentiable and actionable
+
+    return {
+        "Segment": segment_name,
+        "Measurable": "PASS" if measurable else "FAIL",
+        "Accessible": "PASS" if accessible else "FAIL",
+        "Substantial": f"PASS (\${round(projected_margin_dollars/1e3, 1)}k vs \${round(minimum_margin_hurdle/1e3, 1)}k)" if substantial else "FAIL",
+        "Differentiable": "PASS" if differentiable else "FAIL",
+        "Actionable": "PASS" if actionable else "FAIL",
+        "Commercial_Viability": "APPROVED_FOR_TARGETING" if all_passed else "REJECTED_INSUFFICIENT_CRITERIA"
+    }
+
+masda_res = evaluate_masda_viability(
+    segment_name="Corporate Wellness Enthusiasts",
+    market_size_est_known=True,
+    purchasing_power_quantifiable=True,
+    distribution_channels_reachable=True,
+    projected_margin_dollars=480000.0,
+    minimum_margin_hurdle=250000.0,
+    distinct_price_sensitivity=True,
+    team_operational_capability=True
+)
+print(f"Segment: {masda_res['Segment']} | Viability: {masda_res['Commercial_Viability']}")
+print(f"MASDA Substantial: {masda_res['Substantial']}")`,
+        output: `Segment: Corporate Wellness Enthusiasts | Viability: APPROVED_FOR_TARGETING\nMASDA Substantial: PASS ($480.0k vs $250.0k)`,
+        codeNotes: [
+          { line: 12, note: 'Audits each of the five Kotler MASDA criteria against quantitative operational benchmarks' },
+          { line: 14, note: 'Gating test enforces that projected segment margin must clear corporate hurdle rate' },
+          { line: 18, note: 'Requires unanimous fulfillment across all five criteria before releasing marketing development capital' },
+          { line: 36, note: 'Validates Corporate Wellness Enthusiasts generating $480k margin against a $250k hurdle' }
+        ],
+        tryIt: 'Lower projected_margin_dollars to $150,000 on masda_res to observe the Substantial gate fail against the $250,000 corporate margin hurdle.',
+        check: {
+          question: 'According to Kotler\'s MASDA framework, what occurs if two customer demographic groups respond identically to marketing campaigns and price promotions?',
+          options: [
+            'They fail the Differentiable criterion and should be combined into a single unified segment rather than treated as separate targets.',
+            'The company should double its advertising budget to force them to react differently.',
+            'The marketing research firm should be immediately sued for negligence.',
+            'The product price should be increased by 500% to separate them.'
+          ],
+          answer: 0,
+          why: 'Segments are differentiable only if they are conceptually distinguishable and respond differently to different marketing mix elements. Identical responses indicate a single homogeneous market.',
+          answerIndex: 0,
+          explanation: 'Segments are differentiable only if they are conceptually distinguishable and respond differently to different marketing mix elements. Identical responses indicate a single homogeneous market.'
+        }
+      },
+      {
+        title: 'The 4 Classical Targeting Strategies: Mass to Micromarketing',
+        say: [
+          'Once market segments have been profiled and evaluated against MASDA viability gates, corporate leadership must make an explicit strategic commitment regarding which and how many segments to enter: this is Market Targeting.',
+          'Strategic marketing recognizes four primary targeting postures along a spectrum of market coverage: Undifferentiated Marketing, Differentiated Marketing, Concentrated (Niche) Marketing, and Micromarketing.',
+          'Posture 1: Undifferentiated (Mass) Marketing ignores segment differences and goes after the entire market with one broad commercial offering. This posture focuses on common consumer needs rather than differences, relying on mass distribution and mass media advertising (e.g. basic table salt, agricultural flour, commodity electricity). It achieves massive economies of scale but leaves the firm vulnerable to specialized competitors.',
+          'Posture 2: Differentiated (Segmented) Marketing targets multiple market segments and designs separate, distinct offerings and marketing mixes for each (e.g. Toyota offering the Corolla for budget-conscious commuters, the RAV4 for active suburban families, and the Lexus LS for luxury executives). While this strategy captures greater total sales, it dramatically escalates production costs, inventory carrying expenses, and advertising budgets.',
+          'Posture 3: Concentrated (Niche) Marketing channels all corporate resources into capturing a dominant, commanding share of one or two specialized sub-markets. Instead of pursuing a small share of a large market, the firm secures a large share of one specific niche (e.g. Rolex dominating luxury mechanical horology or Whole Foods in its early organic grocery era). Niche marketing delivers supreme capital efficiency and pricing power, but carries catastrophic risk if the narrow niche suffers technological disruption or demand collapse.',
+          'Posture 4: Micromarketing tailors products and marketing programs to the tastes of specific individuals and local customer segments, encompassing Local Marketing (store-specific merchandising) and Individual 1-to-1 Marketing (algorithmic personalized recommendations on Spotify or customized Nike By You footwear).'
+        ],
+        example: 'Think of fishing across different bodies of water. Undifferentiated marketing is trawling a gigantic commercial net across the open ocean. Differentiated marketing operates five specialized fishing boats, each using distinct bait tailored to tuna, salmon, and mackerel. Concentrated niche marketing fishes exclusively in a secluded, high-altitude alpine trout stream. Micromarketing is spearfishing an individual tagged fish.',
+        code: `# Simulation: Targeting Strategy Portfolio Payoff & Overhead Tradeoff Engine
+def evaluate_targeting_strategies(
+    strategy_type: str, # 'Undifferentiated', 'Differentiated', 'Concentrated_Niche', 'Micromarketing'
+    tam_revenue_pool: float,
+    penetration_pct: float,
+    fixed_overhead_cost: float,
+    cogs_margin_pct: float
+) -> dict:
+    gross_revenue = tam_revenue_pool * (penetration_pct / 100.0)
+    gross_profit = gross_revenue * (cogs_margin_pct / 100.0)
+    net_operating_profit = gross_profit - fixed_overhead_cost
+    roi_pct = round((net_operating_profit / fixed_overhead_cost) * 100.0, 1) if fixed_overhead_cost > 0 else 0.0
+
+    return {
+        "Strategy": strategy_type,
+        "Targeted_Gross_Revenue": f"\${round(gross_revenue / 1e6, 2)}M",
+        "Gross_Profit": f"\${round(gross_profit / 1e6, 2)}M",
+        "Overhead_Cost": f"\${round(fixed_overhead_cost / 1e6, 2)}M",
+        "Net_Operating_Profit": f"\${round(net_operating_profit / 1e6, 2)}M",
+        "Strategic_ROI": f"{roi_pct}%"
+    }
+
+strat1 = evaluate_targeting_strategies("Concentrated_Niche", 20000000.0, 25.0, 800000.0, 65.0)
+strat2 = evaluate_targeting_strategies("Differentiated", 100000000.0, 12.0, 4500000.0, 55.0)
+print(f"Niche Strategy -> Net Profit: {strat1['Net_Operating_Profit']} | ROI: {strat1['Strategic_ROI']}")
+print(f"Differentiated -> Net Profit: {strat2['Net_Operating_Profit']} | ROI: {strat2['Strategic_ROI']}")`,
+        output: `Niche Strategy -> Net Profit: $2.45M | ROI: 306.2%\nDifferentiated -> Net Profit: $2.1M | ROI: 46.7%`,
+        codeNotes: [
+          { line: 9, note: 'Calculates gross revenue as TAM multiplied by strategy-specific market share penetration' },
+          { line: 11, note: 'Subtracts fixed organizational overhead to reveal true net operating margin dollars' },
+          { line: 23, note: 'Concentrated niche strategy delivers higher capital ROI ($2.45M profit on $800k overhead = 306.2%)' },
+          { line: 24, note: 'Differentiated strategy yields broader revenue ($12M) but lower ROI (46.7%) due to multiple product lines' }
+        ],
+        tryIt: 'Increase the penetration_pct of the Niche strategy from 25.0% to 35.0% to evaluate how deepening niche dominance accelerates ROI.',
+        check: {
+          question: 'What is the primary operational vulnerability associated with a Concentrated (Niche) Targeting Strategy?',
+          options: [
+            'Severe company vulnerability if the single target segment experiences an unexpected macroeconomic downturn, consumer preference shift, or aggressive entry by a larger rival.',
+            'Having too many product variants that confuse factory workers.',
+            'Excessive global advertising costs across thousands of television channels.',
+            'Inability to register patents with national intellectual property offices.'
+          ],
+          answer: 0,
+          why: 'Because a niche firm puts all its eggs in one basket, any disruption to that specific micro-segment (e.g. shift in tastes or entry of an industry giant) threatens corporate survival.',
+          answerIndex: 0,
+          explanation: 'Because a niche firm puts all its eggs in one basket, any disruption to that specific micro-segment (e.g. shift in tastes or entry of an industry giant) threatens corporate survival.'
+        }
+      },
+      {
+        title: 'Segment Unit Economics: CLV, CAC Payback & Contribution Margin',
+        say: [
+          'In modern data-driven commercial strategy, marketing leaders must never judge the attractiveness of a customer segment based on vanity metrics such as headline GMV or registered user headcount.',
+          'A high-volume segment that generates millions in top-line revenue can simultaneously destroy shareholder value if its unit economics are structurally underwater.',
+          'Every candidate segment must be evaluated through the lens of Customer Lifetime Value (CLV), Customer Acquisition Cost (CAC), and Contribution Margin.',
+          'Customer Lifetime Value represents the net present value of the profit contribution attributed to the entire future relationship with a customer: CLV = (ARPU * Gross Margin %) / Churn Rate.',
+          'Consumer retail segments often exhibit high churn rates (e.g. 8-12% monthly) and aggressive price sensitivity, yielding low CLV that struggles to recoup digital acquisition costs.',
+          'Conversely, specialized B2B mid-market and enterprise cohorts demonstrate low churn (e.g. 1-2% monthly), expansion contract value, and high gross margins, producing massive lifetime value that easily supports high-touch sales acquisition budgets.',
+          'The Golden Rule of SaaS and recurring commerce dictates that a healthy commercial segment must sustain a CLV : CAC ratio >= 3.0x, and achieve a CAC Payback Period of <= 12 months.'
+        ],
+        example: 'Compare two business models. A fast-fashion e-commerce site spends $40 on Facebook ads to acquire a shopper who buys a $50 dress once at a 40% margin ($20 contribution) and never returns — losing $20 per acquired customer. Meanwhile, a specialized B2B compliance software provider spends $2,400 to acquire a client paying $450/month at an 80% margin who stays for 40 months ($14,400 CLV), earning a phenomenal 6.0x return on acquisition spend.',
+        code: `# Simulation: Cohort Segment CLV/CAC & Payback Period Financial Model
+def analyze_segment_unit_economics(
+    segment_name: str,
+    arpu_monthly: float,
+    gross_margin_pct: float,
+    monthly_churn_rate_pct: float,
+    customer_acquisition_cost: float
+) -> dict:
+    # Lifetime in months = 1 / churn_rate
+    churn_dec = monthly_churn_rate_pct / 100.0
+    avg_lifetime_months = 1.0 / churn_dec if churn_dec > 0 else 60.0
+    monthly_contribution_margin = arpu_monthly * (gross_margin_pct / 100.0)
+    
+    clv_gross = monthly_contribution_margin * avg_lifetime_months
+    clv_to_cac_ratio = round(clv_gross / customer_acquisition_cost, 2)
+    payback_period_months = round(customer_acquisition_cost / monthly_contribution_margin, 1)
+
+    health_verdict = (
+        "PRIME_EXPANSION_SEGMENT" if clv_to_cac_ratio >= 3.0 and payback_period_months <= 12.0
+        else "VIABLE_NEEDS_CHURN_OPTIMIZATION" if clv_to_cac_ratio >= 2.0
+        else "UNECONOMIC_VALUE_DESTRUCTIVE"
+    )
+
+    return {
+        "Segment": segment_name,
+        "Customer_Lifetime_Value": f"\${round(clv_gross, 2)}",
+        "Customer_Acquisition_Cost": f"\${round(customer_acquisition_cost, 2)}",
+        "CLV_to_CAC_Ratio": f"{clv_to_cac_ratio}x",
+        "CAC_Payback_Months": f"{payback_period_months} months",
+        "Economics_Health": health_verdict
+    }
+
+unit_res = analyze_segment_unit_economics(
+    segment_name="Mid-Market B2B SaaS",
+    arpu_monthly=450.0,
+    gross_margin_pct=80.0,
+    monthly_churn_rate_pct=2.5,
+    customer_acquisition_cost=2400.0
+)
+print(f"Segment: {unit_res['Segment']} | CLV: {unit_res['Customer_Lifetime_Value']} | CAC: {unit_res['Customer_Acquisition_Cost']}")
+print(f"CLV:CAC: {unit_res['CLV_to_CAC_Ratio']} | Payback: {unit_res['CAC_Payback_Months']} | Health: {unit_res['Economics_Health']}")`,
+        output: `Segment: Mid-Market B2B SaaS | CLV: $14400.0 | CAC: $2400.0\nCLV:CAC: 6.0x | Payback: 6.7 months | Health: PRIME_EXPANSION_SEGMENT`,
+        codeNotes: [
+          { line: 9, note: 'Derives expected customer tenure in months as reciprocal of monthly churn rate (1 / 0.025 = 40 months)' },
+          { line: 13, note: 'Calculates Gross CLV as monthly contribution margin ($360) multiplied by lifetime (40 months = $14,400)' },
+          { line: 15, note: 'Computes CAC Payback period: $2,400 CAC divided by $360 monthly contribution = 6.7 months' },
+          { line: 36, note: 'Confirms segment qualifies as PRIME_EXPANSION_SEGMENT with a 6.0x ratio and <7 month payback' }
+        ],
+        tryIt: 'Increase monthly_churn_rate_pct from 2.5% to 6.0% to see how higher customer attrition degrades CLV:CAC and flips Economics_Health to VIABLE_NEEDS_CHURN_OPTIMIZATION.',
+        check: {
+          question: 'What is the minimum industry benchmark for the CLV : CAC ratio required to confirm a commercially healthy, venture-scale customer segment?',
+          options: [
+            'At least 3.0x (meaning customer lifetime profit covers acquisition costs threefold within acceptable payback windows).',
+            'Exactly 0.5x (meaning acquisition costs are double lifetime revenues).',
+            'Minus 10.0x.',
+            'Zero, because marketing acquisition costs should always be ignored.'
+          ],
+          answer: 0,
+          why: 'A CLV:CAC ratio of at least 3.0x ensures sufficient buffer to absorb operating overhead, ongoing engineering development, and unforeseen market friction.',
+          answerIndex: 0,
+          explanation: 'A CLV:CAC ratio of at least 3.0x ensures sufficient buffer to absorb operating overhead, ongoing engineering development, and unforeseen market friction.'
+        }
+      },
+      {
+        title: 'Unsupervised Machine Learning: K-Means Behavioral Clustering & Centroid Assignment',
+        say: [
+          'As enterprise customer databases expand to millions of transaction logs, human marketing teams can no longer intuitively spot natural segmentation boundaries across dozens of behavioral variables.',
+          'Unsupervised Machine Learning, specifically K-Means Clustering, solves this challenge by mathematically partitioning an unlabelled customer dataset into K distinct behavioral clusters based on multi-dimensional geometric distance.',
+          'The K-Means algorithm operates iteratively: it initializes K cluster centroids, assigns each customer record to the nearest centroid based on Euclidean distance, and recalculates each centroid as the mathematical mean of its assigned member vectors.',
+          'The objective function minimizes total intra-cluster variance (known as Inertia or Within-Cluster Sum of Squares, WCSS): J = sum(sum(||x - mu_i||^2)).',
+          'Before computing distances, data engineers must normalize continuous variables (such as total spend, transaction frequency, and session duration) using min-max scaling or z-score standardization, ensuring high-magnitude variables do not artificially distort Euclidean distance.',
+          'To select the optimal number of clusters K without overfitting, analysts employ the Elbow Method and validate partition quality using the Silhouette Coefficient, where scores near +1.0 confirm well-separated, internally dense behavioral cohorts.',
+          'The discovered clusters transform into actionable buyer personas — such as "Bargain Occasionals", "Steady Middle-Tier", and "VIP Power Buyers" — enabling automated CRM workflows that deliver tailored messaging at scale.'
+        ],
+        example: 'Imagine a giant warehouse floor covered with thousands of unlabeled metal bolts, screws, and washers. Instead of having a human inspect each one, an optical sorting machine measures the length, diameter, and weight of every piece and groups them into three distinct sorting bins based on spatial proximity. That is K-Means clustering.',
+        code: `# Simulation: K-Means Behavioral Customer Clustering & Centroid Assignment Engine
+from typing import List, Dict
+
+def assign_kmeans_clusters(
+    customer_records: List[Dict[str, float]],
+    initial_centroids: List[Dict[str, float]]
+) -> dict:
+    # Euclidean distance metric: sqrt((x1 - x2)^2 + (y1 - y2)^2)
+    def calc_distance(p1: dict, p2: dict) -> float:
+        return ((p1["Spend"] - p2["Spend"])**2 + (p1["Frequency"] - p2["Frequency"])**2)**0.5
+
+    assignments = {i: [] for i in range(len(initial_centroids))}
+
+    for cust in customer_records:
+        distances = [calc_distance(cust, c) for c in initial_centroids]
+        min_idx = distances.index(min(distances))
+        assignments[min_idx].append(cust["ID"])
+
+    # Calculate cluster sizes and total inertia
+    total_inertia = 0.0
+    cluster_profiles = {}
+    for idx, c in enumerate(initial_centroids):
+        custs = [cust for cust in customer_records if cust["ID"] in assignments[idx]]
+        size = len(custs)
+        inertia = sum(calc_distance(cust, c)**2 for cust in custs)
+        total_inertia += inertia
+        cluster_profiles[f"Cluster_{idx}"] = {
+            "Centroid": f"(Spend=\${c['Spend']}, Freq={c['Frequency']})",
+            "Assigned_Count": size,
+            "Members": assignments[idx]
+        }
+
+    return {
+        "Total_Customers": len(customer_records),
+        "Clusters_Formed": len(initial_centroids),
+        "Total_Inertia_Error": round(total_inertia, 2),
+        "Cohort_Breakdown": cluster_profiles
+    }
+
+customers = [
+    {"ID": "C1", "Spend": 25.0, "Frequency": 1.0},
+    {"ID": "C2", "Spend": 30.0, "Frequency": 2.0},
+    {"ID": "C3", "Spend": 220.0, "Frequency": 12.0},
+    {"ID": "C4", "Spend": 250.0, "Frequency": 15.0},
+    {"ID": "C5", "Spend": 120.0, "Frequency": 5.0}
+]
+centroids = [
+    {"Spend": 30.0, "Frequency": 2.0},   # Budget Occasional
+    {"Spend": 230.0, "Frequency": 13.0}  # Power Buyer
+]
+cluster_res = assign_kmeans_clusters(customers, centroids)
+print(f"Total Customers: {cluster_res['Total_Customers']} | Clusters: {cluster_res['Clusters_Formed']}")
+print(f"Cluster 0: {cluster_res['Cohort_Breakdown']['Cluster_0']['Assigned_Count']} buyers -> {cluster_res['Cohort_Breakdown']['Cluster_0']['Members']}")
+print(f"Cluster 1: {cluster_res['Cohort_Breakdown']['Cluster_1']['Assigned_Count']} buyers -> {cluster_res['Cohort_Breakdown']['Cluster_1']['Members']}")`,
+        output: `Total Customers: 5 | Clusters: 2\nCluster 0: 3 buyers -> ['C1', 'C2', 'C5']\nCluster 1: 2 buyers -> ['C3', 'C4']`,
+        codeNotes: [
+          { line: 9, note: 'Implements Euclidean distance calculus across normalized behavioral feature vectors' },
+          { line: 15, note: 'Assigns each customer vector to the centroid minimizing geometric distance' },
+          { line: 24, note: 'Accumulates Within-Cluster Sum of Squares (Inertia) to quantify overall clustering tightness' },
+          { line: 49, note: 'Partitions 5 customers cleanly into Cluster 0 (Budget Occasionals) and Cluster 1 (Power Buyers)' }
+        ],
+        tryIt: 'Add a new high-frequency, high-spend customer record (e.g. Spend: $280.0, Frequency: 18.0) to observe how the Euclidean distance engine routes them to Cluster 1.',
+        check: {
+          question: 'Why is feature scaling/normalization (e.g. z-score or min-max standardization) mandatory before running K-Means clustering on customer behavior data?',
+          options: [
+            'Because features with large raw numerical scales (such as annual dollar spend in thousands) would dominate the Euclidean distance calculation, completely drowning out lower-scale but critical features like transaction frequency.',
+            'Because Python will throw an unhandled syntax exception if raw numbers exceed 100.',
+            'Because customer names cannot be converted to binary strings without normalization.',
+            'Because machine learning servers shut down if features are not multiplied by zero.'
+          ],
+          answer: 0,
+          why: 'Euclidean distance is sensitive to measurement scales; without normalization, high-magnitude variables dominate the distance metric, distorting cluster formation.',
+          answerIndex: 0,
+          explanation: 'Euclidean distance is sensitive to measurement scales; without normalization, high-magnitude variables dominate the distance metric, distorting cluster formation.'
+        }
+      }
+    ],
+    summary: [
+      'STP Paradigm & 4 Vectors: Slicing markets across Geographic, Demographic, Psychographic, and Behavioral dimensions; behavioral patterns yield highest predictive conversion.',
+      'Kotler MASDA Criteria: Rigorous 5-point hurdle (Measurable, Accessible, Substantial, Differentiable, Actionable) prevents squandering capital on unviable micro-segments.',
+      '4 Targeting Postures: Ranging from Undifferentiated (Mass) and Differentiated (Segmented) to Concentrated (Niche) and Micromarketing (1-to-1 personalization).',
+      'Unit Economics & Golden Ratio: Evaluates segments by CLV = (ARPU * Gross Margin) / Churn; demands CLV:CAC >= 3.0x and CAC Payback <= 12 months for commercial expansion.',
+      'K-Means Behavioral Clustering: Unsupervised machine learning minimizes intra-cluster Euclidean inertia (WCSS); feature normalization and Elbow/Silhouette metrics ensure robust cohort discovery.'
+    ],
+    projectStep: {
+      title: 'Month 1 Marketing Strategy Capstone Step 5: STP Segmentation Matrix, Viability Audit & K-Means Cohorts',
+      steps: [
+        'Construct a 4-dimensional segmentation matrix profiling your enterprise\'s target audience across geographic, demographic, psychographic, and behavioral vectors.',
+        'Execute a formal Kotler MASDA viability audit across your candidate cohorts, establishing explicit revenue and margin thresholds.',
+        'Model the unit economics (CLV, CAC, Payback Period) for your chosen target segment and implement a 2-cluster K-Means behavioral classification model.'
+      ]
+    }
   }
 ];
+
