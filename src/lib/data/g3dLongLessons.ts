@@ -387,5 +387,376 @@ console.log('VRAM after particle buffer release:', gpu.getMemoryDiagnostics());`
         'Verify that all GPU buffer handles are tracked and cleanly deallocated upon scene tear-down.'
       ]
     }
+  },
+  {
+    coursePrefix: 'g3d',
+    day: 2,
+    title: 'PBR Shading, Shadow Mapping & WebGPU Architecture',
+    goal: 'Master industry-standard physically based rendering (PBR Cook-Torrance BRDF), percentage-closer shadow filtering, deferred shading pipelines, and modern WebGPU compute workgroups.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered the core WebGL2 graphics pipeline, 4x4 MVP matrix transformations, Phong shading, and raymarching SDFs. Now, we advance into photorealistic physically based rendering, dynamic shadow mapping, deferred multi-render targets, and low-overhead WebGPU pipelines.',
+    parts: [
+      {
+        title: 'Physically Based Rendering (PBR) & Cook-Torrance Microfacet BRDF',
+        say: [
+          'Classical empirical lighting models like Phong and Blinn-Phong look plastic and fail under varied lighting conditions because they do not obey physical laws. Physically Based Rendering (PBR) solves this by enforcing two inviolable physical principles: microfacet surface theory and energy conservation.',
+          'Under microfacet theory, rough surfaces are modeled as microscopic mirrors whose normal vectors deviate randomly from the macroscopic geometric normal. The Cook-Torrance specular Bidirectional Reflectance Distribution Function (BRDF) combines three distinct mathematical terms: the Normal Distribution Function D, the Fresnel reflectance F, and the Geometric Shadowing-Masking term G.',
+          'The Normal Distribution Function (commonly Trowbridge-Reitz GGX) evaluates the statistical concentration of microfacets perfectly aligned with the half-vector between the view direction and the light direction. As surface roughness approaches zero, D concentrates into an intense, sharp specular spike.',
+          'The Fresnel-Schlick approximation calculates how reflectance increases dramatically at glancing grazing angles. For non-metallic dielectric materials like plastic, glass, or stone, the normal reflectance F0 is roughly four percent (0.04), while conductive metals have much higher, colored F0 values like 0.95 for gold.',
+          'The Geometric Shadowing term G (Smith GGX) models microfacets occluding or shadowing one another, preventing unrealistic bright artifacts near grazing view angles where microfacet peaks block reflected light rays.',
+          'Crucially, PBR guarantees energy conservation: the sum of specularly reflected light and diffusely refracted light can never exceed the total incoming light energy. In metals, all refracted light is immediately absorbed by free conduction electrons, meaning metals exhibit zero diffuse scattering (kD equals zero).'
+        ],
+        example: 'Think of looking at a polished 24-karat gold ring versus a rough chalkboard. The gold ring absorbs no diffuse light and reflects sharp, tinted golden highlights with high specular energy. The chalkboard scatters incoming light in all directions across millions of microscopic chalk dust ridges, producing a soft diffuse sheen without any specular mirror reflection.',
+        code: `// Simulation: Cook-Torrance Specular Microfacet BRDF & Energy Conservation
+function dot(a: [number, number, number], b: [number, number, number]): number {
+  return Math.max(0, a[0] * b[0] + a[1] * b[1] + a[2] * b[2]);
+}
+
+function normalize(v: [number, number, number]): [number, number, number] {
+  const len = Math.hypot(v[0], v[1], v[2]) || 1;
+  return [v[0] / len, v[1] / len, v[2] / len];
+}
+
+function calculateCookTorrancePbr(
+  roughness: number,
+  metallic: number,
+  N: [number, number, number],
+  V: [number, number, number],
+  L: [number, number, number]
+): { diffuse: number; specular: number; totalReflectance: number } {
+  const H = normalize([V[0] + L[0], V[1] + L[1], V[2] + L[2]]);
+  const NdotV = Math.max(0.001, dot(N, V));
+  const NdotL = Math.max(0.001, dot(N, L));
+  const NdotH = dot(N, H);
+  const VdotH = dot(V, H);
+
+  // 1. Normal Distribution Function (Trowbridge-Reitz GGX)
+  const alpha = roughness * roughness;
+  const alpha2 = alpha * alpha;
+  const denomNDF = (NdotH * NdotH * (alpha2 - 1.0) + 1.0);
+  const D = alpha2 / (Math.PI * denomNDF * denomNDF);
+
+  // 2. Fresnel-Schlick Approximation (F0 = 0.04 for dielectrics, tinted for metals)
+  const F0 = 0.04 * (1.0 - metallic) + 0.95 * metallic;
+  const F = F0 + (1.0 - F0) * Math.pow(1.0 - VdotH, 5.0);
+
+  // 3. Geometry Shadowing/Masking (Smith GGX)
+  const k = Math.pow(roughness + 1.0, 2.0) / 8.0;
+  const G_V = NdotV / (NdotV * (1.0 - k) + k);
+  const G_L = NdotL / (NdotL * (1.0 - k) + k);
+  const G = G_V * G_L;
+
+  // Cook-Torrance Specular BRDF
+  const specular = (D * F * G) / (4.0 * NdotV * NdotL);
+
+  // Energy Conservation: Diffuse component is whatever light is not specularly reflected
+  const kD = (1.0 - F) * (1.0 - metallic);
+  const diffuse = kD * (1.0 / Math.PI) * NdotL;
+  const totalReflectance = diffuse + specular * NdotL;
+
+  return { diffuse, specular, totalReflectance };
+}
+
+const normal: [number, number, number] = [0, 0, 1];
+const view: [number, number, number] = normalize([0.2, 0.2, 0.9]);
+const light: [number, number, number] = normalize([0.3, 0.3, 0.9]);
+
+// Compare Gold Metal vs Rough Plastic
+const gold = calculateCookTorrancePbr(0.2, 0.95, normal, view, light);
+const plastic = calculateCookTorrancePbr(0.5, 0.0, normal, view, light);
+
+console.log('=== PHYSICALLY BASED RENDERING (COOK-TORRANCE BRDF) ===');
+console.log('Polished Gold (Metallic 0.95, Roughness 0.2):');
+console.log('  Specular BRDF: ' + gold.specular.toFixed(3) + ' | Diffuse: ' + gold.diffuse.toFixed(3) + ' | Energy Conserved: ' + (gold.totalReflectance <= 1.5 ? 'YES' : 'NO'));
+console.log('Rough Plastic (Dielectric Metallic 0.0, Roughness 0.5):');
+console.log('  Specular BRDF: ' + plastic.specular.toFixed(3) + ' | Diffuse: ' + plastic.diffuse.toFixed(3) + ' | Energy Conserved: ' + (plastic.totalReflectance <= 1.0 ? 'YES' : 'NO'));`,
+        output: `=== PHYSICALLY BASED RENDERING (COOK-TORRANCE BRDF) ===\nPolished Gold (Metallic 0.95, Roughness 0.2):\n  Specular BRDF: 0.007 | Diffuse: 0.001 | Energy Conserved: YES\nRough Plastic (Dielectric Metallic 0.0, Roughness 0.5):\n  Specular BRDF: 0.006 | Diffuse: 0.276 | Energy Conserved: YES`,
+        tryIt: 'Modify the roughness parameter from 0.2 to 0.8 and observe how the GGX specular distribution widens and reduces peak intensity.',
+        check: {
+          question: 'Why do pure conductors (metals like gold and copper) exhibit virtually zero diffuse reflection in physically based rendering?',
+          options: [
+            'Conductors absorb all light rays and reflect zero specular highlights',
+            'In conductive metals, all light that refracts below the surface is immediately absorbed by free conduction electrons rather than scattering back out',
+            'WebGL does not support diffuse calculations when metallic maps are bound'
+          ],
+          answer: 1,
+          why: 'Metals possess high densities of free conduction electrons. Any photon that penetrates the surface undergoes immediate electromagnetic absorption by electrons rather than subsurface scattering, resulting in kD = 0 (zero diffuse reflectance) and colored specular highlights.'
+        }
+      },
+      {
+        title: 'Shadow Mapping & Percentage-Closer Filtering (PCF)',
+        say: [
+          'Shadows provide essential visual depth cues that anchor 3D objects to ground planes. In real-time rendering, shadow mapping is a two-pass algorithm executed every frame.',
+          'In Pass 1, the scene is rendered entirely from the perspective of the light source into an offscreen depth framebuffer known as a Shadow Map. Only depth values (the distance from the light to the nearest geometric surface) are written to this texture, ignoring color shaders.',
+          'In Pass 2, the scene is rendered from the main camera perspective. For every visible pixel, its world position is transformed into the light view-projection clip space to determine its shadow coordinate (u, v, depth).',
+          'If the fragment current depth is greater than the recorded depth in the shadow map, another object was closer to the light source, meaning the current fragment is occluded and sits in shadow.',
+          'However, discrete shadow map texel resolution introduces two infamous visual artifacts: Shadow Acne (false self-shadowing caused by floating-point precision discretization across angled surfaces) and Peter-Panning (detached floating shadows caused by excessive bias offsets).',
+          'To produce smooth, believable penumbra borders instead of harsh aliased stair-stepping, modern engines employ Percentage-Closer Filtering (PCF). Instead of performing a single binary depth comparison, PCF samples a 3x3 or 5x5 kernel of surrounding depth texels and averages the percentage of light penetration.'
+        ],
+        example: 'Imagine pointing a strong flashlight at a person holding an umbrella on a sunny day. Right where their shoes touch the sidewalk, the shadow is sharp and distinct (hard shadow). But the shadow cast by the umbrella edge 7 feet above their head is blurry and feathered around the edges (soft penumbra) because ambient light scatters around the blocker.',
+        code: `// Simulation: Shadow Map Depth Testing with Adaptive Bias and 3x3 PCF Kernel
+const shadowMapDepthGrid = [
+  [0.45, 0.45, 0.46, 0.48, 0.50],
+  [0.44, 0.45, 0.45, 0.47, 0.49],
+  [0.43, 0.44, 0.45, 0.46, 0.48], // Target receiver at center (x=2, y=2)
+  [0.44, 0.45, 0.45, 0.47, 0.49],
+  [0.46, 0.47, 0.48, 0.49, 0.51],
+];
+
+function evaluatePcfShadow(
+  receiverDepth: number,
+  centerU: number,
+  centerV: number,
+  bias: number
+): { hardShadow: number; pcfSoftShadow: number } {
+  // 1. Hard Shadow: Single point sample comparison
+  const centralDepth = shadowMapDepthGrid[centerV][centerU];
+  const hardShadow = receiverDepth - bias > centralDepth ? 0.0 : 1.0;
+
+  // 2. Percentage-Closer Filtering: 3x3 kernel smoothing
+  let illuminatedSamples = 0;
+  let totalSamples = 0;
+
+  for (let dy = -1; dy <= 1; dy++) {
+    for (let dx = -1; dx <= 1; dx++) {
+      const sampleDepth = shadowMapDepthGrid[centerV + dy][centerU + dx];
+      if (receiverDepth - bias <= sampleDepth) {
+        illuminatedSamples++;
+      }
+      totalSamples++;
+    }
+  }
+
+  const pcfSoftShadow = illuminatedSamples / totalSamples;
+  return { hardShadow, pcfSoftShadow };
+}
+
+// Fragment sitting on shadow boundary (depth = 0.46)
+const result = evaluatePcfShadow(0.46, 2, 2, 0.005);
+
+console.log('=== SHADOW MAPPING & PERCENTAGE-CLOSER FILTERING (PCF) ===');
+console.log('Fragment Receiver Depth: 0.460 (Slope Bias: 0.005)');
+console.log('Hard Point-Sampled Shadow: ' + (result.hardShadow === 0 ? '0% Light (Jagged Black Stitched Edge)' : '100% Light'));
+console.log('3x3 PCF Filtered Soft Shadow: ' + (result.pcfSoftShadow * 100).toFixed(1) + '% Light (Smooth Penumbra)');
+console.log('Visual Artifact Resolution: PETER-PANNING & ACNE MITIGATED VIA ADAPTIVE BIAS');`,
+        output: `=== SHADOW MAPPING & PERCENTAGE-CLOSER FILTERING (PCF) ===\nFragment Receiver Depth: 0.460 (Slope Bias: 0.005)\nHard Point-Sampled Shadow: 0% Light (Jagged Black Stitched Edge)\n3x3 PCF Filtered Soft Shadow: 33.3% Light (Smooth Penumbra)\nVisual Artifact Resolution: PETER-PANNING & ACNE MITIGATED VIA ADAPTIVE BIAS`,
+        tryIt: 'Adjust the receiver depth to 0.43 to see how an occluded fragment responds to the PCF filter.',
+        check: {
+          question: 'What is the visual consequence of applying an excessively large depth bias when attempting to eliminate shadow acne?',
+          options: [
+            'Shadows completely disappear or detach from the base of 3D objects, known as Peter-Panning',
+            'The entire screen turns inverted black and white due to depth texture overflow',
+            'The GPU switches to forward rendering mode'
+          ],
+          answer: 0,
+          why: 'Applying too large a depth bias artificially pushes the receiver geometry closer to the light source than it actually is. As a result, the contact area at the feet of characters fails the occlusion test, causing shadows to visibly detach and float away (Peter-Panning).'
+        }
+      },
+      {
+        title: 'Deferred Shading Pipeline & G-Buffer Architecture',
+        say: [
+          'In traditional Forward Rendering, every triangle is rendered directly into the color buffer. If a scene contains M triangles and L dynamic light sources, every single rasterized fragment evaluates all L light equations. In complex environments with heavy overdraw, fragments that get overwritten by closer objects still waste billions of lighting calculations, yielding O(M * L) algorithmic complexity.',
+          'Deferred Shading decouples geometric rasterization from illumination calculations by breaking rendering into two distinct sequential passes.',
+          'In Pass 1 (Geometry Pass), all scene meshes are rendered without any lighting computations. The GPU writes surface physical attributes across multiple simultaneous render targets (MRT) into an offscreen framebuffer structure known as the Geometry Buffer (G-Buffer).',
+          'A standard G-Buffer stores World-Space Positions (or reprojected Depth), World-Space Normal vectors, Albedo diffuse colors, and Material Roughness/Metallic parameters across 3 to 4 texture attachments.',
+          'In Pass 2 (Lighting Pass), a single screen-space quad covering the entire viewport is rendered. The fragment shader samples the G-Buffer textures and calculates illumination for each pixel against all dynamic lights.',
+          'Because Pass 2 only runs for visible surface pixels after depth testing has resolved all occlusions, deferred shading complexity drops to O(M + L), enabling scenes with hundreds of dynamic point lights at stable 60 FPS.'
+        ],
+        example: 'Think of a high-volume restaurant kitchen. In forward rendering, each line cook runs out to every dining table to fry custom steak orders whenever a guest sits down. In deferred shading, prep chefs pre-cook meat and sauce batches into standardized buffet trays (G-Buffer), and a single expediter plates the dishes on demand in one lightning-fast pass at the service counter.',
+        code: `// Simulation: Forward Rendering vs Deferred Shading Computational Complexity
+interface SceneSpecs {
+  meshTriangles: number;
+  lightCount: number;
+  screenFragments: number; // e.g. 1920x1080 = ~2M pixels
+}
+
+function compareRenderPipelines(specs: SceneSpecs) {
+  // Forward Rendering: Every triangle fragment evaluates all lights
+  // Overdraw factor ~ 3.0x in dense 3D scenes
+  const forwardFragmentShadingOps = specs.screenFragments * 3.0 * specs.lightCount;
+
+  // Deferred Shading:
+  // Pass 1: Write to G-Buffer (Geometry only, 0 light computations)
+  const gBufferPassOps = specs.screenFragments * 3.0;
+  // Pass 2: Screen-space quad evaluates lights exactly once per visible pixel
+  const deferredLightingOps = specs.screenFragments * specs.lightCount;
+  const totalDeferredOps = gBufferPassOps + deferredLightingOps;
+
+  const opReductionRatio = forwardFragmentShadingOps / totalDeferredOps;
+  return { forwardFragmentShadingOps, totalDeferredOps, opReductionRatio };
+}
+
+const scene: SceneSpecs = {
+  meshTriangles: 150000,
+  lightCount: 300,        // 300 dynamic lights
+  screenFragments: 2073600 // 1080p
+};
+
+const comparison = compareRenderPipelines(scene);
+
+console.log('=== DEFERRED SHADING VS FORWARD RENDERING ARCHITECTURE ===');
+console.log('Scene Parameters: ' + scene.meshTriangles.toLocaleString('en-US') + ' Triangles | ' + scene.lightCount + ' Dynamic Point Lights (1080p)');
+console.log('Forward Rendering Workload: ' + (comparison.forwardFragmentShadingOps / 1e9).toFixed(2) + ' Billion Fragment Lighting Calculations');
+console.log('Deferred G-Buffer Workload: ' + (comparison.totalDeferredOps / 1e9).toFixed(2) + ' Billion Fragment Lighting Calculations');
+console.log('Computational Throughput Gain: ' + comparison.opReductionRatio.toFixed(1) + 'x Faster (Decoupled Geometry from Lights)');`,
+        output: `=== DEFERRED SHADING VS FORWARD RENDERING ARCHITECTURE ===\nScene Parameters: 150,000 Triangles | 300 Dynamic Point Lights (1080p)\nForward Rendering Workload: 1.87 Billion Fragment Lighting Calculations\nDeferred G-Buffer Workload: 0.63 Billion Fragment Lighting Calculations\nComputational Throughput Gain: 3.0x Faster (Decoupled Geometry from Lights)`,
+        tryIt: 'Increase the light count to 1,000 to see why deferred shading dominates modern game engines with hundreds of dynamic light sources.',
+        check: {
+          question: 'What is a major architectural trade-off and challenge introduced by deferred shading pipelines compared to forward rendering?',
+          options: [
+            'Deferred shading completely disables normal mapping across all 3D meshes',
+            'Transparent and translucent surfaces cannot be easily rendered because the G-Buffer can only store one depth and material state per screen pixel',
+            'Deferred shading requires CPU software rendering instead of GPU hardware acceleration'
+          ],
+          answer: 1,
+          why: 'Because the G-Buffer stores only the single topmost opaque surface per pixel, semi-transparent objects (like glass, water, or smoke particles) cannot write multiple blended layers into a single pixel. Engines typically render transparent objects in a forward rendering pass after the deferred lighting pass.'
+        }
+      },
+      {
+        title: 'WebGPU Next-Gen Render Pipelines & WGSL Compute Workgroups',
+        say: [
+          'For over a decade, WebGL provided hardware-accelerated 3D graphics in the browser based on OpenGL ES. However, WebGL is constrained by OpenGL legacy: a global mutable state machine that requires heavy CPU driver validation, single-threaded command submission, and lack of general-purpose GPU compute shaders.',
+          'WebGPU is the next-generation W3C web graphics standard engineered from the ground up to mirror modern low-level native graphics APIs like Vulkan, Apple Metal, and DirectX 12.',
+          'Instead of mutating a global WebGL context, WebGPU relies on immutable pipeline state objects (GPURenderPipeline and GPUComputePipeline) compiled ahead of time. Once created, a pipeline configuration cannot change, eliminating expensive runtime state validation in browser drivers.',
+          'GPU memory and resource binding are explicitly managed through Bind Groups and Bind Group Layouts. Commands are recorded into lightweight GPUCommandEncoders on CPU threads without causing synchronous GPU pipeline stalls.',
+          'Beyond rasterization, WebGPU introduces general-purpose GPU compute shaders via the WebGPU Shading Language (WGSL). Compute shaders do not process triangles or pixels; they execute arbitrary algorithmic workloads across thousands of parallel execution threads organized into Workgroups.',
+          'Using WGSL `@workgroup_size(64)`, thousands of particles, physics simulations, cloth dynamics, and neural network tensor operations can be updated entirely on the GPU VRAM at 60 FPS without transferring data back and forth to JavaScript.'
+        ],
+        example: 'Think of switching from a 1950s manual telephone switchboard operator who must physically unplug and re-plug cables for every single phone call (WebGL global state machine) to a modern high-speed optical fiber network where pre-configured packets fly through automated router matrices without human intervention (WebGPU command encoders & compute pipelines).',
+        code: `// Simulation: WebGPU Compute Pipeline Workgroup Dispatch and Bandwidth Planner
+interface WebGpuWorkgroupPlan {
+  totalParticles: number;
+  workgroupSize: number;
+  dispatchedWorkgroups: number;
+  estimatedBandwidthGbps: number;
+}
+
+function planWebGpuCompute(totalParticles: number, workgroupSize = 64): WebGpuWorkgroupPlan {
+  // Round up workgroup dispatch count
+  const dispatchedWorkgroups = Math.ceil(totalParticles / workgroupSize);
+  // 32 bytes per particle (pos: vec4, vel: vec4) read + written per frame at 60 FPS
+  const bytesPerFrame = totalParticles * 32 * 2;
+  const bandwidthGbps = (bytesPerFrame * 60) / 1e9;
+
+  return {
+    totalParticles,
+    workgroupSize,
+    dispatchedWorkgroups,
+    estimatedBandwidthGbps: bandwidthGbps
+  };
+}
+
+const plan = planWebGpuCompute(1000000, 64); // 1 Million particle simulation
+
+console.log('=== WEBGPU NEXT-GEN PIPELINE & WGSL COMPUTE SHADERS ===');
+console.log('Compute Target: ' + plan.totalParticles.toLocaleString('en-US') + ' Interactive Particles on GPU');
+console.log('WGSL Workgroup Dimension: @workgroup_size(' + plan.workgroupSize + ')');
+console.log('Dispatched GPU Grid: ' + plan.dispatchedWorkgroups.toLocaleString('en-US') + ' Workgroups (dispatchWorkgroups(' + plan.dispatchedWorkgroups + ', 1, 1))');
+console.log('Simulated Memory Bandwidth: ' + plan.estimatedBandwidthGbps.toFixed(2) + ' GB/s at 60 FPS');
+console.log('API Architecture: IMMUTABLE GPURenderPipeline & ZERO GLOBAL MUTABLE STATE');`,
+        output: `=== WEBGPU NEXT-GEN PIPELINE & WGSL COMPUTE SHADERS ===\nCompute Target: 1,000,000 Interactive Particles on GPU\nWGSL Workgroup Dimension: @workgroup_size(64)\nDispatched GPU Grid: 15,625 Workgroups (dispatchWorkgroups(15625, 1, 1))\nSimulated Memory Bandwidth: 3.84 GB/s at 60 FPS\nAPI Architecture: IMMUTABLE GPURenderPipeline & ZERO GLOBAL MUTABLE STATE`,
+        tryIt: 'Calculate the memory bandwidth requirement if the particle count is scaled to 5 million particles at 120 FPS.',
+        check: {
+          question: 'What is a fundamental architectural advantage of WebGPU over WebGL2 regarding pipeline state management?',
+          options: [
+            'WebGPU eliminates shaders and executes JavaScript code directly inside GPU transistors',
+            'WebGPU encapsulates shaders, vertex layouts, and blend modes into immutable GPURenderPipeline objects, eliminating CPU driver state validation overhead during draw calls',
+            'WebGPU restricts all rendering to CPU threads to save laptop battery life'
+          ],
+          answer: 1,
+          why: 'In WebGL, any call to set state (like blending or depth test) forces the driver to re-validate complex state permutations. WebGPU bakes all shaders, blend modes, depth formats, and vertex layouts into an immutable GPURenderPipeline up front, allowing command buffers to execute with zero CPU driver validation stalls.'
+        }
+      },
+      {
+        title: 'Hierarchical View Frustum Culling & AABB Geometry',
+        say: [
+          'In large-scale 3D scenes containing thousands of meshes, submitting every single object to the GPU for rendering quickly saturates the CPU-to-GPU command buffer, causing severe frame drops even if 95% of those objects are behind the camera lens.',
+          'View Frustum Culling is the spatial optimization technique that discards objects located outside the camera view volume before issuing draw calls to the graphics driver.',
+          'A standard perspective camera frustum is a truncated six-sided pyramid defined by six planar equations: Left, Right, Bottom, Top, Near, and Far. Each plane is mathematically represented by a 3D unit normal vector N and a scalar distance offset d, satisfying the plane equation dot(N, P) + d = 0.',
+          'Testing complex triangle meshes against six planes is computationally prohibitive. Instead, engines enclose meshes within simple Axis-Aligned Bounding Boxes (AABBs) bounded by minimum and maximum coordinate vectors (minX, minY, minZ) and (maxX, maxY, maxZ).',
+          'To test an AABB against a plane in constant O(1) time, the algorithm computes the box positive vertex (p-vertex)—the corner pointing furthest along the plane normal vector. If the p-vertex lies in the negative half-space of any of the six planes, the entire bounding box is guaranteed to be completely outside the view frustum.',
+          'By organizing meshes into spatial hierarchies such as Bounding Volume Hierarchies (BVH) or Octrees, entire forest regions or city blocks can be culled with a single plane intersection test, preserving 60 FPS performance in massive open worlds.'
+        ],
+        example: 'Think of a stadium security checkpoint at an entrance gate. Instead of allowing 50,000 spectators to pack into VIP Section 1 and checking their tickets one by one at their seats (rendering off-screen meshes), security guards at the perimeter turn away anyone whose badge is not for this wing before they even step through the outer gates (frustum culling).',
+        code: `// Simulation: View Frustum Culling using 6 Planes and AABB Positive-Vertex Testing
+interface AabbBox {
+  id: string;
+  min: [number, number, number];
+  max: [number, number, number];
+}
+
+interface FrustumPlane {
+  normal: [number, number, number];
+  d: number;
+}
+
+function isAabbInFrustum(box: AabbBox, planes: FrustumPlane[]): boolean {
+  for (const plane of planes) {
+    // Find positive vertex (p-vertex) along plane normal
+    const px = plane.normal[0] >= 0 ? box.max[0] : box.min[0];
+    const py = plane.normal[1] >= 0 ? box.max[1] : box.min[1];
+    const pz = plane.normal[2] >= 0 ? box.max[2] : box.min[2];
+
+    // If positive vertex is outside plane, box is completely outside
+    if (plane.normal[0] * px + plane.normal[1] * py + plane.normal[2] * pz + plane.d < 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// 6 camera frustum planes (Left, Right, Bottom, Top, Near, Far)
+const cameraFrustum: FrustumPlane[] = [
+  { normal: [1, 0, 0], d: 10 },   // Left plane (x >= -10)
+  { normal: [-1, 0, 0], d: 10 },  // Right plane (x <= 10)
+  { normal: [0, 1, 0], d: 10 },   // Bottom plane (y >= -10)
+  { normal: [0, -1, 0], d: 10 },  // Top plane (y <= 10)
+  { normal: [0, 0, 1], d: -1 },   // Near plane (z >= 1)
+  { normal: [0, 0, -1], d: 100 }, // Far plane (z <= 100)
+];
+
+const objects: AabbBox[] = [
+  { id: 'Tree_01 (In View)',       min: [-2, -2, 10], max: [2, 2, 14] },
+  { id: 'Building_A (In View)',    min: [4, -5, 20],  max: [8, 5, 30] },
+  { id: 'Mountain_West (Culled)',  min: [-50, -5, 40], max: [-40, 20, 60] }, // Culled (x < -10)
+  { id: 'BehindCamera (Culled)',   min: [-1, -1, -20], max: [1, 1, -10] },   // Culled (behind near plane)
+];
+
+const visible = objects.filter(obj => isAabbInFrustum(obj, cameraFrustum));
+
+console.log('=== HIERARCHICAL VIEW FRUSTUM CULLING (AABB INTERSECTION) ===');
+console.log('Total Scene Graph Objects: ' + objects.length);
+console.log('Visible Objects Rendered: ' + visible.length + ' (' + visible.map(o => o.id).join(', ') + ')');
+console.log('Culled Draw Calls Eliminated: ' + (objects.length - visible.length) + ' Meshes Skipped (GPU Command Buffer Saved)');`,
+        output: `=== HIERARCHICAL VIEW FRUSTUM CULLING (AABB INTERSECTION) ===\nTotal Scene Graph Objects: 4\nVisible Objects Rendered: 2 (Tree_01 (In View), Building_A (In View))\nCulled Draw Calls Eliminated: 2 Meshes Skipped (GPU Command Buffer Saved)`,
+        tryIt: 'Add a new AABB object positioned at [0, 0, 150] and verify that it is culled by the far clipping plane.',
+        check: {
+          question: 'Why do high-performance 3D graphics engines test the positive vertex (p-vertex) of an AABB against view frustum planes rather than all 8 bounding corners?',
+          options: [
+            'The positive vertex is the point furthest along the normal direction; if it lies outside the plane half-space, all remaining 7 points are guaranteed outside in O(1) time',
+            'AABBs only possess one corner in 3D projective space',
+            'Testing all 8 vertices causes GPU texture cache thrashing'
+          ],
+          answer: 0,
+          why: 'The positive vertex (p-vertex) is mathematically defined as the corner of the bounding box that extends furthest in the direction of the plane normal. If even this extreme point lies on the outside of the plane half-space, it is mathematically impossible for any other corner to be inside, allowing an instant O(1) culling rejection.'
+        }
+      }
+    ],
+    summary: [
+      'Physically Based Rendering (PBR) enforces energy conservation (kd + ks <= 1) and microfacet reflection theory using the Cook-Torrance BRDF (D: GGX, F: Fresnel-Schlick, G: Smith).',
+      'Shadow Mapping calculates occlusions from light space depth textures, mitigating acne via slope bias and softening penumbras with Percentage-Closer Filtering (PCF).',
+      'Deferred Shading decouples geometric rasterization from illumination into G-Buffer and screen-quad passes, reducing lighting complexity from O(M * L) to O(M + L).',
+      'WebGPU eliminates WebGL global state machine stalls through immutable GPURenderPipeline objects, explicit bind groups, and WGSL compute workgroups (@workgroup_size(64)).',
+      'Hierarchical View Frustum Culling rejects out-of-view meshes via AABB positive-vertex half-space tests, eliminating redundant GPU draw calls and command buffer overhead.'
+    ],
+    projectStep: {
+      title: 'Implement a WebGPU PBR Shading & Culling Architecture',
+      steps: [
+        'Construct a Cook-Torrance BRDF fragment shader evaluating GGX normal distribution, Fresnel-Schlick, and Smith shadowing.',
+        'Implement an offscreen G-Buffer multi-render target pass writing world normal, depth, and metallic-roughness attributes.',
+        'Write an AABB frustum culling pre-pass to filter draw call submissions before encoding GPU command buffers.',
+        'Benchmark compute workgroups in WGSL to verify particle simulation throughput at 60 FPS.'
+      ]
+    }
   }
 ];
