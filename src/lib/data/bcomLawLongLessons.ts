@@ -1553,6 +1553,447 @@ Status: PRIVILEGE_WAIVED_PRODUCIBLE_TO_DOJ`,
         'Implement Regulation FD selective disclosure cure protocols and model Upjohn internal investigation privilege defenses.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_law',
+    day: 5,
+    title: 'Milestone 1 Capstone: Enterprise Corporate Restructuring & Chapter 11 Reorganization',
+    goal: 'Master enterprise corporate restructuring and insolvency jurisprudence: Chapter 11 petition automatic stays and Debtor-in-Possession (DIP) priming superpriority financing, Section 363 asset sales free and clear of liens with stalking horse protections, Plan of Reorganization cramdown mechanics under the Absolute Priority Rule, Delaware fiduciary duties in the zone of insolvency under Gheewalla, and Boardroom General Counsel crisis defense certification.',
+    minutes: 50,
+    recap: 'Welcome to the Milestone 1 Capstone for Corporate & Commercial Law. As Corporate General Counsel and Chief Restructuring Advisor, you are tasked with steering a distressed enterprise through federal bankruptcy reorganization, neutralizing creditor lawsuits, executing an expedited Section 363 asset sale, and confirming a Chapter 11 cramdown plan over dissenting equity holders.',
+    parts: [
+      {
+        title: 'Chapter 11 Petition, Automatic Stay & Debtor-in-Possession (DIP) Superpriority Financing',
+        say: [
+          'When a distressed corporation files a voluntary petition under Chapter 11 of the United States Bankruptcy Code, Section 362 instantly triggers the Automatic Stay. The automatic stay operates as an immediate nationwide statutory injunction that halts all pending creditor collection actions, foreclosures, contract terminations, and commercial lawsuits, providing the corporate debtor with breathing room to stabilize operations and negotiate a restructuring plan.',
+          'Under Chapter 11, incumbent management generally remains in place as a Debtor-in-Possession (DIP) under Sections 1107 and 1108, continuing day-to-day operations without requiring a bankruptcy trustee. However, to fund payroll, vendor purchases, and working capital during bankruptcy, the debtor requires specialized Debtor-in-Possession (DIP) Financing.',
+          'To induce lenders to inject new capital into an insolvent enterprise, Bankruptcy Code Section 364 authorizes extraordinary credit enhancements. Under Section 364(c) and (d), the court can grant DIP lenders "superpriority administrative expense" status and even "priming liens"—liens senior to existing pre-petition secured debt—provided existing secured lenders receive "adequate protection" (such as replacement liens on unencumbered assets or cash interest payments). DIP lenders often demand a "roll-up" converting portions of pre-petition debt into post-petition superpriority obligations.'
+        ],
+        example: 'A distressed aerospace supplier files Chapter 11 with $150M in secured debt. The court approves a $50M new-money DIP facility with a 20% ($10M) roll-up on $60M unencumbered collateral. The DIP lender secures Section 364(d) priming superpriority status on a $60M total claim, keeping factory operations active.',
+        code: `# Chapter 11 Automatic Stay & Section 364 DIP Superpriority Financing Engine
+def structure_dip_financing_and_automatic_stay(existing_secured_debt: float, dip_facility_amount: float,
+                                               unencumbered_collateral: float, roll_up_pct: float) -> dict:
+    # Automatic stay takes immediate statutory effect under Section 362
+    automatic_stay_active = True
+    
+    # Section 364(c)/(d) superpriority and priming lien evaluation
+    roll_up_amount = min(existing_secured_debt, dip_facility_amount * (roll_up_pct / 100.0))
+    total_dip_obligation = dip_facility_amount + roll_up_amount
+    
+    is_adequate_protection = unencumbered_collateral >= total_dip_obligation * 0.8
+    dip_priority_tier = "SECTION_364_D_PRIMING_SUPERPRIORITY" if is_adequate_protection else "SECTION_364_C_JUNIOR_SUPERPRIORITY"
+    
+    return {
+        "automatic_stay_active": automatic_stay_active,
+        "new_money_dip_usd": dip_facility_amount,
+        "roll_up_secured_usd": round(roll_up_amount, 2),
+        "total_dip_claim_usd": round(total_dip_obligation, 2),
+        "unencumbered_collateral_usd": unencumbered_collateral,
+        "adequate_protection_satisfied": is_adequate_protection,
+        "priority_status": dip_priority_tier
+    }
+
+p1 = structure_dip_financing_and_automatic_stay(
+    existing_secured_debt=150000000.0, dip_facility_amount=50000000.0,
+    unencumbered_collateral=60000000.0, roll_up_pct=20.0
+)
+dip_money = "$" + f"{p1['new_money_dip_usd']:,.2f}"
+total_dip = "$" + f"{p1['total_dip_claim_usd']:,.2f}"
+print(f"Automatic Stay: {p1['automatic_stay_active']} | New Money DIP: {dip_money}")
+print(f"Total DIP Claim: {total_dip} | Priority Tier: {p1['priority_status']}")`,
+        output: `Automatic Stay: True | New Money DIP: $50,000,000.00
+Total DIP Claim: $60,000,000.00 | Priority Tier: SECTION_364_D_PRIMING_SUPERPRIORITY`,
+        codeNotes: [
+          { line: 5, note: 'Confirms Section 362 statutory injunction halting all creditor litigation against debtor' },
+          { line: 8, note: 'Calculates DIP lender roll-up converting $10M pre-petition debt into superpriority status' },
+          { line: 11, note: 'Evaluates adequate protection standard granting Section 364(d) priming liens over secured debt' },
+          { line: 31, note: 'Unlocks $50M immediate liquidity facility to sustain continuous aerospace manufacturing' }
+        ],
+        tryIt: 'Lower unencumbered_collateral to $30M to observe adequate protection fail, dropping priority to Section 364(c).',
+        check: {
+          question: 'What is the primary legal and operational effect of the Section 362 "Automatic Stay" upon filing a Chapter 11 bankruptcy petition?',
+          options: [
+            'It immediately halts all creditor collection efforts, lawsuits, foreclosures, and asset seizures against the debtor, giving the business breathing room to reorganize.',
+            'It forces the debtor to fire all current employees immediately.',
+            'It automatically cancels all debt without requiring court approval.',
+            'It converts the corporation into a non-profit municipal charity.'
+          ],
+          answer: 0,
+          why: 'Section 362 imposes a broad statutory injunction that freezes all collection and litigation, preventing a chaotic run on corporate assets.',
+          answerIndex: 0,
+          explanation: 'Section 362 imposes a broad statutory injunction that freezes all collection and litigation, preventing a chaotic run on corporate assets.'
+        }
+      },
+      {
+        title: 'Section 363 Asset Sales ("Free and Clear") vs Reorganization Plans',
+        say: [
+          'Rather than enduring a protracted multi-year confirmation process, distressed debtors frequently utilize Section 363 of the Bankruptcy Code to execute an expedited sale of profitable operating divisions or substantially all corporate assets. A Section 363 sale offers buyers the ultimate legal shield: under Section 363(f), assets are transferred "free and clear of any interest," stripping away all successor liabilities, pre-petition unsecured claims, and contract liens.',
+          'To establish a competitive market valuation, the debtor selects a "Stalking Horse Bidder" to set the floor price by executing an initial asset purchase agreement. In exchange for spending capital on due diligence and serving as the baseline target, the stalking horse is granted court-approved Bid Protections: typically a 2% to 3% breakup fee and capped out-of-pocket expense reimbursement.',
+          'The bankruptcy court then approves auction bidding procedures requiring competitive third-party bidders to submit overbids exceeding the baseline bid plus bid protections plus a minimum bidding increment: Minimum Overbid = Stalking Horse Bid + Breakup Fee + Expenses + Minimum Increment. If a rival bidder wins the court auction, the stalking horse receives its fee and expenses from the proceeds, and the bankruptcy estate captures the higher net value for distribution to creditors.'
+        ],
+        example: 'A debtor selects a stalking horse bid of $80M with 3% breakup fee ($2.4M) and $1.0M expenses (minimum overbid $85.4M with $2.0M increment). A rival bidder wins the court auction at $92M. The estate pays $3.4M in protections to the stalking horse and nets $88.6M free and clear of all liens.',
+        code: `# Bankruptcy Section 363 Stalking Horse Auction & Bid Protection Engine
+def evaluate_section363_stalking_horse_auction(stalking_horse_bid: float, breakup_fee_pct: float,
+                                               expense_reimbursement: float, competing_bids: list,
+                                               minimum_overbid_increment: float) -> dict:
+    breakup_fee_usd = stalking_horse_bid * (breakup_fee_pct / 100.0)
+    bid_protections = breakup_fee_usd + expense_reimbursement
+    
+    # Minimum first overbid = Stalking Horse + Protections + Minimum Increment
+    minimum_first_overbid = stalking_horse_bid + bid_protections + minimum_overbid_increment
+    
+    valid_bids = [b for b in competing_bids if b["amount"] >= minimum_first_overbid]
+    valid_bids.sort(key=lambda x: x["amount"], reverse=True)
+    
+    winning_bid = valid_bids[0] if valid_bids else {"bidder": "Stalking Horse Bidder", "amount": stalking_horse_bid}
+    stalking_horse_prevailed = winning_bid["bidder"] == "Stalking Horse Bidder"
+    
+    # If stalking horse loses, they receive breakup fee + expense reimbursement
+    protections_paid_to_stalking_horse = 0.0 if stalking_horse_prevailed else bid_protections
+    net_estate_proceeds = winning_bid["amount"] - protections_paid_to_stalking_horse
+    
+    return {
+        "stalking_horse_initial_bid": stalking_horse_bid,
+        "breakup_fee_usd": round(breakup_fee_usd, 2),
+        "minimum_first_overbid": round(minimum_first_overbid, 2),
+        "winning_bidder": winning_bid["bidder"],
+        "gross_sale_price": round(winning_bid["amount"], 2),
+        "protections_paid_usd": round(protections_paid_to_stalking_horse, 2),
+        "net_estate_proceeds": round(net_estate_proceeds, 2),
+        "section_363_order": "FREE_AND_CLEAR_OF_LIENS_AND_CLAIMS"
+    }
+
+p2 = evaluate_section363_stalking_horse_auction(
+    stalking_horse_bid=80000000.0, breakup_fee_pct=3.0,
+    expense_reimbursement=1000000.0,
+    competing_bids=[{"bidder": "Rival Acquirer Corp", "amount": 92000000.0}],
+    minimum_overbid_increment=2000000.0
+)
+gross_p = "$" + f"{p2['gross_sale_price']:,.2f}"
+net_p = "$" + f"{p2['net_estate_proceeds']:,.2f}"
+sh_bid = "$" + f"{p2['stalking_horse_initial_bid']:,.2f}"
+print(f"Stalking Horse: {sh_bid} -> Winner: {p2['winning_bidder']} ({gross_p})")
+print(f"Net Estate Proceeds: {net_p} | Order: {p2['section_363_order']}")`,
+        output: `Stalking Horse: $80,000,000.00 -> Winner: Rival Acquirer Corp ($92,000,000.00)
+Net Estate Proceeds: $88,600,000.00 | Order: FREE_AND_CLEAR_OF_LIENS_AND_CLAIMS`,
+        codeNotes: [
+          { line: 6, note: 'Calculates court-approved stalking horse breakup fee (3%) and expense reimbursement' },
+          { line: 10, note: 'Establishes minimum qualifying overbid hurdle ($85.4M) incorporating protections and increment' },
+          { line: 20, note: 'Deducts $3.4M in stalking horse protections from winning $92M auction bid to calculate net proceeds' },
+          { line: 40, note: 'Confirms Section 363(f) judicial order transferring assets free and clear of successor claims' }
+        ],
+        tryIt: 'Remove competing bids to observe stalking horse prevail at baseline $80.0M with zero protections paid out.',
+        check: {
+          question: 'Under Bankruptcy Code Section 363(f), what is the primary legal advantage for a buyer purchasing assets through a Section 363 bankruptcy sale?',
+          options: [
+            'The buyer acquires the target assets "free and clear" of pre-petition liens, encumbrances, and successor liability claims.',
+            'The buyer does not have to pay any cash for the acquisition.',
+            'The buyer is exempt from paying corporate taxes for the next twenty years.',
+            'The buyer receives a sovereign government guarantee against business losses.'
+          ],
+          answer: 0,
+          why: 'Section 363(f) strips away historical liabilities and creditor claims, transferring clean title to the buyer and maximizing sale proceeds for the bankruptcy estate.',
+          answerIndex: 0,
+          explanation: 'Section 363(f) strips away historical liabilities and creditor claims, transferring clean title to the buyer and maximizing sale proceeds for the bankruptcy estate.'
+        }
+      },
+      {
+        title: 'Confirmation Plan, Class Voting & The Absolute Priority Rule Cramdown',
+        say: [
+          'The culmination of a Chapter 11 reorganization is the confirmation of a Plan of Reorganization under Section 1129. Creditors and interest holders are organized into distinct classes based on substantial similarity of legal rights (e.g. Class 1 Secured, Class 2 Unsecured, Class 3 Old Equity). Under Section 1126(c), an impaired class accepts the plan if approved by at least two-thirds in dollar amount and more than one-half in number of allowed claims voting.',
+          'If every impaired class votes to accept the plan, the confirmation is consensual. However, if a dissenting junior class (such as common shareholders or mezzanine lenders) votes to reject the plan, the debtor must seek a "Cramdown" confirmation under Section 1129(b). To cram down a plan over dissenting classes, two conditions must be satisfied: (1) At least one impaired class of claims must accept the plan without counting votes of corporate insiders (Section 1129(a)(10)), and (2) The plan must be "fair and equitable" and not unfairly discriminate.',
+          'In reorganization law, "fair and equitable" is defined by the Absolute Priority Rule: a dissenting impaired class must be paid in full before any junior class receives or retains any property under the plan. If unsecured bondholders are impaired and receive only 58.33% recovery on their claims, the Absolute Priority Rule strictly dictates that Old Equity must receive exactly $0.00 and be completely extinguished. Old equity cannot retain shares unless senior classes consent or inject fresh capital under the narrow "new value" exception.'
+        ],
+        example: 'An aerospace debtor has $250M in distributable value against $180M secured debt, $120M unsecured bonds, and $50M old equity. Secured lenders are unimpaired (100% recovery); unsecured bondholders accept at 58.33% ($70M payout). Old equity votes no, but the court confirms the plan via cramdown, wiping out old equity under the Absolute Priority Rule.',
+        code: `# Chapter 11 Plan Confirmation, Absolute Priority Rule & Cramdown Simulator
+def simulate_chapter11_plan_cramdown_and_absolute_priority(distributable_value: float,
+                                                           claims_hierarchy: list,
+                                                           class_voting: list) -> dict:
+    remaining_value = distributable_value
+    payout_summary = []
+    
+    # Water-fall distribution adhering to Absolute Priority Rule
+    for claim in claims_hierarchy:
+        claim_name = claim["class_name"]
+        total_owed = claim["total_claim_usd"]
+        
+        payout = min(remaining_value, total_owed)
+        recovery_pct = (payout / total_owed) * 100.0 if total_owed > 0 else 100.0
+        remaining_value -= payout
+        
+        # Check voting approval: 2/3 in amount and 1/2 in headcount
+        vote_data = next((v for v in class_voting if v["class_name"] == claim_name), None)
+        accepted = (vote_data["dollar_approval_pct"] >= 66.67 and vote_data["headcount_approval_pct"] >= 50.0) if vote_data else True
+        is_impaired = recovery_pct < 100.0
+        
+        payout_summary.append({
+            "class": claim_name,
+            "claim_usd": total_owed,
+            "payout_usd": round(payout, 2),
+            "recovery_pct": round(recovery_pct, 2),
+            "is_impaired": is_impaired,
+            "class_accepted": accepted
+        })
+        
+    # Cramdown check under Section 1129(b):
+    # At least one impaired class must accept, and Absolute Priority Rule satisfied
+    at_least_one_impaired_accepted = any(c["is_impaired"] and c["class_accepted"] for c in payout_summary)
+    
+    saw_underpaid = False
+    absolute_priority_violated = False
+    for c in payout_summary:
+        if saw_underpaid and c["payout_usd"] > 0:
+            absolute_priority_violated = True
+        if c["recovery_pct"] < 100.0:
+            saw_underpaid = True
+            
+    can_cramdown = at_least_one_impaired_accepted and not absolute_priority_violated
+    confirmation_verdict = "PLAN_CONFIRMED_VIA_CRAMDOWN" if can_cramdown else ("PLAN_CONFIRMED_CONSENSUAL" if all(c["class_accepted"] for c in payout_summary) else "CONFIRMATION_DENIED_VIOLATES_ABSOLUTE_PRIORITY")
+    
+    return {
+        "distributable_enterprise_value": distributable_value,
+        "residual_equity_recovery_usd": round(remaining_value, 2),
+        "at_least_one_impaired_accepting_class": at_least_one_impaired_accepted,
+        "absolute_priority_respected": not absolute_priority_violated,
+        "confirmation_verdict": confirmation_verdict,
+        "waterfall": payout_summary
+    }
+
+p3 = simulate_chapter11_plan_cramdown_and_absolute_priority(
+    distributable_value=250000000.0,
+    claims_hierarchy=[
+        {"class_name": "Class 1: Secured Lenders", "total_claim_usd": 180000000.0},
+        {"class_name": "Class 2: Unsecured Bondholders", "total_claim_usd": 120000000.0},
+        {"class_name": "Class 3: Old Equity", "total_claim_usd": 50000000.0}
+    ],
+    class_voting=[
+        {"class_name": "Class 1: Secured Lenders", "dollar_approval_pct": 100.0, "headcount_approval_pct": 100.0},
+        {"class_name": "Class 2: Unsecured Bondholders", "dollar_approval_pct": 72.0, "headcount_approval_pct": 65.0},
+        {"class_name": "Class 3: Old Equity", "dollar_approval_pct": 10.0, "headcount_approval_pct": 15.0}
+    ]
+)
+dist_val_s = "$" + f"{p3['distributable_enterprise_value']:,.2f}"
+print(f"Distributable Value: {dist_val_s} | Verdict: {p3['confirmation_verdict']}")
+for c in p3["waterfall"]:
+    payout_s = "$" + f"{c['payout_usd']:,.2f}"
+    print(f"  {c['class']}: {payout_s} ({c['recovery_pct']}%) | Impaired: {c['is_impaired']} | Approved: {c['class_accepted']}")`,
+        output: `Distributable Value: $250,000,000.00 | Verdict: PLAN_CONFIRMED_VIA_CRAMDOWN
+  Class 1: Secured Lenders: $180,000,000.00 (100.0%) | Impaired: False | Approved: True
+  Class 2: Unsecured Bondholders: $70,000,000.00 (58.33%) | Impaired: True | Approved: True
+  Class 3: Old Equity: $0.00 (0.0%) | Impaired: True | Approved: False`,
+        codeNotes: [
+          { line: 9, note: 'Executes strict waterfall recovery prioritizing secured lenders then unsecured bondholders' },
+          { line: 17, note: 'Validates Section 1126(c) statutory voting thresholds (66.7% dollar amount and 50% headcount)' },
+          { line: 31, note: 'Applies Absolute Priority Rule wiping out Old Equity ($0.00) while senior creditors are impaired' },
+          { line: 55, note: 'Confirms Chapter 11 plan via Section 1129(b) cramdown over rejecting equity class' }
+        ],
+        tryIt: 'Give Old Equity $10M while unsecured bondholders receive $60M to observe confirmation denied for violating absolute priority.',
+        check: {
+          question: 'What is the Absolute Priority Rule under Bankruptcy Code Section 1129(b)(2)(B)?',
+          options: [
+            'In a non-consensual cramdown plan, senior dissenting creditor classes must be paid in full before any junior class (such as common equity) receives or retains any property under the plan.',
+            'The first creditor to file a lawsuit receives all assets of the company.',
+            'Government tax debts are automatically wiped out before bondholders are paid.',
+            'Corporate directors must personally pay all debts of the company.'
+          ],
+          answer: 0,
+          why: 'The Absolute Priority Rule prevents equity holders from retaining ownership value while intermediate unsecured creditors suffer haircut losses without consenting.',
+          answerIndex: 0,
+          explanation: 'The Absolute Priority Rule prevents equity holders from retaining ownership value while intermediate unsecured creditors suffer haircut losses without consenting.'
+        }
+      },
+      {
+        title: 'Fiduciary Duties in the "Zone of Insolvency" & Fraudulent Conveyances',
+        say: [
+          'When a corporation enters financial distress, executives and directors face intense legal pressure regarding their fiduciary duties. In the landmark decision North American Catholic Educational Programming Foundation, Inc. v. Gheewalla, the Delaware Supreme Court decisively resolved a long-standing corporate law debate: directors of an insolvent Delaware corporation do NOT owe direct fiduciary duties to creditors, nor do direct duties shift to creditors in the so-called "zone of insolvency."',
+          'Instead, Gheewalla confirmed that directors owe fiduciary duties solely to the corporate enterprise as a whole. While creditors gain derivative standing to sue on behalf of the insolvent company for breaches of fiduciary duty, directors retain the protection of the Business Judgment Rule when making good-faith operational decisions aimed at maximizing the overall residual value of the firm for all stakeholders.',
+          'However, directors face severe statutory liability under the law of Fraudulent Conveyance (Bankruptcy Code Section 548 and the Uniform Voidable Transactions Act). A transfer is constructively fraudulent if: (1) The company was balance-sheet insolvent or rendered insolvent by the transaction, (2) The company received less than "reasonably equivalent value" in exchange, and (3) The transfer occurred within the 2-year federal lookback window (or up to 4-6 years under state law). Bankruptcy trustees aggressively claw back pre-petition shareholder dividends or leveraged buyout distributions, returning millions in cash to the estate.'
+        ],
+        example: 'Fourteen months prior to bankruptcy while balance-sheet insolvent ($180M debt vs $120M assets), the company paid a $15M dividend to equity holders receiving $0 consideration. The court rules constructive fraud, ordering AVOIDABLE_FRAUDULENT_CONVEYANCE_CLAWBACK_ORDERED and recovering $15.0M for creditors.',
+        code: `# Zone of Insolvency Fiduciary Scope & Fraudulent Conveyance Clawback Engine
+def audit_zone_of_insolvency_and_fraudulent_conveyance(fair_value_assets: float, total_liabilities: float,
+                                                       suspect_transfer_value: float, consideration_received: float,
+                                                       transfer_months_ago: int) -> dict:
+    balance_sheet_insolvent = total_liabilities > fair_value_assets
+    
+    # Gheewalla standard: directors do not owe direct duties to creditors, only to corporate entity
+    director_fiduciary_beneficiary = "CORPORATE_ENTERPRISE_AS_WHOLE" if balance_sheet_insolvent else "SHAREHOLDERS"
+    
+    # Fraudulent conveyance under Bankruptcy Code Section 548:
+    # Constructive fraud: transferred while insolvent for less than reasonably equivalent value, within 2-year lookback
+    within_lookback = transfer_months_ago <= 24
+    inadequate_consideration = consideration_received < (suspect_transfer_value * 0.70)
+    is_constructive_fraud = balance_sheet_insolvent and inadequate_consideration and within_lookback
+    
+    clawback_amount = (suspect_transfer_value - consideration_received) if is_constructive_fraud else 0.0
+    
+    return {
+        "balance_sheet_insolvent": balance_sheet_insolvent,
+        "fiduciary_duty_standard": director_fiduciary_beneficiary,
+        "transfer_value_usd": suspect_transfer_value,
+        "consideration_received_usd": consideration_received,
+        "transfer_months_ago": transfer_months_ago,
+        "is_fraudulent_transfer": is_constructive_fraud,
+        "clawback_remedy_usd": round(clawback_amount, 2),
+        "legal_verdict": "AVOIDABLE_FRAUDULENT_CONVEYANCE_CLAWBACK_ORDERED" if is_constructive_fraud else "LEGITIMATE_BUSINESS_TRANSFER"
+    }
+
+p4 = audit_zone_of_insolvency_and_fraudulent_conveyance(
+    fair_value_assets=120000000.0, total_liabilities=180000000.0,
+    suspect_transfer_value=15000000.0, consideration_received=0.0,
+    transfer_months_ago=14
+)
+claw_s = "$" + f"{p4['clawback_remedy_usd']:,.2f}"
+print(f"Insolvent: {p4['balance_sheet_insolvent']} | Duty Owed To: {p4['fiduciary_duty_standard']}")
+print(f"Fraudulent Conveyance: {p4['is_fraudulent_transfer']} | Clawback: {claw_s} -> {p4['legal_verdict']}")`,
+        output: `Insolvent: True | Duty Owed To: CORPORATE_ENTERPRISE_AS_WHOLE
+Fraudulent Conveyance: True | Clawback: $15,000,000.00 -> AVOIDABLE_FRAUDULENT_CONVEYANCE_CLAWBACK_ORDERED`,
+        codeNotes: [
+          { line: 5, note: 'Applies Delaware Gheewalla precedent confirming fiduciary duties remain owed to the enterprise as a whole' },
+          { line: 11, note: 'Tests Section 548 constructive fraud prongs: insolvency, inadequate consideration, and 2-year lookback' },
+          { line: 15, note: 'Calculates $15.0M clawback remedy recovering unearned shareholder dividends back into estate' },
+          { line: 30, note: 'Orders fraudulent conveyance avoidance restoring funds to pari passu unsecured creditors' }
+        ],
+        tryIt: 'Increase consideration_received to $15.0M to verify reasonably equivalent exchange defeats fraudulent conveyance claims.',
+        check: {
+          question: 'Under the Delaware Supreme Court\'s landmark Gheewalla ruling, what fiduciary duties do corporate directors owe directly to individual creditors when a company enters the "zone of insolvency"?',
+          options: [
+            'None; directors do not owe direct fiduciary duties to creditors, but continue to owe their fiduciary duties to the corporate enterprise as a whole for the benefit of all residual claimants.',
+            'Directors must immediately surrender their personal homes to the bank.',
+            'Directors must prioritize paying unsecured bondholders before employees or vendors.',
+            'Creditors automatically gain the legal right to vote on corporate board resolutions.'
+          ],
+          answer: 0,
+          why: 'Gheewalla firmly rejected creditor direct fiduciary claims, preserving the Business Judgment Rule for directors managing an enterprise through insolvency.',
+          answerIndex: 0,
+          explanation: 'Gheewalla firmly rejected creditor direct fiduciary claims, preserving the Business Judgment Rule for directors managing an enterprise through insolvency.'
+        }
+      },
+      {
+        title: 'Capstone Boardroom Defense & General Counsel Restructuring Certification',
+        say: [
+          'In this milestone capstone, you assume the role of Corporate General Counsel and Chief Restructuring Advisor to orchestrate the emergency defense and successful Chapter 11 emergence of Apex Aerospace Dynamics Corp before the United States Bankruptcy Court and the Board of Directors. The restructuring control tower integrates all legal disciplines mastered across corporate jurisprudence: contract protection, fiduciary defense, asset disposition, and statutory plan confirmation.',
+          'Your restructuring plan deploys Section 362 automatic stay protections and secures a $50M Section 364(d) priming DIP financing facility to keep production lines humming. You conduct an expedited Section 363 stalking horse auction of non-core satellite operations, netting $88.6M in estate liquidity free and clear of successor liabilities. Simultaneously, your forensic litigation team successfully claws back $15.0M in pre-petition constructive fraudulent conveyances.',
+          'Finally, you defend the Plan of Reorganization in court against a dissenting old equity committee, successfully achieving confirmation under Section 1129(b) cramdown while strictly honoring the Absolute Priority Rule. Having successfully restructured $300M in liabilities and preserved enterprise going-concern value, you secure judicial confirmation and earn the accredited credential: Certified Corporate General Counsel & Restructuring Advisor. Course bcom_law is now 100% complete.'
+        ],
+        example: 'Under Chapter 11 reorganization, Apex Aerospace secures $50M DIP funding, captures $88.6M in Section 363 sales, claws back $15M in fraudulent transfers, and confirms a cramdown plan over old equity, securing full judicial confirmation and General Counsel Restructuring accreditation.',
+        code: `# Milestone 1 Capstone: End-to-End Chapter 11 Corporate Restructuring Control Tower
+def run_comprehensive_corporate_restructuring_capstone(company_name: str, distress_profile: dict,
+                                                       restructuring_deal: dict) -> dict:
+    # 1. DIP Financing
+    dip_res = structure_dip_financing_and_automatic_stay(
+        distress_profile["secured_debt"], restructuring_deal["dip_loan"],
+        distress_profile["unencumbered_assets"], restructuring_deal["roll_up_pct"]
+    )
+    
+    # 2. Section 363 Non-Core Asset Sale
+    sale_res = evaluate_section363_stalking_horse_auction(
+        restructuring_deal["stalking_horse_bid"], restructuring_deal["breakup_fee_pct"],
+        restructuring_deal["expense_reimbursement"], restructuring_deal["competing_bids"],
+        restructuring_deal["min_overbid"]
+    )
+    
+    # Total enterprise value available for plan distribution
+    total_distributable = restructuring_deal["plan_reorg_enterprise_value"] + sale_res["net_estate_proceeds"]
+    
+    # 3. Plan Reorganization & Cramdown
+    plan_res = simulate_chapter11_plan_cramdown_and_absolute_priority(
+        total_distributable, restructuring_deal["debt_classes"], restructuring_deal["voting_results"]
+    )
+    
+    # 4. Clawback audit
+    claw_res = audit_zone_of_insolvency_and_fraudulent_conveyance(
+        distress_profile["assets_value"], distress_profile["total_debt"],
+        distress_profile["suspect_dividend"], 0.0, distress_profile["suspect_months_ago"]
+    )
+    
+    restructuring_success = dip_res["automatic_stay_active"] and plan_res["confirmation_verdict"] == "PLAN_CONFIRMED_VIA_CRAMDOWN"
+    
+    return {
+        "company_name": company_name,
+        "dip_funding_unlocked_usd": dip_res["new_money_dip_usd"],
+        "section_363_net_proceeds_usd": sale_res["net_estate_proceeds"],
+        "total_distributable_value_usd": round(total_distributable, 2),
+        "fraudulent_transfer_recovered_usd": claw_res["clawback_remedy_usd"],
+        "plan_confirmation": plan_res["confirmation_verdict"],
+        "absolute_priority_satisfied": plan_res["absolute_priority_respected"],
+        "restructuring_success": restructuring_success,
+        "accreditation": "Certified Corporate General Counsel & Restructuring Advisor" if restructuring_success else "CHAPTER_7_LIQUIDATION_CONVERSION"
+    }
+
+p5 = run_comprehensive_corporate_restructuring_capstone(
+    "Apex Aerospace Dynamics Corp",
+    {
+        "secured_debt": 150000000.0, "unencumbered_assets": 60000000.0,
+        "assets_value": 120000000.0, "total_debt": 180000000.0,
+        "suspect_dividend": 15000000.0, "suspect_months_ago": 14
+    },
+    {
+        "dip_loan": 50000000.0, "roll_up_pct": 20.0,
+        "stalking_horse_bid": 80000000.0, "breakup_fee_pct": 3.0,
+        "expense_reimbursement": 1000000.0, "min_overbid": 2000000.0,
+        "competing_bids": [{"bidder": "Rival Acquirer Corp", "amount": 92000000.0}],
+        "plan_reorg_enterprise_value": 161400000.0,
+        "debt_classes": [
+            {"class_name": "Class 1: Secured Lenders", "total_claim_usd": 180000000.0},
+            {"class_name": "Class 2: Unsecured Bondholders", "total_claim_usd": 120000000.0},
+            {"class_name": "Class 3: Old Equity", "total_claim_usd": 50000000.0}
+        ],
+        "voting_results": [
+            {"class_name": "Class 1: Secured Lenders", "dollar_approval_pct": 100.0, "headcount_approval_pct": 100.0},
+            {"class_name": "Class 2: Unsecured Bondholders", "dollar_approval_pct": 72.0, "headcount_approval_pct": 65.0},
+            {"class_name": "Class 3: Old Equity", "dollar_approval_pct": 10.0, "headcount_approval_pct": 15.0}
+        ]
+    }
+)
+total_val = "$" + f"{p5['total_distributable_value_usd']:,.2f}"
+claw_val = "$" + f"{p5['fraudulent_transfer_recovered_usd']:,.2f}"
+print(f"Company: {p5['company_name']}")
+print(f"Distributable Value: {total_val} | Clawback Recovered: {claw_val}")
+print(f"Plan Confirmation: {p5['plan_confirmation']} | Success: {p5['restructuring_success']}")
+print(f"Accreditation: {p5['accreditation']}")`,
+        output: `Company: Apex Aerospace Dynamics Corp
+Distributable Value: $250,000,000.00 | Clawback Recovered: $15,000,000.00
+Plan Confirmation: PLAN_CONFIRMED_VIA_CRAMDOWN | Success: True
+Accreditation: Certified Corporate General Counsel & Restructuring Advisor`,
+        codeNotes: [
+          { line: 5, note: 'Orchestrates $50M Section 364(d) superpriority DIP loan injection to sustain operations' },
+          { line: 11, note: 'Executes Section 363 stalking horse auction netting $88.6M estate liquidity free and clear' },
+          { line: 17, note: 'Distributes $250M enterprise value across classes and confirms plan via cramdown' },
+          { line: 23, note: 'Recovers $15.0M fraudulent transfer and earns Corporate General Counsel certification' }
+        ],
+        tryIt: 'Zero out DIP financing to observe liquidity collapse and conversion to Chapter 7 liquidation.',
+        check: {
+          question: 'In a corporate Chapter 11 reorganization, what legal finding allows the bankruptcy court to confirm a Plan of Reorganization via "cramdown" over the unanimous rejection of common equity holders?',
+          options: [
+            'At least one impaired creditor class accepts the plan without insider votes, and the plan complies with the Absolute Priority Rule by providing zero recovery to junior equity while senior creditors are impaired.',
+            'The judge personally owns shares in the corporate debtor.',
+            'The company changes its incorporation from Delaware to Nevada.',
+            'The common shareholders fail to attend the court hearing in business suits.'
+          ],
+          answer: 0,
+          why: 'Section 1129(b) empowers the court to cram down a plan over dissenting junior classes provided that the absolute priority rule is strictly honored and an impaired creditor class votes in favor.',
+          answerIndex: 0,
+          explanation: 'Section 1129(b) empowers the court to cram down a plan over dissenting junior classes provided that the absolute priority rule is strictly honored and an impaired creditor class votes in favor.'
+        }
+      }
+    ],
+    summary: [
+      'Chapter 11 DIP Financing: Section 362 automatic stay halts creditor lawsuits; Section 364(d) authorizes priming superpriority liens to inject essential operational liquidity.',
+      'Section 363 Asset Sales: Expedites asset monetization "free and clear" of successor liabilities, utilizing stalking horse bid protections and court-supervised auctions.',
+      'Absolute Priority Rule Cramdown: Mandates senior impaired creditor satisfaction before junior equity receives any recovery, enabling Section 1129(b) non-consensual plan confirmation.',
+      'Zone of Insolvency Fiduciary Duties: Under Delaware Gheewalla jurisprudence, directors owe duties to the enterprise as a whole, defending against direct creditor claims.',
+      'Corporate General Counsel Defense: Orchestrates end-to-end restructuring, claws back Section 548 fraudulent conveyances, and earns General Counsel & Restructuring Advisor accreditation, finalizing Course bcom_law (5/5 Days).'
+    ],
+    projectStep: {
+      title: 'Milestone 1 Capstone: Enterprise Corporate Restructuring & Chapter 11 Control Tower',
+      steps: [
+        'Structure a Chapter 11 petition with automatic stay protections and Section 364(d) superpriority DIP financing.',
+        'Conduct a Section 363 stalking horse auction and model asset transfer free and clear of successor claims.',
+        'Simulate a Plan of Reorganization waterfall and execute a Section 1129(b) cramdown adhering to the Absolute Priority Rule.',
+        'Audit pre-petition transactions for fraudulent conveyance clawbacks and present the Boardroom General Counsel defense.'
+      ]
+    }
   }
 ];
 
