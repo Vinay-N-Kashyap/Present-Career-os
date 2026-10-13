@@ -397,5 +397,372 @@ console.log('Negotiation Strategy: Leverage Offer B to request a competing signi
         'Author a blameless 5 Whys root cause analysis with systemic automated action items.'
       ]
     }
+  },
+  {
+    coursePrefix: 'soft-skills',
+    day: 2,
+    title: 'The Minto Pyramid, Crucial Conversations & Staff+ Engineering Influence',
+    goal: 'Master Staff-level technical leadership: the Minto Pyramid Principle and BLUF executive writing, resolving high-stakes architectural stalemates via Disagree and Commit, cross-functional Iron Triangle capacity negotiation, high-leverage code reviews with psychological safety, and driving multi-team organizational migrations without direct authority.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered the STAR behavioral interview framework, bottom-line-first executive pitches, active listening in system design, 5 Whys blameless post-mortems, and compensation BATNA negotiation. Now, we advance into Staff+ leadership: pyramid technical writing, resolving contentious debates, engineering capacity allocation, empathetic mentorship, and driving cross-org change.',
+    parts: [
+      {
+        title: 'The Minto Pyramid Principle & Bottom-Line-Up-Front (BLUF) Writing',
+        say: [
+          'In engineering organizations, the biggest source of wasted time is poorly structured technical documentation. Junior engineers often write RFCs chronologically: they describe all the rabbit holes they explored, all the failed experiments, and bury their actual recommendation at the very end of page 12.',
+          'Executives, principal architects, and engineering managers do not have time to read narrative mystery novels. The industry standard for high-leverage technical writing is Barbara Minto Pyramid Principle and the Bottom-Line-Up-Front (BLUF) protocol.',
+          'Under the Minto Pyramid, your core recommendation or answer MUST appear in the very first sentence. Once the reader understands the bottom line, the document branches downward into exactly three logically grouped supporting pillars: for example, Scalability, Availability, and Cost Efficiency.',
+          'Each supporting pillar is backed by concrete data, architectural proofs, and trade-off analyses. Beneath the pillars sit the implementation details, risk mitigations, and operational rollout timelines.',
+          'Documents structured this way respect the reader cognitive bandwidth: a CTO can read the first paragraph and approve the strategic direction in 60 seconds, while an infrastructure engineer can drill down into the low-level sharding math in Section 3.',
+          'Adopting BLUF transforms your technical documents from confusing data dumps into persuasive decision instruments that get approved rapidly.'
+        ],
+        example: 'Think of a newspaper article versus a detective novel. A detective novel hides the identity of the culprit until the last page (chronological writing). A newspaper headline and lead paragraph shout: "EARTHQUAKE HITS COAST AT 4 AM; BRIDGES CLOSED" (BLUF), followed by smaller subheadings detailing emergency shelters, traffic detours, and meteorological reports.',
+        code: `// Simulation: Technical RFC Document Evaluator using the Minto Pyramid Principle
+interface TechnicalRfc {
+  title: string;
+  blufRecommendation: string;
+  situation: string;
+  complication: string;
+  pillars: string[];
+  riskMitigations: string[];
+}
+
+function evaluateRfcStructure(rfc: TechnicalRfc): {
+  hasBlufFirst: boolean;
+  pillarCount: number;
+  cognitiveReadabilityScore: number;
+  verdict: string;
+} {
+  const hasBluf = rfc.blufRecommendation.length > 30 && !rfc.blufRecommendation.toLowerCase().startsWith('in conclusion');
+  const validPillars = rfc.pillars.length >= 3;
+  const hasScqa = rfc.situation.length > 20 && rfc.complication.length > 20;
+
+  let score = (hasBluf ? 40 : 10) + (validPillars ? 35 : 15) + (hasScqa ? 25 : 10);
+  score = Math.min(100, score);
+
+  return {
+    hasBlufFirst: hasBluf,
+    pillarCount: rfc.pillars.length,
+    cognitiveReadabilityScore: score,
+    verdict: score >= 90 ? 'EXECUTIVE READY: Decision makers can approve in 60 seconds.' : 'REWRITE NEEDED: Recommendation is buried.'
+  };
+}
+
+const rfc: TechnicalRfc = {
+  title: 'RFC-412: Database Sharding & Migration to Vitess',
+  blufRecommendation: 'We recommend migrating our primary Aurora PostgreSQL cluster to Vitess by Q3 to support 10x Black Friday query volume while eliminating single-master replication lag.',
+  situation: 'Our global transaction volume has grown 280% year-over-year, approaching 18,000 writes/sec.',
+  complication: 'Our vertical database instance reaches 92% CPU during traffic spikes, and read-replica replication lag exceeds 4.5 seconds.',
+  pillars: [
+    'Horizontal Scalability: Vitess partitions write traffic across 16 shards with zero application query rewrites.',
+    'Availability: Eliminates single point of failure (SPOF) with automatic shard failover under 500ms.',
+    'Cost Efficiency: Reduces provisioned cloud compute overhead by 35% via dynamic auto-scaling pods.'
+  ],
+  riskMitigations: [
+    'Dual-writing to shadow cluster during Q2 to verify consistency before cutting over.'
+  ]
+};
+
+const evalResult = evaluateRfcStructure(rfc);
+
+console.log('=== MINTO PYRAMID & BLUF TECHNICAL COMMUNICATION ===');
+console.log('Document: ' + rfc.title);
+console.log('BLUF Stated in Sentence 1: ' + (evalResult.hasBlufFirst ? 'YES (Immediate Cognitive Clarity)' : 'NO'));
+console.log('Supporting Pillars (Rule of 3): ' + evalResult.pillarCount + ' Distinct Architectural Pillars');
+console.log('Readability Score: ' + evalResult.cognitiveReadabilityScore + '/100 (' + evalResult.verdict + ')');
+console.log('Core Takeaway: Lead with the decision recommendation, not the chronological journey.');`,
+        output: `=== MINTO PYRAMID & BLUF TECHNICAL COMMUNICATION ===\nDocument: RFC-412: Database Sharding & Migration to Vitess\nBLUF Stated in Sentence 1: YES (Immediate Cognitive Clarity)\nSupporting Pillars (Rule of 3): 3 Distinct Architectural Pillars\nReadability Score: 100/100 (EXECUTIVE READY: Decision makers can approve in 60 seconds.)\nCore Takeaway: Lead with the decision recommendation, not the chronological journey.`,
+        tryIt: 'Rewrite the BLUF recommendation to bury the lead with "After many meetings, in conclusion..." and observe how the score drops.',
+        check: {
+          question: 'What is the core structural rule of the Minto Pyramid Principle in technical engineering proposals?',
+          options: [
+            'State the bottom-line architectural recommendation in the very first sentence, supported by exactly three logical pillars',
+            'Always format documents in reverse alphabetical order',
+            'Write at least 50 pages before requesting team feedback'
+          ],
+          answer: 0,
+          why: 'The Minto Pyramid dictates that the core conclusion or recommendation must be stated at the apex of the pyramid (sentence 1), allowing decision-makers to immediately grasp the takeaway before drilling down into supporting evidence.'
+        }
+      },
+      {
+        title: 'Managing Technical Disagreements: Disagree & Commit',
+        say: [
+          'In high-performing engineering teams, passionate technical disagreements are inevitable and healthy. When choosing between technologies—such as Kafka versus SQS, or GraphQL versus REST—smart engineers often champion opposing philosophies.',
+          'Dysfunctional teams fall into one of two traps: either consensus paralysis (months of endless meetings with zero decision made) or passive-aggressive sabotage (engineers silently hoping the chosen architecture fails to say "I told you so").',
+          'High-velocity technology companies resolve this using the Amazon leadership principle: "Have Backbone; Disagree and Commit."',
+          'Having backbone means during the debate phase, you are obligated to vigorously articulate your technical concerns, surface trade-offs with empirical data, and challenge assumptions without fear of offending hierarchy.',
+          'However, once the decision owner (often the Tech Lead, Staff Architect, or consensus majority) makes the call, the debate is officially over. Everyone—especially the dissenting engineers—must commit 100% of their energy to executing the chosen path flawlessly.',
+          'Commitment means zero passive-aggressive foot-dragging, zero retrospective finger-pointing, and complete focus on building the guardrails to ensure the selected architecture succeeds.'
+        ],
+        example: 'Think of a rowing crew navigating a raging river fork. As you approach the fork, rowers can passionately debate whether to steer left around the rocks or right through the rapids. But the instant the coxswain shouts "STEER LEFT!", every rower must pull on the left oars with 100% force. If half the crew sulks and paddles right, the entire boat capsizes.',
+        code: `// Simulation: Engineering Debate Resolution & Disagree and Commit Velocity
+interface TechnicalDebate {
+  topic: string;
+  options: { name: string; advocate: string; pros: string[]; cons: string[] }[];
+  finalDecision: string;
+  teamCommitmentScore: number;
+  status: 'STALEMATE' | 'CONSENSUS' | 'DISAGREE_AND_COMMIT';
+}
+
+function resolveEngineeringDisagreement(
+  topic: string,
+  options: { name: string; advocate: string; pros: string[]; cons: string[] }[],
+  chosenOption: string
+): TechnicalDebate {
+  // If all advocates agree, it's consensus. If one compromises with full support, it's disagree & commit.
+  return {
+    topic,
+    options,
+    finalDecision: chosenOption,
+    teamCommitmentScore: 100, // 100% velocity commitment once decided
+    status: 'DISAGREE_AND_COMMIT'
+  };
+}
+
+const debate = resolveEngineeringDisagreement(
+  'Event Bus Migration: Apache Kafka vs AWS SQS/SNS',
+  [
+    { name: 'Kafka', advocate: 'Staff Infra Eng', pros: ['Exact ordering', 'Replayability', '1M msg/s'], cons: ['Self-managed ops overhead'] },
+    { name: 'AWS SQS', advocate: 'Lead Backend Eng', pros: ['Serverless zero-ops', 'Native IAM auth'], cons: ['FIFO throughput limits'] }
+  ],
+  'Apache Kafka (with Confluent Cloud managed service to eliminate ops burden)'
+);
+
+console.log('=== MANAGING TECHNICAL DISAGREEMENTS: DISAGREE & COMMIT ===');
+console.log('Architectural Debate: ' + debate.topic);
+console.log('Final Engineering Decision: ' + debate.finalDecision);
+console.log('Resolution State: ' + debate.status);
+console.log('Execution Velocity: ' + debate.teamCommitmentScore + '% Team Commitment (Zero Passive-Aggressive Second-Guessing)');
+console.log('Leadership Principle: Voice technical objections forcefully with evidence, then rally behind the chosen path 100%.');`,
+        output: `=== MANAGING TECHNICAL DISAGREEMENTS: DISAGREE & COMMIT ===\nArchitectural Debate: Event Bus Migration: Apache Kafka vs AWS SQS/SNS\nFinal Engineering Decision: Apache Kafka (with Confluent Cloud managed service to eliminate ops burden)\nResolution State: DISAGREE_AND_COMMIT\nExecution Velocity: 100% Team Commitment (Zero Passive-Aggressive Second-Guessing)\nLeadership Principle: Voice technical objections forcefully with evidence, then rally behind the chosen path 100%.`,
+        tryIt: 'Simulate what happens to execution velocity if a dissenting engineer second-guesses the decision during sprint implementation.',
+        check: {
+          question: 'What does the engineering principle "Disagree and Commit" require once a technical architecture decision has been finalized?',
+          options: [
+            'Dissenting engineers must continue writing memos trying to reverse the decision during the entire project',
+            'Engineers who argued against the decision must fully support and commit 100% of their effort to make the chosen architecture succeed without second-guessing',
+            'The project manager must fire anyone who disagreed'
+          ],
+          answer: 1,
+          why: 'Disagree and Commit recognizes that total consensus is impossible. Once debate concludes and a decision is rendered, all team members must align 100% to execute the plan with velocity, eliminating destructive second-guessing and passive resistance.'
+        }
+      },
+      {
+        title: 'Cross-Functional Stakeholder Alignment & The Iron Triangle',
+        say: [
+          'Senior and Staff engineers do not operate in an isolated technical vacuum. They partner daily with Product Managers (PMs), Designers, Marketing, and Executive Leadership.',
+          'A pervasive source of team burnout and acrimony occurs when Product Managers demand new features faster than engineering can responsibly deliver, leading to accumulating technical debt and fragile production deployments.',
+          'Effective tech leads manage this tension using the classical Project Management Iron Triangle: Scope, Time, and Resources, with Quality as the fixed boundary invariant.',
+          'When a PM asks to pull forward a deadline, an inexperienced engineer simply says an emotional "No, that’s impossible," alienating stakeholders. A Staff engineer reframes the conversation objectively through trade-offs: "We can hit the June 1st release date if we descope the bulk-export feature to Phase 2, or if we allocate two contractor engineers to build the data migration."',
+          'Furthermore, world-class engineering teams protect systemic health using the 70/20/10 capacity rule: 70% of sprint hours are allocated to new product features, 20% is strictly reserved for technical debt, refactoring, and automated test hardening, and 10% is buffered for on-call triage and production anomalies.',
+          'Protecting that 20% tech debt budget is non-negotiable: ignoring it produces compounding latency regressions, developer attrition, and catastrophic production outages.'
+        ],
+        example: 'Think of maintaining a high-performance commercial airliner. You can fly 70% of flights carrying paying passengers (product features), but you must reserve 20% of the hangar schedule for jet engine overhauls and software maintenance (tech debt), plus 10% weather contingency buffer. If the airline CEO tries to fly 100% passenger routes with zero maintenance, the engines will fail mid-flight.',
+        code: `// Simulation: Cross-Functional Sprint Capacity Allocation & Iron Triangle Model
+interface SprintCapacityPlan {
+  totalHours: number;
+  featureWorkPct: number;
+  techDebtHardeningPct: number;
+  unplannedBufferPct: number;
+}
+
+function evaluateCapacityBalance(plan: SprintCapacityPlan): {
+  featureHours: number;
+  techDebtHours: number;
+  bufferHours: number;
+  isSustainable: boolean;
+  recommendation: string;
+} {
+  const featureHours = (plan.totalHours * plan.featureWorkPct) / 100;
+  const techDebtHours = (plan.totalHours * plan.techDebtHardeningPct) / 100;
+  const bufferHours = (plan.totalHours * plan.unplannedBufferPct) / 100;
+
+  const isSustainable = plan.techDebtHardeningPct >= 20 && plan.unplannedBufferPct >= 10;
+
+  return {
+    featureHours,
+    techDebtHours,
+    bufferHours,
+    isSustainable,
+    recommendation: isSustainable
+      ? 'BALANCED: Sustainable 70/20/10 allocation prevents burnout and system degradation.'
+      : 'HIGH RISK: Insufficient tech debt investment will accelerate developer churn and incident rates.'
+  };
+}
+
+const teamPlan: SprintCapacityPlan = {
+  totalHours: 400, // 5 engineers * 2 weeks * 40 hours
+  featureWorkPct: 70,
+  techDebtHardeningPct: 20,
+  unplannedBufferPct: 10
+};
+
+const balance = evaluateCapacityBalance(teamPlan);
+
+console.log('=== CROSS-FUNCTIONAL ALIGNMENT & SPRINT CAPACITY TRIANGLE ===');
+console.log('Total Engineering Capacity: ' + teamPlan.totalHours + ' Hours (5-Engineer Sprint)');
+console.log('Allocated Product Features (70%): ' + balance.featureHours + ' Hours');
+console.log('Allocated Tech Debt & Refactoring (20%): ' + balance.techDebtHours + ' Hours');
+console.log('Unplanned On-Call & Bug Buffer (10%): ' + balance.bufferHours + ' Hours');
+console.log('Sustainability Status: ' + (balance.isSustainable ? 'HEALTHY & BALANCED' : 'UNSUSTAINABLE'));
+console.log('Stakeholder Negotiation: Frame trade-offs objectively rather than saying an emotional "no".');`,
+        output: `=== CROSS-FUNCTIONAL ALIGNMENT & SPRINT CAPACITY TRIANGLE ===\nTotal Engineering Capacity: 400 Hours (5-Engineer Sprint)\nAllocated Product Features (70%): 280 Hours\nAllocated Tech Debt & Refactoring (20%): 80 Hours\nUnplanned On-Call & Bug Buffer (10%): 40 Hours\nSustainability Status: HEALTHY & BALANCED\nStakeholder Negotiation: Frame trade-offs objectively rather than saying an emotional "no".`,
+        tryIt: 'Adjust the plan to 95% feature work and 5% tech debt to observe why the model flags it as HIGH RISK.',
+        check: {
+          question: 'Why should engineering teams reserve approximately 20% of their recurring sprint capacity for technical debt and hardening?',
+          options: [
+            'To ensure engineers can browse social media during work hours',
+            'To continuously remediate architectural bottlenecks, refactor brittle code, and prevent compounding system instability that degrades future shipping velocity',
+            'Because agile frameworks require exactly 20% unused time by law'
+          ],
+          answer: 1,
+          why: 'Failing to continuously service technical debt leads to compounding code fragility, slower feature velocity, and frequent production outages. A consistent 20% investment preserves codebase health and sustains long-term delivery speed.'
+        }
+      },
+      {
+        title: 'High-Leverage Code Reviews & Psychological Safety',
+        say: [
+          'Code review is the most frequent cross-engineer communication touchpoint in tech. Unfortunately, many teams treat Pull Request reviews as bureaucratic gatekeeping or intellectual competitions where reviewers hunt for trivial syntax nitpicks to assert dominance.',
+          'According to research by Amy Edmondson on Psychological Safety, teams with high psychological safety outperform low-safety teams by a wide margin. In a psychologically safe team, engineers feel safe taking risks, admitting knowledge gaps, and proposing bold architectural changes without fear of ridicule.',
+          'High-leverage engineering reviewers adhere to three foundational code review invariants: Speed, Empathy, and Clear Labeling.',
+          'First is review speed: PR turnaround time should be measured in hours, not days. Stale PRs create context-switching tax and merge conflicts.',
+          'Second is labeling: reviewers should explicitly tag their feedback into three categories: BLOCKER (critical security hole, data loss risk, or broken logic that blocks merging), QUESTION (curious exploration: "Could we consider caching here?"), and NITPICK (purely cosmetic preferences: "nit: extra blank line").',
+          'Crucially, prefixing cosmetic items with "nit:" communicates that the author is free to merge without addressing them, eliminating unnecessary review round-trips while separating critical defects from stylistic opinions.'
+        ],
+        example: 'Think of an architectural building inspection. The city inspector marks broken fire escape bolts as a mandatory code violation that stops building opening (BLOCKER). But they might mention in passing that painted blue trim would look nicer than grey (NITPICK), without blocking the grand opening ribbon-cutting ceremony over a paint color preference.',
+        code: `// Simulation: Code Review Feedback Classification & Psychological Safety Evaluator
+interface CodeReviewComment {
+  type: 'BLOCKER' | 'QUESTION' | 'NITPICK';
+  file: string;
+  comment: string;
+}
+
+function classifyReviewComments(comments: CodeReviewComment[]): {
+  blockers: number;
+  questions: number;
+  nitpicks: number;
+  approvalRecommendation: 'APPROVE' | 'REQUEST_CHANGES' | 'COMMENT';
+} {
+  const blockers = comments.filter(c => c.type === 'BLOCKER').length;
+  const questions = comments.filter(c => c.type === 'QUESTION').length;
+  const nitpicks = comments.filter(c => c.type === 'NITPICK').length;
+
+  const rec = blockers > 0 ? 'REQUEST_CHANGES' : 'APPROVE';
+
+  return { blockers, questions, nitpicks, approvalRecommendation: rec };
+}
+
+const comments: CodeReviewComment[] = [
+  { type: 'BLOCKER', file: 'payment.ts', comment: 'Security: Missing idempotency key check; double-clicking submit button could charge user twice.' },
+  { type: 'QUESTION', file: 'orderService.ts', comment: 'Could we consider using an enum here instead of string literals to prevent typo bugs?' },
+  { type: 'NITPICK', file: 'utils.ts', comment: 'nit: Extra blank line on line 42.' },
+];
+
+const analysis = classifyReviewComments(comments);
+
+console.log('=== HIGH-LEVERAGE CODE REVIEWS & PSYCHOLOGICAL SAFETY ===');
+console.log('Total Review Comments: ' + comments.length);
+console.log('  Blockers (Critical Bugs/Security): ' + analysis.blockers);
+console.log('  Architectural Questions (Collaborative Inquiries): ' + analysis.questions);
+console.log('  Non-blocking Nitpicks: ' + analysis.nitpicks + ' (Labeled "nit:" so author is not blocked)');
+console.log('Review Decision: ' + analysis.approvalRecommendation + ' (Changes requested strictly on blocker)');
+console.log('Psychological Safety Invariant: Criticize the code, respect the person; frame feedback with empathy.');`,
+        output: `=== HIGH-LEVERAGE CODE REVIEWS & PSYCHOLOGICAL SAFETY ===\nTotal Review Comments: 3\n  Blockers (Critical Bugs/Security): 1\n  Architectural Questions (Collaborative Inquiries): 1\n  Non-blocking Nitpicks: 1 (Labeled "nit:" so author is not blocked)\nReview Decision: REQUEST_CHANGES (Changes requested strictly on blocker)\nPsychological Safety Invariant: Criticize the code, respect the person; frame feedback with empathy.`,
+        tryIt: 'Remove the blocker comment and observe how the review decision automatically transitions to APPROVE with questions answered asynchronously.',
+        check: {
+          question: 'Why should code reviewers explicitly label non-essential cosmetic feedback with the prefix "nit:"?',
+          options: [
+            'It signals to the PR author that the comment is an optional stylistic preference and does NOT block the pull request from being merged',
+            'It tells the automated linter to delete the line of code',
+            'It converts the comment into an automated Git commit'
+          ],
+          answer: 0,
+          why: 'Labeling comments with "nit:" provides psychological clarity and prevents unnecessary review stalls. The author knows they can address the minor feedback if convenient, but the PR can proceed to deployment without another round-trip review gate.'
+        }
+      },
+      {
+        title: 'Staff+ Influence Without Authority & Driving Cross-Org Migrations',
+        say: [
+          'As software engineers advance to Staff, Principal, and Distinguished levels, their scope shifts from writing individual pull requests to driving company-wide architectural initiatives.',
+          'Crucially, Staff engineers are individual contributors (ICs)—they have zero direct reports. They cannot order anyone to do anything. They must master the discipline of Influence Without Authority.',
+          'When driving a massive cross-organizational migration—such as deprecating a legacy REST monolith in favor of gRPC microservices across 30 domain teams—mandating adoption from above almost always triggers covert passive resistance and missed deadlines.',
+          'Effective Staff engineers use Coalition Building and Lighthouse Pilots. Instead of pitching all 30 teams at once, they partner with one friendly early-adopter team (the Lighthouse).',
+          'The Staff engineer rolls up their sleeves, embeds with that team, builds ergonomic developer tooling, and solves all early pain points until that team achieves a demonstrable 5x throughput win in production.',
+          'With concrete proof in hand, the Staff engineer showcases the win at engineering all-hands meetings. Other teams proactively volunteer to migrate, transforming an unpopular top-down mandate into organic, bottom-up organizational momentum that crosses the 80% adoption threshold effortlessly.'
+        ],
+        example: 'Think of introducing electric vehicles to a fleet of delivery drivers. If corporate executives issue a stern memo ordering everyone to abandon their gas trucks, drivers resist and complain. But if the company gives two enthusiastic drivers shiny electric vans for a month, and those drivers rave about how fast, quiet, and cheap they are, all the other drivers line up outside the depot asking for their own electric van.',
+        code: `// Simulation: Cross-Organizational Initiative Adoption Curve & Coalition Tracker
+interface ServiceMigrationStatus {
+  serviceName: string;
+  team: string;
+  adoptedNewStandard: boolean;
+  blockerReason?: string;
+}
+
+function trackCrossOrgAdoption(services: ServiceMigrationStatus[]): {
+  totalServices: number;
+  migratedCount: number;
+  adoptionPct: number;
+  readyForDeprecation: boolean;
+} {
+  const migrated = services.filter(s => s.adoptedNewStandard).length;
+  const pct = Math.round((migrated / services.length) * 100);
+
+  return {
+    totalServices: services.length,
+    migratedCount: migrated,
+    adoptionPct: pct,
+    readyForDeprecation: pct >= 80
+  };
+}
+
+const enterpriseServices: ServiceMigrationStatus[] = [
+  { serviceName: 'Auth-Gateway', team: 'Identity Team', adoptedNewStandard: true },
+  { serviceName: 'Billing-Engine', team: 'Fintech Team', adoptedNewStandard: true },
+  { serviceName: 'Search-Indexer', team: 'Search Team', adoptedNewStandard: true },
+  { serviceName: 'Recommendation-API', team: 'ML Team', adoptedNewStandard: true },
+  { serviceName: 'Legacy-Reporting', team: 'Data Team', adoptedNewStandard: false, blockerReason: 'Scheduled for Q4' },
+];
+
+const migration = trackCrossOrgAdoption(enterpriseServices);
+
+console.log('=== STAFF+ INFLUENCE WITHOUT AUTHORITY (CROSS-ORG ADOPTION) ===');
+console.log('Initiative: Enterprise Monolith to gRPC Microservices Standardization');
+console.log('Total Domain Teams Coordinated: ' + migration.totalServices);
+console.log('Services Migrated via Coalition Building: ' + migration.migratedCount + '/' + migration.totalServices + ' (' + migration.adoptionPct + '%)');
+console.log('Legacy Protocol Deprecation Gate (80% Threshold): ' + (migration.readyForDeprecation ? 'PASSED (Deprecation Window Scheduled)' : 'BLOCKED'));
+console.log('Influence Mechanics: Build early lighthouse pilots with one friendly team, demonstrate 5x win, then scale adoption.');`,
+        output: `=== STAFF+ INFLUENCE WITHOUT AUTHORITY (CROSS-ORG ADOPTION) ===\nInitiative: Enterprise Monolith to gRPC Microservices Standardization\nTotal Domain Teams Coordinated: 5\nServices Migrated via Coalition Building: 4/5 (80%)\nLegacy Protocol Deprecation Gate (80% Threshold): PASSED (Deprecation Window Scheduled)\nInfluence Mechanics: Build early lighthouse pilots with one friendly team, demonstrate 5x win, then scale adoption.`,
+        tryIt: 'Add another unmigrated service to drop the adoption percentage below 80% and observe the deprecation gate trigger.',
+        check: {
+          question: 'How do Staff+ engineers effectively drive company-wide technical migrations without direct managerial authority over other teams?',
+          options: [
+            'By partnering with an early-adopter team on a lighthouse pilot, demonstrating undeniable production wins, and providing tooling that makes adoption effortless',
+            'By secretly deleting other teams’ production repositories over the weekend',
+            'By waiting for the CEO to personally mandate the migration in an email'
+          ],
+          answer: 0,
+          why: 'Influence without authority relies on coalition building and proof. By co-developing a lighthouse pilot that delivers real production wins, Staff engineers generate voluntary enthusiasm and organic peer adoption across organizational silos.'
+        }
+      }
+    ],
+    summary: [
+      'The Minto Pyramid Principle and BLUF protocol state the core architectural conclusion in sentence 1, supported by three distinct pillars.',
+      'Disagree and Commit requires engineers to voice data-driven objections forcefully during debate, then commit 100% to executing the chosen path.',
+      'The Iron Triangle model balances Scope, Time, and Resources, using the 70/20/10 sprint rule to protect technical debt and on-call capacity.',
+      'High-leverage code reviews build psychological safety by separating critical BLOCKERS from collaborative QUESTIONS and non-blocking NITPICKS.',
+      'Staff+ engineers drive cross-org architectural migrations through lighthouse pilots, coalition building, and influence without authority.'
+    ],
+    projectStep: {
+      title: 'Author a Staff-Level Architectural RFC & Cross-Org Migration Blueprint',
+      steps: [
+        'Structure a technical RFC using the Minto Pyramid with a 60-second BLUF executive summary and 3 supporting pillars.',
+        'Model an architectural trade-off document establishing Disagree and Commit consensus across competing proposals.',
+        'Draft a 70/20/10 sprint capacity allocation plan negotiating tech debt remediation with product managers.',
+        'Conduct a mock code review categorizing feedback into Blockers, Collaborative Questions, and non-blocking Nitpicks.',
+        'Formulate a multi-team migration strategy identifying early lighthouse pilot teams and deprecation metrics.'
+      ]
+    }
   }
 ];
+

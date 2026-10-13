@@ -111,3 +111,52 @@ test('Java Basics Day 2: Domain-Specific Content Assertions', () => {
   assert.ok(javaD2.parts[4].title.includes('ConcurrentHashMap') || javaD2.parts[4].title.includes('CompletableFuture'));
   assert.ok(javaD2.parts[4].output.includes('ORDER CONFIRMED'));
 });
+
+test('Soft Skills Day 2: Resolution & Structural Invariants for Minto Pyramid & Engineering Leadership', () => {
+  const ssD2 = getLongLesson('soft-skills', 2);
+  assert.ok(ssD2, 'soft-skills Day 2 long lesson must resolve');
+  assert.equal(ssD2.day, 2);
+  assert.equal(ssD2.parts.length, 5, 'soft-skills Day 2 must contain exactly 5 parts');
+  assert.ok(ssD2.summary.length >= 4, 'soft-skills Day 2 must contain comprehensive summary');
+  assert.ok(ssD2.projectStep, 'soft-skills Day 2 must have a hands-on project step');
+  assert.ok(ssD2.minutes >= 15, 'soft-skills Day 2 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of ssD2.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 2: Domain-Specific Content Assertions', () => {
+  const ssD2 = getLongLesson('soft-skills', 2);
+  assert.ok(ssD2);
+
+  // Part 1 – Minto Pyramid & BLUF
+  assert.ok(ssD2.parts[0].title.includes('Minto Pyramid') || ssD2.parts[0].title.includes('BLUF'));
+  assert.ok(ssD2.parts[0].output.includes('BLUF Stated in Sentence 1: YES'));
+
+  // Part 2 – Disagree and Commit
+  assert.ok(ssD2.parts[1].title.includes('Disagree & Commit') || ssD2.parts[1].title.includes('Disagree and Commit'));
+  assert.ok(ssD2.parts[1].output.includes('DISAGREE_AND_COMMIT'));
+
+  // Part 3 – Sprint Capacity Triangle
+  assert.ok(ssD2.parts[2].title.includes('Stakeholder') || ssD2.parts[2].title.includes('Iron Triangle'));
+  assert.ok(ssD2.parts[2].output.includes('HEALTHY & BALANCED'));
+
+  // Part 4 – Code Reviews & Psychological Safety
+  assert.ok(ssD2.parts[3].title.includes('Code Reviews') || ssD2.parts[3].title.includes('Psychological Safety'));
+  assert.ok(ssD2.parts[3].output.includes('Psychological Safety Invariant'));
+
+  // Part 5 – Staff+ Influence Without Authority
+  assert.ok(ssD2.parts[4].title.includes('Influence Without Authority') || ssD2.parts[4].title.includes('Cross-Org'));
+  assert.ok(ssD2.parts[4].output.includes('PASSED (Deprecation Window Scheduled)'));
+});
