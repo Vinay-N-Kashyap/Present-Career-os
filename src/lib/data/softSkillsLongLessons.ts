@@ -1525,6 +1525,380 @@ console.log('Cultural Invariant: Blamelessness builds psychological safety; fix 
         'Facilitate a blameless postmortem retrospective documenting systemic action items following a simulated tier-1 outage.'
       ]
     }
+  },
+  {
+    day: 5,
+    title: 'Executive Storytelling, C-Suite Alignment, Crisis Communications & Cross-Functional Influence',
+    goal: 'Master high-stakes leadership disciplines: Barbara Minto SCQA executive storytelling, Mendelow power-interest stakeholder influence without authority, DORA metrics translation to financial EBITDA, transparent incident crisis communications, and structuring bulletproof Staff+ promotion packets.',
+    minutes: 30,
+    recap: 'Today we transition from team-level engineering leadership into organizational diplomacy, executive storytelling, cross-functional coalition building, and enterprise crisis management.',
+    parts: [
+      {
+        title: 'Executive Storytelling & The Barbara Minto SCQA Framework',
+        say: [
+          'Engineers are naturally trained in inductive reasoning: start with the raw data, outline the chronological debugging journey, detail every technical edge case, and arrive at the conclusion in the final paragraph. When communicating with the C-suite (CTO, CEO, CFO), this inductive approach fails catastrophically.',
+          'Executives are cognitive triage engines managing dozens of competing crises simultaneously. They operate on deductive reasoning and Bottom-Line Up Front (BLUF). If an engineering proposal takes 15 minutes to reach the recommendation, executive attention is already lost.',
+          'The Barbara Minto SCQA framework (Situation, Complication, Question, Answer) structures strategic communications into an undeniable narrative arc: Situation establishes an uncontroversial shared baseline; Complication introduces the catalyst or escalating business risk; Question frames the singular strategic choice; and Answer provides the decisive recommendation quantified in financial or customer impact.',
+          'By leading with the Answer and backing it with quantified Return on Investment (ROI), Staff+ engineers earn immediate credibility and secure cross-functional budget approvals.'
+        ],
+        example: 'Think of an emergency room trauma surgeon briefing the hospital chief of medicine. The surgeon does not narrate the patient\'s entire morning breakfast and commute; they say: "The patient has internal thoracic bleeding (Situation). Vitals dropped 30% in the last 10 minutes (Complication). Can we open OR Suite 3 immediately? (Question). Operating now will stabilize oxygenation and prevent cardiac arrest with a 95% survival rate (Answer)."',
+        code: `// SCQA Executive Storytelling & Proposal Validator
+interface ScqaBriefing {
+  situation: string;
+  complication: string;
+  question: string;
+  answer: string;
+  projectedRoiMillion: number;
+}
+
+class ExecutiveStorytellingValidator {
+  validate(brief: ScqaBriefing) {
+    const hasS = brief.situation.length > 20;
+    const hasC = brief.complication.length > 20;
+    const hasQ = brief.question.endsWith('?');
+    const hasA = brief.answer.length > 25;
+    const isBottomLineUpFront = brief.answer.includes('$') || brief.answer.includes('%') || brief.answer.includes('ROI');
+
+    return {
+      structureValid: hasS && hasC && hasQ && hasA,
+      executiveReadinessScore: (hasS ? 25 : 0) + (hasC ? 25 : 0) + (hasQ ? 25 : 0) + (isBottomLineUpFront ? 25 : 0),
+      summary: \`SCQA Synthesis: S(\${hasS}) C(\${hasC}) Q(\${hasQ}) BLUF(\${isBottomLineUpFront})\`
+    };
+  }
+}
+
+const validator = new ExecutiveStorytellingValidator();
+const brief: ScqaBriefing = {
+  situation: 'Our global e-commerce checkout platform currently processes $1.2B annually across 12 countries.',
+  complication: 'Legacy payment microservices incur an 850ms latency penalty, causing an 8.4% cart abandonment spike at peak load.',
+  question: 'Should we allocate $450k in Q3 to migrate payment ingestion to edge-native event-driven pipelines?',
+  answer: 'Yes. Migrating to edge event streaming will reduce latency to 120ms, preventing $14.2M in annual abandoned transactions with an estimated 31.5x ROI.',
+  projectedRoiMillion: 14.2
+};
+
+const vRes = validator.validate(brief);
+console.log('Executive Briefing Status: ' + (vRes.structureValid ? 'VERIFIED_SCQA_STRUCTURE' : 'DEFICIENT'));
+console.log('Executive Readiness Score: ' + vRes.executiveReadinessScore + '/100');
+console.log('Bottom-Line Upfront ROI: $' + brief.projectedRoiMillion + 'M Annualized Impact');`,
+        output: `Executive Briefing Status: VERIFIED_SCQA_STRUCTURE\nExecutive Readiness Score: 100/100\nBottom-Line Upfront ROI: $14.2M Annualized Impact`,
+        codeNotes: [
+          { line: 8, note: 'Models SCQA narrative completeness checking all 4 structural pillars' },
+          { line: 14, note: 'Awards top-tier executive readiness score only when quantifiable financial ROI is established' },
+          { line: 29, note: 'Demonstrates bottom-line upfront (BLUF) presentation translating technical latency into $14.2M business revenue' }
+        ],
+        tryIt: 'Change the projected ROI to 0 or remove the question mark to see how executive readiness degrades.',
+        check: {
+          question: 'Why do C-suite executives require technical proposals to follow the SCQA framework rather than chronological engineering summaries?',
+          options: [
+            'Executives need deductive reasoning that establishes immediate business context, risk urgency, and bottom-line financial ROI before delving into implementation details',
+            'Executives do not understand what code repositories or databases are',
+            'The SCQA framework automatically compiles TypeScript into machine code',
+            'It reduces the total number of PowerPoint slides to exactly zero'
+          ],
+          answer: 0,
+          why: 'Executives manage scarce capital and time. Deductive SCQA communication provides immediate clarity on what is broken, what decision is required, and what the financial and customer return will be, eliminating cognitive ambiguity.'
+        }
+      },
+      {
+        title: 'Cross-Functional Influence Without Authority & Mendelow\'s Stakeholder Matrix',
+        say: [
+          'In matrixed technology organizations, Staff+ engineers rarely have direct managerial reports. Yet they are accountable for driving foundational architectural initiatives that span dozens of teams, such as database sharding, zero-trust security rollouts, or deprecating legacy monoliths.',
+          'Achieving cross-functional alignment without formal authority requires mastering Stakeholder Mapping using Mendelow\'s Power-Interest Matrix. Stakeholders are mapped along two orthogonal axes: Power (their organizational ability to approve, block, or fund the initiative) and Interest (how directly the initiative impacts their daily metrics or workflow).',
+          'The four quadrants demand distinct engagement strategies: High Power / High Interest stakeholders (such as the VP of Product) must be Managed Closely with collaborative design reviews. High Power / Low Interest stakeholders (such as the CFO) must be Kept Satisfied by translating technical architecture into financial EBITDA margins and risk mitigation.',
+          'Low Power / High Interest stakeholders (such as junior developers using an SDK) must be Kept Informed through demo days and documentation, while Low Power / Low Interest stakeholders are Monitored with passive updates.'
+        ],
+        example: 'Like building a high-speed commuter rail line through a metropolis. You don\'t just ask train conductors for permission; you align with the City Council (High Power) on economic growth, negotiate with neighborhood associations (High Interest) on noise barriers, and provide transit riders (Users) with clear route maps.',
+        code: `// Mendelow Power-Interest Stakeholder Matrix Evaluator
+interface Stakeholder {
+  name: string;
+  role: string;
+  power: 'HIGH' | 'LOW';
+  interest: 'HIGH' | 'LOW';
+  strategicConcern: string;
+}
+
+class StakeholderEngagementMatrix {
+  categorize(stakeholder: Stakeholder): { category: string; communicationStrategy: string } {
+    if (stakeholder.power === 'HIGH' && stakeholder.interest === 'HIGH') {
+      return {
+        category: 'MANAGE_CLOSELY',
+        communicationStrategy: 'Weekly 1:1 briefings; co-design architectural milestones and governance gates'
+      };
+    } else if (stakeholder.power === 'HIGH' && stakeholder.interest === 'LOW') {
+      return {
+        category: 'KEEP_SATISFIED',
+        communicationStrategy: 'Monthly executive summary dashboards; translate tech debt into EBITDA risk metrics'
+      };
+    } else if (stakeholder.power === 'LOW' && stakeholder.interest === 'HIGH') {
+      return {
+        category: 'KEEP_INFORMED',
+        communicationStrategy: 'Bi-weekly demo days and sprint release notes; solicit feedback on developer ergonomics'
+      };
+    } else {
+      return {
+        category: 'MONITOR',
+        communicationStrategy: 'Passive async documentation; status page updates and quarterly roadmaps'
+      };
+    }
+  }
+}
+
+const matrix = new StakeholderEngagementMatrix();
+const cfoStrategy = matrix.categorize({
+  name: 'Evelyn Vance',
+  role: 'Chief Financial Officer',
+  power: 'HIGH',
+  interest: 'LOW',
+  strategicConcern: 'Gross cloud margins and infrastructure spend'
+});
+
+const prodVpStrategy = matrix.categorize({
+  name: 'Marcus Zhang',
+  role: 'VP of Product',
+  power: 'HIGH',
+  interest: 'HIGH',
+  strategicConcern: 'Feature delivery velocity and customer retention'
+});
+
+console.log('CFO Engagement Category: ' + cfoStrategy.category);
+console.log('CFO Comms Strategy: ' + cfoStrategy.communicationStrategy);
+console.log('VP Product Category: ' + prodVpStrategy.category);
+console.log('Leadership Principle: Influence without authority requires framing tech initiatives in stakeholder currency');`,
+        output: `CFO Engagement Category: KEEP_SATISFIED\nCFO Comms Strategy: Monthly executive summary dashboards; translate tech debt into EBITDA risk metrics\nVP Product Category: MANAGE_CLOSELY\nLeadership Principle: Influence without authority requires framing tech initiatives in stakeholder currency`,
+        codeNotes: [
+          { line: 8, note: 'Implements Mendelow Power-Interest quadrant classification algorithm' },
+          { line: 14, note: 'Tailors communication strategy to executive stakeholders with high power but low technical interest' },
+          { line: 28, note: 'Demonstrates translating engineering initiatives into the specific business currency of each leader' }
+        ],
+        tryIt: 'Switch the CFO interest to HIGH and observe how the governance strategy shifts from periodic status reporting to proactive co-design.',
+        check: {
+          question: 'How should a Staff Engineer communicate a major technical debt refactoring to a High-Power / Low-Interest CFO?',
+          options: [
+            'By presenting concise financial metrics translating reduced infrastructure spend and reduced downtime risk directly into gross margin and EBITDA improvements',
+            'By sending the CFO 200 pages of Git commit diffs and unit test logs',
+            'By ignoring the CFO because financial leaders should not influence code architecture',
+            'By asking the CFO to learn Kubernetes command-line tools'
+          ],
+          answer: 0,
+          why: 'High-power, low-interest stakeholders do not want technical jargon; they want to understand how the engineering initiative protects financial margins, mitigates compliance liability, or saves capital expenditure.'
+        }
+      },
+      {
+        title: 'DORA Metrics & Translating Engineering Velocity to C-Suite Business Value',
+        say: [
+          'Engineering teams often track micro-metrics: story points burned, lines of code written, or pull request comments. To business executives and board members, these metrics are completely meaningless and frequently incentivize counter-productive behavior like bloated PRs and superficial commits.',
+          'The DevOps Research and Assessment (DORA) framework provides the industry gold standard for measuring software delivery performance across four core metrics: Deployment Frequency (throughput), Lead Time for Changes (velocity), Change Failure Rate (quality), and Mean Time to Restore (stability).',
+          'Elite engineering organizations deploy multiple times per day with lead times under one hour, change failure rates below 5%, and MTTR under one hour. Crucially, high performers disprove the classic misconception that moving fast creates instability: elite teams achieve BOTH higher velocity AND higher stability simultaneously.',
+          'When presenting to executive leadership, Staff+ engineers translate DORA improvements directly into economic business value: reducing Change Failure Rate saves millions in outage SLA penalties, while shrinking Lead Time accelerates time-to-market and customer feedback loops.'
+        ],
+        example: 'Think of a Formula 1 pit stop crew. An amateur pit crew takes 12 seconds and risks loose lug nuts (high lead time, high change failure rate). A championship pit crew completes a tire change in 1.8 seconds with 99.99% perfection because standardized tooling, telemetry, and automated coordination eliminate waste.',
+        code: `// DORA Metrics to Business Value Calculator
+interface DoraSnapshot {
+  deploymentFrequencyPerDay: number;
+  leadTimeHours: number;
+  changeFailureRatePercent: number;
+  mttrMinutes: number;
+}
+
+class DoraBusinessValueEngine {
+  evaluatePerformance(dora: DoraSnapshot) {
+    const isElite = dora.deploymentFrequencyPerDay >= 1 && dora.leadTimeHours <= 24 && dora.changeFailureRatePercent <= 5 && dora.mttrMinutes <= 60;
+    const downtimeCostPerOutage = 45000; // $45k average cost per production incident
+    const annualOutages = Math.round((dora.deploymentFrequencyPerDay * 365 * dora.changeFailureRatePercent) / 100);
+    const totalDowntimeCost = annualOutages * downtimeCostPerOutage;
+
+    return {
+      tier: isElite ? 'ELITE_PERFORMER' : 'STANDARD_PERFORMER',
+      annualOutages,
+      annualDowntimeCost: totalDowntimeCost,
+      timeToMarketVelocity: dora.leadTimeHours <= 24 ? 'RAPID_MARKET_FEEDBACK' : 'BATCHED_QUARTERLY_DELAYS'
+    };
+  }
+}
+
+const engine = new DoraBusinessValueEngine();
+const eliteMetrics = engine.evaluatePerformance({
+  deploymentFrequencyPerDay: 4.5,
+  leadTimeHours: 2.5,
+  changeFailureRatePercent: 2.1,
+  mttrMinutes: 28
+});
+
+console.log('DORA Performance Tier: ' + eliteMetrics.tier);
+console.log('Calculated Annual Incidents: ' + eliteMetrics.annualOutages + ' Incidents');
+console.log('Projected Outage Cost Exposure: $' + (eliteMetrics.annualDowntimeCost / 1000).toFixed(0) + 'k/year');
+console.log('Executive Translation: Elite DORA practices decouple deployment frequency from production instability');`,
+        output: `DORA Performance Tier: ELITE_PERFORMER\nCalculated Annual Incidents: 34 Incidents\nProjected Outage Cost Exposure: $1530k/year\nExecutive Translation: Elite DORA practices decouple deployment frequency from production instability`,
+        codeNotes: [
+          { line: 8, note: 'Evaluates DORA benchmark criteria across throughput, velocity, stability, and recovery time' },
+          { line: 12, note: 'Calculates quantifiable enterprise financial exposure based on change failure rates and outage cost' },
+          { line: 25, note: 'Demonstrates that elite engineering capabilities yield millions in prevented downtime liabilities' }
+        ],
+        tryIt: 'Increase changeFailureRatePercent to 25% and observe how annual incident count and cost exposure skyrocket.',
+        check: {
+          question: 'What fundamental truth about modern software engineering did the DORA research empirically prove?',
+          options: [
+            'High-performing engineering organizations achieve both rapid delivery velocity and superior production stability simultaneously through automation, small batch sizes, and comprehensive telemetry',
+            'Shipping software faster always results in higher production defect rates',
+            'Lines of code written per day is the single best metric of engineering productivity',
+            'Manual quality assurance testing is faster and more reliable than automated CI/CD pipelines'
+          ],
+          answer: 0,
+          why: 'DORA demonstrated that speed and stability are complementary, not antagonistic: automated testing, continuous integration, and trunk-based development allow teams to ship small batches rapidly with minimal risk.'
+        }
+      },
+      {
+        title: 'High-Stakes Crisis Incident Communications & Public Status Broadcasting',
+        say: [
+          'When a Tier-1 production incident strikes—such as an authentication outage or database corruption—technical troubleshooting is only half the battle. How the organization communicates with customers, executives, and the press determines whether customer trust is salvaged or permanently destroyed.',
+          'High-reliability engineering cultures enforce strict role separation during a crisis: the Incident Commander (IC) directs technical mitigation, while a dedicated Communications Lead manages internal and external updates. This prevents engineers from being distracted by executive Slack pings or customer escalations.',
+          'Public incident communications must follow the Four Golden Rules of Crisis Comms: 1) Strict update cadences (e.g. status updates every 20-30 minutes, even if there is no new technical diagnosis); 2) Quantified impact radius without speculation; 3) Active empathy acknowledging the operational disruption caused to users; and 4) Clear delineation of remediation actions underway.',
+          'Never attempt to conceal an outage or blame external cloud providers in public bulletins. Transparent, accountable communication builds long-term institutional trust.'
+        ],
+        example: 'Like an air traffic controller handling an aircraft emergency. The flight crew focuses 100% on flying the plane, while the air traffic controller coordinates emergency runway access, alerts ground fire crews, and communicates clear updates to surrounding aircraft without distracting the pilots in the cockpit.',
+        code: `// Crisis Communications Bulletin Dispatcher
+interface OutageBroadcast {
+  incidentId: string;
+  severity: 'SEV-1' | 'SEV-2' | 'SEV-3';
+  impactPercentage: number;
+  cadenceMinutes: number;
+  actionUnderway: string;
+}
+
+class CrisisCommunicationsDispatcher {
+  generatePublicStatus(broadcast: OutageBroadcast) {
+    return {
+      statusHeader: \`[\${broadcast.severity} UPDATE] Service Disruption Investigated\`,
+      cadenceSla: \`Next public status update in \${broadcast.cadenceMinutes} minutes guaranteed\`,
+      customerImpact: \`\${broadcast.impactPercentage}% of payment API transactions experiencing latency degradation\`,
+      mitigationAction: broadcast.actionUnderway,
+      goldenRuleCompliance: 'EMPATHY_AND_ACCOUNTABILITY_MAINTAINED'
+    };
+  }
+}
+
+const crisisDispatcher = new CrisisCommunicationsDispatcher();
+const comms = crisisDispatcher.generatePublicStatus({
+  incidentId: 'INC-7091',
+  severity: 'SEV-1',
+  impactPercentage: 14.2,
+  cadenceMinutes: 20,
+  actionUnderway: 'Traffic diverted to secondary us-east-2 failover cluster; canary recovery active'
+});
+
+console.log('Crisis Bulletin: ' + comms.statusHeader);
+console.log('Cadence SLA: ' + comms.cadenceSla);
+console.log('Customer Impact Radius: ' + comms.customerImpact);
+console.log('Remediation Step: ' + comms.mitigationAction);
+console.log('Executive Comms Protocol: ' + comms.goldenRuleCompliance);`,
+        output: `Crisis Bulletin: [SEV-1 UPDATE] Service Disruption Investigated\nCadence SLA: Next public status update in 20 minutes guaranteed\nCustomer Impact Radius: 14.2% of payment API transactions experiencing latency degradation\nRemediation Step: Traffic diverted to secondary us-east-2 failover cluster; canary recovery active\nExecutive Comms Protocol: EMPATHY_AND_ACCOUNTABILITY_MAINTAINED`,
+        codeNotes: [
+          { line: 8, note: 'Formats standardized public crisis bulletin with severity categorization' },
+          { line: 10, note: 'Enforces strict update cadence SLA guaranteeing transparency every 20 minutes' },
+          { line: 24, note: 'Validates transparent reporting of customer impact percentage and active failover steps' }
+        ],
+        tryIt: 'Change the cadence to 60 minutes and observe how customer anxiety increases when status intervals exceed 30 minutes.',
+        check: {
+          question: 'During a major customer-facing production outage, why must engineering teams commit to a strict 20-to-30 minute status update cadence even when no new root cause is discovered?',
+          options: [
+            'Because silence creates customer panic and distrust; predictable cadences reassure users that engineering is actively working and provide operational transparency',
+            'Because cloud providers automatically reboot servers after 30 minutes of silence',
+            'To prevent web browsers from caching outdated HTTP error pages',
+            'Because status pages consume less bandwidth than regular websites'
+          ],
+          answer: 0,
+          why: 'During an outage, silence is interpreted as negligence or confusion. Even a brief update stating "Investigation ongoing, testing database failover, next update in 20 minutes" maintains customer trust and reduces panic.'
+        }
+      },
+      {
+        title: 'The Staff+ Engineering Promotion Dossier: Quantifying Organizational Leverage',
+        say: [
+          'Reaching Senior Engineer (L5) is primarily about technical execution: you are given ambiguous problems and you deliver high-quality, reliable code on time. However, transitioning from Senior to Staff (L6) or Principal (L7) requires a fundamental mindset shift from individual execution to organizational leverage.',
+          'Staff promotion calibration committees evaluate candidates against four non-negotiable pillars: Strategic Scope, Technical Architecture, Force Multiplier Effect, and Quantified Business Impact. Simply writing twice as much code will never get an engineer promoted to Staff.',
+          'Strategic Scope measures your influence radius: while Senior engineers operate at the team level, Staff engineers operate across multiple teams and organizational boundaries, aligning disparate groups around unified technical standards and RFCs.',
+          'The Force Multiplier Effect proves that you elevate everyone around you: mentoring engineers to promotion, setting engineering hiring bars, and eliminating systemic toil across dozens of services. A bulletproof promotion dossier documents these contributions with hard numbers and verifiable customer revenue impact.'
+        ],
+        example: 'Think of an architect who designs a metropolitan suspension bridge. They do not personally pour every bucket of concrete or weld every steel cable; their value lies in the blueprint mathematics, safety standards, and coordination of hundreds of construction teams to build a structure that stands for a century.',
+        code: `// Staff+ Engineering Promotion Packet Evaluator
+interface StaffPromotionPacket {
+  candidateName: string;
+  targetLevel: 'STAFF_L6' | 'PRINCIPAL_L7';
+  scopeBreadth: 'TEAM' | 'MULTI_TEAM' | 'CROSS_ORG';
+  technicalComplexityScore: number; // 1-100
+  multiplierMentorshipCount: number;
+  measurableRevenueImpactMillion: number;
+}
+
+class PromotionCommitteeEvaluator {
+  evaluate(packet: StaffPromotionPacket) {
+    const isCrossOrg = packet.scopeBreadth === 'CROSS_ORG';
+    const isTechLeader = packet.technicalComplexityScore >= 85;
+    const isMultiplier = packet.multiplierMentorshipCount >= 4;
+    const hasBusinessImpact = packet.measurableRevenueImpactMillion >= 1.0;
+
+    const consensusPassed = isCrossOrg && isTechLeader && isMultiplier && hasBusinessImpact;
+
+    return {
+      consensusVerdict: consensusPassed ? 'PROMOTION_APPROVED' : 'NEEDS_BROADER_ORGANIZATIONAL_SCOPE',
+      scopeRating: packet.scopeBreadth,
+      leverageMultiplier: packet.multiplierMentorshipCount + ' Engineers Mentored & Promoted',
+      financialReturn: '$' + packet.measurableRevenueImpactMillion.toFixed(1) + 'M Validated ROI'
+    };
+  }
+}
+
+const evaluator = new PromotionCommitteeEvaluator();
+const review = evaluator.evaluate({
+  candidateName: 'Dr. Sarah Connor',
+  targetLevel: 'STAFF_L6',
+  scopeBreadth: 'CROSS_ORG',
+  technicalComplexityScore: 92,
+  multiplierMentorshipCount: 5,
+  measurableRevenueImpactMillion: 3.4
+});
+
+console.log('Committee Verdict: ' + review.consensusVerdict);
+console.log('Organizational Scope: ' + review.scopeRating);
+console.log('Talent Multiplier: ' + review.leverageMultiplier);
+console.log('Business Justification: ' + review.financialReturn);
+console.log('Career Invariant: Staff+ engineering is calibrated on organizational leverage, not personal keyboard velocity');`,
+        output: `Committee Verdict: PROMOTION_APPROVED\nOrganizational Scope: CROSS_ORG\nTalent Multiplier: 5 Engineers Mentored & Promoted\nBusiness Justification: $3.4M Validated ROI\nCareer Invariant: Staff+ engineering is calibrated on organizational leverage, not personal keyboard velocity`,
+        codeNotes: [
+          { line: 8, note: 'Evaluates Staff+ dossier across cross-organizational scope, talent multiplier, and financial impact' },
+          { line: 14, note: 'Requires cross-org influence and verifiable mentorship multiplier for promotion consensus' },
+          { line: 29, note: 'Demonstrates a quantified business case ($3.4M ROI) securing promotion committee approval' }
+        ],
+        tryIt: 'Change scopeBreadth to TEAM and observe how the committee rejects the packet due to lack of cross-organizational reach.',
+        check: {
+          question: 'What is the primary difference in evaluation criteria between a Senior Engineer (L5) and a Staff Engineer (L6) in engineering calibration committees?',
+          options: [
+            'Senior engineers are evaluated on personal execution and team delivery, whereas Staff engineers are evaluated on cross-organizational scope, talent mentorship multiplier, and business impact',
+            'Staff engineers are required to work 80 hours a week instead of 40',
+            'Staff engineers are prohibited from reading or reviewing pull requests',
+            'Senior engineers only know how to write CSS while Staff engineers write C++'
+          ],
+          answer: 0,
+          why: 'Staff+ roles are leadership roles that amplify the effectiveness of the entire engineering organization. Committees look for cross-team technical strategy, mentorship of other engineers, and systemic business impact.'
+        }
+      }
+    ],
+    summary: [
+      'The Barbara Minto SCQA framework structures executive proposals into Situation, Complication, Question, and Answer with bottom-line upfront ROI.',
+      'Mendelow\'s Power-Interest matrix guides cross-functional influence without authority, tailoring communications to stakeholder priorities.',
+      'DORA metrics bridge engineering velocity and executive business value, proving that speed and production stability reinforce each other.',
+      'Crisis communications require separating Incident Command from public communications, adhering to strict 20-30 minute update cadences.',
+      'Staff+ promotion calibration evaluates organizational scope, talent multiplier leverage, and quantified business return rather than individual code output.'
+    ],
+    projectStep: {
+      title: 'Architect an Executive Engineering Influence & High-Stakes Leadership Portfolio',
+      steps: [
+        'Author an SCQA executive briefing securing budget approval for a mission-critical platform migration.',
+        'Construct a Mendelow Power-Interest stakeholder map aligning Product, Finance, and Security leadership.',
+        'Compute enterprise DORA metrics translating lead time and change failure rate into annualized cost savings.',
+        'Draft a multi-stage crisis communications plan with guaranteed status update cadences during a simulated Tier-1 outage.',
+        'Assemble a comprehensive Staff+ promotion packet documenting cross-organizational scope, talent mentorship, and validated business ROI.'
+      ]
+    }
   }
 ];
 

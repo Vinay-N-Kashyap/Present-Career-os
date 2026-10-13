@@ -426,6 +426,70 @@ test('Java Basics Day 5: Domain-Specific Content Assertions', () => {
   assert.ok(javaD5.parts[4].output.includes('G1GC P99 Pause Time: 35 ms'));
 });
 
+test('Soft Skills Day 5: Resolution & Structural Invariants for SCQA, Stakeholder Matrix & DORA Metrics', () => {
+  const ssD5 = getLongLesson('soft-skills', 5);
+  assert.ok(ssD5, 'soft-skills Day 5 long lesson must resolve');
+  assert.equal(ssD5.day, 5);
+  assert.equal(ssD5.parts.length, 5, 'soft-skills Day 5 must contain exactly 5 parts');
+  assert.ok(ssD5.summary.length >= 4, 'soft-skills Day 5 must contain comprehensive summary');
+  assert.ok(ssD5.projectStep, 'soft-skills Day 5 must have a hands-on project step');
+  assert.ok(ssD5.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(ssD5);
+  const totalMin = estimateLessonMinutes(ssD5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of ssD5.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 5: Domain-Specific Content Assertions', () => {
+  const ssD5 = getLongLesson('soft-skills', 5);
+  assert.ok(ssD5);
+
+  // Part 1 – SCQA Executive Storytelling
+  assert.ok(ssD5.parts[0].title.includes('SCQA') || ssD5.parts[0].title.includes('Executive Storytelling'));
+  assert.ok(ssD5.parts[0].output.includes('VERIFIED_SCQA_STRUCTURE'));
+  assert.ok(ssD5.parts[0].output.includes('Executive Readiness Score: 100/100'));
+  assert.ok(ssD5.parts[0].output.includes('$14.2M Annualized Impact'));
+
+  // Part 2 – Mendelow Stakeholder Power-Interest Matrix
+  assert.ok(ssD5.parts[1].title.includes('Mendelow') || ssD5.parts[1].title.includes('Stakeholder'));
+  assert.ok(ssD5.parts[1].output.includes('KEEP_SATISFIED'));
+  assert.ok(ssD5.parts[1].output.includes('MANAGE_CLOSELY'));
+  assert.ok(ssD5.parts[1].output.includes('Influence without authority'));
+
+  // Part 3 – DORA Metrics & C-Suite Business Value
+  assert.ok(ssD5.parts[2].title.includes('DORA') || ssD5.parts[2].title.includes('Velocity'));
+  assert.ok(ssD5.parts[2].output.includes('ELITE_PERFORMER'));
+  assert.ok(ssD5.parts[2].output.includes('$1530k/year'));
+
+  // Part 4 – Crisis Communications & Incident Command Public Relations
+  assert.ok(ssD5.parts[3].title.includes('Crisis') || ssD5.parts[3].title.includes('Incident Communications'));
+  assert.ok(ssD5.parts[3].output.includes('[SEV-1 UPDATE]'));
+  assert.ok(ssD5.parts[3].output.includes('20 minutes guaranteed'));
+  assert.ok(ssD5.parts[3].output.includes('EMPATHY_AND_ACCOUNTABILITY_MAINTAINED'));
+
+  // Part 5 – Staff+ Engineering Promotion Dossier
+  assert.ok(ssD5.parts[4].title.includes('Staff+') || ssD5.parts[4].title.includes('Promotion Dossier'));
+  assert.ok(ssD5.parts[4].output.includes('PROMOTION_APPROVED'));
+  assert.ok(ssD5.parts[4].output.includes('CROSS_ORG'));
+  assert.ok(ssD5.parts[4].output.includes('5 Engineers Mentored & Promoted'));
+  assert.ok(ssD5.parts[4].output.includes('$3.4M Validated ROI'));
+});
+
 
 
 
