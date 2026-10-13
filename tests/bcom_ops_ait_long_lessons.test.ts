@@ -195,3 +195,36 @@ test('B.Com Ops Day 4: Queuing Theory, Erlang C & Capacity Economics Snippets Ve
   assert.ok(opsLesson4.parts[4].code?.includes('simulate_dynamic_shift_queue'));
 });
 
+test('B.Com Ops Day 5 Capstone: Global Supply Chain Optimization & Resilient Control Tower Snippets Verification', () => {
+  const opsLesson5 = getLongLesson('bcom_ops', 5);
+  assert.ok(opsLesson5, 'bcom_ops Day 5 Capstone long lesson must resolve');
+  assert.equal(opsLesson5.day, 5);
+  assert.equal(opsLesson5.parts.length, 5, 'bcom_ops Day 5 Capstone must contain exactly 5 parts');
+  assert.ok(opsLesson5.summary.length >= 4, 'bcom_ops Day 5 Capstone must contain comprehensive summary');
+  assert.ok(opsLesson5.projectStep, 'bcom_ops Day 5 Capstone must have a hands-on project step');
+
+  for (let i = 0; i < opsLesson5.parts.length; i++) {
+    const part = opsLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(opsLesson5.parts[0].code?.includes('optimize_transportation_network'));
+  assert.ok(opsLesson5.parts[1].code?.includes('evaluate_facility_location_cog'));
+  assert.ok(opsLesson5.parts[2].code?.includes('simulate_bullwhip_multi_echelon'));
+  assert.ok(opsLesson5.parts[3].code?.includes('evaluate_inventory_risk_pooling'));
+  assert.ok(opsLesson5.parts[4].code?.includes('verify_resilient_supply_chain_control_tower'));
+});
+

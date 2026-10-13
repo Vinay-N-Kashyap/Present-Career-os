@@ -1731,4 +1731,511 @@ Trough_Hour_Staffing: 2`,
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom_ops',
+    day: 5,
+    title: 'Milestone 1 Capstone: Global Supply Chain Network Optimization & Resilience Control Tower',
+    goal: 'Design, optimize, and stress-test an end-to-end global supply chain network: solving multi-echelon transportation allocation, determining optimal warehouse facility locations with Center-of-Gravity models, mitigating the Bullwhip Effect via CPFR information sharing, unlocking capital through inventory risk pooling, and engineering a fault-tolerant disruption recovery control tower.',
+    minutes: 48,
+    recap: 'Across Days 1 through 4, we mastered production flow physics, Theory of Constraints, Six Sigma DMAIC, Statistical Process Control, Gage R&R, and stochastic Queuing Theory. In this Milestone 1 Capstone, we synthesize all quantitative operations disciplines into an enterprise-scale global supply chain control tower.',
+    parts: [
+      {
+        title: 'Global Multi-Echelon Supply Network Allocation & Transportation Simplex',
+        say: [
+          'Global enterprises operate complex multi-echelon supply networks spanning raw material suppliers, offshore fabrication foundries, nearshore assembly plants, transshipment ports, and regional distribution centers (DCs). In a modern supply chain, physical distance translates directly into freight cost, working capital lockup, and transit lead time risk. Allocating product flows across competing manufacturing plants and global customer markets requires solving the classic Transportation Linear Optimization Problem.',
+          'Given m production origins each with finite production capacity S_i, and n destination warehouses each with market demand D_j, the objective is to determine shipment volumes x_ij to minimize Total Landed Transportation Cost = sum_i sum_j (c_ij * x_ij), subject to the constraints that no plant exceeds its capacity and every destination receives its required allocation. Unit shipping costs c_ij encapsulate maritime ocean freight, bunker fuel surcharges, overland drayage, customs tariffs, and port handling fees.',
+          'Solving the transportation matrix ensures optimal capacity utilization while preventing expensive cross-hauling. When production capacity matches market demand in equilibrium, linear optimization algorithms allocate high-volume lanes to low-cost regional pairings, generating substantial freight cost savings and establishing the physical baseline for enterprise supply chain visibility.'
+        ],
+        example: 'A global electronics brand manufactures lithium power modules at two plants (Shenzhen capacity 500K units, Penang capacity 400K units) to supply three regional hubs (Rotterdam demand 300K, Long Beach demand 400K, Singapore demand 200K). Greedy minimum-cost transportation allocation routes 300K units from Shenzhen to Rotterdam, 200K units to Long Beach, 200K from Penang to Long Beach, and 200K from Penang to Singapore, achieving a minimal total landed freight cost of $12,000,000 ($13.33/unit).',
+        code: `# Global Multi-Echelon Transportation Allocation Engine
+def optimize_transportation_network(
+    supplies: list[int],
+    demands: list[int],
+    cost_matrix: list[list[float]]
+) -> dict:
+    total_supply = sum(supplies)
+    total_demand = sum(demands)
+    if total_supply != total_demand:
+        raise ValueError("Unbalanced supply/demand network")
+
+    num_sources = len(supplies)
+    num_dests = len(demands)
+    rem_supply = list(supplies)
+    rem_demand = list(demands)
+
+    allocations = [[0 for _ in range(num_dests)] for _ in range(num_sources)]
+    total_transport_cost = 0.0
+
+    # Sort all viable transportation corridors by ascending unit freight cost
+    routes = []
+    for i in range(num_sources):
+        for j in range(num_dests):
+            routes.append((cost_matrix[i][j], i, j))
+    routes.sort(key=lambda r: r[0])
+
+    for unit_cost, i, j in routes:
+        if rem_supply[i] > 0 and rem_demand[j] > 0:
+            quantity = min(rem_supply[i], rem_demand[j])
+            allocations[i][j] = quantity
+            rem_supply[i] -= quantity
+            rem_demand[j] -= quantity
+            total_transport_cost += quantity * unit_cost
+
+    return {
+        "Total_Units_Shipped": total_demand,
+        "Source_Count": num_sources,
+        "Destination_Count": num_dests,
+        "Total_Transport_Cost": "$" + f"{total_transport_cost:,.2f}",
+        "Allocations_Matrix": allocations,
+        "Avg_Cost_Per_Unit": "$" + f"{(total_transport_cost / total_demand):,.2f}"
+    }
+
+supplies = [500, 400]
+demands = [300, 400, 200]
+costs = [
+    [12.0, 18.0, 6.0],  # Shenzhen to Rotterdam, Long Beach, Singapore
+    [14.0, 20.0, 4.0]   # Penang to Rotterdam, Long Beach, Singapore
+]
+
+trans_res = optimize_transportation_network(supplies, demands, costs)
+for k, v in trans_res.items():
+    print(f"{k}: {v}")`,
+        output: `Total_Units_Shipped: 900
+Source_Count: 2
+Destination_Count: 3
+Total_Transport_Cost: $12,000.00
+Allocations_Matrix: [[300, 200, 0], [0, 200, 200]]
+Avg_Cost_Per_Unit: $13.33`,
+        codeNotes: [
+          { line: 7, note: 'Validates that network supply matches demand to ensure feasibility in the closed system' },
+          { line: 20, note: 'Sorts candidate shipping routes by lowest unit freight cost to prioritize efficient lanes' },
+          { line: 28, note: 'Greedily fulfills demand along lowest-cost corridors while respecting source supply caps' },
+          { line: 42, note: 'Calculates exact total freight cost of $12,000.00 and unit freight rate of $13.33' }
+        ],
+        tryIt: 'Increase Shenzhen-to-Singapore freight from $6.0 to $15.0 and observe how allocations re-balance to protect margins.',
+        check: {
+          question: 'In global logistics network design, what is the primary objective of solving the Transportation Linear Program?',
+          options: [
+            'To determine optimal shipment quantities between origins and destinations that satisfy all supply and demand constraints while minimizing total landed freight expenditure.',
+            'To ensure every factory produces the exact same quantity regardless of market demand.',
+            'To eliminate all sea freight in favor of supersonic air transport.',
+            'To randomize supplier purchase orders to obscure procurement patterns from competitors.'
+          ],
+          answer: 0,
+          why: 'The transportation formulation finds the mathematically optimal flow matrix x_ij that fulfills all customer demand while minimizing aggregate shipping and handling costs.',
+          answerIndex: 0,
+          explanation: 'The transportation formulation finds the mathematically optimal flow matrix x_ij that fulfills all customer demand while minimizing aggregate shipping and handling costs.'
+        }
+      },
+      {
+        title: 'Mixed-Integer Facility Location & Center-of-Gravity (CoG) Optimization',
+        say: [
+          'Selecting where to build physical distribution centers (DCs) and master fulfillment hubs is one of the highest-stakes capital decisions an enterprise can make. A poorly located distribution center locks a company into decades of inflated transportation costs, sluggish delivery lead times, and dissatisfied customers. To identify optimal geographic placement, supply chain architects employ the Center-of-Gravity (CoG) method.',
+          'The Center-of-Gravity technique treats market demand clusters as physical weights distributed on a Cartesian coordinate plane. The continuous optimal coordinates (X*, Y*) represent the spatial centroid that minimizes ton-mile transportation friction: X* = sum(W_i * X_i) / sum(W_i), and Y* = sum(W_i * Y_i) / sum(W_i), where W_i is the annual tonnage demanded by customer market i, and (X_i, Y_i) are its spatial coordinates.',
+          'However, continuous CoG coordinates frequently land in uninhabited rural areas or bodies of water where constructing a facility is impossible. Supply chain engineers bridge theory and reality by coupling continuous CoG with discrete Candidate Facility Evaluation. By computing Euclidean ton-mile freight costs to each actual candidate logistics city and combining them with discrete annual fixed warehouse lease and labor costs, the engine determines the global minimum Total Annual Cost facility location.'
+        ],
+        example: 'An omnichannel retailer serves 4 major metro markets: New York (5K tons), Atlanta (3.5K tons), Chicago (4.5K tons), and Dallas (3K tons). The continuous CoG calculates optimal coordinates at (66.72, 54.53). Evaluating three candidate distribution hubs—Columbus ($450K fixed), Memphis ($400K fixed), and Charlotte ($480K fixed)—proves Memphis achieves the lowest total annual cost of $459,238.19.',
+        code: `# Center-of-Gravity (CoG) & Candidate Facility Location Optimizer
+import math
+
+def evaluate_facility_location_cog(
+    markets: list[dict],
+    candidates: list[dict],
+    freight_rate_per_ton_mile: float = 0.15
+) -> dict:
+    # 1. Calculate Continuous Spatial Center-of-Gravity (CoG)
+    total_weight = sum(m["demand_tons"] for m in markets)
+    cog_x = sum(m["demand_tons"] * m["x"] for m in markets) / total_weight
+    cog_y = sum(m["demand_tons"] * m["y"] for m in markets) / total_weight
+
+    # 2. Evaluate Candidate Facility Sites on Fixed + Variable Ton-Mile Freight
+    evaluated_candidates = []
+    best_candidate = None
+    min_total_cost = float("inf")
+
+    for cand in candidates:
+        total_ton_miles = 0.0
+        for m in markets:
+            distance = math.sqrt((cand["x"] - m["x"])**2 + (cand["y"] - m["y"])**2)
+            total_ton_miles += distance * m["demand_tons"]
+
+        variable_freight = total_ton_miles * freight_rate_per_ton_mile
+        total_annual_cost = cand["fixed_annual_cost"] + variable_freight
+
+        entry = {
+            "City": cand["name"],
+            "Fixed_Cost": "$" + f"{cand['fixed_annual_cost']:,.2f}",
+            "Variable_Freight": "$" + f"{variable_freight:,.2f}",
+            "Total_Cost": "$" + f"{total_annual_cost:,.2f}",
+            "Total_Cost_Val": total_annual_cost
+        }
+        evaluated_candidates.append(entry)
+
+        if total_annual_cost < min_total_cost:
+            min_total_cost = total_annual_cost
+            best_candidate = entry
+
+    return {
+        "Theoretical_CoG_X": round(cog_x, 2),
+        "Theoretical_CoG_Y": round(cog_y, 2),
+        "Total_Market_Tons": total_weight,
+        "Optimal_Facility_City": best_candidate["City"],
+        "Optimal_Fixed_Cost": best_candidate["Fixed_Cost"],
+        "Optimal_Freight_Cost": best_candidate["Variable_Freight"],
+        "Minimum_Total_Annual_Cost": best_candidate["Total_Cost"]
+    }
+
+market_hubs = [
+    {"name": "New York", "x": 80.0, "y": 70.0, "demand_tons": 5000},
+    {"name": "Atlanta", "x": 75.0, "y": 40.0, "demand_tons": 3500},
+    {"name": "Chicago", "x": 60.0, "y": 65.0, "demand_tons": 4500},
+    {"name": "Dallas", "x": 45.0, "y": 30.0, "demand_tons": 3000}
+]
+
+candidate_dcs = [
+    {"name": "Columbus", "x": 68.0, "y": 60.0, "fixed_annual_cost": 450_000.0},
+    {"name": "Memphis", "x": 58.0, "y": 42.0, "fixed_annual_cost": 400_000.0},
+    {"name": "Charlotte", "x": 74.0, "y": 45.0, "fixed_annual_cost": 480_000.0}
+]
+
+fac_res = evaluate_facility_location_cog(market_hubs, candidate_dcs)
+for k, v in fac_res.items():
+    print(f"{k}: {v}")`,
+        output: `Theoretical_CoG_X: 66.72
+Theoretical_CoG_Y: 54.53
+Total_Market_Tons: 16000
+Optimal_Facility_City: Memphis
+Optimal_Fixed_Cost: $400,000.00
+Optimal_Freight_Cost: $59,238.19
+Minimum_Total_Annual_Cost: $459,238.19`,
+        codeNotes: [
+          { line: 9, note: 'Computes continuous weighted centroid (X=66.72, Y=54.53) minimizing theoretical distance' },
+          { line: 20, note: 'Calculates Euclidean ton-mile freight expenses to each target market cluster' },
+          { line: 25, note: 'Balances fixed facility lease expenses against variable ton-mile transportation freight' },
+          { line: 45, note: 'Selects Memphis as the optimal DC location at an annual cost of $459,238.19' }
+        ],
+        tryIt: 'Increase New York demand to 12,000 tons and observe how theoretical CoG pulls northeast towards Columbus.',
+        check: {
+          question: 'Why is continuous Center-of-Gravity (CoG) analysis typically combined with discrete candidate facility evaluation?',
+          options: [
+            'Because the continuous centroid mathematical coordinates often fall in locations without industrial infrastructure, roads, or labor supply; candidate evaluation selects the best real-world city by balancing fixed warehouse leases and variable ton-mile freight.',
+            'Because CoG math is illegal to use in commercial real estate without municipal licensing.',
+            'Because candidate cities must always have zero transportation freight costs.',
+            'Because continuous coordinates only work for airborne drone fulfillment.'
+          ],
+          answer: 0,
+          why: 'Continuous CoG calculates the theoretical ideal spatial point, but real-world facilities must be chosen from viable candidate cities with favorable lease costs, logistics infrastructure, and labor availability.',
+          answerIndex: 0,
+          explanation: 'Continuous CoG calculates the theoretical ideal spatial point, but real-world facilities must be chosen from viable candidate cities with favorable lease costs, logistics infrastructure, and labor availability.'
+        }
+      },
+      {
+        title: 'Multi-Echelon Bullwhip Effect Mitigation & CPFR Information Architecture',
+        say: [
+          'Jay Forrester first identified the phenomenon known as the Bullwhip Effect: in a multi-echelon supply chain (Consumer -> Retailer -> Wholesaler -> Distributor -> Tier-1 Factory), small, gentle fluctuations in retail customer demand amplify into catastrophic wild swings as order signals travel upstream. A mere 5% uptick in retail sales can cause distributor orders to jump by 40% and factory manufacturing orders to surge by 150%, followed shortly by catastrophic order cancellations and bloated warehouse inventories.',
+          'The Bullwhip Effect is driven by four structural operational drivers: Demand Signal Processing (each echelon forecasts independently without visibility into true end-consumer sales), Order Batching (accumulating orders to meet full truckload minimums), Price Fluctuations (promotional forward-buying), and Rationing Gaming (retailers placing phantom double-orders during supply shortages). In quantitative supply chain dynamics, the Bullwhip Ratio (BWR) is formulated as BWR = Variance(Orders) / Variance(Demand) = 1 + (2*L)/p + (2*L^2)/(p^2), where L is lead time and p is the forecasting smoothing parameter.',
+          'The modern technological antidote to the Bullwhip Effect is CPFR (Collaborative Planning, Forecasting, and Replenishment) and Vendor-Managed Inventory (VMI). By transmitting real-time Point-of-Sale (POS) scanner data directly across all echelons via cloud EDI and APIs, lead time information lag L is compressed to near-zero. Upstream factories produce strictly to actual consumer consumption rather than distorted distributor forecasts, slashing demand variance by 60% to 75% across the entire network.'
+        ],
+        example: 'In a 4-echelon supply network experiencing weekly retail demand with standard deviation of 4.78 units, traditional siloed ordering with a 2-week lead time inflates upstream factory orders to a Bullwhip Ratio of 3.222 (standard deviation of 8.58). Implementing CPFR real-time POS data sharing compresses the Bullwhip Ratio to 1.142 (standard deviation of 5.11), eliminating 64.6% of upstream production variance.',
+        code: `# Multi-Echelon Bullwhip Effect & CPFR Simulation Engine
+import math
+
+def simulate_bullwhip_multi_echelon(
+    retail_demands: list[float],
+    lead_time_periods: int = 2,
+    forecasting_param_p: float = 3.0
+) -> dict:
+    # 1. Retail Baseline Variance
+    n = len(retail_demands)
+    mean_demand = sum(retail_demands) / n
+    var_demand = sum((d - mean_demand) ** 2 for d in retail_demands) / (n - 1)
+    std_demand = math.sqrt(var_demand)
+
+    # 2. Traditional Siloed Multi-Echelon Bullwhip Ratio (Chen et al. model)
+    # BWR = 1 + (2*L)/p + (2*L^2)/(p^2)
+    l = lead_time_periods
+    p = forecasting_param_p
+    traditional_bwr = 1.0 + (2.0 * l / p) + (2.0 * (l ** 2) / (p ** 2))
+
+    # 3. CPFR Protocol with Real-Time POS Data Sharing (L_info ~ 0.2)
+    cpfr_lead_time = 0.2
+    cpfr_bwr = 1.0 + (2.0 * cpfr_lead_time / p) + (2.0 * (cpfr_lead_time ** 2) / (p ** 2))
+
+    traditional_factory_var = var_demand * traditional_bwr
+    cpfr_factory_var = var_demand * cpfr_bwr
+
+    variance_reduction = round(((traditional_factory_var - cpfr_factory_var) / traditional_factory_var) * 100.0, 1)
+
+    return {
+        "Retail_Mean_Demand": round(mean_demand, 1),
+        "Retail_Std_Dev": round(std_demand, 2),
+        "Lead_Time_Periods": lead_time_periods,
+        "Traditional_Bullwhip_Ratio": round(traditional_bwr, 3),
+        "CPFR_Transparent_Bullwhip_Ratio": round(cpfr_bwr, 3),
+        "Traditional_Factory_StdDev": round(math.sqrt(traditional_factory_var), 2),
+        "CPFR_Factory_StdDev": round(math.sqrt(cpfr_factory_var), 2),
+        "Variance_Reduction_Pct": variance_reduction
+    }
+
+weekly_retail = [100.0, 105.0, 98.0, 102.0, 110.0, 95.0, 104.0, 106.0]
+
+bw_res = simulate_bullwhip_multi_echelon(
+    retail_demands=weekly_retail,
+    lead_time_periods=2,
+    forecasting_param_p=3.0
+)
+
+for k, v in bw_res.items():
+    print(f"{k}: {v}")`,
+        output: `Retail_Mean_Demand: 102.5
+Retail_Std_Dev: 4.78
+Lead_Time_Periods: 2
+Traditional_Bullwhip_Ratio: 3.222
+CPFR_Transparent_Bullwhip_Ratio: 1.142
+Traditional_Factory_StdDev: 8.58
+CPFR_Factory_StdDev: 5.11
+Variance_Reduction_Pct: 64.6`,
+        codeNotes: [
+          { line: 9, note: 'Calculates unbiased sample variance and standard deviation of end-consumer retail demand' },
+          { line: 17, note: 'Models non-linear variance amplification across echelons as a function of lead time L and smoothing p' },
+          { line: 21, note: 'Simulates CPFR architecture where transparent POS data sharing compresses information lag to near zero' },
+          { line: 40, note: 'Proves CPFR achieves a 64.6% variance reduction, stabilizing upstream manufacturing schedules' }
+        ],
+        tryIt: 'Increase lead time periods from 2 to 4 and observe traditional bullwhip ratio surge from 3.22 to 7.22.',
+        check: {
+          question: 'What is the root cause of the Bullwhip Effect in multi-echelon supply chains, and how does CPFR mitigate it?',
+          options: [
+            'The Bullwhip Effect is caused by independent demand forecasting, order batching, and information delay at each echelon; CPFR mitigates it by sharing real-time POS data so upstream factories build to true consumer demand.',
+            'The Bullwhip Effect is caused by truck drivers driving in serpentine patterns; CPFR provides GPS navigation.',
+            'The Bullwhip Effect is caused by excess factory automation; CPFR replaces robots with manual assembly workers.',
+            'The Bullwhip Effect only occurs in financial bond markets, not physical supply chains.'
+          ],
+          answer: 0,
+          why: 'Independent forecasting with lead time delays amplifies variance upstream; real-time Point-of-Sale data sharing under CPFR aligns all echelons with actual consumer consumption.',
+          answerIndex: 0,
+          explanation: 'Independent forecasting with lead time delays amplifies variance upstream; real-time Point-of-Sale data sharing under CPFR aligns all echelons with actual consumer consumption.'
+        }
+      },
+      {
+        title: 'Inventory Risk Pooling & Multi-Location Warehouse Consolidation',
+        say: [
+          'A perpetual strategic debate in supply chain engineering is Decentralized vs Centralized Inventory Allocation. Should an enterprise maintain multiple small regional warehouses close to local customers, or consolidate all inventory into a single master fulfillment hub? Proponents of decentralization highlight faster ground delivery times, while proponents of centralization point to the profound mathematical power of Risk Pooling.',
+          'Risk Pooling is governed by the Square Root Law of Inventory: when consolidating N identical independent regional warehouses into 1 centralized master facility, total safety stock required drops by a factor of sqrt(N). Mathematically, while decentralized safety stock equals sum(z * sqrt(L_i) * sigma_i), centralized safety stock equals z * sqrt(L) * sqrt(sum(sigma_i^2)). Under independent demand distributions, covariance between regions is zero. When demand in the Northeast happens to spike above average, demand in the Southeast or Midwest often dips below average, canceling out aggregate variance.',
+          'Consolidating warehouses frees massive amounts of trapped working capital and dramatically reduces inventory holding costs (depreciation, obsolescence, insurance, and taxes). However, operations managers must balance these inventory savings against outbound transportation freight: centralized fulfillment often requires higher parcel and shipping rates to reach distant customers. By calculating exact capital freed versus freight cost differentials, supply chain architects determine the optimal degree of network centralization.'
+        ],
+        example: 'A specialty medical equipment distributor operates 4 regional depots (Northeast, Southeast, Midwest, West) holding $214,819.04 in safety stock capital (859.3 units). Consolidating into 1 central hub slashes required safety stock to 430.8 units ($107,688.58), freeing $107,130.46 in working capital (a 49.9% reduction) and generating $21,426.09 in direct annual holding cost savings.',
+        code: `# Inventory Risk Pooling & Square Root Consolidation Engine
+import math
+
+def evaluate_inventory_risk_pooling(
+    regional_depots: list[dict],
+    z_service_level: float = 1.96,
+    unit_cost: float = 250.0,
+    annual_holding_rate: float = 0.20
+) -> dict:
+    num_depots = len(regional_depots)
+
+    # 1. Decentralized Regional Safety Stock
+    decentral_ss_units = 0.0
+    sum_variances = 0.0
+    common_lead_time = regional_depots[0]["lead_time_days"]
+
+    for d in regional_depots:
+        ss_units = z_service_level * math.sqrt(d["lead_time_days"] / 7.0) * d["weekly_std_dev"]
+        decentral_ss_units += ss_units
+        sum_variances += (d["weekly_std_dev"] ** 2)
+
+    decentral_capital = decentral_ss_units * unit_cost
+    decentral_holding_cost = decentral_capital * annual_holding_rate
+
+    # 2. Centralized Master Hub Safety Stock (Square Root Law of Inventory)
+    portfolio_std_dev = math.sqrt(sum_variances)
+    central_ss_units = z_service_level * math.sqrt(common_lead_time / 7.0) * portfolio_std_dev
+    central_capital = central_ss_units * unit_cost
+    central_holding_cost = central_capital * annual_holding_rate
+
+    capital_freed = decentral_capital - central_capital
+    annual_savings = decentral_holding_cost - central_holding_cost
+    reduction_pct = round((capital_freed / decentral_capital) * 100.0, 1)
+
+    return {
+        "Decentralized_Depot_Count": num_depots,
+        "Decentralized_Safety_Stock_Units": round(decentral_ss_units, 1),
+        "Centralized_Safety_Stock_Units": round(central_ss_units, 1),
+        "Decentralized_Inventory_Capital": "$" + f"{decentral_capital:,.2f}",
+        "Centralized_Inventory_Capital": "$" + f"{central_capital:,.2f}",
+        "Working_Capital_Freed": "$" + f"{capital_freed:,.2f}",
+        "Annual_Carrying_Cost_Savings": "$" + f"{annual_savings:,.2f}",
+        "Inventory_Reduction_Pct": reduction_pct
+    }
+
+depots = [
+    {"name": "Northeast", "weekly_std_dev": 80.0, "lead_time_days": 14.0},
+    {"name": "Southeast", "weekly_std_dev": 70.0, "lead_time_days": 14.0},
+    {"name": "Midwest", "weekly_std_dev": 75.0, "lead_time_days": 14.0},
+    {"name": "West", "weekly_std_dev": 85.0, "lead_time_days": 14.0}
+]
+
+pool_res = evaluate_inventory_risk_pooling(
+    regional_depots=depots,
+    z_service_level=1.96,
+    unit_cost=250.0,
+    annual_holding_rate=0.20
+)
+
+for k, v in pool_res.items():
+    print(f"{k}: {v}")`,
+        output: `Decentralized_Depot_Count: 4
+Decentralized_Safety_Stock_Units: 859.3
+Centralized_Safety_Stock_Units: 430.8
+Decentralized_Inventory_Capital: $214,819.04
+Centralized_Inventory_Capital: $107,688.58
+Working_Capital_Freed: $107,130.46
+Annual_Carrying_Cost_Savings: $21,426.09
+Inventory_Reduction_Pct: 49.9`,
+        codeNotes: [
+          { line: 15, note: 'Sums independent safety stocks across all 4 regional distribution centers' },
+          { line: 24, note: 'Applies Square Root Law where portfolio standard deviation equals sqrt(sum(sigma_i^2))' },
+          { line: 30, note: 'Computes capital freed ($107,130.46) and ongoing annual inventory holding cost reductions' },
+          { line: 44, note: 'Proves a 49.9% inventory capital reduction achieved purely through risk pooling mechanics' }
+        ],
+        tryIt: 'Expand the network to 9 regional depots and observe safety stock capital reduction approach 66.7% (1 - 1/sqrt(9)).',
+        check: {
+          question: 'According to the Square Root Law of Inventory, why does consolidating multiple regional warehouses into a single master hub reduce total safety stock?',
+          options: [
+            'Because independent regional demand variations cancel each other out; portfolio variance grows as the square root of locations rather than linearly.',
+            'Because warehouse rent drops to zero when square footage exceeds 100,000 square feet.',
+            'Because suppliers offer 50% discounts on product unit costs to centralized facilities.',
+            'Because customer lead times become instantaneous under centralization.'
+          ],
+          answer: 0,
+          why: 'Aggregating uncorrelated stochastic customer demands across regions pools risk; peak demand in one region is offset by below-average demand in another, reducing total required buffer stock.',
+          answerIndex: 0,
+          explanation: 'Aggregating uncorrelated stochastic customer demands across regions pools risk; peak demand in one region is offset by below-average demand in another, reducing total required buffer stock.'
+        }
+      },
+      {
+        title: 'Capstone Verification: End-to-End Resilient Supply Chain Control Tower & Disruption Recovery',
+        say: [
+          'In this Milestone 1 Capstone culmination, we integrate the full spectrum of operations science—flow physics, bottleneck synchronization, statistical quality control, queuing economics, and multi-echelon network design—into an Enterprise Supply Chain Control Tower. Modern global trade is continuously buffeted by severe black swan disruptions: geopolitical maritime canal closures, port labor strikes, supplier insolvencies, critical component shortages, and extreme climate events.',
+          'A truly resilient supply chain does not aim for brittle, zero-inventory fragility. Instead, it engineers structural Fault Tolerance. A Resilient Control Tower actively models primary supply routes alongside pre-qualified contingency routes (secondary nearshore suppliers, expedited air-freight corridors, and buffer inventory stockpiles). It monitors key resilience health metrics: Time-to-Recovery (TTR), Time-to-Survive (TTS), and SLA Order Fill Rate under disruption stress.',
+          'When a primary logistics corridor collapses, the Control Tower automated recovery engine immediately re-routes stranded order volumes to pre-configured contingency suppliers. By calculating baseline versus contingency freight premiums and tracking order fulfillment rates, the engine quantifies the exact financial cost of resilience, certifying that the enterprise can maintain 100% customer delivery commitments even during prolonged 12-day supply shutdowns.'
+        ],
+        example: 'A global consumer hardware network routing 2,400 units/day through maritime lanes experiences a complete 12-day shutdown of its primary Shanghai corridor (1,000 units/day). The Control Tower dynamically redirects 600 units to its expanded Penang facility and 400 units to expedited air freight. The network achieves a 100% customer fulfillment fill rate with a 22.1% freight surcharge, earning Certified Fault-Tolerant accreditation.',
+        code: `# Milestone 1 Capstone: Resilient Supply Chain Control Tower & Recovery Engine
+def verify_resilient_supply_chain_control_tower(
+    primary_routes: list[dict],
+    contingency_routes: list[dict],
+    disruption_event: dict
+) -> dict:
+    total_committed_volume = sum(r["volume"] for r in primary_routes)
+    baseline_freight_cost = sum(r["volume"] * r["unit_freight"] for r in primary_routes)
+
+    # 1. Identify Failed Node and Stranded Volume
+    failed_node = disruption_event["failed_origin"]
+    re_routed_volume = 0
+    contingency_cost = 0.0
+
+    # Retain non-disrupted primary flows
+    for r in primary_routes:
+        if r["origin"] == failed_node:
+            re_routed_volume += r["volume"]
+        else:
+            contingency_cost += r["volume"] * r["unit_freight"]
+
+    # 2. Dynamic Contingency Re-Routing across secondary suppliers & air-freight
+    rem_to_route = re_routed_volume
+    for cr in contingency_routes:
+        if rem_to_route <= 0:
+            break
+        alloc = min(rem_to_route, cr["capacity"])
+        contingency_cost += alloc * cr["unit_freight"]
+        rem_to_route -= alloc
+
+    # 3. Fulfillment Rate and Resilience Performance Metrics
+    fulfilled_volume = total_committed_volume - rem_to_route
+    sla_fill_rate_pct = round((fulfilled_volume / total_committed_volume) * 100.0, 1)
+
+    cost_increase = contingency_cost - baseline_freight_cost
+    cost_increase_pct = round((cost_increase / baseline_freight_cost) * 100.0, 1)
+
+    resilience_certified = sla_fill_rate_pct >= 98.0 and cost_increase_pct <= 25.0
+
+    return {
+        "Total_Network_Demand": total_committed_volume,
+        "Disrupted_Volume": re_routed_volume,
+        "Fulfilled_Volume": fulfilled_volume,
+        "SLA_Fill_Rate_Pct": sla_fill_rate_pct,
+        "Baseline_Freight_Cost": "$" + f"{baseline_freight_cost:,.2f}",
+        "Contingency_Freight_Cost": "$" + f"{contingency_cost:,.2f}",
+        "Freight_Surcharge_Pct": cost_increase_pct,
+        "Time_to_Recovery_Days": disruption_event["ttr_days"],
+        "Resilience_Audit_Status": "Certified Fault-Tolerant" if resilience_certified else "Vulnerable to Failure"
+    }
+
+p_routes = [
+    {"origin": "Shanghai", "dest": "Rotterdam", "volume": 1000, "unit_freight": 25.0},
+    {"origin": "Penang", "dest": "Rotterdam", "volume": 800, "unit_freight": 28.0},
+    {"origin": "Haiphong", "dest": "Rotterdam", "volume": 600, "unit_freight": 22.0}
+]
+
+c_routes = [
+    {"origin": "Penang_Expanded", "dest": "Rotterdam", "capacity": 600, "unit_freight": 34.0},
+    {"origin": "Air_Express_Backup", "dest": "Rotterdam", "capacity": 500, "unit_freight": 45.0}
+]
+
+disruption = {"failed_origin": "Shanghai", "ttr_days": 12}
+
+tower_res = verify_resilient_supply_chain_control_tower(p_routes, c_routes, disruption)
+for k, v in tower_res.items():
+    print(f"{k}: {v}")`,
+        output: `Total_Network_Demand: 2400
+Disrupted_Volume: 1000
+Fulfilled_Volume: 2400
+SLA_Fill_Rate_Pct: 100.0
+Baseline_Freight_Cost: $60,600.00
+Contingency_Freight_Cost: $74,000.00
+Freight_Surcharge_Pct: 22.1
+Time_to_Recovery_Days: 12
+Resilience_Audit_Status: Certified Fault-Tolerant`,
+        codeNotes: [
+          { line: 8, note: 'Calculates network baseline freight budget across primary maritime trade corridors' },
+          { line: 17, note: 'Isolates stranded demand from disrupted Shanghai node (1,000 units) during 12-day shutdown' },
+          { line: 26, note: 'Dynamically re-allocates stranded demand to secondary manufacturing and air express corridors' },
+          { line: 36, note: 'Certifies Fault-Tolerant resilience with 100% customer SLA fulfillment under 22.1% freight premium' }
+        ],
+        tryIt: 'Reduce contingency air express capacity to 100 units to observe SLA fill rate drop to 87.5% (Vulnerable to Failure).',
+        check: {
+          question: 'What defines a "Certified Fault-Tolerant" enterprise supply chain under the Capstone Control Tower framework?',
+          options: [
+            'The ability to maintain >= 98% customer order fulfillment during severe node disruptions through pre-configured secondary suppliers and dynamic re-routing, while containing contingency freight premiums within 25%.',
+            'Having zero transportation freight costs under all geopolitical conditions.',
+            'Shutting down all factory production whenever raw material prices rise by 5%.',
+            'Operating entirely without backup suppliers or safety stock buffers.'
+          ],
+          answer: 0,
+          why: 'True operational resilience is the proven capacity to absorb major facility and lane shocks with pre-qualified contingency routing, preserving customer SLAs without runaway cost inflation.',
+          answerIndex: 0,
+          explanation: 'True operational resilience is the proven capacity to absorb major facility and lane shocks with pre-qualified contingency routing, preserving customer SLAs without runaway cost inflation.'
+        }
+      }
+    ],
+    summary: [
+      'Transportation Optimization: Linear programming allocates multi-source, multi-destination flows to minimize landed freight costs while meeting all capacity and demand constraints.',
+      'Center-of-Gravity Facility Location: Combines continuous spatial centroid calculations with discrete warehouse lease and ton-mile freight evaluations to pinpoint optimal DC cities.',
+      'Bullwhip Effect Mitigation: Point-of-Sale transparency and CPFR collaborative forecasting compress information lead time, slashing upstream manufacturing variance by over 60%.',
+      'Inventory Risk Pooling: The Square Root Law demonstrates that consolidating regional warehouses into a central hub dampens demand variance, freeing 50% of safety stock capital.',
+      'Resilient Control Tower: Milestone 1 Capstone synthesizes end-to-end operational visibility, dynamic contingency re-routing, and stress-tested fault tolerance to certify enterprise business continuity.'
+    ],
+    projectStep: {
+      title: 'Milestone 1 Capstone: Global Supply Chain Network Optimization & Resilience Control Tower',
+      steps: [
+        'Formulate and solve a multi-origin, multi-destination transportation network allocation model to minimize global shipping expenditure.',
+        'Apply Center-of-Gravity spatial mathematics to evaluate candidate logistics cities and select the optimal distribution center site.',
+        'Implement the CPFR Point-of-Sale transparent protocol to eliminate multi-echelon Bullwhip Effect order variance.',
+        'Quantify safety stock capital reductions under Square Root Law risk pooling, and engineer an automated Control Tower disruption recovery engine.'
+      ]
+    }
+  }
 ];
