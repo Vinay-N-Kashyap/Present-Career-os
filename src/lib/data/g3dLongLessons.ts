@@ -758,5 +758,326 @@ console.log('Culled Draw Calls Eliminated: ' + (objects.length - visible.length)
         'Benchmark compute workgroups in WGSL to verify particle simulation throughput at 60 FPS.'
       ]
     }
+  },
+  {
+    coursePrefix: 'g3d',
+    day: 3,
+    title: 'Advanced Graphics & Compute: Skeletal Skinning, SSAO, GPU Particles, HDR Tone Mapping & BVH',
+    goal: 'Master advanced 3D engine systems: Dual Quaternion Skinning (DQS) eliminating candy-wrapper joint collapse, Screen-Space Ambient Occlusion (SSAO) with noise-rotated hemisphere kernels, WebGPU compute shader particle dynamics running on GPU VRAM, ACES filmic HDR tone mapping curves, and Bounding Volume Hierarchy (BVH) spatial acceleration ray tracing.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered WebGL2 pipelines, transformation matrices, and Phong illumination. In Day 2, we mastered Cook-Torrance PBR materials, PCF shadow mapping, deferred G-buffers, WebGPU pipelines, and AABB frustum culling. Now in Day 3, we advance to high-end real-time engine systems: dual quaternion skeletal mesh skinning, screen-space ambient occlusion, GPU compute particle simulation, ACES HDR tone mapping, and BVH spatial partitioning.',
+    parts: [
+      {
+        title: 'Skeletal Mesh Animation & Dual Quaternion Skinning (DQS)',
+        say: [
+          'In real-time 3D character animation, meshes are deformed by an underlying skeleton composed of hierarchical transformation bones.',
+          'Traditional character animation engines rely on Linear Blend Skinning (LBS), where each mesh vertex is transformed by a weighted sum of its controlling bone transformation matrices.',
+          'While LBS is computationally inexpensive, it suffers from severe geometric artifacts under joint torsion or twisting: when a forearm or wrist rotates by 180 degrees, the linear interpolation between opposite matrices passes through zero scale, collapsing the cross-sectional area and pinching the mesh into a paper-thin "candy wrapper" defect.',
+          'Dual Quaternion Skinning (DQS) resolves this defect by representing rigid Euclidean transformations using Dual Quaternions.',
+          'A dual quaternion q = q_r + epsilon * q_d combines a unit real quaternion representing 3D rotation with a dual quaternion representing 3D translation, satisfying the dual unit property where epsilon^2 = 0.',
+          'By interpolating dual quaternions along the shortest geodesic arc on the unit hypersphere, DQS strictly preserves rigid transformation volume during joint bending and twisting, completely eliminating the candy-wrapper artifact without requiring artist-authored blend shapes.'
+        ],
+        example: 'Think of wringing a wet towel. If you twist the towel from opposite ends (180-degree bone rotation), the center of the towel pinches inward until the fabric compresses to almost zero thickness (Linear Blend Skinning candy-wrapper artifact). Dual Quaternion Skinning is like a solid articulated metal armor gauntlet: rotating your wrist spins the armor plates while the internal hollow volume remains 100% rigid and intact.',
+        code: `// Simulation: Skeletal Mesh Animation (Linear Blend Skinning vs Dual Quaternions)
+class SkinningSimulator {
+  // Simulates 180-degree joint twist comparing Linear Blend Skinning against Dual Quaternions
+  evaluateTwistVolumeLoss(twistAngleDegrees: number): {
+    lbsVolumeRetention: number;
+    dqsVolumeRetention: number;
+    candyWrapperEliminated: boolean;
+  } {
+    const rad = (twistAngleDegrees * Math.PI) / 180;
+    // LBS interpolates matrices linearly, causing cross-sectional area to collapse as cos(angle / 2)
+    const lbsScale = Math.cos(rad / 2);
+    const lbsVolume = Math.max(0, lbsScale * lbsScale);
+
+    // Dual Quaternion Skinning (DQS) interpolates on unit dual quaternion sphere, volume retention is strictly 100%
+    const dqsVolume = 1.0;
+
+    return {
+      lbsVolumeRetention: lbsVolume,
+      dqsVolumeRetention: dqsVolume,
+      candyWrapperEliminated: dqsVolume === 1.0
+    };
+  }
+}
+
+const skinning = new SkinningSimulator();
+const twist180 = skinning.evaluateTwistVolumeLoss(180);
+
+console.log('=== SKELETAL MESH ANIMATION: LBS VS DUAL QUATERNION SKINNING ===');
+console.log('Joint Torsion: 180° Bone Rotation');
+console.log('Linear Blend Skinning (LBS) Volume Retention: ' + (twist180.lbsVolumeRetention * 100).toFixed(1) + '% (Severe Candy-Wrapper Pinching!)');
+console.log('Dual Quaternion Skinning (DQS) Volume Retention: ' + (twist180.dqsVolumeRetention * 100).toFixed(1) + '% (Rigid Volume Preserved)');
+console.log('Deformation Artifact: ' + (twist180.candyWrapperEliminated ? 'CANDY-WRAPPER ARTIFACT COMPLETELY MITIGATED' : 'COLLAPSED'));`,
+        output: `=== SKELETAL MESH ANIMATION: LBS VS DUAL QUATERNION SKINNING ===\nJoint Torsion: 180° Bone Rotation\nLinear Blend Skinning (LBS) Volume Retention: 0.0% (Severe Candy-Wrapper Pinching!)\nDual Quaternion Skinning (DQS) Volume Retention: 100.0% (Rigid Volume Preserved)\nDeformation Artifact: CANDY-WRAPPER ARTIFACT COMPLETELY MITIGATED`,
+        tryIt: 'Modify the twist angle to 90 degrees to compare LBS partial volume loss (50%) against DQS rigid volume preservation (100%).',
+        check: {
+          question: 'What visual artifact occurs in Linear Blend Skinning (LBS) when a bone twists 180 degrees, and how do Dual Quaternions fix it?',
+          options: [
+            'LBS linearly interpolates rotation matrices through zero scale, causing the joint to collapse into a "candy-wrapper" pinch; Dual Quaternions interpolate on a unit hypersphere, preserving rigid volume',
+            'LBS causes the GPU monitor to flicker purple',
+            'Dual Quaternions convert the 3D model into an 8-bit voxel sprite'
+          ],
+          answer: 0,
+          why: 'Linear matrix blending is not closed under the group of rigid transformations (SE(3)). As rotation approaches 180 degrees, linear matrix weights average out to zero volume. Dual Quaternions represent rigid rotations and translations as a unified algebraic element that preserves volume under spherical blending.'
+        }
+      },
+      {
+        title: 'Screen-Space Ambient Occlusion (SSAO) & G-Buffer Normal Depth Sampling',
+        say: [
+          'In the real physical world, ambient light does not illuminate all surfaces equally: light struggles to penetrate recessed corners, creases, and small crevices between adjacent objects.',
+          'Without simulating these contact shadows, 3D scenes appear unnaturally flat and video game characters appear to "float" above ground surfaces without resting firmly on the floor.',
+          'Screen-Space Ambient Occlusion (SSAO) approximates diffuse global illumination contact shadowing as a post-processing pass using only the camera G-Buffer depth and normal textures.',
+          'For each pixel on screen, the fragment shader constructs a hemisphere kernel oriented along the surface normal vector.',
+          'To break visible banding patterns without increasing the sample count, the shader tiles a 4x4 random noise texture across the screen to rotate the hemisphere kernel randomly per pixel.',
+          'The shader projects each kernel sample point into screen space and compares its depth against the actual scene depth stored in the G-Buffer: if scene geometry lies in front of the kernel point, that sample is flagged as occluded.',
+          'A subsequent bilateral blur filter smooths the noise across flat surfaces while preserving sharp geometric silhouette edges.'
+        ],
+        example: 'Think of looking at the corner where your room\'s wall meets the carpet floor. Even when the room ceiling light is on, the deep crease in the corner is noticeably darker than the middle of the wall because ambient light bouncing around the room has fewer open angles to enter the crease (ambient occlusion).',
+        code: `// Simulation: Screen-Space Ambient Occlusion (SSAO) Hemisphere Kernel Occlusion
+class SsaoSimulator {
+  // Evaluates occlusion factor in normal-oriented hemisphere kernel
+  evaluateSsaoOcclusion(
+    surfaceNormal: [number, number, number],
+    kernelSamples: number,
+    sampleDepths: number[], // Depth of scene geometry at sample points
+    kernelZ: number[]       // Theoretical z-coordinate of hemisphere kernel points
+  ): { occlusionFactor: number; ambientLightMultiplier: number } {
+    let occludedCount = 0;
+    const bias = 0.025; // Depth bias preventing self-occlusion
+
+    for (let i = 0; i < kernelSamples; i++) {
+      // If geometry depth is closer than kernel point, geometry occludes the hemisphere
+      if (sampleDepths[i] <= kernelZ[i] - bias) {
+        occludedCount++;
+      }
+    }
+
+    const occlusionFactor = occludedCount / kernelSamples;
+    const ambientLightMultiplier = 1.0 - occlusionFactor;
+    return { occlusionFactor, ambientLightMultiplier };
+  }
+}
+
+const ssao = new SsaoSimulator();
+// 16-sample hemisphere in a 90-degree corner (crease) where half the hemisphere is blocked
+const sampleDepths = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9];
+const kernelZ = [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8];
+const ssaoResult = ssao.evaluateSsaoOcclusion([0, 1, 0], 16, sampleDepths, kernelZ);
+
+console.log('=== SCREEN-SPACE AMBIENT OCCLUSION (SSAO) ===');
+console.log('Hemisphere Kernel Size: 16 Samples (4x4 Tiled Noise Rotation)');
+console.log('Surface Geometry: 90° Wall-Floor Crease');
+console.log('Occlusion Factor: ' + (ssaoResult.occlusionFactor * 100).toFixed(1) + '% Ambient Light Blocked');
+console.log('Ambient Lighting Multiplier: ' + ssaoResult.ambientLightMultiplier.toFixed(2) + 'x (Realistic Soft Contact Shadow)');`,
+        output: `=== SCREEN-SPACE AMBIENT OCCLUSION (SSAO) ===\nHemisphere Kernel Size: 16 Samples (4x4 Tiled Noise Rotation)\nSurface Geometry: 90° Wall-Floor Crease\nOcclusion Factor: 50.0% Ambient Light Blocked\nAmbient Lighting Multiplier: 0.50x (Realistic Soft Contact Shadow)`,
+        tryIt: 'Increase occluded sample count to 12 out of 16 to simulate a deep tight crevice with 75% light blockage.',
+        check: {
+          question: 'Why does SSAO rotate its hemisphere kernel using a tiled 4x4 random noise texture?',
+          options: [
+            'To trade structured, noticeable banding artifacts for high-frequency noise that can be easily removed by a fast bilateral blur filter',
+            'To encrypt the depth buffer before sending it to the display',
+            'Because GPUs cannot sample textures larger than 4x4 pixels'
+          ],
+          answer: 0,
+          why: 'Using a fixed hemisphere kernel across all pixels causes harsh step-like banding rings. Rotating the kernel with random noise turns banding into high-frequency stipple noise, which an edge-preserving bilateral blur filter smooths out effortlessly.'
+        }
+      },
+      {
+        title: 'WebGPU Compute Shaders & GPU Particle Simulation Pipelines',
+        say: [
+          'In traditional WebGL applications, simulating particle physics (smoke, fire, snow, explosions) required the CPU to loop over thousands of particles, update their positions in JavaScript, and upload vertex buffer updates to the GPU every single frame.',
+          'This CPU-to-GPU data transfer creates a severe PCIe bandwidth bottleneck, capping particle counts at roughly 5,000 before frame rates drop below 60 FPS.',
+          'WebGPU completely eliminates this bottleneck through Compute Shaders written in WGSL (WebGPU Shading Language).',
+          'Compute shaders run outside the standard vertex/fragment rasterization pipeline, allowing general-purpose parallel math across thousands of GPU cores.',
+          'By storing particle state arrays directly in GPU VRAM using storage buffers (var<storage, read_write>), a single WebGPU compute pass can update 100,000+ particles in parallel using @compute @workgroup_size(64).',
+          'The updated particle positions remain directly on the GPU memory bus and are fed directly into the rendering pipeline as vertex attributes without a single byte ever returning to CPU memory, unlocking massive real-time simulations at 120 FPS.'
+        ],
+        example: 'Think of 100,000 dominoes set up across a massive stadium floor. In WebGL, one person running around with a clipboard (CPU) pushes each domino one by one and radios the coordinator (GPU). In WebGPU compute, 1,500 stadium volunteers (GPU workgroups) push their assigned section of 64 dominoes simultaneously in unison in a fraction of a millisecond.',
+        code: `// Simulation: WebGPU WGSL Compute Workgroups & Particle Dispatch
+class WebGpuParticleComputeSimulator {
+  simulateWorkgroups(particleCount: number, workgroupSize: number = 64): {
+    totalWorkgroupsDispatched: number;
+    gpuThroughputMillionsPerSec: number;
+    cpuReadbackRequired: boolean;
+  } {
+    const workgroups = Math.ceil(particleCount / workgroupSize);
+    // Typical modern GPU executes 100k simple particle Euler steps in 0.12 ms -> ~830M particles/sec
+    const gpuThroughput = 833.3;
+
+    return {
+      totalWorkgroupsDispatched: workgroups,
+      gpuThroughputMillionsPerSec: gpuThroughput,
+      cpuReadbackRequired: false
+    };
+  }
+}
+
+const compute = new WebGpuParticleComputeSimulator();
+const particles = compute.simulateWorkgroups(100000, 64);
+
+console.log('=== WEBGPU COMPUTE SHADERS & GPU PARTICLE SIMULATION ===');
+console.log('Simulated Particles: 100,000 Active GPU Particles');
+console.log('WGSL Workgroup Size: @workgroup_size(64)');
+console.log('Dispatched Workgroups: ' + particles.totalWorkgroupsDispatched + ' Compute Groups');
+console.log('VRAM Storage Buffer: ZERO CPU READBACK (Integrated & Rendered directly in VRAM)');`,
+        output: `=== WEBGPU COMPUTE SHADERS & GPU PARTICLE SIMULATION ===\nSimulated Particles: 100,000 Active GPU Particles\nWGSL Workgroup Size: @workgroup_size(64)\nDispatched Workgroups: 1563 Compute Groups\nVRAM Storage Buffer: ZERO CPU READBACK (Integrated & Rendered directly in VRAM)`,
+        tryIt: 'Increase the particle count to 1,000,000 and calculate the number of dispatched workgroups.',
+        check: {
+          question: 'What is the primary architectural advantage of using WebGPU compute shaders for particle systems over WebGL CPU updates?',
+          options: [
+            'Particles are simulated and stored entirely inside GPU VRAM, eliminating the CPU-to-GPU PCIe memory transfer bottleneck',
+            'WebGPU compute shaders turn off physical gravity calculations',
+            'Compute shaders run on the client’s router instead of the graphics card'
+          ],
+          answer: 0,
+          why: 'WebGPU compute shaders execute particle physics directly on GPU cores and write new coordinates to GPU storage buffers. The render pipeline reads the same VRAM buffer directly, requiring zero CPU readback or PCIe uploads.'
+        }
+      },
+      {
+        title: 'High Dynamic Range (HDR) & ACES Filmic Tone Mapping',
+        say: [
+          'In the real world, luminance spans an astronomical dynamic range: a candle radiates roughly 1 nit, an indoor lamp produces 100 nits, and direct solar specular glare exceeds 100,000 nits.',
+          'Standard monitors and mobile displays operate in Standard Dynamic Range (SDR) with an 8-bit color depth bounded between 0.0 and 1.0 per channel.',
+          'If a 3D engine renders lighting equations into a standard 8-bit framebuffer, all radiance values above 1.0 are abruptly clipped, creating ugly, blown-out flat white blobs that destroy detail in clouds, fire, and metallic reflections.',
+          'High Dynamic Range (HDR) pipelines solve this by rendering lighting into 16-bit floating-point framebuffers (RGBA16F), allowing radiance values to reach 10.0, 50.0, or higher without clipping.',
+          'Before displaying the final image on an SDR monitor, the engine applies a Tone Mapping Operator to smoothly compress extended HDR values back into the [0, 1] display gamut.',
+          'While basic operators like Reinhard (x / (1 + x)) cause desaturated, muddy midtones, the industry standard ACES (Academy Color Encoding System) filmic tone mapper uses an S-curve that provides deep, rich blacks, a linear filmic mid-tone contrast, and a smooth shoulder that naturally desaturates bright highlights like real photographic film.'
+        ],
+        example: 'Think of looking at the sun through a camera lens. If you take a photo with a cheap webcam (SDR clipping), the sun appears as a harsh flat white octagon. If you take a photo with an IMAX 70mm film camera (ACES tone mapping), the center of the sun is intensely bright while the outer halo displays rich orange, yellow, and red gradients with natural cinematic roll-off.',
+        code: `// Simulation: High Dynamic Range (HDR) & ACES Filmic Tone Mapping
+class HdrToneMapper {
+  // ACES Narkowicz filmic tone mapping approximation curve
+  acesFilmic(x: number): number {
+    const a = 2.51;
+    const b = 0.03;
+    const c = 2.43;
+    const d = 0.59;
+    const e = 0.14;
+    return Math.min(1.0, Math.max(0.0, (x * (a * x + b)) / (x * (c * x + d) + e)));
+  }
+
+  // Simple Reinhard operator for comparison: x / (1 + x)
+  reinhard(x: number): number {
+    return x / (1.0 + x);
+  }
+}
+
+const toneMapper = new HdrToneMapper();
+// Radiance values: Mid-tone (0.5), Sunlight Reflection (5.0), Direct Sun Filament (20.0)
+const sunGlintAces = toneMapper.acesFilmic(5.0);
+const sunGlintReinhard = toneMapper.reinhard(5.0);
+const directSunAces = toneMapper.acesFilmic(20.0);
+
+console.log('=== HIGH DYNAMIC RANGE (HDR) & ACES FILMIC TONE MAPPING ===');
+console.log('High-Dynamic Range Input: 5.0 (Bright Solar Specular Glint)');
+console.log('Reinhard Tone Mapped: ' + sunGlintReinhard.toFixed(3) + ' (Muddy, washed out contrast)');
+console.log('ACES Filmic Tone Mapped: ' + sunGlintAces.toFixed(3) + ' (Rich cinematic shoulder & chromatic fidelity)');
+console.log('Extreme Radiance 20.0: ' + directSunAces.toFixed(3) + ' (Smooth asymptotic roll-off without white clipping)');`,
+        output: `=== HIGH DYNAMIC RANGE (HDR) & ACES FILMIC TONE MAPPING ===\nHigh-Dynamic Range Input: 5.0 (Bright Solar Specular Glint)\nReinhard Tone Mapped: 0.833 (Muddy, washed out contrast)\nACES Filmic Tone Mapped: 0.985 (Rich cinematic shoulder & chromatic fidelity)\nExtreme Radiance 20.0: 1.000 (Smooth asymptotic roll-off without white clipping)`,
+        tryIt: 'Evaluate the ACES curve at x = 0.18 (photographic 18% middle gray) to see how the tone mapper preserves linear exposure.',
+        check: {
+          question: 'Why is the ACES filmic tone mapping curve widely preferred over simple Reinhard tone mapping in modern 3D games and cinema?',
+          options: [
+            'ACES incorporates an S-curve that preserves rich contrast in mid-tones, delivers punchy blacks, and smoothly desaturates extreme highlights without muddy artifacts',
+            'ACES doubles the frame rate of the graphics card',
+            'Reinhard tone mapping is illegal under copyright law'
+          ],
+          answer: 0,
+          why: 'Reinhard tone mapping washes out color saturation and flattens mid-tone contrast into a muddy gray. ACES models the physical response of photographic film with a toe (deep blacks), linear mid-tones, and a smooth shoulder (bright highlights).'
+        }
+      },
+      {
+        title: 'Bounding Volume Hierarchy (BVH) & Ray-Box Slab Traversal',
+        say: [
+          'In hardware-accelerated ray tracing, physics collision detection, and spatial scene queries, testing a ray against every individual triangle in a scene with 10 million polygons yields O(N) linear complexity, causing complete performance collapse.',
+          'To achieve real-time 60 FPS performance, engines organize 3D primitives into a Bounding Volume Hierarchy (BVH).',
+          'A BVH is a binary tree where every node encloses its children within an Axis-Aligned Bounding Box (AABB). Leaf nodes contain individual triangles or geometric meshes.',
+          'To test whether a ray intersects an AABB, engines use the Ray-Box Slab Method: an AABB is defined by three pairs of parallel clipping planes (slabs) along the X, Y, and Z axes.',
+          'The intersection algorithm calculates the entry distance tNear and exit distance tFar across all three axes: if the greatest entry distance exceeds the smallest exit distance (tmin > tmax), the ray misses the bounding box completely.',
+          'When a ray misses an internal BVH node’s AABB, the entire subtree beneath that node is pruned in O(1) time, accelerating ray casting queries from O(N) to O(log N) logarithmic time.'
+        ],
+        example: 'Think of looking for a lost book in a giant national library. You don\'t read every single page in all 5 million books (O(N) brute force). You check the building directory for Floor 3 (BVH root), then Aisle 12 (internal node), and finally Shelf 4 (leaf node). If Aisle 12 is for biology books and you need history, you skip the entire aisle in one glance.',
+        code: `// Simulation: Bounding Volume Hierarchy (BVH) & Ray-Box Slab Traversal
+interface Aabb {
+  min: [number, number, number];
+  max: [number, number, number];
+}
+
+class BvhSlabTraverser {
+  // Ray-box intersection using the slab method
+  intersectRayAabb(
+    origin: [number, number, number],
+    direction: [number, number, number],
+    box: Aabb
+  ): { hit: boolean; tNear: number; tFar: number } {
+    let tmin = -Infinity;
+    let tmax = Infinity;
+
+    for (let i = 0; i < 3; i++) {
+      const invD = 1.0 / direction[i];
+      let t0 = (box.min[i] - origin[i]) * invD;
+      let t1 = (box.max[i] - origin[i]) * invD;
+      if (invD < 0.0) {
+        const tmp = t0;
+        t0 = t1;
+        t1 = tmp;
+      }
+      tmin = Math.max(tmin, t0);
+      tmax = Math.min(tmax, t1);
+      if (tmax < tmin) return { hit: false, tNear: 0, tFar: 0 };
+    }
+    return { hit: true, tNear: Math.max(0, tmin), tFar: tmax };
+  }
+}
+
+const bvh = new BvhSlabTraverser();
+const rayOrigin: [number, number, number] = [0, 0, -10];
+const rayDir: [number, number, number] = [0, 0, 1]; // Shooting along +Z axis
+
+const targetBox: Aabb = { min: [-2, -2, 5], max: [2, 2, 9] };
+const missBox: Aabb = { min: [10, 10, 5], max: [15, 15, 9] };
+
+const hitResult = bvh.intersectRayAabb(rayOrigin, rayDir, targetBox);
+const missResult = bvh.intersectRayAabb(rayOrigin, rayDir, missBox);
+
+console.log('=== BOUNDING VOLUME HIERARCHY (BVH) & RAY-BOX SLAB TRAVERSAL ===');
+console.log('Ray: Origin (0,0,-10), Direction (0,0,+1)');
+console.log('Target Box Intersection: ' + (hitResult.hit ? 'HIT at t=' + hitResult.tNear.toFixed(1) + ' (Entering Z=5)' : 'MISS'));
+console.log('Distant Box Intersection: ' + (missResult.hit ? 'HIT' : 'EARLY-OUT MISS (Subtree Skipped)'));
+console.log('Algorithmic Acceleration: O(log N) tree traversal vs O(N) brute force triangle testing');`,
+        output: `=== BOUNDING VOLUME HIERARCHY (BVH) & RAY-BOX SLAB TRAVERSAL ===\nRay: Origin (0,0,-10), Direction (0,0,+1)\nTarget Box Intersection: HIT at t=15.0 (Entering Z=5)\nDistant Box Intersection: EARLY-OUT MISS (Subtree Skipped)\nAlgorithmic Acceleration: O(log N) tree traversal vs O(N) brute force triangle testing`,
+        tryIt: 'Shoot a ray at an angle [1, 0, 1] normalized and verify how the slab algorithm calculates tNear and tFar.',
+        check: {
+          question: 'How does the Ray-AABB Slab Method accelerate ray tracing through a Bounding Volume Hierarchy?',
+          options: [
+            'By computing 1D entry and exit intervals across parallel slab planes, allowing whole bounding box subtrees to be pruned in O(1) time whenever tNear > tFar',
+            'By converting all rays into 2D raster lines on the screen',
+            'By requiring the GPU to execute 1,000 ray bounces per frame'
+          ],
+          answer: 0,
+          why: 'The slab method tests intersection against parallel box planes. If the ray’s entry interval on one axis occurs after its exit interval on another (tNear > tFar), the ray cannot intersect any geometry inside the box, allowing the entire BVH branch to be discarded immediately.'
+        }
+      }
+    ],
+    summary: [
+      'Dual Quaternion Skinning (DQS) eliminates Linear Blend Skinning candy-wrapper volume collapse during 180° joint torsion.',
+      'Screen-Space Ambient Occlusion (SSAO) samples G-buffer depth and normal hemispheres, rotating with 4x4 noise to break banding.',
+      'WebGPU Compute Shaders simulate 100,000+ particles directly in VRAM storage buffers (@workgroup_size(64)) with zero CPU readback.',
+      'High Dynamic Range (HDR) pipelines render to RGBA16F textures and apply ACES filmic tone mapping to preserve rich contrast and highlight roll-off.',
+      'Bounding Volume Hierarchy (BVH) with Ray-AABB slab traversal prunes unhit subtrees, accelerating spatial ray tracing from O(N) to O(log N).'
+    ],
+    projectStep: {
+      title: 'Architect a Next-Generation WebGPU Compute & Shading Pipeline',
+      steps: [
+        'Implement Dual Quaternion Skinning (DQS) for skeletal character meshes to eliminate joint volume loss.',
+        'Build a Screen-Space Ambient Occlusion (SSAO) post-process pass using G-buffer normal and depth buffers.',
+        'Write a WebGPU compute shader pipeline simulating 100,000 particles running entirely in VRAM storage buffers.',
+        'Integrate ACES filmic tone mapping to compress HDR lighting into rich SDR display gamuts.',
+        'Construct a BVH ray-AABB slab intersection traverser accelerating spatial queries to O(log N).'
+      ]
+    }
   }
 ];
+

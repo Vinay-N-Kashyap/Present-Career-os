@@ -209,3 +209,53 @@ test('Fullstack-JS Day 3: Domain-Specific Content Assertions', () => {
   assert.ok(fsD3.parts[4].output.includes('HTTP 429 TOO MANY REQUESTS'));
 });
 
+test('G3D Day 3: Resolution & Structural Invariants for Skeletal Skinning, SSAO, Compute & BVH', () => {
+  const g3dD3 = getLongLesson('g3d', 3);
+  assert.ok(g3dD3, 'g3d Day 3 long lesson must resolve');
+  assert.equal(g3dD3.day, 3);
+  assert.equal(g3dD3.parts.length, 5, 'g3d Day 3 must contain exactly 5 parts');
+  assert.ok(g3dD3.summary.length >= 4, 'g3d Day 3 must contain comprehensive summary');
+  assert.ok(g3dD3.projectStep, 'g3d Day 3 must have a hands-on project step');
+  assert.ok(g3dD3.minutes >= 15, 'g3d Day 3 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of g3dD3.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('G3D Day 3: Domain-Specific Content Assertions', () => {
+  const g3dD3 = getLongLesson('g3d', 3);
+  assert.ok(g3dD3);
+
+  // Part 1 – Skeletal Mesh Animation & Dual Quaternion Skinning
+  assert.ok(g3dD3.parts[0].title.includes('Skinning') || g3dD3.parts[0].title.includes('Dual Quaternion'));
+  assert.ok(g3dD3.parts[0].output.includes('CANDY-WRAPPER ARTIFACT COMPLETELY MITIGATED'));
+
+  // Part 2 – Screen-Space Ambient Occlusion (SSAO)
+  assert.ok(g3dD3.parts[1].title.includes('SSAO') || g3dD3.parts[1].title.includes('Ambient Occlusion'));
+  assert.ok(g3dD3.parts[1].output.includes('Ambient Light Blocked'));
+
+  // Part 3 – WebGPU Compute Shaders & Particle Simulation
+  assert.ok(g3dD3.parts[2].title.includes('Compute') || g3dD3.parts[2].title.includes('Particle'));
+  assert.ok(g3dD3.parts[2].output.includes('ZERO CPU READBACK'));
+
+  // Part 4 – HDR & ACES Filmic Tone Mapping
+  assert.ok(g3dD3.parts[3].title.includes('Tone Mapping') || g3dD3.parts[3].title.includes('HDR'));
+  assert.ok(g3dD3.parts[3].output.includes('ACES Filmic Tone Mapped'));
+
+  // Part 5 – Bounding Volume Hierarchy (BVH) & Slab Traversal
+  assert.ok(g3dD3.parts[4].title.includes('BVH') || g3dD3.parts[4].title.includes('Slab'));
+  assert.ok(g3dD3.parts[4].output.includes('HIT at t=15.0'));
+});
+
+
