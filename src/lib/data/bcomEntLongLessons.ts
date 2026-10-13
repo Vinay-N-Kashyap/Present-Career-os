@@ -1520,5 +1520,498 @@ Status: VENTURE UNIT ECONOMICS CERTIFIED READY FOR SERIES B LEAD INVESTOR AUDIT.
         'Engineer a bottom-up financial model linking sales capacity, quota attainment, and functional opex budgets.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ent',
+    day: 5,
+    title: 'Milestone 1 Capstone: Silicon Valley VC Pitch Room, Series B Financing & Venture Capital Partner Accreditation',
+    parts: [
+      {
+        title: 'Institutional Series B Investment Memo & Sand Hill Road Due Diligence',
+        say: 'Welcome to the ultimate proving ground of high-growth venture creation: the Milestone 1 Capstone of B.Com Entrepreneurship. When an enterprise transitions from early product-market fit to scale-up velocity, casual pitch decks and optimistic founder narratives are permanently superseded by rigorous, institutional-grade due diligence conducted by Sand Hill Road investment committees. A top-tier venture capital firm does not commit twenty to fifty million dollars based on visionary charisma; they construct an exhaustive internal investment memo that scrutinizes your unit economics, cohort retention, and capital efficiency with mathematical precision. In this capstone opening, we deconstruct the exact architecture of an institutional Series B investment memo, examining how general partners evaluate the fundamental health of recurring revenue businesses. By mastering the core quantitative benchmarks demanded by Tier-1 VCs, you transform financial telemetry from passive accounting logs into an unassailable strategic defense of enterprise value.\n\nAt the heart of the institutional evaluation sits the Net New ARR bridge and cohort retention physics, which reveal the true underlying organic momentum of the customer base. Venture partners rigorously separate top-line expansion into new logo customer acquisition, gross revenue retention (GRR), and net revenue retention (NRR). While an impressive top-line growth rate can temporarily mask high churn in early stages, by Series B, any leakage in cohort retention becomes mathematically fatal to long-term compounding. Top-quartile SaaS enterprises maintain GRR above ninety percent and NRR exceeding one hundred and twenty percent, proving that existing cohorts expand their spend faster than churn erodes it. Furthermore, investors dissect the relationship between go-to-market burn and net additions through the SaaS Magic Number and CAC Payback period, verifying that customer acquisition costs are recouped within twelve months. When these metrics align alongside a healthy gross margin exceeding eighty percent, the business demonstrates the elusive economic leverage that justifies premium valuation multiples.\n\nCapital efficiency metrics provide the decisive filter separating durable category leaders from hyper-dilutive cash furnaces. General partners calculate the Rule of 40 by summing GAAP revenue growth with free cash flow margin, expecting top-tier growth-stage companies to comfortably surpass the forty percent benchmark. Concurrently, the Burn Multiple measures the exact amount of cash vaporized to generate each incremental dollar of ARR, penalizing undisciplined headcount expansion and inefficient marketing spend. In this section, you will inspect an automated institutional diligence evaluator that models ending ARR, cohort retention, gross margin, Magic Number, CAC payback, and Burn Multiple into a quantitative investment score. Mastering this diligence framework equips you to defend your enterprise against the most adversarial venture partner inquiries, proving that your growth engine is built on permanent economic foundations.',
+        example: 'Think of passing an institutional Series B due diligence audit like undergoing an exhaustive medical examination before being selected for an elite deep-sea expedition. A local doctor might check your pulse and temperature for five minutes to ensure you are not immediately ill, analogous to seed-stage angel investors glancing at a pitch deck. In contrast, naval flight surgeons will perform comprehensive stress electrocardiograms, lung capacity spirometry, blood biomarker panels, and hypoxia resistance tests to prove you can endure extreme atmospheric pressure without cardiac failure. Similarly, a Tier-1 venture investment committee will not merely confirm that your revenue is increasing; they run multi-cohort retention analyses, simulate severe economic downturns, audit customer acquisition unit economics, and stress-test your cash burn rate to guarantee your corporate vehicle will survive and dominate hyper-competitive global markets.',
+        code: `def model_series_b_investment_memo():
+    print("=== Institutional Series B Investment Memo & SaaS Due Diligence ===")
+    starting_arr = 6_000_000.0
+    ending_arr = 12_000_000.0
+    net_new_arr = ending_arr - starting_arr
+    arr_growth_pct = (net_new_arr / starting_arr) * 100.0
+    
+    beginning_cohort_arr = 5_000_000.0
+    expansion_arr = 1_500_000.0
+    churn_contraction_arr = 250_000.0
+    retained_arr = beginning_cohort_arr - churn_contraction_arr
+    
+    grr_pct = (retained_arr / beginning_cohort_arr) * 100.0
+    nrr_pct = ((retained_arr + expansion_arr) / beginning_cohort_arr) * 100.0
+    
+    revenue = 9_500_000.0
+    cogs = 1_805_000.0
+    gross_profit = revenue - cogs
+    gross_margin_pct = (gross_profit / revenue) * 100.0
+    
+    net_cash_burn = 5_400_000.0
+    burn_multiple = net_cash_burn / net_new_arr
+    
+    fcf = -1_900_000.0
+    fcf_margin_pct = (fcf / revenue) * 100.0
+    rule_of_40_score = arr_growth_pct + fcf_margin_pct
+    
+    sales_marketing_spend = 4_800_000.0
+    magic_number = net_new_arr / sales_marketing_spend
+    cac_payback_months = (sales_marketing_spend / (net_new_arr * (gross_margin_pct / 100.0))) * 12.0
+    
+    score = 0
+    if arr_growth_pct >= 80.0: score += 25
+    if nrr_pct >= 120.0: score += 25
+    if rule_of_40_score >= 40.0: score += 20
+    if burn_multiple <= 1.2: score += 15
+    if cac_payback_months <= 12.0: score += 15
+    
+    verdict = "TIER_1_SERIES_B_APPROVED" if score >= 90 else "CONDITIONAL_APPROVAL"
+    
+    print(f"ARR Trajectory: Beginning=" + "$" + f"{starting_arr:,.2f} -> Ending=" + "$" + f"{ending_arr:,.2f} (+{arr_growth_pct:.1f}% YoY)")
+    print(f"Cohort Retention: GRR={grr_pct:.1f}% | NRR={nrr_pct:.1f}%")
+    print(f"Financial Margins: Gross Margin={gross_margin_pct:.1f}% | FCF Margin={fcf_margin_pct:.1f}%")
+    print(f"Capital Efficiency: Rule of 40={rule_of_40_score:.1f}% | Burn Multiple={burn_multiple:.2f}x")
+    print(f"Go-to-Market: Magic Number={magic_number:.2f} | CAC Payback={cac_payback_months:.1f} months")
+    print(f"Diligence Score: {score}/100 -> Recommendation: {verdict}")
+    return {
+        "arr_growth_pct": arr_growth_pct,
+        "nrr_pct": nrr_pct,
+        "rule_of_40": rule_of_40_score,
+        "burn_multiple": burn_multiple,
+        "cac_payback_months": cac_payback_months,
+        "score": score,
+        "verdict": verdict
+    }
+
+model_series_b_investment_memo()`,
+        output: `=== Institutional Series B Investment Memo & SaaS Due Diligence ===
+ARR Trajectory: Beginning=$6,000,000.00 -> Ending=$12,000,000.00 (+100.0% YoY)
+Cohort Retention: GRR=95.0% | NRR=125.0%
+Financial Margins: Gross Margin=81.0% | FCF Margin=-20.0%
+Capital Efficiency: Rule of 40=80.0% | Burn Multiple=0.90x
+Go-to-Market: Magic Number=1.25 | CAC Payback=11.9 months
+Diligence Score: 100/100 -> Recommendation: TIER_1_SERIES_B_APPROVED`,
+        codeNotes: [
+          'Evaluates high-growth SaaS metrics: 100% ARR growth, 95% GRR, and 125% NRR across cohort renewals.',
+          'Calculates Rule of 40 at 80.0% and Burn Multiple at 0.90x, well inside top-quartile venture capital benchmarks.',
+          'Measures GTM efficiency with a 1.25 Magic Number and 11.9-month CAC payback, qualifying for Tier-1 institutional Series B approval.'
+        ],
+        tryIt: 'Adjust sales and marketing spend to $7,000,000.00 to observe how an extended CAC payback period impacts the institutional diligence score.',
+        check: {
+          question: 'Why do institutional venture capital investment committees place equal weight on Net Revenue Retention (NRR) and Net New ARR growth during Series B due diligence?',
+          options: [
+            'NRR isolates customer expansion and retention from new acquisition, proving that the installed base compounds even if new sales acquisition stalls.',
+            'NRR is an accounting requirement mandated by GAAP for all venture-backed corporate tax returns.',
+            'NRR represents the total cash balance in the bank divided by outstanding common stock.',
+            'NRR eliminates the necessity of tracking gross margin and sales marketing expenses.'
+          ],
+          answer: 0,
+          why: 'NRR measures the compounding power of the existing customer base through expansions and upsells minus churn, validating product-market durability independent of top-line marketing spend.',
+          answerIndex: 0,
+          explanation: 'NRR measures the compounding power of the existing customer base through expansions and upsells minus churn, validating product-market durability independent of top-line marketing spend.'
+        }
+      },
+      {
+        title: 'Multi-Tranche Series B Term Sheet, Syndicate Allocation & Pro-Rata Rights',
+        say: 'Negotiating a multi-million dollar Series B financing round requires navigating complex investor syndication dynamics, pro-rata equity entitlements, and cap table dilution mechanics. Unlike early seed rounds typically closed via rolling SAFE notes, a Series B is led by an institutional growth fund that prices the round, issues a formal NVCA term sheet, and demands fifteen to twenty-five percent ownership of the company post-closing. The lead investor rarely takes the entirety of the round alone; instead, they anchor sixty to seventy percent of the total dollar raise while leaving the remaining allocation open to existing investors exercising major investor pro-rata rights and strategic co-investors. For founders, orchestrating this syndicate allocation is a critical balancing act between securing prestigious lead governance, rewarding early supporters, and preserving long-term cap table equity.\n\nPro-rata rights represent the contractual entitlement of major early investors, usually granted in Seed and Series A financing agreements, to purchase their exact percentage ownership in subsequent preferred stock financings. When existing Series A investors exercise their full pro-rata rights in a thirty million dollar Series B round, they inject fresh capital to prevent their equity percentage from being diluted down by the new financing. However, this pro-rata allocation consumes valuable round capacity: if the lead investor insists on acquiring fifteen percent ownership post-money and existing investors demand their full twenty-four percent pro-rata, the aggregate dilution expands, or other potential syndicate partners are squeezed out. Founders must model the exact dollar waterfalls and ownership shifts resulting from varying syndicate allocations before executing definitive agreements.\n\nFurthermore, the Series B term sheet frequently requires an expansion of the unallocated employee option pool to ensure adequate equity incentives are available to recruit executive talent through subsequent growth milestones. When VCs stipulate that the option pool must represent twelve to fifteen percent of the company on a post-money fully diluted basis, the economic burden of this dilution falls entirely on the pre-money shareholders unless aggressively negotiated. In this section, we examine an algorithmic syndicate allocation model that structures a thirty million dollar raise on a one hundred and twenty million dollar pre-money valuation, distributing allocations across a lead Tier-1 VC, Series A pro-rata exercises, and an opportunistic growth syndicate. Understanding these capitalization dynamics empowers founders to negotiate optimal valuations while managing syndicate governance harmoniously.',
+        example: 'Consider syndicating a thirty million dollar Series B financing round like financing a premier commercial film production. A major Hollywood studio acts as the lead producer, committing sixty percent of the budget and insisting on principal artistic oversight and board representation. Meanwhile, early independent angel investors who funded the original script hold contractual options to co-invest twenty-five percent in all sequels to maintain their financial stake, while a global streaming network takes the remaining fifteen percent for distribution rights. If the lead studio and early backers consume the entire financing allocation without clear structural rules, friction arises over producer credits and profit participation. By establishing clear syndicate allocation rules and cap table schedules upfront, the executive producer ensures every investor receives their rightful ownership without stalling production.',
+        code: `def structure_series_b_syndicate_and_prorata():
+    print("=== Multi-Tranche Series B Term Sheet, Syndicate & Pro-Rata ===")
+    pre_money_val = 120_000_000.0
+    investment_amount = 30_000_000.0
+    post_money_val = pre_money_val + investment_amount
+    
+    series_b_dilution_pct = (investment_amount / post_money_val) * 100.0
+    
+    lead_vc_pct = 60.0
+    lead_vc_investment = investment_amount * (lead_vc_pct / 100.0)
+    
+    pro_rata_pct = 25.0
+    pro_rata_investment = investment_amount * (pro_rata_pct / 100.0)
+    
+    growth_syndicate_pct = 15.0
+    growth_syndicate_investment = investment_amount * (growth_syndicate_pct / 100.0)
+    
+    lead_vc_post_ownership = (lead_vc_investment / post_money_val) * 100.0
+    pro_rata_post_ownership = (pro_rata_investment / post_money_val) * 100.0
+    syndicate_post_ownership = (growth_syndicate_investment / post_money_val) * 100.0
+    
+    pre_round_cap_table = {
+        "Founders & Common": 52.0,
+        "Seed Investors": 12.0,
+        "Series A Investors": 24.0,
+        "Option Pool (Existing)": 12.0
+    }
+    
+    retention_factor = 1.0 - (series_b_dilution_pct / 100.0)
+    post_round_cap_table = {}
+    for stakeholder, pct in pre_round_cap_table.items():
+        if stakeholder == "Series A Investors":
+            post_round_cap_table[stakeholder] = (pct * retention_factor) + pro_rata_post_ownership
+        else:
+            post_round_cap_table[stakeholder] = pct * retention_factor
+            
+    post_round_cap_table["Series B Lead VC"] = lead_vc_post_ownership
+    post_round_cap_table["Series B Growth Syndicate"] = syndicate_post_ownership
+    
+    print(f"Round Terms: Pre-Money=" + "$" + f"{pre_money_val:,.2f} | Raise=" + "$" + f"{investment_amount:,.2f} | Post-Money=" + "$" + f"{post_money_val:,.2f}")
+    print(f"Total Series B Dilution: {series_b_dilution_pct:.2f}%")
+    print("Syndicate Allocation Waterfall:")
+    print(f"  Lead Tier-1 VC (60%): " + "$" + f"{lead_vc_investment:,.2f} -> {lead_vc_post_ownership:.2f}% Post-Money Ownership")
+    print(f"  Series A Pro-Rata (25%): " + "$" + f"{pro_rata_investment:,.2f} -> {pro_rata_post_ownership:.2f}% Incremental Ownership")
+    print(f"  Growth Syndicate (15%): " + "$" + f"{growth_syndicate_investment:,.2f} -> {syndicate_post_ownership:.2f}% Post-Money Ownership")
+    print("Post-Money Fully Diluted Cap Table:")
+    for stakeholder, share in post_round_cap_table.items():
+        print(f"  {stakeholder}: {share:.2f}%")
+    return {
+        "pre_money": pre_money_val,
+        "post_money": post_money_val,
+        "dilution_pct": series_b_dilution_pct,
+        "post_cap_table": post_round_cap_table
+    }
+
+structure_series_b_syndicate_and_prorata()`,
+        output: `=== Multi-Tranche Series B Term Sheet, Syndicate & Pro-Rata ===
+Round Terms: Pre-Money=$120,000,000.00 | Raise=$30,000,000.00 | Post-Money=$150,000,000.00
+Total Series B Dilution: 20.00%
+Syndicate Allocation Waterfall:
+  Lead Tier-1 VC (60%): $18,000,000.00 -> 12.00% Post-Money Ownership
+  Series A Pro-Rata (25%): $7,500,000.00 -> 5.00% Incremental Ownership
+  Growth Syndicate (15%): $4,500,000.00 -> 3.00% Post-Money Ownership
+Post-Money Fully Diluted Cap Table:
+  Founders & Common: 41.60%
+  Seed Investors: 9.60%
+  Series A Investors: 24.20%
+  Option Pool (Existing): 9.60%
+  Series B Lead VC: 12.00%
+  Series B Growth Syndicate: 3.00%`,
+        codeNotes: [
+          'Models a $30.0M Series B raise at $120.0M pre-money ($150.0M post-money), resulting in 20.00% round dilution.',
+          'Allocates the syndicate across Lead VC ($18.0M / 12.00%), Series A pro-rata ($7.5M / 5.00%), and Growth Syndicate ($4.5M / 3.00%).',
+          'Reconciles the fully diluted cap table post-closing, preserving 41.60% for founders and updating Series A ownership to 24.20%.'
+        ],
+        tryIt: 'Adjust the round pre-money valuation to $150,000,000.00 to examine how higher pricing reduces total round dilution on a $30M raise.',
+        check: {
+          question: 'What is the primary strategic benefit of major early investors exercising their contractual pro-rata rights in a Series B round?',
+          options: [
+            'It allows early investors to maintain their exact proportional equity ownership, avoiding dilution as the company scales.',
+            'It guarantees that the company will not be required to hire an independent board member.',
+            'It eliminates the requirement for the lead investor to perform legal due diligence.',
+            'It converts all preferred shares immediately into subordinated debt notes.'
+          ],
+          answer: 0,
+          why: 'Pro-rata rights protect early venture investors against equity dilution by empowering them to inject pro-rata capital to maintain their proportional ownership stake.',
+          answerIndex: 0,
+          explanation: 'Pro-rata rights protect early venture investors against equity dilution by empowering them to inject pro-rata capital to maintain their proportional ownership stake.'
+        }
+      },
+      {
+        title: 'Boardroom Corporate Governance, Protective Covenants & Voting Agreements',
+        say: 'As an enterprise closes its Series B financing, the corporate governance architecture undergoes a permanent structural transformation from founder autonomy to institutional fiduciary oversight. In earlier stages, the Board of Directors typically consists of the founding team and a single Series A investor, allowing founders to maintain majority control over strategic decisions. Upon closing a Series B round, institutional lead investors mandate an expansion to a balanced five-member board, standardizing a two-two-one structure: two founder/common seats (CEO and CTO), two preferred investor seats (Series A and Series B lead partners), and one independent industry executive mutually agreed upon by common and preferred holders. This governance rebalancing ensures institutional accountability while protecting the enterprise against single-person operational vulnerabilities.\n\nBeyond direct board representation, Series B preferred stockholders demand an extensive suite of protective provisions and negative covenants incorporated into the amended certificate of incorporation. Protective covenants are contractual veto rights that prevent executive management from undertaking critical corporate actions without the express consent of a majority or supermajority of preferred shares. Common covenants include strict debt incurring ceilings (e.g., prohibiting uncollateralized borrowings exceeding two million dollars), mandatory preferred consent for any merger, acquisition, or sale of company assets, restrictions on executive compensation adjustments, and caps on annual operating budget variances. For founders, these covenants do not imply a lack of confidence, but rather represent standard institutional safeguards designed to align corporate actions with fiduciary capital preservation.\n\nVoting agreements and drag-along rights complete the institutional governance framework, ensuring orderly decision-making during future liquidity events or recapitalizations. A properly drafted NVCA-standard drag-along agreement specifies that if the Board of Directors and a specified supermajority (such as sixty-six point seven percent) of common and preferred stockholders approve a bona fide sale or merger, all minority common shareholders are legally compelled to vote in favor and execute the transaction. This mechanism prevents disgruntled minority employees or former angel investors from holding an acquisition hostage for preferential terms. In this section, you will audit an interactive governance engine that evaluates board seat distribution, verifies protective covenant thresholds, and checks drag-along enforceability. Mastering these boardroom rules enables founders to maintain constructive, high-trust relationships with their institutional directors.\n\nEffective corporate governance also establishes formal board committees to oversee specialized enterprise functions, specifically an Audit Committee and a Compensation Committee. The Compensation Committee, typically composed of the independent director and one preferred investor, establishes objective performance milestones for C-suite executive bonuses, equity refresh grants, and executive severance packages. Meanwhile, the Audit Committee oversees the engagement of Big Four independent accounting firms, reviews internal financial controls under SOC 2 and Sarbanes-Oxley standards, and inspects annual financial statements prior to board dissemination. Operating within this formalized governance matrix ensures that the venture is managed with the maturity, transparency, and operational rigor expected of a pre-IPO enterprise.',
+        example: 'Think of restructuring your corporate board and protective covenants at Series B like ratifying a national constitutional balance of power during a period of federation expansion. In the founding era, tribal leaders govern through immediate executive decrees without legislative delay. However, once neighboring states contribute substantial treasury resources and citizens to the common alliance, a constitutional council is formed with balanced representation: two provincial governors, two federal delegates, and an independent supreme magistrate. The council establishes strict constitutional vetoes requiring legislative supermajorities before issuing public debt, entering foreign treaties, or altering taxation laws. This governance architecture prevents any single faction from bankrupting the union while providing a stable, rule-based legal system that fosters long-term prosperity.',
+        code: `def audit_boardroom_governance_and_covenants():
+    print("=== Boardroom Corporate Governance & Protective Covenants Audit ===")
+    board_seats = [
+        {"seat": "Seat 1 (Common)", "holder": "Chief Executive Officer (Founder)", "type": "Executive", "voting_power": 1},
+        {"seat": "Seat 2 (Common)", "holder": "Chief Technology Officer (Founder)", "type": "Executive", "voting_power": 1},
+        {"seat": "Seat 3 (Series A)", "holder": "Series A Lead General Partner", "type": "Preferred Investor", "voting_power": 1},
+        {"seat": "Seat 4 (Series B)", "holder": "Series B Lead General Partner", "type": "Preferred Investor", "voting_power": 1},
+        {"seat": "Seat 5 (Independent)", "holder": "Veteran SaaS Enterprise Operator", "type": "Mutually Appointed", "voting_power": 1}
+    ]
+    
+    protective_covenants = [
+        {"covenant": "Indebtedness Threshold", "threshold": "> $2,000,000.00", "required_consent": "Series B Lead + Board Majority"},
+        {"covenant": "M&A / Liquidation Event", "threshold": "Any Change of Control", "required_consent": "66.7% Preferred Supermajority"},
+        {"covenant": "Budget Deviation", "threshold": "> 15% Annual Opex Variance", "required_consent": "Board Majority Approval"},
+        {"covenant": "Option Pool Expansion", "threshold": "> Authorized 12% Pool", "required_consent": "Series A & Series B Preferred Consent"},
+        {"covenant": "Executive Compensation / C-Suite Hire", "threshold": "CEO / CFO / VP Appointments", "required_consent": "Board Compensation Committee"}
+    ]
+    
+    drag_along_threshold_pct = 66.7
+    founder_board_pct = (2 / len(board_seats)) * 100.0
+    investor_board_pct = (2 / len(board_seats)) * 100.0
+    independent_board_pct = (1 / len(board_seats)) * 100.0
+    
+    print(f"Board Structure (5 Seats): Common/Founders={founder_board_pct:.0f}% | Investors={investor_board_pct:.0f}% | Independent={independent_board_pct:.0f}%")
+    print("Seat Allocations:")
+    for seat in board_seats:
+        print(f"  {seat['seat']}: {seat['holder']} ({seat['type']})")
+    print("Protective Provisions & Negative Covenants:")
+    for cov in protective_covenants:
+        print(f"  {cov['covenant']}: Floor={cov['threshold']} | Requires: {cov['required_consent']}")
+    print(f"Drag-Along Agreement: Minimum {drag_along_threshold_pct}% Supermajority required to enforce sale")
+    print("Status: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.")
+    return {
+        "board_size": len(board_seats),
+        "founder_pct": founder_board_pct,
+        "investor_pct": investor_board_pct,
+        "drag_along_threshold_pct": drag_along_threshold_pct,
+        "status": "NVCA_COMPLIANT_2_2_1"
+    }
+
+audit_boardroom_governance_and_covenants()`,
+        output: `=== Boardroom Corporate Governance & Protective Covenants Audit ===
+Board Structure (5 Seats): Common/Founders=40% | Investors=40% | Independent=20%
+Seat Allocations:
+  Seat 1 (Common): Chief Executive Officer (Founder) (Executive)
+  Seat 2 (Common): Chief Technology Officer (Founder) (Executive)
+  Seat 3 (Series A): Series A Lead General Partner (Preferred Investor)
+  Seat 4 (Series B): Series B Lead General Partner (Preferred Investor)
+  Seat 5 (Independent): Veteran SaaS Enterprise Operator (Mutually Appointed)
+Protective Provisions & Negative Covenants:
+  Indebtedness Threshold: Floor=> $2,000,000.00 | Requires: Series B Lead + Board Majority
+  M&A / Liquidation Event: Floor=Any Change of Control | Requires: 66.7% Preferred Supermajority
+  Budget Deviation: Floor=> 15% Annual Opex Variance | Requires: Board Majority Approval
+  Option Pool Expansion: Floor=> Authorized 12% Pool | Requires: Series A & Series B Preferred Consent
+  Executive Compensation / C-Suite Hire: Floor=CEO / CFO / VP Appointments | Requires: Board Compensation Committee
+Drag-Along Agreement: Minimum 66.7% Supermajority required to enforce sale
+Status: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.`,
+        codeNotes: [
+          'Models an NVCA-standard 5-member board structure: 40% Common/Founders, 40% Preferred Investors, and 20% Independent Operator.',
+          'Audits protective negative covenants governing debt incurrence (>$2.0M), change of control M&A, and budget variances (>15%).',
+          'Verifies a 66.7% preferred and common supermajority drag-along threshold, guaranteeing smooth execution of future M&A transactions.'
+        ],
+        tryIt: 'Modify the board structure to include 3 founder seats and test whether it conforms to typical Series B institutional venture standards.',
+        check: {
+          question: 'What is the primary operational role of an independent director in a balanced 2-2-1 Series B venture board of directors?',
+          options: [
+            'To serve as an objective industry expert who breaks potential deadlocks between common founders and preferred investors in the best fiduciary interest of the corporation.',
+            'To represent the legal interests of commercial bank lenders and enforce debt repayments.',
+            'To manage daily sales engineering and customer onboarding operations.',
+            'To audit the code repository every weekend for syntax errors.'
+          ],
+          answer: 0,
+          why: 'An independent director provides seasoned industry wisdom and acts as an impartial tie-breaker when founder and investor interests diverge, ensuring balanced corporate stewardship.',
+          answerIndex: 0,
+          explanation: 'An independent director provides seasoned industry wisdom and acts as an impartial tie-breaker when founder and investor interests diverge, ensuring balanced corporate stewardship.'
+        }
+      },
+      {
+        title: 'Growth Capital Allocation, R&D/GTM Scaling & Stress-Tested Solvency Runway',
+        say: 'Securing a thirty million dollar Series B financing injection provides unprecedented operational leverage, but deploying that capital with strategic discipline is where the ultimate battle for enterprise survival is won or lost. Misallocating growth capital into undisciplined sales headcount, excessive marketing acquisition experiments, or unverified product expansions can quickly trigger runaway cash burn without corresponding ARR generation. A seasoned chief executive must allocate net proceeds across functional pillars according to mathematically validated unit economics: investing aggressively where payback periods are short while maintaining a robust strategic treasury reserve to buffer against macroeconomic downturns.\n\nIn top-tier growth stage software enterprises, Series B capital allocation typically adheres to a battle-tested distribution: fifty-five percent directed toward Go-to-Market (GTM) enterprise sales and customer expansion, thirty percent allocated toward R&D engineering and proprietary AI platform enhancements, ten percent assigned to General & Administrative (G&A) compliance and international legal structuring, and five percent preserved in strategic working capital reserves. This allocation profile ensures that the sales organization possesses the capacity to double revenue annually while product engineering continuously widens the technological moat. By tying hiring plans directly to quota capacity and sales rep ramp periods, executive leadership prevents premature scaling and protects gross margins.\n\nEqually critical is simulating quarterly treasury trajectories and cash runway horizons under severe downside stress scenarios. Even when base-case models project rapid ARR expansion and narrowing cash burn over twenty-four months, macro shocks—such as tech spending freezes, lengthened enterprise sales cycles, or vendor contract consolidations—can severely compress net new bookings. A resilient corporate financial plan incorporates a thirty to forty percent burn shock test, ensuring that even if sales productivity drops significantly, the enterprise maintains at least twenty-four to thirty months of unassailable solvency buffer without requiring an emergency down-round financing. In this section, you will model an automated growth capital deployment engine that tracks quarterly cash ramp, projects ARR milestones to forty-two million dollars, and stress-tests treasury solvency across extreme macroeconomic conditions.',
+        example: 'Consider deploying thirty million dollars in Series B growth capital like fueling and navigating a supersonic passenger aircraft during a transatlantic flight. Over fifty percent of the high-octane fuel is allocated directly to the primary propulsion turbines—your enterprise go-to-market engine—propelling the craft forward to cruise speed. Thirty percent is channeled into hydraulic flight stabilization and advanced avionics—your R&D engineering platform—ensuring structural integrity and guidance at high altitudes. Ten percent fuels auxiliary life-support and communications systems (G&A compliance), while the remaining fuel is locked in emergency reserve tanks. If violent unexpected headwinds or turbulence strike mid-ocean, the pilot does not risk a catastrophic ditching; the reserve fuel guarantees sufficient endurance to divert safely to an alternate airfield.',
+        code: `def allocate_growth_capital_and_stress_runway():
+    print("=== Growth Capital Allocation & Solvency Runway Stress Test ===")
+    net_proceeds = 30_000_000.0
+    existing_cash = 10_000_000.0
+    total_treasury = net_proceeds + existing_cash
+    
+    allocations = {
+        "GTM Enterprise Expansion (55%)": net_proceeds * 0.55,
+        "R&D AI & Core Platform (30%)": net_proceeds * 0.30,
+        "G&A Legal & International Compliance (10%)": net_proceeds * 0.10,
+        "Strategic Working Capital Reserve (5%)": net_proceeds * 0.05
+    }
+    
+    quarterly_runway_simulation = [
+        {"quarter": "Q1", "monthly_burn": 800_000.0, "arr": 13_500_000.0},
+        {"quarter": "Q2", "monthly_burn": 950_000.0, "arr": 15_800_000.0},
+        {"quarter": "Q3", "monthly_burn": 1_100_000.0, "arr": 18_900_000.0},
+        {"quarter": "Q4", "monthly_burn": 1_250_000.0, "arr": 22_500_000.0},
+        {"quarter": "Q5", "monthly_burn": 1_200_000.0, "arr": 26_800_000.0},
+        {"quarter": "Q6", "monthly_burn": 1_100_000.0, "arr": 31_500_000.0},
+        {"quarter": "Q7", "monthly_burn": 900_000.0, "arr": 36_200_000.0},
+        {"quarter": "Q8", "monthly_burn": 650_000.0, "arr": 42_000_000.0}
+    ]
+    
+    current_cash = total_treasury
+    cash_trajectory = []
+    for q in quarterly_runway_simulation:
+        quarterly_burn = q["monthly_burn"] * 3.0
+        current_cash -= quarterly_burn
+        cash_trajectory.append({"quarter": q["quarter"], "ending_cash": current_cash, "arr": q["arr"]})
+        
+    downside_stress_factor = 1.35
+    stressed_annual_burn = sum(q["monthly_burn"] * 3.0 for q in quarterly_runway_simulation[:4]) * downside_stress_factor
+    stressed_runway_months = (total_treasury / (stressed_annual_burn / 12.0))
+    
+    print(f"Total Treasury Capital: " + "$" + f"{total_treasury:,.2f} (" + "$" + f"{existing_cash:,.2f} cash + " + "$" + f"{net_proceeds:,.2f} Series B)")
+    print("Capital Allocation Schedule:")
+    for cat, amt in allocations.items():
+        print(f"  {cat}: " + "$" + f"{amt:,.2f}")
+    print("24-Month Treasury & ARR Ramp Simulation:")
+    for row in cash_trajectory:
+        print(f"  {row['quarter']}: Treasury Remaining=" + "$" + f"{row['ending_cash']:,.2f} | ARR Runway=" + "$" + f"{row['arr']:,.2f}")
+    print(f"Macro Stress Test (1.35x Burn Shock): Stressed Runway = {stressed_runway_months:.1f} Months")
+    print("Status: ROBUST 28+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.")
+    return {
+        "total_treasury": total_treasury,
+        "ending_cash_q8": cash_trajectory[-1]["ending_cash"],
+        "stressed_runway_months": stressed_runway_months
+    }
+
+allocate_growth_capital_and_stress_runway()`,
+        output: `=== Growth Capital Allocation & Solvency Runway Stress Test ===
+Total Treasury Capital: $40,000,000.00 ($10,000,000.00 cash + $30,000,000.00 Series B)
+Capital Allocation Schedule:
+  GTM Enterprise Expansion (55%): $16,500,000.00
+  R&D AI & Core Platform (30%): $9,000,000.00
+  G&A Legal & International Compliance (10%): $3,000,000.00
+  Strategic Working Capital Reserve (5%): $1,500,000.00
+24-Month Treasury & ARR Ramp Simulation:
+  Q1: Treasury Remaining=$37,600,000.00 | ARR Runway=$13,500,000.00
+  Q2: Treasury Remaining=$34,750,000.00 | ARR Runway=$15,800,000.00
+  Q3: Treasury Remaining=$31,450,000.00 | ARR Runway=$18,900,000.00
+  Q4: Treasury Remaining=$27,700,000.00 | ARR Runway=$22,500,000.00
+  Q5: Treasury Remaining=$24,100,000.00 | ARR Runway=$26,800,000.00
+  Q6: Treasury Remaining=$20,800,000.00 | ARR Runway=$31,500,000.00
+  Q7: Treasury Remaining=$18,100,000.00 | ARR Runway=$36,200,000.00
+  Q8: Treasury Remaining=$16,150,000.00 | ARR Runway=$42,000,000.00
+Macro Stress Test (1.35x Burn Shock): Stressed Runway = 28.9 Months
+Status: ROBUST 28+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.`,
+        codeNotes: [
+          'Allocates $30.0M net proceeds across GTM expansion ($16.5M), R&D engineering ($9.0M), G&A ($3.0M), and reserves ($1.5M).',
+          'Simulates 8 quarters of treasury trajectory, reaching $42.0M ARR run-rate with $16.15M ending cash buffer.',
+          'Executes an extreme 1.35x burn shock stress test, certifying 28.9 months of survival runway under adverse market conditions.'
+        ],
+        tryIt: 'Simulate an extreme downside scenario where monthly burn increases by 50% to evaluate the minimum cash cushion threshold.',
+        check: {
+          question: 'Why should growth-stage software companies maintain at least 24 to 30 months of cash runway following a Series B financing round?',
+          options: [
+            'It provides sufficient operational runway to reach key enterprise valuation inflection points while buffering against prolonged macroeconomic venture downturns.',
+            'It eliminates the obligation to pay corporate income taxes in western jurisdictions.',
+            'It is required by the SEC to prevent common shares from trading on secondary markets.',
+            'It guarantees that customer churn rates will immediately drop to zero percent.'
+          ],
+          answer: 0,
+          why: 'A 24-30 month runway insulates the business against macroeconomic capital market freezes and provides ample time to compound ARR toward the next major valuation milestone.',
+          answerIndex: 0,
+          explanation: 'A 24-30 month runway insulates the business against macroeconomic capital market freezes and provides ample time to compound ARR toward the next major valuation milestone.'
+        }
+      },
+      {
+        title: 'Milestone 1 Capstone Synthesis: Sand Hill Road Pitch Defense & Venture Partner Accreditation',
+        say: 'You have arrived at the pinnacle of the B.Com Entrepreneurship curriculum: the Milestone 1 Capstone Defense before the full investment partnership on Sand Hill Road. In this boardroom synthesis, every discipline mastered across the five days of study—from early lean validation, runway physics, and SAFE cap tables on Day 1; venture debt covenants and 409A valuations on Day 2; option pool shuffles, liquidation preferences, and anti-dilution on Day 3; to Rule of 40 economics and Series B forecasting on Day 4—converges into a unified, boardroom-ready defense of enterprise value. Standing before institutional general partners, you are no longer pitching an aspirational prototype; you are defending an unassailable financial architecture designed to achieve category leadership and generational scale.\n\nThe capstone defense synthesizes five core institutional pillars into an integrated venture dossier. First, you defend your SaaS unit economics, demonstrating one hundred percent annual ARR growth, ninety-five percent gross retention, and one hundred and twenty-five percent net revenue retention alongside an eighty percent Rule of 40 score. Second, you present a balanced syndicate capitalization schedule, detailing how eighteen million dollars from the lead investor, seven point five million dollars in Series A pro-rata, and four point five million dollars in growth syndicate commitments preserve forty-one point six percent founder ownership at a one hundred and fifty million dollar post-money valuation. Third, you articulate an NVCA-standard two-two-one corporate governance charter that protects common founders while providing institutional fiduciary oversight through protective covenants and drag-along agreements.\n\nFourth, you prove treasury resilience through a stress-tested twenty-four month capital allocation schedule, verifying that thirty million dollars in net proceeds fuels forty-two million dollars in ARR while preserving over sixteen million dollars in cash and twenty-eight months of solvency under severe macro headwinds. Finally, upon successfully fielding adversarial partner inquiries on customer churn, unit economics, and competitive defensibility, the investment committee casts a unanimous affirmative vote. This milestone officially confers the prestigious accreditation of Certified Venture Capital Partner & Chief Executive Entrepreneur (VCP-CEE), signifying that you possess the advanced strategic, financial, and governance capabilities required to build, scale, and finance world-class venture-backed enterprises.\n\nAs you step into the global venture ecosystem, remember that the technical mastery you have demonstrated in this course represents the true competitive moat of high-caliber entrepreneurs. Valuations fluctuate with macroeconomic cycles, but the fundamental laws of recurring revenue compounding, capital efficiency, and fiduciary governance remain immutable. By uniting rigorous financial modeling with bold entrepreneurial vision, you are prepared to lead boardrooms, negotiate with institutional titans, and steer high-growth technology ventures through every phase of scale from initial seed inception to IPO triumph.',
+        example: 'Think of the Milestone 1 Capstone defense like delivering a doctoral dissertation defense in astrophysics before the world\'s foremost scientific academy. You do not simply recite interesting astronomical trivia; you present peer-reviewed observational datasets, mathematical proofs of orbital mechanics, and computer simulations verifying that your theoretical model withstands gravitational anomalies and cosmic radiation. When the academy faculty scrutinizes your calculations on energy conservation and celestial mass, every variable holds under cross-examination. Upon concluding your defense, the panel votes unanimously to confer highest honors, welcoming you as a full peer and recognized authority in the discipline.',
+        code: `def generate_venture_partner_dossier_and_accreditation():
+    print("=== Silicon Valley VC Pitch Defense & Venture Partner Accreditation ===")
+    memo = model_series_b_investment_memo()
+    syndicate = structure_series_b_syndicate_and_prorata()
+    gov = audit_boardroom_governance_and_covenants()
+    treasury = allocate_growth_capital_and_stress_runway()
+    
+    print("\n--- Milestone 1 Capstone Synthesis: Sand Hill Road Boardroom Defense ---")
+    print(f"  1. Enterprise Scale: ARR Growth = {memo['arr_growth_pct']:.1f}% | NRR = {memo['nrr_pct']:.1f}%")
+    print(f"  2. Capital Efficiency: Rule of 40 = {memo['rule_of_40']:.1f}% | Burn Multiple = {memo['burn_multiple']:.2f}x")
+    print(f"  3. Financing Architecture: " + "$" + f"{syndicate['post_money']:,.2f} Post-Money Valuation (" + "$" + f"{syndicate['pre_money']:,.2f} Pre)")
+    print(f"  4. Governance Integrity: {gov['status']} ({gov['board_size']}-Member Board, {gov['drag_along_threshold_pct']}% Drag-Along)")
+    print(f"  5. Solvency Cushion: " + "$" + f"{treasury['ending_cash_q8']:,.2f} Cash at Q8 ($42M ARR Run-Rate)")
+    print("\n================================================================================")
+    print("OFFICIAL VENTURE PARTNERSHIP UNANIMOUS VOTE: PASSED WITH DISTINCTION (5/5)")
+    print("ACCREDITATION CONFERRED: CERTIFIED VENTURE CAPITAL PARTNER & CHIEF EXECUTIVE ENTREPRENEUR (VCP-CEE)")
+    print("STATUS: COURSE B.COM ENTREPRENEURSHIP (BCOM_ENT) 100% COMPLETE & CERTIFIED.")
+    print("================================================================================")
+
+generate_venture_partner_dossier_and_accreditation()`,
+        output: `=== Silicon Valley VC Pitch Defense & Venture Partner Accreditation ===
+=== Institutional Series B Investment Memo & SaaS Due Diligence ===
+ARR Trajectory: Beginning=$6,000,000.00 -> Ending=$12,000,000.00 (+100.0% YoY)
+Cohort Retention: GRR=95.0% | NRR=125.0%
+Financial Margins: Gross Margin=81.0% | FCF Margin=-20.0%
+Capital Efficiency: Rule of 40=80.0% | Burn Multiple=0.90x
+Go-to-Market: Magic Number=1.25 | CAC Payback=11.9 months
+Diligence Score: 100/100 -> Recommendation: TIER_1_SERIES_B_APPROVED
+=== Multi-Tranche Series B Term Sheet, Syndicate & Pro-Rata ===
+Round Terms: Pre-Money=$120,000,000.00 | Raise=$30,000,000.00 | Post-Money=$150,000,000.00
+Total Series B Dilution: 20.00%
+Syndicate Allocation Waterfall:
+  Lead Tier-1 VC (60%): $18,000,000.00 -> 12.00% Post-Money Ownership
+  Series A Pro-Rata (25%): $7,500,000.00 -> 5.00% Incremental Ownership
+  Growth Syndicate (15%): $4,500,000.00 -> 3.00% Post-Money Ownership
+Post-Money Fully Diluted Cap Table:
+  Founders & Common: 41.60%
+  Seed Investors: 9.60%
+  Series A Investors: 24.20%
+  Option Pool (Existing): 9.60%
+  Series B Lead VC: 12.00%
+  Series B Growth Syndicate: 3.00%
+=== Boardroom Corporate Governance & Protective Covenants Audit ===
+Board Structure (5 Seats): Common/Founders=40% | Investors=40% | Independent=20%
+Seat Allocations:
+  Seat 1 (Common): Chief Executive Officer (Founder) (Executive)
+  Seat 2 (Common): Chief Technology Officer (Founder) (Executive)
+  Seat 3 (Series A): Series A Lead General Partner (Preferred Investor)
+  Seat 4 (Series B): Series B Lead General Partner (Preferred Investor)
+  Seat 5 (Independent): Veteran SaaS Enterprise Operator (Mutually Appointed)
+Protective Provisions & Negative Covenants:
+  Indebtedness Threshold: Floor=> $2,000,000.00 | Requires: Series B Lead + Board Majority
+  M&A / Liquidation Event: Floor=Any Change of Control | Requires: 66.7% Preferred Supermajority
+  Budget Deviation: Floor=> 15% Annual Opex Variance | Requires: Board Majority Approval
+  Option Pool Expansion: Floor=> Authorized 12% Pool | Requires: Series A & Series B Preferred Consent
+  Executive Compensation / C-Suite Hire: Floor=CEO / CFO / VP Appointments | Requires: Board Compensation Committee
+Drag-Along Agreement: Minimum 66.7% Supermajority required to enforce sale
+Status: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.
+=== Growth Capital Allocation & Solvency Runway Stress Test ===
+Total Treasury Capital: $40,000,000.00 ($10,000,000.00 cash + $30,000,000.00 Series B)
+Capital Allocation Schedule:
+  GTM Enterprise Expansion (55%): $16,500,000.00
+  R&D AI & Core Platform (30%): $9,000,000.00
+  G&A Legal & International Compliance (10%): $3,000,000.00
+  Strategic Working Capital Reserve (5%): $1,500,000.00
+24-Month Treasury & ARR Ramp Simulation:
+  Q1: Treasury Remaining=$37,600,000.00 | ARR Runway=$13,500,000.00
+  Q2: Treasury Remaining=$34,750,000.00 | ARR Runway=$15,800,000.00
+  Q3: Treasury Remaining=$31,450,000.00 | ARR Runway=$18,900,000.00
+  Q4: Treasury Remaining=$27,700,000.00 | ARR Runway=$22,500,000.00
+  Q5: Treasury Remaining=$24,100,000.00 | ARR Runway=$26,800,000.00
+  Q6: Treasury Remaining=$20,800,000.00 | ARR Runway=$31,500,000.00
+  Q7: Treasury Remaining=$18,100,000.00 | ARR Runway=$36,200,000.00
+  Q8: Treasury Remaining=$16,150,000.00 | ARR Runway=$42,000,000.00
+Macro Stress Test (1.35x Burn Shock): Stressed Runway = 28.9 Months
+Status: ROBUST 28+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.
+
+--- Milestone 1 Capstone Synthesis: Sand Hill Road Boardroom Defense ---
+  1. Enterprise Scale: ARR Growth = 100.0% | NRR = 125.0%
+  2. Capital Efficiency: Rule of 40 = 80.0% | Burn Multiple = 0.90x
+  3. Financing Architecture: $150,000,000.00 Post-Money Valuation ($120,000,000.00 Pre)
+  4. Governance Integrity: NVCA_COMPLIANT_2_2_1 (5-Member Board, 66.7% Drag-Along)
+  5. Solvency Cushion: $16,150,000.00 Cash at Q8 ($42M ARR Run-Rate)
+
+================================================================================
+OFFICIAL VENTURE PARTNERSHIP UNANIMOUS VOTE: PASSED WITH DISTINCTION (5/5)
+ACCREDITATION CONFERRED: CERTIFIED VENTURE CAPITAL PARTNER & CHIEF EXECUTIVE ENTREPRENEUR (VCP-CEE)
+STATUS: COURSE B.COM ENTREPRENEURSHIP (BCOM_ENT) 100% COMPLETE & CERTIFIED.
+================================================================================`,
+        codeNotes: [
+          'Synthesizes all 5 capstone pillars: SaaS investment memo metrics, syndicate allocation waterfall, and board covenants.',
+          'Validates a $150.0M post-money financing structure and a $16.15M ending treasury cushion at $42.0M ARR run-rate.',
+          'Formally confers the Certified Venture Capital Partner & Chief Executive Entrepreneur (VCP-CEE) accreditation, completing course bcom_ent (5/5 Days).'
+        ],
+        tryIt: 'Run the complete capstone defense suite to verify that all institutional investment committee criteria are fully satisfied.',
+        check: {
+          question: 'What is the ultimate strategic achievement validated by the Milestone 1 Capstone in B.Com Entrepreneurship?',
+          options: [
+            'The synthesis of institutional due diligence, multi-tranche syndication, balanced corporate governance, and stress-tested capital allocation into an investable scale-up enterprise.',
+            'The automated filing of a provisional patent application with no financial documentation.',
+            'The replacement of all human executives with open-source software scripts.',
+            'The immediate distribution of all investment proceeds as cash dividends to common founders.'
+          ],
+          answer: 0,
+          why: 'The capstone validates full mastery over venture capital mechanics, institutional due diligence, boardroom governance, and capital allocation required to scale a growth-stage company.',
+          answerIndex: 0,
+          explanation: 'The capstone validates full mastery over venture capital mechanics, institutional due diligence, boardroom governance, and capital allocation required to scale a growth-stage company.'
+        }
+      }
+    ],
+    summary: [
+      'Authored the institutional Series B investment memo, proving 100% ARR growth ($12.0M ARR), 125% NRR, 80.0% Rule of 40 score, and 0.90x Burn Multiple to secure Tier-1 VC approval.',
+      'Structured a $30.0M Series B syndicate on a $120.0M pre-money valuation ($150.0M post), allocating $18.0M to Lead VC, $7.5M to Series A pro-rata, and $4.5M to growth syndicate while preserving 41.6% founder equity.',
+      'Audited an NVCA-standard 2-2-1 board of directors (2 Common, 2 Preferred, 1 Independent) and established protective covenants governing indebtedness, M&A vetoes, and 66.7% drag-along rights.',
+      'Engineered a 24-month capital allocation plan deploying $30.0M across GTM (55%), R&D (30%), and G&A (10%), scaling ARR to $42.0M while holding $16.15M ending cash and 28.9 months of stressed solvency runway.',
+      'Delivered the unanimous Sand Hill Road pitch defense, earning highest honors and conferring the Certified Venture Capital Partner & Chief Executive Entrepreneur (VCP-CEE) accreditation, finalizing course bcom_ent (5/5 Days).'
+    ],
+    projectStep: {
+      title: 'Execute the Institutional Series B Pitch Defense & Venture Accreditation Suite',
+      steps: [
+        'Model the institutional Series B investment memo evaluating NRR, Rule of 40, Burn Multiple, and CAC payback.',
+        'Structure the multi-tranche Series B syndicate waterfall, honoring Series A pro-rata rights and updating the cap table.',
+        'Audit boardroom corporate governance, establishing a balanced 2-2-1 board and protective negative covenants.',
+        'Simulate 24-month growth capital deployment and execute severe downside burn stress tests to guarantee solvency.',
+        'Deliver the unified capstone defense to win unanimous venture partnership approval and confer VCP-CEE accreditation.'
+      ]
+    }
   }
 ];
