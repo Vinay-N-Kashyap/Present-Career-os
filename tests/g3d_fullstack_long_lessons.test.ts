@@ -110,3 +110,52 @@ test('G3D Day 2: Domain-Specific Content Assertions', () => {
   assert.ok(g3dD2.parts[4].title.includes('Culling') || g3dD2.parts[4].title.includes('AABB'));
   assert.ok(g3dD2.parts[4].output.includes('Culled Draw Calls Eliminated: 2'));
 });
+
+test('Fullstack-JS Day 2: Resolution & Structural Invariants for Streaming SSR, Server Actions & tRPC', () => {
+  const fsD2 = getLongLesson('fullstack-js', 2);
+  assert.ok(fsD2, 'fullstack-js Day 2 long lesson must resolve');
+  assert.equal(fsD2.day, 2);
+  assert.equal(fsD2.parts.length, 5, 'fullstack-js Day 2 must contain exactly 5 parts');
+  assert.ok(fsD2.summary.length >= 4, 'fullstack-js Day 2 must contain comprehensive summary');
+  assert.ok(fsD2.projectStep, 'fullstack-js Day 2 must have a hands-on project step');
+  assert.ok(fsD2.minutes >= 15, 'fullstack-js Day 2 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of fsD2.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Fullstack-JS Day 2: Domain-Specific Content Assertions', () => {
+  const fsD2 = getLongLesson('fullstack-js', 2);
+  assert.ok(fsD2);
+
+  // Part 1 – Streaming SSR
+  assert.ok(fsD2.parts[0].title.includes('Streaming SSR'));
+  assert.ok(fsD2.parts[0].output.includes('Out-of-Order Flush Parallelism'));
+
+  // Part 2 – Server Actions with Optimistic Rollbacks
+  assert.ok(fsD2.parts[1].title.includes('Server Actions'));
+  assert.ok(fsD2.parts[1].output.includes('UI Consistency Guarantee: DISPLAY === CONFIRMED = true'));
+
+  // Part 3 – Edge Middleware JWT Auth
+  assert.ok(fsD2.parts[2].title.includes('Edge Middleware'));
+  assert.ok(fsD2.parts[2].output.includes('GDPR geo-rewrite'));
+
+  // Part 4 – tRPC Type-Safe RPCs
+  assert.ok(fsD2.parts[3].title.includes('tRPC'));
+  assert.ok(fsD2.parts[3].output.includes('ZERO runtime schema validation needed'));
+
+  // Part 5 – Server-Sent Events (SSE)
+  assert.ok(fsD2.parts[4].title.includes('Server-Sent Events') || fsD2.parts[4].title.includes('SSE'));
+  assert.ok(fsD2.parts[4].output.includes('Last-Event-ID'));
+});
