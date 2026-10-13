@@ -53,6 +53,11 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson4.day, 4);
   assert.equal(excelLesson4.parts.length, 5, 'excel_viz Day 4 must contain exactly 5 parts');
 
+  const excelLesson5 = getLongLesson('excel_viz', 5);
+  assert.ok(excelLesson5, 'excel_viz Day 5 long lesson must resolve');
+  assert.equal(excelLesson5.day, 5);
+  assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
+
   // 3. ai_prompt aliasing
   const promptLesson = getLongLesson('ai_prompt', 1);
   assert.ok(promptLesson, 'ai_prompt Day 1 long lesson must resolve via aliasing');
@@ -407,3 +412,46 @@ test('Excel Viz Day 4: DCF Valuation, WACC, LBO Debt Waterfall & M&A Accretion V
   assert.ok(excelLesson4.parts[4].code?.includes('evaluate_ma_accretion_dilution'));
   assert.ok(excelLesson4.parts[4].output?.includes('M&A ACCRETION / DILUTION & SYNERGIES MODEL'));
 });
+
+test('Excel Viz Day 5: Financial Modeling Audit, Circularity Breakers, Monte Carlo VaR & FAST Governance', () => {
+  const excelLesson5 = getLongLesson('excel_viz', 5);
+  assert.ok(excelLesson5, 'excel_viz Day 5 must resolve');
+  assert.equal(excelLesson5.day, 5);
+  assert.equal(excelLesson5.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(excelLesson5);
+  const totalMin = estimateLessonMinutes(excelLesson5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < excelLesson5.parts.length; i++) {
+    const part = excelLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must define Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(excelLesson5.parts[0].code?.includes('evaluate_balance_sheet_integrity'));
+  assert.ok(excelLesson5.parts[0].output?.includes('BALANCE SHEET INTEGRITY & CIRCULARITY AUDIT'));
+  assert.ok(excelLesson5.parts[1].code?.includes('simulate_monte_carlo_portfolio_var'));
+  assert.ok(excelLesson5.parts[1].output?.includes('MONTE CARLO VALUE-AT-RISK DISTRIBUTION'));
+  assert.ok(excelLesson5.parts[2].code?.includes('generate_ebitda_cash_flow_bridge'));
+  assert.ok(excelLesson5.parts[2].output?.includes('EBITDA-TO-FREE-CASH-FLOW WATERFALL BRIDGE'));
+  assert.ok(excelLesson5.parts[3].code?.includes('generate_tornado_sensitivity_ranking'));
+  assert.ok(excelLesson5.parts[3].output?.includes('TORNADO SENSITIVITY DRIVER RANKING'));
+  assert.ok(excelLesson5.parts[4].code?.includes('validate_fast_standard_model_governance'));
+  assert.ok(excelLesson5.parts[4].output?.includes('BOARDROOM FINANCIAL MODEL AUDIT GOVERNANCE'));
+});
+
