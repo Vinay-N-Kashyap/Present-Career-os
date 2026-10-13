@@ -60,6 +60,11 @@ test('IoT Edge & IoT Sec Long Lessons: Resolution & Language Invariants', () => 
   assert.ok(secLesson4, 'iot_sec Day 4 long lesson must resolve');
   assert.equal(secLesson4.day, 4);
   assert.equal(secLesson4.parts.length, 5, 'iot_sec Day 4 must contain exactly 5 parts');
+
+  const secLesson5 = getLongLesson('iot_sec', 5);
+  assert.ok(secLesson5, 'iot_sec Day 5 long lesson must resolve');
+  assert.equal(secLesson5.day, 5);
+  assert.equal(secLesson5.parts.length, 5, 'iot_sec Day 5 must contain exactly 5 parts');
 });
 
 test('IoT Edge Day 1: Edge AI & INT8 Quantization Python Code Snippets & Socratic Checks Verification', () => {
@@ -382,6 +387,48 @@ test('IoT Sec Day 4: Asymmetric ECC, Ephemeral ECDHE, Nonce Safety & Montgomery 
   assert.ok(secLesson4.parts[3].output?.includes('HARDWARE TRNG RING OSCILLATOR HEALTH AUDIT'));
   assert.ok(secLesson4.parts[4].code?.includes('simulate_montgomery_ladder_point_multiplication'));
   assert.ok(secLesson4.parts[4].output?.includes('MONTGOMERY LADDER CONSTANT-TIME POINT MULTIPLICATION'));
+});
+
+test('IoT Sec Day 5 Capstone: Hardware Root of Trust, X.509 DER, Anti-Rollback eFuse & Secure Boot Verification', () => {
+  const secLesson5 = getLongLesson('iot_sec', 5);
+  assert.ok(secLesson5, 'iot_sec Day 5 must resolve');
+  assert.equal(secLesson5.day, 5);
+  assert.equal(secLesson5.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(secLesson5);
+  const totalMin = estimateLessonMinutes(secLesson5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < secLesson5.parts.length; i++) {
+    const part = secLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(secLesson5.parts[0].code?.includes('extract_silicon_puf_huk'));
+  assert.ok(secLesson5.parts[0].output?.includes('SILICON PUF HARDWARE UNIQUE KEY EXTRACTION'));
+  assert.ok(secLesson5.parts[1].code?.includes('parse_asn1_der_certificate_tbs'));
+  assert.ok(secLesson5.parts[1].output?.includes('ZERO-COPY ASN.1 DER CERTIFICATE PARSER'));
+  assert.ok(secLesson5.parts[2].code?.includes('verify_firmware_ecdsa_manifest'));
+  assert.ok(secLesson5.parts[2].output?.includes('ECDSA P-256 SECURE BOOT MANIFEST VERIFICATION'));
+  assert.ok(secLesson5.parts[3].code?.includes('enforce_anti_rollback_efuse_protection'));
+  assert.ok(secLesson5.parts[3].output?.includes('MONOTONIC ANTI-ROLLBACK EFUSE CONTROLLER'));
+  assert.ok(secLesson5.parts[4].code?.includes('execute_production_secure_boot_engine'));
+  assert.ok(secLesson5.parts[4].output?.includes('MILESTONE 1: UNIFIED SECURE BOOT VERIFICATION ENGINE'));
 });
 
 
