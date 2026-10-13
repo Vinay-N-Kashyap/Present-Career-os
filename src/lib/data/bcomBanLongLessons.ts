@@ -788,6 +788,384 @@ print(f"Provision: {loan_p['ECL_Required_Provision']} ({loan_p['Coverage_Pct']})
         'Model loan pricing using RAROC and execute an IFRS 9 3-stage provisioning audit with Special Assets workout action plans.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ban',
+    day: 3,
+    title: 'Syndicated Lending, Structured Trade Finance & Treasury ALM Hedging',
+    goal: 'Master institutional commercial banking: syndicated loan facility structuring and bookrunner allocations, international documentary letters of credit (UCP 600), treasury ALM interest rate swap (IRS) duration hedging, Basel III liquidity stress testing (LCR & NSFR), and bilateral counterparty credit risk (CVA & ISDA netting).',
+    minutes: 45,
+    recap: 'Commercial banks operate at the nexus of institutional capital markets and real-economy trade. Moving beyond single-obligor balance sheet loans, treasury and corporate banking divisions syndicate multi-hundred-million-dollar credit facilities, finance cross-border trade via Letters of Credit, and insulate bank margins from macroeconomic interest rate shocks through derivatives and liquidity stress testing.',
+    parts: [
+      {
+        title: 'Syndicated Loan Facility Structuring & Lead Arranger Bookrunner Allocation',
+        say: [
+          'When corporate borrowers require debt financing that exceeds the single-obligor lending limits or balance sheet risk tolerance of an individual commercial bank, they turn to the syndicated loan market. A Lead Arranger (or Mandated Lead Arranger, MLA) wins the mandate to underwrite or arrange the overall facility, such as a $500 million acquisition loan. The lead bank acts as bookrunner, structuring tranches, drafting the credit agreement, and distributing pieces of the debt to a syndicate of participant banks and institutional investors.',
+          'Syndication takes two primary forms: fully underwritten deals and best-efforts syndications. In a fully underwritten facility, the lead arranger guarantees the entire loan commitment upfront and assumes the underwriting risk that participant banks might not buy into the facility. If the market is lukewarm, the lead arranger gets stuck holding a disproportionately large piece on its balance sheet (an involuntary "hung loan"). Conversely, in an oversubscribed facility, the bookrunner must scale back commitments proportionally across tiers, balancing relationship politics while pocketing lucrative upfront arrangement fees of 50 to 150 basis points.',
+          'The syndicate agreement defines strict legal roles, voting thresholds, and cash-waterfall distributions managed by the Administrative Agent. Routine covenant waivers typically require a simple majority (51% or 66.7% of committed capital), whereas critical amendments such as interest rate reductions, maturity extensions, or release of primary collateral demand 100% unanimous consent. As commercial bankers, understanding how allocations scale and how arranger underwriting economics operate is fundamental to structuring high-yield corporate financings.'
+        ],
+        example: 'A global industrial conglomerate seeks a $500M multi-currency term facility. The Lead Arranger underwrites $100M with a 75 bps arrangement fee ($3.75M) and markets the remaining $400M to institutional co-arrangers and participants, receiving $600M in total commitments (1.2x oversubscribed) and scaling back allocations pro-rata.',
+        code: `# Syndicated Loan Facility Structuring & Bookrunner Allocation Engine
+def structure_syndicated_facility(facility_amount: float, lead_arranger_hold: float, lead_fee_bps: float, participants: list) -> dict:
+    total_committed = lead_arranger_hold + sum(p["commitment"] for p in participants)
+    oversubscription_ratio = total_committed / facility_amount
+    lead_fee_usd = facility_amount * (lead_fee_bps / 10000.0)
+    
+    # Scale allocations if oversubscribed
+    allocations = []
+    scale = min(1.0, facility_amount / total_committed) if total_committed > facility_amount else 1.0
+    actual_lead_hold = lead_arranger_hold * scale
+    
+    allocations.append({
+        "bank": "Lead Arranger (Global Agent)",
+        "role": "Bookrunner",
+        "allocated": actual_lead_hold,
+        "share_pct": (actual_lead_hold / facility_amount) * 100.0
+    })
+    
+    for p in participants:
+        alloc = p["commitment"] * scale
+        allocations.append({
+            "bank": p["name"],
+            "role": p["tier"],
+            "allocated": alloc,
+            "share_pct": (alloc / facility_amount) * 100.0
+        })
+        
+    return {
+        "facility_amount": facility_amount,
+        "total_committed": total_committed,
+        "oversubscription_ratio": round(oversubscription_ratio, 2),
+        "lead_fee_usd": round(lead_fee_usd, 2),
+        "syndicate_members": len(allocations),
+        "allocations": allocations
+    }
+
+p1 = structure_syndicated_facility(
+    500000000.0, 100000000.0, 75.0,
+    [
+        {"name": "Co-Arranger A", "tier": "Lead Manager", "commitment": 150000000.0},
+        {"name": "Participant B", "tier": "Participant", "commitment": 150000000.0},
+        {"name": "Participant C", "tier": "Participant", "commitment": 200000000.0}
+    ]
+)
+lead_fee_str = "$" + f"{p1['lead_fee_usd']:,.2f}"
+print(f"Syndication Oversubscribed: {p1['oversubscription_ratio']}x | Lead Fee: {lead_fee_str}")
+for a in p1["allocations"]:
+    alloc_str = "$" + f"{a['allocated']:,.2f}"
+    print(f"  {a['bank']} ({a['role']}): {alloc_str} ({a['share_pct']:.1f}%)")`,
+        output: `Syndication Oversubscribed: 1.2x | Lead Fee: $3,750,000.00
+  Lead Arranger (Global Agent) (Bookrunner): $83,333,333.33 (16.7%)
+  Co-Arranger A (Lead Manager): $125,000,000.00 (25.0%)
+  Participant B (Participant): $125,000,000.00 (25.0%)
+  Participant C (Participant): $166,666,666.67 (33.3%)`,
+        codeNotes: [
+          { line: 3, note: 'Calculates total commitments and determines oversubscription scaling factor min(1.0, facility / committed)' },
+          { line: 5, note: 'Computes bookrunner upfront fee across entire facility amount based on underwriting basis points' },
+          { line: 11, note: 'Applies pro-rata allocation haircut to ensure total disbursed loans precisely equal facility size' },
+          { line: 35, note: 'Simulates $500M facility oversubscribed to $600M, scaling lead hold to $83.33M and generating $3.75M lead fee' }
+        ],
+        tryIt: 'Increase participant commitments to total $750M and observe the oversubscription ratio rise to 1.5x with steeper pro-rata cuts.',
+        check: {
+          question: 'What is the primary risk facing a lead arranger in a "fully underwritten" syndicated loan transaction when credit markets abruptly deteriorate?',
+          options: [
+            'Hung loan risk, where participant banks decline to purchase allocations, forcing the arranger to absorb the unsold debt onto its own balance sheet.',
+            'The central bank confiscates the arranger\'s trading license automatically.',
+            'The borrower is entitled to convert the entire debt into non-voting common stock.',
+            'The loan maturity automatically shortens to an overnight call facility.'
+          ],
+          answer: 0,
+          why: 'In a fully underwritten facility, the lead bank guarantees 100% of the funds to the borrower. If syndication fails, the bank is stuck with excessive balance sheet concentration known as a hung loan.',
+          answerIndex: 0,
+          explanation: 'In a fully underwritten facility, the lead bank guarantees 100% of the funds to the borrower. If syndication fails, the bank is stuck with excessive balance sheet concentration known as a hung loan.'
+        }
+      },
+      {
+        title: 'Structured Trade Finance, Documentary Letters of Credit (UCP 600) & Bill Discounting',
+        say: [
+          'Cross-border international trade introduces profound geographic, legal, and currency counterpart risks. An exporter in Munich does not want to ship multi-million-dollar precision machinery across oceans without guaranteed payment, while an importer in Singapore cannot safely wire funds before verifying physical delivery of goods. Structured trade finance bridges this trust deficit through documentary instruments governed by the International Chamber of Commerce (ICC) Uniform Customs and Practice for Documentary Credits (UCP 600).',
+          'The foundational instrument is the Documentary Letter of Credit (LC). The importer\'s bank (the Issuing Bank) substitutes its own creditworthiness for that of the importer, providing an irrevocable financial undertaking to pay the exporter upon presentation of complying shipping documents (Commercial Invoice, Clean On-Board Bill of Lading, Certificate of Origin, Inspection Certificate). To eliminate cross-border sovereign and foreign bank transfer risk, the exporter often insists on an added confirmation from a prime domestic bank (the Confirming Bank), which adds its independent irrevocable payment guarantee.',
+          'Once complying shipping documents are presented and accepted under a usance (time) LC, the obligation transforms into a trade acceptance or Banker\'s Acceptance (BA). Because a prime financial institution has guaranteed payment upon maturity (e.g. 90 or 180 days), the exporter does not have to wait for cash. The commercial bank discounts the bill on a money-market 360-day basis, providing immediate liquidity to the supplier while collecting attractive trade discount and acceptance fee spreads.'
+        ],
+        example: 'A machinery manufacturer exports $10M of equipment on 90-day credit. The importer opens an LC with a 25 bps issuing fee. The supplier discounts the accepted 90-day bill with a confirming bank at a 5.5% annual discount rate plus 15 bps confirmation fee, receiving $9,847,500.00 in immediate net proceeds.',
+        code: `# Structured Trade Finance: LC Issuance & Banker's Acceptance Discounting Engine
+def issue_and_discount_trade_lc(invoice_value: float, tenor_days: int, discount_rate_pct: float, issuing_fee_bps: float, confirming_fee_bps: float) -> dict:
+    issuing_fee = invoice_value * (issuing_fee_bps / 10000.0)
+    confirming_fee = invoice_value * (confirming_fee_bps / 10000.0)
+    
+    # Money market 360-day basis discount
+    discount_charge = invoice_value * (discount_rate_pct / 100.0) * (tenor_days / 360.0)
+    net_proceeds = invoice_value - discount_charge - confirming_fee
+    
+    return {
+        "invoice_value": invoice_value,
+        "tenor_days": tenor_days,
+        "issuing_fee": round(issuing_fee, 2),
+        "confirming_fee": round(confirming_fee, 2),
+        "discount_charge": round(discount_charge, 2),
+        "net_supplier_proceeds": round(net_proceeds, 2),
+        "effective_financing_cost_pct": round(((discount_charge + confirming_fee) / invoice_value) * (360.0 / tenor_days) * 100.0, 2)
+    }
+
+p2 = issue_and_discount_trade_lc(10000000.0, 90, 5.5, 25.0, 15.0)
+inv_str = "$" + f"{p2['invoice_value']:,.2f}"
+disc_str = "$" + f"{p2['discount_charge']:,.2f}"
+proc_str = "$" + f"{p2['net_supplier_proceeds']:,.2f}"
+print(f"Invoice: {inv_str} | Tenor: {p2['tenor_days']}d")
+print(f"Discount: {disc_str} | Net Proceeds: {proc_str} | Cost: {p2['effective_financing_cost_pct']}%")`,
+        output: `Invoice: $10,000,000.00 | Tenor: 90d
+Discount: $137,500.00 | Net Proceeds: $9,847,500.00 | Cost: 6.1%`,
+        codeNotes: [
+          { line: 6, note: 'Calculates standard international money market discount charge using 360-day annual day count convention' },
+          { line: 7, note: 'Deducts discount charge and confirming bank acceptance fee to determine net cash disbursed to exporter' },
+          { line: 15, note: 'Annualizes all fees and discount charges into an effective APR financing cost percentage' },
+          { line: 20, note: 'Models $10M 90-day LC generating $137,500 discount fee and yielding $9,847,500 immediate supplier cash' }
+        ],
+        tryIt: 'Extend tenor_days to 180 days to observe discount charges double to $275,000 while maintaining a constant annualized financing cost.',
+        check: {
+          question: 'Under ICC UCP 600 rules, what is the legal significance of a "confirmed" Letter of Credit compared to an unconfirmed Letter of Credit?',
+          options: [
+            'The Confirming Bank provides an independent, irrevocable undertaking to pay the beneficiary, protecting the exporter even if the Issuing Bank or its home nation defaults.',
+            'The Confirming Bank physically inspects the factory and certifies product quality.',
+            'The Confirming Bank guarantees that the importer will make a 50% profit upon resale.',
+            'The Confirming Bank converts the payment currency into gold bullion.'
+          ],
+          answer: 0,
+          why: 'A confirmation adds the direct, independent legal obligation of a second bank (typically in the exporter\'s jurisdiction), insulating the exporter from issuing bank insolvency or country transfer risk.',
+          answerIndex: 0,
+          explanation: 'A confirmation adds the direct, independent legal obligation of a second bank (typically in the exporter\'s jurisdiction), insulating the exporter from issuing bank insolvency or country transfer risk.'
+        }
+      },
+      {
+        title: 'Treasury Asset-Liability Management (ALM) & Interest Rate Swap (IRS) NIM Hedging',
+        say: [
+          'Commercial bank balance sheets possess an inherent structural maturity mismatch: banks fund long-term fixed-rate loans (e.g. 5-year commercial mortgages at 4.5%) using short-term floating-rate liabilities (such as commercial checking deposits and wholesale repos repricing every 30 to 90 days). When benchmark interest rates rise, deposit rates must increase to prevent disintermediation, while income on fixed-rate loans remains locked. This dynamic rapidly crushes the bank\'s Net Interest Margin (NIM = Net Interest Income / Total Earning Assets).',
+          'To protect Net Interest Margin from severe macroeconomic rate shifts, Bank Treasury ALM teams execute Interest Rate Swaps (IRS). In a vanilla fixed-for-floating interest rate swap, the bank agrees with an external swap counterparty to exchange fixed interest cash flows for floating interest cash flows based on a benchmark index (such as SOFR or EURIBOR) on a specified notional principal without exchanging any underlying principal.',
+          'To hedge against rising interest rates, a bank with fixed-rate assets enters a Pay-Fixed, Receive-Floating swap. If rates surge by 200 basis points (+2.00%), the bank\'s deposit interest costs jump by millions of dollars, but the swap position pays out an offsetting stream of floating cash flows. This synthetic hedge transforms the bank\'s fixed-rate asset yield into a floating-rate income stream, locking in a predictable spread, stabilizing Net Interest Income, and insulating regulatory capital from economic value of equity (EVE) degradation.'
+        ],
+        example: 'A treasury desk holds $250M of 5-year fixed loans earning 4.5% funded by floating deposits paying 2.5%. A +200 bps rate shock would increase funding expense by $5.0M annually, wiping out profits. Executing a $250M Pay-Fixed (4.5%) Receive-Floating swap generates an offsetting $5.0M inflow, restoring hedge effectiveness to 100.0%.',
+        code: `# Treasury ALM: Interest Rate Swap (IRS) NIM Duration Hedging Engine
+def hedge_alm_interest_rate_swap(notional_principal: float, fixed_rate_pct: float, floating_base_pct: float, rate_shock_bps: float) -> dict:
+    # 1 bps = 0.01%, so 200 bps = 2.0 percentage points
+    shock_pct = rate_shock_bps / 100.0
+    shocked_floating = floating_base_pct + shock_pct
+    
+    # Pre-hedge: Bank has fixed-rate assets funded by floating deposits
+    # When rates rise, deposit interest cost rises, squeezing NIM
+    unhedged_asset_income = notional_principal * (fixed_rate_pct / 100.0)
+    unhedged_funding_cost_baseline = notional_principal * (floating_base_pct / 100.0)
+    unhedged_funding_cost_shocked = notional_principal * (shocked_floating / 100.0)
+    
+    unhedged_nim_baseline = unhedged_asset_income - unhedged_funding_cost_baseline
+    unhedged_nim_shocked = unhedged_asset_income - unhedged_funding_cost_shocked
+    unhedged_nim_delta = unhedged_nim_shocked - unhedged_nim_baseline
+    
+    # Post-hedge: Bank enters Pay-Fixed, Receive-Floating Swap on 100% notional
+    # Swap net cash flow: Receive floating - Pay fixed
+    swap_net_baseline = notional_principal * ((floating_base_pct - fixed_rate_pct) / 100.0)
+    swap_net_shocked = notional_principal * ((shocked_floating - fixed_rate_pct) / 100.0)
+    
+    hedged_nim_baseline = unhedged_nim_baseline + swap_net_baseline
+    hedged_nim_shocked = unhedged_nim_shocked + swap_net_shocked
+    hedged_nim_delta = hedged_nim_shocked - hedged_nim_baseline
+    
+    return {
+        "notional": notional_principal,
+        "rate_shock_bps": rate_shock_bps,
+        "unhedged_nim_delta": round(unhedged_nim_delta, 2),
+        "hedged_nim_delta": round(hedged_nim_delta, 2),
+        "hedge_effectiveness_pct": round((1.0 - abs(hedged_nim_delta) / abs(unhedged_nim_delta)) * 100.0, 1) if unhedged_nim_delta != 0 else 100.0
+    }
+
+p3 = hedge_alm_interest_rate_swap(250000000.0, 4.5, 2.5, 200.0)
+unhedged_str = "$" + f"{p3['unhedged_nim_delta']:,.2f}"
+hedged_str = "$" + f"{p3['hedged_nim_delta']:,.2f}"
+print(f"Rate Shock +200bps | Unhedged NIM Delta: {unhedged_str}")
+print(f"Hedged NIM Delta: {hedged_str} | Effectiveness: {p3['hedge_effectiveness_pct']}%")`,
+        output: `Rate Shock +200bps | Unhedged NIM Delta: $-5,000,000.00
+Hedged NIM Delta: $0.00 | Effectiveness: 100.0%`,
+        codeNotes: [
+          { line: 3, note: 'Converts rate shock in basis points (200 bps) to percentage points (+2.0%)' },
+          { line: 12, note: 'Evaluates baseline vs shocked net interest margin showing unhedged $5.0M margin destruction' },
+          { line: 19, note: 'Superimposes Pay-Fixed Receive-Floating swap leg to synthetically neutralize variable funding costs' },
+          { line: 31, note: 'Demonstrates 100% hedge effectiveness with hedged NIM delta stabilized at exactly $0.00' }
+        ],
+        tryIt: 'Simulate a partial 50% notional hedge ($125M) and verify that hedged NIM delta is halved to -$2,500,000.',
+        check: {
+          question: 'If a commercial bank holds fixed-rate commercial loans funded by short-term floating-rate wholesale deposits, which derivative position should treasury ALM execute to hedge against rising interest rates?',
+          options: [
+            'Pay-Fixed, Receive-Floating Interest Rate Swap.',
+            'Pay-Floating, Receive-Fixed Interest Rate Swap.',
+            'Sell out-of-the-money equity put options on bank stock.',
+            'Buy physical gold futures contracts on COMEX.'
+          ],
+          answer: 0,
+          why: 'By paying fixed and receiving floating, the bank collects higher floating cash flows as interest rates rise, directly offsetting its increasing deposit funding expenses.',
+          answerIndex: 0,
+          explanation: 'By paying fixed and receiving floating, the bank collects higher floating cash flows as interest rates rise, directly offsetting its increasing deposit funding expenses.'
+        }
+      },
+      {
+        title: 'Basel III Liquidity Risk Stress Testing: LCR, NSFR & 30-Day Runoff Modeling',
+        say: [
+          'Following the global financial crises and high-profile regional bank runs, international regulators recognized that capital adequacy alone cannot prevent bank failure if an institution runs out of liquid cash to meet immediate depositor withdrawals. Under Basel III, the Basel Committee on Banking Supervision (BCBS) enacted two binding liquidity requirements: the short-term Liquidity Coverage Ratio (LCR) and the structural long-term Net Stable Funding Ratio (NSFR).',
+          'The Liquidity Coverage Ratio requires banks to maintain an unencumbered pool of High-Quality Liquid Assets (HQLA) sufficient to survive a severe 30-calendar-day combined retail and wholesale liquidity stress event: LCR = Total Stock of HQLA / Total Net Cash Outflows over 30 Days >= 100%. Assets are tiered: Level 1 assets (central bank reserves, sovereign debt) count at 100% value with 0% haircut, whereas Level 2A assets (senior non-financial corporate bonds) face a mandatory 15% regulatory haircut.',
+          'On the liability side, cash outflows are calculated by applying prescribed run-off assumptions: stable retail deposits incur only a 3% to 5% runoff, but unsecured wholesale corporate deposits face catastrophic 40% to 100% runoffs, and undrawn committed credit lines face immediate drawdown rates. Simultaneously, the Net Stable Funding Ratio requires Available Stable Funding (ASF) to exceed Required Stable Funding (RSF) over a 1-year horizon: NSFR = ASF / RSF >= 100%, discouraging overreliance on short-term wholesale funding to finance illiquid long-term loans.'
+        ],
+        example: 'A $1B bank holds $50M cash, $150M government bonds, and $40M corporate bonds ($234M HQLA after 15% Level 2 haircut). In a 30-day run scenario (5% retail deposit runoff, 40% wholesale runoff, 20% credit line drawdowns), total net outflows reach $180M. The bank achieves an LCR of 130.0% and NSFR of 115.9%, safely clearing the 100% regulatory threshold.',
+        code: `# Basel III Liquidity Risk: LCR & NSFR 30-Day Stress Testing Engine
+def stress_test_lcr_and_nsfr(cash: float, level1_gov_bonds: float, level2_corp_bonds: float,
+                             retail_run_rate_pct: float, retail_deposits: float,
+                             wholesale_run_rate_pct: float, wholesale_deposits: float,
+                             credit_facilities_draw_pct: float, off_balance_sheet_lines: float,
+                             available_stable_funding: float, required_stable_funding: float) -> dict:
+    # Level 1 assets have 0% haircut, Level 2A have 15% haircut
+    hqla = cash + level1_gov_bonds + (level2_corp_bonds * 0.85)
+    
+    outflow_retail = retail_deposits * (retail_run_rate_pct / 100.0)
+    outflow_wholesale = wholesale_deposits * (wholesale_run_rate_pct / 100.0)
+    outflow_facilities = off_balance_sheet_lines * (credit_facilities_draw_pct / 100.0)
+    total_net_outflows = outflow_retail + outflow_wholesale + outflow_facilities
+    
+    lcr_ratio_pct = (hqla / total_net_outflows) * 100.0
+    nsfr_ratio_pct = (available_stable_funding / required_stable_funding) * 100.0
+    
+    return {
+        "total_hqla": round(hqla, 2),
+        "total_net_outflows_30d": round(total_net_outflows, 2),
+        "lcr_ratio_pct": round(lcr_ratio_pct, 1),
+        "lcr_compliant": lcr_ratio_pct >= 100.0,
+        "nsfr_ratio_pct": round(nsfr_ratio_pct, 1),
+        "nsfr_compliant": nsfr_ratio_pct >= 100.0
+    }
+
+p4 = stress_test_lcr_and_nsfr(
+    cash=50000000.0, level1_gov_bonds=150000000.0, level2_corp_bonds=40000000.0,
+    retail_run_rate_pct=5.0, retail_deposits=800000000.0,
+    wholesale_run_rate_pct=40.0, wholesale_deposits=300000000.0,
+    credit_facilities_draw_pct=20.0, off_balance_sheet_lines=100000000.0,
+    available_stable_funding=950000000.0, required_stable_funding=820000000.0
+)
+hqla_str = "$" + f"{p4['total_hqla']:,.2f}"
+outflows_str = "$" + f"{p4['total_net_outflows_30d']:,.2f}"
+print(f"HQLA: {hqla_str} | 30d Outflows: {outflows_str}")
+print(f"LCR: {p4['lcr_ratio_pct']}% (Compliant: {p4['lcr_compliant']}) | NSFR: {p4['nsfr_ratio_pct']}% (Compliant: {p4['nsfr_compliant']})")`,
+        output: `HQLA: $234,000,000.00 | 30d Outflows: $180,000,000.00
+LCR: 130.0% (Compliant: True) | NSFR: 115.9% (Compliant: True)`,
+        codeNotes: [
+          { line: 8, note: 'Applies Basel III 15% regulatory haircut on Level 2A corporate debt to determine total eligible HQLA' },
+          { line: 10, note: 'Models granular 30-day stress runoffs across retail (5%), wholesale (40%), and credit lines (20%)' },
+          { line: 16, note: 'Calculates LCR and NSFR ratios, verifying minimum 100% regulatory compliance' },
+          { line: 31, note: 'Simulates $234M HQLA covering $180M net outflows, generating 130.0% LCR buffer' }
+        ],
+        tryIt: 'Increase wholesale deposit run rate to 75% to observe total outflows reach $285M, dropping LCR to 82.1% non-compliance.',
+        check: {
+          question: 'Why do Basel III LCR regulations mandate a significantly higher runoff rate (e.g. 40% to 100%) for wholesale corporate deposits compared to retail deposits (e.g. 3% to 5%)?',
+          options: [
+            'Wholesale corporate treasurers are financially sophisticated, uninsured above guarantee caps, and will rapidly wire funds out at the first whisper of distress.',
+            'Corporate deposits are held in illiquid physical promissory notes.',
+            'Retail depositors are legally prohibited from accessing internet banking during banking panics.',
+            'The central bank directly pays the salaries of corporate finance officers.'
+          ],
+          answer: 0,
+          why: 'Large institutional and corporate deposits exceed deposit insurance limits and are actively managed; treasurers will instantly pull funds to preserve capital, whereas retail deposits are stickier and government-insured.',
+          answerIndex: 0,
+          explanation: 'Large institutional and corporate deposits exceed deposit insurance limits and are actively managed; treasurers will instantly pull funds to preserve capital, whereas retail deposits are stickier and government-insured.'
+        }
+      },
+      {
+        title: 'Counterparty Credit Risk, Credit Valuation Adjustment (CVA) & ISDA Master Agreement Netting',
+        say: [
+          'In over-the-counter (OTC) financial derivatives such as interest rate swaps and foreign exchange forwards, credit risk is bilateral and dynamic. Unlike a standard loan where the bank is solely the creditor, in an OTC derivative contract the mark-to-market (MTM) value fluctuates with market prices: if the contract is in the money (positive MTM), the bank is exposed to counterparty default; if it is out of the money (negative MTM), the counterparty is exposed to the bank.',
+          'To account for the economic cost of potential counterparty default on uncollateralized OTC derivative books, banks calculate Credit Valuation Adjustment (CVA). CVA represents the difference between the risk-free portfolio value and the true market value accounting for the probability of counterparty insolvency: CVA = (1 - Recovery Rate) * sum of Discounted Expected Exposure * Default Probability. Under Basel III, banks must also maintain substantial regulatory capital reserves against CVA volatility (CVA VaR).',
+          'The premier defense against counterparty credit risk and runaway CVA charges is the International Swaps and Derivatives Association (ISDA) Master Agreement with close-out netting provisions. Under close-out netting, upon a counterparty default event, all outstanding derivative trades across all asset classes are immediately terminated and collapsed into a single net payable or receivable. Instead of having to pay $11M on losing contracts while losing 100% of $17M on winning contracts, netting reduces gross exposure to a mere $6M net claim, freeing hundreds of thousands of dollars in capital reserves.'
+        ],
+        example: 'A trading desk holds 4 OTC derivative contracts with a corporate counterparty: +$12M, -$8M, +$5M, and -$3M. Without netting, gross credit exposure is $17M. Under an ISDA Master Agreement, close-out netting collapses exposure to $6M ($11M exposure reduction), slashing bilateral CVA from $306,000 to $108,000 and freeing $198,000 in regulatory economic capital.',
+        code: `# Bilateral Counterparty Credit Risk: CVA & ISDA Close-Out Netting Engine
+def calculate_cva_and_netting(trades: list, recovery_rate_pct: float, counterparty_cds_spread_bps: float) -> dict:
+    # Gross vs Net under ISDA Master Agreement
+    gross_exposure = sum(max(0.0, t["mtm"]) for t in trades)
+    net_exposure = max(0.0, sum(t["mtm"] for t in trades))
+    netting_benefit = gross_exposure - net_exposure
+    netting_factor = net_exposure / gross_exposure if gross_exposure > 0 else 0.0
+    
+    # 1-year default probability from CDS spread: PD approx Spread / (1 - R)
+    lgd = 1.0 - (recovery_rate_pct / 100.0)
+    cds_spread = counterparty_cds_spread_bps / 10000.0
+    implied_pd = min(1.0, cds_spread / lgd) if lgd > 0 else 0.0
+    
+    # Bilateral CVA approx LGD * Discounted Expected Exposure * PD
+    gross_cva = gross_exposure * lgd * implied_pd
+    net_cva = net_exposure * lgd * implied_pd
+    cva_savings = gross_cva - net_cva
+    
+    return {
+        "gross_exposure": round(gross_exposure, 2),
+        "net_exposure": round(net_exposure, 2),
+        "netting_benefit": round(netting_benefit, 2),
+        "netting_factor": round(netting_factor, 3),
+        "gross_cva": round(gross_cva, 2),
+        "net_cva": round(net_cva, 2),
+        "cva_capital_savings": round(cva_savings, 2)
+    }
+
+p5 = calculate_cva_and_netting(
+    [
+        {"trade_id": "IRS_1", "mtm": 12000000.0},
+        {"trade_id": "IRS_2", "mtm": -8000000.0},
+        {"trade_id": "FX_FWD_1", "mtm": 5000000.0},
+        {"trade_id": "FX_FWD_2", "mtm": -3000000.0}
+    ],
+    recovery_rate_pct=40.0, counterparty_cds_spread_bps=180.0
+)
+gross_mtm = "$" + f"{p5['gross_exposure']:,.2f}"
+net_mtm = "$" + f"{p5['net_exposure']:,.2f}"
+net_sav = "$" + f"{p5['netting_benefit']:,.2f}"
+gross_cva = "$" + f"{p5['gross_cva']:,.2f}"
+net_cva = "$" + f"{p5['net_cva']:,.2f}"
+cap_freed = "$" + f"{p5['cva_capital_savings']:,.2f}"
+print(f"Gross MTM: {gross_mtm} -> Net MTM: {net_mtm} (Savings: {net_sav})")
+print(f"Gross CVA: {gross_cva} -> Net CVA: {net_cva} (Capital Freed: {cap_freed})")`,
+        output: `Gross MTM: $17,000,000.00 -> Net MTM: $6,000,000.00 (Savings: $11,000,000.00)
+Gross CVA: $306,000.00 -> Net CVA: $108,000.00 (Capital Freed: $198,000.00)`,
+        codeNotes: [
+          { line: 3, note: 'Evaluates bilateral positive mark-to-market positions to calculate gross replacement exposure' },
+          { line: 5, note: 'Applies ISDA close-out netting rules to collapse positive and negative MTMs into a single net claim' },
+          { line: 12, note: 'Extracts risk-neutral probability of default (PD) from market-observed CDS credit spreads' },
+          { line: 32, note: 'Reduces derivative default exposure by $11.0M and slashes bilateral CVA expense by $198,000' }
+        ],
+        tryIt: 'Add a new losing trade with -$6M MTM and observe net exposure fall to $0.0M with zero CVA risk.',
+        check: {
+          question: 'What is the crucial legal and economic benefit of an ISDA Master Agreement close-out netting provision during counterparty bankruptcy?',
+          options: [
+            'It terminates all outstanding derivative contracts and calculates a single net aggregate payment, eliminating cherry-picking by the bankruptcy trustee.',
+            'It automatically forces the government to bail out both trading institutions.',
+            'It guarantees that derivative cash flows are completely exempt from taxation.',
+            'It converts all unsecured derivatives into AAA-rated sovereign bonds.'
+          ],
+          answer: 0,
+          why: 'Close-out netting prevents the "cherry-picking" problem where a bankruptcy trustee demands full payment on contracts where the bank owes money while defaulting on contracts where the bankrupt counterparty owes the bank.',
+          answerIndex: 0,
+          explanation: 'Close-out netting prevents the "cherry-picking" problem where a bankruptcy trustee demands full payment on contracts where the bank owes money while defaulting on contracts where the bankrupt counterparty owes the bank.'
+        }
+      }
+    ],
+    summary: [
+      'Syndicated Loan Facilities: Mandated Lead Arrangers manage bookrunner allocations, oversubscription scaling haircuts, and earn 50-150 bps arrangement fees while mitigating hung loan balance sheet risks.',
+      'Structured Trade Finance: Documentary Letters of Credit (UCP 600) and Banker\'s Acceptances eliminate cross-border counterparty risk and provide discount liquidity on 360-day money-market conventions.',
+      'Treasury ALM Swaps: Pay-Fixed Receive-Floating interest rate swaps insulate Net Interest Margins (NIM) and Economic Value of Equity from central bank interest rate shocks.',
+      'Basel III Liquidity Ratios: Mandates 30-day Liquidity Coverage Ratio (LCR >= 100%) with HQLA haircuts and 1-year Net Stable Funding Ratio (NSFR >= 100%) against wholesale deposit runs.',
+      'Counterparty Risk & CVA: Bilateral Credit Valuation Adjustments quantify OTC derivative default costs; ISDA Master Agreement close-out netting collapses gross exposure to free regulatory capital.'
+    ],
+    projectStep: {
+      title: 'Institutional Commercial Banking Syndicate, Trade & ALM Engine',
+      steps: [
+        'Structure a $500M syndicated credit facility with bookrunner tier allocations and oversubscription scaling.',
+        'Model international documentary letter of credit issuance, confirmation, and 90-day banker\'s acceptance discounting.',
+        'Engineer an ALM interest rate swap model to immunize net interest income against +200 bps macroeconomic rate shocks.',
+        'Execute a comprehensive Basel III LCR and NSFR liquidity stress test alongside an ISDA derivative close-out netting audit.'
+      ]
+    }
   }
 ];
 

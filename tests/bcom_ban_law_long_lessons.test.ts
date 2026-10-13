@@ -190,4 +190,59 @@ test('Block 35: B.Com Corporate Law Day 2: IP DTSA, SOX 404 & Poison Pill Snippe
   assert.ok(lesson.parts[4].code?.includes('simulate_shareholder_rights_plan_poison_pill'));
 });
 
+test('Block 112: B.Com Commercial Banking Day 3: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_ban', 3);
+  assert.ok(lesson, 'bcom_ban Day 3 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_ban');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5, 'bcom_ban Day 3 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_ban'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 112: B.Com Commercial Banking Day 3: Syndicated Lending, Trade LC & Treasury ALM Snippets Verification', () => {
+  const lesson = BCOM_BAN_LONG_LESSONS[2];
+  assert.ok(lesson, 'BCOM_BAN_LONG_LESSONS[2] must exist');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Syndicated Loan Facility Structuring/i);
+  assert.ok(lesson.parts[0].code?.includes('structure_syndicated_facility'));
+  assert.match(lesson.parts[1].title, /Structured Trade Finance.*Letters of Credit/i);
+  assert.ok(lesson.parts[1].code?.includes('issue_and_discount_trade_lc'));
+  assert.match(lesson.parts[2].title, /Treasury.*ALM.*Interest Rate Swap/i);
+  assert.ok(lesson.parts[2].code?.includes('hedge_alm_interest_rate_swap'));
+  assert.match(lesson.parts[3].title, /Basel III Liquidity.*LCR.*NSFR/i);
+  assert.ok(lesson.parts[3].code?.includes('stress_test_lcr_and_nsfr'));
+  assert.match(lesson.parts[4].title, /Counterparty Credit Risk.*CVA.*ISDA/i);
+  assert.ok(lesson.parts[4].code?.includes('calculate_cva_and_netting'));
+});
+
+
 
