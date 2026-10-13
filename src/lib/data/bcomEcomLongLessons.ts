@@ -1232,5 +1232,422 @@ Status: E-COMMERCE UNIT ECONOMICS & MEDIA MIX CERTIFIED FOR CAPITAL EFFICIENCY.`
         'Audit multi-channel advertising performance using Marketing Efficiency Ratio (MER) to eliminate duplicate platform attribution.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ecom',
+    day: 4,
+    title: 'Marketplace Operations, Inventory Turns, Drop-Shipping & Global Supply Chain Fulfillment',
+    overview: 'Master multi-channel marketplace operations, inventory productivity analytics, drop-shipping logistics, and international cross-border compliance. You will deconstruct Amazon 3P marketplace fee structures (FBA vs FBM) and Buy Box algorithms, model virtual supply chain economics and delivery latency risk, calculate Gross Margin Return on Investment (GMROI) and the hidden economic penalties of inventory stockouts, analyze international landed costs, tariffs, and de minimis thresholds, and deploy an integrated marketplace supply chain control tower.',
+    parts: [
+      {
+        title: 'Amazon 3P Marketplace Economics: FBA vs FBM & Seller Fee Cascades',
+        say: [
+          'For digital merchants and brand owners, third-party marketplaces—dominated by Amazon 3P, Walmart Marketplace, and Target Plus—represent the largest aggregation of transactional buyer intent on the modern internet. However, generating revenue within a walled marketplace platform operates under fundamentally different unit economics than selling on an independent DTC Shopify storefront. Rather than paying variable digital advertising networks to acquire traffic, marketplace sellers pay platform take rates and fulfillment surcharges that consume substantial portions of product margin. Mastering the financial mechanics of Fulfillment by Amazon (FBA) versus Fulfillment by Merchant (FBM) is paramount for digital retail profitability.',
+          'The seller fee cascade begins with the mandatory Marketplace Referral Fee, which typically extracts fifteen percent of the gross retail selling price across most consumer product categories. In an FBA model, the seller ships palletized inventory into Amazon fulfillment centers, outsourcing pick, pack, outbound delivery, and customer service to the platform. Amazon levies standard unit weight/size handling fees alongside monthly cubic-foot storage fees that surge significantly during fourth-quarter peak holiday seasons. In contrast, under an FBM structure, the merchant retains physical inventory within their own warehouse or third-party logistics (3PL) facility, paying commercial parcel shipping, box packaging, and labor directly.',
+          'While FBM frequently appears cheaper on paper for lightweight or slow-moving catalog SKUs, FBA confers a decisive algorithmic advantage: immediate eligibility for Amazon Prime two-day delivery badges. The Amazon Buy Box algorithm overwhelmingly favors Prime-eligible FBA listings over merchant-fulfilled alternatives, frequently awarding eighty percent or more of transaction volume to the FBA seller even when competing at identical price points. In this section, we evaluate an algorithmic fee comparator that models retail price, product COGS, referral commissions, and variable logistics costs across FBA and FBM, quantifying both net margin and Buy Box capture dynamics.'
+        ],
+        example: 'A home goods merchant sells an ergonomic desk cushion for $45.00 with a $12.00 product COGS and a 15% ($6.75) Amazon referral fee. Under FBA, paying $4.75 pick/pack, $0.85 storage, and $0.40 inbound freight yields a total fee of $12.75 and a net profit of $20.25 (45.0% margin), capturing 82% of Buy Box sales. Under FBM, paying $7.20 outbound shipping, $1.25 packaging, and $2.50 labor results in $17.70 in fees and $15.30 profit (34.0% margin), capturing only 18% of Buy Box volume.',
+        code: `def calculate_marketplace_fba_vs_fbm_economics():
+    print("=== Amazon 3P Marketplace Economics: FBA vs FBM Waterfall ===")
+    retail_price = 45.00
+    product_cogs = 12.00
+    
+    referral_fee_pct = 0.15  # 15% standard category referral
+    referral_fee = retail_price * referral_fee_pct
+    
+    # FBA Scenario
+    fba_pick_pack_fee = 4.75  # Standard large unit
+    fba_monthly_storage = 0.85 # Cubic foot allocation
+    fba_inbound_placement = 0.40 # Inbound freight to Amazon fulfillment center
+    total_fba_fees = referral_fee + fba_pick_pack_fee + fba_monthly_storage + fba_inbound_placement
+    fba_net_profit = retail_price - product_cogs - total_fba_fees
+    fba_margin_pct = (fba_net_profit / retail_price) * 100.0
+    fba_buy_box_share = 0.82  # Prime badge gives dominant Buy Box share
+    
+    # FBM Scenario (Merchant Fulfilled)
+    fbm_outbound_shipping = 7.20 # 3P parcel rate
+    fbm_packaging = 1.25
+    fbm_labor = 2.50
+    fbm_payment_processing = 0.0 # Included in Amazon referral fee
+    total_fbm_fees = referral_fee + fbm_outbound_shipping + fbm_packaging + fbm_labor
+    fbm_net_profit = retail_price - product_cogs - total_fbm_fees
+    fbm_margin_pct = (fbm_net_profit / retail_price) * 100.0
+    fbm_buy_box_share = 0.18 # Lower Buy Box share without Prime badge
+    
+    print(f"Retail Price: " + "$" + f"{retail_price:.2f} | Product COGS: " + "$" + f"{product_cogs:.2f} | Amazon Referral (15%): " + "$" + f"{referral_fee:.2f}")
+    print(f"FBA Model: Pick/Pack=" + "$" + f"{fba_pick_pack_fee:.2f}, Storage=" + "$" + f"{fba_monthly_storage:.2f}, Inbound=" + "$" + f"{fba_inbound_placement:.2f}")
+    print(f"  FBA Total Fees: " + "$" + f"{total_fba_fees:.2f} -> Net Profit: " + "$" + f"{fba_net_profit:.2f} ({fba_margin_pct:.1f}% margin) | Buy Box Share: {fba_buy_box_share*100:.0f}%")
+    print(f"FBM Model: Outbound Ship=" + "$" + f"{fbm_outbound_shipping:.2f}, Packaging=" + "$" + f"{fbm_packaging:.2f}, Labor=" + "$" + f"{fbm_labor:.2f}")
+    print(f"  FBM Total Fees: " + "$" + f"{total_fbm_fees:.2f} -> Net Profit: " + "$" + f"{fbm_net_profit:.2f} ({fbm_margin_pct:.1f}% margin) | Buy Box Share: {fbm_buy_box_share*100:.0f}%")
+    print("Strategic Verdict: FBA delivers higher unit velocity and Buy Box dominance despite platform fees.")
+    return {
+        "fba_net_profit": fba_net_profit,
+        "fba_margin_pct": fba_margin_pct,
+        "fbm_net_profit": fbm_net_profit,
+        "fbm_margin_pct": fbm_margin_pct
+    }
+
+calculate_marketplace_fba_vs_fbm_economics()`,
+        output: `=== Amazon 3P Marketplace Economics: FBA vs FBM Waterfall ===
+Retail Price: $45.00 | Product COGS: $12.00 | Amazon Referral (15%): $6.75
+FBA Model: Pick/Pack=$4.75, Storage=$0.85, Inbound=$0.40
+  FBA Total Fees: $12.75 -> Net Profit: $20.25 (45.0% margin) | Buy Box Share: 82%
+FBM Model: Outbound Ship=$7.20, Packaging=$1.25, Labor=$2.50
+  FBM Total Fees: $17.70 -> Net Profit: $15.30 (34.0% margin) | Buy Box Share: 18%
+Strategic Verdict: FBA delivers higher unit velocity and Buy Box dominance despite platform fees.`,
+        codeNotes: [
+          'Models Amazon 3P unit economics across retail price ($45.00), product COGS ($12.00), and 15% referral fee ($6.75).',
+          'Compares FBA total fees ($12.75, 45.0% margin) against merchant-fulfilled FBM ($17.70 total costs, 34.0% margin).',
+          'Highlights algorithmic Buy Box capture advantage: 82% share for Prime-eligible FBA vs 18% for FBM.'
+        ],
+        tryIt: 'Increase FBA monthly storage fees during peak Q4 to $2.40 to observe how seasonal surcharges compress FBA profitability.',
+        check: {
+          question: 'Why do high-volume Amazon sellers frequently accept steep FBA platform fees instead of fulfilling orders from their own warehouses?',
+          options: [
+            'FBA confers Prime badge eligibility, which heavily weights the Amazon Buy Box algorithm and dramatically boosts conversion velocity.',
+            'Amazon legally prohibits merchant-fulfilled shipping in the United States and Canada.',
+            'FBM requires merchants to pay double the standard 15% platform referral commission.',
+            'FBA completely waives all corporate tax obligations for registered sellers.'
+          ],
+          answer: 0,
+          why: 'Prime badge eligibility granted by FBA unlocks dominant Buy Box rotation, accelerating order conversion and sales velocity far beyond typical FBM performance.',
+          answerIndex: 0,
+          explanation: 'Prime badge eligibility granted by FBA unlocks dominant Buy Box rotation, accelerating order conversion and sales velocity far beyond typical FBM performance.'
+        }
+      },
+      {
+        title: 'Drop-Shipping Economics, Virtual Supply Chains & SLA Risk Mitigation',
+        say: [
+          'Drop-shipping represents a virtual supply chain architecture where the retail merchant functions as a customer-facing sales engine while entirely offloading physical inventory holding and parcel fulfillment to upstream manufacturers or third-party wholesalers. In a drop-shipping model, the retailer never purchases merchandise upfront, holds zero working capital trapped on warehouse shelves, and triggers a purchase order to the overseas supplier only after the end customer has successfully paid. While this model eliminates physical inventory risk and warehouse overhead, it introduces severe operational vulnerabilities in service level agreements (SLAs) and merchant payment standing.',
+          'The fundamental economic vulnerability of drop-shipping stems from long delivery transit horizons and loss of quality control. When merchandise is fulfilled via international cross-border parcel lines, delivery times typically range between twelve and twenty-one days, compared to one-to-three days for domestic retail. As delivery latency expands beyond ten days, customer dissatisfaction surges exponentially, triggering elevated return requests, order cancellation demands, and payment dispute chargebacks. In consumer payment networks, if a merchant chargeback-to-transaction ratio breaches 1.0%, payment processors immediately place the business in excessive risk monitoring, hold rolling rolling rolling reserves (often 10-20% of GMV), or terminate processing accounts.',
+          'To operate a sustainable drop-shipping enterprise, operators must incorporate risk-adjusted financial buffers into order pricing. Beyond baseline wholesale costs, international air packet freight, merchant payment gateway fees, and paid media acquisition CAC, the model must deduct dedicated return reserves (typically 5-10% of gross revenue) and dispute drag (chargeback fees of fifteen dollars per incident). In this section, we analyze a drop-shipping unit economic model that stress-tests a sixteen-day delivery SLA, evaluating whether customer friction and chargeback penalties erode operating profits and threaten payment gateway viability.'
+        ],
+        example: 'A merchant dropships a trending gadget for $58.00 with an $18.00 wholesale cost and $8.50 air parcel shipping. While baseline unit economics project an $11.52 profit after $18.00 ad spend and $1.98 payment fees, a 16-day delivery window triggers an 8.0% return rate (-$4.64) and a 1.5% chargeback rate with $15 fines (-$1.09), slashing net profit to $5.78 (10.0% margin) and breaching the 1.0% payment processor risk threshold.',
+        code: `def model_dropshipping_virtual_supply_chain():
+    print("=== Drop-Shipping Economics & SLA Latency Risk Modeling ===")
+    customer_price = 58.00
+    supplier_wholesale_cost = 18.00
+    air_packet_shipping = 8.50  # International direct parcel line
+    payment_fee = (customer_price * 0.029) + 0.30
+    ad_spend_cac = 18.00
+    
+    baseline_cm_profit = customer_price - supplier_wholesale_cost - air_packet_shipping - payment_fee - ad_spend_cac
+    
+    transit_days = 16
+    return_refund_rate = 0.08  # 8% refund rate due to 16-day latency
+    chargeback_rate = 0.015    # 1.5% dispute rate
+    chargeback_fine = 15.00
+    
+    refund_reserve = customer_price * return_refund_rate
+    chargeback_drag = (customer_price + chargeback_fine) * chargeback_rate
+    
+    net_adjusted_profit = baseline_cm_profit - refund_reserve - chargeback_drag
+    net_adjusted_margin_pct = (net_adjusted_profit / customer_price) * 100.0
+    sla_status = "CRITICAL_CHARGEBACK_RISK" if chargeback_rate >= 0.01 else "HEALTHY_SLA"
+    
+    print(f"Retail Price: " + "$" + f"{customer_price:.2f} | Wholesale Cost: " + "$" + f"{supplier_wholesale_cost:.2f} | Air Freight: " + "$" + f"{air_packet_shipping:.2f}")
+    print(f"Payment Processing: " + "$" + f"{payment_fee:.2f} | Paid Media CAC: " + "$" + f"{ad_spend_cac:.2f}")
+    print(f"Baseline Order Margin: " + "$" + f"{baseline_cm_profit:.2f}")
+    print(f"SLA Latency Impact ({transit_days} days delivery):")
+    print(f"  Refund Reserve (8.0%): -" + "$" + f"{refund_reserve:.2f}")
+    print(f"  Chargeback Dispute Drag (1.5% + " + "$" + f"15 fine): -" + "$" + f"{chargeback_drag:.2f}")
+    print(f"Net Risk-Adjusted Profit: " + "$" + f"{net_adjusted_profit:.2f} ({net_adjusted_margin_pct:.1f}% margin) -> [{sla_status}]")
+    return {
+        "baseline_profit": baseline_cm_profit,
+        "net_adjusted_profit": net_adjusted_profit,
+        "net_margin_pct": net_adjusted_margin_pct,
+        "sla_status": sla_status
+    }
+
+model_dropshipping_virtual_supply_chain()`,
+        output: `=== Drop-Shipping Economics & SLA Latency Risk Modeling ===
+Retail Price: $58.00 | Wholesale Cost: $18.00 | Air Freight: $8.50
+Payment Processing: $1.98 | Paid Media CAC: $18.00
+Baseline Order Margin: $11.52
+SLA Latency Impact (16 days delivery):
+  Refund Reserve (8.0%): -$4.64
+  Chargeback Dispute Drag (1.5% + $15 fine): -$1.09
+Net Risk-Adjusted Profit: $5.78 (10.0% margin) -> [CRITICAL_CHARGEBACK_RISK]`,
+        codeNotes: [
+          'Models virtual supply chain economics across wholesale cost ($18.00), air freight ($8.50), and paid CAC ($18.00).',
+          'Quantifies SLA latency penalties: 16-day transit triggers an 8.0% refund drag and a 1.5% chargeback dispute rate.',
+          'Flags CRITICAL_CHARGEBACK_RISK for breaching the 1.0% card network dispute threshold, threatening merchant gateway account status.'
+        ],
+        tryIt: 'Reduce delivery transit days to 4 via domestic supplier warehousing, dropping return rate to 2% and chargeback rate to 0.4%.',
+        check: {
+          question: 'What is the primary operational hazard facing e-commerce drop-shipping merchants operating with 14-21 day international shipping times?',
+          options: [
+            'Extended delivery latency triggers high return rates and customer payment chargebacks that breach the 1.0% threshold, risking payment gateway termination.',
+            'International air freight carriers confiscate 50% of all packages for customs training.',
+            'Wholesale suppliers are legally required to convert into non-profit charities after 100 orders.',
+            'Search engines permanently de-index websites that do not own physical warehouses.'
+          ],
+          answer: 0,
+          why: 'Long delivery windows frustrate customers, driving payment disputes and chargebacks above the critical 1.0% threshold where payment processors freeze or terminate accounts.',
+          answerIndex: 0,
+          explanation: 'Long delivery windows frustrate customers, driving payment disputes and chargebacks above the critical 1.0% threshold where payment processors freeze or terminate accounts.'
+        }
+      },
+      {
+        title: 'Inventory Turnover, GMROI & Stockout Penalty Economics',
+        say: [
+          'In physical and omnichannel retail commerce, the single largest consumer of corporate working capital is inventory. Balancing inventory availability against capital carrying costs is governed by Gross Margin Return on Investment (GMROI) and Inventory Turnover Velocity. GMROI measures how many dollars of gross profit an enterprise generates for every single dollar invested in inventory cost over a twelve-month period: GMROI equals Annual Gross Profit divided by Average Inventory Cost. Unlike simple gross margin percentage, GMROI measures capital productivity, penalizing sluggish catalog items that trap cash on shelves.',
+          'Inventory Turnover measures the velocity at which merchandise is sold and replenished throughout the year: Inventory Turns equals Annual Cost of Goods Sold divided by Average Inventory Cost. An apparel brand turning inventory six times annually holds roughly two months of inventory on hand, maintaining nimble cash flow. Conversely, a brand turning inventory only twice a year holds six months of stock, exposing itself to severe markdowns, seasonal obsolescence, and twenty to thirty percent annual inventory holding costs (warehousing rent, insurance, shrinkage, and capital cost of financing).',
+          'However, maintaining excessively lean inventory carries an equally catastrophic economic risk: the stockout penalty. When a best-selling SKU runs out of stock, the immediate financial loss is the direct gross margin on unfulfilled orders. Even more devastating in algorithmic marketplaces, a stockout permanently damages search rankings: Amazon and Google algorithms detect zero conversion, stripping organic ranking positions that required months of ad spend to build. Re-ranking a rested product typically requires heavy paid advertising subsidies. In this section, we model GMROI productivity alongside the full economic penalty of a 21-day stockout, validating optimal reorder thresholds.'
+        ],
+        example: 'A consumer brand generates $720,000 in revenue and $432,000 in gross profit (60% margin) on 12,000 units. Carrying $48,000 in average inventory at 6.0 turns per year yields a phenomenal 9.00x GMROI ($9 gross profit per $1 inventory invested). However, experiencing a 21-day stockout forfeits 690 units, costing $24,854.79 in lost gross profit and an additional $9,941.92 in algorithmic re-rank drag, totaling $34,796.71 in economic damage.',
+        code: `def calculate_gmroi_and_stockout_penalty():
+    print("=== GMROI Inventory Velocity & Stockout Penalty Economics ===")
+    annual_sales_units = 12_000
+    selling_price = 60.00
+    unit_cost = 24.00
+    gross_margin_unit = selling_price - unit_cost
+    
+    annual_revenue = annual_sales_units * selling_price
+    annual_gross_profit = annual_sales_units * gross_margin_unit
+    
+    inventory_turns = 6.0  # Turns per year
+    average_inventory_cost = (annual_sales_units * unit_cost) / inventory_turns
+    
+    # GMROI = Gross Profit / Average Inventory Cost
+    gmroi = annual_gross_profit / average_inventory_cost
+    
+    # Stockout penalty modeling
+    stockout_days = 21
+    daily_lost_sales = annual_sales_units / 365.0
+    lost_units = daily_lost_sales * stockout_days
+    direct_lost_gross_profit = lost_units * gross_margin_unit
+    algorithmic_rank_penalty_cost = direct_lost_gross_profit * 0.40  # Rank drops reduce post-restock sales
+    total_stockout_penalty = direct_lost_gross_profit + algorithmic_rank_penalty_cost
+    
+    print(f"Annual Revenue: " + "$" + f"{annual_revenue:,.2f} | Gross Profit: " + "$" + f"{annual_gross_profit:,.2f} (60.0% margin)")
+    print(f"Average Inventory Carried: " + "$" + f"{average_inventory_cost:,.2f} at {inventory_turns:.1f} Turns/Year")
+    print(f"GMROI Efficiency: {gmroi:.2f}x (Every " + "$" + f"1.00 invested in inventory generates " + "$" + f"{gmroi:.2f} in gross profit)")
+    print(f"Stockout Incident ({stockout_days} Days Out of Stock):")
+    print(f"  Lost Sales: {lost_units:.0f} units -> Direct Lost Gross Profit: " + "$" + f"{direct_lost_gross_profit:,.2f}")
+    print(f"  Algorithmic Re-rank Drag (40% penalty): " + "$" + f"{algorithmic_rank_penalty_cost:,.2f}")
+    print(f"  Total Economic Stockout Loss: " + "$" + f"{total_stockout_penalty:,.2f}")
+    return {
+        "gmroi": gmroi,
+        "inventory_turns": inventory_turns,
+        "stockout_penalty": total_stockout_penalty
+    }
+
+calculate_gmroi_and_stockout_penalty()`,
+        output: `=== GMROI Inventory Velocity & Stockout Penalty Economics ===
+Annual Revenue: $720,000.00 | Gross Profit: $432,000.00 (60.0% margin)
+Average Inventory Carried: $48,000.00 at 6.0 Turns/Year
+GMROI Efficiency: 9.00x (Every $1.00 invested in inventory generates $9.00 in gross profit)
+Stockout Incident (21 Days Out of Stock):
+  Lost Sales: 690 units -> Direct Lost Gross Profit: $24,854.79
+  Algorithmic Re-rank Drag (40% penalty): $9,941.92
+  Total Economic Stockout Loss: $34,796.71`,
+        codeNotes: [
+          'Calculates GMROI at 9.00x across $432,000 gross profit and $48,000 average inventory cost at 6.0 turns/year.',
+          'Deconstructs the economic penalty of a 21-day stockout incident resulting in 690 forfeited unit sales.',
+          'Quantifies direct lost gross margin ($24,854.79) plus algorithmic marketplace re-ranking drag ($9,941.92) totaling $34,796.71.'
+        ],
+        tryIt: 'Adjust inventory turns to 3.0 to see how slower turnover increases average inventory carried and cuts GMROI in half.',
+        check: {
+          question: 'What does a Gross Margin Return on Investment (GMROI) of 9.00x indicate about an e-commerce brand\'s inventory productivity?',
+          options: [
+            'For every $1.00 of capital tied up in average inventory cost, the business generates $9.00 in annual gross profit.',
+            'The business loses $9.00 on every transaction before deducting shipping costs.',
+            'The brand must discount all products by 90% during clearance sales.',
+            'The enterprise operates with a 9-year cash conversion cycle.'
+          ],
+          answer: 0,
+          why: 'GMROI measures gross profit generated per dollar of inventory investment; 9.00x indicates exceptional inventory capital productivity.',
+          answerIndex: 0,
+          explanation: 'GMROI measures gross profit generated per dollar of inventory investment; 9.00x indicates exceptional inventory capital productivity.'
+        }
+      },
+      {
+        title: 'Cross-Border E-Commerce, Customs Tariffs, De Minimis & Harmonized Codes',
+        say: [
+          'As e-commerce enterprises expand beyond domestic borders into international consumer markets, they confront the complexities of global trade compliance, customs documentation, import tariffs, and destination-based taxation. When a merchant ships a direct-to-consumer parcel or a commercial freight container from an overseas manufacturing facility into North America, Europe, or Asia, the actual landed cost of the merchandise is dictated by international commercial terms (Incoterms), Harmonized System (HS) commodity codes, and statutory customs valuation methods.',
+          'The benchmark valuation framework is Cost, Insurance, and Freight (CIF), which establishes the customs value upon arrival at the port of entry: CIF Value equals Free On Board (FOB) factory price plus international ocean or air freight plus marine cargo insurance. Customs authorities apply ad valorem duty rates based on the specific 6-to-10 digit HS code classification assigned to the merchandise. Furthermore, destination countries levy national Value Added Tax (VAT) or Goods and Services Tax (GST) applied on the total dutiable base (CIF value plus customs duties), alongside formal customs brokerage entry processing fees.',
+          'E-commerce logistics operators must also navigate critical statutory duty exemptions, notably the United States Section 321 De Minimis threshold, which permits imported commercial parcels valued under eight hundred dollars per person per day to enter the US duty-free and tax-free. In contrast, jurisdictions such as the European Union have eliminated de minimis VAT exemptions, requiring merchants to register for the Import One-Stop Shop (IOSS) to collect and remit VAT at checkout. In this section, we analyze an automated international landed cost calculator that structures CIF valuation, tariff duties, brokerage fees, and import VAT under Delivered Duty Paid (DDP) terms, ensuring seamless cross-border delivery.'
+        ],
+        example: 'A consumer electronics brand manufactures a wearable device in Asia for $50.00 FOB. Adding $8.50 air freight and $0.50 cargo insurance establishes a $59.00 CIF customs value. Entering Europe triggers a 6.5% customs duty ($3.83), a $2.00 brokerage fee, and a 20% import VAT ($12.57) on the dutiable base, lifting total DDP landed cost to $77.40 (+54.8% over factory price). Under US Section 321, parcels under $800 enter completely duty-free.',
+        code: `def model_cross_border_landed_cost_and_tariffs():
+    print("=== Cross-Border E-Commerce Landed Cost & Tariff Schedule ===")
+    product_fob_price = 50.00 # Free On Board factory price
+    ocean_air_freight = 8.50
+    cargo_insurance = 0.50
+    cif_customs_value = product_fob_price + ocean_air_freight + cargo_insurance
+    
+    hs_duty_rate = 0.065 # 6.5% HS customs tariff
+    customs_duty = cif_customs_value * hs_duty_rate
+    
+    customs_brokerage_entry = 2.00 # Entry processing fee
+    import_vat_rate = 0.20 # 20% European Import VAT (reclaimable or paid via IOSS)
+    dutiable_base = cif_customs_value + customs_duty
+    import_vat = dutiable_base * import_vat_rate
+    
+    total_landed_cost = cif_customs_value + customs_duty + customs_brokerage_entry + import_vat
+    
+    de_minimis_threshold = 800.00 # US Section 321 threshold
+    is_us_duty_free = cif_customs_value < de_minimis_threshold
+    
+    print(f"Factory FOB Price: " + "$" + f"{product_fob_price:.2f} | Freight: " + "$" + f"{ocean_air_freight:.2f} | Insurance: " + "$" + f"{cargo_insurance:.2f}")
+    print(f"Customs CIF Value: " + "$" + f"{cif_customs_value:.2f}")
+    print("Tariff & Taxes:")
+    print(f"  Customs Duty (6.5%): " + "$" + f"{customs_duty:.2f}")
+    print(f"  Customs Brokerage Entry: " + "$" + f"{customs_brokerage_entry:.2f}")
+    print(f"  Import VAT (20.0%): " + "$" + f"{import_vat:.2f}")
+    print(f"Total DDP Landed Cost: " + "$" + f"{total_landed_cost:.2f} (+{((total_landed_cost - product_fob_price)/product_fob_price)*100:.1f}% over factory FOB)")
+    print(f"US Section 321 Status: {'DUTY_FREE_UNDER_DE_MINIMIS' if is_us_duty_free else 'SUBJECT_TO_FULL_TARIFF'}")
+    return {
+        "cif_value": cif_customs_value,
+        "duty": customs_duty,
+        "import_vat": import_vat,
+        "total_landed_cost": total_landed_cost
+    }
+
+model_cross_border_landed_cost_and_tariffs()`,
+        output: `=== Cross-Border E-Commerce Landed Cost & Tariff Schedule ===
+Factory FOB Price: $50.00 | Freight: $8.50 | Insurance: $0.50
+Customs CIF Value: $59.00
+Tariff & Taxes:
+  Customs Duty (6.5%): $3.83
+  Customs Brokerage Entry: $2.00
+  Import VAT (20.0%): $12.57
+Total DDP Landed Cost: $77.40 (+54.8% over factory FOB)
+US Section 321 Status: DUTY_FREE_UNDER_DE_MINIMIS`,
+        codeNotes: [
+          'Constructs CIF customs valuation ($59.00) from factory FOB price ($50.00), freight ($8.50), and insurance ($0.50).',
+          'Calculates 6.5% HS customs duty ($3.83), brokerage entry fees ($2.00), and 20% import VAT ($12.57) yielding $77.40 DDP landed cost.',
+          'Validates US Section 321 de minimis eligibility, confirming duty-free and tax-free entry for direct parcels under $800.'
+        ],
+        tryIt: 'Increase the FOB price to $900.00 to observe how exceeding the Section 321 de minimis limit impacts US customs tariff liability.',
+        check: {
+          question: 'What is the primary operational advantage for cross-border e-commerce brands utilizing the US Section 321 de minimis exemption?',
+          options: [
+            'It allows direct-to-consumer imported shipments with a fair retail value under $800 to enter the United States duty-free and tax-free with expedited customs clearance.',
+            'It allows merchants to ship dangerous contraband without customs declaration.',
+            'It eliminates all commercial parcel shipping charges across international postal carriers.',
+            'It forces foreign manufacturers to provide inventory at zero wholesale cost.'
+          ],
+          answer: 0,
+          why: 'Section 321 exempts qualifying shipments under $800 from import duties and federal taxes, providing a substantial cost and speed advantage for direct cross-border e-commerce.',
+          answerIndex: 0,
+          explanation: 'Section 321 exempts qualifying shipments under $800 from import duties and federal taxes, providing a substantial cost and speed advantage for direct cross-border e-commerce.'
+        }
+      },
+      {
+        title: 'Global Marketplace & Supply Chain Operations Control Tower',
+        say: [
+          'Achieving operational excellence in modern e-commerce requires integrating marketplace channel economics, virtual supply chain fulfillment, inventory capital productivity, and cross-border trade compliance into a centralized operations control tower. When digital retailers manage Amazon seller accounts, drop-shipping supplier portals, warehouse inventory levels, and international customs clearance in disconnected spreadsheets, cross-functional blind spots inevitably lead to stockouts, fee penalties, and customer churn. The Global Marketplace & Supply Chain Operations Control Tower provides real-time executive visibility and automated orchestration across the end-to-end supply chain.',
+          'The control tower synthesizes the four core operational disciplines. Pillar 1 manages marketplace distribution: auditing FBA versus FBM fee structures to optimize Buy Box win probabilities while preserving unit margin. Pillar 2 governs virtual supplier fulfillment: tracking delivery transit latency, chargeback dispute rates, and supplier SLAs to protect payment gateway merchant standing. Pillar 3 optimizes inventory productivity: monitoring inventory turnover velocity and GMROI capital efficiency while enforcing dynamic reorder buffers to prevent catastrophic stockout de-ranking. Pillar 4 handles global trade logistics: tracking CIF valuation, HS tariff rates, and destination VAT compliance under DDP delivery terms.',
+          'By deploying this integrated control tower in Python, supply chain leadership can stress-test operational scenarios with instantaneous precision. Whether modeling the margin impact of shifting inventory from FBM to FBA, evaluating a transition from overseas drop-shipping to domestic 3PL fulfillment, mitigating supplier lead-time delays, or hedging cross-border tariff increases, the control tower provides clear executive guidance. In this final lesson of Day 4, you will execute the unified marketplace supply chain control tower, certifying operational resilience and capital efficiency across global digital commerce channels.'
+        ],
+        example: 'A global digital retail brand executes the Supply Chain Operations Control Tower. The command deck confirms a 45.0% FBA net margin capturing 82% Buy Box share, flags drop-shipping latency risks at a 1.5% chargeback rate, validates an elite 9.00x GMROI with $34,796.71 stockout risk visibility, and schedules a $77.40 DDP landed cost under global customs compliance. The executive suite confirms operational readiness across all marketplace channels.',
+        code: `def run_marketplace_supply_chain_control_tower():
+    print("=== PinIT Career OS Global Marketplace & Supply Chain Control Tower ===")
+    print("--- 1. FBA vs FBM Marketplace Economics ---")
+    fba = calculate_marketplace_fba_vs_fbm_economics()
+    
+    print("\n--- 2. Drop-Shipping Virtual Supply Chain ---")
+    ds = model_dropshipping_virtual_supply_chain()
+    
+    print("\n--- 3. GMROI & Stockout Penalty ---")
+    inv = calculate_gmroi_and_stockout_penalty()
+    
+    print("\n--- 4. Cross-Border Landed Cost & Customs ---")
+    cb = model_cross_border_landed_cost_and_tariffs()
+    
+    print("\n--- 5. Executive Supply Chain Operations Synthesis ---")
+    print(f"  Marketplace FBA Net Margin: {fba['fba_margin_pct']:.1f}% (vs FBM {fba['fbm_margin_pct']:.1f}%)")
+    print(f"  Drop-Shipping SLA Risk Margin: {ds['net_margin_pct']:.1f}% [{ds['sla_status']}]")
+    print(f"  Inventory GMROI Velocity: {inv['gmroi']:.2f}x ({inv['inventory_turns']:.1f} Turns/Yr, Stockout Drag: " + "$" + f"{inv['stockout_penalty']:,.2f})")
+    print(f"  Cross-Border DDP Landed Cost: " + "$" + f"{cb['total_landed_cost']:.2f} (Base CIF: " + "$" + f"{cb['cif_value']:.2f})")
+    print("Status: MARKETPLACE SUPPLY CHAIN & INVENTORY PRODUCTIVITY CERTIFIED RESILIENT.")
+
+run_marketplace_supply_chain_control_tower()`,
+        output: `=== PinIT Career OS Global Marketplace & Supply Chain Control Tower ===
+--- 1. FBA vs FBM Marketplace Economics ---
+=== Amazon 3P Marketplace Economics: FBA vs FBM Waterfall ===
+Retail Price: $45.00 | Product COGS: $12.00 | Amazon Referral (15%): $6.75
+FBA Model: Pick/Pack=$4.75, Storage=$0.85, Inbound=$0.40
+  FBA Total Fees: $12.75 -> Net Profit: $20.25 (45.0% margin) | Buy Box Share: 82%
+FBM Model: Outbound Ship=$7.20, Packaging=$1.25, Labor=$2.50
+  FBM Total Fees: $17.70 -> Net Profit: $15.30 (34.0% margin) | Buy Box Share: 18%
+Strategic Verdict: FBA delivers higher unit velocity and Buy Box dominance despite platform fees.
+
+--- 2. Drop-Shipping Virtual Supply Chain ---
+=== Drop-Shipping Economics & SLA Latency Risk Modeling ===
+Retail Price: $58.00 | Wholesale Cost: $18.00 | Air Freight: $8.50
+Payment Processing: $1.98 | Paid Media CAC: $18.00
+Baseline Order Margin: $11.52
+SLA Latency Impact (16 days delivery):
+  Refund Reserve (8.0%): -$4.64
+  Chargeback Dispute Drag (1.5% + $15 fine): -$1.09
+Net Risk-Adjusted Profit: $5.78 (10.0% margin) -> [CRITICAL_CHARGEBACK_RISK]
+
+--- 3. GMROI & Stockout Penalty ---
+=== GMROI Inventory Velocity & Stockout Penalty Economics ===
+Annual Revenue: $720,000.00 | Gross Profit: $432,000.00 (60.0% margin)
+Average Inventory Carried: $48,000.00 at 6.0 Turns/Year
+GMROI Efficiency: 9.00x (Every $1.00 invested in inventory generates $9.00 in gross profit)
+Stockout Incident (21 Days Out of Stock):
+  Lost Sales: 690 units -> Direct Lost Gross Profit: $24,854.79
+  Algorithmic Re-rank Drag (40% penalty): $9,941.92
+  Total Economic Stockout Loss: $34,796.71
+
+--- 4. Cross-Border Landed Cost & Customs ---
+=== Cross-Border E-Commerce Landed Cost & Tariff Schedule ===
+Factory FOB Price: $50.00 | Freight: $8.50 | Insurance: $0.50
+Customs CIF Value: $59.00
+Tariff & Taxes:
+  Customs Duty (6.5%): $3.83
+  Customs Brokerage Entry: $2.00
+  Import VAT (20.0%): $12.57
+Total DDP Landed Cost: $77.40 (+54.8% over factory FOB)
+US Section 321 Status: DUTY_FREE_UNDER_DE_MINIMIS
+
+--- 5. Executive Supply Chain Operations Synthesis ---
+  Marketplace FBA Net Margin: 45.0% (vs FBM 34.0%)
+  Drop-Shipping SLA Risk Margin: 10.0% [CRITICAL_CHARGEBACK_RISK]
+  Inventory GMROI Velocity: 9.00x (6.0 Turns/Yr, Stockout Drag: $34,796.71)
+  Cross-Border DDP Landed Cost: $77.40 (Base CIF: $59.00)
+Status: MARKETPLACE SUPPLY CHAIN & INVENTORY PRODUCTIVITY CERTIFIED RESILIENT.`,
+        codeNotes: [
+          'Unifies all 4 supply chain pillars: Amazon FBA/FBM fee cascades, drop-shipping SLA risks, GMROI, and cross-border tariffs.',
+          'Evaluates FBA margin (45.0% vs FBM 34.0%) and highlights Buy Box rotation dominance (82% vs 18%).',
+          'Audits inventory productivity (GMROI = 9.00x) and quantifies cross-border DDP landed costs ($77.40) under global customs rules.'
+        ],
+        tryIt: 'Run the integrated marketplace supply chain control tower to verify end-to-end multi-channel logistics resilience.',
+        check: {
+          question: 'What is the core strategic purpose of the Global Marketplace & Supply Chain Operations Control Tower in digital retail?',
+          options: [
+            'To synthesize marketplace fee cascades, supplier delivery SLAs, inventory turnover productivity, and international customs compliance into a unified executive operating dashboard.',
+            'To eliminate the need for paying sales commissions to independent advertising affiliates.',
+            'To convert all physical retail stores into non-profit historical museums.',
+            'To prevent international courier aircraft from requiring aviation fuel during flight.'
+          ],
+          answer: 0,
+          why: 'The control tower unifies logistics, marketplace economics, and trade compliance, preventing operational blind spots and protecting profitability.',
+          answerIndex: 0,
+          explanation: 'The control tower unifies logistics, marketplace economics, and trade compliance, preventing operational blind spots and protecting profitability.'
+        }
+      }
+    ],
+    summary: [
+      'Deconstructed Amazon 3P marketplace fee cascades across FBA ($12.75 fees, 45.0% margin, 82% Buy Box share) vs FBM ($17.70 fees, 34.0% margin, 18% Buy Box share), proving FBA algorithmic dominance.',
+      'Modeled drop-shipping virtual supply chain economics, revealing how 16-day delivery latency triggers 8% refunds and 1.5% chargebacks (-$5.73 total drag), flagging payment gateway risk.',
+      'Calculated Gross Margin Return on Investment (GMROI) at 9.00x on 6.0 inventory turns, and quantified the $34,796.71 economic penalty of a 21-day stockout incident including algorithmic re-ranking drag.',
+      'Constructed an international cross-border landed cost schedule, structuring CIF customs valuation ($59.00), 6.5% HS tariff ($3.83), and 20% import VAT ($12.57) to yield $77.40 DDP landed cost while evaluating US Section 321 de minimis eligibility.',
+      'Deployed the Global Marketplace & Supply Chain Operations Control Tower, establishing complete operational resilience across multi-channel digital retail ecosystems.'
+    ],
+    projectStep: {
+      title: 'Deploy the Global Marketplace & Supply Chain Operations Engine',
+      steps: [
+        'Model Amazon 3P fee cascades across FBA and FBM to optimize Buy Box share and unit net margins.',
+        'Calculate drop-shipping SLA latency risks, return reserves, and payment processor chargeback drag.',
+        'Audit inventory productivity using GMROI and quantify the economic costs of catalog stockout incidents.',
+        'Engineer cross-border DDP landed cost schedules incorporating CIF valuation, HS tariffs, and VAT compliance.'
+      ]
+    }
   }
 ];
