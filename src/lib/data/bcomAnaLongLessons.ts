@@ -1442,5 +1442,405 @@ Liquidity Status: [ROBUST_LIQUIDITY]`,
         'Execute liquidity stress tests computing Quick Ratios, Defensive Interval survival days, and cash burn runways.'
       ]
     }
+  },
+{
+    day: 5,
+    coursePrefix: 'bcom_ana',
+    title: 'Milestone 1 Capstone: Enterprise Financial Statement Consolidation, Ratio Intelligence & Fraud Detection Audit Engine',
+    parts: [
+      {
+        title: 'Multi-Entity Consolidated Financial Statements & Intercompany Eliminations',
+        say: [
+          'In multinational holding companies and multi-tier corporate conglomerates, parent corporations control diverse subsidiaries through equity ownership. Preparing financial statements for shareholders and regulatory agencies cannot simply involve aggregating the line-item accounts of all subsidiaries together; doing so creates catastrophic double-counting of revenues, operating expenses, receivables, and payables.',
+          'Consolidated financial reporting requires strict Intercompany Eliminations in accordance with IFRS 10 and US GAAP ASC 810. When a parent company sells goods to a wholly owned subsidiary for $600,000, that transaction is purely an internal transfer between business units. The consolidated financial statements must eliminate the parent $600,000 intercompany revenue and the subsidiary $600,000 intercompany cost of goods sold, ensuring consolidated top-line revenue reflects only transactions executed with external arm\'s-length third parties.',
+          'Similarly, on the consolidated balance sheet, any open intercompany trade receivables and corresponding payables (e.g., $150,000 owed between units) must be netted to zero. Furthermore, any unrealized profit embedded in ending inventory transferred between entities must be stripped out until the goods are sold to an outside customer. Automated multi-entity consolidation engines maintain rigorous audit trails of these elimination entries.'
+        ],
+        example: 'Think of a family household: if a parent pays their child $20 to mow the lawn, family wealth did not increase by $20; outside bankers evaluating the family income must eliminate the internal transfer, counting only salaries earned by family members from external employers.',
+        code: `def simulate_multientity_consolidation_and_elimination(parent, subsidiary, intercompany_sales, intercompany_receivables):
+    """Consolidates Parent and Subsidiary financials with complete intercompany eliminations."""
+    # Gross aggregated amounts
+    gross_rev = parent["revenue"] + subsidiary["revenue"]
+    gross_cogs = parent["cogs"] + subsidiary["cogs"]
+    gross_ar = parent["accounts_receivable"] + subsidiary["accounts_receivable"]
+    gross_ap = parent["accounts_payable"] + subsidiary["accounts_payable"]
+    
+    # Intercompany Eliminations:
+    # 1. Eliminate internal trading sales & internal COGS
+    elim_rev = gross_rev - intercompany_sales
+    elim_cogs = gross_cogs - intercompany_sales
+    
+    # 2. Eliminate internal debtor/creditor balances
+    elim_ar = gross_ar - intercompany_receivables
+    elim_ap = gross_ap - intercompany_receivables
+    
+    consolidated_gross_margin = elim_rev - elim_cogs
+    
+    return {
+        "Gross_Combined_Revenue": gross_rev,
+        "Eliminated_Intercompany_Sales": intercompany_sales,
+        "Consolidated_Revenue": elim_rev,
+        "Consolidated_COGS": elim_cogs,
+        "Consolidated_Gross_Margin": consolidated_gross_margin,
+        "Consolidated_AR": elim_ar,
+        "Consolidated_AP": elim_ap
+    }
+
+parent_co = {"revenue": 5000000.0, "cogs": 3000000.0, "accounts_receivable": 800000.0, "accounts_payable": 600000.0}
+subsidiary_co = {"revenue": 2000000.0, "cogs": 1200000.0, "accounts_receivable": 400000.0, "accounts_payable": 350000.0}
+ic_sales = 600000.0       # Parent sold $600k goods to Sub
+ic_receivables = 150000.0 # Sub still owes Parent $150k
+
+print("=== MULTI-ENTITY CONSOLIDATION & INTERCOMPANY ELIMINATIONS ===")
+res = simulate_multientity_consolidation_and_elimination(parent_co, subsidiary_co, ic_sales, ic_receivables)
+print("Gross Combined Revenue: $" + f"{res['Gross_Combined_Revenue']:,.2f} | Intercompany Eliminated: -$" + f"{res['Eliminated_Intercompany_Sales']:,.2f}")
+print("Consolidated Revenue: $" + f"{res['Consolidated_Revenue']:,.2f} | Consolidated Gross Profit: $" + f"{res['Consolidated_Gross_Margin']:,.2f}")
+print("Consolidated AR: $" + f"{res['Consolidated_AR']:,.2f} | Consolidated AP: $" + f"{res['Consolidated_AP']:,.2f}")`,
+        output: `=== MULTI-ENTITY CONSOLIDATION & INTERCOMPANY ELIMINATIONS ===
+Gross Combined Revenue: $7,000,000.00 | Intercompany Eliminated: -$600,000.00
+Consolidated Revenue: $6,400,000.00 | Consolidated Gross Profit: $2,800,000.00
+Consolidated AR: $1,050,000.00 | Consolidated AP: $800,000.00`,
+        codeNotes: [
+          'Aggregates parent and subsidiary operational accounts to compute gross combined volume ($7.0M).',
+          'Eliminates internal product sales (-$600k) from both revenue and COGS to ensure true external transaction reporting.',
+          'Nets out open intercompany trade receivables and trade payables (-$150k) to prevent double-counting of working capital assets.'
+        ],
+        tryIt: 'Increase intercompany_sales to $1,000,000 and confirm that Consolidated_Revenue adjusts downward to $6,000,000 while Gross Margin is unchanged.',
+        check: {
+          question: 'Why are intercompany sales eliminated in preparing consolidated corporate financial statements?',
+          options: [
+            'Because recognizing revenue on transactions between controlled subsidiaries would artificially inflate revenue without executing actual sales to external customers',
+            'Because subsidiaries are legally forbidden from owning bank accounts',
+            'Because parent corporations are not allowed to sell physical inventory',
+            'To avoid paying employee health insurance premiums'
+          ],
+          answer: 0,
+          why: 'A consolidated entity represents a single economic unit; moving inventory between subsidiaries is an internal transfer, not a realization event with outside economic counterparties.'
+        }
+      },
+      {
+        title: 'Beneish M-Score Earnings Manipulation & Financial Forensic Detection',
+        say: [
+          'Financial statement manipulation and corporate accounting fraud (exemplified by historic collapses like Enron, WorldCom, and Wirecard) inflict catastrophic capital destruction on equity investors and creditors. Auditors and forensic quantitative analysts rely on mathematical statistical models to flag potential earnings management before formal regulatory enforcement.',
+          'The premier empirical forensic model is Professor Messod Beneish\'s 8-variable M-Score model. The Beneish M-Score combines eight financial statement ratios: Days Sales in Receivables Index (DSRI), Gross Margin Index (GMI), Asset Quality Index (AQI), Sales Growth Index (SGI), Depreciation Index (DEPI), SG&A Expense Index (SGAI), Leverage Index (LVGI), and Total Accruals to Total Assets (TATA).',
+          'An accelerating DSRI indicates aggressive revenue recognition (booking unbilled receivables before cash collection), while an elevated AQI flags capitalization of operational expenses into intangible assets. An M-Score calculated above the critical benchmark of -1.78 signals a high statistical probability of earnings manipulation, triggering mandatory forensic deep-dive audits into revenue contracts and journal ledger adjustments.'
+        ],
+        example: 'Think of the Beneish M-Score like a medical blood panel for an athlete: high red blood cell counts, abnormal hormone ratios, and irregular metabolic indices do not prove guilt in isolation, but in combination they flag performance-enhancing drug manipulation with statistical certainty.',
+        code: `def calculate_beneish_m_score_forensic_audit(y0, y1):
+    """Calculates 8-variable Beneish M-Score for forensic earnings manipulation detection."""
+    # 1. DSRI: Days Sales in Receivables Index = (AR_1 / Rev_1) / (AR_0 / Rev_0)
+    dsri = (y1["ar"] / y1["rev"]) / (y0["ar"] / y0["rev"])
+    
+    # 2. GMI: Gross Margin Index = ((Rev_0 - COGS_0)/Rev_0) / ((Rev_1 - COGS_1)/Rev_1)
+    gm_0 = (y0["rev"] - y0["cogs"]) / y0["rev"]
+    gm_1 = (y1["rev"] - y1["cogs"]) / y1["rev"]
+    gmi = gm_0 / gm_1
+    
+    # 3. AQI: Asset Quality Index = (1 - (CA_1 + PPE_1)/TA_1) / (1 - (CA_0 + PPE_0)/TA_0)
+    aq_1 = 1.0 - (y1["current_assets"] + y1["ppe"]) / y1["total_assets"]
+    aq_0 = 1.0 - (y0["current_assets"] + y0["ppe"]) / y0["total_assets"]
+    aqi = aq_1 / aq_0 if aq_0 > 0 else 1.0
+    
+    # 4. SGI: Sales Growth Index = Rev_1 / Rev_0
+    sgi = y1["rev"] / y0["rev"]
+    
+    # 5. DEPI: Depreciation Index = (Depr_0 / (PPE_0 + Depr_0)) / (Depr_1 / (PPE_1 + Depr_1))
+    dep_rate_0 = y0["deprec"] / (y0["ppe"] + y0["deprec"])
+    dep_rate_1 = y1["deprec"] / (y1["ppe"] + y1["deprec"])
+    depi = dep_rate_0 / dep_rate_1
+    
+    # 6. SGAI: SG&A Expense Index = (SGA_1 / Rev_1) / (SGA_0 / Rev_0)
+    sgai = (y1["sga"] / y1["rev"]) / (y0["sga"] / y0["rev"])
+    
+    # 7. LVGI: Leverage Index = (LTD_1 / TA_1) / (LTD_0 / TA_0)
+    lvgi = (y1["debt"] / y1["total_assets"]) / (y0["debt"] / y0["total_assets"])
+    
+    # 8. TATA: Total Accruals to Total Assets = (Net Income_1 - CFO_1) / TA_1
+    tata = (y1["net_income"] - y1["cfo"]) / y1["total_assets"]
+    
+    # Beneish 8-variable model equation:
+    m_score = (
+        -4.84
+        + (0.920 * dsri)
+        + (0.528 * gmi)
+        + (0.404 * aqi)
+        + (0.892 * sgi)
+        + (0.115 * depi)
+        - (0.172 * sgai)
+        + (4.037 * tata)
+        + (0.0327 * lvgi)
+    )
+    
+    # Threshold: M > -1.78 indicates high probability of accounting manipulation
+    manipulator = m_score > -1.78
+    verdict = "HIGH_MANIPULATION_RISK" if manipulator else "LOW_MANIPULATION_RISK"
+    
+    return {
+        "DSRI": round(dsri, 3),
+        "GMI": round(gmi, 3),
+        "SGI": round(sgi, 3),
+        "TATA": round(tata, 3),
+        "M_Score": round(m_score, 2),
+        "Verdict": verdict
+    }
+
+clean_y0 = {"rev": 10000000.0, "cogs": 6000000.0, "ar": 1200000.0, "current_assets": 4000000.0, "ppe": 5000000.0, "total_assets": 10000000.0, "deprec": 500000.0, "sga": 1500000.0, "debt": 2000000.0, "net_income": 1200000.0, "cfo": 1300000.0}
+clean_y1 = {"rev": 11000000.0, "cogs": 6600000.0, "ar": 1350000.0, "current_assets": 4500000.0, "ppe": 5500000.0, "total_assets": 11000000.0, "deprec": 550000.0, "sga": 1650000.0, "debt": 2100000.0, "net_income": 1350000.0, "cfo": 1400000.0}
+
+print("=== BENEISH M-SCORE FORENSIC EARNINGS FRAUD DETECTION ===")
+res = calculate_beneish_m_score_forensic_audit(clean_y0, clean_y1)
+print(f"DSRI: {res['DSRI']} | GMI: {res['GMI']} | SGI: {res['SGI']} | TATA: {res['TATA']}")
+print(f"Beneish M-Score: {res['M_Score']} -> Forensic Audit Verdict: [{res['Verdict']}]")`,
+        output: `=== BENEISH M-SCORE FORENSIC EARNINGS FRAUD DETECTION ===
+DSRI: 1.023 | GMI: 1.0 | SGI: 1.1 | TATA: -0.005
+Beneish M-Score: -2.07 -> Forensic Audit Verdict: [LOW_MANIPULATION_RISK]`,
+        codeNotes: [
+          'Calculates eight forensic indices tracking revenue recognition, asset quality, margin deterioration, and accruals.',
+          'Evaluates Days Sales in Receivables Index (DSRI = 1.023) and Total Accruals to Total Assets (TATA = -0.005).',
+          'Computes overall M-Score (-2.07) remaining safely below the -1.78 threshold, confirming clean earnings quality.'
+        ],
+        tryIt: 'Increase clean_y1 ar to $3,000,000 (aggressive channel stuffing) and observe how M-Score exceeds -1.78, flagging HIGH_MANIPULATION_RISK.',
+        check: {
+          question: 'In the Beneish M-Score forensic model, what threshold separates companies with low earnings manipulation risk from potential manipulators?',
+          options: [
+            'An M-Score greater than -1.78 indicates high probability of accounting manipulation',
+            'An M-Score greater than +100',
+            'An M-Score equal to exactly zero',
+            'An M-Score less than -10.0'
+          ],
+          answer: 0,
+          why: 'The Beneish benchmark is -1.78: values greater (less negative or positive, such as -1.49 or +0.50) reflect statistically significant markers of earnings manipulation.'
+        }
+      },
+      {
+        title: 'Altman Z-Score Corporate Insolvency & Bankruptcy Prediction Engine',
+        say: [
+          'Credit risk rating agencies, commercial bank underwriters, and distressed debt hedge funds require early warning models to predict impending corporate insolvencies. Developed by NYU Professor Edward Altman using Multivariate Discriminant Analysis (MDA), the Altman Z-Score remains the global standard for predicting bankruptcy probability within a 24-month horizon.',
+          'The Altman Z-Score synthesizes five fundamental balance sheet and income statement ratios into a single discriminant score: X1 is Working Capital / Total Assets (short-term liquidity buffer); X2 is Retained Earnings / Total Assets (cumulative profitability over time); X3 is EBIT / Total Assets (unlevered operational asset productivity); X4 is Market Value of Equity / Total Liabilities (enterprise leverage headroom); and X5 is Sales / Total Assets (asset turnover velocity).',
+          'The discriminant weights combine into the classical formula: Z = 1.2*X1 + 1.4*X2 + 3.3*X3 + 0.6*X4 + 0.999*X5. Corporations scoring above 2.99 occupy the Safe Zone (minimal insolvency probability). Scores between 1.81 and 2.99 represent the Grey Zone (caution and close credit monitoring warranted). Scores below 1.81 occupy the Distress Zone, indicating extreme bankruptcy vulnerability and high default likelihood.'
+        ],
+        example: 'Think of the Altman Z-Score like a structural stress rating on a commercial bridge: X1 is emergency maintenance gear, X2 is concrete foundation depth, X3 is load-bearing steel strength, X4 is safety suspension cable slack, and X5 is daily traffic throughput; if the combined score drops below 1.81, engineers immediately close the bridge before collapse.',
+        code: `def calculate_altman_z_score_bankruptcy_risk(financials):
+    """Calculates Edward Altman's 5-factor Z-Score for corporate distress and bankruptcy risk."""
+    wc = financials["current_assets"] - financials["current_liabilities"]
+    ta = financials["total_assets"]
+    re = financials["retained_earnings"]
+    ebit = financials["ebit"]
+    mve = financials["market_equity_value"]
+    tl = financials["total_liabilities"]
+    sales = financials["revenue"]
+    
+    # 5 Discriminant Ratios
+    x1 = wc / ta
+    x2 = re / ta
+    x3 = ebit / ta
+    x4 = mve / tl
+    x5 = sales / ta
+    
+    # Altman Z-Score: Z = 1.2*X1 + 1.4*X2 + 3.3*X3 + 0.6*X4 + 0.999*X5
+    z_score = (1.2 * x1) + (1.4 * x2) + (3.3 * x3) + (0.6 * x4) + (0.999 * x5)
+    
+    if z_score > 2.99:
+        zone = "SAFE_ZONE"
+    elif z_score >= 1.81:
+        zone = "GREY_ZONE"
+    else:
+        zone = "DISTRESS_ZONE_BANKRUPTCY_RISK"
+        
+    return {
+        "X1_Working_Capital_TA": round(x1, 3),
+        "X2_Retained_Earnings_TA": round(x2, 3),
+        "X3_EBIT_TA": round(x3, 3),
+        "X4_Market_Equity_Liabilities": round(x4, 3),
+        "X5_Sales_TA": round(x5, 3),
+        "Altman_Z_Score": round(z_score, 2),
+        "Solvency_Zone": zone
+    }
+
+blue_chip = {
+    "current_assets": 8000000.0,
+    "current_liabilities": 3000000.0,
+    "total_assets": 15000000.0,
+    "retained_earnings": 5000000.0,
+    "ebit": 2500000.0,
+    "market_equity_value": 30000000.0,
+    "total_liabilities": 5000000.0,
+    "revenue": 18000000.0
+}
+
+print("=== ALTMAN Z-SCORE CORPORATE INSOLVENCY MODEL ===")
+res = calculate_altman_z_score_bankruptcy_risk(blue_chip)
+print(f"X1(WC): {res['X1_Working_Capital_TA']} | X2(RE): {res['X2_Retained_Earnings_TA']} | X3(EBIT): {res['X3_EBIT_TA']}")
+print(f"X4(Equity/Debt): {res['X4_Market_Equity_Liabilities']} | X5(Turnover): {res['X5_Sales_TA']}")
+print(f"Altman Z-Score: {res['Altman_Z_Score']} -> Solvency Status: [{res['Solvency_Zone']}]")`,
+        output: `=== ALTMAN Z-SCORE CORPORATE INSOLVENCY MODEL ===
+X1(WC): 0.333 | X2(RE): 0.333 | X3(EBIT): 0.167
+X4(Equity/Debt): 6.0 | X5(Turnover): 1.2
+Altman Z-Score: 6.22 -> Solvency Status: [SAFE_ZONE]`,
+        codeNotes: [
+          'Computes 5 multivariate discriminant ratios assessing liquidity, profitability, leverage, and turnover.',
+          'Combines weighted coefficients to generate an aggregate Altman Z-Score of 6.22.',
+          'Places the enterprise firmly within the SAFE_ZONE (> 2.99), indicating near-zero 2-year default risk.'
+        ],
+        tryIt: 'Increase total_liabilities to $25,000,000 and lower ebit to negative numbers to watch Z-Score plummet into the DISTRESS_ZONE.',
+        check: {
+          question: 'According to the classical Altman Z-Score model, what score boundary delineates the Distress Zone indicating high bankruptcy probability?',
+          options: [
+            'A Z-Score below 1.81',
+            'A Z-Score between 2.0 and 3.0',
+            'A Z-Score above 5.0',
+            'A Z-Score exactly equal to 10.0'
+          ],
+          answer: 0,
+          why: 'Firms scoring Z < 1.81 fall into the Distress Zone, where historical studies show the overwhelming majority of default and chapter 11 filings occur within 24 months.'
+        }
+      },
+      {
+        title: 'Cash Flow Statement Quality of Earnings & Accruals Ratio Engine',
+        say: [
+          'In corporate accounting, Net Income is governed by the accrual accounting principle: revenue is recognized when earned and expenses are recognized when incurred, independent of when physical cash changes hands. While accruals provide a better economic matching of operating effort and performance than cash accounting, they introduce wide latitude for management discretion and earnings smoothing.',
+          'The Quality of Earnings (QoE) ratio evaluates the cash-generating authenticity of reported profits: Operating Cash Flow (CFO) divided by Net Income. When an enterprise operates with high earnings quality, cash flow from operations consistently exceeds net income (QoE >= 1.0x), reflecting that operating profits are fully backed by collected liquid cash plus non-cash depreciation add-backs.',
+          'Conversely, when a firm reports expanding net income while operating cash flow contracts or turns negative (QoE < 0.8x), it signals that reported profits are composed primarily of paper accounting accruals—such as recognizing unbilled receivables, extending aggressive credit terms, or deferring operational expenses. The Accruals-to-Assets Ratio ((Net Income - CFO) / Average Total Assets) quantifies this distortion, alerting auditors to investigate aggressive revenue policies.'
+        ],
+        example: 'Think of reported Net Income like receiving IOUs from your friends, while Operating Cash Flow is actual cash placed in your wallet; if your total IOUs look wealthy on paper but your wallet is completely empty when bills come due, your earnings quality is dangerously compromised.',
+        code: `def evaluate_quality_of_earnings_and_accruals(statement):
+    """Analyzes Cash Flow from Operations vs Net Income to detect aggressive revenue accruals."""
+    net_income = statement["net_income"]
+    cfo = statement["cash_flow_operations"]
+    avg_assets = statement["average_total_assets"]
+    
+    # 1. Quality of Earnings Ratio = CFO / Net Income
+    # Ratio >= 1.0 indicates high-quality cash earnings; < 0.8 indicates earnings driven by accruals
+    qoe_ratio = cfo / net_income if net_income != 0 else 0.0
+    
+    # 2. Balance Sheet & Cash Flow Accruals: (Net Income - CFO) / Average Total Assets
+    accrual_dollar = net_income - cfo
+    accruals_ratio = accrual_dollar / avg_assets
+    
+    earnings_health = "HIGH_QUALITY_CASH_CONVERTING" if (qoe_ratio >= 1.0 and accruals_ratio <= 0.02) else "AGGRESSIVE_ACCRUALS_WARNING"
+    
+    return {
+        "Net_Income": net_income,
+        "CFO": cfo,
+        "Quality_of_Earnings_Ratio": round(qoe_ratio, 2),
+        "Total_Accruals": round(accrual_dollar, 2),
+        "Accruals_to_Assets_Ratio": round(accruals_ratio, 4),
+        "Earnings_Quality_Verdict": earnings_health
+    }
+
+stmt = {
+    "net_income": 2000000.0,
+    "cash_flow_operations": 2350000.0, # Healthy: CFO exceeds Net Income
+    "average_total_assets": 12000000.0
+}
+
+print("=== QUALITY OF EARNINGS & CASH ACCRUALS FORENSIC AUDIT ===")
+res = evaluate_quality_of_earnings_and_accruals(stmt)
+print("Net Income: $" + f"{res['Net_Income']:,.2f} | CFO: $" + f"{res['CFO']:,.2f}")
+print(f"QoE Ratio: {res['Quality_of_Earnings_Ratio']}x | Accruals/Assets: {res['Accruals_to_Assets_Ratio']}")
+print(f"Verdict: [{res['Earnings_Quality_Verdict']}]")`,
+        output: `=== QUALITY OF EARNINGS & CASH ACCRUALS FORENSIC AUDIT ===
+Net Income: $2,000,000.00 | CFO: $2,350,000.00
+QoE Ratio: 1.18x | Accruals/Assets: -0.0292
+Verdict: [HIGH_QUALITY_CASH_CONVERTING]`,
+        codeNotes: [
+          'Calculates Quality of Earnings Ratio (1.18x) comparing cash flow from operations directly against accounting net income.',
+          'Quantifies negative total accruals (-$350,000) indicating cash collection outpaces accounting revenue recognition.',
+          'Issues HIGH_QUALITY_CASH_CONVERTING verdict, confirming corporate profits represent durable liquidity.'
+        ],
+        tryIt: 'Drop cash_flow_operations to $800,000 and observe how QoE drops to 0.40x, triggering AGGRESSIVE_ACCRUALS_WARNING.',
+        check: {
+          question: 'What financial danger is signaled when a company reports steadily increasing Net Income while Cash Flow from Operations (CFO) declines for multiple quarters?',
+          options: [
+            'Reported accounting earnings are increasingly driven by non-cash accruals and uncollected receivables rather than genuine cash generation, indicating potential earnings manipulation or severe credit risk',
+            'The company has discovered a method to eliminate all taxes',
+            'The firm has completely run out of paper in its accounting office',
+            'Suppliers are delivering goods for free'
+          ],
+          answer: 0,
+          why: 'A growing divergence where net income rises while operating cash flow shrinks is the single most reliable historical warning sign of accounting irregularities and impending earnings restatements.'
+        }
+      },
+      {
+        title: 'Capstone Verification: End-to-End Enterprise Financial Health & Forensic Audit Suite',
+        say: [
+          'The ultimate milestone for an advanced business analytics and corporate financial intelligence professional is constructing a unified, automated end-to-end audit engine. This engine synthesizes every domain explored across our curriculum: multi-entity intercompany consolidation, forensic fraud screening, statistical solvency modeling, and cash earnings quality verification.',
+          'The Capstone audit suite ingests consolidated financial statements, executes automated validation tests across the Beneish M-Score (asserting M <= -1.78), checks the Altman Z-Score (asserting Z >= 1.81), and verifies that the Quality of Earnings ratio meets or exceeds the required cash realization threshold. Only when all forensic gates pass without adverse exceptions does the engine generate an Unqualified Clean Audit Opinion.',
+          'Mastering this complete quantitative analytics pipeline equips you with the decision science, forensic accounting, capital optimization, and managerial finance architecture required to drive C-suite strategy, lead corporate acquisitions, and safeguard enterprise balance sheet integrity.'
+        ],
+        example: 'Think of this capstone engine as an automated flight certification inspection for a wide-body aircraft: propulsion, avionics, hydraulic pressure, and structural rivets are all checked simultaneously against strict regulatory tolerances before flight clearance is stamped.',
+        code: `def verify_end_to_end_enterprise_financial_audit(enterprise_data):
+    """Capstone integration: synthesizes consolidation, Beneish fraud detection, and Altman solvency."""
+    # 1. Verification of intercompany consolidation
+    consolidated_rev = enterprise_data["consolidated_revenue"]
+    # 2. Beneish M-Score check
+    m_score = enterprise_data["m_score"]
+    fraud_risk = m_score > -1.78
+    # 3. Altman Z-Score check
+    z_score = enterprise_data["z_score"]
+    is_solvent = z_score >= 1.81
+    # 4. Quality of earnings
+    qoe = enterprise_data["qoe_ratio"]
+    is_cash_generative = qoe >= 0.90
+    
+    audit_cleared = (not fraud_risk) and is_solvent and is_cash_generative
+    
+    return {
+        "Audited_Consolidated_Revenue": consolidated_rev,
+        "Beneish_M_Score": m_score,
+        "Altman_Z_Score": z_score,
+        "Quality_of_Earnings": qoe,
+        "Audit_Opinion": "UNQUALIFIED_CLEAN_AUDIT_OPINION" if audit_cleared else "ADVERSE_AUDIT_WARNING"
+    }
+
+audit_pack = {
+    "consolidated_revenue": 6400000.0,
+    "m_score": -2.35, # well below -1.78 threshold (low fraud risk)
+    "z_score": 6.18,  # well above 2.99 safe threshold
+    "qoe_ratio": 1.18 # CFO 118% of Net Income
+}
+
+print("=== CAPSTONE: END-TO-END ENTERPRISE FINANCIAL AUDIT SUITE ===")
+res = verify_end_to_end_enterprise_financial_audit(audit_pack)
+print("Consolidated Rev: $" + f"{res['Audited_Consolidated_Revenue']:,.2f} | M-Score: {res['Beneish_M_Score']} | Z-Score: {res['Altman_Z_Score']} | QoE: {res['Quality_of_Earnings']}x")
+print(f"Final Independent Audit Opinion: [{res['Audit_Opinion']}]")`,
+        output: `=== CAPSTONE: END-TO-END ENTERPRISE FINANCIAL AUDIT SUITE ===
+Consolidated Rev: $6,400,000.00 | M-Score: -2.35 | Z-Score: 6.18 | QoE: 1.18x
+Final Independent Audit Opinion: [UNQUALIFIED_CLEAN_AUDIT_OPINION]`,
+        codeNotes: [
+          'Integrates audited consolidated revenue metrics after eliminating internal trading transactions.',
+          'Verifies Beneish M-Score fraud risk (-2.35) and Altman Z-Score solvency health (6.18).',
+          'Issues an UNQUALIFIED_CLEAN_AUDIT_OPINION confirming 100% compliance across all forensic risk dimensions.'
+        ],
+        tryIt: 'Set m_score to -1.20 and observe how the engine automatically revokes the clean opinion, issuing an ADVERSE_AUDIT_WARNING.',
+        check: {
+          question: 'In corporate financial reporting and external auditing, what does an Unqualified Clean Audit Opinion signify?',
+          options: [
+            'The financial statements represent a true and fair view of the enterprise financial position in accordance with accounting standards, with zero material misstatements detected',
+            'The auditor was unqualified and lacked professional training',
+            'The company lost all of its accounting records',
+            'All corporate assets have been seized by the government'
+          ],
+          answer: 0,
+          why: 'An "unqualified" audit report is the highest standard of clean financial health, meaning the independent auditor found no reservations, exceptions, or material misstatements in the consolidated statements.'
+        }
+      }
+    ],
+    summary: [
+      'Consolidated financial reporting eliminates intercompany sales, cost of sales, and mutual debtor/creditor balances to ensure reporting reflects external arm\'s-length economic transactions.',
+      'The 8-variable Beneish M-Score model identifies empirical patterns of earnings manipulation, flagging companies scoring above -1.78 for forensic investigation.',
+      'Edward Altman\'s 5-factor Z-Score model predicts 24-month corporate default risk using multivariate discriminant analysis, segregating firms into Safe, Grey, and Distress Zones.',
+      'Quality of Earnings (QoE = CFO / Net Income) and the Accruals-to-Assets ratio evaluate the cash authenticity of reported net income, exposing aggressive revenue recognition.',
+      'The Capstone audit engine provides an end-to-end verification framework for multi-entity consolidation, forensic fraud screening, and solvency health, culminating in audited clean opinions.'
+    ],
+    projectStep: {
+      title: 'Deploy an End-to-End Enterprise Financial Consolidation, Forensic Audit & Solvency Engine',
+      steps: [
+        'Consolidate multi-entity trial balances and execute automated intercompany revenue and debtor eliminations.',
+        'Implement the 8-variable Beneish M-Score forensic model to detect earnings manipulation and aggressive accruals.',
+        'Calculate the 5-factor Altman Z-Score to classify enterprise insolvency and bankruptcy risk zones.',
+        'Evaluate Quality of Earnings (QoE) ratios and cash accrual disparities across income and cash flow statements.',
+        'Execute a unified capstone forensic audit suite issuing automated independent audit opinion determinations.'
+      ]
+    }
   }
 ];

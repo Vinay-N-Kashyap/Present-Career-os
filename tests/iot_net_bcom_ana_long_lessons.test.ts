@@ -60,6 +60,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.ok(anaLesson4, 'bcom_ana Day 4 long lesson must resolve');
   assert.equal(anaLesson4.day, 4);
   assert.equal(anaLesson4.parts.length, 5, 'bcom_ana Day 4 must contain exactly 5 parts');
+
+  const anaLesson5 = getLongLesson('bcom_ana', 5);
+  assert.ok(anaLesson5, 'bcom_ana Day 5 long lesson must resolve');
+  assert.equal(anaLesson5.day, 5);
+  assert.equal(anaLesson5.parts.length, 5, 'bcom_ana Day 5 must contain exactly 5 parts');
 });
 
 test('IoT Net Day 1: 6LoWPAN & Link Budget Python Code Snippets & Socratic Checks Verification', () => {
@@ -382,6 +387,48 @@ test('B.Com Analytics Day 4: Working Capital, CCC, EOQ, ROP & Liquidity Stress T
   assert.ok(anaLesson4.parts[3].output?.includes('ACCOUNTS RECEIVABLE AGING & EXPECTED CREDIT LOSS (ECL)'));
   assert.ok(anaLesson4.parts[4].code?.includes('simulate_working_capital_stress_test'));
   assert.ok(anaLesson4.parts[4].output?.includes('WORKING CAPITAL LIQUIDITY & CASH RUNWAY STRESS TEST'));
+});
+
+test('B.Com Analytics Day 5 Capstone: Consolidation, Beneish M-Score, Altman Z-Score & Audit Suite Verification', () => {
+  const anaLesson5 = getLongLesson('bcom_ana', 5);
+  assert.ok(anaLesson5, 'bcom_ana Day 5 must resolve');
+  assert.equal(anaLesson5.day, 5);
+  assert.equal(anaLesson5.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(anaLesson5);
+  const totalMin = estimateLessonMinutes(anaLesson5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < anaLesson5.parts.length; i++) {
+    const part = anaLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(anaLesson5.parts[0].code?.includes('simulate_multientity_consolidation_and_elimination'));
+  assert.ok(anaLesson5.parts[0].output?.includes('MULTI-ENTITY CONSOLIDATION & INTERCOMPANY ELIMINATIONS'));
+  assert.ok(anaLesson5.parts[1].code?.includes('calculate_beneish_m_score_forensic_audit'));
+  assert.ok(anaLesson5.parts[1].output?.includes('BENEISH M-SCORE FORENSIC EARNINGS FRAUD DETECTION'));
+  assert.ok(anaLesson5.parts[2].code?.includes('calculate_altman_z_score_bankruptcy_risk'));
+  assert.ok(anaLesson5.parts[2].output?.includes('ALTMAN Z-SCORE CORPORATE INSOLVENCY MODEL'));
+  assert.ok(anaLesson5.parts[3].code?.includes('evaluate_quality_of_earnings_and_accruals'));
+  assert.ok(anaLesson5.parts[3].output?.includes('QUALITY OF EARNINGS & CASH ACCRUALS FORENSIC AUDIT'));
+  assert.ok(anaLesson5.parts[4].code?.includes('verify_end_to_end_enterprise_financial_audit'));
+  assert.ok(anaLesson5.parts[4].output?.includes('CAPSTONE: END-TO-END ENTERPRISE FINANCIAL AUDIT SUITE'));
 });
 
 
