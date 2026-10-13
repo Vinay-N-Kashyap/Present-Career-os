@@ -1150,5 +1150,449 @@ for tab in p5['jurisdiction_audit_table']:
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom_tax',
+    day: 4,
+    title: 'Cross-Border Indirect Tax, Global VAT/GST Destination Principles & Customs Valuation',
+    goal: 'Master cross-border indirect tax and global trade compliance: the OECD Destination Principle and B2B Reverse Charge Mechanism (RCM), WTO Customs Valuation harmonization with transfer pricing, Incoterms 2020 Permanent Establishment (PE) and US Wayfair economic sales tax nexus, Unilateral Digital Services Taxes (DST) vs OECD Pillar One Amount A, and multinational supply chain indirect tax optimization.',
+    minutes: 45,
+    recap: 'In Day 3, we mastered OECD BEPS DEMPE intangibles profit attribution, bilateral APAs, thin capitalization interest limits, and CbCR forensic risk profiling. Today, we conquer global indirect taxes: VAT/GST destination rules, customs import tariffs, Incoterm nexus exposures, and digital advertising levies.',
+    parts: [
+      {
+        title: 'Global VAT/GST Destination Principle & Reverse Charge Mechanism (RCM)',
+        say: [
+          'In cross-border trade, value-added taxes (VAT) and goods and services taxes (GST) represent over 30% of government revenue worldwide. The core foundation governing international trade in services and digital goods is the OECD Destination Principle, codified throughout the European Union under Directive 2006/112/EC and adopted across over 160 nations.',
+          'Under the Destination Principle, cross-border commercial transactions are taxed in the jurisdiction where consumption occurs, rather than where the service provider is physically domiciled. For international business-to-consumer (B2C) sales, foreign sellers must register locally or utilize simplified regimes like the EU One-Stop Shop (OSS) to collect destination VAT at the customer\'s local rate.',
+          'However, for business-to-business (B2B) cross-border services, forcing thousands of foreign suppliers to register in every customer country would create catastrophic economic friction. Instead, international tax law utilizes the Reverse Charge Mechanism (RCM): the foreign supplier invoices €0 VAT with a mandatory statutory directive citation, and the domestic business purchaser self-assesses both output VAT and a simultaneous input tax deduction on its local return, preserving corporate liquidity without tax leakage.'
+        ],
+        example: 'An Irish cloud infrastructure subsidiary invoices a French enterprise €500,000 for server hosting. Under the EU B2B Reverse Charge Mechanism, Ireland zero-rates the export invoice. The French corporate client self-assesses 20% French VAT (€100,000) on its local declaration while simultaneously claiming an identical €100,000 input tax credit, achieving zero net cash tax drag and eliminating cross-border tax registration friction.',
+        code: `def evaluate_cross_border_vat_and_reverse_charge(
+    transaction_type: str,
+    supplier_country: str,
+    customer_country: str,
+    invoice_amount_eur: float,
+    customer_vat_registered: bool,
+    destination_standard_vat_rate: float = 0.20
+) -> dict:
+    is_cross_border = supplier_country != customer_country
+    
+    if not is_cross_border:
+        vat_rate_applied = destination_standard_vat_rate
+        vat_amount_invoiced = invoice_amount_eur * vat_rate_applied
+        mechanism = "DOMESTIC_VAT_COLLECTION"
+        invoice_annotation = f"Standard domestic VAT {destination_standard_vat_rate*100:.0f}% charged"
+        customer_self_assesses_rcm = False
+        net_cash_vat_liability = vat_amount_invoiced
+    elif transaction_type == "B2B_SERVICE" and customer_vat_registered:
+        vat_rate_applied = 0.0
+        vat_amount_invoiced = 0.0
+        mechanism = "REVERSE_CHARGE_MECHANISM_RCM"
+        invoice_annotation = "Reverse Charge: Customer self-assesses VAT under Art. 196 EU VAT Directive"
+        customer_self_assesses_rcm = True
+        net_cash_vat_liability = 0.0
+    else:
+        vat_rate_applied = destination_standard_vat_rate
+        vat_amount_invoiced = invoice_amount_eur * vat_rate_applied
+        mechanism = "ONE_STOP_SHOP_DESTINATION_VAT"
+        invoice_annotation = f"Destination VAT {destination_standard_vat_rate*100:.0f}% collected via OSS"
+        customer_self_assesses_rcm = False
+        net_cash_vat_liability = vat_amount_invoiced
+        
+    return {
+        "invoice_subtotal_eur": round(invoice_amount_eur, 2),
+        "vat_rate_applied_pct": round(vat_rate_applied * 100.0, 2),
+        "vat_invoiced_eur": round(vat_amount_invoiced, 2),
+        "total_invoice_due_eur": round(invoice_amount_eur + vat_amount_invoiced, 2),
+        "tax_mechanism": mechanism,
+        "invoice_legal_annotation": invoice_annotation,
+        "customer_rcm_self_assessment": customer_self_assesses_rcm,
+        "net_cash_tax_drag_eur": round(net_cash_vat_liability, 2)
+    }
+
+p1 = evaluate_cross_border_vat_and_reverse_charge(
+    transaction_type="B2B_SERVICE",
+    supplier_country="IE",
+    customer_country="FR",
+    invoice_amount_eur=500000.0,
+    customer_vat_registered=True,
+    destination_standard_vat_rate=0.20
+)
+inv_vat_s = f"EUR {p1['vat_invoiced_eur']:,.2f}"
+drag_s = f"EUR {p1['net_cash_tax_drag_eur']:,.2f}"
+print(f"Mechanism: {p1['tax_mechanism']} | Invoiced VAT: {inv_vat_s}")
+print(f"RCM Self Assessment: {p1['customer_rcm_self_assessment']} | Net Drag: {drag_s}")`,
+        output: `Mechanism: REVERSE_CHARGE_MECHANISM_RCM | Invoiced VAT: EUR 0.00\nRCM Self Assessment: True | Net Drag: EUR 0.00`,
+        codeNotes: [
+          { line: 12, note: 'Validates cross-border B2B eligibility based on verified customer VAT registration status' },
+          { line: 20, note: 'Zeros out invoiced VAT and inserts mandatory statutory Article 196 reverse charge legal notice' },
+          { line: 22, note: 'Shifts VAT accounting to the buyer, enabling simultaneous output declaration and input credit recovery' },
+          { line: 36, note: 'Confirms zero net cash tax drag, preserving working capital liquidity across the corporate group' }
+        ],
+        tryIt: 'Change transaction_type to B2C_SERVICE to observe how One-Stop Shop (OSS) destination VAT forces €100,000 collection.',
+        check: {
+          question: 'In cross-border business-to-business (B2B) services within the European Union, what is the primary operational effect of the Reverse Charge Mechanism (RCM)?',
+          options: [
+            'The seller issues an invoice with zero VAT, and the buyer self-assesses both output VAT and an offsetting input VAT deduction on their domestic tax return.',
+            'The seller must establish a full legal corporate branch and register for local payroll in the customer\'s jurisdiction.',
+            'The customer is completely exempted from paying any corporate income taxes on gross revenues.',
+            'The tax liability is permanently forgiven under the European Central Bank liquidity rebate program.'
+          ],
+          answer: 0,
+          why: 'Under RCM, the place of supply is the customer jurisdiction, but the administrative burden of calculating and remitting VAT shifts to the customer, who self-assesses output VAT and claims an offsetting input deduction.',
+          answerIndex: 0,
+          explanation: 'Under RCM, the place of supply is the customer jurisdiction, but the administrative burden of calculating and remitting VAT shifts to the customer, who self-assesses output VAT and claims an offsetting input deduction.'
+        }
+      },
+      {
+        title: 'Customs Valuation (WTO Valuation Agreement) & Transfer Pricing Harmonization',
+        say: [
+          'When physical inventory crosses international borders between related corporate entities, a deep structural tension emerges between customs revenue authorities and corporate income tax auditors. Customs agencies (such as US Customs and Border Protection or the World Customs Organization) seek the highest possible transaction value to maximize import tariff collections.',
+          'Conversely, corporate income tax authorities (such as the IRS or HMRC) demand the lowest defensible intercompany import price to prevent inflated cost of goods sold (COGS) from stripping domestic taxable income. Reconciling this conflict requires rigorous alignment with the WTO Customs Valuation Agreement and WCO Transfer Pricing guidelines.',
+          'Under WTO Article 1 Transaction Value, the customs base begins with the CIF price (Cost, Insurance, and Freight). However, customs law mandates statutory additions for dutiable "assists" (tools, dies, engineering designs provided free by the buyer) and license royalties paid as a condition of sale. Corporate tax directors must harmonize transfer pricing studies with customs valuation declarations to prevent costly tariff audits and transfer pricing penalties.'
+        ],
+        example: 'A US entity imports specialized precision components from an offshore subsidiary at $4.0M FOB plus $200k freight/insurance. The US buyer supplied $300k in manufacturing tooling assists and paid $500k in software license royalties as a condition of sale. Under WTO rules, customs dutiable value is $5.0M. At a 7.5% tariff rate, the company pays $375,000 in import duties, which generates a $93,750 corporate income tax shield at a 25% tax rate.',
+        code: `def harmonize_customs_valuation_and_transfer_pricing(
+    fob_invoice_price_usd: float,
+    freight_and_insurance_usd: float,
+    dutiable_production_assists_usd: float,
+    license_royalties_condition_of_sale_usd: float,
+    ad_valorem_tariff_rate: float = 0.075,
+    corporate_income_tax_rate: float = 0.25
+) -> dict:
+    cif_base = fob_invoice_price_usd + freight_and_insurance_usd
+    customs_dutiable_value = cif_base + dutiable_production_assists_usd + license_royalties_condition_of_sale_usd
+    
+    customs_tariff_duty = customs_dutiable_value * ad_valorem_tariff_rate
+    tax_shield_from_duty = customs_tariff_duty * corporate_income_tax_rate
+    net_economic_duty_cost = customs_tariff_duty - tax_shield_from_duty
+    
+    return {
+        "cif_invoice_base_usd": round(cif_base, 2),
+        "customs_dutiable_value_usd": round(customs_dutiable_value, 2),
+        "customs_tariff_rate_pct": round(ad_valorem_tariff_rate * 100.0, 2),
+        "customs_duty_payable_usd": round(customs_tariff_duty, 2),
+        "income_tax_shield_usd": round(tax_shield_from_duty, 2),
+        "net_effective_customs_cost_usd": round(net_economic_duty_cost, 2),
+        "valuation_verdict": "WTO_TRANSACTION_VALUE_COMPLIANT"
+    }
+
+p2 = harmonize_customs_valuation_and_transfer_pricing(
+    fob_invoice_price_usd=4000000.0,
+    freight_and_insurance_usd=200000.0,
+    dutiable_production_assists_usd=300000.0,
+    license_royalties_condition_of_sale_usd=500000.0,
+    ad_valorem_tariff_rate=0.075,
+    corporate_income_tax_rate=0.25
+)
+dut_s = "$" + f"{p2['customs_dutiable_value_usd']:,.2f}"
+tax_s = "$" + f"{p2['customs_duty_payable_usd']:,.2f}"
+net_duty_s = "$" + f"{p2['net_effective_customs_cost_usd']:,.2f}"
+print(f"Dutiable Value: {dut_s} | Duty Payable: {tax_s}")
+print(f"Net Duty Cost (after tax shield): {net_duty_s} -> {p2['valuation_verdict']}")`,
+        output: `Dutiable Value: $5,000,000.00 | Duty Payable: $375,000.00\nNet Duty Cost (after tax shield): $281,250.00 -> WTO_TRANSACTION_VALUE_COMPLIANT`,
+        codeNotes: [
+          { line: 9, note: 'Constructs CIF import base by combining FOB purchase invoice with ocean freight and marine insurance' },
+          { line: 11, note: 'Capitalizes dutiable assists ($300k) and condition-of-sale license royalties ($500k) into customs value' },
+          { line: 14, note: 'Calculates ad valorem customs duty ($375k) under statutory WTO Article 1 Transaction Value principles' },
+          { line: 16, note: 'Quantifies income tax shield ($93.75k) since capitalized customs duties reduce taxable corporate income' }
+        ],
+        tryIt: 'Set license royalties to $0 to observe how unbundled software licenses reduce customs dutiable value to $4.5M.',
+        check: {
+          question: 'Why do customs authorities and corporate income tax auditors frequently take opposing positions on the valuation of imported cross-border goods between related parties?',
+          options: [
+            'Customs authorities maximize revenue with higher import values, while income tax auditors maximize domestic taxable income by demanding lower import prices.',
+            'Customs authorities are prohibited by international treaty from reviewing corporate balance sheets.',
+            'Income tax auditors only inspect domestic payroll taxes and never audit cost of goods sold.',
+            'Customs tariffs are completely refunded by the World Bank at the end of every fiscal quarter.'
+          ],
+          answer: 0,
+          why: 'Higher import prices increase customs duty collections but decrease domestic taxable income by inflating COGS. Lower import prices increase domestic taxable income but decrease customs duty collections.',
+          answerIndex: 0,
+          explanation: 'Higher import prices increase customs duty collections but decrease domestic taxable income by inflating COGS. Lower import prices increase domestic taxable income but decrease customs duty collections.'
+        }
+      },
+      {
+        title: 'Incoterms 2020, Permanent Establishment (PE) Risk & US Wayfair Sales Tax Nexus',
+        say: [
+          'Selecting international commercial terms (Incoterms 2020) is frequently treated as an operational logistics decision, but in international tax law, it directly dictates corporate tax nexus and Permanent Establishment (PE) exposure under OECD Article 5. Choosing DDP (Delivered Duty Paid) designates the foreign selling entity as the official Importer of Record.',
+          'When a foreign company sells DDP and maintains consignment inventory in local third-party logistics warehouses, it crosses statutory thresholds. Under OECD and UN Model Tax Conventions, maintaining domestic stock for delivery and handling local customs clearance can inadvertently establish a fixed place of business Permanent Establishment, subjecting global corporate profits to local corporate tax filing mandates.',
+          'Simultaneously, within the United States, physical presence is no longer required to trigger sales tax obligations following the landmark Supreme Court decision in South Dakota v. Wayfair (2018). Under economic nexus statutes across all 45 sales tax states, exceeding economic thresholds—typically $100,000 in annual gross sales or 200 distinct transactions—triggers mandatory state sales tax registration, collection, and remittance.'
+        ],
+        example: 'A European equipment manufacturer sells $1.5M of machinery across 350 transactions into the US under DDP terms while leasing space in a New Jersey consignment warehouse. The company triggers both a US corporate Permanent Establishment audit exposure and mandatory multi-state sales tax nexus under Wayfair. Shifting contracts from DDP to DAP (Delivered at Place) places the importer-of-record burden on the US buyer, neutralizing the corporate PE hazard.',
+        code: `def evaluate_incoterm_pe_risk_and_economic_nexus(
+    incoterm: str,
+    destination_country: str,
+    annual_sales_volume_usd: float,
+    annual_transactions_count: int,
+    maintains_local_consignment_stock: bool
+) -> dict:
+    is_importer_of_record = (incoterm == "DDP")
+    
+    pe_triggered = False
+    pe_risk_reason = "No physical presence or domestic importer status."
+    
+    if is_importer_of_record and maintains_local_consignment_stock:
+        pe_triggered = True
+        pe_risk_reason = "DDP delivery combined with local warehouse inventory establishes a fixed place of business PE under OECD Art. 5."
+    elif is_importer_of_record:
+        pe_risk_reason = "DDP makes seller Importer of Record; elevated audit scrutiny regarding local VAT and customs nexus."
+        
+    wayfair_nexus = False
+    if destination_country == "US":
+        if annual_sales_volume_usd >= 100000.0 or annual_transactions_count >= 200:
+            wayfair_nexus = True
+            
+    recommended_term = "DAP" if pe_triggered else incoterm
+    
+    return {
+        "incoterm_evaluated": incoterm,
+        "importer_of_record_status": "SELLER" if is_importer_of_record else "BUYER",
+        "permanent_establishment_risk": "HIGH_PE_EXPOSURE" if pe_triggered else "LOW_PE_RISK",
+        "pe_audit_rationale": pe_risk_reason,
+        "us_wayfair_sales_tax_nexus": wayfair_nexus,
+        "contractual_mitigation_term": recommended_term
+    }
+
+p3 = evaluate_incoterm_pe_risk_and_economic_nexus(
+    incoterm="DDP",
+    destination_country="US",
+    annual_sales_volume_usd=1500000.0,
+    annual_transactions_count=350,
+    maintains_local_consignment_stock=True
+)
+print(f"Incoterm: {p3['incoterm_evaluated']} | PE Risk: {p3['permanent_establishment_risk']}")
+print(f"Wayfair Nexus: {p3['us_wayfair_sales_tax_nexus']} | Recommended Mitigation: {p3['contractual_mitigation_term']}")`,
+        output: `Incoterm: DDP | PE Risk: HIGH_PE_EXPOSURE\nWayfair Nexus: True | Recommended Mitigation: DAP`,
+        codeNotes: [
+          { line: 8, note: 'Identifies DDP terms as assigning the foreign seller the high-risk legal role of Importer of Record' },
+          { line: 14, note: 'Detects dangerous combination of DDP delivery and local consignment warehousing triggering OECD Article 5 PE' },
+          { line: 20, note: 'Applies post-Wayfair economic nexus thresholds ($100k revenue or 200 transactions) for US sales tax mandates' },
+          { line: 27, note: 'Recommends contractual restructuring to DAP (Delivered at Place) shifting importer obligations to the buyer' }
+        ],
+        tryIt: 'Set maintains_local_consignment_stock to False to see PE risk diminish while Wayfair economic nexus remains active.',
+        check: {
+          question: 'Following the landmark US Supreme Court decision in South Dakota v. Wayfair (2018), what triggers an out-of-state corporation\'s legal obligation to collect state sales tax?',
+          options: [
+            'Exceeding statutory economic activity thresholds (such as $100,000 in sales or 200 transactions), even with zero physical offices or employees in the state.',
+            'Maintaining a physical corporate headquarters within the state boundaries.',
+            'Registering a motor vehicle with the state Department of Transportation.',
+            'Publishing marketing advertisements in local newspapers.'
+          ],
+          answer: 0,
+          why: 'Wayfair overturned the physical presence rule, establishing that substantial economic nexus—meeting sales volume or transaction count thresholds—mandates sales tax collection.',
+          answerIndex: 0,
+          explanation: 'Wayfair overturned the physical presence rule, establishing that substantial economic nexus—meeting sales volume or transaction count thresholds—mandates sales tax collection.'
+        }
+      },
+      {
+        title: 'Digital Services Taxes (DST) vs OECD Pillar One Amount A Allocation',
+        say: [
+          'The explosive growth of the digital economy exposed historic tax treaties that required physical presence before a nation could tax business profits. In response, dozens of market jurisdictions enacted unilateral Digital Services Taxes (DSTs)—such as France\'s 3% tax, the UK\'s 2% DST, and India\'s 2% Equalisation Levy—targeting gross revenues derived from online advertising, marketplace intermediation, and user data monetization.',
+          'Unilateral DSTs inflict severe economic friction on global tech companies because they tax gross revenue rather than net income. Crucially, gross revenue DSTs are not eligible for Foreign Tax Credits (FTCs) under bilateral income tax treaties, resulting in unmitigated double taxation and sparking retaliatory trade tariffs under Section 301 of the US Trade Act.',
+          'To replace chaotic unilateral DSTs, the OECD Inclusive Framework designed BEPS 2.0 Pillar One (Amount A). For the largest global multinational enterprises (revenues >€20 billion and profit margins >10%), Amount A reallocates 25% of residual profits above a 10% routine margin directly to market jurisdictions based on local user and revenue share, accompanied by statutory double taxation relief mechanisms.'
+        ],
+        example: 'A global digital conglomerate generates $25.0B in global revenue and $5.0B in profit before tax (20% margin). In a market jurisdiction where it generates $100M of local digital revenue, a unilateral 3% DST extracts $3.0M in uncreditable gross cash taxes. Under OECD Pillar One Amount A, 25% of the group\'s $2.5B residual super-profit ($625M pool) is reallocated across market countries, generating a $6.25M tax liability fully shielded by home country double tax credits.',
+        code: `def model_unilateral_dst_vs_pillar_one_amount_a(
+    global_revenue_usd: float,
+    global_pbt_usd: float,
+    market_country_digital_revenue_usd: float,
+    market_user_allocation_pct: float,
+    unilateral_dst_rate: float = 0.03,
+    corporate_tax_rate: float = 0.25
+) -> dict:
+    dst_tax_payable = market_country_digital_revenue_usd * unilateral_dst_rate
+    dst_effective_cash_cost = dst_tax_payable
+    
+    profit_margin = global_pbt_usd / global_revenue_usd if global_revenue_usd > 0 else 0.0
+    pillar_one_in_scope = (global_revenue_usd >= 20000000000.0) and (profit_margin > 0.10)
+    
+    if profit_margin > 0.10:
+        routine_profit_10pct = global_revenue_usd * 0.10
+        residual_super_profit = max(0.0, global_pbt_usd - routine_profit_10pct)
+        amount_a_pool = residual_super_profit * 0.25
+        market_reallocated_profit = amount_a_pool * market_user_allocation_pct
+        pillar_one_tax = market_reallocated_profit * corporate_tax_rate
+    else:
+        residual_super_profit = 0.0
+        market_reallocated_profit = 0.0
+        pillar_one_tax = 0.0
+        
+    return {
+        "market_country_digital_revenue_usd": round(market_country_digital_revenue_usd, 2),
+        "unilateral_dst_gross_tax_usd": round(dst_tax_payable, 2),
+        "pillar_one_in_scope": pillar_one_in_scope,
+        "global_profit_margin_pct": round(profit_margin * 100.0, 2),
+        "reallocated_amount_a_profit_usd": round(market_reallocated_profit, 2),
+        "pillar_one_tax_payable_usd": round(pillar_one_tax, 2),
+        "dst_double_tax_friction_usd": round(dst_effective_cash_cost, 2),
+        "policy_status": "PILLAR_ONE_ELIMINATES_DST_TRADE_RETALIATION" if pillar_one_in_scope else "SUBJECT_TO_UNILATERAL_DST"
+    }
+
+p4 = model_unilateral_dst_vs_pillar_one_amount_a(
+    global_revenue_usd=25000000000.0,
+    global_pbt_usd=5000000000.0,
+    market_country_digital_revenue_usd=100000000.0,
+    market_user_allocation_pct=0.04,
+    unilateral_dst_rate=0.03,
+    corporate_tax_rate=0.25
+)
+dst_s = "$" + f"{p4['unilateral_dst_gross_tax_usd']:,.2f}"
+p1_s = "$" + f"{p4['pillar_one_tax_payable_usd']:,.2f}"
+print(f"Digital Revenue: $100,000,000.00 | Unilateral DST: {dst_s}")
+print(f"Pillar One Amount A Tax: {p1_s} | Status: {p4['policy_status']}")`,
+        output: `Digital Revenue: $100,000,000.00 | Unilateral DST: $3,000,000.00\nPillar One Amount A Tax: $6,250,000.00 | Status: PILLAR_ONE_ELIMINATES_DST_TRADE_RETALIATION`,
+        codeNotes: [
+          { line: 8, note: 'Calculates uncreditable 3% unilateral DST on local digital gross revenues creating pure cash tax drag' },
+          { line: 12, note: 'Validates Pillar One thresholds: global revenues exceeding €20B and profit margins exceeding 10%' },
+          { line: 16, note: 'Isolates residual super-profit pool above 10% routine margin and carves out 25% Amount A allocable pool' },
+          { line: 20, note: 'Apportions Amount A profits to market jurisdictions with full double taxation treaty credit relief' }
+        ],
+        tryIt: 'Reduce global revenue to $10B to observe how falling below Pillar One thresholds leaves the firm subject to unilateral DSTs.',
+        check: {
+          question: 'Why do multinational tech corporations strongly favor OECD Pillar One Amount A multilateral rules over national unilateral Digital Services Taxes (DSTs)?',
+          options: [
+            'Because unilateral DSTs tax gross revenues and cannot be credited against corporate income tax treaties, creating unmitigated double taxation and trade war retaliation.',
+            'Because unilateral DSTs require digital companies to shut down their cloud servers for 60 days every year.',
+            'Because Pillar One eliminates all requirements to file corporate tax returns anywhere in the world.',
+            'Because Pillar One provides direct cash grants to technology company shareholders.'
+          ],
+          answer: 0,
+          why: 'DSTs tax gross turnover without regard to profitability and are non-creditable foreign taxes under bilateral tax treaties, producing catastrophic double taxation.',
+          answerIndex: 0,
+          explanation: 'DSTs tax gross turnover without regard to profitability and are non-creditable foreign taxes under bilateral tax treaties, producing catastrophic double taxation.'
+        }
+      },
+      {
+        title: 'Milestone 1 Synthesis: Global Supply Chain Indirect Tax & Customs Optimizer',
+        say: [
+          'Mastering international corporate taxation requires synthesizing cross-border VAT/GST, customs tariff classification, Incoterms liability, and digital taxation into a single enterprise optimization architecture. A modern supply chain cannot operate with fragmented tax silos; an oversight in customs valuation can trigger a catastrophic transfer pricing audit.',
+          'In this capstone synthesis, the corporate tax director designs a resilient cross-border operational blueprint. We implement the EU Reverse Charge Mechanism for services to preserve €100,000 of working capital liquidity, harmonize WTO Article 1 Transaction Value by capitalizing production assists and condition-of-sale software royalties into customs valuation, and eliminate Permanent Establishment risk by restructuring contracts from DDP to DAP.',
+          'Simultaneously, we evaluate global digital platform exposures under OECD Pillar One Amount A, replacing fragmented unilateral DSTs with treaty-creditable profit reallocations. This end-to-end orchestration delivers frictionless supply chain logistics, minimizes effective trade tariff drag, and secures Certified International Indirect Tax & Customs Specialist accreditation.'
+        ],
+        example: 'Novartis Digital Devices Global orchestrates a multi-jurisdictional network: €500,000 cross-border cloud architecture under RCM saving €100,000 in immediate cash tax drag, $4.0M hardware imports harmonized to $5.0M dutiable customs value ($375,000 duty paid, reduced by a $93,750 income tax shield), DDP contract restructured to DAP to eliminate US Permanent Establishment exposure, and digital operations aligned with OECD Pillar One, securing complete supply chain tax efficiency.',
+        code: `def run_global_supply_chain_indirect_tax_optimizer(
+    company_name: str,
+    services_deal: dict,
+    hardware_deal: dict,
+    digital_platform_deal: dict
+) -> dict:
+    vat_res = evaluate_cross_border_vat_and_reverse_charge(
+        services_deal["transaction_type"],
+        services_deal["supplier_country"],
+        services_deal["customer_country"],
+        services_deal["amount_eur"],
+        services_deal["customer_vat_registered"],
+        services_deal["standard_rate"]
+    )
+    
+    customs_res = harmonize_customs_valuation_and_transfer_pricing(
+        hardware_deal["fob_price"],
+        hardware_deal["freight"],
+        hardware_deal["assists"],
+        hardware_deal["royalties"],
+        hardware_deal["tariff_rate"],
+        hardware_deal["income_tax_rate"]
+    )
+    
+    pe_res = evaluate_incoterm_pe_risk_and_economic_nexus(
+        hardware_deal["incoterm"],
+        hardware_deal["destination_country"],
+        hardware_deal["annual_volume"],
+        hardware_deal["transactions_count"],
+        hardware_deal["consignment_stock"]
+    )
+    
+    dst_res = model_unilateral_dst_vs_pillar_one_amount_a(
+        digital_platform_deal["global_revenue"],
+        digital_platform_deal["global_pbt"],
+        digital_platform_deal["market_revenue"],
+        digital_platform_deal["market_share_pct"]
+    )
+    
+    total_customs_paid = customs_res["customs_duty_payable_usd"]
+    total_dst_paid = dst_res["unilateral_dst_gross_tax_usd"]
+    cash_liquidity_saved_via_rcm = services_deal["amount_eur"] * services_deal["standard_rate"]
+    
+    optimization_success = (vat_res["customer_rcm_self_assessment"] is True) and (pe_res["contractual_mitigation_term"] == "DAP")
+    
+    return {
+        "company_name": company_name,
+        "vat_mechanism_deployed": vat_res["tax_mechanism"],
+        "rcm_cash_liquidity_preserved_eur": round(cash_liquidity_saved_via_rcm, 2),
+        "customs_duty_liability_usd": round(total_customs_paid, 2),
+        "incoterm_risk_mitigated_to": pe_res["contractual_mitigation_term"],
+        "unilateral_dst_exposure_usd": round(total_dst_paid, 2),
+        "supply_chain_tax_efficiency_achieved": optimization_success,
+        "accreditation": "Certified International Indirect Tax & Customs Specialist" if optimization_success else "SUPPLY_CHAIN_TAX_AUDIT_RISK"
+    }
+
+p5 = run_global_supply_chain_indirect_tax_optimizer(
+    "Novartis Digital Devices Global",
+    {
+        "transaction_type": "B2B_SERVICE",
+        "supplier_country": "IE", "customer_country": "FR",
+        "amount_eur": 500000.0, "customer_vat_registered": True,
+        "standard_rate": 0.20
+    },
+    {
+        "fob_price": 4000000.0, "freight": 200000.0,
+        "assists": 300000.0, "royalties": 500000.0,
+        "tariff_rate": 0.075, "income_tax_rate": 0.25,
+        "incoterm": "DDP", "destination_country": "US",
+        "annual_volume": 1500000.0, "transactions_count": 350,
+        "consignment_stock": True
+    },
+    {
+        "global_revenue": 25000000000.0, "global_pbt": 5000000000.0,
+        "market_revenue": 100000000.0, "market_share_pct": 0.04
+    }
+)
+rcm_s = f"EUR {p5['rcm_cash_liquidity_preserved_eur']:,.2f}"
+duty_s = "$" + f"{p5['customs_duty_liability_usd']:,.2f}"
+print(f"Company: {p5['company_name']}")
+print(f"RCM Saved: {rcm_s} | Duty Paid: {duty_s}")
+print(f"Incoterm Mitigated To: {p5['incoterm_risk_mitigated_to']} | Success: {p5['supply_chain_tax_efficiency_achieved']}")
+print(f"Accreditation: {p5['accreditation']}")`,
+        output: `Company: Novartis Digital Devices Global\nRCM Saved: EUR 100,000.00 | Duty Paid: $375,000.00\nIncoterm Mitigated To: DAP | Success: True\nAccreditation: Certified International Indirect Tax & Customs Specialist`,
+        codeNotes: [
+          { line: 6, note: 'Executes B2B Reverse Charge Mechanism netting out €100k VAT to preserve cash working capital' },
+          { line: 15, note: 'Capitalizes production assists and royalties into WTO customs valuation yielding $375k duty payable' },
+          { line: 24, note: 'Restructures high-risk DDP terms to DAP eliminating permanent establishment exposure in destination' },
+          { line: 42, note: 'Validates overall supply chain tax efficiency and awards International Indirect Tax Specialist accreditation' }
+        ],
+        tryIt: 'Change consignment_stock to False under DAP terms to observe complete elimination of overseas tax nexus.',
+        check: {
+          question: 'What holistic contractual adjustment successfully eliminates corporate Permanent Establishment (PE) exposure for an overseas seller distributing tangible goods into foreign customer markets?',
+          options: [
+            'Transitioning sales contracts from DDP to DAP (Delivered at Place), making the domestic buyer the official Importer of Record.',
+            'Refusing to issue commercial invoices and requesting payment exclusively in digital tokens.',
+            'Registering a local subsidiary but claiming it only operates during weekends.',
+            'Paying double customs tariffs directly to the local port authority.'
+          ],
+          answer: 0,
+          why: 'Selling DDP makes the foreign seller the Importer of Record. Shifting to DAP transfers customs clearance and import liability to the domestic buyer, neutralizing fixed place of business PE risks.',
+          answerIndex: 0,
+          explanation: 'Selling DDP makes the foreign seller the Importer of Record. Shifting to DAP transfers customs clearance and import liability to the domestic buyer, neutralizing fixed place of business PE risks.'
+        }
+      }
+    ],
+    summary: [
+      'The OECD Destination Principle taxes cross-border consumption locally, utilizing the B2B Reverse Charge Mechanism (RCM) to eliminate cash tax leakage.',
+      'WTO Article 1 Transaction Value customs valuation harmonizes with transfer pricing by capitalizing production assists and condition-of-sale license royalties.',
+      'Incoterms 2020 DDP delivery paired with local consignment warehousing creates severe Permanent Establishment (PE) exposure, mitigated by shifting to DAP.',
+      'US South Dakota v. Wayfair (2018) enforces economic sales tax nexus thresholds ($100k revenue or 200 transactions) without physical presence.',
+      'OECD BEPS 2.0 Pillar One Amount A reallocates 25% of residual profits above a 10% margin to market countries, replacing uncreditable unilateral DSTs.'
+    ],
+    projectStep: {
+      title: 'Global Indirect Tax, Customs & Supply Chain Compliance Control Tower',
+      steps: [
+        'Automate B2B cross-border VAT zero-rating and customer reverse charge self-assessment routines under EU Directive 2006/112/EC.',
+        'Harmonize WTO customs dutiable transaction values by incorporating engineering assists and intellectual property royalties.',
+        'Audit Incoterms 2020 shipping agreements to eliminate OECD Article 5 Permanent Establishment risks and monitor US Wayfair nexus.',
+        'Model OECD Pillar One Amount A profit reallocations to decommission unilateral gross Digital Services Taxes.'
+      ]
+    }
+  }
 
 ];
