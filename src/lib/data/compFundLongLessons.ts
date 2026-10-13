@@ -796,6 +796,213 @@ grep "FORWARD_SECRECY" /home/student/workspace/tls_handshake/tls.log`,
         'Audit a TLS 1.3 1-RTT cryptographic handshake verifying ECDHE key exchange and Forward Secrecy invariants.'
       ]
     }
+  },
+  {
+    coursePrefix: 'comp_fund',
+    day: 5,
+    title: 'Linux Storage Engines, Virtual Memory & Kernel Container Internals',
+    goal: 'Master low-level Linux storage architecture: Ext4/XFS inodes, Page Cache fsync durability, zero-copy sendfile I/O, mmap demand paging, and cgroups v2/namespace container isolation.',
+    minutes: 45,
+    recap: 'In Day 4, we mastered low-level networking: Berkeley sockets, TCP state machines, epoll event loops, DNS resolution trees, and TLS 1.3 cryptographic handshakes. In Day 5, we culminate Computer Fundamentals by exploring the kernel interface between storage, virtual memory, and process containment: Ext4/XFS filesystem inodes, Page Cache write-back flushing, zero-copy DMA I/O pipelines, mmap memory mapping, and cgroups v2 container isolation.',
+    parts: [
+      {
+        title: 'Ext4/XFS Filesystem Internals, Inodes & Directory Structures',
+        say: [
+          'In Linux, files are not merely names in folders; they are represented by an index node (inode). An inode stores all file metadata: file mode (permissions), owner UID, group GID, file size in bytes, timestamps (atime, mtime, ctime), link count, and pointers to the physical data blocks on the disk or NVMe drive. Crucially, the filename itself is NOT stored in the inode—filenames exist solely as directory entries (dentries) mapping a string name to an inode number.',
+          'Hard links allow multiple directory entries to point directly to the exact same inode number. Because they share the identical inode, modifying the content through one filename instantly updates all linked filenames with zero storage overhead. When a file is "deleted" with rm, the kernel simply decrements the inode reference count. Only when this link count drops to zero—and no active process has an open file descriptor referencing it—does the kernel deallocate the physical data blocks on disk.',
+          'Symbolic links (symlinks), by contrast, are separate files possessing their own unique inode numbers. The data content of a symlink file is literally the target filepath string. If the target file is deleted or moved, the symlink becomes a "dangling link" pointing to a non-existent path. Understanding inode tables and link reference counting is essential for diagnosing disk space leaks where deleted files continue consuming storage because running background daemons still hold open file descriptors.'
+        ],
+        example: 'Like a citizen government record in a national registry (inode) vs two nicknames in address books (hard links). Erasing one nickname from your phone does not destroy the citizen government file; it remains active until the last reference is removed.',
+        code: `mkdir -p /home/student/workspace/storage_fs
+echo "DATABASE_TABLE_PAGE_001" > /home/student/workspace/storage_fs/primary.db
+echo "INODE_NUMBER: 1048576" > /home/student/workspace/storage_fs/primary.meta
+echo "HARD_LINK_COUNT: 2" >> /home/student/workspace/storage_fs/primary.meta
+echo "BLOCK_ALLOCATION: 4096_BYTES" >> /home/student/workspace/storage_fs/primary.meta
+cat /home/student/workspace/storage_fs/primary.meta
+grep "INODE_NUMBER" /home/student/workspace/storage_fs/primary.meta`,
+        output: `INODE_NUMBER: 1048576\nHARD_LINK_COUNT: 2\nBLOCK_ALLOCATION: 4096_BYTES\n\nINODE_NUMBER: 1048576`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual storage_fs filesystem directory' },
+          { line: 2, note: 'Writes mock primary database block file' },
+          { line: 3, note: 'Allocates unique 32-bit inode number in metadata table' },
+          { line: 4, note: 'Tracks hard link reference count pointing to inode' },
+          { line: 5, note: 'Allocates 4096-byte standard disk sector block cluster' }
+        ],
+        tryIt: 'Filter for the hard link count using grep "HARD_LINK_COUNT" /home/student/workspace/storage_fs/primary.meta.',
+        check: {
+          question: 'What happens in Linux when a file is deleted with "rm" while a running database daemon still has an open file descriptor to it?',
+          options: [
+            'The kernel immediately crashes with a kernel panic',
+            'The directory entry is unlinked, but the inode and data blocks remain allocated on disk until the database daemon closes its file descriptor',
+            'The database process is forcefully killed by the init process',
+            'The entire hard drive is formatted'
+          ],
+          answer: 1,
+          why: 'Linux only frees disk blocks when both the inode link count reaches zero AND all open file descriptor reference counts drop to zero. Until the running daemon closes the descriptor or terminates, the space remains allocated.'
+        }
+      },
+      {
+        title: 'Linux Page Cache, Dirty Pages & fsync() Durability Invariants',
+        say: [
+          'Accessing physical storage devices—even high-speed PCIe Gen 5 NVMe SSDs—is orders of magnitude slower than accessing CPU registers or L1/L2/L3 cache and system RAM (microseconds versus nanoseconds). To maximize I/O throughput, the Linux kernel employs the Page Cache: a transparent in-memory cache managed in 4KB page frames residing in otherwise unused physical RAM.',
+          'When an application executes a standard write() system call, the kernel does NOT immediately write the bytes to physical flash or disk sectors. Instead, it copies the data from user-space memory into Page Cache frames and immediately marks them as "dirty". The write() system call returns control to the application in fractions of a microsecond, giving the illusion of instantaneous disk I/O.',
+          'A background kernel thread pool periodically writes dirty pages back to physical media based on configurable kernel tunables. However, if power is abruptly lost or the operating system crashes before dirty pages are flushed, unwritten data is permanently destroyed! To guarantee Durability in ACID database transactions, database engines (such as PostgreSQL and MySQL InnoDB) must invoke fsync(fd), forcing the kernel to synchronously flush dirty Page Cache buffers and internal write caches before acknowledging a transaction commit.'
+        ],
+        example: 'Like a bank teller placing cash into a quick desktop cash tray (Page Cache) during the busy day to speed up customer lines, but locking it inside the underground steel vault (fsync) at closing time to ensure security against fire or burglary.',
+        code: `mkdir -p /home/student/workspace/page_cache
+echo "TRANSACTION_ID: tx_9901" > /home/student/workspace/page_cache/wal.log
+echo "PAGE_STATUS: DIRTY_IN_RAM" >> /home/student/workspace/page_cache/wal.log
+echo "FSYNC_INVOCATION: EXECUTED" >> /home/student/workspace/page_cache/wal.log
+echo "PERSISTENCE_STATE: DURABLE_ON_NVME_FLASH" >> /home/student/workspace/page_cache/wal.log
+cat /home/student/workspace/page_cache/wal.log
+grep "PERSISTENCE_STATE" /home/student/workspace/page_cache/wal.log`,
+        output: `TRANSACTION_ID: tx_9901\nPAGE_STATUS: DIRTY_IN_RAM\nFSYNC_INVOCATION: EXECUTED\nPERSISTENCE_STATE: DURABLE_ON_NVME_FLASH\n\nPERSISTENCE_STATE: DURABLE_ON_NVME_FLASH`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual page_cache directory' },
+          { line: 2, note: 'Logs atomic database transaction ID in Write-Ahead Log' },
+          { line: 3, note: 'Marks 4KB memory page as dirty in Linux Page Cache' },
+          { line: 4, note: 'Executes fsync() system call barrier forcing hardware flush' },
+          { line: 5, note: 'Confirms durability state written to persistent NVMe flash' }
+        ],
+        tryIt: 'Filter for the dirty RAM page state using grep "PAGE_STATUS" /home/student/workspace/page_cache/wal.log.',
+        check: {
+          question: 'Why must transactional database engines explicitly call "fsync()" on their write-ahead log (WAL) files rather than relying solely on the "write()" system call?',
+          options: [
+            'write() only copies data into the volatile in-memory Linux Page Cache; fsync() forces the dirty pages to be physically flushed to non-volatile disk/SSD storage',
+            'write() is forbidden by POSIX standards for database files',
+            'fsync() compresses data using gzip algorithms to reduce disk usage',
+            'write() cannot handle strings longer than 16 bytes'
+          ],
+          answer: 0,
+          why: 'write() returns as soon as data enters the Linux Page Cache in volatile RAM. A sudden power loss before dirty pages are flushed causes data loss unless fsync() explicitly flushes the data to persistent media.'
+        }
+      },
+      {
+        title: 'Zero-Copy Network & Disk I/O via sendfile() and DMA',
+        say: [
+          'Serving static files (such as images, video streams, or software bundles) over the network is one of the most common tasks for web servers like Nginx or cloud CDNs. In the traditional I/O paradigm using read() and write(), transferring a file to a network socket requires 4 separate context switches between user mode and kernel mode, and 4 separate data copies across system memory buses.',
+          'In traditional I/O: First, Direct Memory Access (DMA) copies the file from disk into the kernel Page Cache. Second, the CPU copies the bytes from the kernel Page Cache into the application user-space buffer (read). Third, the CPU copies the bytes from user space back into the kernel socket buffer (write). Fourth, the network interface card (NIC) DMA engine copies the bytes from the socket buffer onto the physical network wire. This double CPU copy wastes memory bandwidth and generates heavy CPU cache thrashing.',
+          'The Linux sendfile(out_fd, in_fd, offset, count) system call eliminates the user-space roundtrip completely. Data is transferred directly from the kernel Page Cache into the network socket buffer entirely within kernel space! When paired with modern NIC hardware supporting Scatter-Gather DMA, the kernel only passes lightweight packet descriptors to the socket buffer, allowing the NIC to read directly from the Page Cache via DMA with ZERO CPU byte copies. This Zero-Copy architecture enables high-performance servers to saturate 100 Gbps network interfaces at near-zero CPU utilization.'
+        ],
+        example: 'Like warehouse shipping: instead of having warehouse workers unpack a crate into the office lobby (user space) only to immediately repack it and ship it to the postal truck, the warehouse forklift driver loads the crate directly onto the outgoing truck (Zero-Copy kernel DMA).',
+        code: `mkdir -p /home/student/workspace/zero_copy
+echo "SOURCE_FILE: media_4k_stream.mp4" > /home/student/workspace/zero_copy/transfer.log
+echo "KERNEL_DMA_COPY: DISK_TO_PAGE_CACHE" >> /home/student/workspace/zero_copy/transfer.log
+echo "ZERO_COPY_SENDFILE: PAGE_CACHE_TO_NIC_RING" >> /home/student/workspace/zero_copy/transfer.log
+echo "USER_SPACE_COPIES: 0" >> /home/student/workspace/zero_copy/transfer.log
+cat /home/student/workspace/zero_copy/transfer.log
+grep "USER_SPACE_COPIES: 0" /home/student/workspace/zero_copy/transfer.log`,
+        output: `SOURCE_FILE: media_4k_stream.mp4\nKERNEL_DMA_COPY: DISK_TO_PAGE_CACHE\nZERO_COPY_SENDFILE: PAGE_CACHE_TO_NIC_RING\nUSER_SPACE_COPIES: 0\n\nUSER_SPACE_COPIES: 0`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual zero_copy directory' },
+          { line: 2, note: 'Tracks source video stream payload on disk' },
+          { line: 3, note: 'Executes hardware DMA transfer from disk to kernel Page Cache' },
+          { line: 4, note: 'Executes zero-copy sendfile() system call to socket NIC buffer' },
+          { line: 5, note: 'Verifies zero bytes copied through user-space memory buffers' }
+        ],
+        tryIt: 'Filter for the zero-copy pipeline step using grep "ZERO_COPY_SENDFILE" /home/student/workspace/zero_copy/transfer.log.',
+        check: {
+          question: 'What is the primary performance benefit of the Linux "sendfile()" system call compared to traditional "read()" and "write()" loops?',
+          options: [
+            'It transfers data directly within kernel space from the Page Cache to the network buffer via DMA, eliminating user-space memory copying and context switches',
+            'It increases network bandwidth by over-clocking the CPU',
+            'It converts MP4 video files into animated GIFs',
+            'It deletes temporary files automatically after sending'
+          ],
+          answer: 0,
+          why: 'sendfile() eliminates both user-space memory buffer copying and redundant user-to-kernel context switches, achieving true zero-copy data transfer from disk Page Cache directly to the network interface.'
+        }
+      },
+      {
+        title: 'Virtual Memory Mapping via mmap() and Demand Paging',
+        say: [
+          'Rather than invoking read() or write() system calls and managing intermediate memory buffers, high-performance database engines (like LMDB, RocksDB, and SQLite) and runtime loaders map files directly into their virtual memory address space using mmap().',
+          'When mmap() is executed with MAP_SHARED or MAP_PRIVATE, the Linux kernel does NOT load the entire file into physical RAM immediately! Instead, it merely creates a virtual memory area (VMA) struct in the process address space mapping the file offset to a range of virtual memory page addresses (such as 0x7fff5000).',
+          'This mechanism relies on Demand Paging. When the CPU executes an instruction that dereferences a pointer into the mapped address, the Memory Management Unit (MMU) detects that no physical page frame is mapped and triggers a Page Fault interrupt. The Linux kernel intercepts the page fault, issues an asynchronous I/O read to load the requested 4KB block into a Page Cache frame, updates the process page table, and resumes execution seamlessly. Memory-mapped I/O completely bypasses read() buffer copying and lets the OS virtual memory subsystem manage paging and memory pressure automatically.'
+        ],
+        example: 'Like studying a 1,000-page encyclopedia. Instead of photocopying every page onto your desk before studying (loading whole file into RAM), you bookmark the table of contents (virtual address mapping) and only open and flip to an individual page when your eye specifically reads that topic (demand paging on page fault).',
+        code: `mkdir -p /home/student/workspace/mmap_sim
+echo "VIRTUAL_ADDR_START: 0x7fff5000" > /home/student/workspace/mmap_sim/vma.txt
+echo "MAPPING_TYPE: MAP_SHARED" >> /home/student/workspace/mmap_sim/vma.txt
+echo "DEMAND_PAGING: LAZY_PAGE_FAULT_RESOLVED" >> /home/student/workspace/mmap_sim/vma.txt
+echo "RESIDENT_SET_SIZE: 4096_KB" >> /home/student/workspace/mmap_sim/vma.txt
+cat /home/student/workspace/mmap_sim/vma.txt
+grep "DEMAND_PAGING" /home/student/workspace/mmap_sim/vma.txt`,
+        output: `VIRTUAL_ADDR_START: 0x7fff5000\nMAPPING_TYPE: MAP_SHARED\nDEMAND_PAGING: LAZY_PAGE_FAULT_RESOLVED\nRESIDENT_SET_SIZE: 4096_KB\n\nDEMAND_PAGING: LAZY_PAGE_FAULT_RESOLVED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual mmap_sim directory' },
+          { line: 2, note: 'Maps file to 64-bit user-space virtual memory address' },
+          { line: 3, note: 'Configures MAP_SHARED flag propagating writes back to Page Cache' },
+          { line: 4, note: 'Resolves MMU minor page fault loading 4KB disk page on demand' },
+          { line: 5, note: 'Tracks active resident memory allocated in physical RAM' }
+        ],
+        tryIt: 'Filter for the virtual memory start address using grep "VIRTUAL_ADDR_START" /home/student/workspace/mmap_sim/vma.txt.',
+        check: {
+          question: 'How does Linux demand paging operate when a process accesses a memory-mapped file created with "mmap()"?',
+          options: [
+            'The kernel loads the file 4KB pages into physical RAM lazily upon encountering a Page Fault when the memory address is first accessed',
+            'The entire file is synchronously copied into RAM before mmap() returns',
+            'The hard drive is unmounted while memory is read',
+            'The kernel encrypts the entire address space with SHA-256'
+          ],
+          answer: 0,
+          why: 'Demand paging loads pages into memory on demand. When an address is first referenced, a page fault occurs, causing the kernel to fetch only the needed 4KB block into physical RAM.'
+        }
+      },
+      {
+        title: 'cgroups v2 & Linux Namespaces: The Kernel Architecture of Containers',
+        say: [
+          'A widespread misconception in cloud computing is that Docker containers are lightweight virtual machines with their own operating system kernel. In reality, a container is simply an ordinary Linux process running on the host kernel, isolated by two core Linux kernel primitives: Linux Namespaces and Control Groups (cgroups v2).',
+          'Namespaces control what a process can SEE. The kernel provides multiple distinct namespaces: PID (Process IDs—allowing a containerized process to believe it is PID 1), NET (network interfaces, IP addresses, routing tables), MNT (filesystem mount points via chroot/pivot_root), IPC (System V and POSIX inter-process message queues), UTS (hostnames and domain names), and USER (UID/GID mapping, allowing an unprivileged user on the host to be root inside the container).',
+          'Control Groups (cgroups v2) control what a process can USE. While namespaces provide security isolation, cgroups prevent a runaway process from exhausting host hardware resources. Managed through a unified hierarchy in /sys/fs/cgroup, cgroups enforce hard and soft quotas on CPU time (cpu.max capping usage to CPU bandwidth fractions), memory allocation (memory.max enforcing a byte limit beyond which the Out-Of-Memory OOM-killer terminates the container), and I/O bandwidth (io.max). Together, namespaces and cgroups v2 form the foundational building blocks of container engines like Docker, containerd, and Kubernetes.'
+        ],
+        example: 'Like an apartment building. Namespaces are the private walls, separate front doors, and individual utility meters for each apartment: you cannot see or wander into your neighbor living room. cgroups are the electrical breaker box and water valve limiting each apartment so one tenant cannot starve the building.',
+        code: `mkdir -p /home/student/workspace/container_cgroup
+echo "NAMESPACES: PID_NET_MNT_IPC_UTS_USER" > /home/student/workspace/container_cgroup/isolation.info
+echo "CGROUP_V2_CPU_MAX: 200000_100000" >> /home/student/workspace/container_cgroup/isolation.info
+echo "CGROUP_V2_MEM_MAX: 1073741824" >> /home/student/workspace/container_cgroup/isolation.info
+echo "CONTAINER_ISOLATION: STRICT_KERNEL_ENFORCED" >> /home/student/workspace/container_cgroup/isolation.info
+cat /home/student/workspace/container_cgroup/isolation.info
+grep "CONTAINER_ISOLATION" /home/student/workspace/container_cgroup/isolation.info`,
+        output: `NAMESPACES: PID_NET_MNT_IPC_UTS_USER\nCGROUP_V2_CPU_MAX: 200000_100000\nCGROUP_V2_MEM_MAX: 1073741824\nCONTAINER_ISOLATION: STRICT_KERNEL_ENFORCED\n\nCONTAINER_ISOLATION: STRICT_KERNEL_ENFORCED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual container_cgroup configuration directory' },
+          { line: 2, note: 'Configures 6 core Linux namespaces isolating process visibility' },
+          { line: 3, note: 'Sets cgroups v2 CFS quota capping CPU consumption to 2 cores' },
+          { line: 4, note: 'Sets cgroups v2 hard memory ceiling to 1GB (1073741824 bytes)' },
+          { line: 5, note: 'Confirms container process containment enforced directly by Linux kernel' }
+        ],
+        tryIt: 'Filter for the cgroups memory quota limit using grep "CGROUP_V2_MEM_MAX" /home/student/workspace/container_cgroup/isolation.info.',
+        check: {
+          question: 'In Linux container architecture, what is the fundamental difference between Namespaces and cgroups v2?',
+          options: [
+            'Namespaces isolate what a process can see (PIDs, network, mounts); cgroups v2 restrict what resources a process can consume (CPU, memory, I/O)',
+            'Namespaces are written in Python while cgroups are written in HTML',
+            'Namespaces require hardware virtualization while cgroups run on Windows only',
+            'There is no difference; they are synonyms for virtual machines'
+          ],
+          answer: 0,
+          why: 'Namespaces partition visibility (PID, NET, MNT, UTS, IPC, USER), while cgroups govern resource quotas and limits (CPU bandwidth, RAM allocations, block I/O throughput).'
+        }
+      }
+    ],
+    summary: [
+      'Ext4 and XFS filesystems decouple directory entries from inodes, releasing disk blocks only when both link count and open file descriptor refcounts hit zero.',
+      'The Linux Page Cache buffers writes in RAM as dirty pages; transactional databases must invoke fsync() to guarantee non-volatile storage durability.',
+      'The sendfile() system call achieves zero-copy I/O by transferring data directly between Page Cache and network buffers via DMA, bypassing user space.',
+      'Memory-mapped files (mmap) integrate disk files into process virtual address space, resolving memory pages lazily on demand via MMU page faults.',
+      'Linux containers rely on Namespaces for process isolation (PID, NET, MNT) and cgroups v2 for hardware resource constraints (CPU quotas, memory.max limits).'
+    ],
+    projectStep: {
+      title: 'Architect an Advanced Low-Level Linux Storage & Container Internals Suite',
+      steps: [
+        'Trace Ext4 inode metadata, block allocation records, and hard link reference counting lifecycle.',
+        'Simulate Page Cache dirty write-back buffers and enforce ACID durability barriers via fsync() flushes.',
+        'Benchmark zero-copy sendfile() DMA pipelines eliminating user-space memory copies and context switches.',
+        'Implement memory-mapped virtual address mappings with mmap() and trace lazy demand paging faults.',
+        'Configure Linux container isolation tables combining 6 core Namespaces with cgroups v2 CPU and memory quotas.'
+      ]
+    }
   }
 ];
 

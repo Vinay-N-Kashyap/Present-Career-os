@@ -467,6 +467,65 @@ test('Systems Long Lessons: iot_emb Day 3 UART, SPI, I2C, CAN & CRC-16 AST Verif
   assert.equal(res5.allPassed, true, 'Part 5 calculateCrc16 must pass AST analysis');
 });
 
+test('Systems Long Lessons: comp_fund Day 5 Storage Engines, Inodes, Zero-Copy & Containers Verification', async () => {
+  const compFundD5 = getLongLesson('comp_fund', 5);
+  assert.ok(compFundD5, 'comp_fund Day 5 must resolve');
+  assert.equal(compFundD5.day, 5);
+  assert.equal(compFundD5.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(compFundD5);
+  const totalMin = estimateLessonMinutes(compFundD5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < compFundD5.parts.length; i++) {
+    const part = compFundD5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code must contain bash commands`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Part 1: Ext4/XFS Filesystem Inodes & Directory Structures
+  const res1 = await executeBashSuite(compFundD5.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 inodes must succeed');
+  assert.ok(res1.stdout?.includes('INODE_NUMBER: 1048576'), 'Must display inode number');
+  assert.ok(res1.stdout?.includes('HARD_LINK_COUNT: 2'), 'Must display hard link count');
+
+  // Part 2: Page Cache & fsync()
+  const res2 = await executeBashSuite(compFundD5.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 page cache fsync must succeed');
+  assert.ok(res2.stdout?.includes('DIRTY_IN_RAM'), 'Must mark dirty in RAM');
+  assert.ok(res2.stdout?.includes('DURABLE_ON_NVME_FLASH'), 'Must verify fsync durability');
+
+  // Part 3: Zero-Copy sendfile() & DMA
+  const res3 = await executeBashSuite(compFundD5.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 zero-copy must succeed');
+  assert.ok(res3.stdout?.includes('ZERO_COPY_SENDFILE: PAGE_CACHE_TO_NIC_RING'), 'Must trace zero-copy sendfile');
+  assert.ok(res3.stdout?.includes('USER_SPACE_COPIES: 0'), 'Must verify 0 user space copies');
+
+  // Part 4: Virtual Memory Mapping via mmap()
+  const res4 = await executeBashSuite(compFundD5.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 mmap must succeed');
+  assert.ok(res4.stdout?.includes('VIRTUAL_ADDR_START: 0x7fff5000'), 'Must map virtual memory address');
+  assert.ok(res4.stdout?.includes('DEMAND_PAGING: LAZY_PAGE_FAULT_RESOLVED'), 'Must resolve demand paging fault');
+
+  // Part 5: cgroups v2 & Linux Namespaces
+  const res5 = await executeBashSuite(compFundD5.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 containers must succeed');
+  assert.ok(res5.stdout?.includes('NAMESPACES: PID_NET_MNT_IPC_UTS_USER'), 'Must declare 6 namespaces');
+  assert.ok(res5.stdout?.includes('CONTAINER_ISOLATION: STRICT_KERNEL_ENFORCED'), 'Must verify kernel containment');
+});
+
 
 
 
