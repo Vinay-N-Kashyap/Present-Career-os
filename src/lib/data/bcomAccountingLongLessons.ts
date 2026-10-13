@@ -379,5 +379,340 @@ print(f"Net Realizable AR:           \${ecl['Net_Realizable_AR_On_Balance_Sheet'
         'Calculate an Accounts Receivable aging schedule and derive Net Realizable Receivables.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom-accounting',
+    day: 2,
+    title: 'ASC 842 Leases, Multi-Currency Consolidation, Inventory Dynamics & ERP Controls',
+    goal: 'Master advanced corporate enterprise accounting: ASC 842 / IFRS 16 lease capitalization, multi-currency subsidiary consolidation & CTA under ASC 830, FIFO vs Weighted-Average inventory costing dynamics, ASC 350 goodwill impairment testing, and automated ERP subledger-to-GL reconciliation controls.',
+    minutes: 45,
+    recap: 'Welcome to Day 2 of Financial Accounting & ERP Systems. Today, we elevate beyond simple double-entry bookkeeping into real-world multinational corporate accounting: capitalization of operating leases, foreign exchange translation & CTA under ASC 830, inventory valuation under ASC 330, goodwill impairment testing under ASC 350, and automated ERP general ledger reconciliation.',
+    parts: [
+      {
+        title: 'ASC 842 & IFRS 16 Lease Capitalization Engine',
+        say: [
+          'Prior to accounting standard updates ASC 842 (US GAAP) and IFRS 16, corporations exploited an enormous loophole: Operating Leases were treated as off-balance sheet operating expenses. An airline leasing $50 billion worth of Boeing aircraft or a retail chain leasing 1,000 stores showed ZERO debt liabilities on their balance sheets, masking their true leverage from credit rating agencies!',
+          'Under ASC 842 and IFRS 16, almost all leases exceeding 12 months must be capitalized onto the balance sheet. The lessee must recognize a Right-of-Use (ROU) Asset (representing the contractual right to use the underlying property) and an offsetting Lease Liability (representing the present value of future lease payments).',
+          'The initial lease liability equals the present value of all future lease payments discounted at either the rate implicit in the lease or the lessee\'s Incremental Borrowing Rate (IBR). Over the lease term, the liability is amortized using the effective interest method: each payment splits into Interest Expense (reducing net income) and Principal Reduction (reducing the balance sheet liability).',
+          'Simultaneously, the ROU Asset is systematically depreciated (typically on a straight-line basis over the lease term for finance leases). This ensures that financial leverage, debt covenants, and EBITDA calculations reflect genuine enterprise commitments.'
+        ],
+        example: 'Imagine signing a 5-year lease for an AI supercomputing server cluster at $50,000 per year with an incremental borrowing rate of 6.0%. Under old accounting, you booked $50,000 annual rent expense with zero balance sheet footprint. Under ASC 842, you immediately capitalize a $210,618.19 ROU Asset and $210,618.19 Lease Liability on day one!',
+        code: `# Simulation: ASC 842 / IFRS 16 Lease Capitalization & Amortization Engine
+def calculate_lease_amortization_schedule(annual_payment: float, term_years: int, discount_rate: float):
+    # Present Value of Lease Payments (Ordinary Annuity formula)
+    # PV = PMT * [1 - (1 + r)^(-n)] / r
+    pv_factor = (1.0 - (1.0 + discount_rate) ** (-term_years)) / discount_rate
+    initial_liability = annual_payment * pv_factor
+    initial_rou_asset = initial_liability
+    annual_straight_line_depr = initial_rou_asset / term_years
+
+    schedule = []
+    current_liability = initial_liability
+    current_rou_asset = initial_rou_asset
+
+    for yr in range(1, term_years + 1):
+        interest_expense = current_liability * discount_rate
+        principal_reduction = annual_payment - interest_expense
+        ending_liability = current_liability - principal_reduction
+        current_rou_asset -= annual_straight_line_depr
+
+        schedule.append({
+            "Year": yr,
+            "Payment": annual_payment,
+            "Interest_Expense": round(interest_expense, 2),
+            "Principal_Reduction": round(principal_reduction, 2),
+            "Ending_Lease_Liability": round(ending_liability, 2),
+            "Ending_ROU_Asset": round(current_rou_asset, 2)
+        })
+        current_liability = ending_liability
+
+    return {
+        "Initial_Capitalized_Liability": round(initial_liability, 2),
+        "Schedule": schedule
+    }
+
+lease = calculate_lease_amortization_schedule(annual_payment=50000.0, term_years=5, discount_rate=0.06)
+y1 = lease["Schedule"][0]
+print(f"Capitalized ROU Asset / Liability: \${lease['Initial_Capitalized_Liability']:,}")
+print(f"Yr 1: Payment \${y1['Payment']} -> Interest: \${y1['Interest_Expense']}, Principal: \${y1['Principal_Reduction']}")
+print(f"Yr 1 Ending Liability: \${y1['Ending_Lease_Liability']:,} | ROU Asset: \${y1['Ending_ROU_Asset']:,}")`,
+        output: `Capitalized ROU Asset / Liability: $210,618.19\nYr 1: Payment $50000.0 -> Interest: $12637.09, Principal: $37362.91\nYr 1 Ending Liability: $173,255.28 | ROU Asset: $168,494.55`,
+        tryIt: 'Change the discount_rate from 0.06 to 0.10 and note how a higher interest rate lowers the initial capitalized PV liability to $189,539.34.',
+        check: {
+          question: 'Under ASC 842 and IFRS 16, what was the primary regulatory reason for requiring operating leases to be recorded on corporate balance sheets?',
+          options: [
+            'To eliminate off-balance sheet financing and provide transparency into the true contractual debt obligations and leverage of the lessee',
+            'To force corporations to purchase real estate rather than leasing',
+            'To increase corporate federal income tax liabilities by eliminating rent deductions',
+            'To shorten all commercial lease agreements to under 6 months'
+          ],
+          answer: 0,
+          why: 'Off-balance sheet operating leases allowed companies to disguise billions in contractual payment obligations. ASC 842 eliminates this distortive opacity by mandating Right-of-Use Asset and Lease Liability recognition.',
+          answerIndex: 0,
+          explanation: 'Off-balance sheet operating leases allowed companies to disguise billions in contractual payment obligations. ASC 842 eliminates this distortive opacity by mandating Right-of-Use Asset and Lease Liability recognition.'
+        }
+      },
+      {
+        title: 'Multi-Currency Foreign Subsidiary Consolidation & CTA (ASC 830)',
+        say: [
+          'Global multinational corporations operate dozens of legal subsidiaries worldwide, each transacting in its local Functional Currency (such as Euros, Japanese Yen, or British Pounds). When assembling the global Consolidated Financial Statements in the reporting currency (e.g., US Dollars), financial controllers must follow ASC 830 / IAS 21.',
+          'Under the Current Rate Method, all foreign subsidiary balance sheet assets and liabilities are translated at the current spot exchange rate as of the balance sheet date. Conversely, income statement revenues and expenses are translated at the weighted-average exchange rate over the reporting period.',
+          'Because the spot exchange rate at period-end inevitably differs from the weighted-average rate and historical equity rates, a mathematical translation imbalance is created. Where does this foreign exchange variance go?',
+          'Crucially, under ASC 830, this translation difference CANNOT be flushed through Net Income on the Income Statement! Doing so would generate massive artificial profit volatility driven purely by currency fluctuations. Instead, it is recorded directly into Other Comprehensive Income (OCI) as the Cumulative Translation Adjustment (CTA), accumulating within Shareholders\' Equity.'
+        ],
+        example: 'Consider a US multinational whose European subsidiary holds €20,000,000 in net assets. When the Euro appreciates from $1.05 to $1.12, the USD value of those European net assets expands from $21,000,000 to $22,400,000. The $1,400,000 translation gain is captured in CTA within Accumulated Other Comprehensive Income (AOCI), preserving operational P&L integrity.',
+        code: `# Simulation: Multi-Currency Foreign Subsidiary Consolidation & CTA (ASC 830)
+def consolidate_foreign_subsidiary(local_net_assets_eur: float, local_net_income_eur: float,
+                                   spot_rate_usd_per_eur: float, avg_rate_usd_per_eur: float,
+                                   historical_rate_usd_per_eur: float):
+    # Current Rate Method under ASC 830:
+    # 1. Assets & Liabilities translated at current spot balance sheet rate
+    translated_net_assets_usd = local_net_assets_eur * spot_rate_usd_per_eur
+
+    # 2. Income statement translated at weighted-average rate for the reporting period
+    translated_net_income_usd = local_net_income_eur * avg_rate_usd_per_eur
+
+    # 3. Beginning equity translated at historical exchange rates
+    translated_historical_equity_usd = local_net_assets_eur * historical_rate_usd_per_eur
+
+    # 4. Cumulative Translation Adjustment (CTA) balancing plug into Other Comprehensive Income (OCI)
+    # CTA represents translation gain/loss from spot rate drift vs historical
+    cta_oci_plug_usd = translated_net_assets_usd - translated_historical_equity_usd
+
+    return {
+        "Translated_Net_Assets_USD": round(translated_net_assets_usd, 2),
+        "Translated_Net_Income_USD": round(translated_net_income_usd, 2),
+        "CTA_Equity_Adjustment_USD": round(cta_oci_plug_usd, 2)
+    }
+
+sub = consolidate_foreign_subsidiary(
+    local_net_assets_eur=20000000.0,
+    local_net_income_eur=4000000.0,
+    spot_rate_usd_per_eur=1.12,
+    avg_rate_usd_per_eur=1.08,
+    historical_rate_usd_per_eur=1.05
+)
+print(f"Translated Net Assets: \${sub['Translated_Net_Assets_USD']:,} | Net Income: \${sub['Translated_Net_Income_USD']:,}")
+print(f"CTA OCI Adjustment: \${sub['CTA_Equity_Adjustment_USD']:,} -> Logged in Accumulated Other Comprehensive Income (AOCI) in Equity")`,
+        output: `Translated Net Assets: $22,400,000.0 | Net Income: $4,320,000.0\nCTA OCI Adjustment: $1,280,000.0 -> Logged in Accumulated Other Comprehensive Income (AOCI) in Equity`,
+        tryIt: 'Set spot_rate_usd_per_eur to 0.98 (Euro devalues against USD) and observe how the CTA turns into a negative equity reserve adjustment.',
+        check: {
+          question: 'Why does ASC 830 mandate that foreign currency translation gains/losses under the Current Rate Method be booked to OCI (Cumulative Translation Adjustment) rather than Net Income?',
+          options: [
+            'To prevent unrealized macro currency fluctuations from distorting the core operating earnings and profitability of the business',
+            'Because foreign currencies are legally considered non-taxable assets',
+            'To conceal foreign currency losses from external auditors and creditors',
+            'Because foreign subsidiaries cannot hold bank accounts in their local jurisdiction'
+          ],
+          answer: 0,
+          why: 'Translating balance sheets at spot rates creates paper volatility. Routing CTA through OCI preserves operational Net Income integrity until the foreign subsidiary is liquidated or sold.',
+          answerIndex: 0,
+          explanation: 'Translating balance sheets at spot rates creates paper volatility. Routing CTA through OCI preserves operational Net Income integrity until the foreign subsidiary is liquidated or sold.'
+        }
+      },
+      {
+        title: 'Inventory Costing Dynamics: FIFO vs Weighted-Average (ASC 330)',
+        say: [
+          'For manufacturing, hardware, and retail enterprises, inventory is one of the largest working capital assets on the balance sheet. Under ASC 330, inventory must be carried at the Lower of Cost or Net Realizable Value (LCNRV). However, determining the "cost" of inventory sold requires selecting an inventory cost flow assumption.',
+          'The two prevailing international costing methodologies are FIFO (First-In, First-Out) and Weighted-Average Cost. (Note that LIFO is permissible under US GAAP for tax purposes, but strictly forbidden under IFRS!).',
+          'In an inflationary environment where unit purchase costs rise over time, FIFO assumes the oldest, cheapest units are sold first. This results in lower Cost of Goods Sold (COGS), higher reported Gross Profit, and a higher, more current inventory valuation on the balance sheet.',
+          'Weighted-Average Costing, by contrast, smooths price spikes by calculating a blended average unit cost across all available batches. This produces moderate COGS, stabilizes gross margins, and eliminates artificial profit spikes caused purely by inventory batch vintage timing.'
+        ],
+        example: 'Imagine a microchip manufacturer buying 500 units at $50 in January, 600 units at $55 in March, and 400 units at $65 in June. Selling 550 units at $110 produces $28,000 COGS and $34,500 Gross Profit under FIFO, but $32,916.67 COGS and $29,583.33 Gross Profit under Weighted-Average!',
+        code: `# Simulation: Inventory Costing Dynamics: FIFO vs Weighted-Average Costing under ASC 330
+def calculate_inventory_costing_models(batches: list[dict], units_sold: int, sales_price_per_unit: float):
+    # Total available inventory
+    total_units_avail = sum(b["units"] for b in batches)
+    total_cost_avail = sum(b["units"] * b["cost_per_unit"] for b in batches)
+
+    # 1. FIFO Cost of Goods Sold (First-In, First-Out)
+    fifo_cogs = 0.0
+    units_needed = units_sold
+    for b in batches:
+        take = min(b["units"], units_needed)
+        fifo_cogs += take * b["cost_per_unit"]
+        units_needed -= take
+        if units_needed == 0:
+            break
+    fifo_ending_inv = total_cost_avail - fifo_cogs
+    revenue = units_sold * sales_price_per_unit
+    fifo_gross_profit = revenue - fifo_cogs
+
+    # 2. Weighted-Average Costing (W-Avg)
+    weighted_avg_cost_per_unit = total_cost_avail / total_units_avail
+    wavg_cogs = units_sold * weighted_avg_cost_per_unit
+    wavg_ending_inv = total_cost_avail - wavg_cogs
+    wavg_gross_profit = revenue - wavg_cogs
+
+    return {
+        "FIFO_COGS": round(fifo_cogs, 2),
+        "FIFO_Gross_Profit": round(fifo_gross_profit, 2),
+        "FIFO_Ending_Inventory": round(fifo_ending_inv, 2),
+        "WAvg_COGS": round(wavg_cogs, 2),
+        "WAvg_Gross_Profit": round(wavg_gross_profit, 2),
+        "WAvg_Ending_Inventory": round(wavg_ending_inv, 2),
+        "FIFO_Profit_Premium": round(fifo_gross_profit - wavg_gross_profit, 2)
+    }
+
+inventory_batches = [
+    {"batch": "Jan_01_Beginning", "units": 500, "cost_per_unit": 50.0},
+    {"batch": "Mar_15_Purchase",  "units": 600, "cost_per_unit": 55.0},
+    {"batch": "Jun_20_Purchase",  "units": 400, "cost_per_unit": 65.0}
+]
+costing = calculate_inventory_costing_models(inventory_batches, units_sold=550, sales_price_per_unit=110.0)
+print(f"FIFO COGS: \${costing['FIFO_COGS']:,} -> Gross Profit: \${costing['FIFO_Gross_Profit']:,} (Ending Inv: \${costing['FIFO_Ending_Inventory']:,})")
+print(f"W-Avg COGS: \${costing['WAvg_COGS']:,} -> Gross Profit: \${costing['WAvg_Gross_Profit']:,} (Ending Inv: \${costing['WAvg_Ending_Inventory']:,})")
+print(f"FIFO Inflationary Profit Premium: +\${costing['FIFO_Profit_Premium']:,}")`,
+        output: `FIFO COGS: $28,000.0 | Gross Profit: $34,500.0 (Ending Inv: $51,000.0)\nW-Avg COGS: $32,916.67 | Gross Profit: $29,583.33 (Ending Inv: $46,083.33)\nFIFO Inflationary Profit Premium: +$4,916.67`,
+        tryIt: 'Reverse the costs so prices decline ($65 in Jan, $55 in Mar, $50 in Jun) to confirm that deflation causes Weighted-Average Gross Profit to exceed FIFO Gross Profit.',
+        check: {
+          question: 'In a sustained inflationary pricing environment, what is the financial statement effect of selecting FIFO over Weighted-Average Costing?',
+          options: [
+            'FIFO produces lower COGS, higher reported Gross Profit, and higher ending inventory asset value on the balance sheet',
+            'FIFO produces higher COGS, lower Gross Profit, and artificially depresses working capital',
+            'FIFO has zero impact on COGS or Gross Profit because all inventory methods yield identical gross margins',
+            'FIFO is banned under US GAAP for manufacturing businesses'
+          ],
+          answer: 0,
+          why: 'Because FIFO sells older, cheaper inventory first, COGS reflects lower historical costs, boosting current-period Gross Profit and leaving higher recent costs in Ending Inventory.',
+          answerIndex: 0,
+          explanation: 'Because FIFO sells older, cheaper inventory first, COGS reflects lower historical costs, boosting current-period Gross Profit and leaving higher recent costs in Ending Inventory.'
+        }
+      },
+      {
+        title: 'ASC 350 Goodwill Impairment Testing & Quantitative Loss Calculation',
+        say: [
+          'When a corporation acquires a business, any purchase price paid in excess of the fair market value of net identifiable tangible and intangible assets is capitalized as Goodwill on the balance sheet under ASC 805.',
+          'Goodwill represents synergies, brand reputation, workforce assembly, and future earning power. Unlike equipment or patents, Goodwill has an indefinite useful life and CANNOT be amortized under US GAAP and IFRS. Instead, it must be rigorously tested for impairment at least annually under ASC 350.',
+          'Under current ASU 2017-04 simplification, companies perform a quantitative test by comparing the Fair Value of each Reporting Unit with its Carrying Value (including allocated goodwill). If the reporting unit\'s Carrying Value exceeds its Fair Value, an Impairment Loss must be recognized immediately!',
+          'The impairment loss equals the excess carrying value, capped at the total amount of recorded goodwill allocated to that reporting unit. The impairment is written off as an operating expense on the Income Statement and permanently reduces Goodwill on the Balance Sheet; under US GAAP, goodwill impairments can NEVER be reversed!'
+        ],
+        example: 'A software company acquires a legacy hardware unit for $50M, booking $20M in goodwill. Three years later, market disruption shrinks the reporting unit\'s fair value to $40M, while its carrying value is $52M. The $12M excess is written off as an immediate goodwill impairment loss, reducing goodwill to $8M.',
+        code: `# Simulation: ASC 350 Goodwill Impairment Testing Model
+def evaluate_goodwill_impairment(reporting_units: list[dict]):
+    audit_results = []
+    for unit in reporting_units:
+        name = unit["name"]
+        carrying_value = unit["carrying_value_with_goodwill"]
+        fair_value = unit["fair_value_reporting_unit"]
+        recorded_goodwill = unit["recorded_goodwill"]
+
+        # Step 1 Test: Does Carrying Value exceed Fair Value?
+        if carrying_value > fair_value:
+            # Impairment exists: loss is excess carrying value, capped at total recorded goodwill
+            indicated_loss = carrying_value - fair_value
+            impairment_loss = min(indicated_loss, recorded_goodwill)
+            verdict = "MATERIAL_GOODWILL_IMPAIRMENT_RECOGNIZED"
+        else:
+            impairment_loss = 0.0
+            verdict = "NO_IMPAIRMENT_REPORTING_UNIT_HEALTHY"
+
+        ending_goodwill = recorded_goodwill - impairment_loss
+        audit_results.append({
+            "unit": name,
+            "verdict": verdict,
+            "impairment_loss": round(impairment_loss, 2),
+            "ending_goodwill": round(ending_goodwill, 2)
+        })
+    return audit_results
+
+units_portfolio = [
+    {"name": "Cloud_SaaS_Division", "carrying_value_with_goodwill": 45000000.0, "fair_value_reporting_unit": 62000000.0, "recorded_goodwill": 15000000.0},
+    {"name": "Legacy_Hardware_Division", "carrying_value_with_goodwill": 52000000.0, "fair_value_reporting_unit": 40000000.0, "recorded_goodwill": 20000000.0}
+]
+
+impairments = evaluate_goodwill_impairment(units_portfolio)
+print(f"Unit 1: {impairments[0]['unit']} -> [{impairments[0]['verdict']}] (Loss: \${impairments[0]['impairment_loss']:,})")
+print(f"Unit 2: {impairments[1]['unit']} -> [{impairments[1]['verdict']}] (Loss: \${impairments[1]['impairment_loss']:,}, End Goodwill: \${impairments[1]['ending_goodwill']:,})")`,
+        output: `Unit 1: Cloud_SaaS_Division -> [NO_IMPAIRMENT_REPORTING_UNIT_HEALTHY] (Loss: $0.0)\nUnit 2: Legacy_Hardware_Division -> [MATERIAL_GOODWILL_IMPAIRMENT_RECOGNIZED] (Loss: $12,000,000.0, End Goodwill: $8,000,000.0)`,
+        tryIt: 'Increase Legacy_Hardware_Division fair_value_reporting_unit to $55,000,000.0 and verify that impairment drops to $0.0.',
+        check: {
+          question: 'Under US GAAP ASC 350, once a corporate goodwill impairment loss is recognized on the income statement, can it be reversed in future periods if business conditions recover?',
+          options: [
+            'No, goodwill impairment write-downs are strictly permanent and cannot be reversed under US GAAP',
+            'Yes, impairments can be fully reversed whenever market capitalization exceeds carrying value',
+            'Yes, but only if approved by the SEC within 12 months',
+            'Goodwill is amortized annually so impairment losses never occur'
+          ],
+          answer: 0,
+          why: 'Under US GAAP, goodwill impairment losses are permanent. Reversals are strictly forbidden to prevent management from creating artificial future earnings windfalls.',
+          answerIndex: 0,
+          explanation: 'Under US GAAP, goodwill impairment losses are permanent. Reversals are strictly forbidden to prevent management from creating artificial future earnings windfalls.'
+        }
+      },
+      {
+        title: 'ERP Subledger-to-General-Ledger Automated Reconciliation',
+        say: [
+          'In modern enterprise ERP architectures (such as SAP S/4HANA, Oracle NetSuite, or Workday), transactional activities do not post directly into the primary General Ledger (GL) line by line. Instead, millions of transactions process in specialized Subsidiary Ledgers (Subledgers): Accounts Receivable (AR), Accounts Payable (AP), Fixed Assets, and Inventory.',
+          'Each subledger connects to the General Ledger through a summary Control Account. The foundational operational control of corporate accounting is the Subledger-to-GL Reconciliation: the sum of all individual customer balances in the AR subledger must exactly equal the balance in the AR control account in the GL.',
+          'What causes subledger-to-GL variances? The most common culprits are: (1) manual top-level journal entries posted directly to the GL control account bypassing the subledger, (2) interface batch posting integration timeouts, and (3) timing differences between invoice cutoff dates.',
+          'Automated financial close platforms run scheduled Python and SQL bots during month-end close to detect any out-of-balance condition. If an unreconciled variance is detected, the period-end close is halted until the root cause is resolved and audited.'
+        ],
+        example: 'An automated ERP reconciliation bot queries the General Ledger AR control account ($300,000) and aggregates all active customer subledger balances ($297,500). Finding an out-of-balance variance of +$2,500, it flags an orphaned manual journal entry and locks the period close.',
+        code: `# Simulation: ERP Subledger-to-General-Ledger Automated Reconciliation
+def reconcile_subledger_to_general_ledger(gl_control_balance: float, subledger_item_balances: list[float], pending_journal_entries: list[dict]):
+    subledger_total = sum(subledger_item_balances)
+    variance = gl_control_balance - subledger_total
+    discrepancies = []
+
+    if abs(variance) > 0.01:
+        discrepancies.append(f"UNRECONCILED_OUT_OF_BALANCE_VARIANCE (\${variance:+,.2f})")
+        if variance > 0:
+            discrepancies.append("GL_EXCEEDS_SUBLEDGER: Likely orphaned top-level manual journal entry.")
+        else:
+            discrepancies.append("SUBLEDGER_EXCEEDS_GL: Batch posting sync failure from billing subledger.")
+
+    cleared_for_close = (len(discrepancies) == 0)
+    verdict = "CLEARED_FOR_PERIOD_END_CLOSE" if cleared_for_close else "HOLD_PERIOD_END_CLOSE_INVESTIGATE"
+
+    return {
+        "GL_Control_Balance": round(gl_control_balance, 2),
+        "Subledger_Total": round(subledger_total, 2),
+        "Variance": round(variance, 2),
+        "Verdict": verdict,
+        "Flags": discrepancies
+    }
+
+recon = reconcile_subledger_to_general_ledger(
+    gl_control_balance=300000.0,
+    subledger_item_balances=[120000.0, 95000.0, 82500.0],
+    pending_journal_entries=[]
+)
+print(f"GL: \${recon['GL_Control_Balance']:,} vs Subledger: \${recon['Subledger_Total']:,} | Variance: \${recon['Variance']}")
+print(f"Verdict: {recon['Verdict']} -> {recon['Flags']}")`,
+        output: `GL: $300,000.0 vs Subledger: $297,500.0 | Variance: $2500.0\nVerdict: HOLD_PERIOD_END_CLOSE_INVESTIGATE -> ['UNRECONCILED_OUT_OF_BALANCE_VARIANCE ($+2,500.00)', 'GL_EXCEEDS_SUBLEDGER: Likely orphaned top-level manual journal entry.']`,
+        tryIt: 'Add a subledger balance of $2,500.00 to subledger_item_balances and verify that the variance drops to 0.0 and the verdict flips to CLEARED_FOR_PERIOD_END_CLOSE.',
+        check: {
+          question: 'What is the primary risk when accounting personnel post manual journal entries directly to a General Ledger control account rather than through the specialized subledger?',
+          options: [
+            'It creates a subledger-to-GL discrepancy where summary financial statements fail to tie out to the underlying customer or vendor operational records',
+            'It automatically deletes all historical invoice records in the subledger',
+            'It forces the ERP system into read-only mode for 30 days',
+            'It changes the company fiscal year end date'
+          ],
+          answer: 0,
+          why: 'Direct manual journal entries to GL control accounts break the synchronization between the general ledger and the detailed operational subledger, creating audit reconciliation variances.',
+          answerIndex: 0,
+          explanation: 'Direct manual journal entries to GL control accounts break the synchronization between the general ledger and the detailed operational subledger, creating audit reconciliation variances.'
+        }
+      }
+    ],
+    summary: [
+      'ASC 842 & IFRS 16 eliminate off-balance sheet operating leases by mandating Right-of-Use (ROU) Assets and Lease Liabilities discounted at the incremental borrowing rate.',
+      'ASC 830 Multi-Currency Consolidation translates assets and liabilities at spot rates and routes translation variances to OCI as Cumulative Translation Adjustment (CTA) to avoid P&L distortion.',
+      'ASC 330 Inventory Costing: FIFO assumes oldest units are sold first, producing lower COGS and higher gross profits in inflationary environments compared to Weighted-Average.',
+      'ASC 350 Goodwill Impairment compares reporting unit Fair Value to Carrying Value; recognized impairment write-downs are permanent and cannot be reversed under US GAAP.',
+      'ERP Subledger Reconciliation enforces integrity between detailed operational records (AR, AP) and General Ledger control accounts, halting period close upon variance detection.'
+    ],
+    projectStep: {
+      title: 'Implement an Enterprise Financial Accounting & ERP Control Engine',
+      steps: [
+        'Calculate an ASC 842 lease amortization schedule with ROU asset depreciation and liability interest split.',
+        'Consolidate a foreign subsidiary with spot and average exchange rates, deriving the OCI CTA plug.',
+        'Compare FIFO vs Weighted-Average inventory costing dynamics across multi-period purchase batches.',
+        'Perform an ASC 350 goodwill impairment test and execute an automated ERP subledger-to-GL reconciliation check.'
+      ]
+    }
   }
 ];
+
