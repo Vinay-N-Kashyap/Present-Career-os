@@ -427,5 +427,407 @@ print(f"Scenario 2: {distressed_audit['Auditor_Opinion']}")`,
         'Audit ERP permission matrices to identify toxic Segregation of Duties (SoD) combinations under SOX 404.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_aud',
+    day: 2,
+    title: 'Beneish M-Score, Altman Z-Score Insolvency, Digital Forensics & Whistleblower Triage',
+    goal: 'Master forensic financial investigation: the 8-variable Beneish M-Score earnings manipulation detection model, the Altman Z-Score bankruptcy and solvency prediction matrix, digital bank statement hash verification and PDF metadata tampering audits, shell vendor red-flag profiling, and SOX 301 / Dodd-Frank whistleblower triage protocols.',
+    minutes: 42,
+    recap: 'Day 1 established the quantitative Audit Risk Model, Benford\'s Law anomaly testing, and SOX 404 segregation of duties. Day 2 shifts into deep forensic fraud examination: exposing cooked accounting books with Beneish M-Scores, forecasting bankruptcy with Altman Z-Scores, and catching digital forgery.',
+    parts: [
+      {
+        title: 'The Beneish M-Score 8-Variable Earnings Manipulation Detection Model',
+        say: [
+          'Developed by Professor Messod Beneish in 1999, the Beneish M-Score is a quantitative probit regression model designed to uncover financial statement manipulation and aggressive accounting distortions before traditional auditors detect them.',
+          'The model famously flagged Enron\'s massive accounting fraud years before its catastrophic bankruptcy, demonstrating that reported earnings quality can be mathematically evaluated from public financial ratios.',
+          'The model synthesizes eight distinct financial indices: 1. Days Sales in Receivables Index (DSRI, catches premature revenue recognition); 2. Gross Margin Index (GMI, detects deteriorating margins); 3. Asset Quality Index (AQI, flags excessive capitalization of operating expenses); 4. Sales Growth Index (SGI); 5. Depreciation Index (DEPI, catches slowdown in depreciation rates); 6. Sales, General, and Administrative Expenses Index (SGAI); 7. Leverage Index (LVGI); and 8. Total Accruals to Total Assets (TATA).',
+          'Because the model uses a probit mathematical formulation, negative scores represent higher quality earnings. The empirical critical threshold is -1.78: any company with an M-Score greater than -1.78 (such as -1.40 or +0.28) exhibits a high statistical probability of being an accounting manipulator.',
+          'Forensic auditors calculate M-Score annually across public companies to identify forensic audit targets and design targeted substantive testing procedures around inflated asset and revenue categories.'
+        ],
+        example: 'Company A reports steady revenue growth with an M-Score of -1.98 (safely clean). Company B aggressively accelerates shipments, extends credit terms, and capitalizes ordinary R&D, causing DSRI and TATA to spike. Its M-Score jumps to +0.28, far exceeding the -1.78 red line and triggering an urgent forensic audit.',
+        code: `# Simulation: The Beneish M-Score Earnings Manipulation Model
+from typing import Dict
+
+def calculate_beneish_m_score(
+    dsri: float, # Days Sales in Receivables Index
+    gmi: float,  # Gross Margin Index
+    aqi: float,  # Asset Quality Index
+    sgi: float,  # Sales Growth Index
+    depi: float, # Depreciation Index
+    sgai: float, # SGA Expenses Index
+    lvgi: float, # Leverage Index
+    tata: float  # Total Accruals to Total Assets
+) -> Dict:
+    # 8-variable Beneish probit regression equation
+    m_score = (
+        -4.84 +
+        (0.920 * dsri) +
+        (0.528 * gmi) +
+        (0.404 * aqi) +
+        (0.892 * sgi) +
+        (0.115 * depi) -
+        (0.172 * sgai) +
+        (4.037 * tata) +
+        (0.0327 * lvgi)
+    )
+
+    # Threshold: M-Score > -1.78 indicates high probability of accounting manipulation
+    manipulation_flag = m_score > -1.78
+    classification = "PROBABLE_EARNINGS_MANIPULATOR" if manipulation_flag else "NON_MANIPULATOR_PROBABLE_CLEAN"
+
+    return {
+        "M_Score": round(m_score, 2),
+        "Manipulation_Threshold": -1.78,
+        "Is_Manipulator": manipulation_flag,
+        "Forensic_Classification": classification
+    }
+
+clean_co = calculate_beneish_m_score(
+    dsri=1.02, gmi=0.98, aqi=1.01, sgi=1.05, depi=1.00, sgai=0.99, lvgi=1.02, tata=0.02
+)
+manipulator_co = calculate_beneish_m_score(
+    dsri=1.85, gmi=1.40, aqi=1.35, sgi=1.60, depi=0.75, sgai=0.85, lvgi=1.25, tata=0.18
+)
+print(f"Company A: M-Score {clean_co['M_Score']} -> [{clean_co['Forensic_Classification']}]")
+print(f"Company B: M-Score {manipulator_co['M_Score']} -> [{manipulator_co['Forensic_Classification']}]")`,
+        output: `Company A: M-Score -1.98 -> [NON_MANIPULATOR_PROBABLE_CLEAN]\nCompany B: M-Score 0.28 -> [PROBABLE_EARNINGS_MANIPULATOR]`,
+        tryIt: 'Change Company B tata to 0.04 and dsri to 1.10 to observe the M-score drop below -1.78 into clean territory.',
+        check: {
+          question: 'What does a Beneish M-Score greater than -1.78 (e.g., -1.45 or +0.30) indicate to a forensic auditor?',
+          options: [
+            '(Recommended) The company exhibits a high statistical probability of earnings manipulation and aggressive financial statement distortion.',
+            'The company has zero debt and is immune from financial audits.',
+            'The company is legally entitled to a 50% reduction in federal corporate income taxes.',
+            'The company has qualified for immediate listing on the New York Stock Exchange.'
+          ],
+          answer: 0,
+          why: 'Because the Beneish probit model produces negative scores for clean firms, scores above -1.78 indicate significant probability that reported profits are manipulated through aggressive accruals or distorted margins.',
+          answerIndex: 0,
+          explanation: 'Because the Beneish probit model produces negative scores for clean firms, scores above -1.78 indicate significant probability that reported profits are manipulated through aggressive accruals or distorted margins.'
+        }
+      },
+      {
+        title: 'Altman Z-Score Insolvency & Bankruptcy Prediction Matrix',
+        say: [
+          'Developed by NYU Professor Edward Altman in 1968, the Altman Z-Score is the preeminent multivariate discriminant analysis (MDA) formula used across global capital markets to forecast corporate bankruptcy and default risk.',
+          'Forensic auditors rely heavily on Altman Z-Scores because empirical data demonstrates that companies facing acute solvency distress are over five times more likely to engage in executive management fraud, fabricated revenues, and channel stuffing to conceal covenant breaches from lenders.',
+          'The classic Z-Score formula integrates five weighted financial ratios: X1 = Working Capital / Total Assets (measures short-term liquid asset buffer); X2 = Retained Earnings / Total Assets (measures cumulative profitability and firm maturity); X3 = EBIT / Total Assets (measures genuine operating productivity unclouded by tax or leverage); X4 = Market Value of Equity / Total Liabilities (measures financial leverage cushion); and X5 = Sales / Total Assets (measures asset turnover efficiency).',
+          'The equation Z = 1.2*X1 + 1.4*X2 + 3.3*X3 + 0.6*X4 + 0.999*X5 categorizes firms into three distinct zones: Distress Zone (Z < 1.81, signifying high bankruptcy probability within 24 months), Grey Zone (1.81 <= Z <= 2.99, indicating moderate solvency risk), and Safe Zone (Z > 2.99, reflecting robust solvency).',
+          'Auditors use the Z-Score to satisfy statutory ISA 570 Going Concern mandates and determine whether to demand additional forensic audit verifications or issue an Emphasis of Matter modification.'
+        ],
+        example: 'Firm 1 has negative working capital and retained earnings losses. Its Z-Score is 0.32, landing deep inside the Distress Zone. In contrast, Firm 2 generates strong operating earnings and has low leverage, achieving a Z-Score of 4.53 in the Safe Zone.',
+        code: `# Simulation: Altman Z-Score Insolvency & Bankruptcy Prediction Matrix
+from typing import Dict
+
+def calculate_altman_z_score(
+    working_capital: float,
+    retained_earnings: float,
+    ebit: float,
+    market_value_equity: float,
+    total_liabilities: float,
+    sales: float,
+    total_assets: float
+) -> Dict:
+    # 5 Financial Ratios
+    x1 = working_capital / total_assets
+    x2 = retained_earnings / total_assets
+    x3 = ebit / total_assets
+    x4 = market_value_equity / total_liabilities
+    x5 = sales / total_assets
+
+    # Altman 1968 Original Formula
+    z_score = (1.2 * x1) + (1.4 * x2) + (3.3 * x3) + (0.6 * x4) + (0.999 * x5)
+
+    if z_score < 1.81:
+        zone = "DISTRESS_ZONE (High Bankruptcy Probability within 24 Months)"
+    elif z_score <= 2.99:
+        zone = "GREY_ZONE (Moderate Solvency Risk)"
+    else:
+        zone = "SAFE_ZONE (Solid Solvency Profile)"
+
+    return {
+        "Z_Score": round(z_score, 2),
+        "Working_Capital_Ratio_X1": round(x1, 3),
+        "Profitability_Ratio_X3": round(x3, 3),
+        "Solvency_Leverage_X4": round(x4, 3),
+        "Solvency_Zone": zone
+    }
+
+distressed = calculate_altman_z_score(
+    working_capital=-2000000.0,
+    retained_earnings=-8000000.0,
+    ebit=500000.0,
+    market_value_equity=10000000.0,
+    total_liabilities=30000000.0,
+    sales=15000000.0,
+    total_assets=25000000.0
+)
+healthy = calculate_altman_z_score(
+    working_capital=8000000.0,
+    retained_earnings=15000000.0,
+    ebit=6000000.0,
+    market_value_equity=80000000.0,
+    total_liabilities=20000000.0,
+    sales=35000000.0,
+    total_assets=40000000.0
+)
+print(f"Firm 1: Z-Score {distressed['Z_Score']} -> {distressed['Solvency_Zone']}")
+print(f"Firm 2: Z-Score {healthy['Z_Score']} -> {healthy['Solvency_Zone']}")`,
+        output: `Firm 1: Z-Score 0.32 -> DISTRESS_ZONE (High Bankruptcy Probability within 24 Months)\nFirm 2: Z-Score 4.53 -> SAFE_ZONE (Solid Solvency Profile)`,
+        tryIt: 'Inject $10,000,000 into Firm 1 working capital and retained earnings to see its Z-Score climb toward the Grey Zone.',
+        check: {
+          question: 'Why is an Altman Z-Score below 1.81 considered a major red flag in forensic audit examinations?',
+          options: [
+            '(Recommended) It places the company in the Distress Zone with high probability of bankruptcy within 24 months, which significantly increases management incentive to commit accounting fraud.',
+            'It proves that the company has committed money laundering under federal law.',
+            'It automatically revokes the company\'s commercial banking license.',
+            'It requires the auditor to immediately resign without completing the audit.'
+          ],
+          answer: 0,
+          why: 'Scores below 1.81 signify acute financial distress, creating intense pressure on executive management to fabricate revenue or conceal liabilities to prevent debt covenant defaults.',
+          answerIndex: 0,
+          explanation: 'Scores below 1.81 signify acute financial distress, creating intense pressure on executive management to fabricate revenue or conceal liabilities to prevent debt covenant defaults.'
+        }
+      },
+      {
+        title: 'Forensic Digital Bank Statement Hash Verification & PDF Metadata Tampering Detection',
+        say: [
+          'In modern financial investigations, white-collar criminals routinely falsify digital documentation: submitting forged bank statements to secure commercial credit lines, altered vendor invoices to embezzle funds, or doctored audit confirmation letters.',
+          'Forensic auditors cannot rely solely on visual inspection of scanned PDFs. Digital forensics requires inspecting the underlying file structure, cryptographic hashes, and embedded metadata.',
+          'Cryptographic hashing (SHA-256) establishes document integrity: calculating a cryptographic checksum ensures that an audit evidence file has remained unaltered from the moment of receipt through legal courtroom proceedings (maintaining strict Chain of Custody).',
+          'PDF metadata analysis inspects the internal structural tags: genuine commercial bank statements are generated by enterprise automated spoolers (such as FIS CoreBanking, Fiserv, or Jack Henry systems). If metadata reveals consumer graphic editing applications (such as Adobe Photoshop, Canva, or online PDF patchers), the document is definitively compromised.',
+          'Furthermore, forensic software checks modification timestamp discrepancies (where the document modification timestamp postdates the statement creation date) and localized font embedding anomalies where altered balance numbers use different embedded fonts than the rest of the statement.'
+        ],
+        example: 'An auditor inspects two bank statements. Document 1 was produced by "FIS CoreBanking Reporting v8.2" with zero modification flags. Document 2 claims to be from Chase Bank, but its PDF metadata reveals it was created in "Adobe Photoshop 24.1" with non-standard font embedding. The forensic auditor immediately freezes the credit application.',
+        code: `# Simulation: Forensic Document Metadata & Alteration Detector
+from typing import Dict
+
+class ForensicDocumentMetadataAuditor:
+    DISALLOWED_PRODUCERS = ["adobe photoshop", "canva", "gimp", "pdf editor", "foxit phantompdf"]
+
+    @classmethod
+    def audit_pdf_metadata(
+        cls,
+        filename: str,
+        producer: str,
+        creator_tool: str,
+        modified_after_creation: bool,
+        contains_embedded_nonstandard_fonts: bool
+    ) -> Dict:
+        red_flags = []
+
+        # Check for disallowed image editing software in official financial statements
+        p_lower = producer.lower()
+        c_lower = creator_tool.lower()
+
+        for forbidden in cls.DISALLOWED_PRODUCERS:
+            if forbidden in p_lower or forbidden in c_lower:
+                red_flags.append(f"ILLICIT_CREATOR_TOOL ({producer})")
+                break
+
+        if modified_after_creation:
+            red_flags.append("POST_ISSUANCE_MODIFICATION_TIMESTAMP_MISMATCH")
+
+        if contains_embedded_nonstandard_fonts:
+            red_flags.append("ANOMALOUS_FONT_PATCHING (Signs of localized figure alteration)")
+
+        is_tampered = len(red_flags) > 0
+
+        return {
+            "Filename": filename,
+            "Producer": producer,
+            "Creator": creator_tool,
+            "Tampered_Flag": is_tampered,
+            "Red_Flag_Count": len(red_flags),
+            "Forensic_Finding": "SUSPECTED_FABRICATION" if is_tampered else "VERIFIED_AUTHENTIC_SYSTEM_STATEMENT"
+        }
+
+doc_clean = ForensicDocumentMetadataAuditor.audit_pdf_metadata(
+    "JPMorgan_Statement_Nov2025.pdf", "FIS CoreBanking Reporting v8.2", "AFP-to-PDF Engine", False, False
+)
+doc_forged = ForensicDocumentMetadataAuditor.audit_pdf_metadata(
+    "Chase_Bank_Verification.pdf", "Adobe Photoshop 24.1", "macOS Quartz PDFContext", True, True
+)
+print(f"Doc 1: {doc_clean['Filename']} -> [{doc_clean['Forensic_Finding']}] (Flags: {doc_clean['Red_Flag_Count']})")
+print(f"Doc 2: {doc_forged['Filename']} -> [{doc_forged['Forensic_Finding']}] (Flags: {doc_forged['Red_Flag_Count']})")`,
+        output: `Doc 1: JPMorgan_Statement_Nov2025.pdf -> [VERIFIED_AUTHENTIC_SYSTEM_STATEMENT] (Flags: 0)\nDoc 2: Chase_Bank_Verification.pdf -> [SUSPECTED_FABRICATION] (Flags: 3)`,
+        tryIt: 'Change producer to "Core Banking Engine v5" and set modified_after_creation=False to see Document 2 pass as authentic.',
+        check: {
+          question: 'What is the most definitive technical indicator that an electronic bank statement PDF submitted during an audit was fraudulently altered?',
+          options: [
+            '(Recommended) PDF metadata revealing consumer graphic design software (such as Photoshop or Canva) as the creator, mismatched modification timestamps, or patched non-standard font embeddings.',
+            'The statement was generated on a Tuesday afternoon.',
+            'The document file size is an even number of kilobytes.',
+            'The bank statement contains account numbers with more than 8 digits.'
+          ],
+          answer: 0,
+          why: 'Automated banking systems generate statements via specialized enterprise spoolers; appearance of desktop graphic design software or font patching in metadata provides conclusive proof of tampering.',
+          answerIndex: 0,
+          explanation: 'Automated banking systems generate statements via specialized enterprise spoolers; appearance of desktop graphic design software or font patching in metadata provides conclusive proof of tampering.'
+        }
+      },
+      {
+        title: 'Shell Company Red-Flag Profiling & Vendor Kickback Detection Matrix',
+        say: [
+          'According to the Association of Certified Fraud Examiners (ACFE) Report to the Nations, procurement and billing schemes represent over 43% of all occupational fraud cases, causing massive median losses to enterprises.',
+          'In a classic shell company billing scheme, a corrupt employee registers a fictitious corporate entity and submits fraudulent invoices for consulting, advisory, or marketing services that were never actually rendered.',
+          'Forensic audit algorithms systematically profile vendor master files against red-flag matrices to identify anomalous patterns.',
+          'Key detection vectors include: 1. Conflict of Interest address matching (cross-referencing vendor billing addresses against employee HR home addresses or commercial PO boxes); 2. Missing or invalid tax identification numbers (EIN or VAT numbers); 3. Approval threshold evasion (invoice splitting where multiple invoices are submitted just below the manager\'s discretionary approval limit, such as $4,950 when $5,000 requires VP authorization); and 4. Sequential invoice numbers over extended periods (indicating the vendor has no other commercial clients).',
+          'When two or more high-severity red flags align on a single vendor, the forensic engine immediately triggers an Accounts Payable freeze and issues an investigative notice to internal audit.'
+        ],
+        example: 'Apex Consulting submits four invoices between $4,920 and $4,990 (just below the $5,000 threshold). An automated forensic cross-check reveals the vendor address matches the Senior Procurement Manager\'s home address, and the vendor has no valid EIN. The vendor is immediately flagged as CRITICAL_FRAUD_RISK and frozen.',
+        code: `# Simulation: Shell Company Red-Flag Profiling & Vendor Kickback Engine
+from typing import Dict, List
+
+def detect_shell_vendor_fraud(
+    vendor_name: str,
+    vendor_address: str,
+    employee_home_addresses: List[str],
+    annual_spend: float,
+    invoice_amounts: List[float],
+    has_valid_tax_id: bool,
+    approval_threshold: float = 5000.0
+) -> Dict:
+    fraud_indicators = []
+
+    # Red Flag 1: Conflict of interest - Vendor address matches employee residence
+    if vendor_address in employee_home_addresses:
+        fraud_indicators.append("VENDOR_ADDRESS_MATCHES_EMPLOYEE_RESIDENCE")
+
+    # Red Flag 2: Missing statutory Tax ID / Registration
+    if not has_valid_tax_id:
+        fraud_indicators.append("UNVERIFIED_TAX_IDENTIFICATION_NUMBER")
+
+    # Red Flag 3: Threshold avoidance - multiple invoices just below approval limit ($4,900-$4,999)
+    threshold_evading_invoices = sum(
+        1 for inv in invoice_amounts if (approval_threshold - 100.0) <= inv < approval_threshold
+    )
+    if threshold_evading_invoices >= 2:
+        fraud_indicators.append(f"INVOICE_SPLITTING_THRESHOLD_EVASION ({threshold_evading_invoices} invoices)")
+
+    risk_level = "CRITICAL_FRAUD_RISK" if len(fraud_indicators) >= 2 else ("ELEVATED_RISK" if fraud_indicators else "NORMAL")
+
+    return {
+        "Vendor": vendor_name,
+        "Annual_Spend": round(annual_spend, 2),
+        "Fraud_Risk_Level": risk_level,
+        "Red_Flags_Detected": fraud_indicators,
+        "Recommend_Vendor_Freeze": risk_level == "CRITICAL_FRAUD_RISK"
+    }
+
+v_res = detect_shell_vendor_fraud(
+    vendor_name="Apex_Consulting_LLC",
+    vendor_address="124 Elm Street, Apt 3",
+    employee_home_addresses=["124 Elm Street, Apt 3", "742 Evergreen Terrace"],
+    annual_spend=49500.0,
+    invoice_amounts=[4950.0, 4975.0, 4920.0, 4990.0],
+    has_valid_tax_id=False,
+    approval_threshold=5000.0
+)
+print(f"Vendor: {v_res['Vendor']} | Risk: {v_res['Fraud_Risk_Level']}")
+print(f"Recommend Freeze: {v_res['Recommend_Vendor_Freeze']} -> Flags: {v_res['Red_Flags_Detected']}")`,
+        output: `Vendor: Apex_Consulting_LLC | Risk: CRITICAL_FRAUD_RISK\nRecommend Freeze: True -> Flags: ['VENDOR_ADDRESS_MATCHES_EMPLOYEE_RESIDENCE', 'UNVERIFIED_TAX_IDENTIFICATION_NUMBER', 'INVOICE_SPLITTING_THRESHOLD_EVASION (4 invoices)']`,
+        tryIt: 'Change vendor_address to a distinct commercial address and set has_valid_tax_id=True to see the risk level downgrade.',
+        check: {
+          question: 'Why is cross-referencing employee residential addresses against Accounts Payable vendor billing records a standard forensic audit procedure?',
+          options: [
+            '(Recommended) To detect fictitious shell vendor schemes and employee kickbacks where an insider creates a fake consulting company using their personal address to embezzle company funds.',
+            'To ensure that all employees receive free holiday gift baskets from authorized corporate vendors.',
+            'To verify that vendors live within a 50-mile radius of corporate headquarters for supply chain efficiency.',
+            'To comply with federal postal regulations regarding corporate mail delivery.'
+          ],
+          answer: 0,
+          why: 'Dishonest employees frequently use their home or residential PO box when registering fake shell vendors; algorithmic address matching detects these hidden conflicts of interest immediately.',
+          answerIndex: 0,
+          explanation: 'Dishonest employees frequently use their home or residential PO box when registering fake shell vendors; algorithmic address matching detects these hidden conflicts of interest immediately.'
+        }
+      },
+      {
+        title: 'Whistleblower Hotline Triage Matrix & Dodd-Frank Protocols',
+        say: [
+          'Empirical studies consistently prove that anonymous whistleblower hotlines are the single most effective fraud detection mechanism in corporate history: tips uncover over 40% of all white-collar fraud cases, more than internal and external audits combined.',
+          'Under Sarbanes-Oxley (SOX) Section 301, all publicly traded corporations must maintain independent, confidential, anonymous reporting channels directly overseen by the Board of Directors\' Audit Committee.',
+          'Furthermore, the SEC Dodd-Frank Whistleblower Program provides monetary incentives (10% to 30% of total financial sanctions recovered by the government) and severe federal anti-retaliation protections for corporate insiders reporting securities fraud.',
+          'When tips are submitted, compliance and forensic teams apply a formal Whistleblower Triage Matrix: allegations involving C-suite executives (CEO, CFO, General Counsel) or financial magnitude exceeding $1,000,000 with corroborating evidence are classified as Tier 1.',
+          'Tier 1 allegations require immediate notification of the Board Audit Committee and the retention of independent external forensic counsel to conduct an uncompromised investigation with full digital evidence preservation.'
+        ],
+        example: 'A whistleblower reports that the CFO is artificially inflating quarterly revenues by $8.5M through unexecuted channel partner orders, attaching internal email screenshots. Because it involves a C-suite executive and exceeds $1M with corroboration, the triage engine classifies it as Tier 1, immediately alerting the Board Audit Committee and freezing server logs.',
+        code: `# Simulation: Whistleblower Hotline Triage Matrix & Dodd-Frank Protocols
+from typing import Dict
+
+def triage_whistleblower_allegation(
+    report_id: str,
+    subject_allegation: str,
+    involves_senior_executive: bool,
+    estimated_financial_impact: float,
+    corroborating_evidence_attached: bool
+) -> Dict:
+    # Triage decision logic under SOX 301 and SEC Whistleblower rules
+    if involves_senior_executive or estimated_financial_impact >= 1000000.0:
+        if corroborating_evidence_attached:
+            triage_tier = "TIER_1_IMMEDIATE_AUDIT_COMMITTEE_INDEPENDENT_INQUIRY"
+            action = "Retain independent external forensic legal counsel; preserve server logs."
+        else:
+            triage_tier = "TIER_2_PRELIMINARY_FORENSIC_INVESTIGATION"
+            action = "Internal audit interviews witness and secures financial ledgers."
+    elif estimated_financial_impact >= 50000.0:
+        triage_tier = "TIER_3_INTERNAL_AUDIT_ROUTINE_REVIEW"
+        action = "Route to internal audit for scheduled field examination."
+    else:
+        triage_tier = "TIER_4_HUMAN_RESOURCES_DISPUTE"
+        action = "Route to HR compliance desk."
+
+    return {
+        "Report_ID": report_id,
+        "Allegation": subject_allegation,
+        "Triage_Level": triage_tier,
+        "Recommended_Action": action,
+        "Requires_Board_Notification": "TIER_1" in triage_tier
+    }
+
+wb_res = triage_whistleblower_allegation(
+    report_id="WB-2026-088",
+    subject_allegation="CFO inflating revenue by booking unexecuted channel partner orders",
+    involves_senior_executive=True,
+    estimated_financial_impact=8500000.0,
+    corroborating_evidence_attached=True
+)
+print(f"Report: {wb_res['Report_ID']} -> {wb_res['Triage_Level']}")
+print(f"Action: {wb_res['Recommended_Action']} (Notify Board: {wb_res['Requires_Board_Notification']})")`,
+        output: `Report: WB-2026-088 -> TIER_1_IMMEDIATE_AUDIT_COMMITTEE_INDEPENDENT_INQUIRY\nAction: Retain independent external forensic legal counsel; preserve server logs. (Notify Board: True)`,
+        tryIt: 'Set involves_senior_executive=False and estimated_financial_impact=25000.0 to see the report routed to routine HR compliance.',
+        check: {
+          question: 'Under SOX 301 and corporate governance standards, what immediate action is required when a credible whistleblower tip alleges multimillion-dollar accounting fraud by the Chief Financial Officer?',
+          options: [
+            '(Recommended) The Audit Committee must be immediately notified and an independent investigation launched using outside forensic legal counsel, bypassing management to prevent cover-ups.',
+            'The tip must be forwarded to the CFO to draft a public rebuttal before the Board is notified.',
+            'The company must terminate the employee who submitted the anonymous report.',
+            'The allegation must be held confidential until the annual shareholder meeting 9 months later.'
+          ],
+          answer: 0,
+          why: 'When senior executives are implicated in material accounting fraud, internal management cannot investigate itself; the Board\'s Audit Committee must oversee an independent inquiry led by external forensic counsel.',
+          answerIndex: 0,
+          explanation: 'When senior executives are implicated in material accounting fraud, internal management cannot investigate itself; the Board\'s Audit Committee must oversee an independent inquiry led by external forensic counsel.'
+        }
+      }
+    ],
+    summary: [
+      'The Beneish M-Score combines 8 financial indices into a probit model where scores > -1.78 mathematically indicate earnings manipulation.',
+      'The Altman Z-Score predicts insolvency through 5 weighted ratios, categorizing firms into Distress (Z < 1.81), Grey, and Safe zones.',
+      'Forensic digital document analysis verifies PDF metadata, producer strings, and font patch anomalies to expose doctored bank statements.',
+      'Shell company detection algorithms cross-reference employee addresses and flag sub-threshold invoice splitting to catch procurement kickbacks.',
+      'Whistleblower hotlines are the primary source of fraud detection, requiring formal triage matrices and independent Audit Committee escalation under SOX 301.'
+    ],
+    projectStep: {
+      title: 'Forensic Fraud Examination & Corporate Governance Engine',
+      steps: [
+        'Calculate Beneish M-Scores across historical financial statements to evaluate earnings manipulation probability.',
+        'Model Altman Z-Score insolvency zones to forecast distress risk and management fraud incentives.',
+        'Audit electronic PDF metadata to identify tampering by consumer graphic editing software.',
+        'Implement shell vendor red-flag screening and automate whistleblower allegation triage workflows.'
+      ]
+    }
   }
 ];
+
