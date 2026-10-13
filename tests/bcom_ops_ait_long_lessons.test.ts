@@ -294,3 +294,36 @@ test('B.Com AIT Day 4: Personalization, Recommenders, MAB & NBA Decisioning Snip
   assert.ok(aitLesson4.parts[4].code?.includes('evaluate_next_best_action_arbitration'));
 });
 
+test('B.Com AIT Day 5 Capstone: Autonomous AI Swarm, PSI Drift & Transformation Control Tower Snippets Verification', () => {
+  const aitLesson5 = getLongLesson('bcom_ait', 5);
+  assert.ok(aitLesson5, 'bcom_ait Day 5 Capstone long lesson must resolve');
+  assert.equal(aitLesson5.day, 5);
+  assert.equal(aitLesson5.parts.length, 5, 'bcom_ait Day 5 Capstone must contain exactly 5 parts');
+  assert.ok(aitLesson5.summary.length >= 4, 'bcom_ait Day 5 Capstone must contain comprehensive summary');
+  assert.ok(aitLesson5.projectStep, 'bcom_ait Day 5 Capstone must have a hands-on project step');
+
+  for (let i = 0; i < aitLesson5.parts.length; i++) {
+    const part = aitLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(aitLesson5.parts[0].code?.includes('orchestrate_multi_agent_swarm'));
+  assert.ok(aitLesson5.parts[1].code?.includes('process_multimodal_crosslingual_invoice'));
+  assert.ok(aitLesson5.parts[2].code?.includes('detect_population_stability_drift'));
+  assert.ok(aitLesson5.parts[3].code?.includes('route_human_in_the_loop_exceptions'));
+  assert.ok(aitLesson5.parts[4].code?.includes('verify_enterprise_digital_transformation_control_tower'));
+});
+
