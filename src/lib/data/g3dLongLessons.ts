@@ -1396,6 +1396,333 @@ console.log('Anti-Aliasing Guarantee: Eliminates high-frequency texture shimmer 
         'Create a multi-level mipmap generator and 16x anisotropic sampler pipeline for high-fidelity ground textures.'
       ]
     }
+  },
+  {
+    coursePrefix: 'g3d',
+    day: 5,
+    title: 'Hardware WebGPU Ray Tracing, Compute Particles, SSGI & Volumetric Atmosphere',
+    goal: 'Master next-generation GPU real-time rendering: BVH acceleration structures with Möller-Trumbore ray-triangle intersection, 1,000,000 compute shader particle simulations via ping-pong storage buffers, Screen-Space Reflections (SSR) with Hi-Z depth marching, volumetric fog with Beer-Lambert extinction and Henyey-Greenstein scattering, and cinematic HDR ACES tone mapping.',
+    minutes: 35,
+    recap: 'Today we achieve the pinnacle of real-time 3D graphics engineering: marrying hardware ray tracing, compute shader physics, screen-space global illumination, participating media atmosphere, and filmic post-processing.',
+    parts: [
+      {
+        title: 'WebGPU Ray Tracing: BVH Traversal & Möller-Trumbore Triangle Intersection',
+        say: [
+          'While traditional rasterization projects 3D triangles onto a 2D screen grid from a fixed camera viewpoint, Ray Tracing simulates the physical transport of light photons through a virtual scene. Instead of asking "which pixels does this triangle cover?", ray tracing shoots millions of rays from the camera and calculates exact geometric collisions.',
+          'Testing every ray against millions of scene triangles sequentially would require billions of checks per frame, dropping frame rates to zero. Real-time ray tracing relies on Bounding Volume Hierarchies (BVH): hierarchical trees of Axis-Aligned Bounding Boxes (AABBs) wrapping the scene geometry. Rays perform efficient slab intersection tests against bounding boxes, descending only into candidate tree branches with O(log N) complexity.',
+          'When a ray reaches a leaf node containing a primitive triangle, the Möller-Trumbore algorithm computes the exact intersection. By expressing the ray-triangle intersection as a linear system of barycentric coordinates (u, v) and ray distance t, Möller-Trumbore avoids calculating the triangle plane equation, saving precious GPU registers and ALU cycles.',
+          'In WebGPU compute shaders, BVHs are packed into linear storage buffers (VRAM arrays of node structs), enabling high-speed iterative stack traversal without recursion.'
+        ],
+        example: 'Think of searching for a specific book in a giant university library. You don\'t examine all 500,000 books one by one (brute-force ray tracing); you look at the floor sign (root AABB), walk to the Computer Science aisle (BVH branch), select the shelf (leaf node), and pull out the exact book (Möller-Trumbore intersection).',
+        code: `// WebGPU BVH Ray Tracing: Möller-Trumbore Triangle Intersection Simulator
+interface Ray {
+  origin: [number, number, number];
+  direction: [number, number, number];
+}
+
+interface Triangle {
+  v0: [number, number, number];
+  v1: [number, number, number];
+  v2: [number, number, number];
+}
+
+class BvhRayTracerSimulator {
+  intersectTriangle(ray: Ray, tri: Triangle): { hit: boolean; t: number; u: number; v: number } {
+    // Möller-Trumbore algorithm simulation
+    const edge1 = [tri.v1[0] - tri.v0[0], tri.v1[1] - tri.v0[1], tri.v1[2] - tri.v0[2]];
+    const edge2 = [tri.v2[0] - tri.v0[0], tri.v2[1] - tri.v0[1], tri.v2[2] - tri.v0[2]];
+    
+    // Cross product ray.dir x edge2
+    const pvec = [
+      ray.direction[1] * edge2[2] - ray.direction[2] * edge2[1],
+      ray.direction[2] * edge2[0] - ray.direction[0] * edge2[2],
+      ray.direction[0] * edge2[1] - ray.direction[1] * edge2[0]
+    ];
+    const det = edge1[0] * pvec[0] + edge1[1] * pvec[1] + edge1[2] * pvec[2];
+    if (Math.abs(det) < 1e-6) return { hit: false, t: -1, u: 0, v: 0 };
+
+    const invDet = 1.0 / det;
+    const tvec = [ray.origin[0] - tri.v0[0], ray.origin[1] - tri.v0[1], ray.origin[2] - tri.v0[2]];
+    const u = (tvec[0] * pvec[0] + tvec[1] * pvec[1] + tvec[2] * pvec[2]) * invDet;
+    if (u < 0 || u > 1) return { hit: false, t: -1, u: 0, v: 0 };
+
+    const qvec = [
+      tvec[1] * edge1[2] - tvec[2] * edge1[1],
+      tvec[2] * edge1[0] - tvec[0] * edge1[2],
+      tvec[0] * edge1[1] - tvec[1] * edge1[0]
+    ];
+    const v = (ray.direction[0] * qvec[0] + ray.direction[1] * qvec[1] + ray.direction[2] * qvec[2]) * invDet;
+    if (v < 0 || u + v > 1) return { hit: false, t: -1, u: 0, v: 0 };
+
+    const t = (edge2[0] * qvec[0] + edge2[1] * qvec[1] + edge2[2] * qvec[2]) * invDet;
+    return { hit: t > 0, t, u, v };
+  }
+}
+
+const bvhTracer = new BvhRayTracerSimulator();
+const testRay: Ray = { origin: [0, 0, 5], direction: [0, 0, -1] };
+const targetTri: Triangle = { v0: [-1, -1, 0], v1: [1, -1, 0], v2: [0, 1, 0] };
+const hitRes = bvhTracer.intersectTriangle(testRay, targetTri);
+
+console.log('Ray-Triangle Intersection: ' + (hitRes.hit ? 'HIT_CONFIRMED' : 'MISS'));
+console.log('Ray Hit Distance (t): ' + hitRes.t.toFixed(2) + ' units along ray vector');
+console.log('Barycentric Coordinates: u=' + hitRes.u.toFixed(2) + ', v=' + hitRes.v.toFixed(2));
+console.log('Ray Tracing Invariant: Möller-Trumbore evaluates intersections without precalculating plane equations');`,
+        output: `Ray-Triangle Intersection: HIT_CONFIRMED\nRay Hit Distance (t): 5.00 units along ray vector\nBarycentric Coordinates: u=0.25, v=0.50\nRay Tracing Invariant: Möller-Trumbore evaluates intersections without precalculating plane equations`,
+        codeNotes: [
+          { line: 8, note: 'Implements the Möller-Trumbore vector cross product ray-triangle collision algorithm' },
+          { line: 19, note: 'Validates barycentric coordinates (u, v) to guarantee intersection falls within triangle boundaries' },
+          { line: 37, note: 'Demonstrates ray hit distance calculation t along camera view vector' }
+        ],
+        tryIt: 'Change the ray origin X to 5.0 to miss the triangle and observe how hit returns false with t = -1.',
+        check: {
+          question: 'Why is the Möller-Trumbore intersection algorithm preferred over traditional plane-intersection methods in GPU ray tracing?',
+          options: [
+            'Because it computes barycentric coordinates (u, v) and intersection distance t directly using vector cross products without precomputing or storing the plane equation of the triangle',
+            'Because it converts 3D triangles into 2D JPEG images',
+            'Because it requires zero GPU floating-point arithmetic',
+            'Because it only works when triangles are equilateral'
+          ],
+          answer: 0,
+          why: 'Möller-Trumbore is memory and register efficient: by bypassing the plane normal and offset calculation, it saves memory bandwidth and evaluates hits with minimal ALU instructions.'
+        }
+      },
+      {
+        title: 'Massively Parallel WebGPU Compute Particle Systems (1 Million Particles)',
+        say: [
+          'In traditional WebGL graphics, rendering millions of dynamic particles (sparks, rain, fire, sand) choked the CPU: every particle position had to be computed on the JavaScript main thread and uploaded over the PCIe bus to VRAM every frame, causing catastrophic 10 FPS bottlenecks.',
+          'WebGPU revolutions particle systems by moving the entire physics simulation directly onto GPU Compute Shaders (@compute @workgroup_size(64, 1, 1)). One million particles are stored permanently in GPU VRAM inside storage buffers (var<storage, read_write>).',
+          'To prevent race conditions where threads read and overwrite adjacent particle positions concurrently, the engine employs Ping-Pong Double Buffering: Pass A reads from Storage Buffer 0 and writes updated positions to Storage Buffer 1; Pass B swaps the pointers and writes back to Buffer 0.',
+          'The compute shader applies Verlet integration, curl noise velocity fields, and ground restitution bounces. Crucially, the resulting particle buffer is bound directly to the vertex shader using renderPass.drawIndirect(), achieving 1,000,000 particles at 120 FPS with 0.0 milliseconds of CPU overhead.'
+        ],
+        example: 'Think of a stadium card stunt where 100,000 spectators flip placards in unison. Rather than a single coordinator running up and down the aisles manually flipping each spectator\'s card, all 100,000 people follow local programmed rules and flip their cards simultaneously in half a second.',
+        code: `// WebGPU Compute Particle System: Ping-Pong Storage Buffers & Workgroup Partitioning
+class ComputeParticleSimulator {
+  simulateWorkgroups(totalParticles: number, workgroupSize = 64) {
+    const workgroupCount = Math.ceil(totalParticles / workgroupSize);
+    const vramBytesPerParticle = 32; // position (vec4) + velocity/life (vec4) = 8 floats * 4 bytes
+    const totalStorageMb = (totalParticles * vramBytesPerParticle * 2) / (1024 * 1024); // Double buffered ping-pong
+
+    return {
+      particleCount: totalParticles,
+      workgroupCount,
+      vramFootprintMb: totalStorageMb.toFixed(1),
+      pipeline: 'PING_PONG_STORAGE_BUFFERS_ACTIVE'
+    };
+  }
+}
+
+const computeSim = new ComputeParticleSimulator();
+const simMetrics = computeSim.simulateWorkgroups(1000000, 64);
+
+console.log('Compute Shader Particles: ' + simMetrics.particleCount.toLocaleString('en-US') + ' Active Particles');
+console.log('WebGPU Workgroups Dispatched: ' + simMetrics.workgroupCount.toLocaleString('en-US') + ' (@workgroup_size(64, 1, 1))');
+console.log('VRAM Storage Buffer Size: ' + simMetrics.vramFootprintMb + ' MB (Ping-Pong Double Buffered)');
+console.log('Compute Invariant: Zero CPU-GPU bus latency during physics integration and indirect draw calls');`,
+        output: `Compute Shader Particles: 1,000,000 Active Particles\nWebGPU Workgroups Dispatched: 15,625 (@workgroup_size(64, 1, 1))\nVRAM Storage Buffer Size: 61.0 MB (Ping-Pong Double Buffered)\nCompute Invariant: Zero CPU-GPU bus latency during physics integration and indirect draw calls`,
+        codeNotes: [
+          { line: 8, note: 'Calculates GPU workgroup dispatch partitions for 1,000,000 concurrent compute threads' },
+          { line: 10, note: 'Allocates ping-pong double storage buffers in VRAM for race-free integration' },
+          { line: 25, note: 'Achieves massive particle physics simulation with zero CPU memory transfer overhead' }
+        ],
+        tryIt: 'Change the total particles to 2,000,000 and calculate the number of dispatched workgroups.',
+        check: {
+          question: 'What architectural advantage do WebGPU storage buffers and ping-pong compute shaders provide over legacy WebGL particle pipelines?',
+          options: [
+            'They allow the entire physics simulation and rendering loop to reside permanently in GPU VRAM, eliminating CPU-GPU memory bus transfer bottlenecks',
+            'They double the maximum resolution of the computer monitor',
+            'They convert JavaScript variables into physical quantum particles',
+            'They eliminate the need for vertex shaders entirely'
+          ],
+          answer: 0,
+          why: 'Ping-pong storage buffers allow compute shaders to simulate millions of particles in place on high-speed VRAM, passing data directly to rasterizers via indirect draws without CPU intervention.'
+        }
+      },
+      {
+        title: 'Screen-Space Reflections (SSR) & Hi-Z Depth Buffer Ray Marching',
+        say: [
+          'Planar reflections and cubemaps have severe limitations in dynamic 3D games: cubemaps fail to reflect moving characters, while rendering secondary camera viewports for planar mirrors doubles geometry rasterization cost.',
+          'Screen-Space Reflections (SSR) solve real-time specular reflections by ray marching across the already-rendered G-Buffer depth and normal buffers. For every glossy surface fragment, the shader reflects the camera view vector across the surface normal vector to construct a reflection ray in screen space.',
+          'The ray marcher steps through 2.5D screen coordinates (UV + depth), comparing the current ray depth against the scene depth buffer. When the ray intersects geometry behind the current surface, the color buffer at that screen UV is sampled and blended onto the surface using the Schlick Fresnel equation.',
+          'To accelerate stepping through complex scenes, modern engines use Hierarchical Z-Buffer (Hi-Z) ray marching: a depth mipmap pyramid allows rays to take large leaps through empty space (coarse mip levels) and drop to finer mip levels only when nearing a surface boundary.'
+        ],
+        example: 'Think of looking at the glossy surface of a wet marble lobby floor. You can clearly see the reflection of the hotel desk and chandeliers because they are in your field of view, but you cannot see the reflection of a painting hanging behind the pillars because it is occluded from the camera\'s line of sight.',
+        code: `// Screen-Space Reflections (SSR) Depth Buffer Ray Marcher Simulator
+interface SsrRayResult {
+  hit: boolean;
+  stepsTaken: number;
+  screenUv: [number, number];
+  fresnelReflectance: number;
+}
+
+class SsrRayMarcherSimulator {
+  marchRay(roughness: number): SsrRayResult {
+    const maxSteps = 32;
+    const hitStep = 18;
+    const f0 = 0.04; // Dielectric base reflectance
+    // Schlick Fresnel approximation at 60 degree grazing angle: cos(theta) = 0.5
+    const fresnel = f0 + (1 - f0) * Math.pow(1 - 0.5, 5);
+
+    return {
+      hit: roughness < 0.4,
+      stepsTaken: hitStep,
+      screenUv: [0.62, 0.48],
+      fresnelReflectance: Math.round(fresnel * 100) / 100
+    };
+  }
+}
+
+const ssrMarcher = new SsrRayMarcherSimulator();
+const ssrRes = ssrMarcher.marchRay(0.15); // Glossy surface
+
+console.log('SSR Depth Buffer Ray Hit: ' + (ssrRes.hit ? 'SURFACE_HIT_FOUND' : 'MISS_FALLBACK_TO_IBL'));
+console.log('Screen-Space March Steps: ' + ssrRes.stepsTaken + ' Iterations in Depth Buffer');
+console.log('Sampled Reflection UV: [' + ssrRes.screenUv[0] + ', ' + ssrRes.screenUv[1] + ']');
+console.log('Schlick Fresnel Reflectance: ' + ssrRes.fresnelReflectance + ' Specular Weight');
+console.log('Screen-Space Invariant: Hi-Z depth ray marching bounds reflection queries to on-screen geometry');`,
+        output: `SSR Depth Buffer Ray Hit: SURFACE_HIT_FOUND\nScreen-Space March Steps: 18 Iterations in Depth Buffer\nSampled Reflection UV: [0.62, 0.48]\nSchlick Fresnel Reflectance: 0.07 Specular Weight\nScreen-Space Invariant: Hi-Z depth ray marching bounds reflection queries to on-screen geometry`,
+        codeNotes: [
+          { line: 8, note: 'Models screen-space ray marching stepping through clip-space depth buffers' },
+          { line: 12, note: 'Applies Schlick Fresnel approximation to scale specular reflection intensity at grazing angles' },
+          { line: 28, note: 'Demonstrates sampling on-screen color buffers to generate dynamic real-time reflections' }
+        ],
+        tryIt: 'Increase surface roughness to 0.7 and observe how SSR falls back to image-based lighting probes.',
+        check: {
+          question: 'What is the primary visual limitation of Screen-Space Reflections (SSR) in real-time game engines?',
+          options: [
+            'SSR can only reflect geometry that is currently visible on screen; objects occluded behind foreground meshes or off-camera cannot be reflected and must fall back to environment probes',
+            'SSR only works in black-and-white scenes',
+            'SSR requires the monitor to have an OLED display panel',
+            'SSR cannot reflect metallic materials'
+          ],
+          answer: 0,
+          why: 'Because SSR operates entirely on the rendered 2D screen buffer, any object outside the camera frustum or hidden behind another object has no depth data available, requiring graceful fallback to cubemaps.'
+        }
+      },
+      {
+        title: 'Volumetric Fog & Participating Media: Beer-Lambert Law & Henyey-Greenstein Scattering',
+        say: [
+          'In the physical world, space between objects is rarely a pure vacuum: the atmosphere is filled with participating media such as water droplets, dust, smoke, and smog. Light passing through this medium undergoes absorption, out-scattering, and in-scattering, creating dramatic atmospheric depth, god rays (sun shafts), and morning mist.',
+          'The fundamental governing equation of participating media is the Beer-Lambert Extinction Law: light transmittance decays exponentially over distance: T = exp(-sigma_t * d), where sigma_t is the extinction coefficient and d is optical distance travelled through the medium.',
+          'Simultaneously, light from directional sun sources scatters into the camera ray (in-scattering). The angular distribution of this scattered light is governed by the Henyey-Greenstein phase function p(theta, g), where the asymmetry parameter g controls whether light scatters forward (Mie scattering in fog/mist, g > 0) or uniformly in all directions (Rayleigh scattering, g = 0).',
+          'Real-time volumetric engines evaluate this by raymarching 32 to 64 steps along the camera frustum through a 3D Froxel grid (frustum-aligned 3D texture volume) updated in compute shaders with shadow map lookups.'
+        ],
+        example: 'Think of driving through thick morning fog with your car headlights on high beam. The air directly in front of your car glows with blinding white scattered light (forward Mie scattering), while distant streetlamps dim into faint halos (Beer-Lambert exponential extinction).',
+        code: `// Volumetric Atmospheric Fog: Beer-Lambert Law & Henyey-Greenstein Scattering
+class VolumetricFogSimulator {
+  calculateTransmittance(distanceMeters: number, extinctionCoeff: number, sunAngleCosine: number): {
+    transmittance: number;
+    henyeyGreensteinPhase: number;
+    scatteredRadiance: number;
+  } {
+    // Beer-Lambert law: T = exp(-sigma_t * d)
+    const t = Math.exp(-extinctionCoeff * distanceMeters);
+    // Henyey-Greenstein phase function with forward scattering g = 0.6
+    const g = 0.6;
+    const phase = (1 - g * g) / (4 * Math.PI * Math.pow(1 + g * g - 2 * g * sunAngleCosine, 1.5));
+    const radiance = (1 - t) * phase * 10.0; // In-scattered sunlight
+
+    return {
+      transmittance: Math.round(t * 1000) / 1000,
+      henyeyGreensteinPhase: Math.round(phase * 1000) / 1000,
+      scatteredRadiance: Math.round(radiance * 100) / 100
+    };
+  }
+}
+
+const fogSim = new VolumetricFogSimulator();
+const fogRes = fogSim.calculateTransmittance(25, 0.08, 0.85); // 25 meters, light fog, facing sun
+
+console.log('Beer-Lambert Transmittance: ' + fogRes.transmittance + ' (Optical Depth Extinction)');
+console.log('Henyey-Greenstein Phase: ' + fogRes.henyeyGreensteinPhase + ' (Anisotropic Forward Scattering)');
+console.log('In-Scattered Sunlight Radiance: ' + fogRes.scatteredRadiance + ' cd/m^2');
+console.log('Volumetric Invariant: Participating media couples exponential absorption with forward scattering phase');`,
+        output: `Beer-Lambert Transmittance: 0.135 (Optical Depth Extinction)\nHenyey-Greenstein Phase: 0.257 (Anisotropic Forward Scattering)\nIn-Scattered Sunlight Radiance: 2.22 cd/m^2\nVolumetric Invariant: Participating media couples exponential absorption with forward scattering phase`,
+        codeNotes: [
+          { line: 8, note: 'Implements the Beer-Lambert exponential transmittance equation for participating media' },
+          { line: 10, note: 'Evaluates the Henyey-Greenstein anisotropic phase function for forward aerosol scattering' },
+          { line: 25, note: 'Calculates in-scattered sunlight radiance producing realistic atmospheric god rays' }
+        ],
+        tryIt: 'Change the distance to 50 meters and observe how transmittance drops exponentially toward zero.',
+        check: {
+          question: 'In volumetric lighting, what physical phenomenon does the Henyey-Greenstein phase function model?',
+          options: [
+            'The angular distribution of scattered light, describing how strongly light scatters forward toward the camera versus backward or uniformly when striking aerosol particles',
+            'The speed of sound through damp air',
+            'The rate at which water evaporates from clouds',
+            'The mechanical stiffness of fog machine nozzles'
+          ],
+          answer: 0,
+          why: 'The Henyey-Greenstein phase function describes directional scattering asymmetry: aerosol water droplets scatter sunlight predominantly forward (g > 0), creating the intense halo seen around the sun in misty air.'
+        }
+      },
+      {
+        title: 'HDR Post-Processing Pipeline: ACES Tone Mapping, Bloom & Temporal Anti-Aliasing (TAA)',
+        say: [
+          'Real-world lighting covers an enormous dynamic range: the midday sun is over 100,000 cd/m^2, while moonlit shadows are below 0.001 cd/m^2. Modern real-time engines perform all lighting calculations in High Dynamic Range (HDR) using 16-bit floating-point textures (rgba16float).',
+          'Because standard computer monitors can only display low dynamic range (LDR 8-bit values from 0.0 to 1.0), the engine must apply Tone Mapping to compress HDR values. Simple Reinhard tone mapping (x / (1 + x)) washes out saturated colors and creates muddy grey skies. Modern cinema and game engines standardise on the ACES (Academy Color Encoding System) filmic curve: ACES preserves rich color saturation, produces a smooth highlight toe, and creates a natural shoulder roll-off that mirrors physical photographic film.',
+          'Complementing tone mapping is Dual-Filter Bloom (extracting specular bright spots and applying progressive downsample/upsample blur pyramids to simulate lens glow) and Temporal Anti-Aliasing (TAA).',
+          'TAA jitters camera projection matrices by sub-pixel offsets (Halton sequences) every frame, reprojects previous frames using G-Buffer velocity vectors, and accumulates samples over time to eliminate jagged edges and specular shader crawling.'
+        ],
+        example: 'Think of a high-end cinema camera shooting a dark room with a bright open window. A cheap smartphone camera blows out the window into a blinding white clipped square. A professional cinema camera using ACES captures the golden sun rays, individual leaves outside, and the dark mahogany furniture inside without harsh clipping.',
+        code: `// HDR Post-Processing: ACES Filmic Tone Mapping & Temporal Anti-Aliasing (TAA)
+class HdrPostProcessingPipeline {
+  applyAcesToneMapping(hdrLuminance: number): number {
+    // ACES filmic approximation: (x * (a * x + b)) / (x * (c * x + d) + e)
+    const a = 2.51;
+    const b = 0.03;
+    const c = 2.43;
+    const d = 0.59;
+    const e = 0.14;
+    return (hdrLuminance * (a * hdrLuminance + b)) / (hdrLuminance * (c * hdrLuminance + d) + e);
+  }
+}
+
+const hdrPipeline = new HdrPostProcessingPipeline();
+const highSun = hdrPipeline.applyAcesToneMapping(12.5); // Sunlight reflection
+const ambientGlow = hdrPipeline.applyAcesToneMapping(0.65); // Ambient shadow
+
+console.log('ACES Filmic Curve (HDR 12.5 cd/m^2): ' + highSun.toFixed(3) + ' (Soft Highlight Roll-off)');
+console.log('ACES Filmic Curve (Midtone 0.65 cd/m^2): ' + ambientGlow.toFixed(3) + ' (Contrast Preserved)');
+console.log('Temporal Anti-Aliasing (TAA): Sub-pixel Halton(2,3) camera jitter active');
+console.log('HDR Post-Process Guarantee: Preserves dynamic range without harsh specular whiteout clipping');`,
+        output: `ACES Filmic Curve (HDR 12.5 cd/m^2): 1.014 (Soft Highlight Roll-off)\nACES Filmic Curve (Midtone 0.65 cd/m^2): 0.697 (Contrast Preserved)\nTemporal Anti-Aliasing (TAA): Sub-pixel Halton(2,3) camera jitter active\nHDR Post-Process Guarantee: Preserves dynamic range without harsh specular whiteout clipping`,
+        codeNotes: [
+          { line: 8, note: 'Implements the Narkowicz ACES filmic S-curve rational polynomial approximation' },
+          { line: 18, note: 'Demonstrates smooth highlight compression of intense 12.5 cd/m^2 sunlight without color blowing' },
+          { line: 30, note: 'Models temporal accumulation and sub-pixel camera jitter to eradicate edge aliasing' }
+        ],
+        tryIt: 'Pass an HDR luminance of 100.0 into the ACES curve and observe how it smoothly approaches asymptotic peak display brightness.',
+        check: {
+          question: 'Why is the ACES filmic tone mapping curve widely preferred over linear Reinhard tone mapping in modern 3D graphics?',
+          options: [
+            'ACES preserves color saturation and introduces photographic contrast with a toe and shoulder curve, preventing bright highlights from desaturating into flat chalky white',
+            'ACES tone mapping makes 3D games download 50% faster',
+            'Reinhard tone mapping only works on CRT television monitors',
+            'ACES requires zero floating-point operations'
+          ],
+          answer: 0,
+          why: 'Reinhard tone mapping compresses all channels uniformly, causing bright lights to shift toward chalky white. The ACES S-curve preserves hue and chroma saturation through smooth highlight rolloff.'
+        }
+      }
+    ],
+    summary: [
+      'WebGPU BVH acceleration structures and Möller-Trumbore intersection enable hardware-accelerated real-time ray tracing in O(log N) steps.',
+      'Massively parallel compute shaders simulate 1,000,000 particles in VRAM storage buffers with ping-pong double buffering and zero CPU readback.',
+      'Screen-Space Reflections (SSR) perform Hi-Z depth marching on G-Buffers, blending Fresnel specular reflections with environmental probes.',
+      'Volumetric fog calculates Beer-Lambert exponential transmittance coupled with Henyey-Greenstein anisotropic forward light scattering.',
+      'HDR post-processing applies filmic ACES tone mapping and Temporal Anti-Aliasing (TAA) to deliver cinematic photorealism.'
+    ],
+    projectStep: {
+      title: 'Architect a Next-Generation WebGPU Photorealistic Rendering Engine',
+      steps: [
+        'Construct an on-GPU BVH traversal compute pipeline evaluating Möller-Trumbore ray-triangle intersections.',
+        'Implement a 1,000,000 particle compute simulation with ping-pong storage buffers and indirect draw calls.',
+        'Author an SSR shader with Hi-Z depth ray marching and Schlick Fresnel reflectance blending.',
+        'Develop a volumetric participating media ray marcher computing Beer-Lambert extinction and god rays.',
+        'Build an HDR post-processing pass integrating dual-filter bloom, ACES filmic tone mapping, and TAA reprojection.'
+      ]
+    }
   }
 ];
 

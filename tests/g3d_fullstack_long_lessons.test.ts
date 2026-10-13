@@ -371,6 +371,65 @@ test('G3D Day 4: Domain-Specific Content Assertions', () => {
   assert.ok(g3dD4.parts[4].output.includes('Mip LOD'));
 });
 
+test('G3D Day 5: Resolution & Structural Invariants for WebGPU Ray Tracing, Compute Particles & Fog', () => {
+  const g3dD5 = getLongLesson('g3d', 5);
+  assert.ok(g3dD5, 'g3d Day 5 long lesson must resolve');
+  assert.equal(g3dD5.day, 5);
+  assert.equal(g3dD5.parts.length, 5, 'g3d Day 5 must contain exactly 5 parts');
+  assert.ok(g3dD5.summary.length >= 4, 'Summary must contain at least 4 items');
+  assert.ok(g3dD5.projectStep, 'Day 5 must declare a projectStep');
+  assert.ok(g3dD5.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(g3dD5);
+  const totalMin = estimateLessonMinutes(g3dD5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of g3dD5.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('G3D Day 5: Domain-Specific Content Assertions', () => {
+  const g3dD5 = getLongLesson('g3d', 5);
+  assert.ok(g3dD5);
+
+  // Part 1 – WebGPU Ray Tracing & Möller-Trumbore
+  assert.ok(g3dD5.parts[0].title.includes('Ray Tracing') || g3dD5.parts[0].title.includes('BVH'));
+  assert.ok(g3dD5.parts[0].output.includes('HIT_CONFIRMED'));
+  assert.ok(g3dD5.parts[0].output.includes('Möller-Trumbore'));
+
+  // Part 2 – WebGPU Compute Particles (1 Million)
+  assert.ok(g3dD5.parts[1].title.includes('Compute Particle') || g3dD5.parts[1].title.includes('1 Million'));
+  assert.ok(g3dD5.parts[1].output.includes('1,000,000 Active Particles'));
+  assert.ok(g3dD5.parts[1].output.includes('Ping-Pong'));
+
+  // Part 3 – Screen-Space Reflections (SSR)
+  assert.ok(g3dD5.parts[2].title.includes('Screen-Space Reflections') || g3dD5.parts[2].title.includes('SSR'));
+  assert.ok(g3dD5.parts[2].output.includes('SURFACE_HIT_FOUND'));
+  assert.ok(g3dD5.parts[2].output.includes('Schlick Fresnel Reflectance'));
+
+  // Part 4 – Volumetric Fog & Beer-Lambert
+  assert.ok(g3dD5.parts[3].title.includes('Volumetric') || g3dD5.parts[3].title.includes('Beer-Lambert'));
+  assert.ok(g3dD5.parts[3].output.includes('Beer-Lambert Transmittance'));
+  assert.ok(g3dD5.parts[3].output.includes('Henyey-Greenstein Phase'));
+
+  // Part 5 – HDR ACES Tone Mapping & TAA
+  assert.ok(g3dD5.parts[4].title.includes('ACES') || g3dD5.parts[4].title.includes('Tone Mapping'));
+  assert.ok(g3dD5.parts[4].output.includes('ACES Filmic Curve'));
+  assert.ok(g3dD5.parts[4].output.includes('Temporal Anti-Aliasing (TAA)'));
+});
+
 
 
 
