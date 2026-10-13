@@ -210,3 +210,43 @@ test('Mobile Day 3: Offline CRDTs, Push Notifications, JSI TurboModules & Enclav
   assert.ok(mobileLesson3.parts[4].output?.includes('SECURE ENCLAVE HARDWARE BIOMETRIC AUTHENTICATION'));
 });
 
+test('Blockchain Day 3: ERC Standards, Flash Loans, Gas Packing & Chainlink Oracles Verification', () => {
+  const blockchainLesson3 = getLongLesson('blockchain', 3);
+  assert.ok(blockchainLesson3, 'blockchain Day 3 must resolve');
+  assert.equal(blockchainLesson3.day, 3);
+  assert.equal(blockchainLesson3.parts.length, 5, 'blockchain Day 3 must contain exactly 5 parts');
+  assert.ok(blockchainLesson3.summary.length >= 4, 'blockchain Day 3 must have comprehensive summary');
+  assert.ok(blockchainLesson3.projectStep, 'blockchain Day 3 must have projectStep');
+  assert.ok(blockchainLesson3.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  for (let i = 0; i < blockchainLesson3.parts.length; i++) {
+    const part = blockchainLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have >= 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(blockchainLesson3.parts[0].code?.includes('Erc20TokenSimulator'));
+  assert.ok(blockchainLesson3.parts[0].output?.includes('ERC-20 ALLOWANCE SAFETY & RACE CONDITION DEFENSE'));
+  assert.ok(blockchainLesson3.parts[1].code?.includes('SecureBankWithGuard'));
+  assert.ok(blockchainLesson3.parts[1].output?.includes('FLASH LOANS, REENTRANCY ATTACKS & REENTRANCYGUARD'));
+  assert.ok(blockchainLesson3.parts[2].code?.includes('EvmStoragePacker'));
+  assert.ok(blockchainLesson3.parts[2].output?.includes('EVM STORAGE PACKING & GAS OPTIMIZATION'));
+  assert.ok(blockchainLesson3.parts[3].code?.includes('verifyMerkleProof'));
+  assert.ok(blockchainLesson3.parts[3].output?.includes('MERKLE PROOF AIRDROP VERIFICATION'));
+  assert.ok(blockchainLesson3.parts[4].code?.includes('OracleConsumerSimulator'));
+  assert.ok(blockchainLesson3.parts[4].output?.includes('CHAINLINK ORACLE STALE PRICE PROTECTION'));
+});
+
+

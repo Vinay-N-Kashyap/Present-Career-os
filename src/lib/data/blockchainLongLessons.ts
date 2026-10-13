@@ -865,5 +865,395 @@ console.log('Preserved State Invariant [Slot 0]: ' + proxy.readStorage('slot_0_o
         'Design an ERC-1967 upgradeable proxy demonstrating seamless logic upgrade with state preservation.'
       ]
     }
+  },
+  {
+    coursePrefix: 'blockchain',
+    day: 3,
+    title: 'Smart Contract Engineering: ERC Standards, Flash Loans, Gas Packing & Oracles',
+    goal: 'Master smart contract security and engineering: ERC-20 & ERC-721 token standards with allowance race condition defenses, Flash loans and OpenZeppelin ReentrancyGuard checks-effects-interactions patterns, EVM 32-byte storage slot packing gas optimization, Merkle tree cryptographic airdrop verification, and Chainlink decentralized oracle staleness protection.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered blockchain cryptographic primitives, mining, and state transitions. In Day 2, we mastered Uniswap v2 AMM constant product math, TWAP flash loan resistance, EIP-712 permit meta-transactions, L2 rollups, and ERC-1967 upgradeable proxies. Now in Day 3, we build enterprise smart contracts: ERC token standards, flash loans and reentrancy defense, EVM storage slot packing, Merkle airdrops, and Chainlink oracle feeds.',
+    parts: [
+      {
+        title: 'ERC-20 & ERC-721 Token Standards & Allowance Race Condition Protection',
+        say: [
+          'The Ethereum Request for Comment 20 (ERC-20) standard defined the interface that revolutionized decentralized finance by creating fungible token interoperability.',
+          'Core methods include totalSupply(), balanceOf(), transfer(), approve(), allowance(), and transferFrom().',
+          'However, standard ERC-20 implementations suffer from a well-known vulnerability known as the ERC-20 Approve Front-Running Race Condition.',
+          'If a user decides to reduce an authorized spender’s allowance from 100 to 50 tokens and sends an approve(spender, 50) transaction, a malicious spender monitoring the public mempool can front-run the transaction by spending the original 100 tokens first, and then spend the new 50 tokens once the approval transaction confirms.',
+          'To neutralize this race condition, modern secure implementations (such as OpenZeppelin ERC-20) recommend either enforcing a two-step approve(spender, 0) reset or utilizing increaseAllowance() and decreaseAllowance() methods that pass expected delta amounts.',
+          'Meanwhile, ERC-721 expands this paradigm to Non-Fungible Tokens (NFTs) where each token has a globally unique uint256 tokenId and safeTransferFrom() hooks verifying that recipient smart contracts implement IERC721Receiver.'
+        ],
+        example: 'Think of giving someone a company credit card. If you give a contractor a $500 monthly limit (allowance), and decide to cut it to $200, but they see the letter in transit and immediately spend the $500 before your letter arrives, they could then spend the new $200 as well ($700 total). Safe allowance protocols require freezing the card to $0 first before issuing the new credit limit.',
+        code: `// Simulation: ERC-20 Token Standard & Front-Running Allowance Defense
+class Erc20TokenSimulator {
+  name = 'PinIT Governance Token';
+  symbol = 'PIN';
+  totalSupply = 1000000;
+  private balances: Map<string, number> = new Map();
+  private allowances: Map<string, Map<string, number>> = new Map();
+
+  constructor(owner: string) {
+    this.balances.set(owner, this.totalSupply);
+  }
+
+  balanceOf(account: string): number {
+    return this.balances.get(account) || 0;
+  }
+
+  // Safe allowance pattern mitigating front-running race condition
+  safeApprove(owner: string, spender: string, newAmount: number, expectedCurrentAmount: number): boolean {
+    const ownerAllowances = this.allowances.get(owner) || new Map<string, number>();
+    const current = ownerAllowances.get(spender) || 0;
+
+    // Reject if caller assumes current allowance is 0 but it was changed
+    if (current !== expectedCurrentAmount) {
+      return false; // Race condition prevented
+    }
+    ownerAllowances.set(spender, newAmount);
+    this.allowances.set(owner, ownerAllowances);
+    return true;
+  }
+
+  transferFrom(spender: string, owner: string, to: string, amount: number): boolean {
+    const ownerAllowances = this.allowances.get(owner);
+    const allowance = ownerAllowances?.get(spender) || 0;
+    const balance = this.balanceOf(owner);
+
+    if (allowance < amount || balance < amount) return false;
+    ownerAllowances!.set(spender, allowance - amount);
+    this.balances.set(owner, balance - amount);
+    this.balances.set(to, (this.balances.get(to) || 0) + amount);
+    return true;
+  }
+}
+
+const token = new Erc20TokenSimulator('0xDeployer');
+// Normal approval of 500 tokens
+token.safeApprove('0xDeployer', '0xDexRouter', 500, 0);
+// Spender transfers 200 tokens
+token.transferFrom('0xDexRouter', '0xDeployer', '0xLiquidityPool', 200);
+
+// Attack simulation: Front-running race condition defense
+// Deployer wants to change allowance from 300 to 100, but assumes old allowance was 0 -> Rejected!
+const raceDetected = !token.safeApprove('0xDeployer', '0xDexRouter', 100, 0);
+
+console.log('=== ERC-20 ALLOWANCE SAFETY & RACE CONDITION DEFENSE ===');
+console.log('Token Contract: ' + token.name + ' (' + token.symbol + ')');
+console.log('Transferred via transferFrom: 200 PIN to 0xLiquidityPool');
+console.log('Deployer Remaining Balance: ' + token.balanceOf('0xDeployer') + ' PIN');
+console.log('Race Condition Interception: ' + (raceDetected ? 'BLOCKED (Must pass exact current allowance)' : 'FAILED'));`,
+        output: `=== ERC-20 ALLOWANCE SAFETY & RACE CONDITION DEFENSE ===\nToken Contract: PinIT Governance Token (PIN)\nTransferred via transferFrom: 200 PIN to 0xLiquidityPool\nDeployer Remaining Balance: 999800 PIN\nRace Condition Interception: BLOCKED (Must pass exact current allowance)`,
+        tryIt: 'Reset the allowance to 0 first and verify that a subsequent approval to 100 succeeds cleanly.',
+        check: {
+          question: 'How does the ERC-20 allowance race condition allow a malicious spender to extract more tokens than intended?',
+          options: [
+            'By observing a pending approve() transaction in the mempool, spending the existing allowance first via front-running, and then spending the newly approved allowance once mined',
+            'By overriding the token total supply directly in bytecode',
+            'By modifying the Ethereum consensus gas limit'
+          ],
+          answer: 0,
+          why: 'Because transactions in the mempool are visible, a spender can submit a higher-gas transaction to drain the old allowance before the owner\'s reduction transaction confirms, effectively double-spending allowances.'
+        }
+      },
+      {
+        title: 'Flash Loans, Reentrancy Attacks & Checks-Effects-Interactions Pattern',
+        say: [
+          'Flash loans are a revolutionary financial primitive unique to smart contracts: protocols like Aave allow users to borrow tens of millions of dollars without upfront collateral, provided the principal and borrowing fee are returned within the same atomic transaction.',
+          'If the borrower fails to repay the loan by the end of the transaction execution, the EVM automatically rolls back all state changes, guaranteeing zero default risk for lenders.',
+          'However, flash loans provide attackers with virtually unlimited liquidity to exploit smart contract bugs, chief among them being Reentrancy Attacks.',
+          'The infamous 2016 DAO exploit occurred because a contract executed an external Ether transfer before decrementing the caller’s recorded balance.',
+          'The attacker’s malicious contract utilized its fallback() or receive() hook to recursively call withdraw() over and over before the original balance was zeroed, draining $60 million.',
+          'To eradicate reentrancy vulnerabilities, smart contract engineers adhere strictly to two defense layers: the Checks-Effects-Interactions pattern (updating internal state variables before making external calls) and OpenZeppelin’s ReentrancyGuard nonReentrant modifier (a mutex lock preventing recursive entry).'
+        ],
+        example: 'Think of an automated bank ATM. If the machine dispenses cash through the dispenser slot (external interaction) before deducting $100 from your account ledger (state effect), a thief could jam the slot sensor to trigger five withdrawals in a row before their balance ever decreases. Updating the ledger first makes the exploit impossible.',
+        code: `// Simulation: Flash Loans, Reentrancy Attacks & OpenZeppelin ReentrancyGuard
+class SecureBankWithGuard {
+  balances: Map<string, number> = new Map();
+  private locked = false;
+
+  deposit(account: string, amount: number) {
+    this.balances.set(account, (this.balances.get(account) || 0) + amount);
+  }
+
+  // Protected with Checks-Effects-Interactions and Mutex ReentrancyGuard
+  secureWithdraw(account: string, callback: () => void): { success: boolean; error?: string } {
+    if (this.locked) return { success: false, error: 'REENTRANCY_GUARD_TRIGGERED' };
+    const bal = this.balances.get(account) || 0;
+    if (bal <= 0) return { success: false, error: 'INSUFFICIENT_BALANCE' };
+
+    this.locked = true; // 1. Mutex Lock
+    this.balances.set(account, 0); // 2. EFFECT: State updated FIRST!
+    try {
+      callback(); // 3. INTERACTION: External call executed last
+      return { success: true };
+    } finally {
+      this.locked = false; // Mutex unlocked
+    }
+  }
+}
+
+const secureBank = new SecureBankWithGuard();
+secureBank.deposit('0xAttacker', 100);
+
+let reentrancyIntercepted = false;
+secureBank.secureWithdraw('0xAttacker', () => {
+  // Attacker contract re-enters withdraw in its fallback
+  const attempt = secureBank.secureWithdraw('0xAttacker', () => {});
+  if (attempt.error === 'REENTRANCY_GUARD_TRIGGERED') {
+    reentrancyIntercepted = true;
+  }
+});
+
+console.log('=== FLASH LOANS, REENTRANCY ATTACKS & REENTRANCYGUARD ===');
+console.log('Reentrancy Exploit Defense: ' + (reentrancyIntercepted ? 'REENTRANCY_GUARD_TRIGGERED (Blocked!)' : 'EXPLOITED'));
+console.log('Post-Withdraw Balance: ' + (secureBank.balances.get('0xAttacker') || 0) + ' ETH (Checks-Effects-Interactions Invariant)');`,
+        output: `=== FLASH LOANS, REENTRANCY ATTACKS & REENTRANCYGUARD ===\nReentrancy Exploit Defense: REENTRANCY_GUARD_TRIGGERED (Blocked!)\nPost-Withdraw Balance: 0 ETH (Checks-Effects-Interactions Invariant)`,
+        tryIt: 'Remove the mutex locked flag and reverse the balance update order to see how reentrancy drains funds.',
+        check: {
+          question: 'What is the core principle of the Checks-Effects-Interactions pattern in Solidity smart contracts?',
+          options: [
+            'Update all internal contract state variables (effects) before initiating any external contract calls or ether transfers (interactions)',
+            'Check the gas price before printing a receipt',
+            'Send ether first, and only log the transaction if no errors occur'
+          ],
+          answer: 0,
+          why: 'By committing all balance reductions and state changes before invoking external contracts, reentrant calls will see zeroed balances and fail, completely defusing reentrancy attacks.'
+        }
+      },
+      {
+        title: 'EVM Storage Slot Packing & Gas Optimization',
+        say: [
+          'On the Ethereum Virtual Machine, persistent contract storage is by far the most expensive computing resource in terms of gas consumption.',
+          'Writing a non-zero value into an empty storage slot (SSTORE) costs up to 20,000 gas, while reading a cold slot (SLOAD) costs 2,100 gas.',
+          'EVM storage is organized as an array of 32-byte (256-bit) slots, indexed from 0 to 2^256 - 1.',
+          'Solidity automatically packs contiguous state variables into the same 32-byte slot if their combined data size is less than or equal to 32 bytes.',
+          'However, the order of declaration is critical: if a developer declares uint128 a, uint256 b, uint128 c, Solidity cannot pack a and c together because variable b occupies an entire 32-byte slot between them, consuming 3 distinct slots (96 bytes).',
+          'By simply reordering the struct to uint128 a, uint128 c, uint256 b, the compiler packs a and c into a single 32-byte slot, slashing the storage footprint to 2 slots and saving 20,000 gas on initial storage writes.'
+        ],
+        example: 'Think of packing shipping containers. If you load a half-sized box (uint128), then a full container-sized safe (uint256), and then another half-sized box (uint128), the shipping line charges you for 3 separate containers. But if you place the two half-sized boxes into a single container together, you only pay for 2 containers.',
+        code: `// Simulation: EVM Storage Slot Packing & SSTORE Gas Calculus
+class EvmStoragePacker {
+  calculateUnpackedSlots(fields: { name: string; bytes: number }[]): { slotCount: number; gasCostSstore: number } {
+    // Unpacked: every field placed in a dedicated 32-byte slot
+    const slotCount = fields.length;
+    return { slotCount, gasCostSstore: slotCount * 20000 };
+  }
+
+  calculatePackedSlots(fields: { name: string; bytes: number }[]): { slotCount: number; gasCostSstore: number } {
+    // Packed: adjacent fields whose sum <= 32 bytes share a single slot
+    let slotCount = 1;
+    let currentBytes = 0;
+    for (const f of fields) {
+      if (currentBytes + f.bytes <= 32) {
+        currentBytes += f.bytes;
+      } else {
+        slotCount++;
+        currentBytes = f.bytes;
+      }
+    }
+    return { slotCount, gasCostSstore: slotCount * 20000 };
+  }
+}
+
+const packer = new EvmStoragePacker();
+const accountFields = [
+  { name: 'isVerified', bytes: 1 },    // bool (1 byte)
+  { name: 'tierLevel', bytes: 1 },     // uint8 (1 byte)
+  { name: 'userAddress', bytes: 20 },  // address (20 bytes) -> Total 22 bytes in Slot 0
+  { name: 'balanceWei', bytes: 32 }    // uint256 (32 bytes) -> Total 32 bytes in Slot 1
+];
+
+const unpacked = packer.calculateUnpackedSlots(accountFields);
+const packed = packer.calculatePackedSlots(accountFields);
+const gasSaved = unpacked.gasCostSstore - packed.gasCostSstore;
+
+console.log('=== EVM STORAGE PACKING & GAS OPTIMIZATION ===');
+console.log('Unpacked Layout: ' + unpacked.slotCount + ' Slots (' + unpacked.gasCostSstore.toLocaleString('en-US') + ' Gas for initial SSTORE)');
+console.log('Packed Layout: ' + packed.slotCount + ' Slots (' + packed.gasCostSstore.toLocaleString('en-US') + ' Gas for initial SSTORE)');
+console.log('Gas Efficiency Gain: Saved ' + gasSaved.toLocaleString('en-US') + ' Gas (50% Storage Reduction)');`,
+        output: `=== EVM STORAGE PACKING & GAS OPTIMIZATION ===\nUnpacked Layout: 4 Slots (80,000 Gas for initial SSTORE)\nPacked Layout: 2 Slots (40,000 Gas for initial SSTORE)\nGas Efficiency Gain: Saved 40,000 Gas (50% Storage Reduction)`,
+        tryIt: 'Add a uint64 timestamp field (8 bytes) to accountFields and observe that it fits inside Slot 0 (22 + 8 = 30 bytes <= 32 bytes).',
+        check: {
+          question: 'Why does packing multiple struct variables into a single 32-byte EVM storage slot save significant gas?',
+          options: [
+            'Because reading and writing to storage (SLOAD/SSTORE) is the most expensive operation in EVM; combining variables into one slot reduces the number of slot writes',
+            'Because packing variables turns off gas fees entirely',
+            'Because the EVM cannot store variables larger than 16 bytes'
+          ],
+          answer: 0,
+          why: 'SSTORE costs up to 20,000 gas per unique slot written. Packing multiple smaller types (like uint128, address, and bool) into a single 32-byte slot combines multiple writes into one SSTORE operation.'
+        }
+      },
+      {
+        title: 'Merkle Proofs & Cryptographic Airdrop Whitelists',
+        say: [
+          'Distributing tokens or NFT mint allowances to a whitelist of 10,000 addresses presents a massive on-chain gas dilemma.',
+          'Storing 10,000 addresses directly in a Solidity mapping on Ethereum mainnet requires 10,000 SSTORE operations, costing millions of gas (over $50,000 in transaction fees).',
+          'Cryptographic Merkle Trees provide an elegant, mathematically unassailable solution that slashes on-chain storage costs to O(1).',
+          'The project calculates the whitelist tree entirely off-chain: each recipient address and token allocation forms a leaf node, and pairs of nodes are recursively hashed together using keccak256 until a single 32-byte Merkle Root is produced.',
+          'The smart contract stores only this single 32-byte root in on-chain storage.',
+          'When an eligible user claims their airdrop, they submit their leaf and a lightweight Merkle Proof consisting of O(log N) sibling hashes (approx. 14 hashes for 10,000 users). The contract hashes up the branch in milliseconds to verify membership, using a bitmap to prevent double claiming.'
+        ],
+        example: 'Think of a tournament bracket. The organizer only posts the name of the final tournament champion at the entrance (Merkle root). When you claim you played in the quarterfinals, you don\'t need to reprint the entire 10,000-player roster; you just present the scores of your 4 direct matches (Merkle proof) to prove your branch in the bracket.',
+        code: `// Simulation: Merkle Tree Whitelist Verification & Double-Claim Prevention
+function simpleHash(a: string, b: string): string {
+  const combined = a < b ? a + b : b + a;
+  let h = 0x811c9dc5;
+  for (let i = 0; i < combined.length; i++) {
+    h ^= combined.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return '0x' + (h >>> 0).toString(16).padStart(8, '0');
+}
+
+// 4 Whitelist Leaves
+const leaf0 = '0xAlice_100_PIN';
+const leaf1 = '0xBob_250_PIN';
+const leaf2 = '0xCharlie_500_PIN';
+const leaf3 = '0xDave_1000_PIN';
+
+const node01 = simpleHash(leaf0, leaf1);
+const node23 = simpleHash(leaf2, leaf3);
+const merkleRoot = simpleHash(node01, node23);
+
+// Merkle Proof for Alice (needs sibling leaf1 and sibling node23)
+function verifyMerkleProof(leaf: string, proof: string[], root: string): boolean {
+  let computedHash = leaf;
+  for (const sibling of proof) {
+    computedHash = simpleHash(computedHash, sibling);
+  }
+  return computedHash === root;
+}
+
+const aliceProof = [leaf1, node23];
+const isAliceValid = verifyMerkleProof(leaf0, aliceProof, merkleRoot);
+const fakeProof = ['0xFakeSibling', node23];
+const isFakeValid = verifyMerkleProof(leaf0, fakeProof, merkleRoot);
+
+console.log('=== MERKLE PROOF AIRDROP VERIFICATION ===');
+console.log('On-Chain Stored Merkle Root: ' + merkleRoot);
+console.log('Alice Proof Verification: ' + (isAliceValid ? 'VALID (Claim 100 PIN Authorized)' : 'INVALID'));
+console.log('Forged Proof Verification: ' + (isFakeValid ? 'VALID' : 'REJECTED (Cryptographically Invalid Proof)'));
+console.log('On-Chain Gas Invariant: O(1) storage footprint (only 32 bytes stored for 10,000+ recipients)');`,
+        output: `=== MERKLE PROOF AIRDROP VERIFICATION ===\nOn-Chain Stored Merkle Root: 0x6481612a\nAlice Proof Verification: VALID (Claim 100 PIN Authorized)\nForged Proof Verification: REJECTED (Cryptographically Invalid Proof)\nOn-Chain Gas Invariant: O(1) storage footprint (only 32 bytes stored for 10,000+ recipients)`,
+        tryIt: 'Generate the Merkle proof for Bob (needs leaf0 and node23) and verify it against the same merkleRoot.',
+        check: {
+          question: 'What is the primary architectural benefit of using a Merkle Tree for airdrop whitelisting instead of an on-chain mapping?',
+          options: [
+            'The smart contract only needs to store a single 32-byte root hash regardless of whitelist size, shifting verification compute and proof data to the claimant',
+            'Merkle trees make all tokens trade at zero transaction fees',
+            'Mappings cannot store Ethereum addresses'
+          ],
+          answer: 0,
+          why: 'Storing 10,000 addresses in a mapping requires 10,000 expensive SSTORE writes by the deployer. Merkle trees require storing only one 32-byte root (O(1)), while individual claimants provide O(log N) proofs when claiming.'
+        }
+      },
+      {
+        title: 'Chainlink Decentralized Oracles & Stale Price Protection',
+        say: [
+          'Because the Ethereum Virtual Machine is a deterministic state machine, smart contracts cannot make outbound HTTP requests to query off-chain data such as USD asset prices or weather feeds.',
+          'Decentralized oracles bridge this gap: Chainlink aggregates price data from independent node operators and submits aggregated consensus prices to on-chain contracts via the AggregatorV3Interface.',
+          'However, naively reading latestRoundData() without defensive validation creates severe vulnerabilities.',
+          'During periods of extreme blockchain network congestion or oracle infrastructure outages, an oracle feed might stop updating, leaving stale prices frozen in contract memory.',
+          'Sophisticated arbitrage bots exploit stale price feeds by borrowing collateral or executing swaps against frozen prices that diverge from off-chain market actuals.',
+          'Production DeFi smart contracts enforce three critical oracle validation invariants: price must be strictly positive (price > 0), the round must be complete (answeredInRound >= roundId), and the update timestamp must be fresh (block.timestamp - updatedAt <= HEARTBEAT_TIMEOUT).'
+        ],
+        example: 'Think of a GPS navigation system on a ship. If the satellite receiver loses signal and freezes the ship’s position on the screen, the captain cannot simply assume the boat is stationary. A safety system checks the timestamp of the last satellite ping: if older than 5 minutes, an alarm sounds and automated piloting is suspended.',
+        code: `// Simulation: Chainlink Decentralized Oracle Consumer & Staleness Protection
+interface ChainlinkRoundData {
+  roundId: number;
+  answer: number; // 8 decimals (e.g. 250000000000 for $2500.00)
+  startedAt: number;
+  updatedAt: number;
+  answeredInRound: number;
+}
+
+class OracleConsumerSimulator {
+  private maxStalenessSeconds = 3600; // 1-hour heartbeat
+
+  validatePrice(roundData: ChainlinkRoundData, currentTimestamp: number): {
+    valid: boolean;
+    priceUsd: number;
+    reason: string;
+  } {
+    // Check 1: Non-zero positive price
+    if (roundData.answer <= 0) {
+      return { valid: false, priceUsd: 0, reason: 'INVALID_NEGATIVE_OR_ZERO_PRICE' };
+    }
+    // Check 2: Round completeness
+    if (roundData.answeredInRound < roundData.roundId) {
+      return { valid: false, priceUsd: 0, reason: 'ROUND_INCOMPLETE' };
+    }
+    // Check 3: Staleness check against heartbeat
+    if (currentTimestamp - roundData.updatedAt > this.maxStalenessSeconds) {
+      return { valid: false, priceUsd: 0, reason: 'STALE_PRICE_HEARTBEAT_EXCEEDED' };
+    }
+
+    return {
+      valid: true,
+      priceUsd: roundData.answer / 1e8,
+      reason: 'VERIFIED_FRESH_ORACLE_FEED'
+    };
+  }
+}
+
+const consumer = new OracleConsumerSimulator();
+const now = 1700003600;
+const freshData: ChainlinkRoundData = {
+  roundId: 105,
+  answer: 265050000000, // $2650.50
+  startedAt: now - 300,
+  updatedAt: now - 300, // 5 minutes ago
+  answeredInRound: 105
+};
+
+const staleData: ChainlinkRoundData = {
+  roundId: 104,
+  answer: 260000000000,
+  startedAt: now - 7200,
+  updatedAt: now - 7200, // 2 hours ago (> 1 hour heartbeat)
+  answeredInRound: 104
+};
+
+const freshResult = consumer.validatePrice(freshData, now);
+const staleResult = consumer.validatePrice(staleData, now);
+
+console.log('=== CHAINLINK ORACLE STALE PRICE PROTECTION ===');
+console.log('Fresh Feed Price: $' + freshResult.priceUsd.toFixed(2) + ' (' + freshResult.reason + ')');
+console.log('Stale Feed Evaluation: ' + (staleResult.valid ? 'VALID' : 'REJECTED (' + staleResult.reason + ')'));
+console.log('Protocol Security Invariant: Prevents flash crashes and stale arbitrage exploitation');`,
+        output: `=== CHAINLINK ORACLE STALE PRICE PROTECTION ===\nFresh Feed Price: $2650.50 (VERIFIED_FRESH_ORACLE_FEED)\nStale Feed Evaluation: REJECTED (STALE_PRICE_HEARTBEAT_EXCEEDED)\nProtocol Security Invariant: Prevents flash crashes and stale arbitrage exploitation`,
+        tryIt: 'Simulate a flash-crash zero price (answer: 0) and verify that the consumer rejects the round.',
+        check: {
+          question: 'Why must DeFi contracts check block.timestamp - updatedAt <= HEARTBEAT_TIMEOUT when querying Chainlink price feeds?',
+          options: [
+            'To ensure the price data is recent and prevent arbitrage bots from exploiting outdated prices if the oracle pauses during network congestion',
+            'To reset the gas fees on Ethereum',
+            'Because Chainlink charges extra fees for old prices'
+          ],
+          answer: 0,
+          why: 'If an oracle feed fails to update during market volatility, relying on outdated price feeds allows attackers to liquidate healthy loans or trade against frozen prices, causing protocol insolvency.'
+        }
+      }
+    ],
+    summary: [
+      'ERC-20 allowances must guard against mempool front-running race conditions by resetting allowances to 0 or passing expected current values.',
+      'Flash loans enable atomic uncollateralized borrowing, while ReentrancyGuard and Checks-Effects-Interactions patterns block reentrancy exploits.',
+      'EVM storage packing arranges struct members within 32-byte boundaries, saving 20,000 gas per slot avoided on SSTORE operations.',
+      'Merkle proofs enable O(1) on-chain storage for airdrop whitelists, verifying eligibility off-chain with O(log N) cryptographic sibling hashes.',
+      'Chainlink decentralized oracle consumers must validate round completeness, positive price boundaries, and timestamp staleness heartbeats.'
+    ],
+    projectStep: {
+      title: 'Architect an Audited Smart Contract Suite with Merkle Airdrop & Oracles',
+      steps: [
+        'Deploy an ERC-20 token with safe allowance mutation patterns protecting against front-running.',
+        'Implement a lending vault protected by OpenZeppelin ReentrancyGuard and Checks-Effects-Interactions.',
+        'Optimize contract struct storage layouts into tightly packed 32-byte EVM slots.',
+        'Construct a Merkle tree airdrop distributor with bitmap double-claim prevention.',
+        'Integrate a Chainlink Price Feed consumer with comprehensive staleness and sanity checks.'
+      ]
+    }
   }
 ];
+
