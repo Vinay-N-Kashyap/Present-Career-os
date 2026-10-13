@@ -630,8 +630,47 @@ test('Systems Long Lessons: iot_emb Day 4 FreeRTOS Preemption, Canaries, Queues 
   assert.equal(res5.allPassed, true, 'Part 5 configureTicklessIdle must pass AST analysis');
 });
 
+test('Systems Long Lessons: iot_emb Day 5 Wireless Networking, BLE GATT & Secure OTA Invariants', async () => {
+  const iotEmbLesson5 = getLongLesson('iot_emb', 5);
+  assert.ok(iotEmbLesson5, 'iot_emb Day 5 lesson must be resolved');
+  assert.equal(iotEmbLesson5.day, 5);
+  assert.equal(iotEmbLesson5.parts.length, 5);
 
+  const spokenMin = estimateSpokenMinutes(iotEmbLesson5);
+  const totalMin = estimateLessonMinutes(iotEmbLesson5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
 
+  for (let i = 0; i < iotEmbLesson5.parts.length; i++) {
+    const part = iotEmbLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('#include'), `Part ${i + 1} code must contain valid C++ headers`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
 
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
 
+  // Domain specifics AST verification
+  const res1 = await executeCppSuite(iotEmbLesson5.parts[0].code!, 'buildBleAdvPacket');
+  assert.equal(res1.allPassed, true, 'Part 1 buildBleAdvPacket must pass AST analysis');
 
+  const res2 = await executeCppSuite(iotEmbLesson5.parts[1].code!, 'handleGattCccdWrite');
+  assert.equal(res2.allPassed, true, 'Part 2 handleGattCccdWrite must pass AST analysis');
+
+  const res3 = await executeCppSuite(iotEmbLesson5.parts[3].code!, 'evaluateBootloaderBank');
+  assert.equal(res3.allPassed, true, 'Part 4 evaluateBootloaderBank must pass AST analysis');
+
+  const res4 = await executeCppSuite(iotEmbLesson5.parts[2].code!, 'compress6LoWpanHeader');
+  assert.equal(res4.allPassed, true, 'Part 3 compress6LoWpanHeader must pass AST analysis');
+
+  const res5 = await executeCppSuite(iotEmbLesson5.parts[4].code!, 'verifyOtaFirmwareSignature');
+  assert.equal(res5.allPassed, true, 'Part 5 verifyOtaFirmwareSignature must pass AST analysis');
+});

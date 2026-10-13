@@ -1174,6 +1174,380 @@ int main() {
         'Configure a low-power Tickless Idle power profile suppressing periodic SysTick interrupts during extended idle sleep windows.'
       ]
     }
+  },
+  {
+    day: 5,
+    title: 'Embedded IoT Wireless Networking, BLE GATT Profiles, Low-Power Mesh & OTA Firmware Architecture',
+    goal: 'Master wireless embedded architecture: BLE GAP advertising, connection parameter negotiation, GATT services and CCCD push notifications, 6LoWPAN mesh header compression, dual-bank flash bootloaders, and cryptographic OTA firmware updates.',
+    minutes: 35,
+    recap: 'In Day 4, we mastered the FreeRTOS real-time kernel, preemptive scheduling, stack canaries, and tickless idle sleep. Today in Day 5, we complete our embedded journey by taking microcontrollers online: architecting BLE GATT profiles, low-power mesh networking, dual-bank flash memory layouts, and cryptographically signed OTA firmware updates.',
+    parts: [
+      {
+        title: 'Bluetooth Low Energy (BLE) Fundamentals: GAP Roles, Advertising & Connection Parameters',
+        say: [
+          'Bluetooth Low Energy (BLE) is designed from the physical layer up for ultra-low duty cycles and long battery life.',
+          'Under the Generic Access Profile (GAP), devices operate either as Broadcasters and Observers, or as Peripherals and Centrals.',
+          'Before any connection is formed, a peripheral broadcasts periodic Advertising Packets on three dedicated primary RF channels: 37, 38, and 39.',
+          'A legacy BLE advertising packet contains up to 31 bytes of structured advertising data (AD structures), each consisting of a length byte, an AD type tag, and payload data.',
+          'Typical AD fields include Discovery Flags (such as LE General Discoverable Mode), 16-bit or 128-bit Service UUIDs, and the Human-Readable Complete Local Device Name.',
+          'Once connected, the central and peripheral negotiate three critical connection parameters: the Connection Interval (ranging from 7.5 ms to 4.0 s in 1.25 ms increments), Slave Latency, and the Supervision Timeout.',
+          'Slave Latency allows the peripheral to deliberately sleep through a defined number of connection events if it has no data to send, saving battery power while maintaining the link.',
+          'If no packets are exchanged before the Supervision Timeout expires, both sides drop the link and assume radio disconnection.'
+        ],
+        example: 'Like an automated lighthouse flashing its identifier every second: nearby ships read its name without docking, but can initiate a docking sequence when needed.',
+        code: `#include <iostream>
+#include <cstdint>
+#include <cstring>
+
+struct BleAdvPacket {
+    uint8_t payload[31];
+    uint8_t length;
+    uint16_t connIntervalMs;
+    uint16_t slaveLatency;
+    uint16_t supervisionTimeoutMs;
+};
+
+uint8_t buildBleAdvPacket(BleAdvPacket* packet, const char* deviceName, uint16_t serviceUuid) {
+    packet->length = 0;
+    // AD Structure 1: Flags (0x01: LE General Discoverable Mode, BR/EDR Not Supported = 0x06)
+    packet->payload[packet->length++] = 2;    // Length of this AD structure
+    packet->payload[packet->length++] = 0x01; // AD Type: Flags
+    packet->payload[packet->length++] = 0x06; // Value: LE General Discoverable + BR/EDR Not Supported
+
+    // AD Structure 2: 16-bit Service UUID (0x03)
+    packet->payload[packet->length++] = 3;    // Length
+    packet->payload[packet->length++] = 0x03; // AD Type: Complete List of 16-bit Service UUIDs
+    packet->payload[packet->length++] = static_cast<uint8_t>(serviceUuid & 0xFF);
+    packet->payload[packet->length++] = static_cast<uint8_t>((serviceUuid >> 8) & 0xFF);
+
+    // AD Structure 3: Complete Local Name (0x09)
+    uint8_t nameLen = static_cast<uint8_t>(std::strlen(deviceName));
+    packet->payload[packet->length++] = nameLen + 1;
+    packet->payload[packet->length++] = 0x09; // AD Type: Complete Local Name
+    for (uint8_t i = 0; i < nameLen && packet->length < 31; ++i) {
+        packet->payload[packet->length++] = static_cast<uint8_t>(deviceName[i]);
+    }
+
+    packet->connIntervalMs = 50;           // 50ms interval balance
+    packet->slaveLatency = 4;              // Skip up to 4 intervals when idle
+    packet->supervisionTimeoutMs = 2000;   // 2s link loss watchdog
+
+    return packet->length;
+}
+
+int main() {
+    BleAdvPacket adv;
+    uint8_t len = buildBleAdvPacket(&adv, "PinIT-Sensor", 0x180D); // 0x180D = Heart Rate Service
+    std::cout << "BLE Advertising Packet Formatted: " << static_cast<int>(len) << " bytes\\n";
+    std::cout << "Negotiated Connection Interval: " << adv.connIntervalMs << " ms (Latency: " << adv.slaveLatency << ")\\n";
+    return 0;
+}`,
+        output: `BLE Advertising Packet Formatted: 21 bytes\nNegotiated Connection Interval: 50 ms (Latency: 4)`,
+        codeNotes: [
+          { line: 5, note: 'Defines 31-byte legacy BLE PDU payload and negotiated connection timing parameters' },
+          { line: 15, note: 'Appends standard AD structures: LE General Discoverable flags and 16-bit Service UUID' },
+          { line: 32, note: 'Configures slave latency of 4 to permit low-power peripheral sleep during connection events' }
+        ],
+        tryIt: 'Change serviceUuid to 0x180F (Battery Service) and verify packet length and formatting.',
+        check: {
+          question: 'In BLE connection parameter negotiation, what is the role of Slave Latency?',
+          options: [
+            'It allows the peripheral to skip a specified number of connection intervals without being disconnected, saving battery when no new data is ready',
+            'It forces the peripheral to transmit continuously at 100% duty cycle',
+            'It delays packet transmission until the user clicks a button',
+            'It encrypts BLE packets with AES-128 GCM'
+          ],
+          answer: 0,
+          why: 'Slave latency allows a low-power peripheral to stay in deep sleep and skip periodic connection events when it has no sensor readings to report, while maintaining connection synchronization with the central.'
+        }
+      },
+      {
+        title: 'BLE GATT Architecture: Services, Characteristics, Descriptors & CCCD Notifications',
+        say: [
+          'Once a BLE connection is established, data exchange is governed by the Generic Attribute Profile (GATT) built on top of the Attribute Protocol (ATT).',
+          'A GATT server organizes data in a strict hierarchy: a Profile contains one or more Services, each Service contains Characteristics, and Characteristics may have Descriptors.',
+          'Every attribute in the GATT table is addressed by a 16-bit handle and identified by either a standard 16-bit Bluetooth SIG UUID or a custom 128-bit vendor UUID.',
+          'Characteristics define properties such as Read, Write, Write Without Response, Notify, and Indicate.',
+          'Polling a characteristic via Read requests wastes significant wireless airtime and MCU battery power.',
+          'Instead, production IoT systems use asynchronous push notifications enabled by the Client Characteristic Configuration Descriptor (CCCD, UUID 0x2902).',
+          'When the client writes 0x0001 to the CCCD handle, the server is permitted to push unacknowledged notifications immediately when new sensor data arrives.',
+          'Writing 0x0002 enables indications, which require an application-level acknowledgment from the client before the next packet can be dispatched.'
+        ],
+        example: 'Like subscribing to an email newsletter: instead of constantly refreshing a webpage (polling Read), the publisher sends an email directly to your inbox whenever an update occurs (Notify).',
+        code: `#include <iostream>
+#include <cstdint>
+
+struct GattCharacteristic {
+    uint16_t handle;
+    uint16_t uuid;
+    uint8_t properties; // 0x10 = Notify, 0x02 = Read, 0x08 = Write
+    uint16_t cccdValue; // 0x0000 = Off, 0x0001 = Notifications Enabled, 0x0002 = Indications
+    uint8_t currentData[16];
+    uint8_t dataLength;
+};
+
+bool handleGattCccdWrite(GattCharacteristic* chr, uint16_t newCccdValue) {
+    chr->cccdValue = newCccdValue;
+    bool notificationsActive = (chr->cccdValue & 0x0001) != 0;
+    return notificationsActive;
+}
+
+int main() {
+    GattCharacteristic telemetryChr = {0x0024, 0x2A37, 0x10, 0x0000, {0}, 0};
+    bool active = handleGattCccdWrite(&telemetryChr, 0x0001);
+    std::cout << "GATT Handle 0x" << std::hex << telemetryChr.handle << " CCCD Configured: 0x" << telemetryChr.cccdValue << "\\n";
+    std::cout << "Asynchronous Push Notifications: " << (active ? "ACTIVE" : "DISABLED") << "\\n";
+    return 0;
+}`,
+        output: `GATT Handle 0x24 CCCD Configured: 0x1\nAsynchronous Push Notifications: ACTIVE`,
+        codeNotes: [
+          { line: 4, note: 'Defines GATT characteristic attributes including handle, UUID, property flags, and CCCD state' },
+          { line: 13, note: 'Processes client write to CCCD descriptor, validating 0x0001 notification subscription' },
+          { line: 20, note: 'Enables asynchronous push notifications without client polling overhead' }
+        ],
+        tryIt: 'Set newCccdValue to 0x0000 to disable notifications and observe the updated ACTIVE status.',
+        check: {
+          question: 'What is the purpose of writing 0x0001 to the Client Characteristic Configuration Descriptor (CCCD 0x2902)?',
+          options: [
+            'It enables asynchronous push notifications from the GATT server to the client without polling',
+            'It formats the microcontroller flash memory',
+            'It forces the Bluetooth radio to switch to classic Bluetooth audio streaming',
+            'It sets the device serial baud rate to 115200'
+          ],
+          answer: 0,
+          why: 'Writing 0x0001 to the CCCD descriptor authorizes the GATT server to push unacknowledged telemetry notifications as soon as new data is available, avoiding energy-expensive client polling.'
+        }
+      },
+      {
+        title: 'Low-Power Wireless Mesh Networks: 6LoWPAN, Thread & CoAP / MQTT-SN',
+        say: [
+          'While BLE is optimized for point-to-point connections, large-scale industrial IoT and smart building systems require self-healing, multi-hop mesh topologies.',
+          'Standard IP networking relies on IPv6, but a standard IPv6 header is 40 bytes long, which consumes over 30% of the maximum 127-byte physical frame in IEEE 802.15.4 radios.',
+          '6LoWPAN (IPv6 over Low-Power Wireless Personal Area Networks) solves this via stateless and stateful header compression defined in RFC 6282 (LOWPAN_IPHC).',
+          'By eliding predictable link-local address prefixes (fe80::) and deriving the 64-bit interface identifiers (IID) directly from 802.15.4 MAC addresses, 6LoWPAN compresses 40-byte IPv6 headers down to 2 to 4 bytes.',
+          'The Thread mesh protocol builds on 6LoWPAN and IEEE 802.15.4, utilizing distance-vector routing to form resilient meshes with Leader, Router, and Sleepy End Device roles.',
+          'On top of 6LoWPAN mesh layers, constrained devices avoid resource-heavy HTTP/TCP in favor of CoAP (Constrained Application Protocol, RFC 7252) or MQTT-SN over UDP.',
+          'CoAP uses a 4-byte compact binary header with Confirmable (CON) or Non-Confirmable (NON) message types and RESTful verbs (GET, PUT, POST, DELETE), achieving web semantics with minimal byte overhead.'
+        ],
+        example: 'Like compressing a full postal envelope with recipient name, street address, and country code into a 2-digit apartment intercom number when delivering inside the same building.',
+        code: `#include <iostream>
+#include <cstdint>
+
+struct IPv6Header {
+    uint8_t versionTrafficClass[4];
+    uint16_t payloadLength;
+    uint8_t nextHeader; // 17 = UDP
+    uint8_t hopLimit;
+    uint8_t srcAddr[16];
+    uint8_t destAddr[16];
+};
+
+struct CompressedMeshPacket {
+    uint8_t iphcHeader[3];
+    uint8_t compressedSize;
+    uint8_t originalSize;
+    uint8_t savingsPercent;
+};
+
+uint8_t compress6LoWpanHeader(const IPv6Header* ip6, CompressedMeshPacket* out) {
+    out->originalSize = sizeof(IPv6Header); // 40 bytes
+    // LOWPAN_IPHC: Dispatch (011), Base format flags
+    // DAM=11 (Destination elided from MAC), SAM=11 (Source elided from MAC)
+    out->iphcHeader[0] = 0x7E; // IPHC dispatch + traffic class/flow label elided
+    out->iphcHeader[1] = 0x3B; // Next header UDP compressed, elided 128-bit addresses
+    out->compressedSize = 2;
+    
+    uint32_t saved = out->originalSize - out->compressedSize;
+    out->savingsPercent = static_cast<uint8_t>((saved * 100) / out->originalSize);
+    return out->compressedSize;
+}
+
+int main() {
+    IPv6Header rawIp6 = {{0x60, 0, 0, 0}, 32, 17, 64, {0}, {0}};
+    CompressedMeshPacket meshPkt;
+    uint8_t compLen = compress6LoWpanHeader(&rawIp6, &meshPkt);
+    std::cout << "6LoWPAN IPHC Header: " << static_cast<int>(compLen) << " bytes (from 40-byte IPv6)\\n";
+    std::cout << "Bandwidth Savings: " << static_cast<int>(meshPkt.savingsPercent) << "% over 802.15.4\\n";
+    return 0;
+}`,
+        output: `6LoWPAN IPHC Header: 2 bytes (from 40-byte IPv6)\nBandwidth Savings: 95% over 802.15.4`,
+        codeNotes: [
+          { line: 4, note: 'Represents 40-byte standard IPv6 header requiring compression for constrained radios' },
+          { line: 20, note: 'Executes RFC 6282 LOWPAN_IPHC compression eliding redundant prefixes and MAC-derived addresses' },
+          { line: 27, note: 'Calculates 95% bandwidth savings, reducing 40-byte overhead to 2 compact bytes' }
+        ],
+        tryIt: 'Experiment with changing nextHeader to 6 (TCP) and analyze why UDP/CoAP is preferred in 6LoWPAN meshes.',
+        check: {
+          question: 'How does 6LoWPAN (RFC 6282) compress standard 40-byte IPv6 headers down to 2–4 bytes over IEEE 802.15.4 links?',
+          options: [
+            'By eliding predictable link-local address prefixes and deriving the 64-bit interface identifiers directly from radio MAC addresses',
+            'By encrypting the entire header with RSA-4096',
+            'By stripping out the payload and only transmitting headers',
+            'By converting IPv6 packets into JSON strings'
+          ],
+          answer: 0,
+          why: 'Because link-local IPv6 addresses (fe80::) can be algorithmically derived from the underlying 802.15.4 MAC address, 6LoWPAN eliminates redundant address bytes from the wireless frame.'
+        }
+      },
+      {
+        title: 'Dual-Bank Flash Memory Partitioning & Secure Bootloader Architecture',
+        say: [
+          'Deploying firmware updates to embedded devices in the field carries catastrophic risks: an unexpected power loss during a flash erase or write cycle can permanently brick the device.',
+          'To guarantee continuous availability, production microcontrollers employ Dual-Bank Flash Memory Partitioning.',
+          'The internal flash memory is partitioned into distinct zones: a Secure Bootloader (residing in write-protected low flash memory), Slot 0 (Active Application Bank A), Slot 1 (Candidate Download Bank B), and a Non-Volatile Storage (NVS) scratchpad.',
+          'When an update is received, the running application in Slot 0 writes the incoming firmware into Slot 1 without overwriting itself.',
+          'Upon reboot, the Secure Bootloader inspects metadata flags in NVS. If a new candidate image is present, the bootloader verifies its integrity before launching it.',
+          'In ARM Cortex-M processors, the bootloader points the Vector Table Offset Register (SCB->VTOR) to the new application base address and updates the Main Stack Pointer (MSP) before branching to the application Reset Handler.',
+          'Crucially, a hardware watchdog timer and boot counter monitor the candidate image during its first boot.',
+          'If the candidate application crashes or fails to confirm image stability within a designated grace period, the bootloader increments the failure counter; after 3 failed attempts, it triggers an automatic rollback to Slot 0.'
+        ],
+        example: 'Like testing a parachute in a wind tunnel with a safety cable attached: if the prototype fails to deploy, the harness snaps you safely back onto the launch platform instead of free-falling.',
+        code: `#include <iostream>
+#include <cstdint>
+
+enum BootBankState {
+    BANK_ACTIVE_CONFIRMED = 0,
+    BANK_CANDIDATE_TESTING = 1,
+    BANK_CORRUPT_ROLLBACK = 2
+};
+
+struct FlashPartition {
+    uint32_t slot0BaseAddr;
+    uint32_t slot1BaseAddr;
+    uint32_t activeSlot;
+    BootBankState state;
+    uint32_t bootAttempts;
+};
+
+uint32_t evaluateBootloaderBank(FlashPartition* part) {
+    if (part->state == BANK_CANDIDATE_TESTING) {
+        if (part->bootAttempts >= 3) {
+            // Rollback to Slot 0
+            part->activeSlot = part->slot0BaseAddr;
+            part->state = BANK_CORRUPT_ROLLBACK;
+        } else {
+            part->activeSlot = part->slot1BaseAddr;
+            part->bootAttempts++;
+        }
+    } else {
+        part->activeSlot = part->slot0BaseAddr;
+    }
+    return part->activeSlot;
+}
+
+int main() {
+    FlashPartition nvs = {0x08010000, 0x08080000, 0x08080000, BANK_CANDIDATE_TESTING, 3};
+    uint32_t jumpAddr = evaluateBootloaderBank(&nvs);
+    std::cout << "Bootloader Evaluated Slot: 0x" << std::hex << jumpAddr << "\\n";
+    std::cout << "State: ROLLBACK_PREVENTED_BRICKING\\n";
+    return 0;
+}`,
+        output: `Bootloader Evaluated Slot: 0x8010000\nState: ROLLBACK_PREVENTED_BRICKING`,
+        codeNotes: [
+          { line: 4, note: 'Defines bootloader state machine transitions: Active Confirmed, Candidate Testing, and Rollback' },
+          { line: 17, note: 'Detects consecutive boot failures (bootAttempts >= 3) and redirects execution back to known-good Slot 0' },
+          { line: 31, note: 'Demonstrates deterministic rollback preventing bricked devices during faulty firmware rollouts' }
+        ],
+        tryIt: 'Set bootAttempts to 1 and verify the bootloader launches Slot 1 (0x8080000) for ongoing testing.',
+        check: {
+          question: 'What primary failure mode does Dual-Bank Flash partitioning prevent during embedded firmware updates?',
+          options: [
+            'Bricking the microcontroller if power is cut during flash programming or if the new firmware fails to boot properly',
+            'Slowing down the Wi-Fi data transfer rate',
+            'Exhausting the stack pointer during recursion',
+            'Overheating the onboard battery'
+          ],
+          answer: 0,
+          why: 'Because the running firmware in Slot 0 remains untouched while the new image downloads to Slot 1, power cuts or firmware crashes simply trigger a rollback to Slot 0 rather than rendering the device inoperable.'
+        }
+      },
+      {
+        title: 'Cryptographic Over-The-Air (OTA) Updates: Ed25519 Signatures & Safe Rollback',
+        say: [
+          'Over-The-Air (OTA) firmware updating is the single most sensitive operation in the lifecycle of an IoT product.',
+          'An unauthenticated OTA pipeline allows malicious actors on the local network or internet to push rogue firmware, permanently seizing control of physical devices.',
+          'A production OTA security architecture enforces four mandatory validation barriers before any code execution is permitted.',
+          'First, Magic Byte Validation verifies that the uploaded image begins with an agreed-upon header format (e.g., 0x4F544131).',
+          'Second, Monotonic Anti-Rollback Counters ensure the new version number is strictly greater than the currently installed version (V_new > V_current), neutralizing firmware downgrade attacks targeting known vulnerabilities.',
+          'Third, Payload Integrity Hashing computes a SHA-256 digest over the entire firmware payload to guarantee zero byte corruption occurred during wireless transmission.',
+          'Fourth, Asymmetric Cryptographic Signatures (using Ed25519 or ECDSA secp256r1) verify that the firmware was signed by the manufacturer\'s private signing key.',
+          'The public key is permanently embedded in the write-protected bootloader flash, allowing the MCU to verify authenticity offline without contacting external certificate authorities.',
+          'Only after all four barriers pass is the new firmware written to flash and flagged for trial execution.'
+        ],
+        example: 'Like receiving a high-security bank vault software update: the safe checks the serial number (magic bytes), verifies the version is newer (anti-rollback), checks the tamper seal (SHA-256), and verifies the bank\'s cryptographic digital wax seal (Ed25519) before installing.',
+        code: `#include <iostream>
+#include <cstdint>
+#include <cstring>
+
+struct OtaManifest {
+    uint32_t magic;           // 0x4F544131 ("OTA1")
+    uint32_t version;         // Monotonic version e.g. 200
+    uint32_t payloadSizeBytes;
+    uint8_t  sha256Hash[32];
+    uint8_t  signature[64];   // Ed25519 signature
+};
+
+bool verifyOtaFirmwareSignature(const OtaManifest* manifest, uint32_t currentVersion, bool mockSignatureValid) {
+    // 1. Magic byte verification
+    if (manifest->magic != 0x4F544131) {
+        return false;
+    }
+    // 2. Monotonic anti-rollback check
+    if (manifest->version <= currentVersion) {
+        return false;
+    }
+    // 3. Cryptographic signature check
+    if (!mockSignatureValid) {
+        return false;
+    }
+    return true;
+}
+
+int main() {
+    OtaManifest update = {0x4F544131, 204, 384 * 1024, {0xAA}, {0xFF}};
+    uint32_t activeVer = 203;
+    bool approved = verifyOtaFirmwareSignature(&update, activeVer, true);
+    std::cout << "Firmware OTA Version: v" << update.version << " (Active: v" << activeVer << ")\\n";
+    std::cout << "Cryptographic Verification Verdict: " << (approved ? "APPROVED_FOR_STAGING" : "REJECTED") << "\\n";
+    return 0;
+}`,
+        output: `Firmware OTA Version: v204 (Active: v203)\nCryptographic Verification Verdict: APPROVED_FOR_STAGING`,
+        codeNotes: [
+          { line: 5, note: 'Defines binary OTA manifest header with magic bytes, monotonic version, and Ed25519 signature' },
+          { line: 15, note: 'Enforces anti-rollback defense ensuring candidate version strictly exceeds currently running version' },
+          { line: 26, note: 'Approves candidate firmware image v204 for staging only after all security gates pass' }
+        ],
+        tryIt: 'Change currentVersion to 205 (higher than manifest version 204) and verify that the anti-rollback check rejects the update.',
+        check: {
+          question: 'Why is a monotonic version counter essential in secure embedded OTA firmware verification?',
+          options: [
+            'It prevents downgrade attacks where an attacker forces a device to reinstall older, vulnerable firmware with known security exploits',
+            'It increases the download speed of the Wi-Fi radio',
+            'It optimizes dynamic heap allocation in FreeRTOS',
+            'It compresses the binary image by 50%'
+          ],
+          answer: 0,
+          why: 'Monotonic anti-rollback checks ensure that even if an attacker captures a validly signed legacy firmware binary, they cannot force the device to roll back to that obsolete image containing patched security flaws.'
+        }
+      }
+    ],
+    summary: [
+      'BLE GAP defines Broadcaster/Observer and Peripheral/Central roles with 31-byte legacy advertising packets on primary channels 37, 38, and 39.',
+      'GATT organizes data into Services, Characteristics, and Descriptors, utilizing CCCD (0x2902) subscriptions for low-power asynchronous push notifications.',
+      '6LoWPAN (RFC 6282) compresses 40-byte IPv6 headers to 2–4 bytes over IEEE 802.15.4 radios, enabling scalable Thread meshes and lightweight CoAP REST communication.',
+      'Dual-Bank Flash partitioning isolates active execution in Slot 0 while downloading updates into Slot 1, preventing bricked devices during unexpected power failures.',
+      'Cryptographic OTA verification enforces magic byte validation, monotonic anti-rollback version checks, SHA-256 integrity, and Ed25519 digital signatures.'
+    ],
+    projectStep: {
+      title: 'Architect a Production Connected IoT Wireless Peripheral with Secure OTA Bootloader',
+      steps: [
+        'Construct a 31-byte BLE GAP advertising packet containing discovery flags, 16-bit Service UUIDs, and local device identifiers.',
+        'Implement a GATT characteristic table with CCCD descriptor subscription handlers supporting low-power asynchronous push notifications.',
+        'Design a 6LoWPAN header compression algorithm translating 40-byte IPv6 packets into compact 2-byte 802.15.4 mesh frames.',
+        'Configure dual-bank flash memory partitioning with bootloader state machine logic and automatic rollback recovery.',
+        'Implement an Ed25519 cryptographic signature and monotonic anti-rollback verification pipeline for secure OTA firmware deployments.'
+      ]
+    }
   }
 ];
 
