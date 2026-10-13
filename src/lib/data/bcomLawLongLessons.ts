@@ -1182,6 +1182,377 @@ Breach Event: target (superior_proposal_accepted) -> Fee Paid: $16,000,000.00 (T
         'Compute antitrust HHI concentration deltas and assess deal protection breakup fee enforceability under Omnicare.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_law',
+    day: 4,
+    title: 'Corporate Governance, Fiduciary Oversight, Shareholder Activism & SEC Compliance',
+    goal: 'Master advanced corporate governance and securities regulatory frameworks: Delaware Caremark and Marchand board oversight and mission-critical risk monitoring, shareholder activism under Section 13(d) Schedule 13D and SEC universal proxy rules, SEC Rule 10b5-1 pre-planned trading plan safe harbors and cooling-off periods, SEC Regulation Fair Disclosure (Reg FD) selective disclosure compliance, and corporate internal investigations under Upjohn attorney-client privilege.',
+    minutes: 45,
+    recap: 'Corporate law governs the internal architecture of the firm and the allocation of decision-making authority among directors, executives, and shareholders. Modern directors must navigate proactive oversight obligations over mission-critical enterprise risks, defend against aggressive hedge fund activist proxy fights, and maintain rigorous securities disclosure compliance.',
+    parts: [
+      {
+        title: 'Board Oversight Fiduciary Duties & The Caremark / Marchand Standard',
+        say: [
+          'Under Delaware General Corporation Law (DGCL) Section 141(a), the business and affairs of a corporation are managed under the direction of its Board of Directors. While the Business Judgment Rule shields informed operational decisions made in good faith, directors face existential personal liability under the Duty of Loyalty for failure of oversight, governed by the landmark In re Caremark International Inc. Derivative Litigation framework.',
+          'To establish liability under Caremark, plaintiffs must prove that the directors acted in bad faith through either of two prongs: (1) The directors utterly failed to implement any reporting or information system or controls, or (2) Having implemented such a system, the directors consciously failed to monitor or oversee its operations, disabling themselves from being informed of risks or consciously disregarding red flags.',
+          'In Marchand v. Barnhill (the Blue Bell Creameries ice cream listeria outbreak case), the Delaware Supreme Court dramatically revitalized Caremark scrutiny for "mission-critical" regulatory risks (e.g. food safety, airplane manufacturing, pharmaceutical trials). Even where a company maintains general compliance programs, if the board agenda contains zero regular committee reports or board discussions specifically monitoring the firm\'s central operational safety risk, the directors are deemed to have acted in bad faith and lose the protection of exculpatory charter provisions.'
+        ],
+        example: 'At an industrial food processor where contamination is a mission-critical risk, board meeting minutes reveal 0 agenda discussions on sanitation, and management ignored 3 out of 4 escalated contamination red flags. The court finds bad faith oversight breach under Marchand, ruling DIRECTOR_OVERSIGHT_BREACH_BAD_FAITH.',
+        code: `# Board Fiduciary Oversight & Caremark / Marchand Bad Faith Evaluator
+def evaluate_caremark_oversight_liability(has_monitoring_system: bool, mission_critical_risk: bool,
+                                          board_agenda_mentions: int, red_flags_escalated: int,
+                                          red_flags_investigated: int) -> dict:
+    # Caremark prong 1: failure to implement reporting system
+    # Caremark prong 2: failure to monitor / conscious disregard of red flags
+    prong1_breach = not has_monitoring_system
+    
+    # Under Marchand v. Barnhill, boards must exercise active oversight over "mission-critical" risks
+    mission_critical_failure = mission_critical_risk and (board_agenda_mentions == 0)
+    
+    unaddressed_red_flags = max(0, red_flags_escalated - red_flags_investigated)
+    prong2_breach = red_flags_escalated > 0 and (unaddressed_red_flags / red_flags_escalated) >= 0.5
+    
+    director_bad_faith = prong1_breach or mission_critical_failure or prong2_breach
+    liability_verdict = "DIRECTOR_OVERSIGHT_BREACH_BAD_FAITH" if director_bad_faith else "BUSINESS_JUDGMENT_RULE_PROTECTED"
+    
+    return {
+        "has_compliance_system": has_monitoring_system,
+        "mission_critical_risk": mission_critical_risk,
+        "board_agenda_mentions": board_agenda_mentions,
+        "unaddressed_red_flags": unaddressed_red_flags,
+        "prong1_system_failure": prong1_breach,
+        "prong2_red_flag_disregard": prong2_breach,
+        "mission_critical_oversight_breach": mission_critical_failure,
+        "legal_verdict": liability_verdict
+    }
+
+p1 = evaluate_caremark_oversight_liability(
+    has_monitoring_system=True, mission_critical_risk=True,
+    board_agenda_mentions=0, red_flags_escalated=4, red_flags_investigated=1
+)
+print(f"Compliance System: {p1['has_compliance_system']} | Mission Critical Risk: {p1['mission_critical_risk']}")
+print(f"Board Mentions: {p1['board_agenda_mentions']} | Unaddressed Red Flags: {p1['unaddressed_red_flags']}")
+print(f"Verdict: {p1['legal_verdict']}")`,
+        output: `Compliance System: True | Mission Critical Risk: True
+Board Mentions: 0 | Unaddressed Red Flags: 3
+Verdict: DIRECTOR_OVERSIGHT_BREACH_BAD_FAITH`,
+        codeNotes: [
+          { line: 6, note: 'Evaluates Caremark Prong 1 testing whether board implemented an enterprise reporting system' },
+          { line: 9, note: 'Applies Marchand v. Barnhill rule requiring proactive board-level monitoring of mission-critical hazards' },
+          { line: 12, note: 'Tests Caremark Prong 2: conscious bad-faith disregard of escalated operational red flags' },
+          { line: 32, note: 'Concludes directors breached oversight duties by failing to discuss safety on board agenda' }
+        ],
+        tryIt: 'Increase board_agenda_mentions to 4 and red_flags_investigated to 4 to see directors regain Business Judgment Rule protection.',
+        check: {
+          question: 'Under the Delaware Supreme Court\'s ruling in Marchand v. Barnhill, what specific standard must a corporate board satisfy regarding "mission-critical" regulatory risks?',
+          options: [
+            'The board must make a good faith effort to implement and actively oversee an explicit, board-level monitoring and reporting system tailored to that specific central operational risk.',
+            'The board must delegate all operating responsibility to junior interns without supervision.',
+            'The board is automatically immune from oversight liability if the company has a generic employee handbook.',
+            'Directors must personally inspect manufacturing factories every single morning.'
+          ],
+          answer: 0,
+          why: 'Chief Justice Strine held that boards cannot satisfy their oversight obligations by relying on general corporate compliance when a mission-critical operational risk is ignored at the board table.',
+          answerIndex: 0,
+          explanation: 'Chief Justice Strine held that boards cannot satisfy their oversight obligations by relying on general corporate compliance when a mission-critical operational risk is ignored at the board table.'
+        }
+      },
+      {
+        title: 'Shareholder Activism, Schedule 13D Filings & Universal Proxy Contests',
+        say: [
+          'Under Section 13(d) of the Securities Exchange Act of 1934, any hedge fund, institutional investor, or group that acquires beneficial ownership of more than 5.0% of a registered public class of voting equity must file a Schedule 13D disclosure with the SEC. Under modernized SEC rules, the filing deadline has been accelerated to 5 business days from crossing the 5% threshold, forcing activist funds to disclose their strategic thesis, share accumulation, and control intentions before building massive stealth stakes.',
+          'Upon filing Schedule 13D, activist shareholders frequently launch public campaigns demanding operational changes: spinning off unprofitable business divisions, increasing share buybacks, trimming executive compensation, or replacing incumbent directors through a contested Proxy Fight. Activists wage proxy solicitations seeking shareholder votes to elect dissident slates at the upcoming annual meeting of shareholders.',
+          'In 2022, the SEC revolutionized proxy contests by mandating Universal Proxy Cards under Rule 14a-19. Previously, shareholders voting by proxy were forced to choose entirely between management\'s ballot or the activist\'s separate ballot. Under universal proxy rules, both management and dissident nominees are listed together on a single universal proxy card, empowering institutional asset managers (e.g. BlackRock, Vanguard) to "split the ticket"—electing 1 or 2 high-caliber activist nominees without handing total board control to the dissident slate.'
+        ],
+        example: 'An activist hedge fund crosses 7.8% beneficial ownership and files Schedule 13D within 4 business days. In a contested universal proxy contest, the dissident slate receives 54.0% shareholder voting support, winning board representation and prompting the outcome ACTIVIST_SLATE_ELECTED_BOARD_CONTROL.',
+        code: `# Shareholder Activism: Schedule 13D Compliance & Universal Proxy Ballot Simulator
+def simulate_activist_schedule13d_and_proxy_vote(beneficial_ownership_pct: float, days_since_crossing: int,
+                                                 total_shares_voting: int, activist_nominee_votes: int,
+                                                 management_nominee_votes: int) -> dict:
+    # SEC Section 13(d) requires filing within 5 business days of crossing 5.0%
+    is_13d_required = beneficial_ownership_pct >= 5.0
+    is_13d_timely = days_since_crossing <= 5
+    
+    # Universal Proxy (Rule 14a-19) enables split-ticket voting
+    total_ballots_cast = activist_nominee_votes + management_nominee_votes
+    activist_support_pct = (activist_nominee_votes / total_shares_voting) * 100.0 if total_shares_voting > 0 else 0.0
+    
+    dissident_won_seats = activist_nominee_votes > management_nominee_votes
+    contest_outcome = "ACTIVIST_SLATE_ELECTED_BOARD_CONTROL" if dissident_won_seats else "MANAGEMENT_SLATE_PRESERVED"
+    
+    return {
+        "beneficial_ownership_pct": beneficial_ownership_pct,
+        "schedule_13d_filing_required": is_13d_required,
+        "schedule_13d_timely": is_13d_timely if is_13d_required else True,
+        "activist_support_pct": round(activist_support_pct, 2),
+        "dissident_slate_victory": dissident_won_seats,
+        "contest_outcome": contest_outcome
+    }
+
+p2 = simulate_activist_schedule13d_and_proxy_vote(
+    beneficial_ownership_pct=7.8, days_since_crossing=4,
+    total_shares_voting=100000000, activist_nominee_votes=54000000,
+    management_nominee_votes=46000000
+)
+print(f"Ownership: {p2['beneficial_ownership_pct']}% | 13D Required: {p2['schedule_13d_filing_required']} (Timely: {p2['schedule_13d_timely']})")
+print(f"Activist Vote: {p2['activist_support_pct']}% -> Winner: {p2['contest_outcome']}")`,
+        output: `Ownership: 7.8% | 13D Required: True (Timely: True)
+Activist Vote: 54.0% -> Winner: ACTIVIST_SLATE_ELECTED_BOARD_CONTROL`,
+        codeNotes: [
+          { line: 6, note: 'Enforces accelerated SEC 5 business day filing window for Schedule 13D upon crossing 5% ownership' },
+          { line: 11, note: 'Calculates shareholder vote tally under SEC Rule 14a-19 Universal Proxy unified ballot rules' },
+          { line: 14, note: 'Determines whether dissident nominees capture pluralistic voting majority to unseat incumbent directors' },
+          { line: 26, note: 'Simulates 54.0% activist proxy triumph resulting in dissident slate victory' }
+        ],
+        tryIt: 'Reduce activist_nominee_votes to 42,000,000 to observe management slate retain board control.',
+        check: {
+          question: 'What revolutionary change did SEC Rule 14a-19 (the Universal Proxy Rule) introduce for contested corporate proxy elections?',
+          options: [
+            'It mandates that both management and dissident director nominees be listed together on a single universal proxy card, allowing shareholders voting by proxy to pick and choose individual candidates from either slate.',
+            'It prohibits institutional investors from voting in board elections.',
+            'It requires all corporate proxy fights to be settled by coin toss.',
+            'It completely eliminates shareholder voting in Delaware corporations.'
+          ],
+          answer: 0,
+          why: 'Universal proxy cards democratize proxy voting by eliminating the constraint where proxy voters had to choose all-or-nothing between competing ballots.',
+          answerIndex: 0,
+          explanation: 'Universal proxy cards democratize proxy voting by eliminating the constraint where proxy voters had to choose all-or-nothing between competing ballots.'
+        }
+      },
+      {
+        title: 'SEC Rule 10b5-1 Executive Trading Plans & Mandatory Cooling-Off Periods',
+        say: [
+          'Under Section 10(b) of the Securities Exchange Act and Rule 10b-5, corporate insiders (directors, executive officers) are strictly prohibited from trading securities while in possession of Material Non-Public Information (MNPI). To enable executives to liquidate equity compensation legally without facing insider trading allegations, the SEC established Rule 10b5-1: creating an affirmative defense if trades are executed pursuant to a binding written contract or pre-planned formula established when the insider had no MNPI.',
+          'Following systemic abuses where executives adopted plans and dumped stock days before catastrophic earnings warnings, the SEC adopted sweeping reforms. Modern Rule 10b5-1 plans enforce strict Mandatory Cooling-Off Periods: for directors and officers, trades cannot execute until the later of (1) 90 days following plan adoption/modification, or (2) 2 business days following the filing of Form 10-Q or Form 10-K covering the fiscal quarter in which the plan was adopted (subject to a maximum 120 days). For non-officer employees, a 30-day cooling-off period applies.',
+          'Additionally, amended Rule 10b5-1 prohibits multiple overlapping plans for the same asset class and restricts single-trade plans to only one plan within any 12-month rolling period. Executive officers and directors must also include representations in the plan certifying that they possess no MNPI and are adopting the plan in good faith. Any deviation or premature execution immediately strips the affirmative defense, exposing the executive to criminal DOJ and civil SEC insider trading prosecution.'
+        ],
+        example: 'An officer adopts a Rule 10b5-1 stock plan on January 15, 2026. The company files Form 10-Q on April 20, 2026. The officer executes a scheduled sale on May 1, 2026 (106 days elapsed, >2 business days post-10-Q) with no overlapping plans. The engine confirms the affirmative defense is valid under amended SEC rules.',
+        code: `# SEC Rule 10b5-1 Affirmative Defense & Cooling-Off Period Compliance Engine
+from datetime import datetime, timedelta
+
+def validate_sec_rule_10b5_1_trading_plan(plan_adoption_str: str, trade_execution_str: str,
+                                          is_officer_or_director: bool, form_10q_filing_str: str,
+                                          has_overlapping_plan: bool, single_trade_in_prior_12m: bool) -> dict:
+    adoption_date = datetime.strptime(plan_adoption_str, "%Y-%m-%d")
+    trade_date = datetime.strptime(trade_execution_str, "%Y-%m-%d")
+    filing_date = datetime.strptime(form_10q_filing_str, "%Y-%m-%d")
+    
+    cooling_off_days = (trade_date - adoption_date).days
+    
+    # SEC rule for officers/directors: cooling-off must be the LATER of:
+    # 1. 90 days after adoption
+    # 2. 2 business days after Form 10-Q/10-K filing (approx +2 days)
+    req_cooling_off = 90 if is_officer_or_director else 30
+    sec_10q_limit = filing_date + timedelta(days=2)
+    
+    satisfied_statutory_days = cooling_off_days >= req_cooling_off
+    satisfied_10q_cooling = trade_date >= sec_10q_limit if is_officer_or_director else True
+    
+    cooling_off_satisfied = satisfied_statutory_days and satisfied_10q_cooling
+    no_overlapping = not has_overlapping_plan
+    no_excess_single_trades = not single_trade_in_prior_12m
+    
+    is_valid_safe_harbor = cooling_off_satisfied and no_overlapping and no_excess_single_trades
+    verdict = "AFFIRMATIVE_DEFENSE_RULE_10B5_1_VALID" if is_valid_safe_harbor else "INVALID_INSIDER_TRADING_EXPOSURE"
+    
+    return {
+        "cooling_off_elapsed_days": cooling_off_days,
+        "cooling_off_statutory_min_days": req_cooling_off,
+        "cooling_off_satisfied": cooling_off_satisfied,
+        "no_overlapping_plans": no_overlapping,
+        "single_trade_restriction_compliant": no_excess_single_trades,
+        "safe_harbor_valid": is_valid_safe_harbor,
+        "legal_verdict": verdict
+    }
+
+p3 = validate_sec_rule_10b5_1_trading_plan(
+    plan_adoption_str="2026-01-15", trade_execution_str="2026-05-01",
+    is_officer_or_director=True, form_10q_filing_str="2026-04-20",
+    has_overlapping_plan=False, single_trade_in_prior_12m=False
+)
+print(f"Cooling Off Elapsed: {p3['cooling_off_elapsed_days']}d (Min: {p3['cooling_off_statutory_min_days']}d) | Satisfied: {p3['cooling_off_satisfied']}")
+print(f"No Overlapping: {p3['no_overlapping_plans']} -> Verdict: {p3['legal_verdict']}")`,
+        output: `Cooling Off Elapsed: 106d (Min: 90d) | Satisfied: True
+No Overlapping: True -> Verdict: AFFIRMATIVE_DEFENSE_RULE_10B5_1_VALID`,
+        codeNotes: [
+          { line: 15, note: 'Calculates statutory 90-day cooling-off duration for Section 16 corporate officers and directors' },
+          { line: 16, note: 'Enforces dual condition requiring 2 business days after Form 10-Q/10-K earnings disclosure' },
+          { line: 22, note: 'Verifies strict prohibition against concurrent overlapping trading plans on same class of stock' },
+          { line: 36, note: 'Confirms valid 10b5-1 affirmative defense insulating trade executed 106 days after adoption' }
+        ],
+        tryIt: 'Change trade_execution_str to "2026-02-15" (31 days) to observe plan invalidation due to cooling-off violation.',
+        check: {
+          question: 'Under amended SEC Rule 10b5-1, what is the mandatory cooling-off period before a corporate officer or director may execute their first trade under a new trading plan?',
+          options: [
+            'The later of 90 days after plan adoption or 2 business days following the filing of the Form 10-Q or Form 10-K for the quarter of adoption.',
+            'Exactly 24 hours after sending an email to the corporate secretary.',
+            'Zero days, provided the executive signs an affidavit of good character.',
+            'Ten continuous business years.'
+          ],
+          answer: 0,
+          why: 'The SEC amended Rule 10b5-1 to enforce a robust cooling-off window ensuring that market earnings are disclosed before any planned insider trades execute.',
+          answerIndex: 0,
+          explanation: 'The SEC amended Rule 10b5-1 to enforce a robust cooling-off window ensuring that market earnings are disclosed before any planned insider trades execute.'
+        }
+      },
+      {
+        title: 'Regulation Fair Disclosure (Reg FD) & Selective Disclosure Compliance',
+        say: [
+          'Prior to the adoption of Regulation Fair Disclosure (Reg FD) by the SEC, corporate management routinely leaked Material Non-Public Information (such as earnings beats, clinical trial results, or merger discussions) to favored Wall Street securities analysts and select institutional hedge funds during closed-door conference calls or private dinners before informing the retail public. This created an unfair information asymmetry that rigged capital markets.',
+          'Reg FD establishes a strict bright-line prohibition: whenever an issuer (or executive speaking on its behalf) intentionally discloses Material Non-Public Information to covered persons (securities analysts, broker-dealers, investment advisers, or institutional shareholders), the company must simultaneously disclose that information to the general public via a broadly disseminated press release, public webcast, or Form 8-K SEC filing.',
+          'In the event of an unintentional or accidental selective disclosure (e.g. an executive inadvertently letting slip confidential quarterly guidance during a breakout chat), Reg FD provides a strict cure safe harbor: the issuer must publicly disclose the information "promptly"—defined as within 24 hours of discovering the disclosure or prior to the commencement of the next trading day on the relevant stock exchange (e.g. 9:30 AM EST on NYSE/Nasdaq). Failing to cure within 24 hours triggers immediate SEC enforcement actions, civil injunctions, and substantial corporate fines.'
+        ],
+        example: 'During a private investor dinner, an executive discloses unannounced quarterly earnings guidance to institutional investors. The corporate communications team files a Form 8-K with the SEC 18 hours later. The audit engine marks the disclosure TIMELY_REMEDIATED_VIA_FORM_8K and issues a clean verdict PROMPTLY_CURED_NO_PENALTY.',
+        code: `# SEC Regulation Fair Disclosure (Reg FD) Selective Disclosure Audit Engine
+def audit_regulation_fd_compliance(audience_category: str, discloses_mnpi: bool,
+                                   is_public_channel: bool, hours_since_disclosure: float,
+                                   form_8k_or_pr_filed: bool) -> dict:
+    # Reg FD targets selective disclosures to analysts, hedge funds, or institutional investors
+    is_covered_recipient = audience_category in ["securities_analysts", "institutional_investors", "hedge_funds"]
+    
+    violation = False
+    remediation_status = "N/A"
+    
+    if discloses_mnpi and is_covered_recipient and not is_public_channel:
+        # Selective disclosure occurred! Must remediate within 24 hours via Form 8-K
+        if form_8k_or_pr_filed and hours_since_disclosure <= 24.0:
+            remediation_status = "TIMELY_REMEDIATED_VIA_FORM_8K"
+        else:
+            violation = True
+            remediation_status = "UNREMEDIATED_REG_FD_ENFORCEMENT_ACTION"
+    else:
+        remediation_status = "NO_SELECTIVE_DISCLOSURE"
+        
+    verdict = "REG_FD_CIVIL_VIOLATION" if violation else ("COMPLIANT_WITH_REG_FD" if not discloses_mnpi or is_public_channel else "PROMPTLY_CURED_NO_PENALTY")
+    
+    return {
+        "audience": audience_category,
+        "disclosed_mnpi": discloses_mnpi,
+        "hours_since_disclosure": hours_since_disclosure,
+        "remediation_status": remediation_status,
+        "sec_enforcement_risk": violation,
+        "verdict": verdict
+    }
+
+p4 = audit_regulation_fd_compliance(
+    audience_category="institutional_investors", discloses_mnpi=True,
+    is_public_channel=False, hours_since_disclosure=18.0, form_8k_or_pr_filed=True
+)
+print(f"Audience: {p4['audience']} | Disclosed MNPI: {p4['disclosed_mnpi']} | Elapsed: {p4['hours_since_disclosure']}h")
+print(f"Remediation: {p4['remediation_status']} -> Verdict: {p4['verdict']}")`,
+        output: `Audience: institutional_investors | Disclosed MNPI: True | Elapsed: 18.0h
+Remediation: TIMELY_REMEDIATED_VIA_FORM_8K -> Verdict: PROMPTLY_CURED_NO_PENALTY`,
+        codeNotes: [
+          { line: 5, note: 'Identifies covered market recipients under Reg FD (analysts, institutional investors, hedge funds)' },
+          { line: 12, note: 'Applies statutory 24-hour cure window for unintentional selective disclosures of non-public info' },
+          { line: 18, note: 'Determines SEC civil enforcement risk when public filing is delayed beyond next trading day' },
+          { line: 32, note: 'Validates timely Form 8-K cure within 18 hours, successfully averting civil penalties' }
+        ],
+        tryIt: 'Set form_8k_or_pr_filed=False to observe failure to cure result in REG_FD_CIVIL_VIOLATION.',
+        check: {
+          question: 'If a corporate executive accidentally discloses material non-public financial guidance during an off-the-record chat with a securities analyst, what is the company\'s legal obligation under SEC Regulation FD?',
+          options: [
+            'The company must promptly disclose that information to the general public (via Form 8-K or press release) within 24 hours or before the start of the next trading day.',
+            'The executive must ask the analyst to delete their handwritten notes.',
+            'The company must immediately buy back all outstanding stock.',
+            'The company has no legal obligation if the conversation took place over dinner.'
+          ],
+          answer: 0,
+          why: 'Under Reg FD Rule 101, inadvertent selective disclosures of MNPI must be publicly disseminated within 24 hours to level the playing field for retail investors.',
+          answerIndex: 0,
+          explanation: 'Under Reg FD Rule 101, inadvertent selective disclosures of MNPI must be publicly disseminated within 24 hours to level the playing field for retail investors.'
+        }
+      },
+      {
+        title: 'Corporate Internal Investigations, Upjohn Warnings & Attorney-Client Privilege',
+        say: [
+          'When allegations of accounting fraud, bribery under the Foreign Corrupt Practices Act (FCPA), or antitrust price-fixing surface inside an enterprise, the Audit Committee of the Board retains independent external white-collar counsel to conduct a Corporate Internal Investigation. Counsel interviews employees, reviews encrypted communications, and authors an investigative memorandum.',
+          'Under the United States Supreme Court\'s landmark Upjohn Co. v. United States decision, attorney-client privilege in the corporate context is not limited to senior executives ("control group"); it extends to communications between company counsel and rank-and-file corporate employees at all levels, provided the communication is made at the direction of corporate superiors for the purpose of securing legal advice for the enterprise.',
+          'However, counsel conducting employee interviews must strictly administer the "Upjohn Warning" (the Corporate Miranda warning). Counsel must clearly inform the employee: (1) Counsel represents the corporation, not the individual employee personally, (2) The interview is protected by attorney-client privilege, but that privilege belongs exclusively to the corporation, not the employee, and (3) The corporation alone possesses the legal power to waive the privilege and disclose all interview notes to the Department of Justice (DOJ) or SEC without the employee\'s consent.',
+          'If an employee mistakenly believes that the investigating attorney represents them personally and the attorney fails to administer a clear Upjohn warning, the employee can move to suppress interview transcripts or assert conflict of interest against counsel. Conversely, when the company cooperates with federal prosecutors under the DOJ Corporate Enforcement Policy, the Board frequently elects to waive privilege, turning over interview memos to earn extraordinary leniency credit while exposing culpable executives to personal indictment.'
+        ],
+        example: 'During an FCPA investigation, external counsel administers an Upjohn warning to a regional sales director who acknowledges that privilege belongs solely to the company. When the Board votes to cooperate with the DOJ, the privilege is waived, changing the status to PRIVILEGE_WAIVED_PRODUCIBLE_TO_DOJ.',
+        code: `# Corporate Internal Investigations: Upjohn Privilege & Board Waiver Engine
+def evaluate_internal_investigation_upjohn_privilege(upjohn_warning_given: bool, employee_acknowledged: bool,
+                                                     legal_advice_purpose: bool, disclosed_to_external_auditor: bool,
+                                                     board_waives_privilege: bool) -> dict:
+    # Upjohn privilege prongs:
+    # 1. Communication made by employee to legal counsel acting as legal counsel (legal advice purpose)
+    # 2. Upjohn corporate Miranda warning administered
+    # 3. No inadvertent third-party waiver
+    has_initial_privilege = upjohn_warning_given and employee_acknowledged and legal_advice_purpose and (not disclosed_to_external_auditor)
+    
+    # Privilege belongs exclusively to the corporation (the Board)
+    employee_can_assert = False # Employee NEVER owns corporate privilege
+    
+    if board_waives_privilege and has_initial_privilege:
+        corporation_waived = True
+        status = "PRIVILEGE_WAIVED_PRODUCIBLE_TO_DOJ"
+    elif has_initial_privilege:
+        corporation_waived = False
+        status = "CONFIDENTIAL_PROTECTED_WORK_PRODUCT"
+    else:
+        corporation_waived = False
+        status = "UNPROTECTED_NO_ATTORNEY_CLIENT_PRIVILEGE"
+        
+    return {
+        "upjohn_warning_given": upjohn_warning_given,
+        "employee_owns_privilege": employee_can_assert,
+        "initial_privilege_established": has_initial_privilege,
+        "board_waived_to_regulators": corporation_waived,
+        "investigation_document_status": status
+    }
+
+p5 = evaluate_internal_investigation_upjohn_privilege(
+    upjohn_warning_given=True, employee_acknowledged=True,
+    legal_advice_purpose=True, disclosed_to_external_auditor=False,
+    board_waives_privilege=True
+)
+print(f"Upjohn Warning: {p5['upjohn_warning_given']} | Employee Owns Privilege: {p5['employee_owns_privilege']}")
+print(f"Initial Privilege: {p5['initial_privilege_established']} | Board Waived: {p5['board_waived_to_regulators']}")
+print(f"Status: {p5['investigation_document_status']}")`,
+        output: `Upjohn Warning: True | Employee Owns Privilege: False
+Initial Privilege: True | Board Waived: True
+Status: PRIVILEGE_WAIVED_PRODUCIBLE_TO_DOJ`,
+        codeNotes: [
+          { line: 8, note: 'Applies Supreme Court Upjohn doctrine establishing corporate privilege across all employee tiers' },
+          { line: 11, note: 'Enforces fundamental rule: attorney-client privilege belongs solely to the entity, never the employee' },
+          { line: 13, note: 'Models Board of Directors unilateral waiver to disclose interview admissions to DOJ/SEC' },
+          { line: 28, note: 'Confirms valid corporate waiver enabling cooperation credit under federal enforcement guidelines' }
+        ],
+        tryIt: 'Set board_waives_privilege=False to observe the investigative memo remain CONFIDENTIAL_PROTECTED_WORK_PRODUCT.',
+        check: {
+          question: 'What is the critical legal significance of an "Upjohn Warning" administered by corporate counsel during an employee internal investigation interview?',
+          options: [
+            'It informs the employee that counsel represents the corporation, not the individual, and that the attorney-client privilege belongs solely to the company, which may unilaterally waive it and disclose the statements to the government.',
+            'It reads the employee their constitutional Fifth Amendment Miranda rights before criminal arrest.',
+            'It guarantees that the employee cannot be fired from their job.',
+            'It transfers ownership of corporate stock options to the employee\'s spouse.'
+          ],
+          answer: 0,
+          why: 'Under Upjohn, the company owns the privilege; the warning prevents the employee from claiming a personal attorney-client relationship that would block the company from cooperating with regulators.',
+          answerIndex: 0,
+          explanation: 'Under Upjohn, the company owns the privilege; the warning prevents the employee from claiming a personal attorney-client relationship that would block the company from cooperating with regulators.'
+        }
+      }
+    ],
+    summary: [
+      'Board Oversight Fiduciary Duties: The Caremark and Marchand doctrine imposes liability for bad faith oversight failure when boards utterly ignore mission-critical enterprise hazards.',
+      'Shareholder Activism & Universal Proxy: Section 13(d) accelerates Schedule 13D filings to 5 business days; Rule 14a-19 universal proxies enable split-ticket voting in contested elections.',
+      'SEC Rule 10b5-1 Insider Trading: Enforces mandatory cooling-off periods (90 days / 2 days post-10-Q), prohibits overlapping plans, and restricts single-trade plans.',
+      'Regulation Fair Disclosure (Reg FD): Outlaws selective disclosure of MNPI to analysts; provides a strict 24-hour cure window via public Form 8-K dissemination.',
+      'Internal Investigations & Upjohn Warning: Protects corporate attorney-client privilege across employee tiers while vesting exclusive waiver authority in the Board of Directors.'
+    ],
+    projectStep: {
+      title: 'Corporate Governance, Securities Compliance & Internal Investigation Control Suite',
+      steps: [
+        'Evaluate board fiduciary compliance under Delaware Caremark and Marchand mission-critical oversight standards.',
+        'Simulate activist shareholder Schedule 13D filings and model contested universal proxy ballot election tallies.',
+        'Audit executive pre-planned trading arrangements under amended SEC Rule 10b5-1 cooling-off requirements.',
+        'Implement Regulation FD selective disclosure cure protocols and model Upjohn internal investigation privilege defenses.'
+      ]
+    }
   }
 ];
 

@@ -406,6 +406,61 @@ test('Block 115: B.Com Corporate Law Day 3: M&A Due Diligence, Reps & Warranties
   assert.ok(lesson.parts[4].code?.includes('evaluate_deal_protection_and_breakup_fees'));
 });
 
+test('Block 116: B.Com Corporate Law Day 4: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_law', 4);
+  assert.ok(lesson, 'bcom_law Day 4 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_law');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5, 'bcom_law Day 4 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_law'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 116: B.Com Corporate Law Day 4: Caremark Oversight, Activism 13D, 10b5-1 & Upjohn Snippets Verification', () => {
+  const lesson = BCOM_LAW_LONG_LESSONS[3];
+  assert.ok(lesson, 'BCOM_LAW_LONG_LESSONS[3] must exist');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Board Oversight.*Caremark.*Marchand/i);
+  assert.ok(lesson.parts[0].code?.includes('evaluate_caremark_oversight_liability'));
+  assert.match(lesson.parts[1].title, /Shareholder Activism.*Schedule 13D.*Universal Proxy/i);
+  assert.ok(lesson.parts[1].code?.includes('simulate_activist_schedule13d_and_proxy_vote'));
+  assert.match(lesson.parts[2].title, /SEC Rule 10b5-1.*Cooling-Off/i);
+  assert.ok(lesson.parts[2].code?.includes('validate_sec_rule_10b5_1_trading_plan'));
+  assert.match(lesson.parts[3].title, /Regulation Fair Disclosure.*Reg FD/i);
+  assert.ok(lesson.parts[3].code?.includes('audit_regulation_fd_compliance'));
+  assert.match(lesson.parts[4].title, /Corporate Internal Investigations.*Upjohn/i);
+  assert.ok(lesson.parts[4].code?.includes('evaluate_internal_investigation_upjohn_privilege'));
+});
+
+
 
 
 
