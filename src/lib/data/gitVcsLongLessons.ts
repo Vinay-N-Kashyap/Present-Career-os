@@ -398,6 +398,218 @@ wc -l git_log.txt`,
         'Inspect the resulting commit graph and verify a clean linear history.'
       ]
     }
+  },
+  {
+    coursePrefix: 'git_vcs',
+    day: 3,
+    title: 'Git Plumbing Architecture, DAG Traversal, Reflog Recovery & Bisect',
+    goal: 'Master Git internal architecture: the 4 plumbing object types (Blobs, Trees, Commits, Annotated Tags), cryptographic SHA-1 Merkle DAG traversal, disaster recovery using Git Reflog, automated regression pinpointing via git bisect run, and local commit history curation using interactive rebase.',
+    minutes: 40,
+    recap: 'In Day 2, we mastered lightweight branch pointers, fast-forward vs 3-way merges, merge conflict markers, .gitignore security patterns, and linear rebase topologies. Now, in Day 3, we master Git deep internals: plumbing objects (blobs, trees, commits, tags), SHA-1 content addressing, DAG traversal, reflog disaster recovery, and automated bisect regression hunting.',
+    parts: [
+      {
+        title: 'Git Plumbing Objects: Blobs, Trees, Commits & Annotated Tags',
+        say: [
+          'At its lowest foundational level, Git is not just a version control system—it is a content-addressable key-value object store located in .git/objects.',
+          'Every object stored in Git is compressed with zlib and identified by a 40-character hexadecimal SHA-1 hash computed from its type, byte length, and contents.',
+          'Git defines four fundamental plumbing object types: Blobs store raw file contents (with zero filename or permissions metadata); Trees store directory structures mapping filenames and permissions to blob and child tree SHAs; Commits point to a top-level root tree, record author/committer timestamps, commit messages, and point to parent commit SHAs; Annotated Tags point to a commit with an immutable GPG signature and message.',
+          'Because an object SHA is computed from its contents and parents, Git forms a tamper-evident cryptographic Merkle tree where altering any historical file changes every subsequent commit hash.',
+          'Understanding these four object types demystifies why Git operations are so blindingly fast: comparing two revisions simply requires comparing top-level tree hashes in memory.'
+        ],
+        example: 'Think of a shipping container manifest. The cardboard box (blob) holds raw goods without any label. The manifest sheet (tree) records which box contains what item. The captain departure log signed with timestamps and previous port records (commit) tracks the journey. The customs wax seal (tag) certifies clearance at the destination.',
+        code: `echo "BLOB:   4b825dc642cb6eb9a060e54bf8d69288fbee4904" > objects.txt
+echo "TREE:   d8329fc1cc938780ffdd9f94e0d364e0ea74f579" >> objects.txt
+echo "COMMIT: f077af716a4a15a8128392182093847120938471" >> objects.txt
+echo "TAG:    v1.0.0-release" >> objects.txt
+cat objects.txt
+grep "BLOB" objects.txt
+grep "COMMIT" objects.txt`,
+        output: `BLOB:   4b825dc642cb6eb9a060e54bf8d69288fbee4904\nTREE:   d8329fc1cc938780ffdd9f94e0d364e0ea74f579\nCOMMIT: f077af716a4a15a8128392182093847120938471\nTAG:    v1.0.0-release\nBLOB:   4b825dc642cb6eb9a060e54bf8d69288fbee4904\nCOMMIT: f077af716a4a15a8128392182093847120938471`,
+        codeNotes: [
+          { line: 1, note: 'Defines 40-character SHA-1 hash for raw file blob object' },
+          { line: 2, note: 'Defines tree object representing directory hierarchy' },
+          { line: 3, note: 'Defines commit object linking tree, author, and parent history' },
+          { line: 6, note: 'Filters raw blob content address' },
+          { line: 7, note: 'Filters root commit object' }
+        ],
+        tryIt: 'Add another object line for a child tree and inspect with cat objects.txt.',
+        check: {
+          question: 'What information is stored inside a Git "blob" object in the .git/objects database?',
+          options: [
+            'Only the raw file contents; filenames, timestamps, and file permissions are stored in tree objects',
+            'The complete directory path, author email, and branch name',
+            'The commit message and GPG public key',
+            'The network IP address of the remote repository'
+          ],
+          answer: 0,
+          why: 'A Git blob stores only pure file payload bytes. Filenames and permission modes are stored exclusively in tree objects that point to the blob SHA.'
+        }
+      },
+      {
+        title: 'The Git Directed Acyclic Graph (DAG) & Tree Traversal',
+        say: [
+          'Commit history in Git is structured as a Directed Acyclic Graph (DAG). Each commit node contains arrows pointing backwards to its parent commits.',
+          'The graph is directed because edges have direction (child to parent), and acyclic because time flows strictly forward—it is mathematically impossible for a commit to be its own ancestor.',
+          'Root commits (the initial commit) have zero parents. Standard feature commits have exactly one parent. Merge commits have two parents (or more in an octopus merge).',
+          'When Git calculates log history or checks whether a branch is ahead/behind upstream, it performs a topological sort and breadth-first search across the DAG.',
+          'Understanding the DAG allows developers to visualize branching, cherry-picking, and rebasing as mathematical graph transformations.'
+        ],
+        example: 'Think of a family genealogy tree where every child points backwards to biological parents. Because time moves forward, no child can be their own grandparent (acyclic), and marriage unifies two family branches into a child with two parents (merge commit).',
+        code: `echo "C0 (initial, parents: none)" > dag.txt
+echo "C1 (feature-base, parents: C0)" >> dag.txt
+echo "C2 (main-tip, parents: C1)" >> dag.txt
+echo "C3 (feature-tip, parents: C1)" >> dag.txt
+echo "M4 (merge-commit, parents: C2 C3)" >> dag.txt
+cat dag.txt
+grep "parents: C2 C3" dag.txt`,
+        output: `C0 (initial, parents: none)\nC1 (feature-base, parents: C0)\nC2 (main-tip, parents: C1)\nC3 (feature-tip, parents: C1)\nM4 (merge-commit, parents: C2 C3)\nM4 (merge-commit, parents: C2 C3)`,
+        codeNotes: [
+          { line: 1, note: 'Root commit C0 with zero parents' },
+          { line: 2, note: 'Feature base commit C1 pointing to C0' },
+          { line: 5, note: 'Merge commit M4 uniting divergent branches C2 and C3 with two parents' },
+          { line: 7, note: 'Verifies two-parent integration node' }
+        ],
+        tryIt: 'Add a new commit C5 branching off M4 and verify its parent pointer.',
+        check: {
+          question: 'Why is Git commit history described as a "Directed Acyclic Graph" (DAG)?',
+          options: [
+            'Because commit arrows point backwards to parents in one direction and history cannot loop back onto itself',
+            'Because commits are stored in a circular linked list',
+            'Because branches can only exist in prime numbers',
+            'Because the graph is reset whenever the computer restarts'
+          ],
+          answer: 0,
+          why: 'In Git DAG, edges have direction (child pointing to parents) and cycles are mathematically impossible because each commit hash depends on its immutable historical ancestors.'
+        }
+      },
+      {
+        title: 'Git Reflog: Disaster Recovery & Rescuing "Lost" Commits',
+        say: [
+          'Every software engineer eventually experiences a heart-stopping moment: running git reset --hard HEAD~3 or deleting a branch by accident and believing weeks of code have vanished into thin air.',
+          'In Git, commits are almost never deleted immediately. Even when a branch pointer is deleted or reset, the commit objects remain in .git/objects as dangling commits until garbage collection runs (typically 30 to 90 days later).',
+          'The Git Reference Log (git reflog) is a local, private journal that records every single time HEAD moved in your repository: checkouts, commits, rebases, resets, and merges.',
+          'By running git reflog, you can inspect the exact commit SHA where HEAD stood before the catastrophic reset (e.g. HEAD@{1}).',
+          'To recover the lost code instantly, you simply run git checkout -b rescue-branch HEAD@{1} or git reset --hard HEAD@{1}, restoring your working tree to full health.'
+        ],
+        example: 'Think of a security building badge swipe log. Even if someone accidentally deletes an employee office directory entry (deleting a branch pointer), the security turnstile swipe log (reflog) still shows the exact timestamp and room number they were in, allowing security to walk right back to their desk and recover their belongings.',
+        code: `echo "7a05e8c HEAD@{0}: commit: feat(curriculum): executive leadership" > reflog.log
+echo "65e2afb HEAD@{1}: commit: feat(curriculum): linux process lifecycle" >> reflog.log
+echo "06a328a HEAD@{2}: reset: moving to HEAD~1 (ACCIDENTAL_DROP)" >> reflog.log
+echo "987057a HEAD@{3}: checkout: moving from main to feature" >> reflog.log
+head -n 2 reflog.log
+grep "ACCIDENTAL_DROP" reflog.log`,
+        output: `7a05e8c HEAD@{0}: commit: feat(curriculum): executive leadership\n65e2afb HEAD@{1}: commit: feat(curriculum): linux process lifecycle\n06a328a HEAD@{2}: reset: moving to HEAD~1 (ACCIDENTAL_DROP)`,
+        codeNotes: [
+          { line: 1, note: 'Latest HEAD position after recent commit' },
+          { line: 3, note: 'Records catastrophic accidental hard reset event' },
+          { line: 5, note: 'Inspects top 2 latest reflog movements' },
+          { line: 6, note: 'Pinpoints exact commit SHA prior to the destructive reset for instant rescue' }
+        ],
+        tryIt: 'Run head -n 3 reflog.log to see all 3 preceding HEAD positions.',
+        check: {
+          question: 'What is the purpose of the Git Reflog (git reflog)?',
+          options: [
+            'It provides a local journal tracking every movement of HEAD, enabling recovery of commits lost during hard resets or deleted branches',
+            'It compresses image files before uploading to GitHub',
+            'It automatically creates pull requests on GitHub',
+            'It compiles TypeScript code into WebAssembly'
+          ],
+          answer: 0,
+          why: 'The reflog records every time HEAD updates locally. Because commits are not immediately pruned, developers can use reflog pointers to recover dropped branches and accidental hard resets.'
+        }
+      },
+      {
+        title: 'Automated Regression Hunting with git bisect run',
+        say: [
+          'When a regression bug appears in production and hundreds of commits were merged over the past month, finding the exact commit that introduced the bug manually is grueling and error-prone.',
+          'Git provides a powerful diagnostic tool called git bisect, which uses a binary search algorithm across the commit DAG to pinpoint the faulty commit in O(log N) steps.',
+          'You inform Git of a known broken state (git bisect bad) and a known working historical commit (git bisect good v1.0.0). Git calculates the midpoint commit, checks it out, and prompts you to test.',
+          'Even more powerfully, git bisect run <test-script.sh> automates the entire process: Git executes the test script at each midpoint step. If the script exits with code 0, Git marks it good; if it exits non-zero, Git marks it bad.',
+          'In a history of 1,024 commits, git bisect finds the exact offending commit in just 10 automated test steps, saving hours of manual detective work.'
+        ],
+        example: 'Think of an electrician testing a long strand of 1,000 holiday lights where one bulb is broken. Instead of testing all 1,000 bulbs one by one, the electrician tests bulb 500. If the first half is dark, the break is in the first 500; the electrician then tests bulb 250. In 10 cuts, the broken bulb is isolated.',
+        code: `echo "TEST_RANGE: 1024 commits (Binary Search Depth: 10)" > bisect_run.txt
+echo "STEP 01: commit_512 -> PASS (good)" >> bisect_run.txt
+echo "STEP 02: commit_768 -> FAIL (bad)" >> bisect_run.txt
+echo "STEP 03: commit_640 -> PASS (good)" >> bisect_run.txt
+echo "CULPRIT: commit_704 introduced regression" >> bisect_run.txt
+cat bisect_run.txt
+grep "CULPRIT" bisect_run.txt`,
+        output: `TEST_RANGE: 1024 commits (Binary Search Depth: 10)\nSTEP 01: commit_512 -> PASS (good)\nSTEP 02: commit_768 -> FAIL (bad)\nSTEP 03: commit_640 -> PASS (good)\nCULPRIT: commit_704 introduced regression\nCULPRIT: commit_704 introduced regression`,
+        codeNotes: [
+          { line: 1, note: '1,024 commits requires at most 10 binary search iterations' },
+          { line: 2, note: 'Midpoint 512 passes verification test' },
+          { line: 3, note: 'Step 768 fails, narrowing search window between 512 and 768' },
+          { line: 5, note: 'Pinpoints exact culprit commit 704 that introduced the defect' }
+        ],
+        tryIt: 'Inspect the contents of bisect_run.txt using cat bisect_run.txt.',
+        check: {
+          question: 'What algorithmic time complexity does git bisect achieve when locating a regression across N commits?',
+          options: [
+            'O(log N) through binary search partitioning',
+            'O(N^2) quadratic search',
+            'O(N!) factorial permutation search',
+            'O(1) constant time instant lookup'
+          ],
+          answer: 0,
+          why: 'git bisect repeatedly halves the commit search interval, achieving logarithmic O(log N) efficiency (e.g., 10 steps for 1,024 commits, 20 steps for 1,000,000 commits).'
+        }
+      },
+      {
+        title: 'Interactive Rebase (git rebase -i): Squashing & Curating PRs',
+        say: [
+          'During development, developers create messy temporary commits: "fix typo", "wip", "still debugging", "forgot semicolon". Pushing such commit noise to main degrades git log readability and complicates code reviews.',
+          'Interactive Rebase (git rebase -i HEAD~N) opens a todo list allowing developers to curate and polish their local commit history before opening a pull request.',
+          'The interactive rebase todo list provides several powerful verbs: pick keeps the commit as-is; reword edits the commit message; squash melts the commit into the previous commit while combining messages; fixup melts the commit but discards the message; drop deletes the commit entirely.',
+          'By squashing 10 micro-commits into 2 well-documented, atomic commits with clear rationale, you provide clean, reviewable PRs that senior engineers can approve swiftly.',
+          'Curating commits into logical units with interactive rebase is the universal mark of professional software craftsmanship.'
+        ],
+        example: 'Think of a film editor editing a feature movie. The raw daily camera takes have dozens of false starts, coughs, and bloopers (scratch commits). Before sending the final cut to movie theaters, the editor cuts out the bloopers and splices the scenes into two cohesive, cinematic acts (interactive rebase squashing).',
+        code: `echo "pick   c101 feat: add user auth schema" > rebase_todo.txt
+echo "squash c102 fix: typo in password hash" >> rebase_todo.txt
+echo "squash c103 test: add password unit tests" >> rebase_todo.txt
+echo "reword c104 docs: update readme api guide" >> rebase_todo.txt
+cat rebase_todo.txt
+grep "squash" rebase_todo.txt | wc -l`,
+        output: `pick   c101 feat: add user auth schema\nsquash c102 fix: typo in password hash\nsquash c103 test: add password unit tests\nreword c104 docs: update readme api guide\n2`,
+        codeNotes: [
+          { line: 1, note: 'Initial foundation commit preserved with pick' },
+          { line: 2, note: 'Squashes typo fix into parent commit' },
+          { line: 3, note: 'Squashes test coverage into parent feature commit' },
+          { line: 4, note: 'Rewords documentation commit message for clarity' },
+          { line: 6, note: 'Counts squashed micro-commits consolidated into parent (2)' }
+        ],
+        tryIt: 'Add a drop line to delete an unwanted debug commit.',
+        check: {
+          question: 'In an interactive rebase todo list (git rebase -i), what does the "squash" verb accomplish?',
+          options: [
+            'It combines the commit into the previous commit on the list while merging their commit messages',
+            'It immediately publishes the code to npm',
+            'It encrypts the branch with a password',
+            'It resets the working directory to an empty state'
+          ],
+          answer: 0,
+          why: 'The squash command melds a commit into the commit directly above it in the rebase instruction list, allowing developers to consolidate messy work-in-progress commits into clean atomic units.'
+        }
+      }
+    ],
+    summary: [
+      'Git objects (Blobs, Trees, Commits, Tags) are stored in .git/objects compressed with zlib and identified by 40-character SHA-1 hashes.',
+      'Commit history forms a Directed Acyclic Graph (DAG) of parent-child relationships traversed via topological sorting.',
+      'The Git Reflog records every local movement of HEAD, enabling instant recovery of commits dropped during accidental hard resets.',
+      'git bisect runs automated binary search across the DAG to pinpoint regression-introducing commits in O(log N) time.',
+      'Interactive rebase (git rebase -i) allows developers to squash, reword, and curate messy local commits into clean pull requests.'
+    ],
+    projectStep: {
+      title: 'Execute Git Internals Disaster Recovery & Automated Bisect Hunting',
+      steps: [
+        'Inspect the four plumbing object types in the Git object database using cat and grep.',
+        'Trace the Directed Acyclic Graph (DAG) parent linkages of a 3-way merge commit.',
+        'Recover an accidentally dropped commit using the Git Reference Log (reflog).',
+        'Simulate automated binary search regression triage using git bisect run.',
+        'Curate a feature branch commit history using interactive rebase squashing.'
+      ]
+    }
   }
 ];
 

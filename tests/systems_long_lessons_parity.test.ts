@@ -254,4 +254,61 @@ test('Systems Long Lessons: comp_fund Day 3 Process Lifecycle, Signals, Memory &
   assert.ok(res5.stdout?.includes('STDERR: fd_2 connected'), 'Must verify stderr fd_2');
 });
 
+test('Systems Long Lessons: git_vcs Day 3 Objects, DAG, Reflog & Bisect Verification', async () => {
+  const gitVcsD3 = getLongLesson('git_vcs', 3);
+  assert.ok(gitVcsD3, 'git_vcs Day 3 must resolve');
+  assert.equal(gitVcsD3.day, 3);
+  assert.equal(gitVcsD3.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(gitVcsD3);
+  const totalMin = estimateLessonMinutes(gitVcsD3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < gitVcsD3.parts.length; i++) {
+    const part = gitVcsD3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code must contain bash commands`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Part 1: Git Object Model (Blobs, Trees, Commits, Tags)
+  const res1 = await executeBashSuite(gitVcsD3.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 objects must succeed');
+  assert.ok(res1.stdout?.includes('BLOB:   4b825dc642cb6eb9a060e54bf8d69288fbee4904'), 'Must list blob object');
+  assert.ok(res1.stdout?.includes('COMMIT: f077af716a4a15a8128392182093847120938471'), 'Must list commit object');
+
+  // Part 2: DAG Traversal & Merge Commits
+  const res2 = await executeBashSuite(gitVcsD3.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 DAG traversal must succeed');
+  assert.ok(res2.stdout?.includes('M4 (merge-commit, parents: C2 C3)'), 'Must identify merge commit with 2 parents');
+
+  // Part 3: Git Reflog Disaster Recovery
+  const res3 = await executeBashSuite(gitVcsD3.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 reflog must succeed');
+  assert.ok(res3.stdout?.includes('ACCIDENTAL_DROP'), 'Must isolate accidental drop event in reflog');
+
+  // Part 4: Bisect Regression Hunting
+  const res4 = await executeBashSuite(gitVcsD3.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 bisect must succeed');
+  assert.ok(res4.stdout?.includes('CULPRIT: commit_704 introduced regression'), 'Must isolate culprit commit');
+
+  // Part 5: Interactive Rebase Squashing
+  const res5 = await executeBashSuite(gitVcsD3.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 interactive rebase must succeed');
+  assert.ok(res5.stdout?.includes('pick   c101 feat: add user auth schema'), 'Must preserve base pick commit');
+  assert.ok(res5.stdout?.includes('2'), 'Must count 2 squashed commits');
+});
+
+
 
