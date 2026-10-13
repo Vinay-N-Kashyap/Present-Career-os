@@ -159,3 +159,67 @@ test('B.Com Forensic Audit Day 2: Beneish M-Score, Altman Z-Score & Digital Fore
   assert.ok(lesson2.parts[4].code?.includes('triage_whistleblower_allegation'));
 });
 
+test('Block 118: B.Com Corporate Tax Day 3: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_tax', 3);
+  assert.ok(lesson, 'bcom_tax Day 3 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_tax');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5, 'bcom_tax Day 3 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_tax'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 118: B.Com Corporate Tax Day 3: DEMPE, RPSM, Bilateral APA, 163(j) & CbCR Verification', () => {
+  const lesson = BCOM_TAX_LONG_LESSONS[2];
+  assert.ok(lesson, 'BCOM_TAX_LONG_LESSONS[2] must exist');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have >= 3 codeNotes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /DEMPE Framework.*Intangibles/i);
+  assert.ok(lesson.parts[0].code?.includes('evaluate_dempe_intangible_profit_allocation'));
+  assert.match(lesson.parts[1].title, /Residual Profit Split Method.*RPSM/i);
+  assert.ok(lesson.parts[1].code?.includes('compute_residual_profit_split_method'));
+  assert.match(lesson.parts[2].title, /Advance Pricing Agreements.*APA.*MAP/i);
+  assert.ok(lesson.parts[2].code?.includes('model_bilateral_apa_and_map_double_tax_relief'));
+  assert.match(lesson.parts[3].title, /Thin Capitalization.*163\(j\)/i);
+  assert.ok(lesson.parts[3].code?.includes('calculate_section_163j_interest_limitation'));
+  assert.match(lesson.parts[4].title, /Country-by-Country Reporting.*CbCR/i);
+  assert.ok(lesson.parts[4].code?.includes('audit_cbcr_jurisdictional_risk_profile'));
+
+  // Metrics & Project step validation
+  assert.ok(lesson.summary && lesson.summary.length >= 4, 'Summary must have >= 4 bullet points');
+  assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, 'projectStep must have title and >= 4 steps');
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be >= 8`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
+});
+
+
