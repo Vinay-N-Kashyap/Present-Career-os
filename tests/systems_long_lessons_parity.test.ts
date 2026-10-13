@@ -33,8 +33,13 @@ test('Systems Long Lessons: Resolution & Structural Integrity for comp_fund, git
   assert.equal(iotEmbLesson2.day, 2);
   assert.equal(iotEmbLesson2.parts.length, 5);
 
+  const compFundLesson2 = getLongLesson('comp_fund', 2);
+  assert.ok(compFundLesson2, 'comp_fund Day 2 lesson must be resolved');
+  assert.equal(compFundLesson2.day, 2);
+  assert.equal(compFundLesson2.parts.length, 5);
+
   // Verify all check questions across all parts
-  for (const lesson of [compFundLesson, gitVcsLesson, iotEmbLesson, iotEmbLesson2]) {
+  for (const lesson of [compFundLesson, compFundLesson2, gitVcsLesson, iotEmbLesson, iotEmbLesson2]) {
     for (const part of lesson.parts) {
       assert.ok(part.check.question.length > 10, 'Question must be substantial');
       assert.ok(part.check.options.length >= 2, 'Options must have at least 2 choices');
@@ -56,6 +61,39 @@ test('Systems Long Lessons: comp_fund Day 1 Bash Snippets Execute Successfully i
   assert.equal(res4.allPassed, true, 'Part 4 grep and pipeline must succeed');
   assert.ok(res4.stdout?.includes('ERROR database connection timeout'), 'Grep must filter errors');
   assert.ok(res4.stdout?.includes('2'), 'Piped wc -l must count 2 errors');
+});
+
+test('Systems Long Lessons: comp_fund Day 2 Bash Snippets Execute Successfully in POSIX Runner', async () => {
+  const compFundLesson2 = getLongLesson('comp_fund', 2)!;
+
+  // Part 1: permissions long listing
+  const res1 = await executeBashSuite(compFundLesson2.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 permissions must succeed');
+  assert.ok(res1.stdout?.includes('-rw-r--r--'), 'Must report permission modes');
+  assert.ok(res1.stdout?.includes('keys.pem'), 'Must list keys.pem');
+
+  // Part 2: head -n 2
+  const res2 = await executeBashSuite(compFundLesson2.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 head must succeed');
+  assert.ok(res2.stdout?.includes('PAGE 1: Authentication Gateway'), 'Must include page 1');
+  assert.ok(res2.stdout?.includes('PAGE 2: Customer Dashboard'), 'Must include page 2');
+
+  // Part 3: grep -i, sort, uniq
+  const res3 = await executeBashSuite(compFundLesson2.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 grep -i pipeline must succeed');
+  assert.ok(res3.stdout?.includes('database timeout'), 'Must match database errors');
+
+  // Part 4: wc -l metric aggregation
+  const res4 = await executeBashSuite(compFundLesson2.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 wc -l must succeed');
+  assert.ok(res4.stdout?.includes('4'), 'Must count 4 total nodes');
+  assert.ok(res4.stdout?.includes('3'), 'Must count 3 active nodes');
+
+  // Part 5: chained && execution
+  const res5 = await executeBashSuite(compFundLesson2.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 && chain must succeed');
+  assert.ok(res5.stdout?.includes('Build Success'), 'Must print Build Success');
+  assert.ok(res5.stdout?.includes('bundle.js'), 'Must verify bundle artifact');
 });
 
 test('Systems Long Lessons: iot_emb Day 1 C++ Snippets Pass AST Invariant Verification', async () => {
