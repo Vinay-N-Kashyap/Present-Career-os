@@ -384,5 +384,415 @@ print(f"True Net Delivered Margin:   {res['Net_Delivered_Margin_Pct']}%")`,
         'Simulate multi-warehouse inventory order routing to eliminate split shipment delivery cost penalties.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ecom',
+    day: 2,
+    title: 'Omnichannel Retail Supply Chains, Inventory Turns & DTC Unit Economics',
+    goal: 'Master modern omnichannel commerce engineering: calculating Inventory Turnover Ratios and Days Sales of Inventory (DSI), architecting Bullwhip Effect dampening via vendor-managed inventory (VMI), modeling Direct-to-Consumer (DTC) unit economics across blended CAC and contribution margin tiers, engineering real-time Distributed Order Management (DOM) routing algorithms, and implementing fraud velocity screening rules.',
+    minutes: 44,
+    recap: 'On Day 1 we analyzed marketplace platform take-rates, algorithmic dynamic pricing, and reverse logistics return rates. Today we transition into physical omnichannel execution: optimizing inventory turnover velocity, eliminating supply chain bullwhip oscillations, calculating DTC contribution margins, and engineering fraud prevention gates.',
+    parts: [
+      {
+        title: 'Inventory Turnover Velocity, DSI & Working Capital Traps',
+        say: [
+          'In physical and digital commerce, cash is king, but inventory is where cash goes to die.',
+          'Every pallet of unsold stock sitting inside an e-commerce fulfillment warehouse consumes working capital and bleeds cash through annual holding costs (warehousing rent, climate control, insurance, shrinkage, and obsolescence) typically running 20% to 30% of inventory value.',
+          'Retail efficiency is measured by the Inventory Turnover Ratio: Inventory Turnover = Cost of Goods Sold (COGS) / Average Inventory.',
+          'The reciprocal metric is Days Sales of Inventory (DSI): DSI = (365 / Inventory Turnover), representing the average number of days required to turn inventory into cash.',
+          'Agile fast-fashion leaders like Zara turn inventory 10 to 12 times per year (DSI of ~30-35 days), freeing up operating liquidity to design fresh collections. In contrast, slow-moving traditional retailers turning inventory 2 to 3 times per year face heavy seasonal markdowns and cash crunches.'
+        ],
+        example: 'Think of owning a fruit stand versus a canned goods store. If you buy $1,000 of fresh strawberries and sell them out every 3 days, you turn your inventory 120 times a year and generate massive compounding cash flow on minimal working capital. But if you buy $50,000 of specialty canned truffles that sit on the shelf for two years, your capital is locked up and gathering dust.',
+        code: `# Simulation: Inventory Turnover Velocity & Holding Cost Burden Analyzer
+def analyze_inventory_velocity(
+    annual_cogs: float,
+    beginning_inventory: float,
+    ending_inventory: float,
+    annual_holding_cost_rate_pct: float = 25.0
+) -> dict:
+    average_inventory = (beginning_inventory + ending_inventory) / 2.0
+    turnover_ratio = round(annual_cogs / average_inventory, 2) if average_inventory > 0 else 0.0
+    days_sales_of_inventory = round(365.0 / turnover_ratio, 1) if turnover_ratio > 0 else 999.0
+    annual_holding_cost = average_inventory * (annual_holding_cost_rate_pct / 100.0)
+
+    velocity_grade = (
+        "WORLD_CLASS_AGILE" if turnover_ratio >= 8.0
+        else "HEALTHY_RETAIL_AVERAGE" if turnover_ratio >= 4.0
+        else "SLOW_MOVING_CAPITAL_TRAP"
+    )
+
+    return {
+        "Annual_COGS": f"\${round(annual_cogs / 1e6, 2)}M",
+        "Average_Inventory": f"\${round(average_inventory / 1e6, 2)}M",
+        "Turnover_Ratio": f"{turnover_ratio}x",
+        "Days_Sales_Inventory": f"{days_sales_of_inventory} days",
+        "Annual_Holding_Cost": f"\${round(annual_holding_cost / 1e3, 1)}k",
+        "Velocity_Rating": velocity_grade
+    }
+
+inv_res = analyze_inventory_velocity(18000000.0, 2800000.0, 3200000.0, 25.0)
+print(f"Turnover: {inv_res['Turnover_Ratio']} | DSI: {inv_res['Days_Sales_Inventory']}")
+print(f"Holding Cost: {inv_res['Annual_Holding_Cost']} | Rating: {inv_res['Velocity_Rating']}")`,
+        output: `Turnover: 6.0x | DSI: 60.8 days\nHolding Cost: $750.0k | Rating: HEALTHY_RETAIL_AVERAGE`,
+        codeNotes: [
+          { line: 7, note: 'Calculates average inventory balance as midpoint of beginning and ending inventory' },
+          { line: 8, note: 'Computes annual turnover velocity: $18M COGS divided by $3.0M average inventory = 6.0x' },
+          { line: 9, note: 'Translates turnover into Days Sales of Inventory: 365 / 6.0 = 60.8 days inventory conversion cycle' },
+          { line: 25, note: 'Evaluates inventory carrying costs ($750k annual holding burden) and rates performance' }
+        ],
+        tryIt: 'Increase ending_inventory from $3.2M to $9.0M to see turnover plunge to 3.05x and rating flip to SLOW_MOVING_CAPITAL_TRAP.',
+        check: {
+          question: 'Why does an increase in an e-commerce retailer\'s Inventory Turnover Ratio directly enhance corporate return on equity (ROE)?',
+          options: [
+            'Because generating equivalent sales volume with less average inventory frees up cash flow, reduces inventory holding/warehousing costs, and lowers markdown obsolescence write-downs.',
+            'Because higher inventory turnover allows the company to eliminate corporate income taxes.',
+            'Because shipping carriers legally discount parcel shipping rates by 90% for high-turnover retailers.',
+            'Because the company no longer needs to maintain financial accounting records.'
+          ],
+          answer: 0,
+          why: 'Faster inventory turnover reduces tied-up working capital and minimizes annual holding and obsolescence costs, directly accelerating capital velocity and return on invested capital.',
+          answerIndex: 0,
+          explanation: 'Faster inventory turnover reduces tied-up working capital and minimizes annual holding and obsolescence costs, directly accelerating capital velocity and return on invested capital.'
+        }
+      },
+      {
+        title: 'The Bullwhip Effect & Supply Chain Variance Amplification',
+        say: [
+          'In consumer goods supply chains, minor fluctuations in end-consumer purchasing patterns trigger massive, chaotic swings upstream through the manufacturing tiers: this phenomenon is the Bullwhip Effect.',
+          'First documented by Jay Forrester at MIT, the Bullwhip Effect reveals that demand variability increases at each progressive echelon: Consumer -> Retailer -> Wholesaler -> Manufacturer -> Raw Materials Supplier.',
+          'A modest 5% uptick in retail demand causes a retailer to order 10% more from the wholesaler to build a safety stock cushion. The wholesaler, observing the 10% surge, orders 20% more from the manufacturer. The manufacturer, anticipating exponential growth, doubles factory production orders.',
+          'When retail demand stabilizes, upstream tiers find themselves drowning in colossal excess inventory, triggering sudden order cancellations, factory layoffs, and severe write-downs.',
+          'The primary root causes include: Demand Signal Distortion, Order Batching (waiting to order full truckloads), Price Speculation (promotional discounts and phantom orders), and Shortage Gaming.',
+          'Modern e-commerce enterprises mitigate the bullwhip effect by sharing real-time Point-of-Sale (POS) scanner data with upstream suppliers and transitioning to Vendor-Managed Inventory (VMI).'
+        ],
+        example: 'Think of cracking a whip. When you move your wrist just two inches, the wave travels down the leather cord and amplifies exponentially until the tip cracks at the speed of sound. In supply chains, your wrist is the retail shopper buying one extra pack of diapers, and the cracking whip tip is the paper pulp mill doubling timber clearcutting.',
+        code: `# Simulation: 4-Tier Supply Chain Bullwhip Variance Amplifier Engine
+from typing import List
+
+def simulate_bullwhip_effect(
+    consumer_demand_orders: List[float],
+    safety_stock_buffer_multiplier: float = 1.25
+) -> dict:
+    # 4 Tiers: Consumer -> Retailer -> Distributor -> Manufacturer
+    # Each tier adds safety buffer and order batching distortion
+    retailer_orders = [round(x * safety_stock_buffer_multiplier, 1) for x in consumer_demand_orders]
+    distributor_orders = [round(x * safety_stock_buffer_multiplier, 1) for x in retailer_orders]
+    manufacturer_orders = [round(x * safety_stock_buffer_multiplier, 1) for x in distributor_orders]
+
+    def variance(data: List[float]) -> float:
+        mean = sum(data) / len(data)
+        return sum((x - mean)**2 for x in data) / len(data)
+
+    var_consumer = round(variance(consumer_demand_orders), 2)
+    var_manufacturer = round(variance(manufacturer_orders), 2)
+    bullwhip_ratio = round(var_manufacturer / var_consumer, 2) if var_consumer > 0 else 1.0
+
+    return {
+        "Consumer_Variance": var_consumer,
+        "Retailer_Orders": retailer_orders,
+        "Distributor_Orders": distributor_orders,
+        "Manufacturer_Orders": manufacturer_orders,
+        "Manufacturer_Variance": var_manufacturer,
+        "Bullwhip_Amplification_Ratio": f"{bullwhip_ratio}x",
+        "Distortion_Verdict": "SEVERE_BULLWHIP_AMPLIFICATION" if bullwhip_ratio >= 2.0 else "MILD_DISTORTION"
+    }
+
+demand = [100.0, 105.0, 110.0, 102.0, 108.0]
+bullwhip_res = simulate_bullwhip_effect(demand, 1.25)
+print(f"Consumer Variance: {bullwhip_res['Consumer_Variance']} -> Manufacturer: {bullwhip_res['Manufacturer_Variance']}")
+print(f"Bullwhip Ratio: {bullwhip_res['Bullwhip_Amplification_Ratio']} | Status: {bullwhip_res['Distortion_Verdict']}")`,
+        output: `Consumer Variance: 13.6 -> Manufacturer: 52.73\nBullwhip Ratio: 3.88x | Status: SEVERE_BULLWHIP_AMPLIFICATION`,
+        codeNotes: [
+          { line: 9, note: 'Simulates progressive order buffer compounding across the 4 supply chain echelons' },
+          { line: 15, note: 'Calculates statistical variance at consumer point of sale versus manufacturer production floor' },
+          { line: 19, note: 'Quantifies bullwhip amplification ratio: manufacturer variance divided by consumer variance' },
+          { line: 31, note: 'Reveals 3.88x variance explosion as retail orders compound into severe factory overproduction' }
+        ],
+        tryIt: 'Lower safety_stock_buffer_multiplier to 1.05 (representing tight real-time POS data sharing) to observe Bullwhip Ratio drop to 1.34x.',
+        check: {
+          question: 'Which of the following operational practices is most effective at dampening the Bullwhip Effect in multi-echelon retail supply chains?',
+          options: [
+            'Sharing real-time retail Point-of-Sale (POS) demand data transparently with upstream suppliers and implementing Vendor-Managed Inventory (VMI).',
+            'Ordering inventory exclusively once every two years in gigantic ocean containers.',
+            'Refusing to share sales figures with manufacturers to protect trade secrets.',
+            'Offering frequent, unannounced 50% discount flash sales that artificially create demand spikes.'
+          ],
+          answer: 0,
+          why: 'When all supply chain tiers base replenishment decisions on genuine end-consumer checkout data rather than distorted intermediate orders, artificial variance amplification is eliminated.',
+          answerIndex: 0,
+          explanation: 'When all supply chain tiers base replenishment decisions on genuine end-consumer checkout data rather than distorted intermediate orders, artificial variance amplification is eliminated.'
+        }
+      },
+      {
+        title: 'Direct-to-Consumer (DTC) 3-Tier Contribution Margin Waterfall',
+        say: [
+          'Over the past decade, dozens of high-profile Direct-to-Consumer (DTC) brands raised hundreds of millions in venture capital, scaled to $100M+ in top-line revenue, and promptly imploded into bankruptcy.',
+          'Why? Because their executives celebrated top-line Gross Merchandise Value while ignoring the brutal realities of the DTC Contribution Margin Waterfall.',
+          'In DTC e-commerce, profitability must be evaluated across three strict contribution margin tiers:',
+          'Contribution Margin 1 (CM1): Net Revenue minus Cost of Goods Sold (COGS). Net Revenue explicitly deducts promotional discounts and customer returns/refunds (often 15-25% in apparel). CM1 represents gross product manufacturing profit.',
+          'Contribution Margin 2 (CM2): CM1 minus Variable Order Fulfillment costs (warehouse pick/pack labor, packaging boxes, carrier shipping labels) and Payment Gateway processing fees (typically 2.9% + $0.30). CM2 represents post-fulfillment operational profit.',
+          'Contribution Margin 3 (CM3): CM2 minus Customer Acquisition Cost (Paid Performance Ad Spend on Meta, Google, and TikTok). CM3 represents true first-order marketing profitability.',
+          'If CM3 is negative, the retailer loses money on every first-time customer delivered, relying entirely on repeat repurchase rates that frequently fail to materialize.'
+        ],
+        example: 'Imagine selling a $100 watch online. After a 10% discount and 12% returns, Net Revenue is $78. COGS is $23.40, leaving CM1 at $54.60. Pick, pack, shipping, and credit card fees cost $10.76, leaving CM2 at $43.84. But if Facebook ads cost $50 per acquired customer, your CM3 is -$6.16! You lose $6.16 on every watch you ship, burning cash with every sale.',
+        code: `# Simulation: Direct-to-Consumer (DTC) 3-Tier Contribution Margin Waterfall
+def compute_dtc_contribution_waterfall(
+    gross_revenue: float,
+    discount_pct: float,
+    return_refund_pct: float,
+    cogs_pct: float,
+    pick_pack_ship_per_order: float,
+    payment_gateway_fee_pct: float,
+    total_orders_shipped: int,
+    total_paid_ad_spend: float
+) -> dict:
+    gross_discounts = gross_revenue * (discount_pct / 100.0)
+    gross_returns = gross_revenue * (return_refund_pct / 100.0)
+    net_revenue = gross_revenue - gross_discounts - gross_returns
+
+    # CM1: Net Revenue - COGS
+    cogs_dollars = net_revenue * (cogs_pct / 100.0)
+    cm1_dollars = net_revenue - cogs_dollars
+    cm1_margin_pct = round((cm1_dollars / net_revenue) * 100.0, 1)
+
+    # CM2: CM1 - Variable Fulfillment & Merchant Processing
+    fulfillment_costs = total_orders_shipped * pick_pack_ship_per_order
+    payment_fees = net_revenue * (payment_gateway_fee_pct / 100.0)
+    cm2_dollars = cm1_dollars - fulfillment_costs - payment_fees
+    cm2_margin_pct = round((cm2_dollars / net_revenue) * 100.0, 1)
+
+    # CM3: CM2 - Paid Ad Spend (True Contribution Margin after Ad Acquisition)
+    cm3_dollars = cm2_dollars - total_paid_ad_spend
+    cm3_margin_pct = round((cm3_dollars / net_revenue) * 100.0, 1)
+    blended_cac = round(total_paid_ad_spend / total_orders_shipped, 2) if total_orders_shipped > 0 else 0.0
+
+    return {
+        "Net_Revenue": f"\${round(net_revenue / 1e6, 2)}M",
+        "CM1_Gross_Profit": f"\${round(cm1_dollars / 1e6, 2)}M ({cm1_margin_pct}%)",
+        "CM2_Post_Fulfillment": f"\${round(cm2_dollars / 1e6, 2)}M ({cm2_margin_pct}%)",
+        "CM3_Post_Ad_Spend": f"\${round(cm3_dollars / 1e6, 2)}M ({cm3_margin_pct}%)",
+        "Blended_CAC": f"\${blended_cac}",
+        "Unit_Economics_Health": "SUSTAINABLE_PROFITABLE_DTC" if cm3_dollars > 0 else "UNDERWATER_BURNING_CASH"
+    }
+
+dtc_res = compute_dtc_contribution_waterfall(
+    gross_revenue=5000000.0,
+    discount_pct=10.0,
+    return_refund_pct=12.0,
+    cogs_pct=30.0,
+    pick_pack_ship_per_order=8.50,
+    payment_gateway_fee_pct=2.9,
+    total_orders_shipped=50000,
+    total_paid_ad_spend=1200000.0
+)
+print(f"Net Revenue: {dtc_res['Net_Revenue']} | CM1: {dtc_res['CM1_Gross_Profit']}")
+print(f"CM2: {dtc_res['CM2_Post_Fulfillment']} | CM3: {dtc_res['CM3_Post_Ad_Spend']}")
+print(f"Blended CAC: {dtc_res['Blended_CAC']} | Status: {dtc_res['Unit_Economics_Health']}")`,
+        output: `Net Revenue: $3.9M | CM1: $2.73M (70.0%)\nCM2: $2.19M (56.2%) | CM3: $0.99M (25.4%)\nBlended CAC: $24.0 | Status: SUSTAINABLE_PROFITABLE_DTC`,
+        codeNotes: [
+          { line: 15, note: 'Calculates CM1 after stripping gross discounts and estimated customer return allowances' },
+          { line: 19, note: 'Calculates CM2 by deducting pick, pack, outbound shipping, and payment gateway fees' },
+          { line: 24, note: 'Calculates CM3 by subtracting digital advertising spend to reveal true first-order profitability' },
+          { line: 36, note: 'Confirms healthy operation with $990k in CM3 profit (25.4% margin) and a $24.00 blended CAC' }
+        ],
+        tryIt: 'Increase total_paid_ad_spend from $1.2M to $2.5M to observe CM3 turn negative (-$310k) and flip status to UNDERWATER_BURNING_CASH.',
+        check: {
+          question: 'What does a negative Contribution Margin 3 (CM3) indicate about a Direct-to-Consumer (DTC) e-commerce business model?',
+          options: [
+            'The company is losing money on every initial customer order after factoring in product costs, warehouse fulfillment, shipping, and digital ad acquisition spend.',
+            'The company is generating infinite shareholder returns through tax shelters.',
+            'The website domain has expired and requires renewal.',
+            'The delivery carrier has lost all parcels in transit.'
+          ],
+          answer: 0,
+          why: 'Negative CM3 proves that customer acquisition costs exceed first-order contribution margin; the company destroys capital unless repeat repurchase rates are exceptionally high.',
+          answerIndex: 0,
+          explanation: 'Negative CM3 proves that customer acquisition costs exceed first-order contribution margin; the company destroys capital unless repeat repurchase rates are exceptionally high.'
+        }
+      },
+      {
+        title: 'Distributed Order Management (DOM) & Omnichannel Routing Algorithms',
+        say: [
+          'In modern omnichannel retail, orders do not simply flow to the nearest warehouse.',
+          'Large retailers operate a hybrid fulfillment network consisting of Central Distribution Centers (DCs), Regional Sortation Hubs, and hundreds of physical Retail Stores capable of Ship-from-Store (SFS) and Buy Online Pick Up in Store (BOPIS).',
+          'Distributed Order Management (DOM) engines evaluate incoming orders in real time using multi-variable cost optimization algorithms.',
+          'Key decision inputs include: inventory availability, delivery transit zone distance, shipping carrier rate tables, store fulfillment labor capacity, and "Markdown Avoidance".',
+          'Markdown Avoidance is a game-changing DOM tactic: if a retail store in Dallas has 10 units of a winter coat that is about to go on a 50% clearance discount, the DOM engine intentionally routes a full-price online order to that Dallas store instead of a central warehouse.',
+          'This fulfills the customer order while simultaneously clearing aging inventory at full retail price, preventing massive margin liquidation write-downs.'
+        ],
+        example: 'Imagine a customer in Fort Worth orders a pair of jeans. The central warehouse is 650 miles away with an $11.50 shipping fee. A local Dallas retail store is 45 miles away with a $7.20 shipping fee and holds aging inventory flagged for clearance. The DOM engine routes the order to the Dallas store, saving $4.30 in parcel freight and saving the retailer from taking a $25 clearance markdown.',
+        code: `# Simulation: Distributed Order Management (DOM) Multi-Node Fulfillment Router
+from dataclasses import dataclass
+from typing import List
+
+@dataclass
+class FulfillmentNode:
+    node_id: str
+    node_type: str # 'Central_DC', 'Regional_Hub', 'Retail_Store'
+    inventory_units: int
+    distance_miles: float
+    shipping_cost_base: float
+    aging_markdown_flag: bool
+
+def route_distributed_order(
+    item_id: str,
+    units_requested: int,
+    candidate_nodes: List[FulfillmentNode]
+) -> dict:
+    eligible_nodes = [n for n in candidate_nodes if n.inventory_units >= units_requested]
+    if not eligible_nodes:
+        return {"Status": "BACKORDER_NO_STOCK", "Assigned_Node": None}
+
+    # Optimization score: prioritize markdown stores to avoid write-offs, then lowest shipping cost
+    def node_priority_key(n: FulfillmentNode):
+        markdown_discount = -15.0 if n.aging_markdown_flag else 0.0
+        return n.shipping_cost_base + (n.distance_miles * 0.05) + markdown_discount
+
+    best_node = min(eligible_nodes, key=node_priority_key)
+
+    return {
+        "Item": item_id,
+        "Assigned_Node": best_node.node_id,
+        "Node_Type": best_node.node_type,
+        "Distance": f"{best_node.distance_miles} miles",
+        "Base_Shipping": f"\${best_node.shipping_cost_base}",
+        "Markdown_Mitigation": "YES (CLEARING AGING STOCK)" if best_node.aging_markdown_flag else "NO",
+        "Routing_Strategy": "OPTIMAL_OMNICHANNEL_ALLOCATION"
+    }
+
+nodes = [
+    FulfillmentNode("DC_Central_01", "Central_DC", 500, 650.0, 11.50, False),
+    FulfillmentNode("Store_Dallas_04", "Retail_Store", 12, 45.0, 7.20, True),
+    FulfillmentNode("Hub_Regional_02", "Regional_Hub", 150, 180.0, 8.90, False)
+]
+dom_res = route_distributed_order("SKU_4910", 2, nodes)
+print(f"Item: {dom_res['Item']} -> Node: {dom_res['Assigned_Node']} ({dom_res['Node_Type']})")
+print(f"Markdown Clear: {dom_res['Markdown_Mitigation']} | Distance: {dom_res['Distance']}")`,
+        output: `Item: SKU_4910 -> Node: Store_Dallas_04 (Retail_Store)\nMarkdown Clear: YES (CLEARING AGING STOCK) | Distance: 45.0 miles`,
+        codeNotes: [
+          { line: 5, note: 'FulfillmentNode captures node classification, stock depth, transit distance, and markdown flags' },
+          { line: 20, note: 'Optimization objective balances transit distance, base carrier fees, and clearance avoidance credits' },
+          { line: 24, note: 'Selects optimal fulfillment node minimizing total landing cost and inventory write-down exposure' },
+          { line: 36, note: 'Demonstrates order routed to Store_Dallas_04 to clear aging stock while cutting transit miles' }
+        ],
+        tryIt: 'Set aging_markdown_flag=False on Store_Dallas_04 and observe the routing engine re-evaluate priority against Regional_Hub_02.',
+        check: {
+          question: 'What is the primary financial benefit of implementing "Markdown Avoidance" logic in an omnichannel Distributed Order Management (DOM) routing engine?',
+          options: [
+            'Fulfilling full-price online customer orders directly from retail store locations that hold excess aging inventory, thereby preventing costly clearance markdowns and preserving merchandise margin.',
+            'Eliminating all local and state sales tax obligations on online purchases.',
+            'Forcing customers to pick up orders in person regardless of their selected delivery preference.',
+            'Replacing third-party parcel carriers with in-store employees on bicycles.'
+          ],
+          answer: 0,
+          why: 'Shipping from stores with slow-moving inventory monetizes aging units at full retail prices before end-of-season clearance markdowns destroy product margins.',
+          answerIndex: 0,
+          explanation: 'Shipping from stores with slow-moving inventory monetizes aging units at full retail prices before end-of-season clearance markdowns destroy product margins.'
+        }
+      },
+      {
+        title: 'E-Commerce Fraud Velocity Rules & Chargeback Prevention',
+        say: [
+          'In physical retail, Chip-and-PIN and contactless payments have largely eliminated counterfeit card fraud.',
+          'Consequently, criminal syndicates shifted online into Card-Not-Present (CNP) transactions, targeting e-commerce checkout engines with stolen credential dumps, automated card-testing bots, and account takeovers (ATO).',
+          'Beyond direct merchandise loss, retailers face punitive payment network penalties: Visa and Mastercard place merchants into Excessive Chargeback Monitoring Programs if the chargeback-to-transaction ratio crosses 0.9% to 1.0%.',
+          'Breaching this threshold results in $50-$100 penalty fees per chargeback, mandatory forensic audits, and potential termination of credit card processing merchant accounts.',
+          'To combat CNP fraud in real time without causing checkout friction for honest buyers, merchants deploy rule-based and machine-learning fraud engines.',
+          'Key fraud signals include: IP-to-billing country geographic discrepancies, Address Verification Service (AVS) postal code mismatches, CVV security failures, transaction velocity surges (e.g. 5 orders in 10 minutes from the same device fingerprint), and anonymous VPN/proxy detection.',
+          'Orders scoring high fraud probability are automatically blocked, while intermediate risks are routed to manual risk review queues.'
+        ],
+        example: 'Imagine a transaction originating from an anonymous VPN IP address in Lagos, Nigeria, using a credit card registered to an address in New York with a failed postal code match, and attempting four consecutive transactions in 20 minutes. The fraud engine scores this order at 95/100 and immediately rejects it, preventing a $480 product loss and an inevitable $50 chargeback fee.',
+        code: `# Simulation: Real-Time E-Commerce Fraud Velocity & Risk Scoring Filter
+from dataclasses import dataclass
+from typing import List
+
+@dataclass
+class OrderRiskSignals:
+    order_id: str
+    ip_country: str
+    billing_country: str
+    avs_postal_match: bool
+    cvv_match: bool
+    attempts_last_hour_same_ip: int
+    is_vpn_proxy: bool
+    order_total_dollars: float
+
+def score_ecommerce_fraud_risk(order: OrderRiskSignals) -> dict:
+    risk_score = 0
+    flags = []
+
+    if order.ip_country != order.billing_country:
+        risk_score += 25
+        flags.append("GEO_MISMATCH_IP_VS_BILLING")
+    if not order.avs_postal_match:
+        risk_score += 20
+        flags.append("AVS_POSTAL_CODE_FAILED")
+    if not order.cvv_match:
+        risk_score += 30
+        flags.append("CVV_SECURITY_CODE_FAILED")
+    if order.attempts_last_hour_same_ip >= 4:
+        risk_score += 35
+        flags.append("EXCESSIVE_VELOCITY_ATTEMPTS")
+    if order.is_vpn_proxy:
+        risk_score += 15
+        flags.append("ANONYMOUS_PROXY_VPN_DETECTED")
+
+    if risk_score >= 60:
+        decision = "AUTO_REJECT_FRAUD_PREVENTED"
+    elif risk_score >= 30:
+        decision = "HOLD_MANUAL_FRAUD_REVIEW"
+    else:
+        decision = "AUTO_APPROVED_LOW_RISK"
+
+    return {
+        "OrderID": order.order_id,
+        "Risk_Score": f"{risk_score}/100",
+        "Decision": decision,
+        "Triggered_Flags": flags
+    }
+
+order1 = OrderRiskSignals("ORD_99421", "Nigeria", "United States", False, True, 6, True, 480.0)
+fraud_res = score_ecommerce_fraud_risk(order1)
+print(f"Order: {fraud_res['OrderID']} | Score: {fraud_res['Risk_Score']} -> Decision: {fraud_res['Decision']}")
+print(f"Flags: {fraud_res['Triggered_Flags']}")`,
+        output: `Order: ORD_99421 | Score: 95/100 -> Decision: AUTO_REJECT_FRAUD_PREVENTED\nFlags: ['GEO_MISMATCH_IP_VS_BILLING', 'AVS_POSTAL_CODE_FAILED', 'EXCESSIVE_VELOCITY_ATTEMPTS', 'ANONYMOUS_PROXY_VPN_DETECTED']`,
+        codeNotes: [
+          { line: 5, note: 'OrderRiskSignals captures multi-layered geo, identity, velocity, and proxy telemetry' },
+          { line: 18, note: 'Assigns weighted risk penalty points for AVS failures, CVV mismatches, and geo discrepancies' },
+          { line: 26, note: 'Heavily penalizes velocity surges (>=4 attempts in 1 hour) indicating automated bot fraud testing' },
+          { line: 40, note: 'Scores high-risk transaction at 95/100, automatically blocking transaction to avoid chargeback' }
+        ],
+        tryIt: 'Set attempts_last_hour_same_ip=1, avs_postal_match=True, and is_vpn_proxy=False on order1 to observe score drop to 25 and auto-approve.',
+        check: {
+          question: 'What is the critical commercial danger for an online merchant if their credit card chargeback-to-transaction ratio exceeds 1.0%?',
+          options: [
+            'Payment networks (Visa/Mastercard) place the merchant in Excessive Chargeback Monitoring Programs, imposing heavy monthly fines, increased processing fees, and potential termination of credit card processing abilities.',
+            'The merchant is legally required to provide free merchandise to all customers for thirty days.',
+            'The merchant\'s physical retail stores are immediately seized by local municipal councils.',
+            'All existing customer accounts are automatically converted to cash-on-delivery.'
+          ],
+          answer: 0,
+          why: 'Crossing the 1% chargeback threshold threatens payment gateway connectivity; card networks penalize excessive chargebacks with steep fines and eventual merchant account revocation.',
+          answerIndex: 0,
+          explanation: 'Crossing the 1% chargeback threshold threatens payment gateway connectivity; card networks penalize excessive chargebacks with steep fines and eventual merchant account revocation.'
+        }
+      }
+    ],
+    summary: [
+      'Inventory Turnover Velocity: Ratio = COGS / Average Inventory; faster turns reduce Days Sales of Inventory (DSI) and eliminate 20-30% annual holding cost capital traps.',
+      'Bullwhip Effect Dampening: Small retail demand fluctuations amplify into chaotic factory oscillations upstream; POS data transparency and VMI eliminate order batching distortion.',
+      'DTC Contribution Waterfall: Distinguishes CM1 (Gross Profit), CM2 (Post-Fulfillment), and CM3 (Post-Ad Spend); negative CM3 proves unsustainable customer acquisition.',
+      'Distributed Order Management: Algorithmic routing balances shipping transit zones, store fulfillment capacity, and clearance markdown avoidance.',
+      'Fraud Velocity Screening: Evaluates AVS, CVV, geo-IP mismatch, and attempt velocity to block Card-Not-Present fraud before breaching 1% chargeback monitoring thresholds.'
+    ],
+    projectStep: {
+      title: 'Omnichannel E-Commerce Supply Chain & Fraud Gate Architecture',
+      steps: [
+        'Calculate inventory turnover ratios and Days Sales of Inventory (DSI) to identify working capital drag across product categories.',
+        'Simulate a 4-tier supply chain to evaluate bullwhip variance amplification and quantify POS data smoothing benefits.',
+        'Model the 3-tier DTC contribution margin waterfall and configure a real-time fraud velocity screening engine with automated threshold rules.'
+      ]
+    }
   }
 ];
+
