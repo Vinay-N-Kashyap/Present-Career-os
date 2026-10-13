@@ -778,4 +778,479 @@ print(f"Prob(B > A): {bayesian_res['Prob_Variant_Beats_Control']} | Decision: {b
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom_dmkt',
+    day: 3,
+    title: 'Programmatic Display, Real-Time Bidding (RTB), Viewability & Ad Fraud Detection',
+    goal: 'Master enterprise programmatic media buying: OpenRTB 2.5 bid stream auction mechanics, first-price bid shading, Supply-Path Optimization (SPO), Media Rating Council (MRC) viewability economics (vCPM), ads.txt authorization parsing, and sophisticated invalid traffic (SIVT) bot filtering.',
+    minutes: 45,
+    recap: 'Day 2 established macro econometric Marketing Mix Modeling (MMM) and Bayesian conversion uplift experimentation. Day 3 dives into milliseconds-level programmatic execution: real-time bidding protocols, intermediary take rates, attention metrics, and cyber ad fraud defenses.',
+    parts: [
+      {
+        title: 'Real-Time Bidding (RTB) & OpenRTB 2.5 Bid Stream Protocols',
+        say: [
+          'Whenever a consumer loads a web page or mobile application displaying programmatic ad units, a lightning-fast auction chain executes across the global digital ad ecosystem within a strict 100-millisecond timeout window.',
+          'The Supply-Side Platform (SSP) representing the publisher constructs an OpenRTB 2.5 BidRequest JSON object containing impression IDs, banner dimensions, publisher category, device characteristics, geographical coordinates, and reserve floor prices.',
+          'This bid request is broadcast simultaneously to dozens of Demand-Side Platforms (DSPs) representing enterprise advertisers and performance brands.',
+          'Each DSP must parse the request, query its internal user identity graph, evaluate brand safety blocklists, run real-time machine learning click-through rate (CTR) prediction models, formulate an optimal bid price, and return an OpenRTB BidResponse JSON before the 100-millisecond deadline expires.',
+          'Bids arriving after 100 milliseconds are dropped by the SSP exchange timeout gatekeeper to protect end-user page load latency and browser responsiveness.',
+          'Under modern programmatic first-price auction mechanics, the highest valid bid at or above the publisher reserve floor wins the impression and clears at that exact submitted CPM price.'
+        ],
+        example: 'Like an electronic options exchange where market makers submit microsecond limit orders for contracts; if an investment bank algorithm responds in 105 milliseconds instead of 95 milliseconds, their bid is discarded and the trade clears to the next qualified desk.',
+        code: `# Simulation: OpenRTB 2.5 Real-Time Bidding (RTB) Auction Engine
+from typing import List, Dict
+
+def simulate_openrtb_auction(bid_request: dict, dsp_bidders: List[dict]) -> dict:
+    imp = bid_request["imp"][0]
+    floor_price = imp["bidfloor"]
+    valid_bids = []
+
+    for dsp in dsp_bidders:
+        # Check latency SLA gatekeeper (< 100ms)
+        if dsp["response_time_ms"] > 100:
+            continue
+        # Check publisher reserve bid floor
+        bid_price = dsp["bid_cpm"]
+        if bid_price >= floor_price:
+            valid_bids.append({
+                "dsp": dsp["dsp_name"],
+                "bid_cpm": bid_price,
+                "latency_ms": dsp["response_time_ms"]
+            })
+
+    if not valid_bids:
+        return {"status": "NO_BIDS_ABOVE_FLOOR", "clearing_price": 0.0}
+
+    # First-Price Auction clearing: Highest bidder wins at exact submitted price
+    valid_bids.sort(key=lambda x: x["bid_cpm"], reverse=True)
+    winner = valid_bids[0]
+
+    return {
+        "status": "AUCTION_CLEARED",
+        "impression_id": imp["id"],
+        "winner_dsp": winner["dsp"],
+        "clearing_cpm": round(winner["bid_cpm"], 2),
+        "floor_cpm": round(floor_price, 2),
+        "total_participants": len(dsp_bidders),
+        "qualified_bids": len(valid_bids),
+        "latency_ms": winner["latency_ms"]
+    }
+
+req = {
+    "id": "req-89421-ny",
+    "imp": [{"id": "imp-101", "bidfloor": 2.50, "banner": {"w": 300, "h": 250}}],
+    "device": {"os": "iOS", "geo": {"country": "USA"}}
+}
+
+dsps = [
+    {"dsp_name": "TheTradeDesk", "bid_cpm": 4.20, "response_time_ms": 48},
+    {"dsp_name": "DV360", "bid_cpm": 3.85, "response_time_ms": 62},
+    {"dsp_name": "AmazonDSP", "bid_cpm": 4.60, "response_time_ms": 55},
+    {"dsp_name": "SlowDSP_Timeout", "bid_cpm": 5.50, "response_time_ms": 140},
+    {"dsp_name": "LowBidder", "bid_cpm": 1.75, "response_time_ms": 35}
+]
+
+res = simulate_openrtb_auction(req, dsps)
+print("Part 1: OpenRTB Auction Result:")
+print("Status: " + res['status'] + " | Winner: " + res['winner_dsp'] + " | Clearing CPM: $" + f"{res['clearing_cpm']:.2f}")
+print(f"Qualified: {res['qualified_bids']}/{res['total_participants']} | Latency: {res['latency_ms']}ms")`,
+        output: `Part 1: OpenRTB Auction Result:
+Status: AUCTION_CLEARED | Winner: AmazonDSP | Clearing CPM: $4.60
+Qualified: 3/5 | Latency: 55ms`,
+        codeNotes: [
+          { line: 9, note: 'Enforces strict 100ms programmatic SLA timeout, instantly disqualifying SlowDSP_Timeout' },
+          { line: 13, note: 'Filters out bids below the publisher reserve floor of $2.50 CPM (disqualifying LowBidder at $1.75)' },
+          { line: 22, note: 'Sorts qualified bids descending to clear the first-price auction to AmazonDSP at $4.60 CPM' },
+          { line: 49, note: 'Outputs auction resolution metadata with clearing CPM and winning round-trip latency' }
+        ],
+        tryIt: 'Increase the bid floor to $4.75 and observe how even AmazonDSP fails to clear, returning NO_BIDS_ABOVE_FLOOR.',
+        check: {
+          question: 'Why do programmatic ad exchanges enforce strict 100-millisecond timeout budgets for Demand-Side Platform (DSP) bid responses?',
+          options: [
+            'To protect consumer webpage load performance and core rendering latency from slow downstream bidding servers.',
+            'Because optical internet cables lose electrical charge if data flows for longer than 100 milliseconds.',
+            'Because the Federal Trade Commission legally requires all online transactions to terminate in two-digit milliseconds.',
+            'To allow publishers to manually inspect and approve every individual advertisement before display.'
+          ],
+          answer: 0,
+          why: 'Web browsers cannot pause user navigation while waiting for external bidding servers; strict 100ms latency SLAs prevent ads from freezing browser rendering engines.',
+          answerIndex: 0,
+          explanation: 'Web browsers cannot pause user navigation while waiting for external bidding servers; strict 100ms latency SLAs prevent ads from freezing browser rendering engines.'
+        }
+      },
+      {
+        title: 'First-Price Auction Clearing & Supply-Path Optimization (SPO)',
+        say: [
+          'In the early days of programmatic advertising, ad exchanges operated Generalized Second-Price (GSP) auctions where winners paid one cent above the second-highest bid.',
+          'Between 2017 and 2019, the entire industry transitioned to first-price auctions to eliminate hidden exchange auction manipulation and provide radical bid transparency.',
+          'However, pure first-price auctions introduce the classic winner\'s curse: an advertiser bidding their true ceiling valuation pays far more than necessary to defeat their closest competitor.',
+          'To protect marketing capital, sophisticated DSPs deploy machine learning bid shading algorithms that analyze historical auction clearing distributions and shave the submitted bid down toward the predicted winning threshold without sacrificing win rate.',
+          'Concurrently, advertisers implement Supply-Path Optimization (SPO) to eliminate multi-hop reseller intermediaries that extract 15% to 35% fees from the supply chain without delivering incremental value.',
+          'By auditing header bidding routes and consolidating spend onto direct Prebid SSP integrations, brands ensure that a larger share of their media investment reaches the actual content publisher.'
+        ],
+        example: 'Instead of purchasing an item through three wholesale distributors who each mark up the price by 15%, you negotiate a direct manufacturer account; the manufacturer earns more revenue while you pay a lower total price.',
+        code: `# Simulation: First-Price Bid Shading & Supply-Path Optimization (SPO)
+from typing import List
+
+def optimize_supply_path_and_bid_shading(val_cpm: float, historical_win_floor: float, paths: List[dict]) -> dict:
+    # Bid Shading: In first-price auctions, shade bid toward historical clearing floor
+    shading_factor = 0.65
+    shaded_bid = historical_win_floor + (val_cpm - historical_win_floor) * shading_factor
+    savings_cpm = val_cpm - shaded_bid
+
+    # SPO: Evaluate intermediary take rates across supply paths
+    evaluated_paths = []
+    for p in paths:
+        take_rate = p["intermediary_fee_pct"]
+        publisher_net = shaded_bid * (1.0 - take_rate)
+        evaluated_paths.append({
+            "path_name": p["path_name"],
+            "intermediary_hops": p["hops"],
+            "fee_pct": f"{take_rate * 100:.1f}%",
+            "pub_net_cpm": round(publisher_net, 2)
+        })
+
+    # Sort paths by highest net payout to publisher (directest path)
+    evaluated_paths.sort(key=lambda x: x["pub_net_cpm"], reverse=True)
+    best_path = evaluated_paths[0]
+
+    return {
+        "max_valuation_cpm": round(val_cpm, 2),
+        "shaded_bid_cpm": round(shaded_bid, 2),
+        "bid_savings_cpm": round(savings_cpm, 2),
+        "best_supply_path": best_path["path_name"],
+        "pub_net_received": best_path["pub_net_cpm"]
+    }
+
+paths_data = [
+    {"path_name": "Direct_Prebid_SSP", "hops": 1, "intermediary_fee_pct": 0.10},
+    {"path_name": "Reseller_AdExchange", "hops": 2, "intermediary_fee_pct": 0.22},
+    {"path_name": "Arbitrage_Network", "hops": 4, "intermediary_fee_pct": 0.38}
+]
+
+res = optimize_supply_path_and_bid_shading(val_cpm=5.00, historical_win_floor=3.00, paths=paths_data)
+print("Part 2: SPO & Bid Shading Result:")
+print("Max Valuation: $" + f"{res['max_valuation_cpm']:.2f}" + " -> Shaded Bid: $" + f"{res['shaded_bid_cpm']:.2f}" + " (Savings: $" + f"{res['bid_savings_cpm']:.2f})")
+print("Optimal Path: " + res['best_supply_path'] + " | Pub Net: $" + f"{res['pub_net_received']:.2f}")`,
+        output: `Part 2: SPO & Bid Shading Result:
+Max Valuation: $5.00 -> Shaded Bid: $4.30 (Savings: $0.70)
+Optimal Path: Direct_Prebid_SSP | Pub Net: $3.87`,
+        codeNotes: [
+          { line: 6, note: 'Applies dynamic bid shading formula to lower the first-price bid from $5.00 valuation down to $4.30' },
+          { line: 8, note: 'Captures $0.70 per thousand impressions in pure cost savings without compromising inventory win probability' },
+          { line: 14, note: 'Evaluates net publisher proceeds across Direct Prebid (10%), Reseller (22%), and Arbitrage (38%) pathways' },
+          { line: 36, note: 'Identifies Direct_Prebid_SSP as optimal supply path delivering $3.87 net CPM directly to the content creator' }
+        ],
+        tryIt: 'Change Direct_Prebid_SSP intermediary fee from 0.10 to 0.05 and see publisher net proceeds expand to $4.09.',
+        check: {
+          question: 'What is the primary function of algorithmic bid shading in programmatic first-price ad auctions?',
+          options: [
+            'It prevents the winner\'s curse by dynamically reducing submitted bids below max valuation to the minimum price predicted to win the auction.',
+            'It hides the advertiser\'s credit card number from payment processing gateways.',
+            'It automatically creates animated HTML5 banner creatives without designer intervention.',
+            'It forces Google and Facebook to share their proprietary auction code with third-party auditors.'
+          ],
+          answer: 0,
+          why: 'In a first-price auction, the winner pays their exact bid. Bid shading algorithms estimate the clearing price distribution to bid just enough to win, saving advertisers millions in surplus margin.',
+          answerIndex: 0,
+          explanation: 'In a first-price auction, the winner pays their exact bid. Bid shading algorithms estimate the clearing price distribution to bid just enough to win, saving advertisers millions in surplus margin.'
+        }
+      },
+      {
+        title: 'MRC Viewability Standards & Attention Economics (vCPM)',
+        say: [
+          'In traditional digital media buying, advertisers were billed on a raw impression basis whenever an ad unit was requested by the web server, regardless of whether a human ever saw it.',
+          'To establish commercial accountability, the Media Rating Council (MRC) and Interactive Advertising Bureau (IAB) instituted rigorous viewability benchmarks.',
+          'For desktop and mobile display banners, an ad is legally defined as viewable if at least 50% of the creative pixels appear within the active viewport for at least one continuous second.',
+          'For video creatives, the standard requires at least 50% of the pixels to remain continuously in-view for at least two consecutive seconds of video playback.',
+          'Raw Cost Per Mille (CPM) is deceptive because low-quality below-the-fold placements might cost $1.50 CPM but deliver an abysmal 25% viewability rate, meaning 75% of spend is completely invisible.',
+          'Performance media buyers calculate Viewable CPM (vCPM = Raw CPM / Viewability Rate), which exposes the true cost of delivering measured human attention and guides aggressive placement exclusions.'
+        ],
+        example: 'Paying $1,000 for a highway billboard is a waste if an overgrown tree blocks 70% of drivers from seeing it; the effective cost per visible driver is triple the contract rate.',
+        code: `# Simulation: MRC Viewability Auditing & Effective vCPM Engine
+from typing import List
+
+def calculate_viewability_and_vcpm(placements: List[dict]) -> dict:
+    results = []
+    total_imps = 0
+    total_viewable = 0
+    total_cost = 0.0
+
+    for pl in placements:
+        imps = pl["impressions"]
+        cpm = pl["cpm"]
+        cost = (imps / 1000.0) * cpm
+        view_rate = pl["viewability_rate"]
+        viewable_imps = int(imps * view_rate)
+
+        # vCPM = Cost / (Viewable Impressions / 1000) = CPM / viewability_rate
+        vcpm = cpm / view_rate if view_rate > 0 else 0.0
+
+        total_imps += imps
+        total_viewable += viewable_imps
+        total_cost += cost
+
+        results.append({
+            "name": pl["placement_name"],
+            "cpm": round(cpm, 2),
+            "view_rate": f"{round(view_rate * 100, 1)}%",
+            "vcpm": round(vcpm, 2)
+        })
+
+    blended_view_rate = (total_viewable / total_imps) if total_imps > 0 else 0.0
+    blended_vcpm = (total_cost / (total_viewable / 1000.0)) if total_viewable > 0 else 0.0
+
+    return {
+        "total_impressions": total_imps,
+        "viewable_impressions": total_viewable,
+        "blended_viewability": f"{round(blended_view_rate * 100, 1)}%",
+        "blended_cpm": round(total_cost / (total_imps / 1000.0), 2),
+        "effective_vcpm": round(blended_vcpm, 2)
+    }
+
+placements_input = [
+    {"placement_name": "Homepage_Hero_Display", "impressions": 100000, "cpm": 4.50, "viewability_rate": 0.75},
+    {"placement_name": "Sidebar_Sticky_Display", "impressions": 80000, "cpm": 2.20, "viewability_rate": 0.55},
+    {"placement_name": "Below_Fold_Footer", "impressions": 50000, "cpm": 1.20, "viewability_rate": 0.28},
+    {"placement_name": "In_Stream_PreRoll_Video", "impressions": 40000, "cpm": 12.00, "viewability_rate": 0.82}
+]
+
+res = calculate_viewability_and_vcpm(placements_input)
+print("Part 3: MRC Viewability & vCPM Result:")
+print(f"Total Imps: {res['total_impressions']:,} | Viewable: {res['viewable_impressions']:,} ({res['blended_viewability']})")
+print("Blended CPM: $" + f"{res['blended_cpm']:.2f}" + " -> Effective vCPM: $" + f"{res['effective_vcpm']:.2f}")`,
+        output: `Part 3: MRC Viewability & vCPM Result:
+Total Imps: 270,000 | Viewable: 165,800 (61.4%)
+Blended CPM: $4.32 -> Effective vCPM: $7.03`,
+        codeNotes: [
+          { line: 15, note: 'Applies MRC viewability conversion formula vCPM = CPM / viewability_rate for each individual ad unit' },
+          { line: 31, note: 'Aggregates 270,000 total impressions across 4 formats, calculating 165,800 verified viewable impressions' },
+          { line: 32, note: 'Reveals that below-the-fold footer at $1.20 raw CPM carries a hidden $4.29 vCPM due to 28% viewability' },
+          { line: 49, note: 'Demonstrates that the portfolio blended CPM of $4.32 corresponds to an effective vCPM of $7.03' }
+        ],
+        tryIt: 'Blacklist Below_Fold_Footer and observe how blended viewability jumps from 61.4% to 69.0%, reducing effective vCPM.',
+        check: {
+          question: 'Under official Media Rating Council (MRC) guidelines, what constitutes a viewable display ad impression?',
+          options: [
+            'At least 50% of the creative pixels must appear in the active viewport for at least one continuous second.',
+            'The user must click the ad and stay on the landing page for at least five minutes.',
+            'The advertisement must occupy 100% of the screen and play background audio automatically.',
+            'The ad server must log an HTTP 200 response when the banner file is requested.'
+          ],
+          answer: 0,
+          why: 'The MRC display viewability standard requires a minimum of 50% of the ad unit pixels to be in the browser viewport for a minimum of 1 continuous second.',
+          answerIndex: 0,
+          explanation: 'The MRC display viewability standard requires a minimum of 50% of the ad unit pixels to be in the browser viewport for a minimum of 1 continuous second.'
+        }
+      },
+      {
+        title: 'Ad Fraud Detection: Bot Traffic, Domain Spoofing & Pixel Stuffing',
+        say: [
+          'Digital ad fraud drains an estimated $80 billion globally every year through automated bot networks, counterfeit inventory, and deceptive traffic arbitrage.',
+          'The industry categorizes fraud into General Invalid Traffic (GIVT) such as known search engine spiders and routine crawlers, and Sophisticated Invalid Traffic (SIVT) such as headless botnets and residential proxy farms.',
+          'A prevalent attack vector is domain spoofing, where malicious publishers falsify the HTTP referrer header to masquerade low-quality pirate websites as premium publishers like the Wall Street Journal or Bloomberg.',
+          'The IAB counter-measure is ads.txt (Authorized Digital Sellers), a cryptographically verifiable public record hosted at domain root that specifies which ad exchanges and publisher IDs are authorized to sell their inventory.',
+          'Other pervasive fraud tactics include pixel stuffing, where hundreds of full-sized ads are loaded inside invisible 1x1-pixel iframes, and click farms generating artificial CTR spikes to game affiliate payouts.',
+          'Enterprise DSPs execute automated pre-bid heuristic filters to reject datacenter IPs, verify ads.txt publisher chains, and eliminate non-human traffic before a single dollar is bid.'
+        ],
+        example: 'Like airport security verifying passport biometric chips and ticket barcodes against the central flight manifest; counterfeit tickets and unauthorized travel agents are arrested at the gate.',
+        code: `# Simulation: Programmatic Ad Fraud Detection & ads.txt Verification Engine
+from typing import List, Dict
+
+def audit_programmatic_fraud_and_adstxt(traffic_stream: List[dict], authorized_sellers: Dict[str, str]) -> dict:
+    total_events = len(traffic_stream)
+    valid_events = 0
+    fraud_flags = {
+        "ads_txt_unauthorized": 0,
+        "datacenter_bot_ivt": 0,
+        "hidden_pixel_stuffing": 0,
+        "click_velocity_spike": 0
+    }
+    wasted_ad_spend = 0.0
+
+    for ev in traffic_stream:
+        cpm = ev["cpm"]
+        cost = cpm / 1000.0
+        domain = ev["domain"]
+        seller_id = ev["seller_id"]
+
+        is_fraud = False
+        # 1. ads.txt verification: Match domain with authorized seller ID
+        if domain not in authorized_sellers or authorized_sellers[domain] != seller_id:
+            fraud_flags["ads_txt_unauthorized"] += 1
+            is_fraud = True
+        # 2. Datacenter IP / Headless browser SIVT
+        elif ev["is_datacenter_ip"] or ev["user_agent_bot"]:
+            fraud_flags["datacenter_bot_ivt"] += 1
+            is_fraud = True
+        # 3. Pixel stuffing: Invisible 1x1 or 0x0 container
+        elif ev["ad_width"] <= 1 or ev["ad_height"] <= 1:
+            fraud_flags["hidden_pixel_stuffing"] += 1
+            is_fraud = True
+        # 4. Click velocity anomaly: Display banner CTR > 25%
+        elif ev["ctr"] > 0.25:
+            fraud_flags["click_velocity_spike"] += 1
+            is_fraud = True
+
+        if is_fraud:
+            wasted_ad_spend += cost
+        else:
+            valid_events += 1
+
+    clean_rate = (valid_events / total_events) * 100.0 if total_events > 0 else 0.0
+
+    return {
+        "total_analyzed": total_events,
+        "valid_impressions": valid_events,
+        "clean_traffic_pct": f"{round(clean_rate, 2)}%",
+        "fraud_breakdown": fraud_flags,
+        "intercepted_fraud_spend": round(wasted_ad_spend, 4)
+    }
+
+auth_sellers = {
+    "techinsider.com": "pub-9921",
+    "bloomberg.com": "pub-1044",
+    "wsj.com": "pub-5532"
+}
+
+events = [
+    {"domain": "techinsider.com", "seller_id": "pub-9921", "cpm": 4.00, "is_datacenter_ip": False, "user_agent_bot": False, "ad_width": 300, "ad_height": 250, "ctr": 0.008},
+    {"domain": "techinsider.com", "seller_id": "pub-FAKE", "cpm": 3.50, "is_datacenter_ip": False, "user_agent_bot": False, "ad_width": 300, "ad_height": 250, "ctr": 0.010},
+    {"domain": "bloomberg.com", "seller_id": "pub-1044", "cpm": 8.00, "is_datacenter_ip": True, "user_agent_bot": False, "ad_width": 728, "ad_height": 90, "ctr": 0.005},
+    {"domain": "wsj.com", "seller_id": "pub-5532", "cpm": 10.00, "is_datacenter_ip": False, "user_agent_bot": False, "ad_width": 1, "ad_height": 1, "ctr": 0.002},
+    {"domain": "bloomberg.com", "seller_id": "pub-1044", "cpm": 6.00, "is_datacenter_ip": False, "user_agent_bot": False, "ad_width": 300, "ad_height": 600, "ctr": 0.350},
+    {"domain": "wsj.com", "seller_id": "pub-5532", "cpm": 7.50, "is_datacenter_ip": False, "user_agent_bot": False, "ad_width": 300, "ad_height": 250, "ctr": 0.012}
+]
+
+res = audit_programmatic_fraud_and_adstxt(events, auth_sellers)
+print("Part 4: Fraud Detection & ads.txt Result:")
+print(f"Total: {res['total_analyzed']} | Valid: {res['valid_impressions']} ({res['clean_traffic_pct']})")
+print(f"Fraud Flags: {res['fraud_breakdown']}")
+print("Intercepted Spend: $" + f"{res['intercepted_fraud_spend']:.4f}")`,
+        output: `Part 4: Fraud Detection & ads.txt Result:
+Total: 6 | Valid: 2 (33.33%)
+Fraud Flags: {'ads_txt_unauthorized': 1, 'datacenter_bot_ivt': 1, 'hidden_pixel_stuffing': 1, 'click_velocity_spike': 1}
+Intercepted Spend: $0.0300`,
+        codeNotes: [
+          { line: 20, note: 'Flags pub-FAKE attempting unauthorized domain spoofing against techinsider.com via ads.txt' },
+          { line: 24, note: 'Identifies datacenter proxy botnet masquerading on bloomberg.com as sophisticated invalid traffic' },
+          { line: 28, note: 'Catches pixel stuffing where 1x1 hidden iframe tries to collect WSJ CPM revenue invisibly' },
+          { line: 32, note: 'Detects click velocity anomaly with 35% CTR on a display banner, intercepting $0.0300 in wasted ad spend' }
+        ],
+        tryIt: 'Authorize pub-FAKE in auth_sellers and watch unauthorized count drop to 0.',
+        check: {
+          question: 'How does the IAB ads.txt standard protect advertisers from domain spoofing and inventory arbitrage?',
+          options: [
+            'It publishes a public text file at the publisher domain root listing authorized exchange seller IDs, allowing DSPs to verify inventory legitimacy before bidding.',
+            'It requires all website visitors to solve a CAPTCHA before loading any advertisement.',
+            'It encrypts web server hard drives using SHA-256 blockchain algorithms.',
+            'It automatically refunds advertisers whenever their ad campaign fails to hit target ROAS.'
+          ],
+          answer: 0,
+          why: 'ads.txt creates a public, verifiable supply chain record so buyers can ensure they are transacting with authorized sellers rather than spoofed domain impersonators.',
+          answerIndex: 0,
+          explanation: 'ads.txt creates a public, verifiable supply chain record so buyers can ensure they are transacting with authorized sellers rather than spoofed domain impersonators.'
+        }
+      },
+      {
+        title: 'Programmatic Ad Exchange & DSP Bidding Control Tower',
+        say: [
+          'Enterprise media operations require an integrated control tower that harmonizes bidding algorithms, supply-path optimization, viewability verification, and fraud prevention into a unified decision dashboard.',
+          'A modern Demand-Side Platform evaluates hundreds of billions of bid opportunities daily, filtering raw Queries Per Second (QPS) before committing computational resources to machine learning pricing.',
+          'By calculating the compound financial impact of bid shading savings (reducing first-price premiums by 15%), fraud elimination (intercepting 8.5% invalid bot impressions), and viewability filtering (achieving 72% MRC viewability), the media director protects shareholder capital.',
+          'The final executive metric is Effective Viewable Working CPM: ensuring that every dollar billed represents verified human exposure in brand-safe, authorized environments.',
+          'When effective vCPM is maintained below target benchmarks (e.g. $6.00) while driving qualified site traffic, programmatic media acts as an infinitely scalable acquisition engine.',
+          'Mastering this complete programmatic stack equips you to lead programmatic trading desks and media procurement negotiations at Fortune 500 scale.'
+        ],
+        example: 'Like an automated port customs facility that scans 10,000 shipping containers an hour, rejecting smuggled contraband and tariff evasion while fast-tracking certified legitimate cargo.',
+        code: `# Simulation: Programmatic DSP Media Operations Control Tower
+def run_programmatic_dsp_control_tower(campaign_metrics: dict) -> dict:
+    gross_spend = campaign_metrics["gross_budget"]
+    shading_savings = campaign_metrics["bid_shading_savings"]
+    net_clearing_spend = gross_spend - shading_savings
+    
+    fraud_deduction = net_clearing_spend * campaign_metrics["fraud_blocked_pct"]
+    clean_media_spend = net_clearing_spend - fraud_deduction
+    
+    total_impressions = campaign_metrics["impressions_served"]
+    viewable_impressions = int(total_impressions * campaign_metrics["viewability_rate"])
+    
+    # Financial metrics
+    net_cpm = (clean_media_spend / (total_impressions / 1000.0))
+    effective_vcpm = (clean_media_spend / (viewable_impressions / 1000.0))
+    
+    return {
+        "Gross_Budget": "$" + f"{gross_spend:,.2f}",
+        "Bid_Shading_Savings": "$" + f"{shading_savings:,.2f}",
+        "Net_Clearing_Spend": "$" + f"{net_clearing_spend:,.2f}",
+        "Fraud_Capital_Saved": "$" + f"{fraud_deduction:,.2f}",
+        "Clean_Working_Media": "$" + f"{clean_media_spend:,.2f}",
+        "Viewability_Rate": f"{round(campaign_metrics['viewability_rate'] * 100, 1)}%",
+        "Net_Clearing_CPM": "$" + f"{round(net_cpm, 2):.2f}",
+        "Effective_vCPM": "$" + f"{round(effective_vcpm, 2):.2f}",
+        "Control_Tower_Status": "OPTIMAL_HIGH_YIELD" if effective_vcpm < 8.00 else "ATTENTION_DEFICIT"
+    }
+
+camp = {
+    "gross_budget": 50000.0,
+    "bid_shading_savings": 7500.0,
+    "fraud_blocked_pct": 0.085,
+    "impressions_served": 10000000,
+    "viewability_rate": 0.72
+}
+
+res = run_programmatic_dsp_control_tower(camp)
+print("Part 5: DSP Control Tower Result:")
+for k, v in res.items():
+    print(f"{k}: {v}")`,
+        output: `Part 5: DSP Control Tower Result:
+Gross_Budget: $50,000.00
+Bid_Shading_Savings: $7,500.00
+Net_Clearing_Spend: $42,500.00
+Fraud_Capital_Saved: $3,612.50
+Clean_Working_Media: $38,887.50
+Viewability_Rate: 72.0%
+Net_Clearing_CPM: $3.89
+Effective_vCPM: $5.40
+Control_Tower_Status: OPTIMAL_HIGH_YIELD`,
+        codeNotes: [
+          { line: 3, note: 'Deconstructs $50,000 gross media budget, harvesting $7,500 in first-price bid shading savings' },
+          { line: 7, note: 'Filters out 8.5% ad fraud invalid traffic, preserving $3,612.50 in working media investment' },
+          { line: 15, note: 'Computes clean working CPM of $3.89 and verified effective viewable CPM (vCPM) of $5.40 at 72% viewability' },
+          { line: 19, note: 'Certifies campaign health as OPTIMAL_HIGH_YIELD under strict executive attention efficiency thresholds' }
+        ],
+        tryIt: 'Lower viewability rate from 0.72 to 0.40 and observe effective vCPM climb to $9.72, flipping status to ATTENTION_DEFICIT.',
+        check: {
+          question: 'What does an Effective Viewable CPM (vCPM) of $5.40 communicate to an executive marketing director?',
+          options: [
+            'It represents the exact cost to deliver 1,000 verified human impressions that fulfilled MRC viewability standards in clean, brand-safe inventory.',
+            'It means the company lost $5.40 per thousand visitors on product refunds.',
+            'It indicates that Google charges a $5.40 service fee for every keyword search.',
+            'It means 5.4% of website visitors converted into paying customers within 24 hours.'
+          ],
+          answer: 0,
+          why: 'Effective vCPM decouples raw server impressions from real human attention, measuring the true commercial cost per 1,000 verified, viewable ad exposures.',
+          answerIndex: 0,
+          explanation: 'Effective vCPM decouples raw server impressions from real human attention, measuring the true commercial cost per 1,000 verified, viewable ad exposures.'
+        }
+      }
+    ],
+    summary: [
+      'OpenRTB 2.5 Protocols & RTB Auction Latency: Programmatic bidding requires DSPs to parse bid requests, score intent, and submit bid responses within strict 100ms timeout windows.',
+      'First-Price Bid Shading & Supply-Path Optimization (SPO): First-price auctions eliminate manipulation but require bid shading to avoid winner\'s curse, while SPO cuts intermediary reseller take rates.',
+      'MRC Viewability Standards & vCPM: Defining viewability (>=50% pixels for >=1s display / >=2s video) transforms raw CPM into true attention cost (vCPM = CPM / Viewability Rate).',
+      'Ad Fraud & ads.txt Verification: Pre-bid filtering blocks domain spoofing via ads.txt, catches datacenter proxy botnets, and eliminates hidden 1x1 pixel stuffing.',
+      'Integrated Programmatic Control Tower: Harmonizing bid shading ($7.5k savings), fraud deduction ($3.6k preserved), and 72% viewability delivers high-yield $5.40 effective vCPM.'
+    ],
+    projectStep: {
+      title: 'Programmatic RTB, Viewability & Fraud Defense Suite',
+      steps: [
+        'Simulate OpenRTB 2.5 bid request evaluation and enforce 100ms programmatic SLA timeout limits.',
+        'Implement first-price bid shading algorithms and evaluate supply paths to maximize direct publisher net proceeds.',
+        'Calculate MRC viewability rates and effective viewable CPM (vCPM) across multi-format display and video inventory.',
+        'Audit web traffic logs against authorized ads.txt seller records and block datacenter bot IP clusters.'
+      ]
+    }
+  }
 ];

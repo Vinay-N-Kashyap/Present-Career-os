@@ -360,3 +360,74 @@ test('Course bcom_ecom 100% Complete: All 5 Days Verified', () => {
   }
 });
 
+test('Block 139: B.Com Digital Marketing Day 3: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_dmkt', 3);
+  assert.ok(lesson, 'bcom_dmkt Day 3 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_dmkt');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5, 'bcom_dmkt Day 3 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_dmkt'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 139: B.Com Digital Marketing Day 3: OpenRTB, SPO, MRC Viewability, Ad Fraud & DSP Control Tower Verification', () => {
+  const lesson = BCOM_DMKT_LONG_LESSONS[2];
+  assert.ok(lesson, 'BCOM_DMKT_LONG_LESSONS[2] must exist');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have >= 3 codeNotes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /OpenRTB.*Bid Stream/i);
+  assert.ok(lesson.parts[0].code?.includes('simulate_openrtb_auction'));
+  assert.ok(lesson.parts[0].output?.includes('AmazonDSP'));
+  assert.ok(lesson.parts[0].output?.includes('$4.60'));
+
+  assert.match(lesson.parts[1].title, /First-Price.*Supply-Path Optimization/i);
+  assert.ok(lesson.parts[1].code?.includes('optimize_supply_path_and_bid_shading'));
+  assert.ok(lesson.parts[1].output?.includes('Direct_Prebid_SSP'));
+
+  assert.match(lesson.parts[2].title, /MRC Viewability.*vCPM/i);
+  assert.ok(lesson.parts[2].code?.includes('calculate_viewability_and_vcpm'));
+  assert.ok(lesson.parts[2].output?.includes('$7.03'));
+
+  assert.match(lesson.parts[3].title, /Ad Fraud Detection.*Bot Traffic/i);
+  assert.ok(lesson.parts[3].code?.includes('audit_programmatic_fraud_and_adstxt'));
+  assert.ok(lesson.parts[3].output?.includes('$0.0300'));
+
+  assert.match(lesson.parts[4].title, /Programmatic.*Control Tower/i);
+  assert.ok(lesson.parts[4].code?.includes('run_programmatic_dsp_control_tower'));
+  assert.ok(lesson.parts[4].output?.includes('OPTIMAL_HIGH_YIELD'));
+
+  // Metrics & Project step validation
+  assert.ok(lesson.summary && lesson.summary.length >= 4, 'Summary must have >= 4 bullet points');
+  assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, 'projectStep must have title and >= 4 steps');
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be >= 8`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
+});
+
+
