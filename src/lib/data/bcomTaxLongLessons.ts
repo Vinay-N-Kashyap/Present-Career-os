@@ -1594,5 +1594,494 @@ print(f"Accreditation: {p5['accreditation']}")`,
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom_tax',
+    day: 5,
+    title: 'Milestone 1 Capstone: Enterprise Corporate Tax Optimization & Global Audit Defense Control Tower',
+    goal: 'Demonstrate mastery across international corporate tax strategy: multi-jurisdictional consolidated Effective Tax Rate (ETR) reconciliation under ASC 740, OECD Pillar Two global minimum tax Substance-Based Income Exclusion (SBCO) and QDMTT Top-Up calculations, Residual Profit Split Method (RPSM) DEMPE intangible apportionment, IRC Section 163(j) thin capitalization debt shields, cross-border VAT Reverse Charge netting, and WTO customs valuation harmonization.',
+    minutes: 50,
+    recap: 'Across Days 1 through 4, we analyzed deferred tax timing differences, OECD Pillar Two fundamentals, Section 382/338 M&A tax attributes, DEMPE transfer pricing, bilateral APAs, thin capitalization caps, and cross-border indirect taxes. Today, you assume the role of Chief Tax Officer (CTO) to defend the multinational enterprise balance sheet before global tax authorities.',
+    parts: [
+      {
+        title: 'Enterprise Multi-Jurisdictional Tax Footprint & Effective Tax Rate (ETR) Reconciler',
+        say: [
+          'For global multinational corporations, the ultimate scorecard presented to the Board of Directors and Wall Street investors is the consolidated Effective Tax Rate (ETR). The corporate tax director cannot simply average statutory rates across subsidiaries; under ASC 740 and IAS 12, the financial statement tax expense must be rigorously reconciled against the benchmark domestic statutory rate.',
+          'Consider our multinational enterprise operating across four major legal entities: US Parent ($100M profit, 21% statutory rate), UK Innovation Tech Hub ($60M profit, 25% statutory rate), Ireland Shared Services DAC ($40M profit, 12.5% statutory rate), and Singapore Regional Logistics ($50M profit, 17% statutory rate). Total group consolidated Profit Before Tax (PBT) is $250.0 million.',
+          'The benchmark statutory tax burden across this portfolio is $49.5 million (a 19.8% blended statutory rate). However, by aggressively leveraging permanent tax differences—such as qualified Section 41 research and development tax credits of $5.0 million—the corporate group drives its final book tax expense down to $44.5 million, lowering its consolidated GAAP ETR to 17.80% and delivering $5.0 million in annual cash tax savings to shareholders.'
+        ],
+        example: 'Astraea Biopharma Global Corp aggregates $250M of PBT across US, UK, Ireland, and Singapore. The weighted blended statutory tax is $49.5M (19.8%). By capturing $5.0M in qualified R&D tax credits and optimizing cross-border earnings, the company lowers its book tax expense to $44.5M, establishing an industry-leading 17.8% consolidated ETR and preserving multi-million dollar liquidity for ongoing clinical trials.',
+        code: `def reconcile_global_multinational_tax_footprint(
+    jurisdictions: list,
+    global_rd_tax_credits: float,
+    global_disallowed_fines: float
+) -> dict:
+    total_pbt = sum(j["profit_before_tax"] for j in jurisdictions)
+    total_statutory_benchmark_tax = sum(j["profit_before_tax"] * j["statutory_tax_rate"] for j in jurisdictions)
+    total_pre_credit_actual_tax = sum(j["profit_before_tax"] * j["local_effective_rate"] for j in jurisdictions)
+    
+    blended_statutory_rate = total_statutory_benchmark_tax / total_pbt if total_pbt > 0 else 0.0
+    fine_tax_drag = global_disallowed_fines * blended_statutory_rate
+    
+    final_book_tax_expense = total_pre_credit_actual_tax + fine_tax_drag - global_rd_tax_credits
+    final_consolidated_etr = final_book_tax_expense / total_pbt if total_pbt > 0 else 0.0
+    annual_tax_optimization_savings = max(0.0, total_statutory_benchmark_tax - final_book_tax_expense)
+    
+    return {
+        "global_consolidated_pbt_usd": round(total_pbt, 2),
+        "blended_statutory_tax_usd": round(total_statutory_benchmark_tax, 2),
+        "blended_statutory_rate_pct": round(blended_statutory_rate * 100.0, 2),
+        "rd_tax_credits_applied_usd": round(global_rd_tax_credits, 2),
+        "final_book_tax_expense_usd": round(final_book_tax_expense, 2),
+        "consolidated_etr_pct": round(final_consolidated_etr * 100.0, 2),
+        "annual_tax_savings_usd": round(annual_tax_optimization_savings, 2)
+    }
+
+p1 = reconcile_global_multinational_tax_footprint(
+    jurisdictions=[
+        {"name": "United States", "profit_before_tax": 100000000.0, "statutory_tax_rate": 0.21, "local_effective_rate": 0.21},
+        {"name": "United Kingdom", "profit_before_tax": 60000000.0, "statutory_tax_rate": 0.25, "local_effective_rate": 0.25},
+        {"name": "Ireland", "profit_before_tax": 40000000.0, "statutory_tax_rate": 0.125, "local_effective_rate": 0.125},
+        {"name": "Singapore", "profit_before_tax": 50000000.0, "statutory_tax_rate": 0.17, "local_effective_rate": 0.17}
+    ],
+    global_rd_tax_credits=5000000.0,
+    global_disallowed_fines=0.0
+)
+pbt_s = "$" + f"{p1['global_consolidated_pbt_usd']:,.2f}"
+stat_s = "$" + f"{p1['blended_statutory_tax_usd']:,.2f}"
+book_s = "$" + f"{p1['final_book_tax_expense_usd']:,.2f}"
+print(f"Global PBT: {pbt_s} | Blended Statutory Tax: {stat_s} ({p1['blended_statutory_rate_pct']}%)")
+print(f"Final Book Tax: {book_s} | Consolidated ETR: {p1['consolidated_etr_pct']}%")`,
+        output: `Global PBT: $250,000,000.00 | Blended Statutory Tax: $49,500,000.00 (19.8%)\nFinal Book Tax: $44,500,000.00 | Consolidated ETR: 17.8%`,
+        codeNotes: [
+          { line: 7, note: 'Aggregates group-wide profit before tax ($250M) and statutory benchmark tax ($49.5M)' },
+          { line: 13, note: 'Applies permanent differences deducting $5.0M in verified non-refundable R&D tax credits' },
+          { line: 15, note: 'Determines consolidated Effective Tax Rate (17.80%) across multi-jurisdictional subsidiaries' },
+          { line: 36, note: 'Prints executive GAAP ASC 740 rate reconciliation table for boardroom audit review' }
+        ],
+        tryIt: 'Increase global_disallowed_fines to $10M to observe how non-deductible penalties expand corporate tax drag.',
+        check: {
+          question: 'In corporate financial accounting under ASC 740, what distinguishes a Permanent Tax Difference from a Temporary Timing Difference?',
+          options: [
+            'A Permanent Difference affects either book or tax income but never reverses in future fiscal years, altering the company\'s structural Effective Tax Rate.',
+            'A Permanent Difference is only allowed for companies incorporated in federal tax-exempt territories.',
+            'A Permanent Difference must be completely refunded by the government within 12 months.',
+            'A Permanent Difference represents interest paid on corporate credit cards.'
+          ],
+          answer: 0,
+          why: 'Permanent differences (like municipal bond interest, penalties, or R&D tax credits) never reverse over time, permanently lowering or raising the Effective Tax Rate.',
+          answerIndex: 0,
+          explanation: 'Permanent differences (like municipal bond interest, penalties, or R&D tax credits) never reverse over time, permanently lowering or raising the Effective Tax Rate.'
+        }
+      },
+      {
+        title: 'OECD Pillar Two Global Minimum Tax Top-Up & Substance-Based Carve-Out (SBCO)',
+        say: [
+          'Under the OECD BEPS 2.0 Pillar Two Global Anti-Base Erosion (GloBE) rules, large multinational enterprises are subject to a strict 15% minimum corporate tax floor in every country where they operate. When our Irish entity reports $40.0 million in profit and pays $5.0 million in local Irish corporate tax (a 12.5% effective rate), it immediately breaches the 15% statutory floor by 2.50%.',
+          'However, tax directors do not simply pay 2.50% on gross earnings. The OECD GloBE rules incorporate the crucial Substance-Based Income Exclusion (SBCO) carve-out under Article 5.3. The SBCO permits the MNE to carve out profits earned through genuine economic substance: 8% of eligible payroll costs ($15M payroll = $1.2M carveout) and 5% of the carrying value of eligible tangible assets ($40M assets = $2.0M carveout).',
+          'This establishes a total SBCO carve-out of $3.2 million, reducing the GloBE excess profit base from $40.0 million to $36.8 million. Applying the 2.50% top-up rate to this net substance-adjusted profit yields an exact Top-Up Tax of $920,000, remitted locally via Ireland\'s Qualified Domestic Minimum Top-up Tax (QDMTT) and satisfying global compliance without triggering foreign tax penalties.'
+        ],
+        example: 'Astraea Biopharma\'s Irish DAC generates $40M PBT with $5M in covered taxes (12.5% ETR), facing a 2.5% Pillar Two deficit. Because the entity maintains 120 skilled scientists ($15M payroll) and advanced automated bio-reactors ($40M assets), it claims a $3.2M SBCO carveout. The 2.5% top-up tax applies only to the remaining $36.8M excess profit, resulting in a $920,000 QDMTT payment rather than an unmitigated $1.0M top-up assessment.',
+        code: `def calculate_pillar_two_sbco_and_top_up_tax(
+    entity_name: str,
+    constituent_entity_pbt: float,
+    local_covered_taxes: float,
+    eligible_payroll_costs: float,
+    eligible_tangible_assets: float,
+    minimum_rate: float = 0.15,
+    payroll_carveout_pct: float = 0.08,
+    asset_carveout_pct: float = 0.05
+) -> dict:
+    local_etr = local_covered_taxes / constituent_entity_pbt if constituent_entity_pbt > 0 else 0.0
+    
+    if local_etr < minimum_rate:
+        top_up_rate = minimum_rate - local_etr
+        sbco_payroll = eligible_payroll_costs * payroll_carveout_pct
+        sbco_assets = eligible_tangible_assets * asset_carveout_pct
+        total_sbco_carveout = sbco_payroll + sbco_assets
+        
+        excess_globe_profit = max(0.0, constituent_entity_pbt - total_sbco_carveout)
+        top_up_tax_payable = excess_globe_profit * top_up_rate
+        pillar_two_triggered = True
+    else:
+        top_up_rate = 0.0
+        total_sbco_carveout = 0.0
+        excess_globe_profit = 0.0
+        top_up_tax_payable = 0.0
+        pillar_two_triggered = False
+        
+    return {
+        "entity_name": entity_name,
+        "local_effective_rate_pct": round(local_etr * 100.0, 2),
+        "pillar_two_threshold_pct": round(minimum_rate * 100.0, 2),
+        "top_up_tax_rate_pct": round(top_up_rate * 100.0, 2),
+        "substance_carveout_sbco_usd": round(total_sbco_carveout, 2),
+        "excess_globe_profit_usd": round(excess_globe_profit, 2),
+        "top_up_tax_payable_usd": round(top_up_tax_payable, 2),
+        "compliance_mechanism": "QDMTT_LOCAL_TOP_UP" if pillar_two_triggered else "PILLAR_TWO_SAFE_HARBOR_MET"
+    }
+
+p2 = calculate_pillar_two_sbco_and_top_up_tax(
+    entity_name="Ireland Tech Operations DAC",
+    constituent_entity_pbt=40000000.0,
+    local_covered_taxes=5000000.0,
+    eligible_payroll_costs=15000000.0,
+    eligible_tangible_assets=40000000.0
+)
+sbco_s = "$" + f"{p2['substance_carveout_sbco_usd']:,.2f}"
+top_s = "$" + f"{p2['top_up_tax_payable_usd']:,.2f}"
+print(f"Entity: {p2['entity_name']} | Local ETR: {p2['local_effective_rate_pct']}%")
+print(f"Substance Carve-Out (SBCO): {sbco_s} | Top-Up Tax: {top_s} -> {p2['compliance_mechanism']}")`,
+        output: `Entity: Ireland Tech Operations DAC | Local ETR: 12.5%\nSubstance Carve-Out (SBCO): $3,200,000.00 | Top-Up Tax: $920,000.00 -> QDMTT_LOCAL_TOP_UP`,
+        codeNotes: [
+          { line: 12, note: 'Calculates local covered tax rate (12.5%) and identifies 2.5% Pillar Two deficit below 15% floor' },
+          { line: 15, note: 'Applies statutory SBCO percentages (8% payroll and 5% tangible assets) creating $3.2M exclusion' },
+          { line: 18, note: 'Deducts substance carveout from GloBE income to determine $36.8M net excess taxable profit' },
+          { line: 20, note: 'Computes exact $920,000 QDMTT local top-up tax payable under OECD Model Rules' }
+        ],
+        tryIt: 'Increase eligible tangible assets to $80M to observe how higher physical investments expand SBCO carveouts.',
+        check: {
+          question: 'Under OECD Pillar Two GloBE rules, what is the statutory purpose and calculation mechanism of the Substance-Based Income Exclusion (SBCO)?',
+          options: [
+            'It shields a portion of profits from Top-Up Tax based on verified local payroll and tangible asset investments, ensuring genuine operational substance is not penalized.',
+            'It completely exempts multinational corporations from having to calculate foreign taxes.',
+            'It allows companies to claim a cash tax rebate from the United Nations General Assembly.',
+            'It mandates that companies pay zero corporate taxes if they employ fewer than 10 executives.'
+          ],
+          answer: 0,
+          why: 'The SBCO explicitly excludes routine returns attributable to payroll costs and tangible assets, ensuring that Pillar Two Top-Up Taxes fall strictly on excess mobile profits rather than genuine economic substance.',
+          answerIndex: 0,
+          explanation: 'The SBCO explicitly excludes routine returns attributable to payroll costs and tangible assets, ensuring that Pillar Two Top-Up Taxes fall strictly on excess mobile profits rather than genuine economic substance.'
+        }
+      },
+      {
+        title: 'Transfer Pricing RPSM Apportionment & Section 163(j) Thin Capitalization Shield',
+        say: [
+          'Multinational enterprises must coordinate transfer pricing policies with internal debt capitalization to ensure deductible expenses do not trigger audit disallowances. When related entities co-develop proprietary IP, the two-step Residual Profit Split Method (RPSM) is mandatory under OECD transfer pricing guidelines.',
+          'In our corporate group, the US AI Diagnostics Hub and UK Clinical Bio Hub co-develop an automated genomic platform generating $180M combined revenue against $100M operating costs ($80M combined operating profit). Routine capital returns absorb $10.0M ($6.0M to US at 10% on $60M assets; $4.0M to UK at 8% on $50M assets), leaving a $70.0M non-routine residual profit pool split 60% US ($42.0M) and 40% UK ($28.0M) based on verified DEMPE R&D contributions.',
+          'Concurrently, the US entity carries debt financing requiring $28.0M in annual interest expense against $75.0M EBITDA and $2.0M business interest income. Under IRC Section 163(j), the allowable interest deduction is capped at $2.0M + (30% of $75M) = $24.5M. The US firm deducts $24.5M—securing a $5,145,000 annual interest tax shield at 21%—while disallowing $3.5M of interest expense ($735k tax drag), which is added to indefinite tax carryforwards.'
+        ],
+        example: 'Astraea Biopharma coordinates transfer pricing and corporate debt. The RPSM engine splits $70M of residual profits (US total: $48M; UK total: $32M) with zero transfer pricing mismatch. Meanwhile, Section 163(j) caps interest deductions at $24.5M, yielding a $5.145M cash tax shield while preserving $3.5M in disallowed interest carryforward for future deduction.',
+        code: `def orchestrate_transfer_pricing_and_debt_shield(
+    rpsm_combined_revenue: float,
+    rpsm_combined_costs: float,
+    entities: list,
+    residual_split: dict,
+    us_ebitda: float,
+    us_interest_income: float,
+    us_interest_expense: float,
+    corporate_tax_rate: float = 0.21
+) -> dict:
+    combined_profit = rpsm_combined_revenue - rpsm_combined_costs
+    total_routine = sum(e["assets"] * e["routine_rate"] for e in entities)
+    residual_pool = combined_profit - total_routine
+    
+    split_results = []
+    for e in entities:
+        share = residual_split.get(e["name"], 0.0)
+        ent_routine = e["assets"] * e["routine_rate"]
+        ent_residual = residual_pool * share
+        split_results.append({
+            "entity": e["name"],
+            "routine_usd": round(ent_routine, 2),
+            "residual_usd": round(ent_residual, 2),
+            "total_profit_usd": round(ent_routine + ent_residual, 2)
+        })
+        
+    ati = max(0.0, us_ebitda)
+    cap = us_interest_income + (0.30 * ati)
+    if us_interest_expense > cap:
+        deductible_interest = cap
+        disallowed_interest = us_interest_expense - cap
+        cash_drag = disallowed_interest * corporate_tax_rate
+    else:
+        deductible_interest = us_interest_expense
+        disallowed_interest = 0.0
+        cash_drag = 0.0
+        
+    return {
+        "combined_operating_profit_usd": round(combined_profit, 2),
+        "residual_profit_pool_usd": round(residual_pool, 2),
+        "rpsm_splits": split_results,
+        "section_163j_cap_usd": round(cap, 2),
+        "deductible_interest_usd": round(deductible_interest, 2),
+        "disallowed_interest_usd": round(disallowed_interest, 2),
+        "annual_interest_tax_shield_usd": round(deductible_interest * corporate_tax_rate, 2),
+        "limitation_drag_usd": round(cash_drag, 2)
+    }
+
+p3 = orchestrate_transfer_pricing_and_debt_shield(
+    rpsm_combined_revenue=180000000.0,
+    rpsm_combined_costs=100000000.0,
+    entities=[
+        {"name": "US AI Diagnostics Hub", "assets": 60000000.0, "routine_rate": 0.10},
+        {"name": "UK Clinical Bio Hub", "assets": 50000000.0, "routine_rate": 0.08}
+    ],
+    residual_split={"US AI Diagnostics Hub": 0.60, "UK Clinical Bio Hub": 0.40},
+    us_ebitda=75000000.0,
+    us_interest_income=2000000.0,
+    us_interest_expense=28000000.0,
+    corporate_tax_rate=0.21
+)
+res_pool_s = "$" + f"{p3['residual_profit_pool_usd']:,.2f}"
+cap_s = "$" + f"{p3['section_163j_cap_usd']:,.2f}"
+dis_s = "$" + f"{p3['disallowed_interest_usd']:,.2f}"
+shield_s = "$" + f"{p3['annual_interest_tax_shield_usd']:,.2f}"
+print(f"RPSM Residual Profit: {res_pool_s} | Section 163(j) Cap: {cap_s}")
+print(f"Disallowed Interest: {dis_s} | Annual Shield: {shield_s}")`,
+        output: `RPSM Residual Profit: $70,000,000.00 | Section 163(j) Cap: $24,500,000.00\nDisallowed Interest: $3,500,000.00 | Annual Shield: $5,145,000.00`,
+        codeNotes: [
+          { line: 12, note: 'Calculates $10M in routine capital returns based on physical asset bases in US and UK' },
+          { line: 14, note: 'Apportions $70M non-routine residual profit pool 60% / 40% under verified DEMPE scoring' },
+          { line: 26, note: 'Applies 30% ATI limitation under IRC Section 163(j) capping deductible interest at $24.5M' },
+          { line: 31, note: 'Computes $5,145,000 annual interest tax shield saving direct cash corporate tax in the US' }
+        ],
+        tryIt: 'Increase US interest income to $6M to observe how interest receipts expand the allowable 163(j) debt shield.',
+        check: {
+          question: 'In integrated corporate finance and tax planning, how does the Section 163(j) limitation interact with corporate capital structure optimization?',
+          options: [
+            'It restricts the tax-deductibility of debt to 30% of Adjusted Taxable Income, capping interest tax shields and encouraging balanced equity financing.',
+            'It forces corporations to eliminate all debt and operate solely on retained earnings.',
+            'It provides a 100% tax credit for every dollar of interest paid to commercial banks.',
+            'It allows companies to deduct employee salary expenses twice on federal tax returns.'
+          ],
+          answer: 0,
+          why: 'Section 163(j) prevents excessive corporate leverage by limiting deductible net interest to 30% of ATI, transforming excess interest into a non-deductible carryforward.',
+          answerIndex: 0,
+          explanation: 'Section 163(j) prevents excessive corporate leverage by limiting deductible net interest to 30% of ATI, transforming excess interest into a non-deductible carryforward.'
+        }
+      },
+      {
+        title: 'Cross-Border Supply Chain Indirect Tax, RCM Netting & WTO Customs Harmonization',
+        say: [
+          'A comprehensive corporate tax control tower must harmonize indirect taxation (VAT/GST) and customs trade tariffs with the broader transfer pricing structure. Operating cross-border trade lanes without synchronized customs and VAT mechanics triggers severe working capital lockups and costly port delays.',
+          'In our global operational architecture, Ireland supplies €20.0 million in shared digital services and clinical trial data to the UK Hub. Under the B2B Reverse Charge Mechanism (RCM), the invoice carries zero VAT, allowing the UK buyer to self-assess VAT and claim an instant input tax deduction, preserving €4.0 million in immediate cash liquidity.',
+          'Concurrently, Singapore ships $50.0 million of advanced medical robotics to the US Parent. Ocean freight and marine insurance add $3.0 million, manufacturing tooling assists add $2.0 million, and condition-of-sale firmware royalties add $5.0 million, establishing a WTO Article 1 Transaction Value of $60.0 million. At a 5% tariff rate, the US pays $3.0 million in customs duties, which generates a $630,000 income tax shield at 21%, resulting in a net duty burden of $2.37 million under PE-safe DAP terms.'
+        ],
+        example: 'Astraea Biopharma executes a synchronized trade lane: €20M cross-border services under RCM preserve €4.0M in cash flow liquidity. On the hardware lane, $50M FOB imports are harmonized to $60M WTO customs dutiable value ($3.0M duty paid, offset by $630k income tax deductions), and delivery terms are locked at DAP to avoid US Permanent Establishment exposure.',
+        code: `def execute_multinational_indirect_tax_and_customs_clearance(
+    services_invoice_amount_eur: float,
+    services_customer_vat_registered: bool,
+    services_standard_vat_rate: float,
+    hardware_fob_usd: float,
+    hardware_freight_usd: float,
+    hardware_assists_usd: float,
+    hardware_royalties_usd: float,
+    hardware_tariff_rate: float,
+    corporate_tax_rate: float
+) -> dict:
+    if services_customer_vat_registered:
+        rcm_savings_eur = services_invoice_amount_eur * services_standard_vat_rate
+        vat_mechanism = "REVERSE_CHARGE_MECHANISM_RCM"
+        net_cash_vat_leakage = 0.0
+    else:
+        rcm_savings_eur = 0.0
+        vat_mechanism = "STANDARD_VAT_COLLECTION"
+        net_cash_vat_leakage = services_invoice_amount_eur * services_standard_vat_rate
+        
+    cif_base = hardware_fob_usd + hardware_freight_usd
+    dutiable_value = cif_base + hardware_assists_usd + hardware_royalties_usd
+    customs_duty = dutiable_value * hardware_tariff_rate
+    income_tax_shield = customs_duty * corporate_tax_rate
+    net_duty_cost = customs_duty - income_tax_shield
+    
+    return {
+        "services_invoice_eur": round(services_invoice_amount_eur, 2),
+        "vat_mechanism": vat_mechanism,
+        "rcm_liquidity_preserved_eur": round(rcm_savings_eur, 2),
+        "net_vat_cash_leakage_eur": round(net_cash_vat_leakage, 2),
+        "customs_dutiable_value_usd": round(dutiable_value, 2),
+        "customs_duty_payable_usd": round(customs_duty, 2),
+        "customs_income_tax_shield_usd": round(income_tax_shield, 2),
+        "net_effective_customs_cost_usd": round(net_duty_cost, 2),
+        "incoterm_chosen": "DAP_NO_PERMANENT_ESTABLISHMENT"
+    }
+
+p4 = execute_multinational_indirect_tax_and_customs_clearance(
+    services_invoice_amount_eur=20000000.0,
+    services_customer_vat_registered=True,
+    services_standard_vat_rate=0.20,
+    hardware_fob_usd=50000000.0,
+    hardware_freight_usd=3000000.0,
+    hardware_assists_usd=2000000.0,
+    hardware_royalties_usd=5000000.0,
+    hardware_tariff_rate=0.05,
+    corporate_tax_rate=0.21
+)
+dut_s = "$" + f"{p4['customs_dutiable_value_usd']:,.2f}"
+duty_s = "$" + f"{p4['customs_duty_payable_usd']:,.2f}"
+net_c_s = "$" + f"{p4['net_effective_customs_cost_usd']:,.2f}"
+print(f"Customs Dutiable Value: {dut_s} | Duty: {duty_s}")
+print(f"Net Duty Cost: {net_c_s} | Incoterm: {p4['incoterm_chosen']}")`,
+        output: `Customs Dutiable Value: $60,000,000.00 | Duty: $3,000,000.00\nNet Duty Cost: $2,370,000.00 | Incoterm: DAP_NO_PERMANENT_ESTABLISHMENT`,
+        codeNotes: [
+          { line: 12, note: 'Applies B2B Reverse Charge netting out €4.0M in VAT, preventing cross-border cash lockups' },
+          { line: 20, note: 'Capitalizes FOB, freight, assists, and software royalties into $60M WTO customs transaction value' },
+          { line: 22, note: 'Computes $3.0M customs duty payable offset by $630k income tax deductibility shield' },
+          { line: 33, note: 'Specifies DAP delivery terms to eliminate foreign corporate Permanent Establishment risks' }
+        ],
+        tryIt: 'Zero out software royalties to observe customs dutiable value fall from $60M to $55M.',
+        check: {
+          question: 'Under WTO Customs Valuation rules, why must license royalties paid as a condition of sale and tooling assists be added to the invoice price when importing goods?',
+          options: [
+            'Because they represent economic components of the total consideration paid for the imported merchandise, required to establish true Transaction Value.',
+            'Because customs officers personally collect royalties on behalf of software vendors.',
+            'Because imports without royalties are automatically impounded under maritime law.',
+            'Because foreign exchange currency conversion requires a minimum royalty fee.'
+          ],
+          answer: 0,
+          why: 'Under the WTO Valuation Agreement, assists and condition-of-sale royalties are mandatory statutory additions to the price paid or payable to reflect total economic value.',
+          answerIndex: 0,
+          explanation: 'Under the WTO Valuation Agreement, assists and condition-of-sale royalties are mandatory statutory additions to the price paid or payable to reflect total economic value.'
+        }
+      },
+      {
+        title: 'Capstone Boardroom Defense & Chief Tax Officer (CTO) Global Strategy Certification',
+        say: [
+          'In this Milestone 1 Capstone culmination, you step into the boardroom to present the audited, fully optimized global tax architecture for Astraea Biopharma Global Corp to the Audit Committee and Board of Directors. Every statutory regime, transfer pricing flow, and cross-border trade lane is defended with mathematical and legal precision.',
+          'Our baseline unoptimized corporate portfolio faced a blended statutory benchmark tax liability of $49.5 million across $250.0 million in consolidated PBT (a 19.80% tax rate). Through strategic execution, we captured $5.0 million in verified R&D tax credits, settled OECD Pillar Two Irish minimum tax with an exact $920,000 QDMTT top-up following a $3.2 million SBCO carveout, and structured deductible debt interest generating a $5.145 million US tax shield.',
+          'On the trade lanes, we preserved €4.0 million in working capital via the B2B Reverse Charge Mechanism and harmonized $60.0 million in WTO customs declarations under DAP terms. Factoring in net direct taxes ($44.5M), Pillar Two top-up ($920k), and net customs duties ($2.37M), the group achieves a total fiscal burden of $47.79 million—an optimized effective rate of 19.12%—delivering full audit clearance and awarding Certified Chief Tax Officer & Global Corporate Tax Strategist accreditation.'
+        ],
+        example: 'Astraea Biopharma achieves complete fiscal optimization across 4 sovereign jurisdictions. With zero transfer pricing mismatches, compliant Pillar Two QDMTT filings, and €4.0M in preserved VAT cash flow, the corporate group secures full audit defense approval and Board certification.',
+        code: `def run_comprehensive_corporate_tax_capstone(
+    enterprise_name: str,
+    jurisdictions_profile: list,
+    rd_credits_usd: float,
+    disallowed_fines_usd: float,
+    low_tax_entity: dict,
+    rpsm_data: dict,
+    us_debt_data: dict,
+    indirect_tax_data: dict
+) -> dict:
+    footprint = reconcile_global_multinational_tax_footprint(
+        jurisdictions_profile, rd_credits_usd, disallowed_fines_usd
+    )
+    
+    pillar2 = calculate_pillar_two_sbco_and_top_up_tax(
+        low_tax_entity["name"],
+        low_tax_entity["pbt"],
+        low_tax_entity["covered_taxes"],
+        low_tax_entity["payroll"],
+        low_tax_entity["assets"]
+    )
+    
+    tp_debt = orchestrate_transfer_pricing_and_debt_shield(
+        rpsm_data["revenue"], rpsm_data["costs"], rpsm_data["entities"], rpsm_data["split"],
+        us_debt_data["ebitda"], us_debt_data["interest_income"], us_debt_data["interest_expense"]
+    )
+    
+    indirect = execute_multinational_indirect_tax_and_customs_clearance(
+        indirect_tax_data["services_eur"],
+        indirect_tax_data["vat_registered"],
+        indirect_tax_data["vat_rate"],
+        indirect_tax_data["hardware_fob"],
+        indirect_tax_data["hardware_freight"],
+        indirect_tax_data["hardware_assists"],
+        indirect_tax_data["hardware_royalties"],
+        indirect_tax_data["hardware_tariff"],
+        indirect_tax_data["corporate_tax_rate"]
+    )
+    
+    total_direct_tax = footprint["final_book_tax_expense_usd"]
+    top_up_tax = pillar2["top_up_tax_payable_usd"]
+    net_customs = indirect["net_effective_customs_cost_usd"]
+    total_effective_fiscal_cost = total_direct_tax + top_up_tax + net_customs
+    
+    global_pbt = footprint["global_consolidated_pbt_usd"]
+    effective_global_tax_burden_pct = (total_effective_fiscal_cost / global_pbt) * 100.0 if global_pbt > 0 else 0.0
+    
+    capstone_success = (pillar2["compliance_mechanism"] == "QDMTT_LOCAL_TOP_UP") and (tp_debt["disallowed_interest_usd"] == 3500000.0)
+    
+    return {
+        "enterprise_name": enterprise_name,
+        "global_consolidated_pbt_usd": round(global_pbt, 2),
+        "blended_statutory_benchmark_tax_usd": footprint["blended_statutory_tax_usd"],
+        "optimized_direct_tax_expense_usd": round(total_direct_tax, 2),
+        "pillar_two_top_up_tax_usd": round(top_up_tax, 2),
+        "net_customs_tariff_burden_usd": round(net_customs, 2),
+        "total_consolidated_fiscal_burden_usd": round(total_effective_fiscal_cost, 2),
+        "consolidated_effective_tax_rate_pct": round(effective_global_tax_burden_pct, 2),
+        "annual_tax_shield_and_savings_usd": round(footprint["annual_tax_savings_usd"], 2),
+        "vat_working_capital_preserved_eur": round(indirect["rcm_liquidity_preserved_eur"], 2),
+        "capstone_audit_defense_success": capstone_success,
+        "accreditation": "Certified Chief Tax Officer & Global Corporate Tax Strategist" if capstone_success else "TAX_STRATEGY_AUDIT_DEFICIENCY"
+    }
+
+p5 = run_comprehensive_corporate_tax_capstone(
+    enterprise_name="Astraea Biopharma Global Corp",
+    jurisdictions_profile=[
+        {"name": "United States", "profit_before_tax": 100000000.0, "statutory_tax_rate": 0.21, "local_effective_rate": 0.21},
+        {"name": "United Kingdom", "profit_before_tax": 60000000.0, "statutory_tax_rate": 0.25, "local_effective_rate": 0.25},
+        {"name": "Ireland", "profit_before_tax": 40000000.0, "statutory_tax_rate": 0.125, "local_effective_rate": 0.125},
+        {"name": "Singapore", "profit_before_tax": 50000000.0, "statutory_tax_rate": 0.17, "local_effective_rate": 0.17}
+    ],
+    rd_credits_usd=5000000.0,
+    disallowed_fines_usd=0.0,
+    low_tax_entity={
+        "name": "Ireland Tech Operations DAC", "pbt": 40000000.0, "covered_taxes": 5000000.0,
+        "payroll": 15000000.0, "assets": 40000000.0
+    },
+    rpsm_data={
+        "revenue": 180000000.0, "costs": 100000000.0,
+        "entities": [
+            {"name": "US AI Diagnostics Hub", "assets": 60000000.0, "routine_rate": 0.10},
+            {"name": "UK Clinical Bio Hub", "assets": 50000000.0, "routine_rate": 0.08}
+        ],
+        "split": {"US AI Diagnostics Hub": 0.60, "UK Clinical Bio Hub": 0.40}
+    },
+    us_debt_data={
+        "ebitda": 75000000.0, "interest_income": 2000000.0, "interest_expense": 28000000.0
+    },
+    indirect_tax_data={
+        "services_eur": 20000000.0, "vat_registered": True, "vat_rate": 0.20,
+        "hardware_fob": 50000000.0, "hardware_freight": 3000000.0,
+        "hardware_assists": 2000000.0, "hardware_royalties": 5000000.0,
+        "hardware_tariff": 0.05, "corporate_tax_rate": 0.21
+    }
+)
+tot_fiscal_s = "$" + f"{p5['total_consolidated_fiscal_burden_usd']:,.2f}"
+print(f"Company: {p5['enterprise_name']}")
+print(f"Total Consolidated Fiscal Burden: {tot_fiscal_s} | Effective Rate: {p5['consolidated_effective_tax_rate_pct']}%")
+print(f"Audit Defense Success: {p5['capstone_audit_defense_success']} | Accreditation: {p5['accreditation']}")`,
+        output: `Company: Astraea Biopharma Global Corp\nTotal Consolidated Fiscal Burden: $47,790,000.00 | Effective Rate: 19.12%\nAudit Defense Success: True | Accreditation: Certified Chief Tax Officer & Global Corporate Tax Strategist`,
+        codeNotes: [
+          { line: 9, note: 'Orchestrates consolidated ASC 740 rate reconciliation yielding $44.5M net direct corporate income tax' },
+          { line: 13, note: 'Settles Pillar Two Irish minimum tax with $920k QDMTT payment after $3.2M SBCO carveout' },
+          { line: 19, note: 'Structures deductible debt interest generating $5.145M US tax shield under Section 163(j)' },
+          { line: 40, note: 'Confirms total fiscal burden of $47.79M (19.12% ETR) and awards Chief Tax Officer certification' }
+        ],
+        tryIt: 'Zero out R&D tax credits to observe consolidated fiscal burden increase from $47.79M to $52.79M.',
+        check: {
+          question: 'In an integrated multinational corporate tax architecture, how does the Chief Tax Officer achieve optimal risk-adjusted capital efficiency across direct, indirect, and transfer pricing regimes?',
+          options: [
+            'By aligning DEMPE economic substance with transfer pricing splits, claiming statutory substance carveouts under Pillar Two, leveraging interest tax shields within 163(j) caps, and utilizing VAT reverse charge mechanisms to preserve liquidity.',
+            'By storing all corporate revenue in unrecorded offshore cryptocurrency wallets.',
+            'By transferring all corporate patents to shell companies without operational staff.',
+            'By refusing to calculate customs valuation on imported physical hardware.'
+          ],
+          answer: 0,
+          why: 'True enterprise tax strategy combines verified DEMPE transfer pricing substance, Pillar Two SBCO carveouts, Section 163(j) interest shields, and VAT RCM liquidity preservation to legally minimize effective global tax drag.',
+          answerIndex: 0,
+          explanation: 'True enterprise tax strategy combines verified DEMPE transfer pricing substance, Pillar Two SBCO carveouts, Section 163(j) interest shields, and VAT RCM liquidity preservation to legally minimize effective global tax drag.'
+        }
+      }
+    ],
+    summary: [
+      'Multi-jurisdictional consolidated Effective Tax Rate (ETR) reconciliation under ASC 740 identifies permanent tax credits and timing differences against blended statutory benchmarks.',
+      'OECD Pillar Two Substance-Based Income Exclusions (SBCO) shield 8% of eligible payroll and 5% of tangible assets, minimizing QDMTT Top-Up Tax liabilities.',
+      'The Residual Profit Split Method (RPSM) apportions non-routine residual profits by verified DEMPE contributions, harmonized with IRC Section 163(j) 30% ATI debt interest caps.',
+      'Cross-border B2B services deploy the VAT Reverse Charge Mechanism (RCM) to eliminate cash leakage, while WTO Article 1 Transaction Value harmonizes customs duties under DAP terms.',
+      'The Milestone 1 Capstone Control Tower delivers complete global audit defense, achieving an optimized 19.12% fiscal burden and final Course bcom_tax certification.'
+    ],
+    projectStep: {
+      title: 'Global Corporate Tax Optimization & Audit Defense Control Tower Capstone',
+      steps: [
+        'Perform multi-jurisdictional ASC 740 Effective Tax Rate reconciliations factoring in R&D credits and disallowed penalties.',
+        'Execute OECD Pillar Two SBCO payroll and tangible asset exclusions to compute local QDMTT top-up liabilities.',
+        'Orchestrate two-step Residual Profit Split Method (RPSM) allocations and enforce IRC Section 163(j) debt interest limitation shields.',
+        'Harmonize cross-border VAT Reverse Charge netting, WTO customs transaction values, and DAP terms to secure CTO accreditation.'
+      ]
+    }
+  }
 
 ];
