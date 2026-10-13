@@ -48,6 +48,11 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.ok(excelLesson.projectStep, 'excel_viz Day 1 must have a hands-on project step');
   assert.equal(getLongLessonLanguage('excel_viz'), 'python');
 
+  const excelLesson4 = getLongLesson('excel_viz', 4);
+  assert.ok(excelLesson4, 'excel_viz Day 4 long lesson must resolve');
+  assert.equal(excelLesson4.day, 4);
+  assert.equal(excelLesson4.parts.length, 5, 'excel_viz Day 4 must contain exactly 5 parts');
+
   // 3. ai_prompt aliasing
   const promptLesson = getLongLesson('ai_prompt', 1);
   assert.ok(promptLesson, 'ai_prompt Day 1 long lesson must resolve via aliasing');
@@ -359,4 +364,46 @@ test('Quant Systems Day 5: SOR, Cross-Venue Transit, Johansen VECM, Expected Sho
   assert.ok(quantLesson5.parts[2].code?.includes('calculateVecmHalfLife'));
   assert.ok(quantLesson5.parts[3].code?.includes('calculateExpectedShortfall'));
   assert.ok(quantLesson5.parts[4].code?.includes('evaluateAlgorithmicKillSwitch'));
+});
+
+test('Excel Viz Day 4: DCF Valuation, WACC, LBO Debt Waterfall & M&A Accretion Verification', () => {
+  const excelLesson4 = getLongLesson('excel_viz', 4);
+  assert.ok(excelLesson4, 'excel_viz Day 4 must resolve');
+  assert.equal(excelLesson4.day, 4);
+  assert.equal(excelLesson4.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(excelLesson4);
+  const totalMin = estimateLessonMinutes(excelLesson4);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < excelLesson4.parts.length; i++) {
+    const part = excelLesson4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must define Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(excelLesson4.parts[0].code?.includes('simulate_dcf_unlevered_fcf'));
+  assert.ok(excelLesson4.parts[0].output?.includes('DCF VALUATION & UFCF MODEL'));
+  assert.ok(excelLesson4.parts[1].code?.includes('calculate_wacc_capital_structure'));
+  assert.ok(excelLesson4.parts[1].output?.includes('WACC CAPITAL STRUCTURE ANALYSIS'));
+  assert.ok(excelLesson4.parts[2].code?.includes('simulate_lbo_debt_waterfall'));
+  assert.ok(excelLesson4.parts[2].output?.includes('LBO RETURN WATERFALL & IRR ENGINE'));
+  assert.ok(excelLesson4.parts[3].code?.includes('generate_two_way_sensitivity_surface'));
+  assert.ok(excelLesson4.parts[3].output?.includes('DYNAMIC 2-WAY SENSITIVITY SURFACE'));
+  assert.ok(excelLesson4.parts[4].code?.includes('evaluate_ma_accretion_dilution'));
+  assert.ok(excelLesson4.parts[4].output?.includes('M&A ACCRETION / DILUTION & SYNERGIES MODEL'));
 });
