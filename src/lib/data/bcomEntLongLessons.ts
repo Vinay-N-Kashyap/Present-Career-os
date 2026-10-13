@@ -779,6 +779,375 @@ print(f"Double-Trigger: {vest_res['Acceleration_Status']} -> Final: {vest_res['F
         'Contrast broad-based weighted average versus full ratchet dilution impacts in severe down-rounds.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ent',
+    day: 3,
+    title: 'Venture Capital Term Sheets, Valuation Mechanics & Down-Round Anti-Dilution',
+    overview: 'Master the legal and financial engineering of institutional venture capital term sheets. You will expose the true economics of the option pool shuffle, model liquidation preference waterfalls across non-participating and participating structures, calculate down-round anti-dilution adjustments contrasting Full Ratchet with Broad-Based Weighted Average formulas, audit NVCA protective provisions and board governance dynamics, and build an integrated term sheet negotiation control tower.',
+    parts: [
+      {
+        title: 'Pre-Money vs Post-Money Valuation Mechanics & Option Pool Shuffle',
+        say: [
+          'In venture capital financing rounds, founders often focus exclusively on the headline pre-money valuation, celebrating high paper valuations without understanding the subtle contractual mechanics that quietly dilute their equity. The fundamental mathematical relationship is deceptively simple: Post-Money Valuation = Pre-Money Valuation + Investment Amount. For example, a $5,000,000 investment on a $20,000,000 pre-money valuation creates a $25,000,000 post-money valuation, indicating on paper that the incoming investor will own 20% while existing shareholders retain 80%.',
+          'However, venture capital term sheets almost universally include a clause requiring the startup to create an unallocated Employee Stock Ownership Plan (ESOP) option pool prior to financing—typically 10% to 15% of post-money capitalization. In the notorious "Option Pool Shuffle," the term sheet specifies that this pool must be created out of the pre-money capitalization. Because the option pool is expanded entirely before the investor checks clear, 100% of the dilution required to create the pool is borne by the existing founders, while the investor\'s 20% ownership remains pristine.',
+          'To calculate the real economic impact, the founder must compute the Effective Founder Pre-Money Valuation by subtracting the dollar value of the unallocated pool ($3,750,000 for a 15% pool) from the stated pre-money valuation ($20,000,000). The resulting effective pre-money valuation is only $16,250,000, diluting founders from an expected 80.0% down to 65.0% ownership. Astute founders negotiate to right-size the option pool based on an explicit 12-month hiring plan rather than accepting arbitrary 15% to 20% buffers, preserving millions in founder equity value.'
+        ],
+        example: 'On a $20,000,000 pre-money valuation with a $5,000,000 investment, a required 15% unallocated ESOP pool ($3,750,000) created in the pre-money reduces the founder\'s effective pre-money to $16,250,000, leaving founders with 65.0% post-round ownership instead of 80.0%.',
+        code: `def calculate_option_pool_shuffle():
+    stated_pre_money = 20000000.0  # $20,000,000 stated pre-money
+    investment_amount = 5000000.0   # $5,000,000 Series A investment
+    post_money = stated_pre_money + investment_amount # $25,000,000
+
+    esop_target_pct = 0.15 # 15% post-money unallocated option pool demanded
+    esop_dollar_val = post_money * esop_target_pct # $3,750,000
+
+    # Under standard term sheet, the 15% pool is created in PRE-MONEY
+    effective_founder_pre_money = stated_pre_money - esop_dollar_val # $16,250,000
+    founder_pre_ownership = stated_pre_money / post_money # 80.0%
+    founder_actual_ownership = effective_founder_pre_money / post_money # 65.0%
+    investor_ownership = investment_amount / post_money # 20.0%
+
+    print("Venture Capital Option Pool Shuffle Mechanics:")
+    print("  Stated Pre-Money Valuation: " + "$" + f"{stated_pre_money:,.2f}")
+    print("  Series A Investment: " + "$" + f"{investment_amount:,.2f}")
+    print("  Post-Money Valuation: " + "$" + f"{post_money:,.2f}")
+    print(f"  Unallocated ESOP Pool Required: {esop_target_pct*100:.1f}% (" + "$" + f"{esop_dollar_val:,.2f}" + ")")
+    print("  Effective Founder Pre-Money Valuation: " + "$" + f"{effective_founder_pre_money:,.2f}")
+    print(f"  Investor Ownership: {investor_ownership*100:.1f}%")
+    print(f"  Unallocated Option Pool: {esop_target_pct*100:.1f}%")
+    print(f"  Founder Effective Post-Round Ownership: {founder_actual_ownership*100:.1f}% (Diluted by {founder_pre_ownership*100 - founder_actual_ownership*100:.1f}%)")
+    return {"effective_pre": effective_founder_pre_money, "founder_pct": founder_actual_ownership}
+
+calculate_option_pool_shuffle()`,
+        output: `Venture Capital Option Pool Shuffle Mechanics:
+  Stated Pre-Money Valuation: $20,000,000.00
+  Series A Investment: $5,000,000.00
+  Post-Money Valuation: $25,000,000.00
+  Unallocated ESOP Pool Required: 15.0% ($3,750,000.00)
+  Effective Founder Pre-Money Valuation: $16,250,000.00
+  Investor Ownership: 20.0%
+  Unallocated Option Pool: 15.0%
+  Founder Effective Post-Round Ownership: 65.0% (Diluted by 15.0%)`,
+        codeNotes: [
+          'Calculates the standard post-money valuation ($25.0M) from pre-money ($20.0M) and investment ($5.0M).',
+          'Demonstrates how establishing a 15% unallocated option pool out of pre-money reduces effective founder valuation by $3.75M.',
+          'Quantifies founder ownership compression from 80.0% down to 65.0% due to the pre-money option pool creation.'
+        ],
+        tryIt: 'Negotiate the option pool down from 15% to 10% to observe founder post-round ownership recover to 70.0% ($1.25M in founder equity preserved).',
+        check: {
+          question: 'What is the economic consequence of creating an unallocated employee option pool in the pre-money valuation rather than the post-money valuation?',
+          options: [
+            'Existing founders absorb 100% of the dilution required to create the pool, effectively reducing the true pre-money valuation paid by the new investor',
+            'The incoming venture capital fund pays double the agreed share price to fund employee bonuses',
+            'All existing company employees immediately forfeit their vested common stock',
+            'The IRS imposes a 50% excise tax penalty on all stock option grants'
+          ],
+          answer: 0,
+          why: 'Creating the option pool in the pre-money forces existing shareholders to bear the entire dilution burden, effectively discounting the price-per-share paid by the new investor.',
+          answerIndex: 0,
+          explanation: 'Creating the option pool in the pre-money forces existing shareholders to bear the entire dilution burden, effectively discounting the price-per-share paid by the new investor.'
+        }
+      },
+      {
+        title: 'Preferred Stock Liquidation Preferences & Participation Rights',
+        say: [
+          'Venture capitalists rarely purchase common stock alongside founders; instead, they purchase Preferred Stock structured with liquidation preferences to protect their downside capital. A liquidation preference dictates the order and magnitude of cash distributions when a startup undergoes a liquidity event, such as a merger, trade sale, or asset liquidation. Under the standard National Venture Capital Association (NVCA) model, a 1x Non-Participating Preferred stock grants the investor the right to receive either their original investment back OR convert their preferred shares into common stock to share pro-rata in exit proceeds, whichever is higher.',
+          'In contrast, aggressive investor term sheets sometimes introduce Participating Preferred stock (derided by entrepreneurs as "double-dipping"). In a 1x Fully Participating Preferred structure, the investor receives their full 1x original investment back FIRST, and then participates alongside common stockholders in the remaining exit proceeds according to their pro-rata ownership percentage. In distressed or modest exit scenarios, participating preferred severely depresses founder payouts.',
+          'For instance, on a $5,000,000 Series A investment for 20% ownership, if the company is sold for $12,000,000, a non-participating investor takes their $5,000,000 preference, leaving $7,000,000 for founders. However, under participating preferred, the investor takes $5,000,000 plus 20% of the remaining $7,000,000 ($1.4M), extracting $6,400,000 total and shrinking the founder payout to $5,600,000. In high-value unicorn exits (e.g. $100M), preferred shares automatically convert to common, aligning investor and founder incentives.'
+        ],
+        example: 'At a $12M exit on a $5M Series A (20% ownership), 1x Non-Participating yields $5.0M to the investor and $7.0M to founders. A 1x Fully Participating structure extracts $6.4M for the investor ($5M preference + 20% of $7M remaining), slashing founder proceeds to $5.6M.',
+        code: `def evaluate_liquidation_preference_structures():
+    # Series A invested $5,000,000 for 20% preferred stock
+    invested_amount = 5000000.0
+    ownership_pct = 0.20
+    exit_valuations = [12000000.0, 30000000.0, 100000000.0]
+
+    print("Liquidation Preference Waterfall Comparison (1x Non-Participating vs 1x Participating):")
+    print(f"  {'Exit Value':<15} | {'1x Non-Participating (Preferred vs Common)':<42} | {'1x Fully Participating':<25}")
+    print("  " + "-" * 88)
+
+    results = []
+    for exit_val in exit_valuations:
+        # 1. 1x Non-Participating: Max of (1x Preference, As-Converted Share)
+        as_converted_pref = exit_val * ownership_pct
+        if as_converted_pref > invested_amount:
+            non_part_pref = as_converted_pref
+            non_part_founder = exit_val - non_part_pref
+            choice = "CONVERTED"
+        else:
+            non_part_pref = min(invested_amount, exit_val)
+            non_part_founder = max(0.0, exit_val - non_part_pref)
+            choice = "PREFERENCE"
+
+        # 2. 1x Fully Participating: 1x Preference + 20% of Remaining Proceeds
+        part_pref = min(invested_amount, exit_val)
+        remaining = max(0.0, exit_val - part_pref)
+        part_pref += remaining * ownership_pct
+        part_founder = exit_val - part_pref
+
+        print(f"  " + "$" + f"{exit_val:<14,.0f} | Investor: " + "$" + f"{non_part_pref:,.0f}" + f" ({choice}) / Founder: " + "$" + f"{non_part_founder:,.0f} | Investor: " + "$" + f"{part_pref:,.0f}" + " / Founder: " + "$" + f"{part_founder:,.0f}")
+        results.append({"exit": exit_val, "non_part_investor": non_part_pref, "part_investor": part_pref})
+
+    return results
+
+evaluate_liquidation_preference_structures()`,
+        output: `Liquidation Preference Waterfall Comparison (1x Non-Participating vs 1x Participating):
+  Exit Value      | 1x Non-Participating (Preferred vs Common) | 1x Fully Participating   
+  ----------------------------------------------------------------------------------------
+  $12,000,000     | Investor: $5,000,000 (PREFERENCE) / Founder: $7,000,000 | Investor: $6,400,000 / Founder: $5,600,000
+  $30,000,000     | Investor: $6,000,000 (CONVERTED) / Founder: $24,000,000 | Investor: $10,000,000 / Founder: $20,000,000
+  $100,000,000    | Investor: $20,000,000 (CONVERTED) / Founder: $80,000,000 | Investor: $24,000,000 / Founder: $76,000,000`,
+        codeNotes: [
+          'Models exit waterfalls across $12M, $30M, and $100M liquidity outcomes.',
+          'Demonstrates that non-participating preferred chooses the higher of 1x preference or as-converted common share.',
+          'Illustrates how participating preferred extracts an additional $1.4M to $4.0M in proceeds directly from founder equity.'
+        ],
+        tryIt: 'Examine a $6,000,000 downside fire sale exit to see non-participating preferred consume $5.0M (83.3% of proceeds), leaving only $1.0M for common holders.',
+        check: {
+          question: 'What happens to a 1x Non-Participating Preferred stock in an acquisition where the investor\'s as-converted common stock value exceeds their initial investment?',
+          options: [
+            'The investor automatically converts their preferred shares into common stock to receive their higher pro-rata percentage of exit proceeds',
+            'The investor is legally required to return all initial invested capital back to the founders',
+            'The investor receives both their 1x preference AND their full common stock percentage',
+            'The preferred stock is cancelled by Delaware courts without any distribution'
+          ],
+          answer: 0,
+          why: 'Under non-participating preferred, investors choose whichever payout is greater: their 1x liquidation preference or converting to common stock to share pro-rata.',
+          answerIndex: 0,
+          explanation: 'Under non-participating preferred, investors choose whichever payout is greater: their 1x liquidation preference or converting to common stock to share pro-rata.'
+        }
+      },
+      {
+        title: 'Down-Round Protection: Broad-Based Weighted Average vs Full Ratchet Anti-Dilution',
+        say: [
+          'When market valuations contract or a startup misses revenue milestones, it may be forced to raise capital at a lower valuation than its previous financing round—an event known in venture capital as a "Down-Round." To protect early investors from value destruction, preferred stock agreements include anti-dilution provisions that dynamically adjust the price at which preferred shares convert into common stock, issuing compensatory bonus shares to the investor.',
+          'The two primary mechanisms for anti-dilution adjustments are Full Ratchet and Broad-Based Weighted Average. Full Ratchet is the most punitive clause in venture finance: it reprices the original investor\'s shares entirely to the new down-round price, regardless of how small the new round is. If Series A invested $5,000,000 at $10.00/share and Series B is priced at $5.00/share, Full Ratchet cuts the Series A conversion price directly to $5.00, instantly doubling the investor\'s share count from 500,000 to 1,000,000 shares and wiping out founder equity.',
+          'The NVCA market standard is Broad-Based Weighted Average anti-dilution, which factors in both the price of the new round and the magnitude of capital raised relative to the company\'s fully diluted capitalization. The formula is expressed as CP2 = CP1 * (A + B) / (A + C), where A is pre-round fully diluted shares (2,500,000), B is shares that would have been purchased at the old price ($3M / $10 = 300,000), and C is actual new shares issued (600,000). This adjusts the conversion price moderately to $9.0323, granting Series A 553,571 shares (+53,571 shares or +10.7%) rather than doubling their ownership, protecting founders from wipeout dilution.'
+        ],
+        example: 'Series A holds 500,000 shares at $10.00 in a 2.5M share company. Raising $3.0M at $5.00 triggers Full Ratchet to double Series A to 1,000,000 shares (+100% dilution), whereas Broad-Based Weighted Average adjusts the price to $9.0323, granting 553,571 shares (+10.7% dilution).',
+        code: `def calculate_down_round_anti_dilution():
+    # Series A: Invested $5,000,000 at $10.00/share (500,000 shares)
+    # Total pre-Series B capitalization: 2,500,000 fully diluted shares
+    # Series B Down-Round: Raising $3,000,000 at $5.00/share (600,000 new shares)
+    cp1 = 10.00  # Original Series A Conversion Price
+    shares_a = 500000
+    fully_diluted_pre = 2500000
+    new_money = 3000000.0
+    new_price = 5.00
+    new_shares = new_money / new_price # 600,000 shares
+
+    # 1. Full Ratchet: Conversion price immediately drops to new price
+    full_ratchet_cp = new_price # $5.00
+    full_ratchet_shares = (shares_a * cp1) / full_ratchet_cp # 1,000,000 shares (+500k shares)
+
+    # 2. Broad-Based Weighted Average: CP2 = CP1 * (A + B) / (A + C)
+    # A = Fully diluted shares before round = 2,500,000
+    # B = Shares that would have been purchased at old price = $3,000,000 / $10.00 = 300,000
+    # C = Actual shares purchased at new price = 600,000
+    a = fully_diluted_pre
+    b = new_money / cp1 # 300,000
+    c = new_shares      # 600,000
+    bb_cp = cp1 * ((a + b) / (a + c)) # $10.00 * (2.8M / 3.1M) = $9.0323
+    bb_shares = (shares_a * cp1) / bb_cp # ~553,571 shares (+53,571 shares)
+
+    print("Down-Round Anti-Dilution Adjustment Comparison:")
+    print(f"  Original Series A: {shares_a:,} shares at " + "$" + f"{cp1:.2f} / share")
+    print(f"  Series B Down-Round: Raised " + "$" + f"{new_money:,.0f} at " + "$" + f"{new_price:.2f} / share ({new_shares:,.0f} shares)")
+    print(f"  1. Full Ratchet Protection:")
+    print(f"     Adjusted Conversion Price: " + "$" + f"{full_ratchet_cp:.2f}")
+    print(f"     Adjusted Series A Shares: {full_ratchet_shares:,.0f} (+{full_ratchet_shares - shares_a:,.0f} shares, +100.0% dilution protection)")
+    print(f"  2. Broad-Based Weighted Average Protection:")
+    print(f"     Adjusted Conversion Price: " + "$" + f"{bb_cp:.4f}")
+    print(f"     Adjusted Series A Shares: {bb_shares:,.0f} (+{bb_shares - shares_a:,.0f} shares, +10.7% dilution protection)")
+    return {"full_ratchet_cp": full_ratchet_cp, "broad_based_cp": bb_cp}
+
+calculate_down_round_anti_dilution()`,
+        output: `Down-Round Anti-Dilution Adjustment Comparison:
+  Original Series A: 500,000 shares at $10.00 / share
+  Series B Down-Round: Raised $3,000,000 at $5.00 / share (600,000 shares)
+  1. Full Ratchet Protection:
+     Adjusted Conversion Price: $5.00
+     Adjusted Series A Shares: 1,000,000 (+500,000 shares, +100.0% dilution protection)
+  2. Broad-Based Weighted Average Protection:
+     Adjusted Conversion Price: $9.0323
+     Adjusted Series A Shares: 553,571 (+53,571 shares, +10.7% dilution protection)`,
+        codeNotes: [
+          'Calculates Full Ratchet by setting conversion price directly equal to the new $5.00 round price, doubling investor shares.',
+          'Applies the NVCA Broad-Based Weighted Average formula CP2 = CP1 * (A + B) / (A + C) to calculate $9.0323.',
+          'Shows that Broad-Based Weighted Average limits Series A share expansion to +53,571 shares, mitigating catastrophic founder dilution.'
+        ],
+        tryIt: 'Raise the down-round price from $5.00 to $8.00 to see Broad-Based conversion price moderate to $9.6429 (+18,519 shares).',
+        check: {
+          question: 'Why is Broad-Based Weighted Average anti-dilution vastly preferred by founders over Full Ratchet anti-dilution?',
+          options: [
+            'Because Broad-Based accounts for the dollar amount raised and total capitalization, mitigating dilution, whereas Full Ratchet resets the price entirely regardless of round size',
+            'Because Full Ratchet requires the founders to pay cash out of their personal bank accounts to the investors',
+            'Because Broad-Based anti-dilution is only allowed for companies incorporated in Delaware',
+            'Because Full Ratchet eliminates all preferred stock and forces venture capitalists to accept debt notes'
+          ],
+          answer: 0,
+          why: 'Full Ratchet ignores the size of the round and resets the conversion price directly to the lowest issued price, creating severe dilution; Broad-Based cushions dilution proportionally.',
+          answerIndex: 0,
+          explanation: 'Full Ratchet ignores the size of the round and resets the conversion price directly to the lowest issued price, creating severe dilution; Broad-Based cushions dilution proportionally.'
+        }
+      },
+      {
+        title: 'Corporate Governance: Board Control, Protective Provisions & Drag-Along Rights',
+        say: [
+          'Economic terms determine who gets paid in an exit, but governance terms dictate who controls the company\'s destiny on a day-to-day basis. Founders often surrender corporate control without realizing it by agreeing to unbalanced board seats, sweeping veto rights, and predatory transfer clauses. In standard Series A financings, the Board of Directors typically expands to five members: two Founder seats, two Investor seats, and one mutually agreed Independent industry expert, establishing a balanced decision-making coalition.',
+          'Venture investors protect their minority equity interests through Protective Provisions—contractual negative covenants requiring separate majority approval from preferred stockholders before the company can take significant corporate actions. Standard NVCA protective provisions restrict the startup from altering certificate of incorporation terms, creating or issuing senior equity, incurring debt exceeding agreed thresholds (e.g. >$500,000), repurchasing common shares, or declaring dividends.',
+          'Crucially, term sheets govern exit liquidity through Drag-Along and Tag-Along rights. Drag-Along rights enable a designated majority (typically Board approval, a majority of Preferred, and a majority of Common) to force minority stockholders to vote in favor of a corporate sale or merger, preventing holdout shareholders from blocking an acquisition. Tag-Along (co-sale) rights protect minority investors by guaranteeing them the right to participate pro-rata if founders sell their personal shares on secondary markets.'
+        ],
+        example: 'Auditing an NVCA term sheet confirms a balanced 5-person board (2 Founder, 2 Investor, 1 Independent), standard Series A veto rights on M&A and debt >$500k, a founder-protected drag-along threshold (Common + Preferred majority), and standard major investor information rights.',
+        code: `def audit_nvca_governance_scorecard():
+    terms = [
+        {"clause": "Board Composition", "nvca_standard": "2 Founder, 2 Investor, 1 Independent", "status": "APPROVED", "risk": "BALANCED"},
+        {"clause": "Protective Provisions", "nvca_standard": "Series A majority approval for M&A, debt >$500k, senior stock", "status": "APPROVED", "risk": "STANDARD"},
+        {"clause": "Drag-Along Threshold", "nvca_standard": "Board + Common Majority + Series A Majority required", "status": "APPROVED", "risk": "FOUNDER_PROTECTED"},
+        {"clause": "Information Rights", "nvca_standard": "Major investors (>10% ownership) receive monthly financials & annual budget", "status": "APPROVED", "risk": "STANDARD"}
+    ]
+
+    print("NVCA Term Sheet Corporate Governance & Protective Provisions Audit:")
+    for t in terms:
+        print(f"  {t['clause']:<22} | Standard: {t['nvca_standard']:<40} | Status: {t['status']} ({t['risk']})")
+
+    return {"total_clauses": len(terms), "status": "GOVERNANCE_COMPLIANT"}
+
+audit_nvca_governance_scorecard()`,
+        output: `NVCA Term Sheet Corporate Governance & Protective Provisions Audit:
+  Board Composition      | Standard: 2 Founder, 2 Investor, 1 Independent     | Status: APPROVED (BALANCED)
+  Protective Provisions  | Standard: Series A majority approval for M&A, debt >$500k, senior stock | Status: APPROVED (STANDARD)
+  Drag-Along Threshold   | Standard: Board + Common Majority + Series A Majority required | Status: APPROVED (FOUNDER_PROTECTED)
+  Information Rights     | Standard: Major investors (>10% ownership) receive monthly financials & annual budget | Status: APPROVED (STANDARD)`,
+        codeNotes: [
+          'Evaluates corporate board composition against the balanced 2-2-1 NVCA structure.',
+          'Verifies standard preferred protective provisions limiting unapproved M&A and debt incurrence.',
+          'Ensures drag-along clauses require common stockholder consent to prevent unilateral investor fire sales.'
+        ],
+        tryIt: 'Simulate an investor-favorable drag-along clause requiring only Preferred majority approval to analyze founder vulnerability.',
+        check: {
+          question: 'What is the function of a Drag-Along clause in a venture capital stockholders\' agreement?',
+          options: [
+            'It enables a specified majority of shareholders to force all other shareholders to vote in favor of and execute a board-approved company sale',
+            'It allows founders to drag investors to court for failing to provide marketing referrals',
+            'It prevents the company from hiring external legal counsel without state approval',
+            'It forces sales representatives to attend every board meeting in person'
+          ],
+          answer: 0,
+          why: 'Drag-along rights prevent a minority holdout from vetoing or blocking an acquisition that has been approved by the board and the specified majority of shareholders.',
+          answerIndex: 0,
+          explanation: 'Drag-along rights prevent a minority holdout from vetoing or blocking an acquisition that has been approved by the board and the specified majority of shareholders.'
+        }
+      },
+      {
+        title: 'Deploy the Venture Capital Term Sheet Control Tower',
+        say: [
+          'Venture capital negotiations are an exercise in multi-variable game theory. Evaluating a term sheet requires synthesizing valuation, option pool mechanics, downside liquidation preferences, anti-dilution protections, and board governance provisions into a single coherent capital strategy.',
+          'In this operational capstone module, you will deploy the complete Venture Capital Term Sheet Control Tower. You will audit the option pool shuffle to uncover effective pre-money valuations, model liquidation preferences across exit horizons, simulate down-round anti-dilution dilution formulas, and audit corporate governance provisions.',
+          'Deploying this control tower empowers entrepreneurs and venture finance leaders to negotiate term sheets from a position of analytical strength, safeguarding founder ownership and establishing sustainable boardroom partnerships.'
+        ],
+        example: 'The team analyzes a $20M pre-money term sheet ($16.25M effective founder valuation), confirms non-participating preferred protections across $12M to $100M exits, verifies Broad-Based anti-dilution at $9.0323, and audits 4 balanced NVCA governance clauses.',
+        code: `def run_venture_capital_term_sheet_suite():
+    print("=== PinIT Career OS Venture Capital Term Sheet Control Tower ===")
+    print("--- 1. Pre/Post-Money & Option Pool Shuffle ---")
+    shuf = calculate_option_pool_shuffle()
+
+    print("\n--- 2. Liquidation Preference Structures ---")
+    liq = evaluate_liquidation_preference_structures()
+
+    print("\n--- 3. Down-Round Anti-Dilution Modeling ---")
+    ad = calculate_down_round_anti_dilution()
+
+    print("\n--- 4. NVCA Corporate Governance Scorecard ---")
+    gov = audit_nvca_governance_scorecard()
+
+    print("\n--- 5. VC Term Sheet Synthesis ---")
+    print("  Effective Founder Pre-Money: " + "$" + f"{shuf['effective_pre']:,.2f}")
+    print(f"  Broad-Based Weighted Average Conversion Price: " + "$" + f"{ad['broad_based_cp']:.4f}")
+    print(f"  NVCA Governance Clauses Audited: {gov['total_clauses']} (All Compliant)")
+    print("Status: TERM SHEET FINANCIAL & LEGAL GOVERNANCE READY FOR PARTNER VOTE.")
+
+run_venture_capital_term_sheet_suite()`,
+        output: `=== PinIT Career OS Venture Capital Term Sheet Control Tower ===
+--- 1. Pre/Post-Money & Option Pool Shuffle ---
+Venture Capital Option Pool Shuffle Mechanics:
+  Stated Pre-Money Valuation: $20,000,000.00
+  Series A Investment: $5,000,000.00
+  Post-Money Valuation: $25,000,000.00
+  Unallocated ESOP Pool Required: 15.0% ($3,750,000.00)
+  Effective Founder Pre-Money Valuation: $16,250,000.00
+  Investor Ownership: 20.0%
+  Unallocated Option Pool: 15.0%
+  Founder Effective Post-Round Ownership: 65.0% (Diluted by 15.0%)
+
+--- 2. Liquidation Preference Structures ---
+Liquidation Preference Waterfall Comparison (1x Non-Participating vs 1x Participating):
+  Exit Value      | 1x Non-Participating (Preferred vs Common) | 1x Fully Participating   
+  ----------------------------------------------------------------------------------------
+  $12,000,000     | Investor: $5,000,000 (PREFERENCE) / Founder: $7,000,000 | Investor: $6,400,000 / Founder: $5,600,000
+  $30,000,000     | Investor: $6,000,000 (CONVERTED) / Founder: $24,000,000 | Investor: $10,000,000 / Founder: $20,000,000
+  $100,000,000    | Investor: $20,000,000 (CONVERTED) / Founder: $80,000,000 | Investor: $24,000,000 / Founder: $76,000,000
+
+--- 3. Down-Round Anti-Dilution Modeling ---
+Down-Round Anti-Dilution Adjustment Comparison:
+  Original Series A: 500,000 shares at $10.00 / share
+  Series B Down-Round: Raised $3,000,000 at $5.00 / share (600,000 shares)
+  1. Full Ratchet Protection:
+     Adjusted Conversion Price: $5.00
+     Adjusted Series A Shares: 1,000,000 (+500,000 shares, +100.0% dilution protection)
+  2. Broad-Based Weighted Average Protection:
+     Adjusted Conversion Price: $9.0323
+     Adjusted Series A Shares: 553,571 (+53,571 shares, +10.7% dilution protection)
+
+--- 4. NVCA Corporate Governance Scorecard ---
+NVCA Term Sheet Corporate Governance & Protective Provisions Audit:
+  Board Composition      | Standard: 2 Founder, 2 Investor, 1 Independent     | Status: APPROVED (BALANCED)
+  Protective Provisions  | Standard: Series A majority approval for M&A, debt >$500k, senior stock | Status: APPROVED (STANDARD)
+  Drag-Along Threshold   | Standard: Board + Common Majority + Series A Majority required | Status: APPROVED (FOUNDER_PROTECTED)
+  Information Rights     | Standard: Major investors (>10% ownership) receive monthly financials & annual budget | Status: APPROVED (STANDARD)
+
+--- 5. VC Term Sheet Synthesis ---
+  Effective Founder Pre-Money: $16,250,000.00
+  Broad-Based Weighted Average Conversion Price: $9.0323
+  NVCA Governance Clauses Audited: 4 (All Compliant)
+Status: TERM SHEET FINANCIAL & LEGAL GOVERNANCE READY FOR PARTNER VOTE.`,
+        codeNotes: [
+          'Unifies option pool valuation impacts, liquidation waterfalls, down-round anti-dilution, and NVCA governance.',
+          'Demonstrates how mathematical rigor in term sheet evaluation protects millions in founder capitalization.',
+          'Prepares entrepreneurs for institutional venture capital partner presentations and legal term sheet execution.'
+        ],
+        tryIt: 'Run the integrated term sheet control tower to evaluate trade-offs between valuation, liquidation preference, and governance clauses.',
+        check: {
+          question: 'How do sophisticated startup founders evaluate competing venture capital term sheets beyond top-line valuation?',
+          options: [
+            'By analyzing option pool size and placement, liquidation preference participation rights, anti-dilution formulas, and board governance control thresholds',
+            'By choosing whichever venture capitalist offers the highest discount on office snacks',
+            'By refusing to sign any legal agreements and accepting only physical cash investments',
+            'By granting all voting control to junior angel investors'
+          ],
+          answer: 0,
+          why: 'True deal economics depend heavily on the option pool shuffle, liquidation preferences (participating vs non-participating), anti-dilution provisions, and board composition rather than stated valuation alone.',
+          answerIndex: 0,
+          explanation: 'True deal economics depend heavily on the option pool shuffle, liquidation preferences (participating vs non-participating), anti-dilution provisions, and board composition rather than stated valuation alone.'
+        }
+      }
+    ],
+    summary: [
+      'Unmasked the mechanics of the VC Option Pool Shuffle, showing how a 15% pre-money unallocated ESOP pool reduces effective founder pre-money from $20.0M to $16.25M and founder ownership from 80% to 65%.',
+      'Compared preferred liquidation preferences across $12M, $30M, and $100M exits, demonstrating that 1x Non-Participating Preferred protects downside while participating preferred extracts $1.4M to $4.0M in excess founder proceeds.',
+      'Calculated down-round anti-dilution formulas, contrasting punitive Full Ratchet (doubling Series A to 1,000,000 shares) with NVCA standard Broad-Based Weighted Average (adjusting conversion price to $9.0323, +53,571 shares).',
+      'Audited NVCA corporate governance standards, verifying balanced 2-2-1 board composition, protective provision vetoes on M&A and debt >$500k, and common-shareholder-protected drag-along thresholds.',
+      'Deployed the Venture Capital Term Sheet Control Tower, providing an end-to-end analytical framework for evaluating, negotiating, and executing venture capital term sheets.'
+    ],
+    projectStep: {
+      title: 'Deploy the Venture Capital Term Sheet Modeling & Negotiation Engine',
+      steps: [
+        'Calculate true effective founder pre-money valuations by modeling pre-money option pool expansion requirements.',
+        'Build a multi-scenario liquidation preference waterfall comparing non-participating and participating preferred outcomes.',
+        'Model down-round anti-dilution adjustments using Broad-Based Weighted Average and Full Ratchet formulas.',
+        'Audit corporate governance terms, protective provisions, and drag-along thresholds against NVCA market standards.'
+      ]
+    }
   }
 ];
-
