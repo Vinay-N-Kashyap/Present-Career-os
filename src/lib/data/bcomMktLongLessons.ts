@@ -1437,5 +1437,391 @@ print(f"Intervention: {remorse_case['Proactive_Intervention']}")`,
         'Design a 3-part post-purchase customer onboarding and reassurance sequence to eliminate cognitive dissonance and lower return rates below 2%.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom-marketing',
+    day: 4,
+    title: 'Marketing Research & Demand Forecasting: Scientific Methodology & Predictive Modeling',
+    goal: 'Master empirical marketing research and predictive demand forecasting: designing Cochran-sampled research plans, auditing Likert survey instruments for response biases, calculating Exponential Smoothing demand forecasts with MAPE accuracy metrics, sizing market potential via TAM/SAM/SOM geometry, and synthesizing multi-round Delphi expert consensus projections.',
+    minutes: 42,
+    recap: 'Yesterday we unpacked the psychology of consumer decision journeys, multi-attribute attitudes, and cognitive dissonance. Today we shift from individual minds to market-wide intelligence: mastering how organizations scientifically gather field data and forecast future market demand.',
+    parts: [
+      {
+        title: 'The 5-Step Marketing Research Process & Cochran Sample Size Calculus',
+        say: [
+          'Marketing decisions made without empirical data are mere gambles; scientific marketing research transforms ambiguous business dilemmas into rigorous, risk-mitigated strategies.',
+          'The formal marketing research process follows five disciplined steps: 1. Problem & Objectives Definition; 2. Research Plan Development; 3. Field Data Collection; 4. Data Analysis & Synthesis; 5. Actionable Presentation to Leadership.',
+          'Step 1 is the most critical: as the famous management maxim states, "A problem well-defined is half solved." If you define the problem as declining revenue rather than diagnosing why customers are defecting to a new rival, millions of research dollars will be wasted.',
+          'Marketing research is categorized into three distinct research designs: Exploratory Research (to gather preliminary background and define ambiguous concepts via focus groups), Descriptive Research (to quantify market parameters such as demographic profiles and purchase frequencies), and Causal Research (to test explicit cause-and-effect hypotheses via controlled experiments).',
+          'When designing quantitative surveys, how many respondents must you survey to achieve statistical confidence without burning capital?',
+          'Statistician William G. Cochran developed the canonical formula for representative sample sizes: n0 = (Z^2 * p * (1-p)) / e^2, where Z represents the standard normal deviate for the desired confidence level (1.96 for 95% confidence), p represents the estimated population proportion (set to 0.50 to maximize conservative variance), and e represents the acceptable margin of error (typically 0.05 for +/- 5%).',
+          'Applying Cochran\'s formula proves that whether a city has 500,000 residents or 50 million, a rigorously randomized sample of roughly 384 respondents provides statistically robust market intelligence within +/- 5% error at 95% confidence.'
+        ],
+        example: 'Think of a blood test at a hospital. A doctor does not need to drain all five liters of blood from your body to check your cholesterol; extracting a single, well-mixed 5-milliliter vial provides a perfectly representative diagnosis of your entire cardiovascular system. That is the statistical power of Cochran random sampling.',
+        code: `# Simulation: Cochran Statistical Sample Size Calculator for Market Research
+def calculate_sample_size(
+    population_size: int,
+    confidence_level_z: float, # 1.96 for 95%, 2.576 for 99%
+    margin_of_error_e: float,  # e.g., 0.05 for +/- 5%
+    estimated_proportion_p: float = 0.5 # 0.5 maximizes sample size conservative variance
+) -> dict:
+    # Cochran's Sample Size Formula: n0 = (Z^2 * p * (1-p)) / e^2
+    n0 = (confidence_level_z ** 2 * estimated_proportion_p * (1.0 - estimated_proportion_p)) / (margin_of_error_e ** 2)
+    
+    # Finite Population Correction (FPC): n = n0 / (1 + (n0 - 1) / N)
+    if population_size > 0:
+        n_corrected = n0 / (1.0 + (n0 - 1.0) / population_size)
+    else:
+        n_corrected = n0
+
+    return {
+        "Target_Population": population_size,
+        "Confidence_Z": confidence_level_z,
+        "Margin_Of_Error_Pct": f"+/- {round(margin_of_error_e * 100.0, 1)}%",
+        "Raw_Cochran_Sample": int(round(n0)),
+        "Required_Survey_Sample_Size": int(round(n_corrected)),
+        "Statistical_Reliability": "STATISTICALLY_VALID_REPRESENTATIVE_SAMPLE"
+    }
+
+sample_plan = calculate_sample_size(population_size=50000, confidence_level_z=1.96, margin_of_error_e=0.05)
+print(f"Population: {sample_plan['Target_Population']} | Margin: {sample_plan['Margin_Of_Error_Pct']}")
+print(f"Required Sample: {sample_plan['Required_Survey_Sample_Size']} respondents ({sample_plan['Statistical_Reliability']})")`,
+        output: `Population: 50000 | Margin: +/- 5.0%\nRequired Sample: 381 respondents (STATISTICALLY_VALID_REPRESENTATIVE_SAMPLE)`,
+        codeNotes: [
+          { line: 9, note: 'Cochran formula n0 = (Z^2 * p * (1-p)) / e^2 calculates baseline sample size' },
+          { line: 12, note: 'Finite Population Correction (FPC) adjusts sample size for defined target communities' },
+          { line: 19, note: 'Returns statistically validated survey quota for quantitative research teams' },
+          { line: 26, note: 'Calculates requirement for 50,000 population at 95% confidence and +/- 5% precision' }
+        ],
+        tryIt: 'Change margin_of_error_e from 0.05 (+/- 5%) to 0.02 (+/- 2%) to observe how tightening precision quadruples required sample size.',
+        check: {
+          question: 'In marketing research design, what is the primary role of "Exploratory Research"?',
+          options: [
+            'To gather preliminary qualitative insights, discover fresh ideas, and clarify the nature of ambiguous, poorly understood market problems.',
+            'To prove causality in a double-blind clinical trial under laboratory isolation.',
+            'To calculate exact decimal market share percentages across thirty national territories.',
+            'To print final accounting tax returns for statutory filing.'
+          ],
+          answer: 0,
+          why: 'Exploratory research is conducted when a problem is broad or undefined; it utilizes focus groups, in-depth interviews, and observational studies to shed light on latent customer dynamics before investing in expensive quantitative surveys.',
+          answerIndex: 0,
+          explanation: 'Exploratory research is conducted when a problem is broad or undefined; it utilizes focus groups, in-depth interviews, and observational studies to shed light on latent customer dynamics before investing in expensive quantitative surveys.'
+        }
+      },
+      {
+        title: 'Survey Instrument Engineering: Likert Scales & Neutrality Auditing',
+        say: [
+          'Even with a perfectly randomized sample, a research study will produce catastrophic strategic errors if the survey instrument itself is flawed.',
+          'The design of questions, answer scales, and phrasing directly impacts respondent psychology and data fidelity.',
+          'The gold standard of quantitative attitude measurement is the Likert Scale, developed by Rensis Likert. A Likert scale presents a statement and asks respondents to specify their level of agreement across a symmetric 5-point or 7-point continuum (from "Strongly Disagree" to "Strongly Agree").',
+          'Similarly, the Semantic Differential scale anchors bipolar adjective pairs (such as "Inconvenient vs. Convenient" or "Unreliable vs. Reliable") across a 7-point gradient to map brand personality perceptions.',
+          'However, questionnaire designers must aggressively guard against fatal response biases.',
+          'Leading Questions subtly prompt the respondent toward a desired answer (e.g., "Don\'t you agree that our award-winning app is faster?").',
+          'Double-Barreled Questions commit the cardinal sin of combining two separate topics into a single query (e.g., "How fast and affordable was our service?" — leaving a buyer who felt service was fast but expensive unable to answer honestly).',
+          'Social Desirability Bias causes respondents to over-report virtuous behaviors (such as donating to charity or buying green organic food) and under-report embarrassing habits.',
+          'Rigorous research teams audit every questionnaire item through neutrality testing and pilot runs before field launch.'
+        ],
+        example: 'Think of calibrating a medical thermometer. If the thermometer is warped or offset by two degrees (leading phrasing and double-barreled questions), every reading you take will falsely diagnose healthy patients as having a fever, leading to inappropriate medical treatments.',
+        code: `# Simulation: Questionnaire Integrity & Neutrality Auditor
+from dataclasses import dataclass
+from typing import List
+
+@dataclass
+class SurveyQuestionAudit:
+    question_text: str
+    scale_type: str # 'Likert_5', 'Likert_7', 'Semantic_Differential'
+    contains_leading_words: bool
+    is_double_barreled: bool
+
+def audit_questionnaire_integrity(questions: List[SurveyQuestionAudit]) -> dict:
+    passed = 0
+    flaws = []
+    
+    for q in questions:
+        if q.contains_leading_words:
+            flaws.append(f"FLAG: Leading bias in '{q.question_text}'")
+        elif q.is_double_barreled:
+            flaws.append(f"FLAG: Double-barreled compound query in '{q.question_text}'")
+        else:
+            passed += 1
+
+    clean_rate_pct = round((passed / len(questions)) * 100.0, 1)
+    status = 'APPROVED_FOR_FIELD_DATA_COLLECTION' if clean_rate_pct == 100.0 else 'REQUIRES_INSTRUMENT_REVISION'
+
+    return {
+        "Total_Questions": len(questions),
+        "Clean_Neutral_Questions": passed,
+        "Instrument_Purity_Pct": clean_rate_pct,
+        "Audit_Status": status,
+        "Detected_Flaws": flaws
+    }
+
+questions = [
+    SurveyQuestionAudit("How satisfied are you with product battery endurance?", "Likert_5", False, False),
+    SurveyQuestionAudit("Don't you agree our premium app is faster than rivals?", "Likert_5", True, False),
+    SurveyQuestionAudit("How fast and affordable was our customer service?", "Likert_5", False, True),
+    SurveyQuestionAudit("The software user interface is intuitive to navigate.", "Likert_7", False, False)
+]
+audit_res = audit_questionnaire_integrity(questions)
+print(f"Questions Audited: {audit_res['Total_Questions']} | Purity: {audit_res['Instrument_Purity_Pct']}%")
+print(f"Status: {audit_res['Audit_Status']}")
+print(f"Flaws: {len(audit_res['Detected_Flaws'])} issues flagged")`,
+        output: `Questions Audited: 4 | Purity: 50.0%\nStatus: REQUIRES_INSTRUMENT_REVISION\nFlaws: 2 issues flagged`,
+        codeNotes: [
+          { line: 5, note: 'SurveyQuestionAudit model inspects question wording for leading bias and compounding' },
+          { line: 17, note: 'Detects double-barreled questions that combine two distinct attributes into one query' },
+          { line: 23, note: 'Calculates overall questionnaire purity percentage and issues approval gate' },
+          { line: 40, note: 'Identifies 2 defective questions requiring rewrite before fielding' }
+        ],
+        tryIt: 'Split the double-barreled question into two separate neutral Likert questions to raise questionnaire purity to 75%.',
+        check: {
+          question: 'Why is the survey question "How satisfied are you with the speed and reliability of our cloud platform?" methodologically defective?',
+          options: [
+            'It is a double-barreled question combining two separate attributes (speed and reliability); a respondent whose system is fast but unreliable cannot answer accurately.',
+            'It fails to mention the company\'s chief executive officer by name.',
+            'It uses the English language instead of Latin terminology.',
+            'It does not offer cash cryptocurrency prizes for completion.'
+          ],
+          answer: 0,
+          why: 'A double-barreled question forces respondents to provide a single composite rating for two independent attributes, destroying data validity when performance diverges across the two dimensions.',
+          answerIndex: 0,
+          explanation: 'A double-barreled question forces respondents to provide a single composite rating for two independent attributes, destroying data validity when performance diverges across the two dimensions.'
+        }
+      },
+      {
+        title: 'Quantitative Demand Forecasting: Moving Averages & Exponential Smoothing (MAPE)',
+        say: [
+          'Once marketing research captures customer purchase intentions, operations and finance demand an exact quantitative forecast: how many units will the enterprise sell in the coming quarters?',
+          'Under-forecasting leads to stockouts, furious customers, lost revenue, and competitors capturing market share. Over-forecasting leads to bloated warehouses, working capital gridlock, and steep write-downs of obsolete inventory.',
+          'For established products with historical sales records, quantitative Time-Series Forecasting models project past velocity into the future.',
+          'The simplest technique is the k-Period Moving Average (SMA), which averages sales across the most recent k periods, smoothing out random short-term noise.',
+          'However, the superior industry-standard method is Exponential Smoothing, pioneered by Robert G. Brown. The formula states: F_{t+1} = alpha * A_t + (1 - alpha) * F_t, where F_{t+1} is the forecast for the upcoming period, A_t is the actual sales volume observed in the current period, F_t is the current period forecast, and alpha is a smoothing constant between 0.0 and 1.0.',
+          'The smoothing constant alpha controls responsiveness: a high alpha (e.g., 0.7) reacts swiftly to recent demand spikes, while a low alpha (e.g., 0.2) places heavy weight on long-term historical stability.',
+          'To measure forecast accuracy, professional forecasters compute the Mean Absolute Percentage Error (MAPE): MAPE = (1/n) * Sum(|Actual - Forecast| / Actual) * 100%. A MAPE below 10% reflects exceptional forecasting accuracy.'
+        ],
+        example: 'Think of steering an automobile on a windy highway. Looking purely at where you were 5 miles ago is a Moving Average. Exponential Smoothing is keeping your hands gently on the steering wheel: if a gust of wind nudges you left (actual sales fluctuate), you make a calibrated proportional adjustment (smoothing alpha) to keep the car centered in the lane without over-steering into the ditch.',
+        code: `# Simulation: Exponential Smoothing Demand Forecasting & MAPE Accuracy Engine
+from typing import List
+
+def forecast_demand_exponential_smoothing(
+    actual_historical_sales: List[float],
+    smoothing_alpha: float # 0.1 to 0.9
+) -> dict:
+    # F_t+1 = alpha * A_t + (1 - alpha) * F_t
+    forecasts = [actual_historical_sales[0]] # Initialize first forecast with first actual
+    absolute_percentage_errors = []
+
+    for t in range(len(actual_historical_sales) - 1):
+        actual_t = actual_historical_sales[t]
+        forecast_t = forecasts[t]
+        next_forecast = (smoothing_alpha * actual_t) + ((1.0 - smoothing_alpha) * forecast_t)
+        forecasts.append(round(next_forecast, 2))
+
+    # Compute MAPE for periods 2 onwards
+    for t in range(1, len(actual_historical_sales)):
+        actual = actual_historical_sales[t]
+        pred = forecasts[t]
+        ape = abs(actual - pred) / actual
+        absolute_percentage_errors.append(ape)
+
+    mape_pct = round((sum(absolute_percentage_errors) / len(absolute_percentage_errors)) * 100.0, 2)
+    
+    # Project next out-of-sample period
+    final_actual = actual_historical_sales[-1]
+    final_forecast = forecasts[-1]
+    next_period_projection = round((smoothing_alpha * final_actual) + ((1.0 - smoothing_alpha) * final_forecast), 2)
+
+    return {
+        "Periods_Evaluated": len(actual_historical_sales),
+        "Smoothing_Alpha": smoothing_alpha,
+        "Mean_Absolute_Percentage_Error_Pct": f"{mape_pct}%",
+        "Next_Period_Projected_Demand": next_period_projection,
+        "Forecasting_Accuracy": 'HIGH_ACCURACY_PROJECTION' if mape_pct < 10.0 else 'ACCEPTABLE_HEURISTIC'
+    }
+
+sales = [1200.0, 1280.0, 1310.0, 1420.0, 1390.0, 1480.0]
+demand_res = forecast_demand_exponential_smoothing(sales, smoothing_alpha=0.35)
+print(f"History: {demand_res['Periods_Evaluated']} periods | Alpha: {demand_res['Smoothing_Alpha']}")
+print(f"MAPE: {demand_res['Mean_Absolute_Percentage_Error_Pct']} ({demand_res['Forecasting_Accuracy']})")
+print(f"Next Period Forecast: {demand_res['Next_Period_Projected_Demand']} units")`,
+        output: `History: 6 periods | Alpha: 0.35\nMAPE: 7.78% (HIGH_ACCURACY_PROJECTION)\nNext Period Forecast: 1389.33 units`,
+        codeNotes: [
+          { line: 9, note: 'Recursively applies exponential smoothing equation F_t+1 = alpha*A_t + (1-alpha)*F_t' },
+          { line: 22, note: 'Calculates Mean Absolute Percentage Error (MAPE) to quantify forecast variance' },
+          { line: 27, note: 'Generates out-of-sample demand forecast for the next upcoming operating quarter' },
+          { line: 38, note: 'Achieves high forecasting precision with 7.78% MAPE on 6-period sales velocity' }
+        ],
+        tryIt: 'Increase smoothing_alpha from 0.35 to 0.80 to give heavy weight to the most recent period sales jump (1480 units) and watch the next projection rise.',
+        check: {
+          question: 'In exponential smoothing demand forecasting, what does a high smoothing constant alpha (such as alpha = 0.8) indicate?',
+          options: [
+            'The forecast places dominant weight on the most recent period\'s actual sales, responding swiftly to immediate market fluctuations.',
+            'The forecast ignores all historical data and selects a random lottery number.',
+            'The enterprise has run out of physical inventory in all distribution centers.',
+            'The product is legally restricted from being sold across state borders.'
+          ],
+          answer: 0,
+          why: 'The smoothing constant alpha weights the most recent observation; as alpha approaches 1.0, the forecast reacts rapidly to recent changes, whereas lower alpha values smooth out short-term fluctuations by anchoring to historical trend.',
+          answerIndex: 0,
+          explanation: 'The smoothing constant alpha weights the most recent observation; as alpha approaches 1.0, the forecast reacts rapidly to recent changes, whereas lower alpha values smooth out short-term fluctuations by anchoring to historical trend.'
+        }
+      },
+      {
+        title: 'Market Sizing Geometry: Total Addressable Market (TAM), SAM & SOM Projections',
+        say: [
+          'Before greenlighting a product launch or pitching venture capital investors, founders and marketing executives must calculate the market boundary geometry: TAM, SAM, and SOM.',
+          'These nested concentric circles define the total potential revenue pool and establish realistic milestones.',
+          'TAM (Total Addressable Market) is the total annual market demand for a product or service if your firm enjoyed 100% market share across the entire globe with zero competitors.',
+          'TAM is calculated using the Total Market Potential formula: Q = n * q * p, where n represents the total number of prospective buyers in the category, q represents the average quantity purchased by each buyer per year, and p represents the average selling price.',
+          'SAM (Serviceable Available Market) represents the subset of TAM that directly fits your specific product category, technology architecture, and current geographic distribution capabilities.',
+          'SOM (Serviceable Obtainable Market) is the realistic, defensible slice of SAM that your company can realistically capture within a 1-to-3 year operating horizon, given existing marketing budgets, channel sales capacity, and competitor resistance.',
+          'Amateur business plans claim "If we just capture 1% of the $100 billion global market, we will make $1 billion." Venture capitalists instantly reject this naive top-down claim. Professional marketing plans build bottom-up SOM models proving how marketing spend and sales velocity achieve specific customer unit acquisitions.'
+        ],
+        example: 'Think of fishing in the Atlantic Ocean. TAM is every single edible fish swimming anywhere in the ocean ($150M total market). SAM is all the fish swimming within 50 miles of your local harbor where your vessel has fuel to navigate ($60M serviceable market). SOM is the actual volume of fish your single trawler boat has the nets, crew, and storage hold capacity to harvest this season ($4.8M obtainable revenue).',
+        code: `# Simulation: Bottom-Up TAM, SAM & SOM Market Sizing Geometry Model
+def compute_tam_sam_som(
+    total_population_buyers: int,
+    average_annual_units_per_buyer: float,
+    average_selling_price: float,
+    geographic_serviceable_pct: float, # e.g. 0.30 for 30% serviceable
+    obtainable_market_share_pct: float # e.g. 0.05 for 5% realistic 3-year capture
+) -> dict:
+    # Total Addressable Market (TAM) = n * q * p
+    tam_dollars = total_population_buyers * average_annual_units_per_buyer * average_selling_price
+    sam_dollars = tam_dollars * geographic_serviceable_pct
+    som_dollars = sam_dollars * obtainable_market_share_pct
+
+    return {
+        "Total_Addressable_Market_TAM": f"\${round(tam_dollars / 1e6, 2)}M",
+        "Serviceable_Available_Market_SAM": f"\${round(sam_dollars / 1e6, 2)}M",
+        "Serviceable_Obtainable_Market_SOM": f"\${round(som_dollars / 1e6, 2)}M",
+        "Serviceable_Coverage_Pct": f"{round(geographic_serviceable_pct * 100.0, 1)}%",
+        "Target_SOM_Share_Pct": f"{round(obtainable_market_share_pct * 100.0, 1)}%",
+        "Strategic_Planning_Baseline": f"Targeting \${round(som_dollars / 1e6, 2)}M realistic 3-year revenue capture."
+    }
+
+tam_res = compute_tam_sam_som(
+    total_population_buyers=500000,
+    average_annual_units_per_buyer=2.0,
+    average_selling_price=150.0,
+    geographic_serviceable_pct=0.40,
+    obtainable_market_share_pct=0.08
+)
+print(f"TAM: {tam_res['Total_Addressable_Market_TAM']} | SAM: {tam_res['Serviceable_Available_Market_SAM']} | SOM: {tam_res['Serviceable_Obtainable_Market_SOM']}")
+print(f"Planning Goal: {tam_res['Strategic_Planning_Baseline']}")`,
+        output: `TAM: $150.0M | SAM: $60.0M | SOM: $4.8M\nPlanning Goal: Targeting $4.8M realistic 3-year revenue capture.`,
+        codeNotes: [
+          { line: 9, note: 'Total Market Potential formula TAM = n * q * p computes gross theoretical ceiling' },
+          { line: 10, note: 'Filters TAM by operational capability and regional boundaries to establish SAM' },
+          { line: 11, note: 'Applies realistic competitive market share penetration percentage to yield SOM' },
+          { line: 26, note: 'Calculates $150M TAM translating into realistic $4.8M 3-year commercial target' }
+        ],
+        tryIt: 'Increase obtainable_market_share_pct from 0.08 (8%) to 0.15 (15%) to project a high-growth aggressive scaling scenario.',
+        check: {
+          question: 'What is the fundamental difference between SAM (Serviceable Available Market) and SOM (Serviceable Obtainable Market)?',
+          options: [
+            'SAM represents the market segment that matches your product profile and territory, while SOM is the specific, realistic portion of SAM your company can actually capture with its existing sales and marketing resources.',
+            'SAM applies only to software companies, while SOM applies only to agricultural farms.',
+            'SAM is calculated in Japanese Yen, while SOM is calculated in US Dollars.',
+            'There is no difference; SAM and SOM are identical synonyms.'
+          ],
+          answer: 0,
+          why: 'SAM reflects your total serviceable territory and fit, whereas SOM represents your realistic near-term target given sales capacity, marketing budget, and competitor resistance.',
+          answerIndex: 0,
+          explanation: 'SAM reflects your total serviceable territory and fit, whereas SOM represents your realistic near-term target given sales capacity, marketing budget, and competitor resistance.'
+        }
+      },
+      {
+        title: 'The Delphi Method & Multi-Round Expert Consensus Synthesis',
+        say: [
+          'What happens when a marketing team must forecast demand for a radical breakthrough innovation — such as commercial space tourism, quantum cryptographic networks, or autonomous flying taxis — where zero historical sales data exists?',
+          'Under conditions of extreme technological uncertainty and zero precedent, standard quantitative time-series models (like moving averages and regression) fail completely.',
+          'In such breakthrough domains, marketing strategists rely on Qualitative Consensus Forecasting, spearheaded by the Delphi Method.',
+          'Developed by Norman Dalkey and Olaf Helmer at the RAND Corporation during the Cold War, the Delphi Method is a structured, iterative forecasting process that aggregates the anonymous wisdom of independent industry experts.',
+          'Crucially, the experts never meet in the same room! In open committee meetings, dominant personalities, vocal executives, and senior status bias intimidate others, corrupting judgment through dangerous "groupthink".',
+          'Instead, an independent facilitator circulates a detailed questionnaire to experts anonymously.',
+          'After Round 1, the facilitator calculates statistical distributions (the median and interquartile range IQR) and synthesizes the anonymous rationales for extreme outlier projections.',
+          'In Round 2, the experts review the group statistical summary and arguments, and are invited to revise their individual estimates.',
+          'Over two to three iterative rounds, the variance between expert projections collapses dramatically, converging toward a statistically robust, defensible consensus projection.'
+        ],
+        example: 'Think of guessing the number of marbles in a giant glass jar. If you put ten people in a room, the loudest person will claim "It\'s 10,000!" and everyone else will nod in agreement. But if you have 100 people write their confidential guesses on secret paper slips, compile the median, show everyone the distribution, and let them submit a second secret estimate, the resulting median estimate will be astonishingly close to the true count.',
+        code: `# Simulation: RAND Corporation Delphi Multi-Round Expert Consensus Engine
+from typing import List
+
+def synthesize_delphi_expert_consensus(
+    round_1_estimates: List[float],
+    round_2_estimates: List[float]
+) -> dict:
+    # Calculate median and interquartile spread (IQR) for both rounds
+    def get_stats(data: List[float]) -> dict:
+        sorted_d = sorted(data)
+        n = len(sorted_d)
+        median = sorted_d[n // 2] if n % 2 != 0 else (sorted_d[n // 2 - 1] + sorted_d[n // 2]) / 2.0
+        q1 = sorted_d[n // 4]
+        q3 = sorted_d[(3 * n) // 4]
+        iqr = round(q3 - q1, 2)
+        return {"Median": round(median, 2), "IQR": iqr, "Min": sorted_d[0], "Max": sorted_d[-1]}
+
+    r1_stats = get_stats(round_1_estimates)
+    r2_stats = get_stats(round_2_estimates)
+    
+    spread_reduction_pct = round(((r1_stats["IQR"] - r2_stats["IQR"]) / r1_stats["IQR"]) * 100.0, 1)
+    consensus_converged = r2_stats["IQR"] < (r1_stats["IQR"] * 0.6)
+
+    return {
+        "Experts_Count": len(round_1_estimates),
+        "Round_1_Median": r1_stats["Median"],
+        "Round_1_IQR_Spread": r1_stats["IQR"],
+        "Round_2_Median": r2_stats["Median"],
+        "Round_2_IQR_Spread": r2_stats["IQR"],
+        "Variance_Reduction_Pct": f"{spread_reduction_pct}%",
+        "Consensus_Status": "EXPERT_CONSENSUS_CONVERGED" if consensus_converged else "FURTHER_ROUND_REQUIRED",
+        "Final_Adopted_Projection": r2_stats["Median"]
+    }
+
+# Delphi panel forecasting year 2030 autonomous EV adoption percentage
+r1 = [15.0, 22.0, 28.0, 35.0, 42.0, 50.0, 65.0]
+r2 = [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 40.0]
+delphi_res = synthesize_delphi_expert_consensus(r1, r2)
+print(f"Panel: {delphi_res['Experts_Count']} experts | Variance Reduction: {delphi_res['Variance_Reduction_Pct']}")
+print(f"Status: {delphi_res['Consensus_Status']} | Final Consensus: {delphi_res['Final_Adopted_Projection']}%")`,
+        output: `Panel: 7 experts | Variance Reduction: 71.4%\nStatus: EXPERT_CONSENSUS_CONVERGED | Final Consensus: 32.0%`,
+        codeNotes: [
+          { line: 8, note: 'Computes median and Interquartile Range (IQR) to eliminate outlier distortion' },
+          { line: 20, note: 'Measures spread reduction across rounds to assess variance collapse' },
+          { line: 21, note: 'Validates consensus convergence when second-round spread drops below 60% of baseline' },
+          { line: 36, note: 'Demonstrates 71.4% variance reduction converging on 32.0% autonomous EV adoption' }
+        ],
+        tryIt: 'Add two extreme outlier estimates (e.g. 90.0 and 5.0) to Round 2 to see the algorithm flag FURTHER_ROUND_REQUIRED.',
+        check: {
+          question: 'Why does the Delphi Method require strict anonymity among participating experts throughout all survey rounds?',
+          options: [
+            'To prevent dominant personalities, organizational hierarchy, and social groupthink from biasing or intimidating other panelists into conformity.',
+            'Because expert identities are classified state secrets under international maritime law.',
+            'To avoid paying expert consulting honorariums.',
+            'Because the experts do not speak the same language.'
+          ],
+          answer: 0,
+          why: 'Anonymity insulates experts from social pressure, executive hierarchy, and bandwagon bias, enabling participants to evaluate ideas purely on empirical and logical merit.',
+          answerIndex: 0,
+          explanation: 'Anonymity insulates experts from social pressure, executive hierarchy, and bandwagon bias, enabling participants to evaluate ideas purely on empirical and logical merit.'
+        }
+      }
+    ],
+    summary: [
+      '5-Step Research Process: Disciplined workflow: Problem Definition -> Research Plan -> Field Data Collection -> Analysis -> Actionable Reporting. A problem well-defined is half solved.',
+      'Cochran Sampling: Statistical formula n0 = (Z^2 * p * (1-p)) / e^2 proves that ~384 respondents provide robust representative intelligence within +/- 5% error at 95% confidence.',
+      'Survey Instrument Integrity: Likert & Semantic Differential scales require strict neutrality auditing to eliminate leading phrasing and double-barreled compound queries.',
+      'Exponential Smoothing & MAPE: Time-series forecasting F_t+1 = alpha*A_t + (1-alpha)*F_t balances responsiveness with stability; MAPE < 10% confirms high predictive precision.',
+      'Market Sizing & Delphi Consensus: Deconstructs market potential across TAM (Total potential), SAM (Serviceable fit), and SOM (Realistic obtainable revenue); Delphi consensus resolves radical technological uncertainty.'
+    ],
+    projectStep: {
+      title: 'Month 1 Marketing Strategy Capstone Step 4: Research Plan, Survey Instrument & Demand Forecast',
+      steps: [
+        'Formulate a 5-step marketing research plan for your capstone offering, calculating required sample size using Cochran\'s formula.',
+        'Draft a 5-question neutral Likert survey instrument and audit it to ensure 100% freedom from leading or double-barreled bias.',
+        'Construct a bottom-up TAM/SAM/SOM market sizing model and project Year 1 quarterly demand using Exponential Smoothing with MAPE error bounds.'
+      ]
+    }
   }
 ];
