@@ -406,5 +406,376 @@ for page, score in sorted_ranks:
         'Build the two-proportion Z-test statistical calculator for rigorous A/B conversion experiment validation.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_dmkt',
+    day: 2,
+    title: 'Marketing Mix Modeling (MMM), CAC Payback Physics & Bayesian Uplift Experimentation',
+    goal: 'Master advanced performance marketing architectures: econometric Marketing Mix Modeling (MMM) with adstock decay and diminishing returns, cohort CAC payback period dynamics, search engine crawl budget log auditing, retargeting frequency decay filters, and Bayesian Beta-Binomial conversion uplift estimation.',
+    minutes: 42,
+    recap: 'Day 1 established auction bidding and multi-touch attribution foundations. Day 2 scales into macro portfolio optimization: econometrics that survive privacy signal loss, cohort cash flow horizons, and Bayesian statistical decision rules.',
+    parts: [
+      {
+        title: 'Econometric Marketing Mix Modeling (MMM) & Adstock Carryover Decay',
+        say: [
+          'Following Apple\'s App Tracking Transparency (ATT) and the impending depreciation of third-party tracking cookies, user-level deterministic attribution has experienced profound signal loss.',
+          'To optimize tens of millions of dollars in marketing capital without relying on cookies, enterprise CMOs utilize econometric Marketing Mix Modeling (MMM).',
+          'MMM is a top-down statistical regression methodology that quantifies the macro impact of marketing spend on revenue while isolating seasonality, macroeconomic factors, and price changes.',
+          'A fundamental cornerstone of MMM is adstock modeling: advertising spend does not vanish instantaneously; it generates a psychological carryover effect that decays over subsequent weeks at a geometric rate lambda (e.g. 0.60).',
+          'Furthermore, ad response curves exhibit diminishing marginal returns governed by non-linear saturation functions such as the Hill equation (x^s / (x^s + K^s)), revealing the exact inflection point where additional ad spend incinerates capital.'
+        ],
+        example: 'If an e-commerce brand spends $10,000 on TV in Week 1 with a 0.60 decay factor, that spend creates $10,000 of adstock in Week 1, $6,000 in Week 2, and $3,600 in Week 3 without any additional cash deployed. The Hill saturation curve demonstrates that pushing weekly spend beyond $25,000 yields only 4% marginal revenue lift.',
+        code: `# Simulation: Econometric MMM Adstock Carryover & Hill Saturation Engine
+import math
+from typing import List
+
+def compute_adstock(spend_series: List[float], decay_rate: float) -> List[float]:
+    adstock = []
+    current = 0.0
+    for spend in spend_series:
+        current = spend + decay_rate * current
+        adstock.append(round(current, 2))
+    return adstock
+
+def hill_saturation(adstock_value: float, half_saturation: float, slope: float = 1.5) -> float:
+    # Hill function: x^s / (x^s + K^s)
+    x_s = math.pow(adstock_value, slope)
+    k_s = math.pow(half_saturation, slope)
+    return round(x_s / (x_s + k_s), 4)
+
+weekly_spends = [1000.0, 1500.0, 800.0, 2000.0, 500.0]
+decay = 0.60
+adstocked = compute_adstock(weekly_spends, decay)
+saturations = [hill_saturation(val, 2000.0) for val in adstocked]
+
+print(f"Weekly Raw Spend: {weekly_spends}")
+print(f"Adstock Carryover (Decay={decay}): {adstocked}")
+print(f"Hill Saturation (K=2000): {saturations}")`,
+        output: `Weekly Raw Spend: [1000.0, 1500.0, 800.0, 2000.0, 500.0]\nAdstock Carryover (Decay=0.6): [1000.0, 2100.0, 2060.0, 3236.0, 2441.6]\nHill Saturation (K=2000): [0.2612, 0.5183, 0.5111, 0.673, 0.5743]`,
+        codeNotes: [
+          { line: 4, note: 'compute_adstock transforms raw discrete spending into continuous psychological memory carryover' },
+          { line: 12, note: 'hill_saturation implements S-curve diminishing returns where K represents the half-saturation point' },
+          { line: 20, note: 'Week 4 raw spend of $2,000 accumulates with past residual impressions to hit $3,236 effective adstock' },
+          { line: 25, note: 'Outputs saturation coefficients mapping directly to marginal media channel efficiency' }
+        ],
+        tryIt: 'Change decay to 0.20 to observe how fast adstock collapses when media channel retention is low (e.g. fast-scrolling TikTok vs durable TV).',
+        check: {
+          question: 'Why do modern data-driven marketers deploy Marketing Mix Modeling (MMM) over cookie-based single-touch tracking?',
+          options: [
+            'MMM provides top-down econometric regression that isolates incrementality, adstock carryover, and saturation without depending on fragile user-level device cookies.',
+            'MMM guarantees that all Google and Meta advertising costs are refunded by the payment processor.',
+            'MMM allows marketing teams to eliminate all product analytics software completely.',
+            'MMM replaces the company accounting ledger with social media follower counts.'
+          ],
+          answer: 0,
+          why: 'Top-down econometric modeling respects privacy regulations (GDPR/ATT), measures aggregate macro sales uplift, and models non-linear diminishing returns across both digital and offline media.',
+          answerIndex: 0,
+          explanation: 'Top-down econometric modeling respects privacy regulations (GDPR/ATT), measures aggregate macro sales uplift, and models non-linear diminishing returns across both digital and offline media.'
+        }
+      },
+      {
+        title: 'Customer Acquisition Cost (CAC) Payback Period & Cohort Retention Physics',
+        say: [
+          'High Customer Lifetime Value (CLV) is meaningless if your business runs out of working capital before those customer revenues materialize.',
+          'The single most critical liquidity metric for subscription, SaaS, and repeat DTC e-commerce is the CAC Payback Period: the exact number of months required for a customer\'s cumulative gross profit to recover the initial advertising acquisition expenditure.',
+          'The fundamental payback formula is: Payback Months = CAC / (Monthly ARPU * Gross Margin %).',
+          'However, real-world payback models must incorporate cohort decay: every month, a percentage of acquired customers churn, reducing the active paying base that generates gross margin contributions.',
+          'Top-tier venture and private equity benchmarks dictate that CAC Payback must occur in under 12 months (ideally 5 to 7 months). If payback exceeds 18 months, aggressive growth will consume cash faster than debt or equity can sustain.'
+        ],
+        example: 'A subscription box brand spends $120 to acquire a subscriber paying $35/month at 70% gross margin with 5% monthly churn. In Month 1, the subscriber generates $24.50 in gross margin, recovering 20.4% of CAC. Factoring in cohort attrition, the business achieves full cash-flow breakeven at Month 6, generating $105.22 in net profit per customer by Month 12.',
+        code: `# Simulation: Cohort CAC Payback Period & Cumulative Cash Flow Breakeven
+def calculate_cac_payback_cohort(cac: float, initial_arpu: float, gross_margin_pct: float, monthly_churn_pct: float, months: int = 12) -> dict:
+    cumulative_margin = 0.0
+    active_customers = 1.0 # Base 1 cohort member
+    breakeven_month = None
+
+    for m in range(1, months + 1):
+        monthly_rev = active_customers * initial_arpu
+        monthly_margin = monthly_rev * (gross_margin_pct / 100.0)
+        cumulative_margin += monthly_margin
+
+        if cumulative_margin >= cac and breakeven_month is None:
+            breakeven_month = m
+
+        # Apply cohort churn
+        active_customers *= (1.0 - (monthly_churn_pct / 100.0))
+
+    return {
+        "CAC": cac,
+        "Breakeven_Month": breakeven_month if breakeven_month else "Over 12 Months",
+        "Cumulative_Gross_Margin_M12": round(cumulative_margin, 2),
+        "Net_Profit_M12": round(cumulative_margin - cac, 2),
+        "Payback_Status": "HEALTHY (<12 Mo)" if breakeven_month and breakeven_month <= 12 else "DANGEROUS (>12 Mo)"
+    }
+
+cohort_res = calculate_cac_payback_cohort(cac=120.0, initial_arpu=35.0, gross_margin_pct=70.0, monthly_churn_pct=5.0)
+print(f"CAC: \${cohort_res['CAC']} | Payback Month: {cohort_res['Breakeven_Month']} ({cohort_res['Payback_Status']})")
+print(f"12-Month Net Profit per Customer: \${cohort_res['Net_Profit_M12']}")`,
+        output: `CAC: $120.0 | Payback Month: 6 (HEALTHY (<12 Mo))\n12-Month Net Profit per Customer: $105.22`,
+        codeNotes: [
+          { line: 2, note: 'calculate_cac_payback_cohort models realistic cohort survival decay rather than naive static multiples' },
+          { line: 8, note: 'Calculates monthly gross margin contribution by scaling active survivors against ARPU and margin' },
+          { line: 12, note: 'Captures first crossing point where cumulative gross margin matches or exceeds original CAC' },
+          { line: 26, note: 'Validates healthy unit economics with a 6-month breakeven and $105.22 M12 profit' }
+        ],
+        tryIt: 'Increase cac to 250.0 and rerun to see Payback_Status flip to DANGEROUS (>12 Mo) as churn outpaces recovery.',
+        check: {
+          question: 'Why is CAC Payback Period often considered a more dangerous risk indicator than CLV/CAC ratio for growing companies?',
+          options: [
+            'Because a high CLV realized over 5 years cannot prevent a business from running out of cash if upfront ad spend takes 24 months to recoup in gross profit.',
+            'Because customer acquisition costs are illegal to deduct on corporate tax returns.',
+            'Because credit card payment processors refuse to settle accounts with active subscriptions.',
+            'Because CAC payback period applies exclusively to non-profit organizations.'
+          ],
+          answer: 0,
+          why: 'Working capital physics require fast cash recycling; a company with an outstanding 5x CLV/CAC can still go bankrupt if the payback period exceeds its bank debt and cash runway.',
+          answerIndex: 0,
+          explanation: 'Working capital physics require fast cash recycling; a company with an outstanding 5x CLV/CAC can still go bankrupt if the payback period exceeds its bank debt and cash runway.'
+        }
+      },
+      {
+        title: 'Search Engine Crawl Budget, Canonicalization & Log File Auditing',
+        say: [
+          'In enterprise SEO, producing exceptional content is futile if search engine spiders never discover, crawl, and render your pages.',
+          'Googlebot allocates a finite crawl budget to every domain, determined by two primary factors: Crawl Rate Limit (server responsiveness) and Crawl Demand (site popularity and freshness).',
+          'E-commerce websites with faceted navigation (filtering by size, color, sort order) frequently generate millions of redundant URLs containing near-duplicate content.',
+          'When Googlebot expends its crawl budget requesting useless parameterized URLs, it abandons the crawl before indexing newly launched product pages and category hubs.',
+          'Technical marketing analysts perform server log audits to analyze bot request distributions, enforce rel="canonical" tags, configure robots.txt disallow directives, and eliminate 301 redirect chains to maximize crawl efficiency.'
+        ],
+        example: 'An online retailer discovers that out of 500,000 monthly Googlebot requests, 200,000 requests hit faceted filter query strings like ?sort=price_asc. By adding robots.txt disallow rules on sorting parameters and auditing server logs, Googlebot immediately redirects that bandwidth to newly launched product pages, boosting indexed organic listings by 38%.',
+        code: `# Simulation: Web Server Log File Crawl Budget & Parameter Waste Auditor
+from typing import List, Dict
+
+class CrawlBudgetAuditor:
+    def __init__(self, bot_user_agent: str = "Googlebot"):
+        self.bot_agent = bot_user_agent
+
+    def audit_server_logs(self, log_entries: List[Dict]) -> Dict:
+        status_counts = {"200": 0, "301": 0, "404": 0, "500": 0}
+        parameter_waste_urls = 0
+        total_bot_requests = 0
+
+        for entry in log_entries:
+            if self.bot_agent.lower() in entry["user_agent"].lower():
+                total_bot_requests += 1
+                code = str(entry["status_code"])
+                status_counts[code] = status_counts.get(code, 0) + 1
+
+                # Detect crawl budget leaks on parameterized filter/sort URLs
+                if "?" in entry["url"] and any(param in entry["url"] for param in ["sort=", "filter=", "sessionid="]):
+                    parameter_waste_urls += 1
+
+        waste_pct = round((parameter_waste_urls / total_bot_requests) * 100, 1) if total_bot_requests > 0 else 0.0
+
+        return {
+            "Total_Bot_Hits": total_bot_requests,
+            "HTTP_Status_Distribution": status_counts,
+            "Faceted_Waste_Requests": parameter_waste_urls,
+            "Crawl_Budget_Waste_Pct": f"{waste_pct}%",
+            "Recommendation": "Implement robots.txt Disallow on dynamic parameters and canonicalize to clean product URLs." if waste_pct > 15 else "Crawl budget utilization healthy."
+        }
+
+logs = [
+    {"user_agent": "Googlebot/2.1", "url": "/products/leather-jacket", "status_code": 200},
+    {"user_agent": "Googlebot/2.1", "url": "/products/leather-jacket?sort=price_asc", "status_code": 200},
+    {"user_agent": "Googlebot/2.1", "url": "/products/leather-jacket?filter=color_black&sort=asc", "status_code": 200},
+    {"user_agent": "Googlebot/2.1", "url": "/old-category", "status_code": 301},
+    {"user_agent": "Googlebot/2.1", "url": "/missing-page", "status_code": 404},
+]
+auditor = CrawlBudgetAuditor()
+audit_res = auditor.audit_server_logs(logs)
+print(f"Crawl Hits: {audit_res['Total_Bot_Hits']} | Waste: {audit_res['Crawl_Budget_Waste_Pct']}")
+print(f"Status Breakdown: {audit_res['HTTP_Status_Distribution']}")`,
+        output: `Crawl Hits: 5 | Waste: 40.0%\nStatus Breakdown: {'200': 3, '301': 1, '404': 1, '500': 0}`,
+        codeNotes: [
+          { line: 4, note: 'CrawlBudgetAuditor filters raw server logs specifically for verified search crawler user agents' },
+          { line: 18, note: 'Identifies query parameter leaks that generate duplicate indexing requests' },
+          { line: 21, note: 'Quantifies waste percentage to trigger automated robots.txt disallow recommendations' },
+          { line: 36, note: 'Reports 40.0% crawl budget waste across 5 bot hits, alerting technical SEO teams to take action' }
+        ],
+        tryIt: 'Add two new clean URLs (/products/boots, /products/gloves) with status 200 to observe waste drop to 28.6%.',
+        check: {
+          question: 'What is the primary danger of unmanaged faceted navigation query parameters on large e-commerce websites?',
+          options: [
+            'Search engine crawlers exhaust their allocated crawl budget on millions of duplicate filtered URLs, causing core product pages to remain uncrawled and unindexed.',
+            'Web browsers permanently block customers from sorting product prices.',
+            'The web server permanently disables all SSL encryption certificates.',
+            'The website domain registrar cancels the domain registration within 24 hours.'
+          ],
+          answer: 0,
+          why: 'Googlebot allocates a finite crawl budget; allowing it to crawl infinite parameter combinations wastes spider capacity and leaves money-making landing pages out of search indexation.',
+          answerIndex: 0,
+          explanation: 'Googlebot allocates a finite crawl budget; allowing it to crawl infinite parameter combinations wastes spider capacity and leaves money-making landing pages out of search indexation.'
+        }
+      },
+      {
+        title: 'Retargeting Audience Decay, Frequency Capping & Negative Exclusion Lists',
+        say: [
+          'Retargeting is among the highest-ROI tactics in digital marketing, but unmanaged retargeting campaigns destroy brand equity and waste media spend.',
+          'Two structural flaws afflict amateur retargeting: audience fatigue from excessive ad frequency, and bidding on stale audiences that have lost purchase intent.',
+          'When ad frequency exceeds 3 to 4 impressions per user per day, Click-Through Rates (CTR) plummet while Cost Per Click (CPC) skyrockets as ad fatigue sets in.',
+          'Furthermore, user purchase intent decays exponentially over time: a user who abandoned a cart 24 hours ago has a 10x higher conversion probability than a user who visited 14 days ago.',
+          'Advanced performance media buyers construct time-decay retargeting audience ladders (1-3 Days Hot, 4-7 Days Warm, 8-14 Days Cold) with descending bid multipliers, and enforce strict Negative Exclusion lists to immediately suppress users who completed a purchase.'
+        ],
+        example: 'A luxury watch brand configures a dynamic retargeting ladder. Users who abandoned their carts within 72 hours receive a high $2.50 CPC bid. Users from 8-14 days ago receive a low $0.50 bid. If a user completes a purchase, their ID is immediately added to the Negative Purchaser Audience, suppressing all retargeting ads and saving thousands of dollars in ad waste.',
+        code: `# Simulation: Retargeting Audience Time-Decay Bidding & Negative Suppression Filter
+from typing import List, Dict, Set
+
+def optimize_retargeting_audiences(cart_abandoners: List[Dict], existing_purchaser_ids: Set[str]) -> List[Dict]:
+    campaign_routing = []
+
+    for user in cart_abandoners:
+        uid = user["user_id"]
+        days_since_visit = user["days_since_last_touch"]
+        daily_impressions = user["impressions_served_today"]
+
+        # Negative Exclusion Check: never pay to retarget past purchasers
+        if uid in existing_purchaser_ids:
+            campaign_routing.append({"user_id": uid, "action": "NEGATIVE_EXCLUSION_SUPPRESSED", "bid_cpc": 0.0})
+            continue
+
+        # Frequency Capping Check: prevent ad fatigue (max 3 impressions/day)
+        if daily_impressions >= 3:
+            campaign_routing.append({"user_id": uid, "action": "FREQUENCY_CAP_EXCEEDED_PAUSE", "bid_cpc": 0.0})
+            continue
+
+        # Recency Decay Bidding Tiers
+        if days_since_visit <= 3:
+            bid = 2.50
+            tier = "HOT_RETARGETING_1_TO_3_DAYS"
+        elif days_since_visit <= 7:
+            bid = 1.25
+            tier = "WARM_RETARGETING_4_TO_7_DAYS"
+        else:
+            bid = 0.50
+            tier = "COLD_RETARGETING_8_TO_14_DAYS"
+
+        campaign_routing.append({"user_id": uid, "action": tier, "bid_cpc": bid})
+
+    return campaign_routing
+
+abandoners = [
+    {"user_id": "U101", "days_since_last_touch": 1, "impressions_served_today": 1},
+    {"user_id": "U102", "days_since_last_touch": 5, "impressions_served_today": 4},
+    {"user_id": "U103", "days_since_last_touch": 2, "impressions_served_today": 0},
+    {"user_id": "U104", "days_since_last_touch": 12, "impressions_served_today": 2},
+]
+purchasers = {"U103", "U999"}
+routing = optimize_retargeting_audiences(abandoners, purchasers)
+for r in routing:
+    print(f"User: {r['user_id']} -> Action: {r['action']} | CPC Bid: \${r['bid_cpc']:.2f}")`,
+        output: `User: U101 -> Action: HOT_RETARGETING_1_TO_3_DAYS | CPC Bid: $2.50\nUser: U102 -> Action: FREQUENCY_CAP_EXCEEDED_PAUSE | CPC Bid: $0.00\nUser: U103 -> Action: NEGATIVE_EXCLUSION_SUPPRESSED | CPC Bid: $0.00\nUser: U104 -> Action: COLD_RETARGETING_8_TO_14_DAYS | CPC Bid: $0.50`,
+        codeNotes: [
+          { line: 4, note: 'optimize_retargeting_audiences routes ad bids dynamically across recency, frequency, and exclusion lists' },
+          { line: 12, note: 'Suppresses recent purchasers immediately, avoiding the classic blunder of advertising bought items' },
+          { line: 17, note: 'Applies frequency cap gating to pause bids once 3 daily impressions have been reached' },
+          { line: 22, note: 'Tiers CPC bids proportionally to purchase intent recency ($2.50 hot down to $0.50 cold)' }
+        ],
+        tryIt: 'Change impressions_served_today for U102 from 4 to 2 to observe it exit pause state and receive a $1.25 warm bid.',
+        check: {
+          question: 'What is the primary operational objective of a Negative Purchaser Exclusion audience in digital advertising?',
+          options: [
+            'To instantly stop serving expensive conversion and retargeting ads to customers who have already completed a purchase, saving ad spend and avoiding brand annoyance.',
+            'To ban customers who return products from ever visiting the company website again.',
+            'To automatically decrease retail product prices by 50% for all prospective buyers.',
+            'To hide negative customer reviews on third-party social media platforms.'
+          ],
+          answer: 0,
+          why: 'Serving conversion ads to someone who just purchased 10 minutes ago wastes marketing budget and generates severe customer frustration; negative suppression cures this.',
+          answerIndex: 0,
+          explanation: 'Serving conversion ads to someone who just purchased 10 minutes ago wastes marketing budget and generates severe customer frustration; negative suppression cures this.'
+        }
+      },
+      {
+        title: 'Bayesian Beta-Binomial Conversion Uplift & Statistical Decision Rules',
+        say: [
+          'Traditional frequentist hypothesis testing (p-values) answers only one counterfactual question: "Assuming there is zero difference between Variant A and B, what is the probability of observing data at least this extreme?"',
+          'Business executives do not care about the null hypothesis; they want direct probabilistic answers: "What is the probability that Variant B is better than Variant A, and how much revenue uplift can we expect?"',
+          'Bayesian A/B testing provides these exact answers using conjugate prior distributions.',
+          'For binary conversion rates (converted vs didn\'t convert), the Beta distribution acts as the conjugate prior for the Binomial likelihood: Posterior Beta(alpha, beta) where alpha = conversions + 1 and beta = non-conversions + 1.',
+          'By running Monte Carlo simulations or exact numerical integrations over the two posterior distributions, marketers calculate the exact Probability to Beat Control (e.g. 99.4%) and the Expected Loss, enabling rapid, risk-calibrated deployment decisions.'
+        ],
+        example: 'Variant A records 210 conversions from 5,000 visitors (4.20% CR). Variant B records 265 conversions from 5,000 visitors (5.30% CR). A 10,000-iteration Bayesian simulation reveals that Variant B has a 99.46% probability of beating Control, giving the growth product manager conclusive empirical authorization to roll out Variant B.',
+        code: `# Simulation: Bayesian Beta-Binomial Conjugate A/B Testing Engine
+import random
+
+class BayesianAbTest:
+    def __init__(self, visitors_a: int, conv_a: int, visitors_b: int, conv_b: int, prior_alpha: float = 1.0, prior_beta: float = 1.0):
+        # Beta posterior parameters: alpha = conversions + prior_a, beta = non_conversions + prior_b
+        self.alpha_a = conv_a + prior_alpha
+        self.beta_a = (visitors_a - conv_a) + prior_beta
+        self.alpha_b = conv_b + prior_alpha
+        self.beta_b = (visitors_b - conv_b) + prior_beta
+        self.rate_a = conv_a / visitors_a
+        self.rate_b = conv_b / visitors_b
+
+    def simulate_probability_b_beats_a(self, simulations: int = 10000, seed: int = 42) -> dict:
+        random.seed(seed)
+        b_wins = 0
+        uplifts = []
+
+        for _ in range(simulations):
+            # Beta distribution sampling
+            sample_a = random.betavariate(self.alpha_a, self.beta_a)
+            sample_b = random.betavariate(self.alpha_b, self.beta_b)
+
+            if sample_b > sample_a:
+                b_wins += 1
+            uplifts.append((sample_b - sample_a) / sample_a)
+
+        prob_b_beats_a = round((b_wins / simulations) * 100.0, 2)
+        mean_uplift = round((sum(uplifts) / simulations) * 100.0, 2)
+
+        return {
+            "Control_CR": f"{round(self.rate_a * 100, 2)}%",
+            "Variant_CR": f"{round(self.rate_b * 100, 2)}%",
+            "Prob_Variant_Beats_Control": f"{prob_b_beats_a}%",
+            "Expected_Mean_Uplift": f"{mean_uplift}%",
+            "Decision": "DEPLOY_VARIANT_B" if prob_b_beats_a >= 95.0 else "INCONCLUSIVE_CONTINUE_TEST"
+        }
+
+bayesian_calc = BayesianAbTest(visitors_a=5000, conv_a=210, visitors_b=5000, conv_b=265)
+bayesian_res = bayesian_calc.simulate_probability_b_beats_a()
+print(f"A: {bayesian_res['Control_CR']} | B: {bayesian_res['Variant_CR']}")
+print(f"Prob(B > A): {bayesian_res['Prob_Variant_Beats_Control']} | Decision: {bayesian_res['Decision']}")`,
+        output: `A: 4.2% | B: 5.3%\nProb(B > A): 99.46% | Decision: DEPLOY_VARIANT_B`,
+        codeNotes: [
+          { line: 6, note: 'Computes analytical Beta conjugate posterior parameters incorporating uninformative flat priors' },
+          { line: 17, note: 'Draws 10,000 Monte Carlo samples directly from posterior distributions using betavariate' },
+          { line: 26, note: 'Evaluates probability that Variant B exceeds Control along with percentage expected uplift' },
+          { line: 36, note: 'Outputs 99.46% certainty that Variant B outperforms Variant A, triggering an automated deploy decision' }
+        ],
+        tryIt: 'Change conv_b to 215 and observe Prob(B > A) drop to ~60%, flipping the decision to INCONCLUSIVE_CONTINUE_TEST.',
+        check: {
+          question: 'What is the primary practical advantage of Bayesian A/B testing over classical frequentist p-value hypothesis testing for digital marketing teams?',
+          options: [
+            'It directly yields the posterior probability that Variant B is better than Variant A (e.g. 99.4%) and quantifies expected uplift, allowing direct business risk decisions without fixed sample size constraints.',
+            'It guarantees that every tested variant will double the company\'s conversion rate within 24 hours.',
+            'It eliminates the need to measure user visits and purchases entirely.',
+            'It works only when sample sizes are smaller than ten website visitors.'
+          ],
+          answer: 0,
+          why: 'Bayesian statistics produce intuitive probabilistic statements about which variant is superior and expected gain/loss, making commercial experimentation interpretable and actionable.',
+          answerIndex: 0,
+          explanation: 'Bayesian statistics produce intuitive probabilistic statements about which variant is superior and expected gain/loss, making commercial experimentation interpretable and actionable.'
+        }
+      }
+    ],
+    summary: [
+      'Econometric Marketing Mix Modeling (MMM): Overcomes cookie deprecation through top-down regression incorporating geometric adstock decay and Hill saturation curves.',
+      'CAC Payback Physics: High CLV is useless without fast capital recycling; tracking cohort gross margins ensures customer acquisition cost payback occurs in under 12 months.',
+      'Crawl Budget Optimization: Server log audits detect spider waste on faceted query parameters, preserving Googlebot crawl budget for high-intent product listings.',
+      'Audience Decay & Negative Exclusion: Mitigates ad fatigue via frequency caps (<=3/day), tiers bids across 1-14 day intent recency, and suppresses recent buyers.',
+      'Bayesian A/B Testing: Leverages Beta-Binomial conjugate posteriors to compute exact Probability to Beat Control (e.g. 99.46%) and expected conversion uplift.'
+    ],
+    projectStep: {
+      title: 'Econometric Attribution & Bayesian Optimization Suite',
+      steps: [
+        'Model multi-channel marketing spend with geometric adstock carryover and Hill diminishing returns saturation curves.',
+        'Calculate cohort survival curves and cash flow breakeven months to enforce sub-12-month CAC payback boundaries.',
+        'Audit web server access logs for crawler bot status distributions and faceted navigation budget leaks.',
+        'Deploy a Bayesian Beta-Binomial conjugate simulator to evaluate conversion uplift with definitive probability thresholds.'
+      ]
+    }
   }
 ];
