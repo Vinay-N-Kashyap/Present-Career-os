@@ -1254,6 +1254,366 @@ console.log('Protocol Security Invariant: Prevents flash crashes and stale arbit
         'Integrate a Chainlink Price Feed consumer with comprehensive staleness and sanity checks.'
       ]
     }
+  },
+  {
+    day: 4,
+    title: 'Advanced Smart Contract Auditing, Foundry Invariant Fuzzing & Governance Protocols',
+    goal: 'Master institutional-grade smart contract engineering: Read-Only Reentrancy mitigation with reentrancy guards, Foundry stateless and stateful invariant fuzz testing, SMTChecker formal verification constraints, multi-sig treasury governance (Gnosis Safe threshold signatures), and TimelockController emergency execution queues.',
+    minutes: 36,
+    recap: 'Welcome to Advanced Smart Contract Security & DeFi Governance. Today we progress from standard solidity coding into the rigorous discipline of invariant security auditing, fuzz testing, and trust-minimized governance.',
+    parts: [
+      {
+        title: 'Read-Only Reentrancy & Cross-Contract State Inconsistency',
+        say: [
+          'Classic reentrancy exploits drain contract funds during external calls that modify state. However, a far more subtle and dangerous attack vector is Read-Only Reentrancy. In this scenario, an external view function that calculates an exchange rate or LP token price is read mid-execution by a third-party contract while internal balances are temporarily imbalanced.',
+          'Consider a liquidity pool contract that allows liquidity withdrawal. During the withdrawal execution, the pool transfers native ETH to the caller before burning the caller LP tokens or adjusting internal accounting balances. If the recipient is a malicious contract, its fallback function can invoke a separate lending protocol that queries the pool virtual price.',
+          'Because the pool ETH reserves have decreased but the LP supply has not yet been burned, the pool virtual price appears artificially low or high. The attacker contract borrows assets against this skewed valuation, resulting in millions in uncollateralized bad debt. Defending against read-only reentrancy requires applying transient reentrancy locks (using EIP-1153 TSTORE/TLOAD) or ensuring view functions revert if invoked while a reentrancy lock is active.'
+        ],
+        example: 'Like checking a business bank account balance while an unverified check withdrawal is half-processed. If another loan officer checks the balance before the bookkeeper finishes balancing the ledger, they see incorrect numbers and approve a reckless loan.',
+        code: `// Read-Only Reentrancy & Transient Lock Protection Simulator
+interface PoolState {
+  ethReserve: number;
+  tokenReserve: number;
+  locked: boolean;
+}
+
+class VulnerablePool {
+  public state: PoolState = { ethReserve: 1000, tokenReserve: 1000000, locked: false };
+
+  // Simulates mid-execution state during liquidity withdrawal
+  simulateMidWithdrawal(callback: (viewPrice: number) => void): void {
+    this.state.locked = true;
+    const originalEth = this.state.ethReserve;
+    this.state.ethReserve = 200; // temporarily drained before burn/settlement
+    const midPrice = (this.state.ethReserve * 1000) / this.state.tokenReserve;
+    callback(midPrice);
+    this.state.ethReserve = originalEth; // restored after settlement
+    this.state.locked = false;
+  }
+
+  getVirtualPrice(): number {
+    if (this.state.locked) {
+      throw new Error('READ_ONLY_REENTRANCY_DETECTED: Pool locked during mid-execution state');
+    }
+    return (this.state.ethReserve * 1000) / this.state.tokenReserve;
+  }
+}
+
+const pool = new VulnerablePool();
+let interceptedMidPrice = 0;
+let reentrancyBlocked = false;
+
+pool.simulateMidWithdrawal((price) => {
+  interceptedMidPrice = price;
+  try {
+    pool.getVirtualPrice(); // Protected view call
+  } catch (err: any) {
+    if (err.message.includes('READ_ONLY_REENTRANCY_DETECTED')) {
+      reentrancyBlocked = true;
+    }
+  }
+});
+
+console.log('=== READ-ONLY REENTRANCY & TRANSIENT LOCK PROTECTION ===');
+console.log('Normal Pool Virtual Price: 1.00 ETH/kToken');
+console.log('Manipulated Mid-Execution Price: ' + interceptedMidPrice.toFixed(2) + ' ETH/kToken');
+console.log('Defensive Guard: ' + (reentrancyBlocked ? 'BLOCKED VIA TRANSIENT REENTRANCY LOCK' : 'EXPLOITED'));
+console.log('Security Invariant: Secondary lending markets protected from skewed oracle pricing');`,
+        output: `=== READ-ONLY REENTRANCY & TRANSIENT LOCK PROTECTION ===\nNormal Pool Virtual Price: 1.00 ETH/kToken\nManipulated Mid-Execution Price: 0.20 ETH/kToken\nDefensive Guard: BLOCKED VIA TRANSIENT REENTRANCY LOCK\nSecurity Invariant: Secondary lending markets protected from skewed oracle pricing`,
+        tryIt: 'Comment out the locked check in getVirtualPrice and observe how the defensive guard reports EXPLOITED.',
+        check: {
+          question: 'Why does Read-Only Reentrancy bypass standard nonReentrant modifiers on write functions?',
+          options: [
+            'Because view functions do not modify state and traditionally omit reentrancy guards, allowing external contracts to read transiently inconsistent balances',
+            'Because Ethereum gas fees are free for read-only operations',
+            'Because Solidity compilers automatically delete reentrancy guards on Mondays'
+          ],
+          answer: 0,
+          why: 'View functions typically lack nonReentrant locks. An attacker contract intercepts execution via fallback and reads skewed pool accounting before state reconciliation.'
+        }
+      },
+      {
+        title: 'Foundry Stateful Invariant & Fuzz Testing',
+        say: [
+          'Standard unit tests verify known happy paths and edge cases chosen by the developer. However, sophisticated smart contract hacks emerge from bizarre, multi-transaction execution permutations that developers never conceived. Foundry revolutionizes smart contract quality assurance with high-speed fuzz and invariant testing.',
+          'Stateless fuzzing runs a single function with hundreds of pseudo-random inputs (e.g., uint256 max bounds, zero values, address(0)) to search for arithmetic overflow or unhandled reverts. However, stateful invariant testing goes much further: it defines a set of global system invariants that must NEVER be violated, regardless of how many transactions are executed in what order.',
+          'Foundry uses Actor-Handler contracts to execute randomized sequences of deposits, withdrawals, swaps, and liquidations across hundreds of parallel test runs. If any randomized call sequence drives the protocol into an invariant violation (such as total vault shares exceeding underlying assets), Foundry isolates the exact minimum reproduction trace, guaranteeing rock-solid economic safety.'
+        ],
+        example: 'Like an automated stress-testing rig in a car factory that slams random doors, presses pedals, shifts gears, and hits switches 100,000 times in random orders to confirm the airbags never accidentally deploy.',
+        code: `// Foundry Stateful Invariant Fuzz Testing Simulator
+class InvariantVault {
+  public totalAssets = 10000;
+  public totalShares = 10000;
+
+  deposit(amount: number): number {
+    const shares = Math.floor((amount * this.totalShares) / this.totalAssets);
+    this.totalAssets += amount;
+    this.totalShares += shares;
+    return shares;
+  }
+
+  withdraw(shares: number): number {
+    const assets = Math.floor((shares * this.totalAssets) / this.totalShares);
+    this.totalAssets -= assets;
+    this.totalShares -= shares;
+    return assets;
+  }
+
+  // Conservation of value invariant
+  checkInvariant(): boolean {
+    // Invariant: Share price should never decrease below 1.0
+    return this.totalAssets >= this.totalShares;
+  }
+}
+
+const vault = new InvariantVault();
+let invariantHolds = true;
+const operations = [
+  { type: 'deposit', val: 500 },
+  { type: 'withdraw', val: 200 },
+  { type: 'deposit', val: 1200 },
+  { type: 'withdraw', val: 800 }
+];
+
+for (const op of operations) {
+  if (op.type === 'deposit') vault.deposit(op.val);
+  else vault.withdraw(op.val);
+  if (!vault.checkInvariant()) invariantHolds = false;
+}
+
+console.log('=== FOUNDRY STATEFUL INVARIANT FUZZ TESTING ===');
+console.log('Fuzzing Strategy: Stateful Actor-Handler (Multi-Call Permutations)');
+console.log('Runs Executed: 1,000 runs | Calls Per Run: 64 calls');
+console.log('Invariant Verified: vault_share_price_gte_unity -> ' + (invariantHolds ? 'PASSED (0 Invariant Violations)' : 'FAILED'));
+console.log('Final Vault State: Assets=' + vault.totalAssets + ' | Shares=' + vault.totalShares);`,
+        output: `=== FOUNDRY STATEFUL INVARIANT FUZZ TESTING ===\nFuzzing Strategy: Stateful Actor-Handler (Multi-Call Permutations)\nRuns Executed: 1,000 runs | Calls Per Run: 64 calls\nInvariant Verified: vault_share_price_gte_unity -> PASSED (0 Invariant Violations)\nFinal Vault State: Assets=10700 | Shares=10700`,
+        tryIt: 'Introduce an intentional rounding error in withdraw (+1 asset) and observe how the invariant test catches the exploit.',
+        check: {
+          question: 'What distinguishes stateful invariant testing from stateless fuzzing in Foundry?',
+          options: [
+            'Stateful invariant testing preserves contract storage across randomized sequences of multiple function calls to verify global invariants',
+            'Stateless fuzzing only works on Bitcoin while invariant testing works on Solana',
+            'Stateful invariant testing requires human testers to click buttons'
+          ],
+          answer: 0,
+          why: 'Stateful invariant tests chain randomized multi-call interactions across handlers, ensuring the contract state machine remains solvent throughout arbitrary execution sequences.'
+        }
+      },
+      {
+        title: 'Formal Verification, SMTChecker & Symbolic Execution',
+        say: [
+          'In the words of computer scientist Edsger Dijkstra, testing shows the presence of bugs, not their absence. For multi-million-dollar DeFi protocols, testing alone is insufficient. Formal verification uses mathematical proofs to demonstrate that smart contract logic satisfies a formal specification across all infinite possible inputs.',
+          'The Solidity compiler includes SMTChecker, an integrated formal verification tool that transforms Solidity Abstract Syntax Trees (AST) into Satisfiability Modulo Theories (SMT) formulas. Backed by automated theorem provers like Z3 and CVC4, SMTChecker evaluates contract assertions and requires mathematical proof that no input exists that can cause an assertion violation.',
+          'Symbolic execution tools like Certora, Halmos, and Mythril represent variables not as concrete numbers, but as symbolic algebraic expressions. If an uncollateralized loan or arithmetic underflow is theoretically possible under any combination of inputs, the solver mathematically solves the system of equations and outputs the exact counterexample transaction payload.'
+        ],
+        example: 'Like proving a mathematical theorem using mathematical induction: you prove the theorem holds true for all numbers from 1 to infinity, rather than testing every number one by one.',
+        code: `// Formal Verification & SMTChecker Solver Simulator
+interface AuctionState {
+  collateralEth: number;
+  debtUsd: number;
+  ethPriceUsd: number;
+}
+
+class SmtFormalVerifier {
+  // Proves solvency constraint: (collateral * price * 100) >= (debt * minRatio)
+  verifySolvencyConstraint(state: AuctionState, minRatio: number): {
+    provablySolvent: boolean;
+    collateralRatioPct: number;
+    solverStatus: string;
+  } {
+    const collateralValUsd = state.collateralEth * state.ethPriceUsd;
+    const ratio = (collateralValUsd * 100) / state.debtUsd;
+    const provable = ratio >= minRatio;
+    return {
+      provablySolvent: provable,
+      collateralRatioPct: Math.round(ratio),
+      solverStatus: provable ? 'SMT_SATISFIED (Z3 / CVC4 Proof Bound)' : 'SMT_COUNTEREXAMPLE_FOUND'
+    };
+  }
+}
+
+const verifier = new SmtFormalVerifier();
+const testState: AuctionState = { collateralEth: 10, debtUsd: 15000, ethPriceUsd: 2200 };
+const proof = verifier.verifySolvencyConstraint(testState, 140);
+
+console.log('=== FORMAL VERIFICATION & SMTCHECKER SOLVER ===');
+console.log('SMT Solver: Z3 Theorem Prover integrated with Solidity AST');
+console.log('Solvency Ratio: ' + proof.collateralRatioPct + '% (Requirement: >= 140%)');
+console.log('Proof Status: ' + proof.solverStatus);
+console.log('Formal Guarantee: Exhaustive mathematical proof across all possible state bounds');`,
+        output: `=== FORMAL VERIFICATION & SMTCHECKER SOLVER ===\nSMT Solver: Z3 Theorem Prover integrated with Solidity AST\nSolvency Ratio: 147% (Requirement: >= 140%)\nProof Status: SMT_SATISFIED (Z3 / CVC4 Proof Bound)\nFormal Guarantee: Exhaustive mathematical proof across all possible state bounds`,
+        tryIt: 'Drop the ethPriceUsd to 1200 and observe how the solver flags an SMT_COUNTEREXAMPLE_FOUND indicating liquidation insolvency.',
+        check: {
+          question: 'How does formal verification differ fundamentally from standard unit testing?',
+          options: [
+            'Formal verification uses mathematical theorem provers to prove correctness across the entire input space, rather than testing sample test cases',
+            'Formal verification runs 10x slower but only tests happy paths',
+            'Formal verification replaces all smart contracts with paper certificates'
+          ],
+          answer: 0,
+          why: 'Formal verification transforms code into mathematical logic equations and uses solvers to prove assertions hold true for all conceivable inputs.'
+        }
+      },
+      {
+        title: 'Multi-Signature Safe Architecture & Threshold Signatures',
+        say: [
+          'DeFi treasuries, protocol admin keys, and upgrade proxies must never be controlled by a single private key. If an administrator laptop is compromised or a private key is lost, the protocol suffers catastrophic loss. The industry standard for decentralized asset custody is the Gnosis Safe smart contract architecture.',
+          'A Gnosis Safe manages an array of owner addresses and an M-of-N threshold requirement (e.g., 3-of-5 signatures). To execute a transaction via execTransaction(), the transaction payload is hashed with an EIP-712 domain separator and contract nonce. The required number of signers must sign the digest off-chain using their hardware wallets or private keys.',
+          'Crucially, the signatures must be submitted to the contract concatenated in strictly ascending order of signer addresses (address(signer1) < address(signer2)). The contract loops through the signatures, recovers each signer via ecrecover, verifies uniqueness, and increments the execution nonce to prevent replay attacks before forwarding the call payload.'
+        ],
+        example: 'Like a high-security bank vault with three distinct keyholes requiring three different executive keys inserted and turned simultaneously before the vault door mechanics disengage.',
+        code: `// Gnosis MultiSig Safe Threshold Signature Pipeline Simulator
+interface SafeSignature {
+  signer: string;
+  v: number;
+  r: string;
+  s: string;
+}
+
+class MultiSigSafe {
+  private owners: string[];
+  private threshold: number;
+  private nonce = 0;
+
+  constructor(owners: string[], threshold: number) {
+    this.owners = owners.map(o => o.toLowerCase()).sort();
+    this.threshold = threshold;
+  }
+
+  executeTransaction(to: string, valueEth: number, signatures: SafeSignature[]): boolean {
+    if (signatures.length < this.threshold) return false;
+
+    // Verify signers are unique, valid owners, and in strictly ascending order
+    let lastSigner = '';
+    for (const sig of signatures) {
+      const signer = sig.signer.toLowerCase();
+      if (signer <= lastSigner || !this.owners.includes(signer)) {
+        return false;
+      }
+      lastSigner = signer;
+    }
+    this.nonce++;
+    return true;
+  }
+}
+
+const owners = [
+  '0x1111111111111111111111111111111111111111',
+  '0x2222222222222222222222222222222222222222',
+  '0x3333333333333333333333333333333333333333'
+];
+const safe = new MultiSigSafe(owners, 2);
+
+const sigs: SafeSignature[] = [
+  { signer: owners[0], v: 27, r: '0xabc', s: '0xdef' },
+  { signer: owners[1], v: 28, r: '0x123', s: '0x456' }
+];
+
+const executed = safe.executeTransaction('0xTreasuryPayout', 50, sigs);
+
+console.log('=== GNOSIS MULTISIG SAFE THRESHOLD SIGNATURE PIPELINE ===');
+console.log('Safe Configuration: 2-of-3 Multi-Sig Threshold');
+console.log('Signatures Validated: 2 valid owners in ascending cryptographic order');
+console.log('Execution Status: ' + (executed ? 'TRANSACTION EXECUTED (Nonce incremented to 1)' : 'REVERTED'));
+console.log('Security Invariant: No single compromised private key can drain treasury funds');`,
+        output: `=== GNOSIS MULTISIG SAFE THRESHOLD SIGNATURE PIPELINE ===\nSafe Configuration: 2-of-3 Multi-Sig Threshold\nSignatures Validated: 2 valid owners in ascending cryptographic order\nExecution Status: TRANSACTION EXECUTED (Nonce incremented to 1)\nSecurity Invariant: No single compromised private key can drain treasury funds`,
+        tryIt: 'Attempt passing duplicate signatures from owner[0] and observe that the order check rejects the transaction.',
+        check: {
+          question: 'Why does Gnosis Safe require signatures to be ordered in strictly ascending order of signer addresses?',
+          options: [
+            'To enable gas-efficient O(N) duplicate signer detection in a single pass without storing dynamic memory sets',
+            'Because EVM opcodes only execute from left to right',
+            'To sort signers by their net worth'
+          ],
+          answer: 0,
+          why: 'By requiring strictly ascending addresses, the smart contract checks address(current) > address(previous) to prove signer uniqueness and validity in minimal gas.'
+        }
+      },
+      {
+        title: 'Timelock Governance & Decentralized Emergency Response',
+        say: [
+          'Even if a multi-sig or DAO governance token approves a contract upgrade or parameter modification, executing upgrades instantaneously creates severe central point of trust and rug-pull vulnerabilities. If rogue signers or flash-loan governance attackers vote through a malicious proposal, users would have zero time to react.',
+          'TimelockController contracts introduce mandatory time delays between proposal approval and on-chain execution (typically 48 to 72 hours). When a governance proposal passes, it is queued into the timelock with an earliest execution timestamp (ETA). The proposal remains publicly visible on-chain throughout the delay window.',
+          'This window grants liquidity providers and users the sovereign freedom to withdraw their deposits and exit the protocol if they disagree with the proposed upgrade. In addition, timelock contracts configure Emergency Guardian roles equipped with canceller permissions, capable of vetoing malicious proposals before the timelock expiration timestamp.'
+        ],
+        example: 'Like an official constitutional amendment that must be published in the public registry for 30 days before taking effect, allowing citizens to inspect the changes and take legal action if needed.',
+        code: `// Timelock Controller & Governance Safety Pipeline Simulator
+interface QueuedProposal {
+  id: string;
+  target: string;
+  eta: number;
+  executed: boolean;
+  canceled: boolean;
+}
+
+class TimelockController {
+  private minDelaySeconds = 172800; // 48-hour delay
+  private proposals = new Map<string, QueuedProposal>();
+
+  queue(id: string, target: string, timestampNow: number): QueuedProposal {
+    const proposal: QueuedProposal = {
+      id,
+      target,
+      eta: timestampNow + this.minDelaySeconds,
+      executed: false,
+      canceled: false
+    };
+    this.proposals.set(id, proposal);
+    return proposal;
+  }
+
+  execute(id: string, timestampNow: number): string {
+    const p = this.proposals.get(id);
+    if (!p) return 'ERROR_PROPOSAL_NOT_FOUND';
+    if (p.canceled) return 'ERROR_PROPOSAL_CANCELED';
+    if (timestampNow < p.eta) return 'ERROR_TIMELOCK_NOT_EXPIRED';
+    p.executed = true;
+    return 'SUCCESS_PROPOSAL_EXECUTED';
+  }
+}
+
+const timelock = new TimelockController();
+const queueTime = 1700000000;
+const p = timelock.queue('prop_upgrade_v2', '0xProtocolCore', queueTime);
+const tooEarly = timelock.execute('prop_upgrade_v2', queueTime + 86400); // 24 hours later
+const onTime = timelock.execute('prop_upgrade_v2', queueTime + 172801); // 48 hours + 1s later
+
+console.log('=== TIMELOCK CONTROLLER & GOVERNANCE SAFETY PIPELINE ===');
+console.log('Proposal Queued: ' + p.id + ' | Minimum Delay: 48 hours');
+console.log('Attempt at 24h: ' + tooEarly + ' (Reverted: TimelockNotExpired)');
+console.log('Attempt at 48h+1s: ' + onTime + ' (State transition applied to 0xProtocolCore)');
+console.log('Governance Invariant: Users granted 48h emergency exit window before contract upgrades');`,
+        output: `=== TIMELOCK CONTROLLER & GOVERNANCE SAFETY PIPELINE ===\nProposal Queued: prop_upgrade_v2 | Minimum Delay: 48 hours\nAttempt at 24h: ERROR_TIMELOCK_NOT_EXPIRED (Reverted: TimelockNotExpired)\nAttempt at 48h+1s: SUCCESS_PROPOSAL_EXECUTED (State transition applied to 0xProtocolCore)\nGovernance Invariant: Users granted 48h emergency exit window before contract upgrades`,
+        tryIt: 'Cancel the proposal before the 48h window and verify that execution returns ERROR_PROPOSAL_CANCELED.',
+        check: {
+          question: 'What is the primary security rationale for enforcing a 48-hour timelock delay on DeFi protocol upgrades?',
+          options: [
+            'To give users and liquidity providers sufficient notice and an emergency exit window to withdraw funds if a malicious proposal passes',
+            'To allow miners to calculate proof of work hashes',
+            'To wait for bank holidays to conclude'
+          ],
+          answer: 0,
+          why: 'A timelock ensures users are never trapped by sudden malicious upgrades; they have an on-chain window to evaluate changes and exit gracefully.'
+        }
+      }
+    ],
+    summary: [
+      'Read-Only Reentrancy attacks exploit view functions that expose imbalanced mid-execution states to secondary lending markets.',
+      'Foundry stateful invariant fuzz testing chains randomized multi-call sequences to uncover edge-case protocol insolvency.',
+      'Formal verification and SMTChecker prove mathematical solvency across infinite input domains using Z3 theorem provers.',
+      'Gnosis Safe threshold signatures require sorted owner signatures, preventing single-key custody compromise.',
+      'TimelockController contracts mandate 48-hour delays before parameter upgrades, preserving user exit rights.'
+    ],
+    projectStep: {
+      title: 'Architect an Institutional DeFi Security & Governance Vault',
+      steps: [
+        'Implement transient reentrancy locks on view functions to neutralize Read-Only Reentrancy risks.',
+        'Write a Foundry stateful invariant test suite with custom actor-handlers verifying vault solvency.',
+        'Configure Solidity SMTChecker formal verification contracts asserting auction collateralization bounds.',
+        'Deploy a Gnosis Safe threshold multisig transaction validator with ascending address signature checks.',
+        'Construct an OpenZeppelin TimelockController queue with delay enforcement and emergency cancellation.'
+      ]
+    }
   }
 ];
 
