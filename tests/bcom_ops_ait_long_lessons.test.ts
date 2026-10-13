@@ -261,3 +261,36 @@ test('B.Com AIT Day 3: Enterprise NLP, VADER Sentiment & Invoice IDP Snippets Ve
   assert.ok(aitLesson3.parts[4].code?.includes('predict_customer_churn_risk'));
 });
 
+test('B.Com AIT Day 4: Personalization, Recommenders, MAB & NBA Decisioning Snippets Verification', () => {
+  const aitLesson4 = getLongLesson('bcom_ait', 4);
+  assert.ok(aitLesson4, 'bcom_ait Day 4 long lesson must resolve');
+  assert.equal(aitLesson4.day, 4);
+  assert.equal(aitLesson4.parts.length, 5, 'bcom_ait Day 4 must contain exactly 5 parts');
+  assert.ok(aitLesson4.summary.length >= 4, 'bcom_ait Day 4 must contain comprehensive summary');
+  assert.ok(aitLesson4.projectStep, 'bcom_ait Day 4 must have a hands-on project step');
+
+  for (let i = 0; i < aitLesson4.parts.length; i++) {
+    const part = aitLesson4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(aitLesson4.parts[0].code?.includes('recommend_content_based_items'));
+  assert.ok(aitLesson4.parts[1].code?.includes('predict_user_collaborative_ratings'));
+  assert.ok(aitLesson4.parts[2].code?.includes('simulate_matrix_factorization_als'));
+  assert.ok(aitLesson4.parts[3].code?.includes('evaluate_ucb1_personalization_bandit'));
+  assert.ok(aitLesson4.parts[4].code?.includes('evaluate_next_best_action_arbitration'));
+});
+
