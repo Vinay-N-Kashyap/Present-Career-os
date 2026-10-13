@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getLongLesson, getLongLessonLanguage } from '../src/lib/data/longLessons';
+import { getLongLesson, getLongLessonLanguage, estimateSpokenMinutes, estimateLessonMinutes } from '../src/lib/data/longLessons';
 
 test('Java Basics & Soft Skills Long Lessons: Resolution & Language Invariants', () => {
   // 1. java-basics
@@ -307,6 +307,66 @@ test('Java Basics Day 4: Domain-Specific Content Assertions', () => {
   assert.ok(javaD4.parts[4].title.includes('Distributed Tracing') || javaD4.parts[4].title.includes('OpenTelemetry'));
   assert.ok(javaD4.parts[4].output.includes('00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01'));
 });
+
+test('Soft Skills Day 4: Resolution & Structural Invariants for Principled Negotiation, RICE & Org Leadership', () => {
+  const ssD4 = getLongLesson('soft-skills', 4);
+  assert.ok(ssD4, 'soft-skills Day 4 long lesson must resolve');
+  assert.equal(ssD4.day, 4);
+  assert.equal(ssD4.parts.length, 5, 'soft-skills Day 4 must contain exactly 5 parts');
+  assert.ok(ssD4.summary.length >= 4, 'Summary must contain at least 4 items');
+  assert.ok(ssD4.projectStep, 'Day 4 must declare a projectStep');
+  assert.ok(ssD4.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(ssD4);
+  const totalMin = estimateLessonMinutes(ssD4);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of ssD4.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 4: Domain-Specific Content Assertions', () => {
+  const ssD4 = getLongLesson('soft-skills', 4);
+  assert.ok(ssD4);
+
+  // Part 1 – Principled Negotiation & BATNA/ZOPA
+  assert.ok(ssD4.parts[0].title.includes('Negotiation') || ssD4.parts[0].title.includes('BATNA'));
+  assert.ok(ssD4.parts[0].output.includes('FEASIBLE'));
+  assert.ok(ssD4.parts[0].output.includes('AGREEMENT_REACHED'));
+
+  // Part 2 – Quantitative Roadmap Prioritization (RICE)
+  assert.ok(ssD4.parts[1].title.includes('RICE') || ssD4.parts[1].title.includes('Prioritization'));
+  assert.ok(ssD4.parts[1].output.includes('GraphQL Gateway Migration'));
+  assert.ok(ssD4.parts[1].output.includes('RICE Score: 20000'));
+
+  // Part 3 – Coaching Underperformance & Constructive PIP
+  assert.ok(ssD4.parts[2].title.includes('Underperformance') || ssD4.parts[2].title.includes('PIP'));
+  assert.ok(ssD4.parts[2].output.includes('COACHABLE_SKILL_GAP'));
+  assert.ok(ssD4.parts[2].output.includes('Pair with Staff Engineer mentor'));
+
+  // Part 4 – Staff+ Engineering Archetypes & Org Leverage
+  assert.ok(ssD4.parts[3].title.includes('Staff+') || ssD4.parts[3].title.includes('Archetypes'));
+  assert.ok(ssD4.parts[3].output.includes('CROSS-ORG MULTIPLIER'));
+  assert.ok(ssD4.parts[3].output.includes('Setting multi-year technical vision'));
+
+  // Part 5 – Crisis Management & Blameless Postmortem
+  assert.ok(ssD4.parts[4].title.includes('Crisis') || ssD4.parts[4].title.includes('Postmortem'));
+  assert.ok(ssD4.parts[4].output.includes('BLAMELESS_RETROSPECTIVE_CONCLUDED'));
+  assert.ok(ssD4.parts[4].output.includes('circuit breaker pattern'));
+});
+
 
 
 

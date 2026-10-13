@@ -1197,6 +1197,334 @@ Executive Recommendation: FUND_IMMEDIATELY (Clear ROI, bounded risk)`,
         'Draft a 60-second C-suite executive briefing calculating ROI multiple and financial payback for an AI initiative.'
       ]
     }
+  },
+  {
+    day: 4,
+    title: 'Principled Negotiation, Strategic Roadmap Prioritization & Engineering Org Leadership',
+    goal: 'Master advanced engineering leadership: Principled negotiation (Fisher-Ury BATNA and ZOPA dynamics), quantitative roadmap prioritization (RICE scoring & Opportunity Solution Trees), performance coaching & constructive PIP design, Staff+ career archetype navigation, and blameless postmortem facilitation under high incident pressure.',
+    minutes: 36,
+    recap: 'Welcome to Advanced Engineering Org Leadership. Today we elevate our influence beyond technical design into organizational diplomacy, executive negotiation, roadmap economics, and psychological safety under pressure.',
+    parts: [
+      {
+        title: 'Principled Negotiation & Fisher-Ury Framework (BATNA & ZOPA)',
+        say: [
+          'Technical leadership frequently requires intense negotiation: securing headcount allocations, aligning on API release deadlines with product managers, or negotiating cross-team dependency commitments. Inexperienced engineers often approach negotiation as a zero-sum tug-of-war, digging into rigid positions (such as "We refuse to support this endpoint until Q3") that damage cross-functional relationships.',
+          'The Harvard Principled Negotiation method, pioneered by Roger Fisher and William Ury in Getting to Yes, replaces positional warfare with four core principles: separate the people from the problem, focus on underlying interests rather than entrenched positions, invent creative options for mutual gain, and insist on objective evaluation criteria.',
+          'Two concepts anchor effective negotiation: BATNA (Best Alternative To a Negotiated Agreement) and ZOPA (Zone of Possible Agreement). Your BATNA represents your walk-away power: what you will do if no agreement is reached. The ZOPA is the mathematical overlap between the maximum concessions party A is willing to make and the minimum acceptable terms of party B. Identifying the ZOPA transforms heated political debates into collaborative problem-solving exercises.'
+        ],
+        example: 'Like purchasing a commercial building: instead of arguing angrily over a fixed sticker price, you explore flexible closing dates, seller financing, and shared maintenance credits until both sides discover a mutually profitable transaction inside the ZOPA.',
+        code: `// Principled Negotiation & BATNA/ZOPA Dynamics Simulator
+interface NegotiationParameters {
+  partyAName: string;
+  partyBName: string;
+  partyABatnaMinHours: number;
+  partyABatnaMaxHours: number;
+  partyBBatnaMinHours: number;
+  partyBBatnaMaxHours: number;
+}
+
+class PrincipledNegotiationEngine {
+  calculateZopa(params: NegotiationParameters): { hasZopa: boolean; zopaRange: [number, number]; outcome: string } {
+    // ZOPA exists if party A's max acceptable delivery overlaps party B's min commitment
+    const overlapMin = Math.max(params.partyABatnaMinHours, params.partyBBatnaMinHours);
+    const overlapMax = Math.min(params.partyABatnaMaxHours, params.partyBBatnaMaxHours);
+
+    if (overlapMin <= overlapMax) {
+      return {
+        hasZopa: true,
+        zopaRange: [overlapMin, overlapMax],
+        outcome: 'AGREEMENT_REACHED: Mutual ZOPA identified between ' + overlapMin + 'h and ' + overlapMax + 'h'
+      };
+    } else {
+      return {
+        hasZopa: false,
+        zopaRange: [0, 0],
+        outcome: 'NO_ZOPA: Walk away to BATNA (Incompatible constraints)'
+      };
+    }
+  }
+}
+
+const engine = new PrincipledNegotiationEngine();
+const negotiation = engine.calculateZopa({
+  partyAName: 'Frontend Platform Team',
+  partyBName: 'Core API Team',
+  partyABatnaMinHours: 40,
+  partyABatnaMaxHours: 80,
+  partyBBatnaMinHours: 60,
+  partyBBatnaMaxHours: 100
+});
+
+console.log('=== PRINCIPLED NEGOTIATION & BATNA/ZOPA DYNAMICS ===');
+console.log('Parties: Frontend Platform Team vs Core API Team');
+console.log('ZOPA Assessment: ' + (negotiation.hasZopa ? 'FEASIBLE' : 'INFEASIBLE'));
+console.log('Negotiation Outcome: ' + negotiation.outcome);
+console.log('Diplomatic Invariant: Focus on underlying business interests, not rigid entrenched positions');`,
+        output: `=== PRINCIPLED NEGOTIATION & BATNA/ZOPA DYNAMICS ===\nParties: Frontend Platform Team vs Core API Team\nZOPA Assessment: FEASIBLE\nNegotiation Outcome: AGREEMENT_REACHED: Mutual ZOPA identified between 60h and 80h\nDiplomatic Invariant: Focus on underlying business interests, not rigid entrenched positions`,
+        tryIt: 'Change partyABatnaMaxHours to 50 so that overlapMax (50) is less than overlapMin (60), and observe the negotiation walk away to BATNA.',
+        check: {
+          question: 'What is the role of BATNA (Best Alternative To a Negotiated Agreement) in engineering negotiations?',
+          options: [
+            'It establishes your objective walk-away baseline, preventing you from accepting destructive or unfeasible commitments',
+            'It is a legal contract filed with the government before software releases',
+            'It forces the other party to surrender immediately'
+          ],
+          answer: 0,
+          why: 'Knowing your BATNA ensures you never accept an agreement worse than your best alternative, providing quiet confidence and objective boundary discipline.'
+        }
+      },
+      {
+        title: 'Quantitative Technical Roadmap Prioritization (RICE & Opportunity Solution Trees)',
+        say: [
+          'Every engineering organization suffers from an infinite backlog of desirable projects competing for strictly finite developer bandwidth: paying down database technical debt, building revenue-generating features, upgrading framework versions, or improving CI build times. Saying "no" arbitrarily based on gut feeling provokes resentment and executive distrust.',
+          'The RICE prioritization framework provides a quantitative, transparent scoring methodology: (Reach * Impact * Confidence) / Effort. Reach measures how many engineers or customers the project affects per quarter. Impact quantifies the magnitude of improvement (from 0.5 for minor polish to 3.0 for transformative game-changers). Confidence (0.5 to 1.0) discounts projects with speculative evidence, and Effort accounts for person-months required.',
+          'Complementing RICE is Teresa Torres Opportunity Solution Tree. Rather than jumping directly from high-level company goals to pet solution features, the tree links clear business outcomes to verified customer problems (opportunities), which branch into multiple lightweight solution experiments. This structure ensures engineering bandwidth is strictly allocated to high-leverage initiatives with proven ROI.'
+        ],
+        example: 'Like packing an expedition backpack for high-altitude climbing: every item has weight (effort) and survival value (reach and impact); you cannot pack everything, so you pack only the items with the highest caloric and safety return per ounce.',
+        code: `// Quantitative Roadmap Prioritization (RICE) Simulator
+interface RoadmapInitiative {
+  id: string;
+  name: string;
+  reach: number;      // Users/events affected per quarter
+  impact: number;     // 3 = massive, 2 = high, 1 = medium, 0.5 = low
+  confidence: number; // 1.0 = high, 0.8 = medium, 0.5 = low
+  effort: number;     // Person-months
+}
+
+class RicePrioritizationMatrix {
+  rankInitiatives(items: RoadmapInitiative[]): Array<RoadmapInitiative & { riceScore: number }> {
+    return items
+      .map(item => ({
+        ...item,
+        riceScore: Math.round((item.reach * item.impact * item.confidence) / item.effort)
+      }))
+      .sort((a, b) => b.riceScore - a.riceScore);
+  }
+}
+
+const matrix = new RicePrioritizationMatrix();
+const initiatives: RoadmapInitiative[] = [
+  { id: 'INIT-1', name: 'GraphQL Gateway Migration', reach: 50000, impact: 2, confidence: 0.8, effort: 4 },
+  { id: 'INIT-2', name: 'Dark Mode UI Reskin', reach: 20000, impact: 0.5, confidence: 0.9, effort: 2 },
+  { id: 'INIT-3', name: 'Automated CI Flaky Test Pruner', reach: 300, impact: 3, confidence: 1.0, effort: 0.5 }
+];
+
+const ranked = matrix.rankInitiatives(initiatives);
+
+console.log('=== QUANTITATIVE ROADMAP PRIORITIZATION (RICE) ===');
+console.log('Rank 1: ' + ranked[0].name + ' -> RICE Score: ' + ranked[0].riceScore);
+console.log('Rank 2: ' + ranked[1].name + ' -> RICE Score: ' + ranked[1].riceScore);
+console.log('Rank 3: ' + ranked[2].name + ' -> RICE Score: ' + ranked[2].riceScore);
+console.log('Leadership Principle: Say no with transparent mathematical scoring rather than opinion battles');`,
+        output: `=== QUANTITATIVE ROADMAP PRIORITIZATION (RICE) ===\nRank 1: GraphQL Gateway Migration -> RICE Score: 20000\nRank 2: Dark Mode UI Reskin -> RICE Score: 4500\nRank 3: Automated CI Flaky Test Pruner -> RICE Score: 1800\nLeadership Principle: Say no with transparent mathematical scoring rather than opinion battles`,
+        tryIt: 'Adjust the effort of GraphQL Gateway Migration to 12 months and observe how automated CI tooling leapfrogs in relative priority.',
+        check: {
+          question: 'Why does the RICE framework divide the product of Reach, Impact, and Confidence by Effort?',
+          options: [
+            'To normalize return on investment, prioritizing high-impact initiatives that require minimal engineering expenditure',
+            'To calculate the server hosting bill for AWS',
+            'To guarantee that every engineer receives an annual promotion'
+          ],
+          answer: 0,
+          why: 'Dividing by effort establishes capital efficiency: a project delivering moderate impact in one week often creates more cumulative value than a massive project that ties up the entire team for a year.'
+        }
+      },
+      {
+        title: 'Coaching Underperformance & Constructive PIP Architecture',
+        say: [
+          'Addressing underperformance is one of the most challenging responsibilities of engineering leadership. When an engineer repeatedly misses delivery commitments or produces substandard pull requests, poor managers either ignore the problem until resentment boils over or abruptly launch punitive termination procedures.',
+          'High-integrity engineering leadership begins with rigorous diagnosis: is the performance deficit driven by a Skill gap (lack of domain familiarity or architecture patterns), a Will/Motivation gap (burnout, personal crises, misalignment with team mission), or an Environmental blocker (flaky CI test suites, toxic team politics, ambiguous requirements)?',
+          'If a formal Performance Improvement Plan (PIP) is necessary, it must be architected as a constructive rehabilitation blueprint rather than a bureaucratic firing mechanism. A constructive PIP defines unambiguous success criteria, provides dedicated mentoring partnerships, establishes weekly milestone reviews, and removes external environmental friction, giving the engineer a genuine, supported path back to excellence.'
+        ],
+        example: 'Like an athletic coach diagnosing a pitcher struggling with control: determining whether the issue is mechanics (skill), exhaustion (burnout), or bad mound dirt (environmental blockers), and structuring a 30-day targeted bullpen routine with daily film review.',
+        code: `// Underperformance Diagnosis & Constructive PIP Simulator
+interface PerformanceEvaluation {
+  engineer: string;
+  skillGapScore: number;     // 1-5 (5 = high gap)
+  motivationScore: number;   // 1-5 (5 = high motivation)
+  toolingBlockers: boolean;
+}
+
+class PerformanceDiagnosticEngine {
+  diagnoseAndPlan(evaluation: PerformanceEvaluation): { diagnosis: string; planAction: string } {
+    if (evaluation.toolingBlockers) {
+      return {
+        diagnosis: 'ENVIRONMENTAL_BLOCKER',
+        planAction: 'Unblock developer environment and remove CI/CD friction before evaluating individual output'
+      };
+    }
+    if (evaluation.skillGapScore >= 4 && evaluation.motivationScore >= 4) {
+      return {
+        diagnosis: 'COACHABLE_SKILL_GAP',
+        planAction: 'Pair with Staff Engineer mentor on bounded 30-day architecture deliverables'
+      };
+    }
+    return {
+      diagnosis: 'STRUCTURED_REHABILITATION_PIP',
+      planAction: 'Implement formal 60-day PIP with weekly measurable milestones and explicit success criteria'
+    };
+  }
+}
+
+const diagnostic = new PerformanceDiagnosticEngine();
+const result = diagnostic.diagnoseAndPlan({
+  engineer: 'Alex (Senior Engineer)',
+  skillGapScore: 4,
+  motivationScore: 5,
+  toolingBlockers: false
+});
+
+console.log('=== UNDERPERFORMANCE DIAGNOSIS & CONSTRUCTIVE PIP ===');
+console.log('Target Evaluation: Alex (Senior Engineer)');
+console.log('Primary Diagnosis: ' + result.diagnosis);
+console.log('Actionable Pathway: ' + result.planAction);
+console.log('Management Invariant: Empathy and clarity precede corrective action');`,
+        output: `=== UNDERPERFORMANCE DIAGNOSIS & CONSTRUCTIVE PIP ===\nTarget Evaluation: Alex (Senior Engineer)\nPrimary Diagnosis: COACHABLE_SKILL_GAP\nActionable Pathway: Pair with Staff Engineer mentor on bounded 30-day architecture deliverables\nManagement Invariant: Empathy and clarity precede corrective action`,
+        tryIt: 'Set toolingBlockers to true and verify that the engine immediately targets environment unblocking before individual critique.',
+        check: {
+          question: 'What is the first step an engineering leader must take before initiating formal disciplinary action for underperformance?',
+          options: [
+            'Diagnose root causes to distinguish between coachable skill gaps, motivation challenges, and environmental tooling blockers',
+            'Immediately lock the developer GitHub account and cancel badge access',
+            'Complain about the developer to other team members during standup'
+          ],
+          answer: 0,
+          why: 'Leaders must first rule out environmental blockers and determine whether the issue is coachable before proceeding to formal administrative processes.'
+        }
+      },
+      {
+        title: 'Staff+ Engineering Archetypes & Organizational Leverage',
+        say: [
+          'Advancing beyond Senior Engineer (to Staff, Principal, and Distinguished levels) does not mean simply typing code twice as fast. Staff+ engineering is characterized by organizational leverage: multiplying the output, velocity, and architectural coherence of dozens of engineers across multiple teams.',
+          'In The Staff Engineer Path, Will Larson identifies four primary archetypes of Staff+ leadership: The Tech Lead (partnering closely with Engineering Managers to guide execution and technical hygiene for a critical team), The Architect (owning cross-organization system boundaries, data contracts, and multi-year architectural roadmaps), The Solver (deep-system specialists parachuting into existential performance bottlenecks, migrations, and outages), and The Right Hand (acting as an executive proxy to execute complex cross-department initiatives).',
+          'Succeeding in a Staff+ role requires exercising influence without authority. Because Staff+ engineers rarely manage people directly, their impact depends on building high-trust relationships, authoring compelling RFCs that align divergent viewpoints, and mentoring rising seniors to scale technical excellence throughout the organization.'
+        ],
+        example: 'Like specialized officers aboard an exploration vessel: the Navigator charting deep waters (Architect), the First Mate steering daily operations (Tech Lead), the Emergency Diver handling hull breaches (Solver), and the Diplomatic Emissary negotiating port treaties (Right Hand).',
+        code: `// Staff+ Engineering Archetypes & Org Leverage Simulator
+type StaffArchetype = 'TECH_LEAD' | 'ARCHITECT' | 'SOLVER' | 'RIGHT_HAND';
+
+interface StaffProfile {
+  archetype: StaffArchetype;
+  scopeTeams: number;
+  executiveSponsorship: boolean;
+}
+
+class StaffImpactCalculator {
+  calculateLeverage(profile: StaffProfile): { leverageTier: string; primaryFocus: string } {
+    switch (profile.archetype) {
+      case 'ARCHITECT':
+        return { leverageTier: 'CROSS-ORG MULTIPLIER', primaryFocus: 'Setting multi-year technical vision and API boundary governance' };
+      case 'SOLVER':
+        return { leverageTier: 'DEEP-SYSTEM SPECIALIST', primaryFocus: 'Parachuting into existential performance bottlenecks and critical outages' };
+      case 'TECH_LEAD':
+        return { leverageTier: 'TEAM FORCE-MULTIPLIER', primaryFocus: 'Execution velocity, code quality, and junior-to-senior mentorship' };
+      case 'RIGHT_HAND':
+        return { leverageTier: 'EXECUTIVE PROXY', primaryFocus: 'Driving strategic C-level initiatives across business and engineering units' };
+    }
+  }
+}
+
+const calc = new StaffImpactCalculator();
+const profile: StaffProfile = { archetype: 'ARCHITECT', scopeTeams: 8, executiveSponsorship: true };
+const impact = calc.calculateLeverage(profile);
+
+console.log('=== STAFF+ ENGINEERING ARCHETYPES & ORG LEVERAGE ===');
+console.log('Archetype: ' + profile.archetype);
+console.log('Influence Tier: ' + impact.leverageTier);
+console.log('Core Mission: ' + impact.primaryFocus);
+console.log('Leadership Invariant: Influence is earned through trust and clarity, not managerial hierarchy');`,
+        output: `=== STAFF+ ENGINEERING ARCHETYPES & ORG LEVERAGE ===\nArchetype: ARCHITECT\nInfluence Tier: CROSS-ORG MULTIPLIER\nCore Mission: Setting multi-year technical vision and API boundary governance\nLeadership Invariant: Influence is earned through trust and clarity, not managerial hierarchy`,
+        tryIt: 'Change the archetype to SOLVER and observe how the primary focus adapts to deep firefighting and bottleneck resolution.',
+        check: {
+          question: 'How do Staff+ engineers primarily achieve organizational impact without formal managerial authority?',
+          options: [
+            'By authoring clear RFCs, building cross-functional trust, mentoring rising seniors, and aligning architectural standards across teams',
+            'By threatening to delete production repositories',
+            'By refusing to participate in team meetings'
+          ],
+          answer: 0,
+          why: 'Staff+ impact is built on technical credibility, transparent architectural rationale, and elevating others rather than top-down executive command.'
+        }
+      },
+      {
+        title: 'Crisis Management & Blameless Postmortem Facilitation',
+        say: [
+          'When a tier-1 production outage strikes, adrenaline surges, Slack channels erupt with panic, and executives demand instant timelines. In these high-stakes moments, effective incident leadership is the difference between swift recovery and catastrophic prolonged downtime.',
+          'During an active incident, the Incident Commander (IC) establishes command-and-control discipline: appointing a Communications Lead to keep stakeholders informed, silencing speculative channel noise, and focusing on immediate customer mitigation rather than identifying the root cause during the fire.',
+          'Once service is restored, facilitating a blameless postmortem is mandatory. Rooted in safety science and resilience engineering (such as Sydney Dekker Field Guide to Understanding Human Error), blameless postmortems operate on the premise that human engineers always act with good intent based on the information available to them. Blaming individuals encourages concealment of mistakes; analyzing systemic vulnerabilities (missing circuit breakers, inadequate canary gates, unclear runbooks) creates a resilient, antifragile engineering culture.'
+        ],
+        example: 'Like an aviation NTSB investigation following an aircraft emergency: the cockpit voice recorder is analyzed not to punish the pilot, but to redesign cockpit alert switches and training checklists so no future pilot can make that error.',
+        code: `// Crisis Management & Blameless Postmortem Simulator
+interface IncidentReport {
+  incidentId: string;
+  durationMinutes: number;
+  rootCauseCategory: 'RESILIENCE_DEFICIT' | 'HUMAN_ERROR' | 'VENDOR_OUTAGE';
+  fiveWhysSummary: string[];
+}
+
+class BlamelessPostmortemFacilitator {
+  generateActionPlan(report: IncidentReport): { status: string; correctiveActions: string[] } {
+    return {
+      status: 'BLAMELESS_RETROSPECTIVE_CONCLUDED',
+      correctiveActions: [
+        'Add circuit breaker pattern to prevent cascading API timeouts (Resilience)',
+        'Automate deployment canary rollback on error rate spikes (Safety Guardrail)',
+        'Update runbook documentation and conduct disaster drill simulation (Training)'
+      ]
+    };
+  }
+}
+
+const retro = new BlamelessPostmortemFacilitator();
+const plan = retro.generateActionPlan({
+  incidentId: 'INC-2026-0912',
+  durationMinutes: 42,
+  rootCauseCategory: 'RESILIENCE_DEFICIT',
+  fiveWhysSummary: [
+    'Database connection pool exhausted',
+    'Long-running report held open connections',
+    'No query timeout configured on analytics route',
+    'Analytics route lacked separate read replica pool',
+    'Architecture review did not mandate query isolation for reports'
+  ]
+});
+
+console.log('=== CRISIS MANAGEMENT & BLAMELESS POSTMORTEM ===');
+console.log('Incident Facilitation Status: ' + plan.status);
+console.log('Action Item 1: ' + plan.correctiveActions[0]);
+console.log('Action Item 2: ' + plan.correctiveActions[1]);
+console.log('Cultural Invariant: Blamelessness builds psychological safety; fix systemic flaws, never punish humans');`,
+        output: `=== CRISIS MANAGEMENT & BLAMELESS POSTMORTEM ===\nIncident Facilitation Status: BLAMELESS_RETROSPECTIVE_CONCLUDED\nAction Item 1: Add circuit breaker pattern to prevent cascading API timeouts (Resilience)\nAction Item 2: Automate deployment canary rollback on error rate spikes (Safety Guardrail)\nCultural Invariant: Blamelessness builds psychological safety; fix systemic flaws, never punish humans`,
+        tryIt: 'Examine the fiveWhysSummary sequence and see how root cause analysis moves from surface symptoms to organizational architecture guidelines.',
+        check: {
+          question: 'Why do high-reliability engineering organizations strictly mandate blameless postmortems after major incidents?',
+          options: [
+            'Because blaming individuals breeds fear and concealment, whereas blameless reviews uncover the systemic and architectural weaknesses that allowed the failure to occur',
+            'Because insurance companies require all engineers to sign an apology letter',
+            'To avoid spending money on automated rollback tools'
+          ],
+          answer: 0,
+          why: 'When engineers feel psychologically safe, they speak openly about confusing interfaces and hidden risks, allowing teams to harden systems against future failures.'
+        }
+      }
+    ],
+    summary: [
+      'Principled negotiation applies Fisher-Ury principles to identify ZOPA overlap and preserve BATNA walk-away boundaries.',
+      'Quantitative RICE matrix prioritization scores initiatives objectively, normalizing impact against developer effort.',
+      'Coaching underperformance distinguishes between coachable skill deficits, burnout, and environmental tooling blockers.',
+      'Staff+ engineering archetypes (Tech Lead, Architect, Solver, Right Hand) achieve cross-organizational leverage without managerial authority.',
+      'Blameless postmortem facilitation uses 5-Whys root cause analysis to eliminate systemic defects and build psychological safety.'
+    ],
+    projectStep: {
+      title: 'Architect an Engineering Leadership & Organizational Influence Playbook',
+      steps: [
+        'Model a Principled Negotiation ZOPA calculator evaluating delivery trade-offs between competing platform teams.',
+        'Build a RICE prioritization spreadsheet ranking technical debt initiatives against user-facing product features.',
+        'Author a structured 60-day performance coaching blueprint with measurable weekly milestones and mentor pairing.',
+        'Define a personal Staff+ engineering career portfolio aligning with the Architect or Solver leadership archetype.',
+        'Facilitate a blameless postmortem retrospective documenting systemic action items following a simulated tier-1 outage.'
+      ]
+    }
   }
 ];
 
