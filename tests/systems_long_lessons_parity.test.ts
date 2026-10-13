@@ -193,3 +193,65 @@ test('Systems Long Lessons: iot_emb Day 2 C++ Snippets Pass AST Invariant Verifi
   assert.equal(res5.allPassed, true, 'Part 5 calculateBatteryLifeHours must pass AST analysis');
 });
 
+test('Systems Long Lessons: comp_fund Day 3 Process Lifecycle, Signals, Memory & CFS Verification', async () => {
+  const compFundD3 = getLongLesson('comp_fund', 3);
+  assert.ok(compFundD3, 'comp_fund Day 3 must resolve');
+  assert.equal(compFundD3.day, 3);
+  assert.equal(compFundD3.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(compFundD3);
+  const totalMin = estimateLessonMinutes(compFundD3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < compFundD3.parts.length; i++) {
+    const part = compFundD3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code must contain bash commands`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Part 1: Process Table & Fork/Exec/Zombie
+  const res1 = await executeBashSuite(compFundD3.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 process table must succeed');
+  assert.ok(res1.stdout?.includes('RUNNING node'), 'Must report active node process');
+  assert.ok(res1.stdout?.includes('ZOMBIE  worker-child'), 'Must identify zombie process');
+
+  // Part 2: POSIX Signals
+  const res2 = await executeBashSuite(compFundD3.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 signals table must succeed');
+  assert.ok(res2.stdout?.includes('SIGTERM 15 GRACEFUL'), 'Must include SIGTERM');
+  assert.ok(res2.stdout?.includes('SIGKILL 9  TERMINATE'), 'Must include SIGKILL');
+  assert.ok(res2.stdout?.includes('3'), 'Must count 3 catchable signals');
+
+  // Part 3: Virtual Memory Page Tables
+  const res3 = await executeBashSuite(compFundD3.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 page table must succeed');
+  assert.ok(res3.stdout?.includes('0x001 0x0A4'), 'Must include mapped page');
+  assert.ok(res3.stdout?.includes('0x003 0x000'), 'Must capture unmapped page fault frame');
+
+  // Part 4: Completely Fair Scheduler (CFS) vruntime queue
+  const res4 = await executeBashSuite(compFundD3.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 CFS queue must succeed');
+  assert.ok(res4.stdout?.includes('012.5ms PID_1088 realtime_audio'), 'Lowest vruntime task scheduled first');
+  assert.ok(res4.stdout?.includes('042.1ms PID_1001 api_gateway'), 'Second lowest vruntime task scheduled next');
+
+  // Part 5: File Descriptors & Inodes
+  const res5 = await executeBashSuite(compFundD3.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 file descriptors & inodes must succeed');
+  assert.ok(res5.stdout?.includes('INODE:984321'), 'Must display inode metadata');
+  assert.ok(res5.stdout?.includes('STDOUT: fd_1 active'), 'Must verify stdout fd_1');
+  assert.ok(res5.stdout?.includes('STDERR: fd_2 connected'), 'Must verify stderr fd_2');
+});
+
+

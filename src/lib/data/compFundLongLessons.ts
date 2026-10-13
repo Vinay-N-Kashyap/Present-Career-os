@@ -386,6 +386,217 @@ cat dist/bundle.js`,
         'Chain automated artifact creation and deployment verification safely using &&.'
       ]
     }
+  },
+  {
+    day: 3,
+    title: 'Linux Process Lifecycle, POSIX Signals, Virtual Memory Paging & CFS Scheduling',
+    goal: 'Master low-level Linux operating system internals: process lifecycle trees (PID, PPID, Fork/Exec, Zombies), asynchronous POSIX signals (graceful SIGTERM vs uncatchable SIGKILL), virtual memory address translation (VPN to PFN, Page Tables, TLBs, and Page Faults), kernel process scheduling (CFS red-black trees and vruntime), and file descriptor tables with inode architectures.',
+    minutes: 40,
+    recap: 'In Day 2, we mastered POSIX permissions, metadata inspection with ls -l, stream truncation with head, case-insensitive log filtering with grep -i, and safe conditional chaining with &&. Now, in Day 3, we dive directly into Linux operating system internals: process lifecycle trees, graceful versus uncatchable signals, virtual memory page tables, the completely fair scheduler, and file descriptors.',
+    parts: [
+      {
+        title: 'Linux Process Lifecycle: PID, PPID, Fork-Exec & Zombie States',
+        say: [
+          'Every running program in a Linux operating system is managed by the kernel as a process with a unique Process Identifier (PID) and a Parent Process Identifier (PPID). Process 1, typically systemd or init, is the direct ancestor of all user-space processes.',
+          'New processes are spawned using the classic two-step POSIX system call sequence: fork() duplicates the calling process into an exact copy child, and execve() replaces the child address space with a new executable binary.',
+          'When a child process finishes execution, it sends a SIGCHLD signal to its parent and enters the ZOMBIE state. In the zombie state, its memory is freed, but its PID and exit status remain in the kernel process table until the parent invokes wait() or waitpid() to reap it.',
+          'If the parent process terminates without reaping its children, the children become orphans and are adopted by PID 1 (init/systemd), which immediately reaps them to prevent process table exhaustion.',
+          'Understanding process lifecycle states (RUNNING, SLEEPING, STOPPED, ZOMBIE) is essential for diagnosing server deadlocks, zombie process leaks, and microservice container crashes in production.'
+        ],
+        example: 'Think of a corporate work order. A manager signs a purchase order (fork) and dispatches a courier (execve). When the courier returns with the receipt, the manager must file the receipt (wait/reap); if the manager leaves the building without filing, the receipt clutters the desk (zombie) until the archive administrator (PID 1) files it.',
+        code: `echo "PID  PPID STATE   COMMAND" > proc_table.txt
+echo "1    0    SLEEP   systemd" >> proc_table.txt
+echo "101  1    SLEEP   sshd" >> proc_table.txt
+echo "1024 101  RUNNING node" >> proc_table.txt
+echo "1025 1024 ZOMBIE  worker-child" >> proc_table.txt
+cat proc_table.txt
+grep "RUNNING" proc_table.txt
+grep "ZOMBIE" proc_table.txt`,
+        output: `PID  PPID STATE   COMMAND\n1    0    SLEEP   systemd\n101  1    SLEEP   sshd\n1024 101  RUNNING node\n1025 1024 ZOMBIE  worker-child\n1024 101  RUNNING node\n1025 1024 ZOMBIE  worker-child`,
+        codeNotes: [
+          { line: 1, note: 'Creates process table manifest with headers' },
+          { line: 4, note: 'Registers parent node worker in RUNNING state' },
+          { line: 5, note: 'Registers unreaped child in ZOMBIE state pending parent wait()' },
+          { line: 7, note: 'Filters active running processes' },
+          { line: 8, note: 'Isolates zombie processes requiring cleanup' }
+        ],
+        tryIt: 'Add a new process row with state SLEEP and filter for all SLEEP processes using grep.',
+        check: {
+          question: 'What is a "zombie process" in a Linux operating system?',
+          options: [
+            'A process that has completed execution but remains in the process table because its parent has not yet called wait()',
+            'A malicious rootkit program running in kernel space',
+            'A process whose CPU usage has exceeded 100%',
+            'A thread running without any physical RAM'
+          ],
+          answer: 0,
+          why: 'A zombie process has finished execution and released its memory, but its PID and exit status are preserved in the process table so its parent can read the exit code via wait() or waitpid().'
+        }
+      },
+      {
+        title: 'POSIX Signals: Asynchronous IPC, Graceful SIGTERM vs Uncatchable SIGKILL',
+        say: [
+          'POSIX signals are asynchronous notifications sent by the kernel or other processes to notify a target thread of an event. Common signals include SIGHUP (1), SIGINT (2, Ctrl+C), SIGTERM (15), and SIGKILL (9).',
+          'When a process receives SIGTERM (signal 15), the process can catch the signal with a signal handler (e.g., sigaction in C or process.on("SIGTERM") in Node.js) to perform graceful cleanup: closing database connections, finishing active in-flight HTTP requests, and flushing write buffers.',
+          'In contrast, SIGKILL (signal 9) cannot be caught, blocked, or ignored by any user-space process. The Linux kernel immediately terminates the process and releases its memory, which can leave temporary locks unreleased and database tables corrupted.',
+          'Kubernetes and Docker orchestrators use this dual-signal model: they send SIGTERM first, grant a terminationGracePeriodSeconds (e.g. 30 seconds), and only send SIGKILL if the process fails to terminate gracefully.',
+          'Correct signal handling is the hallmark of zero-downtime distributed microservices.'
+        ],
+        example: 'Think of leaving an office at the end of the day. A scheduled building closing announcement (SIGTERM) allows workers to save documents, finish current calls, lock filing cabinets, and exit peacefully. A sudden building power cutoff (SIGKILL) shuts off machines instantly with zero warning, risking data corruption.',
+        code: `echo "SIGNAL NUM ACTION   CATCHABLE" > signals.txt
+echo "SIGHUP 1   RELOAD   YES" >> signals.txt
+echo "SIGINT 2   INTERRUPT YES" >> signals.txt
+echo "SIGTERM 15 GRACEFUL  YES" >> signals.txt
+echo "SIGKILL 9  TERMINATE NO" >> signals.txt
+cat signals.txt
+grep "YES" signals.txt | wc -l
+grep "SIGKILL" signals.txt`,
+        output: `SIGNAL NUM ACTION   CATCHABLE\nSIGHUP 1   RELOAD   YES\nSIGINT 2   INTERRUPT YES\nSIGTERM 15 GRACEFUL  YES\nSIGKILL 9  TERMINATE NO\n3\nSIGKILL 9  TERMINATE NO`,
+        codeNotes: [
+          { line: 1, note: 'Initializes signal table with POSIX numbers and actions' },
+          { line: 4, note: 'Defines SIGTERM (15) as catchable for graceful application teardown' },
+          { line: 5, note: 'Defines SIGKILL (9) as uncatchable kernel-level immediate termination' },
+          { line: 7, note: 'Counts all signals that user applications can handle and catch (3)' }
+        ],
+        tryIt: 'Add SIGQUIT (signal 3) with CATCHABLE=YES and verify the catchable count increases to 4.',
+        check: {
+          question: 'Why does container orchestration like Kubernetes send SIGTERM before SIGKILL during pod shutdown?',
+          options: [
+            'SIGTERM allows the application to cleanly flush buffers, finish pending requests, and close sockets before SIGKILL forces termination',
+            'SIGTERM reboots the underlying physical Linux server',
+            'SIGKILL is deprecated in modern Linux kernels',
+            'SIGTERM automatically compresses the database into a zip archive'
+          ],
+          answer: 0,
+          why: 'SIGTERM gives the user application an opportunity to execute graceful shutdown logic. SIGKILL cannot be intercepted by user code and forces an abrupt abort, which could truncate inflight transactions.'
+        }
+      },
+      {
+        title: 'Virtual Memory Paging, Page Tables, TLBs & Page Faults',
+        say: [
+          'Modern operating systems isolate processes by giving each process its own virtual address space. A user program never sees raw physical RAM addresses; instead, virtual memory is partitioned into fixed-size blocks called pages (typically 4KB in Linux x86_64).',
+          'Physical RAM is partitioned into matching blocks called page frames. The Memory Management Unit (MMU) hardware uses multi-level Page Tables to map Virtual Page Numbers (VPN) to Physical Frame Numbers (PFN).',
+          'Because traversing multi-level page tables in DRAM adds latency, the CPU caches recent virtual-to-physical translations in a fast hardware cache called the Translation Lookaside Buffer (TLB).',
+          'When a process accesses a virtual page that is marked "present = 0" (e.g. swapped out to disk or lazily allocated), the CPU triggers a Page Fault exception. The kernel page fault handler interrupts execution, loads the requested page from disk or zero-fills an anonymous frame, updates the page table, and resumes execution.',
+          'Understanding memory paging explains copy-on-write (COW) during fork(), memory overcommit, and out-of-memory (OOM) killer mechanics.'
+        ],
+        example: 'Think of a library catalog index card. The card lists a shelf code (virtual address). You check the circulation desk clipboard (TLB) first; if it is listed (TLB hit), you fetch the book immediately. If not (TLB miss), you inspect the card drawers (Page Table). If the book is in an external warehouse (present = 0), a delivery truck brings it in (Page Fault).',
+        code: `echo "VPN   PFN   DIRTY PRESENT" > page_table.txt
+echo "0x001 0x0A4 0     1" >> page_table.txt
+echo "0x002 0x0B8 1     1" >> page_table.txt
+echo "0x003 0x000 0     0" >> page_table.txt
+echo "0x004 0x0F1 0     1" >> page_table.txt
+head -n 3 page_table.txt
+grep "0x000" page_table.txt`,
+        output: `VPN   PFN   DIRTY PRESENT\n0x001 0x0A4 0     1\n0x002 0x0B8 1     1\n0x003 0x000 0     0`,
+        codeNotes: [
+          { line: 1, note: 'Defines virtual memory page table manifest with VPN, PFN, and dirty/present bits' },
+          { line: 4, note: 'Page 0x003 has PRESENT=0 indicating swapped out page frame requiring page fault handling' },
+          { line: 6, note: 'Extracts top 3 lines of page table' },
+          { line: 7, note: 'Identifies non-present page frame triggering kernel page fault' }
+        ],
+        tryIt: 'Change the head command to head -n 4 to preview 4 virtual page translations.',
+        check: {
+          question: 'What hardware component caches recent virtual-to-physical memory translations to accelerate MMU lookups?',
+          options: [
+            'Translation Lookaside Buffer (TLB)',
+            'Direct Memory Access (DMA) controller',
+            'SATA storage controller',
+            'Network Interface Card (NIC)'
+          ],
+          answer: 0,
+          why: 'The Translation Lookaside Buffer (TLB) is a specialized on-chip CPU associative cache that stores recent virtual-to-physical page mappings, avoiding slow DRAM page table walks on every memory reference.'
+        }
+      },
+      {
+        title: 'Linux Completely Fair Scheduler (CFS) & vruntime Priority',
+        say: [
+          'The Linux kernel uses the Completely Fair Scheduler (CFS) for standard non-realtime processes. Instead of fixed time slices, CFS models an ideal multi-tasking CPU where every runnable process receives a mathematically fair share of CPU time.',
+          'To track execution fairness, CFS maintains a virtual runtime (vruntime) metric for each process. vruntime measures the exact amount of execution time the thread has consumed, scaled inversely by its nice level priority (nice -20 high priority to +19 low priority).',
+          'Processes with higher priority (lower nice value) accumulate vruntime much more slowly, granting them larger effective shares of CPU time.',
+          'CFS organizes runnable tasks in a time-ordered red-black binary search tree (rb-tree) keyed by vruntime. The task with the smallest vruntime sits at the leftmost node.',
+          'When a scheduling decision occurs, the kernel picks the leftmost process, dispatches it to the CPU core, updates its vruntime, and reinserts it into the tree in O(log N) time.'
+        ],
+        example: 'Think of runners at a water hydration station. Each runner has a digital meter recording total water consumed (vruntime). The athlete who has drank the least amount of water is always summoned to the faucet first, ensuring balanced, equitable hydration across the entire field.',
+        code: `echo "012.5ms PID_1088 realtime_audio" > cfs_queue.txt
+echo "042.1ms PID_1001 api_gateway" >> cfs_queue.txt
+echo "078.9ms PID_1033 db_sync" >> cfs_queue.txt
+echo "100.4ms PID_1042 worker_low_prio" >> cfs_queue.txt
+sort cfs_queue.txt | head -n 2`,
+        output: `012.5ms PID_1088 realtime_audio\n042.1ms PID_1001 api_gateway`,
+        codeNotes: [
+          { line: 1, note: 'Defines CFS runnable tasks ordered with normalized vruntime values' },
+          { line: 4, note: 'Worker with 100.4ms has accumulated largest vruntime' },
+          { line: 5, note: 'Sorts queue to simulate CFS red-black tree leftmost lookup and picks top 2 tasks' }
+        ],
+        tryIt: 'Add a new high-priority interactive task with vruntime 005.0ms and verify it appears first in the sorted queue.',
+        check: {
+          question: 'How does the Linux Completely Fair Scheduler (CFS) determine which runnable process to dispatch to a CPU core next?',
+          options: [
+            'It selects the process with the lowest virtual runtime (vruntime), located at the leftmost node of its red-black tree',
+            'It randomly picks any process in memory',
+            'It always selects the process with the largest PID',
+            'It executes processes in reverse alphabetical order of their binary names'
+          ],
+          answer: 0,
+          why: 'CFS tracks virtual runtime (vruntime) in a red-black tree. The task that has consumed the least proportional CPU time (lowest vruntime) sits at the leftmost node and is scheduled next to maintain fairness.'
+        }
+      },
+      {
+        title: 'File Descriptors, Inodes & Stream Redirection Architecture',
+        say: [
+          'In UNIX philosophy, "everything is a file" (devices, sockets, pipes, and regular files). When a process opens any I/O resource, the kernel allocates an entry in the process File Descriptor (FD) table.',
+          'File descriptors 0, 1, and 2 are pre-allocated at startup for stdin, stdout, and stderr. Any additional open file receives the lowest available non-negative integer (e.g. 3, 4, 5).',
+          'Below the file descriptor table sits the inode (index node) layer on the filesystem. An inode contains file metadata: permissions, owner, link count, byte size, timestamps, and pointers to raw data blocks on disk, but notably NOT the filename!',
+          'Filenames live strictly inside directory structures as mappings from human-readable names to inode numbers. This separation allows multiple hard links to point to the exact same physical inode without duplicating data.',
+          'Stream redirection operators (> and >>) in the shell invoke the dup2() system call, remapping file descriptor 1 (stdout) or 2 (stderr) to point to a new target file or socket.'
+        ],
+        example: 'Think of a hotel room keycard versus the physical room. The keycard number (file descriptor) is what the guest carries. The room record in the hotel database (inode) holds room dimensions and inventory. The brass room number on the door (directory filename) simply directs people to that room.',
+        code: `mkdir -p /home/student/workspace/proc_fs
+echo "INODE:984321 SIZE:4096 LINKS:1 DATA:app_manifest" > /home/student/workspace/proc_fs/inode_meta.txt
+cat /home/student/workspace/proc_fs/inode_meta.txt
+echo "STDOUT: fd_1 active" > stdout.log
+echo "STDERR: fd_2 connected" >> stderr.log
+cat stdout.log
+cat stderr.log`,
+        output: `INODE:984321 SIZE:4096 LINKS:1 DATA:app_manifest\nSTDOUT: fd_1 active\nSTDERR: fd_2 connected`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual proc_fs directory' },
+          { line: 2, note: 'Stores inode metadata demonstrating inode number and link count' },
+          { line: 4, note: 'Demonstrates stdout redirection simulating file descriptor 1 dup2()' },
+          { line: 5, note: 'Demonstrates stderr redirection simulating file descriptor 2 dup2()' }
+        ],
+        tryIt: 'Inspect the content of stderr.log using cat stderr.log.',
+        check: {
+          question: 'Where is the filename of a file stored in a POSIX filesystem architecture?',
+          options: [
+            'Inside directory entries as a mapping from name to inode number, not in the inode itself',
+            'Directly inside the physical CPU registers',
+            'In the first 4 bytes of physical RAM',
+            'Inside the network router firmware'
+          ],
+          answer: 0,
+          why: 'An inode stores permissions, timestamps, sizes, and disk block pointers, but filenames are strictly stored in directory entries mapping human-readable names to inode numbers.'
+        }
+      }
+    ],
+    summary: [
+      'Linux processes follow a fork/exec lifecycle; terminated children remain zombies until reaped by their parent or adopted by PID 1.',
+      'POSIX signals deliver asynchronous notifications: SIGTERM (15) allows graceful cleanup, while SIGKILL (9) forces uncatchable termination.',
+      'Virtual memory translates VPN to PFN via page tables, cached by the hardware TLB, triggering page faults on non-present pages.',
+      'The Completely Fair Scheduler (CFS) selects the task with the lowest vruntime from its red-black tree to ensure equitable CPU distribution.',
+      'File descriptors index per-process I/O tables pointing to underlying filesystem inodes, while filenames live inside directory tables.'
+    ],
+    projectStep: {
+      title: 'Construct a Linux Kernel Process & Memory Architecture Inspector',
+      steps: [
+        'Model a POSIX process table isolating running services and detecting unreaped zombie child states.',
+        'Evaluate asynchronous signal vectors distinguishing catchable SIGTERM teardown from uncatchable SIGKILL.',
+        'Inspect virtual memory page table mappings identifying non-present page frames and page fault conditions.',
+        'Simulate CFS red-black tree task dispatching by sorting virtual runtime metrics.',
+        'Examine filesystem inode metadata structures and simulate standard stream redirection via dup2.'
+      ]
+    }
   }
 ];
 
