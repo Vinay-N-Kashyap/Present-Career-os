@@ -22,6 +22,11 @@ test('IoT Edge & IoT Sec Long Lessons: Resolution & Language Invariants', () => 
   assert.equal(edgeLesson2.day, 2);
   assert.equal(edgeLesson2.parts.length, 5, 'iot_edge Day 2 must contain exactly 5 parts');
 
+  const edgeLesson3 = getLongLesson('iot_edge', 3);
+  assert.ok(edgeLesson3, 'iot_edge Day 3 long lesson must resolve');
+  assert.equal(edgeLesson3.day, 3);
+  assert.equal(edgeLesson3.parts.length, 5, 'iot_edge Day 3 must contain exactly 5 parts');
+
   // 2. iot_sec
   const secLesson = getLongLesson('iot_sec', 1);
   assert.ok(secLesson, 'iot_sec Day 1 long lesson must resolve');
@@ -148,5 +153,48 @@ test('IoT Sec Day 2: HKDF Key Derivation, AES-GCM AEAD, DPA Masking, Tamper Zero
   assert.ok(secLesson2.parts[3].code?.includes('evaluate_hardware_tamper_and_zeroization'));
   assert.ok(secLesson2.parts[4].code?.includes('AntiReplaySlidingWindow'));
 });
+
+test('IoT Edge Day 3: TFLM FlatBuffers, Zero-Allocation, Static Tensor Arena & Op Resolvers Verification', () => {
+  const edgeLesson3 = getLongLesson('iot_edge', 3);
+  assert.ok(edgeLesson3, 'iot_edge Day 3 must resolve');
+  assert.equal(edgeLesson3.day, 3);
+  assert.equal(edgeLesson3.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(edgeLesson3);
+  const totalMin = estimateLessonMinutes(edgeLesson3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < edgeLesson3.parts.length; i++) {
+    const part = edgeLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(edgeLesson3.parts[0].code?.includes('simulate_tflite_flatbuffer_metadata'));
+  assert.ok(edgeLesson3.parts[0].output?.includes('TFLM FLATBUFFERS SCHEMA METADATA'));
+  assert.ok(edgeLesson3.parts[1].code?.includes('evaluate_zero_heap_interpreter_safety'));
+  assert.ok(edgeLesson3.parts[1].output?.includes('ZERO DYNAMIC ALLOCATION SAFETY AUDIT'));
+  assert.ok(edgeLesson3.parts[2].code?.includes('allocate_static_tensor_arena'));
+  assert.ok(edgeLesson3.parts[2].output?.includes('STATIC TENSOR ARENA ALLOCATION PLAN'));
+  assert.ok(edgeLesson3.parts[3].code?.includes('calculate_op_resolver_flash_savings'));
+  assert.ok(edgeLesson3.parts[3].output?.includes('MICROMUTABLEOPRESOLVER FLASH FOOTPRINT'));
+  assert.ok(edgeLesson3.parts[4].code?.includes('plan_activation_ping_pong_offsets'));
+  assert.ok(edgeLesson3.parts[4].output?.includes('ACTIVATION PING-PONG MEMORY REUSE PLAN'));
+});
+
 
 
