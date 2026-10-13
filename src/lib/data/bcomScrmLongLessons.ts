@@ -374,5 +374,388 @@ print(f"Net Promoter Score: +{res['NPS_Score']}")`,
         'Implement the 4-factor health score classifier and route automated intervention playbooks.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_scrm',
+    day: 2,
+    title: 'MEDDPICC Deal Qualification, Territory Gini Quotas & CPQ Economics',
+    goal: 'Master enterprise sales operations and revenue architecture: MEDDPICC qualification scoring, mathematical sales territory alignment with Gini inequality minimization, Configure-Price-Quote (CPQ) margin governance gates, sales compensation commission acceleration waterfalls, and CS predictive renewal flight-risk intervention playbooks.',
+    minutes: 42,
+    recap: 'Day 1 established pipeline velocity equations and NRR retention fundamentals. Day 2 tackles large-enterprise deal execution: qualifying 6-figure contracts with MEDDPICC, balancing territory quotas equitably, and automating renewal flight-risk rescues.',
+    parts: [
+      {
+        title: 'The MEDDPICC Enterprise Deal Qualification Scoring Engine',
+        say: [
+          'In enterprise B2B sales, multimillion-dollar opportunities frequently stall in late-stage procurement because sales teams mistake a friendly technical user for the actual Economic Buyer or fail to understand the customer\'s legal paper process.',
+          'To eliminate subjective deal forecasting, elite revenue teams enforce the MEDDPICC qualification methodology developed at PTC: Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Identify Pain, Champion, and Competition.',
+          'Two specific pillars represent fatal deal killers: 1. Economic Buyer (the person with discretionary budget sign-off authority; if uncontacted, deal slippage is almost guaranteed); 2. Paper Process (the legal redlining, security questionnaires, and procurement review steps required to turn verbal agreement into signed ink).',
+          'A deal cannot be forecasted for current-quarter close if critical blockers like missing Economic Buyers or unmapped legal workflows exist, regardless of rep optimism.',
+          'Revenue Operations algorithms evaluate deals across all 8 MEDDPICC dimensions to produce objective forecast categories and highlight immediate deal-saving interventions.'
+        ],
+        example: 'A sales rep forecasts a $250,000 data warehouse deal for Q3. The deal scores 91/100 across technical criteria and champion advocacy. However, the legal Paper Process is unmapped. The MEDDPICC engine flags a critical blocker (UNMAPPED_LEGAL_PAPER_PROCESS) and categorizes the deal as AT_RISK_OPPORTUNITY, prompting the sales manager to initiate security review before quarter-end.',
+        code: `# Simulation: MEDDPICC Enterprise Deal Qualification & Forecast Gatekeeper
+from dataclasses import dataclass
+from typing import List, Dict
+
+@dataclass
+class MeddpiccScorecard:
+    deal_name: str
+    deal_size: float
+    metrics_score: int # 0-10
+    economic_buyer_identified: bool
+    decision_criteria_documented: bool
+    decision_process_mapped: bool
+    paper_process_mapped: bool
+    pain_identified_cost: float
+    champion_power_score: int # 0-10
+    competition_strategy: str
+
+def score_meddpicc_deal(deal: MeddpiccScorecard) -> Dict:
+    critical_blockers = []
+    points = 0
+
+    points += deal.metrics_score
+    if deal.economic_buyer_identified:
+        points += 15
+    else:
+        critical_blockers.append("MISSING_ECONOMIC_BUYER")
+
+    if deal.decision_criteria_documented:
+        points += 10
+    if deal.decision_process_mapped:
+        points += 10
+
+    if deal.paper_process_mapped:
+        points += 15
+    else:
+        critical_blockers.append("UNMAPPED_LEGAL_PAPER_PROCESS")
+
+    if deal.pain_identified_cost >= deal.deal_size * 2:
+        points += 15
+    points += deal.champion_power_score * 2
+
+    if deal.competition_strategy != "NONE":
+        points += 15
+
+    deal_health = "HIGH_CONFIDENCE_CLOSE" if points >= 75 and not critical_blockers else "AT_RISK_OPPORTUNITY"
+
+    return {
+        "Deal_Name": deal.deal_name,
+        "Total_Score": f"{points}/100",
+        "Forecast_Status": deal_health,
+        "Critical_Blockers": critical_blockers
+    }
+
+deal1 = MeddpiccScorecard("Cloud Data Warehouse Modernization", 250000.0, 8, True, True, True, False, 750000.0, 9, "DIFFERENTIATE_ON_SECURITY")
+m_res = score_meddpicc_deal(deal1)
+print(f"Deal: {m_res['Deal_Name']} | Score: {m_res['Total_Score']} -> Status: {m_res['Forecast_Status']}")
+print(f"Blockers: {m_res['Critical_Blockers']}")`,
+        output: `Deal: Cloud Data Warehouse Modernization | Score: 91/100 -> Status: AT_RISK_OPPORTUNITY\nBlockers: ['UNMAPPED_LEGAL_PAPER_PROCESS']`,
+        codeNotes: [
+          { line: 5, note: 'MeddpiccScorecard captures empirical verification across all 8 strategic deal pillars' },
+          { line: 20, note: 'Penalizes missing Economic Buyer or unmapped Paper Process with critical blocker flags' },
+          { line: 36, note: 'Forces Forecast_Status to AT_RISK despite high 91/100 score due to unmapped legal steps' },
+          { line: 49, note: 'Generates prescriptive alerts enabling sales management intervention' }
+        ],
+        tryIt: 'Set paper_process_mapped=True to eliminate the blocker and observe the status upgrade to HIGH_CONFIDENCE_CLOSE.',
+        check: {
+          question: 'In the MEDDPICC sales qualification methodology, why is mapping the "Paper Process" essential for accurate quarter-end forecasting?',
+          options: [
+            'Because complex enterprise deals frequently stall in corporate procurement, InfoSec review, and legal redlines for 60-90 days even after commercial agreement is reached.',
+            'Because all sales contracts must be physically printed on archival cotton parchment.',
+            'Because sales reps need to calculate how many trees were cut down for packaging.',
+            'Because paper documents are immune to cybersecurity attacks.'
+          ],
+          answer: 0,
+          why: 'The Paper Process encompasses procurement workflows, master service agreements, and security compliance; failure to map it causes massive forecast slippage past quarter-end.',
+          answerIndex: 0,
+          explanation: 'The Paper Process encompasses procurement workflows, master service agreements, and security compliance; failure to map it causes massive forecast slippage past quarter-end.'
+        }
+      },
+      {
+        title: 'Sales Territory Design & Gini Quota Equalization',
+        say: [
+          'Territory design is the single most decisive factor influencing sales team morale, quota attainment, and rep retention.',
+          'When sales territories are carved naively by geographic borders, some reps inherit fertile "greenhouse" territories with legacy logos and large TAM, while others receive barren territories where hitting quota is mathematically impossible.',
+          'To ensure equity, Revenue Operations leaders compute the Gini Coefficient of Territory Potential: Gini = sum((2*i - n - 1) * val) / (n * sum(values)), scaled from 0.0 (perfect parity) to 1.0 (total inequality).',
+          'A territory plan with a Gini index exceeding 0.25 leads to rapid rep turnover, quota dissatisfaction, and uneven pipeline coverage.',
+          'World-class sales operations balance accounts across Total Addressable Market (TAM), account tiering, and historical whitespace to compress territory Gini indices below 0.05.'
+        ],
+        example: 'In an unbalanced plan, Rep A receives $1.5M in territory pipeline while Rep C receives $300k (Gini = 0.333). After mathematical account reallocation, each rep receives ~$720k to $800k in opportunity potential, collapsing the Gini coefficient to 0.022 and eliminating retention flight risk.',
+        code: `# Simulation: Sales Territory Quota Gini Inequality Coefficient Calculator
+from typing import Dict
+
+def calculate_territory_gini(territories: Dict[str, float]) -> float:
+    # Computes Gini coefficient of quota distribution (0.0 = perfect equality, 1.0 = total inequality)
+    values = sorted(list(territories.values()))
+    n = len(values)
+    if n == 0 or sum(values) == 0:
+        return 0.0
+    index = sum((2 * i - n - 1) * val for i, val in enumerate(values, 1))
+    return round(index / (n * sum(values)), 3)
+
+territories_unequal = {"Rep_A": 1500000.0, "Rep_B": 800000.0, "Rep_C": 300000.0, "Rep_D": 400000.0}
+territories_balanced = {"Rep_A": 800000.0, "Rep_B": 750000.0, "Rep_C": 720000.0, "Rep_D": 730000.0}
+
+gini_bad = calculate_territory_gini(territories_unequal)
+gini_good = calculate_territory_gini(territories_balanced)
+print(f"Unequal Territory Gini: {gini_bad} (High rep turnover risk)")
+print(f"Balanced Territory Gini: {gini_good} (Healthy quota distribution)")`,
+        output: `Unequal Territory Gini: 0.333 (High rep turnover risk)\nBalanced Territory Gini: 0.022 (Healthy quota distribution)`,
+        codeNotes: [
+          { line: 4, note: 'calculate_territory_gini computes Lorenz-curve area integration over sorted territory values' },
+          { line: 11, note: 'Evaluates unbalanced territory map with severe 0.333 Gini rating indicating structural inequality' },
+          { line: 15, note: 'Evaluates re-indexed territory plan achieving exceptional 0.022 Gini parity' },
+          { line: 18, note: 'Provides RevOps teams with objective mathematical validation before rolling out annual quotas' }
+        ],
+        tryIt: 'Equalize all reps to exactly 750000.0 and verify that the Gini coefficient calculates to 0.000.',
+        check: {
+          question: 'What is the operational danger of deploying a sales territory plan with a high Gini coefficient (> 0.25)?',
+          options: [
+            'Reps assigned to starved territories face mathematically impossible quotas and quickly churn, while reps in wealthy territories hit quota without effort, leading to talent drain.',
+            'The CRM database automatically deletes all customer phone numbers.',
+            'The Federal Communications Commission suspends the company\'s email servers.',
+            'Sales reps are forced to work entirely without laptops.'
+          ],
+          answer: 0,
+          why: 'High territory inequality creates structural unfairness, driving voluntary sales rep turnover and leaving key customer whitespace unprospected.',
+          answerIndex: 0,
+          explanation: 'High territory inequality creates structural unfairness, driving voluntary sales rep turnover and leaving key customer whitespace unprospected.'
+        }
+      },
+      {
+        title: 'Configure-Price-Quote (CPQ) Tiered Discounting Guardrails',
+        say: [
+          'In high-growth B2B companies, rogue field discounting is the primary mechanism through which product gross margins are destroyed.',
+          'Enterprise Configure-Price-Quote (CPQ) software enforces algorithmic discount approval matrices to maintain margin discipline while empowering reps to compete.',
+          'Standard CPQ governance enforces four distinct governance tiers: 0% to 10% discount (Auto-Approved by Field Rep authority); 10.1% to 20% discount (Requires VP of Sales approval); 20.1% to 30% discount (Requires CRO / CFO sign-off); Over 30% discount (Strict automated rejection below corporate gross margin floor).',
+          'Furthermore, CPQ engines model multi-year Total Contract Value (TCV) against Annual Recurring Revenue (ARR), rewarding multi-year upfront commitments with approved pricing concessions.',
+          'By embedding automated approval gates into the CRM, organizations prevent unapproved price slashing and preserve gross margin viability.'
+        ],
+        example: 'A quote for a $100,000/year 3-year SaaS contract (List TCV $300,000) requests an 18.5% discount. The CPQ engine calculates contracted ARR at $81,500 ($244,500 TCV) and automatically routes approval to the VP of Sales. A separate quote requesting 35% discount is instantly rejected by the margin guardrail.',
+        code: `# Simulation: Enterprise CPQ Tiered Discounting & Margin Protection Matrix
+from typing import Dict
+
+class CpqDiscountEngine:
+    def __init__(self, list_arr: float, contract_years: int):
+        self.list_arr = list_arr
+        self.years = contract_years
+        self.total_list_value = list_arr * contract_years
+
+    def evaluate_quote(self, proposed_discount_pct: float) -> Dict:
+        discounted_arr = self.list_arr * (1.0 - proposed_discount_pct / 100.0)
+        total_contract_value = discounted_arr * self.years
+
+        if proposed_discount_pct <= 10.0:
+            approval = "AUTO_APPROVED_REP_AUTHORITY"
+        elif proposed_discount_pct <= 20.0:
+            approval = "REQUIRED_APPROVAL_VP_SALES"
+        elif proposed_discount_pct <= 30.0:
+            approval = "REQUIRED_APPROVAL_CRO_CFO"
+        else:
+            approval = "STRICT_REJECT_BELOW_MARGIN_FLOOR"
+
+        return {
+            "List_ARR": self.list_arr,
+            "Discount_Pct": f"{proposed_discount_pct}%",
+            "Contracted_ARR": round(discounted_arr, 2),
+            "Total_Contract_Value_TCV": round(total_contract_value, 2),
+            "Approval_Gate": approval
+        }
+
+cpq = CpqDiscountEngine(list_arr=100000.0, contract_years=3)
+quote1 = cpq.evaluate_quote(18.5)
+quote2 = cpq.evaluate_quote(35.0)
+print(f"Quote 1 (18.5%): ARR=\${quote1['Contracted_ARR']} | TCV=\${quote1['Total_Contract_Value_TCV']} -> {quote1['Approval_Gate']}")
+print(f"Quote 2 (35.0%): ARR=\${quote2['Contracted_ARR']} | TCV=\${quote2['Total_Contract_Value_TCV']} -> {quote2['Approval_Gate']}")`,
+        output: `Quote 1 (18.5%): ARR=$81500.0 | TCV=$244500.0 -> REQUIRED_APPROVAL_VP_SALES\nQuote 2 (35.0%): ARR=$65000.0 | TCV=$195000.0 -> STRICT_REJECT_BELOW_MARGIN_FLOOR`,
+        codeNotes: [
+          { line: 4, note: 'CpqDiscountEngine computes contracted ARR and multi-year TCV commitments' },
+          { line: 12, note: 'Routes proposed discounts through role-based approval tiers based on margin impact' },
+          { line: 26, note: 'Routes Quote 1 (18.5%) to VP of Sales for executive validation' },
+          { line: 31, note: 'Strictly blocks Quote 2 (35.0%) as unprofitable below corporate gross margin floor' }
+        ],
+        tryIt: 'Change proposed_discount_pct on quote1 to 8.0 to observe immediate AUTO_APPROVED_REP_AUTHORITY status.',
+        check: {
+          question: 'Why do enterprise software companies enforce automated Configure-Price-Quote (CPQ) discounting guardrails?',
+          options: [
+            'To prevent unauthorized rogue discounts from destroying product gross margins while establishing auditable executive approval workflows.',
+            'To make quotes completely unreadable by prospective customers.',
+            'To ensure that all customers receive identical prices regardless of company size.',
+            'To replace human sales reps with automated email bots.'
+          ],
+          answer: 0,
+          why: 'CPQ guardrails protect corporate gross margins and profitability while giving reps transparent discount thresholds based on deal size and executive approvals.',
+          answerIndex: 0,
+          explanation: 'CPQ guardrails protect corporate gross margins and profitability while giving reps transparent discount thresholds based on deal size and executive approvals.'
+        }
+      },
+      {
+        title: 'Sales Rep Commission Waterfall & Quota Accelerators',
+        say: [
+          'Sales compensation plans are precision behavioral engineering: reps execute the exact behaviors incentivized by their commission structure.',
+          'In SaaS sales, commission structures feature three core mechanics: Base Commission Rates (e.g. 10% of closed ARR up to 100% quota); Accelerators (e.g. 1.5x commission rate between 100% and 125% quota attainment); Super-Accelerators (e.g. 2.0x commission rate above 125% quota).',
+          'Accelerators create enormous financial incentives for top performers to keep selling aggressively after hitting their annual quota rather than "sandbagging" deals for next year.',
+          'Additionally, enterprise comp plans include Clawback Provisions: if an acquired customer cancels their contract within 90 days, the commission paid on that deal is recouped from the rep\'s subsequent paycheck.',
+          'RevOps compensation engines calculate tiered commission waterfalls, tracking effective commission rates and clawback liability in real time.'
+        ],
+        example: 'A sales rep with a $1,000,000 annual quota closes $1,400,000 in ARR (140% attainment). They earn 10% on the first $1M ($100k), 15% on the next $250k ($37.5k), and 20% on the final $150k ($30k). Total commission payout is $167,500, delivering an effective commission rate of 11.96%.',
+        code: `# Simulation: Tiered Sales Commission Waterfall & Quota Accelerator Engine
+from typing import Dict
+
+def calculate_rep_commission_waterfall(
+    annual_quota: float,
+    closed_revenue: float,
+    base_commission_rate_pct: float = 10.0
+) -> Dict:
+    attainment_pct = (closed_revenue / annual_quota) * 100.0
+    total_commission = 0.0
+
+    # Tier 1: 0% to 100% of Quota (Base Rate: 10%)
+    tier1_rev = min(closed_revenue, annual_quota)
+    total_commission += tier1_rev * (base_commission_rate_pct / 100.0)
+
+    # Tier 2: 100.1% to 125% of Quota (Accelerator: 1.5x = 15%)
+    if closed_revenue > annual_quota:
+        tier2_rev = min(closed_revenue - annual_quota, annual_quota * 0.25)
+        total_commission += tier2_rev * (base_commission_rate_pct * 1.5 / 100.0)
+
+    # Tier 3: Above 125% of Quota (Super Accelerator: 2.0x = 20%)
+    if closed_revenue > annual_quota * 1.25:
+        tier3_rev = closed_revenue - (annual_quota * 1.25)
+        total_commission += tier3_rev * (base_commission_rate_pct * 2.0 / 100.0)
+
+    effective_rate = (total_commission / closed_revenue) * 100.0 if closed_revenue > 0 else 0.0
+
+    return {
+        "Annual_Quota": annual_quota,
+        "Closed_Revenue": closed_revenue,
+        "Attainment_Pct": f"{round(attainment_pct, 1)}%",
+        "Total_Commission_Payout": round(total_commission, 2),
+        "Effective_Commission_Rate": f"{round(effective_rate, 2)}%"
+    }
+
+comp = calculate_rep_commission_waterfall(annual_quota=1000000.0, closed_revenue=1400000.0)
+print(f"Attainment: {comp['Attainment_Pct']} on \${comp['Closed_Revenue']} Closed ARR")
+print(f"Commission Payout: \${comp['Total_Commission_Payout']} (Effective Rate: {comp['Effective_Commission_Rate']})")`,
+        output: `Attainment: 140.0% on $1400000.0 Closed ARR\nCommission Payout: $167500.0 (Effective Rate: 11.96%)`,
+        codeNotes: [
+          { line: 4, note: 'calculate_rep_commission_waterfall partitions closed ARR across performance tiers' },
+          { line: 12, note: 'Applies 10% base rate across the first $1M quota baseline' },
+          { line: 17, note: 'Activates 1.5x accelerator (15%) for performance between 100% and 125%' },
+          { line: 22, note: 'Unlocks 2.0x super-accelerator (20%) for performance exceeding 125% of quota' }
+        ],
+        tryIt: 'Change closed_revenue to 900000.0 and see the payout drop to $90,000 (flat 10.0% rate with no accelerators).',
+        check: {
+          question: 'What is the strategic purpose of adding commission "accelerators" (e.g. 1.5x - 2.0x) for sales reps who exceed 100% of their annual quota?',
+          options: [
+            'To incentivize top sales performers to keep closing deals aggressively rather than delaying contract signatures to the following fiscal year.',
+            'To penalize reps for selling too much software.',
+            'To decrease the overall revenue generated by the company.',
+            'To force sales reps to switch to engineering roles.'
+          ],
+          answer: 0,
+          why: 'Without accelerators, reps who hit 100% quota in October will "sandbag" deals until January; accelerators motivate them to maximize full annual revenue.',
+          answerIndex: 0,
+          explanation: 'Without accelerators, reps who hit 100% quota in October will "sandbag" deals until January; accelerators motivate them to maximize full annual revenue.'
+        }
+      },
+      {
+        title: 'Customer Success Renewal Flight Risk Scoring & Intervention',
+        say: [
+          'In SaaS business models, 80% of customer lifetime value is generated after the initial sale through recurring contract renewals and expansions.',
+          'Customer Success Managers (CSMs) cannot personally track hundreds of enterprise accounts; they require automated early-warning telemetry.',
+          'Account Churn Flight Risk combines three leading indicators: 1. Seat/License Utilization (<60% active seats indicates shelfware); 2. Executive Champion Turnover (when the VP who bought the software departs, the new replacement frequently brings in their favored vendor); 3. Net Promoter Score sentiment (Detractor ratings <=6).',
+          'When an account exhibits multiple risk factors and its renewal horizon drops under 90 days, the risk engine triggers a critical status and automatically dispatches executive rescue playbooks.',
+          'Early intervention (60-90 days before renewal) saves over 60% of at-risk contracts that would otherwise result in catastrophic logo churn.'
+        ],
+        example: 'An enterprise account with 60 days remaining on its contract has 45% seat utilization, an NPS rating of 5, and its executive sponsor just left the company. The CS engine scores flight risk at 100/100, flags CRITICAL_CHURN_FLIGHT_RISK, and automatically triggers an executive sponsor rescue campaign with the VP of Customer Success.',
+        code: `# Simulation: Predictive Customer Success Account Renewal Flight-Risk Engine
+from typing import Dict
+
+def score_account_renewal_flight_risk(
+    days_to_renewal: int,
+    license_utilization_pct: float,
+    sponsor_has_left: bool,
+    nps_score: int
+) -> Dict:
+    risk_score = 0
+    risk_reasons = []
+
+    if license_utilization_pct < 60.0:
+        risk_score += 35
+        risk_reasons.append("LOW_SEAT_UTILIZATION")
+    if sponsor_has_left:
+        risk_score += 40
+        risk_reasons.append("EXECUTIVE_CHAMPION_CHURN")
+    if nps_score <= 6:
+        risk_score += 25
+        risk_reasons.append("DETRACTOR_NPS_SENTIMENT")
+
+    if risk_score >= 60 and days_to_renewal <= 90:
+        status = "CRITICAL_CHURN_FLIGHT_RISK"
+        playbook = "DISPATCH_EXECUTIVE_SPONSOR_RESCUE_CAMPAIGN"
+    elif risk_score >= 35:
+        status = "MODERATE_RENEWAL_RISK"
+        playbook = "SCHEDULE_CSM_TRAINING_AND_ADOPTION_SPRINT"
+    else:
+        status = "HEALTHY_ACCOUNT_EXPANSION_READY"
+        playbook = "PREPARE_MULTI_YEAR_EXPANSION_OFFER"
+
+    return {
+        "Risk_Score": f"{risk_score}/100",
+        "Renewal_Horizon_Days": days_to_renewal,
+        "Account_Status": status,
+        "Recommended_Playbook": playbook,
+        "Flags": risk_reasons
+    }
+
+account1 = score_account_renewal_flight_risk(
+    days_to_renewal=60,
+    license_utilization_pct=45.0,
+    sponsor_has_left=True,
+    nps_score=5
+)
+print(f"Account Flight Risk: {account1['Risk_Score']} -> Status: {account1['Account_Status']}")
+print(f"Playbook: {account1['Recommended_Playbook']} | Flags: {account1['Flags']}")`,
+        output: `Account Flight Risk: 100/100 -> Status: CRITICAL_CHURN_FLIGHT_RISK\nPlaybook: DISPATCH_EXECUTIVE_SPONSOR_RESCUE_CAMPAIGN | Flags: ['LOW_SEAT_UTILIZATION', 'EXECUTIVE_CHAMPION_CHURN', 'DETRACTOR_NPS_SENTIMENT']`,
+        codeNotes: [
+          { line: 4, note: 'score_account_renewal_flight_risk evaluates telemetry signals across utilization, personnel, and sentiment' },
+          { line: 12, note: 'Heavily penalizes executive sponsor turnover (+40) and low license usage (+35)' },
+          { line: 20, note: 'Flags accounts inside 90-day renewal horizon for urgent executive outreach' },
+          { line: 36, note: 'Identifies critical 100/100 flight risk and prescribes targeted rescue intervention' }
+        ],
+        tryIt: 'Set sponsor_has_left=False and license_utilization_pct=85.0 to see the account status flip to HEALTHY_ACCOUNT_EXPANSION_READY.',
+        check: {
+          question: 'In B2B Customer Success operations, why is Executive Champion Turnover considered one of the highest leading indicators of churn risk?',
+          options: [
+            'Because when the internal executive who championed and bought the software leaves, their replacement often evaluates alternative vendors and cancels unadopted tools.',
+            'Because companies are legally prohibited from renewing software contracts if employees change jobs.',
+            'Because software automatically uninstalls when executive user profiles are deleted.',
+            'Because customer support phone numbers stop working when champions resign.'
+          ],
+          answer: 0,
+          why: 'New executives frequently review existing vendor spend and replace tools with their preferred solutions unless the CS team quickly re-proves business value.',
+          answerIndex: 0,
+          explanation: 'New executives frequently review existing vendor spend and replace tools with their preferred solutions unless the CS team quickly re-proves business value.'
+        }
+      }
+    ],
+    summary: [
+      'MEDDPICC Enterprise Qualification: Evaluates deals across 8 objective dimensions, flagging unmapped Paper Processes and missing Economic Buyers.',
+      'Territory Gini Equalization: Mathematically balances sales quotas and whitespace opportunity potential to maintain Gini inequality indices under 0.05.',
+      'CPQ Tiered Discounting: Enforces algorithmic approval matrices to preserve gross margins while granting reps transparent commercial latitude.',
+      'Commission Acceleration Waterfalls: Structures compensation with 1.5x and 2.0x multipliers above 100% quota to maximize full annual performance.',
+      'Predictive Renewal Flight Risk: Combines seat utilization, executive champion turnover, and NPS sentiment to trigger 90-day customer rescue campaigns.'
+    ],
+    projectStep: {
+      title: 'Architect an Enterprise Revenue Operations & CS Flight-Risk Engine',
+      steps: [
+        'Score enterprise CRM opportunities against the 8-pillar MEDDPICC matrix and identify forecast blockers.',
+        'Calculate Gini inequality coefficients across sales territories to ensure equitable quota allocation.',
+        'Implement the CPQ tiered approval matrix with multi-year contract value calculations.',
+        'Build the commission waterfall with quota accelerators and configure the customer renewal risk classifier.'
+      ]
+    }
   }
 ];
