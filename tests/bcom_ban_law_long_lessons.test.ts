@@ -244,5 +244,60 @@ test('Block 112: B.Com Commercial Banking Day 3: Syndicated Lending, Trade LC & 
   assert.ok(lesson.parts[4].code?.includes('calculate_cva_and_netting'));
 });
 
+test('Block 113: B.Com Commercial Banking Day 4: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_ban', 4);
+  assert.ok(lesson, 'bcom_ban Day 4 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_ban');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5, 'bcom_ban Day 4 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_ban'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 113: B.Com Commercial Banking Day 4: Fintech, ISO 20022 & AML Graph Analytics Snippets Verification', () => {
+  const lesson = BCOM_BAN_LONG_LESSONS[3];
+  assert.ok(lesson, 'BCOM_BAN_LONG_LESSONS[3] must exist');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Open Banking.*PSD2.*Consent/i);
+  assert.ok(lesson.parts[0].code?.includes('evaluate_open_banking_consent_and_api'));
+  assert.match(lesson.parts[1].title, /ISO 20022.*pacs\.008.*Reconciliation/i);
+  assert.ok(lesson.parts[1].code?.includes('generate_and_reconcile_iso20022_pacs008'));
+  assert.match(lesson.parts[2].title, /Anti-Money Laundering.*Smurfing.*SAR/i);
+  assert.ok(lesson.parts[2].code?.includes('evaluate_aml_transaction_rules'));
+  assert.match(lesson.parts[3].title, /Benford.*Law.*First-Digit.*Anomaly/i);
+  assert.ok(lesson.parts[3].code?.includes('audit_benford_law_first_digit_anomalies'));
+  assert.match(lesson.parts[4].title, /Graph Fraud Analytics.*Mule Ring/i);
+  assert.ok(lesson.parts[4].code?.includes('detect_money_laundering_graph_cycles_and_mules'));
+});
+
+
 
 

@@ -1166,6 +1166,401 @@ Gross CVA: $306,000.00 -> Net CVA: $108,000.00 (Capital Freed: $198,000.00)`,
         'Execute a comprehensive Basel III LCR and NSFR liquidity stress test alongside an ISDA derivative close-out netting audit.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ban',
+    day: 4,
+    title: 'Fintech Open Banking, ISO 20022 Financial Messaging & AML Compliance',
+    goal: 'Master next-generation commercial banking technology and financial crime infrastructure: PSD2 Open Banking APIs and OAuth 2.0 token consent gating, ISO 20022 XML financial messaging (pacs.008 & camt.053), real-time Anti-Money Laundering (AML) smurfing and SAR rules engines, Benford\'s Law forensic anomaly auditing, and graph-based money mule network detection.',
+    minutes: 45,
+    recap: 'Commercial banking is undergoing an unprecedented digital transformation. Core banking mainframes and legacy batch messaging are giving way to real-time Open Banking REST APIs, structured ISO 20022 XML payment standards, and automated financial crime surveillance powered by Benford\'s Law and graph theory.',
+    parts: [
+      {
+        title: 'Fintech Open Banking Architecture, PSD2 APIs & OAuth 2.0 Scoped Consent Gating',
+        say: [
+          'Under the Revised Payment Services Directive (PSD2) and global Open Banking mandates, commercial banks are legally required to open their customer account data and payment rails to authorized Third-Party Providers (TPPs). TPPs fall into two primary regulatory categories: Account Information Service Providers (AISPs), which aggregate transaction histories and account balances, and Payment Initiation Service Providers (PISPs), which initiate push payments directly from the consumer\'s checking account without routing through credit card networks.',
+          'To ensure cybersecurity and data privacy, Open Banking relies on mutual Transport Layer Security (mTLS) with qualified eIDAS digital certificates and OAuth 2.0 authorization frameworks. The customer never shares their online banking password with the fintech app; instead, they are redirected to their bank\'s identity provider to grant explicit, granular consent scopes (such as "accounts:read" or "payments:write") restricted to specific validity windows (typically capped at 90 or 180 days).',
+          'Furthermore, regulatory standards mandate Strong Customer Authentication (SCA) utilizing multi-factor authentication (something you know, something you have, something you are). Low-value remote electronic transactions (e.g. below €50) are granted SCA exemptions to minimize user friction, but cumulative velocity limits or high-value payment orders immediately trigger an interactive step-up cryptographic challenge before the bank\'s core API releases funds.'
+        ],
+        example: 'A corporate treasury fintech requests a $1,250.00 vendor payment on behalf of a merchant. While the fintech holds a valid OAuth 2.0 token with "payments:write" scope, the transaction exceeds the $50.00 low-value exemption threshold, prompting the bank API to return "REQUIRES_STEP_UP_SCA" before disbursing funds.',
+        code: `# Open Banking PSD2 API Authorization & SCA Consent Gating Engine
+def evaluate_open_banking_consent_and_api(client_id: str, consent_scopes: list, token_expires_in_sec: int,
+                                          request_scope: str, transaction_amount: float, sca_exempt_limit: float = 50.0) -> dict:
+    is_token_valid = token_expires_in_sec > 0
+    has_scope = request_scope in consent_scopes
+    requires_sca = False
+    
+    if request_scope == "payments:write":
+        if transaction_amount > sca_exempt_limit:
+            requires_sca = True
+            
+    api_authorized = is_token_valid and has_scope
+    status = "AUTHORIZED" if (api_authorized and not requires_sca) else ("REQUIRES_STEP_UP_SCA" if api_authorized and requires_sca else "DENIED_UNAUTHORIZED")
+    
+    return {
+        "client_id": client_id,
+        "token_valid": is_token_valid,
+        "scope_granted": has_scope,
+        "transaction_amount": transaction_amount,
+        "requires_sca_challenge": requires_sca,
+        "status": status
+    }
+
+p1 = evaluate_open_banking_consent_and_api(
+    "tpp_fintech_007", ["accounts:read", "payments:write"], 3600, "payments:write", 1250.00
+)
+tx_amt_str = "$" + f"{p1['transaction_amount']:,.2f}"
+print(f"Client: {p1['client_id']} | Amount: {tx_amt_str} | Token: {p1['token_valid']}")
+print(f"Scope: {p1['scope_granted']} | SCA Required: {p1['requires_sca_challenge']} -> Status: {p1['status']}")`,
+        output: `Client: tpp_fintech_007 | Amount: $1,250.00 | Token: True
+Scope: True | SCA Required: True -> Status: REQUIRES_STEP_UP_SCA`,
+        codeNotes: [
+          { line: 3, note: 'Validates OAuth 2.0 token lifetime expiration and verifies matching permission scope' },
+          { line: 8, note: 'Evaluates transaction amount against low-value SCA exemption threshold ($50.00)' },
+          { line: 12, note: 'Enforces PSD2 step-up challenge policy when initiating payments above exemption limit' },
+          { line: 26, note: 'Simulates $1,250 payment by fintech TPP triggering mandatory 2FA step-up authentication' }
+        ],
+        tryIt: 'Lower transaction_amount to $25.00 to qualify for the SCA exemption and watch status switch to AUTHORIZED immediately.',
+        check: {
+          question: 'Under PSD2 Open Banking regulations, what is the primary technical and security purpose of an OAuth 2.0 token-based architecture?',
+          options: [
+            'It enables third-party fintech applications to access specific banking features without ever handling or storing the customer\'s confidential banking credentials.',
+            'It forces the customer to pay a $5 credit card fee for each API call.',
+            'It prevents corporate treasurers from exporting account statements to spreadsheet software.',
+            'It automatically converts all checking account balances into cryptocurrency.'
+          ],
+          answer: 0,
+          why: 'OAuth 2.0 replaces credential sharing with scoped, revocable access tokens issued by the bank identity provider after user authentication.',
+          answerIndex: 0,
+          explanation: 'OAuth 2.0 replaces credential sharing with scoped, revocable access tokens issued by the bank identity provider after user authentication.'
+        }
+      },
+      {
+        title: 'ISO 20022 Financial Messaging: pacs.008 Credit Transfers & Straight-Through Reconciliation',
+        say: [
+          'The global financial ecosystem is migrating away from legacy SWIFT MT text-based messages (e.g. MT103 single customer credit transfer) to the universal ISO 20022 XML standard. Legacy MT messages suffered from severely truncated characters, unformatted free-text fields, and missing remittance identifiers, forcing commercial banks to manually review millions of flagged cross-border transactions and driving up operational overhead.',
+          'ISO 20022 introduces rich, highly structured XML syntax categorized by business domain: "pacs" (Payments Clearing and Settlement), "camt" (Cash Management), and "pain" (Payment Initiation). A pacs.008.001.08 message represents an interbank customer credit transfer containing explicit debtor/creditor BIC codes, structured address fields, unambiguous currency denominations, and a 36-character UUID known as the Unique End-to-End Transaction Reference (UETR).',
+          'Crucially, ISO 20022 carries rich remittance data within the <EndToEndId> tag, linking payments directly to specific corporate purchase orders or invoices. When receiving banks process incoming pacs.008 messages, core banking engines perform automated Straight-Through Processing (STP) reconciliation: the system matches the <EndToEndId> and settled amount against the enterprise accounts receivable ledger in real time, eliminating reconciliation suspense accounts and providing instant treasury cash visibility.'
+        ],
+        example: 'A global supplier receives a $250,000.00 ISO 20022 pacs.008 wire carrying EndToEndId "INV-2026-9041". The receiving bank\'s core ERP engine matches the transaction reference and exact amount against outstanding invoices, completing automated 100% STP reconciliation.',
+        code: `# ISO 20022 Financial Messaging (pacs.008) & Automated STP Reconciliation Engine
+def generate_and_reconcile_iso20022_pacs008(uetr: str, debtor_bic: str, creditor_bic: str,
+                                            amount: float, currency: str, end_to_end_id: str,
+                                            pending_receivables: list) -> dict:
+    xml_header = f"<pacs.008.001.08><GrpHdr><MsgId>MSG-{uetr[:8]}</MsgId></GrpHdr>"
+    xml_tx = f"<CdtTrfTxInf><PmtId><EndToEndId>{end_to_end_id}</EndToEndId><UETR>{uetr}</UETR></PmtId><IntrBkSttlmAmt Ccy=\"{currency}\">{amount:.2f}</IntrBkSttlmAmt></CdtTrfTxInf></pacs.008.001.08>"
+    payload_preview = xml_header + xml_tx
+    
+    # Straight-through reconciliation
+    matched_invoice = None
+    for inv in pending_receivables:
+        if inv["invoice_id"] == end_to_end_id and abs(inv["expected_amount"] - amount) < 0.01:
+            matched_invoice = inv
+            break
+            
+    is_reconciled = matched_invoice is not None
+    
+    return {
+        "uetr": uetr,
+        "end_to_end_id": end_to_end_id,
+        "amount": amount,
+        "currency": currency,
+        "debtor_bic": debtor_bic,
+        "creditor_bic": creditor_bic,
+        "stp_reconciled": is_reconciled,
+        "matched_invoice_id": matched_invoice["invoice_id"] if matched_invoice else None,
+        "payload_bytes": len(payload_preview)
+    }
+
+p2 = generate_and_reconcile_iso20022_pacs008(
+    "eb8391b4-4f28-4ad0-b8c3-4d691e2b5e90", "CHASUS33XXX", "BNPAFRPPXXX",
+    250000.00, "USD", "INV-2026-9041",
+    [{"invoice_id": "INV-2026-9041", "expected_amount": 250000.00, "debtor": "Global Corp"}]
+)
+p2_amt_str = "$" + f"{p2['amount']:,.2f}"
+print(f"ISO 20022 pacs.008 UETR: {p2['uetr'][:12]}... | Amount: {p2_amt_str} {p2['currency']}")
+print(f"EndToEndId: {p2['end_to_end_id']} | STP Reconciled: {p2['stp_reconciled']} (Matched: {p2['matched_invoice_id']})")`,
+        output: `ISO 20022 pacs.008 UETR: eb8391b4-4f2... | Amount: $250,000.00 USD
+EndToEndId: INV-2026-9041 | STP Reconciled: True (Matched: INV-2026-9041)`,
+        codeNotes: [
+          { line: 5, note: 'Assembles standard ISO 20022 XML payment structure containing GrpHdr and CdtTrfTxInf components' },
+          { line: 6, note: 'Embeds SWIFT gpi UETR tracking UUID and EndToEndId reference for continuous auditability' },
+          { line: 11, note: 'Executes automated STP reconciliation matching incoming remittance ID and amount against open ledger items' },
+          { line: 31, note: 'Validates $250k credit transfer reconciliation with invoice INV-2026-9041 in zero latency' }
+        ],
+        tryIt: 'Change incoming amount to $249,990.00 and observe STP reconciliation fail due to penny mismatch.',
+        check: {
+          question: 'What is the primary structural advantage of ISO 20022 payment messages (such as pacs.008) over legacy SWIFT MT103 messages?',
+          options: [
+            'Rich, structured XML schema that carries unambiguous remittance information, full party identifiers, and universal UETR tracking for straight-through processing.',
+            'ISO 20022 messages are encrypted using handwritten calligraphy.',
+            'ISO 20022 completely eliminates all bank transaction fees by government fiat.',
+            'ISO 20022 allows messages to be sent over commercial AM radio waves.'
+          ],
+          answer: 0,
+          why: 'The rich XML formatting prevents data truncation and allows automatic electronic reconciliation between ERP systems and bank ledgers without human intervention.',
+          answerIndex: 0,
+          explanation: 'The rich XML formatting prevents data truncation and allows automatic electronic reconciliation between ERP systems and bank ledgers without human intervention.'
+        }
+      },
+      {
+        title: 'Anti-Money Laundering (AML) Rules Engine, Smurfing Detection & SAR Filing Escalations',
+        say: [
+          'Under the Bank Secrecy Act (BSA), USA PATRIOT Act, and Financial Action Task Force (FATF) standards, commercial banks are legally deputized as the frontline defense against illicit financial flows. Banks must file a Currency Transaction Report (CTR) for any cash deposit or withdrawal exceeding $10,000 in a single business day. To evade this automated reporting threshold, criminals engage in "structuring" (also known as "smurfing")—breaking large illicit cash hoards into multiple smaller deposits (e.g. $9,200, $9,400, $9,100) deposited across different branches or rolling time windows.',
+          'Commercial bank compliance divisions deploy real-time transaction monitoring rule engines to detect structuring patterns. The engine aggregates transaction velocity over rolling 24-hour and 7-day windows, flagging accounts where multiple transfers cluster tightly inside the structuring detection band (typically $8,500 to $9,999). Simultaneously, the engine screens counterparties against the Office of Foreign Assets Control (OFAC) Specially Designated Nationals (SDN) and sanctioned countries list (e.g. North Korea, Iran, Syria).',
+          'When an account accumulates composite risk scores exceeding regulatory alarm thresholds (e.g. >= 50 points), the automated rules engine escalates the file to the Anti-Money Laundering Investigations Unit and generates a draft Suspicious Activity Report (SAR / STR). Filing a SAR with regulatory authorities (such as FinCEN) is strictly subject to federal "anti-tipping-off" rules: bank personnel are legally prohibited from disclosing to the customer that a SAR has been filed, under penalty of criminal prosecution.'
+        ],
+        example: 'A commercial account executes three deposits of $9,200, $9,400, and $9,100 ($27,700 total) within 24 hours. The AML rules engine detects intentional structuring below the $10,000 CTR limit, assigns a risk score of 60, and generates an automated mandate to FILE_SUSPICIOUS_ACTIVITY_REPORT_SAR.',
+        code: `# Anti-Money Laundering (AML) Real-Time Rules Engine & Structuring Detection
+def evaluate_aml_transaction_rules(account_id: str, rolling_transactions: list,
+                                   ofac_sanctioned_countries: list, ctr_threshold: float = 10000.0) -> dict:
+    alerts = []
+    risk_score = 0
+    total_volume_24h = sum(tx["amount"] for tx in rolling_transactions)
+    
+    # Rule 1: CTR Direct Breach
+    direct_ctr = [tx for tx in rolling_transactions if tx["amount"] >= ctr_threshold]
+    if direct_ctr:
+        alerts.append("CTR_REPORTING_MANDATORY_HIGH_CASH")
+        risk_score += 40
+        
+    # Rule 2: Smurfing / Structuring Detection ($8,500 to $9,999 clustering)
+    smurfing_txs = [tx for tx in rolling_transactions if 8500.0 <= tx["amount"] < ctr_threshold]
+    if len(smurfing_txs) >= 2:
+        alerts.append(f"STRUCTURING_SMURFING_DETECTED_COUNT_{len(smurfing_txs)}")
+        risk_score += 60
+        
+    # Rule 3: Sanctions OFAC Jurisdictions
+    sanctioned = [tx for tx in rolling_transactions if tx.get("counterparty_country") in ofac_sanctioned_countries]
+    if sanctioned:
+        alerts.append(f"OFAC_SANCTION_MATCH_COUNTRY_{sanctioned[0]['counterparty_country']}")
+        risk_score += 100
+        
+    sar_filing_required = risk_score >= 50
+    recommendation = "FILE_SUSPICIOUS_ACTIVITY_REPORT_SAR" if sar_filing_required else "PASS_STANDARD_MONITORING"
+    
+    return {
+        "account_id": account_id,
+        "total_volume_24h": round(total_volume_24h, 2),
+        "risk_score": risk_score,
+        "sar_filing_required": sar_filing_required,
+        "alerts_triggered": alerts,
+        "recommendation": recommendation
+    }
+
+p3 = evaluate_aml_transaction_rules(
+    "ACC_CORP_8819",
+    [
+        {"tx_id": "TX_1", "amount": 9200.00, "counterparty_country": "US"},
+        {"tx_id": "TX_2", "amount": 9400.00, "counterparty_country": "US"},
+        {"tx_id": "TX_3", "amount": 9100.00, "counterparty_country": "US"}
+    ],
+    ["KP", "IR", "SY"]
+)
+p3_vol_str = "$" + f"{p3['total_volume_24h']:,.2f}"
+print(f"Account: {p3['account_id']} | 24h Volume: {p3_vol_str} | Risk Score: {p3['risk_score']}")
+print(f"Alerts: {p3['alerts_triggered']} -> Rec: {p3['recommendation']}")`,
+        output: `Account: ACC_CORP_8819 | 24h Volume: $27,700.00 | Risk Score: 60
+Alerts: ['STRUCTURING_SMURFING_DETECTED_COUNT_3'] -> Rec: FILE_SUSPICIOUS_ACTIVITY_REPORT_SAR`,
+        codeNotes: [
+          { line: 9, note: 'Monitors direct cash threshold ($10,000) triggering statutory Currency Transaction Reports' },
+          { line: 15, note: 'Detects structuring smurfing pattern by identifying repetitive transfers within the $8,500 to $9,999 band' },
+          { line: 20, note: 'Screens foreign transactions against OFAC sanctioned jurisdiction lists for mandatory freeze escalation' },
+          { line: 36, note: 'Flags account with 3 structured transfers ($27.7k total) and escalates for mandatory SAR filing' }
+        ],
+        tryIt: 'Add a single transaction with country "IR" (Iran) to observe risk score surge by +100 with OFAC sanction trigger.',
+        check: {
+          question: 'What is the criminal and regulatory definition of "structuring" (or smurfing) under financial anti-money laundering law?',
+          options: [
+            'Intentionally breaking a large cash transaction into multiple smaller transactions below the $10,000 reporting threshold to evade statutory CTR filing.',
+            'Investing corporate cash reserves into commercial real estate development structures.',
+            'Organizing bank branch tellers into hierarchical operational teams.',
+            'Refinancing an existing mortgage with a lower interest rate loan.'
+          ],
+          answer: 0,
+          why: 'Structuring is the deliberate evasion of statutory reporting thresholds (such as the $10,000 BSA cash threshold) by dividing funds into smaller tranches.',
+          answerIndex: 0,
+          explanation: 'Structuring is the deliberate evasion of statutory reporting thresholds (such as the $10,000 BSA cash threshold) by dividing funds into smaller tranches.'
+        }
+      },
+      {
+        title: 'Forensic Financial Auditing & Benford\'s Law First-Digit Anomaly Detection',
+        say: [
+          'In commercial loan forensic audits, internal fraud investigations, and vendor invoice verification, compliance teams frequently inspect large datasets of disbursement vouchers to detect fabricated figures. Humans are notoriously poor random number generators: when fraudsters invent fake invoices, travel expense reports, or embezzlement transfers, they tend to scatter numbers uniformly or gravitate towards round numbers, violating the natural mathematical distribution of economic phenomena.',
+          'Benford\'s Law (the First-Digit Law) dictates that in naturally occurring financial datasets spanning multiple orders of magnitude, the number 1 appears as the leading first digit approximately 30.1% of the time, while the number 9 appears only 4.6% of the time, following the logarithmic formula: P(d) = log10(1 + 1/d). Naturally compounded numbers, prices, and ledger lines conform strictly to this logarithmic curve because growth processes multiply over geometric scales.',
+          'To mathematically determine whether a transaction ledger contains fabricated numbers, auditors apply the Chi-Square (χ²) goodness-of-fit statistical test comparing observed digit frequencies against Benford expectations: χ² = sum of ((Observed - Expected)² / Expected). For 8 degrees of freedom (digits 1 through 9), a Chi-Square value exceeding the critical threshold of 15.51 at the p = 0.05 confidence level proves that the ledger was artificially fabricated, providing definitive mathematical evidence to reject disbursements.'
+        ],
+        example: 'A forensic audit of an executive expense claim containing 14 receipts reveals an abnormal clustering of digit 5 (e.g. $512, $580, $592). The Chi-Square test yields a statistic of 116.54, vastly exceeding the critical threshold of 15.51, triggering immediate rejection and referral to criminal fraud prosecutors.',
+        code: `# Forensic Accounting: Benford\'s Law First-Digit Chi-Square Anomaly Detector
+import math
+
+def audit_benford_law_first_digit_anomalies(amounts: list, chi_square_critical_threshold: float = 15.51) -> dict:
+    digits = range(1, 10)
+    # Theoretical Benford distribution P(d) = log10(1 + 1/d)
+    benford_expected_pct = {d: math.log10(1.0 + 1.0 / d) for d in digits}
+    
+    observed_counts = {d: 0 for d in digits}
+    valid_count = 0
+    
+    for a in amounts:
+        if a > 0:
+            first_digit = int(str(f"{a:.2f}").lstrip("0.")[0])
+            if 1 <= first_digit <= 9:
+                observed_counts[first_digit] += 1
+                valid_count += 1
+                
+    if valid_count == 0:
+        return {"error": "No valid positive amounts"}
+        
+    chi_square_stat = 0.0
+    for d in digits:
+        expected_count = valid_count * benford_expected_pct[d]
+        observed = observed_counts[d]
+        chi_square_stat += ((observed - expected_count) ** 2) / expected_count
+        
+    is_anomalous = chi_square_stat > chi_square_critical_threshold
+    
+    return {
+        "sample_size": valid_count,
+        "chi_square_stat": round(chi_square_stat, 2),
+        "critical_threshold_df8_p05": chi_square_critical_threshold,
+        "forensic_anomaly_detected": is_anomalous,
+        "audit_verdict": "REJECT_SUSPECTED_FABRICATED_ENTRIES" if is_anomalous else "ACCEPT_NATURAL_DISTRIBUTION"
+    }
+
+fake_data = [512.0, 580.0, 592.0, 540.0, 510.0, 560.0, 575.0, 533.0, 521.0, 599.0, 502.0, 545.0, 110.0, 220.0]
+p4 = audit_benford_law_first_digit_anomalies(fake_data)
+print(f"Sample Size: {p4['sample_size']} | Chi-Square: {p4['chi_square_stat']} (Crit: {p4['critical_threshold_df8_p05']})")
+print(f"Forensic Anomaly: {p4['forensic_anomaly_detected']} -> Verdict: {p4['audit_verdict']}")`,
+        output: `Sample Size: 14 | Chi-Square: 116.54 (Crit: 15.51)
+Forensic Anomaly: True -> Verdict: REJECT_SUSPECTED_FABRICATED_ENTRIES`,
+        codeNotes: [
+          { line: 5, note: 'Calculates theoretical Benford logarithmic first-digit probabilities P(d) = log10(1 + 1/d)' },
+          { line: 12, note: 'Extracts leading significant digit (1-9) from continuous floating-point financial amounts' },
+          { line: 20, note: 'Computes Chi-Square goodness-of-fit test against 8 degrees of freedom critical threshold (15.51)' },
+          { line: 32, note: 'Detects fabricated ledger entries with Chi-Square of 116.54, proving synthetic data fabrication' }
+        ],
+        tryIt: 'Generate 100 values using powers of 2 (2**i * 1.5) to see natural geometric series pass Benford distribution test.',
+        check: {
+          question: 'According to Benford\'s Law, what is the theoretical probability of the number 1 appearing as the leading first digit in natural financial datasets?',
+          options: [
+            'Approximately 30.1%, drastically higher than the 11.1% expected under a naive uniform distribution.',
+            'Exactly 11.1%, identical to all other digits from 1 through 9.',
+            'Zero percent, because corporate accounting systems round numbers to the nearest ten.',
+            'Fifty percent, because all numbers are either odd or even.'
+          ],
+          answer: 0,
+          why: 'Because natural processes scale logarithmically, log10(1 + 1/1) = log10(2) ≈ 0.30103, meaning 1 appears as the first digit roughly 30.1% of the time.',
+          answerIndex: 0,
+          explanation: 'Because natural processes scale logarithmically, log10(1 + 1/1) = log10(2) ≈ 0.30103, meaning 1 appears as the first digit roughly 30.1% of the time.'
+        }
+      },
+      {
+        title: 'Graph Fraud Analytics: Money Laundering Layering & Mule Ring Detection',
+        say: [
+          'Money laundering occurs across three classic sequential phases: Placement (introducing illicit cash into the financial system), Layering (moving funds through a complex web of transactions to obscure the paper trail), and Integration (reintroducing the laundered funds into legitimate commerce as clean capital). While traditional rule engines catch isolated transactions, they struggle with sophisticated criminal syndicates executing multi-hop circular wash transactions across networks of accounts.',
+          'To uncover hidden criminal syndicates, modern banking intelligence platforms model transaction flows as directed graphs G = (V, E), where bank accounts represent vertices and fund transfers represent directed edges. Compliance teams execute graph algorithms to identify two characteristic topological signatures of money laundering: high-degree "funnel accounts" (money mule consolidators) and closed directed cycles (layering wash loops).',
+          'A mule ring typically features a fan-in topology where dozens of retail "mules" receive small wire transfers and funnel them into a single centralized aggregator account, which immediately disperses the aggregate sum to an offshore entity. Furthermore, circular transfer paths (e.g. Account A -> Account B -> Account C -> Account A) reveal artificial wash trading designed solely to create fake audit trails. Identifying these graph topologies allows banks to freeze entire criminal syndicates simultaneously rather than chasing individual transactions.'
+        ],
+        example: 'A fraud intelligence graph scans wire transfers and discovers three mules wiring $9,000 each into "Funnel_Hub", which then wires $27,000 to "Shell_Co_A", then to "Offshore_B", and loops back into "Funnel_Hub". The engine flags both the funnel mule aggregator and the 3-hop circular layering cycle, classifying the network as CRITICAL_CIRCULAR_LAYERING_NETWORK.',
+        code: `# Financial Crime Graph Analytics: Circular Layering Cycles & Mule Funnel Detection
+from collections import defaultdict
+
+def detect_money_laundering_graph_cycles_and_mules(transfers: list, funnel_threshold: int = 3) -> dict:
+    adj = defaultdict(list)
+    in_degree = defaultdict(int)
+    out_degree = defaultdict(int)
+    
+    for t in transfers:
+        u, v = t["sender"], t["receiver"]
+        adj[u].append(v)
+        out_degree[u] += 1
+        in_degree[v] += 1
+        
+    # Cycle detection (DFS)
+    cycles = []
+    
+    def dfs(curr, origin, depth, stack):
+        if depth > 4:
+            return
+        for neighbor in adj[curr]:
+            if neighbor == origin and depth >= 2:
+                cycles.append(stack + [neighbor])
+            elif neighbor not in stack:
+                stack.append(neighbor)
+                dfs(neighbor, origin, depth + 1, stack)
+                stack.pop()
+                
+    all_nodes = set(list(in_degree.keys()) + list(out_degree.keys()))
+    for n in all_nodes:
+        dfs(n, n, 1, [n])
+        
+    # Detect funnel mule accounts (many deposits consolidated)
+    mule_accounts = [n for n, deg in in_degree.items() if deg >= funnel_threshold and out_degree[n] >= 1]
+    
+    return {
+        "nodes_analyzed": len(all_nodes),
+        "cycles_found": len(cycles),
+        "layering_cycle_sample": cycles[0] if cycles else None,
+        "mule_funnel_accounts": mule_accounts,
+        "ring_classification": "CRITICAL_CIRCULAR_LAYERING_NETWORK" if cycles or mule_accounts else "CLEAN_TOPOLOGY"
+    }
+
+p5 = detect_money_laundering_graph_cycles_and_mules(
+    [
+        {"sender": "Mule_1", "receiver": "Funnel_Hub", "amount": 9000.0},
+        {"sender": "Mule_2", "receiver": "Funnel_Hub", "amount": 9000.0},
+        {"sender": "Mule_3", "receiver": "Funnel_Hub", "amount": 9000.0},
+        {"sender": "Funnel_Hub", "receiver": "Shell_Co_A", "amount": 27000.0},
+        {"sender": "Shell_Co_A", "receiver": "Offshore_B", "amount": 26500.0},
+        {"sender": "Offshore_B", "receiver": "Funnel_Hub", "amount": 26000.0}
+    ]
+)
+print(f"Nodes Analyzed: {p5['nodes_analyzed']} | Cycles Detected: {p5['cycles_found']}")
+print(f"Mule Funnel Hubs: {p5['mule_funnel_accounts']} | Classification: {p5['ring_classification']}")
+if p5['layering_cycle_sample']:
+    print(f"Sample Layering Cycle: {' -> '.join(p5['layering_cycle_sample'])}")`,
+        output: `Nodes Analyzed: 6 | Cycles Detected: 3
+Mule Funnel Hubs: ['Funnel_Hub'] | Classification: CRITICAL_CIRCULAR_LAYERING_NETWORK
+Sample Layering Cycle: Funnel_Hub -> Shell_Co_A -> Offshore_B -> Funnel_Hub`,
+        codeNotes: [
+          { line: 7, note: 'Builds directed graph adjacency lists and computes in-degree and out-degree connectivity' },
+          { line: 16, note: 'Executes depth-first search (DFS) cycle discovery to detect closed money laundering wash loops' },
+          { line: 28, note: 'Identifies high in-degree funnel accounts consolidating illicit funds from multiple feeder mules' },
+          { line: 44, note: 'Detects 3 circular layering cycles and identifies Funnel_Hub as central laundering nexus' }
+        ],
+        tryIt: 'Remove the transfer from Offshore_B back to Funnel_Hub to break the cycle and verify cycles fall to 0.',
+        check: {
+          question: 'In financial graph analytics, why is the detection of directed closed cycles (e.g. Account A -> B -> C -> A) considered a critical red flag for money laundering?',
+          options: [
+            'Circular transfers have no legitimate commercial rationale and are characteristic of the layering phase designed to obfuscate audit trails.',
+            'Closed cycles indicate that all counterparties work for the same marketing company.',
+            'Circular payments automatically double the balance in the originating account.',
+            'Closed cycles are mandated by central banks for clearing sovereign debt.'
+          ],
+          answer: 0,
+          why: 'Moving money in circular loops generates transaction volume and confusing paper trails without changing economic ownership, a hallmark of money laundering layering.',
+          answerIndex: 0,
+          explanation: 'Moving money in circular loops generates transaction volume and confusing paper trails without changing economic ownership, a hallmark of money laundering layering.'
+        }
+      }
+    ],
+    summary: [
+      'Open Banking & PSD2: Implements mTLS, OAuth 2.0 scoped token consent gating, and Strong Customer Authentication (SCA) step-up challenges for payments above €50 exemptions.',
+      'ISO 20022 XML Messaging: Migrates legacy MT to structured pacs.008 payment and camt.053 statement formats, leveraging UETR tracking and EndToEndId for instant STP ERP reconciliation.',
+      'AML & Structuring Rules: Detects smurfing patterns within $8,500-$9,999 bands and OFAC sanctions, automating regulatory Suspicious Activity Report (SAR / STR) filings.',
+      'Benford\'s Law Forensic Auditing: Leverages logarithmic digit distributions and Chi-Square goodness-of-fit (df=8, crit=15.51) to mathematically detect fabricated expense invoices.',
+      'Graph Fraud Analytics: Employs directed graph DFS cycle detection and degree centrality to uncover money mule funnel accounts and circular layering syndicates.'
+    ],
+    projectStep: {
+      title: 'Fintech Open Banking, ISO 20022 & AML Financial Crime Control Center',
+      steps: [
+        'Build a PSD2 OAuth 2.0 consent authorization gate enforcing SCA multi-factor step-up challenges.',
+        'Construct an ISO 20022 pacs.008 XML message generator and execute automated straight-through reconciliation.',
+        'Engineer an automated AML smurfing and OFAC sanctions detection engine with SAR filing triggers.',
+        'Implement Benford\'s Law Chi-Square forensic auditing alongside a graph-based money mule cycle detection engine.'
+      ]
+    }
   }
 ];
 
