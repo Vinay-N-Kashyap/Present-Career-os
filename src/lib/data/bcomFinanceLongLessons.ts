@@ -365,5 +365,404 @@ print(f"Implied Equity Value:    \${val['Equity_Value_MarketCap']:,}")`,
         'Project 5-year Free Cash Flows to Firm and compute Terminal Value to establish Equity Value.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom-finance',
+    day: 2,
+    title: 'LBO Financial Modeling, M&A Accretion, Real Options & FX Risk Hedging',
+    goal: 'Master advanced corporate financial engineering: Leveraged Buyout (LBO) debt paydown mechanics and sponsor IRR returns, Mergers & Acquisitions (M&A) EPS accretion/dilution hurdle modeling with operating synergies, Black-Scholes Real Options analysis in corporate capital expenditure budgeting, static tradeoff optimal capital structure determination, and multi-currency foreign exchange (FX) transaction risk hedging.',
+    minutes: 42,
+    recap: 'Day 1 established enterprise DCF valuation, WACC computation, and DuPont ROE decomposition. Day 2 tackles sophisticated corporate transactions and risk management: structuring leveraged buyouts, evaluating M&A earnings accretion, valuing real investment options, and hedging FX exposures.',
+    parts: [
+      {
+        title: 'Leveraged Buyout (LBO) Debt Paydown & Private Equity IRR Waterfall',
+        say: [
+          'In private equity and corporate finance, a Leveraged Buyout (LBO) is the acquisition of a target company using a significant proportion of borrowed capital (typically 60% to 80% debt: senior secured bank facilities, mezzanine notes, and high-yield bonds).',
+          'The core mathematical premise of an LBO is financial leverage amplification: the private equity sponsor commits a modest equity check (20% to 40% of enterprise value), and uses the target firm\'s future operating Free Cash Flow (FCF) to systematically pay down the acquisition debt over a 3- to 7-year holding period.',
+          'Value creation in an LBO occurs through three primary levers: 1. De-leveraging / Debt Paydown (transferring enterprise value from debt holders to equity sponsors); 2. Operational EBITDA Expansion (revenue growth and margin improvement); and 3. Multiple Expansion (selling at a higher EV/EBITDA multiple upon exit).',
+          'Private equity investors benchmark performance using two key metrics: Money-on-Invested-Capital (MoIC = Exit Equity / Initial Sponsor Equity) and Internal Rate of Return (IRR). Standard PE underwriting models target a 2.0x+ MoIC and a 20% to 25% net IRR.',
+          'Crucially, financial engineers must model senior debt amortization schedules and interest coverage ratios to ensure the company generates sufficient cash flow to service debt covenants without inducing financial distress.'
+        ],
+        example: 'A private equity sponsor acquires an industrial company for $100M (10x EBITDA of $10M) funded with $65M debt and $35M sponsor equity. Over 5 years, the company generates $35M in free cash flow, paying debt down to $30M. Exiting at the same 10x multiple with 25% EBITDA growth yields an exit equity value of $95M ($125M EV - $30M debt), delivering a 2.71x MoIC and a 22.1% net IRR.',
+        code: `# Simulation: Leveraged Buyout (LBO) Debt Paydown & IRR Waterfall Model
+from typing import Dict
+
+def calculate_lbo_returns(
+    entry_ebitda: float,
+    entry_multiple: float,
+    debt_percentage: float, # e.g. 70% debt, 30% sponsor equity
+    annual_free_cash_flow: float,
+    holding_period_years: int = 5,
+    exit_multiple: float = 10.0
+) -> Dict:
+    enterprise_value_entry = entry_ebitda * entry_multiple
+    initial_debt = enterprise_value_entry * (debt_percentage / 100.0)
+    sponsor_initial_equity = enterprise_value_entry - initial_debt
+
+    # Cumulative cash flow used to pay down senior debt over hold period
+    total_debt_paydown = annual_free_cash_flow * holding_period_years
+    ending_debt = max(0.0, initial_debt - total_debt_paydown)
+
+    # Exit at year 5
+    exit_enterprise_value = entry_ebitda * 1.25 * exit_multiple # assuming 25% EBITDA growth
+    sponsor_exit_equity = exit_enterprise_value - ending_debt
+
+    # MoIC (Multiple on Invested Capital) & IRR
+    moic = sponsor_exit_equity / sponsor_initial_equity if sponsor_initial_equity > 0 else 0.0
+    irr = (moic ** (1.0 / holding_period_years) - 1.0) * 100.0 if moic > 0 else 0.0
+
+    return {
+        "Entry_EV": round(enterprise_value_entry, 2),
+        "Initial_Debt": round(initial_debt, 2),
+        "Sponsor_Initial_Equity": round(sponsor_initial_equity, 2),
+        "Ending_Debt": round(ending_debt, 2),
+        "Exit_EV": round(exit_enterprise_value, 2),
+        "Sponsor_Exit_Equity": round(sponsor_exit_equity, 2),
+        "MoIC": round(moic, 2),
+        "IRR_Pct": round(irr, 2)
+    }
+
+lbo_res = calculate_lbo_returns(
+    entry_ebitda=10000000.0,
+    entry_multiple=10.0, # $100M EV
+    debt_percentage=65.0, # $65M debt, $35M equity
+    annual_free_cash_flow=7000000.0, # $35M paid down over 5 years
+    holding_period_years=5,
+    exit_multiple=10.0
+)
+print(f"Entry EV: \${lbo_res['Entry_EV']:,.2f} | Sponsor Equity: \${lbo_res['Sponsor_Initial_Equity']:,.2f}")
+print(f"Ending Debt: \${lbo_res['Ending_Debt']:,.2f} -> Exit Equity: \${lbo_res['Sponsor_Exit_Equity']:,.2f}")
+print(f"MoIC: {lbo_res['MoIC']}x | 5-Year IRR: {lbo_res['IRR_Pct']}%")`,
+        output: `Entry EV: $100,000,000.00 | Sponsor Equity: $35,000,000.00\nEnding Debt: $30,000,000.00 -> Exit Equity: $95,000,000.00\nMoIC: 2.71x | 5-Year IRR: 22.1%`,
+        tryIt: 'Change exit_multiple to 12.0 to simulate multiple expansion and observe how sponsor IRR expands above 28%.',
+        check: {
+          question: 'What is the primary mathematical driver of private equity equity returns in a standard Leveraged Buyout (LBO) transaction?',
+          options: [
+            '(Recommended) Using the acquired firm\'s operating cash flow to amortize debt over the holding period, thereby transferring enterprise value from lenders directly into sponsor equity value.',
+            'Permanently exempting the target company from paying employee salaries.',
+            'Converting all corporate debt into non-refundable government grants.',
+            'Selling all target operational assets immediately at a 90% discount.'
+          ],
+          answer: 0,
+          why: 'Debt paydown de-levers the business, shifting the capital structure so that equity holders own a progressively larger percentage of the enterprise value at exit.',
+          answerIndex: 0,
+          explanation: 'Debt paydown de-levers the business, shifting the capital structure so that equity holders own a progressively larger percentage of the enterprise value at exit.'
+        }
+      },
+      {
+        title: 'M&A Accretion/Dilution Analysis & Synergies Hurdle Model',
+        say: [
+          'When publicly traded corporations undertake mergers and acquisitions (M&A), equity research analysts and institutional shareholders evaluate the transaction through Accretion/Dilution Analysis.',
+          'A transaction is Accretive if the pro-forma Earnings Per Share (EPS) of the combined entity exceeds the standalone buyer\'s pre-deal EPS. If pro-forma EPS declines, the deal is Dilutive.',
+          'Accretion or dilution depends primarily on the acquisition financing structure: 1. All-Cash or Debt Deals: accretive if the target\'s earnings yield (Target Net Income / Purchase Price) exceeds the buyer\'s after-tax cost of debt or foregone interest on cash; 2. All-Stock Deals: accretive if the buyer\'s P/E multiple is higher than the effective P/E multiple paid for the target.',
+          'Financing cost adjustments must incorporate the corporate tax shield on new debt: After-Tax Interest Expense = New Debt * Interest Rate * (1 - Corporate Tax Rate).',
+          'Furthermore, corporate acquisitions typically model operational Synergies (cost savings from redundant overhead, consolidated ERP systems, and supply chain purchasing scale). Identifying the minimum synergies required to break even (the "Synergies Hurdle") is essential for board approval.'
+        ],
+        example: 'Buyer earns $40M ($4.00 EPS on 10M shares at $50/share). Buyer acquires Target earning $12M for $100M, funded with $50M stock (1M new shares) and $50M debt at 6% interest ($2.25M after-tax interest expense). With $5.0M pre-tax synergies ($3.75M after-tax), pro-forma net income rises to $53.5M across 11M shares, yielding $4.86 pro-forma EPS—a 21.59% accretive deal.',
+        code: `# Simulation: M&A Accretion/Dilution & Synergies Hurdle Model
+from typing import Dict
+
+def calculate_mna_accretion_dilution(
+    buyer_share_price: float,
+    buyer_shares_outstanding: int,
+    buyer_net_income: float,
+    target_net_income: float,
+    purchase_price: float,
+    stock_consideration_pct: float, # e.g. 60% stock, 40% cash
+    debt_interest_rate_pct: float,
+    corporate_tax_rate: float,
+    pre_tax_synergies: float
+) -> Dict:
+    standalone_buyer_eps = buyer_net_income / buyer_shares_outstanding
+
+    # Transaction financing
+    stock_paid = purchase_price * (stock_consideration_pct / 100.0)
+    cash_debt_paid = purchase_price * (1.0 - stock_consideration_pct / 100.0)
+
+    # New shares issued
+    new_shares_issued = int(stock_paid / buyer_share_price)
+    pro_forma_shares = buyer_shares_outstanding + new_shares_issued
+
+    # Net income adjustments
+    after_tax_interest_expense = cash_debt_paid * (debt_interest_rate_pct / 100.0) * (1.0 - corporate_tax_rate)
+    after_tax_synergies = pre_tax_synergies * (1.0 - corporate_tax_rate)
+
+    pro_forma_net_income = buyer_net_income + target_net_income + after_tax_synergies - after_tax_interest_expense
+    pro_forma_eps = pro_forma_net_income / pro_forma_shares
+
+    eps_accretion_dollars = pro_forma_eps - standalone_buyer_eps
+    eps_accretion_pct = (eps_accretion_dollars / standalone_buyer_eps) * 100.0
+
+    return {
+        "Standalone_Buyer_EPS": round(standalone_buyer_eps, 2),
+        "New_Shares_Issued": new_shares_issued,
+        "Pro_Forma_Shares": pro_forma_shares,
+        "Pro_Forma_Net_Income": round(pro_forma_net_income, 2),
+        "Pro_Forma_EPS": round(pro_forma_eps, 2),
+        "EPS_Accretion_Pct": round(eps_accretion_pct, 2),
+        "Verdict": "ACCRETIVE_TRANSACTION" if eps_accretion_pct > 0 else "DILUTIVE_TRANSACTION"
+    }
+
+mna_res = calculate_mna_accretion_dilution(
+    buyer_share_price=50.0,
+    buyer_shares_outstanding=10000000, # $500M market cap
+    buyer_net_income=40000000.0, # $4.00 standalone EPS
+    target_net_income=12000000.0,
+    purchase_price=100000000.0,
+    stock_consideration_pct=50.0, # $50M stock (1M shares), $50M debt
+    debt_interest_rate_pct=6.0,
+    corporate_tax_rate=0.25,
+    pre_tax_synergies=5000000.0
+)
+print(f"Standalone EPS: \${mna_res['Standalone_Buyer_EPS']} -> Pro-Forma EPS: \${mna_res['Pro_Forma_EPS']}")
+print(f"Accretion: {mna_res['EPS_Accretion_Pct']}% -> [{mna_res['Verdict']}]")`,
+        output: `Standalone EPS: $4.0 -> Pro-Forma EPS: $4.86\nAccretion: 21.59% -> [ACCRETIVE_TRANSACTION]`,
+        tryIt: 'Set pre_tax_synergies=0.0 and stock_consideration_pct=100.0 (all stock) to observe how high stock issuance impacts EPS accretion.',
+        check: {
+          question: 'Under what condition is an all-stock corporate acquisition automatically accretive to the acquiring company\'s Earnings Per Share (EPS)?',
+          options: [
+            '(Recommended) When the acquiring company\'s Price-to-Earnings (P/E) multiple is strictly higher than the effective acquisition P/E multiple paid for the target company.',
+            'When the target company has a higher debt-to-equity ratio than the acquiring firm.',
+            'Only when the transaction is paid entirely in physical gold bullion.',
+            'When both companies report negative net income for the fiscal year.'
+          ],
+          answer: 0,
+          why: 'When a buyer with a higher P/E multiple issues stock to buy a lower P/E target, it issues fewer new shares per dollar of acquired earnings, automatically driving EPS accretion.',
+          answerIndex: 0,
+          explanation: 'When a buyer with a higher P/E multiple issues stock to buy a lower P/E target, it issues fewer new shares per dollar of acquired earnings, automatically driving EPS accretion.'
+        }
+      },
+      {
+        title: 'Black-Scholes Real Options Valuation in Capital Budgeting',
+        say: [
+          'Traditional Discounted Cash Flow (DCF) models suffer from a fundamental theoretical flaw: they assume corporate management will execute a project passively along a rigid multi-year path regardless of how commercial uncertainty unfolds.',
+          'In reality, managers possess Managerial Flexibility: the option to expand, defer, stage, or abandon a project based on real-time market feedback. This managerial flexibility has quantifiable economic value known as Real Options.',
+          'Real Options Analysis (ROA) maps capital investment decisions onto financial call option pricing models: 1. Present Value of Expected Operating Cash Flows corresponds to the Underlying Asset Price (S); 2. Capital Expenditure (Capex) required to execute corresponds to the Strike Price (K); 3. Years the investment opportunity remains open corresponds to Time to Expiration (t); 4. Market uncertainty corresponds to Volatility (sigma); and 5. The Risk-Free Interest Rate corresponds to r.',
+          'Using the Black-Scholes formula, financial engineers can calculate the exact monetary value of the "Option to Expand" or "Option to Delay".',
+          'Crucially, projects with slightly negative static DCF Net Present Values (NPV < 0) often have substantial positive Real Option values because the right to delay or expand caps downside risk while preserving unlimited upside participation.'
+        ],
+        example: 'An R&D expansion project requires $10M capex against $9.5M in expected DCF cash flows (static NPV is -$500,000, which DCF would reject). However, management has a 3-year exclusive window in a volatile market (35% volatility). The Black-Scholes Real Option model values this strategic option at $2,573,436.22, proving the project is highly valuable to initiate.',
+        code: `# Simulation: Black-Scholes Real Options Valuation in Capital Budgeting
+import math
+from typing import Dict
+
+def calculate_real_option_value(
+    present_value_cash_flows: float, # S (underlying asset value)
+    capex_exercise_price: float,      # K (strike price to execute capex)
+    time_to_expiry_years: float,     # t (years option remains open)
+    risk_free_rate_pct: float,       # r
+    volatility_pct: float            # sigma
+) -> Dict:
+    s = present_value_cash_flows
+    k = capex_exercise_price
+    t = time_to_expiry_years
+    r = risk_free_rate_pct / 100.0
+    sigma = volatility_pct / 100.0
+
+    # Black-Scholes d1 and d2 equations
+    d1 = (math.log(s / k) + (r + 0.5 * sigma ** 2) * t) / (sigma * math.sqrt(t))
+    d2 = d1 - sigma * math.sqrt(t)
+
+    # Standard normal cumulative distribution approximation
+    def norm_cdf(x):
+        return (1.0 + math.erf(x / math.sqrt(2.0))) / 2.0
+
+    # Call Option Value: C = S * N(d1) - K * e^(-r*t) * N(d2)
+    call_value = (s * norm_cdf(d1)) - (k * math.exp(-r * t) * norm_cdf(d2))
+
+    # Standard static NPV without flexibility = S - K
+    static_npv = s - k
+
+    return {
+        "Static_DCF_NPV": round(static_npv, 2),
+        "Real_Option_Value": round(call_value, 2),
+        "Flexibility_Premium": round(call_value - max(0.0, static_npv), 2),
+        "Strategic_Recommendation": "PROCEED_PRESERVE_OPTION_TO_EXPAND"
+    }
+
+opt_res = calculate_real_option_value(
+    present_value_cash_flows=9500000.0, # S = $9.5M (Static NPV = -$500k negative!)
+    capex_exercise_price=10000000.0,    # K = $10.0M
+    time_to_expiry_years=3.0,
+    risk_free_rate_pct=4.5,
+    volatility_pct=35.0
+)
+print(f"Static NPV: \${opt_res['Static_DCF_NPV']:,.2f} (Appears Unattractive under DCF)")
+print(f"Real Option Value: \${opt_res['Real_Option_Value']:,.2f} (Flexibility Premium: \${opt_res['Flexibility_Premium']:,.2f})")`,
+        output: `Static NPV: $-500,000.00 (Appears Unattractive under DCF)\nReal Option Value: $2,573,436.22 (Flexibility Premium: $2,573,436.22)`,
+        tryIt: 'Increase volatility_pct to 50.0% to observe how greater commercial uncertainty paradoxically increases the value of strategic real options.',
+        check: {
+          question: 'Why does higher commercial volatility increase the value of a Real Option in corporate capital budgeting, whereas it decreases the value of a static DCF project?',
+          options: [
+            '(Recommended) Because options possess asymmetric payoffs: management can capture massive upside if demand surges while capping downside losses by simply choosing not to exercise if market conditions deteriorate.',
+            'Because volatility legally waives corporate income taxes on project revenue.',
+            'Because higher volatility eliminates debt service obligations on bank loans.',
+            'Because volatility guarantees that competitor patents will expire earlier.'
+          ],
+          answer: 0,
+          why: 'Options have convex payoffs; management only exercises the capex strike price if the project is in-the-money, so increased dispersion of future outcomes expands upside potential without increasing downside risk.',
+          answerIndex: 0,
+          explanation: 'Options have convex payoffs; management only exercises the capex strike price if the project is in-the-money, so increased dispersion of future outcomes expands upside potential without increasing downside risk.'
+        }
+      },
+      {
+        title: 'Optimal Capital Structure & Financial Distress Tradeoff',
+        say: [
+          'In corporate financial policy, the Static Tradeoff Theory provides the foundation for designing a firm\'s optimal capital structure (the optimal mix of debt versus equity financing).',
+          'While Modigliani-Miller Proposition II with taxes proved that debt financing generates an Interest Tax Shield ($V_L = V_U + T_c * Debt$), taking on excessive leverage exposes the corporation to significant financial distress and bankruptcy risks.',
+          'Financial distress imposes two categories of costs: 1. Direct Costs (legal fees, forensic accounting, reorganization court costs, typically 3% to 5% of firm value); and 2. Indirect Costs (loss of credit ratings, customer cancellations, employee attrition, supplier demand for cash on delivery, and the debt overhang underinvestment problem, typically 15% to 25% of firm value).',
+          'Under the Tradeoff Theory, Levered Firm Value equals: $V_L = V_U + PV(Interest Tax Shield) - PV(Expected Financial Distress Costs)$, where expected distress costs equal the Probability of Default * Total Distress Costs.',
+          'At low leverage, adding debt significantly expands firm value because tax shield gains far outpace remote default risks. Beyond an optimal tipping point, rising default probabilities crush firm value, identifying the exact debt-to-equity ratio that minimizes WACC.'
+        ],
+        example: 'A $50M unlevered firm tests debt levels from $0 to $40M. At $10M debt, tax shields exceed minor distress risks. At $30M debt, levered firm value reaches its peak of $55,250,000. Raising debt further to $40M causes bankruptcy probabilities to surge (45%), eroding firm value down to $54.375M due to crushing financial distress costs.',
+        code: `# Simulation: Optimal Capital Structure & Financial Distress Tradeoff Engine
+from typing import Dict, List
+
+def calculate_optimal_capital_structure(
+    unlevered_firm_value: float,
+    corporate_tax_rate: float,
+    debt_levels: List[float],
+    distress_probability_multipliers: List[float], # e.g. 0.01 at low debt to 0.35 at high debt
+    bankruptcy_cost_pct: float = 25.0
+) -> Dict:
+    best_value = 0.0
+    optimal_debt = 0.0
+    results = []
+
+    for debt, prob in zip(debt_levels, distress_probability_multipliers):
+        # Static Tradeoff Theory: V_L = V_U + (Tc * Debt) - PV(Distress Costs)
+        tax_shield_pv = debt * corporate_tax_rate
+        expected_distress_pv = prob * (unlevered_firm_value * (bankruptcy_cost_pct / 100.0))
+        levered_value = unlevered_firm_value + tax_shield_pv - expected_distress_pv
+
+        results.append({
+            "Debt": debt,
+            "Tax_Shield": round(tax_shield_pv, 2),
+            "Expected_Distress_PV": round(expected_distress_pv, 2),
+            "Levered_Firm_Value": round(levered_value, 2)
+        })
+
+        if levered_value > best_value:
+            best_value = levered_value
+            optimal_debt = debt
+
+    return {
+        "Unlevered_Firm_Value": unlevered_firm_value,
+        "Optimal_Debt_Level": optimal_debt,
+        "Maximized_Levered_Value": round(best_value, 2),
+        "Optimal_Leverage_Schedule": results
+    }
+
+tradeoff = calculate_optimal_capital_structure(
+    unlevered_firm_value=50000000.0,
+    corporate_tax_rate=0.25,
+    debt_levels=[0.0, 10000000.0, 20000000.0, 30000000.0, 40000000.0],
+    distress_probability_multipliers=[0.0, 0.02, 0.06, 0.18, 0.45],
+    bankruptcy_cost_pct=25.0
+)
+print(f"Unlevered Value: \${tradeoff['Unlevered_Firm_Value']:,.2f}")
+print(f"Optimal Debt: \${tradeoff['Optimal_Debt_Level']:,.2f} -> Peak Levered Firm Value: \${tradeoff['Maximized_Levered_Value']:,.2f}")`,
+        output: `Unlevered Value: $50,000,000.00\nOptimal Debt: $30,000,000.00 -> Peak Levered Firm Value: $55,250,000.00`,
+        tryIt: 'Increase bankruptcy_cost_pct to 35.0% to observe how severe distress penalties shift the optimal debt level downward to $20,000,000.',
+        check: {
+          question: 'According to the Static Tradeoff Theory of Capital Structure, at what point is a corporation\'s market value maximized?',
+          options: [
+            '(Recommended) At the debt-to-equity ratio where the marginal gain from the interest tax shield exactly equals the marginal increase in the expected present value of financial distress costs.',
+            'When the corporation eliminates 100% of all debt and operates purely on common equity.',
+            'When the firm reaches 100% debt financing and completely eliminates common shares.',
+            'When the corporate tax rate is set to zero by federal statutory decree.'
+          ],
+          answer: 0,
+          why: 'Firm value is maximized (and WACC minimized) where the incremental tax shield from adding one more dollar of debt is exactly offset by the incremental expected bankruptcy and distress cost.',
+          answerIndex: 0,
+          explanation: 'Firm value is maximized (and WACC minimized) where the incremental tax shield from adding one more dollar of debt is exactly offset by the incremental expected bankruptcy and distress cost.'
+        }
+      },
+      {
+        title: 'Foreign Exchange (FX) Risk Hedging: Forward Contracts vs Zero-Cost Collars',
+        say: [
+          'Multinational corporations selling goods across borders face foreign exchange Transaction Exposure: the risk that currency exchange rates fluctuate unfavorably between when a sales contract is signed and when payment is collected in foreign currency.',
+          'To insulate cash flows from currency volatility, corporate treasury desks execute structured currency hedging strategies.',
+          'The simplest hedge is an Over-the-Counter (OTC) Forward Contract: the corporation locks in a binding forward exchange rate with a bank, completely eliminating currency risk. Forward rates are governed by Covered Interest Rate Parity: $F = S * (1 + r_domestic) / (1 + r_foreign)$. However, forward contracts eliminate all upside if the foreign currency appreciates.',
+          'Alternatively, treasury desks structure a Zero-Cost Collar: the firm purchases an out-of-the-money Put option (establishing a guaranteed floor against currency collapse) while simultaneously selling an out-of-the-money Call option (establishing a ceiling on currency gains) with identical premium costs.',
+          'Because the call option sale finances the put option purchase, the collar requires zero upfront cash expenditure, providing ironclad downside insurance while allowing the firm to participate in favorable currency appreciation within the strike corridor.'
+        ],
+        example: 'A US multinational expects a €10,000,000 receivable in 6 months when spot is $1.08. If the Euro plunges to $1.02, unhedged proceeds drop to $10,200,000 (a $600k loss). A Forward contract locked at 1.085 guarantees $10,850,000 (+$650,000 protection). A Zero-Cost Collar with a 1.06 floor guarantees $10,600,000 (+$400,000 protection) with zero upfront cash premium cost.',
+        code: `# Simulation: FX Transaction Exposure Hedging (Forward vs Zero-Cost Collar)
+from typing import Dict
+
+def evaluate_fx_hedging_strategies(
+    foreign_receivable_amount: float, # e.g. €10,000,000 to receive in 6 months
+    spot_exchange_rate: float,        # e.g. 1.08 USD per EUR
+    forward_exchange_rate: float,     # e.g. 1.085 USD per EUR (Covered Interest Parity)
+    collar_put_strike: float,         # e.g. 1.06 (guaranteed floor)
+    collar_call_strike: float,        # e.g. 1.11 (upside ceiling)
+    unhedged_future_spot: float       # e.g. 1.02 (sharp foreign currency devaluation)
+) -> Dict:
+    # 1. Unhedged Outcome
+    unhedged_usd_received = foreign_receivable_amount * unhedged_future_spot
+
+    # 2. Forward Contract Hedge (locked rate)
+    forward_usd_received = foreign_receivable_amount * forward_exchange_rate
+
+    # 3. Zero-Cost Collar Hedge
+    # If spot < floor, exercise put at floor; if spot > ceiling, called away at ceiling; else spot
+    effective_collar_rate = max(collar_put_strike, min(collar_call_strike, unhedged_future_spot))
+    collar_usd_received = foreign_receivable_amount * effective_collar_rate
+
+    return {
+        "Receivable_EUR": foreign_receivable_amount,
+        "Unhedged_Proceeds_USD": round(unhedged_usd_received, 2),
+        "Forward_Contract_Proceeds_USD": round(forward_usd_received, 2),
+        "Collar_Proceeds_USD": round(collar_usd_received, 2),
+        "Forward_Benefit_Vs_Unhedged": round(forward_usd_received - unhedged_usd_received, 2),
+        "Collar_Benefit_Vs_Unhedged": round(collar_usd_received - unhedged_usd_received, 2)
+    }
+
+fx_res = evaluate_fx_hedging_strategies(
+    foreign_receivable_amount=10000000.0,
+    spot_exchange_rate=1.08,
+    forward_exchange_rate=1.085,
+    collar_put_strike=1.06,
+    collar_call_strike=1.11,
+    unhedged_future_spot=1.02 # Euro dropped from 1.08 to 1.02
+)
+print(f"Unhedged (at 1.02): \${fx_res['Unhedged_Proceeds_USD']:,.2f}")
+print(f"Forward (at 1.085): \${fx_res['Forward_Contract_Proceeds_USD']:,.2f} (+\${fx_res['Forward_Benefit_Vs_Unhedged']:,.2f} protection)")
+print(f"Collar (floor 1.06): \${fx_res['Collar_Proceeds_USD']:,.2f} (+\${fx_res['Collar_Benefit_Vs_Unhedged']:,.2f} protection)")`,
+        output: `Unhedged (at 1.02): $10,200,000.00\nForward (at 1.085): $10,850,000.00 (+$650,000.00 protection)\nCollar (floor 1.06): $10,600,000.00 (+$400,000.00 protection)`,
+        tryIt: 'Change unhedged_future_spot to 1.15 to observe how the unhedged and collar strategies capture currency appreciation while the forward contract remains locked at 1.085.',
+        check: {
+          question: 'What is the key strategic benefit of structuring a Zero-Cost Collar for corporate foreign currency hedging compared to a standard forward contract?',
+          options: [
+            '(Recommended) It guarantees downside protection against currency depreciation with zero net upfront option premium, while allowing the firm to participate in favorable currency appreciation up to the call strike ceiling.',
+            'It converts foreign currency receivables directly into US Treasury inflation-protected securities.',
+            'It allows the corporation to bypass all international banking regulations and sanctions.',
+            'It permanently fixes the global price of gold in international commercial treaties.'
+          ],
+          answer: 0,
+          why: 'A collar finances the put option floor by selling a call option ceiling, creating free downside insurance while maintaining upside flexibility within the defined strike corridor.',
+          answerIndex: 0,
+          explanation: 'A collar finances the put option floor by selling a call option ceiling, creating free downside insurance while maintaining upside flexibility within the defined strike corridor.'
+        }
+      }
+    ],
+    summary: [
+      'LBO modeling creates sponsor equity value through cash flow debt amortization, EBITDA expansion, and exit multiple valuation waterfalls.',
+      'M&A Accretion/Dilution models evaluate pro-forma EPS effects, weighing buyer P/E versus target purchase P/E and after-tax synergy hurdles.',
+      'Black-Scholes Real Options Analysis prices managerial flexibility to expand or delay capex projects, capturing upside that static DCF ignores.',
+      'Static Tradeoff Theory determines optimal leverage where marginal interest tax shields equal marginal expected financial distress costs.',
+      'Treasury FX risk management utilizes Forward contracts to lock rates or Zero-Cost Collars to establish downside floors without sacrificing upside participation.'
+    ],
+    projectStep: {
+      title: 'Advanced Corporate Finance & Transaction Engineering Simulator',
+      steps: [
+        'Model LBO sources, uses, debt amortization schedules, and sponsor IRR exit returns.',
+        'Calculate M&A pro-forma EPS accretion/dilution and determine breakeven synergy hurdles.',
+        'Apply the Black-Scholes formula to evaluate strategic capital budgeting real options.',
+        'Simulate corporate capital structure tradeoffs and foreign exchange forward vs collar hedges.'
+      ]
+    }
   }
 ];
+
