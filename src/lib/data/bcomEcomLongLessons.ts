@@ -793,6 +793,444 @@ print(f"Flags: {fraud_res['Triggered_Flags']}")`,
         'Model the 3-tier DTC contribution margin waterfall and configure a real-time fraud velocity screening engine with automated threshold rules.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ecom',
+    day: 3,
+    title: 'E-Commerce Unit Economics, Multi-Channel CAC/LTV & Cart Abandonment Recovery',
+    overview: 'Master digital commerce financial mechanics, customer acquisition economics, and conversion funnel recovery. You will deconstruct multi-tiered order contribution margins (CM1, CM2, CM3), model multi-period cohort customer lifetime value (LTV) and repurchase curves, architect automated multi-stage checkout abandonment recovery sequences, audit multi-channel media mix efficiency (ROAS vs. Blended MER), and deploy an integrated e-commerce growth control tower.',
+    parts: [
+      {
+        title: 'D2C Order Unit Economics: CM1, CM2, and Contribution Margin 3 (CM3)',
+        say: [
+          'In direct-to-consumer (D2C) e-commerce, the most dangerous illusion is top-line gross margin. A brand founder might celebrate an eighty-percent gross margin on a hundred-dollar pair of sunglasses, assuming that sixty or seventy dollars of profit flow directly into the corporate bank account. However, between the moment a customer clicks Buy Now and the moment cash settles in the merchant bank account, an unforgiving waterfall of operational and media costs consumes the proceeds. To evaluate whether digital retail operations are truly compounding wealth, e-commerce financial operators decompose unit economics into three distinct contribution margin tiers: CM1, CM2, and CM3.',
+          'Contribution Margin 1 (CM1) represents classic gross product profit: Net Revenue (Gross AOV minus promotional discounts and return allowances) minus Cost of Goods Sold (including inbound freight and landed manufacturing costs). CM2 captures post-fulfillment profit by deducting all variable order fulfillment expenses: warehouse pick-and-pack labor, outbound parcel shipping, custom packaging materials, and merchant gateway payment processing fees (typically 2.9% plus 30 cents per transaction). A healthy D2C brand must maintain a CM2 margin between 35% and 50% of net revenue; if fulfillment eats more than half of gross margin, the brand lacks the economic buffer to acquire customers at scale.',
+          'Contribution Margin 3 (CM3) is the ultimate metric of customer acquisition viability. CM3 is calculated by subtracting First-Order Customer Acquisition Cost (Paid Media CAC) from CM2. If CM3 is positive, every customer acquired on paid channels is immediately profitable on their initial transaction, creating an infinite cash flywheel for aggressive growth. Conversely, if CM3 is negative, the merchant loses money on every first order and must rely on subsequent repurchase cohorts to achieve breakeven. In this section, we model an automated D2C order waterfall engine that calculates CM1, CM2, and CM3, pinpointing whether customer acquisition is profitable on day one.'
+        ],
+        example: 'Consider an apparel brand selling a $120.00 jacket with a $12.00 promo discount and a $6.00 return reserve, netting $102.00 in revenue. If product manufacturing and landed freight cost $40.00, CM1 is $62.00 (60.8%). After deducting $4.50 warehouse pick/pack, $10.50 FedEx shipping, $2.00 branded box, and $3.26 Stripe processing, CM2 drops to $41.74 (40.9%). If Meta ad acquisition CAC is $38.00, the brand nets a positive CM3 of $3.74 (3.7%), validating first-order profitability.',
+        code: `def calculate_dtc_unit_economics_waterfall():
+    print("=== D2C Unit Economics Waterfall (CM1, CM2, CM3) ===")
+    gross_aov = 120.00
+    discounts = 12.00
+    returns_allowance = 6.00
+    net_revenue = gross_aov - discounts - returns_allowance
+    
+    cogs_product = 36.00
+    cogs_inbound_freight = 4.00
+    total_cogs = cogs_product + cogs_inbound_freight
+    cm1_gross_profit = net_revenue - total_cogs
+    cm1_margin_pct = (cm1_gross_profit / net_revenue) * 100.0
+    
+    pick_pack_labor = 4.50
+    outbound_shipping = 10.50
+    packaging_supplies = 2.00
+    payment_processing_fee = (net_revenue * 0.029) + 0.30
+    total_variable_fulfillment = pick_pack_labor + outbound_shipping + packaging_supplies + payment_processing_fee
+    cm2_fulfillment_profit = cm1_gross_profit - total_variable_fulfillment
+    cm2_margin_pct = (cm2_fulfillment_profit / net_revenue) * 100.0
+    
+    paid_media_cac = 38.00
+    cm3_net_contribution = cm2_fulfillment_profit - paid_media_cac
+    cm3_margin_pct = (cm3_net_contribution / net_revenue) * 100.0
+    
+    status = "HEALTHY_PROFITABLE_ACQUISITION" if cm3_net_contribution > 0 else "CASH_BURNING_ACQUISITION"
+    
+    print(f"Gross AOV: " + "$" + f"{gross_aov:.2f} | Discounts: -" + "$" + f"{discounts:.2f} | Returns: -" + "$" + f"{returns_allowance:.2f}")
+    print(f"Net Revenue: " + "$" + f"{net_revenue:.2f}")
+    print(f"CM1 (Gross Profit): " + "$" + f"{cm1_gross_profit:.2f} ({cm1_margin_pct:.1f}% margin)")
+    print(f"Fulfillment & Payment: -" + "$" + f"{total_variable_fulfillment:.2f} (Pick/Pack=" + "$" + f"{pick_pack_labor:.2f}, Ship=" + "$" + f"{outbound_shipping:.2f}, Gateway=" + "$" + f"{payment_processing_fee:.2f})")
+    print(f"CM2 (Post-Fulfillment Profit): " + "$" + f"{cm2_fulfillment_profit:.2f} ({cm2_margin_pct:.1f}% margin)")
+    print(f"Paid Media CAC: -" + "$" + f"{paid_media_cac:.2f}")
+    print(f"CM3 (Net Contribution Margin): " + "$" + f"{cm3_net_contribution:.2f} ({cm3_margin_pct:.1f}% margin) -> [{status}]")
+    return {
+        "net_revenue": net_revenue,
+        "cm1": cm1_gross_profit,
+        "cm2": cm2_fulfillment_profit,
+        "cm3": cm3_net_contribution,
+        "cm3_margin_pct": cm3_margin_pct
+    }
+
+calculate_dtc_unit_economics_waterfall()`,
+        output: `=== D2C Unit Economics Waterfall (CM1, CM2, CM3) ===
+Gross AOV: $120.00 | Discounts: -$12.00 | Returns: -$6.00
+Net Revenue: $102.00
+CM1 (Gross Profit): $62.00 (60.8% margin)
+Fulfillment & Payment: -$20.26 (Pick/Pack=$4.50, Ship=$10.50, Gateway=$3.26)
+CM2 (Post-Fulfillment Profit): $41.74 (40.9% margin)
+Paid Media CAC: -$38.00
+CM3 (Net Contribution Margin): $3.74 (3.7% margin) -> [HEALTHY_PROFITABLE_ACQUISITION]`,
+        codeNotes: [
+          'Deconstructs order economics across Net Revenue ($102.00), CM1 ($62.00 / 60.8%), and CM2 ($41.74 / 40.9%).',
+          'Incorporates variable order fulfillment costs ($20.26) including pick/pack, parcel shipping, and gateway fees.',
+          'Evaluates first-order paid media CAC ($38.00), yielding a profitable CM3 of $3.74 (3.7% margin).'
+        ],
+        tryIt: 'Increase paid media CAC to $45.00 to observe how customer acquisition flips from profitable into negative cash burn.',
+        check: {
+          question: 'What is the critical distinction between Contribution Margin 2 (CM2) and Contribution Margin 3 (CM3) in D2C e-commerce?',
+          options: [
+            'CM2 reflects profit after deducting variable fulfillment and merchant fees, while CM3 subtracts paid media customer acquisition cost (CAC).',
+            'CM2 includes executive salaries, while CM3 reflects only physical warehouse rent.',
+            'CM2 is an accounting metric required exclusively for physical department stores.',
+            'CM3 excludes all product manufacturing costs and inbound freight.'
+          ],
+          answer: 0,
+          why: 'CM2 evaluates order economics after physical fulfillment and payment processing; CM3 further deducts paid advertising spend to evaluate true net marketing profitability.',
+          answerIndex: 0,
+          explanation: 'CM2 evaluates order economics after physical fulfillment and payment processing; CM3 further deducts paid advertising spend to evaluate true net marketing profitability.'
+        }
+      },
+      {
+        title: 'Customer Lifetime Value (LTV) Cohorts, Repurchase Curves & LTV:CAC Ratios',
+        say: [
+          'While achieving positive CM3 on initial customer orders is the ideal scenario for working capital management, many high-growth consumer categories—such as specialty consumables, skincare, apparel subscriptions, and pet supplies—operate at breakeven or slight losses on day zero. In these business models, the entire enterprise enterprise value is generated through multi-period customer repeat purchase behavior. Evaluating long-term economic health requires replacing single-transaction snapshots with rigorous cohort lifetime value (LTV) modeling, tracking how repeat purchase frequencies compound cumulative gross margin contribution over time.',
+          'Cohort LTV modeling groups customers acquired during a common time window (such as a calendar month) and tracks their cumulative spend and order counts over 60, 180, 360, and 720 days. Crucially, true e-commerce LTV is not measured in top-line Gross Merchandise Value, but in cumulative Contribution Margin 2 (CM2) generated per customer. If an acquired customer spends $110 on Day 0 and another $105 on Day 60, only the post-fulfillment CM2 profit (at 50% margin) contributes to amortizing the initial CAC. By tracking cohort retention curves, growth operators determine the exact payback horizon where cumulative CM2 surpasses upfront CAC.',
+          'The gold standard of venture-backed consumer brand economics is an LTV:CAC ratio exceeding 3.0x over a 360-day to 720-day horizon, accompanied by a CAC payback period under six months. If LTV:CAC is below 1.5x, the business is trapped in an advertising treadmill where customer churn erodes all operating margin. In this section, we examine an automated cohort waterfall that simulates 1,000 acquired customers across four repurchase cycles, calculating cumulative CM2 per customer, dynamic LTV:CAC ratios, and net cohort return on investment. Mastering these cohort economics allows e-commerce leadership to allocate growth capital with mathematical confidence.'
+        ],
+        example: 'A luxury direct-to-consumer coffee roaster spends $32.00 to acquire a new subscriber on Meta. On Day 0, the customer generates $55.00 in CM2 profit (1.72x CAC), achieving immediate payback. Over 720 days, through seasonal blends and subscription replenishments across 35% repeat buyers, cumulative CM2 per customer expands to $104.67, delivering a stellar 3.27x LTV:CAC ratio and 227.1% net cohort ROI.',
+        code: `def model_ecommerce_ltv_cohort_waterfall():
+    print("=== Multi-Period Cohort LTV & Repurchase Economics ===")
+    initial_cohort_customers = 1000
+    first_order_aov = 110.00
+    cm2_margin_ratio = 0.50  # 50% CM2 margin
+    blended_cac = 32.00
+    
+    cohort_schedule = [
+        {"period": "Day 0 (Acquisition)", "active_ratio": 1.00, "orders_per_active": 1.0, "aov": 110.00},
+        {"period": "Day 60 (Repurchase 1)", "active_ratio": 0.35, "orders_per_active": 1.0, "aov": 105.00},
+        {"period": "Day 180 (Repurchase 2)", "active_ratio": 0.25, "orders_per_active": 1.0, "aov": 110.00},
+        {"period": "Day 360 (Repurchase 3)", "active_ratio": 0.18, "orders_per_active": 1.0, "aov": 115.00},
+        {"period": "Day 720 (Repurchase 4)", "active_ratio": 0.12, "orders_per_active": 1.0, "aov": 120.00}
+    ]
+    
+    cumulative_gross_revenue = 0.0
+    cumulative_cm2_profit = 0.0
+    print("Cohort Trajectory (1,000 Customers Acquired):")
+    for row in cohort_schedule:
+        period_orders = initial_cohort_customers * row["active_ratio"] * row["orders_per_active"]
+        period_rev = period_orders * row["aov"]
+        period_cm2 = period_rev * cm2_margin_ratio
+        cumulative_gross_revenue += period_rev
+        cumulative_cm2_profit += period_cm2
+        ltv_per_cust = cumulative_cm2_profit / initial_cohort_customers
+        ltv_to_cac = ltv_per_cust / blended_cac
+        print(f"  {row['period']}: Orders={period_orders:.0f} | Period Rev=" + "$" + f"{period_rev:,.2f} | Cumul LTV(CM2)=" + "$" + f"{ltv_per_cust:.2f} | LTV:CAC={ltv_to_cac:.2f}x")
+        
+    total_cac_invested = initial_cohort_customers * blended_cac
+    net_cohort_roi_pct = ((cumulative_cm2_profit - total_cac_invested) / total_cac_invested) * 100.0
+    print(f"Cohort Summary: Total CAC=" + "$" + f"{total_cac_invested:,.2f} | 360-Day CM2 Profit=" + "$" + f"{cumulative_cm2_profit:,.2f} | Net ROI={net_cohort_roi_pct:.1f}%")
+    return {
+        "cumulative_cm2_profit": cumulative_cm2_profit,
+        "ltv_to_cac": ltv_to_cac,
+        "net_cohort_roi_pct": net_cohort_roi_pct
+    }
+
+model_ecommerce_ltv_cohort_waterfall()`,
+        output: `=== Multi-Period Cohort LTV & Repurchase Economics ===
+Cohort Trajectory (1,000 Customers Acquired):
+  Day 0 (Acquisition): Orders=1000 | Period Rev=$110,000.00 | Cumul LTV(CM2)=$55.00 | LTV:CAC=1.72x
+  Day 60 (Repurchase 1): Orders=350 | Period Rev=$36,750.00 | Cumul LTV(CM2)=$73.38 | LTV:CAC=2.29x
+  Day 180 (Repurchase 2): Orders=250 | Period Rev=$27,500.00 | Cumul LTV(CM2)=$87.12 | LTV:CAC=2.72x
+  Day 360 (Repurchase 3): Orders=180 | Period Rev=$20,700.00 | Cumul LTV(CM2)=$97.47 | LTV:CAC=3.05x
+  Day 720 (Repurchase 4): Orders=120 | Period Rev=$14,400.00 | Cumul LTV(CM2)=$104.67 | LTV:CAC=3.27x
+Cohort Summary: Total CAC=$32,000.00 | 360-Day CM2 Profit=$104,675.00 | Net ROI=227.1%`,
+        codeNotes: [
+          'Tracks a 1,000-customer cohort across 5 multi-period intervals from Day 0 through Day 720.',
+          'Measures cumulative LTV in Contribution Margin 2 ($104.67 per customer), not gross top-line revenue.',
+          'Demonstrates an expanding LTV:CAC ratio from 1.72x at Day 0 to 3.27x at Day 720, generating a 227.1% net cohort ROI.'
+        ],
+        tryIt: 'Reduce the 60-day repurchase active ratio from 0.35 to 0.15 to see how lower customer retention degrades overall cohort ROI.',
+        check: {
+          question: 'Why must customer lifetime value (LTV) in D2C e-commerce be calculated using Contribution Margin 2 (CM2) rather than Gross Revenue?',
+          options: [
+            'Because Gross Revenue ignores COGS, shipping, and payment gateway costs, creating a false impression of marketing profitability when repeat orders consume significant fulfillment cash.',
+            'Because federal trade regulations mandate that all revenue figures be discounted by statutory corporate income tax.',
+            'Because Shopify stores do not record gross transaction values in order databases.',
+            'Because customers always demand full refunds on all repeat purchases.'
+          ],
+          answer: 0,
+          why: 'Measuring LTV in Gross Revenue overstates profitability; true LTV must reflect net contribution profit after subtracting product manufacturing, shipping, and payment processing costs.',
+          answerIndex: 0,
+          explanation: 'Measuring LTV in Gross Revenue overstates profitability; true LTV must reflect net contribution profit after subtracting product manufacturing, shipping, and payment processing costs.'
+        }
+      },
+      {
+        title: 'Checkout Funnel Drop-off Telemetry & Cart Abandonment Recovery Architecture',
+        say: [
+          'Across global e-commerce platforms, approximately seventy percent of shopping carts loaded with merchandise are abandoned prior to final order completion. When a consumer browses product pages, selects items, adds them to their digital cart, and initiates checkout, the brand has already expended marketing capital to drive the visit. Any subsequent drop-off represents direct revenue leakage and wasted customer acquisition spend. Understanding the telemetry of the checkout funnel and deploying an automated, multi-tiered abandonment recovery engine is one of the highest-ROI operational interventions in digital retail.',
+          'A standard checkout funnel exhibits predictable attrition across each sequential step: from Store Sessions to Add to Cart (ATC, typically 8-12%), to Initiate Checkout (IC, ~50-60% of ATC), to Shipping Information (~70-80% of IC), and finally to Completed Payment (~55-65% of Shipping). The primary drivers of checkout abandonment include unexpected shipping fees and taxes revealed late in the flow, mandatory account creation requirements, complex form inputs, and payment trust concerns. By instrumenting real-time event telemetry via webhooks and client-side pixels, merchants can instantly flag abandoned sessions the moment a customer exits without completing payment.',
+          'An enterprise abandonment recovery architecture deploys an orchestrated, time-decayed communication sequence across multiple channels. Stage 1 triggers a high-urgency SMS or push notification within sixty minutes, capitalizing on fresh buyer intent with personalized cart permalinks. Stage 2 dispatches an automated email within four hours featuring social proof and customer reviews to overcome product hesitation. Stage 3, deployed at twenty-four hours, introduces a modest ten-percent incentive or free shipping perk to price-sensitive shoppers. Finally, Stage 4 executes dynamic product retargeting ads (DPA) on paid social over forty-eight hours. In this section, we simulate a complete recovery sequence over 50,000 store sessions, demonstrating how recovering just 212 abandoned orders generates $21,658.84 in incremental GMV at an astonishing 39.8x recovery ROAS.'
+        ],
+        example: 'An online cosmetics retailer logs 50,000 monthly sessions, leading to 6,000 add-to-carts and 3,300 initiated checkouts. However, 1,815 buyers abandon at the payment screen, leaving $185,130.00 in GMV stranded. By activating an automated 4-stage recovery sequence (SMS, reviews email, 10% discount email, and dynamic social ads) costing just $543.86 in total delivery, the brand recovers 212 orders ($21,658.84 in GMV), lifting the store conversion rate from 2.97% to 3.39%.',
+        code: `def simulate_cart_abandonment_recovery_engine():
+    print("=== Checkout Funnel Telemetry & Abandonment Recovery Sequence ===")
+    sessions = 50_000
+    atc_sessions = sessions * 0.12       # 12% Add to Cart
+    ic_sessions = atc_sessions * 0.55    # 55% Initiate Checkout
+    shipping_sessions = ic_sessions * 0.75 # 75% Enter Shipping
+    completed_orders = shipping_sessions * 0.60 # 60% Complete Payment
+    
+    unrecovered_checkout_dropouts = ic_sessions - completed_orders
+    baseline_conversion_rate = (completed_orders / sessions) * 100.0
+    aov = 102.00
+    
+    recovery_stages = [
+        {"channel": "SMS Cart Ping (1h, urgent reminder)", "reach_rate": 0.40, "conversion_rate": 0.08, "cost_per_send": 0.02},
+        {"channel": "Email Sequence 1 (4h, social proof)", "reach_rate": 0.65, "conversion_rate": 0.05, "cost_per_send": 0.005},
+        {"channel": "Email Sequence 2 (24h, 10% incentive)", "reach_rate": 0.50, "conversion_rate": 0.06, "cost_per_send": 0.005},
+        {"channel": "Dynamic Retargeting DPA (48h)", "reach_rate": 0.70, "conversion_rate": 0.04, "cost_per_send": 0.45}
+    ]
+    
+    print(f"Funnel Telemetry: Sessions={sessions:,} -> ATC={atc_sessions:,.0f} -> IC={ic_sessions:,.0f} -> Completed={completed_orders:,.0f} ({baseline_conversion_rate:.2f}% Baseline CVR)")
+    print(f"Abandoned Checkouts: {unrecovered_checkout_dropouts:,.0f} Orders (" + "$" + f"{unrecovered_checkout_dropouts * aov:,.2f} GMV at risk)")
+    
+    total_recovered_orders = 0
+    total_recovery_cost = 0.0
+    pool = unrecovered_checkout_dropouts
+    
+    print("Recovery Sequence Execution:")
+    for stg in recovery_stages:
+        targeted = pool * stg["reach_rate"]
+        recovered = targeted * stg["conversion_rate"]
+        stage_cost = targeted * stg["cost_per_send"]
+        recovered_gmv = recovered * aov
+        total_recovered_orders += recovered
+        total_recovery_cost += stage_cost
+        pool -= recovered
+        print(f"  {stg['channel']}: Recovered={recovered:.0f} orders (" + "$" + f"{recovered_gmv:,.2f} GMV) | Cost=" + "$" + f"{stage_cost:,.2f}")
+        
+    recovered_revenue = total_recovered_orders * aov
+    recovery_roas = recovered_revenue / total_recovery_cost
+    lifted_orders = completed_orders + total_recovered_orders
+    lifted_conversion_rate = (lifted_orders / sessions) * 100.0
+    
+    print(f"Recovery Synthesis: Total Recovered={total_recovered_orders:.0f} Orders (" + "$" + f"{recovered_revenue:,.2f} GMV) | Spend=" + "$" + f"{total_recovery_cost:,.2f} | Recovery ROAS={recovery_roas:.1f}x")
+    print(f"Lifted Conversion Rate: {baseline_conversion_rate:.2f}% -> {lifted_conversion_rate:.2f}% (+{((lifted_conversion_rate - baseline_conversion_rate)/baseline_conversion_rate)*100.0:.1f}% relative lift)")
+    return {
+        "recovered_orders": total_recovered_orders,
+        "recovered_revenue": recovered_revenue,
+        "recovery_roas": recovery_roas,
+        "lifted_cvr": lifted_conversion_rate
+    }
+
+simulate_cart_abandonment_recovery_engine()`,
+        output: `=== Checkout Funnel Telemetry & Abandonment Recovery Sequence ===
+Funnel Telemetry: Sessions=50,000 -> ATC=6,000 -> IC=3,300 -> Completed=1,485 (2.97% Baseline CVR)
+Abandoned Checkouts: 1,815 Orders ($185,130.00 GMV at risk)
+Recovery Sequence Execution:
+  SMS Cart Ping (1h, urgent reminder): Recovered=58 orders ($5,924.16 GMV) | Cost=$14.52
+  Email Sequence 1 (4h, social proof): Recovered=57 orders ($5,824.19 GMV) | Cost=$5.71
+  Email Sequence 2 (24h, 10% incentive): Recovered=51 orders ($5,201.45 GMV) | Cost=$4.25
+  Dynamic Retargeting DPA (48h): Recovered=46 orders ($4,709.05 GMV) | Cost=$519.38
+Recovery Synthesis: Total Recovered=212 Orders ($21,658.84 GMV) | Spend=$543.86 | Recovery ROAS=39.8x
+Lifted Conversion Rate: 2.97% -> 3.39% (+14.3% relative lift)`,
+        codeNotes: [
+          'Models a 50,000-session checkout funnel with 1,815 abandoned orders representing $185,130.00 in stranded GMV.',
+          'Executes a 4-tier recovery sequence across SMS, automated email sequences, and dynamic product retargeting.',
+          'Recovers 212 orders ($21,658.84 GMV) on $543.86 total spend, delivering a 39.8x recovery ROAS and a 14.3% relative lift in store conversion.'
+        ],
+        tryIt: 'Adjust the SMS reach rate from 0.40 to 0.70 to observe how higher immediate mobile contact rates expand total recovered GMV.',
+        check: {
+          question: 'Why do automated cart recovery sequences achieve exceptional Return on Ad Spend (ROAS) exceeding 30x compared to prospecting ad campaigns?',
+          options: [
+            'Because the audience has already demonstrated high purchase intent by entering the checkout funnel, requiring minimal incremental messaging cost to convert.',
+            'Because SMS carriers provide free cellular bandwidth for commercial retail promotions.',
+            'Because shopping cart abandonment is completely illegal under consumer protection statutes.',
+            'Because web browsers automatically deduct the purchase amount from user credit cards upon cart abandonment.'
+          ],
+          answer: 0,
+          why: 'Cart abandoners are at the very bottom of the funnel; because intent is already validated, low-cost reminder messaging converts at high rates with immense marginal ROI.',
+          answerIndex: 0,
+          explanation: 'Cart abandoners are at the very bottom of the funnel; because intent is already validated, low-cost reminder messaging converts at high rates with immense marginal ROI.'
+        }
+      },
+      {
+        title: 'Multi-Channel Media Mix: Platform ROAS vs Blended MER & Attribution Realities',
+        say: [
+          'In the wake of major privacy shifts—most notably Apple App Tracking Transparency (ATT) framework and progressive third-party cookie deprecation—digital marketing measurement has undergone a seismic paradigm shift. In prior years, e-commerce marketers relied heavily on in-platform Return on Ad Spend (ROAS) reported inside Meta Ads Manager and Google Ads dashboards. Today, reliance on platform-reported ROAS is one of the most common causes of venture-backed e-commerce insolvency, as algorithmic advertising platforms systematically double-count conversions and claim credit for organic customer purchases.',
+          'The phenomenon of phantom ROAS arises because advertising platforms use overlapping, self-serving attribution windows (such as 7-day click and 1-day view-through). If a loyal customer sees a Meta ad on Instagram, clicks a Google Shopping link later that afternoon, and applies a discount code from an affiliate website, all three channels claim credit for one hundred percent of the resulting transaction. When a merchant sums up platform-reported revenue across channels, the claimed total frequently exceeds the actual dollars deposited into Shopify by thirty to fifty percent. Marketers who scale ad spend based on inflated platform metrics quickly experience cash-flow collapse.',
+          'To navigate this attribution fog, modern e-commerce executives rely on the Marketing Efficiency Ratio (MER), also known as Blended ROAS: Total Store Net Revenue divided by Total Marketing Ad Spend. MER provides an ungameable, balance-sheet-level view of overall customer acquisition efficiency. While channel-specific metrics and first-click attribution models help guide tactical creative bidding, MER serves as the strategic steering wheel for capital allocation. In this section, we analyze a $100,000 monthly media budget across Meta, Google Shopping, TikTok, and Affiliates, demonstrating how a phantom 3.20x platform ROAS resolves to a true 2.50x blended MER. Understanding this gap is essential for maintaining advertising capital discipline.'
+        ],
+        example: 'An online furniture merchant spends $100,000 on ads across Meta ($45k), Google ($30k), TikTok ($15k), and Affiliates ($10k). Meta claims $135k in sales (3.0x), Google claims $120k (4.0x), TikTok claims $30k (2.0x), and Affiliates claim $35k (3.5x), totaling $320,000 in claimed sales (3.20x phantom ROAS). However, Shopify shows actual net store revenue was only $250,000. The true Blended MER is 2.50x, exposing a $70,000 overattribution gap.',
+        code: `def audit_roas_vs_mer_channel_efficiency():
+    print("=== Multi-Channel Media Mix: Platform ROAS vs Blended MER ===")
+    channels = [
+        {"name": "Meta Ads (Paid Social)", "spend": 45_000.0, "platform_reported_rev": 135_000.0, "first_click_rev": 72_000.0},
+        {"name": "Google Shopping (Search)", "spend": 30_000.0, "platform_reported_rev": 120_000.0, "first_click_rev": 90_000.0},
+        {"name": "TikTok Ads (Top Funnel)", "spend": 15_000.0, "platform_reported_rev": 30_000.0, "first_click_rev": 12_000.0},
+        {"name": "Affiliate & Influencer", "spend": 10_000.0, "platform_reported_rev": 35_000.0, "first_click_rev": 22_000.0}
+    ]
+    
+    actual_store_net_revenue = 250_000.0
+    total_marketing_spend = sum(c["spend"] for c in channels)
+    total_platform_reported_rev = sum(c["platform_reported_rev"] for c in channels)
+    
+    blended_mer = actual_store_net_revenue / total_marketing_spend
+    phantom_reported_roas = total_platform_reported_rev / total_marketing_spend
+    overattribution_gap = total_platform_reported_rev - actual_store_net_revenue
+    
+    print(f"Total Marketing Spend: " + "$" + f"{total_marketing_spend:,.2f}")
+    print(f"Actual Shopify/Store Net Revenue: " + "$" + f"{actual_store_net_revenue:,.2f} -> True Blended MER: {blended_mer:.2f}x")
+    print(f"Sum of Platform-Claimed Revenue: " + "$" + f"{total_platform_reported_rev:,.2f} -> Phantom Reported ROAS: {phantom_reported_roas:.2f}x")
+    print(f"Overattribution Inflation Gap: " + "$" + f"{overattribution_gap:,.2f} (Platforms overclaimed actual sales by {((overattribution_gap)/actual_store_net_revenue)*100:.1f}%)")
+    print("Channel Efficiency Breakdown:")
+    for c in channels:
+        p_roas = c["platform_reported_rev"] / c["spend"]
+        fc_roas = c["first_click_rev"] / c["spend"]
+        print(f"  {c['name']}: Spend=" + "$" + f"{c['spend']:,.2f} | Platform ROAS={p_roas:.2f}x | First-Click ROAS={fc_roas:.2f}x")
+    return {
+        "blended_mer": blended_mer,
+        "total_spend": total_marketing_spend,
+        "overattribution_gap": overattribution_gap
+    }
+
+audit_roas_vs_mer_channel_efficiency()`,
+        output: `=== Multi-Channel Media Mix: Platform ROAS vs Blended MER ===
+Total Marketing Spend: $100,000.00
+Actual Shopify/Store Net Revenue: $250,000.00 -> True Blended MER: 2.50x
+Sum of Platform-Claimed Revenue: $320,000.00 -> Phantom Reported ROAS: 3.20x
+Overattribution Inflation Gap: $70,000.00 (Platforms overclaimed actual sales by 28.0%)
+Channel Efficiency Breakdown:
+  Meta Ads (Paid Social): Spend=$45,000.00 | Platform ROAS=3.00x | First-Click ROAS=1.60x
+  Google Shopping (Search): Spend=$30,000.00 | Platform ROAS=4.00x | First-Click ROAS=3.00x
+  TikTok Ads (Top Funnel): Spend=$15,000.00 | Platform ROAS=2.00x | First-Click ROAS=0.80x
+  Affiliate & Influencer: Spend=$10,000.00 | Platform ROAS=3.50x | First-Click ROAS=2.20x`,
+        codeNotes: [
+          'Audits a $100,000 media budget across Meta, Google Shopping, TikTok, and Affiliate marketing channels.',
+          'Exposes a $70,000 overattribution gap between platform claims ($320,000 / 3.20x ROAS) and store revenue ($250,000).',
+          'Calculates the true Marketing Efficiency Ratio (MER = 2.50x) and evaluates first-click incrementality across channels.'
+        ],
+        tryIt: 'Adjust Google Shopping spend to $40,000.00 and evaluate how it impacts overall store MER and channel contribution.',
+        check: {
+          question: 'What is Marketing Efficiency Ratio (MER) and why is it preferred over platform-reported ROAS for executive financial planning?',
+          options: [
+            'MER is Total Store Net Revenue divided by Total Marketing Ad Spend; it cannot be inflated by overlapping platform attribution windows and reflects true bank account revenue.',
+            'MER measures only offline billboard advertising and television campaigns.',
+            'MER is an inventory accounting formula used exclusively by customs import brokers.',
+            'MER reflects the percentage of website visitors who leave a 5-star customer review.'
+          ],
+          answer: 0,
+          why: 'MER measures macro marketing efficiency by dividing total store revenue by total ad spend, eliminating duplicate attribution claims across advertising networks.',
+          answerIndex: 0,
+          explanation: 'MER measures macro marketing efficiency by dividing total store revenue by total ad spend, eliminating duplicate attribution claims across advertising networks.'
+        }
+      },
+      {
+        title: 'Integrated E-Commerce Growth Control Tower & Capital Optimization',
+        say: [
+          'Scaling a digital retail enterprise requires synchronizing order unit economics, cohort retention dynamics, checkout funnel recovery, and multi-channel media allocation into a single executive command center. When business operators manage each department in a silo—marketing chasing ROAS, fulfillment managing shipping costs, and customer support handling refunds—the overall enterprise frequently experiences cash flow crises despite growing top-line sales. The E-Commerce Growth Control Tower establishes a unified, real-time operating dashboard that aligns marketing velocity with working capital solvency.',
+          'The control tower synthesizes the four fundamental levers of digital retail profitability. Lever 1 confirms first-order economics: verifying that Contribution Margin 2 covers upfront paid media CAC to maintain a positive CM3. Lever 2 tracks multi-period cohort health: certifying that repeat purchase frequencies compound LTV:CAC above the 3.0x venture threshold over 360 days. Lever 3 monitors funnel leakages: deploying automated SMS, email, and dynamic retargeting sequences that recover high-margin abandoned checkout GMV. Lever 4 enforces media discipline: managing paid media spend according to true blended MER rather than deceptive in-platform vanity metrics.',
+          'By unifying these four operational pillars into an automated Python executive control suite, management can immediately simulate the macro financial impact of operational changes. Whether evaluating a supplier price hike, a spike in parcel shipping surcharges, an increase in Meta ad auction CPMs, or a shift in repurchase cohort retention, the control tower provides instant clarity on cash contribution and runway. In this capstone synthesis for Day 3, you will execute the integrated growth control tower, validating that digital commerce operations meet institutional capital efficiency standards.'
+        ],
+        example: 'A direct-to-consumer health and wellness brand deploys the Integrated E-Commerce Growth Control Tower. The executive dashboard displays a positive CM3 of $3.74 (3.7% net margin), a 360-day cohort LTV:CAC of 3.27x (227.1% net ROI), $21,658.84 in recovered abandoned cart GMV lifting overall conversion to 3.39%, and a disciplined 2.50x Blended MER on $100,000 media spend. The dashboard confirms that the brand is fully primed for sustainable, capital-efficient growth.',
+        code: `def run_ecommerce_growth_control_tower():
+    print("=== PinIT Career OS E-Commerce Unit Economics & Growth Control Tower ===")
+    print("--- 1. Order Waterfall Economics ---")
+    unit = calculate_dtc_unit_economics_waterfall()
+    
+    print("\n--- 2. Cohort LTV & Repurchase Trajectory ---")
+    cohort = model_ecommerce_ltv_cohort_waterfall()
+    
+    print("\n--- 3. Cart Abandonment Sequence ---")
+    cart = simulate_cart_abandonment_recovery_engine()
+    
+    print("\n--- 4. Media Mix & MER Audit ---")
+    media = audit_roas_vs_mer_channel_efficiency()
+    
+    print("\n--- 5. Executive E-Commerce Control Tower Synthesis ---")
+    print(f"  Order CM3 Contribution Margin: " + "$" + f"{unit['cm3']:.2f} ({unit['cm3_margin_pct']:.1f}% net margin)")
+    print(f"  360-Day Cohort LTV:CAC Ratio: {cohort['ltv_to_cac']:.2f}x (Net Cohort ROI: {cohort['net_cohort_roi_pct']:.1f}%)")
+    print(f"  Cart Abandonment Lift: +{cart['recovered_orders']:.0f} orders (" + "$" + f"{cart['recovered_revenue']:,.2f} GMV, CVR lifted to {cart['lifted_cvr']:.2f}%)")
+    print(f"  True Blended MER: {media['blended_mer']:.2f}x (Spend: " + "$" + f"{media['total_spend']:,.2f})")
+    print("Status: E-COMMERCE UNIT ECONOMICS & MEDIA MIX CERTIFIED FOR CAPITAL EFFICIENCY.")
+
+run_ecommerce_growth_control_tower()`,
+        output: `=== PinIT Career OS E-Commerce Unit Economics & Growth Control Tower ===
+--- 1. Order Waterfall Economics ---
+=== D2C Unit Economics Waterfall (CM1, CM2, CM3) ===
+Gross AOV: $120.00 | Discounts: -$12.00 | Returns: -$6.00
+Net Revenue: $102.00
+CM1 (Gross Profit): $62.00 (60.8% margin)
+Fulfillment & Payment: -$20.26 (Pick/Pack=$4.50, Ship=$10.50, Gateway=$3.26)
+CM2 (Post-Fulfillment Profit): $41.74 (40.9% margin)
+Paid Media CAC: -$38.00
+CM3 (Net Contribution Margin): $3.74 (3.7% margin) -> [HEALTHY_PROFITABLE_ACQUISITION]
+
+--- 2. Cohort LTV & Repurchase Trajectory ---
+=== Multi-Period Cohort LTV & Repurchase Economics ===
+Cohort Trajectory (1,000 Customers Acquired):
+  Day 0 (Acquisition): Orders=1000 | Period Rev=$110,000.00 | Cumul LTV(CM2)=$55.00 | LTV:CAC=1.72x
+  Day 60 (Repurchase 1): Orders=350 | Period Rev=$36,750.00 | Cumul LTV(CM2)=$73.38 | LTV:CAC=2.29x
+  Day 180 (Repurchase 2): Orders=250 | Period Rev=$27,500.00 | Cumul LTV(CM2)=$87.12 | LTV:CAC=2.72x
+  Day 360 (Repurchase 3): Orders=180 | Period Rev=$20,700.00 | Cumul LTV(CM2)=$97.47 | LTV:CAC=3.05x
+  Day 720 (Repurchase 4): Orders=120 | Period Rev=$14,400.00 | Cumul LTV(CM2)=$104.67 | LTV:CAC=3.27x
+Cohort Summary: Total CAC=$32,000.00 | 360-Day CM2 Profit=$104,675.00 | Net ROI=227.1%
+
+--- 3. Cart Abandonment Sequence ---
+=== Checkout Funnel Telemetry & Abandonment Recovery Sequence ===
+Funnel Telemetry: Sessions=50,000 -> ATC=6,000 -> IC=3,300 -> Completed=1,485 (2.97% Baseline CVR)
+Abandoned Checkouts: 1,815 Orders ($185,130.00 GMV at risk)
+Recovery Sequence Execution:
+  SMS Cart Ping (1h, urgent reminder): Recovered=58 orders ($5,924.16 GMV) | Cost=$14.52
+  Email Sequence 1 (4h, social proof): Recovered=57 orders ($5,824.19 GMV) | Cost=$5.71
+  Email Sequence 2 (24h, 10% incentive): Recovered=51 orders ($5,201.45 GMV) | Cost=$4.25
+  Dynamic Retargeting DPA (48h): Recovered=46 orders ($4,709.05 GMV) | Cost=$519.38
+Recovery Synthesis: Total Recovered=212 Orders ($21,658.84 GMV) | Spend=$543.86 | Recovery ROAS=39.8x
+Lifted Conversion Rate: 2.97% -> 3.39% (+14.3% relative lift)
+
+--- 4. Media Mix & MER Audit ---
+=== Multi-Channel Media Mix: Platform ROAS vs Blended MER ===
+Total Marketing Spend: $100,000.00
+Actual Shopify/Store Net Revenue: $250,000.00 -> True Blended MER: 2.50x
+Sum of Platform-Claimed Revenue: $320,000.00 -> Phantom Reported ROAS: 3.20x
+Overattribution Inflation Gap: $70,000.00 (Platforms overclaimed actual sales by 28.0%)
+Channel Efficiency Breakdown:
+  Meta Ads (Paid Social): Spend=$45,000.00 | Platform ROAS=3.00x | First-Click ROAS=1.60x
+  Google Shopping (Search): Spend=$30,000.00 | Platform ROAS=4.00x | First-Click ROAS=3.00x
+  TikTok Ads (Top Funnel): Spend=$15,000.00 | Platform ROAS=2.00x | First-Click ROAS=0.80x
+  Affiliate & Influencer: Spend=$10,000.00 | Platform ROAS=3.50x | First-Click ROAS=2.20x
+
+--- 5. Executive E-Commerce Control Tower Synthesis ---
+  Order CM3 Contribution Margin: $3.74 (3.7% net margin)
+  360-Day Cohort LTV:CAC Ratio: 3.27x (Net Cohort ROI: 227.1%)
+  Cart Abandonment Lift: +212 orders ($21,658.84 GMV, CVR lifted to 3.39%)
+  True Blended MER: 2.50x (Spend: $100,000.00)
+Status: E-COMMERCE UNIT ECONOMICS & MEDIA MIX CERTIFIED FOR CAPITAL EFFICIENCY.`,
+        codeNotes: [
+          'Integrates all 4 core growth pillars: order contribution waterfall, cohort LTV, cart recovery, and MER audit.',
+          'Validates day-one order profitability (CM3 = $3.74) alongside 3.27x multi-year cohort LTV:CAC expansion.',
+          'Synthesizes a 2.50x blended MER and +14.3% checkout conversion lift into an executive growth dashboard.'
+        ],
+        tryIt: 'Run the complete growth control tower suite to confirm all four e-commerce financial pillars are operating in harmony.',
+        check: {
+          question: 'What is the ultimate strategic advantage of synchronizing order unit economics, cohort LTV, and blended MER inside an integrated control tower?',
+          options: [
+            'It prevents capital exhaustion by aligning paid advertising spend with true contribution margin profitability and customer cash payback dynamics.',
+            'It automatically waives all credit card processing fees charged by merchant banking networks.',
+            'It allows the enterprise to cease paying manufacturing costs to physical suppliers.',
+            'It guarantees that postal carrier delays will never impact customer delivery satisfaction.'
+          ],
+          answer: 0,
+          why: 'An integrated control tower provides complete visibility across customer acquisition, fulfillment costs, and repeat cohort cash generation, preventing premature scaling and cash burn.',
+          answerIndex: 0,
+          explanation: 'An integrated control tower provides complete visibility across customer acquisition, fulfillment costs, and repeat cohort cash generation, preventing premature scaling and cash burn.'
+        }
+      }
+    ],
+    summary: [
+      'Deconstructed D2C order unit economics into CM1 (Gross Profit $62.00 / 60.8%), CM2 (Post-Fulfillment $41.74 / 40.9%), and CM3 (Net Contribution $3.74 / 3.7%), proving first-order profitability.',
+      'Constructed a 5-interval cohort retention waterfall for 1,000 customers, demonstrating cumulative CM2 expansion to $104.67 per customer and a 3.27x LTV:CAC ratio (227.1% net ROI).',
+      'Simulated a 4-tier checkout abandonment recovery sequence across SMS, automated email, and dynamic social ads, recovering 212 orders ($21,658.84 GMV) at a 39.8x recovery ROAS and lifting store CVR by 14.3%.',
+      'Audited a $100,000 multi-channel media mix across Meta, Google, TikTok, and Affiliates, unmasking a $70,000 overattribution gap between phantom platform ROAS (3.20x) and true blended MER (2.50x).',
+      'Deployed the E-Commerce Growth Control Tower, providing real-time executive visibility across unit profitability, cohort retention, and capital efficiency.'
+    ],
+    projectStep: {
+      title: 'Deploy the D2C E-Commerce Unit Economics & Media Mix Control Tower',
+      steps: [
+        'Calculate CM1, CM2, and CM3 contribution margins across all product categories to verify first-order customer profitability.',
+        'Model multi-period cohort LTV curves using Contribution Margin 2 to establish true CAC payback horizons.',
+        'Configure automated multi-channel checkout abandonment sequences to recover lost shopping carts at high marginal ROAS.',
+        'Audit multi-channel advertising performance using Marketing Efficiency Ratio (MER) to eliminate duplicate platform attribution.'
+      ]
+    }
   }
 ];
-
