@@ -94,3 +94,38 @@ test('B.Com Ops Day 2: TOC Bottleneck, Drum-Buffer-Rope & Kanban Sizing Snippets
   assert.ok(opsLesson2.parts[3].code?.includes('calculate_kanban_cards'));
   assert.ok(opsLesson2.parts[4].code?.includes('MonteCarloLeadTimeForecaster'));
 });
+
+test('B.Com AIT Day 2: Vector Search RAG, Guardrails & Model Risk Governance Snippets Verification', () => {
+  const aitLesson2 = getLongLesson('bcom_ait', 2);
+  assert.ok(aitLesson2, 'bcom_ait Day 2 long lesson must resolve');
+  assert.equal(aitLesson2.day, 2);
+  assert.equal(aitLesson2.parts.length, 5, 'bcom_ait Day 2 must contain exactly 5 parts');
+  assert.ok(aitLesson2.summary.length >= 4, 'bcom_ait Day 2 must contain comprehensive summary');
+  assert.ok(aitLesson2.projectStep, 'bcom_ait Day 2 must have a hands-on project step');
+
+  for (let i = 0; i < aitLesson2.parts.length; i++) {
+    const part = aitLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(aitLesson2.parts[0].code?.includes('retrieve_rag_chunks'));
+  assert.ok(aitLesson2.parts[0].code?.includes('cosine_similarity'));
+  assert.ok(aitLesson2.parts[1].code?.includes('EnterpriseGuardrailEngine'));
+  assert.ok(aitLesson2.parts[2].code?.includes('evaluate_rag_triad'));
+  assert.ok(aitLesson2.parts[3].code?.includes('AiAgentCanaryRouter'));
+  assert.ok(aitLesson2.parts[4].code?.includes('AiRegulatoryComplianceClassifier'));
+});
+
