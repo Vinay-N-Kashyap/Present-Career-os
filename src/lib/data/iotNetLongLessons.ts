@@ -1367,5 +1367,378 @@ print(f"Sensor Delta Subscription: {p5_sub['interaction_status']}")`,
         'Verify a Device Attestation Certificate (DAC) PKI chain and execute timed interaction commands.'
       ]
     }
+  },
+{
+    day: 5,
+    coursePrefix: 'iot_net',
+    title: 'Milestone 1 Capstone: End-to-End Thread Mesh Gateway & Cloud Telemetry Pipeline',
+    parts: [
+      {
+        title: 'Thread Border Router Backbone & NAT64/DNS64 Translation Architecture',
+        say: [
+          'A Thread Border Router (OTBR) acts as the bridge connecting an IEEE 802.15.4 low-power wireless mesh network with external IP-bearing networks such as Ethernet, Wi-Fi, or Cellular backhauls. Within the Thread mesh partition, nodes operate using Unique Local IPv6 Addresses (ULA) under the fd00::/64 prefix, which cannot be routed directly over public Internet infrastructures without stateful translation. The Border Router announces network parameters via ICMPv6 Router Advertisements and disseminates off-mesh routable prefixes into the Thread network using the Network Data TLV mechanism.',
+          'To enable battery-powered Thread sensor leaf nodes to transmit telemetry directly to legacy cloud servers hosting IPv4 endpoints, the Border Router implements NAT64 (RFC 6146) coupled with DNS64 (RFC 6147). When a Thread node performs a DNS query for an IPv4-only cloud domain like mqtt.example.com, the Border Router synthetic DNS64 server embeds the 32-bit IPv4 address into the well-known 64:ff9b::/96 prefix. The node then addresses its UDP packets to this synthetic IPv6 address, and the Border Router NAT64 state engine extracts the lower bits, allocates an ephemeral NAT port, and transmits standard IPv4 packets across its WAN egress interface.',
+          'Modern Thread Border Routers also negotiate bidirectional Multicast DNS (mDNS) and DNS-SD discovery proxies across the border interface. This ensures that IP accessories running on the 802.15.4 mesh can advertise Commissionable Services, Matter endpoints, or CoAP resources to local controllers sitting on Wi-Fi without requiring heavy broadcast packet floods inside the battery-constrained mesh. The boundary enforces strict routing firewalls to block unauthorized ingress packets while transparently forwarding outbound sensor telemetry.'
+        ],
+        example: 'Think of the Thread Border Router as an international customs checkpoint equipped with a real-time translator: local citizens speak Thread mesh ULA, while external world systems speak standard Internet IPv4 and global IPv6, and the router translates both addresses and envelopes on the fly.',
+        code: `def evaluate_border_router_nat64_routing(packets):
+    NAT64_PREFIX = "64:ff9b::"
+    routed = []
+    for pkt in packets:
+        src_ip = pkt["src"]
+        dst_ip = pkt["dst"]
+        proto = pkt["proto"]
+        payload = pkt["payload"]
+        
+        if dst_ip.startswith(NAT64_PREFIX):
+            ipv4_hex = dst_ip.replace(NAT64_PREFIX, "").replace(":", "")
+            octets = [str(int(ipv4_hex[i:i+2], 16)) for i in range(0, len(ipv4_hex), 2)]
+            trans_dst = ".".join(octets)
+            action = "NAT64_TRANSLATED"
+            gateway_egress = "eth0_ipv4"
+        elif dst_ip.startswith("2001:") or dst_ip.startswith("2600:"):
+            trans_dst = dst_ip
+            action = "IPV6_DIRECT_FORWARD"
+            gateway_egress = "eth0_ipv6"
+        else:
+            trans_dst = dst_ip
+            action = "LOCAL_MESH_DROP"
+            gateway_egress = "none"
+            
+        routed.append({
+            "sensor_node": src_ip,
+            "action": action,
+            "egress_target": trans_dst,
+            "interface": gateway_egress,
+            "payload_bytes": len(payload)
+        })
+    return routed
+
+sample_packets = [
+    {"src": "fd00:db8:1::10a", "dst": "64:ff9b::3456:789a", "proto": "UDP", "payload": b"\\x40\\x02\\x12\\x34telemetry"},
+    {"src": "fd00:db8:1::10b", "dst": "2001:4860:4860::8888", "proto": "UDP", "payload": b"\\x40\\x02\\x12\\x35dns_query"},
+    {"src": "fd00:db8:1::10c", "dst": "fd00:db8:2::9999", "proto": "UDP", "payload": b"\\x40\\x02\\x12\\x36internal"}
+]
+
+print("=== THREAD BORDER ROUTER NAT64/DNS64 BACKBONE ===")
+results = evaluate_border_router_nat64_routing(sample_packets)
+for r in results:
+    print(f"Node: {r['sensor_node']} | Action: {r['action']} | Egress: {r['egress_target']} | Iface: {r['interface']} | Bytes: {r['payload_bytes']}")`,
+        output: `=== THREAD BORDER ROUTER NAT64/DNS64 BACKBONE ===
+Node: fd00:db8:1::10a | Action: NAT64_TRANSLATED | Egress: 52.86.120.154 | Iface: eth0_ipv4 | Bytes: 13
+Node: fd00:db8:1::10b | Action: IPV6_DIRECT_FORWARD | Egress: 2001:4860:4860::8888 | Iface: eth0_ipv6 | Bytes: 13
+Node: fd00:db8:1::10c | Action: LOCAL_MESH_DROP | Egress: fd00:db8:2::9999 | Iface: none | Bytes: 12`,
+        codeNotes: [
+          'NAT64_PREFIX identifies synthetic destination addresses generated by upstream DNS64 name resolution.',
+          'The router unpacks trailing hex nibbles into decimal octets representing the target public IPv4 address.',
+          'Local mesh packets lacking external prefixes or routable gateways are dropped or kept within the 802.15.4 partition.'
+        ],
+        tryIt: 'Pass an IPv6 GUA address starting with 2600:: and verify that direct forward mode triggers across the eth0_ipv6 interface.',
+        check: {
+          question: 'What is the primary role of NAT64/DNS64 on an OpenThread Border Router (OTBR)?',
+          options: [
+            'To enable IPv6-only Thread mesh nodes to communicate seamlessly with IPv4-only cloud endpoints and servers',
+            'To double the maximum transmission bandwidth of the IEEE 802.15.4 radio link',
+            'To encrypt Thread link-layer frames using 4096-bit RSA hardware keys',
+            'To eliminate the need for radio antennas on battery-powered edge leaf devices'
+          ],
+          answer: 0,
+          why: 'DNS64 creates synthetic IPv6 addresses containing embedded IPv4 bits, and NAT64 statefully translates the resulting packets to standard IPv4 traffic at the border interface.'
+        }
+      },
+      {
+        title: 'CoAP-to-MQTT Gateway Translation & Semantic Multiplexing',
+        say: [
+          'Resource-constrained Thread sensor nodes communicate using the Constrained Application Protocol (CoAP) over UDP due to its low header overhead and connectionless design. In contrast, cloud IoT platforms like AWS IoT Core, Google Cloud IoT, and Azure IoT Hub primarily ingest telemetry streams via MQTT over TLS running over reliable TCP connections. The edge gateway bridges these disparate networking paradigms through semantic protocol translation.',
+          'The gateway intercepts incoming CoAP Confirmable (CON) PUT or POST packets, unpacks the URI path hierarchy (such as /sensors/env or /sensors/power), and maps the device hardware identifier and resource path into a hierarchical MQTT topic structure. It parses the CoAP binary or serialized payload, packs the readings into a standardized JSON structure with millisecond timestamps, and issues an MQTT PUBLISH packet with Quality of Service level 1 (QoS 1) to guarantee cloud ingestion.',
+          'Once the MQTT broker responds with a PUBACK control packet indicating durable arrival on the cloud message broker, the edge gateway generates a CoAP 2.04 Changed response back over UDP to the originating Thread node. This two-phase delivery guarantee ensures that low-power microcontrollers maintain transactional awareness of telemetry delivery without having to establish memory-heavy TLS/TCP state machines locally.'
+        ],
+        example: 'Think of the CoAP-to-MQTT bridge as a multilingual telegraph station: quick, compact field telegrams arriving by lightweight radio are transcribed into registered courier parcels before being dispatched into the cloud postal system.',
+        code: `import json
+
+def simulate_coap_to_mqtt_translation_bridge(coap_requests):
+    """Translates binary CoAP CON PUT/POST into structured MQTT QoS 1 telemetry publishes."""
+    mqtt_messages = []
+    for req in coap_requests:
+        dev_eui = req["node_id"]
+        uri_path = req["path"]
+        payload_raw = req["payload"]
+        
+        # Map CoAP URI to MQTT topic hierarchy
+        topic = f"telemetry/{dev_eui}/{uri_path.strip('/')}"
+        
+        # Parse CoAP payload (key=val or JSON string)
+        telemetry_data = {}
+        for item in payload_raw.split(","):
+            k, v = item.split("=")
+            telemetry_data[k.strip()] = float(v.strip()) if "." in v else int(v.strip())
+        
+        mqtt_msg = {
+            "topic": topic,
+            "qos": 1,
+            "retain": False,
+            "payload_json": json.dumps(telemetry_data, sort_keys=True),
+            "coap_ack_code": "2.04_CHANGED"
+        }
+        mqtt_messages.append(mqtt_msg)
+    return mqtt_messages
+
+requests = [
+    {"node_id": "00124b0014d2e801", "path": "/sensors/env", "payload": "temp=24.5,hum=58,press=1013"},
+    {"node_id": "00124b0014d2e802", "path": "/sensors/power", "payload": "volt=3.3,curr=14,bat=94"}
+]
+
+print("=== COAP TO MQTT PROTOCOL TRANSLATION BRIDGE ===")
+messages = simulate_coap_to_mqtt_translation_bridge(requests)
+for m in messages:
+    print(f"Topic: {m['topic']} | QoS: {m['qos']} | Payload: {m['payload_json']} | Response: {m['coap_ack_code']}")`,
+        output: `=== COAP TO MQTT PROTOCOL TRANSLATION BRIDGE ===
+Topic: telemetry/00124b0014d2e801/sensors/env | QoS: 1 | Payload: {"hum": 58, "press": 1013, "temp": 24.5} | Response: 2.04_CHANGED
+Topic: telemetry/00124b0014d2e802/sensors/power | QoS: 1 | Payload: {"bat": 94, "curr": 14, "volt": 3.3} | Response: 2.04_CHANGED`,
+        codeNotes: [
+          'Maps CoAP URI paths like /sensors/env into standard MQTT hierarchical topics containing device EUIs.',
+          'Parses key-value telemetry pairs and outputs canonical JSON strings formatted with sorted keys.',
+          'Returns a CoAP 2.04 Changed acknowledgement code to confirm cloud ingestion back to the sensor node.'
+        ],
+        tryIt: 'Add a vibration sensor reading to the payload string and observe the resulting JSON structure and MQTT topic path.',
+        check: {
+          question: 'Why does an IoT gateway translate CoAP UDP to MQTT TCP rather than having edge sensor nodes connect to MQTT directly?',
+          options: [
+            'Constrained microcontrollers lack the RAM and battery budget to sustain persistent TLS/TCP sockets and large keep-alive packets',
+            'MQTT is completely forbidden from running across Wi-Fi or cellular networks',
+            'CoAP does not support any form of payload transmission',
+            'Thread radio mesh layers only permit audio streaming data'
+          ],
+          answer: 0,
+          why: 'CoAP operates over connectionless UDP with minimal header overhead (<10 bytes), whereas MQTT requires TCP handshakes, TLS session negotiation, and recurring keep-alive pings that deplete battery life.'
+        }
+      },
+      {
+        title: 'Resilient Edge Store-and-Forward Buffering & Exponential Backoff',
+        say: [
+          'In mission-critical industrial deployments, WAN connectivity between the edge gateway and cloud platforms is subject to intermittent cellular drops, ISP blackouts, and maintenance outages. A production IoT gateway cannot simply discard sensor readings when the WAN uplink drops; doing so destroys time-series continuity and invalidates predictive maintenance models. Instead, gateways maintain a local persistent store-and-forward buffer.',
+          'When the gateway detects a broken MQTT connection, it diverts incoming sensor telemetry into a local ring buffer or SQLite WAL database. Because local flash memory on an embedded gateway is finite, the buffer enforces strict priority-aware eviction policies. Non-critical periodic telemetry (such as ambient temperature) is evicted first when queue capacity is reached, while high-priority anomalies (such as motor vibration spikes or emergency gas leak alerts) are preserved at all costs.',
+          'Upon WAN link recovery, the gateway initiates exponential backoff with full jitter to avoid overwhelming the cloud broker with synchronized reconnection storms. Once the secure TLS session re-establishes, the gateway drains buffered events in chronological order while throttling throughput to honor upstream API rate limits. Only after receiving broker confirmation are persisted records removed from the local disk queue.'
+        ],
+        example: 'Think of the store-and-forward queue as an emergency flight black box: during severe turbulence when radio communication is cut, every flight reading is safely recorded to local durable tape and broadcasted once contact is restored.',
+        code: `def simulate_edge_store_and_forward_buffer(incoming_events, max_queue_capacity=3):
+    """Simulate edge ring buffer during WAN outage with priority retention and exponential backoff."""
+    buffer = []
+    dropped_events = []
+    wan_online = False
+    dispatched_events = []
+    
+    # Step 1: Accumulate events while WAN offline
+    for ev in incoming_events:
+        if len(buffer) >= max_queue_capacity:
+            # Evict lowest priority event (priority 1 is lower than priority 2)
+            lowest_idx = min(range(len(buffer)), key=lambda i: buffer[i]["priority"])
+            evicted = buffer.pop(lowest_idx)
+            dropped_events.append(evicted["id"])
+        buffer.append(ev)
+        
+    # Step 2: WAN recovers, simulate exponential backoff drain
+    wan_online = True
+    backoff_intervals = []
+    attempt = 0
+    while buffer:
+        wait_sec = 2 ** attempt
+        backoff_intervals.append(wait_sec)
+        event = buffer.pop(0)
+        dispatched_events.append(event["id"])
+        attempt += 1
+        
+    return {
+        "wan_online": wan_online,
+        "retained_and_dispatched": dispatched_events,
+        "evicted_ids": dropped_events,
+        "backoff_intervals": backoff_intervals
+    }
+
+events = [
+    {"id": "ev_01", "priority": 1, "val": 22.1},
+    {"id": "ev_02", "priority": 3, "val": 99.4},  # critical alert
+    {"id": "ev_03", "priority": 1, "val": 22.3},
+    {"id": "ev_04", "priority": 2, "val": 45.0}   # exceeds capacity of 3
+]
+
+print("=== RESILIENT STORE-AND-FORWARD BUFFER & BACKOFF ===")
+res = simulate_edge_store_and_forward_buffer(events, max_queue_capacity=3)
+print(f"WAN Online: {res['wan_online']}")
+print(f"Dispatched: {res['retained_and_dispatched']}")
+print(f"Evicted on Overflow: {res['evicted_ids']}")
+print(f"Backoff Intervals (s): {res['backoff_intervals']}")`,
+        output: `=== RESILIENT STORE-AND-FORWARD BUFFER & BACKOFF ===
+WAN Online: True
+Dispatched: ['ev_02', 'ev_03', 'ev_04']
+Evicted on Overflow: ['ev_01']
+Backoff Intervals (s): [1, 2, 4]`,
+        codeNotes: [
+          'Evaluates capacity constraints and evicts lower-priority events to preserve critical sensor alerts.',
+          'Simulates exponential backoff intervals (2^attempt) to prevent reconnection throttling storms.',
+          'Drains queued messages in order upon WAN recovery, verifying zero data loss for critical alerts.'
+        ],
+        tryIt: 'Increase max_queue_capacity to 4 and confirm that no events are evicted from the queue.',
+        check: {
+          question: 'What is the danger of reconnecting an edge gateway fleet immediately to the cloud broker without exponential backoff jitter after an outage?',
+          options: [
+            'A thundering herd problem occurs, causing millions of simultaneous TLS handshakes that crash the cloud broker',
+            'The sensor batteries will physically overheat and burst',
+            'The gateway flash memory is automatically formatted',
+            'The Thread mesh channel frequencies will shift into cellular bands'
+          ],
+          answer: 0,
+          why: 'When thousands of disconnected gateways recover simultaneously and retry connections without randomized backoff, the flood of TLS handshakes overwhelms cloud ingest load balancers.'
+        }
+      },
+      {
+        title: 'End-to-End Telemetry Payload Compression & CBOR Serialization',
+        say: [
+          'On constrained wireless networks operating under IEEE 802.15.4, the maximum physical layer packet size is 127 bytes. After subtracting link-layer security headers, 6LoWPAN mesh routing encapsulation, and UDP/CoAP headers, the remaining application payload budget for a single unfragmented frame is typically under 70 to 80 bytes. Transmitting telemetry encoded as standard text JSON frequently exceeds this ceiling and triggers costly packet fragmentation.',
+          'Every 6LoWPAN fragment incurs radio transmit airtime, doubles collision probability, and increases power consumption across all intermediate routing hops. The Concise Binary Object Representation (CBOR, RFC 8949) addresses this by providing a binary data format that mirrors the JSON data model (maps, arrays, integers, floats, strings) while compressing field keys and numbers into compact type-length-value byte tags.',
+          'By using short integer identifiers for common telemetry metric keys (such as 1 for temperature and 2 for relative humidity) and compact IEEE 754 half-precision (16-bit) floating point values, CBOR reduces payload footprint by 60% to 75% compared to raw JSON strings. This guarantees that complex multi-sensor readings fit entirely within a single physical 802.15.4 radio packet, maximizing battery life and network resilience.'
+        ],
+        example: 'Think of CBOR versus JSON like packing an expedition backpack: JSON brings large printed cardboard boxes with full labels, while CBOR vacuum-packs every item in labeled numbered pouches that take up a third of the volume.',
+        code: `import json
+
+def evaluate_cbor_telemetry_compression(sensor_readings):
+    """Quantify payload serialization footprint: JSON vs Compact Tagged Binary (CBOR-style)."""
+    comparison = []
+    for r in sensor_readings:
+        json_str = json.dumps(r, separators=(",", ":"))
+        json_bytes = json_str.encode("utf-8")
+        
+        # Simulated CBOR encoding: 1 byte map header + 1 byte key-id + value bytes
+        # Compact key dictionary: id=1, temp=2, hum=3, ts=4
+        cbor_sim_size = 1 + len(r) * 3 + 4  # fixed compact representation
+        
+        savings_pct = round(((len(json_bytes) - cbor_sim_size) / len(json_bytes)) * 100, 1)
+        fits_single_6lowpan = cbor_sim_size <= 80  # 80 bytes fits inside unfragmented 6LoWPAN frame
+        
+        comparison.append({
+            "node": r.get("node", "leaf"),
+            "json_bytes": len(json_bytes),
+            "cbor_bytes": cbor_sim_size,
+            "savings_pct": savings_pct,
+            "unfragmented_frame": fits_single_6lowpan
+        })
+    return comparison
+
+readings = [
+    {"node": "01", "temp": 24.5, "hum": 62, "ts": 1711920001},
+    {"node": "02", "temp": 81.2, "hum": 15, "ts": 1711920002, "press": 1012, "battery_pct": 89}
+]
+
+print("=== CBOR VS JSON TELEMETRY SERIALIZATION EFFICIENCY ===")
+stats = evaluate_cbor_telemetry_compression(readings)
+for s in stats:
+    print(f"Node {s['node']} | JSON: {s['json_bytes']}B | CBOR: {s['cbor_bytes']}B | Savings: {s['savings_pct']}% | Single Frame: {s['unfragmented_frame']}")`,
+        output: `=== CBOR VS JSON TELEMETRY SERIALIZATION EFFICIENCY ===
+Node 01 | JSON: 50B | CBOR: 17B | Savings: 66.0% | Single Frame: True
+Node 02 | JSON: 80B | CBOR: 23B | Savings: 71.2% | Single Frame: True`,
+        codeNotes: [
+          'Measures UTF-8 encoded minified JSON length against binary CBOR dictionary mappings.',
+          'Demonstrates greater than 65% byte-level savings over text-based representation.',
+          'Confirms that compressed binary payloads remain well within the 80-byte 6LoWPAN unfragmented frame limit.'
+        ],
+        tryIt: 'Add extra telemetry fields and observe how CBOR maintains high compression efficiency compared to growing JSON keys.',
+        check: {
+          question: 'Why is avoiding 6LoWPAN packet fragmentation so critical for low-power wireless mesh nodes?',
+          options: [
+            'Packet fragmentation doubles radio transmission time, multiplies channel collision rates, and consumes significantly more battery energy',
+            'Fragmented packets can only travel over optical fiber lines',
+            'Fragmentation causes the microcontroller to shut down permanently',
+            '6LoWPAN routers completely refuse to route fragmented IPv6 packets'
+          ],
+          answer: 0,
+          why: 'If any single fragment of an IPv6 packet is lost over the air, the entire datagram must be retransmitted, causing severe battery drain and radio congestion.'
+        }
+      },
+      {
+        title: 'Capstone Verification: End-to-End Mesh Sensing to Cloud Pub/Sub Pipeline Validation',
+        say: [
+          'The ultimate milestone for an embedded IoT network engineer is proving end-to-end telemetry fidelity across the entire communication stack: from an 802.15.4 Thread sensor leaf node, through multi-hop mesh routers, across an OpenThread Border Router, translated via CoAP-to-MQTT bridge, and ingested into a cloud pub/sub messaging engine.',
+          'Verification requires tracking packet sequence numbers, calculating accumulated transit latency across routing hops, monitoring gateway translation overhead, and asserting zero unhandled packet loss. The test pipeline validates that each sensor reading includes valid cryptographic authentication tokens, matches approved CoAP methods, and reaches the cloud telemetry sink well within the end-to-end Service Level Agreement (SLA) latency threshold of 100 milliseconds.',
+          'Upon completing this milestone, your edge-to-cloud architecture provides the hardened networking backbone required for production smart buildings, automated industrial telemetry, and connected healthcare monitoring. It proves mastery over link budgets, mesh routing protocols, boundary translations, resilient storage, and binary serialization.'
+        ],
+        example: 'Think of this capstone verification as the full flight test of a space capsule: every subsystem—attitude control, life support, telemetry radio, and ground station links—is verified in unified operation before flight certification.',
+        code: `def verify_end_to_end_mesh_telemetry_pipeline(mesh_traffic):
+    """Verify end-to-end telemetry pipeline from 802.15.4 Thread nodes to Cloud Pub/Sub."""
+    delivered_to_cloud = 0
+    total_packets = len(mesh_traffic)
+    total_latency_ms = 0
+    
+    for pkt in mesh_traffic:
+        # 1. Verification of 6LoWPAN Header compression and source
+        has_valid_mesh_prefix = pkt["src_ipv6"].startswith("fd00:")
+        # 2. CoAP token and method
+        is_valid_coap = pkt["method"] in ["POST", "PUT"]
+        # 3. Gateway translation
+        cloud_topic = f"cloud/mesh/{pkt['sensor_type']}"
+        # 4. Latency budget check
+        latency = pkt["hop_count"] * 12 + pkt["gw_processing_ms"]
+        total_latency_ms += latency
+        
+        if has_valid_mesh_prefix and is_valid_coap and latency < 100:
+            delivered_to_cloud += 1
+            
+    delivery_rate = round((delivered_to_cloud / total_packets) * 100, 1)
+    avg_latency = round(total_latency_ms / total_packets, 1)
+    
+    return {
+        "total_packets": total_packets,
+        "delivered": delivered_to_cloud,
+        "delivery_rate_pct": delivery_rate,
+        "avg_latency_ms": avg_latency,
+        "status": "PIPELINE_VERIFIED" if delivery_rate == 100.0 else "PIPELINE_DEGRADED"
+    }
+
+traffic = [
+    {"src_ipv6": "fd00:1::01", "sensor_type": "temp", "method": "POST", "hop_count": 2, "gw_processing_ms": 14},
+    {"src_ipv6": "fd00:1::02", "sensor_type": "vibe", "method": "PUT", "hop_count": 3, "gw_processing_ms": 18},
+    {"src_ipv6": "fd00:1::03", "sensor_type": "flow", "method": "POST", "hop_count": 1, "gw_processing_ms": 11}
+]
+
+print("=== CAPSTONE: END-TO-END MESH TELEMETRY PIPELINE ===")
+res = verify_end_to_end_mesh_telemetry_pipeline(traffic)
+print(f"Total: {res['total_packets']} | Delivered: {res['delivered']} | Rate: {res['delivery_rate_pct']}% | Latency: {res['avg_latency_ms']}ms | Status: {res['status']}")`,
+        output: `=== CAPSTONE: END-TO-END MESH TELEMETRY PIPELINE ===
+Total: 3 | Delivered: 3 | Rate: 100.0% | Latency: 38.3ms | Status: PIPELINE_VERIFIED`,
+        codeNotes: [
+          'Validates IPv6 ULA mesh prefix and CoAP transaction methods for multi-hop traffic.',
+          'Calculates cumulative hop transit time and gateway translation overhead against an SLA threshold.',
+          'Demonstrates 100% packet delivery rate and healthy average latency across all leaf nodes.'
+        ],
+        tryIt: 'Increase hop_count on node 2 to 10 and verify how excessive mesh routing latency impacts SLA qualification.',
+        check: {
+          question: 'In an end-to-end Thread-to-Cloud IoT pipeline, what metric is most critical for verifying real-time predictive safety systems?',
+          options: [
+            'End-to-end transit latency remaining bounded under the SLA threshold with zero unacknowledged packet loss',
+            'The color of the gateway external chassis casing',
+            'The number of characters printed in terminal debug log messages',
+            'The total number of CSS style sheets used on the web dashboard'
+          ],
+          answer: 0,
+          why: 'Predictive safety and industrial control loops require deterministic packet delivery within strict latency bounds to prevent mechanical damage or hazard escalations.'
+        }
+      }
+    ],
+    summary: [
+      'OpenThread Border Routers implement NAT64 and DNS64 to translate ULA mesh IPv6 packets into routable IPv4 Internet datagrams.',
+      'The CoAP-to-MQTT edge bridge translates lightweight binary CoAP requests into structured MQTT QoS 1 cloud publications with acknowledgment feedback.',
+      'Edge store-and-forward buffering with priority eviction protects critical sensor telemetry from loss during intermittent WAN outages.',
+      'CBOR binary serialization slashes payload footprint by over 65%, keeping multi-metric telemetry inside single unfragmented 6LoWPAN frames.',
+      'The Capstone pipeline achieves deterministic end-to-end telemetry verification with validated transit latencies and 100% delivery reliability.'
+    ],
+    projectStep: {
+      title: 'Deploy and Verify an End-to-End Thread Mesh Border Router & Telemetry Pipeline',
+      steps: [
+        'Configure an OpenThread Border Router backbone with NAT64 prefix routing and external egress interfaces.',
+        'Implement a CoAP-to-MQTT protocol translation bridge with topic generation and CoAP response acknowledgements.',
+        'Construct a resilient store-and-forward local ring buffer with priority-based eviction and exponential backoff retry.',
+        'Benchmark CBOR binary serialization against JSON to verify unfragmented 6LoWPAN transmission.',
+        'Execute end-to-end integration tests measuring packet delivery rate and transit latency across simulated mesh hops.'
+      ]
+    }
   }
 ];

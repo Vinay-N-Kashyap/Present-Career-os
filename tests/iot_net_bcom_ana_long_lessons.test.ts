@@ -32,6 +32,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.equal(netLesson4.day, 4);
   assert.equal(netLesson4.parts.length, 5, 'iot_net Day 4 must contain exactly 5 parts');
 
+  const netLesson5 = getLongLesson('iot_net', 5);
+  assert.ok(netLesson5, 'iot_net Day 5 long lesson must resolve');
+  assert.equal(netLesson5.day, 5);
+  assert.equal(netLesson5.parts.length, 5, 'iot_net Day 5 must contain exactly 5 parts');
+
   // 2. bcom_ana
   const anaLesson = getLongLesson('bcom_ana', 1);
   assert.ok(anaLesson, 'bcom_ana Day 1 long lesson must resolve');
@@ -241,6 +246,48 @@ test('IoT Net Day 4: Matter Protocol, SPAKE2+, Multi-Admin & Interaction Model V
   assert.ok(netLesson4.parts[3].output?.includes('MATTER DEVICE ATTESTATION CERTIFICATE (DAC) VERIFICATION'));
   assert.ok(netLesson4.parts[4].code?.includes('simulate_matter_interaction_model_engine'));
   assert.ok(netLesson4.parts[4].output?.includes('MATTER INTERACTION MODEL TIMED ACTIONS & SUBSCRIPTIONS'));
+});
+
+test('IoT Net Day 5 Capstone: Border Router, CoAP-MQTT, Resilient Buffer & Telemetry Pipeline Verification', () => {
+  const netLesson5 = getLongLesson('iot_net', 5);
+  assert.ok(netLesson5, 'iot_net Day 5 must resolve');
+  assert.equal(netLesson5.day, 5);
+  assert.equal(netLesson5.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(netLesson5);
+  const totalMin = estimateLessonMinutes(netLesson5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < netLesson5.parts.length; i++) {
+    const part = netLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(netLesson5.parts[0].code?.includes('evaluate_border_router_nat64_routing'));
+  assert.ok(netLesson5.parts[0].output?.includes('THREAD BORDER ROUTER NAT64/DNS64 BACKBONE'));
+  assert.ok(netLesson5.parts[1].code?.includes('simulate_coap_to_mqtt_translation_bridge'));
+  assert.ok(netLesson5.parts[1].output?.includes('COAP TO MQTT PROTOCOL TRANSLATION BRIDGE'));
+  assert.ok(netLesson5.parts[2].code?.includes('simulate_edge_store_and_forward_buffer'));
+  assert.ok(netLesson5.parts[2].output?.includes('RESILIENT STORE-AND-FORWARD BUFFER & BACKOFF'));
+  assert.ok(netLesson5.parts[3].code?.includes('evaluate_cbor_telemetry_compression'));
+  assert.ok(netLesson5.parts[3].output?.includes('CBOR VS JSON TELEMETRY SERIALIZATION EFFICIENCY'));
+  assert.ok(netLesson5.parts[4].code?.includes('verify_end_to_end_mesh_telemetry_pipeline'));
+  assert.ok(netLesson5.parts[4].output?.includes('CAPSTONE: END-TO-END MESH TELEMETRY PIPELINE'));
 });
 
 
