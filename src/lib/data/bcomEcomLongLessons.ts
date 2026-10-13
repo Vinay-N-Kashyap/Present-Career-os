@@ -1649,5 +1649,424 @@ Status: MARKETPLACE SUPPLY CHAIN & INVENTORY PRODUCTIVITY CERTIFIED RESILIENT.`,
         'Engineer cross-border DDP landed cost schedules incorporating CIF valuation, HS tariffs, and VAT compliance.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ecom',
+    day: 5,
+    title: 'Milestone 1 Capstone: Global E-Commerce Architecture, Omnichannel Retail & Chief Commerce Officer Accreditation',
+    overview: 'Deliver the executive capstone defense of digital retail strategy and commerce architecture. You will orchestrate a multi-channel $15.0M GMV distribution flywheel across Shopify Plus, Amazon FBA, TikTok Shop, and wholesale B2B, optimize a 3-node distributed 3PL fulfillment network delivering 98.5% two-day ground coverage, consolidate an enterprise omnichannel P&L yielding $1.2M in operating profit, implement resilient payment gateway routing maintaining a 0.42% dispute ratio, and deliver the final boardroom presentation to earn Chief Commerce Officer & Senior E-Commerce Strategist (CCO-SES) accreditation.',
+    parts: [
+      {
+        title: 'Omnichannel GMV Flywheel & Multi-Storefront Traffic Orchestration',
+        say: [
+          'Welcome to the pinnacle of digital commerce mastery: the Milestone 1 Capstone of B.Com E-Commerce. In earlier eras of internet retail, a brand could survive by operating exclusively on a single sales channel, whether an independent direct-to-consumer storefront or an Amazon seller account. Today, single-channel retail is an existential vulnerability: privacy tracking restrictions make direct customer acquisition unpredictable, while platform algorithm shifts and fee increases can eradicate marketplace margins overnight. The preeminent modern digital enterprise operates as a diversified omnichannel flywheel, harmonizing direct web, marketplace giants, social commerce, and wholesale distribution into a resilient commerce engine.',
+          'An institutional-grade omnichannel flywheel distributes merchandise across distinct customer intent environments while centralizing catalog management and pricing governance. Direct-to-consumer (DTC) flagship stores built on platforms like Shopify Plus capture loyal repeat buyers, preserve full customer first-party data, and command maximum gross margin with negligible platform commissions (2.9% gateway fees). Simultaneously, Amazon 3P Marketplace (FBA) captures high-intent Prime shoppers who refuse to purchase off-platform, operating at higher platform take rates (15% referral) but delivering massive incremental search volume. Emerging social channels like TikTok Shop monetize impulsive content discovery, while wholesale B2B portals supply physical boutique partners with bulk orders at low customer acquisition cost.',
+          'Managing this multi-channel matrix requires strict inventory allocation rules and pricing parity controls to avoid channel conflict or merchant suspensions. If a brand offers deep unauthorized discounts on direct channels, marketplace algorithms immediately strip the Buy Box; conversely, if marketplace pricing undercuts the direct storefront, direct customer loyalty is compromised. In this capstone opening, we evaluate an omnichannel distribution engine that models fifteen million dollars in annual Gross Merchandise Value (GMV) across four channels, balancing individual take rates and conversion rates into a sustainable blended 7.09% platform fee. Mastering multi-storefront orchestration establishes the foundation for enterprise commerce scale.'
+        ],
+        example: 'A high-growth wellness brand scales to $15.0M annual GMV. Direct Shopify Plus sales generate $7.5M (50% of GMV) with a 3.4% CVR and $217,500 in processing fees; Amazon FBA captures $4.8M (32% of GMV) with an 11.5% CVR and $720,000 in referral fees; TikTok Shop generates $1.5M (10% of GMV) with a 4.8% CVR; and wholesale B2B portals produce $1.2M (8% of GMV) with an 18.0% CVR. The blended platform take rate is 7.09% ($1,063,500 total fees), eliminating single-platform dependency.',
+        code: `def model_omnichannel_gmv_flywheel():
+    print("=== Omnichannel GMV Flywheel & Multi-Channel Distribution ===")
+    channels = [
+        {"channel": "DTC Flagship (Shopify Plus)", "gmv": 7_500_000.0, "take_rate_or_fee": 0.029, "cvr": 0.034},
+        {"channel": "Amazon 3P Marketplace (FBA)", "gmv": 4_800_000.0, "take_rate_or_fee": 0.150, "cvr": 0.115},
+        {"channel": "TikTok Shop & Social Commerce", "gmv": 1_500_000.0, "take_rate_or_fee": 0.060, "cvr": 0.048},
+        {"channel": "Wholesale B2B Portal (Faire/Direct)", "gmv": 1_200_000.0, "take_rate_or_fee": 0.030, "cvr": 0.180}
+    ]
+    
+    total_gmv = sum(c["gmv"] for c in channels)
+    print(f"Total Omnichannel GMV: " + "$" + f"{total_gmv:,.2f}")
+    print("Channel Breakdown:")
+    for c in channels:
+        share = (c["gmv"] / total_gmv) * 100.0
+        fees = c["gmv"] * c["take_rate_or_fee"]
+        net_proceeds = c["gmv"] - fees
+        print(f"  {c['channel']}: GMV=" + "$" + f"{c['gmv']:,.2f} ({share:.1f}%) | Platform Fees=" + "$" + f"{fees:,.2f} | Net Proceeds=" + "$" + f"{net_proceeds:,.2f} | CVR={c['cvr']*100:.1f}%")
+        
+    blended_platform_fee = sum(c["gmv"] * c["take_rate_or_fee"] for c in channels)
+    blended_take_rate_pct = (blended_platform_fee / total_gmv) * 100.0
+    print(f"Blended Channel Take Rate: {blended_take_rate_pct:.2f}% (Total Fees: " + "$" + f"{blended_platform_fee:,.2f})")
+    print("Status: MULTI-CHANNEL DISTRIBUTION ENGINE VALIDATED WITH ZERO SINGLE-PLATFORM DEPENDENCY.")
+    return {
+        "total_gmv": total_gmv,
+        "blended_take_rate_pct": blended_take_rate_pct,
+        "channels": len(channels)
+    }
+
+model_omnichannel_gmv_flywheel()`,
+        output: `=== Omnichannel GMV Flywheel & Multi-Channel Distribution ===
+Total Omnichannel GMV: $15,000,000.00
+Channel Breakdown:
+  DTC Flagship (Shopify Plus): GMV=$7,500,000.00 (50.0%) | Platform Fees=$217,500.00 | Net Proceeds=$7,282,500.00 | CVR=3.4%
+  Amazon 3P Marketplace (FBA): GMV=$4,800,000.00 (32.0%) | Platform Fees=$720,000.00 | Net Proceeds=$4,080,000.00 | CVR=11.5%
+  TikTok Shop & Social Commerce: GMV=$1,500,000.00 (10.0%) | Platform Fees=$90,000.00 | Net Proceeds=$1,410,000.00 | CVR=4.8%
+  Wholesale B2B Portal (Faire/Direct): GMV=$1,200,000.00 (8.0%) | Platform Fees=$36,000.00 | Net Proceeds=$1,164,000.00 | CVR=18.0%
+Blended Channel Take Rate: 7.09% (Total Fees: $1,063,500.00)
+Status: MULTI-CHANNEL DISTRIBUTION ENGINE VALIDATED WITH ZERO SINGLE-PLATFORM DEPENDENCY.`,
+        codeNotes: [
+          'Models a $15.0M omnichannel GMV distribution across DTC Shopify (50%), Amazon FBA (32%), TikTok Shop (10%), and B2B (8%).',
+          'Calculates channel-specific platform fees ($1,063,500 total) to derive a blended take rate of 7.09%.',
+          'Highlights diverse conversion rates from 3.4% on direct web to 11.5% on Amazon and 18.0% on wholesale portals.'
+        ],
+        tryIt: 'Shift $2,000,000 in GMV from Amazon FBA to DTC Shopify Plus to examine how direct brand ownership expands net proceeds.',
+        check: {
+          question: 'What is the primary strategic rationale for building a multi-channel e-commerce flywheel rather than relying solely on Amazon or Shopify?',
+          options: [
+            'It insulates the enterprise against platform fee increases, account suspensions, and ad auction volatility while accessing diverse consumer intent pools.',
+            'It automatically exempts the business from state sales tax nexus obligations.',
+            'It allows the enterprise to cease paying manufacturing costs to physical suppliers.',
+            'It eliminates all parcel packaging and shipping expenses across the supply chain.'
+          ],
+          answer: 0,
+          why: 'Diversifying across direct web, marketplaces, social commerce, and wholesale mitigates single-platform de-platforming risk and lowers customer acquisition vulnerability.',
+          answerIndex: 0,
+          explanation: 'Diversifying across direct web, marketplaces, social commerce, and wholesale mitigates single-platform de-platforming risk and lowers customer acquisition vulnerability.'
+        }
+      },
+      {
+        title: 'Unified Inventory Pooling, Distributed 3PL Nodes & Regional Shipping SLAs',
+        say: [
+          'Fulfilling one hundred and fifty thousand annual orders across national consumer markets requires replacing single-warehouse shipping with an optimized multi-node distributed fulfillment network. When a brand ships all parcels from a single central warehouse (for instance, located on the East Coast), packages bound for West Coast consumers traverse postal shipping zones seven and eight, incurring peak cross-country carrier rates (often exceeding eleven to twelve dollars per package) and sluggish four-to-six-day transit times. In modern retail, slow delivery degrades customer satisfaction, elevates cart abandonment, and forfeits marketplace delivery badges.',
+          'A distributed 3PL network strategically positions inventory across multiple regional fulfillment nodes to compress postal transit zones and accelerate ground delivery speeds. By maintaining inventory across three strategically located fulfillment centers—such as an East Coast hub in Pennsylvania, a West Coast hub in Nevada, and a Midwest hub in Ohio—orders are dynamically routed to the facility closest to the recipient. This zone-skipping architecture slashes average shipping transit times to under two days while utilizing standard ground shipping rates rather than exorbitant air express freight.',
+          'Furthermore, multi-node order management relies on algorithmic inventory pooling to prevent stock imbalances. While maintaining three facilities increases safety stock slightly under the square root law of inventory centralization, the massive freight savings from zone-skipping far outweigh incremental inventory carrying costs. In this section, we analyze an automated network routing simulator that processes 150,000 annual shipments across a three-node fulfillment network, generating $536,400 in annual parcel freight savings while achieving 98.5% two-day ground coverage at an average transit speed of 1.81 days. Mastering distributed logistics provides decisive operational leverage.'
+        ],
+        example: 'A retail brand ships 150,000 packages annually. Fulfilling entirely from a single warehouse costs $11.80 per package ($1,770,000 total) with 4.5-day transit. Distributing fulfillment across Allentown (42% share, $8.20 cost), Reno (33% share, $8.50 cost), and Columbus (25% share, $7.90 cost) lowers the weighted average freight cost to $8.22 ($1,233,600 total), unlocking $536,400 in annual freight savings and achieving 98.5% 2-day ground delivery.',
+        code: `def optimize_distributed_3pl_nodes_and_shipping():
+    print("=== Distributed 3PL Nodes & Regional Shipping SLA Optimization ===")
+    total_annual_orders = 150_000
+    
+    nodes = [
+        {"node": "East Coast Hub (Allentown, PA)", "order_share": 0.42, "avg_shipping_cost": 8.20, "avg_transit_days": 1.8},
+        {"node": "West Coast Hub (Reno, NV)", "order_share": 0.33, "avg_shipping_cost": 8.50, "avg_transit_days": 1.9},
+        {"node": "Midwest Hub (Columbus, OH)", "order_share": 0.25, "avg_shipping_cost": 7.90, "avg_transit_days": 1.7}
+    ]
+    
+    single_warehouse_shipping_cost = 11.80 # Cross-country zone 7/8 shipping
+    
+    total_distributed_shipping_cost = 0.0
+    weighted_transit_days = 0.0
+    print("Distributed 3PL Fulfillment Network:")
+    for n in nodes:
+        node_orders = total_annual_orders * n["order_share"]
+        node_cost = node_orders * n["avg_shipping_cost"]
+        total_distributed_shipping_cost += node_cost
+        weighted_transit_days += n["avg_transit_days"] * n["order_share"]
+        print(f"  {n['node']}: Orders={node_orders:,.0f} ({n['order_share']*100:.0f}%) | Avg Cost=" + "$" + f"{n['avg_shipping_cost']:.2f} | Transit={n['avg_transit_days']:.1f} days")
+        
+    single_node_total_cost = total_annual_orders * single_warehouse_shipping_cost
+    annual_freight_savings = single_node_total_cost - total_distributed_shipping_cost
+    two_day_coverage_pct = 98.5
+    
+    print(f"Network Summary: Annual Orders={total_annual_orders:,}")
+    print(f"  Single-Hub Freight Cost: " + "$" + f"{single_node_total_cost:,.2f} (" + "$" + f"11.80 / order)")
+    print(f"  Distributed 3-Node Freight Cost: " + "$" + f"{total_distributed_shipping_cost:,.2f} (" + "$" + f"{total_distributed_shipping_cost/total_annual_orders:.2f} / order)")
+    print(f"  Annual Zone-Skipping Freight Savings: " + "$" + f"{annual_freight_savings:,.2f}")
+    print(f"  Average Transit Speed: {weighted_transit_days:.2f} Days | 2-Day Ground Coverage: {two_day_coverage_pct:.1f}%")
+    return {
+        "annual_savings": annual_freight_savings,
+        "weighted_transit_days": weighted_transit_days,
+        "coverage_pct": two_day_coverage_pct
+    }
+
+optimize_distributed_3pl_nodes_and_shipping()`,
+        output: `=== Distributed 3PL Nodes & Regional Shipping SLA Optimization ===
+Distributed 3PL Fulfillment Network:
+  East Coast Hub (Allentown, PA): Orders=63,000 (42%) | Avg Cost=$8.20 | Transit=1.8 days
+  West Coast Hub (Reno, NV): Orders=49,500 (33%) | Avg Cost=$8.50 | Transit=1.9 days
+  Midwest Hub (Columbus, OH): Orders=37,500 (25%) | Avg Cost=$7.90 | Transit=1.7 days
+Network Summary: Annual Orders=150,000
+  Single-Hub Freight Cost: $1,770,000.00 ($11.80 / order)
+  Distributed 3-Node Freight Cost: $1,233,600.00 ($8.22 / order)
+  Annual Zone-Skipping Freight Savings: $536,400.00
+  Average Transit Speed: 1.81 Days | 2-Day Ground Coverage: 98.5%`,
+        codeNotes: [
+          'Simulates 150,000 annual parcel shipments across a 3-node distributed fulfillment network.',
+          'Compares single-hub shipping ($1,770,000 / $11.80 avg) against 3-node distributed routing ($1,233,600 / $8.22 avg).',
+          'Unlocks $536,400 in annual freight savings while delivering 98.5% 2-day domestic ground delivery coverage.'
+        ],
+        tryIt: 'Adjust the West Coast hub order share to 50% to simulate a regional surge in Pacific demand and recalculate freight costs.',
+        check: {
+          question: 'How does a distributed 3PL node fulfillment network generate hundreds of thousands of dollars in annual parcel shipping savings?',
+          options: [
+            'By fulfilling orders from regional nodes closest to end consumers, skipping high-cost cross-country postal zones (Zones 7-8) and utilizing inexpensive short-haul ground transit.',
+            'By forcing customer recipients to drive to the central sorting terminal to pick up their orders.',
+            'By replacing commercial cardboard parcel boxes with reused shopping bags.',
+            'By transferring all shipping costs directly to municipal city governments.'
+          ],
+          answer: 0,
+          why: 'Zone-skipping routes parcels through local postal zones (Zones 2-3) rather than cross-country long-haul zones (Zones 7-8), dramatically lowering carrier parcel rates while accelerating transit.',
+          answerIndex: 0,
+          explanation: 'Zone-skipping routes parcels through local postal zones (Zones 2-3) rather than cross-country long-haul zones (Zones 7-8), dramatically lowering carrier parcel rates while accelerating transit.'
+        }
+      },
+      {
+        title: 'Omnichannel P&L: Contribution Margin Waterfall & Fixed Opex Absorption',
+        say: [
+          'Scaling an omnichannel retail enterprise to fifteen million dollars in gross merchandise value requires rigorous full-income-statement management. Too many e-commerce operators fixate exclusively on top-line GMV or initial ad return (ROAS), neglecting the structural layers of variable and fixed operating expenditure that determine true corporate solvency. In this section, we construct the consolidated enterprise P&L waterfall, tracking how gross transaction volume bridges down to bottom-line Operating Profit (EBIT) across four transparent contribution stages.',
+          'The waterfall begins by bridging Gross GMV ($15.0M) to Net Revenue ($13.2M) through promotional discounts ($1.2M) and return allowances ($600k). Next, landed product COGS ($4.6M) is deducted to yield Contribution Margin 1 (CM1) of $8.6M (65.2% margin). CM2 isolates post-fulfillment economics by deducting outbound freight ($1.23M), warehouse pick/pack labor ($675k), and marketplace commissions ($890k), leaving $5.80M in post-fulfillment profit (43.9% margin). This proves that the core fulfillment engine operates with robust operational discipline.',
+          'Customer acquisition and brand advertising are factored in CM3: deducting paid social ad spend ($2.8M) and creative agency fees ($400k) leaves $2.60M in net contribution profit (19.7% margin). Finally, fixed corporate overhead—headcount executive salaries ($950k), SaaS software infrastructure ($300k), and legal/administrative expenses ($150k)—totals $1.40M. Absorbing these fixed expenses delivers an exceptional $1,201,250 in operating profit (9.1% Net Operating Margin). In this section, we inspect the full multi-tier P&L model, verifying that top-line volume converts reliably into corporate earnings.'
+        ],
+        example: 'A consolidated $15.0M GMV brand bridges to $13.2M Net Revenue after $1.2M discounts and $600k returns. Deducting $4.6M COGS leaves $8.6M CM1 (65.2%). Subtracting $2.8M fulfillment and marketplace fees yields $5.80M CM2 (43.9%). Factoring $3.2M paid marketing leaves $2.60M CM3 (19.7%). After absorbing $1.40M in corporate salaries, SaaS, and admin, the brand generates $1,201,250 in Operating Profit (9.1% EBIT margin).',
+        code: `def consolidate_omnichannel_ecommerce_pl():
+    print("=== Consolidated Omnichannel E-Commerce P&L Waterfall ===")
+    gross_gmv = 15_000_000.0
+    promotions_discounts = 1_200_000.0
+    returns_refunds = 600_000.0
+    net_revenue = gross_gmv - promotions_discounts - returns_refunds
+    
+    cogs_landed = 4_600_000.0
+    cm1_gross_profit = net_revenue - cogs_landed
+    cm1_margin_pct = (cm1_gross_profit / net_revenue) * 100.0
+    
+    outbound_shipping = 1_233_750.0
+    warehouse_pick_pack = 675_000.0
+    marketplace_platform_fees = 890_000.0
+    total_fulfillment_and_fees = outbound_shipping + warehouse_pick_pack + marketplace_platform_fees
+    cm2_post_fulfillment = cm1_gross_profit - total_fulfillment_and_fees
+    cm2_margin_pct = (cm2_post_fulfillment / net_revenue) * 100.0
+    
+    paid_media_advertising = 2_800_000.0
+    marketing_agency_creative = 400_000.0
+    total_customer_acquisition = paid_media_advertising + marketing_agency_creative
+    cm3_net_contribution = cm2_post_fulfillment - total_customer_acquisition
+    cm3_margin_pct = (cm3_net_contribution / net_revenue) * 100.0
+    
+    fixed_opex_salaries = 950_000.0
+    saas_software_infra = 300_000.0
+    general_administrative = 150_000.0
+    total_fixed_opex = fixed_opex_salaries + saas_software_infra + general_administrative
+    
+    operating_profit_ebit = cm3_net_contribution - total_fixed_opex
+    operating_margin_pct = (operating_profit_ebit / net_revenue) * 100.0
+    
+    print(f"Gross GMV: " + "$" + f"{gross_gmv:,.2f} | Discounts: -" + "$" + f"{promotions_discounts:,.2f} | Returns: -" + "$" + f"{returns_refunds:,.2f}")
+    print(f"Net Revenue: " + "$" + f"{net_revenue:,.2f}")
+    print(f"CM1 (Gross Profit): " + "$" + f"{cm1_gross_profit:,.2f} ({cm1_margin_pct:.1f}% margin)")
+    print(f"CM2 (Post-Fulfillment): " + "$" + f"{cm2_post_fulfillment:,.2f} ({cm2_margin_pct:.1f}% margin)")
+    print(f"CM3 (Net Contribution): " + "$" + f"{cm3_net_contribution:,.2f} ({cm3_margin_pct:.1f}% margin)")
+    print(f"Operating Profit (EBIT): " + "$" + f"{operating_profit_ebit:,.2f} ({operating_margin_pct:.1f}% margin)")
+    return {
+        "net_revenue": net_revenue,
+        "cm1": cm1_gross_profit,
+        "cm2": cm2_post_fulfillment,
+        "cm3": cm3_net_contribution,
+        "ebit": operating_profit_ebit,
+        "operating_margin_pct": operating_margin_pct
+    }
+
+consolidate_omnichannel_ecommerce_pl()`,
+        output: `=== Consolidated Omnichannel E-Commerce P&L Waterfall ===
+Gross GMV: $15,000,000.00 | Discounts: -$1,200,000.00 | Returns: -$600,000.00
+Net Revenue: $13,200,000.00
+CM1 (Gross Profit): $8,600,000.00 (65.2% margin)
+CM2 (Post-Fulfillment): $5,801,250.00 (43.9% margin)
+CM3 (Net Contribution): $2,601,250.00 (19.7% margin)
+Operating Profit (EBIT): $1,201,250.00 (9.1% margin)`,
+        codeNotes: [
+          'Consolidates full enterprise P&L bridging $15.0M GMV to $13.2M Net Revenue and $8.6M CM1 gross profit.',
+          'Accounts for variable fulfillment and platform fees ($2.8M), yielding $5.80M CM2 (43.9% margin).',
+          'Absorbs $3.2M paid acquisition (CM3 = $2.60M / 19.7%) and $1.4M fixed opex to deliver $1.20M Operating Profit (9.1% EBIT).'
+        ],
+        tryIt: 'Increase paid media advertising by $500,000 to observe how marketing expansion impacts bottom-line operating profit.',
+        check: {
+          question: 'What is the primary management benefit of decomposing an e-commerce income statement into distinct CM1, CM2, and CM3 contribution tiers?',
+          options: [
+            'It isolates product manufacturing, physical fulfillment, and customer acquisition costs into modular tiers, allowing leadership to pinpoint exactly where margin erosion occurs.',
+            'It guarantees that the enterprise will never be audited by tax authorities.',
+            'It enables the business to report gross merchandise volume as taxable income.',
+            'It automatically waives all employee payroll tax obligations.'
+          ],
+          answer: 0,
+          why: 'Tiered contribution waterfalls separate manufacturing costs, logistics fulfillment expenses, and marketing acquisition spend, providing granular diagnostic visibility into business drivers.',
+          answerIndex: 0,
+          explanation: 'Tiered contribution waterfalls separate manufacturing costs, logistics fulfillment expenses, and marketing acquisition spend, providing granular diagnostic visibility into business drivers.'
+        }
+      },
+      {
+        title: 'Payment Gateway Orchestration & 3DS2 Fraud Defense Architecture',
+        say: [
+          'Processing thirteen million dollars in net digital payment volume requires building an enterprise payment gateway orchestration and fraud mitigation architecture. Relying on a single payment processor is an acute operational vulnerability: if a processor suffers an infrastructure outage, executes an algorithmic settlement freeze, or experiences elevated authorization declines, customer checkout conversion halts instantaneously. A resilient digital commerce stack orchestrates multiple payment gateways with automated failover and dynamic smart routing.',
+          'An advanced gateway router distributes transactions across primary processors (such as Stripe for domestic direct web), secondary multi-currency specialists (such as Adyen for European and cross-border transactions), and digital wallet express lanes (such as PayPal, Apple Pay, and Venmo). The routing engine dynamically selects gateways based on card-issuing bank country, fee rate schedules, and historical authorization success rates. By routing high-trust domestic transactions through lower-fee channels while reserving backup routes during gateway latency spikes, authorization rates expand from 93% to over 97%, unlocking hundreds of thousands of dollars in salvaged revenue.',
+          'Simultaneously, the commerce architecture enforces multi-layered fraud defense utilizing 3D Secure 2.0 (3DS2) dynamic challenge rules and automated chargeback representment. 3DS2 enables friction-free authentication for low-risk transactions while triggering biometric or one-time-password step-up challenges only for suspicious orders, shifting chargeback fraud liability to the card issuer. Through automated delivery proof representment, the merchant wins 65% of disputed claims, maintaining an overall dispute ratio of 0.42%—well below the critical 1.0% card network penalty threshold. In this section, we analyze the payment telemetry of 150,000 transactions, validating gateway resilience and chargeback defense.'
+        ],
+        example: 'An e-commerce brand processes $13.2M across 150,000 transactions. Routing volume across Stripe ($7.5M, 96.5% auth), Adyen ($4.2M, 97.2% auth), and PayPal ($1.5M, 98.1% auth) optimizes payment processing costs. Enforcing 3DS2 dynamic screening restricts total disputes to 630 (0.42% dispute ratio vs 1.0% threshold), while automated representment wins back 410 claims, recovering $36,080.00 in GMV and certifying gateway health.',
+        code: `def architect_payment_gateway_and_fraud_defense():
+    print("=== Payment Gateway Orchestration & 3DS2 Fraud Defense ===")
+    total_transactions = 150_000
+    processed_volume = 13_200_000.0
+    
+    gateways = [
+        {"gateway": "Stripe (Primary D2C)", "volume": 7_500_000.0, "fee_rate": 0.029, "auth_rate": 0.965},
+        {"gateway": "Adyen (International & Backup)", "volume": 4_200_000.0, "fee_rate": 0.026, "auth_rate": 0.972},
+        {"gateway": "PayPal / Venmo (Express Checkout)", "volume": 1_500_000.0, "fee_rate": 0.032, "auth_rate": 0.981}
+    ]
+    
+    total_disputes = 630 # 630 chargebacks across 150,000 transactions
+    dispute_ratio_pct = (total_disputes / total_transactions) * 100.0
+    card_network_threshold_pct = 1.00 # Visa/Mastercard monitoring program threshold
+    
+    recovered_disputes = 410 # 65% win-rate on representments via automated delivery proof
+    recovered_gmv = recovered_disputes * (processed_volume / total_transactions)
+    
+    print(f"Processed Payment Volume: " + "$" + f"{processed_volume:,.2f} across {total_transactions:,} Transactions")
+    print("Multi-Gateway Routing Performance:")
+    for g in gateways:
+        print(f"  {g['gateway']}: Vol=" + "$" + f"{g['volume']:,.2f} | Fee={g['fee_rate']*100:.1f}% | Auth Rate={g['auth_rate']*100:.1f}%")
+        
+    print("Fraud & Dispute Telemetry:")
+    print(f"  Chargeback Disputes: {total_disputes:,} ({dispute_ratio_pct:.2f}% Dispute Ratio vs {card_network_threshold_pct:.2f}% Threshold)")
+    print(f"  Automated Representment: Recovered {recovered_disputes} disputes (" + "$" + f"{recovered_gmv:,.2f} GMV saved)")
+    print(f"  Gateway Health: {'EXCELLENT_HEALTH_BELOW_THRESHOLD' if dispute_ratio_pct < 0.65 else 'MONITORING_RISK'}")
+    return {
+        "dispute_ratio_pct": dispute_ratio_pct,
+        "recovered_gmv": recovered_gmv,
+        "gateway_status": "EXCELLENT_HEALTH_BELOW_THRESHOLD"
+    }
+
+architect_payment_gateway_and_fraud_defense()`,
+        output: `=== Payment Gateway Orchestration & 3DS2 Fraud Defense ===
+Processed Payment Volume: $13,200,000.00 across 150,000 Transactions
+Multi-Gateway Routing Performance:
+  Stripe (Primary D2C): Vol=$7,500,000.00 | Fee=2.9% | Auth Rate=96.5%
+  Adyen (International & Backup): Vol=$4,200,000.00 | Fee=2.6% | Auth Rate=97.2%
+  PayPal / Venmo (Express Checkout): Vol=$1,500,000.00 | Fee=3.2% | Auth Rate=98.1%
+Fraud & Dispute Telemetry:
+  Chargeback Disputes: 630 (0.42% Dispute Ratio vs 1.00% Threshold)
+  Automated Representment: Recovered 410 disputes ($36,080.00 GMV saved)
+  Gateway Health: EXCELLENT_HEALTH_BELOW_THRESHOLD`,
+        codeNotes: [
+          'Orchestrates $13.2M in payment volume across Stripe, Adyen, and PayPal with up to 98.1% authorization rates.',
+          'Tracks 630 chargeback disputes (0.42% dispute ratio), remaining well below the 1.00% card network monitoring threshold.',
+          'Executes automated representment with delivery telemetry, recovering 410 disputes and $36,080.00 in GMV.'
+        ],
+        tryIt: 'Simulate an increase in chargeback disputes to 1,600 to observe how breaching the 1.0% limit triggers card network risk status.',
+        check: {
+          question: 'What is the primary operational advantage of implementing 3D Secure 2.0 (3DS2) dynamic challenge rules in enterprise digital checkout?',
+          options: [
+            'It triggers frictionless biometric step-up authentication only for elevated risk transactions, shifting fraudulent chargeback liability to the card-issuing bank.',
+            'It allows merchants to avoid paying sales tax on all international consumer orders.',
+            'It automatically converts digital currency transactions into gold bullion.',
+            'It guarantees that postal carriers will deliver packages in under 12 hours.'
+          ],
+          answer: 0,
+          why: '3DS2 provides dynamic risk-based authentication; when an order passes 3DS2 challenge, fraud liability shifts away from the merchant to the card issuer, protecting the business against fraudulent chargebacks.',
+          answerIndex: 0,
+          explanation: '3DS2 provides dynamic risk-based authentication; when an order passes 3DS2 challenge, fraud liability shifts away from the merchant to the card issuer, protecting the business against fraudulent chargebacks.'
+        }
+      },
+      {
+        title: 'Milestone 1 Capstone Synthesis: Omnichannel Boardroom Defense & Chief Commerce Officer Accreditation',
+        say: [
+          'You have reached the culmination of the B.Com E-Commerce curriculum: the Milestone 1 Capstone Boardroom Defense before the board of directors and institutional growth investors. In this executive presentation, every discipline mastered across the five days of study—from two-sided marketplace economics, dynamic pricing, and reverse logistics on Day 1; inventory turnover velocity, bullwhip dampening, and fraud velocity screening on Day 2; D2C contribution waterfalls, cohort LTV curves, cart recovery, and MER attribution on Day 3; to Amazon FBA fee cascades, drop-shipping SLAs, GMROI, and cross-border trade compliance on Day 4—converges into a single, unified enterprise commerce defense.',
+          'Standing before the board, you defend four cornerstone operational pillars. First, you present the omnichannel distribution flywheel, demonstrating fifteen million dollars in annual GMV distributed across direct web, Amazon FBA, TikTok Shop, and wholesale portals with zero single-platform dependency and a disciplined 7.09% blended platform take rate. Second, you prove logistics efficiency through a 3-node distributed 3PL network in Pennsylvania, Nevada, and Ohio that generates $536,400 in annual parcel freight savings while delivering 98.5% two-day ground coverage at an average transit time of 1.81 days.',
+          'Third, you defend full-income-statement financial solvency, demonstrating how $13.2M in Net Revenue cascades through $8.6M in gross profit (CM1 65.2%), $5.80M in post-fulfillment margin (CM2 43.9%), and $2.60M in net marketing contribution (CM3 19.7%) to absorb $1.40M in fixed corporate opex and deliver $1,201,250 in operating profit (9.1% EBIT margin). Fourth, you demonstrate payment resilience, verifying multi-gateway redundancy, 3DS2 fraud defense, and an unassailable 0.42% dispute ratio that safeguards merchant accounts.',
+          'Upon successfully fielding adversarial inquiries regarding customer acquisition efficiency, supply chain tariffs, and fulfillment scalability, the board of directors casts a unanimous affirmative vote. This milestone officially confers the prestigious accreditation of Chief Commerce Officer & Senior E-Commerce Strategist (CCO-SES), recognizing your mastery over the strategic, financial, and logistics architecture required to scale world-class global retail enterprises. Course B.Com E-Commerce (bcom_ecom) is now officially 100% complete and certified.'
+        ],
+        example: 'Think of the Milestone 1 Capstone defense like presenting the complete operational and economic commissioning report of a major international seaport to the maritime authority. You prove that the deep-water navigation channels accommodate massive container ships (omnichannel flywheel), automated gantry cranes unload freight with zero bottlenecks (distributed 3PL nodes), port tariff revenue covers all operating expenses and debt service (consolidated P&L), and customs security gates inspect cargo without gridlock (3DS2 fraud defense). The authority votes unanimously to issue the port\'s permanent commercial charter.',
+        code: `def generate_chief_commerce_officer_dossier_and_accreditation():
+    print("=== Omnichannel Boardroom Defense & Chief Commerce Officer Accreditation ===")
+    omni = model_omnichannel_gmv_flywheel()
+    nodes = optimize_distributed_3pl_nodes_and_shipping()
+    pl = consolidate_omnichannel_ecommerce_pl()
+    pay = architect_payment_gateway_and_fraud_defense()
+    
+    print("\n--- Milestone 1 Capstone Synthesis: Boardroom Commerce Defense ---")
+    print(f"  1. Omnichannel Scale: " + "$" + f"{omni['total_gmv']:,.2f} GMV across {omni['channels']} channels ({omni['blended_take_rate_pct']:.2f}% take rate)")
+    print(f"  2. Logistics Velocity: " + "$" + f"{nodes['annual_savings']:,.2f} savings | {nodes['coverage_pct']:.1f}% 2-Day Coverage ({nodes['weighted_transit_days']:.2f} Days Avg)")
+    print(f"  3. P&L Health: CM1=" + "$" + f"{pl['cm1']:,.2f} | CM2=" + "$" + f"{pl['cm2']:,.2f} | CM3=" + "$" + f"{pl['cm3']:,.2f} | EBIT=" + "$" + f"{pl['ebit']:,.2f} ({pl['operating_margin_pct']:.1f}% Margin)")
+    print(f"  4. Payment Resilience: {pay['dispute_ratio_pct']:.2f}% Dispute Ratio ({pay['gateway_status']}, " + "$" + f"{pay['recovered_gmv']:,.2f} Saved)")
+    print("\n================================================================================")
+    print("OFFICIAL BOARD OF DIRECTORS UNANIMOUS VOTE: PASSED WITH DISTINCTION (5/5)")
+    print("ACCREDITATION CONFERRED: CHIEF COMMERCE OFFICER & SENIOR E-COMMERCE STRATEGIST (CCO-SES)")
+    print("STATUS: COURSE B.COM E-COMMERCE (BCOM_ECOM) 100% COMPLETE & CERTIFIED.")
+    print("================================================================================")
+
+generate_chief_commerce_officer_dossier_and_accreditation()`,
+        output: `=== Omnichannel Boardroom Defense & Chief Commerce Officer Accreditation ===
+=== Omnichannel GMV Flywheel & Multi-Channel Distribution ===
+Total Omnichannel GMV: $15,000,000.00
+Channel Breakdown:
+  DTC Flagship (Shopify Plus): GMV=$7,500,000.00 (50.0%) | Platform Fees=$217,500.00 | Net Proceeds=$7,282,500.00 | CVR=3.4%
+  Amazon 3P Marketplace (FBA): GMV=$4,800,000.00 (32.0%) | Platform Fees=$720,000.00 | Net Proceeds=$4,080,000.00 | CVR=11.5%
+  TikTok Shop & Social Commerce: GMV=$1,500,000.00 (10.0%) | Platform Fees=$90,000.00 | Net Proceeds=$1,410,000.00 | CVR=4.8%
+  Wholesale B2B Portal (Faire/Direct): GMV=$1,200,000.00 (8.0%) | Platform Fees=$36,000.00 | Net Proceeds=$1,164,000.00 | CVR=18.0%
+Blended Channel Take Rate: 7.09% (Total Fees: $1,063,500.00)
+Status: MULTI-CHANNEL DISTRIBUTION ENGINE VALIDATED WITH ZERO SINGLE-PLATFORM DEPENDENCY.
+=== Distributed 3PL Nodes & Regional Shipping SLA Optimization ===
+Distributed 3PL Fulfillment Network:
+  East Coast Hub (Allentown, PA): Orders=63,000 (42%) | Avg Cost=$8.20 | Transit=1.8 days
+  West Coast Hub (Reno, NV): Orders=49,500 (33%) | Avg Cost=$8.50 | Transit=1.9 days
+  Midwest Hub (Columbus, OH): Orders=37,500 (25%) | Avg Cost=$7.90 | Transit=1.7 days
+Network Summary: Annual Orders=150,000
+  Single-Hub Freight Cost: $1,770,000.00 ($11.80 / order)
+  Distributed 3-Node Freight Cost: $1,233,600.00 ($8.22 / order)
+  Annual Zone-Skipping Freight Savings: $536,400.00
+  Average Transit Speed: 1.81 Days | 2-Day Ground Coverage: 98.5%
+=== Consolidated Omnichannel E-Commerce P&L Waterfall ===
+Gross GMV: $15,000,000.00 | Discounts: -$1,200,000.00 | Returns: -$600,000.00
+Net Revenue: $13,200,000.00
+CM1 (Gross Profit): $8,600,000.00 (65.2% margin)
+CM2 (Post-Fulfillment): $5,801,250.00 (43.9% margin)
+CM3 (Net Contribution): $2,601,250.00 (19.7% margin)
+Operating Profit (EBIT): $1,201,250.00 (9.1% margin)
+=== Payment Gateway Orchestration & 3DS2 Fraud Defense ===
+Processed Payment Volume: $13,200,000.00 across 150,000 Transactions
+Multi-Gateway Routing Performance:
+  Stripe (Primary D2C): Vol=$7,500,000.00 | Fee=2.9% | Auth Rate=96.5%
+  Adyen (International & Backup): Vol=$4,200,000.00 | Fee=2.6% | Auth Rate=97.2%
+  PayPal / Venmo (Express Checkout): Vol=$1,500,000.00 | Fee=3.2% | Auth Rate=98.1%
+Fraud & Dispute Telemetry:
+  Chargeback Disputes: 630 (0.42% Dispute Ratio vs 1.00% Threshold)
+  Automated Representment: Recovered 410 disputes ($36,080.00 GMV saved)
+  Gateway Health: EXCELLENT_HEALTH_BELOW_THRESHOLD
+
+--- Milestone 1 Capstone Synthesis: Boardroom Commerce Defense ---
+  1. Omnichannel Scale: $15,000,000.00 GMV across 4 channels (7.09% take rate)
+  2. Logistics Velocity: $536,400.00 savings | 98.5% 2-Day Coverage (1.81 Days Avg)
+  3. P&L Health: CM1=$8,600,000.00 | CM2=$5,801,250.00 | CM3=$2,601,250.00 | EBIT=$1,201,250.00 (9.1% Margin)
+  4. Payment Resilience: 0.42% Dispute Ratio (EXCELLENT_HEALTH_BELOW_THRESHOLD, $36,080.00 Saved)
+
+================================================================================
+OFFICIAL BOARD OF DIRECTORS UNANIMOUS VOTE: PASSED WITH DISTINCTION (5/5)
+ACCREDITATION CONFERRED: CHIEF COMMERCE OFFICER & SENIOR E-COMMERCE STRATEGIST (CCO-SES)
+STATUS: COURSE B.COM E-COMMERCE (BCOM_ECOM) 100% COMPLETE & CERTIFIED.
+================================================================================`,
+        codeNotes: [
+          'Synthesizes all 4 capstone pillars: $15.0M GMV flywheel, distributed 3PL nodes, enterprise P&L, and payment routing.',
+          'Validates $536,400 in annual freight savings with 98.5% 2-day ground delivery and $1,201,250 in operating profit (9.1% EBIT).',
+          'Formally confers the Chief Commerce Officer & Senior E-Commerce Strategist (CCO-SES) accreditation, completing course bcom_ecom (5/5 Days).'
+        ],
+        tryIt: 'Run the complete capstone defense suite to verify all enterprise digital commerce standards are fully achieved.',
+        check: {
+          question: 'What is the ultimate strategic achievement validated by the Milestone 1 Capstone in B.Com E-Commerce?',
+          options: [
+            'The synthesis of omnichannel distribution, distributed 3PL logistics, multi-tiered contribution margin P&L, and payment resilience into a profitable, scalable retail enterprise.',
+            'The automated creation of 500 spam dropshipping blogs with no inventory or payment systems.',
+            'The immediate shutdown of all physical retail and digital operations.',
+            'The total elimination of all customer service communication channels.'
+          ],
+          answer: 0,
+          why: 'The capstone validates executive mastery over omnichannel retail, distributed supply chains, full-income-statement profitability, and payment infrastructure required to lead as a Chief Commerce Officer.',
+          answerIndex: 0,
+          explanation: 'The capstone validates executive mastery over omnichannel retail, distributed supply chains, full-income-statement profitability, and payment infrastructure required to lead as a Chief Commerce Officer.'
+        }
+      }
+    ],
+    summary: [
+      'Modeled a $15.0M omnichannel GMV distribution across DTC Shopify ($7.5M), Amazon FBA ($4.8M), TikTok Shop ($1.5M), and wholesale B2B ($1.2M), achieving a resilient 7.09% blended platform fee.',
+      'Optimized a 3-node distributed 3PL fulfillment network (Allentown, Reno, Columbus), generating $536,400 in annual parcel freight savings and achieving 98.5% two-day ground delivery coverage at 1.81 days average transit.',
+      'Consolidated the enterprise omnichannel P&L, demonstrating $13.2M Net Revenue, $8.6M CM1 (65.2%), $5.80M CM2 (43.9%), $2.60M CM3 (19.7%), and $1,201,250 in Operating Profit (9.1% EBIT margin).',
+      'Architected multi-gateway payment routing across Stripe, Adyen, and PayPal, enforcing 3DS2 dynamic screening to maintain an unassailable 0.42% chargeback ratio while recovering $36,080 in disputed claims.',
+      'Delivered the unanimous omnichannel boardroom defense, conferring the Chief Commerce Officer & Senior E-Commerce Strategist (CCO-SES) accreditation and finalizing course bcom_ecom (5/5 Days).'
+    ],
+    projectStep: {
+      title: 'Execute the Omnichannel E-Commerce Boardroom Defense & CCO Accreditation Suite',
+      steps: [
+        'Model the multi-channel GMV flywheel across direct web, marketplaces, social commerce, and wholesale.',
+        'Optimize distributed 3PL fulfillment network nodes to maximize 2-day ground shipping coverage and freight savings.',
+        'Consolidate the multi-tier enterprise P&L waterfall from Gross GMV to bottom-line Operating Profit (EBIT).',
+        'Configure multi-gateway payment routing and 3DS2 fraud defense to safeguard merchant processor standing.',
+        'Deliver the executive capstone presentation to earn unanimous board approval and confer CCO-SES accreditation.'
+      ]
+    }
   }
 ];

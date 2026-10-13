@@ -286,3 +286,77 @@ test('Block 137: B.Com E-Commerce Day 4: FBA vs FBM, Dropshipping SLAs, GMROI & 
   assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
 });
 
+test('Block 138: B.Com E-Commerce Day 5 Capstone: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_ecom', 5);
+  assert.ok(lesson, 'bcom_ecom Day 5 Capstone lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_ecom');
+  assert.equal(lesson.day, 5);
+  assert.equal(lesson.parts.length, 5, 'bcom_ecom Day 5 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_ecom'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 138: B.Com E-Commerce Day 5 Capstone: GMV Flywheel, 3PL Nodes, Consolidated P&L, Payment Routing & CCO-SES Accreditation Verification', () => {
+  const lesson = BCOM_ECOM_LONG_LESSONS[4];
+  assert.ok(lesson, 'BCOM_ECOM_LONG_LESSONS[4] must exist');
+  assert.equal(lesson.day, 5);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have >= 3 codeNotes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Omnichannel GMV Flywheel/i);
+  assert.ok(lesson.parts[0].code?.includes('model_omnichannel_gmv_flywheel'));
+  assert.match(lesson.parts[1].title, /Distributed 3PL Nodes.*Shipping SLA/i);
+  assert.ok(lesson.parts[1].code?.includes('optimize_distributed_3pl_nodes_and_shipping'));
+  assert.match(lesson.parts[2].title, /Omnichannel P&L.*Contribution Margin/i);
+  assert.ok(lesson.parts[2].code?.includes('consolidate_omnichannel_ecommerce_pl'));
+  assert.match(lesson.parts[3].title, /Payment Gateway.*3DS2 Fraud Defense/i);
+  assert.ok(lesson.parts[3].code?.includes('architect_payment_gateway_and_fraud_defense'));
+  assert.match(lesson.parts[4].title, /Boardroom Defense.*Chief Commerce Officer Accreditation/i);
+  assert.ok(lesson.parts[4].code?.includes('generate_chief_commerce_officer_dossier_and_accreditation'));
+
+  // Capstone Accreditation Assertions
+  assert.ok(lesson.parts[4].output?.includes('CCO-SES'), 'Must confer CCO-SES accreditation');
+  assert.ok(lesson.parts[4].output?.includes('15,000,000.00'), 'Must model $15M GMV flywheel');
+  assert.ok(lesson.parts[4].output?.includes('1,201,250.00'), 'Must generate $1.2M operating profit');
+
+  // Metrics & Project step validation
+  assert.ok(lesson.summary && lesson.summary.length >= 4, 'Summary must have >= 4 bullet points');
+  assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, 'projectStep must have title and >= 4 steps');
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be >= 8`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
+});
+
+test('Course bcom_ecom 100% Complete: All 5 Days Verified', () => {
+  for (let day = 1; day <= 5; day++) {
+    const lesson = getLongLesson('bcom_ecom', day);
+    assert.ok(lesson, `bcom_ecom Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_ecom Day ${day} must have 5 parts`);
+  }
+});
+
