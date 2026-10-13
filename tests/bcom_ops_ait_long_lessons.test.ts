@@ -129,3 +129,36 @@ test('B.Com AIT Day 2: Vector Search RAG, Guardrails & Model Risk Governance Sni
   assert.ok(aitLesson2.parts[4].code?.includes('AiRegulatoryComplianceClassifier'));
 });
 
+test('B.Com Ops Day 3: Lean Six Sigma DMAIC, Process Capability & SPC Control Charts Snippets Verification', () => {
+  const opsLesson3 = getLongLesson('bcom_ops', 3);
+  assert.ok(opsLesson3, 'bcom_ops Day 3 long lesson must resolve');
+  assert.equal(opsLesson3.day, 3);
+  assert.equal(opsLesson3.parts.length, 5, 'bcom_ops Day 3 must contain exactly 5 parts');
+  assert.ok(opsLesson3.summary.length >= 4, 'bcom_ops Day 3 must contain comprehensive summary');
+  assert.ok(opsLesson3.projectStep, 'bcom_ops Day 3 must have a hands-on project step');
+
+  for (let i = 0; i < opsLesson3.parts.length; i++) {
+    const part = opsLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(opsLesson3.parts[0].code?.includes('calculate_process_capability'));
+  assert.ok(opsLesson3.parts[1].code?.includes('shewhart_xbar_r_chart'));
+  assert.ok(opsLesson3.parts[2].code?.includes('evaluate_p_chart_and_nelson_rules'));
+  assert.ok(opsLesson3.parts[3].code?.includes('calculate_gage_rr'));
+  assert.ok(opsLesson3.parts[4].code?.includes('analyze_cost_of_quality'));
+});
+

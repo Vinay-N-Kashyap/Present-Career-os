@@ -714,5 +714,510 @@ print(f"Lead Time P50: {mc_res['P50_Expected_Lead_Time_Hours']}h | P85 SLA: {mc_
         'Calculate Kanban card limits and run Monte Carlo simulations to quote contractually reliable delivery SLAs.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ops',
+    day: 3,
+    title: 'Lean Six Sigma DMAIC, Process Capability & Statistical Process Control (SPC)',
+    goal: 'Master advanced quality engineering and operational statistics: calculating Cp/Cpk capability indices, constructing Shewhart X-bar and R charts, detecting non-random trends with Nelson Rules, evaluating Gage R&R measurement systems, and modeling Cost of Quality (CoQ) economics.',
+    minutes: 42,
+    recap: 'In Day 2, we mastered Goldratt\'s Theory of Constraints, Drum-Buffer-Rope scheduling, OEE equipment efficiency, and Kanban pull systems. Today, we step into Six Sigma quality engineering to eliminate variation, diagnose special causes, and ensure bulletproof process capability.',
+    parts: [
+      {
+        title: 'Lean Six Sigma DMAIC & Process Capability Indices (Cp, Cpk)',
+        say: [
+          'Lean Six Sigma unifies two powerful operational philosophies: Lean focuses relentlessly on the elimination of waste (Muda) and non-value-adding cycle time, while Six Sigma applies rigorous statistical discipline to minimize process variation. At the heart of Six Sigma execution is the DMAIC roadmap: Define customer Critical to Quality (CTQ) parameters, Measure baseline performance, Analyze root causes using statistical hypothesis testing, Improve the process through robust parameter design, and Control the gains using automated poka-yoke mechanisms and statistical monitoring.',
+          'In high-volume manufacturing and enterprise service workflows, quality is defined by specification limits set by the customer: Upper Specification Limit (USL) and Lower Specification Limit (LSL). Even when an operation\'s average output aligns with target dimensions, standard deviation dictates whether individual units will fall outside tolerances and trigger scrap or warranty claims. We measure this through two foundational indices: Process Potential (Cp) and Process Capability (Cpk).',
+          'Process Potential Cp evaluates whether the spread of the process fits within specification tolerances: Cp = (USL - LSL) / (6 * sigma). However, Cp assumes the process mean is perfectly centered between specification limits; it is completely blind to mean drift. To account for off-center processes, we compute Cpk = min((USL - mean)/(3*sigma), (mean - LSL)/(3*sigma)). When Cpk >= 1.33 (equivalent to 4-sigma), a process is deemed capable by standard industry auditors. World-class Six Sigma requires Cpk >= 1.67 or 2.0, yielding no more than 3.4 Defects Per Million Opportunities (DPMO) even after factoring in Motorola\'s historical 1.5-sigma long-term mean drift.'
+        ],
+        example: 'Consider CNC milling of titanium aircraft turbine blades with specification tolerances of 100.00 +/- 0.05 mm. If standard deviation is 0.008 mm and the machine operates at a slight mean offset of 100.008 mm, Cp is 2.083 but actual Cpk is 1.75, confirming that the blade line comfortably passes FAA aerospace airworthiness audits.',
+        code: `# Quantitative Process Capability & Six Sigma DPMO Analysis
+import math
+
+def calculate_process_capability(
+    mean: float,
+    std_dev: float,
+    usl: float,
+    lsl: float
+) -> dict:
+    # 1. Potential Process Capability (Cp: assumes perfect centering)
+    cp = (usl - lsl) / (6.0 * std_dev)
+
+    # 2. Actual Process Capability accounting for mean offset (Cpk)
+    cpu = (usl - mean) / (3.0 * std_dev)
+    cpl = (mean - lsl) / (3.0 * std_dev)
+    cpk = min(cpu, cpl)
+
+    # 3. Equivalent Sigma Level (including standard 1.5 sigma drift)
+    sigma_level = round(3.0 * cpk + 1.5, 2)
+
+    # 4. Tail Defect Estimation in DPMO via Complementary Error Function
+    z_upper = (usl - mean) / std_dev
+    z_lower = (mean - lsl) / std_dev
+    p_defect_upper = 0.5 * (1.0 - math.erf(z_upper / math.sqrt(2.0)))
+    p_defect_lower = 0.5 * (1.0 - math.erf(z_lower / math.sqrt(2.0)))
+    total_dpmo = round((p_defect_upper + p_defect_lower) * 1_000_000, 1)
+
+    # 5. Industrial Quality Classification
+    if cpk >= 1.67:
+        status = "World-Class Six Sigma"
+    elif cpk >= 1.33:
+        status = "Capable (>= 1.33)"
+    else:
+        status = "Incapable (< 1.33)"
+
+    return {
+        "Mean": round(mean, 4),
+        "Std_Dev": round(std_dev, 4),
+        "USL": usl,
+        "LSL": lsl,
+        "Cp": round(cp, 3),
+        "Cpk": round(cpk, 3),
+        "Sigma_Level": sigma_level,
+        "Estimated_DPMO": total_dpmo,
+        "Capability_Status": status
+    }
+
+cap_res = calculate_process_capability(
+    mean=100.008,
+    std_dev=0.008,
+    usl=100.05,
+    lsl=99.95
+)
+
+for k, v in cap_res.items():
+    print(f"{k}: {v}")`,
+        output: `Mean: 100.008
+Std_Dev: 0.008
+USL: 100.05
+LSL: 99.95
+Cp: 2.083
+Cpk: 1.75
+Sigma_Level: 6.75
+Estimated_DPMO: 0.1
+Capability_Status: World-Class Six Sigma`,
+        codeNotes: [
+          { line: 5, note: 'calculate_process_capability evaluates both potential (Cp) and actual (Cpk) indices' },
+          { line: 12, note: 'Cpk takes the minimum of upper and lower distance, penalizing off-center mean drift' },
+          { line: 20, note: 'Uses math.erf to compute Gaussian tail probabilities and converts to DPMO' },
+          { line: 40, note: 'Confirms Cpk of 1.75 qualifies as World-Class Six Sigma with only 0.1 parts per million defect risk' }
+        ],
+        tryIt: 'Shift the mean to 100.025 and re-run to observe how Cpk drops to 1.04 (Incapable) while Cp remains completely unchanged at 2.083.',
+        check: {
+          question: 'Why can an industrial manufacturing process possess an outstanding Cp of 2.0 while simultaneously producing an unacceptable rate of defective parts?',
+          options: [
+            'Because Cp only measures the spread of the process relative to tolerance width and is completely blind to whether the process mean has shifted towards one of the specification limits.',
+            'Because Cp is only valid for discrete categorical data and cannot be applied to continuous measurements.',
+            'Because Six Sigma prohibits calculating standard deviations when sample sizes exceed 100 units.',
+            'Because Cp automatically assumes that every defect is caught by incoming supplier inspections.'
+          ],
+          answer: 0,
+          why: 'Cp solely measures tolerance width divided by 6-sigma; if the process mean drifts significantly towards the USL or LSL, Cpk will collapse and defects will surge despite an outstanding Cp.',
+          answerIndex: 0,
+          explanation: 'Cp solely measures tolerance width divided by 6-sigma; if the process mean drifts significantly towards the USL or LSL, Cpk will collapse and defects will surge despite an outstanding Cp.'
+        }
+      },
+      {
+        title: 'Statistical Process Control (SPC): Shewhart X-bar and R Control Charts',
+        say: [
+          'Walter Shewhart formulated the foundational insight of modern quality engineering: all manufacturing and operational variance falls into two distinct categories: Common Cause Variation and Special Cause Variation. Common cause variation is the inherent, random noise of a stable system operating normally (ambient temperature shifts, standard machine vibration, micro-variations in raw material density). Special cause variation arises from specific, assignable external events (a dull cutting tool, a broken thermocouple, an untrained shift operator, or a contaminated batch of lubricant).',
+          'Attempting to adjust a machine in response to common cause variation is called "tampering" (as demonstrated in Deming\'s famous Funnel Experiment); tampering actually increases system variance and destabilizes throughput. Instead, Statistical Process Control (SPC) uses Shewhart Control Charts to establish the mathematical boundary between common cause noise and special cause signals. The classic Shewhart chart for continuous variables is the X-bar and R chart, constructed by periodically pulling small rational subgroups of items (typically n = 5).',
+          'The X-bar chart tracks the subgroup mean to detect shifts in the process centering, while the R chart tracks the subgroup range (Max - Min) to monitor changes in process variability. Control limits are derived directly from the voice of the process: X-bar UCL = X_double_bar + A2 * R_bar, and LCL = X_double_bar - A2 * R_bar, where A2 is an empirical constant (0.577 for n=5). Crucially, control limits are never customer specification limits; control limits represent the 3-sigma natural behavior of the machine. Any point breaching control limits proves the presence of a special cause requiring immediate root-cause investigation.'
+        ],
+        example: 'In a pharmaceutical bottling line filling 500 mL sterile saline vials, operators sample 5 vials every 30 minutes. If subgroup 4 registers an average fill of 500.5 mL against an Upper Control Limit of 500.394 mL, the operator halts the filler to inspect valve actuator wear before thousands of out-of-spec vials enter packaging.',
+        code: `# Shewhart X-bar and R Control Chart Engine
+def shewhart_xbar_r_chart(
+    subgroups: list[list[float]],
+    a2: float = 0.577,
+    d3: float = 0.0,
+    d4: float = 2.114
+) -> dict:
+    subgroup_means = [sum(sg) / len(sg) for sg in subgroups]
+    subgroup_ranges = [max(sg) - min(sg) for sg in subgroups]
+
+    # 1. Grand Mean and Mean Range
+    x_double_bar = sum(subgroup_means) / len(subgroup_means)
+    r_bar = sum(subgroup_ranges) / len(subgroup_ranges)
+
+    # 2. Control Limits for X-bar Chart
+    x_ucl = x_double_bar + (a2 * r_bar)
+    x_lcl = x_double_bar - (a2 * r_bar)
+
+    # 3. Control Limits for R Chart
+    r_ucl = d4 * r_bar
+    r_lcl = d3 * r_bar
+
+    # 4. Out-of-Control Detection
+    x_violations = [
+        {"Subgroup": idx + 1, "Mean": round(m, 3)}
+        for idx, m in enumerate(subgroup_means) if m > x_ucl or m < x_lcl
+    ]
+    r_violations = [
+        {"Subgroup": idx + 1, "Range": round(r, 3)}
+        for idx, r in enumerate(subgroup_ranges) if r > r_ucl or r < r_lcl
+    ]
+
+    is_in_control = len(x_violations) == 0 and len(r_violations) == 0
+
+    return {
+        "Total_Subgroups": len(subgroups),
+        "Grand_Mean_Xbar": round(x_double_bar, 3),
+        "Mean_Range_Rbar": round(r_bar, 3),
+        "Xbar_UCL": round(x_ucl, 3),
+        "Xbar_LCL": round(x_lcl, 3),
+        "R_UCL": round(r_ucl, 3),
+        "R_LCL": round(r_lcl, 3),
+        "In_Control": is_in_control,
+        "Xbar_Violations": len(x_violations),
+        "R_Violations": len(r_violations)
+    }
+
+samples = [
+    [500.1, 500.3, 499.8, 500.2, 500.0],
+    [500.2, 500.4, 500.1, 499.9, 500.3],
+    [499.9, 500.0, 500.2, 500.1, 499.8],
+    [500.5, 500.6, 500.4, 500.3, 500.7],
+    [500.0, 499.8, 500.1, 500.2, 499.9],
+    [500.2, 500.1, 500.3, 500.0, 500.2]
+]
+
+spc_res = shewhart_xbar_r_chart(samples)
+for k, v in spc_res.items():
+    print(f"{k}: {v}")`,
+        output: `Total_Subgroups: 6
+Grand_Mean_Xbar: 500.153
+Mean_Range_Rbar: 0.417
+Xbar_UCL: 500.394
+Xbar_LCL: 499.913
+R_UCL: 0.881
+R_LCL: 0.0
+In_Control: False
+Xbar_Violations: 1
+R_Violations: 0`,
+        codeNotes: [
+          { line: 8, note: 'Calculates sample means and ranges across each rational subgroup of 5 measurements' },
+          { line: 15, note: 'Applies Shewhart empirical constant A2 (0.577) to determine 3-sigma X-bar limits' },
+          { line: 26, note: 'Flags subgroup 4 (mean 500.5) as an assignable cause breach exceeding UCL 500.394' },
+          { line: 40, note: 'Declares In_Control as False, triggering immediate root-cause maintenance protocols' }
+        ],
+        tryIt: 'Adjust subgroup 4 values down by 0.25 mL each to bring its mean back within UCL and confirm In_Control becomes True.',
+        check: {
+          question: 'What is the critical operational distinction between Specification Limits and Control Limits?',
+          options: [
+            'Specification limits represent customer or regulatory tolerance expectations, whereas control limits represent the 3-sigma natural statistical capability of the actual process.',
+            'Specification limits are calculated with Shewhart constants, while control limits are defined by marketing managers.',
+            'Specification limits must always be narrower than control limits under ISO 9001 regulations.',
+            'There is no distinction; both terms describe the upper and lower thresholds of customer warranty claims.'
+          ],
+          answer: 0,
+          why: 'Specification limits define what the customer requires, whereas control limits define what the process is currently delivering in statistical equilibrium.',
+          answerIndex: 0,
+          explanation: 'Specification limits define what the customer requires, whereas control limits define what the process is currently delivering in statistical equilibrium.'
+        }
+      },
+      {
+        title: 'Attribute Quality Control: p-Chart & Western Electric / Nelson Rules',
+        say: [
+          'While variables control charts (like X-bar and R) track continuous dimensions like diameter, weight, or voltage, many enterprise operations evaluate quality as binary attributes: a circuit board passes or fails functional testing, an invoice is approved or rejected, or a surgical delivery kit is sterile or contaminated. In attribute quality control, the workhorse tool is the p-Chart, which models the proportion of non-conforming items per inspection lot based on the binomial distribution.',
+          'The center line of the p-chart is the historical average defect proportion p_bar = Total Defectives / Total Inspected. Control limits reflect the binomial standard error: UCL = p_bar + 3 * sqrt(p_bar * (1 - p_bar) / n), and LCL = max(0, p_bar - 3 * sqrt(p_bar * (1 - p_bar) / n)). When sample sizes vary between lots, the control limits adjust dynamically for each lot size. A single point exceeding the UCL indicates an immediate spike in defect rates.',
+          'However, waiting for a single data point to cross the 3-sigma control limit often allows defective inventory to accumulate unnoticed. Modern quality systems apply Western Electric and Nelson Rules to detect subtle non-random patterns: Rule 1 flags any point beyond 3-sigma; Rule 2 flags 9 consecutive points on one side of the center line (a persistent mean shift); and Rule 3 flags 6 consecutive points steadily increasing or decreasing (a systematic drift, such as progressive machine tool wear). Detecting these early indicators enables proactive intervention before catastrophic process breakdown.'
+        ],
+        example: 'On an automated surface-mount PCB assembly line inspecting 1,000 solder joints per batch, an average defect rate of 1.34% gives a UCL of 2.43%. If defect rates rise over 6 consecutive batches (1.1%, 1.3%, 1.5%, 1.7%, 1.9%, 2.2%), Nelson Rule 3 detects stencil clogging hours before defects exceed the 3-sigma threshold.',
+        code: `# Attribute p-Chart & Nelson Rules Detection Engine
+import math
+
+def evaluate_p_chart_and_nelson_rules(
+    lot_sizes: list[int],
+    defectives: list[int]
+) -> dict:
+    total_inspected = sum(lot_sizes)
+    total_defectives = sum(defectives)
+    p_bar = total_defectives / total_inspected
+
+    proportions = [d / n for d, n in zip(defectives, lot_sizes)]
+    n_avg = total_inspected / len(lot_sizes)
+    sigma_p = math.sqrt((p_bar * (1.0 - p_bar)) / n_avg)
+
+    # 1. 3-Sigma Control Limits
+    ucl = min(1.0, p_bar + (3.0 * sigma_p))
+    lcl = max(0.0, p_bar - (3.0 * sigma_p))
+
+    # 2. Nelson Rule 1: Single point beyond 3-sigma
+    rule1_alerts = [i + 1 for i, p in enumerate(proportions) if p > ucl or p < lcl]
+
+    # 3. Nelson Rule 2: 9 consecutive points on one side of center line
+    rule2_alerts = []
+    consecutive_side = 0
+    last_side = None
+    for i, p in enumerate(proportions):
+        side = "above" if p > p_bar else ("below" if p < p_bar else "on")
+        if side == last_side and side != "on":
+            consecutive_side += 1
+        else:
+            consecutive_side = 1
+            last_side = side
+        if consecutive_side >= 9:
+            rule2_alerts.append(i + 1)
+
+    # 4. Nelson Rule 3: 6 consecutive points steadily trending
+    rule3_alerts = []
+    trend_count = 1
+    trend_dir = None
+    for i in range(1, len(proportions)):
+        diff = proportions[i] - proportions[i - 1]
+        cur_dir = "up" if diff > 0 else ("down" if diff < 0 else "flat")
+        if cur_dir == trend_dir and cur_dir != "flat":
+            trend_count += 1
+        else:
+            trend_count = 2 if cur_dir != "flat" else 1
+            trend_dir = cur_dir
+        if trend_count >= 6:
+            rule3_alerts.append(i + 1)
+
+    stable = not (rule1_alerts or rule2_alerts or rule3_alerts)
+
+    return {
+        "Total_Lots": len(lot_sizes),
+        "Avg_Lot_Size": int(n_avg),
+        "P_Bar": round(p_bar, 4),
+        "Sigma_P": round(sigma_p, 4),
+        "UCL": round(ucl, 4),
+        "LCL": round(lcl, 4),
+        "Rule1_Outliers": rule1_alerts,
+        "Rule2_Run_Alerts": rule2_alerts,
+        "Rule3_Trend_Alerts": rule3_alerts,
+        "System_State": "Statistically Stable" if stable else "Special Cause Detected"
+    }
+
+lots = [1000] * 8
+defects = [12, 14, 11, 15, 13, 16, 12, 14]
+
+p_res = evaluate_p_chart_and_nelson_rules(lots, defects)
+for k, v in p_res.items():
+    print(f"{k}: {v}")`,
+        output: `Total_Lots: 8
+Avg_Lot_Size: 1000
+P_Bar: 0.0134
+Sigma_P: 0.0036
+UCL: 0.0243
+LCL: 0.0025
+Rule1_Outliers: []
+Rule2_Run_Alerts: []
+Rule3_Trend_Alerts: []
+System_State: Statistically Stable`,
+        codeNotes: [
+          { line: 12, note: 'Computes binomial standard error sigma_p from aggregate defectives and sample size' },
+          { line: 16, note: 'Applies 3-sigma bounds ensuring LCL is clamped to zero to prevent impossible negative limits' },
+          { line: 23, note: 'Implements Nelson Rule 2 run tracking across consecutive points relative to p_bar' },
+          { line: 38, note: 'Detects Nelson Rule 3 monotonicity trends (6 consecutive points increasing or decreasing)' }
+        ],
+        tryIt: 'Change defects to [10, 12, 14, 16, 18, 20, 22, 23] and verify that Rule3_Trend_Alerts flags a continuous degradation trend.',
+        check: {
+          question: 'What operational advantage does implementing Nelson Rules provide over relying exclusively on 3-sigma control limit breaches?',
+          options: [
+            'Nelson Rules identify non-random systematic patterns (such as 6 points trending or 9 points on one side) long before a data point crosses the 3-sigma boundary, enabling early corrective action.',
+            'Nelson Rules allow factories to eliminate inspection labor entirely.',
+            'Nelson Rules convert attribute defect counts into continuous millivolt signals.',
+            'Nelson Rules guarantee that standard deviation drops to zero.'
+          ],
+          answer: 0,
+          why: 'Nelson Rules detect non-random runs and trends while the process is still technically within 3-sigma bounds, preventing severe out-of-control failures.',
+          answerIndex: 0,
+          explanation: 'Nelson Rules detect non-random runs and trends while the process is still technically within 3-sigma bounds, preventing severe out-of-control failures.'
+        }
+      },
+      {
+        title: 'Measurement System Analysis (MSA) & Gage Repeatability and Reproducibility (Gage R&R)',
+        say: [
+          'Before an operations team can draw valid conclusions from process capability indices or control charts, they must answer a critical question: is our measurement system capable of detecting true part variation, or are our readings dominated by measurement noise? If your measurement system is noisy, you will scrap perfectly good parts (Producer\'s Risk) and ship defective parts to customers (Consumer\'s Risk). Measurement System Analysis (MSA) evaluates the precision and accuracy of gages, sensors, and human inspectors.',
+          'Under classical MSA variance decomposition, total observed variance sigma_total^2 equals the sum of true part-to-part variance sigma_part^2 and measurement system error sigma_measurement^2. Measurement error further breaks down into two core components: Repeatability and Reproducibility. Repeatability (Equipment Variation, EV) represents the variation observed when the same appraiser measures the same part multiple times using the same gage. Reproducibility (Appraiser Variation, AV) represents the variation observed when different appraisers measure the identical part using the same gage.',
+          'The Automotive Industry Action Group (AIAG) standardizes Gage R&R evaluation via Percentage Gage R&R: %GRR = (sigma_gage_rr / sigma_total) * 100. AIAG defines three strict operational tiers: %GRR < 10% is fully acceptable for production; 10% to 30% is marginally acceptable depending on part criticality and cost of failure; and %GRR > 30% is completely unacceptable, requiring gage recalibration, fixturing redesign, or operator retraining. Additionally, the Number of Distinct Categories (ndc = 1.41 * sigma_part / sigma_gage_rr) must equal at least 5 to ensure the gage can reliably discriminate between subtle part differences.'
+        ],
+        example: 'In an electric vehicle battery pack manufacturing plant, three quality technicians measure laser weld depth on 10 sample terminals. With a total process standard deviation of 0.2179 mm and a combined Gage R&R standard deviation of 0.05 mm, %GRR is 22.94% and ndc is 5, classifying the measurement rig as marginally acceptable for production monitoring.',
+        code: `# Measurement System Analysis & Gage R&R Decomposition
+import math
+
+def calculate_gage_rr(
+    part_variance: float,
+    repeatability_var: float,
+    reproducibility_var: float
+) -> dict:
+    # 1. Total Measurement System Variance (Gage R&R)
+    gage_rr_var = repeatability_var + reproducibility_var
+    gage_rr_sd = math.sqrt(gage_rr_var)
+
+    # 2. Total Combined Process Variance
+    total_variance = part_variance + gage_rr_var
+    total_sd = math.sqrt(total_variance)
+
+    # 3. % Gage R&R based on Standard Deviation ratio
+    pct_grr = (gage_rr_sd / total_sd) * 100.0
+
+    # 4. Number of Distinct Categories: ndc = 1.41 * (part_sd / gage_rr_sd)
+    part_sd = math.sqrt(part_variance)
+    ndc = int(1.41 * (part_sd / gage_rr_sd))
+
+    # 5. AIAG Industrial Classification Thresholds
+    if pct_grr < 10.0:
+        verdict = "Acceptable (< 10%)"
+    elif pct_grr <= 30.0:
+        verdict = "Marginal (10% - 30%)"
+    else:
+        verdict = "Unacceptable (> 30%)"
+
+    return {
+        "Repeatability_EV_SD": round(math.sqrt(repeatability_var), 4),
+        "Reproducibility_AV_SD": round(math.sqrt(reproducibility_var), 4),
+        "Total_Gage_RR_SD": round(gage_rr_sd, 4),
+        "Part_to_Part_SD": round(part_sd, 4),
+        "Total_Process_SD": round(total_sd, 4),
+        "Pct_Gage_RR": round(pct_grr, 2),
+        "Distinct_Categories_ndc": ndc,
+        "AIAG_Verdict": verdict
+    }
+
+grr_res = calculate_gage_rr(
+    part_variance=0.0450,
+    repeatability_var=0.0016,
+    reproducibility_var=0.0009
+)
+
+for k, v in grr_res.items():
+    print(f"{k}: {v}")`,
+        output: `Repeatability_EV_SD: 0.04
+Reproducibility_AV_SD: 0.03
+Total_Gage_RR_SD: 0.05
+Part_to_Part_SD: 0.2121
+Total_Process_SD: 0.2179
+Pct_Gage_RR: 22.94
+Distinct_Categories_ndc: 5
+AIAG_Verdict: Marginal (10% - 30%)`,
+        codeNotes: [
+          { line: 5, note: 'Decomposes total measurement variance into Equipment Variation (EV) and Appraiser Variation (AV)' },
+          { line: 16, note: 'Calculates %GRR as the ratio of measurement standard deviation to total observed standard deviation' },
+          { line: 19, note: 'Computes ndc (number of distinct categories), verifying the gage can distinguish at least 5 part groups' },
+          { line: 24, note: 'Classifies the gage as Marginal under AIAG standards, warranting operator fixture improvements' }
+        ],
+        tryIt: 'Reduce repeatability variance to 0.0002 to model a precision automated optical comparator and observe %GRR drop below 10%.',
+        check: {
+          question: 'If a plant\'s Gage R&R analysis reveals a %GRR of 38%, what operational action must leadership take?',
+          options: [
+            'Accept the process because 38% falls well within statistical 3-sigma tolerance bands.',
+            'Halve the customer specification limits to compensate for gage error.',
+            'Halt formal capability studies and upgrade or recalibrate the measurement equipment, because over 30% measurement error masks true part quality.',
+            'Increase production speed by 38% to minimize the time parts spend inside the measuring fixture.'
+          ],
+          answer: 2,
+          why: 'Under AIAG standards, a %GRR exceeding 30% is unacceptable because measurement error consumes too much tolerance, rendering capability metrics and quality decisions invalid.',
+          answerIndex: 2,
+          explanation: 'Under AIAG standards, a %GRR exceeding 30% is unacceptable because measurement error consumes too much tolerance, rendering capability metrics and quality decisions invalid.'
+        }
+      },
+      {
+        title: 'Cost of Quality (CoQ) Analytics & PAF Economic Optimization Engine',
+        say: [
+          'Quality is often mistakenly treated as an overhead cost that reduces company profits. In truth, poor quality is the single largest hidden destroyer of operational margin. Armand Feigenbaum and Joseph Juran developed the Prevention-Appraisal-Failure (PAF) model to quantify the economics of quality. Under the PAF model, the Cost of Quality (CoQ) separates into two broad categories: the Cost of Conformance (good money invested to do things right) and the Cost of Non-Conformance (bad money wasted because things were done wrong).',
+          'The Cost of Conformance consists of Prevention Costs (investments in robust product design, supplier audits, employee training, and automated poka-yoke error-proofing) and Appraisal Costs (testing, inspection, gage calibration, and quality audits). The Cost of Non-Conformance divides into Internal Failure Costs (scrap, rework, machine downtime, and reinspection occurring before shipment) and External Failure Costs (customer returns, warranty claims, field recalls, legal liability, and brand reputation loss).',
+          'The fundamental economic law of operations is the 1-10-100 Rule: spending $1 on upstream Prevention eliminates $10 in Appraisal testing and prevents $100 in catastrophic External Failure costs. High-performing manufacturing companies keep total Cost of Quality below 3% to 5% of revenue, with over 70% of that budget concentrated in Prevention and Appraisal. In contrast, low-maturity operations routinely bleed 15% to 25% of revenue in internal scrap and external customer warranties. Modeling CoQ empowers operations managers to justify preventive capital investments with indisputable economic ROI.'
+        ],
+        example: 'A medical device company generating $15M in revenue discovers that internal scrap ($380K) and customer warranty replacements ($540K) total $920K annually (83.6% of all quality costs). Shifting $60K into automated poka-yoke inspection eliminates the bulk of warranty failures, generating an immediate 15x return on quality investment.',
+        code: `# Cost of Quality (CoQ) & PAF Economic Optimization Engine
+def analyze_cost_of_quality(
+    prevention: float,
+    appraisal: float,
+    internal_failure: float,
+    external_failure: float,
+    annual_revenue: float
+) -> dict:
+    # 1. Conformance vs Non-Conformance Breakdown
+    total_conformance = prevention + appraisal
+    total_non_conformance = internal_failure + external_failure
+    total_coq = total_conformance + total_non_conformance
+
+    # 2. Key Financial Ratios
+    coq_revenue_pct = (total_coq / annual_revenue) * 100.0
+    failure_share_pct = (total_non_conformance / total_coq) * 100.0
+
+    # 3. 1-10-100 Rule Leverage Ratio: Failure costs avoided per dollar of prevention
+    prevention_leverage_ratio = round(total_non_conformance / max(1.0, prevention), 1)
+
+    # 4. Strategic Governance Recommendation
+    if failure_share_pct > 60.0:
+        recommendation = "Shift budget upstream to Prevention to eliminate high Failure costs"
+    else:
+        recommendation = "Balanced Quality Portfolio"
+
+    return {
+        "Annual_Revenue": "$" + f"{annual_revenue:,.2f}",
+        "Prevention_Cost": "$" + f"{prevention:,.2f}",
+        "Appraisal_Cost": "$" + f"{appraisal:,.2f}",
+        "Internal_Failure_Cost": "$" + f"{internal_failure:,.2f}",
+        "External_Failure_Cost": "$" + f"{external_failure:,.2f}",
+        "Total_Cost_of_Quality": "$" + f"{total_coq:,.2f}",
+        "CoQ_Pct_of_Revenue": round(coq_revenue_pct, 2),
+        "NonConformance_Share_Pct": round(failure_share_pct, 1),
+        "Prevention_Leverage_Ratio": prevention_leverage_ratio,
+        "Strategic_Recommendation": recommendation
+    }
+
+coq_res = analyze_cost_of_quality(
+    prevention=60_000.0,
+    appraisal=120_000.0,
+    internal_failure=380_000.0,
+    external_failure=540_000.0,
+    annual_revenue=15_000_000.0
+)
+
+for k, v in coq_res.items():
+    print(f"{k}: {v}")`,
+        output: `Annual_Revenue: $15,000,000.00
+Prevention_Cost: $60,000.00
+Appraisal_Cost: $120,000.00
+Internal_Failure_Cost: $380,000.00
+External_Failure_Cost: $540,000.00
+Total_Cost_of_Quality: $1,100,000.00
+CoQ_Pct_of_Revenue: 7.33
+NonConformance_Share_Pct: 83.6
+Prevention_Leverage_Ratio: 15.3
+Strategic_Recommendation: Shift budget upstream to Prevention to eliminate high Failure costs`,
+        codeNotes: [
+          { line: 9, note: 'Groups quality expenses into Conformance (Prevention + Appraisal) and Non-Conformance (Failures)' },
+          { line: 15, note: 'Measures total CoQ as a percentage of revenue and highlights the non-conformance proportion' },
+          { line: 18, note: 'Computes the Prevention Leverage Ratio illustrating the 1-10-100 economic multiplier' },
+          { line: 40, note: 'Identifies an 83.6% failure burden, justifying upstream capital investment in automated poka-yoke controls' }
+        ],
+        tryIt: 'Double prevention to $120,000 and reduce external failure to $50,000 to see non-conformance share collapse below 50%.',
+        check: {
+          question: 'Under the 1-10-100 Rule of quality management, which category of quality expenditure delivers the highest financial return on investment?',
+          options: [
+            'Prevention Costs, because every dollar spent designing defects out of the process avoids an order-of-magnitude increase in downstream inspection and catastrophic failure costs.',
+            'External Failure Costs, because customer warranty claims generate tax write-offs for the accounting department.',
+            'Appraisal Costs, because hiring more inspectors is the most efficient way to achieve Six Sigma.',
+            'Scrap disposal costs, because selling scrapped metal increases secondary revenue.'
+          ],
+          answer: 0,
+          why: 'The 1-10-100 rule demonstrates that spending $1 on Prevention eliminates $10 in Appraisal testing and $100 in catastrophic customer Failure costs.',
+          answerIndex: 0,
+          explanation: 'The 1-10-100 rule demonstrates that spending $1 on Prevention eliminates $10 in Appraisal testing and $100 in catastrophic customer Failure costs.'
+        }
+      }
+    ],
+    summary: [
+      'Process Capability (Cp vs Cpk): Cp measures potential spread relative to tolerance, while Cpk penalizes mean offset; Cpk >= 1.33 is capable and >= 1.67 is world-class.',
+      'Statistical Process Control: Shewhart X-bar and R charts separate random common cause variation from assignable special cause signals using empirical constants.',
+      'Attribute Control & Nelson Rules: Binomial p-charts track defective proportions, while Nelson Rules detect non-random runs and monotonic trends prior to 3-sigma breaches.',
+      'Measurement System Analysis (MSA): Gage R&R decomposes variance into Repeatability (EV) and Reproducibility (AV); %GRR < 10% is acceptable, while > 30% renders measurement invalid.',
+      'Cost of Quality (CoQ): The PAF model and 1-10-100 Rule demonstrate that investing in upstream Prevention yields exponential savings over downstream internal and external failure costs.'
+    ],
+    projectStep: {
+      title: 'Statistical Process Control & Gage R&R Quality Architecture',
+      steps: [
+        'Calculate continuous process capability indices (Cp and Cpk) to benchmark manufacturing tolerances against Six Sigma DPMO targets.',
+        'Construct Shewhart X-bar and R control charts to distinguish common cause background noise from assignable special causes.',
+        'Implement an attribute p-chart equipped with Western Electric and Nelson Rules to detect insidious process drift.',
+        'Perform a Gage R&R variance decomposition study to validate measurement tool precision, and optimize quality spend via the PAF Cost of Quality framework.'
+      ]
+    }
   }
 ];
+
