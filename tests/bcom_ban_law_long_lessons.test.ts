@@ -298,6 +298,61 @@ test('Block 113: B.Com Commercial Banking Day 4: Fintech, ISO 20022 & AML Graph 
   assert.ok(lesson.parts[4].code?.includes('detect_money_laundering_graph_cycles_and_mules'));
 });
 
+test('Block 114: B.Com Commercial Banking Day 5 Capstone: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_ban', 5);
+  assert.ok(lesson, 'bcom_ban Day 5 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_ban');
+  assert.equal(lesson.day, 5);
+  assert.equal(lesson.parts.length, 5, 'bcom_ban Day 5 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_ban'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 114: B.Com Commercial Banking Day 5 Capstone: CCAR Stress Testing & Capital Restoration Snippets Verification', () => {
+  const lesson = BCOM_BAN_LONG_LESSONS[4];
+  assert.ok(lesson, 'BCOM_BAN_LONG_LESSONS[4] must exist');
+  assert.equal(lesson.day, 5);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Multi-Asset Balance Sheet.*RWA Aggregation/i);
+  assert.ok(lesson.parts[0].code?.includes('aggregate_commercial_bank_rwa_and_capital'));
+  assert.match(lesson.parts[1].title, /CCAR Severely Adverse.*Credit Migration/i);
+  assert.ok(lesson.parts[1].code?.includes('simulate_ccar_severely_adverse_credit_migration'));
+  assert.match(lesson.parts[2].title, /Net Interest Income.*NII.*Deposit Beta/i);
+  assert.ok(lesson.parts[2].code?.includes('simulate_nii_yield_curve_compression'));
+  assert.match(lesson.parts[3].title, /Dynamic Capital Buffers.*CoCo Bond/i);
+  assert.ok(lesson.parts[3].code?.includes('execute_capital_restoration_and_coco_conversion'));
+  assert.match(lesson.parts[4].title, /Capstone Supervisory Defense.*CCAR Certification/i);
+  assert.ok(lesson.parts[4].code?.includes('run_comprehensive_ccar_capital_stress_test'));
+});
+
+
 
 
 

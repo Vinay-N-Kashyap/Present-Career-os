@@ -1561,6 +1561,453 @@ Sample Layering Cycle: Funnel_Hub -> Shell_Co_A -> Offshore_B -> Funnel_Hub`,
         'Implement Benford\'s Law Chi-Square forensic auditing alongside a graph-based money mule cycle detection engine.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ban',
+    day: 5,
+    title: 'Milestone 1 Capstone: Global Commercial Bank Balance Sheet & CCAR Stress Testing',
+    goal: 'Engineer and defend an enterprise Global Commercial Bank Balance Sheet and Comprehensive Capital Analysis and Review (CCAR / EBA) Capital Stress Testing Engine: Basel III multi-asset RWA aggregation, Dodd-Frank Act (DFAST) severely adverse macroeconomic credit migration, Net Interest Margin yield curve compression with deposit beta modeling, dynamic capital restoration via CoCo bond conversions and dividend cuts, and Boardroom supervisory capital clearance.',
+    minutes: 50,
+    recap: 'Welcome to the Milestone 1 Capstone for Commercial Banking & Treasury Operations. As Managing Director of Treasury and Chief Risk Officer, you are responsible for steering a $1 Trillion global banking institution through severe macroeconomic crises, ensuring capital preservation, liquidity survival, and regulatory clearance under Federal Reserve CCAR supervisory mandates.',
+    parts: [
+      {
+        title: 'Enterprise Multi-Asset Balance Sheet & Basel III RWA Aggregation',
+        say: [
+          'A global commercial bank\'s balance sheet represents a complex matrix of multi-trillion-dollar assets spanning diverse credit qualities and collateral structures. Under the Basel III regulatory framework, banks cannot simply evaluate raw balance sheet assets; they must calculate Risk-Weighted Assets (RWA) to reflect each asset\'s underlying default and recovery characteristics. Sovereign debt and central bank reserves receive a 0% risk weight, residential mortgages carry a preferential 35% risk weight, high-grade corporate loans receive 50%, while unrated high-yield exposures carry a full 100% risk weight.',
+          'Crucially, modern commercial banking involves massive off-balance-sheet commitments, such as undrawn revolving credit lines and standby letters of credit. Regulators enforce Credit Conversion Factors (CCF)—typically 50% for committed credit facilities—to convert off-balance-sheet contingent liabilities into on-balance credit equivalents before applying the borrower\'s risk weight: Off-Balance RWA = Exposure * CCF * Risk Weight.',
+          'To ensure solvency, the bank must satisfy multiple binding capital ratios simultaneously: Common Equity Tier 1 (CET1 >= 4.5% + 2.5% Capital Conservation Buffer = 7.0%), Tier 1 Capital (>= 8.5%), and Total Capital (>= 10.5%). In addition, regulators enforce the non-risk-based Basel III Leverage Ratio (Tier 1 Capital / Total Exposure >= 3.0%), acting as a backstop preventing excessive leverage regardless of risk weights.'
+        ],
+        example: 'A commercial bank manages $1,000B in assets ($50B cash, $200B sovereign bonds, $350B mortgages, $300B corporate IG, $100B high-yield) and $100B in undrawn revolvers (50% CCF). Total RWA reaches $422.5B. Supported by $65B CET1, $15B AT1, and $20B Tier 2 capital, the bank reports a strong 15.38% CET1 ratio and 7.62% leverage ratio, comfortably exceeding Basel III minima.',
+        code: `# Enterprise Multi-Asset Balance Sheet & Basel III RWA Engine
+def aggregate_commercial_bank_rwa_and_capital(assets: list, off_balance_sheet: list,
+                                              cet1_capital: float, at1_capital: float, tier2_capital: float) -> dict:
+    total_assets = sum(a["amount"] for a in assets)
+    on_balance_rwa = sum(a["amount"] * (a["risk_weight_pct"] / 100.0) for a in assets)
+    
+    # Off-balance sheet: Exposure * Credit Conversion Factor (CCF) * Risk Weight
+    off_balance_rwa = sum(obs["amount"] * (obs["ccf_pct"] / 100.0) * (obs["risk_weight_pct"] / 100.0) for obs in off_balance_sheet)
+    total_rwa = on_balance_rwa + off_balance_rwa
+    
+    tier1_capital = cet1_capital + at1_capital
+    total_capital = tier1_capital + tier2_capital
+    
+    # Total leverage exposure includes on-balance assets + off-balance after CCF
+    total_leverage_exposure = total_assets + sum(obs["amount"] * (obs["ccf_pct"] / 100.0) for obs in off_balance_sheet)
+    
+    cet1_ratio_pct = (cet1_capital / total_rwa) * 100.0
+    tier1_ratio_pct = (tier1_capital / total_rwa) * 100.0
+    total_capital_ratio_pct = (total_capital / total_rwa) * 100.0
+    leverage_ratio_pct = (tier1_capital / total_leverage_exposure) * 100.0
+    
+    return {
+        "total_assets": total_assets,
+        "total_rwa": total_rwa,
+        "cet1_capital": cet1_capital,
+        "tier1_capital": tier1_capital,
+        "total_capital": total_capital,
+        "cet1_ratio_pct": round(cet1_ratio_pct, 2),
+        "tier1_ratio_pct": round(tier1_ratio_pct, 2),
+        "total_capital_ratio_pct": round(total_capital_ratio_pct, 2),
+        "leverage_ratio_pct": round(leverage_ratio_pct, 2),
+        "meets_basel3_minima": cet1_ratio_pct >= 7.0 and total_capital_ratio_pct >= 10.5 and leverage_ratio_pct >= 3.0
+    }
+
+p1 = aggregate_commercial_bank_rwa_and_capital(
+    [
+        {"type": "Cash & Reserves", "amount": 50000000000.0, "risk_weight_pct": 0.0},
+        {"type": "Sovereign Bonds", "amount": 200000000000.0, "risk_weight_pct": 0.0},
+        {"type": "Residential Mortgages", "amount": 350000000000.0, "risk_weight_pct": 35.0},
+        {"type": "Corporate IG Loans", "amount": 300000000000.0, "risk_weight_pct": 50.0},
+        {"type": "Corporate High Yield", "amount": 100000000000.0, "risk_weight_pct": 100.0}
+    ],
+    [
+        {"type": "Undrawn Revolvers", "amount": 100000000000.0, "ccf_pct": 50.0, "risk_weight_pct": 100.0}
+    ],
+    cet1_capital=65000000000.0, at1_capital=15000000000.0, tier2_capital=20000000000.0
+)
+assets_str = "$" + f"{p1['total_assets'] / 1e9:.1f}B"
+rwa_str = "$" + f"{p1['total_rwa'] / 1e9:.1f}B"
+cet1_str = "$" + f"{p1['cet1_capital'] / 1e9:.1f}B"
+print(f"Total Assets: {assets_str} | Total RWA: {rwa_str} | CET1 Capital: {cet1_str}")
+print(f"CET1 Ratio: {p1['cet1_ratio_pct']}% | Tier 1: {p1['tier1_ratio_pct']}% | Total Cap: {p1['total_capital_ratio_pct']}% | Leverage: {p1['leverage_ratio_pct']}%")`,
+        output: `Total Assets: $1000.0B | Total RWA: $422.5B | CET1 Capital: $65.0B
+CET1 Ratio: 15.38% | Tier 1: 18.93% | Total Cap: 23.67% | Leverage: 7.62%`,
+        codeNotes: [
+          { line: 4, note: 'Applies regulatory risk weights across cash (0%), mortgages (35%), and corporate loans (50-100%)' },
+          { line: 8, note: 'Applies 50% Credit Conversion Factor on off-balance-sheet commitments before risk-weighting' },
+          { line: 18, note: 'Calculates regulatory CET1, Tier 1, Total Capital, and Basel III Leverage ratios' },
+          { line: 45, note: 'Demonstrates $1,000B asset portfolio yielding $422.5B RWA and 15.38% CET1 capital ratio' }
+        ],
+        tryIt: 'Reallocate $100B from 0% sovereign bonds into 100% corporate high yield and observe RWA surge to $522.5B.',
+        check: {
+          question: 'What is the purpose of applying Credit Conversion Factors (CCF) to off-balance-sheet commitments under Basel III?',
+          options: [
+            'To convert contingent credit obligations (such as undrawn revolving lines) into on-balance-sheet credit exposure equivalents prior to applying borrower risk weights.',
+            'To convert foreign currency commitments into United States Dollars at official exchange rates.',
+            'To forgive customer interest payments during recessions.',
+            'To guarantee that bank executives receive annual stock compensation.'
+          ],
+          answer: 0,
+          why: 'Borrowers frequently draw down committed lines during distress, so CCFs ensure the bank holds capital against the probable credit exposure that will materialize on-balance-sheet.',
+          answerIndex: 0,
+          explanation: 'Borrowers frequently draw down committed lines during distress, so CCFs ensure the bank holds capital against the probable credit exposure that will materialize on-balance-sheet.'
+        }
+      },
+      {
+        title: 'Federal Reserve CCAR Severely Adverse Macroeconomic Credit Migration',
+        say: [
+          'Under the Dodd-Frank Act Stress Testing (DFAST) and Comprehensive Capital Analysis and Review (CCAR), the Federal Reserve subjects systemically important banks to a hypothetical "Severely Adverse" macroeconomic scenario. This scenario typically envisions an acute global recession: annualized GDP contracts by -3.5%, nationwide unemployment doubles to 10.0%, and commercial real estate and equity valuations plunge by 25% to 40% over a 9-quarter horizon.',
+          'Under such economic stress, borrowers across all credit segments experience severe credit migration. Performing Stage 1 credits deteriorate into delinquent Stage 2 and defaulted Stage 3 non-performing assets. The bank\'s credit risk engine models this migration using a macroeconomic stress multiplier: Stressed PD = min(1.0, Base PD * (1.0 + 0.10 * |GDP Shock| + 0.15 * Unemployment Spike)).',
+          'As default probabilities spike, the bank must recognize immediate incremental loan loss provisions under forward-looking IFRS 9 / CECL standards: Incremental Provision = EAD * Stressed PD * LGD - Baseline Loss. These incremental provisions flow directly through the income statement as credit impairment expenses, eroding retained earnings and deducting billions of dollars directly from Common Equity Tier 1 capital.'
+        ],
+        example: 'Under a -3.5% GDP contraction and +5.0% unemployment spike (2.1x macro multiplier), the bank\'s $750B loan portfolio experiences severe PD deterioration (mortgages rise from 1.2% to 2.52%, high yield rises from 4.5% to 9.45%), generating $5.16B in required incremental credit provisions.',
+        code: `# CCAR Severely Adverse Credit Migration & Provision Surge Engine
+def simulate_ccar_severely_adverse_credit_migration(loan_books: list, gdp_contraction_pct: float, unemployment_spike_pts: float) -> dict:
+    total_provisions_required = 0.0
+    stressed_book_summary = []
+    
+    # Macro stress factor = 1.0 + 0.1 * |gdp| + 0.15 * unemployment_spike
+    stress_multiplier = 1.0 + (0.10 * abs(gdp_contraction_pct)) + (0.15 * unemployment_spike_pts)
+    
+    for book in loan_books:
+        ead = book["ead"]
+        base_pd = book["baseline_pd_pct"] / 100.0
+        lgd = book["lgd_pct"] / 100.0
+        
+        # Stressed PD under economic contraction
+        stressed_pd = min(1.0, base_pd * stress_multiplier)
+        baseline_loss = ead * base_pd * lgd
+        stressed_loss = ead * stressed_pd * lgd
+        incremental_provision = stressed_loss - baseline_loss
+        
+        total_provisions_required += incremental_provision
+        stressed_book_summary.append({
+            "segment": book["segment"],
+            "ead": ead,
+            "stressed_pd_pct": round(stressed_pd * 100.0, 2),
+            "stressed_loss": round(stressed_loss, 2),
+            "incremental_provision": round(incremental_provision, 2)
+        })
+        
+    return {
+        "macro_stress_multiplier": round(stress_multiplier, 2),
+        "total_incremental_provisions": round(total_provisions_required, 2),
+        "stressed_segments": stressed_book_summary
+    }
+
+p2 = simulate_ccar_severely_adverse_credit_migration(
+    [
+        {"segment": "Residential Mortgages", "ead": 350000000000.0, "baseline_pd_pct": 1.2, "lgd_pct": 30.0},
+        {"segment": "Corporate IG Loans", "ead": 300000000000.0, "baseline_pd_pct": 0.8, "lgd_pct": 40.0},
+        {"segment": "Corporate High Yield", "ead": 100000000000.0, "baseline_pd_pct": 4.5, "lgd_pct": 55.0}
+    ],
+    gdp_contraction_pct=-3.5, unemployment_spike_pts=5.0
+)
+prov_str = "$" + f"{p2['total_incremental_provisions'] / 1e9:.2f}B"
+print(f"Macro Multiplier: {p2['macro_stress_multiplier']}x | Total Incremental Provisions: {prov_str}")
+for s in p2["stressed_segments"]:
+    loss_str = "$" + f"{s['stressed_loss'] / 1e9:.2f}B"
+    print(f"  {s['segment']}: Stressed PD {s['stressed_pd_pct']}% | Stressed Loss: {loss_str}")`,
+        output: `Macro Multiplier: 2.1x | Total Incremental Provisions: $5.16B
+  Residential Mortgages: Stressed PD 2.52% | Stressed Loss: $2.65B
+  Corporate IG Loans: Stressed PD 1.68% | Stressed Loss: $2.02B
+  Corporate High Yield: Stressed PD 9.45% | Stressed Loss: $5.20B`,
+        codeNotes: [
+          { line: 6, note: 'Calculates macro multiplier (2.1x) scaling default probabilities under recessionary GDP and job losses' },
+          { line: 14, note: 'Applies stressed default probabilities to compute incremental loan loss provisions' },
+          { line: 20, note: 'Aggregates credit losses across residential mortgages, corporate IG, and high-yield books' },
+          { line: 36, note: 'Simulates $5.16B in incremental loan impairment charges deducted directly from bank capital' }
+        ],
+        tryIt: 'Increase unemployment_spike_pts to 8.0 to observe macro multiplier rise to 2.55x with provisions reaching $7.27B.',
+        check: {
+          question: 'Under CECL and IFRS 9 accounting rules, how do incremental credit provisions calculated during CCAR stress testing affect the bank\'s capital ratios?',
+          options: [
+            'Provisions are recorded as operating expenses on the income statement, directly reducing net income and retained earnings, which directly depletes CET1 capital.',
+            'Provisions increase bank capital because they represent money saved for a rainy day.',
+            'Provisions have no effect on capital because they are classified as non-cash deferred tax assets.',
+            'Provisions are paid out directly to common shareholders as special dividends.'
+          ],
+          answer: 0,
+          why: 'Loan loss provisions reduce after-tax net income, thereby reducing retained earnings, the primary core component of Common Equity Tier 1 (CET1) capital.',
+          answerIndex: 0,
+          explanation: 'Loan loss provisions reduce after-tax net income, thereby reducing retained earnings, the primary core component of Common Equity Tier 1 (CET1) capital.'
+        }
+      },
+      {
+        title: 'Net Interest Income (NII) Compression, Yield Curve Inversion & Deposit Beta',
+        say: [
+          'In addition to direct loan default losses, severe macroeconomic crises inflict devastating collateral damage on a bank\'s core earnings engine through Net Interest Income (NII) compression. During periods of aggressive central bank monetary tightening or financial market turbulence, the yield curve often experiences severe inversion: short-term benchmark interest rates rise faster than long-term asset yields.',
+          'Commercial banks face asymmetric interest rate repricing dynamics governed by Deposit Beta—the percentage of market rate hikes that the bank must pass on to depositors to prevent catastrophic deposit outflows. In competitive wholesale corporate banking, deposit betas reach 70% to 90%. Conversely, long-term asset yields repricing lags significantly due to fixed-rate loan tenors and competitive caps (repricing mismatch).',
+          'When short-term liability costs surge while long-term asset yields reprice sluggishly, Net Interest Margin collapses: NII Compression = Baseline NII - Shocked NII. Over a multi-quarter stress horizon, this margin squeeze destroys billions of dollars in expected operating revenue, depriving the bank of the organic earnings buffer required to absorb loan impairment charges.'
+        ],
+        example: 'A bank with $750B earning assets earning 4.8% and $800B liabilities costing 2.2% generates $18.40B baseline NII. A +250 bps interest rate shock with a 75% deposit beta and 40% repricing lag causes funding costs to jump to 4.075% while asset yields rise to only 6.30%, crushing annual NII by $3.75B (a 20.38% contraction).',
+        code: `# Net Interest Income (NII) Compression & Deposit Beta Squeeze Engine
+def simulate_nii_yield_curve_compression(earning_assets: float, asset_yield_pct: float,
+                                         interest_liabilities: float, liability_cost_pct: float,
+                                         rate_hike_bps: float, deposit_beta: float,
+                                         repricing_mismatch_pct: float) -> dict:
+    rate_hike_pct = rate_hike_bps / 100.0
+    
+    baseline_interest_income = earning_assets * (asset_yield_pct / 100.0)
+    baseline_interest_expense = interest_liabilities * (liability_cost_pct / 100.0)
+    baseline_nii = baseline_interest_income - baseline_interest_expense
+    
+    # Under yield curve shock, deposit cost rises by rate_hike * beta
+    shocked_liability_cost_pct = liability_cost_pct + (rate_hike_pct * deposit_beta)
+    # Asset yield repricing is delayed by repricing mismatch
+    shocked_asset_yield_pct = asset_yield_pct + (rate_hike_pct * (1.0 - repricing_mismatch_pct))
+    
+    shocked_interest_income = earning_assets * (shocked_asset_yield_pct / 100.0)
+    shocked_interest_expense = interest_liabilities * (shocked_liability_cost_pct / 100.0)
+    shocked_nii = shocked_interest_income - shocked_interest_expense
+    nii_compression = baseline_nii - shocked_nii
+    
+    return {
+        "baseline_nii": round(baseline_nii, 2),
+        "shocked_nii": round(shocked_nii, 2),
+        "nii_compression": round(nii_compression, 2),
+        "nii_compression_pct": round((nii_compression / baseline_nii) * 100.0, 2) if baseline_nii > 0 else 0.0
+    }
+
+p3 = simulate_nii_yield_curve_compression(
+    earning_assets=750000000000.0, asset_yield_pct=4.8,
+    interest_liabilities=800000000000.0, liability_cost_pct=2.2,
+    rate_hike_bps=250.0, deposit_beta=0.75, repricing_mismatch_pct=0.40
+)
+base_nii = "$" + f"{p3['baseline_nii'] / 1e9:.2f}B"
+shock_nii = "$" + f"{p3['shocked_nii'] / 1e9:.2f}B"
+comp_nii = "$" + f"{p3['nii_compression'] / 1e9:.2f}B"
+print(f"Baseline NII: {base_nii} -> Shocked NII: {shock_nii}")
+print(f"NII Squeeze: {comp_nii} ({p3['nii_compression_pct']}%)")`,
+        output: `Baseline NII: $18.40B -> Shocked NII: $14.65B
+NII Squeeze: $3.75B (20.38%)`,
+        codeNotes: [
+          { line: 6, note: 'Calculates baseline net interest income ($18.40B) before macroeconomic stress' },
+          { line: 12, note: 'Applies 75% deposit beta to scale liability funding cost expansion under rate hike' },
+          { line: 14, note: 'Models 40% asset repricing lag reflecting fixed loan tenors' },
+          { line: 29, note: 'Quantifies $3.75B annual NII contraction representing 20.38% core revenue destruction' }
+        ],
+        tryIt: 'Increase deposit_beta from 0.75 to 0.90 to observe NII compression widen to $5.25B.',
+        check: {
+          question: 'What does a high "Deposit Beta" (e.g. 85%) signify for a commercial bank during a period of rising central bank interest rates?',
+          options: [
+            'The bank must pass on 85% of the central bank rate increase to depositors in higher interest expenses, substantially narrowing Net Interest Margin.',
+            'The bank\'s stock price will automatically decline by exactly 85%.',
+            'The bank is legally required to invest 85% of its deposits in technology startups.',
+            'The bank must convert 85% of its branches into digital ATMs.'
+          ],
+          answer: 0,
+          why: 'Deposit beta measures deposit pricing sensitivity: a high beta means liability costs increase rapidly alongside market rates, compressing net interest spreads.',
+          answerIndex: 0,
+          explanation: 'Deposit beta measures deposit pricing sensitivity: a high beta means liability costs increase rapidly alongside market rates, compressing net interest spreads.'
+        }
+      },
+      {
+        title: 'Dynamic Capital Buffers, CoCo Bond Contingent Write-Down & Capital Restoration',
+        say: [
+          'When combined credit losses and NII compression push a bank\'s post-stress CET1 capital ratio below the regulatory Capital Conservation Buffer (CCB) hurdle of 7.0% (4.5% statutory minimum + 2.5% buffer), the institution enters severe supervisory distress. Under Basel III rules, the bank is legally prohibited from paying discretionary common dividends or executive bonuses, forcing organic cash preservation.',
+          'To prevent systemic insolvency and avoid taxpayer bailouts, modern global banks issue Contingent Convertible (CoCo) Additional Tier 1 capital bonds. CoCos feature contractual automatic loss-absorption triggers: if the bank\'s CET1 ratio breaches a designated solvency tripwire (typically 5.125% or 7.0%), the bonds automatically convert into common equity or suffer permanent principal write-down, instantly injecting billions of dollars directly into CET1 capital.',
+          'Simultaneously, the bank\'s Executive Risk Committee activates dynamic balance sheet recovery levers: halting discretionary dividend distributions preserves billions in annual capital, while aggressive RWA pruning (such as unwinding non-core high-risk corporate and trading portfolios) shrinks the denominator of the capital ratio. Together, these automated mechanisms restore the bank\'s CET1 ratio safely back above regulatory minimums.'
+        ],
+        example: 'A bank experiencing $9.7B credit losses and $3.75B NII compression sees its CET1 ratio fall from 8.99% to 5.81%, breaching the 7.0% CCB buffer. Executing management actions ($10.0B CoCo conversion, $4.0B dividend freeze, and $25.0B RWA pruning) restores post-stress CET1 capital to $38.55B and the CET1 ratio to 9.70%, ensuring institutional survival.',
+        code: `# Dynamic Capital Restoration & CoCo Contingent Conversion Engine
+def execute_capital_restoration_and_coco_conversion(current_cet1: float, current_rwa: float,
+                                                    incremental_losses: float, nii_loss: float,
+                                                    coco_principal: float, dividend_freeze_savings: float,
+                                                    rwa_pruning_capacity: float) -> dict:
+    # Post-stress CET1 before management actions
+    post_stress_cet1_raw = current_cet1 - incremental_losses - nii_loss
+    raw_cet1_ratio_pct = (post_stress_cet1_raw / current_rwa) * 100.0
+    
+    # Capital Conservation Buffer threshold = 7.0% (4.5% min + 2.5% CCB)
+    breached_buffer = raw_cet1_ratio_pct < 7.0
+    
+    # Recovery actions:
+    coco_converted = 0.0
+    dividends_saved = 0.0
+    rwa_pruned = 0.0
+    
+    if breached_buffer:
+        dividends_saved = dividend_freeze_savings
+        coco_converted = coco_principal # CoCo triggers and converts to CET1 equity
+        rwa_pruned = rwa_pruning_capacity # Sell down non-core trading assets
+        
+    restored_cet1 = post_stress_cet1_raw + coco_converted + dividends_saved
+    restored_rwa = current_rwa - rwa_pruned
+    restored_cet1_ratio_pct = (restored_cet1 / restored_rwa) * 100.0
+    
+    return {
+        "raw_cet1_capital": round(post_stress_cet1_raw, 2),
+        "raw_cet1_ratio_pct": round(raw_cet1_ratio_pct, 2),
+        "buffer_breached": breached_buffer,
+        "coco_equity_injection": round(coco_converted, 2),
+        "dividend_freeze_preserved": round(dividends_saved, 2),
+        "rwa_pruned": round(rwa_pruned, 2),
+        "restored_cet1_capital": round(restored_cet1, 2),
+        "restored_cet1_ratio_pct": round(restored_cet1_ratio_pct, 2),
+        "restoration_successful": restored_cet1_ratio_pct >= 7.0
+    }
+
+p4 = execute_capital_restoration_and_coco_conversion(
+    current_cet1=38000000000.0, current_rwa=422500000000.0,
+    incremental_losses=9700000000.0, nii_loss=3750000000.0,
+    coco_principal=10000000000.0, dividend_freeze_savings=4000000000.0,
+    rwa_pruning_capacity=25000000000.0
+)
+raw_cet1 = "$" + f"{p4['raw_cet1_capital'] / 1e9:.2f}B"
+resto_cet1 = "$" + f"{p4['restored_cet1_capital'] / 1e9:.2f}B"
+print(f"Raw Stressed CET1: {raw_cet1} ({p4['raw_cet1_ratio_pct']}%) | Buffer Breached: {p4['buffer_breached']}")
+print(f"Restored CET1: {resto_cet1} ({p4['restored_cet1_ratio_pct']}%) | Success: {p4['restoration_successful']}")`,
+        output: `Raw Stressed CET1: $24.55B (5.81%) | Buffer Breached: True
+Restored CET1: $38.55B (9.7%) | Success: True`,
+        codeNotes: [
+          { line: 6, note: 'Calculates raw post-stress CET1 ratio (5.81%) breaching the 7.0% Capital Conservation Buffer' },
+          { line: 15, note: 'Executes automated Contingent Convertible (CoCo) bond conversion injecting $10.0B equity' },
+          { line: 16, note: 'Enforces mandatory dividend freeze preserving $4.0B and prunes $25.0B in high-risk RWA' },
+          { line: 36, note: 'Successfully restores capital ratio to 9.70%, clearing Basel III regulatory requirements' }
+        ],
+        tryIt: 'Zero out coco_principal to observe capital restoration fail at 7.18% without enough buffer cushion.',
+        check: {
+          question: 'What is the primary loss-absorption mechanism of a Contingent Convertible (CoCo) AT1 bond during a banking crisis?',
+          options: [
+            'It automatically converts into common equity or undergoes principal write-down when the bank\'s CET1 ratio breaches a contractually specified tripwire threshold.',
+            'It guarantees that the bondholder will receive a full cash refund from the central bank.',
+            'It forces the borrower to take on additional personal loan debt.',
+            'It converts the bank\'s mortgage assets into commercial aircraft leases.'
+          ],
+          answer: 0,
+          why: 'CoCo bonds are designed to bail-in private debt investors by converting to common equity when capital drops, replenishing CET1 without taxpayer assistance.',
+          answerIndex: 0,
+          explanation: 'CoCo bonds are designed to bail-in private debt investors by converting to common equity when capital drops, replenishing CET1 without taxpayer assistance.'
+        }
+      },
+      {
+        title: 'Capstone Supervisory Defense & Boardroom CCAR Certification',
+        say: [
+          'In this milestone capstone, you step into the boardroom as Chief Risk Officer (CRO) and Head of Treasury to present the bank\'s enterprise CCAR stress test submission to the Board of Directors and Federal Reserve examiners. The submission synthesizes all balance sheet domains: multi-asset RWA calculations, CECL/IFRS 9 credit migration under severe recession, deposit beta margin compression, and dynamic capital restoration.',
+          'The Federal Reserve evaluates the bank\'s submission against strict qualitative and quantitative standards. Quantitatively, the bank\'s post-stress restored CET1 ratio must never breach the statutory minimum hurdle rate of 7.0% at any point during the 9-quarter forecast horizon. Qualitatively, examiners scrutinize the bank\'s governance, scenario sensitivity, and realism of recovery management actions.',
+          'Upon successful execution, the automated stress testing engine proves that Global Horizon Commercial Bank AG weathers $8.91B in combined macro credit and NII losses while maintaining a post-stress restored CET1 ratio of 10.84%. The bank secures full supervisory clearance without objection ("PASS_CCAR_SUPERVISORY_OBJECTION_FREE") and you earn the accredited credential: Certified Global Bank Treasury & Chief Risk Officer (CRO).'
+        ],
+        example: 'Under Federal Reserve CCAR Severely Adverse stress, the bank\'s baseline 8.99% CET1 ratio dips to 6.88% raw stressed under $8.91B in macro losses. Automated recovery actions restore post-stress CET1 to 10.84%, earning full supervisory clearance and Boardroom CRO accreditation.',
+        code: `# Milestone 1 Capstone: End-to-End CCAR Stress Testing Control Tower
+def run_comprehensive_ccar_capital_stress_test(bank_name: str, baseline_balance_sheet: dict,
+                                               macro_stress: dict, capital_recovery_plan: dict) -> dict:
+    # Step 1: Baseline RWA
+    base_res = aggregate_commercial_bank_rwa_and_capital(
+        baseline_balance_sheet["assets"], baseline_balance_sheet["off_balance_sheet"],
+        baseline_balance_sheet["cet1"], baseline_balance_sheet["at1"], baseline_balance_sheet["tier2"]
+    )
+    
+    # Step 2: Credit Losses
+    credit_res = simulate_ccar_severely_adverse_credit_migration(
+        baseline_balance_sheet["loans"], macro_stress["gdp_shock_pct"], macro_stress["unemployment_spike_pts"]
+    )
+    
+    # Step 3: NII Compression
+    nii_res = simulate_nii_yield_curve_compression(
+        baseline_balance_sheet["total_earning_assets"], baseline_balance_sheet["asset_yield_pct"],
+        baseline_balance_sheet["total_funding_liabilities"], baseline_balance_sheet["liability_cost_pct"],
+        macro_stress["rate_hike_bps"], macro_stress["deposit_beta"], macro_stress["repricing_mismatch"]
+    )
+    
+    # Step 4: Capital Restoration
+    resto_res = execute_capital_restoration_and_coco_conversion(
+        base_res["cet1_capital"], base_res["total_rwa"],
+        credit_res["total_incremental_provisions"], nii_res["nii_compression"],
+        capital_recovery_plan["coco_principal"], capital_recovery_plan["annual_dividend_freeze"],
+        capital_recovery_plan["rwa_pruning_capacity"]
+    )
+    
+    supervisory_verdict = "PASS_CCAR_SUPERVISORY_OBJECTION_FREE" if resto_res["restoration_successful"] else "FAIL_CAPITAL_SUPERVISORY_OBJECTION"
+    
+    return {
+        "bank_name": bank_name,
+        "baseline_cet1_ratio_pct": base_res["cet1_ratio_pct"],
+        "post_stress_raw_cet1_ratio_pct": resto_res["raw_cet1_ratio_pct"],
+        "total_stress_losses_usd": round(credit_res["total_incremental_provisions"] + nii_res["nii_compression"], 2),
+        "restored_post_stress_cet1_ratio_pct": resto_res["restored_cet1_ratio_pct"],
+        "supervisory_verdict": supervisory_verdict,
+        "accreditation": "Certified Global Bank Treasury & Chief Risk Officer (CRO)" if supervisory_verdict == "PASS_CCAR_SUPERVISORY_OBJECTION_FREE" else "CONDITIONAL_WORKOUT"
+    }
+
+p5 = run_comprehensive_ccar_capital_stress_test(
+    "Global Horizon Commercial Bank AG",
+    {
+        "assets": [
+            {"type": "Cash & Reserves", "amount": 50000000000.0, "risk_weight_pct": 0.0},
+            {"type": "Sovereign Bonds", "amount": 200000000000.0, "risk_weight_pct": 0.0},
+            {"type": "Residential Mortgages", "amount": 350000000000.0, "risk_weight_pct": 35.0},
+            {"type": "Corporate IG Loans", "amount": 300000000000.0, "risk_weight_pct": 50.0},
+            {"type": "Corporate High Yield", "amount": 100000000000.0, "risk_weight_pct": 100.0}
+        ],
+        "off_balance_sheet": [
+            {"type": "Undrawn Revolvers", "amount": 100000000000.0, "ccf_pct": 50.0, "risk_weight_pct": 100.0}
+        ],
+        "loans": [
+            {"segment": "Residential Mortgages", "ead": 350000000000.0, "baseline_pd_pct": 1.2, "lgd_pct": 30.0},
+            {"segment": "Corporate IG Loans", "ead": 300000000000.0, "baseline_pd_pct": 0.8, "lgd_pct": 40.0},
+            {"segment": "Corporate High Yield", "ead": 100000000000.0, "baseline_pd_pct": 4.5, "lgd_pct": 55.0}
+        ],
+        "cet1": 38000000000.0, "at1": 15000000000.0, "tier2": 20000000000.0,
+        "total_earning_assets": 750000000000.0, "asset_yield_pct": 4.8,
+        "total_funding_liabilities": 800000000000.0, "liability_cost_pct": 2.2
+    },
+    {
+        "gdp_shock_pct": -3.5, "unemployment_spike_pts": 5.0,
+        "rate_hike_bps": 250.0, "deposit_beta": 0.75, "repricing_mismatch": 0.40
+    },
+    {
+        "coco_principal": 10000000000.0, "annual_dividend_freeze": 4000000000.0,
+        "rwa_pruning_capacity": 25000000000.0
+    }
+)
+losses_str = "$" + f"{p5['total_stress_losses_usd'] / 1e9:.2f}B"
+print(f"Bank: {p5['bank_name']}")
+print(f"Baseline CET1: {p5['baseline_cet1_ratio_pct']}% -> Raw Stressed: {p5['post_stress_raw_cet1_ratio_pct']}% (Losses: {losses_str})")
+print(f"Restored Post-Stress CET1: {p5['restored_post_stress_cet1_ratio_pct']}% | Verdict: {p5['supervisory_verdict']}")
+print(f"Accreditation: {p5['accreditation']}")`,
+        output: `Bank: Global Horizon Commercial Bank AG
+Baseline CET1: 8.99% -> Raw Stressed: 6.88% (Losses: $8.91B)
+Restored Post-Stress CET1: 10.84% | Verdict: PASS_CCAR_SUPERVISORY_OBJECTION_FREE
+Accreditation: Certified Global Bank Treasury & Chief Risk Officer (CRO)`,
+        codeNotes: [
+          { line: 5, note: 'Orchestrates multi-asset baseline RWA and capital ratio aggregation across $1,000B portfolio' },
+          { line: 11, note: 'Executes macroeconomic credit migration modeling $5.16B in CECL/IFRS 9 incremental provisions' },
+          { line: 17, note: 'Simulates yield curve inversion and deposit beta dynamics producing $3.75B in NII compression' },
+          { line: 23, note: 'Restores post-stress capital to 10.84% via CoCo conversion, securing supervisory CCAR clearance' }
+        ],
+        tryIt: 'Increase GDP shock to -6.0% to evaluate hyper-stressed credit losses exceeding capital restoration capacity.',
+        check: {
+          question: 'In a Federal Reserve CCAR supervisory stress test evaluation, what is the consequence if a bank\'s post-stress capital ratio falls below the mandatory 7.0% hurdle rate?',
+          options: [
+            'The Federal Reserve issues a formal supervisory objection, restricting capital distributions (dividends and share repurchases) and mandating immediate capital remediation.',
+            'The bank\'s charter is automatically transferred to the post office.',
+            'All corporate loans on the bank\'s balance sheet are forgiven by executive decree.',
+            'The Federal Reserve reimburses the bank\'s loan losses using taxpayer tax credits.'
+          ],
+          answer: 0,
+          why: 'A CCAR objection legally bars the bank from distributing capital to shareholders, requiring the board to submit a mandatory capital remediation plan.',
+          answerIndex: 0,
+          explanation: 'A CCAR objection legally bars the bank from distributing capital to shareholders, requiring the board to submit a mandatory capital remediation plan.'
+        }
+      }
+    ],
+    summary: [
+      'Basel III RWA Aggregation: Computes standardized risk weights across cash (0%), mortgages (35%), and corporate loans (50-100%) with 50% CCF off-balance-sheet equivalents.',
+      'CCAR Severely Adverse Credit Migration: Scales borrower default probabilities via macroeconomic recession factors to model multi-billion-dollar CECL/IFRS 9 loan impairment provisions.',
+      'Deposit Beta & NII Squeeze: Models yield curve inversion and deposit repricing asymmetry to quantify core operating revenue contraction.',
+      'Dynamic Capital Restoration: Leverages contractual CoCo bond loss-absorption conversion, dividend freezes, and RWA pruning to restore depleted CET1 buffers.',
+      'Supervisory CCAR Defense: Proves capital adequacy above the 7.0% hurdle under $8.91B in macro losses, securing official CRO certification and finalizing Course bcom_ban (5/5 Days).'
+    ],
+    projectStep: {
+      title: 'Milestone 1 Capstone: Enterprise Bank Balance Sheet & CCAR Stress Control Tower',
+      steps: [
+        'Model enterprise multi-asset balance sheet assets and calculate Basel III Risk-Weighted Assets (RWA) and Leverage Ratios.',
+        'Simulate Federal Reserve CCAR Severely Adverse macroeconomic credit migration and CECL/IFRS 9 incremental loan loss provisions.',
+        'Calculate Net Interest Income (NII) compression under yield curve inversion and empirical deposit beta dynamics.',
+        'Execute dynamic capital restoration via CoCo bond conversions and dividend restrictions to secure Boardroom CRO certification.'
+      ]
+    }
   }
 ];
 
