@@ -348,6 +348,70 @@ test('Block 120: B.Com Corporate Tax Day 5 Capstone: Global Tax Optimization Con
   assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
 });
 
+test('Block 121: B.Com Forensic Audit Day 3: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_aud', 3);
+  assert.ok(lesson, 'bcom_aud Day 3 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_aud');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5, 'bcom_aud Day 3 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_aud'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 121: B.Com Forensic Audit Day 3: Journal Entry Testing, MAD Z-Scores, Intercompany & FCPA Verification', () => {
+  const lesson = BCOM_AUD_LONG_LESSONS[2];
+  assert.ok(lesson, 'BCOM_AUD_LONG_LESSONS[2] must exist');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have >= 3 codeNotes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Journal Entry Testing.*ISA 240/i);
+  assert.ok(lesson.parts[0].code?.includes('audit_journal_entries_fraud_heuristics'));
+  assert.match(lesson.parts[1].title, /MAD Z-Scores/i);
+  assert.ok(lesson.parts[1].code?.includes('detect_expense_anomalies_via_mad_zscore'));
+  assert.match(lesson.parts[2].title, /Intercompany Reconciliation.*Phantom/i);
+  assert.ok(lesson.parts[2].code?.includes('reconcile_intercompany_matrix_and_detect_phantom_balances'));
+  assert.match(lesson.parts[3].title, /Foreign Corrupt Practices Act.*FCPA.*Bribery/i);
+  assert.ok(lesson.parts[3].code?.includes('screen_fcpa_third_party_intermediary_risk'));
+  assert.match(lesson.parts[4].title, /Collision Graph Analysis.*Kickback/i);
+  assert.ok(lesson.parts[4].code?.includes('run_forensic_employee_vendor_collision_audit'));
+
+  // Metrics & Project step validation
+  assert.ok(lesson.summary && lesson.summary.length >= 4, 'Summary must have >= 4 bullet points');
+  assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, 'projectStep must have title and >= 4 steps');
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be >= 8`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
+});
+
+
 
 
 

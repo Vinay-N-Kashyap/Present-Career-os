@@ -828,6 +828,486 @@ print(f"Action: {wb_res['Recommended_Action']} (Notify Board: {wb_res['Requires_
         'Implement shell vendor red-flag screening and automate whistleblower allegation triage workflows.'
       ]
     }
-  }
-];
+  },
+  {
+    coursePrefix: 'bcom_aud',
+    day: 3,
+    title: 'Advanced Fraud Analytics, Machine Learning Anomaly Auditing & FCPA Red Flags',
+    goal: 'Master automated forensic audit technologies: general ledger journal entry testing under ISA 240 and PCAOB AS 2401, robust statistical outlier detection via Median Absolute Deviation (MAD) Modified Z-scores, multi-entity intercompany matrix reconciliations and phantom elimination audits, Foreign Corrupt Practices Act (FCPA) third-party intermediary corruption risk scoring, and employee-vendor collision graph forensic analysis.',
+    minutes: 45,
+    recap: 'In Day 2, we evaluated the Beneish M-Score, Altman Z-Score distress zones, PDF metadata tampering, and shell vendor triage. Today, we advance into enterprise forensic data science: testing millions of general ledger journal entries, detecting non-linear statistical anomalies, exposing phantom intercompany accounts, and dismantling procurement kickback rings.',
+    parts: [
+      {
+        title: 'Automated Journal Entry Testing (ISA 240 / PCAOB AS 2401) & Fraud Heuristics',
+        say: [
+          'When corporate management perpetrates financial statement fraud, the illicit adjustments are ultimately recorded through manual journal entries in the general ledger. Recognizing this vulnerability, International Standard on Auditing (ISA 240) and PCAOB AS 2401 mandate that auditors design and perform automated journal entry testing across the entire accounting population.',
+          'Fraudulent journal entries exhibit distinct behavioral fingerprints: they are disproportionately entered outside standard business hours (late nights, weekends, and statutory holidays), recorded by senior executives (such as the Chief Financial Officer or Corporate Controller) who normally possess supervisory rather than transactional roles, and posted immediately prior to or after period-end close to hit quarterly earnings consensus.',
+          'Furthermore, forensic data analytics flags heuristic numerical patterns, such as round-dollar amounts ($500,000, $1,000,000) or transactions intentionally posted just below internal delegation-of-authority approval bands ($9,500 to $9,999). Automated scripts inspect account pairings, immediately alerting when manual entries debit obscure asset or suspense accounts while crediting revenue without cash receipt.'
+        ],
+        example: 'During a statutory audit of an enterprise software provider, an automated ISA 240 audit script scans 450,000 journal entries. It flags entry JE-2026-901 for $1,000,000 posted at 11:00 PM on a Saturday following quarter-end close by the CFO, debiting a prepaid suspense account and crediting license revenue. The entry triggers a maximum fraud risk score of 140, triggering an immediate forensic audit committee review.',
+        code: `def audit_journal_entries_fraud_heuristics(entries: list) -> dict:
+    audited = []
+    high_risk_count = 0
+    
+    for entry in entries:
+        flags = []
+        score = 0
+        
+        hour = entry.get("posting_hour", 12)
+        is_weekend = entry.get("is_weekend", False)
+        if is_weekend or (hour >= 22 or hour <= 5):
+            flags.append("OFF_HOURS_OR_WEEKEND_POSTING")
+            score += 25
+            
+        amount = entry.get("amount", 0.0)
+        if amount >= 10000.0 and (amount % 10000.0 == 0.0):
+            flags.append("ROUND_DOLLAR_AMOUNT_PATTERN")
+            score += 20
+        elif 9500.0 <= (amount % 10000.0) <= 9999.0:
+            flags.append("SUB_THRESHOLD_APPROVAL_BAND")
+            score += 25
+            
+        if entry.get("is_post_close_adjustment", False):
+            flags.append("POST_PERIOD_CLOSE_ADJUSTMENT")
+            score += 30
+            
+        debit_acct = entry.get("debit_account", "")
+        credit_acct = entry.get("credit_account", "")
+        if "Suspense" in debit_acct or "Intangible" in debit_acct:
+            if "Revenue" in credit_acct:
+                flags.append("SENSITIVE_ACCOUNT_COMBINATION_REVENUE_INFLATION")
+                score += 35
+                
+        if entry.get("posted_by_role", "") in ["CFO", "CEO", "CONTROLLER"]:
+            flags.append("SENIOR_EXECUTIVE_MANUAL_OVERRIDE")
+            score += 30
+            
+        risk_tier = "HIGH_RISK_MANAGEMENT_OVERRIDE" if score >= 50 else ("MEDIUM_RISK" if score >= 25 else "LOW_RISK_ROUTINE")
+        if risk_tier == "HIGH_RISK_MANAGEMENT_OVERRIDE":
+            high_risk_count += 1
+            
+        audited.append({
+            "entry_id": entry["entry_id"],
+            "amount_usd": round(amount, 2),
+            "fraud_risk_score": score,
+            "risk_tier": risk_tier,
+            "audit_flags": flags
+        })
+        
+    return {
+        "total_entries_screened": len(entries),
+        "high_risk_exceptions_found": high_risk_count,
+        "isa240_audit_verdict": "TARGETED_SUBSTANTIVE_INQUIRY_REQUIRED" if high_risk_count > 0 else "CLEAN_JOURNAL_POPULATION",
+        "screened_entries": audited
+    }
 
+p1 = audit_journal_entries_fraud_heuristics([
+    {
+        "entry_id": "JE-2026-901", "amount": 1000000.0, "is_weekend": True, "posting_hour": 23,
+        "is_post_close_adjustment": True, "debit_account": "Prepaid Asset Suspense",
+        "credit_account": "Software License Revenue", "posted_by_role": "CFO"
+    },
+    {
+        "entry_id": "JE-2026-902", "amount": 14235.60, "is_weekend": False, "posting_hour": 14,
+        "is_post_close_adjustment": False, "debit_account": "Inventory",
+        "credit_account": "Accounts Payable", "posted_by_role": "STAFF_ACCOUNTANT"
+    }
+])
+print(f"Entries Screened: {p1['total_entries_screened']} | High Risk Exceptions: {p1['high_risk_exceptions_found']}")
+print(f"Verdict: {p1['isa240_audit_verdict']}")
+for e in p1['screened_entries']:
+    amt_s = "$" + f"{e['amount_usd']:,.2f}"
+    print(f"  {e['entry_id']}: {amt_s} | Score {e['fraud_risk_score']} -> {e['risk_tier']}")`,
+        output: `Entries Screened: 2 | High Risk Exceptions: 1\nVerdict: TARGETED_SUBSTANTIVE_INQUIRY_REQUIRED\n  JE-2026-901: $1,000,000.00 | Score 140 -> HIGH_RISK_MANAGEMENT_OVERRIDE\n  JE-2026-902: $14,235.60 | Score 0 -> LOW_RISK_ROUTINE`,
+        codeNotes: [
+          { line: 11, note: 'Screens general ledger entries for off-hours and weekend posting anomalies' },
+          { line: 17, note: 'Detects round-dollar patterns ($1,000,000) and threshold-skirting approval bands' },
+          { line: 27, note: 'Flags suspicious account pairs debiting prepaid suspense and crediting revenue' },
+          { line: 33, note: 'Isolates senior executive management override postings by CFOs or Controllers' }
+        ],
+        tryIt: 'Change JE-2026-901 posted_by_role to STAFF_ACCOUNTANT and posting_hour to 11 AM to observe score reduction.',
+        check: {
+          question: 'Under ISA 240 and PCAOB AS 2401, why is manual journal entry testing mandatory even when an auditor tests routine internal controls over daily operational transactions?',
+          options: [
+            'Because management is uniquely positioned to override internal accounting controls and record fraudulent manual adjustments directly in the general ledger.',
+            'Because manual journal entries are automatically deleted from server databases every 90 days.',
+            'Because external auditors are legally required to balance the corporate checkbook.',
+            'Because journal entry testing eliminates the need to verify cash bank balances.'
+          ],
+          answer: 0,
+          why: 'Management override of controls is an inherent risk in financial reporting; senior executives can circumvent established controls by posting manual post-closing journal entries directly into the ledger.',
+          answerIndex: 0,
+          explanation: 'Management override of controls is an inherent risk in financial reporting; senior executives can circumvent established controls by posting manual post-closing journal entries directly into the ledger.'
+        }
+      },
+      {
+        title: 'Statistical & Machine Learning Anomaly Detection via Robust MAD Z-Scores',
+        say: [
+          'Traditional audit testing often relies on fixed dollar thresholds—such as examining all expenses over $50,000. Sophisticated fraudsters exploit this rule by structuring fraudulent outflows into multiple smaller transactions ($45,000 each) or dispersing unapproved disbursements across routine expense categories.',
+          'Standard statistical measures, like the classic Mean and Standard Deviation, are fatally flawed when testing for fraud because extreme fraudulent outliers inflate both the mean and the standard deviation, masking the very anomalies the auditor seeks to discover. In forensic data science, this phenomenon is known as the masking effect.',
+          'To overcome masking, forensic auditors deploy robust statistics based on the Median Absolute Deviation (MAD) to compute Modified Z-scores. The median is completely immune to extreme outliers (possessing a 50% breakdown point). Any expense generating a Modified Z-score exceeding 3.5 deviates radically from the normal distribution of corporate expenditures, identifying fraudulent diversions with mathematical certainty.'
+        ],
+        example: 'In testing a departmental expense ledger with a median expenditure of $1,100 and a MAD of $150, a routine client dinner of $1,200 yields a Modified Z-score of 0.45. However, a $87,500 consulting disbursement to an undisclosed advisory LLC yields an astronomical Modified Z-score of 388.51, flagging an undeniable statistical outlier that warrants immediate contract inspection.',
+        code: `def detect_expense_anomalies_via_mad_zscore(
+    expense_records: list,
+    threshold_mad_score: float = 3.5
+) -> dict:
+    amounts = [rec["amount"] for rec in expense_records]
+    if not amounts:
+        return {"total_records": 0, "anomalies_detected": 0, "anomalous_records": []}
+        
+    sorted_amounts = sorted(amounts)
+    n = len(sorted_amounts)
+    mid = n // 2
+    median = (sorted_amounts[mid] if n % 2 != 0 else (sorted_amounts[mid - 1] + sorted_amounts[mid]) / 2.0)
+    
+    abs_deviations = sorted([abs(x - median) for x in amounts])
+    mad = (abs_deviations[mid] if n % 2 != 0 else (abs_deviations[mid - 1] + abs_deviations[mid]) / 2.0)
+    mad = max(0.0001, mad)
+    
+    anomalies = []
+    for rec in expense_records:
+        x = rec["amount"]
+        mod_z = 0.6745 * abs(x - median) / mad
+        if mod_z >= threshold_mad_score:
+            anomalies.append({
+                "record_id": rec["record_id"],
+                "payee": rec["payee"],
+                "amount_usd": round(x, 2),
+                "modified_zscore": round(mod_z, 2),
+                "is_outlier": True
+            })
+            
+    return {
+        "total_expenses_analyzed": len(expense_records),
+        "population_median_usd": round(median, 2),
+        "mad_dispersion_usd": round(mad, 2),
+        "anomalies_flagged_count": len(anomalies),
+        "flagged_exceptions": anomalies
+    }
+
+p2 = detect_expense_anomalies_via_mad_zscore([
+    {"record_id": "EXP-101", "payee": "Corporate Travel", "amount": 1200.0},
+    {"record_id": "EXP-102", "payee": "Team Lunch", "amount": 850.0},
+    {"record_id": "EXP-103", "payee": "Client Dinner", "amount": 1100.0},
+    {"record_id": "EXP-104", "payee": "Office Supplies", "amount": 950.0},
+    {"record_id": "EXP-105", "payee": "Apex Advisory LLC", "amount": 87500.0}
+])
+med_s = "$" + f"{p2['population_median_usd']:,.2f}"
+mad_s = "$" + f"{p2['mad_dispersion_usd']:,.2f}"
+print(f"Median: {med_s} | MAD: {mad_s} | Anomalies: {p2['anomalies_flagged_count']}")
+for a in p2['flagged_exceptions']:
+    out_s = "$" + f"{a['amount_usd']:,.2f}"
+    print(f"  {a['record_id']} ({a['payee']}): {out_s} (Modified Z: {a['modified_zscore']})")`,
+        output: `Median: $1,100.00 | MAD: $150.00 | Anomalies: 1\n  EXP-105 (Apex Advisory LLC): $87,500.00 (Modified Z: 388.51)`,
+        codeNotes: [
+          { line: 12, note: 'Calculates population median robust to extreme fraudulent transaction amounts' },
+          { line: 16, note: 'Computes Median Absolute Deviation (MAD) establishing non-parametric dispersion baseline' },
+          { line: 21, note: 'Applies Boris Iglewicz and David Hoaglin Modified Z-score formula with 0.6745 normal factor' },
+          { line: 23, note: 'Screens against statutory 3.5 threshold identifying extreme non-linear statistical outliers' }
+        ],
+        tryIt: 'Add another high payment of $90,000 to observe how median and MAD remain stable, flagging both outliers.',
+        check: {
+          question: 'Why do forensic data auditors rely on the Median Absolute Deviation (MAD) Modified Z-score rather than traditional Mean and Standard Deviation when testing financial ledgers for fraud?',
+          options: [
+            'Because the mean and standard deviation are heavily distorted by the very fraudulent outliers the auditor seeks to detect, creating a masking effect.',
+            'Because calculating the arithmetic mean is prohibited under modern auditing standards.',
+            'Because the MAD formula automatically decrypts password-protected corporate PDF files.',
+            'Because standard deviation can only be computed for companies in the manufacturing sector.'
+          ],
+          answer: 0,
+          why: 'Extreme fraudulent numbers inflate the sample mean and standard deviation, causing other fraudulent entries to look normal (masking). The median and MAD are robust non-parametric metrics with high breakdown points.',
+          answerIndex: 0,
+          explanation: 'Extreme fraudulent numbers inflate the sample mean and standard deviation, causing other fraudulent entries to look normal (masking). The median and MAD are robust non-parametric metrics with high breakdown points.'
+        }
+      },
+      {
+        title: 'Multi-Entity Intercompany Reconciliation & Phantom Asset Elimination Audit',
+        say: [
+          'In multinational corporate groups, intercompany accounts are the single most dangerous breeding ground for financial manipulation and hidden operational losses. In notorious historic corporate scandals—such as Parmalat, WorldCom, and Olympus—fictitious profits and embezzled funds were concealed in obscure intercompany clearing accounts.',
+          'Under basic accounting principles of consolidation, every intercompany receivable recorded on Subsidiary A\'s balance sheet must correspond exactly to an identical intercompany payable on Subsidiary B\'s balance sheet. When the corporate group consolidates its financial statements, these balances must eliminate to exactly zero across all currencies and entities.',
+          'During statutory assurance, auditors execute automated intercompany elimination audits. A failure to eliminate—or the presence of large unreconciled balances aging beyond 90 days—indicates either broken enterprise resource planning (ERP) controls or intentional phantom revenue schemes, where management booked unilateral fictitious sales that the receiving subsidiary never recognized.'
+        ],
+        example: 'During group consolidation of a $250M enterprise, US Parent reports a $40.0M intercompany receivable due from an offshore affiliate in the Cayman Islands. However, the Cayman subsidiary records only $32.0M in corresponding payables, creating an uneliminated variance of $8.0M that has aged over 180 days. The audit engine triggers a Phantom Balance Variance alert, mandating substantive verification of the underlying contracts.',
+        code: `def reconcile_intercompany_matrix_and_detect_phantom_balances(
+    subsidiary_pairs: list
+) -> dict:
+    total_receivables = 0.0
+    total_payables = 0.0
+    unreconciled_pairs = []
+    
+    for pair in subsidiary_pairs:
+        rec = pair["entity_a_receivable_usd"]
+        pay = pair["entity_b_payable_usd"]
+        diff = abs(rec - pay)
+        total_receivables += rec
+        total_payables += pay
+        
+        has_variance = diff > 100.0
+        unreconciled_pairs.append({
+            "entity_a": pair["entity_a_name"],
+            "entity_b": pair["entity_b_name"],
+            "receivable_usd": round(rec, 2),
+            "payable_usd": round(pay, 2),
+            "variance_usd": round(diff, 2),
+            "is_balanced": not has_variance,
+            "aging_days": pair.get("unreconciled_aging_days", 0)
+        })
+        
+    net_consolidation_imbalance = abs(total_receivables - total_payables)
+    imbalance_flag = net_consolidation_imbalance > 1000.0
+    
+    return {
+        "total_intercompany_receivables_usd": round(total_receivables, 2),
+        "total_intercompany_payables_usd": round(total_payables, 2),
+        "net_uneliminated_variance_usd": round(net_consolidation_imbalance, 2),
+        "consolidation_audit_verdict": "PHANTOM_BALANCE_UNRECONCILED_VARIANCE" if imbalance_flag else "INTERCOMPANY_ELIMINATIONS_TIED_CLEAN",
+        "pair_reconciliation": unreconciled_pairs
+    }
+
+p3 = reconcile_intercompany_matrix_and_detect_phantom_balances([
+    {"entity_a_name": "US Parent Corp", "entity_b_name": "UK Tech Hub Ltd", "entity_a_receivable_usd": 25000000.0, "entity_b_payable_usd": 25000000.0, "unreconciled_aging_days": 0},
+    {"entity_a_name": "US Parent Corp", "entity_b_name": "Cayman Trading SA", "entity_a_receivable_usd": 40000000.0, "entity_b_payable_usd": 32000000.0, "unreconciled_aging_days": 180}
+])
+rec_s = "$" + f"{p3['total_intercompany_receivables_usd']:,.2f}"
+pay_s = "$" + f"{p3['total_intercompany_payables_usd']:,.2f}"
+var_s = "$" + f"{p3['net_uneliminated_variance_usd']:,.2f}"
+print(f"Receivables: {rec_s} | Payables: {pay_s} | Variance: {var_s}")
+print(f"Consolidation Verdict: {p3['consolidation_audit_verdict']}")`,
+        output: `Receivables: $65,000,000.00 | Payables: $57,000,000.00 | Variance: $8,000,000.00\nConsolidation Verdict: PHANTOM_BALANCE_UNRECONCILED_VARIANCE`,
+        codeNotes: [
+          { line: 8, note: 'Iterates through cross-border entity pairs comparing receivables against payables' },
+          { line: 14, note: 'Applies $100 materiality tolerance threshold to detect unilateral uneliminated balances' },
+          { line: 24, note: 'Quantifies aggregate group-wide consolidation imbalance ($8.0M uneliminated variance)' },
+          { line: 26, note: 'Issues statutory audit red flag requiring substantive confirmation of offshore contracts' }
+        ],
+        tryIt: 'Change Cayman payable to $40,000,000.0 to observe the intercompany matrix eliminate cleanly to zero variance.',
+        check: {
+          question: 'In statutory group audits, what does a persistent, material unreconciled variance between an intercompany receivable and its corresponding payable indicate?',
+          options: [
+            'Either an accounting breakdown in multi-currency settlement or a potential fraudulent scheme where one entity booked unilateral revenue that the other party never incurred.',
+            'That the corporate group has achieved full compliance with OECD Pillar Two minimum tax standards.',
+            'That the central bank has issued a corporate stimulus bond.',
+            'That the auditor should issue an immediate unqualified clean opinion.'
+          ],
+          answer: 0,
+          why: 'Intercompany balances must eliminate to exactly zero upon consolidation. A material unreconciled difference signifies either accounting system failures or fictitious one-sided transactions booked to artificially inflate revenues.',
+          answerIndex: 0,
+          explanation: 'Intercompany balances must eliminate to exactly zero upon consolidation. A material unreconciled difference signifies either accounting system failures or fictitious one-sided transactions booked to artificially inflate revenues.'
+        }
+      },
+      {
+        title: 'Foreign Corrupt Practices Act (FCPA) & UK Bribery Act Red-Flag Screening',
+        say: [
+          'Under the US Foreign Corrupt Practices Act (FCPA) and the UK Bribery Act 2010, multinational corporations face crippling criminal penalties, executive imprisonment, and mandatory disgorgement of profits for paying bribes to foreign government officials. Crucially, companies are held criminally liable for bribes paid through third-party intermediaries—even if senior leadership claims lack of knowledge.',
+          'Corrupt arrangements rarely feature direct payments to politicians. Instead, funds are funneled through local third-party intermediaries—frequently disguised as local sales representatives, customs clearing agents, or strategic advisors. Corrupt intermediaries exhibit unmistakable red flags: operating in jurisdictions with poor Transparency International Corruption Perceptions Index (CPI < 40) ratings, having beneficial ownership tied to Politically Exposed Persons (PEPs), or demanding success fees exceeding standard commercial norms (> 15%).',
+          'Furthermore, requesting payment routing through offshore bank accounts in Switzerland or the British Virgin Islands—completely unrelated to the country where services are allegedly performed—is a premier indicator of money laundering and bribery conduits. Automated compliance engines continuously screen vendor masters against international sanctions and PEP databases, mandating immediate stop-work orders upon detecting high-risk patterns.'
+        ],
+        example: 'A global aerospace conglomerate evaluates a prospective intermediary in Nigeria (CPI score 25) requesting a 22.5% success fee for government customs clearance, tied to an active ministry official and demanding payment into a Cayman bank account. The automated FCPA compliance engine flags 5 critical red flags, generates a risk score of 120, and issues a mandatory Stop-Work Order.',
+        code: `def screen_fcpa_third_party_intermediary_risk(
+    intermediary: dict
+) -> dict:
+    flags = []
+    risk_score = 0
+    
+    cpi = intermediary.get("jurisdiction_cpi_index", 50)
+    if cpi < 40:
+        flags.append("HIGH_CORRUPTION_JURISDICTION_CPI_UNDER_40")
+        risk_score += 25
+        
+    if intermediary.get("pep_or_government_official_tied", False):
+        flags.append("POLITICALLY_EXPOSED_PERSON_PEP_AFFILIATION")
+        risk_score += 35
+        
+    commission_pct = intermediary.get("commission_or_success_fee_pct", 0.0)
+    if commission_pct >= 15.0:
+        flags.append("EXCESSIVE_SUCCESS_FEE_ABOVE_15_PERCENT")
+        risk_score += 20
+        
+    if intermediary.get("offshore_payment_routing_requested", False):
+        flags.append("OFFSHORE_PAYMENT_ROUTING_HAVEN")
+        risk_score += 25
+        
+    if intermediary.get("vague_scope_of_work", False):
+        flags.append("VAGUE_OR_UNSPECIFIED_CONSULTING_SERVICES")
+        risk_score += 15
+        
+    if risk_score >= 60:
+        directive = "MANDATORY_STOP_WORK_AND_INTERNAL_LEGAL_INQUIRY"
+        tier = "CRITICAL_FCPA_CORRUPTION_RISK"
+    elif risk_score >= 30:
+        directive = "ENHANCED_DUE_DILIGENCE_AND_LEGAL_CLEARANCE_REQUIRED"
+        tier = "MODERATE_RISK"
+    else:
+        directive = "STANDARD_COMPLIANCE_APPROVED"
+        tier = "LOW_RISK"
+        
+    return {
+        "intermediary_name": intermediary["name"],
+        "jurisdiction": intermediary.get("country", ""),
+        "total_fcpa_risk_score": risk_score,
+        "risk_tier": tier,
+        "compliance_directive": directive,
+        "red_flag_count": len(flags),
+        "audit_red_flags": flags
+    }
+
+p4 = screen_fcpa_third_party_intermediary_risk({
+    "name": "Global Horizon Strategic Liaisons Ltd",
+    "country": "Nigeria",
+    "jurisdiction_cpi_index": 25,
+    "pep_or_government_official_tied": True,
+    "commission_or_success_fee_pct": 22.5,
+    "offshore_payment_routing_requested": True,
+    "vague_scope_of_work": True
+})
+print(f"Intermediary: {p4['intermediary_name']} | Risk Score: {p4['total_fcpa_risk_score']}")
+print(f"Risk Tier: {p4['risk_tier']} | Directive: {p4['compliance_directive']}")
+print(f"Red Flags Count: {p4['red_flag_count']}")`,
+        output: `Intermediary: Global Horizon Strategic Liaisons Ltd | Risk Score: 120\nRisk Tier: CRITICAL_FCPA_CORRUPTION_RISK | Directive: MANDATORY_STOP_WORK_AND_INTERNAL_LEGAL_INQUIRY\nRed Flags Count: 5`,
+        codeNotes: [
+          { line: 8, note: 'Evaluates Transparency International CPI index (<40) reflecting systemic jurisdictional bribery risk' },
+          { line: 12, note: 'Screens beneficial ownership against global Politically Exposed Persons (PEP) registry' },
+          { line: 16, note: 'Flags excessive success fees (>15%) commonly used to fund illicit government official payments' },
+          { line: 20, note: 'Identifies offshore bank wire routing disconnected from local commercial operational geography' }
+        ],
+        tryIt: 'Set pep_or_government_official_tied to False and commission to 5% to observe risk score drop to moderate.',
+        check: {
+          question: 'Under the US Foreign Corrupt Practices Act (FCPA), which payment arrangement represents the most severe red flag that an overseas commercial consultant is acting as a conduit for foreign bribery?',
+          options: [
+            'A high commission rate (>15%) paired with a request to wire fees to an offshore bank account in a tax haven, where the consultant has ties to government officials.',
+            'The consultant invoices the company in Euros rather than US Dollars.',
+            'The consultant delivers reports formatted in markdown rather than PDF.',
+            'The consultant is incorporated as a limited liability partnership.'
+          ],
+          answer: 0,
+          why: 'Offshore wire transfers, excessive success commissions, and political affiliations are classic FCPA red flags cited in DOJ/SEC corporate bribery enforcement actions.',
+          answerIndex: 0,
+          explanation: 'Offshore wire transfers, excessive success commissions, and political affiliations are classic FCPA red flags cited in DOJ/SEC corporate bribery enforcement actions.'
+        }
+      },
+      {
+        title: 'Forensic Collision Graph Analysis: Employee-Vendor Kickback Conspiracies',
+        say: [
+          'In procurement fraud, dishonest purchasing managers establish collusive relationships with corrupt vendors, awarding sole-source contracts at inflated prices in exchange for illicit kickbacks. Because fraudsters intentionally conceal these connections, traditional sample audits rarely uncover the scheme.',
+          'Forensic audit analytics exposes these conspiracies by constructing an employee-vendor collision graph. The algorithm cross-references master personnel files against approved vendor data, scanning for matching residential addresses, identical bank routing and checking account numbers, shared telephone numbers, and matching tax identification numbers.',
+          'When an employee shares a home address or bank account with an approved vendor, the system correlates this link against purchasing history. If the employee repeatedly approved sole-source purchase orders positioned just beneath competitive bidding thresholds (e.g., $49,500 against a $50,000 threshold), the analysis establishes prima facie proof of a criminal kickback scheme, ready for criminal referral and asset recovery.'
+        ],
+        example: 'A forensic collision analysis cross-references 2,500 employees against 800 vendors. It flags vendor Vance Industrial Supply LLC sharing the exact home address (742 Evergreen Terrace) and direct deposit bank account of Procurement VP Marcus Vance. The algorithm identifies two sole-source purchase orders totaling $98,400 approved by Vance just beneath the $50k threshold, confirming a self-dealing fraud scheme.',
+        code: `def run_forensic_employee_vendor_collision_audit(
+    employees: list,
+    vendors: list,
+    purchase_orders: list
+) -> dict:
+    collisions = []
+    diverted_spend = 0.0
+    
+    emp_by_addr = {e["residential_address"].strip().lower(): e for e in employees if "residential_address" in e}
+    emp_by_bank = {e["bank_account_number"].strip(): e for e in employees if "bank_account_number" in e}
+    emp_by_phone = {e["phone_number"].strip(): e for e in employees if "phone_number" in e}
+    
+    for v in vendors:
+        v_addr = v.get("registered_address", "").strip().lower()
+        v_bank = v.get("payee_bank_account", "").strip()
+        v_phone = v.get("contact_phone", "").strip()
+        v_id = v["vendor_id"]
+        
+        colliding_emp = None
+        match_type = []
+        
+        if v_addr in emp_by_addr:
+            colliding_emp = emp_by_addr[v_addr]
+            match_type.append("SHARED_RESIDENTIAL_ADDRESS")
+        if v_bank in emp_by_bank:
+            colliding_emp = emp_by_bank[v_bank]
+            match_type.append("SHARED_DIRECT_DEPOSIT_BANK_ACCOUNT")
+        if v_phone in emp_by_phone:
+            colliding_emp = emp_by_phone[v_phone]
+            match_type.append("SHARED_PHONE_NUMBER")
+            
+        if colliding_emp:
+            vendor_pos = [po for po in purchase_orders if po["vendor_id"] == v_id and po["approver_employee_id"] == colliding_emp["employee_id"]]
+            vendor_spend = sum(po["amount"] for po in vendor_pos)
+            diverted_spend += vendor_spend
+            
+            collisions.append({
+                "vendor_id": v_id,
+                "vendor_name": v["name"],
+                "colliding_employee_id": colliding_emp["employee_id"],
+                "colliding_employee_name": colliding_emp["name"],
+                "match_types": match_type,
+                "correlated_po_count": len(vendor_pos),
+                "fraudulent_spend_diverted_usd": round(vendor_spend, 2)
+            })
+            
+    fraud_detected = len(collisions) > 0
+    return {
+        "employees_screened": len(employees),
+        "vendors_screened": len(vendors),
+        "collusive_relationships_identified": len(collisions),
+        "total_fraudulent_spend_diverted_usd": round(diverted_spend, 2),
+        "forensic_verdict": "CRIMINAL_KICKBACK_CONSPIRACY_REFERRED_TO_LEGAL" if fraud_detected else "PROCUREMENT_INDEPENDENCE_VERIFIED",
+        "collision_details": collisions
+    }
+
+p5 = run_forensic_employee_vendor_collision_audit(
+    employees=[
+        {"employee_id": "EMP-401", "name": "Marcus Vance (Procurement VP)", "residential_address": "742 Evergreen Terrace, Springfield", "bank_account_number": "9988776655", "phone_number": "555-0199"},
+        {"employee_id": "EMP-402", "name": "Elena Rostova (Engineering Lead)", "residential_address": "120 Elm St, Boston", "bank_account_number": "1122334455", "phone_number": "555-0144"}
+    ],
+    vendors=[
+        {"vendor_id": "VEN-881", "name": "Vance Industrial Supply LLC", "registered_address": "742 Evergreen Terrace, Springfield", "payee_bank_account": "9988776655", "contact_phone": "555-0199"},
+        {"vendor_id": "VEN-882", "name": "Acme Steel Corp", "registered_address": "900 Industrial Parkway, Chicago", "payee_bank_account": "3344556677", "contact_phone": "555-0188"}
+    ],
+    purchase_orders=[
+        {"po_id": "PO-9001", "vendor_id": "VEN-881", "approver_employee_id": "EMP-401", "amount": 49500.0},
+        {"po_id": "PO-9002", "vendor_id": "VEN-881", "approver_employee_id": "EMP-401", "amount": 48900.0},
+        {"po_id": "PO-9003", "vendor_id": "VEN-882", "approver_employee_id": "EMP-402", "amount": 120000.0}
+    ]
+)
+div_s = "$" + f"{p5['total_fraudulent_spend_diverted_usd']:,.2f}"
+print(f"Employees Screened: {p5['employees_screened']} | Vendors Screened: {p5['vendors_screened']}")
+print(f"Collusive Relationships: {p5['collusive_relationships_identified']} | Diverted Spend: {div_s}")
+print(f"Verdict: {p5['forensic_verdict']}")`,
+        output: `Employees Screened: 2 | Vendors Screened: 2\nCollusive Relationships: 1 | Diverted Spend: $98,400.00\nVerdict: CRIMINAL_KICKBACK_CONSPIRACY_REFERRED_TO_LEGAL`,
+        codeNotes: [
+          { line: 8, note: 'Constructs fast hash tables for employee residential addresses, bank accounts, and telephone numbers' },
+          { line: 20, note: 'Discovers collisions across vendor registered addresses, direct deposit accounts, and phones' },
+          { line: 31, note: 'Correlates matching entities with purchase orders approved by the colluding employee' },
+          { line: 44, note: 'Quantifies $98,400 diverted spend and refers findings to internal audit legal counsel' }
+        ],
+        tryIt: 'Change vendor VEN-881 bank account to an independent account to observe partial collision isolation.',
+        check: {
+          question: 'In corporate forensic fraud examination, what is the most definitive investigative technique to identify self-dealing and kickback schemes between procurement employees and shell vendors?',
+          options: [
+            'Executing automated collision graph analysis matching employee residential addresses and personal bank account numbers against vendor master records.',
+            'Asking vendors to sign an annual voluntary ethics questionnaire.',
+            'Verifying that all purchasing managers have completed corporate compliance slide decks.',
+            'Inspecting vendor business cards for official corporate logos.'
+          ],
+          answer: 0,
+          why: 'Automated entity collision analysis matches immutable data points (bank account numbers, physical addresses, phone numbers) across employee and vendor masters, exposing illicit self-dealing connections.',
+          answerIndex: 0,
+          explanation: 'Automated entity collision analysis matches immutable data points (bank account numbers, physical addresses, phone numbers) across employee and vendor masters, exposing illicit self-dealing connections.'
+        }
+      }
+    ],
+    summary: [
+      'Automated journal entry testing under ISA 240 and PCAOB AS 2401 identifies management override via off-hours postings, round numbers, and sensitive account pairings.',
+      'Robust statistical outlier detection utilizing Median Absolute Deviation (MAD) Modified Z-scores resists masking effects to isolate extreme fraudulent expenditures.',
+      'Intercompany elimination matrices reconcile paired receivables and payables across subsidiaries to uncover hidden losses and phantom balances.',
+      'FCPA third-party intermediary compliance models evaluate Transparency International CPI ratings, PEP ties, excessive success fees, and offshore bank accounts.',
+      'Employee-vendor collision graph analytics matches physical addresses and bank details across master files, exposing procurement kickbacks and self-dealing.'
+    ],
+    projectStep: {
+      title: 'Automated Forensic Audit Analytics & Fraud Examination Suite',
+      steps: [
+        'Implement ISA 240 automated general ledger journal entry fraud heuristic scoring algorithms.',
+        'Deploy non-parametric Median Absolute Deviation (MAD) Modified Z-score engines to flag anomalous disbursements.',
+        'Reconcile multi-entity intercompany matrices to detect uneliminated variances and phantom assets.',
+        'Screen third-party intermediaries for FCPA corruption red flags and execute employee-vendor collision graph audits.'
+      ]
+    }
+  }
+
+];
