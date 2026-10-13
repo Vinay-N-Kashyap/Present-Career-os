@@ -1151,5 +1151,415 @@ Status: SALES OPERATIONS CONTROL TOWER SYNCHRONIZED ACROSS CRM, MARKETING & FINA
         'Plan sales capacity headcount, factoring in AE ramp curves and mandatory pipeline coverage ratios.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_scrm',
+    day: 4,
+    title: 'Enterprise ABM, Net Revenue Retention (NRR) & Churn Hazard Modeling',
+    overview: 'Master the strategic disciplines of enterprise Account-Based Marketing (ABM), customer expansion economics, and predictive churn prevention. You will map buying center personas and quantify account penetration depth across target enterprise accounts, decompose Net Revenue Retention (NRR) and Gross Revenue Retention (GRR) cohorts to drive expansion revenue, build telemetry-driven customer health hazard models to trigger proactive customer success interventions, and enforce multi-tier Deal Desk CPQ discount approval governance.',
+    parts: [
+      {
+        title: 'Account-Based Marketing (ABM) Tiering, Account Penetration & Buying Center Mapping',
+        say: [
+          'In large enterprise B2B sales, traditional volume-based lead generation strategies fail because commercial purchasing decisions are never made by a single individual. Enterprise software purchases exceeding $100,000 involve cross-functional buying committees comprising an average of 6 to 10 distinct stakeholders across executive leadership, technical engineering, information security, and corporate legal. Account-Based Marketing (ABM) reorients revenue teams from chasing disconnected leads to executing coordinated, personalized campaigns targeting specific high-value named enterprise accounts.',
+          'Effective ABM begins with rigorous account tiering based on Annual Contract Value (ACV) potential and strategic fit. Tier 1 accounts (1:1 ABM) represent bespoke flagship targets with $1M+ ARR potential, receiving completely customized content, dedicated executive relationship alignment, and bespoke ROI financial cases. Tier 2 accounts (1:Few ABM) group clusters of 20 to 50 accounts sharing identical industry verticals or technology stacks, receiving tailored vertical messaging. Tier 3 accounts (1:Many ABM) apply programmatic IP-targeted digital advertising and marketing automation to scale awareness across hundreds of secondary enterprise prospects.',
+          'Within target accounts, sales and marketing teams map and penetrate the complete buying center. A mature buying center map tracks coverage across five indispensable personas: the Economic Buyer (C-suite budget holder with final sign-off authority), the Technical Evaluator (evaluates architecture and API compatibility), the Champion (internal influencer advocating daily for your solution), the Security/Legal Gatekeeper (CISO and procurement counsel enforcing compliance), and the End-User Lead (validates workflow usability). Neglecting the security gatekeeper until the final week of the quarter is the most common cause of deal slippage in enterprise software.'
+        ],
+        example: 'At Global Bank Corp (Tier 1, $1.5M target ARR), the sales team engages 4 out of 5 personas (80% penetration: Economic Buyer, Technical Lead, Champion, End-User), but flags the deal because the Security Gatekeeper remains unengaged, threatening final procurement sign-off.',
+        code: `def map_abm_tiering_and_buying_center():
+    accounts = [
+        {
+            "name": "Global Bank Corp",
+            "tier": "Tier 1 Strategic (1:1)",
+            "target_arr": 1500000.0,
+            "buying_center": {
+                "economic_buyer": True,
+                "technical_evaluator": True,
+                "champion": True,
+                "security_gatekeeper": False,
+                "end_user_lead": True
+            }
+        },
+        {
+            "name": "Titan Manufacturing",
+            "tier": "Tier 2 Scale (1:Few)",
+            "target_arr": 400000.0,
+            "buying_center": {
+                "economic_buyer": True,
+                "technical_evaluator": False,
+                "champion": True,
+                "security_gatekeeper": False,
+                "end_user_lead": False
+            }
+        }
+    ]
+
+    print("Account-Based Marketing (ABM) Account Penetration Matrix:")
+    results = []
+    for acc in accounts:
+        bc = acc["buying_center"]
+        roles_engaged = sum(1 for engaged in bc.values() if engaged)
+        total_roles = len(bc)
+        penetration_pct = (roles_engaged / total_roles) * 100
+        status = "EXPEDITE_DEAL" if penetration_pct >= 80 else "SECURITY_RISK" if not bc["security_gatekeeper"] else "DISCOVERY_REQUIRED"
+        print(f"  {acc['name']} ({acc['tier']}): Target ARR=" + "$" + f"{acc['target_arr']:,.0f}")
+        print(f"    Buying Center Penetration: {roles_engaged}/{total_roles} Roles ({penetration_pct:.1f}%) | Gatekeeper Security: {'SECURED' if bc['security_gatekeeper'] else 'UNENGAGED'}")
+        print(f"    Account Deal Health: {status}")
+        results.append({"name": acc["name"], "penetration": penetration_pct, "status": status})
+
+    return results
+
+map_abm_tiering_and_buying_center()`,
+        output: `Account-Based Marketing (ABM) Account Penetration Matrix:
+  Global Bank Corp (Tier 1 Strategic (1:1)): Target ARR=$1,500,000
+    Buying Center Penetration: 4/5 Roles (80.0%) | Gatekeeper Security: UNENGAGED
+    Account Deal Health: EXPEDITE_DEAL
+  Titan Manufacturing (Tier 2 Scale (1:Few)): Target ARR=$400,000
+    Buying Center Penetration: 2/5 Roles (40.0%) | Gatekeeper Security: UNENGAGED
+    Account Deal Health: SECURITY_RISK`,
+        codeNotes: [
+          'Evaluates stakeholder persona engagement across Economic Buyer, Technical Lead, Champion, Security, and End-User.',
+          'Quantifies account penetration depth percentage to determine deal readiness.',
+          'Highlights unengaged security gatekeepers as high-risk vulnerabilities that stall procurement approval.'
+        ],
+        tryIt: 'Flip security_gatekeeper to True for Global Bank Corp to achieve 100% full buying center penetration.',
+        check: {
+          question: 'Why does single-threaded account engagement (relying on only one champion) pose catastrophic risk in enterprise sales?',
+          options: [
+            'If the sole champion changes jobs, leaves the company, or gets overridden by security and procurement, the entire deal collapses immediately',
+            'Because CRM software databases cannot store deals with fewer than four contact records',
+            'Because single-threaded deals are legally required to discount software by 50%',
+            'Because sales reps receive zero commission unless at least five people sign the sales order'
+          ],
+          answer: 0,
+          why: 'Enterprise deals require multi-threading across economic buyers, technical evaluators, security, and champions; losing a single contact will stall or kill single-threaded deals.',
+          answerIndex: 0,
+          explanation: 'Enterprise deals require multi-threading across economic buyers, technical evaluators, security, and champions; losing a single contact will stall or kill single-threaded deals.'
+        }
+      },
+      {
+        title: 'Net Revenue Retention (NRR) Decomposition & SaaS Expansion Physics',
+        say: [
+          'In SaaS business models, customer acquisition is merely the beginning of the revenue relationship. The true driver of enterprise valuation is Net Revenue Retention (NRR), also known as Net Dollar Retention (NDR). NRR measures the percentage of recurring revenue retained from an existing customer cohort over a 12-month period, factoring in upsells, tier expansions, seat contractions, and full customer cancellations. Top-quartile public SaaS companies consistently report NRR figures between 120% and 130%, meaning that even if sales stopped acquiring new customers completely, existing accounts would grow corporate revenue by 20% to 30% annually on their own.',
+          'To diagnose retention health, revenue analysts contrast NRR against Gross Revenue Retention (GRR). GRR isolates the percentage of recurring revenue retained excluding expansion, calculated as (Starting ARR - Contractions - Churn) / Starting ARR. Because GRR ignores expansion, it can never exceed 100%. While a stellar NRR of 125% appears impressive, if GRR is only 75%, it masks a dangerous structural flaw: high customer churn is being temporarily papered over by hyper-aggressive expansion in a few remaining accounts.',
+          'Decomposing cohort retention into its constituent components—Seat Upsells, Product Cross-Sells, Downsell Contractions, and Logo Churn—allows Customer Success managers to identify specific levers for expansion. Designing pricing metrics that naturally expand with customer usage (such as data volume ingested, API calls processed, or monthly active users) creates organic negative churn, turning the customer base into a compounding revenue engine.'
+        ],
+        example: 'A $10,000,000 starting ARR cohort generates $1,800,000 in product expansion and $700,000 in seat upsells, while suffering -$400,000 in contractions and -$600,000 in churn. The ending cohort ARR of $11,500,000 produces an outstanding 115.00% NRR and a healthy 90.00% GRR.',
+        code: `def calculate_nrr_and_grr_retention():
+    # Cohort of enterprise accounts over 1 fiscal year
+    starting_arr = 10000000.0  # $10,000,000 starting cohort ARR
+    expansion_arr = 1800000.0  # Cross-sell & tier expansion (+$1.8M)
+    upsell_arr = 700000.0      # Seat additions (+$700k)
+    downsell_arr = -400000.0   # Contractions (-$400k)
+    churn_arr = -600000.0      # Terminations (-$600k)
+
+    ending_arr = starting_arr + expansion_arr + upsell_arr + downsell_arr + churn_arr
+
+    # Net Revenue Retention (NRR): (Starting + Expansion + Upsell - Downsell - Churn) / Starting
+    nrr = (ending_arr / starting_arr) * 100
+
+    # Gross Revenue Retention (GRR): (Starting - Downsell - Churn) / Starting
+    grr = ((starting_arr + downsell_arr + churn_arr) / starting_arr) * 100
+
+    net_expansion = expansion_arr + upsell_arr + downsell_arr + churn_arr
+
+    print("Enterprise SaaS Cohort Retention Economics:")
+    print("  Starting Cohort ARR: " + "$" + f"{starting_arr:,.2f}")
+    print("  (+) Expansion ARR: " + "$" + f"{expansion_arr:,.2f}")
+    print("  (+) Seat Upsell ARR: " + "$" + f"{upsell_arr:,.2f}")
+    print("  (-) Contraction / Downsell: " + "$" + f"{downsell_arr:,.2f}")
+    print("  (-) Full Account Churn: " + "$" + f"{churn_arr:,.2f}")
+    print("  Ending Cohort ARR: " + "$" + f"{ending_arr:,.2f}")
+    print("  Net ARR Expansion: " + "$" + f"{net_expansion:,.2f}")
+    print(f"  Net Revenue Retention (NRR): {nrr:.2f}% (Benchmark: >120% Top Quartile)")
+    print(f"  Gross Revenue Retention (GRR): {grr:.2f}% (Benchmark: >90% Enterprise)")
+    return {"nrr": nrr, "grr": grr, "ending_arr": ending_arr}
+
+calculate_nrr_and_grr_retention()`,
+        output: `Enterprise SaaS Cohort Retention Economics:
+  Starting Cohort ARR: $10,000,000.00
+  (+) Expansion ARR: $1,800,000.00
+  (+) Seat Upsell ARR: $700,000.00
+  (-) Contraction / Downsell: $-400,000.00
+  (-) Full Account Churn: $-600,000.00
+  Ending Cohort ARR: $11,500,000.00
+  Net ARR Expansion: $1,500,000.00
+  Net Revenue Retention (NRR): 115.00% (Benchmark: >120% Top Quartile)
+  Gross Revenue Retention (GRR): 90.00% (Benchmark: >90% Enterprise)` ,
+        codeNotes: [
+          'Computes ending cohort ARR by incorporating expansion, upsell, downsell, and logo churn.',
+          'Calculates NRR at 115.00%, illustrating net account expansion over the 12-month period.',
+          'Calculates GRR at 90.00%, confirming that customer retention meets standard enterprise health thresholds.'
+        ],
+        tryIt: 'Increase expansion ARR from $1.8M to $2.5M to demonstrate how top-tier SaaS companies reach a 122.00% NRR.',
+        check: {
+          question: 'What is the critical distinction between Net Revenue Retention (NRR) and Gross Revenue Retention (GRR)?',
+          options: [
+            'NRR includes expansion and upsell revenue from existing accounts and can exceed 100%, whereas GRR excludes expansion and measures pure retention capped at 100%',
+            'NRR applies only to customer refunds, whereas GRR measures sales commission deductions',
+            'GRR includes new logo acquisitions, while NRR measures marketing advertising expenses',
+            'NRR is calculated only in the first quarter of customer onboarding, while GRR is calculated at IPO'
+          ],
+          answer: 0,
+          why: 'NRR factors in expansion and upsell to measure total net cohort value, while GRR isolates pure account retention and contraction and cannot exceed 100%.',
+          answerIndex: 0,
+          explanation: 'NRR factors in expansion and upsell to measure total net cohort value, while GRR isolates pure account retention and contraction and cannot exceed 100%.'
+        }
+      },
+      {
+        title: 'Customer Health Scoring, Churn Hazard Telemetry & Proactive Intervention',
+        say: [
+          'In recurring revenue businesses, waiting until an enterprise customer informs you they will not renew is an operational failure. By the time a procurement officer sends an official non-renewal cancellation notice 30 days before contract expiry, the customer has already evaluated competitors, signed a replacement vendor agreement, and migrated their workflows. Preventing churn requires tracking leading behavioral indicators through automated telemetry and statistical hazard modeling.',
+          'A robust customer health scoring algorithm combines four predictive risk vectors: product usage telemetry, organizational leadership changes, customer support ticket sentiment, and contract renewal proximity. A precipitous 30% to 50% drop in Daily Active Users (DAU) or API utilization is the most reliable leading indicator that a customer is abandoning the platform. Similarly, when the executive sponsor who originally bought the software leaves the company, the account enters severe risk as the incoming successor audits software spending to cut legacy vendor budgets.',
+          'When an account\'s calculated churn hazard score breaches critical thresholds (e.g. hazard >= 70/100), the CRM must trigger immediate programmatic escalation workflows. Instead of standard quarterly email check-ins, high-risk accounts trigger an immediate Executive Sponsor Intervention, pairing the company\'s Chief Customer Officer or VP of Product with the customer\'s new leadership to restructure implementation plans, provide dedicated engineering support, and preserve the recurring revenue relationship.'
+        ],
+        example: 'Apex Retail ($350k ARR) experiences a 45% DAU telemetry drop, executive sponsor departure, 3 critical support escalations, and 60 days to renewal, generating a 100/100 hazard score that triggers an immediate Executive Sponsor Intervention.',
+        code: `def model_churn_hazard_and_early_warning():
+    customers = [
+        {"client": "Apex Retail", "arr": 350000.0, "dau_drop_pct": 0.45, "exec_sponsor_left": True, "support_escalations": 3, "renewal_days": 60},
+        {"client": "Nexus Logistics", "arr": 220000.0, "dau_drop_pct": 0.10, "exec_sponsor_left": False, "support_escalations": 0, "renewal_days": 180},
+        {"client": "Vanguard Media", "arr": 180000.0, "dau_drop_pct": 0.30, "exec_sponsor_left": False, "support_escalations": 2, "renewal_days": 45}
+    ]
+
+    print("Customer Success Churn Hazard Scoring & Interventions:")
+    scored_clients = []
+    for c in customers:
+        # Hazard Score (0 to 100)
+        hazard = 0
+        hazard += min(c["dau_drop_pct"] * 100, 40) # Telemetry drop (Max 40)
+        if c["exec_sponsor_left"]:
+            hazard += 30 # Sponsor departure (30 pts)
+        hazard += min(c["support_escalations"] * 10, 20) # Escalations (Max 20)
+        if c["renewal_days"] <= 60:
+            hazard += 10 # Imminent renewal (10 pts)
+
+        if hazard >= 70:
+            risk_tier = "CRITICAL_RED_CHURN_IMMINENT"
+            action = "EXECUTIVE_SPONSOR_INTERVENTION"
+        elif hazard >= 40:
+            risk_tier = "ELEVATED_YELLOW_AT_RISK"
+            action = "CSM_SUCCESS_PLAN_AUDIT"
+        else:
+            risk_tier = "HEALTHY_GREEN_STABLE"
+            action = "STANDARD_QUARTERLY_BIZ_REVIEW"
+
+        scored_clients.append({"client": c["client"], "hazard": hazard, "risk": risk_tier, "action": action})
+        print(f"  {c['client']}: Hazard={hazard:.0f}/100 | Risk={risk_tier} | ARR=" + "$" + f"{c['arr']:,.0f}" + f" | Action={action}")
+
+    return scored_clients
+
+model_churn_hazard_and_early_warning()`,
+        output: `Customer Success Churn Hazard Scoring & Interventions:
+  Apex Retail: Hazard=100/100 | Risk=CRITICAL_RED_CHURN_IMMINENT | ARR=$350,000 | Action=EXECUTIVE_SPONSOR_INTERVENTION
+  Nexus Logistics: Hazard=10/100 | Risk=HEALTHY_GREEN_STABLE | ARR=$220,000 | Action=STANDARD_QUARTERLY_BIZ_REVIEW
+  Vanguard Media: Hazard=60/100 | Risk=ELEVATED_YELLOW_AT_RISK | ARR=$180,000 | Action=CSM_SUCCESS_PLAN_AUDIT`,
+        codeNotes: [
+          'Calculates a multi-factor hazard score (0 to 100) based on telemetry decline, executive turnover, and support issues.',
+          'Identifies Apex Retail as a Critical Red risk (100/100) requiring urgent executive intervention.',
+          'Automates differentiated CS playbooks based on risk tier (Green QBR, Yellow Success Plan, Red Exec Sponsor).'
+        ],
+        tryIt: 'Reduce Apex Retail support escalations and extend renewal days to observe hazard score decrease into the Yellow tier.',
+        check: {
+          question: 'Why is executive sponsor departure considered one of the highest-weight leading indicators in churn hazard modeling?',
+          options: [
+            'Because incoming new executive leaders often re-evaluate legacy software vendors to cut costs or introduce platforms they used at previous companies',
+            'Because executive sponsors legally own all software licenses personally under federal copyright statutes',
+            'Because CRM systems automatically delete account access when an employee email address bounces',
+            'Because software security certificates expire immediately when a corporate executive resigns'
+          ],
+          answer: 0,
+          why: 'Executive sponsor turnover poses extreme churn risk because incoming leaders frequently review existing vendor commitments to reduce costs or replace them with preferred tools from previous roles.',
+          answerIndex: 0,
+          explanation: 'Executive sponsor turnover poses extreme churn risk because incoming leaders frequently review existing vendor commitments to reduce costs or replace them with preferred tools from previous roles.'
+        }
+      },
+      {
+        title: 'Deal Desk CPQ Governance & Multi-Tier Discount Approval Matrix',
+        say: [
+          'In rapid-fire enterprise deal cycles, sales representatives face intense commercial pressure from customer procurement teams demanding aggressive discounts and non-standard contract concessions. Without centralized governance, individual reps will sacrifice profit margins to close deals before quarter-end, eroding corporate gross margins and setting disastrous discounting precedents across the customer base. Deal Desk operations and Configure, Price, Quote (CPQ) systems enforce mathematical discipline across contract approvals.',
+          'CPQ approval governance establishes a clear hierarchical matrix based on discount thresholds. Reps typically possess autonomy to grant discounts between 0% and 10% to close transactions without managerial friction. Discounts between 10% and 20% require formal sign-off from the Sales Director. Concessions between 20% and 30% escalate to the VP of Sales, while discounts exceeding 30% require executive joint approval from the Chief Financial Officer (CFO) and Chief Executive Officer (CEO).',
+          'Beyond pricing discounts, the Deal Desk evaluates non-standard legal and commercial contract terms that generate financial or operational liability. Concessions such as extending payment terms from standard Net 30 to Net 60/90 days trigger mandatory Finance approval due to working capital impact. Similarly, custom Service Level Agreements (e.g. 99.99% uptime with cash penalty rebates) or termination for convenience clauses require Legal counsel review. Enforcing automated Deal Desk guardrails protects enterprise gross margins while accelerating deal velocity.'
+        ],
+        example: 'On a $250,000 ACV deal for Enterprise Energy Co, a 24% discount ($60k) requires VP of Sales approval, while Net 60 terms trigger Finance sign-off and custom 99.99% SLAs trigger Legal review.',
+        code: `def evaluate_deal_desk_cpq_discount_matrix():
+    deal = {
+        "account": "Enterprise Energy Co",
+        "list_acv": 250000.0,
+        "proposed_discount_pct": 0.24, # 24% discount requested
+        "payment_terms": "Net 60",     # Non-standard (standard is Net 30)
+        "sla_custom": True             # Non-standard 99.99% custom SLA
+    }
+
+    discount_amount = deal["list_acv"] * deal["proposed_discount_pct"]
+    net_contract_value = deal["list_acv"] - discount_amount
+
+    # Approval Matrix
+    # 0 - 10%: AE Autonomy
+    # >10% - 20%: Sales Director Approval
+    # >20% - 30%: VP of Sales Approval
+    # >30%: CFO & CEO Approval
+    if deal["proposed_discount_pct"] <= 0.10:
+        discount_authority = "AE_AUTONOMY"
+    elif deal["proposed_discount_pct"] <= 0.20:
+        discount_authority = "SALES_DIRECTOR_APPROVAL"
+    elif deal["proposed_discount_pct"] <= 0.30:
+        discount_authority = "VP_SALES_APPROVAL"
+    else:
+        discount_authority = "CFO_CEO_EXECUTIVE_APPROVAL"
+
+    # Non-standard term triggers
+    legal_trigger = deal["sla_custom"]
+    finance_trigger = deal["payment_terms"] != "Net 30"
+
+    print("Deal Desk CPQ Approval Governance:")
+    print("  Account: " + deal["account"])
+    print("  List Price ACV: " + "$" + f"{deal['list_acv']:,.2f}")
+    print(f"  Discount Requested: {deal['proposed_discount_pct']*100:.1f}% (" + "$" + f"{discount_amount:,.2f}" + ")")
+    print("  Net Contract Value: " + "$" + f"{net_contract_value:,.2f}")
+    print(f"  Required Discount Sign-Off: {discount_authority}")
+    print(f"  Finance Approval Required (Non-Standard Terms: {deal['payment_terms']}): {finance_trigger}")
+    print(f"  Legal Approval Required (Custom SLA: {deal['sla_custom']}): {legal_trigger}")
+    return {"net_acv": net_contract_value, "authority": discount_authority}
+
+evaluate_deal_desk_cpq_discount_matrix()`,
+        output: `Deal Desk CPQ Approval Governance:
+  Account: Enterprise Energy Co
+  List Price ACV: $250,000.00
+  Discount Requested: 24.0% ($60,000.00)
+  Net Contract Value: $190,000.00
+  Required Discount Sign-Off: VP_SALES_APPROVAL
+  Finance Approval Required (Non-Standard Terms: Net 60): True
+  Legal Approval Required (Custom SLA: True): True`,
+        codeNotes: [
+          'Evaluates proposed pricing against a tiered approval matrix, routing 24% discount to VP of Sales.',
+          'Automatically flags non-standard Net 60 payment terms for corporate Finance approval.',
+          'Triggers Legal counsel review for custom 99.99% uptime SLA commitments with penalty clauses.'
+        ],
+        tryIt: 'Increase the discount to 35% to see the approval authority escalate to joint CFO and CEO Executive Approval.',
+        check: {
+          question: 'What is the primary function of an enterprise Deal Desk in B2B sales operations?',
+          options: [
+            'To enforce commercial pricing governance and review non-standard legal and financial contract terms to preserve corporate profitability',
+            'To manufacture physical office furniture and desks for newly hired sales representatives',
+            'To prohibit sales representatives from speaking directly with customer procurement personnel',
+            'To enforce a mandatory 50% discount on every contract submitted to the CRM'
+          ],
+          answer: 0,
+          why: 'The Deal Desk serves as the cross-functional commercial clearinghouse, ensuring discounts are approved according to policy and non-standard terms receive proper legal and finance review.',
+          answerIndex: 0,
+          explanation: 'The Deal Desk serves as the cross-functional commercial clearinghouse, ensuring discounts are approved according to policy and non-standard terms receive proper legal and finance review.'
+        }
+      },
+      {
+        title: 'Deploy the Enterprise ABM, NRR Expansion & Retention Architecture',
+        say: [
+          'Enterprise customer relationship management reaches peak maturity when customer acquisition and long-term customer success operate in continuous synchronization. Account-Based Marketing opens multi-threaded relationships across key buying personas; high-velocity sales execution closes contracts with disciplined Deal Desk pricing; customer success teams monitor telemetry hazard models to extinguish churn risks early; and customer account expansion compounds Net Revenue Retention year after year.',
+          'In this operational capstone module, you will deploy the complete Enterprise ABM, NRR Expansion & Retention Architecture. You will audit buying center penetration across strategic accounts, decompose cohort NRR and GRR expansion economics, evaluate real-time churn hazard telemetry to trigger CS interventions, and enforce CPQ Deal Desk approval governance.',
+          'Deploying this integrated retention architecture ensures that the enterprise builds enduring customer partnerships, minimizes revenue leakage, and achieves top-quartile SaaS valuation multiples.'
+        ],
+        example: 'The team coordinates ABM penetration, validates an outstanding 115.00% cohort NRR and 90.00% GRR, flags 1 critical churn risk account for executive intervention, and enforces VP of Sales CPQ approval on a $190,000 net ACV contract.',
+        code: `def run_enterprise_abm_and_retention_suite():
+    print("=== PinIT Career OS Enterprise ABM, NRR Expansion & Retention Suite ===")
+    print("--- 1. ABM Account Buying Center Penetration ---")
+    abm = map_abm_tiering_and_buying_center()
+
+    print("\n--- 2. Cohort Net Revenue Retention (NRR) ---")
+    nrr = calculate_nrr_and_grr_retention()
+
+    print("\n--- 3. Customer Churn Hazard Early Warning ---")
+    churn = model_churn_hazard_and_early_warning()
+
+    print("\n--- 4. Deal Desk CPQ Discount Governance ---")
+    cpq = evaluate_deal_desk_cpq_discount_matrix()
+
+    print("\n--- 5. Enterprise Retention & Expansion Executive Summary ---")
+    print(f"  Cohort Net Revenue Retention (NRR): {nrr['nrr']:.2f}%")
+    print(f"  Cohort Gross Revenue Retention (GRR): {nrr['grr']:.2f}%")
+    print(f"  Critical Churn Risk Accounts: {sum(1 for c in churn if 'CRITICAL' in c['risk'])}")
+    print(f"  Deal Desk Approval Level: {cpq['authority']} (Net ACV: " + "$" + f"{cpq['net_acv']:,.2f}" + ")")
+    print("Status: ENTERPRISE CUSTOMER SUCCESS & REVENUE EXPANSION ENGINE FULLY OPERATIONAL.")
+
+run_enterprise_abm_and_retention_suite()`,
+        output: `=== PinIT Career OS Enterprise ABM, NRR Expansion & Retention Suite ===
+--- 1. ABM Account Buying Center Penetration ---
+Account-Based Marketing (ABM) Account Penetration Matrix:
+  Global Bank Corp (Tier 1 Strategic (1:1)): Target ARR=$1,500,000
+    Buying Center Penetration: 4/5 Roles (80.0%) | Gatekeeper Security: UNENGAGED
+    Account Deal Health: EXPEDITE_DEAL
+  Titan Manufacturing (Tier 2 Scale (1:Few)): Target ARR=$400,000
+    Buying Center Penetration: 2/5 Roles (40.0%) | Gatekeeper Security: UNENGAGED
+    Account Deal Health: SECURITY_RISK
+
+--- 2. Cohort Net Revenue Retention (NRR) ---
+Enterprise SaaS Cohort Retention Economics:
+  Starting Cohort ARR: $10,000,000.00
+  (+) Expansion ARR: $1,800,000.00
+  (+) Seat Upsell ARR: $700,000.00
+  (-) Contraction / Downsell: $-400,000.00
+  (-) Full Account Churn: $-600,000.00
+  Ending Cohort ARR: $11,500,000.00
+  Net ARR Expansion: $1,500,000.00
+  Net Revenue Retention (NRR): 115.00% (Benchmark: >120% Top Quartile)
+  Gross Revenue Retention (GRR): 90.00% (Benchmark: >90% Enterprise)
+
+--- 3. Customer Churn Hazard Early Warning ---
+Customer Success Churn Hazard Scoring & Interventions:
+  Apex Retail: Hazard=100/100 | Risk=CRITICAL_RED_CHURN_IMMINENT | ARR=$350,000 | Action=EXECUTIVE_SPONSOR_INTERVENTION
+  Nexus Logistics: Hazard=10/100 | Risk=HEALTHY_GREEN_STABLE | ARR=$220,000 | Action=STANDARD_QUARTERLY_BIZ_REVIEW
+  Vanguard Media: Hazard=60/100 | Risk=ELEVATED_YELLOW_AT_RISK | ARR=$180,000 | Action=CSM_SUCCESS_PLAN_AUDIT
+
+--- 4. Deal Desk CPQ Discount Governance ---
+Deal Desk CPQ Approval Governance:
+  Account: Enterprise Energy Co
+  List Price ACV: $250,000.00
+  Discount Requested: 24.0% ($60,000.00)
+  Net Contract Value: $190,000.00
+  Required Discount Sign-Off: VP_SALES_APPROVAL
+  Finance Approval Required (Non-Standard Terms: Net 60): True
+  Legal Approval Required (Custom SLA: True): True
+
+--- 5. Enterprise Retention & Expansion Executive Summary ---
+  Cohort Net Revenue Retention (NRR): 115.00%
+  Cohort Gross Revenue Retention (GRR): 90.00%
+  Critical Churn Risk Accounts: 1
+  Deal Desk Approval Level: VP_SALES_APPROVAL (Net ACV: $190,000.00)
+Status: ENTERPRISE CUSTOMER SUCCESS & REVENUE EXPANSION ENGINE FULLY OPERATIONAL.`,
+        codeNotes: [
+          'Coordinates buying center penetration, NRR/GRR retention, telemetry churn hazards, and CPQ Deal Desk approval.',
+          'Demonstrates how multi-threaded account engagement protects against logo churn and accelerates deal velocity.',
+          'Automates proactive executive intervention playbooks for at-risk enterprise accounts.'
+        ],
+        tryIt: 'Run the full retention engine to observe the interplay between marketing ABM, sales CPQ, and customer success health scoring.',
+        check: {
+          question: 'How does high Net Revenue Retention (NRR > 115%) transform the growth trajectory and valuation multiple of a B2B SaaS company?',
+          options: [
+            'It creates compounding revenue expansion from existing customers, accelerating growth with zero incremental customer acquisition cost (CAC) and commanding premium valuation multiples',
+            'It forces the company to eliminate all product development engineering budgets',
+            'It mandates that the company lower its software prices by 20% every renewal cycle',
+            'It converts all equity shares into non-voting debt debentures'
+          ],
+          answer: 0,
+          why: 'High NRR means existing customers organically generate expansion revenue year after year without incurring new sales and marketing CAC, producing superior unit economics and premium enterprise valuations.',
+          answerIndex: 0,
+          explanation: 'High NRR means existing customers organically generate expansion revenue year after year without incurring new sales and marketing CAC, producing superior unit economics and premium enterprise valuations.'
+        }
+      }
+    ],
+    summary: [
+      'Mapped enterprise buying center personas (Economic Buyer, Technical Evaluator, Champion, Security Gatekeeper, End-User) across ABM Tier 1 and Tier 2 strategic accounts, identifying unengaged security gatekeepers as high-risk vulnerabilities.',
+      'Decomposed SaaS cohort retention economics for a $10M starting ARR cohort, calculating an outstanding 115.00% NRR and 90.00% GRR from $1.8M product expansion, $700k upsells, -$400k contractions, and -$600k logo churn.',
+      'Constructed a telemetry-driven customer health hazard scoring model (0 to 100), identifying critical at-risk accounts (Apex Retail at 100/100) to trigger proactive executive sponsor interventions before renewal.',
+      'Designed a Deal Desk CPQ discount approval matrix (0-10% AE, 10-20% Director, 20-30% VP, >30% CFO/CEO), evaluating non-standard Net 60 terms and custom 99.99% SLAs for finance and legal approval.',
+      'Deployed the Enterprise ABM, NRR Expansion & Retention Architecture, establishing an interconnected revenue retention engine linking marketing ABM, customer success telemetry, and Deal Desk governance.'
+    ],
+    projectStep: {
+      title: 'Deploy the Enterprise ABM, NRR Expansion & Churn Prevention Engine',
+      steps: [
+        'Map buying center personas and calculate account penetration scores across target enterprise ABM tiers.',
+        'Decompose SaaS recurring revenue cohorts into expansion, upsell, contraction, and logo churn to track NRR and GRR.',
+        'Build a customer health hazard scoring algorithm incorporating product telemetry drops and executive sponsor departures.',
+        'Implement Deal Desk CPQ discount approval matrices with automated triggers for non-standard payment and SLA terms.'
+      ]
+    }
   }
 ];
