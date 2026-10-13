@@ -430,4 +430,79 @@ test('Block 139: B.Com Digital Marketing Day 3: OpenRTB, SPO, MRC Viewability, A
   assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
 });
 
+test('Block 140: B.Com Digital Marketing Day 4: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_dmkt', 4);
+  assert.ok(lesson, 'bcom_dmkt Day 4 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_dmkt');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5, 'bcom_dmkt Day 4 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_dmkt'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 140: B.Com Digital Marketing Day 4: Geo-Lift iROAS, Marginal ROAS, CDP Identity Graph, ABM Intent & Control Tower Verification', () => {
+  const lesson = BCOM_DMKT_LONG_LESSONS[3];
+  assert.ok(lesson, 'BCOM_DMKT_LONG_LESSONS[3] must exist');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have >= 3 codeNotes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Geo-Lift.*Incrementality/i);
+  assert.ok(lesson.parts[0].code?.includes('calculate_geolift_incrementality'));
+  assert.ok(lesson.parts[0].output?.includes('iROAS: 2.20x'));
+  assert.ok(lesson.parts[0].output?.includes('STATISTICALLY_SIGNIFICANT_CONFIRMED'));
+
+  assert.match(lesson.parts[1].title, /Non-Linear Media Saturation.*Marginal ROAS/i);
+  assert.ok(lesson.parts[1].code?.includes('optimize_marginal_roas_allocation'));
+  assert.ok(lesson.parts[1].output?.includes('EXPAND_BUDGET'));
+  assert.ok(lesson.parts[1].output?.includes('SATURATED_REALLOCATE'));
+
+  assert.match(lesson.parts[2].title, /Customer Data Platform.*Identity Graph/i);
+  assert.ok(lesson.parts[2].code?.includes('stitch_identity_graph_records'));
+  assert.ok(lesson.parts[2].output?.includes('Golden Customers: 2'));
+  assert.ok(lesson.parts[2].output?.includes('Stitch Rate: 60.0%'));
+
+  assert.match(lesson.parts[3].title, /High-ACV Account-Based Marketing.*Intent/i);
+  assert.ok(lesson.parts[3].code?.includes('score_abm_account_intent_and_surge'));
+  assert.ok(lesson.parts[3].output?.includes('DIRECT_ENTERPRISE_SDR_ESCALATION'));
+  assert.ok(lesson.parts[3].output?.includes('cloudhealthcorp.com'));
+
+  assert.match(lesson.parts[4].title, /Omni-Channel Incrementality.*Control Tower/i);
+  assert.ok(lesson.parts[4].code?.includes('run_omnichannel_incrementality_control_tower'));
+  assert.ok(lesson.parts[4].output?.includes('Over_Attribution_Gap: $51,400.00'));
+  assert.ok(lesson.parts[4].output?.includes('HIGH_EFFICIENCY_EXPANSION'));
+
+  // Metrics & Project step validation
+  assert.ok(lesson.summary && lesson.summary.length >= 4, 'Summary must have >= 4 bullet points');
+  assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, 'projectStep must have title and >= 4 steps');
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be >= 8`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
+});
+
+
 

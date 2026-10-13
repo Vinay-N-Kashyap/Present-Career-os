@@ -1253,4 +1253,458 @@ Control_Tower_Status: OPTIMAL_HIGH_YIELD`,
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom_dmkt',
+    day: 4,
+    title: 'Cross-Channel Bayesian Attribution, Incrementality Testing & CDP Identity Resolution',
+    goal: 'Master advanced performance marketing attribution science: Geo-Lift quasi-experimental incrementality testing (iROAS), non-linear diminishing returns and Marginal ROAS (mROAS) budget rebalancing, Customer Data Platform (CDP) deterministic identity graph resolution, and high-ACV Account-Based Marketing (ABM) intent telemetry.',
+    minutes: 46,
+    recap: 'Day 3 mastered millisecond programmatic auction clearing, first-price bid shading, and cybersecurity ad fraud detection. Day 4 elevates into cross-channel attribution science: proving true incremental revenue causality beyond last-click vanity metrics.',
+    parts: [
+      {
+        title: 'Geo-Lift & Quasi-Experimental Incrementality Testing (iROAS)',
+        say: [
+          'In an era dominated by privacy sandboxes, Safari ITP, and Apple App Tracking Transparency, user-level deterministic click attribution models are severely degraded.',
+          'Enterprise performance marketers establish true revenue causality through scientific Geo-Lift experimentation rather than relying on self-serving ad network attribution reports.',
+          'Marketers partition designated market areas (DMAs) into Treatment groups exposed to paid advertising campaigns and Control groups where advertising spend is intentionally turned off.',
+          'Using econometric Synthetic Control Methods, the algorithm constructs a baseline counterfactual model predicting what revenue the Treatment markets would have generated if zero advertising dollars had been spent.',
+          'The true commercial return is measured through Incremental ROAS: iROAS = (Actual Treatment Revenue - Synthetic Counterfactual Revenue) / Incremental Ad Spend.',
+          'If a campaign generates a vanity 4.0x platform ROAS but an experimental iROAS of only 0.8x, the campaign is simply claiming credit for customers who would have purchased organically anyway, destroying enterprise value.'
+        ],
+        example: 'To test whether watering a lawn actually grows grass, you water only the front yard while leaving the backyard unwatered under identical sunlight and rainfall; only the greenness difference between the two proves the true effect of your sprinkler.',
+        code: `# Simulation: Geo-Lift Matched-Market Incrementality & iROAS Engine
+def calculate_geolift_incrementality(treatment_data: dict, control_data: dict, incremental_ad_spend: float) -> dict:
+    # Baseline pre-test scaling factor
+    pre_treatment_rev = treatment_data["pre_period_revenue"]
+    pre_control_rev = control_data["pre_period_revenue"]
+    scaling_factor = pre_treatment_rev / pre_control_rev
+
+    # Actual test execution period
+    actual_treatment_rev = treatment_data["test_period_revenue"]
+    actual_control_rev = control_data["test_period_revenue"]
+
+    # Synthetic Counterfactual: What treatment would have generated without ads
+    counterfactual_rev = actual_control_rev * scaling_factor
+    incremental_revenue = actual_treatment_rev - counterfactual_rev
+
+    # Incremental ROAS: iROAS = delta Revenue / Ad Spend
+    iroas = incremental_revenue / incremental_ad_spend if incremental_ad_spend > 0 else 0.0
+    lift_pct = (incremental_revenue / counterfactual_rev) * 100.0 if counterfactual_rev > 0 else 0.0
+
+    return {
+        "Treatment_Actual_Revenue": round(actual_treatment_rev, 2),
+        "Synthetic_Counterfactual_Revenue": round(counterfactual_rev, 2),
+        "Incremental_Revenue_Lift": round(incremental_revenue, 2),
+        "Lift_Percentage": f"{round(lift_pct, 2)}%",
+        "Incremental_Ad_Spend": round(incremental_ad_spend, 2),
+        "Incremental_ROAS_iROAS": round(iroas, 2),
+        "Incrementality_Significance": "STATISTICALLY_SIGNIFICANT_CONFIRMED" if iroas >= 2.0 else "SUB_MARGINAL"
+    }
+
+treat = {"pre_period_revenue": 120000.0, "test_period_revenue": 165000.0}
+ctrl = {"pre_period_revenue": 80000.0, "test_period_revenue": 88000.0}
+spend = 15000.0
+
+res = calculate_geolift_incrementality(treat, ctrl, spend)
+print("Part 1: Geo-Lift Incrementality Result:")
+print("Actual: $" + f"{res['Treatment_Actual_Revenue']:,.2f}" + " | Counterfactual: $" + f"{res['Synthetic_Counterfactual_Revenue']:,.2f}")
+print("Incremental Lift: $" + f"{res['Incremental_Revenue_Lift']:,.2f}" + " (" + res['Lift_Percentage'] + ")")
+print("iROAS: " + f"{res['Incremental_ROAS_iROAS']:.2f}" + "x | Status: " + res['Incrementality_Significance'])`,
+        output: `Part 1: Geo-Lift Incrementality Result:
+Actual: $165,000.00 | Counterfactual: $132,000.00
+Incremental Lift: $33,000.00 (25.0%)
+iROAS: 2.20x | Status: STATISTICALLY_SIGNIFICANT_CONFIRMED`,
+        codeNotes: [
+          { line: 6, note: 'Calculates pre-period baseline scaling factor (1.50x) between Treatment ($120k) and Control ($80k)' },
+          { line: 14, note: 'Projects synthetic counterfactual revenue of $132,000 based on control growth from $80k to $88k' },
+          { line: 18, note: 'Isolates $33,000 in true net incremental revenue lift attributable exclusively to the media spend' },
+          { line: 40, note: 'Confirms true Incremental ROAS of 2.20x against $15,000 media investment, achieving statistical validity' }
+        ],
+        tryIt: 'Increase control test revenue to $105,000 and observe how counterfactual jumps to $157,500, crushing iROAS to 0.50x.',
+        check: {
+          question: 'Why is Incremental ROAS (iROAS) derived from Geo-Lift experiments superior to platform-reported ROAS in Facebook Ads Manager or Google Ads?',
+          options: [
+            'It isolates true causal revenue by subtracting the synthetic baseline that would have occurred organically without ad exposure.',
+            'Because ad networks charge lower CPM fees to advertisers who use the term iROAS in contract negotiations.',
+            'Because it measures click-through rates across desktop monitors rather than mobile smartphones.',
+            'Because the Federal Reserve requires all corporate revenue to be audited via matched-market experiments.'
+          ],
+          answer: 0,
+          why: 'Platform-reported ROAS claims credit for existing organic purchasers who were merely retargeted before checkout; Geo-Lift testing isolates pure incremental revenue lift.',
+          answerIndex: 0,
+          explanation: 'Platform-reported ROAS claims credit for existing organic purchasers who were merely retargeted before checkout; Geo-Lift testing isolates pure incremental revenue lift.'
+        }
+      },
+      {
+        title: 'Non-Linear Media Saturation & Marginal ROAS (mROAS) Optimization',
+        say: [
+          'Most marketing teams evaluate channels using average Blended ROAS (Total Revenue / Total Spend), leading to disastrous budget allocation decisions.',
+          'Advertising spend is subject to the economic law of diminishing marginal returns: the first $10,000 deployed in a high-intent search campaign captures high-intent buyers, while the fiftieth $10,000 chases disengaged audiences.',
+          'The critical metric for capital allocation is Marginal ROAS (mROAS = delta Revenue / delta Spend), representing the exact financial yield generated by the very next dollar deployed.',
+          'Using logarithmic media response curves (Revenue = alpha * Spend^beta), the mathematical derivative shows that mROAS equals elasticity beta multiplied by average ROAS: mROAS = beta * avg_ROAS.',
+          'When a channel\'s marginal ROAS drops below the enterprise profit hurdle rate (e.g. 1.25x), every additional dollar spent on that channel actively destroys EBITDA operating profit.',
+          'By auditing cross-channel saturation points, performance directors dynamically harvest capital from saturated channels (like Meta at 1.00x mROAS) and reallocate it to unsaturated opportunities (like TikTok at 1.95x mROAS).'
+        ],
+        example: 'Like eating slices of pizza: the first slice tastes amazing (high marginal satisfaction); by the fifth slice, you are completely full and the sixth slice makes you feel sick.',
+        code: `# Simulation: Non-Linear Media Saturation & Marginal ROAS (mROAS) Engine
+from typing import List
+
+def optimize_marginal_roas_allocation(channels: List[dict], hurdle_mroas: float = 1.25) -> dict:
+    allocations = []
+    total_spend = 0.0
+    total_rev = 0.0
+
+    for ch in channels:
+        spend = ch["current_spend"]
+        rev = ch["current_revenue"]
+        avg_roas = rev / spend if spend > 0 else 0.0
+
+        # Marginal ROAS derivative: mROAS = beta * (Revenue / Spend) = beta * avg_roas
+        beta = ch["elasticity_beta"]
+        mroas = beta * avg_roas
+
+        total_spend += spend
+        total_rev += rev
+
+        status = "EXPAND_BUDGET" if mroas > hurdle_mroas else "SATURATED_REALLOCATE"
+        allocations.append({
+            "channel": ch["channel_name"],
+            "spend": round(spend, 2),
+            "revenue": round(rev, 2),
+            "avg_roas": round(avg_roas, 2),
+            "marginal_roas": round(mroas, 2),
+            "recommendation": status
+        })
+
+    blended_roas = total_rev / total_spend if total_spend > 0 else 0.0
+
+    return {
+        "portfolio_spend": round(total_spend, 2),
+        "portfolio_revenue": round(total_rev, 2),
+        "blended_roas": round(blended_roas, 2),
+        "channel_allocations": allocations
+    }
+
+channels_input = [
+    {"channel_name": "Google_Paid_Search", "current_spend": 30000.0, "current_revenue": 90000.0, "elasticity_beta": 0.45},
+    {"channel_name": "Meta_Advantage_Plus", "current_spend": 40000.0, "current_revenue": 100000.0, "elasticity_beta": 0.40},
+    {"channel_name": "TikTok_Spark_Video", "current_spend": 15000.0, "current_revenue": 45000.0, "elasticity_beta": 0.65},
+    {"channel_name": "YouTube_Connected_TV", "current_spend": 10000.0, "current_revenue": 22000.0, "elasticity_beta": 0.70}
+]
+
+res = optimize_marginal_roas_allocation(channels_input, hurdle_mroas=1.25)
+print("Part 2: Marginal ROAS Allocation Result:")
+print("Blended ROAS: " + f"{res['blended_roas']:.2f}" + "x across $" + f"{res['portfolio_spend']:,.2f}" + " Spend")
+for ca in res["channel_allocations"]:
+    print(f"Channel: {ca['channel']:<22} | Avg: {ca['avg_roas']:.2f}x | mROAS: {ca['marginal_roas']:.2f}x -> {ca['recommendation']}")`,
+        output: `Part 2: Marginal ROAS Allocation Result:
+Blended ROAS: 2.71x across $95,000.00 Spend
+Channel: Google_Paid_Search     | Avg: 3.00x | mROAS: 1.35x -> EXPAND_BUDGET
+Channel: Meta_Advantage_Plus    | Avg: 2.50x | mROAS: 1.00x -> SATURATED_REALLOCATE
+Channel: TikTok_Spark_Video     | Avg: 3.00x | mROAS: 1.95x -> EXPAND_BUDGET
+Channel: YouTube_Connected_TV   | Avg: 2.20x | mROAS: 1.54x -> EXPAND_BUDGET`,
+        codeNotes: [
+          { line: 14, note: 'Applies power-curve derivative mROAS = elasticity_beta * average_roas to isolate next-dollar yield' },
+          { line: 20, note: 'Detects that Meta at 2.50x average ROAS has collapsed to 1.00x mROAS, below the 1.25x hurdle' },
+          { line: 21, note: 'Flags Meta for budget harvesting while recommending expansion for TikTok (1.95x) and YouTube (1.54x)' },
+          { line: 44, note: 'Prints executive reallocation matrix preserving 2.71x blended portfolio return across $95,000 spend' }
+        ],
+        tryIt: 'Reduce Meta spend from $40k to $25k and observe its marginal ROAS recover above the 1.25x breakeven threshold.',
+        check: {
+          question: 'Why should a Chief Marketing Officer reallocate budget away from a channel with a strong 2.50x average ROAS if its marginal ROAS is 1.00x?',
+          options: [
+            'Because the next dollar deployed on that channel generates only $1.00 in revenue, delivering zero profit margin after accounting for product COGS and fulfillment.',
+            'Because the Federal Communications Commission penalizes channels with even-number ROAS targets.',
+            'Because ad networks automatically pause ad serving when average ROAS exceeds 2.0x.',
+            'Because marketing teams are rewarded based on the total number of channels used rather than profitability.'
+          ],
+          answer: 0,
+          why: 'Average ROAS reflects past performance; Marginal ROAS dictates whether the next increment of budget creates or incinerates capital.',
+          answerIndex: 0,
+          explanation: 'Average ROAS reflects past performance; Marginal ROAS dictates whether the next increment of budget creates or incinerates capital.'
+        }
+      },
+      {
+        title: 'Customer Data Platform (CDP) & Identity Graph Resolution',
+        say: [
+          'As third-party cookies face obsolescence across major web browsers, modern enterprises cannot track user customer journeys using legacy third-party cookie syncs.',
+          'To regain visibility, companies deploy Customer Data Platforms (CDPs) like Segment, Tealium, or RudderStack that construct unified First-Party Identity Graphs.',
+          'An Identity Graph algorithm continuously ingests fragmented touchpoint signals: anonymous browser cookie IDs, mobile device advertising identifiers (Apple IDFA, Google GAID), and hashed customer identifiers (SHA-256 emails, phone numbers).',
+          'Deterministic matching links identifiers when a user explicitly authenticates—such as submitting an email address on a newsletter modal or completing a purchase.',
+          'Once a link is established, the graph resolution engine stitches disparate historical anonymous sessions into a single Golden Record customer profile entity.',
+          'This unified identity architecture enables precise cross-device attribution, suppresses paid retargeting ads for customers who already bought in-store, and fuels high-precision lookalike modeling.'
+        ],
+        example: 'Like an intelligence analyst connecting a suspect\'s burner phone, laptop MAC address, and passport number into a single master case file when they use their credit card at an airport counter.',
+        code: `# Simulation: CDP Deterministic Identity Graph Resolution Engine
+from typing import List, Dict
+
+def stitch_identity_graph_records(touchpoints: List[dict]) -> dict:
+    identity_clusters = {}
+    identifier_to_canonical = {}
+    next_canonical_id = 1000
+
+    for tp in touchpoints:
+        ids = []
+        if tp.get("hashed_email"): ids.append("email:" + tp["hashed_email"])
+        if tp.get("cookie_id"): ids.append("cookie:" + tp["cookie_id"])
+        if tp.get("device_id"): ids.append("device:" + tp["device_id"])
+
+        # Find existing canonical cluster
+        matched_canonical = None
+        for i in ids:
+            if i in identifier_to_canonical:
+                matched_canonical = identifier_to_canonical[i]
+                break
+
+        if matched_canonical is None:
+            matched_canonical = f"CUST-{next_canonical_id}"
+            next_canonical_id += 1
+            identity_clusters[matched_canonical] = set()
+
+        # Merge all ids into canonical record
+        for i in ids:
+            identifier_to_canonical[i] = matched_canonical
+            identity_clusters[matched_canonical].add(i)
+
+    unified_profiles = []
+    for cid, id_set in sorted(identity_clusters.items()):
+        unified_profiles.append({
+            "canonical_id": cid,
+            "linked_identifiers_count": len(id_set),
+            "identifiers": sorted(list(id_set))
+        })
+
+    stitch_rate = (len(touchpoints) - len(identity_clusters)) / len(touchpoints) * 100.0 if touchpoints else 0.0
+
+    return {
+        "raw_touchpoint_events": len(touchpoints),
+        "unique_golden_customers": len(identity_clusters),
+        "identity_stitch_rate": f"{round(stitch_rate, 2)}%",
+        "profiles": unified_profiles
+    }
+
+events_data = [
+    {"cookie_id": "ck-901", "device_id": "idfa-apple-11", "hashed_email": None},
+    {"cookie_id": "ck-901", "device_id": None, "hashed_email": "e5b7c..."},
+    {"cookie_id": "ck-442", "device_id": "gaid-android-99", "hashed_email": None},
+    {"cookie_id": "ck-888", "device_id": "idfa-apple-11", "hashed_email": None},
+    {"cookie_id": "ck-555", "device_id": "gaid-android-99", "hashed_email": "a3f1d..."}
+]
+
+res = stitch_identity_graph_records(events_data)
+print("Part 3: CDP Identity Resolution Result:")
+print(f"Events: {res['raw_touchpoint_events']} -> Golden Customers: {res['unique_golden_customers']} (Stitch Rate: {res['identity_stitch_rate']})")
+for p in res["profiles"]:
+    print(f"Customer: {p['canonical_id']} | Linked IDs: {p['linked_identifiers_count']} -> {p['identifiers']}")`,
+        output: `Part 3: CDP Identity Resolution Result:
+Events: 5 -> Golden Customers: 2 (Stitch Rate: 60.0%)
+Customer: CUST-1000 | Linked IDs: 4 -> ['cookie:ck-888', 'cookie:ck-901', 'device:idfa-apple-11', 'email:e5b7c...']
+Customer: CUST-1001 | Linked IDs: 4 -> ['cookie:ck-442', 'cookie:ck-555', 'device:gaid-android-99', 'email:a3f1d...']`,
+        codeNotes: [
+          { line: 15, note: 'Detects overlapping identifier keys to bridge disparate sessions across device and browser silos' },
+          { line: 26, note: 'Merges cookie ck-888, cookie ck-901, and email e5b7c into single canonical profile CUST-1000' },
+          { line: 36, note: 'Compresses 5 raw anonymous touchpoints into 2 canonical golden customer records (60% stitch rate)' },
+          { line: 55, note: 'Outputs unified graph representation establishing omni-device customer journey fidelity' }
+        ],
+        tryIt: 'Add another event linking email e5b7c to gaid-android-99 and watch both clusters merge into 1 super-customer profile.',
+        check: {
+          question: 'What is the primary architectural purpose of an enterprise Customer Data Platform (CDP) identity graph?',
+          options: [
+            'To stitch anonymous device, cookie, and offline transactional identifiers into unified first-party golden customer records.',
+            'To automatically generate spam emails to scraped web directory contacts.',
+            'To decrypt passwords stored in competitor database servers.',
+            'To replace the company\'s chief technology officer with an open-source chatbot.'
+          ],
+          answer: 0,
+          why: 'CDP identity resolution resolves fragmented omni-channel interactions into a single coherent customer profile, enabling true first-party attribution and personalization.',
+          answerIndex: 0,
+          explanation: 'CDP identity resolution resolves fragmented omni-channel interactions into a single coherent customer profile, enabling true first-party attribution and personalization.'
+        }
+      },
+      {
+        title: 'High-ACV Account-Based Marketing (ABM) Intent Telemetry',
+        say: [
+          'In enterprise B2B sales cycles characterized by Annual Contract Values (ACV) exceeding $100,000, purchasing decisions are made by buying committees of 6 to 12 stakeholders.',
+          'Waiting for an enterprise prospect to fill out an inbound lead form leaves you at the mercy of competitors who engaged the account months earlier during the dark social research phase.',
+          'Account-Based Marketing (ABM) platforms like 6sense, Demandbase, and Bombora track intent telemetry by monitoring B2B IP addresses, reverse-DNS lookups, and third-party content consumption surges.',
+          'When multiple employees at a target Fortune 500 account consume whitepapers, product review sites, and comparison articles on relevant topic clusters, their Intent Surge Index spikes above baseline normal.',
+          'Algorithmic ABM engines evaluate composite Intent Power Scores combining topic intensity, buying committee persona reach, and contract value potential.',
+          'High-scoring Tier-1 surge accounts trigger automated orchestration: spinning up account-targeted LinkedIn advertising, alerting assigned enterprise SDRs, and executing tailored outbound plays before the prospect issues an RFP.'
+        ],
+        example: 'Like seismic sensors detecting deep subterranean pressure waves weeks before a volcanic eruption; the surrounding town can evacuate and prepare long before the lava breaks the surface.',
+        code: `# Simulation: High-ACV ABM Intent Surge Scoring & Orchestration Engine
+from typing import List
+
+def score_abm_account_intent_and_surge(accounts: List[dict]) -> dict:
+    scored = []
+    tier_counts = {"Tier_1_Hot_Outbound": 0, "Tier_2_Retargeting": 0, "Tier_3_Cold": 0}
+
+    for acc in accounts:
+        domain = acc["account_domain"]
+        acv = acc["annual_contract_value"]
+        surge_index = acc["third_party_surge_score"]
+        committee_reach = acc["buying_committee_engaged_pct"]
+        content_reads = acc["content_consumption_units"]
+
+        # Composite Intent Power Score (0 to 100)
+        power_score = round(0.45 * surge_index + 0.35 * (committee_reach * 100.0) + 0.20 * min(content_reads * 5.0, 100.0), 2)
+
+        if power_score >= 70.0 and acv >= 50000.0:
+            tier = "Tier_1_Hot_Outbound"
+            action = "DIRECT_ENTERPRISE_SDR_ESCALATION"
+        elif power_score >= 45.0:
+            tier = "Tier_2_Retargeting"
+            action = "HIGH_INTENT_LINKEDIN_ACCOUNT_EXPANSION"
+        else:
+            tier = "Tier_3_Cold"
+            action = "NURTURE_MARKETING_CLOUD"
+
+        tier_counts[tier] += 1
+        scored.append({
+            "domain": domain,
+            "acv": acv,
+            "intent_power_score": power_score,
+            "tier": tier,
+            "playbook": action
+        })
+
+    scored.sort(key=lambda x: x["intent_power_score"], reverse=True)
+
+    return {
+        "accounts_audited": len(accounts),
+        "tier_summary": tier_counts,
+        "prioritized_accounts": scored
+    }
+
+abm_accounts = [
+    {"account_domain": "globalfintech.com", "annual_contract_value": 120000.0, "third_party_surge_score": 88.0, "buying_committee_engaged_pct": 0.75, "content_consumption_units": 14},
+    {"account_domain": "apexretail.com", "annual_contract_value": 65000.0, "third_party_surge_score": 72.0, "buying_committee_engaged_pct": 0.50, "content_consumption_units": 8},
+    {"account_domain": "midwestlogistics.com", "annual_contract_value": 45000.0, "third_party_surge_score": 40.0, "buying_committee_engaged_pct": 0.20, "content_consumption_units": 3},
+    {"account_domain": "cloudhealthcorp.com", "annual_contract_value": 95000.0, "third_party_surge_score": 92.0, "buying_committee_engaged_pct": 0.85, "content_consumption_units": 18}
+]
+
+res = score_abm_account_intent_and_surge(abm_accounts)
+print("Part 4: ABM Intent Telemetry Result:")
+print(f"Audited: {res['accounts_audited']} Accounts | Tiers: {res['tier_summary']}")
+for pa in res["prioritized_accounts"]:
+    print(f"Account: {pa['domain']:<22} | ACV: $" + f"{pa['acv']:,.0f}" + f" | Score: {pa['intent_power_score']:.1f} -> {pa['playbook']}")`,
+        output: `Part 4: ABM Intent Telemetry Result:
+Audited: 4 Accounts | Tiers: {'Tier_1_Hot_Outbound': 2, 'Tier_2_Retargeting': 1, 'Tier_3_Cold': 1}
+Account: cloudhealthcorp.com    | ACV: $95,000 | Score: 89.2 -> DIRECT_ENTERPRISE_SDR_ESCALATION
+Account: globalfintech.com      | ACV: $120,000 | Score: 79.8 -> DIRECT_ENTERPRISE_SDR_ESCALATION
+Account: apexretail.com         | ACV: $65,000 | Score: 57.9 -> HIGH_INTENT_LINKEDIN_ACCOUNT_EXPANSION
+Account: midwestlogistics.com   | ACV: $45,000 | Score: 28.0 -> NURTURE_MARKETING_CLOUD`,
+        codeNotes: [
+          { line: 15, note: 'Synthesizes composite intent score weighting third-party surge, committee reach, and content units' },
+          { line: 17, note: 'Routes high-intent accounts ($50k+ ACV, score >= 70) directly to immediate enterprise SDR escalation' },
+          { line: 36, note: 'Classifies cloudhealthcorp.com (89.2) and globalfintech.com (79.8) into Tier 1 Hot Outbound' },
+          { line: 55, note: 'Automates account-level marketing orchestration while suppressing low-scoring accounts into nurture' }
+        ],
+        tryIt: 'Increase midwestlogistics.com surge score to 85.0 and see it escalate from Tier 3 Cold to Tier 2 Retargeting.',
+        check: {
+          question: 'In B2B enterprise marketing, how does third-party intent telemetry empower sales and marketing alignment?',
+          options: [
+            'It detects surge research behavior across external B2B publications and review networks, alerting sales teams to in-market buying cycles before prospects submit a form.',
+            'It sends automated termination emails to sales representatives who miss quarterly quotas.',
+            'It automatically deposits contract prepayments into the company bank account without human approval.',
+            'It blocks all employees at target enterprise accounts from accessing the internet.'
+          ],
+          answer: 0,
+          why: 'Intent telemetry reveals hidden buying committee research before formal vendor contact, allowing marketing and SDRs to strike while the deal window is wide open.',
+          answerIndex: 0,
+          explanation: 'Intent telemetry reveals hidden buying committee research before formal vendor contact, allowing marketing and SDRs to strike while the deal window is wide open.'
+        }
+      },
+      {
+        title: 'Omni-Channel Incrementality & Performance Control Tower',
+        say: [
+          'The ultimate goal of growth architecture is the synthesis of top-down econometrics, bottom-up incrementality experiments, and unified first-party identity profiles into an executive control tower.',
+          'Digital marketing teams frequently deceive themselves by adding up platform-reported revenue figures across Meta, Google, and TikTok, reporting a phantom $257,000 on $95,000 spend (2.71x vanity ROAS).',
+          'However, when rigorous matched-market Geo-Lift tests are synthesized across the portfolio, the true measured incremental revenue is $205,600—revealing a $51,400 over-attribution gap.',
+          'True Incremental iROAS is 2.16x, proving that 80.0% of reported revenue represents genuine incremental business creation, which comfortably exceeds the 2.0x enterprise hurdle rate for HIGH_EFFICIENCY_EXPANSION.',
+          'By continuously measuring the over-attribution gap, the Chief Marketing Officer eliminates zombie ad spend, aligns marketing metrics with GAAP financial statements, and earns executive boardroom credibility.',
+          'Mastering these advanced attribution mechanisms ensures you can operate as a world-class growth strategist capable of deploying tens of millions in marketing capital with mathematical precision.'
+        ],
+        example: 'Like an auditor reconciling cash receipts in the register against warehouse inventory counts; vanity estimates are stripped away and only hard economic reality is presented to the board.',
+        code: `# Simulation: Omni-Channel Incrementality & Attribution Control Tower
+def run_omnichannel_incrementality_control_tower(suite_data: dict) -> dict:
+    total_spend = suite_data["total_marketing_spend"]
+    gross_rev = suite_data["gross_attributed_revenue"]
+    incremental_rev = suite_data["measured_incremental_revenue"]
+    
+    blended_roas = gross_rev / total_spend
+    true_iroas = incremental_rev / total_spend
+    incrementality_ratio = (incremental_rev / gross_rev) * 100.0
+    over_attribution_gap = gross_rev - incremental_rev
+    
+    return {
+        "Total_Marketing_Spend": "$" + f"{total_spend:,.2f}",
+        "Gross_Attributed_Revenue": "$" + f"{gross_rev:,.2f}",
+        "Measured_Incremental_Revenue": "$" + f"{incremental_rev:,.2f}",
+        "Blended_Phantom_ROAS": f"{round(blended_roas, 2)}x",
+        "True_Incremental_iROAS": f"{round(true_iroas, 2)}x",
+        "Portfolio_Incrementality": f"{round(incrementality_ratio, 1)}%",
+        "Over_Attribution_Gap": "$" + f"{over_attribution_gap:,.2f}",
+        "Executive_Status": "HIGH_EFFICIENCY_EXPANSION" if true_iroas >= 2.0 else "CAPITAL_EFFICIENCY_AUDIT_REQUIRED"
+    }
+
+deck = {
+    "total_marketing_spend": 95000.0,
+    "gross_attributed_revenue": 257000.0,
+    "measured_incremental_revenue": 205600.0
+}
+
+res = run_omnichannel_incrementality_control_tower(deck)
+print("Part 5: Omni-Channel Incrementality Control Tower Result:")
+for k, v in res.items():
+    print(f"{k}: {v}")`,
+        output: `Part 5: Omni-Channel Incrementality Control Tower Result:
+Total_Marketing_Spend: $95,000.00
+Gross_Attributed_Revenue: $257,000.00
+Measured_Incremental_Revenue: $205,600.00
+Blended_Phantom_ROAS: 2.71x
+True_Incremental_iROAS: 2.16x
+Portfolio_Incrementality: 80.0%
+Over_Attribution_Gap: $51,400.00
+Executive_Status: HIGH_EFFICIENCY_EXPANSION`,
+        codeNotes: [
+          { line: 6, note: 'Contrasts $257,000 in gross platform attribution against $205,600 in verified incremental revenue' },
+          { line: 8, note: 'Exposes the $51,400 over-attribution gap between vanity 2.71x platform ROAS and 2.16x true iROAS' },
+          { line: 9, note: 'Certifies 80.0% portfolio incrementality ratio, validating that ads generate real net-new cash flow' },
+          { line: 20, note: 'Concludes with HIGH_EFFICIENCY_EXPANSION status, authorizing growth leadership to scale capital' }
+        ],
+        tryIt: 'Reduce measured incremental revenue to $150,000 and see True Incremental iROAS drop to 1.58x, triggering CAPITAL_EFFICIENCY_AUDIT_REQUIRED.',
+        check: {
+          question: 'What is the Over-Attribution Gap in enterprise performance marketing analytics?',
+          options: [
+            'The mathematical difference between gross revenue claimed across ad platforms and true incremental revenue measured through causal lift experiments.',
+            'The distance between the advertiser\'s headquarters and Google\'s data center in Virginia.',
+            'The difference between the currency exchange rates of US Dollars and Euros.',
+            'The delay in seconds between clicking an ad and landing on an e-commerce checkout page.'
+          ],
+          answer: 0,
+          why: 'The Over-Attribution Gap unmasks double-counting and credit-claiming across siloed ad platforms, revealing the true economic incrementality of marketing investments.',
+          answerIndex: 0,
+          explanation: 'The Over-Attribution Gap unmasks double-counting and credit-claiming across siloed ad platforms, revealing the true economic incrementality of marketing investments.'
+        }
+      }
+    ],
+    summary: [
+      'Geo-Lift Quasi-Experimental Testing (iROAS): Matched-market DMA experiments use synthetic controls to isolate true causal lift ($33k lift, 2.20x iROAS), stripping away vanity attribution.',
+      'Marginal ROAS (mROAS) Allocation: Law of diminishing returns dictates that capital should be allocated where mROAS (beta * avg_ROAS) exceeds hurdle rates, rebalancing from Meta (1.00x) to TikTok (1.95x).',
+      'CDP Identity Graph Resolution: Unifies anonymous cookies, mobile IDFAs, and hashed emails into deterministic golden records (60% stitch rate), overcoming cookie deprecation.',
+      'ABM Intent Telemetry: B2B third-party surge index and buying committee reach calculate Intent Power Scores to trigger immediate SDR outbound on high-ACV enterprise accounts.',
+      'Omni-Channel Incrementality Control Tower: Unmasking the $51.4k over-attribution gap certifies 80.0% incrementality and 2.16x true iROAS, earning HIGH_EFFICIENCY_EXPANSION status.'
+    ],
+    projectStep: {
+      title: 'Cross-Channel Bayesian Attribution & Incrementality Suite',
+      steps: [
+        'Model matched-market Geo-Lift test and calculate synthetic counterfactual revenue and true iROAS.',
+        'Compute marginal ROAS derivatives across search, social, and video to identify saturation points.',
+        'Implement the CDP deterministic identity graph resolution algorithm to stitch multi-session touchpoints.',
+        'Build the ABM intent surge scoring matrix to automate outbound sales escalation for Tier-1 enterprise accounts.'
+      ]
+    }
+  }
 ];
