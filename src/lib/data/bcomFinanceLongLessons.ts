@@ -1588,5 +1588,432 @@ print(f"Net Collar Cost: {nc_s} | Protection Floor: {fl_s} | Upside Cap: {cap_s}
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom-finance',
+    day: 5,
+    title: 'Milestone 1 Capstone: Enterprise Corporate Finance, Strategic Capital Structure & Global Treasury Control Tower',
+    goal: 'Command the ultimate corporate finance and treasury control tower: orchestrate integrated multi-stage enterprise valuation, determine optimal capital structure via dynamic WACC minimization and credit rating trade-offs, stress-test multi-tranche debt covenant headroom (DSCR, Debt/EBITDA), structure cross-asset derivative hedging portfolios (IRS fixed-rate swaps, forward FX contracts, zero-cost equity collars), and defend the comprehensive corporate financing strategy to earn Chief Financial Officer & Senior Corporate Finance Strategist (CFO-SCFS) accreditation.',
+    minutes: 50,
+    recap: 'In Days 1 through 4, we engineered foundational DCF, LBO modeling, multi-stage valuation, and fixed income duration/convexity. Today, in this Milestone 1 Capstone, we synthesize the entire financial engineering stack to govern an enterprise balance sheet and lead a multi-billion-dollar corporate transformation.',
+    parts: [
+      {
+        title: 'Triangulated Enterprise Valuation: Multi-Stage DCF, Trading Comps & Precedent Transactions',
+        say: [
+          'Welcome to the Chief Financial Officer (CFO) Strategic Control Tower. In executive boardroom deliberations, relying on a single valuation methodology is considered professional malpractice. Institutional M&A transactions, fairness opinions, and strategic restructurings require a triangulated "Football Field" valuation analysis that cross-validates intrinsic discounted cash flows against prevailing market pricing.',
+          'The triumvirate of corporate valuation encompasses: (1) Unlevered Multi-Stage Discounted Cash Flow (DCF), which establishes intrinsic fundamental value based on projected Free Cash Flow to Firm; (2) Public Trading Comparables, which reflect current secondary market enterprise multiples (EV/EBITDA) awarded to peer companies; and (3) Precedent Transactions, which incorporate the historical control premiums paid by strategic acquirers in past takeovers.',
+          'By weighting these methodologies (40% DCF, 35% Trading Comps, 25% Precedent Transactions), the control tower synthesizes a robust blended Enterprise Value. Deducting net debt (total debt minus cash) derives Implied Equity Value, which divides across fully diluted shares to determine the definitive target per-share price for strategic transactions.'
+        ],
+        example: 'Valuing Apex Global Technologies ($100,000,000 EBITDA, $295M net debt, 10M shares). Triangulating across DCF ($1.28B EV), public trading comps at 11.5x EV/EBITDA ($1.15B EV), and precedent transactions at 13.0x EV/EBITDA ($1.30B EV) produces a blended Enterprise Value of $1,239,500,000.00. Bridging to equity yields an Implied Equity Value of $944,500,000.00 and an intrinsic target share price of $94.45.',
+        code: `def triangulate_enterprise_valuation_football_field(
+    dcf_ev: float,
+    peer_ev_ebitda_multiple: float,
+    precedent_ev_ebitda_multiple: float,
+    ebitda: float,
+    net_debt: float,
+    shares_outstanding: float
+) -> dict:
+    comps_ev = ebitda * peer_ev_ebitda_multiple
+    precedents_ev = ebitda * precedent_ev_ebitda_multiple
+    
+    blended_ev = (0.40 * dcf_ev) + (0.35 * comps_ev) + (0.25 * precedents_ev)
+    implied_equity_value = blended_ev - net_debt
+    implied_share_price = implied_equity_value / shares_outstanding if shares_outstanding > 0 else 0.0
+    
+    min_ev = min(dcf_ev, comps_ev, precedents_ev)
+    max_ev = max(dcf_ev, comps_ev, precedents_ev)
+    
+    return {
+        "dcf_enterprise_value": round(dcf_ev, 2),
+        "trading_comps_enterprise_value": round(comps_ev, 2),
+        "precedent_transactions_enterprise_value": round(precedents_ev, 2),
+        "valuation_corridor_min_ev": round(min_ev, 2),
+        "valuation_corridor_max_ev": round(max_ev, 2),
+        "blended_enterprise_value": round(blended_ev, 2),
+        "net_debt": round(net_debt, 2),
+        "implied_equity_value": round(implied_equity_value, 2),
+        "implied_share_price": round(implied_share_price, 2)
+    }
+
+p1 = triangulate_enterprise_valuation_football_field(
+    dcf_ev=1280000000.0,
+    peer_ev_ebitda_multiple=11.5,
+    precedent_ev_ebitda_multiple=13.0,
+    ebitda=100000000.0,
+    net_debt=295000000.0,
+    shares_outstanding=10000000.0
+)
+b_ev_s = "$" + f"{p1['blended_enterprise_value']:,.2f}"
+eq_s = "$" + f"{p1['implied_equity_value']:,.2f}"
+sp_s = "$" + f"{p1['implied_share_price']:,.2f}"
+print(f"DCF: $" + f"{p1['dcf_enterprise_value']:,.2f} | Comps: $" + f"{p1['trading_comps_enterprise_value']:,.2f} | Precedents: $" + f"{p1['precedent_transactions_enterprise_value']:,.2f}")
+print(f"Blended EV: {b_ev_s} | Equity Value: {eq_s} | Implied Share Price: {sp_s}")`,
+        output: `DCF: $1,280,000,000.00 | Comps: $1,150,000,000.00 | Precedents: $1,300,000,000.00\nBlended EV: $1,239,500,000.00 | Equity Value: $944,500,000.00 | Implied Share Price: $94.45`,
+        codeNotes: [
+          { line: 10, note: 'Applies institutional market multiples to LTM EBITDA for public comps and precedent M&A transactions' },
+          { line: 12, note: 'Calculates weighted blended Enterprise Value across intrinsic and market-based valuation pillars' },
+          { line: 13, note: 'Bridges Enterprise Value to Equity Value by deducting net debt liabilities' },
+          { line: 14, note: 'Derives intrinsic per-share target price across diluted common shares outstanding' }
+        ],
+        tryIt: 'Adjust peer_ev_ebitda_multiple to 14.0x to observe how expanding market valuation multiples elevates the blended share price past $100.00.',
+        check: {
+          question: 'Why do investment banking fairness opinions require weighting both intrinsic DCF valuation and market-based multiples (comps and precedents) rather than relying exclusively on DCF?',
+          options: [
+            'DCF captures long-term intrinsic cash-generating fundamentals, while market multiples ground the valuation in current investor sentiment and observable control transactions.',
+            'DCF models are prohibited by the SEC for corporations with more than $500M in revenue.',
+            'Market multiples eliminate the need to calculate corporate income taxes or working capital changes.',
+            'Precedent transactions measure liquidation value under Chapter 7 bankruptcy proceedings.'
+          ],
+          answer: 0,
+          why: 'A triangulated football field balances theoretical intrinsic value with actual market clearing prices, preventing unrealistic assumptions from biasing the transaction.',
+          answerIndex: 0,
+          explanation: 'A triangulated football field balances theoretical intrinsic value with actual market clearing prices, preventing unrealistic assumptions from biasing the transaction.'
+        }
+      },
+      {
+        title: 'Trade-Off Capital Structure & Dynamic WACC Minimization Engine',
+        say: [
+          'A primary fiduciary responsibility of the CFO is optimizing the corporate capital structure—the proportional mix of debt and equity financing used to fund enterprise operations. Under the Static Trade-Off Theory of capital structure, firms balance the tax shield benefits of debt against the rising probability and costs of financial distress.',
+          'At low levels of leverage, adding debt is highly accretive: interest payments are tax-deductible, creating a valuable interest tax shield (T_c * Debt) while debt investors accept lower returns than equity holders due to senior claim status. This drives WACC down and expands firm value.',
+          'However, as leverage increases beyond an optimal threshold, financial distress costs accelerate. Credit rating agencies downgrade the firm (widening credit spreads), and equity beta surges under the Hamada Equation. The capital structure optimization engine sweeps debt ratios to locate the exact global WACC minimum and maximized firm value.'
+        ],
+        example: 'Apex Global Technologies models capital structure options across debt ratios from 0% to 65%. At 0% debt (AAA rating), WACC is 9.15%. Introducing debt lowers WACC until reaching the global optimum at 35.0% debt (A rating) with a minimized WACC of 8.7431%, creating $97.8M in net value and maximizing firm value at $1,297,800,000.00 before excessive distress costs emerge at higher leverage.',
+        code: `def optimize_capital_structure_wacc(
+    unlevered_firm_value: float,
+    tax_rate: float,
+    unlevered_beta: float,
+    risk_free_rate: float,
+    equity_risk_premium: float,
+    credit_spread_table: list[dict]
+) -> dict:
+    best_wacc = float("inf")
+    optimal_tier = None
+    evaluated_tiers = []
+    
+    for tier in credit_spread_table:
+        d_pct = tier["debt_ratio"]
+        e_pct = 1.0 - d_pct
+        de_ratio = d_pct / e_pct if e_pct > 0 else 999.0
+        
+        b_l = unlevered_beta * (1.0 + (1.0 - tax_rate) * de_ratio)
+        ke = risk_free_rate + (b_l * equity_risk_premium)
+        kd_pretax = risk_free_rate + tier["credit_spread"]
+        kd_aftertax = kd_pretax * (1.0 - tax_rate)
+        
+        wacc = (e_pct * ke) + (d_pct * kd_aftertax)
+        
+        pv_tax_shield = d_pct * unlevered_firm_value * tax_rate
+        pv_distress = tier["expected_distress_cost_pct"] * unlevered_firm_value
+        levered_firm_value = unlevered_firm_value + pv_tax_shield - pv_distress
+        
+        tier_data = {
+            "debt_ratio_pct": round(d_pct * 100.0, 1),
+            "rating": tier["credit_rating"],
+            "levered_beta": round(b_l, 4),
+            "cost_of_equity_pct": round(ke * 100.0, 2),
+            "pretax_cost_of_debt_pct": round(kd_pretax * 100.0, 2),
+            "wacc_pct": round(wacc * 100.0, 4),
+            "firm_value": round(levered_firm_value, 2)
+        }
+        evaluated_tiers.append(tier_data)
+        
+        if wacc < best_wacc:
+            best_wacc = wacc
+            optimal_tier = tier_data
+            
+    return {
+        "unlevered_firm_value": round(unlevered_firm_value, 2),
+        "optimal_debt_ratio_pct": optimal_tier["debt_ratio_pct"],
+        "optimal_credit_rating": optimal_tier["rating"],
+        "minimum_wacc_pct": optimal_tier["wacc_pct"],
+        "maximized_firm_value": optimal_tier["firm_value"],
+        "evaluated_capital_structures": evaluated_tiers
+    }
+
+spreads = [
+    {"debt_ratio": 0.00, "credit_rating": "AAA", "credit_spread": 0.006, "expected_distress_cost_pct": 0.000},
+    {"debt_ratio": 0.20, "credit_rating": "AA",  "credit_spread": 0.010, "expected_distress_cost_pct": 0.002},
+    {"debt_ratio": 0.35, "credit_rating": "A",   "credit_spread": 0.015, "expected_distress_cost_pct": 0.006},
+    {"debt_ratio": 0.50, "credit_rating": "BBB", "credit_spread": 0.025, "expected_distress_cost_pct": 0.020},
+    {"debt_ratio": 0.65, "credit_rating": "BB",  "credit_spread": 0.045, "expected_distress_cost_pct": 0.055}
+]
+p2 = optimize_capital_structure_wacc(
+    unlevered_firm_value=1200000000.0,
+    tax_rate=0.25,
+    unlevered_beta=0.90,
+    risk_free_rate=0.042,
+    equity_risk_premium=0.055,
+    credit_spread_table=spreads
+)
+fv_s = "$" + f"{p2['maximized_firm_value']:,.2f}"
+print(f"Optimal Debt: {p2['optimal_debt_ratio_pct']}% | Rating: {p2['optimal_credit_rating']}")
+print(f"Min WACC: {p2['minimum_wacc_pct']}% | Maximized Firm Value: {fv_s}")`,
+        output: `Optimal Debt: 35.0% | Rating: A\nMin WACC: 8.7431% | Maximized Firm Value: $1,297,800,000.00`,
+        codeNotes: [
+          { line: 17, note: 'Relevers equity beta using the Hamada equation as debt-to-equity expands' },
+          { line: 20, note: 'Calculates after-tax cost of debt incorporating marginal tax shield deduction' },
+          { line: 24, note: 'Balances present value of interest tax shields against expected bankruptcy distress penalties' },
+          { line: 38, note: 'Identifies the global minimum WACC and corresponding optimal investment-grade credit rating' }
+        ],
+        tryIt: 'Increase expected_distress_cost_pct at 35% debt to see the optimum shift toward a more conservative 20% AA-rated structure.',
+        check: {
+          question: 'Under the Static Trade-Off Theory of capital structure, why does increasing debt beyond the optimal point destroy enterprise value?',
+          options: [
+            'The exponential rise in the present value of bankruptcy distress costs and credit spreads surpasses the incremental value of interest tax shields.',
+            'Corporate tax shields expire automatically after 3 years under IRC Section 163(j).',
+            'All corporate bondholders convert their debt into preferred stock whenever leverage reaches 50%.',
+            'WACC increases because the risk-free rate is forced upward by the Federal Reserve.'
+          ],
+          answer: 0,
+          why: 'Beyond the optimal leverage inflection point, financial distress and agency costs grow faster than the tax shield, driving WACC up and destroying firm value.',
+          answerIndex: 0,
+          explanation: 'Beyond the optimal leverage inflection point, financial distress and agency costs grow faster than the tax shield, driving WACC up and destroying firm value.'
+        }
+      },
+      {
+        title: 'Multi-Tranche Debt Capitalization & Covenant Headroom Stress Testing',
+        say: [
+          'Operating at target leverage requires structuring debt across institutional tranches with staggered maturities and risk profiles: Revolving Credit Facilities (working capital liquidity), Term Loan A (amortizing bank debt), Term Loan B (institutional institutional term debt), and Senior Unsecured Notes (fixed-rate bond issues).',
+          'However, institutional credit agreements contain binding maintenance covenants designed to protect lenders. The two most critical covenants are: (1) Total Leverage Ratio (Total Debt / EBITDA, typically capped at 4.5x) and (2) Interest Coverage Ratio (EBITDA / Total Interest, typically floored at 3.0x).',
+          'A seasoned CFO must stress-test debt covenant headroom against severe macroeconomic shocks. By simulating concurrent revenue contraction (-10%) and operating margin compression (-5%), the control tower verifies whether EBITDA remains sufficient to service debt obligations without triggering technical default or restructuring covenants.'
+        ],
+        example: 'Apex Global Technologies maintains $450,000,000 in total debt ($150M TLA at 6.5%, $200M TLB at 7.5%, $100M Notes at 8.5%) against $125M baseline EBITDA. Under a dual macroeconomic shock (-10% revenue, -5% margin), stressed EBITDA drops to $106,875,000. Stressed leverage reaches 4.21x (comfortably below the 4.5x ceiling) and interest coverage holds at 3.21x (above the 3.0x floor), certifying robust covenant headroom.',
+        code: `def stress_test_debt_covenant_headroom(
+    ebitda_base: float,
+    revenue_shock_pct: float,
+    margin_shock_pct: float,
+    debt_tranches: list[dict],
+    max_leverage_covenant: float = 4.5,
+    min_interest_coverage_covenant: float = 3.0
+) -> dict:
+    total_debt = sum(t["principal"] for t in debt_tranches)
+    annual_interest = sum(t["principal"] * t["interest_rate"] for t in debt_tranches)
+    
+    ebitda_stressed = ebitda_base * (1.0 - revenue_shock_pct) * (1.0 - margin_shock_pct)
+    
+    leverage_stressed = total_debt / ebitda_stressed if ebitda_stressed > 0 else 999.0
+    interest_coverage_stressed = ebitda_stressed / annual_interest if annual_interest > 0 else 0.0
+    
+    leverage_breach = leverage_stressed > max_leverage_covenant
+    interest_coverage_breach = interest_coverage_stressed < min_interest_coverage_covenant
+    covenants_compliant = not (leverage_breach or interest_coverage_breach)
+    
+    return {
+        "base_ebitda": round(ebitda_base, 2),
+        "stressed_ebitda": round(ebitda_stressed, 2),
+        "total_debt": round(total_debt, 2),
+        "annual_interest_expense": round(annual_interest, 2),
+        "stressed_leverage_ratio": round(leverage_stressed, 2),
+        "leverage_covenant_limit": max_leverage_covenant,
+        "stressed_interest_coverage": round(interest_coverage_stressed, 2),
+        "interest_coverage_limit": min_interest_coverage_covenant,
+        "covenant_headroom_passed": covenants_compliant,
+        "solvency_status": "ROBUST_COVENANT_COMPLIANCE" if covenants_compliant else "TECHNICAL_DEFAULT_WARNING"
+    }
+
+tranches = [
+    {"name": "Term Loan A", "principal": 150000000.0, "interest_rate": 0.065},
+    {"name": "Term Loan B", "principal": 200000000.0, "interest_rate": 0.075},
+    {"name": "Senior Notes", "principal": 100000000.0, "interest_rate": 0.085}
+]
+p3 = stress_test_debt_covenant_headroom(
+    ebitda_base=125000000.0,
+    revenue_shock_pct=0.10,
+    margin_shock_pct=0.05,
+    debt_tranches=tranches,
+    max_leverage_covenant=4.5,
+    min_interest_coverage_covenant=3.0
+)
+tot_d_s = "$" + f"{p3['total_debt']:,.2f}"
+st_eb_s = "$" + f"{p3['stressed_ebitda']:,.2f}"
+print(f"Total Debt: {tot_d_s} | Stressed EBITDA: {st_eb_s}")
+print(f"Stressed Leverage: {p3['stressed_leverage_ratio']}x (Limit: {p3['leverage_covenant_limit']}x)")
+print(f"Interest Coverage: {p3['stressed_interest_coverage']}x (Limit: {p3['interest_coverage_limit']}x)")
+print(f"Status: {p3['solvency_status']}")`,
+        output: `Total Debt: $450,000,000.00 | Stressed EBITDA: $106,875,000.00\nStressed Leverage: 4.21x (Limit: 4.5x)\nInterest Coverage: 3.21x (Limit: 3.0x)\nStatus: ROBUST_COVENANT_COMPLIANCE`,
+        codeNotes: [
+          { line: 9, note: 'Aggregates principal exposure and weighted interest service across all debt tranches' },
+          { line: 12, note: 'Applies multiplicative revenue contraction and margin compression to model stressed earnings' },
+          { line: 14, note: 'Evaluates stressed leverage against credit agreement maximum debt covenant limits' },
+          { line: 27, note: 'Certifies covenant headroom compliance under severe economic downside scenarios' }
+        ],
+        tryIt: 'Increase revenue_shock_pct to 0.20 (20% drop) to observe how leverage breaches 4.5x and triggers TECHNICAL_DEFAULT_WARNING.',
+        check: {
+          question: 'What immediate legal and financial consequences occur if a corporation breaches a debt maintenance covenant such as Maximum Leverage Ratio?',
+          options: [
+            'Lenders gain the contractual right to accelerate debt maturity, demand immediate repayment, increase interest margins, or mandate restructuring concessions.',
+            'The company is automatically dissolved and its assets auctioned off by the county sheriff.',
+            'All company bank accounts are frozen and transferred to the Internal Revenue Service.',
+            'The board of directors is replaced by the Federal Deposit Insurance Corporation (FDIC).'
+          ],
+          answer: 0,
+          why: 'A covenant breach triggers a technical default, giving lenders powerful leverage to demand fee waivers, higher spreads, equity cures, or debt acceleration.',
+          answerIndex: 0,
+          explanation: 'A covenant breach triggers a technical default, giving lenders powerful leverage to demand fee waivers, higher spreads, equity cures, or debt acceleration.'
+        }
+      },
+      {
+        title: 'Enterprise Treasury Cross-Asset Risk Hedging: IRS & FX Forwards',
+        say: [
+          'Global corporations operate in an interconnected market environment where interest rate hikes and foreign currency fluctuations can rapidly wipe out operational profit margins. The corporate treasury must establish a comprehensive cross-asset hedging architecture.',
+          'To neutralize interest rate risk on floating-rate debt ($200M Term Loan B linked to SOFR), the treasurer executes a Pay-Fixed Receive-Floating Interest Rate Swap (IRS). If SOFR interest rates surge from 4.5% to 5.5%, the swap generates net cash receipts that exactly offset the higher interest payments on the bank debt, locking in interest expense.',
+          'Concurrently, to eliminate foreign currency translation risk on cross-border receivables (€100M from European operations), the treasury executes an FX Forward contract. Grounded in Covered Interest Parity (F = S * (1 + r_usd) / (1 + r_eur)), the forward contract guarantees exact USD cash proceeds twelve months forward, eliminating all currency volatility from enterprise net income.'
+        ],
+        example: 'Apex Global Technologies hedges $200,000,000 in floating debt by swapping at a 4.50% fixed rate against 5.50% projected SOFR, locking in $2,000,000.00 in annual net interest savings. Concurrently, hedging €100,000,000 in European receivables at a spot rate of 1.0850 and interest rates of 4.5% USD / 3.0% EUR locks in an exact forward rate of 1.1008 and guarantees $110,080,097.09 in USD cash proceeds.',
+        code: `def execute_enterprise_treasury_hedging_portfolio(
+    floating_debt_notional: float,
+    fixed_swap_rate: float,
+    projected_sofr: float,
+    eur_receivables_notional: float,
+    spot_eurusd: float,
+    r_usd: float,
+    r_eur: float,
+    horizon_months: int = 12
+) -> dict:
+    t_years = horizon_months / 12.0
+    annual_swap_pnl = floating_debt_notional * (projected_sofr - fixed_swap_rate)
+    
+    f_eurusd = spot_eurusd * ((1.0 + r_usd * t_years) / (1.0 + r_eur * t_years))
+    locked_usd_proceeds = eur_receivables_notional * f_eurusd
+    
+    return {
+        "irs_notional_hedged_usd": round(floating_debt_notional, 2),
+        "fixed_swap_rate_pct": round(fixed_swap_rate * 100.0, 2),
+        "projected_floating_rate_pct": round(projected_sofr * 100.0, 2),
+        "annual_irs_net_savings_usd": round(annual_swap_pnl, 2),
+        "eur_receivables_hedged": round(eur_receivables_notional, 2),
+        "spot_eurusd": round(spot_eurusd, 4),
+        "forward_eurusd_rate": round(f_eurusd, 4),
+        "guaranteed_usd_cash_proceeds": round(locked_usd_proceeds, 2),
+        "treasury_hedging_verdict": "FULL_CROSS_ASSET_IMMUNIZATION"
+    }
+
+p4 = execute_enterprise_treasury_hedging_portfolio(
+    floating_debt_notional=200000000.0,
+    fixed_swap_rate=0.045,
+    projected_sofr=0.055,
+    eur_receivables_notional=100000000.0,
+    spot_eurusd=1.0850,
+    r_usd=0.045,
+    r_eur=0.030,
+    horizon_months=12
+)
+sav_s = "$" + f"{p4['annual_irs_net_savings_usd']:,.2f}"
+proc_s = "$" + f"{p4['guaranteed_usd_cash_proceeds']:,.2f}"
+print(f"IRS Swap Notional: $" + f"{p4['irs_notional_hedged_usd']:,.2f} | Annual Net Savings: {sav_s}")
+print(f"FX Spot EUR/USD: {p4['spot_eurusd']} -> Forward Rate: {p4['forward_eurusd_rate']}")
+print(f"Guaranteed Proceeds: {proc_s} | Verdict: {p4['treasury_hedging_verdict']}")`,
+        output: `IRS Swap Notional: $200,000,000.00 | Annual Net Savings: $2,000,000.00\nFX Spot EUR/USD: 1.085 -> Forward Rate: 1.1008\nGuaranteed Proceeds: $110,080,097.09 | Verdict: FULL_CROSS_ASSET_IMMUNIZATION`,
+        codeNotes: [
+          { line: 11, note: 'Calculates net interest savings on interest rate swap under rising benchmark rate scenarios' },
+          { line: 13, note: 'Calculates forward exchange rate enforcing Covered Interest Rate Parity arbitrage-free pricing' },
+          { line: 14, note: 'Computes guaranteed USD cash conversion proceeds on international currency receivables' },
+          { line: 24, note: 'Certifies enterprise balance sheet immunization against macroeconomic rate and currency shocks' }
+        ],
+        tryIt: 'Adjust projected_sofr to 0.040 to observe how the swap incurs a net cash payment when floating rates drop below the fixed swap rate.',
+        check: {
+          question: 'Under Covered Interest Parity (CIP), why does the currency with the lower nominal interest rate (e.g. EUR at 3.0% vs USD at 4.5%) trade at a forward premium against the higher-yielding currency?',
+          options: [
+            'To prevent cross-border interest rate arbitrage, the forward exchange rate must adjust so that investing in either currency yields the identical risk-free return.',
+            'The lower-interest-rate currency is guaranteed to experience faster GDP growth over the subsequent 10 years.',
+            'Central banks mandate artificial forward premiums to subsidize import-dependent corporate borrowers.',
+            'Forward premiums are determined entirely by the trading volume of sovereign gold certificates.'
+          ],
+          answer: 0,
+          why: 'Covered Interest Parity ensures no-arbitrage equilibrium: the forward premium compensates for the interest rate differential between the two national currencies.',
+          answerIndex: 0,
+          explanation: 'Covered Interest Parity ensures no-arbitrage equilibrium: the forward premium compensates for the interest rate differential between the two national currencies.'
+        }
+      },
+      {
+        title: 'Milestone 1 Capstone Synthesis: Boardroom Strategic Defense & CFO Accreditation',
+        say: [
+          'Congratulations on reaching the final boardroom synthesis of Milestone 1. In this ultimate executive module, every financial engineering and corporate finance discipline converges: DCF and market comps triangulation, dynamic WACC minimization under trade-off theory, debt covenant headroom stress-testing, and multi-asset treasury hedging.',
+          'As the Chief Financial Officer presenting to the Board of Directors, your strategic capital allocation plan must withstand rigorous scrutiny from institutional shareholders, activist investors, and credit rating agencies. You prove that the enterprise is valued at $1.24B ($94.45 share price), that 35% target leverage unlocks $97.8M in tax shield value at a minimized 8.74% WACC, and that credit covenants remain fully compliant under severe recessionary stress.',
+          'By delivering this unassailable capital allocation and treasury risk plan, you achieve unanimous Board of Directors approval, certifying comprehensive balance sheet resilience and earning the prestigious Chief Financial Officer & Senior Corporate Finance Strategist (CFO-SCFS) accreditation.'
+        ],
+        example: 'At the annual strategic board meeting of Apex Global Technologies, the executive finance team presents the integrated capital plan. Synthesizing a $1.24B blended enterprise valuation ($94.45 share price), an optimized 35% debt capital structure at 8.74% WACC, 4.21x stressed leverage compliance, and $2.0M in annual swap savings, the board awards unanimous approval and confers CFO-SCFS accreditation.',
+        code: `def generate_cfo_boardroom_capital_plan_and_accreditation(
+    company_name: str,
+    p1_val: dict,
+    p2_cap: dict,
+    p3_cov: dict,
+    p4_hedge: dict
+) -> dict:
+    total_enterprise_value = p1_val.get("blended_enterprise_value", 0.0)
+    implied_share_price = p1_val.get("implied_share_price", 0.0)
+    optimal_debt_pct = p2_cap.get("optimal_debt_ratio_pct", 0.0)
+    min_wacc = p2_cap.get("minimum_wacc_pct", 0.0)
+    solvency_safe = p3_cov.get("covenant_headroom_passed", False)
+    
+    board_approval = solvency_safe and (implied_share_price > 0.0)
+    
+    return {
+        "corporation": company_name,
+        "blended_enterprise_value": total_enterprise_value,
+        "implied_share_price": implied_share_price,
+        "optimal_capital_structure_debt_pct": optimal_debt_pct,
+        "minimized_wacc_pct": min_wacc,
+        "debt_covenants_certified": solvency_safe,
+        "annual_irs_hedging_savings": p4_hedge.get("annual_irs_net_savings_usd", 0.0),
+        "cfo_boardroom_verdict": "UNANIMOUS_BOARD_APPROVAL_VALUE_MAXIMIZED" if board_approval else "PLAN_REJECTED",
+        "executive_accreditation": "CHIEF_FINANCIAL_OFFICER_SENIOR_STRATEGIST_CFO_SCFS"
+    }
+
+p5 = generate_cfo_boardroom_capital_plan_and_accreditation(
+    company_name="Apex Global Technologies Corp.",
+    p1_val=p1,
+    p2_cap=p2,
+    p3_cov=p3,
+    p4_hedge=p4
+)
+b_ev_s = "$" + f"{p5['blended_enterprise_value']:,.2f}"
+sh_p_s = "$" + f"{p5['implied_share_price']:,.2f}"
+print(f"Corporation: {p5['corporation']}")
+print(f"Blended EV: {b_ev_s} | Share Price: {sh_p_s}")
+print(f"Optimal Capital Structure: {p5['optimal_capital_structure_debt_pct']}% Debt | Min WACC: {p5['minimized_wacc_pct']}%")
+print(f"Covenants Certified: {p5['debt_covenants_certified']} | Boardroom Verdict: {p5['cfo_boardroom_verdict']}")
+print(f"Credential: {p5['executive_accreditation']}")`,
+        output: `Corporation: Apex Global Technologies Corp.\nBlended EV: $1,239,500,000.00 | Share Price: $94.45\nOptimal Capital Structure: 35.0% Debt | Min WACC: 8.7431%\nCovenants Certified: True | Boardroom Verdict: UNANIMOUS_BOARD_APPROVAL_VALUE_MAXIMIZED\nCredential: CHIEF_FINANCIAL_OFFICER_SENIOR_STRATEGIST_CFO_SCFS`,
+        codeNotes: [
+          { line: 9, note: 'Synthesizes triangulated Enterprise Value ($1.24B) and implied per-share intrinsic price ($94.45)' },
+          { line: 12, note: 'Certifies optimal capital structure (35% Debt, A rating) achieving global minimum WACC (8.74%)' },
+          { line: 13, note: 'Validates debt covenant compliance and solvency headroom under macroeconomic stress shocks' },
+          { line: 21, note: 'Confers prestigious Chief Financial Officer & Senior Corporate Finance Strategist (CFO-SCFS) accreditation' }
+        ],
+        tryIt: 'Simulate a failed stress test by passing covenant_headroom_passed as False to confirm that boardroom verdict switches to PLAN_REJECTED.',
+        check: {
+          question: 'What is the overarching objective of a Chief Financial Officer when orchestrating enterprise valuation, capital structure, debt covenants, and treasury hedging into a unified board strategy?',
+          options: [
+            'To maximize long-term shareholder enterprise value while minimizing cost of capital and immunizing the corporate balance sheet against catastrophic distress.',
+            'To minimize corporate revenue so that federal and state income tax liabilities are reduced to zero.',
+            'To convert all common stock into non-voting cryptocurrency tokens held on offshore servers.',
+            'To eliminate all debt financing and fund the corporation entirely through short-term trade accounts payable.'
+          ],
+          answer: 0,
+          why: 'The core mission of corporate finance is maximizing intrinsic shareholder value by optimizing the capital structure, lowering WACC, and protecting liquidity through robust risk hedging.',
+          answerIndex: 0,
+          explanation: 'The core mission of corporate finance is maximizing intrinsic shareholder value by optimizing the capital structure, lowering WACC, and protecting liquidity through robust risk hedging.'
+        }
+      }
+    ],
+    summary: [
+      'Orchestrated triangulated "Football Field" enterprise valuation synthesizing multi-stage DCF ($1.28B), public trading comps ($1.15B), and precedent transactions ($1.30B) to derive a blended EV of $1.24B ($94.45 implied share price).',
+      'Engineered dynamic capital structure optimization under static trade-off theory, sweeping leverage ratios to identify the global minimum WACC (8.7431% at 35.0% debt, A rating) and unlocking $97.8M in net firm value.',
+      'Stress-tested multi-tranche debt capital structures ($450M total debt across TLA, TLB, and Notes) under joint revenue (-10%) and margin (-5%) shocks, certifying robust covenant headroom (4.21x leverage vs 4.5x limit, 3.21x interest coverage vs 3.0x limit).',
+      'Constructed enterprise cross-asset treasury hedging portfolios deploying $200M notional Interest Rate Swaps ($2.0M annual net interest savings under rising rates) and Covered Interest Parity FX forwards (€100M at 1.1008 EUR/USD forward rate).',
+      'Synthesized the complete executive capital allocation strategy to achieve unanimous board of directors approval and confer Chief Financial Officer & Senior Corporate Finance Strategist (CFO-SCFS) accreditation.'
+    ],
+    projectStep: {
+      title: 'Command the Enterprise Corporate Finance & Global Treasury Control Tower',
+      steps: [
+        'Ingest fundamental financials and construct the triangulated football field valuation model across DCF, trading multiples, and precedent M&A transactions.',
+        'Run the trade-off capital structure optimizer to map WACC across debt-to-capital ratios, determining optimal leverage, credit spread, and maximized firm value.',
+        'Simulate multi-tranche debt capitalization and evaluate financial covenant compliance (Debt/EBITDA, Interest Coverage) under severe recessionary stress shocks.',
+        'Implement the treasury derivative hedging portfolio: calibrate pay-fixed interest rate swaps and Covered Interest Parity FX forward contracts.',
+        'Synthesize findings into an executive boardroom presentation, achieve unanimous board approval, and earn Chief Financial Officer & Senior Corporate Finance Strategist (CFO-SCFS) accreditation.'
+      ]
+    }
+  }
 
 ];
