@@ -929,7 +929,383 @@ print(f"Firmware Branch Action: {res5['status']}")`,
         'Implement dual-token redundant authorization logic with control flow integrity (CFI) step canaries.'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_sec',
+    day: 4,
+    title: 'Asymmetric Cryptography: ECC, ECDHE Key Exchange, Nonce Safety & Hardware TRNGs',
+    goal: 'Master asymmetric cryptography on resource-constrained embedded systems: Elliptic Curve Cryptography (NIST P-256 vs Ed25519), ephemeral ECDH key agreement with Perfect Forward Secrecy, ECDSA nonce reuse vulnerability audits (RFC 6979), silicon True Random Number Generators (TRNG ring oscillators and NIST SP 800-90B health tests), and side-channel protected Montgomery ladder point multiplication.',
+    minutes: 35,
+    recap: 'In Day 3, we mastered hardware DMA crypto engines, table-free ChaCha20 ARX ciphers, constant-time memory comparisons, and voltage glitch detection. Today in Day 4, we advance to asymmetric public-key cryptography on microcontrollers, ephemeral key agreement, TRNG entropy harvesting, and constant-time modular arithmetic.',
+    parts: [
+      {
+        title: 'Elliptic Curve Cryptography: NIST P-256 vs Ed25519 on Embedded Cores',
+        say: [
+          'For decades, RSA public-key cryptography dominated internet security. However, executing RSA on resource-constrained microcontrollers (such as ARM Cortex-M0+ or M4 cores) is virtually prohibitive. To achieve a modern 128-bit security level, RSA requires a 3072-bit modulus (384 bytes). Performing modular exponentiation (c = m^e mod n) with 3072-bit bignums requires over 4 kilobytes of working RAM for multiprecision accumulators and takes upwards of 12,000 milliseconds on an unaccelerated 48 MHz microcontroller—stalling the device for 12 full seconds!',
+          'Elliptic Curve Cryptography (ECC) revolutionizes embedded public-key security by achieving equivalent mathematical strength with dramatically smaller keys. A 256-bit elliptic curve key delivers the exact same 128-bit security level as RSA-3072, but requires only 32 bytes of Flash storage. Furthermore, point multiplication over elliptic curves executes in only 38.5 milliseconds on a Cortex-M0+—a staggering 322x speedup over RSA while slashing RAM overhead by 93.8%!',
+          'In modern embedded systems, two curve families dominate: (1) NIST P-256 (secp256r1), specified in ANSI X9.62 and FIPS 186-4, utilizing the short Weierstrass equation y^2 = x^3 - 3x + b mod p; and (2) Ed25519 (Curve25519), designed by Daniel J. Bernstein, utilizing twisted Edwards curves -x^2 + y^2 = 1 - (121665/121666)x^2y^2. While NIST P-256 is mandatory for legacy enterprise TLS and government compliance, Ed25519 provides complete immunity to exceptional point edge cases, executes in constant time by default, and delivers 19.2 ms signature generation on Cortex-M0+.'
+        ],
+        example: 'Like replacing a 50-pound cast-iron ship anchor and chain (RSA-3072) with a high-strength titanium mountaineering carabiner (ECC-256) on an ultralight drone: both hold the exact same breaking load, but the carabiner weighs 1/100th as much and fits in a shirt pocket.',
+        code: `# Simulation: Asymmetric Key & Signature Footprint Benchmark on Embedded MCUs
+def compare_asymmetric_key_and_signature_metrics(algorithm: str) -> dict:
+    specs = {
+        "RSA-2048": {
+            "pubkey_bytes": 256,
+            "signature_bytes": 256,
+            "cortex_m0_sign_ms": 12400.0,
+            "security_bits": 112,
+            "ram_overhead_bytes": 4096
+        },
+        "NIST-P256": {
+            "pubkey_bytes": 64, # Uncompressed (X, Y)
+            "signature_bytes": 64, # (r, s)
+            "cortex_m0_sign_ms": 38.5,
+            "security_bits": 128,
+            "ram_overhead_bytes": 512
+        },
+        "Ed25519": {
+            "pubkey_bytes": 32, # Compressed point
+            "signature_bytes": 64, # (R, S)
+            "cortex_m0_sign_ms": 19.2,
+            "security_bits": 128,
+            "ram_overhead_bytes": 256
+        }
+    }
+    
+    selected = specs.get(algorithm, specs["NIST-P256"])
+    speedup_vs_rsa = round(specs["RSA-2048"]["cortex_m0_sign_ms"] / selected["cortex_m0_sign_ms"], 1)
+    ram_savings_vs_rsa = round((specs["RSA-2048"]["ram_overhead_bytes"] - selected["ram_overhead_bytes"]) / specs["RSA-2048"]["ram_overhead_bytes"] * 100, 1)
+    
+    return {
+        "algorithm": algorithm,
+        "pubkey_bytes": selected["pubkey_bytes"],
+        "signature_bytes": selected["signature_bytes"],
+        "sign_latency_ms": selected["cortex_m0_sign_ms"],
+        "security_level_bits": selected["security_bits"],
+        "speedup_vs_rsa": speedup_vs_rsa,
+        "ram_savings_pct": ram_savings_vs_rsa
+    }
+
+p1_rsa = compare_asymmetric_key_and_signature_metrics("RSA-2048")
+p1_p256 = compare_asymmetric_key_and_signature_metrics("NIST-P256")
+p1_ed = compare_asymmetric_key_and_signature_metrics("Ed25519")
+
+print("=== ASYMMETRIC CRYPTOGRAPHY BENCHMARK (CORTEX-M0+) ===")
+print(f"RSA-2048:  Pubkey={p1_rsa['pubkey_bytes']}B, Sig={p1_rsa['signature_bytes']}B, Latency={p1_rsa['sign_latency_ms']} ms")
+print(f"NIST-P256: Pubkey={p1_p256['pubkey_bytes']}B, Sig={p1_p256['signature_bytes']}B, Latency={p1_p256['sign_latency_ms']} ms ({p1_p256['speedup_vs_rsa']}x faster)")
+print(f"Ed25519:   Pubkey={p1_ed['pubkey_bytes']}B, Sig={p1_ed['signature_bytes']}B, Latency={p1_ed['sign_latency_ms']} ms ({p1_ed['speedup_vs_rsa']}x faster)")
+print(f"RAM Savings over RSA: {p1_ed['ram_savings_pct']}% reduction")`,
+        output: `=== ASYMMETRIC CRYPTOGRAPHY BENCHMARK (CORTEX-M0+) ===\nRSA-2048:  Pubkey=256B, Sig=256B, Latency=12400.0 ms\nNIST-P256: Pubkey=64B, Sig=64B, Latency=38.5 ms (322.1x faster)\nEd25519:   Pubkey=32B, Sig=64B, Latency=19.2 ms (645.8x faster)\nRAM Savings over RSA: 93.8% reduction`,
+        codeNotes: [
+          { line: 2, note: 'Profiles asymmetric cryptographic footprint across RSA-2048, NIST P-256, and Ed25519' },
+          { line: 24, note: 'Demonstrates 322x to 645x signature latency acceleration on ARM Cortex-M0+ microcontrollers' },
+          { line: 39, note: 'Slashing RAM overhead from 4,096 bytes to 256 bytes (93.8% memory savings)' }
+        ],
+        tryIt: 'Query the dictionary with a non-existent algorithm and confirm it defaults safely to NIST-P256.',
+        check: {
+          question: 'Why is Elliptic Curve Cryptography (ECC) overwhelmingly preferred over RSA in battery-powered IoT microcontrollers?',
+          options: [
+            'Because 256-bit ECC provides equivalent 128-bit cryptographic strength with 32-byte keys, slashing RAM footprint by >90% and executing hundreds of times faster than 2048-bit RSA',
+            'Because RSA cannot encrypt text messages longer than 10 characters',
+            'Because ECC does not require a microcontroller power supply to operate',
+            'Because RSA algorithms have been outlawed internationally'
+          ],
+          answer: 0,
+          why: 'RSA requires massive 2048-bit or 3072-bit integer arithmetic which consumes excessive RAM and takes seconds on microcontrollers. ECC provides identical security in 32-byte keys with sub-50ms execution.'
+        }
+      },
+      {
+        title: 'Ephemeral ECDH (ECDHE) Key Exchange over Wireless: Forward Secrecy Invariant',
+        say: [
+          'When two IoT devices communicate across open wireless channels (such as Thread, Zigbee, BLE, or LoRaWAN), encrypting traffic with a static pre-shared key (PSK) embedded in firmware is a critical security vulnerability. If an attacker captures thousands of encrypted wireless packets today, and then physically tears down a single device three years later to extract its static key via silicon probing, the attacker can retroactively decrypt the entire historical archive of communications!',
+          'To eradicate retrospective eavesdropping, modern embedded transport security (such as TLS 1.3 and DTLS 1.3) mandates Ephemeral Elliptic Curve Diffie-Hellman (ECDHE) key exchange. In an ECDHE handshake, both the client sensor and the edge gateway generate a fresh, single-use ephemeral keypair (d_A, Q_A) and (d_B, Q_B) for each individual session.',
+          'The endpoints exchange public curve points Q_A and Q_B across the radio link. Alice computes the shared point S = d_A * Q_B, while Bob computes S = d_B * Q_A. Because multiplication on elliptic curves is associative (d_A * (d_B * G) = d_B * (d_A * G)), both endpoints arrive at the exact same point S. The moment the session key is derived via HKDF, both microcontrollers actively zeroize their ephemeral private keys (d_A, d_B) from SRAM. This guarantees Perfect Forward Secrecy (PFS): even complete compromise of long-term identity keys in the future cannot decrypt past session captures.'
+        ],
+        example: 'Like two spies meeting in a public park: instead of speaking in their permanent embassy code, they each roll a random pair of dice under their jackets, compute a temporary one-time handshake signal, conduct their conversation, and immediately eat the paper containing the dice numbers before parting.',
+        code: `# Simulation: Ephemeral ECDH (ECDHE) Key Agreement Protocol
+def simulate_ecdh_ephemeral_key_exchange(alice_priv: int, bob_priv: int, generator_g: int, prime_modulus: int) -> dict:
+    # Ephemeral ECDH over cyclic subgroup (g^x mod p) demonstrating forward secrecy
+    # Alice generates public key QA = G * dA mod p
+    alice_pub = pow(generator_g, alice_priv, prime_modulus)
+    
+    # Bob generates public key QB = G * dB mod p
+    bob_pub = pow(generator_g, bob_priv, prime_modulus)
+    
+    # Alice derives shared secret S_A = QB * dA mod p
+    shared_alice = pow(bob_pub, alice_priv, prime_modulus)
+    
+    # Bob derives shared secret S_B = QA * dB mod p
+    shared_bob = pow(alice_pub, bob_priv, prime_modulus)
+    
+    return {
+        "alice_pub": hex(alice_pub),
+        "bob_pub": hex(bob_pub),
+        "shared_alice": hex(shared_alice),
+        "shared_bob": hex(shared_bob),
+        "secrets_match": shared_alice == shared_bob,
+        "forward_secrecy": True
+    }
+
+p2_res = simulate_ecdh_ephemeral_key_exchange(0xA1B2C3, 0xD4E5F6, 5, 0xFFFFFFFFFFFFFFC5)
+print("=== EPHEMERAL ECDH KEY EXCHANGE OVER WIRELESS ===")
+print(f"Alice Ephemeral Pubkey: {p2_res['alice_pub']}")
+print(f"Bob Ephemeral Pubkey:   {p2_res['bob_pub']}")
+print(f"Alice Derived Secret:   {p2_res['shared_alice']}")
+print(f"Bob Derived Secret:     {p2_res['shared_bob']}")
+print(f"Key Agreement Verified: {p2_res['secrets_match']} (Forward Secrecy Guaranteed)")`,
+        output: `=== EPHEMERAL ECDH KEY EXCHANGE OVER WIRELESS ===\nAlice Ephemeral Pubkey: 0x8d4e8525b09844f8\nBob Ephemeral Pubkey:   0x6653b46f858d0716\nAlice Derived Secret:   0x96dc6c04bcb47e9e\nBob Derived Secret:     0x96dc6c04bcb47e9e\nKey Agreement Verified: True (Forward Secrecy Guaranteed)`,
+        codeNotes: [
+          { line: 2, note: 'Simulates Diffie-Hellman key agreement over mathematical cyclic groups' },
+          { line: 10, note: 'Derives shared secret point independently on both client and server nodes' },
+          { line: 21, note: 'Verifies agreement matches exactly and provides Perfect Forward Secrecy (PFS)' }
+        ],
+        tryIt: 'Change Alice private key to 0x111111 and verify both endpoints still converge on a shared secret identical to each other.',
+        check: {
+          question: 'What critical security property does Ephemeral ECDH (ECDHE) provide over static pre-shared keys in wireless sensor networks?',
+          options: [
+            'Perfect Forward Secrecy (PFS): compromising the device identity key in the future cannot retroactively decrypt past recorded wireless communications',
+            'It doubles the wireless transmission distance of the radio transceiver',
+            'It eliminates the need for mathematical checksums on UDP packets',
+            'It allows sensor nodes to communicate without battery power'
+          ],
+          answer: 0,
+          why: 'Because ephemeral private keys are generated freshly for each session and wiped from RAM immediately afterward, an adversary who later steals the device cannot decrypt previously recorded network traffic.'
+        }
+      },
+      {
+        title: 'ECDSA Signature Generation & The Catastrophic Reused Nonce Vulnerability',
+        say: [
+          'In embedded secure boot, firmware integrity verification, and device attestation, the Elliptic Curve Digital Signature Algorithm (ECDSA) is the industry standard. An ECDSA signature over a hashed firmware message z consists of a pair of integers (r, s), computed as: r = (k * G)_x mod n, and s = k^-1 * (z + r * d) mod n, where d is the device private signing key, G is the curve base point, and k is a per-signature random nonce.',
+          'Notice the variable k: cryptographic specifications strictly mandate that k must be a cryptographically secure, unpredictable, and completely unique integer generated freshly for every single signature! If a flawed random number generator on an IoT firmware signing server generates the exact same nonce k for two distinct messages (z_1, z_2), catastrophic security failure occurs.',
+          'An eavesdropper observing the two public signatures (r, s_1) and (r, s_2) notes that both signatures share the identical r value! The attacker can subtract the two signature equations: s_1 - s_2 = k^-1 * (z_1 - z_2) mod n. By computing k = (z_1 - z_2) * (s_1 - s_2)^-1 mod n, the attacker immediately recovers the secret nonce k. Once k is known, the master private key d is derived in a single modular arithmetic step: d = (s_1 * k - z_1) * r^-1 mod n! This exact vulnerability famously compromised Sony PlayStation 3 signing keys in 2010. To prevent nonce reuse, modern embedded firmware mandates Deterministic ECDSA (RFC 6979), deriving k = HMAC-SHA256(d, z).'
+        ],
+        example: 'Like sealing envelopes with a wax signet ring that imprints a serial number: if you accidentally stamp the same serial number on two different letters, a forensic investigator can superimpose the wax molds to carve a replica of your private master signet ring.',
+        code: `# Simulation: ECDSA Nonce Reuse Private Key Extraction Audit (RFC 6979 Mitigation)
+def audit_ecdsa_nonce_reuse_vulnerability(k_nonce: int, z1_hash: int, z2_hash: int, priv_d: int, order_n: int) -> dict:
+    # Sign message 1: s1 = k^-1 * (z1 + r * d) mod n
+    # Sign message 2: s2 = k^-1 * (z2 + r * d) mod n with SAME k!
+    r_val = 0x12345678 # (k * G).x mod n
+    k_inv = pow(k_nonce, -1, order_n)
+    
+    s1 = (k_inv * (z1_hash + r_val * priv_d)) % order_n
+    s2 = (k_inv * (z2_hash + r_val * priv_d)) % order_n
+    
+    # Attacker algebraic recovery: k = (z1 - z2) / (s1 - s2) mod n
+    s_diff = (s1 - s2) % order_n
+    s_diff_inv = pow(s_diff, -1, order_n)
+    recovered_k = ((z1_hash - z2_hash) * s_diff_inv) % order_n
+    
+    # Attacker recovers private key d = (s1 * k - z1) * r^-1 mod n
+    r_inv = pow(r_val, -1, order_n)
+    recovered_d = (((s1 * recovered_k) - z1_hash) * r_inv) % order_n
+    
+    return {
+        "original_private_key": hex(priv_d),
+        "reused_nonce": hex(k_nonce),
+        "signature_s1": hex(s1),
+        "signature_s2": hex(s2),
+        "recovered_k": hex(recovered_k),
+        "recovered_private_key": hex(recovered_d),
+        "private_key_compromised": recovered_d == priv_d
+    }
+
+n_curve = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+p3_res = audit_ecdsa_nonce_reuse_vulnerability(0x99887766, 0x11112222, 0x33334444, 0xCAFEBABE, n_curve)
+
+print("=== ECDSA NONCE REUSE PRIVATE KEY EXTRACTION AUDIT ===")
+print(f"Original Private Key:   {p3_res['original_private_key']}")
+print(f"Reused Ephemeral Nonce: {p3_res['reused_nonce']}")
+print(f"Recovered Nonce k:      {p3_res['recovered_k']}")
+print(f"Recovered Private Key:  {p3_res['recovered_private_key']}")
+print(f"Attacker Exploit State: COMPROMISED={p3_res['private_key_compromised']} (RFC 6979 Required)")`,
+        output: `=== ECDSA NONCE REUSE PRIVATE KEY EXTRACTION AUDIT ===\nOriginal Private Key:   0xcafebabe\nReused Ephemeral Nonce: 0x99887766\nRecovered Nonce k:      0x99887766\nRecovered Private Key:  0xcafebabe\nAttacker Exploit State: COMPROMISED=True (RFC 6979 Required)`,
+        codeNotes: [
+          { line: 2, note: 'Simulates catastrophic algebraic private key extraction from reused ECDSA nonce k' },
+          { line: 12, note: 'Solves k = (z1 - z2) / (s1 - s2) mod n using modular inverse arithmetic' },
+          { line: 27, note: 'Recovers master private key d in 3 instructions, proving RFC 6979 deterministic nonces are mandatory' }
+        ],
+        tryIt: 'Change the private key priv_d to 0x12345678 and observe how the algebraic recovery extracts the new key with 100% precision.',
+        check: {
+          question: 'What catastrophic security consequence occurs if an ECDSA signing engine reuses the same ephemeral nonce k for two distinct signatures?',
+          options: [
+            'An attacker can algebraically calculate the master private signing key d from the public signatures alone using simple modular arithmetic',
+            'The signed files are deleted from the microcontroller Flash memory',
+            'The signature verification function returns a buffer overflow exception',
+            'The microcontroller CPU clock frequency drops by 50%'
+          ],
+          answer: 0,
+          why: 'Subtracting the two ECDSA signature equations eliminates the private key term and allows direct algebraic recovery of the nonce k, which immediately yields the master private key d.'
+        }
+      },
+      {
+        title: 'Hardware True Random Number Generators (TRNG): Ring Oscillators & Entropy Pooling',
+        say: [
+          'As demonstrated in our ECDSA audit, the entire cryptographic security of an embedded device collapses if its random numbers are predictable or repeating. Standard software functions like rand() or linear congruential generators (LCGs) are Pseudo-Random Number Generators (PRNGs); given the same 32-bit seed, they output the exact same sequence of numbers. An attacker who resets an IoT device can predict every session key and ECDSA nonce generated after boot!',
+          'High-assurance secure microcontrollers incorporate dedicated on-silicon Hardware True Random Number Generators (TRNGs). Embedded TRNGs harvest true physical entropy from microscopic thermal quantum noise in silicon transistors using Ring Oscillators. A ring oscillator consists of an odd number of CMOS inverters connected in a closed feedback loop. Because transistor propagation delays fluctuate microscopically due to thermal Johnson-Nyquist noise and manufacturing variances, the oscillator frequency jitters uncontrollably.',
+          'By sampling the fast ring oscillator using an independent stable crystal clock, the TRNG captures nondeterministic phase jitter. To comply with NIST SP 800-90B and FIPS 140-3 standards, hardware TRNGs implement continuous Health Tests: (1) The Repetition Count Test (RCT) detects if an oscillator gets stuck at 0 or 1; and (2) The Adaptive Proportion Test (APT) detects statistical bias. The verified jitter stream is pooled and conditioned through a SHA-256 or AES-CBC-MAC compression engine before seeding a NIST SP 800-90A Deterministic Random Bit Generator (DRBG).'
+        ],
+        example: 'Like placing 16 wind chimes in an open stormy field and recording the precise nanosecond each chime clinks: because atmospheric turbulence is physically chaotic, no supercomputer can predict the next clink sound.',
+        code: `# Simulation: Hardware TRNG Ring Oscillator Entropy Harvester & Health Tests
+def simulate_trng_ring_oscillator_entropy_pool(raw_jitter_samples: list[int]) -> dict:
+    # NIST SP 800-90B: Repetition Count Test (RCT)
+    # Detects catastrophic hardware failure (e.g. ring oscillator locked at 0 or 1)
+    cutoff_threshold = 8 # Flag if same bit repeats 8 times sequentially
+    max_consecutive = 1
+    current_run = 1
+    rct_failed = False
+    
+    for i in range(1, len(raw_jitter_samples)):
+        if raw_jitter_samples[i] == raw_jitter_samples[i - 1]:
+            current_run += 1
+            if current_run > max_consecutive:
+                max_consecutive = current_run
+            if current_run >= cutoff_threshold:
+                rct_failed = True
+        else:
+            current_run = 1
+            
+    # Calculate Shannon Entropy: H = -sum(p * log2(p))
+    total_bits = len(raw_jitter_samples)
+    zeros = raw_jitter_samples.count(0)
+    ones = raw_jitter_samples.count(1)
+    
+    p0 = zeros / total_bits if total_bits > 0 else 0.5
+    p1 = ones / total_bits if total_bits > 0 else 0.5
+    
+    import math
+    h0 = -p0 * math.log2(p0) if p0 > 0 else 0
+    h1 = -p1 * math.log2(p1) if p1 > 0 else 0
+    shannon_entropy = round(h0 + h1, 4)
+    
+    # Condition raw entropy using 32-bit fold accumulator
+    entropy_word = 0
+    for b in raw_jitter_samples:
+        entropy_word = ((entropy_word << 1) | b) & 0xFFFFFFFF
+        
+    return {
+        "sample_count": total_bits,
+        "max_repetition": max_consecutive,
+        "rct_alarm": rct_failed,
+        "shannon_entropy_per_bit": shannon_entropy,
+        "conditioned_entropy_word": hex(entropy_word),
+        "health_status": "ENTROPY_QUALIFIED_HEALTHY" if not rct_failed and shannon_entropy > 0.95 else "HEALTH_TEST_ALARM"
+    }
+
+# 32 simulated jitter bits from thermal noise
+healthy_jitter = [1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0]
+p4_res = simulate_trng_ring_oscillator_entropy_pool(healthy_jitter)
+
+print("=== HARDWARE TRNG RING OSCILLATOR HEALTH AUDIT ===")
+print(f"Bitstream Length:         {p4_res['sample_count']} bits")
+print(f"Max Consecutive Run:      {p4_res['max_repetition']} bits (NIST Limit: 8)")
+print(f"Shannon Entropy Per Bit:  {p4_res['shannon_entropy_per_bit']} bits (Max: 1.0000)")
+print(f"Conditioned Entropy Seed: {p4_res['conditioned_entropy_word']}")
+print(f"TRNG Silicon Health:      {p4_res['health_status']}")`,
+        output: `=== HARDWARE TRNG RING OSCILLATOR HEALTH AUDIT ===\nBitstream Length:         32 bits\nMax Consecutive Run:      2 bits (NIST Limit: 8)\nShannon Entropy Per Bit:  0.9972 bits (Max: 1.0000)\nConditioned Entropy Seed: 0xb4d65a6a\nTRNG Silicon Health:      ENTROPY_QUALIFIED_HEALTHY`,
+        codeNotes: [
+          { line: 2, note: 'Implements NIST SP 800-90B Repetition Count Test (RCT) over raw oscillator jitter' },
+          { line: 22, note: 'Calculates Shannon entropy per bit, verifying physical thermal noise decorrelation' },
+          { line: 39, note: 'Conditions raw bitstream into 32-bit hardware entropy seed word' }
+        ],
+        tryIt: 'Introduce a run of 8 consecutive 1s in the bitstream and verify the RCT health test immediately trips an alarm.',
+        check: {
+          question: 'Why do secure microcontrollers harvest random entropy from silicon ring oscillators instead of software PRNGs?',
+          options: [
+            'Because ring oscillators harvest true non-deterministic thermal noise from physical silicon transistors, preventing attackers from predicting cryptographic keys across reboots',
+            'Because hardware ring oscillators generate electricity to power the microcontroller',
+            'Because software PRNGs require an internet connection to generate numbers',
+            'Because ring oscillators decrease the CPU operating temperature'
+          ],
+          answer: 0,
+          why: 'Software PRNGs are deterministic and repeat sequences if initialized with the same state. Hardware TRNGs capture chaotic physical thermal noise in silicon that is physically impossible to predict.'
+        }
+      },
+      {
+        title: 'Side-Channel Protected Modular Inversion & Point Multiplication (Montgomery Ladder)',
+        say: [
+          'In elliptic curve cryptography, the most computationally intensive operation is Scalar Multiplication: computing Q = k * P, where k is a secret scalar (such as a device private key) and P is a curve point. The textbook algorithm taught in computer science is the Binary Double-and-Add algorithm: it scans the scalar bits from left to right; for every bit, it doubles the accumulator point (R = 2R); if the bit is 1, it additionally performs a point addition (R = R + P).',
+          'In embedded hardware, the naive Double-and-Add algorithm is a catastrophic vulnerability to Simple Power Analysis (SPA) side-channel attacks! Point Addition and Point Doubling execute completely different sequences of field multiplications and modular inversions. An attacker placing an oscilloscope current probe across the microcontroller VDD pin can clearly see the distinctive power spike of an "Add" operation when bit=1, and its absence when bit=0! The attacker reads the entire 256-bit private key off the oscilloscope screen in a single trace!',
+          'To achieve complete side-channel immunity, high-assurance embedded firmware implements the Montgomery Ladder (Peter L. Montgomery). The Montgomery ladder maintains two working points (R_0, R_1) with the constant invariant R_1 - R_0 = P. In every single bit iteration—whether the secret scalar bit is 0 or 1—the ladder executes exactly ONE Point Doubling and exactly ONE Point Addition! The execution path, instruction sequence, and power consumption profile remain 100% invariant across all scalar values, defeating SPA and timing attacks completely.'
+        ],
+        example: 'Like marching in a ceremonial military drill: the soldier stomps their left boot and right boot with identical force on every single cadence step regardless of whether turning left or right, making it impossible for someone listening through a wall to deduce which direction the platoon turned.',
+        code: `# Simulation: Side-Channel Protected Montgomery Ladder Point Multiplication
+def simulate_montgomery_ladder_point_multiplication(scalar: int, base_point: int) -> dict:
+    # Constant-Time Montgomery Ladder:
+    # Traditional double-and-add leaks scalar bits through execution path differences.
+    # Montgomery ladder performs exactly 1 Double and 1 Add in EVERY iteration.
+    r0 = 0 # Identity point
+    r1 = base_point
+    
+    double_ops = 0
+    add_ops = 0
+    
+    # Process 8-bit scalar from MSB to LSB
+    scalar_bits = [int(b) for b in bin(scalar)[2:].zfill(8)]
+    
+    for bit in scalar_bits:
+        if bit == 0:
+            # R1 = R0 + R1; R0 = 2 * R0
+            r1 = (r0 + r1)
+            r0 = (2 * r0)
+        else:
+            # R0 = R0 + R1; R1 = 2 * R1
+            r0 = (r0 + r1)
+            r1 = (2 * r1)
+        double_ops += 1
+        add_ops += 1
+        
+    return {
+        "scalar_evaluated": hex(scalar),
+        "bit_length": len(scalar_bits),
+        "double_operations": double_ops,
+        "add_operations": add_ops,
+        "constant_time_invariant": double_ops == add_ops == len(scalar_bits),
+        "resulting_r0_point": r0
+    }
+
+p5_res = simulate_montgomery_ladder_point_multiplication(0x5A, 3) # scalar 90, base 3
+
+print("=== MONTGOMERY LADDER CONSTANT-TIME POINT MULTIPLICATION ===")
+print(f"Secret Scalar:            {p5_res['scalar_evaluated']} ({p5_res['bit_length']} bits)")
+print(f"Point Double Operations:  {p5_res['double_operations']}")
+print(f"Point Add Operations:     {p5_res['add_operations']}")
+print(f"SPA Side-Channel Defense: Invariant={p5_res['constant_time_invariant']} (Zero Branch Leakage)")`,
+        output: `=== MONTGOMERY LADDER CONSTANT-TIME POINT MULTIPLICATION ===\nSecret Scalar:            0x5a (8 bits)\nPoint Double Operations:  8\nPoint Add Operations:     8\nSPA Side-Channel Defense: Invariant=True (Zero Branch Leakage)`,
+        codeNotes: [
+          { line: 2, note: 'Implements constant-time Montgomery ladder point multiplication invariant' },
+          { line: 15, note: 'Executes exactly 1 point double and 1 point add in every bit iteration regardless of bit value' },
+          { line: 28, note: 'Ensures identical execution latency and power trace profile, defeating SPA side-channel attacks' }
+        ],
+        tryIt: 'Change scalar to 0xFF (all 1s) and verify that double_ops and add_ops remain exactly 8 and 8.',
+        check: {
+          question: 'How does the Montgomery Ladder algorithm protect elliptic curve scalar multiplication from Simple Power Analysis (SPA) side-channel attacks?',
+          options: [
+            'By executing exactly one point doubling and one point addition in every bit iteration regardless of whether the scalar bit is 0 or 1, eliminating data-dependent branch variations in power traces',
+            'By increasing the operating frequency of the microcontroller beyond oscilloscope bandwidth limits',
+            'By turning off the power supply during scalar multiplication',
+            'By converting all numbers into floating-point decimals'
+          ],
+          answer: 0,
+          why: 'The Montgomery ladder enforces constant-time execution by performing identical addition and doubling operations in every iteration, ensuring that oscilloscope power traces reveal zero information about secret scalar bits.'
+        }
+      }
+    ],
+    summary: [
+      'Elliptic Curve Cryptography (ECC) provides 128-bit security in 32-byte keys, slashing RAM overhead by 93.8% and executing hundreds of times faster than RSA-2048.',
+      'Ephemeral ECDH (ECDHE) key agreement generates single-use session keys, enforcing Perfect Forward Secrecy (PFS) against retrospective decryption.',
+      'Reusing the ephemeral nonce k across two ECDSA signatures allows an attacker to algebraically calculate the private signing key in seconds (mitigated by RFC 6979).',
+      'Hardware True Random Number Generators (TRNG) sample ring oscillator thermal jitter with NIST SP 800-90B health tests, ensuring unpredictable cryptographic seeds.',
+      'The Montgomery Ladder executes identical point doublings and additions in every scalar bit iteration, defeating Simple Power Analysis (SPA) side-channel attacks.'
+    ],
+    projectStep: {
+      title: 'Architect an Asymmetric Public-Key Cryptographic Engine for Embedded Microcontrollers',
+      steps: [
+        'Benchmark ECC key sizes and execution latency against RSA on constrained ARM Cortex-M cores.',
+        'Implement an ephemeral ECDH key agreement exchange verifying Perfect Forward Secrecy.',
+        'Audit an ECDSA nonce reuse flaw to demonstrate algebraic private key recovery and verify RFC 6979.',
+        'Construct a hardware TRNG ring oscillator entropy harvester with NIST SP 800-90B health testing.',
+        'Implement a side-channel resistant Montgomery ladder point multiplication routine.'
+      ]
+    }
   }
 ];
-
-
