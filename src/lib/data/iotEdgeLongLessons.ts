@@ -304,5 +304,309 @@ dma.receive_dma_stream(audio_stream)`,
         'Stream incoming audio samples into a DMA ping-pong buffer and trigger inference.'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_edge',
+    day: 2,
+    title: 'TinyML Depthwise Convolutions, Autoencoder Anomalies, Pruning & MCUNet',
+    goal: 'Master advanced TinyML architecture: depthwise separable convolution MAC reductions, autoencoder vibration anomaly detection, structured magnitude weight pruning, MCUNet peak SRAM activation bottlenecks, and wake-word Log-Mel spectrogram DSP feature pipelines.',
+    minutes: 45,
+    recap: 'Welcome to Day 2 of Edge AI & TinyML Embedded Machine Learning. Today, we advance from static tensor arenas and INT8 quantization into advanced micro-neural network architectures: Depthwise Separable Convolutions, unsupervised IMU anomaly detection, structured weight pruning, MCUNet peak SRAM activation management, and Log-Mel audio feature extraction.',
+    parts: [
+      {
+        title: 'Depthwise Separable Convolutions & MobileNet TinyML Architecture',
+        say: [
+          'In embedded vision and TinyML applications, standard 2D convolutions are computationally prohibitive. A standard convolution layer with kernel size K, input channels C_in, and output channels C_out requires H * W * C_in * C_out * K^2 Multiply-Accumulate (MAC) operations, requiring tens of millions of cycles that overwhelm microcontroller CPU budgets.',
+          'Depthwise Separable Convolutions (pioneered by MobileNet) revolutionize TinyML by factorizing the standard convolution into two separate steps: (1) a Depthwise Convolution that applies a single K x K spatial filter per input channel, followed by (2) a Pointwise Convolution that computes a 1 x 1 linear combination across all channels.',
+          'The computational cost drops from H * W * C_in * C_out * K^2 down to H * W * C_in * (K^2 + C_out). For a standard 3x3 filter (K=3) and 64 output channels, this yields an extraordinary 7.89x to 9.0x reduction in operations (saving over 87% of CPU clock cycles!).',
+          'Crucially, Depthwise Separable Convolutions preserve representational accuracy while shrinking model parameter size, allowing real-time visual classification models to fit inside tight microcontroller Flash and SRAM budgets.'
+        ],
+        example: 'A battery-powered wildlife trail camera classifies animal species. A standard convolution layer would require 14.4 million operations per image, draining the battery in hours. Depthwise separable convolutions reduce this to 1.83 million operations, allowing the microcontroller to run vision inference in 45 milliseconds.',
+        code: `# Simulation: Depthwise Separable Convolutions & MAC Operations Reducer
+def calculate_depthwise_separable_macs(h: int, w: int, c_in: int, c_out: int, k: int) -> dict:
+    # 1. Standard 2D Convolution MACs: H * W * C_in * C_out * K * K
+    standard_macs = h * w * c_in * c_out * k * k
+    standard_params = c_in * c_out * k * k
+
+    # 2. Depthwise Separable Convolution:
+    # Depthwise step: H * W * C_in * K * K
+    dw_macs = h * w * c_in * k * k
+    dw_params = c_in * k * k
+    # Pointwise step: H * W * C_in * C_out * 1 * 1
+    pw_macs = h * w * c_in * c_out
+    pw_params = c_in * c_out
+
+    depthwise_sep_macs = dw_macs + pw_macs
+    depthwise_sep_params = dw_params + pw_params
+
+    mac_reduction_ratio = standard_macs / depthwise_sep_macs
+    param_reduction_ratio = standard_params / depthwise_sep_params
+
+    return {
+        "Standard_MACs": standard_macs,
+        "Depthwise_Sep_MACs": depthwise_sep_macs,
+        "MAC_Reduction_Factor": round(mac_reduction_ratio, 2),
+        "Parameter_Reduction_Factor": round(param_reduction_ratio, 2),
+        "Memory_Saved_Pct": round((1.0 - (depthwise_sep_macs / standard_macs)) * 100.0, 1)
+    }
+
+dw_metrics = calculate_depthwise_separable_macs(h=28, w=28, c_in=32, c_out=64, k=3)
+print(f"Standard MACs: {dw_metrics['Standard_MACs']:,} vs Depthwise-Sep: {dw_metrics['Depthwise_Sep_MACs']:,}")
+print(f"Efficiency: {dw_metrics['MAC_Reduction_Factor']}x fewer operations ({dw_metrics['Memory_Saved_Pct']}% compute savings)")`,
+        output: `Standard MACs: 14,450,688 vs Depthwise-Sep: 1,831,424\nEfficiency: 7.89x fewer operations (87.3% compute savings)`,
+        tryIt: 'Change k from 3 to 5 (a 5x5 kernel) and observe how compute savings expand beyond 93%.',
+        check: {
+          question: 'What mathematical factorization enables Depthwise Separable Convolutions to achieve an 8x to 9x reduction in MAC operations compared to standard 2D convolutions?',
+          options: [
+            'Decomposing the operation into a per-channel spatial depthwise filter (KxKx1) followed by an inter-channel pointwise linear projection (1x1xC_out)',
+            'Dropping half of the input image pixels at random',
+            'Converting floating-point numbers into text strings',
+            'Running inference on an external cloud server'
+          ],
+          answer: 0,
+          why: 'By splitting spatial filtering across channels from channel-mixing projections, Depthwise Separable Convolutions eliminate massive redundant cross-channel multiply-accumulates.',
+          answerIndex: 0,
+          explanation: 'By splitting spatial filtering across channels from channel-mixing projections, Depthwise Separable Convolutions eliminate massive redundant cross-channel multiply-accumulates.'
+        }
+      },
+      {
+        title: 'TinyML Autoencoder Anomaly Detection on Industrial Vibrations',
+        say: [
+          'In industrial predictive maintenance (PdM), machine failures are exceedingly rare; factory motors, turbines, and conveyor belts operate normally 99.9% of the time. Consequently, training supervised classification models is impossible because failure labeled datasets do not exist!',
+          'TinyML solves this problem using unsupervised Autoencoder Neural Networks. An autoencoder is trained exclusively on normal, healthy machine vibration telemetry from an onboard 3-axis accelerometer (IMU).',
+          'The architecture forces input signals through an informational bottleneck (latent dimension compression) before reconstructing the signal at the output layer. When the machine runs normally, the autoencoder reconstructs the waveform with near-zero Mean Squared Error (MSE < 0.001).',
+          'However, when mechanical wear, rotor imbalance, or bearing cracks develop, the unfamiliar anomalous frequencies cannot be compressed through the trained bottleneck. The Reconstruction MSE spikes dramatically above the baseline threshold, triggering an immediate localized equipment fault alert!'
+        ],
+        example: 'A sensor mounted on a 500-horsepower industrial compressor monitors vibration harmonics. When healthy, reconstruction MSE is 0.0003. When a tiny bearing race crack occurs, anomalous high-frequency chatter causes reconstruction MSE to spike to 0.0261, instantly alerting technicians 3 weeks before catastrophic failure.',
+        code: `# Simulation: TinyML Autoencoder Anomaly Detection on Industrial Vibrations
+def evaluate_autoencoder_reconstruction_anomaly(sensor_readings: list[float], normal_threshold_mse: float) -> dict:
+    # Autoencoder bottleneck compression forward pass:
+    # Normal machine patterns reconstruct cleanly; anomalous spikes fail reconstruction
+    reconstructed = []
+    for x in sensor_readings:
+        reconstructed.append(0.85 * x)
+
+    squared_errors = [(orig - recon) ** 2 for orig, recon in zip(sensor_readings, reconstructed)]
+    reconstruction_mse = sum(squared_errors) / len(squared_errors)
+
+    is_anomaly = reconstruction_mse > normal_threshold_mse
+    verdict = "ANOMALY_BEARING_FAULT_DETECTED" if is_anomaly else "NORMAL_HEALTHY_OPERATION"
+
+    return {
+        "Reconstruction_MSE": round(reconstruction_mse, 4),
+        "Baseline_Threshold": normal_threshold_mse,
+        "Is_Anomaly": is_anomaly,
+        "Verdict": verdict
+    }
+
+healthy_vibration = [0.12, -0.08, 0.15, -0.11, 0.09, -0.14]
+faulty_vibration  = [0.85, -0.74, 1.42, -1.10, 0.95, -1.25]
+
+h_eval = evaluate_autoencoder_reconstruction_anomaly(healthy_vibration, normal_threshold_mse=0.01)
+f_eval = evaluate_autoencoder_reconstruction_anomaly(faulty_vibration, normal_threshold_mse=0.01)
+
+print(f"Healthy Vibration: MSE = {h_eval['Reconstruction_MSE']} -> [{h_eval['Verdict']}]")
+print(f"Faulty Bearing:   MSE = {f_eval['Reconstruction_MSE']} -> [{f_eval['Verdict']}]")`,
+        output: `Healthy Vibration: MSE = 0.0003 -> [NORMAL_HEALTHY_OPERATION]\nFaulty Bearing:   MSE = 0.0261 -> [ANOMALY_BEARING_FAULT_DETECTED]`,
+        tryIt: 'Increase normal_threshold_mse to 0.05 to observe how threshold tuning controls false alarm sensitivity versus missed detection trade-offs.',
+        check: {
+          question: 'Why are autoencoders particularly well-suited for industrial edge anomaly detection compared to standard supervised classifiers?',
+          options: [
+            'Because autoencoders only require healthy operational data for training, detecting unexpected anomalies by measuring reconstruction error spikes without needing historical failure datasets',
+            'Because autoencoders require zero memory or CPU cycles to run',
+            'Because supervised models are legally banned in manufacturing facilities',
+            'Because autoencoders can repair physical mechanical bearings automatically'
+          ],
+          answer: 0,
+          why: 'Industrial machines rarely fail in production, making labeled failure data scarce. Autoencoders learn healthy baselines and flag any deviation via reconstruction error spikes.',
+          answerIndex: 0,
+          explanation: 'Industrial machines rarely fail in production, making labeled failure data scarce. Autoencoders learn healthy baselines and flag any deviation via reconstruction error spikes.'
+        }
+      },
+      {
+        title: 'Structured Magnitude-Based Weight Pruning & Sparse Flash Compression',
+        say: [
+          'Trained deep learning models contain significant parameter redundancy; a large percentage of weight coefficients contribute negligibly to the final inference score. In embedded microcontrollers with strict 512KB to 1MB non-volatile Flash limits, storing inactive weights is a severe waste of silicon storage.',
+          'Magnitude-Based Weight Pruning removes this bloat by evaluating weight absolute values |w_i|. Weights whose magnitudes fall below a predetermined significance threshold tau are zeroed out: w_i = 0 if |w_i| < tau.',
+          'Pruning produces a Sparse Weight Matrix. In unstructured pruning, non-zero weights can appear in arbitrary positions. In structured pruning, entire rows, channels, or kernel tiles are eliminated.',
+          'To achieve physical storage savings on microcontroller Flash, sparse tensors are stored using compressed representations (such as 1-bit presence bitmasks or Compressed Sparse Row CSR formats). Storing only a 1-bit mask plus the surviving non-zero INT8 values slashes Flash footprints by 35% to 60% with zero accuracy loss.'
+        ],
+        example: 'A keyword spotting model contains 16 weight parameters in a layer. Pruning all weights with absolute value under 0.10 zeroes out exactly 8 parameters (50% sparsity). Encoding the surviving weights with a 2-byte presence bitmask shrinks the layer storage footprint from 16 bytes down to 10 bytes (37.5% Flash savings).',
+        code: `import math
+
+# Simulation: Structured Magnitude-Based Weight Pruning
+def simulate_structured_weight_pruning(weights: list[float], pruning_threshold: float) -> dict:
+    pruned_weights = [w if abs(w) >= pruning_threshold else 0.0 for w in weights]
+    zero_count = sum(1 for w in pruned_weights if w == 0.0)
+    sparsity_ratio = (zero_count / len(weights)) * 100.0
+
+    # Uncompressed: 1 byte per INT8 weight
+    uncompressed_bytes = len(weights)
+    # Compressed: 1 bit per weight (presence mask) + 1 byte per non-zero weight
+    non_zeros = len(weights) - zero_count
+    compressed_bytes = math.ceil(len(weights) / 8.0) + non_zeros
+    flash_saved_pct = (1.0 - (compressed_bytes / uncompressed_bytes)) * 100.0
+
+    return {
+        "Total_Parameters": len(weights),
+        "Pruned_Zeros": zero_count,
+        "Sparsity_Pct": round(sparsity_ratio, 1),
+        "Uncompressed_Bytes": uncompressed_bytes,
+        "Compressed_Flash_Bytes": compressed_bytes,
+        "Flash_Storage_Saved_Pct": round(flash_saved_pct, 1)
+    }
+
+raw_weights = [0.04, 0.72, -0.01, 0.85, -0.65, 0.02, -0.03, 0.91, -0.12, 0.05, -0.02, 0.78, 0.01, -0.88, 0.03, 0.64]
+prune_res = simulate_structured_weight_pruning(raw_weights, pruning_threshold=0.10)
+print(f"Pruned {prune_res['Pruned_Zeros']} / {prune_res['Total_Parameters']} weights ({prune_res['Sparsity_Pct']}% Sparsity)")
+print(f"Flash Footprint: {prune_res['Uncompressed_Bytes']}B -> {prune_res['Compressed_Flash_Bytes']}B ({prune_res['Flash_Storage_Saved_Pct']}% Flash saved)")`,
+        output: `Pruned 8 / 16 weights (50.0% Sparsity)\nFlash Footprint: 16B -> 10B (37.5% Flash saved)`,
+        tryIt: 'Increase pruning_threshold to 0.20 and note how sparsity jumps to 62.5% and Flash footprint drops to 8 bytes.',
+        check: {
+          question: 'How does magnitude-based weight pruning achieve physical Flash storage reductions on embedded microcontrollers?',
+          options: [
+            'By zeroing out near-zero parameters below a significance threshold and storing surviving weights in a compressed sparse format with an index bitmask',
+            'By deleting the microcontroller firmware operating system',
+            'By downclocking the CPU crystal oscillator',
+            'By converting 32-bit floating point weights into 64-bit doubles'
+          ],
+          answer: 0,
+          why: 'Weights close to zero contribute negligibly to activation outputs. Zeroing them out allows sparse compression schemes (like bitmasks) to discard the zero values, shrinking flash binary size.',
+          answerIndex: 0,
+          explanation: 'Weights close to zero contribute negligibly to activation outputs. Zeroing them out allows sparse compression schemes (like bitmasks) to discard the zero values, shrinking flash binary size.'
+        }
+      },
+      {
+        title: 'Peak SRAM Activation Footprint & Memory Bottlenecks (MCUNet)',
+        say: [
+          'A pervasive misconception in TinyML is that Flash memory is the primary constraint. In reality, the true bottleneck on microcontrollers is volatile SRAM (typically 64KB to 256KB), which is 4 to 16 times smaller than Flash!',
+          'While model weights are stored statically in non-volatile Flash (read-only execution directly from Flash via XIP), dynamic intermediate activation feature maps must reside in volatile SRAM during inference execution.',
+          'In standard sequential neural network execution, intermediate activations are processed using ping-pong double buffers. The peak SRAM memory requirement of a model is determined by: Peak SRAM = max(sizeof(Activation_i) + sizeof(Activation_i+1)).',
+          'Notice that the peak SRAM bottleneck almost always occurs in the very first layers of a convolutional network, where input image resolution is high (e.g., 96x96x16 = 147KB) even though later layers have far more weights! MCUNet architectures resolve this using patch-based streaming execution to fit vision models inside tiny SRAM budgets.'
+        ],
+        example: 'A neural network on a 64KB SRAM microcontroller processes an image. Input layer generates 9,216 bytes, but Conv1 expands to 36,864 bytes. Transitioning from Conv1 to Conv2 (18,432 bytes) requires both feature maps in SRAM simultaneously: 36,864 + 18,432 = 55,296 bytes (54.0 KB), fitting within the 64KB limit with 10KB headroom.',
+        code: `# Simulation: Peak SRAM Activation Footprint & Memory Bottleneck (MCUNet)
+def calculate_peak_sram_activation_footprint(layer_shapes: list[dict], available_sram_kb: float) -> dict:
+    # Memory required during transition between layer i and layer i+1:
+    # Buffer pair = sizeof(Activation_i) + sizeof(Activation_i+1)
+    peak_bytes = 0
+    bottleneck_layer = ""
+
+    for i in range(len(layer_shapes) - 1):
+        l_in = layer_shapes[i]
+        l_out = layer_shapes[i + 1]
+
+        size_in = l_in["h"] * l_in["w"] * l_in["c"]
+        size_out = l_out["h"] * l_out["w"] * l_out["c"]
+        buffer_pair = size_in + size_out
+
+        if buffer_pair > peak_bytes:
+            peak_bytes = buffer_pair
+            bottleneck_layer = f"{l_in['name']} -> {l_out['name']}"
+
+    peak_sram_kb = peak_bytes / 1024.0
+    fits_in_sram = peak_sram_kb <= available_sram_kb
+
+    return {
+        "Peak_SRAM_Bytes": peak_bytes,
+        "Peak_SRAM_KB": round(peak_sram_kb, 2),
+        "Bottleneck_Transition": bottleneck_layer,
+        "Available_SRAM_KB": available_sram_kb,
+        "Fits_In_SRAM": fits_in_sram
+    }
+
+network_layers = [
+    {"name": "Input", "h": 96, "w": 96, "c": 1},      # 96x96 grayscale image (9,216 bytes)
+    {"name": "Conv1", "h": 48, "w": 48, "c": 16},     # 48x48x16 (36,864 bytes)
+    {"name": "Conv2", "h": 24, "w": 24, "c": 32},     # 24x24x32 (18,432 bytes)
+    {"name": "Output", "h": 1, "w": 1, "c": 10}       # 10 classes
+]
+
+sram_check = calculate_peak_sram_activation_footprint(network_layers, available_sram_kb=64.0)
+print(f"Peak SRAM Required: {sram_check['Peak_SRAM_KB']} KB across [{sram_check['Bottleneck_Transition']}]")
+print(f"Fits in {sram_check['Available_SRAM_KB']} KB SRAM: {sram_check['Fits_In_SRAM']} (Headroom: {sram_check['Available_SRAM_KB'] - sram_check['Peak_SRAM_KB']:.2f} KB)")`,
+        output: `Peak SRAM Required: 54.0 KB across [Conv1 -> Conv2]\nFits in 64.0 KB SRAM: True (Headroom: 10.00 KB)`,
+        tryIt: 'Change Conv1 channels from 16 to 32 and observe how Peak SRAM jumps to 88.0 KB, causing Fits_In_SRAM to fail on a 64 KB microcontroller.',
+        check: {
+          question: 'In deep learning inference on microcontrollers, why does the peak SRAM activation bottleneck almost always occur in the initial early layers rather than the final layers?',
+          options: [
+            'Because early layers process high-resolution spatial feature maps, generating massive activation tensors that must reside simultaneously in RAM during layer transitions',
+            'Because microcontrollers erase RAM every 5 clock cycles',
+            'Because final layers do not require activation buffers',
+            'Because weights are stored in SRAM instead of Flash'
+          ],
+          answer: 0,
+          why: 'Early convolutional layers operate on large spatial dimensions (height x width). Even with few channels, high resolution creates large activation buffers that dominate peak SRAM.',
+          answerIndex: 0,
+          explanation: 'Early convolutional layers operate on large spatial dimensions (height x width). Even with few channels, high resolution creates large activation buffers that dominate peak SRAM.'
+        }
+      },
+      {
+        title: 'Wake-Word Audio Log-Mel Spectrogram DSP Feature Pipeline',
+        say: [
+          'In battery-powered smart speakers, IoT appliances, and wearables, voice assistants must run an "Always-On" Wake-Word Keyword Spotting (KWS) engine drawing less than 1 milliwatt of power. Microcontrollers cannot feed raw 16kHz audio PCM pressure waveforms directly into neural networks; the dimensionality is too vast and uninformative.',
+          'Instead, TinyML voice frontends deploy digital signal processing (DSP) to compute Log-Mel Filterbank Energy Spectrograms. The raw 16kHz audio stream is partitioned into short overlapping frames (typically 30 ms window with 10 ms stride).',
+          'First, a Pre-Emphasis Filter (y[n] = x[n] - 0.95*x[n-1]) amplifies high-frequency speech harmonics. Second, a Fast Fourier Transform (FFT) converts time-domain PCM samples into frequency-domain power spectrum magnitudes.',
+          'Third, triangular Mel filterbanks group frequencies according to the non-linear human cochlear perception scale (dense resolution at low frequencies, wide bands at high frequencies). Taking the logarithm of each Mel filterbank energy produces compact, rotation-invariant Log-Mel feature vectors that a tiny 1D convolutional neural network can classify in real-time.'
+        ],
+        example: 'An ultra-low-power voice assistant chip samples a microphone buffer. The DSP pipeline applies pre-emphasis, windowing, and a 4-channel Mel filterbank, outputting a compact 4-element Log-Mel energy vector [-2.11, -0.842, -0.056, -0.261] that is fed directly to the keyword spotting neural network.',
+        code: `import math
+
+# Simulation: Wake-Word Audio Log-Mel Spectrogram Feature Extraction
+def compute_log_mel_spectrogram_features(audio_samples: list[float], num_mel_bins: int = 4) -> list[float]:
+    # 1. Pre-emphasis and windowing
+    windowed = [audio_samples[i] - 0.95 * (audio_samples[i-1] if i > 0 else 0) for i in range(len(audio_samples))]
+
+    # 2. Spectral magnitude accumulation across Mel frequency sub-bands
+    half_len = len(windowed) // 2
+    band_energies = [0.0] * num_mel_bins
+    bin_width = half_len // num_mel_bins
+
+    for b in range(num_mel_bins):
+        start = b * bin_width
+        end = start + bin_width
+        energy = sum(abs(windowed[i]) ** 2 for i in range(start, end))
+        # Logarithmic compression: log10(energy + epsilon)
+        band_energies[b] = round(math.log10(max(energy, 1e-6)), 3)
+
+    return band_energies
+
+mock_audio_pcm = [0.05, 0.12, -0.08, 0.25, -0.32, 0.45, -0.22, 0.15, 0.08, -0.04, 0.11, -0.19, 0.35, -0.42, 0.28, -0.14]
+log_mel_features = compute_log_mel_spectrogram_features(mock_audio_pcm, num_mel_bins=4)
+print(f"Log-Mel Energy Vectors (4 Bins): {log_mel_features}")`,
+        output: `Log-Mel Energy Vectors (4 Bins): [-2.11, -0.842, -0.056, -0.261]`,
+        tryIt: 'Change num_mel_bins to 8 to generate an 8-dimensional spectrogram feature vector across higher frequency resolution.',
+        check: {
+          question: 'Why do voice keyword spotting (KWS) models transform raw audio PCM waveforms into Log-Mel spectrogram features before neural network inference?',
+          options: [
+            'Because Log-Mel filterbanks compress high-dimensional raw time-series into compact, speech-relevant frequency energy patterns matching human auditory perception',
+            'Because neural networks cannot accept numbers with decimal points',
+            'Because Log-Mel conversion encrypts speech against unauthorized wiretaps',
+            'Because audio PCM files cannot be stored in RAM'
+          ],
+          answer: 0,
+          why: 'Log-Mel spectrograms discard phase noise and reduce 16,000 raw samples per second down to compact, pitch-invariant spectral energy bands tailored for speech classification.',
+          answerIndex: 0,
+          explanation: 'Log-Mel spectrograms discard phase noise and reduce 16,000 raw samples per second down to compact, pitch-invariant spectral energy bands tailored for speech classification.'
+        }
+      }
+    ],
+    summary: [
+      'Depthwise Separable Convolutions decouple spatial filtering from cross-channel projection, slashing MAC operations by 8x to 9x (87%+ savings).',
+      'TinyML Autoencoders detect industrial mechanical anomalies by evaluating reconstruction MSE spikes against baseline healthy operational profiles.',
+      'Structured Magnitude Pruning zeroes out low-significance weights and compresses tensors into sparse bitmask formats, saving 35-60% Flash storage.',
+      'Peak SRAM activation memory bottleneck occurs during layer transitions: max(Activation_i + Activation_i+1), dominated by early high-resolution feature maps.',
+      'Log-Mel Spectrogram DSP pipelines apply pre-emphasis, windowing, and auditory filterbanks to compress raw audio for low-power wake-word spotting.'
+    ],
+    projectStep: {
+      title: 'Architect an Industrial TinyML Anomaly & Vision Pipeline',
+      steps: [
+        'Calculate MAC operations and parameter savings for a depthwise separable convolution layer.',
+        'Implement an autoencoder reconstruction error calculation for 3-axis accelerometer vibration telemetry.',
+        'Prune neural network weight tensors and calculate compressed Flash footprint savings.',
+        'Profile peak SRAM activation double-buffer requirements and extract Log-Mel spectrogram features.'
+      ]
+    }
   }
 ];
+
