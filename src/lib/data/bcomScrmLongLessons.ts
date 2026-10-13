@@ -757,5 +757,399 @@ print(f"Playbook: {account1['Recommended_Playbook']} | Flags: {account1['Flags']
         'Build the commission waterfall with quota accelerators and configure the customer renewal risk classifier.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_scrm',
+    day: 3,
+    title: 'Advanced Sales Operations: Pipeline Velocity, Lead Scoring & Multi-Touch Attribution',
+    overview: 'Master the analytical and operational mechanics of enterprise sales operations (SalesOps) and revenue architecture. You will calculate sales pipeline velocity across funnel conversion stages, engineer predictive lead scoring algorithms with firmographic and behavioral signals, model multi-touch revenue attribution across first-touch, last-touch, linear, and W-shaped frameworks, design account executive capacity and quota ramp models, and deploy an integrated enterprise sales operations control tower.',
+    parts: [
+      {
+        title: 'Sales Pipeline Velocity Equation & Funnel Stage Conversion Analysis',
+        say: [
+          'In modern B2B enterprise sales, revenue is not merely a static target but the dynamic output of a mathematical velocity equation. Sales Pipeline Velocity measures the dollar amount of revenue flowing through the sales pipeline each day, week, or month. The fundamental equation is expressed as V = (N * W * L) / T, where N represents the number of active qualified opportunities in the pipeline, W is the historical win rate percentage, L is the average deal size or annual contract value (ACV), and T represents the average sales cycle length in days from discovery qualification to contract execution.',
+          'To optimize velocity, revenue operations leaders must dissect stage-by-stage conversion drop-offs rather than inspecting high-level aggregate pipeline numbers. A standard B2B enterprise sales cycle progresses through discrete stages: Discovery, Technical Demonstration, Business Proposal, Legal & Procurement, and Closed Won. Stage leakage occurs when prospects stall or disqualify between milestones; for instance, a 40% drop-off between Discovery and Technical Demo signals weak initial qualification criteria, while a 20% drop-off in Legal suggests onerous contract terms or procurement roadblocks.',
+          'Small incremental improvements across velocity variables generate exponential compounding impacts on revenue run-rate. Decreasing the sales cycle length T by 15 days or increasing the win rate W by 5 percentage points can expand annual booked revenue by millions of dollars without hiring additional sales reps. By tracking pipeline velocity metrics in real time within the CRM, sales managers can dynamically adjust sales rep quotas, reallocate territory resources, and intervene on stalled enterprise opportunities before quarter-end.'
+        ],
+        example: 'A sales pipeline maintains 120 qualified opportunities with a 20.83% win rate (25 closed deals), an $85,000 average deal size, and a 75-day sales cycle. The pipeline generates $28,333.33 in daily velocity, translating to an $850,000 monthly velocity and a $10,341,667 annualized pipeline run-rate.',
+        code: `def calculate_sales_pipeline_velocity():
+    # Pipeline Velocity = (Num Qualified Deals * Win Rate * Avg Deal Size) / Sales Cycle Days
+    stages = [
+        {"stage": "Discovery", "count": 120, "dropoff_rate": 0.40},
+        {"stage": "Technical Demo", "count": 72, "dropoff_rate": 0.35},
+        {"stage": "Business Proposal", "count": 46, "dropoff_rate": 0.30},
+        {"stage": "Legal & Procurement", "count": 32, "dropoff_rate": 0.20},
+        {"stage": "Closed Won", "count": 25, "dropoff_rate": 0.0}
+    ]
+    num_opps = 120
+    win_rate = 25 / 120 # 20.83% overall win rate
+    avg_deal_size = 85000.0 # $85,000 ACV
+    sales_cycle_days = 75.0 # 75 days
+
+    daily_velocity = (num_opps * win_rate * avg_deal_size) / sales_cycle_days
+    monthly_velocity = daily_velocity * 30.0
+    annualized_pipeline_revenue = daily_velocity * 365.0
+
+    print("Enterprise Sales Pipeline Velocity Analysis:")
+    print(f"  Active Qualified Opportunities (N): {num_opps}")
+    print(f"  End-to-End Win Rate (W): {win_rate*100:.2f}%")
+    print("  Average Deal Size (L): " + "$" + f"{avg_deal_size:,.2f}")
+    print(f"  Average Sales Cycle Length (T): {sales_cycle_days:.1f} days")
+    print("  Daily Pipeline Velocity: " + "$" + f"{daily_velocity:,.2f}" + " / day")
+    print("  Monthly Pipeline Velocity: " + "$" + f"{monthly_velocity:,.2f}" + " / month")
+    print("  Annualized Pipeline Run-Rate: " + "$" + f"{annualized_pipeline_revenue:,.2f}")
+    return {"win_rate": win_rate, "daily_velocity": daily_velocity, "annual_velocity": annualized_pipeline_revenue}
+
+calculate_sales_pipeline_velocity()`,
+        output: `Enterprise Sales Pipeline Velocity Analysis:
+  Active Qualified Opportunities (N): 120
+  End-to-End Win Rate (W): 20.83%
+  Average Deal Size (L): $85,000.00
+  Average Sales Cycle Length (T): 75.0 days
+  Daily Pipeline Velocity: $28,333.33 / day
+  Monthly Pipeline Velocity: $850,000.00 / month
+  Annualized Pipeline Run-Rate: $10,341,666.67`,
+        codeNotes: [
+          'Calculates daily pipeline velocity using the standard formula V = (N * W * L) / T.',
+          'Translates daily throughput into monthly ($850,000) and annualized ($10.34M) run-rate metrics.',
+          'Demonstrates how sales cycle length in the denominator directly throttles pipeline revenue generation.'
+        ],
+        tryIt: 'Shorten the sales cycle length from 75 to 60 days to evaluate how sales execution velocity expands annualized bookings by over $2.5M.',
+        check: {
+          question: 'In the sales pipeline velocity equation V = (N * W * L) / T, which change will result in the highest percentage increase in velocity?',
+          options: [
+            'Decreasing average sales cycle length T by 20% while holding other variables constant',
+            'Decreasing the number of qualified opportunities N by 20%',
+            'Increasing sales rep travel entertainment expense budgets without changing win rates',
+            'Extending customer contract terms from 12 months to 24 months without changing ACV'
+          ],
+          answer: 0,
+          why: 'Because T is in the denominator, reducing sales cycle length T by 20% increases velocity by 25% (1 / 0.80 = 1.25), accelerating revenue generation through the funnel.',
+          answerIndex: 0,
+          explanation: 'Because T is in the denominator, reducing sales cycle length T by 20% increases velocity by 25% (1 / 0.80 = 1.25), accelerating revenue generation through the funnel.'
+        }
+      },
+      {
+        title: 'Predictive Lead Scoring & Algorithmic Routing Architecture',
+        say: [
+          'Not all inbound inquiries or marketing leads carry equal commercial value. If sales development representatives (SDRs) manually review every form submission without algorithmic prioritization, high-intent enterprise buyers will wait hours for follow-up while reps waste valuable time chasing low-intent student downloads or competitor researchers. Predictive lead scoring solves this operational bottleneck by synthesizing firmographic and behavioral intent signals into a standardized numerical rating between 0 and 100.',
+          'Firmographic attributes evaluate organizational fit based on Ideal Customer Profile (ICP) criteria, including annual corporate revenue, employee headcount, industry vertical, and technology stack compatibility. Behavioral signals measure digital buying intent, such as frequency of visits to the product pricing page, downloads of technical whitepapers, attendance at live webinars, and requests for custom enterprise demonstrations. High-fit, high-intent prospects receive maximum score weightings.',
+          'Based on final calculated scores, automated CRM routing rules segment leads into operational tiers with strict Service Level Agreement (SLA) response times. Tier A Enterprise Hot leads (scores >= 80) trigger instant Slack alerts and automated routing to dedicated Enterprise SDRs with a mandatory 2-hour response SLA. Tier B Mid-Market Warm leads (scores 50-79) are routed for 24-hour follow-up, while Tier C Nurture leads (scores < 50) enter automated marketing email drip cadences until further engagement signals materialize.'
+        ],
+        example: 'Acme Health generates a 100/100 score ($450M revenue, 2,800 employees, 4 whitepaper downloads, executive demo request) and routes to Tier A with a 2-hour SLA, while CloudForge Tech scores 20/100 and routes to Tier C marketing nurture with a 72-hour SLA.',
+        code: `def score_predictive_leads_and_tier():
+    leads = [
+        {"company": "Acme Health", "rev_m": 450, "employees": 2800, "whitepaper_downloads": 4, "exec_demo": True, "industry": "Healthcare"},
+        {"company": "Beacon Logistics", "rev_m": 85, "employees": 450, "whitepaper_downloads": 2, "exec_demo": False, "industry": "Transportation"},
+        {"company": "CloudForge Tech", "rev_m": 12, "employees": 80, "whitepaper_downloads": 1, "exec_demo": False, "industry": "Software"}
+    ]
+
+    print("Predictive Lead Scoring Engine:")
+    scored_leads = []
+    for lead in leads:
+        # Score calculation (Max 100 points)
+        score = 0
+        # Firmographic score (Max 40 pts)
+        if lead["rev_m"] >= 100:
+            score += 25
+        elif lead["rev_m"] >= 50:
+            score += 15
+        else:
+            score += 5
+
+        if lead["employees"] >= 1000:
+            score += 15
+        elif lead["employees"] >= 200:
+            score += 10
+        else:
+            score += 5
+
+        # Behavioral score (Max 60 pts)
+        score += min(lead["whitepaper_downloads"] * 10, 30)
+        if lead["exec_demo"]:
+            score += 30
+
+        # Tiering
+        if score >= 80:
+            tier = "TIER_A_HOT_ENTERPRISE"
+            sla_hours = 2
+        elif score >= 50:
+            tier = "TIER_B_WARM_MIDMARKET"
+            sla_hours = 24
+        else:
+            tier = "TIER_C_NURTURE_SMB"
+            sla_hours = 72
+
+        scored_leads.append({"company": lead["company"], "score": score, "tier": tier, "sla": sla_hours})
+        print(f"  {lead['company']}: Score={score}/100 | Tier={tier} | SDR Routing SLA={sla_hours}h")
+
+    return scored_leads
+
+score_predictive_leads_and_tier()`,
+        output: `Predictive Lead Scoring Engine:
+  Acme Health: Score=100/100 | Tier=TIER_A_HOT_ENTERPRISE | SDR Routing SLA=2h
+  Beacon Logistics: Score=45/100 | Tier=TIER_C_NURTURE_SMB | SDR Routing SLA=72h
+  CloudForge Tech: Score=20/100 | Tier=TIER_C_NURTURE_SMB | SDR Routing SLA=72h`,
+        codeNotes: [
+          'Evaluates firmographic fit (revenue and headcount) up to 40 points to enforce ICP alignment.',
+          'Quantifies digital engagement intent (whitepapers and executive demo requests) up to 60 points.',
+          'Automates tiering into Tier A, Tier B, and Tier C with enforced SDR response SLAs.'
+        ],
+        tryIt: 'Flag Beacon Logistics with an executive demo request to see its score rise to 75, elevating it to Tier B Warm Mid-Market status.',
+        check: {
+          question: 'What is the primary operational objective of establishing automated lead scoring tiers with response SLAs in a CRM?',
+          options: [
+            'To ensure high-intent enterprise buyers receive immediate dedicated SDR outreach while filtering low-fit leads into marketing nurture cadences',
+            'To eliminate all sales development reps and replace the entire sales force with automated chatbots',
+            'To charge customers higher software subscription prices based on how many whitepapers they download',
+            'To delete accounts from the CRM database if they do not purchase within 48 hours'
+          ],
+          answer: 0,
+          why: 'Automated lead scoring ensures fast, prioritized SDR engagement for high-fit enterprise prospects while conserving sales resources by routing lower-intent leads to automated marketing nurture.',
+          answerIndex: 0,
+          explanation: 'Automated lead scoring ensures fast, prioritized SDR engagement for high-fit enterprise prospects while conserving sales resources by routing lower-intent leads to automated marketing nurture.'
+        }
+      },
+      {
+        title: 'Multi-Touch Revenue Attribution Modeling (Linear vs W-Shaped Frameworks)',
+        say: [
+          'In modern B2B sales cycles spanning 6 to 12 months, enterprise buyers interact with dozens of marketing and sales touchpoints across multiple channels before signing a contract. Marketing teams often struggle to defend their budgets because simplistic single-touch attribution models distort reality. First-Touch attribution credits 100% of revenue to the initial awareness channel (e.g. SEO or blog posts), ignoring subsequent demo presentations. Conversely, Last-Touch attribution awards 100% of credit to the closing interaction (e.g. custom ROI calculator or demo), dismissing the brand marketing campaigns that generated the lead.',
+          'To achieve fair cross-functional alignment between Marketing and Sales, revenue operations teams implement multi-touch attribution models. Linear attribution distributes credit equally across all touchpoints in the buyer journey. While straightforward, linear models undervalue pivotal transition moments, treating a routine email newsletter click with the same significance as an executive meeting.',
+          'The industry standard for complex B2B enterprise attribution is the W-Shaped model. The W-Shaped framework assigns 30% of revenue credit to the First Touch (initial brand discovery), 30% to Lead Creation (when the prospect submits contact information), 30% to Opportunity Creation (when the SDR qualifies the deal into an active sales stage), and distributes the remaining 10% equally across intermediate nurture touchpoints. This balanced allocation ensures that demand generation, lead qualification, and deal closing teams all receive proportionate attribution for closed-won revenue.'
+        ],
+        example: 'On an enterprise $180,000 closed-won contract spanning 5 touchpoints, Linear attribution allocates $36,000 to each channel. Under W-Shaped attribution, Organic SEO (First Touch), Webinar (Lead Creation), and Executive Dinner (Opp Creation) each receive $54,000 (30%), while PPC Ad and Demo receive $9,000 (5%).',
+        code: `def model_multi_touch_revenue_attribution():
+    deal_value = 180000.0 # $180,000 closed-won contract
+    touchpoints = [
+        {"touch": 1, "channel": "Organic SEO Whitepaper", "stage": "First Touch"},
+        {"touch": 2, "channel": "Google Search PPC Ad", "stage": "Nurture"},
+        {"touch": 3, "channel": "Product Webinar Registration", "stage": "Lead Creation"},
+        {"touch": 4, "channel": "Executive Field Dinner", "stage": "Opportunity Creation"},
+        {"touch": 5, "channel": "Custom ROI Calculator & Demo", "stage": "Closing Touch"}
+    ]
+    n = len(touchpoints)
+
+    # 1. First-Touch Attribution (100% to first)
+    first_touch = {tp["channel"]: (deal_value if i == 0 else 0.0) for i, tp in enumerate(touchpoints)}
+
+    # 2. Last-Touch Attribution (100% to last)
+    last_touch = {tp["channel"]: (deal_value if i == n - 1 else 0.0) for i, tp in enumerate(touchpoints)}
+
+    # 3. Linear Attribution (Equal split)
+    linear_touch = {tp["channel"]: deal_value / n for tp in touchpoints}
+
+    # 4. W-Shaped Attribution (30% First, 30% Lead Creation, 30% Opp Creation, 10% Middle/Closing)
+    # Touch 1 (30%), Touch 2 (5%), Touch 3 (30%), Touch 4 (30%), Touch 5 (5%)
+    w_weights = [0.30, 0.05, 0.30, 0.30, 0.05]
+    w_shaped = {tp["channel"]: deal_value * w_weights[i] for i, tp in enumerate(touchpoints)}
+
+    print("Multi-Touch Revenue Attribution Comparison ($180,000 Deal):")
+    print(f"  {'Channel':<30} | {'First-Touch':<12} | {'Last-Touch':<12} | {'Linear':<12} | {'W-Shaped':<12}")
+    print("  " + "-" * 88)
+    for i, tp in enumerate(touchpoints):
+        ch = tp["channel"]
+        ft_val = "$" + f"{first_touch[ch]:,.0f}"
+        lt_val = "$" + f"{last_touch[ch]:,.0f}"
+        lin_val = "$" + f"{linear_touch[ch]:,.0f}"
+        w_val = "$" + f"{w_shaped[ch]:,.0f}"
+        print(f"  {ch:<30} | {ft_val:<12} | {lt_val:<12} | {lin_val:<12} | {w_val:<12}")
+
+    return {"w_shaped": w_shaped, "linear": linear_touch}
+
+model_multi_touch_revenue_attribution()`,
+        output: `Multi-Touch Revenue Attribution Comparison ($180,000 Deal):
+  Channel                        | First-Touch  | Last-Touch   | Linear       | W-Shaped    
+  ----------------------------------------------------------------------------------------
+  Organic SEO Whitepaper         | $180,000     | $0           | $36,000      | $54,000     
+  Google Search PPC Ad           | $0           | $0           | $36,000      | $9,000      
+  Product Webinar Registration   | $0           | $0           | $36,000      | $54,000     
+  Executive Field Dinner         | $0           | $0           | $36,000      | $54,000     
+  Custom ROI Calculator & Demo   | $0           | $180,000     | $36,000      | $9,000      `,
+        codeNotes: [
+          'First-Touch and Last-Touch oversimplify the customer journey by giving 100% of revenue to a single touchpoint.',
+          'Linear attribution splits deal value evenly ($36,000 per channel across 5 touches).',
+          'W-Shaped attribution prioritizes the 3 core funnel transitions (First Touch, Lead Creation, Opp Creation) at 30% each, sharing 10% across nurture.'
+        ],
+        tryIt: 'Modify the deal value to $250,000 to observe how marketing channel ROI budgets scale across attribution models.',
+        check: {
+          question: 'Why is the W-Shaped attribution model widely preferred over First-Touch or Last-Touch models in enterprise B2B sales?',
+          options: [
+            'Because it awards 90% of revenue credit to the three critical milestones (First Touch, Lead Creation, Opportunity Creation) while appropriately rewarding intermediate nurture touches',
+            'Because it requires zero CRM integration and can be computed without tracking website activity',
+            'Because it completely excludes the sales department from receiving any commission credit',
+            'Because federal marketing disclosure laws require W-shaped tax filings for all digital advertising'
+          ],
+          answer: 0,
+          why: 'The W-shaped model accurately captures enterprise buying dynamics by placing 30% weight on each of the 3 major conversion milestones (first touch, lead creation, opportunity creation) and distributing 10% across nurture channels.',
+          answerIndex: 0,
+          explanation: 'The W-shaped model accurately captures enterprise buying dynamics by placing 30% weight on each of the 3 major conversion milestones (first touch, lead creation, opportunity creation) and distributing 10% across nurture channels.'
+        }
+      },
+      {
+        title: 'Sales Capacity Planning, AE Quota Ramp & Pipeline Coverage Economics',
+        say: [
+          'A recurring mistake in high-growth companies is setting aggressive revenue targets without building an underlying sales capacity headcount model. Sales leaders cannot simply announce a $6M new bookings plan without calculating how many Account Executives (AEs) are required, how long it takes new hires to achieve full quota productivity, and how much qualified pipeline marketing and outbound SDRs must generate to support them.',
+          'AE quota capacity planning begins with the fully ramped annual quota, typically set between $800,000 and $1,200,000 in enterprise software. New sales reps do not produce at 100% capacity on Day 1; they require a 3 to 6 month ramp period as they learn product capabilities, territory accounts, and competitive positioning. In Year 1, a newly hired AE with a 4-month ramp produces an effective quota contribution of roughly 75% to 80% of a fully ramped peer ($791,667 in a $1.0M quota environment). To achieve a $6.0M new bookings target, the organization must hire and deploy 8 full-time AEs.',
+          'Crucially, quota capacity is meaningless without adequate pipeline coverage. Because enterprise win rates typically hover around 20% to 28%, each sales rep requires 3.5x to 4.0x in qualified pipeline coverage to reliably achieve their quota. For an enterprise target of $6,000,000 in bookings at 3.5x coverage, the combined marketing and SDR demand generation engine must produce $21,000,000 in qualified pipeline across the fiscal year. Synchronizing quota targets with pipeline coverage guarantees financial predictability and prevents territory starvation.'
+        ],
+        example: 'To achieve a $6,000,000 annual bookings target with $1,000,000 AE quotas and a 4-month ramp ($791,667 effective Year 1 quota), the company requires 7.6 reps (rounded to 8 AEs). At a 3.5x pipeline coverage ratio, marketing and SDRs must generate $21,000,000 in qualified pipeline.',
+        code: `def plan_sales_capacity_and_quota_ramp():
+    target_arr_plan = 6000000.0  # $6M new ARR target for the year
+    ae_annual_quota = 1000000.0  # $1.0M quota per fully ramped AE
+    pipeline_coverage_ratio = 3.5 # 3.5x pipeline coverage required
+    ramp_months = 4
+    ramp_productivity = [0.0, 0.25, 0.50, 0.75, 1.0] # Productivity % by month
+
+    # Effective quota per new hire in Year 1: 4 months ramp (avg 37.5% of 4/12) + 8 months fully ramped (8/12)
+    ramped_contribution = (4/12 * 0.375 + 8/12 * 1.0) * ae_annual_quota # ~$791,667
+    aes_needed = target_arr_plan / ramped_contribution
+    pipeline_required = target_arr_plan * pipeline_coverage_ratio
+
+    print("Sales Capacity & AE Quota Ramp Planning:")
+    print("  Annual Bookings Target: " + "$" + f"{target_arr_plan:,.2f}")
+    print("  Fully Ramped AE Annual Quota: " + "$" + f"{ae_annual_quota:,.2f}")
+    print(f"  Ramp Period: {ramp_months} months | Year 1 Weighted Quota: " + "$" + f"{ramped_contribution:,.2f}")
+    print(f"  Ramped AEs Required to Hit Target: {aes_needed:.1f} reps (Round to 8 Full-Time AEs)")
+    print(f"  Mandatory Pipeline Coverage: {pipeline_coverage_ratio}x")
+    print("  Total Pipeline Generation Required: " + "$" + f"{pipeline_required:,.2f}")
+    return {"aes_needed": aes_needed, "pipeline_required": pipeline_required}
+
+plan_sales_capacity_and_quota_ramp()`,
+        output: `Sales Capacity & AE Quota Ramp Planning:
+  Annual Bookings Target: $6,000,000.00
+  Fully Ramped AE Annual Quota: $1,000,000.00
+  Ramp Period: 4 months | Year 1 Weighted Quota: $791,666.67
+  Ramped AEs Required to Hit Target: 7.6 reps (Round to 8 Full-Time AEs)
+  Mandatory Pipeline Coverage: 3.5x
+  Total Pipeline Generation Required: $21,000,000.00`,
+        codeNotes: [
+          'Incorporates a 4-month AE ramp period, reducing Year 1 effective quota contribution from $1.0M to $791,667.',
+          'Calculates that 8 full-time AEs are required to achieve the $6,000,000 new bookings plan.',
+          'Multiplies target bookings by 3.5x coverage to establish an aggressive $21,000,000 demand generation goal.'
+        ],
+        tryIt: 'Increase the required pipeline coverage ratio to 4.0x to see pipeline generation requirements jump to $24,000,000.',
+        check: {
+          question: 'Why must sales capacity models account for AE ramp periods when planning annual hiring targets?',
+          options: [
+            'Because newly hired sales reps take several months to achieve full productivity, meaning 1 new hire cannot deliver 100% of an annual quota in their first year',
+            'Because labor laws prohibit new employees from generating any sales revenue during their first 90 days',
+            'Because marketing teams refuse to generate pipeline for any newly hired sales representative',
+            'Because sales quotas automatically double during the second half of every fiscal year'
+          ],
+          answer: 0,
+          why: 'Accounting for the learning curve and territory ramp period ensures realistic capacity expectations; new hires only produce a discounted fraction of full quota in Year 1.',
+          answerIndex: 0,
+          explanation: 'Accounting for the learning curve and territory ramp period ensures realistic capacity expectations; new hires only produce a discounted fraction of full quota in Year 1.'
+        }
+      },
+      {
+        title: 'Deploy the Enterprise Sales Operations Control Tower',
+        say: [
+          'Enterprise revenue architecture succeeds only when sales pipeline velocity, predictive lead routing, multi-touch attribution, and capacity planning operate as a unified system. When marketing generates high-fit leads, predictive scoring instantly routes them to ramped AEs with high velocity and high win rates, while multi-touch attribution models accurately credit every contributing channel to justify ongoing marketing investments.',
+          'In this operational capstone module, you will execute the end-to-end Sales Operations Control Tower. You will synthesize pipeline velocity calculations across funnel drop-offs, verify automated predictive lead scoring and SLA routing, compare multi-touch attribution distribution tables, and validate headcount capacity requirements.',
+          'Deploying this integrated control tower equips revenue leaders with the predictive analytics and operational rigor necessary to scale B2B organizations from early traction to predictable enterprise revenue.'
+        ],
+        example: 'The revenue operations team consolidates pipeline velocity ($10.34M run-rate), lead scoring (1 Tier A Hot lead), W-Shaped attribution (Organic SEO top channel at $54,000), and capacity planning ($21M pipeline generation target for 8 AEs).',
+        code: `def run_enterprise_sales_operations_engine():
+    print("=== PinIT Career OS Enterprise Sales Operations Control Tower ===")
+    print("--- 1. Pipeline Velocity & Stage Conversions ---")
+    pv = calculate_sales_pipeline_velocity()
+
+    print("\n--- 2. Predictive Lead Scoring & SLA Routing ---")
+    leads = score_predictive_leads_and_tier()
+
+    print("\n--- 3. Multi-Touch Revenue Attribution Modeling ---")
+    attr = model_multi_touch_revenue_attribution()
+
+    print("\n--- 4. Sales Capacity & Quota Headcount Modeling ---")
+    cap = plan_sales_capacity_and_quota_ramp()
+
+    print("\n--- 5. Sales Operations Executive Synthesis ---")
+    print("  Pipeline Velocity Run-Rate: " + "$" + f"{pv['annual_velocity']:,.2f}")
+    print(f"  Tier A Enterprise Hot Leads: {sum(1 for l in leads if l['tier'] == 'TIER_A_HOT_ENTERPRISE')}")
+    print("  W-Shaped Top Attributed Channel: Organic SEO (" + "$" + f"{attr['w_shaped']['Organic SEO Whitepaper']:,.2f}" + ")")
+    print("  Total Pipeline Generation Target: " + "$" + f"{cap['pipeline_required']:,.2f}")
+    print("Status: SALES OPERATIONS CONTROL TOWER SYNCHRONIZED ACROSS CRM, MARKETING & FINANCE.")
+
+run_enterprise_sales_operations_engine()`,
+        output: `=== PinIT Career OS Enterprise Sales Operations Control Tower ===
+--- 1. Pipeline Velocity & Stage Conversions ---
+Enterprise Sales Pipeline Velocity Analysis:
+  Active Qualified Opportunities (N): 120
+  End-to-End Win Rate (W): 20.83%
+  Average Deal Size (L): $85,000.00
+  Average Sales Cycle Length (T): 75.0 days
+  Daily Pipeline Velocity: $28,333.33 / day
+  Monthly Pipeline Velocity: $850,000.00 / month
+  Annualized Pipeline Run-Rate: $10,341,666.67
+
+--- 2. Predictive Lead Scoring & SLA Routing ---
+Predictive Lead Scoring Engine:
+  Acme Health: Score=100/100 | Tier=TIER_A_HOT_ENTERPRISE | SDR Routing SLA=2h
+  Beacon Logistics: Score=45/100 | Tier=TIER_C_NURTURE_SMB | SDR Routing SLA=72h
+  CloudForge Tech: Score=20/100 | Tier=TIER_C_NURTURE_SMB | SDR Routing SLA=72h
+
+--- 3. Multi-Touch Revenue Attribution Modeling ---
+Multi-Touch Revenue Attribution Comparison ($180,000 Deal):
+  Channel                        | First-Touch  | Last-Touch   | Linear       | W-Shaped    
+  ----------------------------------------------------------------------------------------
+  Organic SEO Whitepaper         | $180,000     | $0           | $36,000      | $54,000     
+  Google Search PPC Ad           | $0           | $0           | $36,000      | $9,000      
+  Product Webinar Registration   | $0           | $0           | $36,000      | $54,000     
+  Executive Field Dinner         | $0           | $0           | $36,000      | $54,000     
+  Custom ROI Calculator & Demo   | $0           | $180,000     | $36,000      | $9,000      
+
+--- 4. Sales Capacity & Quota Headcount Modeling ---
+Sales Capacity & AE Quota Ramp Planning:
+  Annual Bookings Target: $6,000,000.00
+  Fully Ramped AE Annual Quota: $1,000,000.00
+  Ramp Period: 4 months | Year 1 Weighted Quota: $791,666.67
+  Ramped AEs Required to Hit Target: 7.6 reps (Round to 8 Full-Time AEs)
+  Mandatory Pipeline Coverage: 3.5x
+  Total Pipeline Generation Required: $21,000,000.00
+
+--- 5. Sales Operations Executive Synthesis ---
+  Pipeline Velocity Run-Rate: $10,341,666.67
+  Tier A Enterprise Hot Leads: 1
+  W-Shaped Top Attributed Channel: Organic SEO ($54,000.00)
+  Total Pipeline Generation Target: $21,000,000.00
+Status: SALES OPERATIONS CONTROL TOWER SYNCHRONIZED ACROSS CRM, MARKETING & FINANCE.`,
+        codeNotes: [
+          'Integrates pipeline throughput, predictive lead scoring, attribution models, and capacity headcount.',
+          'Demonstrates how sales cycle length and win rates combine to drive an annualized $10.34M run-rate.',
+          'Validates that 8 full-time AEs and $21.0M in pipeline coverage are necessary to hit the $6.0M target.'
+        ],
+        tryIt: 'Run the integrated control tower to observe the cross-functional handoffs between Marketing, SDRs, and AEs.',
+        check: {
+          question: 'How do pipeline velocity, lead scoring, attribution, and capacity planning reinforce one another in an enterprise sales organization?',
+          options: [
+            'Lead scoring prioritizes high-fit deals to improve win rates and shorten sales cycles, boosting pipeline velocity, while attribution justifies marketing spend and capacity models ensure sufficient rep headcount to close pipeline',
+            'They operate completely independently with no shared data or organizational touchpoints',
+            'They are used exclusively by human resources to calculate year-end employee health benefits',
+            'They force all customers to pay cash upfront before receiving product demonstrations'
+          ],
+          answer: 0,
+          why: 'All four components form an interconnected revenue engine: lead scoring feeds qualified opps to shorten cycles and lift win rates, driving velocity, while attribution optimizes marketing ROI and capacity planning balances headcount.',
+          answerIndex: 0,
+          explanation: 'All four components form an interconnected revenue engine: lead scoring feeds qualified opps to shorten cycles and lift win rates, driving velocity, while attribution optimizes marketing ROI and capacity planning balances headcount.'
+        }
+      }
+    ],
+    summary: [
+      'Calculated sales pipeline velocity V = (N * W * L) / T ($28,333.33/day, $10.34M annualized run-rate), modeling stage conversion drop-offs across Discovery, Demo, Proposal, and Legal.',
+      'Engineered a predictive lead scoring engine combining firmographic attributes (revenue, headcount) and behavioral engagement (downloads, demo requests) with automated SDR routing SLAs.',
+      'Constructed a multi-touch revenue attribution comparison for a $180,000 deal, contrasting First-Touch and Last-Touch with Linear ($36k/touch) and W-Shaped models ($54k for First, Lead Creation, Opp Creation).',
+      'Modeled AE sales capacity planning with a 4-month ramp period, calculating an effective Year 1 quota contribution of $791,667, requiring 8 full-time AEs and $21.0M in pipeline coverage at 3.5x ratio.',
+      'Deployed the Enterprise Sales Operations Control Tower, establishing a unified analytical engine linking demand generation, lead routing, pipeline throughput, and quota attainment.'
+    ],
+    projectStep: {
+      title: 'Deploy the Enterprise Sales Operations & Pipeline Velocity Engine',
+      steps: [
+        'Calculate sales pipeline velocity and model conversion leakage across each stage of the funnel.',
+        'Implement predictive lead scoring algorithms with firmographic and behavioral weights to trigger automated SLA routing.',
+        'Model multi-touch revenue attribution across First-Touch, Last-Touch, Linear, and W-Shaped frameworks.',
+        'Plan sales capacity headcount, factoring in AE ramp curves and mandatory pipeline coverage ratios.'
+      ]
+    }
   }
 ];
