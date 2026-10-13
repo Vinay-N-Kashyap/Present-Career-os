@@ -1253,6 +1253,390 @@ console.log('Header Invariant: Retry-After: ' + req3.retryAfterSec + 's; X-RateL
         'Implement a distributed Token Bucket rate limiter that returns HTTP 429 and Retry-After headers on burst depletion.'
       ]
     }
+  },
+  {
+    coursePrefix: 'fullstack-js',
+    day: 4,
+    title: 'Micro-Frontends, OpenTelemetry, Zero-Downtime Blue-Green & CQRS',
+    goal: 'Master enterprise distributed JavaScript systems architecture: Micro-Frontends with Webpack 5 Module Federation, distributed tracing and W3C context propagation with OpenTelemetry SDK, Blue-Green zero-downtime rolling deployments with health check draining, idempotent webhook consumers with Redis deduplication locks, and database scaling with PostgreSQL read replicas and CQRS (Command Query Responsibility Segregation).',
+    minutes: 45,
+    recap: 'In Day 3, we mastered RFC 6455 WebSockets, Redis distributed sessions, PostgreSQL connection pooling and deadlock retries, CSP nonces and CORS preflights, and Token Bucket rate limiting. Now, in Day 4, we advance to planet-scale distributed full-stack architecture: Micro-Frontends with dynamic Module Federation, OpenTelemetry distributed tracing, zero-downtime Blue-Green deployments, strictly idempotent payment webhooks, and read replicas with CQRS.',
+    parts: [
+      {
+        title: 'Micro-Frontends & Dynamic Webpack 5 Module Federation',
+        say: [
+          'In large enterprise engineering organizations with dozens of teams, monolithic frontend applications become massive deployment bottlenecks. A broken component in the checkout page blocks the catalog team from releasing features.',
+          'Micro-Frontend architecture divides the user interface into semi-autonomous applications owned by independent squads. Webpack 5 Module Federation serves as the industry standard engine for micro-frontends.',
+          'Module Federation allows a host container to dynamically import remote JavaScript bundles at runtime over HTTP, without compiling them together at build time.',
+          'The biggest risk in micro-frontends is dependency duplication: if three remote micro-apps each load their own copy of React, memory consumption triples and React context breaks across boundaries.',
+          'Module Federation solves this through its shared scope configuration: specifying shared: { react: { singleton: true, eager: false } } ensures only one singleton instance of React is ever instantiated in the browser runtime.',
+          'By decoupling builds while sharing singletons, independent squads can deploy new UI versions dozens of times a day with zero cross-team coordination lockups.'
+        ],
+        example: 'Think of modern modular smartphones with magnetic accessory slots. The phone chassis (host shell) provides the power and screen (shared React singleton). A camera maker can release a snap-on telephoto lens (remote component) that plugs into the phone instantly without requiring Apple or Google to redesign the underlying phone motherboard.',
+        code: `// Simulation: Webpack 5 Module Federation Host & Remote Container Resolver
+interface RemoteModuleManifest {
+  scope: string;
+  module: string;
+  url: string;
+  sharedSingleton: boolean;
+}
+
+class ModuleFederationHostSimulator {
+  private remotes: Map<string, RemoteModuleManifest> = new Map();
+  private sharedScope: Map<string, { version: string; instanceId: string }> = new Map();
+
+  registerRemote(manifest: RemoteModuleManifest): void {
+    this.remotes.set(manifest.scope + '/' + manifest.module, manifest);
+  }
+
+  shareSingleton(library: string, version: string): void {
+    if (!this.sharedScope.has(library)) {
+      this.sharedScope.set(library, { version, instanceId: 'singleton_' + library + '_v' + version });
+    }
+  }
+
+  loadRemoteComponent(remoteKey: string): { status: string; sharedReact: string } {
+    const remote = this.remotes.get(remoteKey);
+    if (!remote) {
+      throw new Error('ScriptLoadError: Remote container not found: ' + remoteKey);
+    }
+    const reactShare = this.sharedScope.get('react')!;
+    return {
+      status: 'LOADED_CONTAINER_V2',
+      sharedReact: reactShare.instanceId
+    };
+  }
+}
+
+const host = new ModuleFederationHostSimulator();
+host.shareSingleton('react', '19.0.0');
+host.registerRemote({
+  scope: 'checkoutApp',
+  module: 'PaymentWidget',
+  url: 'https://checkout.enterprise.com/remoteEntry.js',
+  sharedSingleton: true
+});
+
+const component = host.loadRemoteComponent('checkoutApp/PaymentWidget');
+
+console.log('=== MICRO-FRONTENDS & WEBPACK MODULE FEDERATION ===');
+console.log('Remote Component Status: ' + component.status);
+console.log('Shared React Runtime: ' + component.sharedReact);
+console.log('Federation Invariant: 100% singleton isolation prevents multiple React instances in DOM');`,
+        output: `=== MICRO-FRONTENDS & WEBPACK MODULE FEDERATION ===
+Remote Component Status: LOADED_CONTAINER_V2
+Shared React Runtime: singleton_react_v19.0.0
+Federation Invariant: 100% singleton isolation prevents multiple React instances in DOM`,
+        tryIt: 'Register an additional remote navigationBar from navigationApp and load it through the host.',
+        check: {
+          question: 'Why is configuring "singleton: true" critical when sharing React in Webpack Module Federation?',
+          options: [
+            'Having multiple instances of React in the same browser DOM destroys React Context and triggers hook state corruption',
+            'Because Webpack crashes if any library is loaded twice',
+            'Because singletons automatically convert CSS into WebAssembly',
+            'To limit browser network bandwidth to 1 MB/s'
+          ],
+          answer: 0,
+          why: 'React maintains internal fiber tree states; if two micro-frontends instantiate separate copies of React, Context providers cannot bridge boundaries and hooks (like useState) fail across component trees.'
+        }
+      },
+      {
+        title: 'Distributed Tracing & OpenTelemetry Spans across Fullstack JavaScript',
+        say: [
+          'In modern cloud architectures, a single user click might touch a Next.js frontend, an API gateway, three Express microservices, and two PostgreSQL databases.',
+          'When a customer experiences a 5-second latency spike, inspecting server logs in isolation is useless: you see thousands of unrelated log lines without any cross-service correlation.',
+          'OpenTelemetry (OTel) is the vendor-neutral industry standard for distributed observability. It models transactions as a distributed Trace composed of nested, timed Spans.',
+          'The Root Span begins when the browser initiates the HTTP fetch, generating a 128-bit Trace ID and a 64-bit Span ID.',
+          'These IDs are injected into outgoing request headers using the W3C Trace Context standard (traceparent: 00-traceId-spanId-flags). Each downstream service extracts the header, creates a child span pointing to the parent span ID, and records its execution latency.',
+          'Visualizing the resulting span tree in tracing tools (like Jaeger or Datadog) immediately highlights whether the bottleneck was a slow database query, a third-party payment API, or network hop latency.'
+        ],
+        example: 'Think of an international courier delivery. When a parcel is shipped, it receives a master tracking number (Trace ID). At each transit hub—sorting facility, cargo airplane, customs desk, delivery van—the package receives a local station barcode stamp (Child Span). The customer can view the exact minute each step took along the journey.',
+        code: `// Simulation: OpenTelemetry Distributed Span Tree & Trace Aggregator
+interface OtelSpan {
+  traceId: string;
+  spanId: string;
+  parentSpanId: string | null;
+  name: string;
+  durationMs: number;
+}
+
+class OpenTelemetrySimulator {
+  private spans: OtelSpan[] = [];
+
+  createSpan(traceId: string, name: string, parentSpanId: string | null = null, durationMs: number): OtelSpan {
+    const span: OtelSpan = {
+      traceId,
+      spanId: 'span_' + Math.abs(name.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)),
+      parentSpanId,
+      name,
+      durationMs
+    };
+    this.spans.push(span);
+    return span;
+  }
+
+  getTraceSummary(traceId: string): { totalDurationMs: number; spanCount: number } {
+    const traceSpans = this.spans.filter(s => s.traceId === traceId);
+    const totalMs = traceSpans.reduce((sum, s) => sum + s.durationMs, 0);
+    return { totalDurationMs: totalMs, spanCount: traceSpans.length };
+  }
+}
+
+const otel = new OpenTelemetrySimulator();
+const traceId = '4bf92f3577b34da6a3ce929d0e0e4736';
+const root = otel.createSpan(traceId, 'GET /api/checkout', null, 45);
+const dbSpan = otel.createSpan(traceId, 'pg.query SELECT balance', root.spanId, 12);
+const paymentSpan = otel.createSpan(traceId, 'POST https://stripe.com/v1/charges', root.spanId, 85);
+
+const summary = otel.getTraceSummary(traceId);
+
+console.log('=== DISTRIBUTED TRACING & OPENTELEMETRY SPAN TREE ===');
+console.log('Trace Root: ' + root.name + ' [' + root.spanId + ']');
+console.log('Child Span 1: ' + dbSpan.name + ' (parent: ' + dbSpan.parentSpanId + ') [' + dbSpan.durationMs + 'ms]');
+console.log('Child Span 2: ' + paymentSpan.name + ' (parent: ' + paymentSpan.parentSpanId + ') [' + paymentSpan.durationMs + 'ms]');
+console.log('Trace Metrics: Total Latency: ' + summary.totalDurationMs + 'ms across ' + summary.spanCount + ' correlated spans');`,
+        output: `=== DISTRIBUTED TRACING & OPENTELEMETRY SPAN TREE ===
+Trace Root: GET /api/checkout [span_1518]
+Child Span 1: pg.query SELECT balance (parent: span_1518) [12ms]
+Child Span 2: POST https://stripe.com/v1/charges (parent: span_1518) [85ms]
+Trace Metrics: Total Latency: 142ms across 3 correlated spans`,
+        tryIt: 'Add another child span for Redis cache lookup taking 4ms and observe how the total latency increases to 146ms.',
+        check: {
+          question: 'What header format does OpenTelemetry use to propagate distributed trace context across HTTP boundaries?',
+          options: [
+            'W3C Trace Context (traceparent: 00-{traceId}-{spanId}-{flags})',
+            'Cookie: session_id=xyz',
+            'Content-Type: application/json',
+            'X-Forwarded-Host'
+          ],
+          answer: 0,
+          why: 'The W3C Trace Context recommendation standardizes the traceparent header, allowing heterogeneous services to correlate parent-child spans without vendor lock-in.'
+        }
+      },
+      {
+        title: 'Blue-Green & Canary Zero-Downtime Deployments with Traffic Draining',
+        say: [
+          'In mission-critical e-commerce and financial platforms, maintenance windows with downtime are completely unacceptable. Deploying a new release must cause zero dropped connections or 502 Bad Gateway errors.',
+          'Blue-Green deployment maintains two identical production environments: Blue runs the current live version, while Green hosts the newly deployed target release.',
+          'Before routing real user traffic to Green, automated synthetic health checks verify database migrations, cache connections, and API endpoints.',
+          'Traffic shifting occurs progressively via Canary deployment: an ingress load balancer routes a small percentage (e.g. 5% to 20%) of live traffic to Green. Error budgets and latency metrics are monitored in real time.',
+          'Once metrics prove stable, the load balancer shifts 100% of traffic to Green. Crucially, the Blue environment is NOT killed instantly; it enters a Connection Draining phase (e.g. 30 seconds), allowing in-flight HTTP requests to complete cleanly.',
+          'If any anomaly is detected during canary evaluation, traffic instantly reverts 100% back to Blue with zero user impact.'
+        ],
+        example: 'Think of an airport with parallel twin runways. Flights land on Runway Blue while ground crews inspect Runway Green. Once Runway Green is cleared, airplanes are directed to land on Green, while any airplanes already on Runway Blue finish rolling to their gates before Blue is closed for maintenance.',
+        code: `// Simulation: Zero-Downtime Blue-Green & Canary Traffic Router
+type DeploymentColor = 'BLUE' | 'GREEN';
+
+class ZeroDowntimeTrafficRouter {
+  private activeColor: DeploymentColor = 'BLUE';
+  private canaryWeightPercent: number = 0; // 0 to 100
+  private drainingConnections: number = 0;
+
+  setCanary(greenWeight: number): void {
+    this.canaryWeightPercent = greenWeight;
+  }
+
+  routeRequest(randomFactor: number): DeploymentColor {
+    return randomFactor < this.canaryWeightPercent / 100 ? 'GREEN' : 'BLUE';
+  }
+
+  cutoverToGreen(): { previous: DeploymentColor; current: DeploymentColor; drainStatus: string } {
+    this.drainingConnections = 14; // in-flight Blue requests
+    const prev = this.activeColor;
+    this.activeColor = 'GREEN';
+    this.canaryWeightPercent = 100;
+    return {
+      previous: prev,
+      current: 'GREEN',
+      drainStatus: 'BLUE_DRAINING (' + this.drainingConnections + ' in-flight requests granted 30s grace)'
+    };
+  }
+}
+
+const router = new ZeroDowntimeTrafficRouter();
+router.setCanary(20); // 20% canary to green
+const reqA = router.routeRequest(0.10); // goes to GREEN
+const reqB = router.routeRequest(0.50); // goes to BLUE
+const cutover = router.cutoverToGreen();
+
+console.log('=== ZERO-DOWNTIME BLUE-GREEN DEPLOYMENTS & CANARY DRAINING ===');
+console.log('Canary Sample 1 (10% threshold): Routed to ' + reqA);
+console.log('Canary Sample 2 (50% threshold): Routed to ' + reqB);
+console.log('100% Production Cutover: ' + cutover.previous + ' -> ' + cutover.current);
+console.log('Connection Draining: ' + cutover.drainStatus);`,
+        output: `=== ZERO-DOWNTIME BLUE-GREEN DEPLOYMENTS & CANARY DRAINING ===
+Canary Sample 1 (10% threshold): Routed to GREEN
+Canary Sample 2 (50% threshold): Routed to BLUE
+100% Production Cutover: BLUE -> GREEN
+Connection Draining: BLUE_DRAINING (14 in-flight requests granted 30s grace)`,
+        tryIt: 'Increase the canary weight to 50% and verify that a 0.35 random factor routes to GREEN.',
+        check: {
+          question: 'What is the purpose of "Connection Draining" during a zero-downtime Blue-Green deployment cutover?',
+          options: [
+            'It allows existing in-flight HTTP requests on the old environment to complete cleanly before terminating old containers',
+            'It empties all database tables before the new release',
+            'It disconnects all user WiFi connections',
+            'It reboots the operating system kernel'
+          ],
+          answer: 0,
+          why: 'Connection draining prevents in-flight requests from being abruptly severed with 502/504 errors when traffic cuts over to the new environment.'
+        }
+      },
+      {
+        title: 'Strictly Idempotent Webhooks & Redis Distributed Deduplication Locks',
+        say: [
+          'External payment providers (such as Stripe, Adyen, and PayPal) send asynchronous Webhook events to notify your backend when payments succeed or fail.',
+          'Because network packets can be lost, webhook providers adhere to an "at-least-once" delivery guarantee: if your server does not respond with HTTP 200 within 5 seconds, the provider retries the webhook multiple times.',
+          'If your webhook endpoint is not strictly Idempotent, a duplicate webhook delivery could charge a customer twice, fulfill two orders, or corrupt database ledger balances.',
+          'To ensure idempotency, every event payload includes a unique eventId. Before processing the event, your server executes an atomic distributed lock in Redis: SET idemp_lock:{eventId} LOCKED NX EX 300.',
+          'The NX flag guarantees that Redis sets the key ONLY IF it does not already exist. If Redis returns nil, another worker is already processing or has already processed this exact event, allowing you to return HTTP 200 immediately and safely discard the duplicate.',
+          'Atomic deduplication locks safeguard financial integrity in high-throughput distributed systems.'
+        ],
+        example: 'Think of a registered postal letter with a unique tracking number. When the postal worker delivers the letter, you sign the delivery sheet. If a second courier arrives an hour later with a duplicate copy, you inspect your receipt book, recognize the tracking number, and say "Already received," without paying twice.',
+        code: `// Simulation: Idempotent Webhook Processor with Redis Deduplication Lock
+interface WebhookPayload {
+  eventId: string;
+  amount: number;
+  customer: string;
+}
+
+class IdempotentWebhookProcessor {
+  private redisKvStore: Map<string, string> = new Map();
+
+  async processWebhook(event: WebhookPayload): Promise<{ status: string; processed: boolean }> {
+    const lockKey = 'idemp_lock:' + event.eventId;
+
+    // Simulate Redis SET key "LOCKED" NX EX 300
+    if (this.redisKvStore.has(lockKey)) {
+      return {
+        status: 'DUPLICATE_IGNORED (Cached result: ' + this.redisKvStore.get(lockKey) + ')',
+        processed: false
+      };
+    }
+
+    // Acquire lock and process
+    this.redisKvStore.set(lockKey, 'PROCESSED_SUCCESS');
+    return {
+      status: 'NEW_PAYMENT_PROCESSED ($' + event.amount + ' charged)',
+      processed: true
+    };
+  }
+}
+
+const processor = new IdempotentWebhookProcessor();
+const webhookEvent: WebhookPayload = {
+  eventId: 'evt_stripe_994821',
+  amount: 250,
+  customer: 'cus_alice_10'
+};
+
+const firstAttempt = await processor.processWebhook(webhookEvent);
+const secondAttempt = await processor.processWebhook(webhookEvent);
+
+console.log('=== IDEMPOTENT WEBHOOKS & REDIS DEDUPLICATION LOCKS ===');
+console.log('Webhook Delivery 1: ' + firstAttempt.status);
+console.log('Webhook Delivery 2 (Network Retry): ' + secondAttempt.status);
+console.log('Financial Safety Invariant: Customer never double-charged under duplicate delivery');`,
+        output: `=== IDEMPOTENT WEBHOOKS & REDIS DEDUPLICATION LOCKS ===
+Webhook Delivery 1: NEW_PAYMENT_PROCESSED ($250 charged)
+Webhook Delivery 2 (Network Retry): DUPLICATE_IGNORED (Cached result: PROCESSED_SUCCESS)
+Financial Safety Invariant: Customer never double-charged under duplicate delivery`,
+        tryIt: 'Send a third webhook attempt and verify that it continues to be ignored safely with cached status.',
+        check: {
+          question: 'In an idempotent webhook handler, what does the Redis command "SET key value NX EX 300" achieve?',
+          options: [
+            'It atomically acquires a distributed mutex lock ONLY IF the key does not exist (NX), expiring in 300 seconds (EX) to prevent race conditions',
+            'It permanently deletes the key from the database',
+            'It sends an email notification to the customer',
+            'It converts the webhook payload into an XML document'
+          ],
+          answer: 0,
+          why: 'The atomic SET NX (not exists) command guarantees that only the first thread acquires the lock, while concurrent or duplicate deliveries fail to acquire the lock and exit cleanly.'
+        }
+      },
+      {
+        title: 'Database Read Replicas & CQRS (Command Query Responsibility Segregation)',
+        say: [
+          'In high-scale web platforms, read operations outnumber write operations by 10 to 1 or higher: for every 1 purchase order placed, users perform 50 product searches and catalog views.',
+          'When all read and write traffic hits a single primary database instance, CPU and disk I/O saturate, causing slow query performance and connection timeouts.',
+          'Database architectures solve this by establishing Read Replicas: the Primary database node handles all writes (INSERT, UPDATE, DELETE) and streams write-ahead logs (WAL) asynchronously to multiple read-only replica nodes.',
+          'The architectural pattern CQRS (Command Query Responsibility Segregation) formalizes this separation in application code: Commands (mutations) route strictly to the Primary database pool, while Queries (reads) route to the Read Replica pool.',
+          'Because replica replication is asynchronous, a slight replication lag (typically 5–50ms) can occur. To prevent the "read-your-own-writes" inconsistency (where a user updates their profile and immediately reloads a stale cached replica), applications can force reads through the Primary for 5 seconds after a mutation.',
+          'Implementing CQRS with read replicas allows database clusters to scale horizontal read capacity linearly to millions of queries per second.'
+        ],
+        example: 'Think of a newspaper publisher. The chief editor desk (Primary DB) is the only place where new articles are written and approved. Once approved, printing presses produce thousands of copies distributed to newsstands across the city (Read Replicas). Millions of citizens read copies from newsstands without crowding into the editor office.',
+        code: `// Simulation: CQRS Database Router with Primary Leader & Read Replicas
+interface AccountRecord {
+  id: string;
+  balance: number;
+  updatedAt: number;
+}
+
+class CqrsDatabaseRouter {
+  private primaryDb: Map<string, AccountRecord> = new Map();
+  private replicaDb: Map<string, AccountRecord> = new Map();
+  public replicationLagMs: number = 15;
+
+  executeCommand(id: string, newBalance: number): void {
+    const record: AccountRecord = { id, balance: newBalance, updatedAt: Date.now() };
+    this.primaryDb.set(id, record);
+    // Simulate asynchronous WAL replication to read replica
+    this.replicaDb.set(id, { ...record });
+  }
+
+  executeQuery(id: string): { routedTo: string; record: AccountRecord | undefined } {
+    return {
+      routedTo: 'READ_REPLICA_NODE_01',
+      record: this.replicaDb.get(id)
+    };
+  }
+}
+
+const cqrs = new CqrsDatabaseRouter();
+cqrs.executeCommand('acc_9901', 5400);
+const readResult = cqrs.executeQuery('acc_9901');
+
+console.log('=== DATABASE READ REPLICAS & CQRS ROUTING ===');
+console.log('Command Executed: Mutation committed to PRIMARY_DB_LEADER');
+console.log('Query Executed: Routed to ' + readResult.routedTo);
+console.log('Queried Record: Balance = $' + readResult.record?.balance);
+console.log('Scaling Invariant: Offloads 90% read traffic from primary write database');`,
+        output: `=== DATABASE READ REPLICAS & CQRS ROUTING ===
+Command Executed: Mutation committed to PRIMARY_DB_LEADER
+Query Executed: Routed to READ_REPLICA_NODE_01
+Queried Record: Balance = $5400
+Scaling Invariant: Offloads 90% read traffic from primary write database`,
+        tryIt: 'Add a second read replica node and distribute queries using round-robin balancing.',
+        check: {
+          question: 'In a CQRS database architecture with Read Replicas, where should database write operations (INSERT/UPDATE/DELETE) be routed?',
+          options: [
+            'Strictly to the Primary (Leader) database instance, which replicates changes to read replicas',
+            'Randomly to any read replica node',
+            'To the browser local storage',
+            'To the DNS nameserver'
+          ],
+          answer: 0,
+          why: 'In standard master-replica configurations, only the Primary (Leader) database accepts write transactions to maintain single-source-of-truth consistency, while read replicas serve read-only queries.'
+        }
+      }
+    ],
+    summary: [
+      'Webpack 5 Module Federation enables dynamic micro-frontends with singleton sharing to prevent duplicate React instances.',
+      'OpenTelemetry models distributed full-stack transactions as parent-child Span trees propagated via W3C traceparent headers.',
+      'Blue-Green and Canary zero-downtime deployments shift traffic progressively and drain in-flight connections before retirement.',
+      'Idempotent webhook handlers use atomic Redis SET NX distributed locks to guarantee financial transactions are never executed twice.',
+      'CQRS database routers route write commands to the Primary database and read queries to Replicas, scaling read throughput linearly.'
+    ],
+    projectStep: {
+      title: 'Architect an Enterprise Distributed Commerce Platform with Federation & CQRS',
+      steps: [
+        'Configure a Webpack Module Federation host application sharing React singletons with remote micro-frontend containers.',
+        'Instrument an OpenTelemetry tracing pipeline propagating W3C traceparent headers across API gateway calls.',
+        'Implement a Canary deployment traffic router with 30-second connection draining for legacy containers.',
+        'Construct an idempotent payment webhook consumer backed by atomic Redis distributed deduplication mutexes.',
+        'Build a CQRS database connection router directing mutations to Primary and queries to Read Replicas.'
+      ]
+    }
   }
 ];
 

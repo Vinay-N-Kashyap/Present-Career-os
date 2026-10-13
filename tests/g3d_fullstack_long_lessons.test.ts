@@ -258,4 +258,59 @@ test('G3D Day 3: Domain-Specific Content Assertions', () => {
   assert.ok(g3dD3.parts[4].output.includes('HIT at t=15.0'));
 });
 
+test('Fullstack-JS Day 4: Resolution & Structural Invariants for Micro-Frontends, OpenTelemetry & CQRS', () => {
+  const fsD4 = getLongLesson('fullstack-js', 4);
+  assert.ok(fsD4, 'fullstack-js Day 4 long lesson must resolve');
+  assert.equal(fsD4.day, 4);
+  assert.equal(fsD4.parts.length, 5, 'fullstack-js Day 4 must contain exactly 5 parts');
+  assert.ok(fsD4.summary.length >= 4, 'fullstack-js Day 4 must contain comprehensive summary');
+  assert.ok(fsD4.projectStep, 'fullstack-js Day 4 must have a hands-on project step');
+  assert.ok(fsD4.minutes >= 15, 'fullstack-js Day 4 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of fsD4.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Fullstack-JS Day 4: Domain-Specific Content Assertions', () => {
+  const fsD4 = getLongLesson('fullstack-js', 4);
+  assert.ok(fsD4);
+
+  // Part 1 – Micro-Frontends & Module Federation
+  assert.ok(fsD4.parts[0].title.includes('Micro-Frontends') || fsD4.parts[0].title.includes('Module Federation'));
+  assert.ok(fsD4.parts[0].output.includes('LOADED_CONTAINER_V2'));
+  assert.ok(fsD4.parts[0].output.includes('singleton_react_v19.0.0'));
+
+  // Part 2 – Distributed Tracing & OpenTelemetry Spans
+  assert.ok(fsD4.parts[1].title.includes('OpenTelemetry') || fsD4.parts[1].title.includes('Distributed Tracing'));
+  assert.ok(fsD4.parts[1].output.includes('GET /api/checkout'));
+  assert.ok(fsD4.parts[1].output.includes('POST https://stripe.com/v1/charges'));
+
+  // Part 3 – Blue-Green & Canary Zero-Downtime Deployments
+  assert.ok(fsD4.parts[2].title.includes('Blue-Green') || fsD4.parts[2].title.includes('Canary'));
+  assert.ok(fsD4.parts[2].output.includes('BLUE -> GREEN'));
+  assert.ok(fsD4.parts[2].output.includes('BLUE_DRAINING'));
+
+  // Part 4 – Idempotent Webhooks & Redis Locks
+  assert.ok(fsD4.parts[3].title.includes('Idempotent Webhooks') || fsD4.parts[3].title.includes('Deduplication'));
+  assert.ok(fsD4.parts[3].output.includes('NEW_PAYMENT_PROCESSED'));
+  assert.ok(fsD4.parts[3].output.includes('DUPLICATE_IGNORED'));
+
+  // Part 5 – Database Read Replicas & CQRS
+  assert.ok(fsD4.parts[4].title.includes('Read Replicas') || fsD4.parts[4].title.includes('CQRS'));
+  assert.ok(fsD4.parts[4].output.includes('PRIMARY_DB_LEADER'));
+  assert.ok(fsD4.parts[4].output.includes('READ_REPLICA_NODE_01'));
+});
+
+
 
