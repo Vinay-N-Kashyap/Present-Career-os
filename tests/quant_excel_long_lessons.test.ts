@@ -23,6 +23,11 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(quantLesson2.day, 2);
   assert.equal(quantLesson2.parts.length, 5, 'quant-systems Day 2 must contain exactly 5 parts');
 
+  const quantLesson3 = getLongLesson('quant-systems', 3);
+  assert.ok(quantLesson3, 'quant-systems Day 3 long lesson must resolve');
+  assert.equal(quantLesson3.day, 3);
+  assert.equal(quantLesson3.parts.length, 5, 'quant-systems Day 3 must contain exactly 5 parts');
+
 
   // 2. excel_viz
   const excelLesson = getLongLesson('excel_viz', 1);
@@ -216,5 +221,49 @@ test('Excel Viz Day 3: Power Query M, LAMBDAs, 3-Statement Model, Scenario Switc
   assert.ok(excelLesson3.parts[4].code?.includes('render_executive_kpi_dashboard'));
   assert.ok(excelLesson3.parts[4].output?.includes('C-SUITE EXECUTIVE PERFORMANCE DASHBOARD'));
 });
+
+test('Quant Systems Day 3: Limit Order Book, Avellaneda-Stoikov, OTR & PTP Verification', () => {
+  const quantLesson3 = getLongLesson('quant-systems', 3);
+  assert.ok(quantLesson3, 'quant-systems Day 3 must resolve');
+  assert.equal(quantLesson3.day, 3);
+  assert.equal(quantLesson3.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(quantLesson3);
+  const totalMin = estimateLessonMinutes(quantLesson3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < quantLesson3.parts.length; i++) {
+    const part = quantLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('#include'), `Part ${i + 1} code must contain valid C++ headers`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+
+    // Run structural AST inspection on C++ code
+    const inspection = inspectCppSource(part.code, 'main');
+    assert.equal(inspection.hasValidSignature, true, `C++ code in '${part.title}' must have valid signature`);
+    assert.equal(inspection.hasHeaders, true, `C++ code in '${part.title}' must include standard headers`);
+    assert.equal(inspection.hasReturn, true, `C++ code in '${part.title}' must include explicit return statement`);
+    assert.equal(inspection.syntaxViolations.length, 0, `C++ code in '${part.title}' must have zero syntax violations`);
+  }
+
+  // Domain specifics
+  assert.ok(quantLesson3.parts[0].code?.includes('executePriceTimeMatch'));
+  assert.ok(quantLesson3.parts[1].code?.includes('calculateAvellanedaStoikovQuotes'));
+  assert.ok(quantLesson3.parts[2].code?.includes('calculateOrderToTradeRatio'));
+  assert.ok(quantLesson3.parts[3].code?.includes('calculatePtpOneWayDelay'));
+  assert.ok(quantLesson3.parts[4].code?.includes('calculateOrnsteinUhlenbeckZScore'));
+});
+
 
 
