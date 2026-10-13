@@ -407,5 +407,386 @@ print(f"Antitrust Verdict:  {analysis['Antitrust_Enforcement_Risk']}")`,
         'Compute the Herfindahl-Hirschman Index (HHI) market concentration shift to evaluate M&A antitrust regulatory clearance.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_law',
+    day: 2,
+    title: 'Intellectual Property Protection, ESG Governance & Shareholder Activism Defense',
+    goal: 'Master corporate intellectual property strategy, board ESG governance compliance, and shareholder rights defense: registering and auditing IP portfolios (Patents, Trademarks, Copyrights, Trade Secrets) under Defend Trade Secrets Act (DTSA) standards, enforcing Whistleblower protection and Sarbanes-Oxley (SOX) Section 404 internal audit controls, calculating ESG Corporate Governance compliance indices, and architecting poison pill (Shareholder Rights Plan) defenses against hostile takeovers under the Unocal / Revlon intermediate scrutiny standards.',
+    minutes: 44,
+    recap: 'On Day 1 we mastered commercial contract formation, Salomon corporate veil piercing, director fiduciary duties under the Business Judgment Rule, and antitrust HHI market concentration. Today we expand corporate jurisprudence into intangible asset protection, ESG compliance frameworks, and hostile takeover defense mechanisms.',
+    parts: [
+      {
+        title: 'The 4 Pillars of Intellectual Property & Trade Secret DTSA Protocols',
+        say: [
+          'In the modern knowledge economy, intangible intellectual assets constitute over 85% of total corporate enterprise value for Fortune 500 corporations.',
+          'Corporate counsel must navigate four distinct legal pillars of Intellectual Property: Patents, Trademarks, Copyrights, and Trade Secrets.',
+          'Pillar 1: Patents grant a 20-year statutory monopoly to practice novel, useful, and non-obvious inventions in exchange for public disclosure of the patent specification.',
+          'Pillar 2: Trademarks protect brand identifiers, logos, and slogans under the Lanham Act, preventing consumer confusion in the marketplace as long as the mark remains in commercial use.',
+          'Pillar 3: Copyrights protect original works of authorship fixed in a tangible medium of expression (software code, artistic works, manuals), shielding expression but never abstract ideas.',
+          'Pillar 4: Trade Secrets protect proprietary formulas, algorithms, customer lists, and pricing matrices under the Defend Trade Secrets Act (DTSA) and state Uniform Trade Secrets Acts (UTSA).',
+          'Unlike patents, trade secrets never expire, but they carry zero protection against independent discovery or reverse engineering. Most importantly, a trade secret exists legally ONLY if the owner exerts "reasonable measures" to keep the information secret (strict NDAs, role-based access, and encrypted credentials).'
+        ],
+        example: 'Think of Coca-Cola versus Pfizer. Pfizer patents a new pharmaceutical molecule, disclosing its chemical structure to the world in exchange for a 20-year government monopoly. After 20 years, generic competitors can manufacture it freely. Coca-Cola, on the other hand, never patented its secret syrup formula; it guards the formula as a perpetual trade secret inside a physical security vault under biometric encryption. After 130 years, it remains protected.',
+        code: `# Simulation: IP Portfolio Audit & Trade Secret Secrecy Hygiene Classifier
+from dataclasses import dataclass
+
+@dataclass
+class IntellectualPropertyAsset:
+    asset_id: str
+    asset_type: str # 'Patent', 'Trademark', 'Copyright', 'Trade_Secret'
+    economic_value_score: float # 1-10
+    nda_executed: bool
+    role_based_access_locked: bool
+    public_disclosure_made: bool
+
+def audit_ip_protection_hygiene(asset: IntellectualPropertyAsset) -> dict:
+    if asset.asset_type == "Trade_Secret":
+        if asset.public_disclosure_made:
+            status = "TRADE_SECRET_DESTROYED"
+            rationale = "Public disclosure permanently eviscerates trade secret status under DTSA/UTSA."
+        elif asset.nda_executed and asset.role_based_access_locked:
+            status = "ENFORCEABLE_DTSA_TRADE_SECRET"
+            rationale = "Satisfies statutory reasonable secrecy measures with active encryption/access controls."
+        else:
+            status = "VULNERABLE_INSUFFICIENT_SECURITY"
+            rationale = "Lacks reasonable secrecy protocols; injunctions likely denied in misappropriation suit."
+    elif asset.asset_type == "Patent":
+        status = "PATENT_STATUTORY_MONOPOLY" if not asset.public_disclosure_made else "PRIOR_ART_RISK"
+        rationale = "Subject to 20-year exclusive practice upon examination."
+    else:
+        status = "STANDARD_STATUTORY_REGISTRATION"
+        rationale = "Protected under Lanham Act or Copyright statutory schemes."
+
+    return {
+        "AssetID": asset.asset_id,
+        "Type": asset.asset_type,
+        "Legal_Status": status,
+        "Judicial_Assessment": rationale
+    }
+
+ts1 = IntellectualPropertyAsset("ALGO_984", "Trade_Secret", 9.5, True, True, False)
+res1 = audit_ip_protection_hygiene(ts1)
+print(f"Asset: {res1['AssetID']} | Type: {res1['Type']} -> Status: {res1['Legal_Status']}")
+print(f"Assessment: {res1['Judicial_Assessment']}")`,
+        output: `Asset: ALGO_984 | Type: Trade_Secret -> Status: ENFORCEABLE_DTSA_TRADE_SECRET\nAssessment: Satisfies statutory reasonable secrecy measures with active encryption/access controls.`,
+        codeNotes: [
+          { line: 4, note: 'IntellectualPropertyAsset models statutory IP classes, economic value, and secrecy hygiene controls' },
+          { line: 15, note: 'Detects fatal destruction of trade secret protection if public disclosure occurred' },
+          { line: 18, note: 'Validates strict statutory compliance with Defend Trade Secrets Act reasonable security protocols' },
+          { line: 36, note: 'Confirms proprietary algorithmic engine ALGO_984 qualifies for federal injunctive protection under DTSA' }
+        ],
+        tryIt: 'Flip role_based_access_locked to False on asset ts1 to observe status downgrade to VULNERABLE_INSUFFICIENT_SECURITY.',
+        check: {
+          question: 'What is the fundamental statutory requirement for a proprietary corporate algorithm to qualify for trade secret protection under the Defend Trade Secrets Act (DTSA)?',
+          options: [
+            'The owner must take affirmative, reasonable measures under the circumstances to maintain its secrecy, and the information must derive independent economic value from not being generally known.',
+            'The company must register the full algorithm source code with the Library of Congress.',
+            'The algorithm must be published on a public GitHub repository with an MIT license.',
+            'The algorithm must have been invented more than 100 years ago.'
+          ],
+          answer: 0,
+          why: 'Under the DTSA and UTSA, trade secret protection vanishes if the owner fails to maintain reasonable security measures such as confidentiality agreements, role-based encryption, and access controls.',
+          answerIndex: 0,
+          explanation: 'Under the DTSA and UTSA, trade secret protection vanishes if the owner fails to maintain reasonable security measures such as confidentiality agreements, role-based encryption, and access controls.'
+        }
+      },
+      {
+        title: 'Sarbanes-Oxley (SOX) Internal Controls & Whistleblower Protections',
+        say: [
+          'Enacted following the catastrophic accounting frauds at Enron and WorldCom, the Sarbanes-Oxley Act of 2002 (SOX) transformed corporate compliance into a matter of direct criminal liability.',
+          'SOX Section 302 mandates that corporate CEOs and CFOs personally certify the accuracy and integrity of all periodic financial reports, with willful false certifications punishable by up to 20 years in federal prison.',
+          'SOX Section 404 requires management and external auditors to establish, document, test, and assess the effectiveness of Internal Controls over Financial Reporting (ICFR).',
+          'Deficiencies in internal controls are classified into three strict legal categories: Control Deficiency (minor operational gap), Significant Deficiency (merits attention by board audit committee), and Material Weakness (reasonable possibility that a material misstatement will not be prevented or detected).',
+          'A single unremediated Material Weakness forces the external auditor to issue an adverse public audit opinion, frequently triggering steep equity market selloffs.',
+          'Crucially, SOX and Dodd-Frank enforce robust Whistleblower protections: companies are strictly prohibited from discharging, demoting, suspending, harassing, or retaliating against employees who report suspected financial malfeasance.'
+        ],
+        example: 'Think of dual-signature authorization at a bank. If a company allows a single mid-level accountant to wire $10M offshore with zero secondary approval or ledger reconciliation, that is a glaring Material Weakness in internal controls. Even if no fraud has occurred yet, the lack of preventative controls creates an unacceptable risk of material financial distortion.',
+        code: `# Simulation: SOX 404 Internal Control Defect Escalation & Whistleblower Filter
+def evaluate_sox_internal_control_deficiency(
+    control_name: str,
+    annual_transaction_volume: float,
+    unreconciled_variance: float,
+    preventive_control_active: bool,
+    materiality_threshold: float = 250000.0
+) -> dict:
+    variance_pct = (unreconciled_variance / annual_transaction_volume) * 100.0 if annual_transaction_volume > 0 else 0.0
+    
+    if unreconciled_variance >= materiality_threshold and not preventive_control_active:
+        severity = "MATERIAL_WEAKNESS"
+        action = "Mandatory Adverse SOX 404 Audit Opinion; Immediate Board Audit Committee Reporting."
+    elif unreconciled_variance >= (materiality_threshold * 0.25):
+        severity = "SIGNIFICANT_DEFICIENCY"
+        action = "Escalate to Senior Management and External Auditors; 30-Day Remediation Plan."
+    else:
+        severity = "CONTROL_DEFICIENCY"
+        action = "Operational Log Entry; Remediate During Routine Internal Controls Cycle."
+
+    return {
+        "Control": control_name,
+        "Variance_Amount": f"\${round(unreconciled_variance / 1e3, 1)}k",
+        "Materiality_Hurdle": f"\${round(materiality_threshold / 1e3, 1)}k",
+        "SOX_404_Classification": severity,
+        "Mandatory_Remediation": action
+    }
+
+sox_res = evaluate_sox_internal_control_deficiency(
+    control_name="Revenue Recognition Deferred ARR Reconciliation",
+    annual_transaction_volume=50000000.0,
+    unreconciled_variance=420000.0,
+    preventive_control_active=False,
+    materiality_threshold=250000.0
+)
+print(f"Control: {sox_res['Control']} | Severity: {sox_res['SOX_404_Classification']}")
+print(f"Action: {sox_res['Mandatory_Remediation']}")`,
+        output: `Control: Revenue Recognition Deferred ARR Reconciliation | Severity: MATERIAL_WEAKNESS\nAction: Mandatory Adverse SOX 404 Audit Opinion; Immediate Board Audit Committee Reporting.`,
+        codeNotes: [
+          { line: 9, note: 'Evaluates unreconciled internal accounting variances against quantified materiality thresholds' },
+          { line: 11, note: 'Elevates unmitigated variances exceeding materiality hurdle to the highest severity level: Material Weakness' },
+          { line: 14, note: 'Routes intermediate variances to Significant Deficiency with mandatory external auditor escalation' },
+          { line: 31, note: 'Identifies $420k deferred revenue reconciliation gap as a Material Weakness requiring adverse SOX 404 filing' }
+        ],
+        tryIt: 'Enable preventive_control_active=True on sox_res to see the severity downgrade to SIGNIFICANT_DEFICIENCY.',
+        check: {
+          question: 'What is the critical legal difference between a "Significant Deficiency" and a "Material Weakness" under SOX Section 404 internal audit rules?',
+          options: [
+            'A Material Weakness represents a severe deficiency where there is a reasonable possibility that a material misstatement will not be prevented or detected, requiring an adverse public audit opinion.',
+            'A Significant Deficiency leads directly to criminal incarceration of all shareholders.',
+            'A Material Weakness applies only to small family-owned grocery stores.',
+            'There is no legal difference; both terms are interchangeable informal accounting slang.'
+          ],
+          answer: 0,
+          why: 'Under PCAOB auditing standards, a Material Weakness is the most severe internal control defect, indicating an unaddressed gap that could materially corrupt reported financial statements.',
+          answerIndex: 0,
+          explanation: 'Under PCAOB auditing standards, a Material Weakness is the most severe internal control defect, indicating an unaddressed gap that could materially corrupt reported financial statements.'
+        }
+      },
+      {
+        title: 'ESG Governance Disclosure & Regulatory Greenwashing Liability',
+        say: [
+          'Environmental, Social, and Governance (ESG) compliance has evolved from voluntary public relations brochures into legally binding securities disclosure obligations.',
+          'The "G" (Corporate Governance) represents the structural cornerstone of ESG: board independence (requiring a majority of independent directors), the presence of a certified financial expert on the Audit Committee, and executive compensation clawback policies under Dodd-Frank.',
+          'Clawback policies legally mandate that public companies recover incentive-based executive compensation if financial results are subsequently restated due to accounting errors or misconduct, regardless of whether the executive was personally at fault.',
+          'Concurrently, securities regulators worldwide (including the SEC and the European Union under CSRD) are aggressively prosecuting "Greenwashing" — the practice of making false, misleading, or unsubstantiated claims regarding sustainability or carbon neutrality.',
+          'Under SEC Rule 10b-5, false ESG statements in sustainability reports or investor presentations create direct securities fraud liability if those statements mislead reasonable investors regarding corporate risk or financial exposure.'
+        ],
+        example: 'Imagine an airline marketing its flights as "100% Carbon Neutral" based on cheap, unverified carbon offset credits that never actually retired carbon. If consumer protection agencies or the SEC investigate and prove the offsets were fictitious, the airline faces massive regulatory fines, mandatory advertising retractions, and securities class-action lawsuits for misleading ESG disclosure.',
+        code: `# Simulation: ESG Governance Rating & Greenwashing Misstatement Risk Scorer
+def evaluate_esg_governance_and_greenwashing_risk(
+    independent_board_pct: float,
+    audit_financial_expert_present: bool,
+    executive_clawback_policy_active: bool,
+    unsubstantiated_carbon_neutral_claims: bool
+) -> dict:
+    # Governance score components
+    gov_score = 0
+    if independent_board_pct >= 66.0:
+        gov_score += 40
+    elif independent_board_pct >= 50.0:
+        gov_score += 25
+    if audit_financial_expert_present:
+        gov_score += 30
+    if executive_clawback_policy_active:
+        gov_score += 30
+
+    if unsubstantiated_carbon_neutral_claims:
+        litigation_risk = "HIGH_RULE_10B5_GREENWASHING_EXPOSURE"
+        recommendation = "Immediate retraction of promotional marketing claims; audit carbon offsets with third-party verifier."
+    else:
+        litigation_risk = "LOW_COMPLIANT_DISCLOSURE"
+        recommendation = "Maintain regular audited sustainability reporting alignment."
+
+    return {
+        "Governance_Index": f"{gov_score}/100",
+        "Board_Independence": f"{independent_board_pct}%",
+        "Governance_Grade": "TIER_1_ROBUST" if gov_score >= 80 else "TIER_2_ADEQUATE" if gov_score >= 60 else "DEFICIENT",
+        "Greenwashing_Litigation_Risk": litigation_risk,
+        "Counsel_Recommendation": recommendation
+    }
+
+esg_res = evaluate_esg_governance_and_greenwashing_risk(75.0, True, True, True)
+print(f"Governance Index: {esg_res['Governance_Index']} ({esg_res['Governance_Grade']})")
+print(f"Litigation Risk: {esg_res['Greenwashing_Litigation_Risk']}")`,
+        output: `Governance Index: 100/100 (TIER_1_ROBUST)\nLitigation Risk: HIGH_RULE_10B5_GREENWASHING_EXPOSURE`,
+        codeNotes: [
+          { line: 8, note: 'Calculates corporate governance strength based on board independence and clawback policies' },
+          { line: 17, note: 'Flags unsubstantiated sustainability assertions as high-risk securities fraud exposure under Rule 10b-5' },
+          { line: 27, note: 'Assigns top Tier-1 governance rating while identifying urgent greenwashing regulatory liability' },
+          { line: 36, note: 'Recommends immediate public retraction of unverified promotional carbon offset claims' }
+        ],
+        tryIt: 'Toggle unsubstantiated_carbon_neutral_claims to False to see litigation risk drop to LOW_COMPLIANT_DISCLOSURE.',
+        check: {
+          question: 'How can voluntary corporate sustainability reports or environmental disclosures create legal liability under US Federal Securities Law (SEC Rule 10b-5)?',
+          options: [
+            'If ESG disclosures contain materially false or misleading claims (such as fabricated carbon offsets) that mislead reasonable investors regarding corporate environmental risks or financial exposure.',
+            'Because companies are legally prohibited from discussing environmental topics in public.',
+            'Because sustainability reports must always be written entirely in Latin.',
+            'Only if the CEO personally signs every single page of the report in duplicate.'
+          ],
+          answer: 0,
+          why: 'Rule 10b-5 applies to all public statements by an issuer; materially misleading claims regarding green credentials or emissions that influence investor perceptions constitute actionable securities fraud.',
+          answerIndex: 0,
+          explanation: 'Rule 10b-5 applies to all public statements by an issuer; materially misleading claims regarding green credentials or emissions that influence investor perceptions constitute actionable securities fraud.'
+        }
+      },
+      {
+        title: 'Shareholder Lawsuits: Direct Actions vs Derivative Claims & SLCs',
+        say: [
+          'When corporate managers or directors breach their legal obligations, shareholders can seek judicial redress through two distinct procedural conduits: Direct Actions and Derivative Lawsuits.',
+          'A Direct Action arises when the injury is suffered directly by the shareholder in their individual capacity — such as denial of voting rights, withholding of declared dividends, or selective share dilution.',
+          'In contrast, a Derivative Lawsuit arises when the primary injury is suffered by the corporate entity itself — such as corporate waste, embezzlement, or director self-dealing.',
+          'Because the corporation is the true victim in a derivative claim, any financial recovery won in court flows directly into the corporate bank account, not to the individual shareholder plaintiff!',
+          'To prevent frivolous nuisance suits, corporate law imposes the "Demand on the Board" prerequisite: shareholders must formally petition the board of directors to initiate the lawsuit.',
+          'However, under the Aronson v. Lewis Demand Futility Doctrine, demand is legally excused if the plaintiff proves that a majority of the board of directors is financially interested or conflicted in the challenged transaction.',
+          'To regain control of derivative litigation, independent boards frequently appoint a Special Litigation Committee (SLC) of independent directors, which investigates the claims under the Zapata Corp v. Maldonado framework to determine whether continuing the lawsuit serves the corporation\'s best interests.'
+        ],
+        example: 'Think of a residential condominium building. If the building manager breaks your private apartment window, that is a Direct injury — you sue directly to replace your window. But if the building manager steals $50,000 from the condominium roof repair fund, that is a Derivative injury — the entire building was harmed. You must demand the HOA board sue the manager, and any recovered money goes back into the roof repair fund.',
+        code: `# Simulation: Shareholder Lawsuit Direct/Derivative Router & Demand Futility Evaluator
+def route_shareholder_litigation(
+    plaintiff_name: str,
+    injury_nature: str, # 'Dilution_Of_Voting_Power', 'Corporate_Asset_Misappropriation'
+    board_majority_conflicted: bool,
+    independent_slc_formed: bool
+) -> dict:
+    if injury_nature == "Dilution_Of_Voting_Power":
+        suit_type = "DIRECT_SHAREHOLDER_ACTION"
+        demand_status = "NO_DEMAND_REQUIRED"
+        standing = "Direct individual standing; shareholder recovers individual damages."
+    else:
+        suit_type = "DERIVATIVE_ACTION_ON_BEHALF_OF_CORP"
+        if board_majority_conflicted:
+            demand_status = "DEMAND_EXCUSED_FUTILITY_DOCTRINE"
+            standing = "Aronson test satisfied: majority board interested; court permits derivative litigation."
+        else:
+            demand_status = "DEMAND_REQUIRED"
+            standing = "Plaintiff must serve formal demand on board; board retains Business Judgment Rule deference."
+
+    return {
+        "Plaintiff": plaintiff_name,
+        "Lawsuit_Type": suit_type,
+        "Demand_Doctrine": demand_status,
+        "Standing_Ruling": standing
+    }
+
+lit_res = route_shareholder_litigation("Vanguard Institutional", "Corporate_Asset_Misappropriation", True, False)
+print(f"Plaintiff: {lit_res['Plaintiff']} -> Suit: {lit_res['Lawsuit_Type']}")
+print(f"Demand: {lit_res['Demand_Doctrine']} | Ruling: {lit_res['Standing_Ruling']}")`,
+        output: `Plaintiff: Vanguard Institutional -> Suit: DERIVATIVE_ACTION_ON_BEHALF_OF_CORP\nDemand: DEMAND_EXCUSED_FUTILITY_DOCTRINE | Ruling: Aronson test satisfied: majority board interested; court permits derivative litigation.`,
+        codeNotes: [
+          { line: 8, note: 'Classifies litigation based on whether harm impacts individual shareholder rights or corporate treasury' },
+          { line: 13, note: 'Applies Aronson Demand Futility rule: excused if board majority is compromised by personal conflicts' },
+          { line: 17, note: 'Enforces prerequisite demand requirement if board retains independence and objective judgment' },
+          { line: 29, note: 'Routes asset misappropriation claim to derivative standing with demand excused due to conflicted board' }
+        ],
+        tryIt: 'Change board_majority_conflicted to False to see the demand doctrine shift to DEMAND_REQUIRED under the Business Judgment Rule.',
+        check: {
+          question: 'In a successful Shareholder Derivative Lawsuit where corporate officers are found liable for embezzling company assets, who receives the monetary damages awarded by the court?',
+          options: [
+            'The corporation itself, because the primary injury was inflicted upon the corporate entity and its balance sheet.',
+            'The individual shareholder who filed the lawsuit receives 100% of the funds in their personal checking account.',
+            'The federal treasury confiscates the damages as a criminal tariff.',
+            'The company\'s suppliers divide the money equally.'
+          ],
+          answer: 0,
+          why: 'In a derivative lawsuit, the shareholder merely acts as a representative champion for the corporation; all damages recovered flow back into the company treasury to restore corporate value.',
+          answerIndex: 0,
+          explanation: 'In a derivative lawsuit, the shareholder merely acts as a representative champion for the corporation; all damages recovered flow back into the company treasury to restore corporate value.'
+        }
+      },
+      {
+        title: 'Hostile Takeovers: Poison Pills & The Unocal / Revlon Standards',
+        say: [
+          'In corporate mergers and acquisitions, when a target company\'s board of directors rejects an acquisition proposal, the prospective buyer may launch a Hostile Takeover — bypassing management by making an unsolicited Tender Offer directly to public shareholders.',
+          'To defend against predatory corporate raiders and coercive two-tiered tender offers, corporate boards deploy powerful defensive mechanisms, spearheaded by the Shareholder Rights Plan ("Poison Pill").',
+          'Invented by legendary corporate lawyer Martin Lipton, a Poison Pill grants existing shareholders (excluding the hostile raider) the legal right to purchase newly issued common shares at a massive 50% discount once a raider crosses a specific ownership threshold (typically 15%).',
+          'When triggered, the poison pill detonates: millions of new discount shares flood the market, radically diluting the raider\'s ownership percentage and making the acquisition financially ruinous.',
+          'Because poison pills grant incumbent boards immense power to entrench themselves, Delaware courts review defensive actions under two landmark heightened judicial scrutiny standards:',
+          'The Unocal Standard (Unocal Corp v. Mesa Petroleum): Directors must prove that (1) they had reasonable grounds to believe a danger to corporate policy and effectiveness existed, and (2) the defensive measure was reasonable and proportionate in relation to the threat posed.',
+          'The Revlon Duty (Revlon v. MacAndrews & Forbes): Once the sale or breakup of the company becomes inevitable, the board\'s role fundamentally transforms from corporate defenders into "auctioneers" — their sole fiduciary duty is to maximize the immediate cash price per share for shareholders.'
+        ],
+        example: 'Think of a hostile castle siege. The castle defenders (the board) pull up the drawbridge and pour boiling water (the poison pill) to fend off the invader. Under the Unocal standard, the court asks: "Was the boiling water a proportionate response to save the castle?" But once the castle walls crumble and surrender is inevitable, the Revlon duty kicks in: the king must stop fighting and negotiate the highest possible surrender ransom for the townspeople.',
+        code: `# Simulation: Poison Pill Dilution Physics & Unocal Proportionality Evaluator
+def simulate_shareholder_rights_plan_poison_pill(
+    hostile_bidder_holding_pct: float,
+    pill_trigger_threshold_pct: float, # typically 15%
+    shares_outstanding: int,
+    market_price_per_share: float,
+    discount_rights_pct: float = 50.0
+) -> dict:
+    pill_triggered = hostile_bidder_holding_pct >= pill_trigger_threshold_pct
+
+    if pill_triggered:
+        # Non-hostile shareholders can buy shares at 50% discount, radically diluting the raider
+        friendly_shareholders_shares = int(shares_outstanding * (1.0 - (hostile_bidder_holding_pct / 100.0)))
+        new_discount_shares_issued = friendly_shareholders_shares * 1 # 1 right per share
+        post_pill_total_shares = shares_outstanding + new_discount_shares_issued
+        
+        hostile_shares = int(shares_outstanding * (hostile_bidder_holding_pct / 100.0))
+        post_pill_raider_pct = round((hostile_shares / post_pill_total_shares) * 100.0, 2)
+        dilution_drop_pct = round(hostile_bidder_holding_pct - post_pill_raider_pct, 2)
+        defense_status = "POISON_PILL_DETONATED_RAIDER_MASSIVELY_DILUTED"
+    else:
+        post_pill_raider_pct = hostile_bidder_holding_pct
+        dilution_drop_pct = 0.0
+        defense_status = "PILL_DORMANT_BELOW_TRIGGER_THRESHOLD"
+
+    return {
+        "Trigger_Threshold": f"{pill_trigger_threshold_pct}%",
+        "Raider_Accumulation": f"{hostile_bidder_holding_pct}%",
+        "Defense_Status": defense_status,
+        "Post_Detonation_Raider_Holding": f"{post_pill_raider_pct}%",
+        "Ownership_Dilution_Drop": f"-{dilution_drop_pct}%",
+        "Unocal_Standard": "PROPORTIONATE_DEFENSE_UPHELD" if pill_triggered else "STANDBY"
+    }
+
+pill_res = simulate_shareholder_rights_plan_poison_pill(
+    hostile_bidder_holding_pct=16.5,
+    pill_trigger_threshold_pct=15.0,
+    shares_outstanding=10000000,
+    market_price_per_share=50.0,
+    discount_rights_pct=50.0
+)
+print(f"Status: {pill_res['Defense_Status']}")
+print(f"Raider Holding: {pill_res['Raider_Accumulation']} -> Diluted To: {pill_res['Post_Detonation_Raider_Holding']} ({pill_res['Ownership_Dilution_Drop']})")
+print(f"Judicial Scrutiny: {pill_res['Unocal_Standard']}")`,
+        output: `Status: POISON_PILL_DETONATED_RAIDER_MASSIVELY_DILUTED\nRaider Holding: 16.5% -> Diluted To: 8.99% (-7.51%)\nJudicial Scrutiny: PROPORTIONATE_DEFENSE_UPHELD`,
+        codeNotes: [
+          { line: 9, note: 'Triggers rights plan when hostile bidder crosses ownership threshold (16.5% vs 15.0% threshold)' },
+          { line: 13, note: 'Issues deeply discounted shares exclusively to non-hostile shareholders, multiplying share count' },
+          { line: 17, note: 'Drastically dilutes raider ownership stake from 16.5% down to 8.99%, destroying takeover economics' },
+          { line: 36, note: 'Confirms defense satisfies Unocal proportionality test against coercive takeover threat' }
+        ],
+        tryIt: 'Lower hostile_bidder_holding_pct to 12.0% to observe the poison pill remain dormant below the trigger line.',
+        check: {
+          question: 'Under the Delaware Supreme Court\'s landmark Revlon doctrine, how does the fiduciary duty of a target company\'s board of directors fundamentally change once the sale or breakup of the corporation becomes inevitable?',
+          options: [
+            'The board\'s role transforms from defending the corporate entity into acting as neutral auctioneers charged with maximizing the immediate cash value per share for shareholders.',
+            'The board is legally required to burn all corporate records.',
+            'The board must immediately file for Chapter 7 liquidation bankruptcy.',
+            'The directors are forbidden from communicating with shareholders or investment bankers.'
+          ],
+          answer: 0,
+          why: 'Under Revlon, defensive barriers like poison pills must be redeemed once a sale is inevitable; the board must secure the highest transaction price available in the open market.',
+          answerIndex: 0,
+          explanation: 'Under Revlon, defensive barriers like poison pills must be redeemed once a sale is inevitable; the board must secure the highest transaction price available in the open market.'
+        }
+      }
+    ],
+    summary: [
+      'Intellectual Property & DTSA: Intangible assets dominate modern balance sheets; trade secrets require reasonable secrecy protocols (NDAs, encrypted access) to sustain federal DTSA protection.',
+      'SOX 404 Internal Controls: Classifies accounting gaps into Control Deficiency, Significant Deficiency, and Material Weakness; protects whistleblowers from retaliation under Dodd-Frank.',
+      'ESG & Greenwashing: The G pillar enforces board independence and executive clawback rules; unsubstantiated environmental claims trigger direct securities fraud liability under Rule 10b-5.',
+      'Shareholder Litigation: Direct actions protect individual shareholder rights; derivative lawsuits recover damages for the corporate treasury, subject to demand futility under Aronson.',
+      'Hostile Takeover Defense: Poison pills dilute hostile raiders; boards must satisfy the Unocal proportionality standard, pivoting to Revlon auctioneer duties once a corporate sale is inevitable.'
+    ],
+    projectStep: {
+      title: 'Corporate Legal Governance & Shareholder Defense Architecture',
+      steps: [
+        'Audit corporate intangible assets under Defend Trade Secrets Act (DTSA) reasonable secrecy protocols.',
+        'Construct a SOX 404 internal control deficiency classification matrix with whistleblower escalation trees.',
+        'Model shareholder rights plan (Poison Pill) dilution physics and evaluate board defense proportionality under the Unocal / Revlon standards.'
+      ]
+    }
   }
 ];
+

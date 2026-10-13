@@ -138,3 +138,56 @@ test('Block 34: B.Com Commercial Banking Day 2: Credit Underwriting, DSCR & NPL 
   assert.ok(lesson.parts[4].code?.includes('classify_ifrs9_staging_and_provision'));
 });
 
+test('Block 35: B.Com Corporate Law Day 2: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_law', 2);
+  assert.ok(lesson, 'bcom_law Day 2 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_law');
+  assert.equal(lesson.day, 2);
+  assert.equal(lesson.parts.length, 5, 'bcom_law Day 2 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_law'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 9, `Spoken minutes (${spoken}) must be at least 9 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 35: B.Com Corporate Law Day 2: IP DTSA, SOX 404 & Poison Pill Snippets Verification', () => {
+  const lesson = BCOM_LAW_LONG_LESSONS[1];
+  assert.ok(lesson, 'BCOM_LAW_LONG_LESSONS[1] must exist');
+  assert.equal(lesson.day, 2);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have >= 3 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /4 Pillars of Intellectual Property.*Trade Secret/i);
+  assert.ok(lesson.parts[0].code?.includes('audit_ip_protection_hygiene'));
+  assert.match(lesson.parts[1].title, /SOX.*Internal Controls.*Whistleblower/i);
+  assert.ok(lesson.parts[1].code?.includes('evaluate_sox_internal_control_deficiency'));
+  assert.match(lesson.parts[2].title, /ESG Governance.*Greenwashing/i);
+  assert.ok(lesson.parts[2].code?.includes('evaluate_esg_governance_and_greenwashing_risk'));
+  assert.match(lesson.parts[3].title, /Shareholder Lawsuits.*Direct.*Derivative/i);
+  assert.ok(lesson.parts[3].code?.includes('route_shareholder_litigation'));
+  assert.match(lesson.parts[4].title, /Hostile Takeovers.*Poison Pills.*Unocal/i);
+  assert.ok(lesson.parts[4].code?.includes('simulate_shareholder_rights_plan_poison_pill'));
+});
+
+
