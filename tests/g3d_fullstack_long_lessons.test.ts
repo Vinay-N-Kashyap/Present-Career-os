@@ -430,6 +430,69 @@ test('G3D Day 5: Domain-Specific Content Assertions', () => {
   assert.ok(g3dD5.parts[4].output.includes('Temporal Anti-Aliasing (TAA)'));
 });
 
+test('Fullstack-JS Day 5: Resolution & Structural Invariants for Edge Geo-Routing, Redlock, CRDTs & Circuit Breakers', () => {
+  const fsD5 = getLongLesson('fullstack-js', 5);
+  assert.ok(fsD5, 'fullstack-js Day 5 long lesson must resolve');
+  assert.equal(fsD5.day, 5);
+  assert.equal(fsD5.parts.length, 5, 'fullstack-js Day 5 must contain exactly 5 parts');
+  assert.ok(fsD5.summary.length >= 4, 'Summary must contain at least 4 items');
+  assert.ok(fsD5.projectStep, 'Day 5 must declare a projectStep');
+  assert.ok(fsD5.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(fsD5);
+  const totalMin = estimateLessonMinutes(fsD5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of fsD5.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Fullstack-JS Day 5: Domain-Specific Content Assertions', () => {
+  const fsD5 = getLongLesson('fullstack-js', 5);
+  assert.ok(fsD5);
+
+  // Part 1 – Distributed Edge Geo-Routing & V8 Isolate Middleware
+  assert.ok(fsD5.parts[0].title.includes('Edge Geo-Routing') || fsD5.parts[0].title.includes('V8 Isolate'));
+  assert.ok(fsD5.parts[0].output.includes('ORIGIN_EU_CENTRAL_FRANKFURT'));
+  assert.ok(fsD5.parts[0].output.includes('Second Request Cached: true'));
+  assert.ok(fsD5.parts[0].output.includes('Second Request Latency: 2ms'));
+
+  // Part 2 – Distributed Locks & Concurrency Control via Redis Redlock
+  assert.ok(fsD5.parts[1].title.includes('Distributed Locks') || fsD5.parts[1].title.includes('Redlock'));
+  assert.ok(fsD5.parts[1].output.includes('Redlock Acquired (Quorum 3/5): true'));
+  assert.ok(fsD5.parts[1].output.includes('Duplicate Concurrent Acquisition: false'));
+  assert.ok(fsD5.parts[1].output.includes('Released Across Nodes Count: 5'));
+
+  // Part 3 – Zero-Downtime Database Migrations & The Expand/Contract Pattern
+  assert.ok(fsD5.parts[2].title.includes('Database Migrations') || fsD5.parts[2].title.includes('Expand/Contract'));
+  assert.ok(fsD5.parts[2].output.includes('Phase CONTRACT Historic u1 First Name: Ada'));
+  assert.ok(fsD5.parts[2].output.includes('Dual-Written u2 Last Name: Turing'));
+  assert.ok(fsD5.parts[2].output.includes('DROPPED_COLUMN'));
+
+  // Part 4 – Multi-Region Eventual Consistency & CRDTs
+  assert.ok(fsD5.parts[3].title.includes('Multi-Region') || fsD5.parts[3].title.includes('CRDT'));
+  assert.ok(fsD5.parts[3].output.includes('Merged Value in US Node: High Contrast Mode'));
+  assert.ok(fsD5.parts[3].output.includes('Commutative Equality (A + B === B + A): true'));
+
+  // Part 5 – Enterprise Chaos Engineering, Resiliency & SLO Circuit Breakers
+  assert.ok(fsD5.parts[4].title.includes('Circuit Breaker') || fsD5.parts[4].title.includes('Chaos Engineering'));
+  assert.ok(fsD5.parts[4].output.includes('Initial Call Status: SUCCESS_200_OK (CLOSED)'));
+  assert.ok(fsD5.parts[4].output.includes('Tripping Call State: OPEN'));
+  assert.ok(fsD5.parts[4].output.includes('FAST_FAIL_FALLBACK_TRIGGERED'));
+});
+
 
 
 

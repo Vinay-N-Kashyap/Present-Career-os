@@ -1637,6 +1637,476 @@ Scaling Invariant: Offloads 90% read traffic from primary write database`,
         'Build a CQRS database connection router directing mutations to Primary and queries to Read Replicas.'
       ]
     }
+  },
+  {
+    coursePrefix: 'fullstack-js',
+    day: 5,
+    title: 'Edge Computing, Distributed Consensus & Resilient Global Architecture',
+    goal: 'Master edge geo-routing, Redis Redlock distributed consensus, zero-downtime database migrations, CRDT multi-region eventual consistency, and chaos engineering circuit breakers.',
+    minutes: 45,
+    recap: 'In Day 4, we scaled web platforms using Micro-Frontends, OpenTelemetry, Canary releases, and CQRS read replicas. In Day 5, we advance to global infrastructure engineering: executing logic at the edge via V8 isolates, coordinating distributed locks with Redlock, performing zero-downtime database migrations with Expand/Contract, and building self-healing systems with CRDTs and circuit breakers.',
+    parts: [
+      {
+        title: 'Distributed Edge Geo-Routing & V8 Isolate Middleware',
+        say: [
+          'Traditional cloud server architectures deploy application containers in a centralized data center (such as us-east-1). When an end-user in Tokyo or Frankfurt visits the application, their TCP and TLS handshakes must cross transoceanic submarine cables, introducing 150 to 250 milliseconds of physical network latency before the server processes a single byte.',
+          'Edge Computing shifts computation directly to Point of Presence (PoP) edge nodes located within 10 to 20 milliseconds of 95% of the global internet population. Modern edge platforms like Cloudflare Workers and Vercel Edge Runtime achieve this not by orchestrating heavy Linux containers or Docker VMs, but by leveraging lightweight Google V8 Isolates. A V8 isolate initializes in less than 5 milliseconds with negligible memory footprint (3–5 MB), completely eliminating container cold starts.',
+          'Edge Middleware intercepts incoming HTTP requests before they reach the origin server. By inspecting geo-routing headers (such as cf-ipcountry and x-vercel-ip-city), the Edge router can dynamically steer traffic to the nearest regional origin, verify JWT authentication tokens, rewrite request paths, and execute instant A/B experiments with zero client-side layout shift.',
+          'When combined with edge caching semantics like Cache-Control: public, s-maxage=60, stale-while-revalidate=300, edge nodes serve cached dynamic HTML and JSON payloads in sub-5ms while asynchronously fetching fresh content from the origin in the background, maintaining near-zero global Time to First Byte (TTFB).'
+        ],
+        example: 'Think of visiting a foreign country embassy in your home city instead of boarding an international flight to the foreign capital. The embassy (Edge PoP) can immediately verify your credentials, stamp your visa, and issue documentation locally in minutes rather than making you travel 14 hours across continents.',
+        code: `// Simulation: Distributed Edge Geo-Routing & V8 Isolate Middleware
+interface EdgeRequest {
+  ip: string;
+  country: string;
+  path: string;
+  headers: Record<string, string>;
+}
+
+interface EdgeResponse {
+  status: number;
+  routedOrigin: string;
+  cached: boolean;
+  cacheHeader: string;
+  edgeLatencyMs: number;
+}
+
+class EdgeGeoRouterSimulator {
+  private edgeCache: Map<string, { body: string; expiresAt: number }> = new Map();
+
+  route(req: EdgeRequest): EdgeResponse {
+    const cacheKey = req.country + ':' + req.path;
+    const now = Date.now();
+    const cachedEntry = this.edgeCache.get(cacheKey);
+
+    if (cachedEntry && cachedEntry.expiresAt > now) {
+      return {
+        status: 200,
+        routedOrigin: 'EDGE_CACHE_POP_' + req.country,
+        cached: true,
+        cacheHeader: 'HIT (s-maxage=60, stale-while-revalidate=300)',
+        edgeLatencyMs: 2
+      };
+    }
+
+    // Geo-steering origin resolution
+    let origin = 'ORIGIN_US_EAST_PRIMARY';
+    if (req.country === 'DE' || req.country === 'GB') {
+      origin = 'ORIGIN_EU_CENTRAL_FRANKFURT';
+    } else if (req.country === 'JP' || req.country === 'SG') {
+      origin = 'ORIGIN_AP_NORTHEAST_TOKYO';
+    }
+
+    // Cache at edge
+    this.edgeCache.set(cacheKey, { body: 'data', expiresAt: now + 60000 });
+
+    return {
+      status: 200,
+      routedOrigin: origin,
+      cached: false,
+      cacheHeader: 'MISS (stored in Edge V8 isolate)',
+      edgeLatencyMs: 14
+    };
+  }
+}
+
+const edgeRouter = new EdgeGeoRouterSimulator();
+const req1 = { ip: '185.60.216.35', country: 'DE', path: '/api/v1/feed', headers: { 'cf-ipcountry': 'DE' } };
+const res1 = edgeRouter.route(req1);
+const res2 = edgeRouter.route(req1); // Second call hits edge cache
+
+console.log('First Request Routed Origin:', res1.routedOrigin);
+console.log('First Request Edge Cache:', res1.cacheHeader);
+console.log('Second Request Cached:', res2.cached);
+console.log('Second Request Latency:', res2.edgeLatencyMs + 'ms');
+console.log('Edge Invariant: Sub-millisecond cold start via V8 isolates');`,
+        output: `First Request Routed Origin: ORIGIN_EU_CENTRAL_FRANKFURT
+First Request Edge Cache: MISS (stored in Edge V8 isolate)
+Second Request Cached: true
+Second Request Latency: 2ms
+Edge Invariant: Sub-millisecond cold start via V8 isolates`,
+        codeNotes: [
+          'V8 Isolates share a single OS process while maintaining strictly isolated memory heaps, allowing instant sub-5ms initialization.',
+          'Geolocation headers (cf-ipcountry, x-vercel-ip-country) allow dynamic origin steering at the network boundary.',
+          'stale-while-revalidate headers allow the edge to return stale cached content in 2ms while asynchronously updating in the background.'
+        ],
+        tryIt: 'Add custom geo-routing for Australian visitors (country AU) directing to an ORIGIN_OC_SYDNEY origin pool.',
+        check: {
+          question: 'Why do modern Edge computing runtimes use V8 Isolates instead of standard Docker containers for executing middleware?',
+          options: [
+            'Docker containers cannot run JavaScript code',
+            'V8 Isolates initialize in under 5ms with minimal memory, eliminating container cold starts at global edge locations',
+            'V8 Isolates compile code directly to quantum circuits',
+            'Edge locations do not support internet connections'
+          ],
+          answer: 1,
+          why: 'V8 Isolates provide secure, multi-tenant memory boundaries within a single process, booting in single-digit milliseconds compared to hundreds of milliseconds or seconds for container virtualization.'
+        }
+      },
+      {
+        title: 'Distributed Locks & Concurrency Control via Redis Redlock',
+        say: [
+          'In distributed systems, concurrent background workers and API pods frequently compete for shared resources, such as processing financial checkout operations, decrementing inventory counters, or booking limited flight seats. While a single Redis instance using SET key value NX PX 30000 provides atomic mutual exclusion, it represents a single point of failure.',
+          'If the primary Redis master node crashes before asynchronous replication propagates the newly acquired lock key to a replica, the promoted replica will have no knowledge of the lock. It will immediately grant the same lock to a second competing worker, resulting in catastrophic dual-execution and race conditions.',
+          'The Redlock algorithm, designed by Salvatore Sanfilippo, establishes fault-tolerant distributed locking across N independent, un-clustered Redis instances (typically N = 5). To acquire the lock, a client attempts to set the lock with a unique random token across all 5 nodes sequentially, using a timeout much smaller than the lock validity TTL.',
+          'The client only considers the lock successfully acquired if it achieves a majority quorum (Q >= floor(N/2) + 1 = 3 nodes) and the total elapsed time is less than the lock TTL minus clock drift. Releasing the lock requires an atomic Lua script that verifies the token before deletion, preventing a delayed worker from releasing a lock that expired and was reassigned to another process.'
+        ],
+        example: 'Think of a 5-judge panel in a courtroom. A single judge cannot issue a binding legal verdict alone; at least 3 of the 5 judges (majority quorum) must sign the ruling. If two judges are absent or ill, the remaining 3 judges can still constitutionally validate the decision.',
+        code: `// Simulation: Distributed Locks via Redlock Consensus
+interface RedisNode {
+  id: string;
+  kv: Map<string, { value: string; expiresAt: number }>;
+}
+
+class RedlockSimulator {
+  private nodes: RedisNode[];
+  private quorum: number;
+
+  constructor(nodeIds: string[]) {
+    this.nodes = nodeIds.map(id => ({ id, kv: new Map() }));
+    this.quorum = Math.floor(nodeIds.length / 2) + 1;
+  }
+
+  acquireLock(resource: string, token: string, ttlMs: number): boolean {
+    const now = Date.now();
+    let acquiredVotes = 0;
+
+    for (const node of this.nodes) {
+      const current = node.kv.get(resource);
+      if (!current || current.expiresAt <= now) {
+        node.kv.set(resource, { value: token, expiresAt: now + ttlMs });
+        acquiredVotes++;
+      }
+    }
+
+    // Majority quorum check
+    if (acquiredVotes >= this.quorum) {
+      return true;
+    }
+
+    // Rollback if quorum failed
+    this.releaseLock(resource, token);
+    return false;
+  }
+
+  releaseLock(resource: string, token: string): number {
+    let releasedVotes = 0;
+    for (const node of this.nodes) {
+      const current = node.kv.get(resource);
+      if (current && current.value === token) {
+        node.kv.delete(resource);
+        releasedVotes++;
+      }
+    }
+    return releasedVotes;
+  }
+}
+
+const redlock = new RedlockSimulator(['redis-1', 'redis-2', 'redis-3', 'redis-4', 'redis-5']);
+const lockToken = 'uuid-tx-88219-mutex';
+const acquired = redlock.acquireLock('order:lock:7821', lockToken, 10000);
+const duplicateAcquire = redlock.acquireLock('order:lock:7821', 'uuid-tx-rogue', 10000);
+const releasedNodes = redlock.releaseLock('order:lock:7821', lockToken);
+
+console.log('Redlock Acquired (Quorum 3/5):', acquired);
+console.log('Duplicate Concurrent Acquisition:', duplicateAcquire);
+console.log('Released Across Nodes Count:', releasedNodes);
+console.log('Consensus Invariant: Safe under minority Redis node failure');`,
+        output: `Redlock Acquired (Quorum 3/5): true
+Duplicate Concurrent Acquisition: false
+Released Across Nodes Count: 5
+Consensus Invariant: Safe under minority Redis node failure`,
+        codeNotes: [
+          'Quorum formula: Math.floor(N / 2) + 1 guarantees majority consensus across N independent Redis nodes.',
+          'Unique tokens (such as cryptographically random UUIDs) prevent clients from releasing locks owned by other processes.',
+          'Atomic lock release ensures that get and delete operations occur without interleaving race conditions.'
+        ],
+        tryIt: 'Simulate a scenario where 2 out of the 5 Redis nodes are down and verify that lock acquisition still succeeds.',
+        check: {
+          question: 'Why must the release of a distributed lock in Redis be executed using an atomic Lua script that compares the token value?',
+          options: [
+            'Because Redis does not support deleting keys directly',
+            'To ensure that a slow client whose lock expired does not accidentally delete a new lock acquired by another client',
+            'To encrypt the lock key on disk for security compliance',
+            'To convert the key name into uppercase letters'
+          ],
+          answer: 1,
+          why: 'If a client takes longer than the lock TTL to complete its task, the lock expires and another worker acquires it. An atomic check-and-delete Lua script ensures a client only deletes its own active lock token.'
+        }
+      },
+      {
+        title: 'Zero-Downtime Database Migrations & The Expand/Contract Pattern',
+        say: [
+          'In modern cloud environments, applications achieve high availability by using rolling deployments: old application pods and new application pods run concurrently in production for several minutes while traffic shifts gradually. If a database migration executes a breaking schema change—such as renaming a column, altering a column type, or dropping a table—the running old pods will immediately fail with fatal SQL errors.',
+          'The Expand/Contract pattern (also known as the Parallel Run pattern) solves this by decomposing any breaking schema evolution into five distinct, non-breaking phases executed across sequential deployments. At no point during this lifecycle is a breaking change applied directly to active tables.',
+          'In Phase 1 (Expand), the new column or table is added to the database with a nullable or default constraint, leaving the old column completely untouched. In Phase 2 (Dual-Write), updated application code writes incoming mutations to both the old and new columns, while continuing to read from the old column.',
+          'In Phase 3 (Backfill), an asynchronous background worker iterates over historical records in batches and backfills the new column without placing exclusive locks on the table. In Phase 4 (Cutover), application reads and writes are switched entirely to the new column. Finally, in Phase 5 (Contract), the deprecated old column is safely removed once all running pods have migrated.'
+        ],
+        example: 'Think of replacing a heavily trafficked bridge across a river. You do not blow up the old bridge while cars are driving across it! You build a brand new suspension bridge right next to it (Expand), direct traffic onto both bridges (Dual-Write), pave the final approach lanes (Backfill), redirect 100% of traffic onto the new bridge (Cutover), and only then safely dismantle the old bridge (Contract).',
+        code: `// Simulation: Zero-Downtime Expand/Contract Database Migrations
+type MigrationPhase = 'EXPAND' | 'DUAL_WRITE' | 'BACKFILL' | 'CUTOVER' | 'CONTRACT';
+
+interface UserRecord {
+  id: string;
+  legacy_name?: string;
+  first_name?: string;
+  last_name?: string;
+}
+
+class ExpandContractMigrationSimulator {
+  public phase: MigrationPhase = 'EXPAND';
+  public db: Map<string, UserRecord> = new Map();
+
+  init(records: UserRecord[]) {
+    records.forEach(r => this.db.set(r.id, { ...r }));
+  }
+
+  // Application write path with dual-write safety
+  writeUser(id: string, fullName: string) {
+    const parts = fullName.split(' ');
+    const firstName = parts[0] || '';
+    const lastName = parts.slice(1).join(' ') || '';
+
+    const existing = this.db.get(id) || { id };
+
+    if (this.phase === 'EXPAND') {
+      // Only write legacy
+      this.db.set(id, { ...existing, legacy_name: fullName });
+    } else if (this.phase === 'DUAL_WRITE' || this.phase === 'BACKFILL') {
+      // Dual-write to both old and new schema columns
+      this.db.set(id, { ...existing, legacy_name: fullName, first_name: firstName, last_name: lastName });
+    } else if (this.phase === 'CUTOVER' || this.phase === 'CONTRACT') {
+      // Write strictly to new schema columns
+      this.db.set(id, { ...existing, first_name: firstName, last_name: lastName, legacy_name: undefined });
+    }
+  }
+
+  // Backfill historic legacy rows asynchronously
+  backfillHistorical() {
+    for (const [id, user] of this.db.entries()) {
+      if (user.legacy_name && (!user.first_name || !user.last_name)) {
+        const parts = user.legacy_name.split(' ');
+        user.first_name = parts[0] || '';
+        user.last_name = parts.slice(1).join(' ') || '';
+      }
+    }
+  }
+}
+
+const migration = new ExpandContractMigrationSimulator();
+migration.init([{ id: 'u1', legacy_name: 'Ada Lovelace' }]);
+
+// Advance to dual write
+migration.phase = 'DUAL_WRITE';
+migration.writeUser('u2', 'Alan Turing');
+
+// Backfill historic records
+migration.phase = 'BACKFILL';
+migration.backfillHistorical();
+
+// Cutover and Contract
+migration.phase = 'CONTRACT';
+migration.writeUser('u3', 'Grace Hopper');
+
+const u1 = migration.db.get('u1');
+const u2 = migration.db.get('u2');
+const u3 = migration.db.get('u3');
+
+console.log('Phase CONTRACT Historic u1 First Name:', u1?.first_name);
+console.log('Phase CONTRACT Dual-Written u2 Last Name:', u2?.last_name);
+console.log('Phase CONTRACT New u3 Legacy Name:', u3?.legacy_name ?? 'DROPPED_COLUMN');
+console.log('Schema Invariant: Zero locking, zero service interruption');`,
+        output: `Phase CONTRACT Historic u1 First Name: Ada
+Phase CONTRACT Dual-Written u2 Last Name: Turing
+Phase CONTRACT New u3 Legacy Name: DROPPED_COLUMN
+Schema Invariant: Zero locking, zero service interruption`,
+        codeNotes: [
+          'Dual-writing ensures newly created records immediately populate both schema shapes during rolling deployments.',
+          'Historical backfilling runs asynchronously in non-blocking batches to prevent database transaction locks.',
+          'The contract phase safely drops legacy columns only after all running application instances stop referencing them.'
+        ],
+        tryIt: 'Add a middle name field to the Expand/Contract pipeline and observe its transition through dual-writing.',
+        check: {
+          question: 'What is the primary danger of directly executing an "ALTER TABLE DROP COLUMN" migration during a rolling application deployment?',
+          options: [
+            'The database immediately shuts down',
+            'Older application pods still actively querying the dropped column will crash with fatal runtime SQL errors',
+            'The database hard drive fills up instantly',
+            'All existing user passwords become plain text'
+          ],
+          answer: 1,
+          why: 'During rolling deployments, older application instances remain active while newer instances spin up. Dropping a column immediately causes any queries issued by older instances to fail.'
+        }
+      },
+      {
+        title: 'Multi-Region Eventual Consistency & Conflict-Free Replicated Data Types (CRDTs)',
+        say: [
+          'High-scale global applications require active-active deployments across multiple geographic regions (such as North America, Europe, and Asia-Pacific) to ensure resilience and low latency. However, under the CAP Theorem, multi-region architectures must navigate the trade-off between consistency and latency.',
+          'Synchronous consensus algorithms like Raft or Multi-Paxos impose a severe cross-continental round-trip network penalty (150 to 300ms) on every single write transaction. When a user in London edits a document, waiting for consensus confirmation from servers in Oregon causes unacceptable input lag.',
+          'Conflict-Free Replicated Data Types (CRDTs) enable multi-master write architectures where each region accepts local mutations instantly with zero network coordination. Regional nodes replicate mutation states asynchronously in the background and are mathematically guaranteed to converge to the exact same state without merge conflicts.',
+          'State-based CRDTs (CvRDTs) operate over mathematical bounded semi-lattices where the merge operator is commutative (A merge B equals B merge A), associative ((A merge B) merge C equals A merge (B merge C)), and idempotent (A merge A equals A). In a Last-Write-Wins (LWW) Register CRDT, each update carries a monotonically increasing Lamport timestamp and a node ID tie-breaker, guaranteeing deterministic resolution regardless of message arrival order.'
+        ],
+        example: 'Think of two colleagues editing separate offline copies of a project plan on airplanes. When they land and sync their files, an automated algorithm deterministically orders their timestamped bullet points without asking them to manually resolve conflicting sentences.',
+        code: `// Simulation: Multi-Region CRDTs & Lamport Timestamp Convergence
+interface LwwRegister<T> {
+  value: T;
+  timestamp: number; // Lamport timestamp
+  nodeId: string;
+}
+
+class MultiRegionCrdtSimulator {
+  // Merge two LWW registers deterministically (Last-Write-Wins)
+  static merge<T>(a: LwwRegister<T>, b: LwwRegister<T>): LwwRegister<T> {
+    if (b.timestamp > a.timestamp) return b;
+    if (a.timestamp > b.timestamp) return a;
+    // Tie-breaker using lexicographical node ID
+    return b.nodeId > a.nodeId ? b : a;
+  }
+}
+
+// Concurrent edits in US-East and EU-West
+const usNodeUpdate: LwwRegister<string> = {
+  value: 'Dark Modern Mode',
+  timestamp: 104,
+  nodeId: 'node-us-east-1'
+};
+
+const euNodeUpdate: LwwRegister<string> = {
+  value: 'High Contrast Mode',
+  timestamp: 105, // Higher Lamport clock
+  nodeId: 'node-eu-west-1'
+};
+
+// Both regions exchange states and merge
+const mergedInUs = MultiRegionCrdtSimulator.merge(usNodeUpdate, euNodeUpdate);
+const mergedInEu = MultiRegionCrdtSimulator.merge(euNodeUpdate, usNodeUpdate);
+
+console.log('Merged Value in US Node:', mergedInUs.value);
+console.log('Merged Value in EU Node:', mergedInEu.value);
+console.log('Commutative Equality (A + B === B + A):', mergedInUs.value === mergedInEu.value);
+console.log('CRDT Invariant: Deterministic mathematical state convergence');`,
+        output: `Merged Value in US Node: High Contrast Mode
+Merged Value in EU Node: High Contrast Mode
+Commutative Equality (A + B === B + A): true
+CRDT Invariant: Deterministic mathematical state convergence`,
+        codeNotes: [
+          'Commutative property: The order in which regional updates are received does not alter the final merged state.',
+          'Idempotent property: Receiving the same mutation multiple times over an unreliable network causes no duplicate side effects.',
+          'Lamport logical timestamps provide a causal ordering for events across distributed machines without relying on wall-clock synchronization.'
+        ],
+        tryIt: 'Set equal timestamps for both updates and verify that the nodeId tie-breaker determines the winning state consistently.',
+        check: {
+          question: 'What mathematical properties must a CRDT merge function possess to guarantee deterministic state convergence without coordination?',
+          options: [
+            'It must be linear, quadratic, and exponential',
+            'It must be commutative, associative, and idempotent',
+            'It must be synchronous, blocking, and centralized',
+            'It must require root administrative privileges'
+          ],
+          answer: 1,
+          why: 'A CRDT merge function must be commutative (order does not matter), associative (grouping does not matter), and idempotent (re-applying an update does not change state) to resolve conflicts across asynchronous networks.'
+        }
+      },
+      {
+        title: 'Enterprise Chaos Engineering, Resiliency & SLO Circuit Breakers',
+        say: [
+          'In microservice architectures, an outage rarely starts as a global system crash. Instead, it begins as a small degradation in a single downstream service—such as an external shipping rate calculator or an analytics aggregator that begins taking 5 seconds to respond instead of 50 milliseconds.',
+          'As incoming requests pile up, worker threads and database connection pools in upstream services become exhausted waiting for pending HTTP responses. This triggers a cascading failure domino effect that can quickly bring down an entire enterprise application.',
+          'The Circuit Breaker pattern acts as an automated safety fuse for distributed network calls. It functions as a finite state machine with three states: CLOSED (normal operations where all requests flow through), OPEN (failure threshold exceeded; requests fail immediately without attempting network calls, shielding downstream services and returning graceful fallbacks), and HALF_OPEN (a canary probe state where limited trial requests verify whether the downstream dependency has stabilized).',
+          'Modern resilience frameworks track failure rates over sliding time windows. When coupled with exponential backoff and randomized full jitter, circuit breakers eliminate the "thundering herd" problem where thousands of retrying clients overwhelm a recovering service. Site Reliability Engineering (SRE) teams validate these mechanisms using automated chaos engineering experiments that inject synthetic faults into production-like environments.'
+        ],
+        example: 'Think of the electrical circuit breaker in your house. When a damaged appliance draws dangerous levels of electrical current, the breaker immediately trips open, cutting power to that specific circuit to prevent an electrical fire while keeping the rest of the house powered.',
+        code: `// Simulation: Enterprise Chaos Engineering & SLO Circuit Breakers
+type CircuitState = 'CLOSED' | 'OPEN' | 'HALF_OPEN';
+
+class CircuitBreakerSimulator {
+  public state: CircuitState = 'CLOSED';
+  private failureCount: number = 0;
+  private failureThreshold: number = 3;
+  private recoveryTimeoutMs: number = 1000;
+  private lastFailureTime: number = 0;
+
+  execute(isHealthyService: boolean): { status: string; state: CircuitState } {
+    const now = Date.now();
+
+    // Check if OPEN circuit can probe HALF_OPEN
+    if (this.state === 'OPEN' && now - this.lastFailureTime > this.recoveryTimeoutMs) {
+      this.state = 'HALF_OPEN';
+    }
+
+    if (this.state === 'OPEN') {
+      return { status: 'FAST_FAIL_FALLBACK_TRIGGERED', state: this.state };
+    }
+
+    if (!isHealthyService) {
+      this.failureCount++;
+      this.lastFailureTime = now;
+      if (this.failureCount >= this.failureThreshold) {
+        this.state = 'OPEN';
+      }
+      return { status: 'SERVICE_DEGRADED_EXCEPTION', state: this.state };
+    }
+
+    // Success
+    if (this.state === 'HALF_OPEN') {
+      this.state = 'CLOSED';
+      this.failureCount = 0;
+    }
+    return { status: 'SUCCESS_200_OK', state: this.state };
+  }
+}
+
+const breaker = new CircuitBreakerSimulator();
+const resA = breaker.execute(true);  // OK
+const resB = breaker.execute(false); // Fail 1
+const resC = breaker.execute(false); // Fail 2
+const resD = breaker.execute(false); // Fail 3 -> Trips OPEN
+const resE = breaker.execute(false); // Immediate FAST FAIL without network call
+
+console.log('Initial Call Status:', resA.status + ' (' + resA.state + ')');
+console.log('Tripping Call State:', resD.state);
+console.log('Open Circuit Execution:', resE.status);
+console.log('Resilience Invariant: Prevents cascading microservice collapse');`,
+        output: `Initial Call Status: SUCCESS_200_OK (CLOSED)
+Tripping Call State: OPEN
+Open Circuit Execution: FAST_FAIL_FALLBACK_TRIGGERED
+Resilience Invariant: Prevents cascading microservice collapse`,
+        codeNotes: [
+          'The CLOSED state represents healthy baseline operation where calls execute normally.',
+          'The OPEN state immediately returns a cached or fallback response, saving CPU and thread pool resources.',
+          'The HALF_OPEN state sends canary probe requests to safely test if the downstream service has recovered.'
+        ],
+        tryIt: 'Adjust the failure threshold from 3 to 5 and observe how many consecutive failures are needed to trip the breaker.',
+        check: {
+          question: 'What is the primary architectural purpose of transitioning a Circuit Breaker into the OPEN state when a downstream service fails?',
+          options: [
+            'To immediately format the server hard drive',
+            'To fail fast without making network calls, preventing resource exhaustion and cascading failures across the system',
+            'To compress all outgoing HTTP headers into Gzip format',
+            'To trigger a mandatory database backup'
+          ],
+          answer: 1,
+          why: 'In the OPEN state, the circuit breaker immediately returns an error or fallback response without invoking the failing service, preventing thread pool exhaustion and protecting the system from cascading collapse.'
+        }
+      }
+    ],
+    summary: [
+      'Edge Computing on V8 Isolates executes middleware in sub-5ms at global Points of Presence with stale-while-revalidate caching.',
+      'The Redis Redlock algorithm establishes distributed mutex consensus across independent un-clustered nodes using majority quorum.',
+      'The Expand/Contract pattern enables zero-downtime database migrations across five non-breaking phases during rolling deployments.',
+      'Conflict-Free Replicated Data Types (CRDTs) guarantee mathematical state convergence in multi-region eventual consistency architectures.',
+      'Circuit Breakers protect microservice clusters from cascading failures by fast-failing during downstream outages and probing recovery.'
+    ],
+    projectStep: {
+      title: 'Architect a Resilient Multi-Region Edge Platform with Redlock & Circuit Breakers',
+      steps: [
+        'Deploy an Edge Geo-Router middleware inspecting incoming geolocation headers and serving stale-while-revalidate cached responses.',
+        'Implement a Redlock distributed lock coordinator acquiring majority quorum across 5 independent Redis instances with atomic Lua releases.',
+        'Execute a 5-phase Expand/Contract zero-downtime database migration with non-blocking asynchronous historical backfilling.',
+        'Construct a Last-Write-Wins CRDT register resolving concurrent multi-region updates deterministically via Lamport timestamps.',
+        'Integrate an automated Circuit Breaker state machine with sliding window failure rates, fast-fail fallbacks, and HALF_OPEN probe recovery.'
+      ]
+    }
   }
 ];
 
