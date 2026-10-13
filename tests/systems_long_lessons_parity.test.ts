@@ -310,5 +310,64 @@ test('Systems Long Lessons: git_vcs Day 3 Objects, DAG, Reflog & Bisect Verifica
   assert.ok(res5.stdout?.includes('2'), 'Must count 2 squashed commits');
 });
 
+test('Systems Long Lessons: comp_fund Day 4 POSIX Sockets, TCP State, epoll & TLS 1.3 Verification', async () => {
+  const compFundD4 = getLongLesson('comp_fund', 4);
+  assert.ok(compFundD4, 'comp_fund Day 4 must resolve');
+  assert.equal(compFundD4.day, 4);
+  assert.equal(compFundD4.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(compFundD4);
+  const totalMin = estimateLessonMinutes(compFundD4);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < compFundD4.parts.length; i++) {
+    const part = compFundD4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code must contain bash commands`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Part 1: POSIX Berkeley Sockets
+  const res1 = await executeBashSuite(compFundD4.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 sockets must succeed');
+  assert.ok(res1.stdout?.includes('FD_3 LISTEN'), 'Must list listening socket FD_3');
+  assert.ok(res1.stdout?.includes('ESTABLISHED'), 'Must isolate established client channels');
+
+  // Part 2: TCP 3-Way Handshake & Teardown
+  const res2 = await executeBashSuite(compFundD4.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 TCP handshake must succeed');
+  assert.ok(res2.stdout?.includes('SYN-ACK'), 'Must include SYN-ACK step');
+  assert.ok(res2.stdout?.includes('TIME_WAIT 2MSL_TIMEOUT:60s'), 'Must verify TIME_WAIT teardown state');
+
+  // Part 3: epoll I/O Multiplexing
+  const res3 = await executeBashSuite(compFundD4.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 epoll must succeed');
+  assert.ok(res3.stdout?.includes('EPOLL_EVENT: FD_4 EPOLLIN'), 'Must capture read readiness event');
+
+  // Part 4: DNS Recursive Resolution Hierarchy
+  const res4 = await executeBashSuite(compFundD4.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 DNS hierarchy must succeed');
+  assert.ok(res4.stdout?.includes('ROOT_SERVER'), 'Must traverse root server referral');
+  assert.ok(res4.stdout?.includes('AUTH_NAMESERVER'), 'Must resolve authoritative A record');
+
+  // Part 5: TLS 1.3 1-RTT Handshake
+  const res5 = await executeBashSuite(compFundD4.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 TLS 1.3 must succeed');
+  assert.ok(res5.stdout?.includes('TLS_1_3'), 'Must verify TLS 1.3 version');
+  assert.ok(res5.stdout?.includes('FORWARD_SECRECY: VERIFIED'), 'Must confirm forward secrecy');
+});
+
+
 
 

@@ -597,6 +597,205 @@ cat stderr.log`,
         'Examine filesystem inode metadata structures and simulate standard stream redirection via dup2.'
       ]
     }
+  },
+  {
+    day: 4,
+    title: 'POSIX Network Sockets, TCP/IP Handshake, High-Concurrency epoll & TLS 1.3',
+    goal: 'Master foundational computer networking & low-level communication architecture: Berkeley socket lifecycle (socket, bind, listen, accept), TCP 3-way handshake & state machine (SYN, ACK, TIME_WAIT), Linux high-concurrency I/O multiplexing (epoll vs select/poll), recursive DNS resolution root hierarchy, and TLS 1.3 cryptographic key exchange.',
+    minutes: 35,
+    recap: 'Welcome to Computer Networking & Low-Level Communication Architecture. Today we transition from internal OS processes to inter-machine socket programming, TCP state machines, and cryptographic transport layers.',
+    parts: [
+      {
+        title: 'POSIX Berkeley Socket Lifecycle: socket, bind, listen, accept',
+        say: [
+          'In UNIX operating systems, all input and output adheres to the universal abstraction of file descriptors. When two computers communicate over the internet, the operating system kernel provides network endpoints known as Berkeley sockets.',
+          'The lifecycle of a TCP server begins with socket(AF_INET, SOCK_STREAM, 0), requesting a stream-oriented socket file descriptor from the kernel. Next, bind() binds that socket descriptor to a specific local IP address and port number. Without bind(), the kernel does not know which incoming network packets belong to this process.',
+          'The server then calls listen(), which transitions the socket from active client mode to passive listening mode and initializes the kernel incoming connection backlog queue (SOMAXCONN). Finally, accept() blocks until an incoming client connection arrives, pulling it from the queue and returning a brand-new file descriptor representing the dedicated bi-directional communication channel with that specific client.'
+        ],
+        example: 'Like a hospital phone switchboard: the main reception phone number is the passive listening socket. When a patient calls, the operator answers and transfers them to a dedicated internal room line (the connected client socket), freeing the main switchboard to accept new calls.',
+        code: `mkdir -p /home/student/workspace/net_socket
+echo "FD_3 LISTEN  0.0.0.0:8080 BACKLOG:128" > /home/student/workspace/net_socket/sockets.txt
+echo "FD_4 ACCEPT  192.168.1.50:52310 ESTABLISHED" >> /home/student/workspace/net_socket/sockets.txt
+echo "FD_5 ACCEPT  192.168.1.51:52312 ESTABLISHED" >> /home/student/workspace/net_socket/sockets.txt
+cat /home/student/workspace/net_socket/sockets.txt
+grep "ESTABLISHED" /home/student/workspace/net_socket/sockets.txt`,
+        output: `FD_3 LISTEN  0.0.0.0:8080 BACKLOG:128\nFD_4 ACCEPT  192.168.1.50:52310 ESTABLISHED\nFD_5 ACCEPT  192.168.1.51:52312 ESTABLISHED\n\nFD_4 ACCEPT  192.168.1.50:52310 ESTABLISHED\nFD_5 ACCEPT  192.168.1.51:52312 ESTABLISHED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual net_socket directory' },
+          { line: 2, note: 'Registers listening socket descriptor FD_3 bound to 0.0.0.0:8080' },
+          { line: 3, note: 'Records accepted client connection on dedicated socket descriptor FD_4' },
+          { line: 4, note: 'Records second accepted client connection on dedicated socket descriptor FD_5' }
+        ],
+        tryIt: 'Filter for the listening socket descriptor using grep "LISTEN" /home/student/workspace/net_socket/sockets.txt.',
+        check: {
+          question: 'What does the POSIX accept() system call return when an incoming TCP connection is established?',
+          options: [
+            'A brand-new file descriptor specifically dedicated to communicating with the connected client, leaving the original listening socket open for new incoming connections',
+            'The physical MAC address of the nearest Wi-Fi router',
+            'A string containing the user password in plain text',
+            'An integer count of the total RAM installed on the server'
+          ],
+          answer: 0,
+          why: 'accept() creates and returns a new connected socket file descriptor for that specific client stream, allowing the original listening socket to continue accepting new inbound connections concurrently.'
+        }
+      },
+      {
+        title: 'TCP 3-Way Handshake & Connection Teardown State Machine',
+        say: [
+          'Transmission Control Protocol (TCP) provides reliable, ordered, error-checked delivery of byte streams across unreliable IP networks. Before any application data can travel, client and server must establish sequence numbers and window sizes via the 3-Way Handshake.',
+          'Step 1: The client sends a SYN packet with an initial random sequence number x (ISN). Step 2: The server receives the SYN and responds with a SYN-ACK packet containing its own initial sequence number y and acknowledging the client with ACK = x + 1. Step 3: The client replies with an ACK packet containing ACK = y + 1. At this moment, the connection transitions to the ESTABLISHED state on both endpoints.',
+          'Graceful connection termination uses a 4-way FIN/ACK handshake. The endpoint that initiates teardown enters the TIME_WAIT state, lasting 2 * MSL (Maximum Segment Lifetime, typically 60 seconds). TIME_WAIT is essential in networking: it ensures that late-arriving, duplicate packets from the closed connection expire in the network and cannot be misattributed to a newly opened connection reusing the same IP and port.'
+        ],
+        example: 'Like an air-traffic radio protocol: "Tower, this is Flight 101, requesting approach" (SYN) -> "Flight 101, Tower acknowledges, climb to 5000 feet, do you copy?" (SYN-ACK) -> "Tower, Flight 101 copies, 5000 feet confirmed" (ACK).',
+        code: `mkdir -p /home/student/workspace/tcp_state
+echo "STEP_1 CLIENT SYN     SEQ:1000 ACK:0" > /home/student/workspace/tcp_state/handshake.log
+echo "STEP_2 SERVER SYN-ACK SEQ:5000 ACK:1001" >> /home/student/workspace/tcp_state/handshake.log
+echo "STEP_3 CLIENT ACK     SEQ:1001 ACK:5001" >> /home/student/workspace/tcp_state/handshake.log
+echo "STATE: ESTABLISHED" >> /home/student/workspace/tcp_state/handshake.log
+echo "TEARDOWN: TIME_WAIT 2MSL_TIMEOUT:60s" >> /home/student/workspace/tcp_state/handshake.log
+cat /home/student/workspace/tcp_state/handshake.log`,
+        output: `STEP_1 CLIENT SYN     SEQ:1000 ACK:0\nSTEP_2 SERVER SYN-ACK SEQ:5000 ACK:1001\nSTEP_3 CLIENT ACK     SEQ:1001 ACK:5001\nSTATE: ESTABLISHED\nTEARDOWN: TIME_WAIT 2MSL_TIMEOUT:60s`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual tcp_state directory' },
+          { line: 2, note: 'Logs Step 1 client SYN packet with initial sequence number 1000' },
+          { line: 3, note: 'Logs Step 2 server SYN-ACK packet with sequence 5000 and ACK 1001' },
+          { line: 4, note: 'Logs Step 3 client ACK packet completing 3-way handshake' }
+        ],
+        tryIt: 'Inspect the handshake log and observe how the ACK sequence numbers advance by exactly 1 in each handshake step.',
+        check: {
+          question: 'What critical networking problem is prevented by the TCP TIME_WAIT state (2 * MSL)?',
+          options: [
+            'It prevents delayed duplicate packets from a previous connection incarnation from corrupting a new connection reusing the same IP and port tuple',
+            'It prevents the computer screen from sleeping during file downloads',
+            'It speeds up the CPU clock frequency',
+            'It forces the internet router to reboot every 60 seconds'
+          ],
+          answer: 0,
+          why: 'TIME_WAIT holds the socket open long enough for stray packets in flight to expire and ensures the final ACK was received by the remote peer before the port can be safely reused.'
+        }
+      },
+      {
+        title: 'I/O Multiplexing: epoll vs select and poll for 100K Connections',
+        say: [
+          'In early server architectures (the C10K problem era), servers handled concurrent connections by spawning a new OS thread or process per connection. This model failed at scale because OS context switching and 8MB thread stack allocations exhausted server memory.',
+          'Early I/O multiplexing used select() and poll(). While they allowed a single thread to monitor multiple sockets, both required passing an array of all monitored file descriptors from user space to kernel space on EVERY single poll call, leading to O(N) CPU overhead where the CPU wasted cycles scanning thousands of idle sockets.',
+          'Linux epoll revolutionized high-concurrency servers (powering Nginx, Node.js libuv, and Netty). epoll maintains a kernel-level data structure using a red-black tree to register file descriptors in O(log N) time and an internal ready list. When network packets arrive, the network card hardware interrupt adds the active socket directly to the ready list in O(1) time, allowing a single thread to handle 100,000+ persistent connections with near-zero idle CPU usage.'
+        ],
+        example: 'Like an office receptionist checking on 100 meeting rooms: with select(), the receptionist walks to all 100 rooms every 5 minutes knocking on doors. With epoll(), rooms have a buzzer that illuminates a light on the receptionist desk only when assistance is needed.',
+        code: `mkdir -p /home/student/workspace/epoll_events
+echo "EPOLL_EVENT: FD_4 EPOLLIN  CLIENT_REQUEST_READY" > /home/student/workspace/epoll_events/events.log
+echo "EPOLL_EVENT: FD_5 EPOLLOUT SOCKET_WRITE_READY" >> /home/student/workspace/epoll_events/events.log
+cat /home/student/workspace/epoll_events/events.log
+grep "EPOLLIN" /home/student/workspace/epoll_events/events.log`,
+        output: `EPOLL_EVENT: FD_4 EPOLLIN  CLIENT_REQUEST_READY\nEPOLL_EVENT: FD_5 EPOLLOUT SOCKET_WRITE_READY\n\nEPOLL_EVENT: FD_4 EPOLLIN  CLIENT_REQUEST_READY`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual epoll_events directory' },
+          { line: 2, note: 'Records an incoming read readiness event (EPOLLIN) on client socket descriptor FD_4' },
+          { line: 3, note: 'Records write buffer readiness event (EPOLLOUT) on socket descriptor FD_5' }
+        ],
+        tryIt: 'Filter for write readiness events using grep "EPOLLOUT" /home/student/workspace/epoll_events/events.log.',
+        check: {
+          question: 'Why does Linux epoll scale to 100,000 concurrent sockets while select() degrades exponentially?',
+          options: [
+            'epoll uses an in-kernel ready list populated by device interrupts returning only active sockets in O(1) time, avoiding select O(N) linear scanning of all descriptors',
+            'epoll uses 5G cellular modems instead of ethernet cables',
+            'select() is forbidden on 64-bit microprocessors',
+            'epoll compresses all incoming network packets with zip compression'
+          ],
+          answer: 0,
+          why: 'select() requires the kernel to iterate over all N file descriptors on every call. epoll uses hardware interrupt callbacks to maintain a ready list of only active descriptors, achieving O(1) event delivery.'
+        }
+      },
+      {
+        title: 'DNS Resolution Pipeline & Root Server Hierarchy',
+        say: [
+          'The Domain Name System (DNS) is the global decentralized directory service translating human-readable domain names (such as pinit.io) into machine-routable IP addresses (such as 76.76.21.21).',
+          'When an application requests a domain, resolution follows a strict hierarchical tree: first checking the local OS cache and /etc/hosts. If missed, the query proceeds to a Recursive Resolver (like 1.1.1.1 or 8.8.8.8), which queries the Root DNS servers (13 named root server clusters designated a.root-servers.net through m.root-servers.net).',
+          'The Root servers refer the resolver to the Top-Level Domain (TLD) servers (such as .io or .com). The TLD servers in turn refer the query to the Authoritative Nameservers for the specific domain. The authoritative server returns the final resource record (A for IPv4, AAAA for IPv6, CNAME for aliases), accompanied by a Time-To-Live (TTL) integer specifying how many seconds intermediate caches may retain the mapping.'
+        ],
+        example: 'Like finding an address in an international registry: checking the World Directorate (Root), which points you to the United Kingdom registry (TLD), which directs you to the London municipal hall (Authoritative server), which provides the exact street coordinates (A record).',
+        code: `mkdir -p /home/student/workspace/dns_trace
+echo "QUERY: pinit.io TYPE:A" > /home/student/workspace/dns_trace/resolution.txt
+echo "STEP_1 ROOT_SERVER      .           NS a.root-servers.net" >> /home/student/workspace/dns_trace/resolution.txt
+echo "STEP_2 TLD_SERVER       .io         NS a.nic.io" >> /home/student/workspace/dns_trace/resolution.txt
+echo "STEP_3 AUTH_NAMESERVER  pinit.io    A  76.76.21.21 TTL:300" >> /home/student/workspace/dns_trace/resolution.txt
+cat /home/student/workspace/dns_trace/resolution.txt
+grep "AUTH_NAMESERVER" /home/student/workspace/dns_trace/resolution.txt`,
+        output: `QUERY: pinit.io TYPE:A\nSTEP_1 ROOT_SERVER      .           NS a.root-servers.net\nSTEP_2 TLD_SERVER       .io         NS a.nic.io\nSTEP_3 AUTH_NAMESERVER  pinit.io    A  76.76.21.21 TTL:300\n\nSTEP_3 AUTH_NAMESERVER  pinit.io    A  76.76.21.21 TTL:300`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual dns_trace directory' },
+          { line: 2, note: 'Records recursive lookup query for domain pinit.io A record' },
+          { line: 3, note: 'Traces referral from root DNS server to .io TLD' },
+          { line: 4, note: 'Traces referral from TLD server to authoritative nameserver' },
+          { line: 5, note: 'Records final authoritative A record resolution with 300s TTL' }
+        ],
+        tryIt: 'Filter for the root server referral line using grep "ROOT_SERVER" /home/student/workspace/dns_trace/resolution.txt.',
+        check: {
+          question: 'What is the function of the TTL (Time-To-Live) field in a DNS resource record?',
+          options: [
+            'It dictates the duration in seconds that resolvers and client operating systems can cache the DNS record before re-querying authoritative nameservers',
+            'It measures the distance in miles to the web server',
+            'It sets the maximum speed limit of the ethernet network cable',
+            'It automatically deletes the website domain after the timer expires'
+          ],
+          answer: 0,
+          why: 'TTL specifies cache freshness. Lower TTLs allow fast DNS failover during migrations, while higher TTLs reduce lookup latency and decrease load on authoritative nameservers.'
+        }
+      },
+      {
+        title: 'TLS 1.3 Cryptographic Handshake & Key Exchange',
+        say: [
+          'Transport Layer Security (TLS 1.3) encrypts internet traffic across the wire, preventing eavesdropping, tampering, and message forgery between web browsers and servers.',
+          'Legacy TLS 1.2 required two full round-trips (2-RTT) of back-and-forth packet negotiation before encrypted application data could be sent. TLS 1.3 optimizes this to a single round-trip (1-RTT) by having the client guess the server cryptographic parameters and send its Diffie-Hellman Ephemeral (ECDHE) key share directly in the initial ClientHello packet.',
+          'The server responds with ServerHello containing its own key share, its digital X.509 certificate, and a cryptographic signature. Both parties calculate a shared symmetric session key (using curve X25519) without ever transmitting the secret over the wire. This ephemeral key exchange guarantees Forward Secrecy: even if an adversary records all encrypted traffic today and steals the server private key five years from now, previously recorded sessions can never be decrypted.'
+        ],
+        example: 'Like two people mixing colors of paint in public view: both add their secret color to a common base and share the intermediate mixture. Both can compute the identical final secret shade, yet someone watching from across the room cannot deduce the secret colors used.',
+        code: `mkdir -p /home/student/workspace/tls_handshake
+echo "TLS_VERSION: TLS_1_3" > /home/student/workspace/tls_handshake/tls.log
+echo "CIPHER_SUITE: TLS_AES_256_GCM_SHA384" >> /home/student/workspace/tls_handshake/tls.log
+echo "KEY_EXCHANGE: ECDHE_X25519" >> /home/student/workspace/tls_handshake/tls.log
+echo "FORWARD_SECRECY: VERIFIED" >> /home/student/workspace/tls_handshake/tls.log
+cat /home/student/workspace/tls_handshake/tls.log
+grep "FORWARD_SECRECY" /home/student/workspace/tls_handshake/tls.log`,
+        output: `TLS_VERSION: TLS_1_3\nCIPHER_SUITE: TLS_AES_256_GCM_SHA384\nKEY_EXCHANGE: ECDHE_X25519\nFORWARD_SECRECY: VERIFIED\n\nFORWARD_SECRECY: VERIFIED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual tls_handshake directory' },
+          { line: 2, note: 'Records negotiated protocol version TLS 1.3' },
+          { line: 3, note: 'Records symmetric authenticated encryption cipher suite AES-256-GCM' },
+          { line: 4, note: 'Records Elliptic Curve Diffie-Hellman Ephemeral key exchange algorithm X25519' },
+          { line: 5, note: 'Confirms forward secrecy verification protecting past sessions' }
+        ],
+        tryIt: 'Filter for the negotiated cipher suite using grep "CIPHER_SUITE" /home/student/workspace/tls_handshake/tls.log.',
+        check: {
+          question: 'What security property does Ephemeral Diffie-Hellman (ECDHE) key exchange provide in TLS 1.3?',
+          options: [
+            'Forward Secrecy: compromises of the server long-term private key in the future cannot be used to decrypt previously recorded session traffic',
+            'Zero gas fees on Ethereum transactions',
+            'Automatic renewal of SSL domain certificates',
+            'Compression of JPEG images on web pages'
+          ],
+          answer: 0,
+          why: 'ECDHE generates fresh, temporary cryptographic key pairs for each connection session. Once the session ends, the keys are discarded from memory, making retro-active decryption mathematically impossible.'
+        }
+      }
+    ],
+    summary: [
+      'POSIX Berkeley sockets follow a socket/bind/listen/accept sequence, returning dedicated connection file descriptors upon client accept.',
+      'TCP establishes reliable byte streams via 3-way handshake (SYN, SYN-ACK, ACK) and enforces TIME_WAIT (2*MSL) to prevent stale packet collision.',
+      'Linux epoll achieves O(1) event delivery using kernel ready lists populated by hardware interrupts, handling 100K+ concurrent sockets.',
+      'Recursive DNS resolution traverses Root, TLD, and Authoritative nameservers, respecting TTL caching boundaries.',
+      'TLS 1.3 provides 1-RTT handshake negotiation and ECDHE key exchange, guaranteeing cryptographic Forward Secrecy.'
+    ],
+    projectStep: {
+      title: 'Architect a Low-Level Network Socket & Transport Layer Diagnostic Suite',
+      steps: [
+        'Simulate a POSIX Berkeley TCP socket server inspecting listening descriptors and accepted client channels.',
+        'Trace the 3-way TCP handshake and connection teardown state machine isolating the TIME_WAIT socket lifecycle.',
+        'Evaluate Linux epoll I/O multiplexing readiness queues distinguishing EPOLLIN and EPOLLOUT notification events.',
+        'Trace recursive DNS resolution traversing Root servers, TLD registries, and Authoritative A record lookups.',
+        'Audit a TLS 1.3 1-RTT cryptographic handshake verifying ECDHE key exchange and Forward Secrecy invariants.'
+      ]
+    }
   }
 ];
 
