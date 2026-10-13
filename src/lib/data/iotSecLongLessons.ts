@@ -642,6 +642,294 @@ for seq, acc in results:
         'Implement an active physical tamper detection matrix with zeroization and DTLS anti-replay window.'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_sec',
+    day: 3,
+    title: 'Hardware Cryptographic Engines, ChaCha20-Poly1305, Constant-Time Execution & Glitch Protections',
+    goal: 'Master hardware-accelerated embedded cryptography: DMA-driven hardware AES/SHA engines, ChaCha20-Poly1305 stream cipher for microcontrollers without AES coprocessors, constant-time cryptographic routines defeating timing side-channels, and clock/voltage glitch fault-injection detection circuits.',
+    minutes: 35,
+    recap: 'In Day 2, we engineered HKDF domain derivation, AES-GCM AEAD, DPA masking, and anti-replay windows. Today in Day 3, we dive into hardware cryptographic engines, ChaCha20-Poly1305 stream ciphers, constant-time software invariants, and active physical fault injection/glitch countermeasures.',
+    parts: [
+      {
+        title: 'Hardware Cryptographic Engines & DMA Offload vs Software Emulation',
+        say: [
+          'In battery-constrained IoT devices, executing symmetric cryptography entirely in software creates severe performance bottlenecks and massive energy drains. A standard software implementation of AES-256 requires approximately 280 CPU clock cycles per 16-byte block, using lookup tables (T-tables) and arithmetic loops that monopolize the CPU core. Encrypting a 4-kilobyte firmware image or network payload in software consumes over 71,000 CPU cycles—blocking real-time motor control loops and wireless interrupt servicing.',
+          'Modern secure microcontrollers (such as STM32H7, Nordic nRF5340, or NXP LPC55S69) incorporate dedicated Hardware Cryptographic Engines (Crypto Accelerators). These coprocessors implement the AES S-box, MixColumns, and Key Expansion stages directly in dedicated silicon logic gates. Crucially, the crypto engine connects directly to the Direct Memory Access (DMA) controller over the internal AHB bus matrix, enabling full autonomous background encryption.',
+          'When the firmware initiates an encryption job, it configures DMA source and destination descriptors and triggers the crypto peripheral. The DMA controller streams plaintext blocks directly from SRAM into the AES engine and writes ciphertext back to memory at roughly 1.2 cycles per byte with 0% CPU core intervention! Encrypting a 4 KB payload finishes in only 76.8 microseconds (a 14.6x hardware speedup), freeing the main processor to enter low-power sleep or process critical sensor telemetry.'
+        ],
+        example: 'Like an automated mail sorting machine in a modern post office: instead of a postal worker manually reading, weighing, and stamping every individual envelope by hand (software emulation), envelopes glide along a motorized conveyor belt that stamps 100 letters a minute automatically (DMA hardware coprocessor).',
+        code: `# Simulation: Hardware Crypto Coprocessor & DMA Engine Throughput
+def evaluate_hardware_crypto_engine_throughput(payload_bytes: int, cpu_freq_hz: int):
+    # Software AES-256: ~280 CPU cycles per 16-byte block (table-based)
+    # Hardware AES Coprocessor (DMA): ~1.2 cycles per byte, 0% CPU blocking
+    software_cycles = int((payload_bytes / 16.0) * 280)
+    hardware_cycles = int(payload_bytes * 1.2)
+    
+    software_latency_us = round((software_cycles / cpu_freq_hz) * 1e6, 2)
+    hardware_latency_us = round((hardware_cycles / cpu_freq_hz) * 1e6, 2)
+    speedup_ratio = round(software_cycles / hardware_cycles, 1)
+    
+    return {
+        "payload_bytes": payload_bytes,
+        "sw_cycles": software_cycles,
+        "hw_cycles": hardware_cycles,
+        "sw_latency_us": software_latency_us,
+        "hw_latency_us": hardware_latency_us,
+        "speedup_ratio": speedup_ratio
+    }
+
+res1 = evaluate_hardware_crypto_engine_throughput(4096, 64000000) # 4 KB on 64 MHz MCU
+print("=== HARDWARE CRYPTO ENGINE VS SOFTWARE EMULATION ===")
+print(f"Payload Size:             {res1['payload_bytes']} Bytes (4 KB)")
+print(f"Software AES Cycles:      {res1['sw_cycles']:,} cycles ({res1['sw_latency_us']} us)")
+print(f"Hardware DMA AES Cycles:  {res1['hw_cycles']:,} cycles ({res1['hw_latency_us']} us)")
+print(f"Hardware Speedup Factor:  {res1['speedup_ratio']}x Faster Throughput")`,
+        output: `=== HARDWARE CRYPTO ENGINE VS SOFTWARE EMULATION ===\nPayload Size:             4096 Bytes (4 KB)\nSoftware AES Cycles:      71,680 cycles (1120.0 us)\nHardware DMA AES Cycles:  4,915 cycles (76.8 us)\nHardware Speedup Factor:  14.6x Faster Throughput`,
+        codeNotes: [
+          { line: 2, note: 'Compares software AES cycle costs against autonomous DMA hardware coprocessor execution' },
+          { line: 6, note: 'Computes hardware execution latency of 76.8 us vs 1,120.0 us for software emulation' },
+          { line: 21, note: 'Demonstrates 14.6x throughput acceleration with zero CPU core blocking' }
+        ],
+        tryIt: 'Increase payload_bytes to 16384 (16 KB) and observe how software latency surges past 4.4 ms while hardware DMA takes only 307 us.',
+        check: {
+          question: 'What is the primary architectural advantage of pairing a hardware AES accelerator with a DMA controller in embedded microcontrollers?',
+          options: [
+            'It offloads cryptographic encryption from the CPU core, executing memory-to-memory block operations autonomously in silicon with zero CPU blocking',
+            'It allows encryption to work without an electrical power supply',
+            'It automatically prints physical barcodes on external paper receipts',
+            'It prevents the microcontroller from connecting to Wi-Fi networks'
+          ],
+          answer: 0,
+          why: 'DMA controllers stream data directly between memory and cryptographic peripheral registers over internal buses, allowing high-throughput encryption while the CPU sleeps or handles other tasks.'
+        }
+      },
+      {
+        title: 'ChaCha20-Poly1305: ARX Stream Cipher Architecture for Low-Power Microcontrollers',
+        say: [
+          'While high-end Cortex-M4 and M7 microcontrollers often feature dedicated AES hardware accelerators, billions of ultra-low-cost IoT microcontrollers (such as ARM Cortex-M0+ or RISC-V RV32EC cores) lack hardware crypto engines. On these minimalist chips, executing software AES is not only slow, but notoriously vulnerable to Cache-Timing Side-Channel Attacks because AES relies on 256-byte S-box lookup tables in RAM.',
+          'To provide military-grade security on chips without AES hardware, modern cryptographic standards (RFC 8439) standardize the ChaCha20-Poly1305 AEAD cipher. ChaCha20 is a stream cipher designed by Daniel J. Bernstein that completely eliminates lookup tables! Instead of memory lookups, ChaCha20 relies exclusively on ARX operations: 32-bit Integer Addition (A), Bitwise Rotation (R), and Bitwise XOR (X).',
+          'Every ARM and RISC-V microcontroller executes Addition, Rotation, and XOR in a single CPU cycle with guaranteed constant time. The core building block of ChaCha20 is the Quarter-Round function, which takes four 32-bit state words (a, b, c, d) and mixes them through four sequential ARX operations. Because ARX instructions execute with identical clock cycle latency regardless of key or data values, ChaCha20 is naturally immune to cache timing attacks while delivering blisteringly fast software throughput.'
+        ],
+        example: 'Like shuffling a deck of cards using only simple mechanical cuts and rotations: because every cut takes exactly the same motion and time, an observer watching the dealer cannot guess which card is on top by listening to the sound of the shuffle.',
+        code: `# Simulation: ChaCha20 ARX Quarter-Round State Transformation Kernel
+def simulate_chacha20_quarter_round(a: int, b: int, c: int, d: int):
+    # ChaCha20 Quarter Round: Add-Rotate-XOR (ARX) operations on 32-bit words
+    def rotl32(v, bits):
+        return ((v << bits) & 0xFFFFFFFF) | ((v & 0xFFFFFFFF) >> (32 - bits))
+    
+    # 1. a += b; d ^= a; d <<<= 16;
+    a = (a + b) & 0xFFFFFFFF
+    d = rotl32(d ^ a, 16)
+    # 2. c += d; b ^= c; b <<<= 12;
+    c = (c + d) & 0xFFFFFFFF
+    b = rotl32(b ^ c, 12)
+    # 3. a += b; d ^= a; d <<<= 8;
+    a = (a + b) & 0xFFFFFFFF
+    d = rotl32(d ^ a, 8)
+    # 4. c += d; b ^= c; b <<<= 7;
+    c = (c + d) & 0xFFFFFFFF
+    b = rotl32(b ^ c, 7)
+    
+    return [hex(a), hex(b), hex(c), hex(d)]
+
+qr_state = simulate_chacha20_quarter_round(0x11111111, 0x22222222, 0x33333333, 0x44444444)
+print("=== CHACHA20 ARX QUARTER-ROUND KERNEL ===")
+print(f"Word State [a, b, c, d]: {qr_state}")`,
+        output: `=== CHACHA20 ARX QUARTER-ROUND KERNEL ===\nWord State [a, b, c, d]: ['0xbbbbbbbb', '0xffffff7f', '0x77777776', '0xcccccccc']`,
+        codeNotes: [
+          { line: 2, note: 'Implements pure ARX (Add, Rotate, XOR) quarter-round kernel without memory tables' },
+          { line: 7, note: 'Executes four sequential ARX mixing rounds with constant instruction latency' },
+          { line: 22, note: 'Mixes input 32-bit words into cryptographically diffused state words' }
+        ],
+        tryIt: 'Change word a to 0x00000000 and observe how all 4 state words diffuse completely into new values.',
+        check: {
+          question: 'Why is the ChaCha20 ARX stream cipher highly recommended for IoT microcontrollers that lack hardware AES coprocessors?',
+          options: [
+            'Because it relies entirely on 32-bit Add, Rotate, and XOR instructions without lookup tables, executing in constant time and eliminating cache timing side-channels',
+            'Because it compresses files into ZIP format automatically',
+            'Because it allows passwords to be written in plain text',
+            'Because it only works on microcontrollers with analog temperature sensors'
+          ],
+          answer: 0,
+          why: 'Software AES uses table lookups that leak secret key bits through CPU cache access latency. ChaCha20 uses only arithmetic ARX instructions that execute in constant time with zero cache leakage.'
+        }
+      },
+      {
+        title: 'Constant-Time Cryptographic Implementation: Eliminating Timing Attack Leakage',
+        say: [
+          'In standard application software, standard library functions prioritize speed above all else. For instance, the standard C library string comparison function memcmp(buf1, buf2, n) compares bytes sequentially from left to right. The moment it encounters the very first mismatched byte, it executes an early return (if (buf1[i] != buf2[i]) return -1;) to avoid wasting CPU cycles.',
+          'In cryptographic engineering, using early-exit comparison functions like memcmp() to verify authentication tags or HMAC signatures is a catastrophic vulnerability known as a Timing Side-Channel Attack. An attacker who sends forged authentication tags over a local UART interface or network socket can measure the precise nanosecond execution latency of the microcontroller using a digital oscilloscope or high-resolution hardware timers.',
+          'If the first byte of the attacker\'s forged tag is wrong, the MCU rejects the request in 4 nanoseconds. If the attacker guesses the correct first byte, the rejection takes 8 nanoseconds! By iterating through only 256 guesses per byte position (256 * 16 = 4,096 total requests), the attacker cracks a 128-bit authentication tag in minutes! To eliminate timing attacks, cryptographic firmware must strictly enforce Constant-Time Comparisons: every byte must be evaluated unconditionally using a bitwise OR accumulator (accumulator |= (s_byte ^ c_byte)), ensuring the routine takes the exact same number of clock cycles whether byte 0 or byte 15 mismatches.'
+        ],
+        example: 'Like checking a 4-digit bicycle padlock: if the lock gave an audible click every time you dialed the correct digit, a thief could crack the combination in 40 seconds by listening for clicks rather than trying all 10,000 combinations.',
+        code: `# Simulation: Constant-Time vs Early-Exit Comparison Timing Defense
+def constant_time_memcmp_audit(secret: bytes, candidate: bytes):
+    # Vulnerable naive compare exits early on first mismatched byte: leaks byte position via execution time!
+    # Constant-time compare evaluates every byte unconditionally using bitwise OR accumulator.
+    if len(secret) != len(candidate):
+        return False, 0
+    
+    accumulator = 0
+    eval_steps = 0
+    for s_byte, c_byte in zip(secret, candidate):
+        accumulator |= (s_byte ^ c_byte)
+        eval_steps += 1
+        
+    is_match = (accumulator == 0)
+    return is_match, eval_steps
+
+secret_mac = bytes.fromhex("1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d")
+test_wrong_byte0 = bytes.fromhex("002b3c4d5e6f7a8b9c0d1e2f3a4b5c6d")
+test_wrong_byte15 = bytes.fromhex("1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c00")
+
+_, steps0 = constant_time_memcmp_audit(secret_mac, test_wrong_byte0)
+_, steps15 = constant_time_memcmp_audit(secret_mac, test_wrong_byte15)
+print("=== CONSTANT-TIME TIMING ATTACK MITIGATION ===")
+print(f"Secret MAC Length:        16 Bytes (128 Bits)")
+print(f"Steps (Mismatch Byte 0):  {steps0} Bytes Evaluated (No Early Exit)")
+print(f"Steps (Mismatch Byte 15): {steps15} Bytes Evaluated (No Early Exit)")
+print(f"Execution Timing Delta:   0.00 ns (Zero Timing Side-Channel)")`,
+        output: `=== CONSTANT-TIME TIMING ATTACK MITIGATION ===\nSecret MAC Length:        16 Bytes (128 Bits)\nSteps (Mismatch Byte 0):  16 Bytes Evaluated (No Early Exit)\nSteps (Mismatch Byte 15): 16 Bytes Evaluated (No Early Exit)\nExecution Timing Delta:   0.00 ns (Zero Timing Side-Channel)`,
+        codeNotes: [
+          { line: 2, note: 'Demonstrates timing side-channel mitigation using unconditional bitwise OR accumulator' },
+          { line: 9, note: 'Accumulates differences across all bytes without early branching or conditional exits' },
+          { line: 22, note: 'Evaluates exactly 16 bytes regardless of mismatch index, producing 0.00 ns timing delta' }
+        ],
+        tryIt: 'Pass matching bytes into constant_time_memcmp_audit and verify it returns is_match=True while still evaluating all 16 bytes.',
+        check: {
+          question: 'Why must cryptographic MAC and signature verification routines never use early-exit functions like standard memcmp()?',
+          options: [
+            'Because early-exit functions terminate faster when early bytes mismatch, leaking the secret byte values one-by-one through observable execution timing differences',
+            'Because standard memcmp() causes memory leaks in microcontrollers',
+            'Because early-exit functions invert the endianness of the processor',
+            'Because digital signatures cannot be represented as byte arrays'
+          ],
+          answer: 0,
+          why: 'If a comparison returns earlier on byte 0 than on byte 15, attackers can measure the elapsed time to guess secret signature bytes sequentially in linear time.'
+        }
+      },
+      {
+        title: 'Fault Injection Countermeasures: Clock & Voltage Glitch Detector Circuits',
+        say: [
+          'In high-security embedded environments (such as smart cards, biometric door locks, or cryptocurrency hardware wallets), attackers frequently possess physical access to the device. When software defenses and cryptographic algorithms are mathematically sound, sophisticated adversaries bypass security using Hardware Fault Injection Attacks.',
+          'The two most prevalent fault injection techniques are Voltage Glitching and Clock Glitching. In a voltage glitch attack, the attacker uses a high-speed MOSFET switch to momentarily pull the microcontroller\'s VDD power supply rail down from 3.3V to 1.8V for 20 nanoseconds (a Brownout Pulse) precisely when the CPU executes a security check instruction (such as a conditional branch BEQ verify_signature). The sudden drop in voltage starves the CPU core transistors of charge, causing the instruction decoder to skip the branch or misread a comparison flag!',
+          'To defeat physical fault injection, secure microcontrollers incorporate on-die Hardware Glitch Detectors. An analog voltage supervisor continuously monitors VDD using high-speed comparators; if the supply voltage deviates outside safe operational thresholds (e.g. < 2.7V or > 3.8V for even 5 nanoseconds), an asynchronous hardware tamper interrupt triggers immediate CPU reset and key zeroization. Similarly, dual-rail clock monitors verify that clock edge periods do not shrink below physical transistor propagation limits.'
+        ],
+        example: 'Like an anti-shaker tilt sensor on a coin-operated vending machine: if an aggressive person kicks or rocks the machine to force snacks to fall without paying, the sensor trips an alarm, locks the dispenser flap, and shuts down the machine.',
+        code: `# Simulation: Hardware Fault Injection Voltage & Clock Glitch Supervisor
+def evaluate_voltage_clock_glitch_detector(vdd_volts: float, clock_period_ns: float):
+    # Hardware supervisor monitors: VDD nominal 3.3V (safe: 3.0V - 3.6V), Clock nominal 15.625ns (64MHz)
+    voltage_glitch = vdd_volts < 2.7 or vdd_volts > 3.8
+    clock_glitch = clock_period_ns < 10.0 # High-frequency glitch edge
+    
+    tamper_detected = voltage_glitch or clock_glitch
+    verdict = "RESET_SYSTEM_CLEAR_KEYS" if tamper_detected else "NORMAL_SECURE_EXECUTION"
+    
+    return {
+        "vdd_volts": vdd_volts,
+        "clock_period_ns": clock_period_ns,
+        "tamper_detected": tamper_detected,
+        "hardware_action": verdict
+    }
+
+res4_safe = evaluate_voltage_clock_glitch_detector(3.3, 15.6)
+res4_glitch = evaluate_voltage_clock_glitch_detector(2.2, 15.6) # Brownout glitch attack
+print("=== HARDWARE FAULT INJECTION GLITCH DETECTOR ===")
+print(f"Nominal 3.3V Profile:   {res4_safe['hardware_action']} (Tamper: {res4_safe['tamper_detected']})")
+print(f"2.2V Glitch Profile:    {res4_glitch['hardware_action']} (Tamper: {res4_glitch['tamper_detected']})")`,
+        output: `=== HARDWARE FAULT INJECTION GLITCH DETECTOR ===\nNominal 3.3V Profile:   NORMAL_SECURE_EXECUTION (Tamper: False)\n2.2V Glitch Profile:    RESET_SYSTEM_CLEAR_KEYS (Tamper: True)`,
+        codeNotes: [
+          { line: 2, note: 'Monitors analog VDD power rails and clock oscillation frequencies for fault injection' },
+          { line: 4, note: 'Detects brownout transient drops (<2.7V) indicative of voltage glitch attacks' },
+          { line: 18, note: 'Triggers RESET_SYSTEM_CLEAR_KEYS immediate shutdown when glitch anomaly is detected' }
+        ],
+        tryIt: 'Set clock_period_ns to 8.0 ns (simulating an overclock glitch spike) and verify the supervisor triggers tamper action.',
+        check: {
+          question: 'How do voltage glitch fault-injection attacks attempt to bypass secure boot verification checks?',
+          options: [
+            'By pulsing the CPU power supply voltage down momentarily to starve transistors of charge, causing the CPU to skip the conditional branch instruction that enforces signature verification',
+            'By draining the battery so the user forgets their password',
+            'By erasing the Wi-Fi credentials stored in flash memory',
+            'By heating the microcontroller with a hairdryer to melt solder joints'
+          ],
+          answer: 0,
+          why: 'A nanosecond voltage drop causes timing violations inside silicon logic gates, leading the instruction decoder to misread or skip critical conditional jump instructions.'
+        }
+      },
+      {
+        title: 'Double-Check Redundant Logic & Control Flow Integrity (CFI) in Firmware',
+        say: [
+          'Even with hardware glitch detectors in place, defense-in-depth requires that software firmware itself be resilient to transient hardware faults. If an attacker manages to inject a precision laser glitch or electromagnetic pulse (EMP) that skips a single instruction despite analog sensors, a naive security check like if (is_authenticated) grant_admin_access(); can be compromised in a single clock cycle.',
+          'Secure firmware engineers implement Redundant Defensive Programming and Control Flow Integrity (CFI). First, security flags must never be simple boolean true (1) or false (0). A single flipped bit in an ALU register can turn 0 into 1! Instead, authorization states use multi-bit Hamming-Distance-Separated Magic Constants—such as AUTH_GRANTED = 0x5A5AA5A5 and AUTH_DENIED = 0xA5A55A5A, which require at least 16 simultaneous bit-flips to transition.',
+          'Second, critical decisions employ Dual-Token Redundancy with Step Canaries. The firmware performs the verification check twice using inverted arithmetic logic (if (token == magic && ~token == ~magic)), updating an accumulator step canary at each stage. Before performing a sensitive operation (such as executing an OTA firmware update or opening an electronic lock), the firmware validates that all step canaries were hit in the exact expected sequential order. If an instruction was skipped by a glitch, the step canary will be corrupted, triggering an immediate security lockdown.'
+        ],
+        example: 'Like entering a nuclear missile silo: the launch protocol requires two separate launch officers sitting in separate chairs to turn two physical keys simultaneously at the exact same second, ensuring that a single distracted officer can never launch a missile alone.',
+        code: `# Simulation: Dual-Token Redundant Logic & Control Flow Integrity (CFI)
+def validate_redundant_control_flow_integrity(auth_token: int, golden_magic: int):
+    # Attack scenario: Voltage glitch skips CPU branch instruction BEQ (Bypass check)
+    # Defense: Dual-token validation, step counters, and bit-inverted redundancy checks
+    step_canary = 0xAA55
+    
+    # Check 1: Primary verification
+    check1_pass = (auth_token == golden_magic)
+    if check1_pass:
+        step_canary ^= 0x1122
+        
+    # Check 2: Bit-inverted secondary verification
+    check2_pass = ((~auth_token & 0xFFFFFFFF) == (~golden_magic & 0xFFFFFFFF))
+    if check2_pass:
+        step_canary ^= 0x3344
+        
+    # Final assertion: Execution reaches target only if both checks and canary pass
+    cfi_verified = check1_pass and check2_pass and (step_canary == (0xAA55 ^ 0x1122 ^ 0x3344))
+    return {
+        "cfi_verified": cfi_verified,
+        "status": "AUTHORIZATION_GRANTED_DUAL_CFI" if cfi_verified else "SECURITY_FAULT_LOCKDOWN"
+    }
+
+res5 = validate_redundant_control_flow_integrity(0xDEADBEEF, 0xDEADBEEF)
+print("=== CONTROL FLOW INTEGRITY (CFI) DUAL-TOKEN AUDIT ===")
+print(f"Token Match Invariant:  {res5['cfi_verified']}")
+print(f"Firmware Branch Action: {res5['status']}")`,
+        output: `=== CONTROL FLOW INTEGRITY (CFI) DUAL-TOKEN AUDIT ===\nToken Match Invariant:  True\nFirmware Branch Action: AUTHORIZATION_GRANTED_DUAL_CFI`,
+        codeNotes: [
+          { line: 2, note: 'Implements dual-token control flow integrity resistant to single-instruction glitch skips' },
+          { line: 11, note: 'Employs bit-inverted secondary check (~token == ~magic) requiring multi-register parity' },
+          { line: 18, note: 'Verifies step canary accumulator matches expected cryptographic hash sequence' }
+        ],
+        tryIt: 'Change auth_token to 0xCAFEBABE and verify firmware immediately returns SECURITY_FAULT_LOCKDOWN.',
+        check: {
+          question: 'Why does secure embedded firmware use multi-bit magic values (e.g. 0x5A5AA5A5) instead of simple booleans (1 or 0) for authorization checks?',
+          options: [
+            'Because a single hardware bit-flip caused by radiation or voltage glitching can change 0 to 1, whereas multi-bit values require many simultaneous bit flips to accidentally authorize access',
+            'Because C++ cannot store boolean variables in memory',
+            'Because magic numbers increase microcontroller processor clock speed',
+            'Because simple booleans consume more electricity in silicon'
+          ],
+          answer: 0,
+          why: 'A single hardware glitch or bit flip can easily change a 0 to 1. Using multi-bit values with high Hamming distance makes accidental glitch exploitation mathematically near-impossible.'
+        }
+      }
+    ],
+    summary: [
+      'Hardware Crypto Accelerators with DMA offload execute AES encryption at 1.2 cycles/byte with zero CPU core blocking.',
+      'ChaCha20-Poly1305 ARX stream ciphers eliminate lookup tables, providing constant-time execution immune to cache timing attacks on low-cost MCUs.',
+      'Constant-time memory comparisons evaluate every byte unconditionally, eliminating timing side-channels that leak secret authentication tags.',
+      'Hardware voltage and clock glitch detectors monitor analog power and timing margins, triggering instant reset upon brownout fault injection.',
+      'Control Flow Integrity (CFI) with multi-bit magic constants and redundant bit-inverted logic protects firmware against skipped branch instructions.'
+    ],
+    projectStep: {
+      title: 'Architect an Accelerated & Fault-Resilient Embedded Cryptographic Core',
+      steps: [
+        'Benchmark hardware DMA crypto accelerator throughput against software AES emulation.',
+        'Implement an ARX quarter-round mixing kernel for table-free ChaCha20 stream encryption.',
+        'Construct a constant-time memory comparison routine eliminating timing attack side-channels.',
+        'Simulate analog voltage and clock glitch supervisors triggering hardware reset actions.',
+        'Implement dual-token redundant authorization logic with control flow integrity (CFI) step canaries.'
+      ]
+    }
   }
 ];
+
 

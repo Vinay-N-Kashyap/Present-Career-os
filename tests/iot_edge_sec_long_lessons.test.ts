@@ -50,6 +50,11 @@ test('IoT Edge & IoT Sec Long Lessons: Resolution & Language Invariants', () => 
   assert.ok(secLesson2, 'iot_sec Day 2 long lesson must resolve');
   assert.equal(secLesson2.day, 2);
   assert.equal(secLesson2.parts.length, 5, 'iot_sec Day 2 must contain exactly 5 parts');
+
+  const secLesson3 = getLongLesson('iot_sec', 3);
+  assert.ok(secLesson3, 'iot_sec Day 3 long lesson must resolve');
+  assert.equal(secLesson3.day, 3);
+  assert.equal(secLesson3.parts.length, 5, 'iot_sec Day 3 must contain exactly 5 parts');
 });
 
 test('IoT Edge Day 1: Edge AI & INT8 Quantization Python Code Snippets & Socratic Checks Verification', () => {
@@ -288,6 +293,48 @@ test('IoT Edge Day 5 Capstone: Production INT8 Inference Kernel, Fused ReLU & So
   assert.ok(edgeLesson5.parts[3].output?.includes('INTEGER SOFTMAX DECISION ENGINE'));
   assert.ok(edgeLesson5.parts[4].code?.includes('benchmark_end_to_end_edge_inference'));
   assert.ok(edgeLesson5.parts[4].output?.includes('TINYML INFERENCE CYCLE BENCHMARK'));
+});
+
+test('IoT Sec Day 3: Hardware Crypto Engines, ChaCha20 ARX, Constant-Time & Glitch Protection Verification', () => {
+  const secLesson3 = getLongLesson('iot_sec', 3);
+  assert.ok(secLesson3, 'iot_sec Day 3 must resolve');
+  assert.equal(secLesson3.day, 3);
+  assert.equal(secLesson3.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(secLesson3);
+  const totalMin = estimateLessonMinutes(secLesson3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < secLesson3.parts.length; i++) {
+    const part = secLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(secLesson3.parts[0].code?.includes('evaluate_hardware_crypto_engine_throughput'));
+  assert.ok(secLesson3.parts[0].output?.includes('HARDWARE CRYPTO ENGINE VS SOFTWARE EMULATION'));
+  assert.ok(secLesson3.parts[1].code?.includes('simulate_chacha20_quarter_round'));
+  assert.ok(secLesson3.parts[1].output?.includes('CHACHA20 ARX QUARTER-ROUND KERNEL'));
+  assert.ok(secLesson3.parts[2].code?.includes('constant_time_memcmp_audit'));
+  assert.ok(secLesson3.parts[2].output?.includes('CONSTANT-TIME TIMING ATTACK MITIGATION'));
+  assert.ok(secLesson3.parts[3].code?.includes('evaluate_voltage_clock_glitch_detector'));
+  assert.ok(secLesson3.parts[3].output?.includes('HARDWARE FAULT INJECTION GLITCH DETECTOR'));
+  assert.ok(secLesson3.parts[4].code?.includes('validate_redundant_control_flow_integrity'));
+  assert.ok(secLesson3.parts[4].output?.includes('CONTROL FLOW INTEGRITY (CFI) DUAL-TOKEN AUDIT'));
 });
 
 
