@@ -228,3 +228,36 @@ test('B.Com Ops Day 5 Capstone: Global Supply Chain Optimization & Resilient Con
   assert.ok(opsLesson5.parts[4].code?.includes('verify_resilient_supply_chain_control_tower'));
 });
 
+test('B.Com AIT Day 3: Enterprise NLP, VADER Sentiment & Invoice IDP Snippets Verification', () => {
+  const aitLesson3 = getLongLesson('bcom_ait', 3);
+  assert.ok(aitLesson3, 'bcom_ait Day 3 long lesson must resolve');
+  assert.equal(aitLesson3.day, 3);
+  assert.equal(aitLesson3.parts.length, 5, 'bcom_ait Day 3 must contain exactly 5 parts');
+  assert.ok(aitLesson3.summary.length >= 4, 'bcom_ait Day 3 must contain comprehensive summary');
+  assert.ok(aitLesson3.projectStep, 'bcom_ait Day 3 must have a hands-on project step');
+
+  for (let i = 0; i < aitLesson3.parts.length; i++) {
+    const part = aitLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Part ${i + 1} answerIndex must be valid`);
+    assert.ok(check.explanation.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(aitLesson3.parts[0].code?.includes('calculate_tfidf_matrix'));
+  assert.ok(aitLesson3.parts[1].code?.includes('analyze_customer_sentiment'));
+  assert.ok(aitLesson3.parts[2].code?.includes('extract_and_redact_entities'));
+  assert.ok(aitLesson3.parts[3].code?.includes('extract_and_reconcile_invoice'));
+  assert.ok(aitLesson3.parts[4].code?.includes('predict_customer_churn_risk'));
+});
+
