@@ -172,3 +172,49 @@ test('Excel Viz Day 2: Dynamic Array Spill, Monte Carlo, Power Pivot DAX & Sensi
   assert.ok(excelLesson2.parts[4].output?.includes('EXECUTIVE FINANCIAL WATERFALL (EBITDA BRIDGE)'));
 });
 
+test('Excel Viz Day 3: Power Query M, LAMBDAs, 3-Statement Model, Scenario Switchboard & Executive Dashboards', () => {
+  const excelLesson3 = getLongLesson('excel_viz', 3);
+  assert.ok(excelLesson3, 'excel_viz Day 3 must resolve');
+  assert.equal(excelLesson3.day, 3);
+  assert.equal(excelLesson3.parts.length, 5, 'excel_viz Day 3 must contain exactly 5 parts');
+  assert.ok(excelLesson3.summary.length >= 4, 'excel_viz Day 3 must have comprehensive summary');
+  assert.ok(excelLesson3.projectStep, 'excel_viz Day 3 must have projectStep');
+  assert.ok(excelLesson3.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(excelLesson3);
+  const totalMin = estimateLessonMinutes(excelLesson3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < excelLesson3.parts.length; i++) {
+    const part = excelLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('print('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(excelLesson3.parts[0].code?.includes('simulate_power_query_m_pipeline'));
+  assert.ok(excelLesson3.parts[0].output?.includes('POWER QUERY DECLARATIVE M UNPIVOT PIPELINE'));
+  assert.ok(excelLesson3.parts[1].code?.includes('evaluate_excel_lambda_compounding'));
+  assert.ok(excelLesson3.parts[1].output?.includes('EXCEL LAMBDA SCAN & COMPOUNDING RECURSION'));
+  assert.ok(excelLesson3.parts[2].code?.includes('simulate_three_statement_model'));
+  assert.ok(excelLesson3.parts[2].output?.includes('INTEGRATED 3-STATEMENT FINANCIAL MODEL'));
+  assert.ok(excelLesson3.parts[3].code?.includes('evaluate_financial_scenarios'));
+  assert.ok(excelLesson3.parts[3].output?.includes('DYNAMIC SCENARIO SWITCHBOARD'));
+  assert.ok(excelLesson3.parts[4].code?.includes('render_executive_kpi_dashboard'));
+  assert.ok(excelLesson3.parts[4].output?.includes('C-SUITE EXECUTIVE PERFORMANCE DASHBOARD'));
+});
+
+

@@ -672,5 +672,324 @@ for name, start_v, delta, end_v, cat in bridge:
         'Generate a two-way WACC vs Terminal Growth DCF sensitivity matrix and render an executive EBITDA waterfall variance bridge.'
       ]
     }
+  },
+  {
+    day: 3,
+    title: 'Enterprise Financial Modeling: Power Query M-Pipelines, Advanced LAMBDAs, 3-Statement Linking & Executive Dashboards',
+    goal: 'Master institutional financial engineering in Excel: automated Power Query declarative M-code unpivoting pipelines, recursive Excel LAMBDAs with SCAN and REDUCE for compound amortization schedules, dynamically linked 3-Statement financial models (Income Statement, Balance Sheet, Cash Flow) with zero circular reference leaks, dynamic scenario switchboards (Base, Bull, Bear), and C-suite KPI executive dashboard architecture.',
+    minutes: 35,
+    recap: 'Welcome to Enterprise Financial Modeling & Executive Reporting Architecture. Today we transition from isolated analytical formulas into fully integrated 3-statement corporate models, automated Power Query ingestion pipelines, and C-suite KPI telemetry.',
+    parts: [
+      {
+        title: 'Power Query ETL & M-Language Declarative Pipelines (Table.UnpivotOtherColumns)',
+        say: [
+          'In corporate FP&A and institutional investment banking, financial analysts waste thousands of hours manually copying and pasting monthly GL reports, transposing columns, and fixing broken VLOOKUP references.',
+          'Modern Excel completely eliminates this manual labor through Power Query and its declarative functional formula language, M. Power Query operates as an enterprise ETL (Extract, Transform, Load) engine directly inside Excel: extracting dirty ERP exports, applying immutable transformations, and refreshing clean data models with a single click.',
+          'One of the most essential transformations in financial data engineering is Unpivoting. Accounting systems frequently export "wide" cross-tab reports with dates or months stretched across 12 horizontal columns. Such layouts violate Tidy Data principles and prevent Pivot Tables from grouping by quarter or year. Using Table.UnpivotOtherColumns in M code, wide monthly grids are automatically flattened into atomic "tall" rows (Account, Month, Amount).',
+          'Every transformation step in Power Query is recorded as an immutable M-expression (such as Table.TransformColumnTypes and Table.ReplaceValue). When next month raw CSV export lands in the network folder, clicking Data > Refresh All re-executes the entire multi-step pipeline in seconds with zero risk of human copy-paste errors.'
+        ],
+        example: 'Like an automated industrial car wash: instead of spending two hours scrubbing tires, wiping windows, and waxing paint by hand every Saturday, you drive your dirty car onto the conveyor belt and let the automated machinery wash, rinse, dry, and shine the car in three minutes.',
+        code: `# Power Query M Declarative ETL & Unpivot Simulation
+raw_wide_data = [
+    {"account": "Revenue", "Jan": 120000, "Feb": 135000, "Mar": 142000},
+    {"account": "COGS",    "Jan": 48000,  "Feb": 54000,  "Mar": 56800},
+    {"account": "OpEx",    "Jan": 35000,  "Feb": 36000,  "Mar": 37500},
+]
+
+def simulate_power_query_m_pipeline(records):
+    tidy_rows = []
+    for row in records:
+        acct = row["account"]
+        for month in ["Jan", "Feb", "Mar"]:
+            val = row[month]
+            tidy_rows.append({"account": acct, "month": month, "amount": val})
+    return tidy_rows
+
+unpivoted = simulate_power_query_m_pipeline(raw_wide_data)
+print("=== POWER QUERY DECLARATIVE M UNPIVOT PIPELINE ===")
+print(f"{'ACCOUNT':<12} | {'MONTH':<6} | {'AMOUNT ($)':<12}")
+print("-" * 36)
+for r in unpivoted[:6]:
+    amt = r['amount']
+    print(f"{r['account']:<12} | {r['month']:<6} | \${amt:>10,}")
+print(f"Total Tidy Records Generated: {len(unpivoted)}")`,
+        output: `=== POWER QUERY DECLARATIVE M UNPIVOT PIPELINE ===\nACCOUNT      | MONTH  | AMOUNT ($)  \n------------------------------------\nRevenue      | Jan    | $   120,000\nRevenue      | Feb    | $   135,000\nRevenue      | Mar    | $   142,000\nCOGS         | Jan    | $    48,000\nCOGS         | Feb    | $    54,000\nCOGS         | Mar    | $    56,800\nTotal Tidy Records Generated: 9`,
+        codeNotes: [
+          { line: 2, note: 'Simulates wide cross-tab financial accounting feed with months as horizontal columns' },
+          { line: 8, note: 'Applies declarative unpivot operation transforming wide matrix into tall atomic key-value records' },
+          { line: 20, note: 'Formats unpivoted rows with explicit currency alignment matching Power Query preview' },
+          { line: 22, note: 'Confirms total generated record count matches expected product (3 accounts x 3 months = 9)' }
+        ],
+        tryIt: 'Add an April column ($150,000 revenue) and observe how the automated pipeline ingests the fourth period without modifying the logic.',
+        check: {
+          question: 'What is the primary benefit of using Power Query Unpivot (Table.UnpivotOtherColumns) over traditional Excel copy-paste?',
+          options: [
+            'It creates an automated, repeatable ETL pipeline that flattens wide reports into tidy tall records without manual errors on refresh',
+            'It translates formulas into French and Spanish automatically',
+            'It permanently deletes historical transaction data to save hard drive space',
+            'It prevents formulas from calculating numbers larger than 1,000'
+          ],
+          answer: 0,
+          why: 'Power Query Unpivot records declarative transformation steps in M code, allowing analysts to refresh and ingest new data instantly without tedious, error-prone manual transpositions.'
+        }
+      },
+      {
+        title: 'Advanced Dynamic LAMBDAs & Recursive Scan (SCAN, REDUCE, MAP)',
+        say: [
+          'For decades, extending Excel formula capabilities required writing complex Visual Basic for Applications (VBA) macro scripts. Macro-enabled workbooks (.xlsm) carried severe security warnings, were blocked by corporate firewalls, and failed on Excel for Web and iPad.',
+          'Modern Excel revolutionized spreadsheet modeling with the introduction of LAMBDA and its companion functional helper functions: MAP, REDUCE, SCAN, BYROW, and BYCOL. A LAMBDA allows you to define custom, parameter-driven functions using standard Excel syntax and store them in the Name Manager.',
+          'The SCAN function is especially revolutionary for treasury and debt modeling: =SCAN(initial_value, array, LAMBDA(accumulator, value, calculation)). While traditional Excel required dragging formulas down hundreds of rows to calculate cumulative bank balances, SCAN calculates running balances across an entire spilled array in a single cell formula.',
+          'Combining SCAN and REDUCE with compounding interest calculations allows financial modelers to construct 30-year bond amortizations, debt service repayment waterfalls, and discounted cash flows cleanly with zero dragged formulas and zero VBA dependencies.'
+        ],
+        example: 'Like an automated conveyor belt scanner with a tally counter: as boxes roll past, the scanner reads each box weight, adds it to the running sum, and writes down the cumulative total on a digital ledger in one swift motion.',
+        code: `# Advanced Excel LAMBDA & SCAN Functional Recursion Simulation
+cash_flows = [10000, 15000, -8000, 22000, 18000]
+initial_balance = 50000
+
+def evaluate_excel_lambda_compounding(opening_bal, flows, monthly_rate=0.005):
+    schedule = []
+    current_bal = opening_bal
+    for month, cf in enumerate(flows, 1):
+        interest = current_bal * monthly_rate
+        closing_bal = current_bal + interest + cf
+        schedule.append({
+            "month": month,
+            "start": current_bal,
+            "flow": cf,
+            "interest": interest,
+            "end": closing_bal
+        })
+        current_bal = closing_bal
+    return schedule
+
+sim = evaluate_excel_lambda_compounding(initial_balance, cash_flows)
+print("=== EXCEL LAMBDA SCAN & COMPOUNDING RECURSION ===")
+print(f"{'MTH':<4} | {'OPENING':<10} | {'FLOW':<9} | {'INTEREST':<10} | {'CLOSING':<10}")
+print("-" * 52)
+for s in sim:
+    mth = s['month']
+    st = s['start']
+    fl = s['flow']
+    intr = s['interest']
+    ed = s['end']
+    print(f"M{mth:<3} | \${st:>8,.0f} | \${fl:>7,.0f} | \${intr:>8,.0f} | \${ed:>8,.0f}")
+final_equity = sim[-1]["end"]
+print(f"Final Projected Treasury Balance: \${final_equity:,.2f}")`,
+        output: `=== EXCEL LAMBDA SCAN & COMPOUNDING RECURSION ===\nMTH  | OPENING    | FLOW      | INTEREST   | CLOSING   \n----------------------------------------------------\nM1   | $  50,000 | $ 10,000 | $     250 | $  60,250\nM2   | $  60,250 | $ 15,000 | $     301 | $  75,551\nM3   | $  75,551 | $ -8,000 | $     378 | $  67,929\nM4   | $  67,929 | $ 22,000 | $     340 | $  90,269\nM5   | $  90,269 | $ 18,000 | $     451 | $ 108,720\nFinal Projected Treasury Balance: $108,719.99`,
+        codeNotes: [
+          { line: 2, note: 'Defines opening treasury liquidity and monthly operational cash flow array' },
+          { line: 5, note: 'Simulates Excel SCAN accumulator evaluating opening balance plus monthly interest and inflows' },
+          { line: 19, note: 'Outputs tabular monthly schedule matching dynamic array spilled output' },
+          { line: 27, note: 'Verifies final compounded treasury balance at month 5 reaches exactly $108,719.99' }
+        ],
+        tryIt: 'Increase monthly interest rate to 0.01 (1%) and observe how compounding accelerates the final treasury balance.',
+        check: {
+          question: 'What unique functional capability does the Excel SCAN helper function provide compared to standard formulas?',
+          options: [
+            'It iterates over an array and outputs the intermediate accumulator value at each step into a spilled dynamic array',
+            'It physically scans paper documents using your computer webcam',
+            'It checks your spreadsheet for spelling errors in financial terms',
+            'It encrypts cells with a 256-bit password'
+          ],
+          answer: 0,
+          why: 'SCAN calculates running totals or stateful accumulations across an array, spilling the full sequence of intermediate results without requiring manual row-by-row formula dragging.'
+        }
+      },
+      {
+        title: 'Mechanics of Integrated 3-Statement Financial Models (IS, BS, CFS)',
+        say: [
+          'In corporate finance, private equity, and investment banking, financial decisions cannot be evaluated using an Income Statement in isolation. A business can report high accounting Net Income on its Income Statement yet become insolvent due to inventory tie-ups and unpaid receivables.',
+          'The gold standard of financial analysis is the Integrated 3-Statement Model, which links the Income Statement (IS), Balance Sheet (BS), and Cash Flow Statement (CFS) through strict accounting invariants:',
+          'Linkage 1: Net Income from the bottom of the Income Statement flows directly to the top of the Cash Flow Statement (Operating Activities) and adds to Retained Earnings on the Balance Sheet.',
+          'Linkage 2: Non-cash expenses (such as Depreciation & Amortization) are subtracted to calculate EBIT on the Income Statement, but added back on the Cash Flow Statement because no actual cash left the bank.',
+          'Linkage 3: Capital Expenditures (CapEx) appear as cash outflows under Investing Activities on the Cash Flow Statement and increase Property, Plant & Equipment (PP&E) on the Balance Sheet.',
+          'Linkage 4: The Net Change in Cash from the bottom of the Cash Flow Statement updates Cash & Cash Equivalents on the Balance Sheet. When constructed properly, Total Assets exactly equals Total Liabilities plus Shareholders Equity ($Assets - (Liabilities + Equity) = 0$).'
+        ],
+        example: 'Like three linked mechanical gears in a clock: turning the minute hand (Net Income on Income Statement) advances the hour wheel (Retained Earnings on Balance Sheet) and moves the escapement lever (Ending Cash on Cash Flow Statement). If any link is misaligned, the clock stops.',
+        code: `# Integrated 3-Statement Corporate Financial Model Simulation
+def simulate_three_statement_model(rev, cogs_pct, opex, capex, tax_rate=0.21):
+    # 1. Income Statement
+    gross_profit = rev * (1 - cogs_pct)
+    ebitda = gross_profit - opex
+    deprec = capex * 0.20 # 20% depreciation on new capex
+    ebit = ebitda - deprec
+    taxes = max(0.0, ebit * tax_rate)
+    net_income = ebit - taxes
+
+    # 2. Cash Flow Statement
+    cfo = net_income + deprec # Non-cash depreciation addback
+    cfi = -capex              # Capital expenditures
+    cff = 0.0                 # No debt issued
+    net_change_cash = cfo + cfi + cff
+
+    # 3. Balance Sheet (Year 1)
+    cash = 100000.0 + net_change_cash
+    ppe = 50000.0 + capex - deprec
+    total_assets = cash + ppe
+
+    liabilities = 30000.0
+    equity = 120000.0 + net_income # Retained earnings accumulation
+    total_liab_equity = liabilities + equity
+
+    balance_check = total_assets - total_liab_equity
+    return {
+        "rev": rev,
+        "net_income": net_income,
+        "net_cash": net_change_cash,
+        "assets": total_assets,
+        "liab_eq": total_liab_equity,
+        "check": balance_check
+    }
+
+m = simulate_three_statement_model(500000.0, 0.40, 120000.0, 40000.0)
+print("=== INTEGRATED 3-STATEMENT FINANCIAL MODEL ===")
+rev_v = m['rev']
+ni_v = m['net_income']
+nc_v = m['net_cash']
+ast_v = m['assets']
+lq_v = m['liab_eq']
+chk_v = m['check']
+print(f"Revenue:           \${rev_v:>10,.0f}")
+print(f"Net Income:        \${ni_v:>10,.0f}")
+print(f"Operating/Net CF:  \${nc_v:>10,.0f}")
+print(f"Total Assets:      \${ast_v:>10,.0f}")
+print(f"Total Liab & Eq:   \${lq_v:>10,.0f}")
+print(f"Balance Check:     \${chk_v:>10,.2f} ({'BALANCED' if abs(chk_v) < 0.01 else 'UNBALANCED'})")`,
+        output: `=== INTEGRATED 3-STATEMENT FINANCIAL MODEL ===\nRevenue:           $   500,000\nNet Income:        $   135,880\nOperating/Net CF:  $   103,880\nTotal Assets:      $   285,880\nTotal Liab & Eq:   $   285,880\nBalance Check:     $      0.00 (BALANCED)`,
+        codeNotes: [
+          { line: 3, note: 'Calculates Income Statement down to Net Income after taxes ($135,880)' },
+          { line: 11, note: 'Constructs Cash Flow Statement adding back non-cash depreciation ($8,000)' },
+          { line: 17, note: 'Links ending cash to Balance Sheet asset side and net income to equity side' },
+          { line: 34, note: 'Proves mathematical balance check: Total Assets ($285,880) - Total Liab & Eq ($285,880) = 0' }
+        ],
+        tryIt: 'Change CapEx to $60,000 and observe how depreciation, PP&E, and cash flow adjust dynamically while the balance sheet remains 100% balanced.',
+        check: {
+          question: 'Why must Depreciation & Amortization be added back to Net Income on the Cash Flow Statement?',
+          options: [
+            'Because depreciation is an accounting allocation of historical cost, not a current cash expenditure leaving the bank account',
+            'Because the government gives tax refunds on all old equipment',
+            'Because banks require depreciation to be doubled every year',
+            'To make the company revenue look larger to investors'
+          ],
+          answer: 0,
+          why: 'Depreciation reduces taxable Net Income on the Income Statement, but no actual physical cash left the business during the period. Therefore, it is added back under Operating Cash Flow.'
+        }
+      },
+      {
+        title: 'Dynamic Scenario Switchboards & Sensitivity Switching (CHOOSE / XLOOKUP)',
+        say: [
+          'A dangerous flaw in financial modeling is hardcoding a single set of optimistic assumptions. When macro conditions shift, interest rates rise, or customer demand slows, single-point models provide zero guidance on downside risk.',
+          'Professional financial engineers design dynamic Scenario Switchboards: centralized control panels that allow executives and investors to toggle between multiple operating cases (Scenario 1: Base Case, Scenario 2: Bull Case, Scenario 3: Bear Case) using form controls or dropdown menus.',
+          'Using functions like =CHOOSE(Scenario_Index, Base_Val, Bull_Val, Bear_Val) or =XLOOKUP(Scenario_Name, Scenario_Table[Case], Scenario_Table[Value]), every assumption in the financial model—such as revenue growth rates, gross margins, SG&A hiring plans, and interest rates—updates instantaneously.',
+          'This dynamic architecture allows CFOs to stress-test debt covenants, cash runway, and valuation multiples across all three operating environments during live board meetings with zero model recalculation lag.'
+        ],
+        example: 'Like an airplane cockpit flight simulator: flipping a single switch instantly changes simulated weather from clear skies (Bull Case) to mild crosswinds (Base Case) to a severe thunderstorm (Bear Case), testing whether the aircraft remains stable under stress.',
+        code: `# Dynamic Scenario Switchboard Simulation (CHOOSE / XLOOKUP)
+scenarios = {
+    "Base Case": {"rev_growth": 0.08, "margin": 0.25},
+    "Bull Case": {"rev_growth": 0.18, "margin": 0.32},
+    "Bear Case": {"rev_growth": -0.05, "margin": 0.16}
+}
+
+def evaluate_financial_scenarios(base_rev, scenario_table):
+    results = {}
+    for name, params in scenario_table.items():
+        proj_rev = base_rev * (1 + params["rev_growth"])
+        proj_ebitda = proj_rev * params["margin"]
+        results[name] = (proj_rev, proj_ebitda)
+    return results
+
+proj = evaluate_financial_scenarios(1000000.0, scenarios)
+print("=== DYNAMIC SCENARIO SWITCHBOARD (CHOOSE / XLOOKUP) ===")
+print(f"{'SCENARIO':<12} | {'PROJECTED REVENUE':<18} | {'PROJECTED EBITDA':<18}")
+print("-" * 54)
+for name, (r, e) in proj.items():
+    print(f"{name:<12} | \${r:>16,.0f} | \${e:>16,.0f}")`,
+        output: `=== DYNAMIC SCENARIO SWITCHBOARD (CHOOSE / XLOOKUP) ===\nSCENARIO     | PROJECTED REVENUE  | PROJECTED EBITDA  \n------------------------------------------------------\nBase Case    | $       1,080,000 | $         270,000\nBull Case    | $       1,180,000 | $         377,600\nBear Case    | $         950,000 | $         152,000`,
+        codeNotes: [
+          { line: 2, note: 'Defines scenario assumption matrix for Base (8% growth), Bull (18%), and Bear (-5%)' },
+          { line: 8, note: 'Applies dynamic scenario parameters across baseline revenue and margin drivers' },
+          { line: 16, note: 'Outputs comparative projected revenue and EBITDA across all 3 operating cases' },
+          { line: 20, note: 'Quantifies downside EBITDA risk ($152,000) versus upside potential ($377,600)' }
+        ],
+        tryIt: 'Add a "Stress Test" scenario with -15% revenue growth and 10% margin to analyze recession impact.',
+        check: {
+          question: 'Why is an active Scenario Switchboard (e.g., using CHOOSE or XLOOKUP) standard practice in enterprise financial models?',
+          options: [
+            'It enables instantaneous switching between Base, Bull, and Bear cases to stress-test financial resilience without creating multiple duplicate sheets',
+            'It translates the workbook into different currencies using live satellite feeds',
+            'It automatically pays company vendor invoices on the 1st of each month',
+            'It converts Excel into an Adobe Photoshop drawing program'
+          ],
+          answer: 0,
+          why: 'Scenario switchboards allow stakeholders to evaluate how sensitivity assumptions impact revenue, EBITDA, and debt covenants across varying economic conditions within a single audit-proof model.'
+        }
+      },
+      {
+        title: 'Executive KPI Dashboard Architecture & Cognitive Typography Design',
+        say: [
+          'A financial model is only as valuable as the decisions it empowers. When analysts present 50-row tables filled with raw 8-digit numbers, busy C-suite executives experience cognitive fatigue and miss critical warning signals.',
+          'Professional dashboard design enforces Stephen Few "5-Second Rule": an executive looking at a summary dashboard must comprehend organizational performance status within 5 seconds without asking for explanations.',
+          'To achieve this, executive dashboards utilize structured KPI Summary Tiles. Each tile highlights four essential components: (1) Primary Current Metric in large high-contrast typography, (2) Benchmark Target Comparison, (3) Period-over-Period Delta (YoY or MoM), and (4) Visual Status Indicator (Green, Amber, Red).',
+          'Furthermore, executive dashboards eliminate visual clutter: remove default gray Excel gridlines, restrict bright colors exclusively to actionable variances, and incorporate high-density in-cell micro-visualizations (such as Sparklines or ASCII trend bars) to display trajectory trends alongside raw metrics.'
+        ],
+        example: 'Like an automobile dashboard: you have a large digital speedometer (primary metric), a speed limit reminder (benchmark), a fuel gauge with a low-fuel warning light (variance status), and an odometer, rather than a raw real-time stream of engine oil sensor voltages.',
+        code: `# Executive KPI Summary Tiles Dashboard Architecture
+kpi_cards = [
+    {"metric": "ARR (Annual Recurring)", "actual": 24500000, "target": 22000000, "growth": "+28.4%", "status": "GREEN"},
+    {"metric": "Net Revenue Retention",  "actual": 118,      "target": 115,      "growth": "+3.0%",  "status": "GREEN"},
+    {"metric": "Customer Acquisition",   "actual": 4200,     "target": 4800,     "growth": "-12.5%", "status": "AMBER"},
+    {"metric": "Operating Cash Flow",    "actual": 6100000,  "target": 5500000,  "growth": "+10.9%", "status": "GREEN"}
+]
+
+def render_executive_kpi_dashboard(kpis):
+    lines = []
+    lines.append("=== C-SUITE EXECUTIVE PERFORMANCE DASHBOARD ===")
+    for k in kpis:
+        variance = ((k["actual"] - k["target"]) / k["target"]) * 100
+        val_fmt = f"\${k['actual']:,}" if k["actual"] > 1000 else f"{k['actual']}%"
+        lines.append(f"[{k['status']}] {k['metric']:<24} | Val: {val_fmt:<11} | YoY: {k['growth']:<7} | Var: {variance:+5.1f}%")
+    return "\n".join(lines)
+
+output = render_executive_kpi_dashboard(kpi_cards)
+print(output)`,
+        output: `=== C-SUITE EXECUTIVE PERFORMANCE DASHBOARD ===\n[GREEN] ARR (Annual Recurring)   | Val: $24,500,000 | YoY: +28.4%  | Var: +11.4%\n[GREEN] Net Revenue Retention    | Val: 118%        | YoY: +3.0%   | Var:  +2.6%\n[AMBER] Customer Acquisition     | Val: $4,200      | YoY: -12.5%  | Var: -12.5%\n[GREEN] Operating Cash Flow      | Val: $6,100,000  | YoY: +10.9%  | Var: +10.9%`,
+        codeNotes: [
+          { line: 2, note: 'Defines executive KPI registry with actual performance, targets, growth, and status' },
+          { line: 9, note: 'Computes variance percentage against benchmark target for immediate operational clarity' },
+          { line: 11, note: 'Formats high-contrast values with appropriate currency or percentage typography' },
+          { line: 15, note: 'Renders executive performance cards identifying CAC underperformance in amber' }
+        ],
+        tryIt: 'Adjust Operating Cash Flow actual to $4,800,000 (status RED) and observe how variance turns negative.',
+        check: {
+          question: 'What is the "5-Second Rule" in executive dashboard design for corporate reporting?',
+          options: [
+            'An executive should be able to understand the overall operational status and critical performance metrics within 5 seconds of looking at the dashboard',
+            'All formulas must calculate in under 5 milliseconds',
+            'The dashboard must automatically refresh every 5 seconds',
+            'If you drop a paper financial report on the floor, you have 5 seconds to pick it up'
+          ],
+          answer: 0,
+          why: 'The 5-Second Rule ensures dashboard typography, KPI cards, and color hierarchy communicate core performance and variance status immediately without cognitive overload.'
+        }
+      }
+    ],
+    summary: [
+      'Power Query declarative M pipelines automate extraction, unpivoting (Table.UnpivotOtherColumns), and data cleaning with single-click refresh.',
+      'Modern Excel LAMBDAs with SCAN and REDUCE enable recursive compound amortization schedules without VBA macros or spilled cell errors.',
+      'An integrated 3-Statement Model links Net Income to Operating Cash Flow, CapEx to PP&E, and Ending Cash to the Balance Sheet to maintain mathematical balance.',
+      'Scenario Switchboards (CHOOSE / XLOOKUP) allow instantaneous sensitivity testing between Base, Bull, and Bear assumptions across a unified model.',
+      'Executive KPI dashboard tiles utilize disciplined typography, benchmark comparisons, and variance indicators adhering to the 5-Second Rule.'
+    ],
+    projectStep: {
+      title: 'Architect an Integrated 3-Statement Corporate Financial Model & Executive Dashboard',
+      steps: [
+        'Build an automated Power Query M ingestion pipeline to unpivot wide accounting trial balances into tidy records.',
+        'Implement an Excel LAMBDA with SCAN to generate a recursive compounding treasury amortization schedule.',
+        'Construct an integrated 3-Statement Model with balanced linkages between Net Income, Cash Flow, and Balance Sheet.',
+        'Deploy a dynamic Scenario Switchboard driving Base, Bull, and Bear operational assumptions with CHOOSE / XLOOKUP.',
+        'Design a C-suite Executive KPI Performance Dashboard featuring high-contrast metric tiles and variance status indicators.'
+      ]
+    }
   }
 ];
