@@ -1175,5 +1175,418 @@ print(f"Upside: {p5['valuation_upside_pct']}% | Recommendation: {p5['investment_
       ]
     }
   }
+,
+  {
+    coursePrefix: 'bcom-finance',
+    day: 4,
+    title: 'Fixed Income Analytics, Duration, Convexity, CDS Default Modeling & Options Risk Hedging',
+    goal: 'Master enterprise fixed income analytics, credit risk modeling, and corporate treasury hedging: solve bond Yield to Maturity (YTM) via Newton-Raphson numerical methods, calculate Macaulay Duration, Modified Duration, and Convexity price Taylor approximations, bootstrap zero-coupon spot yield curves and implied forward rates, model Credit Default Swap (CDS) hazard rates and cumulative default probabilities, and construct Black-Scholes zero-cost collars for equity and currency risk management.',
+    minutes: 45,
+    recap: 'In Day 3, we engineered multi-stage DCF valuation, Hamada beta relevering, sensitivity surfaces, and LBO waterfalls. Today, we enter treasury risk management: pricing institutional bonds, measuring interest rate convexity, quantifying counterparty credit default risk, and executing options hedging collars.',
+    parts: [
+      {
+        title: 'Bond Pricing, Yield to Maturity (YTM) & Newton-Raphson Solver',
+        say: [
+          'In global corporate treasury management, debt financing represents the primary vehicle for capital formation. An institutional fixed-rate coupon bond commits the issuing corporation to pay periodic coupon cash flows (C = Face * c) followed by the repayment of the principal Face value (M) at maturity.',
+          'While computing a bond\'s present value given a known market interest rate is straightforward arithmetic, the reverse problem—calculating the market-implied Yield to Maturity (YTM) given an observed secondary trading price—cannot be solved algebraically. Because the discount rate y appears with multiple exponent powers in the denominator across all coupon periods, YTM must be solved numerically.',
+          'Financial engineers implement the Newton-Raphson root-finding algorithm: y_{n+1} = y_n - f(y_n) / f\'(y_n), where f(y) is the pricing error (PV(y) - Market Price) and the first derivative f\'(y) is the bond\'s negative price sensitivity with respect to yield. Within four to six iterations, the algorithm converges on the exact internal rate of return of the bond with sub-basis-point precision.'
+        ],
+        example: 'A corporation issues a 10-year, $1,000 face value bond with a 6.00% annual coupon. Amid rising interest rates, the bond trades at a secondary market discount price of $925.00. Initializing a Newton-Raphson solver at 5.0% yield converges in five iterations to an exact Yield to Maturity of 7.0714%, reflecting the true cost of debt to the issuer.',
+        code: `def solve_bond_yield_to_maturity(
+    face_value: float,
+    coupon_rate: float,
+    years_to_maturity: int,
+    market_price: float,
+    initial_guess: float = 0.05
+) -> dict:
+    coupon = face_value * coupon_rate
+    y = initial_guess
+    tolerance = 1e-7
+    max_iter = 100
+    
+    for _ in range(max_iter):
+        pv = 0.0
+        pv_prime = 0.0
+        for t in range(1, years_to_maturity + 1):
+            df = (1.0 + y) ** t
+            pv += coupon / df
+            pv_prime -= (t * coupon) / ((1.0 + y) ** (t + 1))
+        df_t = (1.0 + y) ** years_to_maturity
+        pv += face_value / df_t
+        pv_prime -= (years_to_maturity * face_value) / ((1.0 + y) ** (years_to_maturity + 1))
+        
+        diff = pv - market_price
+        if abs(diff) < tolerance:
+            break
+        y -= diff / pv_prime
+        
+    return {
+        "face_value": face_value,
+        "coupon_rate_pct": round(coupon_rate * 100.0, 2),
+        "years_to_maturity": years_to_maturity,
+        "market_price": round(market_price, 2),
+        "yield_to_maturity_pct": round(y * 100.0, 4),
+        "pricing_relationship": "DISCOUNT" if market_price < face_value else ("PREMIUM" if market_price > face_value else "PAR")
+    }
+
+p1 = solve_bond_yield_to_maturity(
+    face_value=1000.0,
+    coupon_rate=0.06,
+    years_to_maturity=10,
+    market_price=925.0
+)
+fc_s = "$" + f"{p1['face_value']:,.2f}"
+pr_s = "$" + f"{p1['market_price']:,.2f}"
+print(f"Bond: {fc_s} Face, {p1['coupon_rate_pct']:.2f}% Coupon | Price: {pr_s}")
+print(f"YTM: {p1['yield_to_maturity_pct']}% | Status: {p1['pricing_relationship']}")`,
+        output: `Bond: $1,000.00 Face, 6.00% Coupon | Price: $925.00\nYTM: 7.0714% | Status: DISCOUNT`,
+        codeNotes: [
+          { line: 15, note: 'Accumulates discounted coupon cash flows and analytical first derivatives with respect to yield' },
+          { line: 20, note: 'Discounts principal face value at maturity and evaluates pricing discrepancy against market trading quotes' },
+          { line: 24, note: 'Executes Newton-Raphson update step subtracting f(y) / f\'(y) until tolerance converges within 1e-7' },
+          { line: 32, note: 'Classifies secondary market pricing relationship as Discount (YTM > Coupon), Premium, or Par' }
+        ],
+        tryIt: 'Increase market_price to $1,075.00 to observe how the bond trades at a PREMIUM and the YTM falls below the 6.00% coupon rate.',
+        check: {
+          question: 'Why does an increase in secondary market bond trading price above face value indicate that the bond\'s Yield to Maturity has fallen below its stated coupon rate?',
+          options: [
+            'Investors are willing to pay an upfront premium only because the bond\'s fixed contractual coupon rate exceeds prevailing new-issue market yields.',
+            'Higher prices automatically trigger a mandatory prepayment penalty enforced by the indenture trustee.',
+            'Bond prices and interest rates move in the same direction because higher prices increase the issuer\'s total interest deductions.',
+            'Secondary market premiums are credited directly to the issuer\'s retained earnings under GAAP rules.'
+          ],
+          answer: 0,
+          why: 'Bond prices and yields share an inverse relationship; when prevailing interest rates fall below the bond\'s coupon rate, investors bid the bond up above par value.',
+          answerIndex: 0,
+          explanation: 'Bond prices and yields share an inverse relationship; when prevailing interest rates fall below the bond\'s coupon rate, investors bid the bond up above par value.'
+        }
+      },
+      {
+        title: 'Macaulay Duration, Modified Duration & Convexity Price Approximation',
+        say: [
+          'Corporate treasurers managing billion-dollar bond portfolios require precise metrics to quantify interest rate risk. Macaulay Duration calculates the weighted-average time (in years) until a bond\'s cash flows are received, where each cash flow\'s weight equals its present value proportion of the bond\'s total price.',
+          'Modified Duration converts Macaulay Duration into a direct percentage price sensitivity metric: D_mod = D_mac / (1 + y). For an instantaneous yield change delta_y, Modified Duration predicts the first-order linear price change: delta_P / P = -D_mod * delta_y. Additionally, Dollar Duration (DV01 / PVBP) measures the absolute dollar value loss for a 1 basis point (0.01%) yield increase.',
+          'However, the true price-yield curve of a bond is not linear; it is strictly convex. For substantial yield shifts (+/- 100 bps), relying solely on duration produces severe underestimation of price gains and overestimation of price drops. Incorporating second-order Convexity (C) via Taylor series approximation yields the definitive formula: delta_P / P = -D_mod * delta_y + 0.5 * C * (delta_y)^2.'
+        ],
+        example: 'A 10-year, 6.00% coupon bond priced at $923.10 has a Macaulay Duration of 7.7000 years, a Modified Duration of 7.1895 years, and a Convexity of 67.1314 (DV01 of $0.6637 per bond). Under a +100 bps macroeconomic rate shock, duration predicts a -7.1895% loss, but convexity offsets this with a +0.3357% curvature gain, resulting in a net price decline of -6.8539% to $859.83.',
+        code: `def calculate_bond_duration_and_convexity(
+    face_value: float,
+    coupon_rate: float,
+    years_to_maturity: int,
+    ytm: float,
+    yield_shock_bps: float
+) -> dict:
+    coupon = face_value * coupon_rate
+    price = 0.0
+    weighted_time = 0.0
+    convexity_sum = 0.0
+    
+    for t in range(1, years_to_maturity + 1):
+        cf = coupon + (face_value if t == years_to_maturity else 0.0)
+        pv = cf / ((1.0 + ytm) ** t)
+        price += pv
+        weighted_time += t * pv
+        convexity_sum += pv * (t * t + t)
+        
+    mac_duration = weighted_time / price
+    mod_duration = mac_duration / (1.0 + ytm)
+    convexity = convexity_sum / (price * ((1.0 + ytm) ** 2))
+    
+    dy = yield_shock_bps / 10000.0
+    duration_effect = -mod_duration * dy
+    convexity_effect = 0.5 * convexity * (dy ** 2)
+    total_pct_change = (duration_effect + convexity_effect) * 100.0
+    estimated_new_price = price * (1.0 + duration_effect + convexity_effect)
+    
+    dv01 = mod_duration * price * 0.0001
+    
+    return {
+        "base_price": round(price, 2),
+        "macaulay_duration_years": round(mac_duration, 4),
+        "modified_duration_years": round(mod_duration, 4),
+        "convexity": round(convexity, 4),
+        "dv01_per_bond": round(dv01, 4),
+        "yield_shock_bps": yield_shock_bps,
+        "duration_pct_impact": round(duration_effect * 100.0, 4),
+        "convexity_pct_impact": round(convexity_effect * 100.0, 4),
+        "net_price_pct_change": round(total_pct_change, 4),
+        "estimated_new_price": round(estimated_new_price, 2)
+    }
+
+p2 = calculate_bond_duration_and_convexity(
+    face_value=1000.0,
+    coupon_rate=0.06,
+    years_to_maturity=10,
+    ytm=0.071,
+    yield_shock_bps=100.0
+)
+bp_s = "$" + f"{p2['base_price']:,.2f}"
+dv_s = "$" + f"{p2['dv01_per_bond']:,.4f}"
+np_s = "$" + f"{p2['estimated_new_price']:,.2f}"
+print(f"Base Price: {bp_s} | Macaulay Duration: {p2['macaulay_duration_years']:.4f} yrs")
+print(f"Modified Duration: {p2['modified_duration_years']} yrs | Convexity: {p2['convexity']} | DV01: {dv_s}")
+print(f"Yield Shock: +{p2['yield_shock_bps']:.1f} bps -> Net Price Impact: {p2['net_price_pct_change']}%")
+print(f"New Price: {np_s}")`,
+        output: `Base Price: $923.10 | Macaulay Duration: 7.7000 yrs\nModified Duration: 7.1895 yrs | Convexity: 67.1314 | DV01: $0.6637\nYield Shock: +100.0 bps -> Net Price Impact: -6.8539%\nNew Price: $859.83`,
+        codeNotes: [
+          { line: 17, note: 'Calculates present-value-weighted time and second-order time squared summation for convexity' },
+          { line: 19, note: 'Divides weighted time by base price to compute exact Macaulay Duration in years' },
+          { line: 20, note: 'Normalizes Macaulay Duration by (1 + y) to derive Modified Duration percentage sensitivity' },
+          { line: 25, note: 'Applies second-order Taylor series: duration linear loss plus positive convexity curvature buffer' }
+        ],
+        tryIt: 'Flip yield_shock_bps to -100.0 to observe how convexity enhances price gains, causing prices to rise by +7.5252% rather than just 7.1895%.',
+        check: {
+          question: 'Why is positive convexity considered an exceptionally desirable mathematical property for corporate treasury bond holdings?',
+          options: [
+            'Convexity accelerates price gains when market interest rates fall while cushioning price losses when interest rates rise.',
+            'Convexity guarantees that the bond issuer will never default under any macroeconomic credit event.',
+            'Convexity eliminates the payment of federal capital gains taxes upon maturity redemption.',
+            'Convexity converts fixed-rate coupon payments into floating-rate SOFR distributions automatically.'
+          ],
+          answer: 0,
+          why: 'Because the price-yield curve is convex, price increases when yields drop are larger than price decreases when yields rise by an identical magnitude.',
+          answerIndex: 0,
+          explanation: 'Because the price-yield curve is convex, price increases when yields drop are larger than price decreases when yields rise by an identical magnitude.'
+        }
+      },
+      {
+        title: 'Zero-Coupon Spot Rate Bootstrapping & Forward Rates Curve Analytics',
+        say: [
+          'In financial theory, valuing individual cash flows requires discounting each coupon payment at the specific zero-coupon spot rate matching that exact maturity, rather than applying a single flat YTM. However, active financial markets primarily quote coupon-bearing sovereign Treasury bonds rather than pure zero-coupon bonds.',
+          'To uncover the true underlying term structure of risk-free interest rates, quantitative analysts execute Spot Curve Bootstrapping. Starting with 1-year zero-coupon Treasury bills, the 1-year spot rate z_1 is computed directly: (100 + C) / (1 + z_1) = Price. In Year 2, the 2-year coupon bond is discounted using the known z_1 for its first coupon, leaving z_2 as the sole unknown to be solved algebraically.',
+          'Once the zero-coupon spot curve is constructed, forward rates can be derived. The 1-year implied forward rate starting in Year 1: f_{1,2} = [(1 + z_2)^2 / (1 + z_1)] - 1. Forward rates represent the break-even reinvestment rate demanded by the market, establishing the baseline pricing for corporate Interest Rate Swaps (IRS) and floating-rate credit facilities.'
+        ],
+        example: 'Given par Treasury bonds yielding 4.0% for 1 year, 4.5% for 2 years, and 5.0% for 3 years at a price of 100.00. Bootstrapping extracts zero-coupon spot rates of 4.0000% (Year 1), 4.5113% (Year 2), and 5.0341% (Year 3), deriving 1-year implied forward rates of 5.0251% (Year 1 to 2) and 6.0875% (Year 2 to 3).',
+        code: `def bootstrap_spot_and_forward_yield_curve(
+    par_bonds: list[dict]
+) -> dict:
+    spot_rates = {}
+    
+    for bond in sorted(par_bonds, key=lambda b: b["maturity_years"]):
+        mat = bond["maturity_years"]
+        coupon = bond["coupon_rate"] * 100.0
+        price = bond.get("price", 100.0)
+        
+        if mat == 1:
+            z1 = ((100.0 + coupon) / price) - 1.0
+            spot_rates[1] = z1
+        else:
+            prior_pv = sum(coupon / ((1.0 + spot_rates[t]) ** t) for t in range(1, mat))
+            remaining = price - prior_pv
+            z_mat = (((100.0 + coupon) / remaining) ** (1.0 / mat)) - 1.0
+            spot_rates[mat] = z_mat
+            
+    forward_rates = {}
+    maturities = sorted(spot_rates.keys())
+    for i in range(len(maturities) - 1):
+        t1 = maturities[i]
+        t2 = maturities[i + 1]
+        f_rate = (((1.0 + spot_rates[t2]) ** t2) / ((1.0 + spot_rates[t1]) ** t1)) ** (1.0 / (t2 - t1)) - 1.0
+        forward_rates[f"Year_{t1}_to_{t2}"] = round(f_rate * 100.0, 4)
+        
+    return {
+        "spot_curve_pct": {f"Year_{k}": round(v * 100.0, 4) for k, v in spot_rates.items()},
+        "forward_curve_pct": forward_rates
+    }
+
+par_curve = [
+    {"maturity_years": 1, "coupon_rate": 0.040, "price": 100.0},
+    {"maturity_years": 2, "coupon_rate": 0.045, "price": 100.0},
+    {"maturity_years": 3, "coupon_rate": 0.050, "price": 100.0}
+]
+p3 = bootstrap_spot_and_forward_yield_curve(par_curve)
+print(f"Spot Rates: {p3['spot_curve_pct']}")
+print(f"Forward Rates: {p3['forward_curve_pct']}")`,
+        output: `Spot Rates: {'Year_1': 4.0, 'Year_2': 4.5113, 'Year_3': 5.0341}\nForward Rates: {'Year_1_to_2': 5.0251, 'Year_2_to_3': 6.0875}`,
+        codeNotes: [
+          { line: 12, note: 'Bootstraps 1-year zero-coupon spot rate directly from single-period coupon and par price' },
+          { line: 15, note: 'Subtracts present value of interim coupons discounted at previously bootstrapped spot rates' },
+          { line: 17, note: 'Isolates and solves for the terminal zero-coupon rate for maturity t' },
+          { line: 24, note: 'Derives implied 1-year forward rates enforcing absence of intertemporal arbitrage' }
+        ],
+        tryIt: 'Increase the 3-year coupon rate to 0.060 (6.0%) to observe how steepening the yield curve drives the forward rate above 8.0%.',
+        check: {
+          question: 'Under the Pure Expectations Hypothesis of the term structure, what do forward interest rates imply about future spot rates?',
+          options: [
+            'Forward rates represent the financial market\'s unbiased consensus expectation of future short-term spot interest rates.',
+            'Forward rates reflect the mandatory underwriting commission charged by primary dealer investment banks.',
+            'Forward rates indicate the maximum statutory rate of inflation permitted by international monetary treaties.',
+            'Forward rates are fixed policy benchmarks determined directly by the Bank for International Settlements.'
+          ],
+          answer: 0,
+          why: 'The Pure Expectations Hypothesis posits that forward rates equal the market\'s expected future spot rates, ensuring that multi-year investments yield the same expected return as rolling 1-year instruments.',
+          answerIndex: 0,
+          explanation: 'The Pure Expectations Hypothesis posits that forward rates equal the market\'s expected future spot rates, ensuring that multi-year investments yield the same expected return as rolling 1-year instruments.'
+        }
+      },
+      {
+        title: 'Credit Default Swaps (CDS) & Implied Default Probability Modeling',
+        say: [
+          'Corporate treasuries and institutional credit investors measure counterparty risk and debt portfolio default exposures using Credit Default Swaps (CDS). A CDS functions as financial insurance: the protection buyer pays an ongoing annual spread (quoted in basis points), and the protection seller agrees to make a contingent payoff equal to (1 - Recovery Rate) if the reference corporate entity suffers a credit default event.',
+          'In continuous-time credit modeling, the market-implied Hazard Rate lambda (the instantaneous probability of default given survival up to that moment) is derived directly from the traded CDS spread: lambda = CDS_Spread / (1 - Recovery Rate). Under standard ISDA market conventions, senior unsecured corporate debt is benchmarked at a 40% recovery rate (Loss Given Default = 60%).',
+          'From the hazard rate, the cumulative probability of default over any multi-year horizon T is computed using the Poisson survival function: PD_T = 1 - exp(-lambda * T). A rising CDS spread immediately alerts corporate treasurers to deteriorating counterparty creditworthiness, triggering mandatory collateral calls or credit line reductions.'
+        ],
+        example: 'A Tier-2 automotive supplier\'s 5-year CDS spread widens to 250.0 bps amid supply chain disruptions. Benchmarking senior recovery at 40% (60% LGD) implies an annual hazard rate of 4.1667%. Over a 5-year horizon, the market-implied cumulative default probability reaches 18.8064%, classifying the credit as High Yield and triggering proactive treasury counterparty limits.',
+        code: `def calculate_cds_implied_default_probability(
+    cds_spread_bps: float,
+    recovery_rate: float,
+    horizon_years: int = 5
+) -> dict:
+    s = cds_spread_bps / 10000.0
+    loss_given_default = 1.0 - recovery_rate
+    hazard_rate = s / loss_given_default if loss_given_default > 0 else 0.0
+    cumulative_pd = 1.0 - math.exp(-hazard_rate * horizon_years)
+    annual_survival_prob = math.exp(-hazard_rate)
+    
+    return {
+        "cds_spread_bps": cds_spread_bps,
+        "recovery_rate_pct": round(recovery_rate * 100.0, 2),
+        "loss_given_default_pct": round(loss_given_default * 100.0, 2),
+        "annual_hazard_rate_pct": round(hazard_rate * 100.0, 4),
+        "annual_survival_probability_pct": round(annual_survival_prob * 100.0, 4),
+        "horizon_years": horizon_years,
+        "cumulative_default_probability_pct": round(cumulative_pd * 100.0, 4),
+        "credit_risk_tier": "DISTRESSED" if cds_spread_bps >= 500 else ("HIGH_YIELD" if cds_spread_bps >= 200 else "INVESTMENT_GRADE")
+    }
+
+p4 = calculate_cds_implied_default_probability(
+    cds_spread_bps=250.0,
+    recovery_rate=0.40,
+    horizon_years=5
+)
+print(f"CDS Spread: {p4['cds_spread_bps']:.1f} bps | Recovery: {p4['recovery_rate_pct']}% | LGD: {p4['loss_given_default_pct']}%")
+print(f"Annual Hazard Rate: {p4['annual_hazard_rate_pct']}% | 5-Year Cumulative PD: {p4['cumulative_default_probability_pct']}% | Tier: {p4['credit_risk_tier']}")`,
+        output: `CDS Spread: 250.0 bps | Recovery: 40.0% | LGD: 60.0%\nAnnual Hazard Rate: 4.1667% | 5-Year Cumulative PD: 18.8064% | Tier: HIGH_YIELD`,
+        codeNotes: [
+          { line: 7, note: 'Calculates Loss Given Default (LGD = 1 - Recovery Rate) based on standard 40% senior recovery convention' },
+          { line: 8, note: 'Extracts continuous annual hazard rate lambda from annualized CDS basis point spread' },
+          { line: 9, note: 'Computes cumulative multi-year default probability using Poisson exponential survival distributions' },
+          { line: 19, note: 'Categorizes issuer credit risk tier into Investment Grade (<200 bps), High Yield, or Distressed (>=500 bps)' }
+        ],
+        tryIt: 'Increase cds_spread_bps to 600.0 bps to simulate a distressed credit event and observe how the 5-year default probability surges past 39%.',
+        check: {
+          question: 'If a corporate borrower\'s CDS spread widens while its recovery rate expectation remains constant at 40%, what does this mathematically prove about market expectations?',
+          options: [
+            'The market-implied hazard rate and cumulative probability of bankruptcy default have both increased.',
+            'The company has issued additional equity shares that diluted existing stockholders.',
+            'The Federal Reserve has cut interest rates to stimulate the broader national economy.',
+            'The corporate debt has been reclassified from subordinated mezzanine notes into senior secured term loans.'
+          ],
+          answer: 0,
+          why: 'The hazard rate is directly proportional to the CDS spread divided by loss given default; widening spreads directly translate into higher implied default probabilities.',
+          answerIndex: 0,
+          explanation: 'The hazard rate is directly proportional to the CDS spread divided by loss given default; widening spreads directly translate into higher implied default probabilities.'
+        }
+      },
+      {
+        title: 'Black-Scholes-Merton Options Pricing & Corporate Treasury Collar Hedging',
+        say: [
+          'Corporate treasuries face continuous market exposures: cross-border currency volatility, commodity feedstock fluctuations, and strategic corporate equity stakes. To protect enterprise balance sheets without paying massive upfront insurance premiums, financial executives deploy derivatives strategies anchored in the Black-Scholes-Merton (BSM) options pricing model.',
+          'Under BSM, European Call and Put option prices are determined by spot price S, strike price K, risk-free rate r, time to maturity T, and volatility sigma. Key risk parameters (the Greeks) govern sensitivity: Delta measures hedge ratio per unit of underlying asset, and Gamma measures the rate of change of Delta.',
+          'To achieve downside protection at minimal cost, treasurers construct a Zero-Cost Collar: purchasing an out-of-the-money Put option (establishing a guaranteed price floor) and simultaneously selling an out-of-the-money Call option (capping upside participation). By setting the strike prices such that the call premium received exactly offsets the put premium paid, the corporation locks in an unassailable risk corridor with zero upfront cash drag.'
+        ],
+        example: 'A corporation holds a strategic equity asset trading at $100.00 and seeks downside insurance against an upcoming earnings release. With 25% volatility, a 4.5% risk-free rate, and a 1-year horizon, purchasing a 90-strike Put costs $3.89, while selling a 110-strike Call yields $7.83 (net collar cash flow of -$3.94). Establishing an exact zero-cost collar locks in a $90 downside floor while funding insurance through an upside cap.',
+        code: `def norm_cdf(x: float) -> float:
+    return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
+
+def model_black_scholes_options_and_treasury_collar(
+    spot_price: float,
+    strike_call: float,
+    strike_put: float,
+    risk_free_rate: float,
+    volatility: float,
+    time_to_expiry_years: float
+) -> dict:
+    sqrt_t = math.sqrt(time_to_expiry_years)
+    r = risk_free_rate
+    sig = volatility
+    
+    d1_c = (math.log(spot_price / strike_call) + (r + 0.5 * sig ** 2) * time_to_expiry_years) / (sig * sqrt_t)
+    d2_c = d1_c - sig * sqrt_t
+    call_price = spot_price * norm_cdf(d1_c) - strike_call * math.exp(-r * time_to_expiry_years) * norm_cdf(d2_c)
+    call_delta = norm_cdf(d1_c)
+    
+    d1_p = (math.log(spot_price / strike_put) + (r + 0.5 * sig ** 2) * time_to_expiry_years) / (sig * sqrt_t)
+    d2_p = d1_p - sig * sqrt_t
+    put_price = strike_put * math.exp(-r * time_to_expiry_years) * norm_cdf(-d2_p) - spot_price * norm_cdf(-d1_p)
+    put_delta = norm_cdf(d1_p) - 1.0
+    
+    gamma = (math.exp(-0.5 * (d1_c ** 2)) / (math.sqrt(2 * math.pi))) / (spot_price * sig * sqrt_t)
+    net_collar_cost = put_price - call_price
+    
+    return {
+        "spot_price": spot_price,
+        "call_strike": strike_call,
+        "put_strike": strike_put,
+        "call_premium": round(call_price, 2),
+        "put_premium": round(put_price, 2),
+        "call_delta": round(call_delta, 4),
+        "put_delta": round(put_delta, 4),
+        "portfolio_gamma": round(gamma, 6),
+        "net_collar_cost": round(net_collar_cost, 2),
+        "downside_protection_floor": strike_put,
+        "upside_participation_cap": strike_call
+    }
+
+p5 = model_black_scholes_options_and_treasury_collar(
+    spot_price=100.0,
+    strike_call=110.0,
+    strike_put=90.0,
+    risk_free_rate=0.045,
+    volatility=0.25,
+    time_to_expiry_years=1.0
+)
+sp_s = "$" + f"{p5['spot_price']:,.2f}"
+c_st_s = "$" + f"{p5['call_strike']:,.2f}"
+p_st_s = "$" + f"{p5['put_strike']:,.2f}"
+cp_s = "$" + f"{p5['call_premium']:,.2f}"
+pp_s = "$" + f"{p5['put_premium']:,.2f}"
+nc_s = "$" + f"{p5['net_collar_cost']:,.2f}"
+fl_s = "$" + f"{p5['downside_protection_floor']:,.2f}"
+cap_s = "$" + f"{p5['upside_participation_cap']:,.2f}"
+print(f"Spot: {sp_s} | Call Strike: {c_st_s} (Premium: {cp_s}) | Put Strike: {p_st_s} (Premium: {pp_s})")
+print(f"Call Delta: {p5['call_delta']} | Put Delta: {p5['put_delta']} | Portfolio Gamma: {p5['portfolio_gamma']}")
+print(f"Net Collar Cost: {nc_s} | Protection Floor: {fl_s} | Upside Cap: {cap_s}")`,
+        output: `Spot: $100.00 | Call Strike: $110.00 (Premium: $7.83) | Put Strike: $90.00 (Premium: $3.89)\nCall Delta: 0.4696 | Put Delta: -0.2338 | Portfolio Gamma: 0.015911\nNet Collar Cost: $-3.94 | Protection Floor: $90.00 | Upside Cap: $110.00`,
+        codeNotes: [
+          { line: 12, note: 'Calculates Black-Scholes d1 and d2 arguments incorporating drift and annualized volatility' },
+          { line: 14, note: 'Evaluates European Call premium and analytical hedge Delta using Gaussian normal CDF' },
+          { line: 19, note: 'Calculates European Put premium and negative downside hedge Delta' },
+          { line: 23, note: 'Computes net collar cash outlay: put premium purchased minus call premium sold' }
+        ],
+        tryIt: 'Increase strike_call to $117.00 to find the exact strike where call premium falls to $3.89, achieving a perfect $0.00 Zero-Cost Collar.',
+        check: {
+          question: 'Why would a corporate treasury department implement a Zero-Cost Collar on an equity holding rather than simply buying a standalone protective Put option?',
+          options: [
+            'A zero-cost collar eliminates the cash expense of buying insurance by funding the put purchase through the sale of an out-of-the-money call option, in exchange for capping upside gains.',
+            'Zero-cost collars are required by the SEC to prevent illegal insider trading by corporate officers.',
+            'Buying standalone puts causes immediate dilution of the company\'s common stock earnings per share.',
+            'Zero-cost collars convert corporate debt from fixed-rate coupon obligations into subordinated convertible debt.'
+          ],
+          answer: 0,
+          why: 'Standalone puts require cash outlay; a collar funds the downside protection floor by selling upside upside calls, eliminating upfront cash drag.',
+          answerIndex: 0,
+          explanation: 'Standalone puts require cash outlay; a collar funds the downside protection floor by selling upside upside calls, eliminating upfront cash drag.'
+        }
+      }
+    ],
+    summary: [
+      'Engineered numerical Newton-Raphson bond yield solvers converging on exact Yield to Maturity ($925 discount bond -> 7.0714% YTM) across multi-period coupon cash flows.',
+      'Calculated Macaulay Duration (7.7000 yrs), Modified Duration (7.1895 yrs), DV01 ($0.6637), and Convexity (67.1314), proving that positive convexity cushions bond portfolio losses under +100 bps yield shocks.',
+      'Bootstrapped risk-free zero-coupon spot yield curves (Year 1: 4.0%, Year 2: 4.51%, Year 3: 5.03%) from coupon Treasuries and derived forward rates (Year 1 to 2: 5.03%, Year 2 to 3: 6.09%) to price institutional swaps.',
+      'Modeled Credit Default Swap (CDS) hazard rates (4.1667%) and cumulative default probabilities (18.8064% over 5 years) to quantify counterparty default exposures under ISDA 40% recovery conventions.',
+      'Constructed Black-Scholes-Merton options pricing and corporate treasury collar hedging strategies, locking in a $90.00 downside protection floor funded by an upside cap with zero upfront cash drag.'
+    ],
+    projectStep: {
+      title: 'Engineer the Corporate Fixed Income & Treasury Risk Management Engine',
+      steps: [
+        'Deploy the Newton-Raphson numerical algorithm to solve for bond Yield to Maturity given secondary market trading prices.',
+        'Compute Macaulay Duration, Modified Duration, and second-order Convexity to project bond portfolio price impacts under macroeconomic interest rate shocks.',
+        'Bootstrap zero-coupon spot rate curves and derive implied forward rate curves to establish benchmark discount rates for corporate debt issuance.',
+        'Translate traded CDS spreads into annual hazard rates and Poisson cumulative default probabilities for counterparty risk underwriting.',
+        'Implement the Black-Scholes-Merton options pricing engine and calibrate a zero-cost collar hedging corridor to protect corporate balance sheet assets.'
+      ]
+    }
+  }
 
 ];
