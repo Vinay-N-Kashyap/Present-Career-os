@@ -27,6 +27,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.equal(netLesson3.day, 3);
   assert.equal(netLesson3.parts.length, 5, 'iot_net Day 3 must contain exactly 5 parts');
 
+  const netLesson4 = getLongLesson('iot_net', 4);
+  assert.ok(netLesson4, 'iot_net Day 4 long lesson must resolve');
+  assert.equal(netLesson4.day, 4);
+  assert.equal(netLesson4.parts.length, 5, 'iot_net Day 4 must contain exactly 5 parts');
+
   // 2. bcom_ana
   const anaLesson = getLongLesson('bcom_ana', 1);
   assert.ok(anaLesson, 'bcom_ana Day 1 long lesson must resolve');
@@ -194,6 +199,48 @@ test('IoT Net Day 3: Thread IPv6 Mesh, CoAP Blockwise & OSCORE Security Verifica
   assert.ok(netLesson3.parts[3].output?.includes('THREAD BORDER ROUTER PREFIX DISSEMINATION'));
   assert.ok(netLesson3.parts[4].code?.includes('simulate_thread_commissioning_handshake'));
   assert.ok(netLesson3.parts[4].output?.includes('THREAD COMMISSIONING & SECURE CREDENTIAL DELIVERY'));
+});
+
+test('IoT Net Day 4: Matter Protocol, SPAKE2+, Multi-Admin & Interaction Model Verification', () => {
+  const netLesson4 = getLongLesson('iot_net', 4);
+  assert.ok(netLesson4, 'iot_net Day 4 must resolve');
+  assert.equal(netLesson4.day, 4);
+  assert.equal(netLesson4.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(netLesson4);
+  const totalMin = estimateLessonMinutes(netLesson4);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < netLesson4.parts.length; i++) {
+    const part = netLesson4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(netLesson4.parts[0].code?.includes('simulate_matter_data_model_hierarchy'));
+  assert.ok(netLesson4.parts[0].output?.includes('MATTER DATA MODEL HIERARCHY & CLUSTERS'));
+  assert.ok(netLesson4.parts[1].code?.includes('simulate_matter_pase_spake2plus_handshake'));
+  assert.ok(netLesson4.parts[1].output?.includes('MATTER PASE SPAKE2+ COMMISSIONING HANDSHAKE'));
+  assert.ok(netLesson4.parts[2].code?.includes('evaluate_matter_case_multi_admin_fabrics'));
+  assert.ok(netLesson4.parts[2].output?.includes('MATTER CASE & MULTI-ADMIN FABRIC ACCESS CONTROL'));
+  assert.ok(netLesson4.parts[3].code?.includes('verify_matter_device_attestation_certificate'));
+  assert.ok(netLesson4.parts[3].output?.includes('MATTER DEVICE ATTESTATION CERTIFICATE (DAC) VERIFICATION'));
+  assert.ok(netLesson4.parts[4].code?.includes('simulate_matter_interaction_model_engine'));
+  assert.ok(netLesson4.parts[4].output?.includes('MATTER INTERACTION MODEL TIMED ACTIONS & SUBSCRIPTIONS'));
 });
 
 

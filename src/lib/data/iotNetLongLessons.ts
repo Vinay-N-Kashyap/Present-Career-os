@@ -1029,5 +1029,343 @@ print(f"Thread Node State:      {p5_res['commissioning_status']}")`,
         'Simulate Border Router SLAAC IPv6 prefix dissemination and DTLS joiner commissioning.'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_net',
+    day: 4,
+    title: 'Matter Protocol Architecture: Unified IP Data Models, SPAKE2+ & Multi-Admin',
+    goal: 'Master the Matter (CHIP) smart home standard: navigating the unified data model hierarchy, establishing zero-knowledge PASE sessions via SPAKE2+, managing multi-admin fabrics with CASE certificates, validating Device Attestation Certificates (DAC), and enforcing Timed Interactions.',
+    minutes: 35,
+    recap: 'In Day 3, we engineered Thread IPv6 mesh topologies, CoAP blockwise chunking, and OSCORE encryption. Today in Day 4, we scale to the Matter Protocol (Connected Home over IP)—unifying Thread and Wi-Fi devices into a single secure, interoperable smart home application layer.',
+    parts: [
+      {
+        title: 'Matter Protocol Architecture: Unified IP Application Layer over Thread & Wi-Fi',
+        say: [
+          'For over two decades, the smart home industry suffered from severe vendor lock-in and platform fragmentation. Consumers faced frustrating silos where smart plugs, lighting, and thermostats only worked with one specific ecosystem (Apple HomeKit, Google Home, Amazon Alexa, or Samsung SmartThings), requiring clunky proprietary bridge hardware and incompatible radio protocols.',
+          'The Matter Protocol (originally Project CHIP - Connected Home over IP), standardized by the Connectivity Standards Alliance (CSA), revolutionizes IoT by introducing a single unified application layer that operates seamlessly over standard IPv6 transport—whether over low-power IEEE 802.15.4 Thread mesh or high-bandwidth 802.11 Wi-Fi.',
+          'At the core of Matter is its standardized Data Model Hierarchy: a physical device comprises one or more Endpoints. Endpoint 0 is always the Root Node (housing device-wide management, network commissioning, and basic information). Additional endpoints represent distinct functional capabilities (e.g. Endpoint 1 as a Dimmable Light, Endpoint 2 as a Temperature Sensor). Each endpoint contains standard Clusters (such as OnOff Cluster 0x0006 or LevelControl Cluster 0x0008), which group state Attributes, executable Commands, and event logs. Matter uses mDNS (Multicast DNS) for zero-configuration local network discovery, eliminating cloud dependencies.'
+        ],
+        example: 'Like the USB-C standard for electronics: before USB-C, every brand had proprietary power bricks and cables; with USB-C, a single standardized physical connector and protocol powers laptops, phones, monitors, and headphones interchangeably.',
+        code: `# Simulation: Matter Data Model Hierarchy & Cluster Traversal
+def simulate_matter_data_model_hierarchy(device_type: str, endpoints_config: list[dict]) -> dict:
+    # Matter Data Model: Device -> Endpoints -> Clusters -> Attributes/Commands
+    cluster_registry = {
+        0x0006: {"name": "OnOff", "attributes": ["OnOffState"], "commands": ["Off", "On", "Toggle"]},
+        0x0008: {"name": "LevelControl", "attributes": ["CurrentLevel"], "commands": ["MoveToLevel"]},
+        0x001D: {"name": "Descriptor", "attributes": ["DeviceTypeList", "ServerList"], "commands": []},
+        0x0028: {"name": "BasicInformation", "attributes": ["VendorID", "ProductID", "NodeLabel"], "commands": []}
+    }
+    
+    parsed_endpoints = []
+    total_clusters = 0
+    
+    for ep in endpoints_config:
+        ep_id = ep["id"]
+        server_clusters = []
+        for cid in ep.get("servers", []):
+            c_meta = cluster_registry.get(cid, {"name": f"UnknownCluster_{hex(cid)}", "attributes": [], "commands": []})
+            server_clusters.append({
+                "cluster_id": hex(cid),
+                "cluster_name": c_meta["name"],
+                "attributes": c_meta["attributes"],
+                "commands": c_meta["commands"]
+            })
+            total_clusters += 1
+            
+        parsed_endpoints.append({
+            "endpoint_id": ep_id,
+            "device_role": "RootNode" if ep_id == 0 else device_type,
+            "server_clusters": server_clusters
+        })
+        
+    return {
+        "device_type": device_type,
+        "endpoint_count": len(parsed_endpoints),
+        "total_active_clusters": total_clusters,
+        "endpoints": parsed_endpoints
+    }
+
+ep_layout = [
+    {"id": 0, "servers": [0x001D, 0x0028]}, # Endpoint 0: Root Node
+    {"id": 1, "servers": [0x0006, 0x0008]}  # Endpoint 1: Dimmable Light
+]
+p1_res = simulate_matter_data_model_hierarchy("DimmableLight", ep_layout)
+
+print("=== MATTER DATA MODEL HIERARCHY & CLUSTERS ===")
+print(f"Device Type Profile:     {p1_res['device_type']}")
+print(f"Endpoint Count:          {p1_res['endpoint_count']} Endpoints ({p1_res['total_active_clusters']} Clusters Total)")
+for ep in p1_res['endpoints']:
+    print(f"  Endpoint {ep['endpoint_id']} ({ep['device_role']}): {[c['cluster_name'] for c in ep['server_clusters']]}")
+print(f"Cluster 0x0006 Commands: {p1_res['endpoints'][1]['server_clusters'][0]['commands']}")`,
+        output: `=== MATTER DATA MODEL HIERARCHY & CLUSTERS ===\nDevice Type Profile:     DimmableLight\nEndpoint Count:          2 Endpoints (4 Clusters Total)\n  Endpoint 0 (RootNode): ['Descriptor', 'BasicInformation']\n  Endpoint 1 (DimmableLight): ['OnOff', 'LevelControl']\nCluster 0x0006 Commands: ['Off', 'On', 'Toggle']`,
+        codeNotes: [
+          { line: 2, note: 'Defines Matter cluster registry mapping 16-bit IDs to standardized attributes and commands' },
+          { line: 22, note: 'Organizes device into Endpoint 0 Root Node and application functional endpoints' },
+          { line: 40, note: 'Enumerates active server clusters and executable commands across the device tree' }
+        ],
+        tryIt: 'Add a new endpoint with an OccupancySensing cluster (0x0406) and verify it parses cleanly.',
+        check: {
+          question: 'How does the Matter Protocol achieve universal smart home interoperability across competing ecosystems?',
+          options: [
+            'By standardizing a unified IPv6 application layer and data model across Thread and Wi-Fi, allowing devices to communicate locally with Apple Home, Google Home, and Alexa without proprietary bridges',
+            'By requiring every consumer to purchase a dedicated cloud subscription server',
+            'By converting all network traffic into analog telephone audio tones',
+            'By shutting down local Wi-Fi networks during smart device pairing'
+          ],
+          answer: 0,
+          why: 'Matter creates a single open-source application protocol operating over standard IPv6, ensuring certified accessories communicate locally with any compliant smart home platform.'
+        }
+      },
+      {
+        title: 'PASE (Passcode-Authenticated Session Establishment): SPAKE2+ Commissioning',
+        say: [
+          'When an unconfigured Matter accessory is turned on for the first time, it has no operational network credentials and shares no public key certificates with the user smartphone (Commissioner). The only piece of shared information between the user and the accessory is an 8-digit numeric setup PIN code (e.g. 20202021) printed on a QR-code sticker on the physical device body.',
+          'In traditional IoT systems, pairing using an 8-digit PIN is vulnerable to Offline Dictionary Attacks: an eavesdropper listening to wireless radio frames can capture an authentication hash and iterate through all 100 million possible 8-digit codes in seconds on a GPU, extracting the master network key!',
+          'Matter permanently eliminates dictionary attacks by mandating SPAKE2+ (Simple Password Exponential Key Exchange) for Passcode-Authenticated Session Establishment (PASE). SPAKE2+ is an asymmetric Password-Authenticated Key Exchange (PAKE) algorithm. During factory provisioning, the 8-digit passcode and a random salt are hashed through PBKDF2 (1,000+ rounds) to compute two scalar curve points (w0, w1). During pairing over BLE or Wi-Fi, the Commissioner and accessory exchange public curve points. Both sides compute a shared session key without ever transmitting the passcode or any hash that can be tested offline, providing zero-knowledge authentication!'
+        ],
+        example: 'Like two bank tellers verifying a customer secret 4-digit code through a mathematical riddle: both tellers solve the riddle and confirm they have the exact same answer without either teller ever speaking the secret number aloud.',
+        code: `# Simulation: Matter PASE SPAKE2+ Key Exchange Verification
+def simulate_matter_pase_spake2plus_handshake(setup_passcode: int, salt_hex: str, iterations: int = 1000) -> dict:
+    # SPAKE2+ Passcode Authenticated Key Exchange:
+    # Converts low-entropy 8-digit PIN (e.g. 20202021) into high-entropy cryptographic verifier
+    # Verifier w0, w1 points derived via PBKDF2 simulation
+    passcode_str = str(setup_passcode)
+    salt_bytes = bytes.fromhex(salt_hex)
+    
+    # Deterministic verifier simulation
+    w0 = (sum(ord(c) * 31 for c in passcode_str) + len(salt_bytes)) % 0xFFFFFFFF
+    w1 = (sum(ord(c) * 17 for c in passcode_str) * iterations) % 0xFFFFFFFF
+    
+    # Zero-Knowledge Key Confirmation: both Commissioner and Accessory exchange P_A and P_B points
+    shared_pase_key = hex((w0 ^ w1 ^ 0xA5A55A5A) & 0xFFFFFFFF)
+    
+    return {
+        "setup_passcode": setup_passcode,
+        "pbkdf2_iterations": iterations,
+        "spake2_w0": hex(w0),
+        "spake2_w1": hex(w1),
+        "derived_pase_key": shared_pase_key,
+        "offline_dictionary_attack_resistant": True
+    }
+
+p2_res = simulate_matter_pase_spake2plus_handshake(20202021, "1122334455667788", 1000)
+
+print("=== MATTER PASE SPAKE2+ COMMISSIONING HANDSHAKE ===")
+print(f"Setup PIN Passcode:      {p2_res['setup_passcode']} (8-Digit Out-Of-Band Code)")
+print(f"PBKDF2 Iterations:       {p2_res['pbkdf2_iterations']} rounds")
+print(f"SPAKE2+ Verifier (w0):   {p2_res['spake2_w0']}")
+print(f"SPAKE2+ Verifier (w1):   {p2_res['spake2_w1']}")
+print(f"Derived PASE Secret Key: {p2_res['derived_pase_key']} (ZKP Verified: {p2_res['offline_dictionary_attack_resistant']})")`,
+        output: `=== MATTER PASE SPAKE2+ COMMISSIONING HANDSHAKE ===\nSetup PIN Passcode:      20202021 (8-Digit Out-Of-Band Code)\nPBKDF2 Iterations:       1000 rounds\nSPAKE2+ Verifier (w0):   0x2f9f\nSPAKE2+ Verifier (w1):   0x65f1a8\nDerived PASE Secret Key: 0xa5c0846d (ZKP Verified: True)`,
+        codeNotes: [
+          { line: 2, note: 'Derives SPAKE2+ scalar verifiers (w0, w1) using PBKDF2 stretching to defeat dictionary attacks' },
+          { line: 12, note: 'Executes zero-knowledge key agreement without exposing raw passcode across radio medium' },
+          { line: 27, note: 'Synthesizes shared PASE session key for secure initial fabric commissioning' }
+        ],
+        tryIt: 'Change the passcode to 12345678 and observe how the derived PASE key changes completely.',
+        check: {
+          question: 'Why does Matter mandate the SPAKE2+ protocol for Passcode-Authenticated Session Establishment (PASE) during initial setup?',
+          options: [
+            'Because SPAKE2+ is a zero-knowledge password-authenticated key exchange that prevents offline dictionary attacks against short 8-digit PINs, even if an attacker sniffs all wireless setup packets',
+            'Because SPAKE2+ compresses video streams on smart home cameras',
+            'Because standard passwords cannot be typed on mobile phone touchscreens',
+            'Because SPAKE2+ increases the battery voltage of the smart accessory'
+          ],
+          answer: 0,
+          why: 'Low-entropy passcodes (like 8-digit setup PINs) are vulnerable to brute-force dictionary attacks if simple hashes are exchanged. SPAKE2+ ensures an eavesdropper gains zero mathematical advantage from captured packets.'
+        }
+      },
+      {
+        title: 'CASE (Certificate-Authenticated Session Establishment) & Multi-Admin Architecture',
+        say: [
+          'Once initial commissioning over PASE is complete, operational communications between controllers and accessories switch to Certificate-Authenticated Session Establishment (CASE). In CASE, devices communicate over IPv6 using mutual authentication based on X.509 Node Operational Certificates (NOC).',
+          'The CASE handshake executes the SIGMA-I (Sign-and-Mac) protocol using ephemeral ECDH key agreement. Each endpoint validates the other certificate chain back to the trusted Root of Trust CA for that specific fabric, establishing an authenticated, AEAD-encrypted session key for daily operational use.',
+          'Crucially, Matter introduces the revolutionary Multi-Admin Architecture. A physical Matter accessory can simultaneously belong to multiple distinct Fabrics (e.g. Fabric 1 for Apple Home, Fabric 2 for Google Home, Fabric 3 for Home Assistant). Each fabric possesses its own cryptographically isolated Fabric ID, its own Root CA, and its own Access Control List (ACL) table! For example, Apple Home can hold Administer privileges, while Google Home holds Operate privileges. If one ecosystem experiences an outage, the other ecosystems continue operating locally without disruption!'
+        ],
+        example: 'Like an electronic badge reader at a multi-tenant corporate office building: the same physical turnstile verifies Google badges for Google employees and Apple badges for Apple employees, with each company issuing its own independent cryptographic certificates and access permissions.',
+        code: `# Simulation: Matter CASE Session & Multi-Admin Fabric Routing
+def evaluate_matter_case_multi_admin_fabrics(active_fabrics: list[dict], request_fabric_id: int, request_privilege: str) -> dict:
+    # Matter Multi-Admin: Single device belongs to multiple independent Fabrics (Apple, Google, Home Assistant)
+    # Each fabric has an isolated Fabric ID, Node ID, and Root CA
+    privilege_levels = {"View": 1, "Operate": 2, "Manage": 3, "Administer": 4}
+    
+    target_fabric = next((f for f in active_fabrics if f["fabric_id"] == request_fabric_id), None)
+    if not target_fabric:
+        return {"authorized": False, "reason": "FABRIC_NOT_COMMISSIONED"}
+        
+    required_level = privilege_levels.get(request_privilege, 99)
+    granted_level = privilege_levels.get(target_fabric.get("acl_tier", "View"), 0)
+    is_authorized = granted_level >= required_level
+    
+    return {
+        "request_fabric_id": hex(request_fabric_id),
+        "fabric_label": target_fabric["label"],
+        "granted_acl_tier": target_fabric["acl_tier"],
+        "required_privilege": request_privilege,
+        "is_authorized": is_authorized,
+        "multi_admin_isolated": True
+    }
+
+fabrics = [
+    {"fabric_id": 0x1001, "label": "Apple Home Fabric", "acl_tier": "Administer"},
+    {"fabric_id": 0x1002, "label": "Google Home Fabric", "acl_tier": "Operate"}
+]
+p3_admin = evaluate_matter_case_multi_admin_fabrics(fabrics, 0x1001, "Administer")
+p3_oper = evaluate_matter_case_multi_admin_fabrics(fabrics, 0x1002, "Administer") # Google only has Operate
+
+print("=== MATTER CASE & MULTI-ADMIN FABRIC ACCESS CONTROL ===")
+print(f"Fabric 0x1001 ({p3_admin['fabric_label']}): Privilege={p3_admin['required_privilege']} -> Granted: {p3_admin['is_authorized']}")
+print(f"Fabric 0x1002 ({p3_oper['fabric_label']}): Privilege={p3_oper['required_privilege']} -> Granted: {p3_oper['is_authorized']} (Tier: {p3_oper['granted_acl_tier']})")
+print(f"Multi-Admin Isolation:   Cryptographically segregated fabrics confirmed")`,
+        output: `=== MATTER CASE & MULTI-ADMIN FABRIC ACCESS CONTROL ===\nFabric 0x1001 (Apple Home Fabric): Privilege=Administer -> Granted: True\nFabric 0x1002 (Google Home Fabric): Privilege=Administer -> Granted: False (Tier: Operate)\nMulti-Admin Isolation:   Cryptographically segregated fabrics confirmed`,
+        codeNotes: [
+          { line: 2, note: 'Implements multi-admin fabric access control isolating independent smart home ecosystems' },
+          { line: 12, note: 'Enforces hierarchical privilege levels: View (1) < Operate (2) < Manage (3) < Administer (4)' },
+          { line: 27, note: 'Allows concurrent control from Apple and Google without cross-fabric interference' }
+        ],
+        tryIt: 'Promote Google Home to Administer tier and verify that administrative commands are granted.',
+        check: {
+          question: 'What is the primary architectural capability provided by the Matter Multi-Admin feature?',
+          options: [
+            'Allowing a single physical Matter accessory to connect simultaneously to multiple independent smart home ecosystems (e.g. Apple Home and Google Home) with isolated cryptographic credentials',
+            'Allowing multiple users to share a single Wi-Fi password on social media',
+            'Enabling the microcontroller to run multiple operating systems at the same time',
+            'Automatically creating multiple administrator accounts on a laptop computer'
+          ],
+          answer: 0,
+          why: 'Multi-Admin allows accessories to belong to multiple fabrics at the same time. Each platform has its own fabric ID and certificates, eliminating the need for cloud-to-cloud bridges.'
+        }
+      },
+      {
+        title: 'Device Attestation Certificates (DAC) & Product Attestation Authority (PAA)',
+        say: [
+          'In an open IP standard where anyone can build smart home hardware, how does a Matter ecosystem prevent counterfeit, cloned, or rogue accessories from connecting to a user network? If an uncertified manufacturer builds a smart lock with security flaws, an attacker could exploit it to compromise the entire home.',
+          'Matter guarantees hardware authenticity and compliance through the Device Attestation Certificate (DAC) Public Key Infrastructure (PKI). Every genuine Matter accessory leaves the factory with a unique DAC fused into secure silicon during manufacturing, signed by the manufacturer Product Attestation Intermediate (PAI) CA, which chains directly to an official CSA-approved Product Attestation Authority (PAA) Root CA.',
+          'During commissioning, the accessory provides its DAC and executes an Attestation Challenge signature proving it holds the corresponding private key. The Commissioner verifies the certificate chain and queries the CSA Distributed Compliance Ledger (DCL)—a decentralized cryptographic ledger maintaining public keys of all certified PAA roots and approved Product IDs. If a device fails attestation or lacks CSA certification, the Commissioner immediately halts setup!'
+        ],
+        example: 'Like an official hologram security seal and manufacturer certificate on an expensive diamond: before purchase, the jeweler inspects the certificate serial number against the official diamond certification registry to verify authenticity.',
+        code: `# Simulation: Matter Device Attestation Certificate (DAC) Hierarchy Verification
+def verify_matter_device_attestation_certificate(dac_vid: int, dac_pid: int, cert_chain: list[str]) -> dict:
+    # Matter Certificate Hierarchy:
+    # Product Attestation Authority (PAA) -> Product Attestation Intermediate (PAI) -> Device Attestation Certificate (DAC)
+    chain_valid = len(cert_chain) == 3 and cert_chain[0] == "DAC" and cert_chain[1] == "PAI" and cert_chain[2] == "PAA"
+    
+    # Official CSA Vendor Registry check
+    csa_certified_vendors = {0xFFF1: "Acme IoT Labs", 0x1005: "Nordic Semiconductor", 0x2357: "Espressif"}
+    vendor_name = csa_certified_vendors.get(dac_vid, "UnregisteredVendor")
+    is_genuine_certified = chain_valid and (vendor_name != "UnregisteredVendor")
+    
+    return {
+        "dac_vendor_id": hex(dac_vid),
+        "dac_product_id": hex(dac_pid),
+        "vendor_name": vendor_name,
+        "cert_chain_length": len(cert_chain),
+        "chain_hierarchy": " -> ".join(cert_chain),
+        "device_certified": is_genuine_certified
+    }
+
+p4_res = verify_matter_device_attestation_certificate(0xFFF1, 0x8001, ["DAC", "PAI", "PAA"])
+
+print("=== MATTER DEVICE ATTESTATION CERTIFICATE (DAC) VERIFICATION ===")
+print(f"Vendor / Product ID:     {p4_res['dac_vendor_id']} / {p4_res['dac_product_id']} ({p4_res['vendor_name']})")
+print(f"Attestation PKI Chain:   {p4_res['chain_hierarchy']}")
+print(f"CSA Ledger Attestation:  GENUINE_CERTIFIED={p4_res['device_certified']}")`,
+        output: `=== MATTER DEVICE ATTESTATION CERTIFICATE (DAC) VERIFICATION ===\nVendor / Product ID:     0xfff1 / 0x8001 (Acme IoT Labs)\nAttestation PKI Chain:   DAC -> PAI -> PAA\nCSA Ledger Attestation:  GENUINE_CERTIFIED=True`,
+        codeNotes: [
+          { line: 2, note: 'Traverses official 3-tier attestation chain: DAC -> PAI -> PAA Root' },
+          { line: 8, note: 'Validates Vendor ID and Product ID against CSA Distributed Compliance Ledger (DCL)' },
+          { line: 22, note: 'Certifies hardware is authentic and manufactured by a verified, compliant vendor' }
+        ],
+        tryIt: 'Change dac_vid to 0x9999 (an uncertified vendor) and verify that device_certified evaluates to False.',
+        check: {
+          question: 'What is the role of the Device Attestation Certificate (DAC) during Matter commissioning?',
+          options: [
+            'Proving cryptographically that the physical hardware is a genuine, certified Matter device manufactured by an authorized vendor, verified against the CSA Distributed Compliance Ledger',
+            'Storing user Wi-Fi network passwords in plain text',
+            'Measuring the ambient room temperature during device setup',
+            'Enabling the device to play FM radio stations'
+          ],
+          answer: 0,
+          why: 'The DAC is burned into secure silicon during manufacturing and chains back to an official CSA Product Attestation Authority, preventing counterfeit or rogue hardware from joining the network.'
+        }
+      },
+      {
+        title: 'Matter Interaction Model: Subscriptions, Timed Interactions & Access Control Lists',
+        say: [
+          'The Matter Interaction Model (IM) defines the formal rules for exchanging data between nodes. The IM supports four fundamental transaction actions: Read, Write, Invoke (executing commands), and Subscribe.',
+          'In battery-constrained environments, standard polling (clients repeatedly querying a sensor every 5 seconds) is disastrous for battery life and congests radio spectrum. Matter solves this with Subscription Interactions: the controller registers a subscription with MinInterval and MaxInterval bounds. The accessory transmits an Attribute Report ONLY when an attribute value changes (Delta Reporting), dramatically reducing radio emissions while ensuring instant UI updates.',
+          'For safety-critical actuators—such as motorized door locks or garage door openers—the IM enforces Timed Interactions to prevent replay and delayed packet attacks. The controller first sends a Timed Request establishing a brief timeout window (e.g. 200 milliseconds). The actual Invoke command (e.g. UnlockDoor) must arrive within that 200 ms window. If network jitter or an attacker delays the packet, the window expires and the command is rejected automatically!'
+        ],
+        example: 'Like an electronic door buzzer at an apartment building: the resident presses the buzzer button, unlocking the front door latch for exactly 5 seconds. If the visitor pushes the door within 5 seconds, it opens; if they hesitate for 6 seconds, the latch clicks shut again.',
+        code: `# Simulation: Matter Interaction Model (Timed Actions & Delta Subscriptions)
+def simulate_matter_interaction_model_engine(action_type: str, is_timed: bool, elapsed_ms: float, delta_detected: bool) -> dict:
+    # Matter Interaction Model:
+    # 1. Timed Interaction: sensitive actions (e.g. unlock door) must execute within 200 ms timeout window
+    # 2. Subscription: sends Attribute Report only when delta is detected (Delta Reporting)
+    timed_window_max_ms = 200.0
+    
+    if action_type == "UnlockDoorCommand":
+        if not is_timed:
+            status = "REJECTED_NEEDS_TIMED_INTERACTION"
+        elif elapsed_ms > timed_window_max_ms:
+            status = "REJECTED_TIMED_INTERACTION_EXPIRED"
+        else:
+            status = "EXECUTED_DOOR_UNLOCKED_SAFELY"
+    elif action_type == "AttributeSubscription":
+        status = "REPORT_TRANSMITTED_DELTA_PRESENT" if delta_detected else "REPORT_SUPPRESSED_NO_CHANGE"
+    else:
+        status = "COMMAND_COMPLETED"
+        
+    return {
+        "action_type": action_type,
+        "is_timed": is_timed,
+        "elapsed_ms": elapsed_ms,
+        "interaction_status": status
+    }
+
+p5_timed_ok = simulate_matter_interaction_model_engine("UnlockDoorCommand", is_timed=True, elapsed_ms=85.0, delta_detected=False)
+p5_timed_late = simulate_matter_interaction_model_engine("UnlockDoorCommand", is_timed=True, elapsed_ms=250.0, delta_detected=False)
+p5_sub = simulate_matter_interaction_model_engine("AttributeSubscription", is_timed=False, elapsed_ms=0.0, delta_detected=True)
+
+print("=== MATTER INTERACTION MODEL TIMED ACTIONS & SUBSCRIPTIONS ===")
+print(f"Timed Door Unlock (85ms):  {p5_timed_ok['interaction_status']}")
+print(f"Timed Door Unlock (250ms): {p5_timed_late['interaction_status']}")
+print(f"Sensor Delta Subscription: {p5_sub['interaction_status']}")`,
+        output: `=== MATTER INTERACTION MODEL TIMED ACTIONS & SUBSCRIPTIONS ===\nTimed Door Unlock (85ms):  EXECUTED_DOOR_UNLOCKED_SAFELY\nTimed Door Unlock (250ms): REJECTED_TIMED_INTERACTION_EXPIRED\nSensor Delta Subscription: REPORT_TRANSMITTED_DELTA_PRESENT`,
+        codeNotes: [
+          { line: 2, note: 'Implements Matter Interaction Model timed execution and subscription delta reporting' },
+          { line: 6, note: 'Enforces 200 ms security timeout window on critical actuator commands (e.g. door unlock)' },
+          { line: 15, note: 'Suppresses redundant attribute reports when sensor values remain unchanged' }
+        ],
+        tryIt: 'Set is_timed to False for UnlockDoorCommand and verify the interaction engine rejects the command.',
+        check: {
+          question: 'Why does the Matter Interaction Model require Timed Interactions for safety-critical commands like smart door locks?',
+          options: [
+            'To prevent replay attacks and delayed packet delivery exploits by enforcing that the command executes within a tight, validated millisecond window following authorization',
+            'To make the door lock motor spin twice as fast',
+            'To synchronize the smart lock clock with GPS satellites',
+            'To sound an audible alarm every time a door is opened'
+          ],
+          answer: 0,
+          why: 'Timed Interactions ensure that an intercepted or delayed actuator command cannot be replayed or executed outside a tight authorized time window (typically <200 ms).'
+        }
+      }
+    ],
+    summary: [
+      'The Matter Protocol unifies smart home accessories under a standardized IPv6 application layer across Thread and Wi-Fi networks.',
+      'PASE commissioning uses SPAKE2+ zero-knowledge key exchange to protect low-entropy 8-digit setup PINs from offline dictionary attacks.',
+      'CASE mutual authentication and Multi-Admin fabrics allow accessories to pair concurrently with Apple Home, Google Home, and Alexa.',
+      'Device Attestation Certificates (DAC) chain to official CSA Product Attestation Authorities, blocking counterfeit hardware.',
+      'The Matter Interaction Model employs Subscriptions with Delta Reporting and Timed Interactions for safety-critical actuators.'
+    ],
+    projectStep: {
+      title: 'Architect a Matter (CHIP) Application Data Model & Commissioning Engine',
+      steps: [
+        'Traverse and configure a Matter Endpoint hierarchy with OnOff and LevelControl clusters.',
+        'Implement a zero-knowledge SPAKE2+ key exchange for passcode-authenticated session establishment (PASE).',
+        'Simulate Multi-Admin fabric routing and enforce Access Control List (ACL) permission tiers.',
+        'Verify a Device Attestation Certificate (DAC) PKI chain and execute timed interaction commands.'
+      ]
+    }
   }
 ];
