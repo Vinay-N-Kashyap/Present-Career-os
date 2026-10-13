@@ -108,3 +108,48 @@ test('Block 30: bcom-marketing Day 2 parts uphold strict code, output, and check
   assert.match(lesson.parts[3].title, /Buyer & Supplier Power.*Value Chain/i);
   assert.match(lesson.parts[4].title, /TOWS.*Action Grid/i);
 });
+
+test('Block 31: bcom-marketing Day 3 long lesson resolves with 5 in-depth parts', () => {
+  const lesson = getLongLesson('bcom-marketing', 3);
+  assert.ok(lesson, 'bcom-marketing Day 3 must resolve');
+  assert.equal(lesson.day, 3);
+  assert.equal(lesson.parts.length, 5, 'Must contain exactly 5 in-depth parts');
+
+  // Verify alias resolution for bcom_mkt Day 3
+  const aliased = getLongLesson('bcom_mkt', 3);
+  assert.ok(aliased, 'bcom_mkt alias Day 3 must resolve');
+  assert.equal(aliased.title, lesson.title);
+
+  // Assert realistic lesson length
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 9, `Spoken minutes (${spoken}) must be at least 9 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 31: bcom-marketing Day 3 parts uphold strict code, output, and check question invariants', () => {
+  const lesson = getLongLesson('bcom-marketing', 3)!;
+
+  lesson.parts.forEach((part, idx) => {
+    assert.ok(part.title, `Day 3 Part ${idx + 1} must have a title`);
+    assert.ok(Array.isArray(part.say) && part.say.length >= 3, `Day 3 Part ${idx + 1} must have detailed teaching paragraphs`);
+    assert.ok(part.example, `Day 3 Part ${idx + 1} must include an everyday example`);
+    assert.ok(part.code, `Day 3 Part ${idx + 1} must include executable Python code`);
+    assert.ok(part.output, `Day 3 Part ${idx + 1} must include expected console output`);
+    assert.ok(part.tryIt, `Day 3 Part ${idx + 1} must include a tryIt interactive challenge`);
+
+    // Check quiz contract
+    assert.ok(part.check.question, `Day 3 Part ${idx + 1} check must have question text`);
+    assert.ok(Array.isArray(part.check.options) && part.check.options.length >= 3, `Day 3 Part ${idx + 1} check must have >= 3 options`);
+    assert.equal(typeof part.check.answer, 'number', `Day 3 Part ${idx + 1} check must have numerical answer`);
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Day 3 Part ${idx + 1} answer must be in options range`);
+    assert.ok(part.check.why, `Day 3 Part ${idx + 1} check must have educational rationale`);
+  });
+
+  // Verify specific Day 3 concepts
+  assert.match(lesson.parts[0].title, /5-Stage Consumer Buying Decision Process/i);
+  assert.match(lesson.parts[1].title, /Maslow.*Selective Perceptual Defense/i);
+  assert.match(lesson.parts[2].title, /Reference Groups.*Conspicuous/i);
+  assert.match(lesson.parts[3].title, /Fishbein Attitude/i);
+  assert.match(lesson.parts[4].title, /Cognitive Dissonance.*Buyer.*Remorse/i);
+});

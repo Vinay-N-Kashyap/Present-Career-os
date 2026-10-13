@@ -1024,5 +1024,418 @@ print(f"Rationale: {top['Rationale']}")`,
         'Develop a 4-quadrant TOWS matrix crossing your top 2 internal strengths/weaknesses against external opportunities/threats, prioritizing initiatives by SPI score.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom-marketing',
+    day: 3,
+    title: 'Consumer Buying Behavior: The 5-Stage Decision Journey & Cognitive Dissonance',
+    goal: 'Master consumer psychology and decision science: modeling the 5-stage purchase funnel, breaking through selective perceptual defense mechanisms across Maslow\'s hierarchy, quantifying reference group social conformity, calculating Multi-Attribute Fishbein brand attitudes, and proactively mitigating post-purchase cognitive dissonance.',
+    minutes: 44,
+    recap: 'Yesterday we evaluated external macro and competitive forces through PESTLE and Porter\'s Five Forces. Today we dive into the human mind: unpacking how individual consumers recognize needs, process commercial signals, evaluate competing options, and experience post-purchase psychology.',
+    parts: [
+      {
+        title: 'The 5-Stage Consumer Buying Decision Process & Funnel Architecture',
+        say: [
+          'The ultimate goal of marketing is to influence buying decisions, yet purchase is merely one isolated milestone along an extended psychological journey.',
+          'Classical consumer behavior theory models this journey across five sequential stages: Need Recognition, Information Search, Evaluation of Alternatives, Purchase Decision, and Post-Purchase Evaluation.',
+          'Stage 1: Need Recognition occurs when a consumer perceives a significant discrepancy between their actual state of being and their desired state. This gap can be triggered by internal physiological stimuli (such as hunger or exhaustion) or external commercial triggers (such as an evocative advertisement or a friend\'s recommendation).',
+          'Stage 2: Information Search begins once a need is aroused. Consumers conduct internal searches by scanning long-term memory for past experiences, followed by external searches across search engines, social media reviews, peer recommendations, and showroom visits.',
+          'Stage 3: Evaluation of Alternatives transforms gathered information into an "evoked set" — the small handful of candidate brands the buyer seriously considers. Buyers evaluate these options against conscious and unconscious criteria.',
+          'Stage 4: Purchase Decision bridges intention and transaction. Crucially, a purchase intention does not guarantee an actual purchase! Two major intervening factors can disrupt the journey: the negative attitudes of significant others, and unanticipated situational factors (such as unexpected delivery charges or stockouts).',
+          'Stage 5: Post-Purchase Behavior dictates customer lifetime value. How the customer feels after using the product determines whether they become a repeat buyer and brand advocate, or return the item in frustration.'
+        ],
+        example: 'Think of visiting a physician. First, you notice a persistent cough (Need Recognition). Next, you look up symptoms online and ask friends for doctor recommendations (Information Search). You compare two nearby clinics based on distance and patient reviews (Evaluation of Alternatives). You book an appointment, unless a sudden flat tire delays you (Purchase Decision). Finally, taking the prescribed medicine cures your cough and confirms you chose the right doctor (Post-Purchase Evaluation).',
+        code: `# Simulation: 5-Stage Consumer Purchase Funnel Progression Engine
+from dataclasses import dataclass
+
+@dataclass
+class CustomerProspect:
+    prospect_id: str
+    current_stage: str # 'Need_Recognition', 'Info_Search', 'Alt_Evaluation', 'Purchase_Decision', 'Post_Purchase'
+    problem_urgency: float # 1.0 to 10.0
+    info_depth_score: float # 1.0 to 10.0
+    attitude_score: float   # 1.0 to 10.0
+    budget_ready: bool
+
+def advance_buyer_journey(prospect: CustomerProspect) -> dict:
+    if prospect.current_stage == 'Need_Recognition':
+        if prospect.problem_urgency >= 6.0:
+            next_stage = 'Info_Search'
+            action = 'Deploy educational content & search engine authority articles.'
+        else:
+            next_stage = 'Need_Recognition'
+            action = 'Retarget with problem-awareness video campaigns.'
+    elif prospect.current_stage == 'Info_Search':
+        if prospect.info_depth_score >= 5.0:
+            next_stage = 'Alt_Evaluation'
+            action = 'Provide side-by-side comparison tables & third-party reviews.'
+        else:
+            next_stage = 'Info_Search'
+            action = 'Send buyer guide and customer case study whitepaper.'
+    elif prospect.current_stage == 'Alt_Evaluation':
+        if prospect.attitude_score >= 7.0 and prospect.budget_ready:
+            next_stage = 'Purchase_Decision'
+            action = 'Offer limited-time incentive, money-back guarantee & frictionless checkout.'
+        else:
+            next_stage = 'Alt_Evaluation'
+            action = 'Address specific objections with expert product demo consultation.'
+    elif prospect.current_stage == 'Purchase_Decision':
+        next_stage = 'Post_Purchase'
+        action = 'Send instant order confirmation, onboarding tutorial & VIP customer welcome.'
+    else:
+        next_stage = 'Advocate'
+        action = 'Invite to referral program & request verified review.'
+
+    return {
+        "Prospect": prospect.prospect_id,
+        "Initial_Stage": prospect.current_stage,
+        "Advanced_To": next_stage,
+        "Recommended_Marketing_Action": action
+    }
+
+p1 = CustomerProspect("USR_8421", "Alt_Evaluation", 8.5, 7.0, 8.2, True)
+res1 = advance_buyer_journey(p1)
+print(f"Prospect: {res1['Prospect']} | Stage: {res1['Initial_Stage']} -> {res1['Advanced_To']}")
+print(f"Action: {res1['Recommended_Marketing_Action']}")`,
+        output: `Prospect: USR_8421 | Stage: Alt_Evaluation -> Purchase_Decision\nAction: Offer limited-time incentive, money-back guarantee & frictionless checkout.`,
+        codeNotes: [
+          { line: 5, note: 'CustomerProspect models state progression across the 5 classical buying funnel stages' },
+          { line: 13, note: 'Gating thresholds ensure prospects have sufficient information and intent before advancing' },
+          { line: 27, note: 'Transitions prospects with high attitude and budget directly into the Purchase Decision stage' },
+          { line: 43, note: 'Evaluates prospect USR_8421 progressing from alternative comparison to final checkout' }
+        ],
+        tryIt: 'Toggle budget_ready to False on prospect p1 to observe how budget constraints stall the transition at Alt_Evaluation.',
+        check: {
+          question: 'Even after a consumer forms a firm Purchase Intention to buy a specific brand, which of the following intervening factors can prevent the transaction from occurring?',
+          options: [
+            'The negative attitudes of significant others (such as a spouse objecting to the price) or unanticipated situational events (such as sudden shipping fees or job loss).',
+            'Government agencies automatically confiscating credit cards.',
+            'The consumer permanently forgetting the English language.',
+            'The manufacturer doubling factory output.'
+          ],
+          answer: 0,
+          why: 'Philip Kotler identified two critical intervening factors between Purchase Intention and Purchase Decision: the attitudes of influential others and unanticipated situational events.',
+          answerIndex: 0,
+          explanation: 'Philip Kotler identified two critical intervening factors between Purchase Intention and Purchase Decision: the attitudes of influential others and unanticipated situational events.'
+        }
+      },
+      {
+        title: 'Psychological Drivers: Maslow\'s Hierarchy & Selective Perceptual Defense',
+        say: [
+          'Human purchasing choices are driven by profound psychological forces operating beneath conscious awareness: Motivation, Perception, Learning, and Beliefs.',
+          'Abraham Maslow\'s Hierarchy of Needs reveals that human needs are arranged hierarchically: Physiological needs (food, water, sleep) form the base, followed by Safety needs (security, health, shelter), Social Belonging (love, friendship), Esteem needs (prestige, status, mastery), and Self-Actualization (realizing one\'s ultimate creative potential).',
+          'A consumer struggling with safety and financial insecurity is psychologically deaf to marketing messages promising self-actualization; effective positioning always anchors to the consumer\'s active need tier.',
+          'Furthermore, modern consumers are bombarded with an estimated 4,000 to 10,000 commercial brand messages every single day. To prevent sensory overload, the human brain deploys three formidable perceptual defense filters.',
+          'Filter 1: Selective Attention. Consumers filter out roughly 98% of promotional stimuli, noticing only messages that relate directly to a current urgent need or offer a startling contrast.',
+          'Filter 2: Selective Distortion. Consumers twist, misinterpret, or reframe information to conform to their pre-existing biases and brand loyalties.',
+          'Filter 3: Selective Retention. Consumers forget the vast majority of what they hear, retaining only points that reinforce their core attitudes.',
+          'To break through these perceptual defenses, marketers must craft unexpected creative hooks and align messaging directly with the prospect\'s dominant active motivational tier.'
+        ],
+        example: 'Think of walking through a crowded, noisy subway station. Hundreds of people are chatting and train announcements echo continuously, yet your brain filters out all the noise. But if someone whispers your name or shouts "Fire!", your attention snaps to it instantly. That is Selective Attention.',
+        code: `# Simulation: Maslow Hierarchy Motivation & Selective Perceptual Defense Filter
+from dataclasses import dataclass
+
+@dataclass
+class PsychologicalProfile:
+    consumer_id: str
+    dominant_need_tier: str # 'Physiological', 'Safety', 'Belonging', 'Esteem', 'Self_Actualization'
+    commercial_messages_exposed: int
+    selective_attention_filter_pct: float # typically 95-98% filtered out
+    perceptual_bias: str
+
+def analyze_perceptual_filtering(profile: PsychologicalProfile) -> dict:
+    retained_messages = int(profile.commercial_messages_exposed * (1.0 - (profile.selective_attention_filter_pct / 100.0)))
+    
+    tier_copy_strategy = {
+        "Physiological": "Focus on immediate bodily comfort, hunger, thirst, or basic survival.",
+        "Safety": "Emphasize security, financial protection, warranty, and risk-free guarantees.",
+        "Belonging": "Highlight community inclusion, family warmth, friendship, and shared identity.",
+        "Esteem": "Showcase prestige, professional mastery, status elevation, and luxury recognition.",
+        "Self_Actualization": "Appeal to personal fulfillment, creative realization, and authentic purpose."
+    }
+
+    return {
+        "Consumer": profile.consumer_id,
+        "Need_Hierarchy_Tier": profile.dominant_need_tier,
+        "Ad_Impressions_Exposed": profile.commercial_messages_exposed,
+        "Messages_Passing_Attention_Gate": max(1, retained_messages),
+        "Perceptual_Defense": f"Filters out {profile.selective_attention_filter_pct}% of promotional noise.",
+        "Strategic_Copy_Hook": tier_copy_strategy.get(profile.dominant_need_tier, "General benefit")
+    }
+
+prof = PsychologicalProfile("CONS_991", "Esteem", 4000, 97.5, "Status-Conscious")
+res2 = analyze_perceptual_filtering(prof)
+print(f"Consumer: {res2['Consumer']} | Dominant Need: {res2['Need_Hierarchy_Tier']}")
+print(f"Filtered: {res2['Ad_Impressions_Exposed']} ads -> {res2['Messages_Passing_Attention_Gate']} admitted ({res2['Perceptual_Defense']})")
+print(f"Hook: {res2['Strategic_Copy_Hook']}")`,
+        output: `Consumer: CONS_991 | Dominant Need: Esteem\nFiltered: 4000 ads -> 100 admitted (Filters out 97.5% of promotional noise.)\nHook: Showcase prestige, professional mastery, status elevation, and luxury recognition.`,
+        codeNotes: [
+          { line: 5, note: 'PsychologicalProfile models motivational need tier and sensory attention gating' },
+          { line: 13, note: 'Calculates retained commercial impressions after selective attention screening' },
+          { line: 15, note: 'Aligns advertising copy hooks with Maslow hierarchy motivational levels' },
+          { line: 31, note: 'Simulates a status-motivated consumer filtering 4,000 daily commercial impressions' }
+        ],
+        tryIt: 'Change dominant_need_tier from Esteem to Safety to observe how the recommended strategic copy hook shifts to risk reduction and guarantees.',
+        check: {
+          question: 'What is "Selective Distortion" in consumer perceptual psychology?',
+          options: [
+            'The psychological tendency of consumers to twist or interpret incoming brand information so that it fits their existing beliefs and brand loyalties.',
+            'A mechanical failure in television broadcast transmission cables.',
+            'The complete inability of human beings to remember prices.',
+            'A federal regulatory rule banning deceptive advertising.'
+          ],
+          answer: 0,
+          why: 'Selective Distortion occurs when consumers interpret commercial information in a manner that supports rather than challenges their established attitudes and preconceptions.',
+          answerIndex: 0,
+          explanation: 'Selective Distortion occurs when consumers interpret commercial information in a manner that supports rather than challenges their established attitudes and preconceptions.'
+        }
+      },
+      {
+        title: 'Social Influence, Reference Groups & Conspicuous Consumption Dynamics',
+        say: [
+          'No consumer buys in isolation; human consumption is deeply embedded in social structures: culture, subcultures, social classes, reference groups, and opinion leaders.',
+          'A Reference Group consists of all the groups that have a direct (face-to-face) or indirect influence on a person\'s attitudes or behavior.',
+          'Primary reference groups include family, close friends, and co-workers with whom an individual interacts continuously and informally. Secondary groups include professional associations, trade unions, and religious communities.',
+          'Aspirational Groups are those a person does not currently belong to, but aspires to join (such as luxury lifestyle enthusiasts or elite athletes). Dissociative Groups are groups whose values or behavior a person vigorously rejects (such as a rebellious teenager refusing to wear clothes favored by elderly accountants).',
+          'The strength of reference group influence varies dramatically depending on whether a product is consumed publicly or privately, and whether it is a luxury or a necessity.',
+          'For Public Luxuries (such as sports cars, designer clothing, or luxury watches), reference group influence is exceptionally powerful on both the product category and the specific brand choice, because ownership is highly conspicuous and confers public status.',
+          'Conversely, for Private Necessities (such as mattresses, soap, or refrigerator appliances), social group influence is minimal because the product is hidden inside the home and consumption is invisible to peers.'
+        ],
+        example: 'Think of buying a mattress versus buying an expensive leather jacket. Nobody at work will ever see what brand of mattress you sleep on at night (Private Necessity), so social peer pressure is near zero. But your colleagues and friends immediately see your leather jacket every single day (Public Luxury), so their admiration or teasing exerts immense social influence on your brand choice.',
+        code: `# Simulation: Bourne / Bearden Reference Group Conspicuousness & Social Multiplier
+def evaluate_social_influence(
+    product_category: str,
+    base_purchase_intent: float, # 0.0 to 10.0
+    reference_group_conspicuousness: str, # 'Public_Luxury', 'Private_Luxury', 'Public_Necessity', 'Private_Necessity'
+    opinion_leader_endorsement: bool
+) -> dict:
+    # Conspicuousness matrix (Bourne / Bearden & Etzel Model):
+    # Public Luxury (cars, watches): Strong influence on both category and brand choice
+    # Private Luxury (home sauna): Strong influence on category, weak on brand
+    # Public Necessity (smartphones): Weak influence on category, strong on brand
+    # Private Necessity (mattress, detergent): Weak influence on both category and brand
+    multipliers = {
+        "Public_Luxury": 1.45,
+        "Private_Luxury": 1.25,
+        "Public_Necessity": 1.30,
+        "Private_Necessity": 1.05
+    }
+
+    group_mult = multipliers.get(reference_group_conspicuousness, 1.1)
+    influencer_bonus = 1.25 if opinion_leader_endorsement else 1.0
+    
+    final_intent = min(10.0, round(base_purchase_intent * group_mult * influencer_bonus, 2))
+
+    return {
+        "Category": product_category,
+        "Conspicuousness_Classification": reference_group_conspicuousness,
+        "Base_Intent": base_purchase_intent,
+        "Final_Social_Intent": final_intent,
+        "Social_Multiplier": round(group_mult * influencer_bonus, 2),
+        "Social_Proof_Importance": 'CRITICAL' if group_mult >= 1.3 else 'MODERATE'
+    }
+
+social_audit = evaluate_social_influence("Mechanical Luxury Chronograph", 5.5, "Public_Luxury", True)
+print(f"Category: {social_audit['Category']} ({social_audit['Conspicuousness_Classification']})")
+print(f"Social Intent: {social_audit['Base_Intent']} -> {social_audit['Final_Social_Intent']} (Multiplier: {social_audit['Social_Multiplier']}x)")`,
+        output: `Category: Mechanical Luxury Chronograph (Public_Luxury)\nSocial Intent: 5.5 -> 9.97 (Multiplier: 1.81x)`,
+        codeNotes: [
+          { line: 8, note: 'Bourne / Bearden & Etzel conspicuousness matrix models social peer pressure intensity' },
+          { line: 16, note: 'Public luxuries trigger highest social multipliers due to visible status signaling' },
+          { line: 20, note: 'Combines reference group conformity and opinion leader authority bonuses' },
+          { line: 32, note: 'Evaluates luxury watch purchase boosted 1.81x by social proof and expert endorsement' }
+        ],
+        tryIt: 'Change reference_group_conspicuousness to Private_Necessity (e.g. laundry detergent) to see the social multiplier drop to 1.05x.',
+        check: {
+          question: 'In reference group sociology, what is a "Dissociative Group"?',
+          options: [
+            'A social group whose values, lifestyles, and behavioral norms an individual actively rejects and avoids identifying with.',
+            'A group that has formally dissolved its legal incorporation.',
+            'A group of consumers who only purchase goods during holiday clearance sales.',
+            'A focus group organized by an advertising research agency.'
+          ],
+          answer: 0,
+          why: 'Dissociative groups are negative reference groups whose values or behaviors consumers deliberately shun, motivating them to avoid purchasing brands associated with that group.',
+          answerIndex: 0,
+          explanation: 'Dissociative groups are negative reference groups whose values or behaviors consumers deliberately shun, motivating them to avoid purchasing brands associated with that group.'
+        }
+      },
+      {
+        title: 'Multi-Attribute Attitude Modeling (The Fishbein Attitude Calculus)',
+        say: [
+          'When consumers reach Stage 3 of the buying journey (Evaluation of Alternatives), how do they actually choose between competing offerings?',
+          'Pioneering social psychologist Martin Fishbein demonstrated that consumers do not judge offerings as monolithic wholes; they evaluate offerings as bundles of distinct attributes, with each attribute carrying a specific importance weight.',
+          'The Fishbein Multi-Attribute Attitude Model expresses this mathematically: Ao = Sum(bi * ei), where Ao represents the consumer\'s overall attitude score toward a brand, bi represents the consumer\'s belief about the degree to which the brand possesses attribute i, and ei represents the subjective importance weight the consumer places on attribute i.',
+          'Consider a smartphone buyer comparing three brands across three key attributes: Camera Resolution, Battery Life, and Retail Price.',
+          'One buyer may assign an importance weight of 0.50 to Camera Quality, 0.30 to Battery, and 0.20 to Price. For this buyer, a brand with a stellar camera will win easily, even if its battery is mediocre.',
+          'Another budget-conscious buyer may weight Price at 0.60 and Camera at 0.10, flipping the mathematical preference entirely.',
+          'The Fishbein model provides marketers with four precise strategic levers to change consumer brand choice: 1. Alter brand beliefs (convince buyers your battery lasts longer); 2. Alter attribute importance weights (convince buyers camera quality matters more than price); 3. Introduce a completely new attribute (e.g., satellite SOS messaging); or 4. Degrade competitor brand beliefs.'
+        ],
+        example: 'Think of scoring a gymnastics competition. A gymnast is evaluated across multiple criteria: difficulty, execution, artistic expression, and landing. Each criterion has a specific weight. The gold medal does not go to the athlete who simply shouts the loudest, but to the one whose weighted sum across all criteria is highest.',
+        code: `# Simulation: Fishbein Multi-Attribute Attitude Scoring & Strategic Brand Comparison
+from dataclasses import dataclass
+from typing import List, Dict
+
+@dataclass
+class BrandAttributeRating:
+    attribute_name: str
+    importance_weight: float # 0.0 to 1.0 (Sum of weights = 1.0)
+    brand_beliefs: Dict[str, float] # Attribute score 1.0 to 10.0 for each brand
+
+def compute_fishbein_attitude(attributes: List[BrandAttributeRating], brand_names: List[str]) -> dict:
+    # Fishbein Model: Ao = Sum(bi * ei)
+    attitude_scores = {b: 0.0 for b in brand_names}
+
+    for attr in attributes:
+        w = attr.importance_weight
+        for b in brand_names:
+            rating = attr.brand_beliefs.get(b, 5.0)
+            attitude_scores[b] += w * rating
+
+    rounded_scores = {b: round(score, 2) for b, score in attitude_scores.items()}
+    winning_brand = max(rounded_scores, key=rounded_scores.get)
+
+    return {
+        "Brand_Attitude_Scores": rounded_scores,
+        "Preferred_Choice": winning_brand,
+        "Margin_Of_Preference": round(rounded_scores[winning_brand] - min(rounded_scores.values()), 2)
+    }
+
+# Smartphone buyer decision: Battery (30%), Camera (40%), Price/Value (30%)
+attrs = [
+    BrandAttributeRating("Camera Quality", 0.40, {"Brand_Alpha": 9.2, "Brand_Beta": 8.0, "Brand_Gamma": 6.0}),
+    BrandAttributeRating("Battery Endurance", 0.30, {"Brand_Alpha": 7.0, "Brand_Beta": 8.5, "Brand_Gamma": 9.0}),
+    BrandAttributeRating("Price Value", 0.30, {"Brand_Alpha": 6.5, "Brand_Beta": 8.0, "Brand_Gamma": 9.5})
+]
+brands = ["Brand_Alpha", "Brand_Beta", "Brand_Gamma"]
+att_res = compute_fishbein_attitude(attrs, brands)
+print(f"Fishbein Attitudes: {att_res['Brand_Attitude_Scores']}")
+print(f"Preferred: {att_res['Preferred_Choice']} (Lead Margin: +{att_res['Margin_Of_Preference']} pts)")`,
+        output: `Fishbein Attitudes: {'Brand_Alpha': 7.73, 'Brand_Beta': 8.15, 'Brand_Gamma': 7.95}\nPreferred: Brand_Beta (Lead Margin: +0.42 pts)`,
+        codeNotes: [
+          { line: 5, note: 'BrandAttributeRating defines attribute importance weights and brand belief scores' },
+          { line: 12, note: 'Fishbein mathematical formula computes Ao = Sum(bi * ei)' },
+          { line: 20, note: 'Computes overall multi-attribute score across all competing market brands' },
+          { line: 36, note: 'Evaluates Brand_Beta winning with 8.15 points based on balanced camera, battery, and price' }
+        ],
+        tryIt: 'Increase Camera Quality importance weight to 0.70 and decrease Price Value to 0.10 to see Brand_Alpha surge ahead.',
+        check: {
+          question: 'According to the Fishbein Multi-Attribute Attitude Model (Ao = Sum(bi * ei)), how can a marketer improve a brand\'s overall attitude score without physically changing the product itself?',
+          options: [
+            'By using persuasive advertising to shift consumer importance weights (ei) toward attributes where the brand is already superior, or by strengthening consumer beliefs (bi) regarding existing features.',
+            'By secretly deleting all competitor websites from the internet.',
+            'By bribing retail store clerks to hide competing inventory under the counter.',
+            'By declaring bankruptcy and reincorporating under an anonymous shell company.'
+          ],
+          answer: 0,
+          why: 'The Fishbein model demonstrates that attitude is cognitive; marketers can improve scores by reshaping consumer perceptions of brand attributes (beliefs bi) or convincing consumers that their strong attributes matter most (weights ei).',
+          answerIndex: 0,
+          explanation: 'The Fishbein model demonstrates that attitude is cognitive; marketers can improve scores by reshaping consumer perceptions of brand attributes (beliefs bi) or convincing consumers that their strong attributes matter most (weights ei).'
+        }
+      },
+      {
+        title: 'Post-Purchase Cognitive Dissonance & Proactive Buyer\'s Remorse Mitigation',
+        say: [
+          'Closing a sale is not the finish line; it is the starting gun for long-term customer lifetime value and brand retention.',
+          'Immediately following a major transaction, consumers frequently experience what social psychologist Leon Festinger termed Cognitive Dissonance: an uncomfortable state of psychological tension and self-doubt.',
+          'Colloquially known as "Buyer\'s Remorse", cognitive dissonance occurs because every chosen purchase involves giving up the attractive features of the rejected alternatives.',
+          'Dissonance surges under three specific conditions: 1. High Financial Commitment (the purchase was expensive relative to income); 2. High Psychological Involvement (the product reflects personal identity or social status); and 3. Close Alternative Quality (the rejected competitors were nearly as appealing as the winner).',
+          'Unresolved cognitive dissonance is a primary driver of product returns, buyer cancellation calls, negative word-of-mouth, and customer churn.',
+          'Sophisticated marketers do not abandon customers after receiving payment; they deploy proactive Post-Purchase Reassurance sequences.',
+          'Tactics include: immediate congratulatory confirmation emails validating the wisdom of the choice, unboxing video tutorials ensuring smooth initial product setup, showcasing awards and customer reviews, and providing ironclad money-back guarantees that lower perceived risk.',
+          'When cognitive dissonance is proactively neutralized, customers transition from anxious buyers into loyal, vocal brand advocates.'
+        ],
+        example: 'Think of signing a 30-year mortgage to buy a new home or purchasing a \$60,000 automobile. The moment you walk out of the dealership or sign the papers, a sudden sinking feeling hits your stomach: "Did I pay too much? What if the other car was more reliable? Can I really afford this?" That uncomfortable pit in your stomach is pure Cognitive Dissonance.',
+        code: `# Simulation: Post-Purchase Cognitive Dissonance & Buyer Remorse Mitigation Model
+def evaluate_cognitive_dissonance_risk(
+    transaction_amount: float,
+    involvement_level: str,      # 'High', 'Medium', 'Low'
+    competitor_similarity: float,# 0.0 to 1.0 (High = Close substitute alternatives rejected)
+    has_unconditional_return_guarantee: bool,
+    post_purchase_reassurance_sent: bool
+) -> dict:
+    # Higher price, higher involvement, and closer alternatives trigger intense cognitive dissonance
+    base_anxiety = (min(5000.0, transaction_amount) / 5000.0) * 4.0
+    involvement_multiplier = 1.5 if involvement_level == 'High' else (1.0 if involvement_level == 'Medium' else 0.5)
+    alternative_anxiety = competitor_similarity * 2.5
+    
+    gross_dissonance = (base_anxiety * involvement_multiplier) + alternative_anxiety
+    
+    # Mitigation shields
+    shield = 0.0
+    if has_unconditional_return_guarantee:
+        shield += 2.5
+    if post_purchase_reassurance_sent:
+        shield += 3.0
+
+    net_dissonance_score = max(0.0, round(gross_dissonance - shield, 2))
+    
+    if net_dissonance_score >= 5.0:
+        risk_level = 'SEVERE_BUYERS_REMORSE_RISK'
+        remedy = 'Immediate founder concierge call, unboxing video guide & proactive support check-in.'
+    elif net_dissonance_score >= 2.5:
+        risk_level = 'MODERATE_POST_PURCHASE_ANXIETY'
+        remedy = 'Automated reassurance email highlighting social validation & awards.'
+    else:
+        risk_level = 'NEGLIGIBLE_DISSONANCE_SECURE'
+        remedy = 'Standard shipping tracking and community onboarding.'
+
+    return {
+        "Transaction_Value": f"\${transaction_amount}",
+        "Gross_Dissonance_Index": round(gross_dissonance, 2),
+        "Mitigation_Shield": round(shield, 2),
+        "Net_Dissonance_Score": net_dissonance_score,
+        "Risk_Assessment": risk_level,
+        "Proactive_Intervention": remedy
+    }
+
+remorse_case = evaluate_cognitive_dissonance_risk(
+    transaction_amount=2400.0,
+    involvement_level='High',
+    competitor_similarity=0.85,
+    has_unconditional_return_guarantee=True,
+    post_purchase_reassurance_sent=False
+)
+print(f"Transaction: {remorse_case['Transaction_Value']} | Net Dissonance: {remorse_case['Net_Dissonance_Score']}/10.0")
+print(f"Risk: {remorse_case['Risk_Assessment']}")
+print(f"Intervention: {remorse_case['Proactive_Intervention']}")`,
+        output: `Transaction: $2400.0 | Net Dissonance: 2.5/10.0\nRisk: MODERATE_POST_PURCHASE_ANXIETY\nIntervention: Automated reassurance email highlighting social validation & awards.`,
+        codeNotes: [
+          { line: 9, note: 'Calculates gross post-purchase anxiety as a function of price, involvement, and alternative closeness' },
+          { line: 16, note: 'Quantifies mitigation shields from return guarantees and proactive customer reassurance' },
+          { line: 23, note: 'Computes net dissonance score and prescribes retention workflows to preempt buyer returns' },
+          { line: 36, note: 'Evaluates a $2,400 high-involvement purchase lacking post-purchase reassurance' }
+        ],
+        tryIt: 'Set post_purchase_reassurance_sent to True to see Net Dissonance drop to 0.0 (NEGLIGIBLE_DISSONANCE_SECURE).',
+        check: {
+          question: 'What is the primary psychological driver of Cognitive Dissonance (Buyer\'s Remorse) following a major purchase?',
+          options: [
+            'The discomfort of having given up the attractive, desirable features of the rejected competing alternatives.',
+            'The product immediately breaking the moment it is plugged into electrical power.',
+            'The credit card company charging exorbitant annual interest rates.',
+            'The delivery courier taking two days longer than estimated.'
+          ],
+          answer: 0,
+          why: 'Cognitive dissonance arises because choosing one brand inherently requires relinquishing the desirable benefits of the non-chosen alternatives, generating internal self-doubt about whether the optimal choice was made.',
+          answerIndex: 0,
+          explanation: 'Cognitive dissonance arises because choosing one brand inherently requires relinquishing the desirable benefits of the non-chosen alternatives, generating internal self-doubt about whether the optimal choice was made.'
+        }
+      }
+    ],
+    summary: [
+      '5-Stage Buying Funnel: Deconstructs the decision journey: Need Recognition -> Information Search -> Evaluation of Alternatives -> Purchase Decision -> Post-Purchase Behavior.',
+      'Perceptual Defense Filters: The brain deploys Selective Attention, Selective Distortion, and Selective Retention to filter out 98% of commercial noise; ads must resonate with active Maslow need tiers.',
+      'Reference Group Power: Conspicuous Public Luxuries trigger intense social conformity and opinion leader amplification; Private Necessities rely purely on functional utility.',
+      'Fishbein Attitude Model: Quantifies alternative evaluation through Ao = Sum(bi * ei); brands can win by shifting beliefs (bi) or reframing attribute importance weights (ei).',
+      'Cognitive Dissonance Shielding: Post-purchase buyer remorse is mitigated through immediate reassurance messaging, unboxing onboarding, and risk-free return guarantees that secure customer lifetime value.'
+    ],
+    projectStep: {
+      title: 'Month 1 Marketing Strategy Capstone Step 3: Consumer Journey Mapping & Dissonance Mitigation',
+      steps: [
+        'Map the complete 5-stage customer journey for your target persona, identifying critical leakages between intent and transaction.',
+        'Build a Fishbein Multi-Attribute model comparing your offering against 2 primary rivals across 4 weighted criteria.',
+        'Design a 3-part post-purchase customer onboarding and reassurance sequence to eliminate cognitive dissonance and lower return rates below 2%.'
+      ]
+    }
   }
 ];
