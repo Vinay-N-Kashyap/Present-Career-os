@@ -787,6 +787,401 @@ print(f"Judicial Scrutiny: {pill_res['Unocal_Standard']}")`,
         'Model shareholder rights plan (Poison Pill) dilution physics and evaluate board defense proportionality under the Unocal / Revlon standards.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_law',
+    day: 3,
+    title: 'M&A Legal Due Diligence, Reps & Warranties, MAE Clauses & Antitrust HHI',
+    goal: 'Master mergers and acquisitions (M&A) legal practice: comprehensive legal due diligence risk scoring, definitive purchase agreement Representations & Warranties and Rep & Warranty Insurance (RWI) recovery, Delaware Material Adverse Effect (MAE / MAC) litigation standards, 2023 FTC/DOJ Horizontal Merger Guidelines and HHI concentration analysis, and deal protection breakup fees under Revlon and Omnicare.',
+    minutes: 45,
+    recap: 'In high-stakes corporate mergers and acquisitions, the definitive transaction agreement is not merely a financial deal sheet—it is an intricate legal mechanism for allocating catastrophic business risks, regulatory hurdles, and post-closing liabilities between buyer and seller.',
+    parts: [
+      {
+        title: 'M&A Legal Due Diligence Architecture & Red-Flag Risk Scoring',
+        say: [
+          'Prior to executing a definitive Stock Purchase Agreement (SPA) or Asset Purchase Agreement (APA), the buyer\'s legal counsel conducts comprehensive Legal Due Diligence across the target company\'s virtual data room (VDR). The objective is not merely descriptive; it is defensive risk discovery to uncover undisclosed liabilities, defective title, broken chain of title in intellectual property, regulatory violations, and commercial contract impediments that could destroy transaction value.',
+          'A critical focus of commercial contract due diligence is identifying Change of Control (CoC) and Anti-Assignment clauses. Many enterprise customer or supplier agreements specify that a change in ownership exceeding 50% constitutes an automatic event of default or grants the counterparty an immediate unilateral right to terminate. If a target company\'s top revenue customer refuses to grant written CoC consent prior to closing, the entire commercial premise of the acquisition evaporates.',
+          'Simultaneously, counsel quantifies contingent litigation exposure and environmental liabilities under the Comprehensive Environmental Response, Compensation, and Liability Act (CERCLA). Because CERCLA imposes strict, joint, and several liability on current facility owners regardless of who originally contaminated the soil, an undetected chemical spill can bankrupt the acquirer. Due diligence findings directly dictate whether the buyer proceeds, demands special indemnity escrows, or walks away entirely.'
+        ],
+        example: 'During due diligence of a $100M target, counsel discovers an unconsented Change of Control clause on a customer generating 25% of sales, $6.5M in pending patent litigation damages, and an unassigned software copyright defect. The risk score reaches 90, triggering an urgent recommendation to TERMINATE_OR_REPRICE_TRANSACTION.',
+        code: `# M&A Legal Due Diligence Risk Scoring & Deal Breaker Detector
+def evaluate_ma_due_diligence_risks(contracts: list, litigation_claims: list, ip_defects: int, environmental_remediation_usd: float) -> dict:
+    risk_score = 0
+    deal_breakers = []
+    
+    # 1. Review Change of Control (CoC) clauses
+    coc_breaches = [c for c in contracts if c.get("has_change_of_control") and not c.get("consented")]
+    if coc_breaches:
+        risk_score += len(coc_breaches) * 15
+        if any(c.get("revenue_pct", 0) > 20.0 for c in coc_breaches):
+            deal_breakers.append("KEY_CUSTOMER_COC_CONSENT_UNOBTAINED")
+            
+    # 2. Review Litigation exposure
+    total_litigation_exposure = sum(l["potential_damages"] for l in litigation_claims if l["likelihood"] in ["probable", "reasonably_possible"])
+    if total_litigation_exposure > 5000000.0:
+        risk_score += 30
+        deal_breakers.append("HIGH_LITIGATION_EXPOSURE")
+        
+    # 3. IP Ownership chain
+    if ip_defects > 0:
+        risk_score += ip_defects * 20
+        deal_breakers.append("BROKEN_IP_ASSIGNMENT_CHAIN")
+        
+    # 4. Environmental liabilities
+    if environmental_remediation_usd > 2000000.0:
+        risk_score += 25
+        
+    recommendation = "PROCEED_TO_DEFINITIVE_AGREEMENT" if risk_score < 30 else ("SPECIAL_INDEMNITY_ESCROW_REQUIRED" if risk_score < 60 else "TERMINATE_OR_REPRICE_TRANSACTION")
+    
+    return {
+        "due_diligence_risk_score": risk_score,
+        "deal_breakers_identified": deal_breakers,
+        "total_litigation_exposure_usd": round(total_litigation_exposure, 2),
+        "environmental_clean_up_usd": round(environmental_remediation_usd, 2),
+        "recommendation": recommendation
+    }
+
+p1 = evaluate_ma_due_diligence_risks(
+    contracts=[
+        {"id": "CTR_1", "has_change_of_control": True, "consented": False, "revenue_pct": 25.0},
+        {"id": "CTR_2", "has_change_of_control": False, "consented": True, "revenue_pct": 10.0}
+    ],
+    litigation_claims=[
+        {"id": "LIT_1", "potential_damages": 6500000.0, "likelihood": "probable"}
+    ],
+    ip_defects=1, environmental_remediation_usd=2500000.0
+)
+lit_exp_str = "$" + f"{p1['total_litigation_exposure_usd']:,.2f}"
+print(f"Due Diligence Risk Score: {p1['due_diligence_risk_score']} | Rec: {p1['recommendation']}")
+print(f"Deal Breakers: {p1['deal_breakers_identified']} | Lit Exposure: {lit_exp_str}")`,
+        output: `Due Diligence Risk Score: 90 | Rec: TERMINATE_OR_REPRICE_TRANSACTION
+Deal Breakers: ['KEY_CUSTOMER_COC_CONSENT_UNOBTAINED', 'HIGH_LITIGATION_EXPOSURE', 'BROKEN_IP_ASSIGNMENT_CHAIN'] | Lit Exposure: $6,500,000.00`,
+        codeNotes: [
+          { line: 6, note: 'Screens customer contracts for unconsented Change of Control clauses affecting >20% revenue' },
+          { line: 13, note: 'Aggregates probable and reasonably possible litigation exposure exceeding $5.0M threshold' },
+          { line: 20, note: 'Penalizes broken intellectual property assignment chains that jeopardize software ownership' },
+          { line: 38, note: 'Identifies 3 critical deal breakers, generating recommendation to terminate or reprice transaction' }
+        ],
+        tryIt: 'Mark CTR_1 as consented=True to remove the CoC deal breaker and observe risk score drop to 75.',
+        check: {
+          question: 'Why are Change of Control (CoC) clauses in key supplier and customer agreements considered top-tier deal risks in M&A due diligence?',
+          options: [
+            'If a key counterparty refuses to consent to the ownership transfer, they can terminate the contract immediately upon closing, destroying the revenue foundation of the deal.',
+            'CoC clauses force the buyer to rehire all previous executives at double salary.',
+            'CoC clauses automatically convert common equity into municipal bonds.',
+            'CoC clauses require the target company to physically relocate its headquarters to another state.'
+          ],
+          answer: 0,
+          why: 'Counterparties can weaponize CoC provisions to exit unfavorable pricing or demand massive renegotiation fees, posing severe revenue attrition risks to the acquirer.',
+          answerIndex: 0,
+          explanation: 'Counterparties can weaponize CoC provisions to exit unfavorable pricing or demand massive renegotiation fees, posing severe revenue attrition risks to the acquirer.'
+        }
+      },
+      {
+        title: 'Representations & Warranties, Indemnification Baskets, Caps & RWI Insurance',
+        say: [
+          'In the definitive acquisition agreement, Representations & Warranties (Reps & Warranties) serve as the seller\'s formal statements of fact regarding the target company\'s financial condition, tax compliance, legal standing, capitalization, and asset title. If an undisclosed tax lien or customer fraud emerges post-closing, the buyer brings a contractual claim for breach of representation under the agreement\'s Indemnification article.',
+          'To prevent frivolous nuisance litigation while capping the seller\'s total downside exposure, M&A agreements negotiate strict indemnification parameters: Baskets and Caps. An Indemnity Basket sets a financial threshold before the seller pays anything: a Deductible basket pays only the excess above the threshold (e.g. claim of $1.5M on a $1.0M deductible pays $500k), whereas a Tipping (First-Dollar) basket pays 100% of the claim from dollar one once the threshold is crossed ($1.5M payout). Meanwhile, the Indemnity Cap establishes the absolute ceiling of seller liability, typically negotiated at 5% to 15% of the transaction purchase price.',
+          'In modern private equity and strategic M&A, the market has widely adopted Representation & Warranty Insurance (RWI). Under an RWI policy, an independent commercial insurer underwrites the target\'s reps: the seller\'s indemnity cap is reduced to a nominal amount (or even a "public style" zero-escrow structure), and the insurer covers losses exceeding the retention deductible up to policy limits (typically 10% of enterprise value), facilitating clean exits for selling shareholders.'
+        ],
+        example: 'On a $100M transaction with a $1.0M tipping basket and 5% ($5.0M) seller indemnity cap, the buyer discovers an $8.0M undisclosed environmental tax breach. The tipping basket is crossed, the seller pays its maximum $5.0M cap, and the buyer\'s RWI policy pays the remaining $3.0M excess, achieving 100% recovery ($8.0M total).',
+        code: `# M&A Indemnification Waterfall, Basket Mechanics & RWI Recovery Engine
+def calculate_indemnification_and_rwi_payout(claim_amount: float, purchase_price: float,
+                                             basket_type: str, basket_amount: float,
+                                             seller_cap_pct: float, rwi_policy: dict) -> dict:
+    # Check basket (Tipping vs Deductible)
+    if claim_amount < basket_amount:
+        seller_liability = 0.0
+        covered_loss = 0.0
+    else:
+        if basket_type == "tipping":
+            covered_loss = claim_amount # Recovers from dollar one once exceeded
+        else: # deductible
+            covered_loss = claim_amount - basket_amount
+            
+    seller_cap_usd = purchase_price * (seller_cap_pct / 100.0)
+    seller_payout = min(covered_loss, seller_cap_usd)
+    
+    # RWI Policy coverage (excess over seller indemnity or retention)
+    rwi_payout = 0.0
+    if rwi_policy.get("active") and covered_loss > seller_cap_usd:
+        excess_loss = covered_loss - seller_cap_usd
+        rwi_payout = min(excess_loss, rwi_policy.get("policy_limit", 0.0))
+        
+    total_buyer_recovery = seller_payout + rwi_payout
+    unrecovered_loss = claim_amount - total_buyer_recovery
+    
+    return {
+        "claim_amount": claim_amount,
+        "basket_exceeded": claim_amount >= basket_amount,
+        "seller_cap_usd": round(seller_cap_usd, 2),
+        "seller_indemnity_payout": round(seller_payout, 2),
+        "rwi_insurance_payout": round(rwi_payout, 2),
+        "total_recovery_usd": round(total_buyer_recovery, 2),
+        "unrecovered_buyer_loss": round(unrecovered_loss, 2)
+    }
+
+p2 = calculate_indemnification_and_rwi_payout(
+    claim_amount=8000000.0, purchase_price=100000000.0,
+    basket_type="tipping", basket_amount=1000000.0,
+    seller_cap_pct=5.0,
+    rwi_policy={"active": True, "policy_limit": 10000000.0}
+)
+claim_str = "$" + f"{p2['claim_amount']:,.2f}"
+seller_cap_str = "$" + f"{p2['seller_cap_usd']:,.2f}"
+seller_str = "$" + f"{p2['seller_indemnity_payout']:,.2f}"
+rwi_str = "$" + f"{p2['rwi_insurance_payout']:,.2f}"
+rec_str = "$" + f"{p2['total_recovery_usd']:,.2f}"
+unrec_str = "$" + f"{p2['unrecovered_buyer_loss']:,.2f}"
+print(f"Claim: {claim_str} | Seller Cap: {seller_cap_str} -> Seller Paid: {seller_str}")
+print(f"RWI Paid: {rwi_str} | Total Recovery: {rec_str} | Unrecovered: {unrec_str}")`,
+        output: `Claim: $8,000,000.00 | Seller Cap: $5,000,000.00 -> Seller Paid: $5,000,000.00
+RWI Paid: $3,000,000.00 | Total Recovery: $8,000,000.00 | Unrecovered: $0.00`,
+        codeNotes: [
+          { line: 6, note: 'Evaluates tipping basket mechanics where exceeding threshold unlocks 100% first-dollar recovery' },
+          { line: 15, note: 'Caps seller cash indemnity exposure at 5% of purchase price ($5.0M)' },
+          { line: 19, note: 'Routes remaining $3.0M excess loss to Rep & Warranty Insurance policy under policy limits' },
+          { line: 39, note: 'Achieves 100% buyer loss recovery ($8.0M) across combined seller indemnity and RWI coverage' }
+        ],
+        tryIt: 'Switch basket_type to "deductible" and observe covered loss drop by $1.0M, resulting in $7.0M total recovery.',
+        check: {
+          question: 'What is the critical legal difference between a "Deductible" indemnity basket and a "Tipping" (or first-dollar) indemnity basket in an acquisition agreement?',
+          options: [
+            'Under a deductible basket, the buyer recovers only the amount that exceeds the threshold; under a tipping basket, once the threshold is crossed, the buyer recovers all losses from dollar one.',
+            'A tipping basket requires the buyer to tip the seller\'s attorneys an additional 15% gratuity.',
+            'A deductible basket only applies to intellectual property claims.',
+            'A tipping basket cannot be enforced under Delaware or New York law.'
+          ],
+          answer: 0,
+          why: 'A deductible basket permanently absorbs the first dollar losses up to the threshold, whereas a tipping basket triggers full retroactive recovery of all losses once breached.',
+          answerIndex: 0,
+          explanation: 'A deductible basket permanently absorbs the first dollar losses up to the threshold, whereas a tipping basket triggers full retroactive recovery of all losses once breached.'
+        }
+      },
+      {
+        title: 'Material Adverse Effect (MAE / MAC) Clauses & Deal Walkaway Litigation',
+        say: [
+          'Between the signing of a definitive merger agreement and the final closing date (which can span 6 to 18 months for regulatory clearances), market conditions or company operations may suffer catastrophic degradation. Acquirers frequently attempt to terminate the transaction and walk away without penalty by asserting that a Material Adverse Effect (MAE) or Material Adverse Change (MAC) has occurred, excusing their obligation to close.',
+          'Under established Delaware Court of Chancery jurisprudence (landmark rulings including IBP v. Tyson Foods, Hexion v. Huntsman, and Akorn v. Fresenius), proving an MAE faces an exceptionally high judicial hurdle. The court requires that the adverse event must substantially threaten the overall earnings potential of the target in a durationally significant manner—measured in years, not months (the "duration test", typically requiring >= 24 months of severe impairment).',
+          'Furthermore, M&A agreements negotiate extensive "carve-outs" in the definition of an MAE: general economic recessions, stock market drops, changes in law/GAAP, and industry-wide declines are explicitly excluded from qualifying as an MAE unless the target is "disproportionately affected" compared to industry peers. If the buyer improperly terminates without establishing a bona fide MAE, the Delaware Chancery Court will reject the claim and order Specific Performance, legally compelling the buyer to close the multi-billion-dollar deal.',
+          'In Akorn v. Fresenius, the Delaware Supreme Court upheld an MAE termination for the first time in history because the target suffered a persistent 50%+ collapse in operating EBITDA spanning multiple years coupled with pervasive regulatory data fraud, satisfying both the durational significance and company-specific disproportionate impact standards.'
+        ],
+        example: 'A target company suffers a 48% EBITDA collapse persisting over 30 months while industry peers drop only 10% (38% disproportionate gap). The court finds durational significance and disproportionate harm, ruling VALID_MAE_ACQUIRER_MAY_WALK_AWAY and relieving the buyer from closing.',
+        code: `# Material Adverse Effect (MAE) Delaware Jurisprudential Evaluator
+def evaluate_material_adverse_effect_mae(ebitda_drop_pct: float, duration_months: int,
+                                         industry_wide_drop_pct: float, has_disproportionate_impact: bool,
+                                         systemic_force_majeure: bool) -> dict:
+    # Delaware Court of Chancery standard:
+    # 1. Impairment must be consequential to earning power over a commercially reasonable period (measured in years, e.g. >= 24 months)
+    # 2. General market/industry downturns are carved out UNLESS disproportionate impact
+    duration_test_passed = duration_months >= 24
+    severe_earning_drop = ebitda_drop_pct >= 40.0
+    
+    is_carve_out = systemic_force_majeure and (not has_disproportionate_impact)
+    
+    relative_industry_gap = ebitda_drop_pct - industry_wide_drop_pct
+    
+    is_mae_proven = duration_test_passed and severe_earning_drop and not is_carve_out and (has_disproportionate_impact or industry_wide_drop_pct < 15.0)
+    
+    verdict = "VALID_MAE_ACQUIRER_MAY_WALK_AWAY" if is_mae_proven else "NO_MAE_SPECIFIC_PERFORMANCE_ORDERED"
+    
+    return {
+        "ebitda_drop_pct": ebitda_drop_pct,
+        "duration_months": duration_months,
+        "relative_industry_gap": round(relative_industry_gap, 2),
+        "carve_out_exception_triggered": is_carve_out,
+        "mae_judicially_proven": is_mae_proven,
+        "legal_verdict": verdict
+    }
+
+p3 = evaluate_material_adverse_effect_mae(
+    ebitda_drop_pct=48.0, duration_months=30,
+    industry_wide_drop_pct=10.0, has_disproportionate_impact=True,
+    systemic_force_majeure=False
+)
+print(f"EBITDA Drop: {p3['ebitda_drop_pct']}% over {p3['duration_months']}m | Relative Gap: {p3['relative_industry_gap']}%")
+print(f"MAE Proven: {p3['mae_judicially_proven']} -> Verdict: {p3['legal_verdict']}")`,
+        output: `EBITDA Drop: 48.0% over 30m | Relative Gap: 38.0%
+MAE Proven: True -> Verdict: VALID_MAE_ACQUIRER_MAY_WALK_AWAY`,
+        codeNotes: [
+          { line: 6, note: 'Applies Delaware Chancery durational significance test requiring impairment to span >= 24 months' },
+          { line: 9, note: 'Evaluates standard industry-wide carve-outs and tests for disproportionate adverse impact' },
+          { line: 13, note: 'Synthesizes severe earnings collapse (48%), durational persistence, and peer divergence' },
+          { line: 29, note: 'Confirms valid MAE under Akorn v. Fresenius standard, entitling acquirer to walk away' }
+        ],
+        tryIt: 'Reduce duration_months to 6 months to observe the short-term blip fail the durational significance test.',
+        check: {
+          question: 'Under Delaware Court of Chancery jurisprudence (e.g. IBP v. Tyson Foods), what durational timeframe is required for an economic downturn to qualify as a Material Adverse Effect?',
+          options: [
+            'The downturn must be consequential to the company\'s overall earning potential over a commercially reasonable period measured in years, rather than a short-term blip measured in months or quarters.',
+            'A single poor quarterly earnings report of any magnitude is sufficient.',
+            'The downturn must last for at least 50 continuous years.',
+            'Delaware courts do not enforce MAE clauses under any circumstances.'
+          ],
+          answer: 0,
+          why: 'Vice Chancellor Strine established in IBP that an MAE requires durational significance—an adverse event that alters the long-term foundational earnings power of the enterprise over several years.',
+          answerIndex: 0,
+          explanation: 'Vice Chancellor Strine established in IBP that an MAE requires durational significance—an adverse event that alters the long-term foundational earnings power of the enterprise over several years.'
+        }
+      },
+      {
+        title: 'FTC / DOJ Antitrust Merger Guidelines, Market Concentration & HHI Delta',
+        say: [
+          'Under Section 7 of the Clayton Act, the Federal Trade Commission (FTC) and the Department of Justice (DOJ) Antitrust Division have statutory authority to challenge mergers and acquisitions where the effect "may be substantially to lessen competition, or to tend to create a monopoly." To enforce this standard objectively, antitrust regulators define the relevant product and geographic market and evaluate market concentration using the Herfindahl-Hirschman Index (HHI).',
+          'The HHI is calculated by summing the squares of individual market shares of all firms in the market: HHI = sum of (s_i^2). In an M&A transaction between Firm A and Firm B, the post-merger increase in concentration (the HHI Delta) equals twice the product of their individual market shares: Delta HHI = 2 * s_A * s_B. Under the modernized 2023 FTC/DOJ Merger Guidelines, any market with a post-merger HHI exceeding 1,800 is classified as Highly Concentrated, and an acquisition that increases HHI by more than 100 points triggers a structural legal presumption that the merger is unlawful.',
+          'When regulators issue a "Second Request" comprehensive civil investigative demand, merging parties face multi-year antitrust review. To resolve antitrust objections without litigation, merging parties frequently negotiate Structural Remedies: committing to divest overlapping operating business units or production facilities to an independent third party, effectively shrinking the combined post-merger market share and reducing the HHI Delta below contentious thresholds.'
+        ],
+        example: 'In a market with shares [30%, 25%, 20%, 15%, 10%] (Pre-HHI 2,250), the top two firms merge. Without remedies, Delta HHI would be +1,500. Proposing a 5% divestiture reduces post-merger share to 50% and Delta HHI to +1,000, but Post-HHI remains 3,250, prompting the FTC to issue a SECOND_REQUEST_CHALLENGE_INJUNCTION.',
+        code: `# FTC/DOJ Horizontal Merger Antitrust HHI Concentration & Remedy Engine
+def analyze_antitrust_merger_hhi(market_shares: list, firm_a_idx: int, firm_b_idx: int,
+                                 divestiture_market_share: float = 0.0) -> dict:
+    pre_hhi = sum(s ** 2 for s in market_shares)
+    
+    s_a = market_shares[firm_a_idx]
+    s_b = market_shares[firm_b_idx]
+    
+    combined_share = (s_a + s_b) - divestiture_market_share
+    delta_hhi = 2 * s_a * s_b - (2 * divestiture_market_share * (s_a + s_b - divestiture_market_share))
+    post_hhi = pre_hhi + delta_hhi
+    
+    # 2023 FTC/DOJ Merger Guidelines:
+    # Highly Concentrated if Post-HHI > 1,800, Delta > 100 triggers structural presumption of illegality
+    is_highly_concentrated = post_hhi > 1800.0
+    presumption_of_unlawfulness = is_highly_concentrated and delta_hhi >= 100.0
+    
+    regulatory_remedy = "SECOND_REQUEST_CHALLENGE_INJUNCTION" if presumption_of_unlawfulness else ("MODERATE_SCRUTINY_SETTLEMENT" if delta_hhi >= 50.0 else "CLEARANCE_GRANTED_NO_OBJECTION")
+    
+    return {
+        "pre_merger_hhi": round(pre_hhi, 1),
+        "post_merger_hhi": round(post_hhi, 1),
+        "delta_hhi": round(delta_hhi, 1),
+        "combined_market_share_pct": round(combined_share, 1),
+        "presumption_of_unlawfulness": presumption_of_unlawfulness,
+        "regulatory_remedy": regulatory_remedy
+    }
+
+p4 = analyze_antitrust_merger_hhi(
+    market_shares=[30.0, 25.0, 20.0, 15.0, 10.0],
+    firm_a_idx=0, firm_b_idx=1, divestiture_market_share=5.0
+)
+print(f"Pre-Merger HHI: {p4['pre_merger_hhi']} -> Post-Merger HHI: {p4['post_merger_hhi']} (Delta: +{p4['delta_hhi']})")
+print(f"Combined Share: {p4['combined_market_share_pct']}% | Presumption: {p4['presumption_of_unlawfulness']} -> {p4['regulatory_remedy']}")`,
+        output: `Pre-Merger HHI: 2250.0 -> Post-Merger HHI: 3250.0 (Delta: +1000.0)
+Combined Share: 50.0% | Presumption: True -> SECOND_REQUEST_CHALLENGE_INJUNCTION`,
+        codeNotes: [
+          { line: 3, note: 'Computes baseline industry concentration by summing squared market shares (Pre-HHI 2,250)' },
+          { line: 9, note: 'Calculates concentration delta (2 * s1 * s2) factoring in proposed divestiture market relief' },
+          { line: 15, note: 'Applies 2023 FTC/DOJ thresholds: Post-HHI > 1,800 and Delta >= 100 trigger illegality presumption' },
+          { line: 31, note: 'Flags mega-merger creating 50% dominant firm with +1,000 Delta HHI for antitrust challenge' }
+        ],
+        tryIt: 'Increase divestiture_market_share to 20% to observe concentration drop and evaluate antitrust settlement viability.',
+        check: {
+          question: 'Under the FTC/DOJ Horizontal Merger Guidelines, what mathematical threshold triggers a structural legal presumption that a horizontal merger is anti-competitive?',
+          options: [
+            'In a highly concentrated market (post-merger HHI > 1,800), an increase in HHI (Delta HHI) of more than 100 points.',
+            'The merging companies have fewer than 10 employees.',
+            'The merger increases total national GDP by more than 5%.',
+            'The combined company issues more than 1,000 credit cards.'
+          ],
+          answer: 0,
+          why: 'The 2023 Merger Guidelines establish a formal legal presumption of anti-competitive harm when a merger in a highly concentrated market increases HHI by >= 100 points.',
+          answerIndex: 0,
+          explanation: 'The 2023 Merger Guidelines establish a formal legal presumption of anti-competitive harm when a merger in a highly concentrated market increases HHI by >= 100 points.'
+        }
+      },
+      {
+        title: 'Breakup Fees, Reverse Breakup Fees & Deal Protection Covenants',
+        say: [
+          'To incentivize an acquirer to invest millions of dollars in transaction due diligence and financing commitments, merger agreements contain Deal Protection Covenants: "No-Shop" provisions (restricting the target from actively soliciting competing bids), "Window-Shop" exceptions (allowing the target board to review unsolicited superior offers under their fiduciary duties), and "Match Rights" (giving the original buyer the right to match any higher proposal).',
+          'If the target company\'s board exercises its "fiduciary out" to terminate the merger agreement and accept a superior topping bid from a rival bidder, the target must pay the original acquirer a Target Breakup Fee (Termination Fee). Under Delaware corporate jurisprudence (e.g. Omnicare v. NCS Healthcare and Brazen v. Bell Atlantic), breakup fees are subject to enhanced judicial scrutiny: courts uphold termination fees as reasonable liquidated damages if they fall within the established market range of 2.0% to 4.0% of transaction equity value. If a fee exceeds 4.5% to 5.0%, courts strike it down as coercive and preclusive of competing bids.',
+          'Conversely, modern acquisition agreements routinely negotiate a Buyer Reverse Breakup Fee (typically 5.0% to 8.0% of transaction value). A reverse breakup fee is payable by the buyer to the target if the deal collapses due to factors within the buyer\'s responsibility—specifically failure to secure regulatory antitrust clearance or failure to close debt financing syndication. This reverse fee provides the target with monetary compensation for the reputational damage and employee attrition suffered during prolonged regulatory review.'
+        ],
+        example: 'On a $500M transaction, the agreement stipulates a 3.2% ($16.0M) target breakup fee and a 6.0% ($30.0M) buyer reverse breakup fee. The target accepts an unsolicited superior proposal; the 3.2% fee is confirmed legally enforceable under Delaware standards, and the target pays $16.0M to the disappointed buyer.',
+        code: `# M&A Deal Protection Covenants & Breakup Fee Enforceability Engine
+def evaluate_deal_protection_and_breakup_fees(equity_value_usd: float, target_breakup_fee_pct: float,
+                                              reverse_breakup_fee_pct: float, breaching_party: str,
+                                              breach_reason: str) -> dict:
+    target_fee_usd = equity_value_usd * (target_breakup_fee_pct / 100.0)
+    reverse_fee_usd = equity_value_usd * (reverse_breakup_fee_pct / 100.0)
+    
+    # Delaware corporate law scrutiny:
+    # Target breakup fee > 4.0% is preclusive/coercive under Omnicare
+    is_target_fee_reasonable = target_breakup_fee_pct <= 4.0
+    
+    payable_fee_usd = 0.0
+    fee_type = "NONE"
+    
+    if breaching_party == "target":
+        if breach_reason in ["superior_proposal_accepted", "fiduciary_out_exercised"]:
+            payable_fee_usd = target_fee_usd
+            fee_type = "TARGET_BREAKUP_FEE"
+    elif breaching_party == "buyer":
+        if breach_reason in ["antitrust_clearance_failed", "financing_failure"]:
+            payable_fee_usd = reverse_fee_usd
+            fee_type = "BUYER_REVERSE_BREAKUP_FEE"
+            
+    return {
+        "equity_value_usd": equity_value_usd,
+        "target_breakup_fee_pct": target_breakup_fee_pct,
+        "target_fee_usd": round(target_fee_usd, 2),
+        "is_target_fee_enforceable": is_target_fee_reasonable,
+        "reverse_breakup_fee_pct": reverse_breakup_fee_pct,
+        "reverse_fee_usd": round(reverse_fee_usd, 2),
+        "breaching_party": breaching_party,
+        "breach_reason": breach_reason,
+        "payable_fee_usd": round(payable_fee_usd, 2),
+        "fee_type": fee_type
+    }
+
+p5 = evaluate_deal_protection_and_breakup_fees(
+    equity_value_usd=500000000.0, target_breakup_fee_pct=3.2,
+    reverse_breakup_fee_pct=6.0, breaching_party="target",
+    breach_reason="superior_proposal_accepted"
+)
+target_str = "$" + f"{p5['target_fee_usd']:,.2f}"
+payable_str = "$" + f"{p5['payable_fee_usd']:,.2f}"
+print(f"Target Breakup Fee: {p5['target_breakup_fee_pct']}% ({target_str}) | Enforceable: {p5['is_target_fee_enforceable']}")
+print(f"Breach Event: {p5['breaching_party']} ({p5['breach_reason']}) -> Fee Paid: {payable_str} ({p5['fee_type']})")`,
+        output: `Target Breakup Fee: 3.2% ($16,000,000.00) | Enforceable: True
+Breach Event: target (superior_proposal_accepted) -> Fee Paid: $16,000,000.00 (TARGET_BREAKUP_FEE)`,
+        codeNotes: [
+          { line: 6, note: 'Applies Delaware Omnicare preclusion standard capping reasonable target breakup fees at 4.0%' },
+          { line: 12, note: 'Triggers target termination fee upon board exercise of fiduciary out to accept superior bid' },
+          { line: 16, note: 'Models buyer reverse breakup fee (6.0%) payable if transaction fails antitrust or financing condition' },
+          { line: 36, note: 'Validates $16.0M breakup fee payout following acceptance of rival acquisition proposal' }
+        ],
+        tryIt: 'Increase target_breakup_fee_pct to 6.5% and observe the engine flag the fee as unenforceable and preclusive.',
+        check: {
+          question: 'Under Delaware corporate law (e.g. Omnicare v. NCS Healthcare), why will courts invalidate a target company breakup fee that exceeds 4.5% to 5.0% of deal value?',
+          options: [
+            'An excessively high breakup fee is legally coercive and preclusive, improperly deterring rival bidders from submitting superior offers to maximize shareholder value.',
+            'Breakup fees exceeding $10M are prohibited by the United States Constitution.',
+            'Target boards are never allowed to agree to any financial penalties.',
+            'Breakup fees must be paid in gold coins rather than wire transfers.'
+          ],
+          answer: 0,
+          why: 'A breakup fee that is too large creates a punitive economic barrier that prevents rival bidders from topping the bid, violating the board\'s duty to maintain a fair playing field.',
+          answerIndex: 0,
+          explanation: 'A breakup fee that is too large creates a punitive economic barrier that prevents rival bidders from topping the bid, violating the board\'s duty to maintain a fair playing field.'
+        }
+      }
+    ],
+    summary: [
+      'M&A Legal Due Diligence: Uncovers Change of Control contract triggers, litigation contingencies, broken IP assignment chains, and CERCLA environmental remediation liabilities.',
+      'Reps, Warranties & RWI: Allocates post-closing risk via tipping vs deductible indemnity baskets, seller liability caps (5-15%), and Representation & Warranty Insurance policies.',
+      'Material Adverse Effect (MAE): Enforces Delaware Chancery durational significance (>= 24 months) and industry carve-out exceptions under Akorn v. Fresenius precedent.',
+      'Antitrust Merger Guidelines: Applies 2023 FTC/DOJ standards, evaluating HHI concentration (> 1,800) and delta (+100) to identify mergers subject to structural injunctions.',
+      'Deal Protection & Breakup Fees: Balances No-Shop covenants and fiduciary outs; caps enforceable target fees at 2-4% under Omnicare and structures 5-8% buyer reverse breakup fees.'
+    ],
+    projectStep: {
+      title: 'M&A Transaction Legal Architecture & Antitrust Control Suite',
+      steps: [
+        'Audit virtual data room documentation and score M&A due diligence risks across Change of Control and IP ownership.',
+        'Model definitive agreement indemnification waterfalls with tipping baskets, caps, and RWI insurance policies.',
+        'Evaluate transaction closing conditions against Delaware Court of Chancery Material Adverse Effect (MAE) standards.',
+        'Compute antitrust HHI concentration deltas and assess deal protection breakup fee enforceability under Omnicare.'
+      ]
+    }
   }
 ];
 
