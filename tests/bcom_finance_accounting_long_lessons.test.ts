@@ -466,6 +466,70 @@ test('Block 128: B.Com Accounting Day 4: Fair Value Hierarchy, CECL, Convertible
   assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
 });
 
+test('Block 129: B.Com Accounting Day 5 Capstone: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom-accounting', 5);
+  assert.ok(lesson, 'bcom-accounting Day 5 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom-accounting');
+  assert.equal(lesson.day, 5);
+  assert.equal(lesson.parts.length, 5, 'bcom-accounting Day 5 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom-accounting'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 129: B.Com Accounting Day 5 Capstone: Multi-Entity Consolidation, Cash Flow, Tax Provision, Adjusted EBITDA & Global Controller Accreditation Verification', () => {
+  const lesson = BCOM_ACCOUNTING_LONG_LESSONS[4];
+  assert.ok(lesson, 'BCOM_ACCOUNTING_LONG_LESSONS[4] must exist');
+  assert.equal(lesson.day, 5);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have >= 3 codeNotes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Multi-Entity.*Consolidation.*ASC 810/i);
+  assert.ok(lesson.parts[0].code?.includes('consolidate_multi_entity_enterprise'));
+  assert.match(lesson.parts[1].title, /ASC 230.*Cash Flow.*Indirect/i);
+  assert.ok(lesson.parts[1].code?.includes('reconstruct_asc230_cash_flow_statement'));
+  assert.match(lesson.parts[2].title, /ASC 740.*Income Tax.*Deferred/i);
+  assert.ok(lesson.parts[2].code?.includes('model_asc740_income_tax_provision'));
+  assert.match(lesson.parts[3].title, /Regulation G.*Adjusted EBITDA/i);
+  assert.ok(lesson.parts[3].code?.includes('reconcile_gaap_to_adjusted_ebitda'));
+  assert.match(lesson.parts[4].title, /Global Financial Controller.*Accreditation/i);
+  assert.ok(lesson.parts[4].code?.includes('generate_global_controller_audit_dossier_and_accreditation'));
+
+  // Metrics & Project step validation
+  assert.ok(lesson.summary && lesson.summary.length >= 4, 'Summary must have >= 4 bullet points');
+  assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, 'projectStep must have title and >= 4 steps');
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be >= 8`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
+});
+
+
 
 
 

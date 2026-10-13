@@ -1519,5 +1519,441 @@ Status: ALL FINANCIAL INSTRUMENTS COMPLIANT WITH ASC 820, ASC 326, ASC 470 & ASC
         'Evaluate derivative cash flow hedge effectiveness via retrospective dollar-offset testing and roll forward the AOCI equity hedging reserve.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom-accounting',
+    day: 5,
+    title: 'Milestone 1 Capstone: Global Financial Controller War Room & SEC Form 10-K Consolidation',
+    overview: 'Execute the definitive Milestone 1 Capstone for the B.Com Accounting Masterclass. Step into the role of Group Financial Controller presiding over an enterprise multi-entity corporate war room. You will eliminate intercompany sales, markups, and unrealized inventory profits under ASC 810, reconstruct an indirect statement of cash flows reconciling GAAP net income to operating cash flow under ASC 230, model statutory vs effective tax provisions with deferred tax assets and liabilities under ASC 740, defend SEC Regulation G Non-GAAP Adjusted EBITDA bridges, and lead the audit committee defense to secure an unqualified clean opinion and earn Senior Certified Financial Controller & Corporate Reporting Strategist (CFC-CRS) accreditation.',
+    parts: [
+      {
+        title: 'Multi-Entity Enterprise Consolidation & Intercompany Elimination (ASC 810 / IFRS 10)',
+        say: [
+          'In multinational corporate groups, subsidiaries frequently trade goods, issue management fees, and lend working capital across jurisdictional borders. Under US GAAP ASC 810 and IFRS 10, when preparing consolidated financial statements, the reporting entity must present the economic results of the parent and its subsidiaries as if they were a single unified corporate enterprise. Consequently, all intra-group transactions—including intercompany sales, transfer fee markups, dividends, and loan balances—must be fully eliminated in consolidation. If intercompany revenues and expenses were not eliminated, corporate groups could artificially inflate top-line revenue by merely moving inventory between legal entities on paper.',
+          'The most mathematically nuanced challenge in consolidation accounting arises when goods sold intercompany remain unsold to third-party customers at the balance sheet measurement date. In an upstream or downstream inventory sale with a transfer markup, the purchasing subsidiary\'s ending inventory contains an unrealized intercompany profit that has not yet been earned through external arm\'s-length transactions. To correct this under GAAP, the controller must identify the unrealized gross profit embedded in ending inventory and eliminate it by debiting Consolidated Cost of Goods Sold (increasing expense) and crediting Ending Inventory (reducing asset carrying value to historical cost).',
+          'Furthermore, when the parent owns less than 100% of a consolidated subsidiary, the accounting engine must account for the non-controlling interest (NCI). Under ASC 810, total consolidated net income is first computed across the entire enterprise, and then bifurcated on the face of the income statement between net income attributable to the parent\'s equity holders and net income attributable to non-controlling interests. On the balance sheet, NCI is presented distinctly within total stockholders\' equity rather than as a mezzanine liability. Mastering these consolidation adjustments guarantees that financial statements reflect authentic economic reality rather than internal paper transfers.'
+        ],
+        example: 'Parent generates $12M revenue and Sub generates $5M revenue, including $800k in intercompany product sales with a $200k gross markup. At year-end, Sub retains 25% of the purchased goods, embedding $50,000 in unrealized inventory profit. The controller eliminates the $800k intercompany revenue and adjusts COGS by $50,000, deriving $16.2M consolidated revenue and $3.09M parent net income after 20% NCI ($160k).',
+        code: `def consolidate_multi_entity_enterprise():
+    # Parent (100%) and Foreign Sub (80% owned, 20% Non-Controlling Interest)
+    parent_rev = 12000000.0
+    sub_rev = 5000000.0
+    interco_sales = 800000.0  # Parent sold goods to Sub for $800k (cost to Parent was $600k)
+    unrealized_profit_pct = 0.25 # Sub has 25% of interco inventory remaining at year-end
+    interco_markup = 200000.0   # $800k - $600k
+    unrealized_profit_inv = interco_markup * unrealized_profit_pct # $50,000 profit to eliminate
+
+    parent_cogs = 7000000.0
+    sub_cogs = 3200000.0
+
+    # Consolidated Revenue & COGS
+    consolidated_rev = parent_rev + sub_rev - interco_sales
+    consolidated_cogs = parent_cogs + sub_cogs - interco_sales + unrealized_profit_inv
+    consolidated_gross_profit = consolidated_rev - consolidated_cogs
+
+    # Net income calculation
+    parent_opex = 2500000.0
+    sub_opex = 1000000.0
+    sub_net_income = sub_rev - sub_cogs - sub_opex # $800,000
+    nci_share_pct = 0.20
+    nci_net_income = sub_net_income * nci_share_pct # $160,000
+
+    total_net_income = consolidated_gross_profit - (parent_opex + sub_opex)
+    controlling_net_income = total_net_income - nci_net_income
+
+    print("ASC 810 Multi-Entity Consolidation & Intercompany Elimination:")
+    print("  Consolidated Revenue (less $800k interco): " + "$" + f"{consolidated_rev:,.2f}")
+    print("  Consolidated COGS (less $800k interco + $50k unrealized inv profit): " + "$" + f"{consolidated_cogs:,.2f}")
+    print("  Consolidated Gross Profit: " + "$" + f"{consolidated_gross_profit:,.2f}")
+    print("  Total Consolidated Net Income: " + "$" + f"{total_net_income:,.2f}")
+    print("  Less: Non-Controlling Interest (NCI 20%): " + "$" + f"{nci_net_income:,.2f}")
+    print("  Net Income Attributable to Parent Shareholders: " + "$" + f"{controlling_net_income:,.2f}")
+    return {"rev": consolidated_rev, "net_inc": total_net_income, "parent_inc": controlling_net_income}
+
+consolidate_multi_entity_enterprise()`,
+        output: `ASC 810 Multi-Entity Consolidation & Intercompany Elimination:
+  Consolidated Revenue (less $800k interco): $16,200,000.00
+  Consolidated COGS (less $800k interco + $50k unrealized inv profit): $9,450,000.00
+  Consolidated Gross Profit: $6,750,000.00
+  Total Consolidated Net Income: $3,250,000.00
+  Less: Non-Controlling Interest (NCI 20%): $160,000.00
+  Net Income Attributable to Parent Shareholders: $3,090,000.00`,
+        codeNotes: [
+          'Gross combined revenue ($17M) is reduced by the $800k intercompany sale to report $16.2M consolidated revenue.',
+          'Consolidated COGS eliminates the $800k intercompany purchase and adds back $50,000 in unrealized inventory profit.',
+          'Non-controlling interest (20%) is deducted from total consolidated net income ($3.25M) to yield $3.09M parent shareholder profit.'
+        ],
+        tryIt: 'Increase the subsidiary\'s remaining year-end intercompany inventory from 25% to 50% to observe how deferred profit shrinks current consolidated net income.',
+        check: {
+          question: 'Why must unrealized intercompany profit in ending inventory be eliminated in consolidation under ASC 810?',
+          options: [
+            'Because the consolidated entity cannot recognize profit by simply transferring goods between related entities until the inventory is sold to an independent third party',
+            'Because GAAP mandates that inventory must always be carried on the balance sheet at fair value rather than historical cost',
+            'Because intercompany inventory profits are taxed at double the corporate income tax rate by the IRS',
+            'Because non-controlling interest shareholders are legally prohibited from receiving any share of gross profit'
+          ],
+          answer: 0,
+          why: 'Under ASC 810 / IFRS 10, a corporate group represents a single economic entity; profits can only be recognized when goods are sold externally to third-party customers.',
+          answerIndex: 0,
+          explanation: 'Under ASC 810 / IFRS 10, a corporate group represents a single economic entity; profits can only be recognized when goods are sold externally to third-party customers.'
+        }
+      },
+      {
+        title: 'ASC 230 Statement of Cash Flows Reconstruction (Operating Indirect Method)',
+        say: [
+          'While accrual accounting provides the most accurate measurement of operating performance, cash flow remains the ultimate arbiter of corporate liquidity and solvency. Under US GAAP ASC 230 and IAS 7, the statement of cash flows categorizes all cash inflows and outflows across three distinct business activities: operating, investing, and financing. In public financial reporting, the vast majority of corporations present Cash Flow from Operating Activities (CFO) using the indirect method, which begins with consolidated net income and systematically reconciles it to net operating cash.',
+          'The indirect operating reconciliation involves two major categories of adjustments. First, non-cash expenses recognized in the income statement—most notably depreciation, amortization, and provisions for bad debts or credit losses—are added back to net income because they reduced accrual profit without consuming liquidity. Conversely, non-operating gains (such as gains on the sale of property, plant, and equipment) are subtracted from net income to prevent double-counting, as the total cash proceeds from equipment disposals belong in the investing section.',
+          'The second phase of the indirect reconciliation analyzes changes in operating working capital accounts. Increases in operating current assets (such as accounts receivable and inventory) represent cash outflows or uncollected revenues and are subtracted from net income. Conversely, increases in operating current liabilities (such as accounts payable and accrued payroll expenses) represent unpaid obligations or supplier financing and are added back to net income. When combined with Cash Flow from Investing (CapEx and asset sales) and Cash Flow from Financing (debt issuance, debt retirement, and dividends), the statement reconciles exactly to the net change in balance sheet cash.',
+          'As financial controller, mastering cash flow modeling ensures that management avoids liquidity traps where a company reports robust accrual profits while simultaneously running out of cash to meet payroll and debt service obligations.'
+        ],
+        example: 'Starting from $1,450,000 net income, the controller adds back $445,000 in non-cash depreciation and bad debt provisions, subtracts a $45,000 equipment sale gain, and adjusts for -$105,000 in working capital drag to establish $1,745,000 in operating cash flow (CFO), ending with $2,005,000 cash.',
+        code: `def reconstruct_asc230_cash_flow_statement():
+    net_income = 1450000.0
+    depreciation_amort = 380000.0
+    provision_bad_debts = 65000.0
+    gain_on_asset_sale = 45000.0 # Non-operating gain deducted from CFO
+
+    # Working Capital Changes (Operating Assets & Liabilities)
+    chg_ar = -120000.0         # AR increased by $120k (Cash outflow)
+    chg_inventory = -95000.0   # Inventory increased by $95k (Cash outflow)
+    chg_ap = 80000.0           # AP increased by $80k (Cash inflow)
+    chg_accrued_exp = 30000.0  # Accrued expenses increased by $30k (Cash inflow)
+
+    # Cash Flow from Operating Activities (CFO)
+    cfo = (net_income + depreciation_amort + provision_bad_debts - gain_on_asset_sale
+           + chg_ar + chg_inventory + chg_ap + chg_accrued_exp)
+
+    # Cash Flow from Investing Activities (CFI)
+    capex = -650000.0
+    proceeds_asset_sale = 110000.0
+    cfi = capex + proceeds_asset_sale
+
+    # Cash Flow from Financing Activities (CFF)
+    term_debt_issuance = 500000.0
+    principal_debt_repayment = -300000.0
+    dividends_paid = -250000.0
+    cff = term_debt_issuance + principal_debt_repayment + dividends_paid
+
+    net_change_in_cash = cfo + cfi + cff
+    beginning_cash = 850000.0
+    ending_cash = beginning_cash + net_change_in_cash
+
+    print("ASC 230 Statement of Cash Flows (Indirect Method):")
+    print("  Net Income: " + "$" + f"{net_income:,.2f}")
+    print("  Non-Cash Addbacks (Depr: " + "$" + f"{depreciation_amort:,.0f}" + ", Bad Debts: " + "$" + f"{provision_bad_debts:,.0f}" + "): " + "$" + f"{depreciation_amort + provision_bad_debts:,.2f}")
+    print("  Gain on Asset Sale Deducted: " + "$" + f"{-gain_on_asset_sale:,.2f}")
+    print("  Working Capital Cash Drag: " + "$" + f"{chg_ar + chg_inventory + chg_ap + chg_accrued_exp:,.2f}")
+    print("  Net Cash Provided by Operating Activities (CFO): " + "$" + f"{cfo:,.2f}")
+    print("  Net Cash Used in Investing Activities (CFI): " + "$" + f"{cfi:,.2f}")
+    print("  Net Cash Provided by Financing Activities (CFF): " + "$" + f"{cff:,.2f}")
+    print("  Net Change in Cash: " + "$" + f"{net_change_in_cash:,.2f}")
+    print("  Ending Cash Balance: " + "$" + f"{ending_cash:,.2f}")
+    return {"cfo": cfo, "cfi": cfi, "cff": cff, "ending_cash": ending_cash}
+
+reconstruct_asc230_cash_flow_statement()`,
+        output: `ASC 230 Statement of Cash Flows (Indirect Method):
+  Net Income: $1,450,000.00
+  Non-Cash Addbacks (Depr: $380,000, Bad Debts: $65,000): $445,000.00
+  Gain on Asset Sale Deducted: $-45,000.00
+  Working Capital Cash Drag: $-105,000.00
+  Net Cash Provided by Operating Activities (CFO): $1,745,000.00
+  Net Cash Used in Investing Activities (CFI): $-540,000.00
+  Net Cash Provided by Financing Activities (CFF): $-50,000.00
+  Net Change in Cash: $1,155,000.00
+  Ending Cash Balance: $2,005,000.00`,
+        codeNotes: [
+          'Non-cash expenses ($445k) are added back to net income, while non-operating gain ($45k) is subtracted to avoid double counting with CFI.',
+          'Operating working capital adjustments reflect cash tied up in AR (-$120k) and inventory (-$95k), partially offset by AP (+$80k) and accruals (+$30k).',
+          'Operating ($1.745M), investing (-$540k), and financing (-$50k) flows sum to a net cash increase of $1.155M, reconciling ending cash to $2.005M.'
+        ],
+        tryIt: 'Adjust the accounts receivable change to -$300,000 to simulate a severe customer collection slowdown and measure its direct impact on CFO.',
+        check: {
+          question: 'Under the ASC 230 indirect method, why is an increase in Accounts Receivable subtracted from Net Income in the Operating section?',
+          options: [
+            'Because revenue was recognized on an accrual basis in the income statement but the cash has not yet been collected from customers',
+            'Because Accounts Receivable represents a long-term capital investment classified as financing',
+            'Because increasing receivables indicates that the company wrote off bad debts against retained earnings',
+            'Because customer credit balances must be remitted immediately to state tax authorities'
+          ],
+          answer: 0,
+          why: 'An increase in Accounts Receivable reflects credit sales that inflated accrual net income without generating corresponding cash collections during the period, requiring a deduction to reach actual cash flow.',
+          answerIndex: 0,
+          explanation: 'An increase in Accounts Receivable reflects credit sales that inflated accrual net income without generating corresponding cash collections during the period, requiring a deduction to reach actual cash flow.'
+        }
+      },
+      {
+        title: 'ASC 740 Income Tax Accounting: Temporary vs Permanent Differences & Deferred Taxes',
+        say: [
+          'Accounting for income taxes under US GAAP ASC 740 and IAS 12 requires reconciling financial accounting rules (governed by GAAP) with tax statutory law (governed by the Internal Revenue Code). Because GAAP prioritizes economic matching while tax codes incentivize capital investment, pretax book accounting income rarely equals taxable income on Form 1120. The controller must dissect book-tax discrepancies into two distinct categories: permanent differences and temporary differences.',
+          'Permanent differences are items that are recognized for financial reporting but never for tax purposes, or vice versa. Common examples include tax-exempt municipal bond interest income (which increases book income but is never taxed) and non-deductible fines or penalties (which reduce book income but cannot be deducted for tax). Permanent differences do not reverse in subsequent periods and directly alter the company\'s Effective Tax Rate (ETR), causing it to diverge from the 21% US federal statutory rate.',
+          'Temporary differences, in contrast, arise from timing disparities where revenues or expenses are recognized in different periods for book versus tax purposes. A prime example is depreciation: companies often use straight-line depreciation for book reporting but accelerate deductions under MACRS or Section 168(k) bonus depreciation for tax. This generates a future taxable amount, creating a Deferred Tax Liability (DTL). Conversely, accruals for warranties and CECL bad debt reserves are recognized immediately for book purposes but cannot be deducted for tax until paid or written off, creating a Deferred Tax Asset (DTA). Total income tax expense on the P&L equals Current Tax Expense plus Deferred Tax Expense, providing a stable, matched tax provision.',
+          'Furthermore, ASC 740 mandates that reporting entities evaluate whether it is "more likely than not" (a greater than 50% probability) that deferred tax assets will be realized through future taxable income. If future realization is doubtful, the controller must record a valuation allowance against the DTA.'
+        ],
+        example: 'On $2,000,000 pretax book income, $25,000 in net permanent deductions and temporary differences (MACRS $180k excess depreciation vs $100k book reserve accruals) result in $1,895,000 taxable income ($397,950 current tax). The controller records a $16,800 net deferred tax liability, producing a total tax provision of $414,750 (20.74% effective tax rate).',
+        code: `def model_asc740_income_tax_provision():
+    pretax_accounting_income = 2000000.0
+    statutory_tax_rate = 0.21 # 21% US Federal Rate
+
+    # Permanent Differences (Do NOT reverse)
+    muni_interest_income = -50000.0 # Non-taxable
+    nondeductible_fines = 25000.0   # Non-deductible expense
+    permanent_adj = muni_interest_income + nondeductible_fines # -$25,000
+
+    # Temporary Differences (Reverse in future years)
+    tax_depr_excess = -180000.0    # MACRS accelerates depreciation over book (Future Taxable -> DTL)
+    bad_debt_reserve_excess = 60000.0 # Book accrued bad debt before tax write-off (Future Deductible -> DTA)
+    warranty_accrual_excess = 40000.0 # Book warranty accrual (Future Deductible -> DTA)
+
+    taxable_income = pretax_accounting_income + permanent_adj + tax_depr_excess + bad_debt_reserve_excess + warranty_accrual_excess
+    current_tax_expense = taxable_income * statutory_tax_rate
+
+    # Deferred Tax Asset (DTA) & Liability (DTL)
+    deferred_tax_asset = (bad_debt_reserve_excess + warranty_accrual_excess) * statutory_tax_rate # $100k * 21% = $21k
+    deferred_tax_liability = abs(tax_depr_excess) * statutory_tax_rate # $180k * 21% = $37.8k
+    net_deferred_tax_liability = deferred_tax_liability - deferred_tax_asset # $16.8k
+
+    deferred_tax_expense = net_deferred_tax_liability
+    total_tax_provision = current_tax_expense + deferred_tax_expense
+    effective_tax_rate = (total_tax_provision / pretax_accounting_income) * 100
+
+    print("ASC 740 Income Tax Provision & Deferred Taxes:")
+    print("  Pretax Accounting Income: " + "$" + f"{pretax_accounting_income:,.2f}")
+    print("  Taxable Income on IRS Form 1120: " + "$" + f"{taxable_income:,.2f}")
+    print("  Current Tax Expense (Payable Now): " + "$" + f"{current_tax_expense:,.2f}")
+    print("  Deferred Tax Asset (Future Deductions): " + "$" + f"{deferred_tax_asset:,.2f}")
+    print("  Deferred Tax Liability (Future Taxable MACRS): " + "$" + f"{deferred_tax_liability:,.2f}")
+    print("  Net Deferred Tax Liability on Balance Sheet: " + "$" + f"{net_deferred_tax_liability:,.2f}")
+    print("  Total Tax Provision (P&L Expense): " + "$" + f"{total_tax_provision:,.2f}")
+    print(f"  Effective Tax Rate: {effective_tax_rate:.2f}% (Statutory: 21.00%)")
+    return {"current_tax": current_tax_expense, "net_dtl": net_deferred_tax_liability, "total_tax": total_tax_provision, "etr": effective_tax_rate}
+
+model_asc740_income_tax_provision()`,
+        output: `ASC 740 Income Tax Provision & Deferred Taxes:
+  Pretax Accounting Income: $2,000,000.00
+  Taxable Income on IRS Form 1120: $1,895,000.00
+  Current Tax Expense (Payable Now): $397,950.00
+  Deferred Tax Asset (Future Deductions): $21,000.00
+  Deferred Tax Liability (Future Taxable MACRS): $37,800.00
+  Net Deferred Tax Liability on Balance Sheet: $16,800.00
+  Total Tax Provision (P&L Expense): $414,750.00
+  Effective Tax Rate: 20.74% (Statutory: 21.00%)`,
+        codeNotes: [
+          'Permanent differences (-$25k) reduce effective tax rate from the 21.00% statutory rate down to 20.74%.',
+          'Temporary differences calculate a $21,000 DTA (bad debts, warranties) and a $37,800 DTL (accelerated MACRS depreciation).',
+          'The net deferred tax liability of $16,800 is recognized on the balance sheet, ensuring total P&L tax expense matches book income.'
+        ],
+        tryIt: 'Add a $100,000 tax penalty to permanent differences to observe how non-deductible items drive the effective tax rate above the statutory rate.',
+        check: {
+          question: 'What is the distinguishing feature of a temporary difference under ASC 740 compared to a permanent difference?',
+          options: [
+            'Temporary differences will reverse in future periods and generate deferred tax assets or liabilities, whereas permanent differences never reverse',
+            'Temporary differences are illegal under IRS regulations and result in mandatory financial penalties',
+            'Temporary differences affect cash flow immediately but are excluded from GAAP financial statements',
+            'Temporary differences apply only to state sales taxes rather than corporate federal income taxes'
+          ],
+          answer: 0,
+          why: 'Temporary differences represent timing discrepancies that reverse in future years (giving rise to DTAs and DTLs), whereas permanent differences do not reverse and directly alter the effective tax rate.',
+          answerIndex: 0,
+          explanation: 'Temporary differences represent timing discrepancies that reverse in future years (giving rise to DTAs and DTLs), whereas permanent differences do not reverse and directly alter the effective tax rate.'
+        }
+      },
+      {
+        title: 'SEC Regulation G Non-GAAP Adjusted EBITDA Reconciliation & Footnote Disclosures',
+        say: [
+          'Public company corporate filings under SEC Form 10-K and Form 10-Q frequently supplement GAAP financial statements with non-GAAP performance metrics, most prominently Adjusted EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization). Management teams argue that Adjusted EBITDA provides analysts with clearer insight into underlying core operational cash earnings by removing non-operating financing decisions, statutory tax variances, accounting depreciation conventions, and non-cash or non-recurring charges.',
+          'However, the SEC enforces strict oversight under Regulation G and Item 10(e) of Regulation S-K to prevent misleading presentations. A company cannot present a non-GAAP measure without giving equal or greater prominence to the most directly comparable GAAP measure (GAAP Net Income). Crucially, the filing must contain a quantitative reconciliation table bridging GAAP Net Income to Adjusted EBITDA, explaining why management believes the metric is useful to investors and describing the exact nature of each adjustment.',
+          'Standard adjustments begin by adding back interest expense, income tax provisions, and depreciation and amortization to reach standard EBITDA. From there, management adjusts for discrete items: non-cash stock-based compensation (granting equity to employees), facility restructuring and employee severance charges, and one-off acquisition transaction legal fees. Controllers must ensure that adjustments are applied consistently from period to period and that normal, recurring operational cash operating expenses are never stripped out under the guise of "one-time" adjustments, as this triggers immediate SEC comment letters.'
+        ],
+        example: 'Starting from $1,450,000 GAAP Net Income, the controller bridges to $2,419,750 standard EBITDA by adding back interest ($175k), taxes ($414,750), and D&A ($380k). Adding stock compensation ($140k), severance ($90k), and M&A legal costs ($65k) establishes $2,714,750 Adjusted EBITDA (16.76% margin).',
+        code: `def reconcile_gaap_to_adjusted_ebitda():
+    gaap_net_income = 1450000.0
+    interest_expense = 175000.0
+    tax_provision = 414750.0
+    depreciation_amortization = 380000.0
+
+    ebitda = gaap_net_income + interest_expense + tax_provision + depreciation_amortization
+
+    # Non-GAAP Adjustments
+    stock_based_compensation = 140000.0
+    restructuring_severance = 90000.0
+    m_and_a_transaction_costs = 65000.0
+
+    adjusted_ebitda = ebitda + stock_based_compensation + restructuring_severance + m_and_a_transaction_costs
+    rev = 16200000.0
+    adjusted_ebitda_margin = (adjusted_ebitda / rev) * 100
+
+    print("SEC Form 10-K Non-GAAP Adjusted EBITDA Reconciliation (Regulation G):")
+    print("  GAAP Consolidated Net Income: " + "$" + f"{gaap_net_income:,.2f}")
+    print("  (+) Provision for Income Taxes: " + "$" + f"{tax_provision:,.2f}")
+    print("  (+) Interest Expense, Net: " + "$" + f"{interest_expense:,.2f}")
+    print("  (+) Depreciation & Amortization: " + "$" + f"{depreciation_amortization:,.2f}")
+    print("  EBITDA (Standard): " + "$" + f"{ebitda:,.2f}")
+    print("  (+) Stock-Based Compensation: " + "$" + f"{stock_based_compensation:,.2f}")
+    print("  (+) Restructuring & Facility Severance: " + "$" + f"{restructuring_severance:,.2f}")
+    print("  (+) M&A Legal Due Diligence Costs: " + "$" + f"{m_and_a_transaction_costs:,.2f}")
+    print("  Adjusted EBITDA: " + "$" + f"{adjusted_ebitda:,.2f}")
+    print(f"  Adjusted EBITDA Margin: {adjusted_ebitda_margin:.2f}%")
+    return {"ebitda": ebitda, "adjusted_ebitda": adjusted_ebitda, "margin": adjusted_ebitda_margin}
+
+reconcile_gaap_to_adjusted_ebitda()`,
+        output: `SEC Form 10-K Non-GAAP Adjusted EBITDA Reconciliation (Regulation G):
+  GAAP Consolidated Net Income: $1,450,000.00
+  (+) Provision for Income Taxes: $414,750.00
+  (+) Interest Expense, Net: $175,000.00
+  (+) Depreciation & Amortization: $380,000.00
+  EBITDA (Standard): $2,419,750.00
+  (+) Stock-Based Compensation: $140,000.00
+  (+) Restructuring & Facility Severance: $90,000.00
+  (+) M&A Legal Due Diligence Costs: $65,000.00
+  Adjusted EBITDA: $2,714,750.00
+  Adjusted EBITDA Margin: 16.76%`,
+        codeNotes: [
+          'Standard EBITDA ($2,419,750) adds back capital structure (interest), tax jurisdiction (taxes), and asset age (D&A) differences.',
+          'Regulation G non-GAAP adjustments add back non-cash stock compensation ($140k), restructuring ($90k), and M&A fees ($65k).',
+          'Adjusted EBITDA of $2,714,750 represents a 16.76% margin against $16.2M consolidated net revenues.'
+        ],
+        tryIt: 'Examine what happens if normal recurring marketing software licenses ($50k) are inappropriately added back, exposing the filing to SEC comment letters.',
+        check: {
+          question: 'What is the primary SEC requirement under Regulation G when presenting non-GAAP Adjusted EBITDA in Form 10-K filings?',
+          options: [
+            'The filing must present the most directly comparable GAAP measure (GAAP Net Income) with equal or greater prominence and provide a full mathematical reconciliation bridge',
+            'Adjusted EBITDA must always exceed GAAP Net Income by at least 25% to be deemed informative',
+            'The company is required to replace the GAAP audited income statement entirely with the Adjusted EBITDA schedule',
+            'Non-GAAP metrics are only permitted if certified by state treasury departments prior to quarterly earnings calls'
+          ],
+          answer: 0,
+          why: 'SEC Regulation G mandates equal or greater prominence for the comparable GAAP measure and requires an explicit, audited mathematical reconciliation table.',
+          answerIndex: 0,
+          explanation: 'SEC Regulation G mandates equal or greater prominence for the comparable GAAP measure and requires an explicit, audited mathematical reconciliation table.'
+        }
+      },
+      {
+        title: 'Milestone 1 Capstone Defense: The Global Financial Controller War Room & Accreditation',
+        say: [
+          'You have reached the final milestone of the B.Com Accounting Masterclass curriculum. In this culminating executive simulation, you convene the Board of Directors Audit Committee War Room to deliver the comprehensive annual financial controller dossier. You will defend every critical accounting policy decision, consolidation adjustment, and disclosure note across the entire enterprise financial statements.',
+          'Your executive dossier synthesizes all core disciplines mastered throughout the five-day curriculum: foundational double-entry accrual invariants and fundamental balance sheet equations from Day 1; ASC 842 lease capitalization, foreign functional currency translation, and goodwill impairment evaluations from Day 2; multi-pool activity-based costing allocations and standard costing variance waterfalls from Day 3; ASC 820 Level 3 fair value hierarchies, forward-looking ASC 326 CECL credit loss allowances, and ASC 815 cash flow hedge effectiveness from Day 4; and multi-entity consolidation eliminations, indirect cash flows, and ASC 740 income tax provisions from Day 5.',
+          'Upon executing the integrated master synthesis pipeline, you will defend the unqualified clean audit opinion issued by independent auditors, verify full SEC Regulation G compliance, and receive the official conferral of Senior Certified Financial Controller & Corporate Reporting Strategist (CFC-CRS) accreditation, marking 100% completion of the B.Com Accounting course.'
+        ],
+        example: 'The controller presents consolidated revenue ($16.20M), parent net income ($3.09M), operating cash flow ($1.745M), net DTL ($16,800), and SEC Adjusted EBITDA ($2.715M), securing unanimous audit committee approval and receiving CFC-CRS accreditation.',
+        code: `def generate_global_controller_audit_dossier_and_accreditation():
+    print("================================================================================")
+    print("   PINIT CAREER OS MILESTONE 1 CAPSTONE: GLOBAL FINANCIAL CONTROLLER WAR ROOM   ")
+    print("================================================================================")
+    print("\n[PHASE 1: MULTI-ENTITY ASC 810 CONSOLIDATION]")
+    c = consolidate_multi_entity_enterprise()
+
+    print("\n[PHASE 2: ASC 230 STATEMENT OF CASH FLOWS]")
+    cf = reconstruct_asc230_cash_flow_statement()
+
+    print("\n[PHASE 3: ASC 740 INCOME TAX PROVISION & DEFERRED TAXES]")
+    tx = model_asc740_income_tax_provision()
+
+    print("\n[PHASE 4: SEC REGULATION G NON-GAAP RECONCILIATION]")
+    adj = reconcile_gaap_to_adjusted_ebitda()
+
+    print("\n[PHASE 5: BOARD OF DIRECTORS AUDIT COMMITTEE SIGN-OFF & ACCREDITATION]")
+    print("  Consolidated Enterprise Revenue: " + "$" + f"{c['rev']:,.2f}")
+    print("  Parent Net Income: " + "$" + f"{c['parent_inc']:,.2f}")
+    print("  Operating Cash Flow (CFO): " + "$" + f"{cf['cfo']:,.2f}")
+    print("  Net Deferred Tax Liability: " + "$" + f"{tx['net_dtl']:,.2f}")
+    print("  SEC Adjusted EBITDA: " + "$" + f"{adj['adjusted_ebitda']:,.2f}")
+    print("  Audit Status: UNQUALIFIED CLEAN OPINION (Big Four Audit Defense Passed)")
+    print("  Executive Sign-Off: Conferred Senior Certified Financial Controller & Corporate Reporting Strategist (CFC-CRS)")
+
+generate_global_controller_audit_dossier_and_accreditation()`,
+        output: `================================================================================
+   PINIT CAREER OS MILESTONE 1 CAPSTONE: GLOBAL FINANCIAL CONTROLLER WAR ROOM   
+================================================================================
+
+[PHASE 1: MULTI-ENTITY ASC 810 CONSOLIDATION]
+ASC 810 Multi-Entity Consolidation & Intercompany Elimination:
+  Consolidated Revenue (less $800k interco): $16,200,000.00
+  Consolidated COGS (less $800k interco + $50k unrealized inv profit): $9,450,000.00
+  Consolidated Gross Profit: $6,750,000.00
+  Total Consolidated Net Income: $3,250,000.00
+  Less: Non-Controlling Interest (NCI 20%): $160,000.00
+  Net Income Attributable to Parent Shareholders: $3,090,000.00
+
+[PHASE 2: ASC 230 STATEMENT OF CASH FLOWS]
+ASC 230 Statement of Cash Flows (Indirect Method):
+  Net Income: $1,450,000.00
+  Non-Cash Addbacks (Depr: $380,000, Bad Debts: $65,000): $445,000.00
+  Gain on Asset Sale Deducted: $-45,000.00
+  Working Capital Cash Drag: $-105,000.00
+  Net Cash Provided by Operating Activities (CFO): $1,745,000.00
+  Net Cash Used in Investing Activities (CFI): $-540,000.00
+  Net Cash Provided by Financing Activities (CFF): $-50,000.00
+  Net Change in Cash: $1,155,000.00
+  Ending Cash Balance: $2,005,000.00
+
+[PHASE 3: ASC 740 INCOME TAX PROVISION & DEFERRED TAXES]
+ASC 740 Income Tax Provision & Deferred Taxes:
+  Pretax Accounting Income: $2,000,000.00
+  Taxable Income on IRS Form 1120: $1,895,000.00
+  Current Tax Expense (Payable Now): $397,950.00
+  Deferred Tax Asset (Future Deductions): $21,000.00
+  Deferred Tax Liability (Future Taxable MACRS): $37,800.00
+  Net Deferred Tax Liability on Balance Sheet: $16,800.00
+  Total Tax Provision (P&L Expense): $414,750.00
+  Effective Tax Rate: 20.74% (Statutory: 21.00%)
+
+[PHASE 4: SEC REGULATION G NON-GAAP RECONCILIATION]
+SEC Form 10-K Non-GAAP Adjusted EBITDA Reconciliation (Regulation G):
+  GAAP Consolidated Net Income: $1,450,000.00
+  (+) Provision for Income Taxes: $414,750.00
+  (+) Interest Expense, Net: $175,000.00
+  (+) Depreciation & Amortization: $380,000.00
+  EBITDA (Standard): $2,419,750.00
+  (+) Stock-Based Compensation: $140,000.00
+  (+) Restructuring & Facility Severance: $90,000.00
+  (+) M&A Legal Due Diligence Costs: $65,000.00
+  Adjusted EBITDA: $2,714,750.00
+  Adjusted EBITDA Margin: 16.76%
+
+[PHASE 5: BOARD OF DIRECTORS AUDIT COMMITTEE SIGN-OFF & ACCREDITATION]
+  Consolidated Enterprise Revenue: $16,200,000.00
+  Parent Net Income: $3,090,000.00
+  Operating Cash Flow (CFO): $1,745,000.00
+  Net Deferred Tax Liability: $16,800.00
+  SEC Adjusted EBITDA: $2,714,750.00
+  Audit Status: UNQUALIFIED CLEAN OPINION (Big Four Audit Defense Passed)
+  Executive Sign-Off: Conferred Senior Certified Financial Controller & Corporate Reporting Strategist (CFC-CRS)`,
+        codeNotes: [
+          'Unifies multi-entity consolidation, indirect cash flow modeling, income tax provisioning, and SEC non-GAAP reconciliation.',
+          'Demonstrates defensibility across every major US GAAP standard (ASC 810, ASC 230, ASC 740, ASC 820, ASC 326, ASC 815, ASC 470).',
+          'Concludes the B.Com Accounting Masterclass with formal CFO and Audit Committee certification and CFC-CRS accreditation.'
+        ],
+        tryIt: 'Run the complete Capstone pipeline to verify full financial integration across all five days of the B.Com Accounting Masterclass.',
+        check: {
+          question: 'What constitutes an Unqualified Clean Audit Opinion on an enterprise SEC Form 10-K filing?',
+          options: [
+            'The independent auditor concludes that the consolidated financial statements present fairly, in all material respects, the financial position and results of operations in conformity with GAAP',
+            'The auditor certifies that the company has achieved record-high profitability and will never suffer an operating loss',
+            'The auditor states that internal controls were completely unnecessary because management has high integrity',
+            'The SEC waives all quarterly filing requirements for the subsequent five fiscal years'
+          ],
+          answer: 0,
+          why: 'An unqualified opinion is the highest audit rating, signifying that financial statements are free of material misstatements and comply fully with GAAP.',
+          answerIndex: 0,
+          explanation: 'An unqualified opinion is the highest audit rating, signifying that financial statements are free of material misstatements and comply fully with GAAP.'
+        }
+      }
+    ],
+    summary: [
+      'Executed ASC 810 multi-entity enterprise consolidation, eliminating $800,000 in intercompany revenues, adjusting for $50,000 in unrealized inventory profit, and segregating $160,000 in Non-Controlling Interest (NCI) from parent profit.',
+      'Constructed an ASC 230 statement of cash flows using the indirect method, adding back $445,000 in non-cash items, deducting $45,000 in asset gains, and adjusting for $105,000 working capital drag to produce $1,745,000 in operating cash flow.',
+      'Modeled an ASC 740 income tax provision, distinguishing permanent differences from temporary timing differences (MACRS depreciation vs CECL/warranty accruals) to establish a $16,800 net DTL and 20.74% effective tax rate.',
+      'Constructed an SEC Regulation G Non-GAAP Adjusted EBITDA bridge ($2,714,750 Adjusted EBITDA, 16.76% margin), justifying add-backs for stock-based compensation, facility severance, and M&A diligence costs.',
+      'Synthesized the complete Milestone 1 Financial Controller War Room, defending the annual audit to earn an unqualified clean opinion and conferring Senior Certified Financial Controller & Corporate Reporting Strategist (CFC-CRS) accreditation.'
+    ],
+    projectStep: {
+      title: 'Execute the Milestone 1 Financial Controller Capstone War Room',
+      steps: [
+        'Consolidate multi-entity operations under ASC 810, eliminating intercompany sales, transfer markups, and unrealized inventory profits.',
+        'Reconstruct the ASC 230 statement of cash flows under the indirect method, reconciling net income to cash provided by operations.',
+        'Compute the ASC 740 income tax provision, distinguishing permanent book-tax items from temporary differences and posting net deferred tax balances.',
+        'Bridge GAAP Net Income to SEC Regulation G Adjusted EBITDA and deliver the audit committee defense to secure CFC-CRS accreditation.'
+      ]
+    }
   }
 ];
