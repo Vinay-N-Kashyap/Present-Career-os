@@ -210,3 +210,53 @@ test('Java Basics Day 3: Domain-Specific Content Assertions', () => {
   assert.ok(javaD3.parts[4].output.includes('Parent delegation prevents rogue plugins'));
 });
 
+test('Soft Skills Day 3: Resolution & Structural Invariants for Radical Candor, NVC & Executive Briefings', () => {
+  const ssD3 = getLongLesson('soft-skills', 3);
+  assert.ok(ssD3, 'soft-skills Day 3 long lesson must resolve');
+  assert.equal(ssD3.day, 3);
+  assert.equal(ssD3.parts.length, 5, 'soft-skills Day 3 must contain exactly 5 parts');
+  assert.ok(ssD3.summary.length >= 4, 'soft-skills Day 3 must contain comprehensive summary');
+  assert.ok(ssD3.projectStep, 'soft-skills Day 3 must have a hands-on project step');
+  assert.ok(ssD3.minutes >= 15, 'soft-skills Day 3 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of ssD3.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 3: Domain-Specific Content Assertions', () => {
+  const ssD3 = getLongLesson('soft-skills', 3);
+  assert.ok(ssD3);
+
+  // Part 1 – Radical Candor
+  assert.ok(ssD3.parts[0].title.includes('Radical Candor'));
+  assert.ok(ssD3.parts[0].output.includes('RADICAL_CANDOR'));
+
+  // Part 2 – Crucial Conversations & NVC
+  assert.ok(ssD3.parts[1].title.includes('Crucial Conversations') || ssD3.parts[1].title.includes('Non-Violent Communication'));
+  assert.ok(ssD3.parts[1].output.includes('100% VALID NVC STRUCTURE'));
+
+  // Part 3 – Cross-Functional RFC & ADR
+  assert.ok(ssD3.parts[2].title.includes('RFC') || ssD3.parts[2].title.includes('PRD'));
+  assert.ok(ssD3.parts[2].output.includes('APPROVED_ADR'));
+
+  // Part 4 – Stakeholder Escalation Matrix
+  assert.ok(ssD3.parts[3].title.includes('Escalation'));
+  assert.ok(ssD3.parts[3].output.includes('LEVEL_3_VP_EXECUTIVE_ESC'));
+
+  // Part 5 – Executive Presentation Framing
+  assert.ok(ssD3.parts[4].title.includes('Executive Presentation') || ssD3.parts[4].title.includes('Boardroom'));
+  assert.ok(ssD3.parts[4].output.includes('FUND_IMMEDIATELY'));
+});
+
+

@@ -763,6 +763,440 @@ console.log('Influence Mechanics: Build early lighthouse pilots with one friendl
         'Formulate a multi-team migration strategy identifying early lighthouse pilot teams and deprecation metrics.'
       ]
     }
+  },
+  {
+    coursePrefix: 'soft-skills',
+    day: 3,
+    title: 'Executive Leadership, Crucial Conversations & Cross-Functional Alignment',
+    goal: 'Master the interpersonal and organizational leadership required of Principal and Staff engineers: navigating Radical Candor feedback loops, defusing high-stakes incident tension with Non-Violent Communication (NVC), driving consensus across cross-functional RFCs and PRDs, executing clean stakeholder escalations without burning bridges, and delivering compelling C-suite executive briefings.',
+    minutes: 45,
+    recap: 'In Day 2, we mastered the Minto Pyramid Principle, Disagree and Commit consensus models, Iron Triangle capacity planning, psychological safety in code reviews, and influence without authority. In Day 3, we elevate to executive-grade interpersonal communication: delivering radical candor, conducting crucial conversations during production fire drills, driving cross-functional product alignment through formal RFC/ADR lifecycles, navigating clean stakeholder escalation ladders, and framing technical proposals for boardroom buy-in.',
+    parts: [
+      {
+        title: 'Radical Candor: Balancing Caring Personally with Challenging Directly',
+        say: [
+          'Giving and receiving critical feedback is the ultimate litmus test of engineering leadership. Many senior engineers mistake harsh bluntness for honesty, destroying psychological safety and leaving teammates demoralized and defensive.',
+          'Kim Scott Radical Candor framework provides a 2x2 matrix defined by two orthogonal axes: Caring Personally on the vertical axis and Challenging Directly on the horizontal axis. Radical Candor sits in the upper-right quadrant, where high personal care is combined with uncompromising directness.',
+          'When you care personally but fail to challenge directly, you slide into Ruinous Empathy: you avoid giving tough feedback to spare temporary feelings, which ultimately allows substandard work to persist and hurts the engineer career trajectory.',
+          'When you challenge directly without caring personally, you land in Obnoxious Aggression: public insults, patronizing code review comments, and dressing down peers in post-mortems trigger fight-or-flight reactions that paralyze team collaboration.',
+          'Manipulative Insincerity sits in the bottom-left corner where someone neither cares nor speaks the truth, playing political games and gossiping behind backs. Radical Candor is kind, direct, timely, and actionable: it critiques the work and the code behavior, never the human character or intelligence.',
+          'Practicing Radical Candor creates an environment where high technical standards and emotional safety coexist naturally.'
+        ],
+        example: 'Imagine a teammate who repeatedly commits code without integration tests, breaking the staging build. Ruinous Empathy says: "Great effort, don’t worry about the build failure, we will fix it later." Obnoxious Aggression says: "Your code is garbage and you are incompetent." Radical Candor says: "I know how hard you worked on this PR and I value your domain insight, but the missing test coverage puts the release at risk. Let’s sit together today and write those integration tests before merging."',
+        code: `// Simulation: Radical Candor Feedback Evaluator Matrix
+type CandorQuadrant = 'RADICAL_CANDOR' | 'RUINOUS_EMPATHY' | 'OBNOXIOUS_AGGRESSION' | 'MANIPULATIVE_INSINCERITY';
+
+interface FeedbackProfile {
+  carePersonally: number;   // 1 to 10
+  challengeDirectly: number; // 1 to 10
+  statement: string;
+}
+
+class RadicalCandorEngine {
+  classifyFeedback(profile: FeedbackProfile): {
+    quadrant: CandorQuadrant;
+    actionable: boolean;
+    diagnosis: string;
+  } {
+    const highCare = profile.carePersonally >= 6;
+    const highChallenge = profile.challengeDirectly >= 6;
+
+    if (highCare && highChallenge) {
+      return {
+        quadrant: 'RADICAL_CANDOR',
+        actionable: true,
+        diagnosis: 'Kind, direct, and actionable: challenges behavior without demeaning identity.'
+      };
+    }
+    if (highCare && !highChallenge) {
+      return {
+        quadrant: 'RUINOUS_EMPATHY',
+        actionable: false,
+        diagnosis: 'Protects feelings in the short term but allows performance to fail long term.'
+      };
+    }
+    if (!highCare && highChallenge) {
+      return {
+        quadrant: 'OBNOXIOUS_AGGRESSION',
+        actionable: false,
+        diagnosis: 'Brutally honest without empathy; triggers fight-or-flight defensiveness.'
+      };
+    }
+    return {
+      quadrant: 'MANIPULATIVE_INSINCERITY',
+      actionable: false,
+      diagnosis: 'Political and passive-aggressive: neither cares nor speaks the truth.'
+    };
+  }
+}
+
+const candor = new RadicalCandorEngine();
+const example1 = candor.classifyFeedback({
+  carePersonally: 9,
+  challengeDirectly: 8,
+  statement: 'I know how hard you worked on this PR, but the missing test coverage puts the release at risk. Let’s add the integration tests today.'
+});
+const example2 = candor.classifyFeedback({
+  carePersonally: 9,
+  challengeDirectly: 2,
+  statement: 'It’s fine, don’t worry about the missing tests, I am sure production will be fine.'
+});
+
+console.log('=== RADICAL CANDOR FEEDBACK MATRIX ===');
+console.log('Example 1 Classification: ' + example1.quadrant + ' (Actionable: ' + example1.actionable + ')');
+console.log('Diagnosis 1: ' + example1.diagnosis);
+console.log('Example 2 Classification: ' + example2.quadrant + ' (Actionable: ' + example2.actionable + ')');
+console.log('Core Insight: Radical Candor requires high personal care AND high direct challenge simultaneously.');`,
+        output: `=== RADICAL CANDOR FEEDBACK MATRIX ===
+Example 1 Classification: RADICAL_CANDOR (Actionable: true)
+Diagnosis 1: Kind, direct, and actionable: challenges behavior without demeaning identity.
+Example 2 Classification: RUINOUS_EMPATHY (Actionable: false)
+Core Insight: Radical Candor requires high personal care AND high direct challenge simultaneously.`,
+        tryIt: 'Adjust the carePersonally and challengeDirectly sliders to simulate how obnoxious aggression damages engineering trust.',
+        check: {
+          question: 'In the Radical Candor framework, what quadrant occurs when a tech lead cares deeply about an engineer feelings but avoids challenging their low-quality code directly?',
+          options: [
+            'Radical Candor',
+            'Ruinous Empathy',
+            'Obnoxious Aggression',
+            'Manipulative Insincerity'
+          ],
+          answer: 1,
+          why: 'Ruinous Empathy occurs when someone cares personally but fails to challenge directly. By withholding constructive criticism to avoid temporary discomfort, the leader prevents the engineer from learning and allows code quality to degrade.'
+        }
+      },
+      {
+        title: 'Crucial Conversations & Non-Violent Communication (NVC) in Outages',
+        say: [
+          'When a multi-region database outage strikes and thousands of customers are failing transactions, adrenaline spikes and cognitive bandwidth narrows. Under acute crisis stress, engineering retrospectives frequently devolve into blame attribution and emotional finger-pointing.',
+          'The Non-Violent Communication (NVC) framework, developed by Marshall Rosenberg, offers a reliable conversational protocol designed to de-escalate tension and restore collaborative problem-solving through four distinct steps: Observation, Feeling, Need, and Request (OFNR).',
+          'First, the Observation must be purely factual, observable, and stripped of moral judgments, generalizations, or accusatory language such as "always" or "careless." For instance, "The database migration script was committed 20 minutes before cutoff without peer review" is an objective fact, not an accusation.',
+          'Second, articulate the Feeling as an emotional state rather than a veiled accusation: "I feel anxious and concerned about production database downtime," rather than "I feel that you are reckless."',
+          'Third, identify the underlying Need: "We need predictable, stress-free deployments and verified schema migrations that protect our SLA." This connects back to shared engineering values that everyone on the team agrees with.',
+          'Fourth, issue a concrete, actionable Request: "Can we agree to a 24-hour code freeze for all SQL migrations prior to release?" By separating factual observations from emotional interpretations, NVC neutralizes defensiveness and builds lasting psychological safety.'
+        ],
+        example: 'Contrast a toxic outage retrospective comment ("You always push reckless migrations and break everything!") with an NVC statement: "During the last 3 releases, migrations ran without peer sign-off (Observation). I feel anxious about stability (Feeling). We need reliable uptime and safe schema transitions (Need). Can we mandate two DBA approvals on all schema changes going forward? (Request)."',
+        code: `// Simulation: Crucial Conversations NVC Protocol Validator
+interface NvcMessage {
+  observation: string;
+  feeling: string;
+  need: string;
+  request: string;
+}
+
+class NvcValidator {
+  validateEngineeringFeedback(msg: NvcMessage): {
+    isValidNvc: boolean;
+    containsMoralJudgments: boolean;
+    psychologicalSafetyScore: number;
+  } {
+    // Check for judgmental red flags in observation (e.g. "always", "lazy", "careless")
+    const judgmentWords = ['always', 'never', 'lazy', 'careless', 'sloppy', 'stupid'];
+    const hasJudgment = judgmentWords.some(w => msg.observation.toLowerCase().includes(w));
+
+    const isComplete = Boolean(msg.observation && msg.feeling && msg.need && msg.request);
+    const score = isComplete && !hasJudgment ? 100 : hasJudgment ? 35 : 60;
+
+    return {
+      isValidNvc: isComplete && !hasJudgment,
+      containsMoralJudgments: hasJudgment,
+      psychologicalSafetyScore: score
+    };
+  }
+}
+
+const nvc = new NvcValidator();
+const validNvcMessage: NvcMessage = {
+  observation: 'In the last 3 sprint releases, the database migration script was committed 20 minutes before cutoff without peer review.',
+  feeling: 'I feel anxious and concerned about production database downtime.',
+  need: 'We need predictable, stress-free deployments and verified schema migrations.',
+  request: 'Can we agree to a 24-hour code freeze for all SQL migrations prior to release?'
+};
+
+const evaluation = nvc.validateEngineeringFeedback(validNvcMessage);
+
+console.log('=== CRUCIAL CONVERSATIONS & NON-VIOLENT COMMUNICATION (NVC) ===');
+console.log('OFNR Protocol Completeness: ' + (evaluation.isValidNvc ? '100% VALID NVC STRUCTURE' : 'INVALID'));
+console.log('Contains Moral Judgments: ' + evaluation.containsMoralJudgments);
+console.log('Psychological Safety Score: ' + evaluation.psychologicalSafetyScore + '/100');
+console.log('Actionable Request: ' + validNvcMessage.request);`,
+        output: `=== CRUCIAL CONVERSATIONS & NON-VIOLENT COMMUNICATION (NVC) ===
+OFNR Protocol Completeness: 100% VALID NVC STRUCTURE
+Contains Moral Judgments: false
+Psychological Safety Score: 100/100
+Actionable Request: Can we agree to a 24-hour code freeze for all SQL migrations prior to release?`,
+        tryIt: 'Inject an accusatory word like "sloppy" or "lazy" into the observation to see the psychological safety score drop to 35.',
+        check: {
+          question: 'What are the four sequential components of Marshall Rosenberg Non-Violent Communication (NVC) framework?',
+          options: [
+            'Opinion, Frustration, Negotiation, Resolution',
+            'Observation, Feeling, Need, Request (OFNR)',
+            'Obstacle, Feedback, Nuance, Reaction',
+            'Order, Fact, Nullification, Redirection'
+          ],
+          answer: 1,
+          why: 'The NVC protocol consists of Observation (objective facts without judgment), Feeling (emotion expressed without blame), Need (universal requirement or value), and Request (actionable, positive proposal).'
+        }
+      },
+      {
+        title: 'Cross-Functional RFC & PRD Engineering Alignment',
+        say: [
+          'Large-scale engineering initiatives rarely fail due to technical insufficiency; they fail due to misaligned expectations between Engineering, Product Management, Design, and Operations. When engineers write architectural proposals in isolation, they build elegant solutions to the wrong problems.',
+          'A mature engineering organization uses a standardized Request for Comments (RFC) and Architecture Decision Record (ADR) lifecycle to bridge technical architecture with Product Requirement Documents (PRDs).',
+          'The RFC lifecycle begins with a problem statement tied directly to product metrics, such as user latency, conversion rate, or infrastructure COGS. It outlines proposed technical alternatives, trade-off matrices, data models, and migration paths.',
+          'To prevent endless review cycles and bikeshedding, an RFC must have a time-boxed review window, designated decision-makers (such as the Lead Architect or Staff Engineer), and explicit criteria for resolving blocker comments.',
+          'Once all blocker comments are resolved or arbitrated, the RFC is sealed as an Architecture Decision Record (ADR), creating an immutable, historical record of why specific technical decisions and compromises were chosen.',
+          'This alignment process ensures product stakeholders understand technical constraints while engineers remain accountable to business outcomes.'
+        ],
+        example: 'Think of an RFC as a legislative bill and an ADR as a signed law. While the bill is in draft and committee review (RFC stage), stakeholders debate amendments and resolve objections. Once consensus is reached and signed off, it becomes permanent law (ADR), unblocking engineering teams to execute without revisiting settled debates every sprint.',
+        code: `// Simulation: Cross-Functional RFC Lifecycle Engine
+type RfcStatus = 'DRAFT' | 'IN_REVIEW' | 'BLOCKERS_RESOLVED' | 'APPROVED_ADR';
+
+interface RfcDocument {
+  id: string;
+  title: string;
+  author: string;
+  reviewers: string[];
+  blockerCommentsCount: number;
+  daysInReview: number;
+  maxReviewWindowDays: number;
+}
+
+class RfcLifecycleEngine {
+  evaluateRfcStatus(rfc: RfcDocument): {
+    status: RfcStatus;
+    readyForImplementation: boolean;
+    recommendation: string;
+  } {
+    if (rfc.daysInReview > rfc.maxReviewWindowDays && rfc.blockerCommentsCount > 0) {
+      return {
+        status: 'IN_REVIEW',
+        readyForImplementation: false,
+        recommendation: 'REVIEW_TIMEOUT: Escalate unaddressed blockers to Principal Architect for tie-breaking decision.'
+      };
+    }
+    if (rfc.blockerCommentsCount === 0 && rfc.daysInReview >= 3) {
+      return {
+        status: 'APPROVED_ADR',
+        readyForImplementation: true,
+        recommendation: 'CONSENSUS_ACHIEVED: Architecture Decision Record signed off; create Jira epics.'
+      };
+    }
+    return {
+      status: 'IN_REVIEW',
+      readyForImplementation: false,
+      recommendation: 'ACTIVE_REVIEW: ' + rfc.blockerCommentsCount + ' blocker comments pending resolution.'
+    };
+  }
+}
+
+const rfcEngine = new RfcLifecycleEngine();
+const rfcDoc: RfcDocument = {
+  id: 'RFC-104',
+  title: 'Migrating Search Indexing from Elasticsearch to Vector Search',
+  author: 'Staff Backend Eng',
+  reviewers: ['Lead Infra Eng', 'Security Architect', 'Principal PM'],
+  blockerCommentsCount: 0,
+  daysInReview: 5,
+  maxReviewWindowDays: 7
+};
+
+const rfcResult = rfcEngine.evaluateRfcStatus(rfcDoc);
+
+console.log('=== CROSS-FUNCTIONAL RFC LIFECYCLE & ADR SIGN-OFF ===');
+console.log('RFC Document: [' + rfcDoc.id + '] ' + rfcDoc.title);
+console.log('Current Status: ' + rfcResult.status);
+console.log('Implementation Ready: ' + rfcResult.readyForImplementation);
+console.log('Next Step: ' + rfcResult.recommendation);`,
+        output: `=== CROSS-FUNCTIONAL RFC LIFECYCLE & ADR SIGN-OFF ===
+RFC Document: [RFC-104] Migrating Search Indexing from Elasticsearch to Vector Search
+Current Status: APPROVED_ADR
+Implementation Ready: true
+Next Step: CONSENSUS_ACHIEVED: Architecture Decision Record signed off; create Jira epics.`,
+        tryIt: 'Introduce an unresolved blocker comment to see the status revert to IN_REVIEW.',
+        check: {
+          question: 'What is the primary function of converting an approved RFC into an Architecture Decision Record (ADR)?',
+          options: [
+            'To automatically generate frontend TypeScript components from the database schema',
+            'To establish an immutable historical record of the context, trade-offs, and consensus reached for an architectural choice',
+            'To immediately delete legacy code without unit testing',
+            'To bypass all product management roadmap review gates'
+          ],
+          answer: 1,
+          why: 'An Architecture Decision Record (ADR) serves as a persistent, version-controlled document that records why a specific architectural path was selected, what trade-offs were accepted, and which alternatives were rejected.'
+        }
+      },
+      {
+        title: 'High-Stakes Stakeholder Escalation Matrix',
+        say: [
+          'In any growing organization, teams will eventually encounter irreconcilable trade-offs: team A needs a payment API completed this sprint to hit an enterprise customer contract, while team B is in the middle of a mandatory database migration and refuses to take on new work.',
+          'Junior engineers often view escalation as a personal failure or an aggressive declaration of war against another team. In contrast, Staff and Principal engineers understand that escalation is an essential governance protocol to route trade-off decisions to the leaders who hold budget and priority authority.',
+          'The key to a "clean escalation" is transparency, speed, and shared problem ownership. You must never escalate behind another team back or surprise a peer lead in an executive meeting.',
+          'A structured escalation ladder defines clear tiers: Level 1 is a direct peer lead sync to explore compromise; Level 2 is Engineering Manager alignment on sprint capacity and backlog sequencing; Level 3 is a joint VP/Director executive review with a pre-circulated trade-off memo.',
+          'In a clean escalation, both team leads author the memo together, laying out Option A (prioritize payments, delay DB migration) and Option B (prioritize DB migration, defer payments contract) with objective impacts, and present it jointly to leadership.',
+          'When done properly, escalation removes emotional resentment and empowers executive leadership to make clear, data-informed prioritization choices.'
+        ],
+        example: 'Imagine a railway track switch where two trains are heading toward the same junction. Instead of train conductors arguing over the radio about who deserves to go first, the track dispatcher evaluates the overall network schedule and switches the track. Escalation is alerting the dispatcher with full visibility so the system runs smoothly.',
+        code: `// Simulation: Stakeholder Escalation Matrix & Conflict Resolution Router
+type EscalationLevel = 'LEVEL_1_PEER_SYNC' | 'LEVEL_2_MANAGER_ALIGN' | 'LEVEL_3_VP_EXECUTIVE_ESC';
+
+interface ProjectRoadblock {
+  blockingTeam: string;
+  impactOnTargetLaunchDays: number;
+  crossTeamDisagreementDays: number;
+}
+
+class StakeholderEscalationRouter {
+  routeRoadblock(roadblock: ProjectRoadblock): {
+    level: EscalationLevel;
+    recommendedAction: string;
+    cleanEscalationProtocol: string;
+  } {
+    if (roadblock.impactOnTargetLaunchDays > 14 || roadblock.crossTeamDisagreementDays > 5) {
+      return {
+        level: 'LEVEL_3_VP_EXECUTIVE_ESC',
+        recommendedAction: 'Schedule joint 30-min VP review with pre-circulated trade-off memo presenting two viable options.',
+        cleanEscalationProtocol: 'Notify blocking team lead in advance; attend meeting together as joint partners.'
+      };
+    }
+    if (roadblock.impactOnTargetLaunchDays > 5 || roadblock.crossTeamDisagreementDays > 2) {
+      return {
+        level: 'LEVEL_2_MANAGER_ALIGN',
+        recommendedAction: 'Engineering Managers align on sprint capacity reallocation and dependency sequencing.',
+        cleanEscalationProtocol: 'Share factual dependency log without finger-pointing.'
+      };
+    }
+    return {
+      level: 'LEVEL_1_PEER_SYNC',
+      recommendedAction: 'Direct tech lead 1-on-1 working session to unblock API schema contract.',
+      cleanEscalationProtocol: 'Work directly with peer engineer to find compromise.'
+    };
+  }
+}
+
+const escRouter = new StakeholderEscalationRouter();
+const criticalRoadblock: ProjectRoadblock = {
+  blockingTeam: 'Core Payments Team',
+  impactOnTargetLaunchDays: 20,
+  crossTeamDisagreementDays: 6
+};
+
+const escDecision = escRouter.routeRoadblock(criticalRoadblock);
+
+console.log('=== HIGH-STAKES STAKEHOLDER ESCALATION MATRIX ===');
+console.log('Blocking Entity: ' + criticalRoadblock.blockingTeam + ' (Impact: +' + criticalRoadblock.impactOnTargetLaunchDays + ' days)');
+console.log('Escalation Tier: ' + escDecision.level);
+console.log('Action: ' + escDecision.recommendedAction);
+console.log('Clean Escalation Rule: ' + escDecision.cleanEscalationProtocol);`,
+        output: `=== HIGH-STAKES STAKEHOLDER ESCALATION MATRIX ===
+Blocking Entity: Core Payments Team (Impact: +20 days)
+Escalation Tier: LEVEL_3_VP_EXECUTIVE_ESC
+Action: Schedule joint 30-min VP review with pre-circulated trade-off memo presenting two viable options.
+Clean Escalation Rule: Notify blocking team lead in advance; attend meeting together as joint partners.`,
+        tryIt: 'Reduce impactOnTargetLaunchDays to 3 and disagreement days to 1 to verify routing to a Level 1 Peer Sync.',
+        check: {
+          question: 'What is the golden rule of a "clean escalation" when resolving a cross-team blocking dependency?',
+          options: [
+            'Send an anonymous complaint directly to human resources',
+            'Escalate secretly to the CEO without informing the other team lead',
+            'Inform the blocking team lead in advance and present a joint trade-off memo to leadership as collaborative partners',
+            'Block their pull requests on GitHub in retaliation'
+          ],
+          answer: 2,
+          why: 'A clean escalation is transparent and blameless. By notifying the blocking team lead in advance and authoring a joint memo presenting concrete trade-offs, both leads preserve trust and empower executives to make business-level priority calls.'
+        }
+      },
+      {
+        title: 'Executive Presentation Framing & Boardroom Delivery',
+        say: [
+          'Presenting architectural roadmaps or budget proposals to the C-suite and Board of Directors requires an entirely different cognitive vocabulary than presenting to an engineering sprint demo. Executives do not evaluate projects based on Kafka partitions, Kubernetes namespaces, or TypeScript strict typing.',
+          'Boardrooms operate on three primary currencies: Revenue Growth, Risk Mitigation, and Cost Efficiency. If your presentation begins with 15 slides explaining microservice networking diagrams, you will lose your executive audience in the first five minutes.',
+          'An effective executive briefing leads with the financial and strategic bottom line: "We are requesting a $400K engineering investment over two quarters to build an AI-powered interview copilot, projected to generate $2.5M in enterprise ARR, delivering a 6.3x return on capital."',
+          'Follow the bottom line with the primary strategic risk and your concrete mitigation plan, showing that you have thought like an owner and stress-tested worst-case scenarios.',
+          'Keep technical architecture relegated to the appendix: if the CTO or Head of Security wants to drill into data residency or compliance boundaries, pull up the supporting slides on demand.',
+          'Framing your technical proposals in terms of ROI, bounded risk, and capital efficiency earns engineering leadership the credibility to secure funding for critical infrastructure initiatives.'
+        ],
+        example: 'Compare an engineer telling a CEO: "We need to rewrite the search pipeline in Rust because C++ memory leaks are annoying," versus: "Migrating our search indexing engine will reduce cloud infrastructure spend by $400K annually and improve p99 query latency from 800ms to 120ms, boosting checkout conversions by 4.2%."',
+        code: `// Simulation: Executive Boardroom Briefing & ROI Formatter
+interface ExecutiveProjectProposal {
+  initiative: string;
+  projectedRevenueGainUsd: number;
+  engineeringCostUsd: number;
+  implementationQuarters: number;
+  primaryRisk: string;
+}
+
+class ExecutiveBriefingFormatter {
+  formatCSuiteSummary(proposal: ExecutiveProjectProposal): {
+    roiMultiple: number;
+    bottomLineSummary: string;
+    decisionRecommendation: string;
+  } {
+    const roi = Number((proposal.projectedRevenueGainUsd / proposal.engineeringCostUsd).toFixed(1));
+    const summary = 'Investment of $' + (proposal.engineeringCostUsd / 1000).toFixed(0) + 'K yields $' +
+      (proposal.projectedRevenueGainUsd / 1e6).toFixed(1) + 'M return (' + roi + 'x ROI) over ' +
+      proposal.implementationQuarters + ' quarters.';
+
+    return {
+      roiMultiple: roi,
+      bottomLineSummary: summary,
+      decisionRecommendation: roi >= 3.0 ? 'FUND_IMMEDIATELY' : 'RE-EVALUATE_PRIORITIES'
+    };
+  }
+}
+
+const execFormatter = new ExecutiveBriefingFormatter();
+const proposal: ExecutiveProjectProposal = {
+  initiative: 'AI-Powered Interview Copilot Tier',
+  projectedRevenueGainUsd: 2500000,
+  engineeringCostUsd: 400000,
+  implementationQuarters: 2,
+  primaryRisk: 'Third-party LLM latency spikes during peak user load'
+};
+
+const execScorecard = execFormatter.formatCSuiteSummary(proposal);
+
+console.log('=== EXECUTIVE PRESENTATION FRAMING & BOARDROOM DELIVERY ===');
+console.log('Executive Initiative: ' + proposal.initiative);
+console.log('Bottom-Line Impact: ' + execScorecard.bottomLineSummary);
+console.log('C-Suite ROI Metric: ' + execScorecard.roiMultiple + 'x Return on Capital');
+console.log('Executive Recommendation: ' + execScorecard.decisionRecommendation + ' (Clear ROI, bounded risk)');`,
+        output: `=== EXECUTIVE PRESENTATION FRAMING & BOARDROOM DELIVERY ===
+Executive Initiative: AI-Powered Interview Copilot Tier
+Bottom-Line Impact: Investment of $400K yields $2.5M return (6.3x ROI) over 2 quarters.
+C-Suite ROI Metric: 6.3x Return on Capital
+Executive Recommendation: FUND_IMMEDIATELY (Clear ROI, bounded risk)`,
+        tryIt: 'Increase engineeringCostUsd to $1.2M to observe how the ROI drops and flips the recommendation to RE-EVALUATE_PRIORITIES.',
+        check: {
+          question: 'When presenting a major engineering infrastructure proposal to C-level executives, what should form the core opening focus?',
+          options: [
+            'A 20-slide deep dive into Kafka consumer group partition rebalancing',
+            'Direct business outcomes, ROI, capital efficiency, and bounded risk mitigation',
+            'A line-by-line critique of the previous architecture team failures',
+            'A request for unlimited budget with no delivery timelines'
+          ],
+          answer: 1,
+          why: 'Executive decision-makers operate on business metrics, return on invested capital, and risk management. Technical implementation details should be kept in the appendix, while the presentation opens with bottom-line strategic value.'
+        }
+      }
+    ],
+    summary: [
+      'Radical Candor balances high personal care with uncompromising direct challenge, avoiding ruinous empathy and obnoxious aggression.',
+      'The NVC framework enforces the OFNR protocol (Observation, Feeling, Need, Request) to de-escalate blame during outage retrospectives.',
+      'Cross-functional RFC lifecycles align engineering constraints with PRDs, creating immutable Architecture Decision Records (ADRs).',
+      'Clean stakeholder escalations are transparent and joint, bringing pre-circulated trade-off memos to leadership without surprises.',
+      'Executive presentations frame technical infrastructure investments around ROI, capital efficiency, and bounded risk mitigations.'
+    ],
+    projectStep: {
+      title: 'Author an Executive Briefing Memo & Cross-Functional Alignment Blueprint',
+      steps: [
+        'Formulate a 2x2 Radical Candor feedback matrix diagnosing team code review behaviors.',
+        'Apply the 4-step OFNR protocol to draft a blameless retrospective communication for a tier-1 outage.',
+        'Structure a formal RFC lifecycle transition document resolving blocker comments into an approved ADR.',
+        'Model a Level 3 joint executive escalation memo outlining trade-offs between competing team roadmaps.',
+        'Draft a 60-second C-suite executive briefing calculating ROI multiple and financial payback for an AI initiative.'
+      ]
+    }
   }
 ];
 
