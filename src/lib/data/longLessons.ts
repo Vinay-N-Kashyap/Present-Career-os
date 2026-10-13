@@ -60,6 +60,7 @@ import { BCOM_BAN_LONG_LESSONS } from './bcomBanLongLessons';
 import { BCOM_LAW_LONG_LESSONS } from './bcomLawLongLessons';
 import { BCOM_TAX_LONG_LESSONS } from './bcomTaxLongLessons';
 import { BCOM_AUD_LONG_LESSONS } from './bcomAudLongLessons';
+import { BCOM_MKT_LONG_LESSONS } from './bcomMktLongLessons';
 
 export interface LongLessonCheck {
   question: string;
@@ -140,6 +141,7 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   'quant-systems': QUANT_SYSTEMS_LONG_LESSONS,
   excel_viz: EXCEL_VIZ_LONG_LESSONS,
   ai_prompt: PROMPT_PYTHON_LONG_LESSONS,
+  nlp: NLP_PYTHON_LONG_LESSONS,
   blockchain: BLOCKCHAIN_LONG_LESSONS,
   mobile: MOBILE_LONG_LESSONS,
   'java-basics': JAVA_BASICS_LONG_LESSONS,
@@ -158,7 +160,8 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   bcom_ent: BCOM_ENT_LONG_LESSONS,
   bcom_ecom: BCOM_ECOM_LONG_LESSONS,
   bcom_dmkt: BCOM_DMKT_LONG_LESSONS,
-  'bcom-marketing': BCOM_DMKT_LONG_LESSONS,
+  'bcom-marketing': BCOM_MKT_LONG_LESSONS,
+  bcom_mkt: BCOM_MKT_LONG_LESSONS,
   bcom_ban: BCOM_BAN_LONG_LESSONS,
   bcom_law: BCOM_LAW_LONG_LESSONS,
   bcom_tax: BCOM_TAX_LONG_LESSONS,
@@ -220,6 +223,7 @@ const LONG_LESSON_LANGUAGE: Record<string, LongLessonLanguage> = {
   bcom_ecom: 'python',
   bcom_dmkt: 'python',
   'bcom-marketing': 'python',
+  bcom_mkt: 'python',
   bcom_ban: 'python',
   bcom_law: 'python',
   bcom_tax: 'python',

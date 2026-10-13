@@ -1,0 +1,65 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {
+  getLongLesson,
+  getLongLessonLanguage,
+  estimateSpokenMinutes,
+  estimateLessonMinutes
+} from '../src/lib/data/longLessons';
+
+test('Block 29: bcom-marketing Day 1 long lesson resolves with full 5-part pedagogical structure', () => {
+  const lesson = getLongLesson('bcom-marketing', 1);
+  assert.ok(lesson, 'bcom-marketing Day 1 must resolve');
+  assert.equal(lesson.day, 1);
+  assert.equal(lesson.parts.length, 5, 'Must contain exactly 5 in-depth parts');
+
+  // Verify alias resolution for bcom_mkt
+  const aliased = getLongLesson('bcom_mkt', 1);
+  assert.ok(aliased, 'bcom_mkt alias must resolve');
+  assert.equal(aliased.title, lesson.title);
+
+  // Assert language mapping
+  assert.equal(getLongLessonLanguage('bcom-marketing'), 'python');
+  assert.equal(getLongLessonLanguage('bcom_mkt'), 'python');
+
+  // Assert realistic lesson length
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 9, `Spoken minutes (${spoken}) must be at least 9 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 29: bcom-marketing parts uphold strict code, output, and check question invariants', () => {
+  const lesson = getLongLesson('bcom-marketing', 1)!;
+
+  lesson.parts.forEach((part, idx) => {
+    assert.ok(part.title, `Part ${idx + 1} must have a title`);
+    assert.ok(Array.isArray(part.say) && part.say.length >= 3, `Part ${idx + 1} must have detailed teaching paragraphs`);
+    assert.ok(part.example, `Part ${idx + 1} must include an everyday example`);
+    assert.ok(part.code, `Part ${idx + 1} must include executable Python code`);
+    assert.ok(part.output, `Part ${idx + 1} must include expected console output`);
+    assert.ok(part.tryIt, `Part ${idx + 1} must include a tryIt interactive challenge`);
+
+    // Check quiz contract
+    assert.ok(part.check.question, `Part ${idx + 1} check must have question text`);
+    assert.ok(Array.isArray(part.check.options) && part.check.options.length >= 3, `Part ${idx + 1} check must have >= 3 options`);
+    assert.equal(typeof part.check.answer, 'number', `Part ${idx + 1} check must have numerical answer`);
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Part ${idx + 1} answer must be in options range`);
+    assert.ok(part.check.why, `Part ${idx + 1} check must have educational rationale`);
+  });
+
+  // Verify specific Part concepts
+  assert.match(lesson.parts[0].title, /5 Competing Organizational Orientations/i);
+  assert.match(lesson.parts[1].title, /Customer Value Equation/i);
+  assert.match(lesson.parts[2].title, /Expectation-Disconfirmation/i);
+  assert.match(lesson.parts[3].title, /STP/i);
+  assert.match(lesson.parts[4].title, /CBBE/i);
+});
+
+test('Block 29: nlp quest prefix parity resolves directly to NLP long lessons', () => {
+  const nlpLesson = getLongLesson('nlp', 1);
+  assert.ok(nlpLesson, 'nlp quest prefix must resolve to Day 1 long lesson');
+  assert.equal(nlpLesson.day, 1);
+  assert.ok(nlpLesson.parts.length >= 5, 'NLP lesson must have >= 5 parts');
+  assert.equal(getLongLessonLanguage('nlp'), 'python');
+});
