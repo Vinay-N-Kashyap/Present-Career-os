@@ -367,6 +367,65 @@ test('Soft Skills Day 4: Domain-Specific Content Assertions', () => {
   assert.ok(ssD4.parts[4].output.includes('circuit breaker pattern'));
 });
 
+test('Java Basics Day 5: Resolution & Structural Invariants for Panama FFM, Loom Virtual Threads & ZGC', () => {
+  const javaD5 = getLongLesson('java-basics', 5);
+  assert.ok(javaD5, 'java-basics Day 5 long lesson must resolve');
+  assert.equal(javaD5.day, 5);
+  assert.equal(javaD5.parts.length, 5, 'java-basics Day 5 must contain exactly 5 parts');
+  assert.ok(javaD5.summary.length >= 4, 'java-basics Day 5 must contain comprehensive summary');
+  assert.ok(javaD5.projectStep, 'java-basics Day 5 must have a hands-on project step');
+  assert.ok(javaD5.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(javaD5);
+  const totalMin = estimateLessonMinutes(javaD5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of javaD5.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 5: Domain-Specific Content Assertions', () => {
+  const javaD5 = getLongLesson('java-basics', 5);
+  assert.ok(javaD5);
+
+  // Part 1 – Project Panama FFM Off-Heap Memory & C Linkage
+  assert.ok(javaD5.parts[0].title.includes('Panama') || javaD5.parts[0].title.includes('Foreign Function'));
+  assert.ok(javaD5.parts[0].output.includes('OFF_HEAP_CONFINED_ARENA_ACTIVE'));
+  assert.ok(javaD5.parts[0].output.includes('strlen'));
+
+  // Part 2 – Project Loom Virtual Threads Concurrency
+  assert.ok(javaD5.parts[1].title.includes('Loom') || javaD5.parts[1].title.includes('Virtual Threads'));
+  assert.ok(javaD5.parts[1].output.includes('Concurrent Task Count: 100,000'));
+  assert.ok(javaD5.parts[1].output.includes('100K_TASKS_DISPATCHED_CLEANLY'));
+
+  // Part 3 – Structured Concurrency & StructuredTaskScope
+  assert.ok(javaD5.parts[2].title.includes('Structured Concurrency') || javaD5.parts[2].title.includes('StructuredTaskScope'));
+  assert.ok(javaD5.parts[2].output.includes('CANCELLED_ON_FAILURE'));
+  assert.ok(javaD5.parts[2].output.includes('CreditBureauCheck'));
+
+  // Part 4 – Scoped Values
+  assert.ok(javaD5.parts[3].title.includes('Scoped Values') || javaD5.parts[3].title.includes('ScopedValue'));
+  assert.ok(javaD5.parts[3].output.includes('SECURITY_CONTEXT'));
+  assert.ok(javaD5.parts[3].output.includes('Tenant_AcmeCorp_Admin'));
+
+  // Part 5 – Generational ZGC vs G1GC Tuning
+  assert.ok(javaD5.parts[4].title.includes('ZGC') || javaD5.parts[4].title.includes('G1GC'));
+  assert.ok(javaD5.parts[4].output.includes('Generational ZGC P99 Pause Time: 0.45 ms'));
+  assert.ok(javaD5.parts[4].output.includes('G1GC P99 Pause Time: 35 ms'));
+});
+
 
 
 
