@@ -55,6 +55,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.ok(anaLesson3, 'bcom_ana Day 3 long lesson must resolve');
   assert.equal(anaLesson3.day, 3);
   assert.equal(anaLesson3.parts.length, 5, 'bcom_ana Day 3 must contain exactly 5 parts');
+
+  const anaLesson4 = getLongLesson('bcom_ana', 4);
+  assert.ok(anaLesson4, 'bcom_ana Day 4 long lesson must resolve');
+  assert.equal(anaLesson4.day, 4);
+  assert.equal(anaLesson4.parts.length, 5, 'bcom_ana Day 4 must contain exactly 5 parts');
 });
 
 test('IoT Net Day 1: 6LoWPAN & Link Budget Python Code Snippets & Socratic Checks Verification', () => {
@@ -335,6 +340,48 @@ test('B.Com Analytics Day 3: Standard Costing, CVP Leverage, ABC & DuPont ROE Ve
   assert.ok(anaLesson3.parts[3].output?.includes('CAPITAL BUDGETING: NPV & PROFITABILITY INDEX'));
   assert.ok(anaLesson3.parts[4].code?.includes('calculate_dupont_roe_decomposition'));
   assert.ok(anaLesson3.parts[4].output?.includes('DUPONT 3-TIER ROE DECOMPOSITION ANALYSIS'));
+});
+
+test('B.Com Analytics Day 4: Working Capital, CCC, EOQ, ROP & Liquidity Stress Test Verification', () => {
+  const anaLesson4 = getLongLesson('bcom_ana', 4);
+  assert.ok(anaLesson4, 'bcom_ana Day 4 must resolve');
+  assert.equal(anaLesson4.day, 4);
+  assert.equal(anaLesson4.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(anaLesson4);
+  const totalMin = estimateLessonMinutes(anaLesson4);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < anaLesson4.parts.length; i++) {
+    const part = anaLesson4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(anaLesson4.parts[0].code?.includes('calculate_cash_conversion_cycle_metrics'));
+  assert.ok(anaLesson4.parts[0].output?.includes('CASH CONVERSION CYCLE (CCC) WORKING CAPITAL'));
+  assert.ok(anaLesson4.parts[1].code?.includes('calculate_economic_order_quantity_and_cost_curve'));
+  assert.ok(anaLesson4.parts[1].output?.includes('ECONOMIC ORDER QUANTITY (EOQ) COST OPTIMIZATION'));
+  assert.ok(anaLesson4.parts[2].code?.includes('calculate_stochastic_reorder_point_and_safety_stock'));
+  assert.ok(anaLesson4.parts[2].output?.includes('STOCHASTIC REORDER POINT (ROP) & SAFETY STOCK'));
+  assert.ok(anaLesson4.parts[3].code?.includes('calculate_accounts_receivable_ecl_allowance'));
+  assert.ok(anaLesson4.parts[3].output?.includes('ACCOUNTS RECEIVABLE AGING & EXPECTED CREDIT LOSS (ECL)'));
+  assert.ok(anaLesson4.parts[4].code?.includes('simulate_working_capital_stress_test'));
+  assert.ok(anaLesson4.parts[4].output?.includes('WORKING CAPITAL LIQUIDITY & CASH RUNWAY STRESS TEST'));
 });
 
 

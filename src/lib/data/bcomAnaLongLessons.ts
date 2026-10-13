@@ -1076,5 +1076,371 @@ for c in [company_a, company_b]:
         'Implement a 3-tier DuPont decomposition engine diagnosing the underlying operational and financial leverage drivers of ROE.'
       ]
     }
+  },
+{
+    day: 4,
+    coursePrefix: 'bcom_ana',
+    title: 'Working Capital Analytics, Cash Conversion Cycle & Inventory Optimization Engine',
+    parts: [
+      {
+        title: 'Cash Conversion Cycle (CCC) & Operating Cash Flow Dynamics',
+        say: [
+          'Working capital management governs an enterprise operational liquidity, dictating whether cash generated from core business operations remains trapped in working capital accounts or flows freely to fund strategic expansion. The supreme quantitative metric for measuring operational working capital efficiency is the Cash Conversion Cycle (CCC), which tracks the exact duration in days required for a dollar invested in inventory and production inputs to cycle through sales and return as collected cash.',
+          'The Cash Conversion Cycle is computed from three underlying activity metrics: Days Sales of Inventory (DSI), Days Sales Outstanding (DSO), and Days Payables Outstanding (DPO). Formally: CCC = DSI + DSO - DPO. DSI measures inventory turnover velocity: (Inventory / COGS) * 365. DSO evaluates credit collection efficiency: (Accounts Receivable / Revenue) * 365. DPO gauges vendor financing leverage: (Accounts Payable / COGS) * 365.',
+          'A shorter or negative Cash Conversion Cycle represents a massive competitive moat. In traditional manufacturing, positive cycles of 60 to 120 days require large revolving credit facilities to finance trapped capital. Conversely, hyper-efficient retailers like Amazon and Dell operate with negative Cash Conversion Cycles (e.g., -43 days): they collect cash from customers immediately upon sale while paying suppliers on 80-day vendor credit terms, effectively funding operations using zero-interest supplier capital.'
+        ],
+        example: 'Think of the Cash Conversion Cycle like a relay race where a baton is a physical dollar bill: DSI is how long the runner holds the baton in the warehouse, DSO is how long the customer runs with the baton before paying you, and DPO is how long before you must hand the baton to your suppliers; if you collect the baton from the customer 40 days before your supplier asks for it, you race forward entirely on supplier momentum.',
+        code: `def calculate_cash_conversion_cycle_metrics(financials):
+    """Calculates DSI, DSO, DPO, and Cash Conversion Cycle (CCC)."""
+    rev = financials["annual_revenue"]
+    cogs = financials["annual_cogs"]
+    ar = financials["accounts_receivable"]
+    inv = financials["inventory"]
+    ap = financials["accounts_payable"]
+    
+    # 1. Days Sales of Inventory (DSI) = (Inventory / COGS) * 365
+    dsi = (inv / cogs) * 365.0
+    
+    # 2. Days Sales Outstanding (DSO) = (AR / Revenue) * 365
+    dso = (ar / rev) * 365.0
+    
+    # 3. Days Payables Outstanding (DPO) = (AP / COGS) * 365
+    dpo = (ap / cogs) * 365.0
+    
+    # 4. Cash Conversion Cycle (CCC) = DSI + DSO - DPO
+    ccc = dsi + dso - dpo
+    
+    working_cap_verdict = "NEGATIVE_CCC_SUPPLIER_FINANCED" if ccc < 0 else "POSITIVE_CCC_CAPITAL_TIED_UP"
+    
+    return {
+        "Days_Sales_Inventory": round(dsi, 1),
+        "Days_Sales_Outstanding": round(dso, 1),
+        "Days_Payables_Outstanding": round(dpo, 1),
+        "Cash_Conversion_Cycle_Days": round(ccc, 1),
+        "Verdict": working_cap_verdict
+    }
+
+company_retail = {
+    "annual_revenue": 12000000.0,
+    "annual_cogs": 8000000.0,
+    "accounts_receivable": 300000.0,
+    "inventory": 650000.0,
+    "accounts_payable": 1800000.0
+}
+company_mfg = {
+    "annual_revenue": 24000000.0,
+    "annual_cogs": 16000000.0,
+    "accounts_receivable": 3500000.0,
+    "inventory": 4200000.0,
+    "accounts_payable": 1900000.0
+}
+
+print("=== CASH CONVERSION CYCLE (CCC) WORKING CAPITAL ===")
+r_res = calculate_cash_conversion_cycle_metrics(company_retail)
+print(f"[Retail] DSI: {r_res['Days_Sales_Inventory']}d | DSO: {r_res['Days_Sales_Outstanding']}d | DPO: {r_res['Days_Payables_Outstanding']}d -> CCC: {r_res['Cash_Conversion_Cycle_Days']}d [{r_res['Verdict']}]")
+m_res = calculate_cash_conversion_cycle_metrics(company_mfg)
+print(f"[Mfg] DSI: {m_res['Days_Sales_Inventory']}d | DSO: {m_res['Days_Sales_Outstanding']}d | DPO: {m_res['Days_Payables_Outstanding']}d -> CCC: {m_res['Cash_Conversion_Cycle_Days']}d [{m_res['Verdict']}]")`,
+        output: `=== CASH CONVERSION CYCLE (CCC) WORKING CAPITAL ===
+[Retail] DSI: 29.7d | DSO: 9.1d | DPO: 82.1d -> CCC: -43.3d [NEGATIVE_CCC_SUPPLIER_FINANCED]
+[Mfg] DSI: 95.8d | DSO: 53.2d | DPO: 43.3d -> CCC: 105.7d [POSITIVE_CCC_CAPITAL_TIED_UP]`,
+        codeNotes: [
+          'Calculates Days Sales of Inventory (DSI) and Days Sales Outstanding (DSO) against COGS and Revenue.',
+          'Quantifies Days Payables Outstanding (DPO = 82.1 days) highlighting working capital leverage over suppliers.',
+          'Contrasts negative working capital model (-43.3 days) against capital-intensive manufacturing (+105.7 days).'
+        ],
+        tryIt: 'Reduce company_mfg inventory to $2,000,000 and calculate the resulting drop in manufacturing CCC days.',
+        check: {
+          question: 'What is the strategic business advantage of operating with a Negative Cash Conversion Cycle (CCC)?',
+          options: [
+            'The enterprise collects cash from customer sales before it must pay vendors for raw materials, effectively generating interest-free operating cash flow',
+            'The company never has to file annual tax returns with regulatory authorities',
+            'All manufacturing machinery operates without consuming electricity',
+            'The firm is legally exempt from paying accounts payable to external suppliers'
+          ],
+          answer: 0,
+          why: 'A negative CCC means customer receivables are collected weeks before vendor payables come due, generating a float of liquid cash that can fund operations and growth without external debt.'
+        }
+      },
+      {
+        title: 'Economic Order Quantity (EOQ) & Total Inventory Cost Minimization',
+        say: [
+          'Inventory represents one of the largest capital commitments on an enterprise balance sheet. Holding too much inventory incurs punishing holding costs: warehouse rent, refrigeration, insurance, shrinkage, obsolescence, and tied-up capital opportunity costs. Conversely, ordering in tiny batches causes frequent purchasing order setups, freight expediting fees, volume discount forfeitures, and stockout disruption.',
+          'The Economic Order Quantity (EOQ) model mathematically resolves this trade-off by finding the batch order size Q* that minimizes total annual inventory holding and ordering costs. Formally: EOQ = sqrt((2 * D * S) / H), where D is annual demand in units, S is fixed ordering cost per purchase order, and H is annual holding cost per unit.',
+          'A fundamental mathematical property of the classical EOQ curve is that total inventory cost is minimized precisely at the inflection point where annual ordering costs ((D / Q) * S) exactly equal annual inventory holding costs ((Q / 2) * H). Automated procurement algorithms deploy this mathematical optimum to dynamically set purchase order sizes, eliminating guesswork from supply chain replenishment.'
+        ],
+        example: 'Think of grocery shopping for non-perishable pantry items: ordering delivery every single day incurs high service delivery fees; ordering a five-year supply incurs high basement storage and clutter costs; EOQ calculates the exact monthly order batch where delivery fees balance storage inconvenience.',
+        code: `import math
+
+def calculate_economic_order_quantity_and_cost_curve(annual_demand, order_cost, holding_cost_per_unit):
+    """Calculates Wilson's EOQ, optimal order frequency, and minimum annual inventory cost."""
+    # EOQ = sqrt((2 * D * S) / H)
+    eoq = math.sqrt((2.0 * annual_demand * order_cost) / holding_cost_per_unit)
+    optimal_q = round(eoq)
+    
+    orders_per_year = round(annual_demand / optimal_q, 2)
+    annual_order_cost = (annual_demand / optimal_q) * order_cost
+    annual_carrying_cost = (optimal_q / 2.0) * holding_cost_per_unit
+    total_inventory_cost = annual_order_cost + annual_carrying_cost
+    
+    return {
+        "Optimal_Order_Quantity_Units": optimal_q,
+        "Orders_Per_Year": orders_per_year,
+        "Annual_Ordering_Cost": round(annual_order_cost, 2),
+        "Annual_Carrying_Cost": round(annual_carrying_cost, 2),
+        "Total_Inventory_Cost": round(total_inventory_cost, 2)
+    }
+
+# Annual demand = 12,000 units, Order setup cost = $150, Holding cost = $4/unit/yr
+demand = 12000
+order_fee = 150.0
+holding_fee = 4.0
+
+print("=== ECONOMIC ORDER QUANTITY (EOQ) COST OPTIMIZATION ===")
+res = calculate_economic_order_quantity_and_cost_curve(demand, order_fee, holding_fee)
+print(f"Optimal EOQ: {res['Optimal_Order_Quantity_Units']} units | Orders/Yr: {res['Orders_Per_Year']}")
+print("Annual Order Cost: $" + f"{res['Annual_Ordering_Cost']:,.2f} | Annual Carrying Cost: $" + f"{res['Annual_Carrying_Cost']:,.2f}")
+print("Total Optimized Cost: $" + f"{res['Total_Inventory_Cost']:,.2f}")`,
+        output: `=== ECONOMIC ORDER QUANTITY (EOQ) COST OPTIMIZATION ===
+Optimal EOQ: 949 units | Orders/Yr: 12.64
+Annual Order Cost: $1,896.73 | Annual Carrying Cost: $1,898.00
+Total Optimized Cost: $3,794.73`,
+        codeNotes: [
+          'Calculates optimal purchase batch size (949 units) balancing ordering setup and holding carrying costs.',
+          'Demonstrates cost parity where annual ordering cost ($1,896.73) approximately equals annual carrying cost ($1,898.00).',
+          'Computes annual purchase order frequency (12.64 orders per year) for automated procurement schedules.'
+        ],
+        tryIt: 'Double order_fee from $150 to $300 and verify how EOQ expands by approximately sqrt(2) = 1.414x.',
+        check: {
+          question: 'At the exact Economic Order Quantity (EOQ) point, what relationship exists between annual ordering costs and annual carrying costs?',
+          options: [
+            'Annual ordering costs are equal to annual carrying costs',
+            'Annual ordering costs are exactly double annual carrying costs',
+            'Annual carrying costs are zero',
+            'Annual ordering costs equal total annual revenue'
+          ],
+          answer: 0,
+          why: 'At the mathematical minimum of the total inventory cost function, the marginal decrease in ordering cost equals the marginal increase in holding cost, making the two cost components equal.'
+        }
+      },
+      {
+        title: 'Stochastic Demand Reorder Points (ROP) & Safety Stock Sizing',
+        say: [
+          'While deterministic EOQ models establish the optimal batch size, they assume that daily customer demand and supplier replenishment lead times are completely constant. In reality, both variables fluctuate stochastically: factory lead times experience transport congestion, and daily consumer demand experiences random surges.',
+          'To protect against stockouts and lost sales without holding exorbitant inventory, supply chain analysts calculate Safety Stock (SS) based on probabilistic service level targets. When both daily demand (mean d, variance sigma_d^2) and supplier lead time (mean L, variance sigma_L^2) are stochastic, the combined standard deviation of lead time demand is: sigma_L = sqrt(L * sigma_d^2 + d^2 * sigma_L^2). Safety Stock is then sized as: SS = Z * sigma_L, where Z represents the standard normal inverse for the chosen cycle service level (e.g., Z = 1.645 for 95%, Z = 2.326 for 99%).',
+          'The Reorder Point (ROP) signals the exact inventory threshold that triggers a new replenishment order: ROP = Expected Lead Time Demand (d * L) + Safety Stock. Tuning the target service level represents an executive strategic trade-off: elevating service from 95% to 99% requires a 40% jump in safety buffer units, directly increasing working capital carrying costs to protect against rare tail-risk demand spikes.'
+        ],
+        example: 'Think of maintaining a reserve tank in a motorboat: expected lead time demand is the fuel required to motor to the nearest refueling dock; safety stock is the extra reserve fuel kept in case head winds slow the boat or you take a detour, sized according to how unwilling you are to be stranded at sea.',
+        code: `import math
+
+def calculate_stochastic_reorder_point_and_safety_stock(avg_daily_demand, std_daily_demand, avg_lead_days, std_lead_days, z_score):
+    """Calculates safety stock under joint demand and lead-time uncertainty."""
+    # sigma_L = sqrt(L * sigma_d^2 + d^2 * sigma_L^2)
+    variance_l = (avg_lead_days * (std_daily_demand ** 2)) + ((avg_daily_demand ** 2) * (std_lead_days ** 2))
+    combined_std = math.sqrt(variance_l)
+    
+    safety_stock = round(z_score * combined_std)
+    lead_time_demand = round(avg_daily_demand * avg_lead_days)
+    reorder_point = lead_time_demand + safety_stock
+    
+    return {
+        "Lead_Time_Expected_Demand": lead_time_demand,
+        "Safety_Stock_Units": safety_stock,
+        "Reorder_Point_Units": reorder_point,
+        "Target_Service_Level_Z": z_score
+    }
+
+# Demand: 50 units/day (std: 8), Lead time: 6 days (std: 1.5), 95% service level (Z=1.645)
+res_95 = calculate_stochastic_reorder_point_and_safety_stock(50.0, 8.0, 6.0, 1.5, 1.645)
+# 99% service level (Z=2.326)
+res_99 = calculate_stochastic_reorder_point_and_safety_stock(50.0, 8.0, 6.0, 1.5, 2.326)
+
+print("=== STOCHASTIC REORDER POINT (ROP) & SAFETY STOCK ===")
+print(f"[95% Service] Expected LT Demand: {res_95['Lead_Time_Expected_Demand']} | Safety Stock: {res_95['Safety_Stock_Units']} | ROP: {res_95['Reorder_Point_Units']} units")
+print(f"[99% Service] Expected LT Demand: {res_99['Lead_Time_Expected_Demand']} | Safety Stock: {res_99['Safety_Stock_Units']} | ROP: {res_99['Reorder_Point_Units']} units")`,
+        output: `=== STOCHASTIC REORDER POINT (ROP) & SAFETY STOCK ===
+[95% Service] Expected LT Demand: 300 | Safety Stock: 128 | ROP: 428 units
+[99% Service] Expected LT Demand: 300 | Safety Stock: 180 | ROP: 480 units`,
+        codeNotes: [
+          'Calculates combined lead-time demand variance factoring both demand jitter and transport delay variance.',
+          'Quantifies safety stock expansion from 128 units (95% service) to 180 units (99% service).',
+          'Computes deterministic Reorder Point (ROP = 428 units) triggering automated purchase orders.'
+        ],
+        tryIt: 'Set std_lead_days to 0.0 (perfect supplier punctuality) and observe how safety stock drops dramatically.',
+        check: {
+          question: 'What is the primary operational penalty of increasing customer service level from 95% to 99% in inventory replenishment systems?',
+          options: [
+            'Safety stock units and associated working capital carrying costs escalate non-linearly due to the bell-curve tails of normal distributions',
+            'Suppliers will immediately refuse to sell products to the company',
+            'Customer orders can no longer be processed using barcode scanners',
+            'Truck drivers must legally drive at double their regular highway speed'
+          ],
+          answer: 0,
+          why: 'Because the normal distribution curve flattens in its tails, capturing the final few percentage points of demand coverage requires disproportionately massive safety buffer increases.'
+        }
+      },
+      {
+        title: 'Accounts Receivable Aging Matrix & Expected Credit Loss (ECL) Allowance (IFRS 9 / CECL)',
+        say: [
+          'Under modern global accounting frameworks—specifically IFRS 9 Financial Instruments and US GAAP CECL (Current Expected Credit Losses)—corporations can no longer wait for a customer to declare formal bankruptcy before recognizing bad debt. Instead, finance analytics departments must maintain forward-looking Expected Credit Loss (ECL) allowance models.',
+          'A corporate ECL provision engine utilizes an Accounts Receivable Aging Matrix, segregating open receivables into distinct risk cohorts: Current (0-30 days), 31-60 days past due, 61-90 days past due, and Over 90 days past due. Historical migration matrices and forward macroeconomic overlays determine the default probability for each bucket.',
+          'The engine multiplies gross receivables in each aging bucket by its specific default loss rate to compute the Total Required Allowance for Doubtful Accounts on the balance sheet. Comparing the required balance against the prior unadjusted allowance ledger determines the Bad Debt Provision Expense adjustment charged against current operating income, enforcing audited balance sheet integrity.'
+        ],
+        example: 'Think of an AR aging matrix like monitoring overdue library books: books due yesterday have a 99% return likelihood; books overdue by six months have a 50% loss likelihood; the library sets aside a replacement fund today based on these percentages rather than waiting for borrowers to disappear.',
+        code: `def calculate_accounts_receivable_ecl_allowance(aging_buckets, existing_allowance):
+    """Calculates Expected Credit Loss (ECL) allowance under IFRS 9 / CECL provision matrices."""
+    total_gross_ar = sum(b["balance"] for b in aging_buckets)
+    total_required_allowance = 0.0
+    details = []
+    
+    for b in aging_buckets:
+        bucket_ecl = b["balance"] * b["default_rate"]
+        total_required_allowance += bucket_ecl
+        details.append({
+            "bucket": b["label"],
+            "balance": b["balance"],
+            "rate_pct": round(b["default_rate"] * 100.0, 1),
+            "ecl": round(bucket_ecl, 2)
+        })
+        
+    provision_expense = total_required_allowance - existing_allowance
+    action = "INCREASE_PROVISION_EXPENSE" if provision_expense > 0 else "REDUCE_ALLOWANCE_RECOVERY"
+    
+    return {
+        "Gross_AR": total_gross_ar,
+        "Required_Allowance": round(total_required_allowance, 2),
+        "Existing_Allowance": existing_allowance,
+        "Net_Provision_Adjustment": round(provision_expense, 2),
+        "Accounting_Action": action
+    }
+
+ledger = [
+    {"label": "Current (0-30d)", "balance": 1500000.0, "default_rate": 0.010}, # 1.0%
+    {"label": "31-60 days", "balance": 450000.0, "default_rate": 0.045},       # 4.5%
+    {"label": "61-90 days", "balance": 180000.0, "default_rate": 0.150},       # 15.0%
+    {"label": "Over 90 days", "balance": 90000.0, "default_rate": 0.500}        # 50.0%
+]
+prior_allowance = 85000.0
+
+print("=== ACCOUNTS RECEIVABLE AGING & EXPECTED CREDIT LOSS (ECL) ===")
+res = calculate_accounts_receivable_ecl_allowance(ledger, prior_allowance)
+print("Gross AR: $" + f"{res['Gross_AR']:,.2f} | Required Allowance: $" + f"{res['Required_Allowance']:,.2f}")
+print("Prior Allowance: $" + f"{res['Existing_Allowance']:,.2f} | Adjustment: $" + f"{res['Net_Provision_Adjustment']:,.2f} [{res['Accounting_Action']}]")`,
+        output: `=== ACCOUNTS RECEIVABLE AGING & EXPECTED CREDIT LOSS (ECL) ===
+Gross AR: $2,220,000.00 | Required Allowance: $107,250.00
+Prior Allowance: $85,000.00 | Adjustment: $22,250.00 [INCREASE_PROVISION_EXPENSE]`,
+        codeNotes: [
+          'Applies forward-looking default rates scaling from 1.0% for current receivables to 50.0% for 90+ days delinquent accounts.',
+          'Computes total audited balance sheet allowance requirement ($107,250.00) across $2.22M gross trade receivables.',
+          'Calculates quarterly income statement bad debt provision adjustment ($22,250.00) relative to prior ledger balance.'
+        ],
+        tryIt: 'Increase over-90-days balance to $250,000 and calculate the resulting bad debt provision hit to operating profit.',
+        check: {
+          question: 'Under modern IFRS 9 / CECL standards, why must corporations recognize bad debt provisions before an account defaults?',
+          options: [
+            'To reflect forward-looking expected credit risk immediately, preventing management from hiding deteriorating customer quality until default occurs',
+            'To reduce income tax payments to zero in every financial quarter',
+            'To pay bonuses to external collection agencies',
+            'Because credit card companies demand all trade receivables be settled in cash'
+          ],
+          answer: 0,
+          why: 'The financial crisis proved that waiting for an incurred loss event masks credit deterioration; forward-looking ECL provisions ensure balance sheet receivables reflect net realizable cash value.'
+        }
+      },
+      {
+        title: 'Working Capital Liquidity Stress Testing & Cash Burn Runway Simulation',
+        say: [
+          'Corporate liquidity crises rarely erupt from chronic operational unprofitability; they are sparked by acute cash crunches when accounts receivable slow, credit lines freeze, or unexpected operating burn outstrips liquid reserves. Comprehensive financial stress testing evaluates balance sheet resilience against extreme liquidity shocks.',
+          'Key liquidity metrics include the Current Ratio (Current Assets / Current Liabilities) and the Quick Ratio or Acid-Test ((Cash + Marketable Securities + AR) / Current Liabilities), which strips out illiquid physical inventory. For fast-growing or turnaround businesses, the Defensive Interval Ratio (DIR) measures operational survival endurance: Quick Assets divided by Daily Operating Cash Burn.',
+          'By simulating multi-month stress scenarios (such as customer payment freezes or sudden supply chain delays), the decision model computes exact Cash Runway in months. A firm maintaining a Current Ratio of 2.14x, Quick Ratio of 1.71x, and Defensive Interval of 360 days possesses the robust liquidity balance sheet required to withstand macroeconomic downturns without dilutive emergency financing.'
+        ],
+        example: 'Think of liquidity stress testing like calculating life support reserves on a deep-sea submersible: cash is oxygen tanks, receivables are auxiliary oxygen cylinders, and daily operating expenses are breathing rate; stress testing verifies how many hours the crew can survive if surface supply lines are severed.',
+        code: `def simulate_working_capital_stress_test(balance_sheet, monthly_cash_burn):
+    """Simulates liquidity ratios, defensive interval, and cash runway under stress scenarios."""
+    cash = balance_sheet["cash_equivalents"]
+    st_inv = balance_sheet["marketable_securities"]
+    ar = balance_sheet["accounts_receivable"]
+    inv = balance_sheet["inventory"]
+    cl = balance_sheet["current_liabilities"]
+    
+    current_assets = cash + st_inv + ar + inv
+    quick_assets = cash + st_inv + ar
+    
+    # 1. Current Ratio = Current Assets / Current Liabilities
+    current_ratio = current_assets / cl
+    
+    # 2. Quick Ratio (Acid Test) = (Cash + Securities + AR) / Current Liabilities
+    quick_ratio = quick_assets / cl
+    
+    # 3. Defensive Interval Ratio (DIR in days) = Quick Assets / Daily Operating Expenses
+    daily_burn = monthly_cash_burn / 30.0
+    defensive_interval_days = quick_assets / daily_burn
+    
+    # 4. Cash Runway in Months = (Cash + Securities) / Monthly Cash Burn
+    liquid_runway_months = (cash + st_inv) / monthly_cash_burn
+    
+    solvency = "ROBUST_LIQUIDITY" if (current_ratio > 1.5 and quick_ratio > 1.0 and liquid_runway_months > 6.0) else "LIQUIDITY_WARNING"
+    
+    return {
+        "Current_Ratio": round(current_ratio, 2),
+        "Quick_Ratio": round(quick_ratio, 2),
+        "Defensive_Interval_Days": round(defensive_interval_days, 1),
+        "Cash_Runway_Months": round(liquid_runway_months, 1),
+        "Solvency_Status": solvency
+    }
+
+bs = {
+    "cash_equivalents": 1200000.0,
+    "marketable_securities": 300000.0,
+    "accounts_receivable": 900000.0,
+    "inventory": 600000.0,
+    "current_liabilities": 1400000.0
+}
+burn = 200000.0 # $200k monthly burn
+
+print("=== WORKING CAPITAL LIQUIDITY & CASH RUNWAY STRESS TEST ===")
+res = simulate_working_capital_stress_test(bs, burn)
+print(f"Current Ratio: {res['Current_Ratio']}x | Quick Ratio: {res['Quick_Ratio']}x")
+print(f"Defensive Interval: {res['Defensive_Interval_Days']} days | Cash Runway: {res['Cash_Runway_Months']} months")
+print(f"Liquidity Status: [{res['Solvency_Status']}]")`,
+        output: `=== WORKING CAPITAL LIQUIDITY & CASH RUNWAY STRESS TEST ===
+Current Ratio: 2.14x | Quick Ratio: 1.71x
+Defensive Interval: 360.0 days | Cash Runway: 7.5 months
+Liquidity Status: [ROBUST_LIQUIDITY]`,
+        codeNotes: [
+          'Calculates standard Current Ratio (2.14x) and Quick Acid-Test Ratio (1.71x) excluding illiquid inventory.',
+          'Measures Defensive Interval Ratio (360.0 days) assessing operational survival on liquid quick assets alone.',
+          'Quantifies liquid cash runway (7.5 months) under stressed cash burn conditions to assure solvency.'
+        ],
+        tryIt: 'Increase monthly_cash_burn to $350,000 and observe how Cash Runway drops to 4.3 months, triggering LIQUIDITY_WARNING.',
+        check: {
+          question: 'Why does the Quick Ratio (Acid-Test) exclude inventory from current assets when evaluating acute enterprise liquidity?',
+          options: [
+            'Because physical inventory cannot be instantly converted to cash to pay impending short-term debts without heavy discounting or liquidation delays',
+            'Because inventory does not belong on corporate balance sheets under accounting rules',
+            'Because inventory always increases in value over time',
+            'Because only cash and crypto can be classified as assets'
+          ],
+          answer: 0,
+          why: 'In an acute credit crisis, selling inventory takes weeks or months and may require steep distress discounts; the Quick Ratio measures instant debt-paying capacity using cash, securities, and receivables.'
+        }
+      }
+    ],
+    summary: [
+      'The Cash Conversion Cycle (CCC = DSI + DSO - DPO) measures working capital efficiency, contrasting capital-trapped models against negative CCC supplier-financed operations.',
+      'Wilson\'s Economic Order Quantity (EOQ) minimizes total inventory carrying and ordering costs at the exact intersection where annual order costs equal holding costs.',
+      'Stochastic Reorder Point (ROP) models size safety stocks using combined demand and lead-time standard deviations to guarantee targeted cycle service levels.',
+      'IFRS 9 / CECL Accounts Receivable Aging Matrices compute forward-looking Expected Credit Loss (ECL) allowances across delinquent buckets, protecting balance sheet integrity.',
+      'Working capital stress testing evaluates Current Ratio, Quick Ratio, Defensive Interval Ratio (DIR), and cash runway to verify balance sheet solvency under cash flow shocks.'
+    ],
+    projectStep: {
+      title: 'Engineer a Working Capital, Cash Conversion & Inventory Optimization Engine',
+      steps: [
+        'Calculate operational DSI, DSO, DPO, and Cash Conversion Cycle (CCC) metrics across business models.',
+        'Implement an Economic Order Quantity (EOQ) model optimizing purchase order sizes and carrying cost curves.',
+        'Construct a stochastic Reorder Point (ROP) and safety stock engine under dual demand and lead-time uncertainty.',
+        'Build an Accounts Receivable aging provision matrix calculating forward-looking Expected Credit Loss (ECL) allowances.',
+        'Execute liquidity stress tests computing Quick Ratios, Defensive Interval survival days, and cash burn runways.'
+      ]
+    }
   }
 ];
