@@ -858,6 +858,344 @@ console.log('CompletableFuture.allOf() Pipeline Status: ORDER CONFIRMED (All Asy
         'Compose an asynchronous checkout pipeline using CompletableFuture to parallelize fraud detection, inventory reservation, and payment processing.'
       ]
     }
+  },
+  {
+    coursePrefix: 'java-basics',
+    day: 3,
+    title: 'Generics, Reflection & Modern Java 21 Sealed Class Patterns',
+    goal: 'Master enterprise JVM meta-programming: Generics and type erasure bridge methods, dynamic reflection invocation and MethodHandles, custom runtime annotations, Java 21 sealed types with exhaustive pattern matching, and ClassLoader parent delegation isolation.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered the JVM execution lifecycle and virtual threads. In Day 2, we mastered the Java Memory Model, HashMap treeification, and Spring IoC proxies. Now, we advance into JVM meta-programming: compile-time generic erasure, dynamic reflection, runtime annotations, Java 21 sealed class pattern matching, and ClassLoader sandbox isolation.',
+    parts: [
+      {
+        title: 'Generics & Type Erasure in the JVM (Bridge Methods & Bytecode Invariants)',
+        say: [
+          'Java Generics were introduced in Java 5 to provide compile-time type safety and eliminate hazardous manual casting from enterprise codebases.',
+          'However, to maintain strict binary backwards compatibility with pre-Java 5 compiled libraries, the JVM architects chose an implementation known as Type Erasure.',
+          'During compilation by javac, all generic type parameters—such as the T in List<T> or Box<T>—are completely erased and replaced by their upper bound, which defaults to Object.',
+          'Because the compiled bytecode .class file knows nothing about T at runtime, the compiler automatically inserts synthetic checkcast bytecode instructions at every call site where a generic value is retrieved.',
+          'Furthermore, when a class implements a generic interface with specific types, the compiler synthesizes synthetic Bridge Methods in bytecode to preserve polymorphic method overriding across erasured boundaries.',
+          'Understanding type erasure explains why you cannot instantiate a generic array directly (new T[10] fails) and why primitive types cannot be used directly as generic arguments without boxing overhead.'
+        ],
+        example: 'Think of shipping boxes labeled with dry-erase markers. While in your warehouse office, you write "FRAGILE CRYSTAL VASES" on the outside (compile-time type safety). But before loading onto the delivery truck, a clerk wipes off the marker and stamps "STANDARD CARGO" on all boxes (type erasure to Object). When the destination warehouse receives the box, a security scanner inspects the contents to verify they are indeed vases (synthetic checkcast instruction).',
+        code: `// Simulation: Java Generics Type Erasure & Bytecode checkcast Synthesis
+class GenericBoxSimulator<T> {
+  private item: T;
+
+  constructor(item: T) {
+    this.item = item;
+  }
+
+  get(): T {
+    return this.item;
+  }
+
+  // JVM bytecode inspection simulation:
+  // In compiled .class bytecode, T is erased to Object (or upper bound).
+  // The compiler inserts synthetic checkcast instructions at call sites.
+  inspectBytecodeSignature(): {
+    sourceSignature: string;
+    erasedBytecodeDescriptor: string;
+    syntheticCheckcastInserted: boolean;
+  } {
+    return {
+      sourceSignature: 'T get()',
+      erasedBytecodeDescriptor: 'Ljava/lang/Object; get()',
+      syntheticCheckcastInserted: true
+    };
+  }
+}
+
+const box = new GenericBoxSimulator<string>('Enterprise Service Payload');
+const bytecode = box.inspectBytecodeSignature();
+
+console.log('=== JAVA GENERICS & TYPE ERASURE IN THE JVM ===');
+console.log('Source Code Method Signature: ' + bytecode.sourceSignature);
+console.log('Compiled JVM Bytecode Descriptor: ' + bytecode.erasedBytecodeDescriptor + ' (T erased to Object)');
+console.log('Type-Safety Guarantee: Synthetic checkcast opcode inserted by javac at call sites');
+console.log('Payload Retrieved: ' + box.get());`,
+        output: `=== JAVA GENERICS & TYPE ERASURE IN THE JVM ===\nSource Code Method Signature: T get()\nCompiled JVM Bytecode Descriptor: Ljava/lang/Object; get() (T erased to Object)\nType-Safety Guarantee: Synthetic checkcast opcode inserted by javac at call sites\nPayload Retrieved: Enterprise Service Payload`,
+        tryIt: 'Modify the generic bound to simulate an upper bound like <T extends Comparable<T>> and observe the erased descriptor change.',
+        check: {
+          question: 'What happens to generic type parameters like T in Java source code when compiled into JVM bytecode (.class files)?',
+          options: [
+            'They are preserved as native hardware CPU register types',
+            'They are erased and replaced by Object (or their upper bound), with javac inserting synthetic checkcast instructions at call sites',
+            'They are converted into JavaScript strings'
+          ],
+          answer: 1,
+          why: 'Java implements generics via Type Erasure for backwards compatibility. At runtime, generic parameters are replaced by Object (or bounds), and javac emits checkcast opcodes to verify types safely at call sites.'
+        }
+      },
+      {
+        title: 'Java Reflection API & Runtime Dynamic Introspection',
+        say: [
+          'The Java Reflection API allows programs to inspect and manipulate classes, methods, fields, and constructors dynamically at runtime without compile-time knowledge of their names.',
+          'Frameworks like Spring, Hibernate, and Jackson rely heavily on reflection: when Jackson deserializes JSON into a Java POJO, it inspects field names and private setters dynamically.',
+          'Using java.lang.Class and java.lang.reflect.Method, developers can query method signatures, setAccessible(true) on private fields, and invoke methods dynamically.',
+          'However, traditional reflection incurs significant performance overhead: it bypasses JIT compiler optimizations like method inlining, requires boxing and unboxing of primitive arguments, and performs security manager access checks on every invocation.',
+          'In modern high-performance Java, reflection has evolved: Java 7 introduced the java.lang.invoke.MethodHandle API, which allows the JIT compiler to inline dynamically bound calls nearly as fast as direct static method invocations.',
+          'Understanding reflection enables engineers to build modular plugin architectures and understand how enterprise dependency injection frameworks operate beneath the surface.'
+        ],
+        example: 'Think of a universal remote control. A standard TV button is hardwired to a specific circuit board (direct compile-time method call). A universal learning remote has a sensor that listens to whatever infrared frequency the television emits, stores the signal by name, and blasts that exact signal when requested (dynamic reflection dispatch).',
+        code: `// Simulation: Java Reflection API & Dynamic Method Dispatch
+class ReflectionSimulator {
+  private methods: Map<string, (...args: any[]) => any> = new Map();
+
+  register(target: any) {
+    const proto = Object.getPrototypeOf(target);
+    for (const name of Object.getOwnPropertyNames(proto)) {
+      if (typeof target[name] === 'function' && name !== 'constructor') {
+        this.methods.set(name, target[name].bind(target));
+      }
+    }
+  }
+
+  invoke(methodName: string, ...args: any[]): any {
+    const fn = this.methods.get(methodName);
+    if (!fn) throw new Error('NoSuchMethodException: ' + methodName);
+    return fn(...args);
+  }
+}
+
+class OrderWorkflow {
+  calculateDiscount(total: number, tier: string): number {
+    const rate = tier === 'VIP' ? 0.20 : 0.05;
+    return total * (1 - rate);
+  }
+}
+
+const workflow = new OrderWorkflow();
+const reflector = new ReflectionSimulator();
+reflector.register(workflow);
+
+const discounted = reflector.invoke('calculateDiscount', 500, 'VIP');
+
+console.log('=== JAVA REFLECTION API & DYNAMIC INVOCATION ===');
+console.log('Target Class: OrderWorkflow');
+console.log('Method Dynamically Dispatched via Reflection: calculateDiscount(500, VIP)');
+console.log('Discounted Result: $' + discounted.toFixed(2));
+console.log('Performance Invariant: Reflection bypasses JIT inlining; use MethodHandle for hot paths');`,
+        output: `=== JAVA REFLECTION API & DYNAMIC INVOCATION ===\nTarget Class: OrderWorkflow\nMethod Dynamically Dispatched via Reflection: calculateDiscount(500, VIP)\nDiscounted Result: $400.00\nPerformance Invariant: Reflection bypasses JIT inlining; use MethodHandle for hot paths`,
+        tryIt: 'Invoke a non-existent method name to observe how the Reflection API throws NoSuchMethodException.',
+        check: {
+          question: 'Why does traditional Java Reflection incur higher CPU latency than direct method calls?',
+          options: [
+            'Because reflective calls bypass JIT compiler inlining, require argument array boxing, and perform runtime security checks',
+            'Because reflection requires turning off the computer monitor',
+            'Because reflection deletes the compiled class file from disk'
+          ],
+          answer: 0,
+          why: 'Direct method calls can be aggressively inlined by the JIT C2 compiler into native assembly. Reflection introduces dynamic lookup indirection, parameter array boxing, and runtime permission checks that prevent inlining.'
+        }
+      },
+      {
+        title: 'Custom Annotations & Runtime Metadata Processing',
+        say: [
+          'Java Annotations provide structured metadata about classes, methods, and parameters without directly affecting program logic on their own.',
+          'Every custom annotation is defined using the @interface keyword and configured with two essential meta-annotations: @Target and @Retention.',
+          'The @Target meta-annotation specifies where the annotation may be applied, such as ElementType.METHOD, ElementType.FIELD, or ElementType.TYPE.',
+          'The @Retention meta-annotation is the critical architectural switch: RetentionPolicy.SOURCE discards the annotation during compilation (like @Override), RetentionPolicy.CLASS retains it in bytecode but discards it at runtime, while RetentionPolicy.RUNTIME preserves the metadata in JVM memory so frameworks can inspect it via reflection.',
+          'Enterprise frameworks like Spring Boot use runtime annotations—such as @GetMapping, @Transactional, and @RolesAllowed—to construct declarative routing and security authorization filters.',
+          'By reading annotation metadata during container startup, systems decouple infrastructure concerns like authorization and logging from core business logic.'
+        ],
+        example: 'Think of food packaging nutrition labels. The ingredients and calorie counts printed on the cereal box (@interface NutritionLabel) do not change the taste of the flakes inside. But grocery store checkout scanners and FDA inspectors read those labels at checkout time (@Retention(RUNTIME)) to enforce dietary laws and calculate sales tax.',
+        code: `// Simulation: Custom Annotation Metadata Registry & RBAC Access Enforcement
+interface RouteMetadata {
+  path: string;
+  httpMethod: 'GET' | 'POST';
+  rolesAllowed: string[];
+}
+
+class AnnotationRegistrySimulator {
+  private routes: Map<string, RouteMetadata> = new Map();
+
+  registerEndpoint(methodName: string, metadata: RouteMetadata) {
+    this.routes.set(methodName, metadata);
+  }
+
+  evaluateAccess(methodName: string, userRole: string): { allowed: boolean; reason: string } {
+    const meta = this.routes.get(methodName);
+    if (!meta) return { allowed: false, reason: '404 Not Found' };
+    if (!meta.rolesAllowed.includes(userRole)) {
+      return { allowed: false, reason: '403 Forbidden: Missing required role ' + meta.rolesAllowed.join(',') };
+    }
+    return { allowed: true, reason: '200 OK: Authorized for ' + meta.path };
+  }
+}
+
+const registry = new AnnotationRegistrySimulator();
+// Simulating @GetMapping("/admin/audit") & @RolesAllowed({"ADMIN"})
+registry.registerEndpoint('viewAuditLog', {
+  path: '/admin/audit',
+  httpMethod: 'GET',
+  rolesAllowed: ['ADMIN']
+});
+
+const memberAttempt = registry.evaluateAccess('viewAuditLog', 'MEMBER');
+const adminAttempt = registry.evaluateAccess('viewAuditLog', 'ADMIN');
+
+console.log('=== CUSTOM ANNOTATIONS & RUNTIME METADATA PROCESSING ===');
+console.log('Annotation Target: @GetMapping("/admin/audit") @RolesAllowed({"ADMIN"})');
+console.log('Evaluation (Member Role): ' + memberAttempt.reason);
+console.log('Evaluation (Admin Role): ' + adminAttempt.reason);
+console.log('Runtime Invariant: @Retention(RetentionPolicy.RUNTIME) preserves metadata in byte code');`,
+        output: `=== CUSTOM ANNOTATIONS & RUNTIME METADATA PROCESSING ===\nAnnotation Target: @GetMapping("/admin/audit") @RolesAllowed({"ADMIN"})\nEvaluation (Member Role): 403 Forbidden: Missing required role ADMIN\nEvaluation (Admin Role): 200 OK: Authorized for /admin/audit\nRuntime Invariant: @Retention(RetentionPolicy.RUNTIME) preserves metadata in byte code`,
+        tryIt: 'Add another role "AUDITOR" to the rolesAllowed array and verify access is granted.',
+        check: {
+          question: 'Which RetentionPolicy must a Java custom annotation use if it needs to be read dynamically at runtime via reflection?',
+          options: [
+            'RetentionPolicy.RUNTIME',
+            'RetentionPolicy.SOURCE',
+            'RetentionPolicy.CLASS'
+          ],
+          answer: 0,
+          why: 'RetentionPolicy.RUNTIME is the only policy that instructs javac to record annotation metadata into the .class bytecode and load it into JVM memory so it can be queried via Class.getAnnotation().'
+        }
+      },
+      {
+        title: 'Java 21 Sealed Classes & Pattern Matching Switch',
+        say: [
+          'In enterprise domain modeling, uncontrolled class inheritance can lead to severe architectural fragmentation when arbitrary third-party subclasses break domain assumptions.',
+          'Java 17 and 21 introduced Sealed Classes and Interfaces to solve this. A sealed class explicitly restricts which other classes or interfaces may extend or implement it using the permits keyword.',
+          'By defining a closed algebraic data type—such as sealed interface PaymentEvent permits CardPayment, CryptoPayment, WirePayment—the domain model guarantees that no unexpected event subtypes can ever exist.',
+          'This enables a monumental feature in Java 21: Pattern Matching for switch expressions.',
+          'When switching over a sealed type hierarchy, the compiler performs Exhaustiveness Checking: because it knows every permitted subtype at compile time, no default branch is required.',
+          'If a developer adds a new permitted subclass in the future, the compiler immediately produces a compile-time error at every switch statement that handles the hierarchy, completely eliminating forgotten edge-case bugs in production.'
+        ],
+        example: 'Think of an electric car transmission selector. The gear lever only has three physically permitted mechanical notches: Park, Reverse, and Drive (a sealed interface). There is physically no fourth option. The vehicle computer does not need a fallback "unknown gear" branch; every possible valid state is guaranteed and accounted for by mechanical design.',
+        code: `// Simulation: Java 21 Sealed Hierarchy Exhaustive Pattern Matching
+type PaymentEvent =
+  | { type: 'CARD'; panLast4: string; amount: number }
+  | { type: 'CRYPTO'; txHash: string; network: 'ETHEREUM' | 'SOLANA' }
+  | { type: 'WIRE'; iban: string; swift: string };
+
+function processPaymentPatternMatch(event: PaymentEvent): string {
+  switch (event.type) {
+    case 'CARD':
+      return 'Card Charged: *' + event.panLast4 + ' ($' + event.amount + ')';
+    case 'CRYPTO':
+      return 'Crypto Confirmed: ' + event.network + ' (Tx: ' + event.txHash.slice(0, 8) + '...)';
+    case 'WIRE':
+      return 'Wire Cleared: ' + event.swift + ' / ' + event.iban;
+  }
+}
+
+const card = processPaymentPatternMatch({ type: 'CARD', panLast4: '4242', amount: 1250 });
+const crypto = processPaymentPatternMatch({ type: 'CRYPTO', txHash: '0x8f3c1b29a', network: 'ETHEREUM' });
+
+console.log('=== JAVA 21 SEALED CLASSES & PATTERN MATCHING SWITCH ===');
+console.log('Pattern Match 1: ' + card);
+console.log('Pattern Match 2: ' + crypto);
+console.log('Exhaustiveness Guarantee: Compiler verifies all sealed permits are handled without default branch');`,
+        output: `=== JAVA 21 SEALED CLASSES & PATTERN MATCHING SWITCH ===\nPattern Match 1: Card Charged: *4242 ($1250)\nPattern Match 2: Crypto Confirmed: ETHEREUM (Tx: 0x8f3c1b...)\nExhaustiveness Guarantee: Compiler verifies all sealed permits are handled without default branch`,
+        tryIt: 'Add a WIRE payment event to the simulation and observe the exhaustiveness pattern match output.',
+        check: {
+          question: 'What major compile-time guarantee do Java 21 Sealed Classes provide when used with switch pattern matching?',
+          options: [
+            'Exhaustiveness Checking: the compiler verifies that every permitted subtype is handled, removing the need for a default clause',
+            'They guarantee that the JVM will never run out of memory',
+            'They automatically encrypt the source code with AES-256'
+          ],
+          answer: 0,
+          why: 'Because a sealed class explicitly enumerates all permitted subtypes, the compiler knows the full domain universe and guarantees exhaustiveness in switch expressions without requiring a defensive default branch.'
+        }
+      },
+      {
+        title: 'ClassLoader Hierarchy & Dynamic Isolation (Parent Delegation Model)',
+        say: [
+          'In enterprise application servers and modular container systems, classloading is the foundation of security and runtime isolation.',
+          'The Java Virtual Machine organizes classloaders into a strict three-tier hierarchy: the Bootstrap ClassLoader (written in native C/C++ to load core classes like java.lang.String from the JDK runtime), the Platform/Extension ClassLoader, and the Application/System ClassLoader (which loads classes from your classpath).',
+          'Classloaders adhere to the Parent Delegation Model: when asked to load a class, a classloader must always delegate the request to its parent loader before attempting to search its own classpath.',
+          'This model enforces a critical security invariant: a malicious plugin or third-party dependency cannot provide its own counterfeit java.lang.String or java.lang.System class to hijack credentials, because the Bootstrap ClassLoader always loads the official JDK classes first.',
+          'In modular microservice and plugin architectures (such as OSGi or Tomcat webapp containers), custom classloaders are used to create isolated class namespaces.',
+          'This allows two independent plugins running in the same JVM process to load different, conflicting versions of the same library (such as Jackson 2.12 and Jackson 2.15) without classpath collisions.'
+        ],
+        example: 'Think of military chain-of-command clearances. If a junior private (Application ClassLoader) receives a request to open a classified file, they must first ask their sergeant (Platform ClassLoader), who in turn asks the general (Bootstrap ClassLoader). Only if the general and sergeant have no jurisdiction is the private allowed to handle it locally.',
+        code: `// Simulation: JVM ClassLoader Hierarchy & Parent Delegation Security Model
+class ClassLoaderSimulator {
+  name: string;
+  parent: ClassLoaderSimulator | null;
+  loadedClasses: Set<string> = new Set();
+
+  constructor(name: string, parent: ClassLoaderSimulator | null = null) {
+    this.name = name;
+    this.parent = parent;
+  }
+
+  loadClass(className: string): string {
+    // Parent Delegation Model: Always ask parent first!
+    if (this.parent) {
+      try {
+        return this.parent.loadClass(className);
+      } catch {
+        // Parent could not find it; child attempts to load
+      }
+    }
+
+    if (this.name === 'BootstrapClassLoader' && className.startsWith('java.lang.')) {
+      this.loadedClasses.add(className);
+      return 'Loaded by ' + this.name;
+    }
+
+    if (this.name === 'AppClassLoader' && className.startsWith('com.enterprise.')) {
+      this.loadedClasses.add(className);
+      return 'Loaded by ' + this.name;
+    }
+
+    if (this.name === 'PluginClassLoader' && className.startsWith('com.plugin.')) {
+      this.loadedClasses.add(className);
+      return 'Loaded by ' + this.name + ' (Isolated Sandbox)';
+    }
+
+    throw new Error('ClassNotFoundException: ' + className);
+  }
+}
+
+const bootstrap = new ClassLoaderSimulator('BootstrapClassLoader', null);
+const appLoader = new ClassLoaderSimulator('AppClassLoader', bootstrap);
+const pluginLoader = new ClassLoaderSimulator('PluginClassLoader', appLoader);
+
+const stringLoad = pluginLoader.loadClass('java.lang.String');
+const serviceLoad = pluginLoader.loadClass('com.enterprise.OrderService');
+const customPluginLoad = pluginLoader.loadClass('com.plugin.CustomReport');
+
+console.log('=== CLASSLOADER HIERARCHY & PARENT DELEGATION MODEL ===');
+console.log('Delegation 1 (java.lang.String): ' + stringLoad);
+console.log('Delegation 2 (com.enterprise.OrderService): ' + serviceLoad);
+console.log('Delegation 3 (com.plugin.CustomReport): ' + customPluginLoad);
+console.log('Security Invariant: Parent delegation prevents rogue plugins from overriding core Java classes');`,
+        output: `=== CLASSLOADER HIERARCHY & PARENT DELEGATION MODEL ===\nDelegation 1 (java.lang.String): Loaded by BootstrapClassLoader\nDelegation 2 (com.enterprise.OrderService): Loaded by AppClassLoader\nDelegation 3 (com.plugin.CustomReport): Loaded by PluginClassLoader (Isolated Sandbox)\nSecurity Invariant: Parent delegation prevents rogue plugins from overriding core Java classes`,
+        tryIt: 'Attempt to load an unregistered class name to observe the ClassNotFoundException.',
+        check: {
+          question: 'Why does the JVM enforce the Parent Delegation Model in its ClassLoader architecture?',
+          options: [
+            'To prevent untrusted code from overriding core Java platform classes (like java.lang.String) and ensure consistent class uniqueness',
+            'To double the RAM usage of the operating system',
+            'To force all Java programs to run slower'
+          ],
+          answer: 0,
+          why: 'The Parent Delegation Model guarantees that core system classes loaded by the Bootstrap ClassLoader take precedence, preventing untrusted or malicious classes from replacing foundational runtime types.'
+        }
+      }
+    ],
+    summary: [
+      'Java Generics use compile-time Type Erasure to maintain backwards compatibility, with javac emitting synthetic checkcast opcodes.',
+      'The Reflection API provides runtime introspection of classes and methods, while MethodHandles provide JIT-optimizable dynamic invocation.',
+      'Custom annotations configured with @Retention(RetentionPolicy.RUNTIME) preserve metadata in bytecode for framework inspection.',
+      'Java 21 Sealed Classes permit explicit subtypes, enabling exhaustive pattern matching switch expressions without default clauses.',
+      'The ClassLoader hierarchy enforces the Parent Delegation Model, preventing rogue classes from overriding core JDK runtime types.'
+    ],
+    projectStep: {
+      title: 'Architect a Modular Plugin Container with Dynamic Reflection & Sealed Events',
+      steps: [
+        'Define a sealed hierarchy of enterprise domain events (OrderCreated, PaymentCaptured, RefundIssued).',
+        'Implement an isolated custom ClassLoader that safely sandboxes third-party plugin classes.',
+        'Use the Reflection API and custom @PluginEndpoint annotations to discover and register event handlers.',
+        'Implement an exhaustive pattern-matching dispatch loop in Java 21 to process events with zero unhandled cases.'
+      ]
+    }
   }
 ];
+
 
