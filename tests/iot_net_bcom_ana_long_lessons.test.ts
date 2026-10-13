@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getLongLesson, getLongLessonLanguage } from '../src/lib/data/longLessons';
+import {
+  getLongLesson,
+  getLongLessonLanguage,
+  estimateSpokenMinutes,
+  estimateLessonMinutes
+} from '../src/lib/data/longLessons';
 
 test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants', () => {
   // 1. iot_net
@@ -20,6 +25,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.ok(anaLesson.summary.length >= 4, 'bcom_ana Day 1 must contain comprehensive summary');
   assert.ok(anaLesson.projectStep, 'bcom_ana Day 1 must have a hands-on project step');
   assert.equal(getLongLessonLanguage('bcom_ana'), 'python');
+
+  const anaLesson2 = getLongLesson('bcom_ana', 2);
+  assert.ok(anaLesson2, 'bcom_ana Day 2 long lesson must resolve');
+  assert.equal(anaLesson2.day, 2);
+  assert.equal(anaLesson2.parts.length, 5, 'bcom_ana Day 2 must contain exactly 5 parts');
 });
 
 test('IoT Net Day 1: 6LoWPAN & Link Budget Python Code Snippets & Socratic Checks Verification', () => {
@@ -61,3 +71,40 @@ test('B.Com Analytics Day 1: Linear Optimization & Monte Carlo Python Code Snipp
     assert.ok(part.code.includes('print('), `Code in '${part.title}' must print results`);
   }
 });
+
+test('B.Com Analytics Day 2: Logistic Credit Scoring, RFM CLV, Seasonal Forecasting & A/B Power Snippets Verification', () => {
+  const anaLesson2 = getLongLesson('bcom_ana', 2);
+  assert.ok(anaLesson2, 'bcom_ana Day 2 must resolve');
+  assert.equal(anaLesson2.day, 2);
+  assert.equal(anaLesson2.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(anaLesson2);
+  const totalMin = estimateLessonMinutes(anaLesson2);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < anaLesson2.parts.length; i++) {
+    const part = anaLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Domain specifics
+  assert.ok(anaLesson2.parts[0].code?.includes('calculate_credit_default_probability'));
+  assert.ok(anaLesson2.parts[1].code?.includes('segment_rfm_customer_portfolio'));
+  assert.ok(anaLesson2.parts[2].code?.includes('forecast_seasonal_demand'));
+  assert.ok(anaLesson2.parts[3].code?.includes('calculate_ab_test_sample_size'));
+  assert.ok(anaLesson2.parts[4].code?.includes('decompose_executive_revenue_metrics'));
+});
+
