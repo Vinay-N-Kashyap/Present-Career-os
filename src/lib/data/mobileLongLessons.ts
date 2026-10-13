@@ -813,5 +813,385 @@ console.log('Security Invariant: Plaintext keys NEVER touch unencrypted AsyncSto
         'Implement a Universal Link deep routing engine and configure Secure Enclave biometric token protection.'
       ]
     }
+  },
+  {
+    coursePrefix: 'mobile',
+    day: 3,
+    title: 'Advanced Mobile Engineering: Offline Sync CRDTs, Push Architecture & Native JSI TurboModules',
+    goal: 'Master enterprise mobile systems: State-based CRDTs with LWW-Element-Sets for conflict-free offline multi-device synchronization, APNs & FCM push notification delivery architecture with silent background payloads, Native C++ JSI TurboModule bindings with zero-copy memory transfers, robust deep linking navigation stack recovery, and biometric hardware encryption.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered React Native architecture, bridge mechanics, and native threading. In Day 2, we mastered the Fabric C++ renderer, Reanimated worklets, WatermelonDB lazy records, Universal Links, and Secure Enclave biometrics. Now in Day 3, we master conflict-free offline synchronization via CRDTs, APNs/FCM push notification infrastructure, native C++ JSI host object bindings, deep link navigation restoration, and cryptographic biometric challenge protocols.',
+    parts: [
+      {
+        title: 'Offline Synchronization & Conflict-Free Replicated Data Types (CRDTs)',
+        say: [
+          'Mobile devices operate under intermittent connectivity: users board subway tunnels, enter elevators, and switch airplane mode while actively creating and editing data.',
+          'Traditional centralized database locks fail completely on mobile because offline clients cannot communicate with an API server to acquire write locks.',
+          'Conflict-Free Replicated Data Types (CRDTs) solve this fundamental distributed systems problem by allowing multiple mobile devices to write concurrently to local storage without coordination, while mathematically guaranteeing eventual convergence when network connectivity resumes.',
+          'A State-based LWW-Element-Set (Last-Write-Wins Element Set) maintains two distinct sets: an Add-Set and a Remove-Set (often called Tombstones).',
+          'Every record mutation is tagged with a monotonic Lamport timestamp and a deterministic device ID that acts as an unambiguous tie-breaker.',
+          'When two devices synchronize, they perform a commutative, associative, and idempotent join-semilattice merge: if an element exists in both sets, the operation with the highest timestamp wins, guaranteeing identical replicas across all devices without data loss or user merge conflict modals.'
+        ],
+        example: 'Think of two friends editing a shared paper grocery checklist while shopping in different aisles of a supermarket with no cell reception. If Friend A writes "Apples" at 10:00 AM and Friend B crosses it off at 10:05 AM, when they meet at checkout (reconnection), the 10:05 AM strike-through wins because its timestamp is later. Neither person has to guess or argue.',
+        code: `// Simulation: Offline Sync & CRDT LWW-Element-Set Replication
+interface CrdtRecord {
+  id: string;
+  value: string;
+  timestamp: number; // Lamport timestamp
+  clientId: string; // Tie-breaker
+}
+
+class LwwElementSetSimulator {
+  private addSet: Map<string, CrdtRecord> = new Map();
+  private removeSet: Map<string, CrdtRecord> = new Map();
+
+  add(id: string, value: string, timestamp: number, clientId: string) {
+    const existing = this.addSet.get(id);
+    if (!existing || timestamp > existing.timestamp || (timestamp === existing.timestamp && clientId > existing.clientId)) {
+      this.addSet.set(id, { id, value, timestamp, clientId });
+    }
+  }
+
+  remove(id: string, timestamp: number, clientId: string) {
+    const existing = this.removeSet.get(id);
+    if (!existing || timestamp > existing.timestamp || (timestamp === existing.timestamp && clientId > existing.clientId)) {
+      this.removeSet.set(id, { id, value: '', timestamp, clientId });
+    }
+  }
+
+  // Merge another peer's CRDT state replica
+  merge(peer: LwwElementSetSimulator) {
+    for (const [id, rec] of peer.addSet.entries()) {
+      this.add(rec.id, rec.value, rec.timestamp, rec.clientId);
+    }
+    for (const [id, rec] of peer.removeSet.entries()) {
+      this.remove(rec.id, rec.timestamp, rec.clientId);
+    }
+  }
+
+  // Query state: element exists if in addSet and not in removeSet with higher timestamp
+  has(id: string): { exists: boolean; value?: string } {
+    const added = this.addSet.get(id);
+    if (!added) return { exists: false };
+    const removed = this.removeSet.get(id);
+    if (!removed) return { exists: true, value: added.value };
+    if (added.timestamp > removed.timestamp || (added.timestamp === removed.timestamp && added.clientId > removed.clientId)) {
+      return { exists: true, value: added.value };
+    }
+    return { exists: false };
+  }
+}
+
+const phoneA = new LwwElementSetSimulator();
+const phoneB = new LwwElementSetSimulator();
+
+// Offline edits
+phoneA.add('task_1', 'Deploy to App Store', 100, 'device_A');
+phoneB.add('task_1', 'Deploy to Play Store & App Store', 105, 'device_B'); // Later timestamp
+phoneA.add('task_2', 'Draft Release Notes', 102, 'device_A');
+phoneB.remove('task_2', 104, 'device_B'); // Deleted on device B while offline
+
+// Reconnecting and synchronizing states
+phoneA.merge(phoneB);
+phoneB.merge(phoneA);
+
+console.log('=== OFFLINE SYNC: CRDT LWW-ELEMENT-SET REPLICATION ===');
+console.log('Conflict Resolution (task_1): Value = "' + phoneA.has('task_1').value + '" (LWW Winner: device_B at t=105)');
+console.log('Tombstone Resolution (task_2): Exists = ' + phoneA.has('task_2').exists + ' (Removed at t=104 > Added at t=102)');
+console.log('Mathematical Convergence: phoneA === phoneB state equivalence guaranteed without central lock');`,
+        output: `=== OFFLINE SYNC: CRDT LWW-ELEMENT-SET REPLICATION ===\nConflict Resolution (task_1): Value = "Deploy to Play Store & App Store" (LWW Winner: device_B at t=105)\nTombstone Resolution (task_2): Exists = false (Removed at t=104 > Added at t=102)\nMathematical Convergence: phoneA === phoneB state equivalence guaranteed without central lock`,
+        tryIt: 'Add a new device C with timestamp 110 and verify that its edits override previous state on both devices upon synchronization.',
+        check: {
+          question: 'Why are CRDTs particularly well-suited for offline mobile application architecture?',
+          options: [
+            'They guarantee eventual consistency through commutative, associative, and idempotent state merges without requiring continuous network connectivity or central locking',
+            'They compress mobile screen pixels to improve battery life',
+            'They convert all relational SQLite tables into MongoDB collections'
+          ],
+          answer: 0,
+          why: 'CRDT operations can be applied in any order across distributed nodes. When mobile devices reconnect and exchange state, their mathematical join-semilattice properties guarantee that all replicas converge to identical states without conflicts.'
+        }
+      },
+      {
+        title: 'Push Notifications Architecture (APNs & FCM Remote Delivery)',
+        say: [
+          'Push notifications are the primary mechanism for re-engaging mobile users and delivering time-sensitive alerts when an application is closed or backgrounded.',
+          'Mobile push infrastructure relies on OS vendor gateways: Apple Push Notification service (APNs) for iOS and Firebase Cloud Messaging (FCM) v1 for Android.',
+          'When an app launches, the OS hardware registers with APNs/FCM to obtain a unique, rotating Device Token, which the app securely transmits to your backend API.',
+          'To send a push, your backend connects to the APNs HTTP/2 provider API using a JWT provider authentication token (signed with an Apple P8 private key) or Google service account credentials.',
+          'A critical feature of modern mobile push architecture is Silent Background Push: by setting content-available: 1 on iOS and apns-priority: 5 (or data-only messages on FCM), the OS wakes the app in the background for up to 30 seconds without displaying a visual banner to the user.',
+          'This allows the mobile app to silently fetch new messages, synchronize local CRDT databases, and update cache badges so fresh content is instantly visible the moment the user taps the app icon.'
+        ],
+        example: 'Think of a courier delivery service. A standard high-priority delivery knocks loudly on your front door with sirens flashing (visual alert push). A silent background delivery quietly slides an updated morning newspaper through your mail slot while you sleep (silent push), so when you wake up and open the door, today\'s news is already waiting for you.',
+        code: `// Simulation: Enterprise Push Notification Routing (APNs & FCM)
+interface PushPayload {
+  token: string;
+  topic: string;
+  priority: 5 | 10;
+  contentAvailable?: boolean; // Silent background push
+  alert?: { title: string; body: string };
+  data: Record<string, string>;
+}
+
+class PushNotificationRouter {
+  routeNotification(payload: PushPayload): {
+    channel: 'ALERT_HIGH_PRIORITY' | 'SILENT_BACKGROUND_DATA';
+    http2Headers: Record<string, string>;
+    dispatched: boolean;
+  } {
+    const isSilent = payload.contentAvailable && !payload.alert;
+    const priority = isSilent ? '5' : '10';
+
+    return {
+      channel: isSilent ? 'SILENT_BACKGROUND_DATA' : 'ALERT_HIGH_PRIORITY',
+      http2Headers: {
+        'apns-topic': payload.topic,
+        'apns-priority': priority,
+        'apns-push-type': isSilent ? 'background' : 'alert'
+      },
+      dispatched: true
+    };
+  }
+}
+
+const pushRouter = new PushNotificationRouter();
+const alertPush = pushRouter.routeNotification({
+  token: 'fcm_token_device_abc123',
+  topic: 'com.pinit.careeros',
+  priority: 10,
+  alert: { title: 'Interview Scheduled', body: 'Mock session begins in 15 mins' },
+  data: { interviewId: 'iv_9021', type: 'INTERVIEW_ALERT' }
+});
+
+const silentPush = pushRouter.routeNotification({
+  token: 'fcm_token_device_abc123',
+  topic: 'com.pinit.careeros',
+  priority: 5,
+  contentAvailable: true,
+  data: { syncAction: 'SYNC_COURSE_PROGRESS', courseId: 'mobile-dev' }
+});
+
+console.log('=== PUSH NOTIFICATIONS: APNS & FCM ROUTING ===');
+console.log('Alert Push Channel: ' + alertPush.channel + ' (APNs Priority: ' + alertPush.http2Headers['apns-priority'] + ')');
+console.log('Silent Background Push: ' + silentPush.channel + ' (Wakes headless JS background task without user banner)');
+console.log('Delivery Invariant: APNs HTTP/2 multiplexed provider API with JWT authentication');`,
+        output: `=== PUSH NOTIFICATIONS: APNS & FCM ROUTING ===\nAlert Push Channel: ALERT_HIGH_PRIORITY (APNs Priority: 10)\nSilent Background Push: SILENT_BACKGROUND_DATA (Wakes headless JS background task without user banner)\nDelivery Invariant: APNs HTTP/2 multiplexed provider API with JWT authentication`,
+        tryIt: 'Inspect the apns-push-type header and verify it switches between "alert" and "background" depending on payload configuration.',
+        check: {
+          question: 'What is the purpose of setting content-available: 1 and apns-priority: 5 in an APNs push notification?',
+          options: [
+            'It instructs iOS to wake the mobile app in the background to execute data sync tasks without showing a notification banner to the user',
+            'It forces the phone to restart into recovery mode',
+            'It deletes the application data from device storage'
+          ],
+          answer: 0,
+          why: 'Silent push notifications (content-available: 1) grant background execution time to the application, enabling it to pre-fetch data and synchronize caches before the user ever opens the app.'
+        }
+      },
+      {
+        title: 'TurboModules & Native C++ JSI HostObjects',
+        say: [
+          'In legacy React Native architectures, any communication between JavaScript and native iOS/Android code had to cross the asynchronous JSON Bridge.',
+          'Every function call required serializing JavaScript objects into JSON strings, queueing them in a message buffer, context-switching to native worker threads, deserializing JSON, executing the native method, and sending serialized responses back over the same pipeline.',
+          'This JSON serialization overhead incurred 8–15 ms of artificial latency per call, making high-performance tasks like 60 FPS video processing, real-time cryptography, and SQLite querying sluggish.',
+          'The New Architecture replaces the legacy bridge with TurboModules powered by the JavaScript Interface (JSI).',
+          'JSI is a lightweight C++ abstraction layer that exposes native C++ objects—known as HostObjects—directly into the JavaScript engine (Hermes or V8) global runtime context.',
+          'JavaScript functions can now invoke native C++ methods synchronously in under 100 nanoseconds with zero JSON serialization and zero-copy memory access, providing true C++ speed inside React Native.'
+        ],
+        example: 'Think of international diplomacy. The legacy JSON bridge was like communicating via postal letters through an embassy translator (slow serialization, queue delays). JSI TurboModules are like sitting directly across the conference table with an earpiece translator (instantaneous synchronous communication with zero paperwork overhead).',
+        code: `// Simulation: Native C++ JSI TurboModule HostObject Invocation
+class JsiHostObjectSimulator {
+  // Simulates a C++ HostObject registered directly on the Hermes JS global
+  private nativeCryptoState: { initialized: boolean; keySizeBits: number } = {
+    initialized: true,
+    keySizeBits: 256
+  };
+
+  // Synchronous C++ method invocation via JSI (Zero JSON bridge serialization)
+  sha256Hex(inputString: string): { hash: string; elapsedNs: number; zeroCopy: boolean } {
+    let hash = 0x811c9dc5;
+    for (let i = 0; i < inputString.length; i++) {
+      hash ^= inputString.charCodeAt(i);
+      hash = Math.imul(hash, 0x01000193);
+    }
+    const hex = (hash >>> 0).toString(16).padStart(8, '0') + 'c47b892a01ef34ab';
+    return {
+      hash: '0x' + hex,
+      elapsedNs: 85, // Sub-microsecond synchronous execution
+      zeroCopy: true
+    };
+  }
+}
+
+const nativeModule = new JsiHostObjectSimulator();
+const jsiExecution = nativeModule.sha256Hex('PinIT Mobile Payload');
+
+console.log('=== NATIVE C++ JSI TURBOMODULE ZERO-COPY INVOCATION ===');
+console.log('HostObject Binding: global.__NativeCryptoHostObject (Synchronous JSI Pointer)');
+console.log('Execution Latency: ' + jsiExecution.elapsedNs + ' ns (Compared to 8-15 ms on legacy JSON bridge)');
+console.log('Hash Result: ' + jsiExecution.hash);
+console.log('Architecture Guarantee: Zero-copy direct V8/Hermes memory access without thread serialization');`,
+        output: `=== NATIVE C++ JSI TURBOMODULE ZERO-COPY INVOCATION ===\nHostObject Binding: global.__NativeCryptoHostObject (Synchronous JSI Pointer)\nExecution Latency: 85 ns (Compared to 8-15 ms on legacy JSON bridge)\nHash Result: 0x3c8cc3f7c47b892a01ef34ab\nArchitecture Guarantee: Zero-copy direct V8/Hermes memory access without thread serialization`,
+        tryIt: 'Benchmark calling jsiExecution 10,000 times in a tight loop to confirm sub-millisecond cumulative performance.',
+        check: {
+          question: 'How does JSI (JavaScript Interface) eliminate the performance bottleneck of the legacy React Native bridge?',
+          options: [
+            'By exposing native C++ HostObjects directly into the JavaScript engine runtime, allowing synchronous invocations without JSON serialization overhead',
+            'By compiling all JavaScript code into WebAssembly ahead of time',
+            'By running all native code on a remote cloud server'
+          ],
+          answer: 0,
+          why: 'JSI allows JavaScript and native C++ code to hold direct memory pointers to each other. Functions can be called synchronously in nanoseconds without serializing data into JSON strings or dispatching across message queues.'
+        }
+      },
+      {
+        title: 'Deep Linking & Navigation Stack State Restoration',
+        say: [
+          'Deep linking allows mobile applications to be opened directly to specific screens from external web links, marketing emails, or push notifications.',
+          'Modern mobile standards use Universal Links on iOS (apple-app-site-association) and App Links on Android (assetlinks.json), which use cryptographically verified domain associations to prevent rogue apps from hijacking custom URI schemes.',
+          'When a user clicks https://pinit.os/courses/mobile-dev/day/3, the operating system opens the app and passes the incoming URL.',
+          'However, simply rendering the target screen in isolation creates a broken user experience: when the user taps the top-left "Back" button, the app has nowhere to navigate and may exit or freeze.',
+          'Production mobile navigation engines (such as React Navigation) parse incoming URLs into a complete hierarchical Navigation Stack State Tree.',
+          'By mounting the parent hierarchy—Home -> CourseOverview -> LessonDetail—the app ensures that back gestures and navigation breadcrumbs operate smoothly and intuitively.'
+        ],
+        example: 'Think of opening an encyclopedia to a specific page. If a teacher points you to Chapter 4, Section 3 (deep link), they don\'t tear the page out of the book and hand it to you in isolation. They open the full book with Chapters 1, 2, and 3 sitting underneath, so you can easily flip back to the table of contents at any moment.',
+        code: `// Simulation: Deep Linking & Hierarchical Navigation Stack Restoration
+interface RouteDefinition {
+  name: string;
+  params?: Record<string, string>;
+}
+
+class DeepLinkRouter {
+  parseUniversalLink(url: string): { matched: boolean; path: string; stack: RouteDefinition[] } {
+    const parsed = new URL(url);
+    const path = parsed.pathname;
+
+    // Pattern: /courses/:courseId/day/:dayNumber
+    const match = path.match(/^\\/courses\\/([^/]+)\\/day\\/(\\d+)$/);
+    if (match) {
+      const courseId = match[1];
+      const day = match[2];
+      return {
+        matched: true,
+        path,
+        stack: [
+          { name: 'Home' },
+          { name: 'CourseOverview', params: { courseId } },
+          { name: 'LessonDetail', params: { courseId, day } }
+        ]
+      };
+    }
+    return { matched: false, path, stack: [{ name: 'Home' }] };
+  }
+}
+
+const linkRouter = new DeepLinkRouter();
+const incomingLink = 'https://pinit.os/courses/mobile-dev/day/3';
+const navigationResolution = linkRouter.parseUniversalLink(incomingLink);
+
+console.log('=== DEEP LINKING & NAVIGATION STACK STATE RESTORATION ===');
+console.log('Incoming Universal Link: ' + incomingLink);
+console.log('Pattern Matched: ' + navigationResolution.matched + ' for ' + navigationResolution.path);
+console.log('Restored Stack Depth: ' + navigationResolution.stack.length + ' routes');
+console.log('Stack Tree: ' + navigationResolution.stack.map(r => r.name).join(' -> '));
+console.log('Target Route Params: ' + JSON.stringify(navigationResolution.stack[2].params));`,
+        output: `=== DEEP LINKING & NAVIGATION STACK STATE RESTORATION ===\nIncoming Universal Link: https://pinit.os/courses/mobile-dev/day/3\nPattern Matched: true for /courses/mobile-dev/day/3\nRestored Stack Depth: 3 routes\nStack Tree: Home -> CourseOverview -> LessonDetail\nTarget Route Params: {"courseId":"mobile-dev","day":"3"}`,
+        tryIt: 'Modify the router to support query parameter parsing for promotional tracking (?ref=push_notif).',
+        check: {
+          question: 'Why should mobile deep linking restore an entire navigation stack hierarchy rather than just rendering the destination screen?',
+          options: [
+            'To preserve user navigation continuity so tapping "Back" navigates up the logical parent hierarchy instead of closing the app',
+            'Because React Native cannot render single screens without parent wrappers',
+            'To double the memory usage of the mobile application'
+          ],
+          answer: 0,
+          why: 'Restoring the full navigation stack hierarchy (Home -> Course -> Lesson) guarantees that hardware back gestures and UI back buttons function predictably, returning users to higher-level application screens.'
+        }
+      },
+      {
+        title: 'Secure Enclave Cryptographic Key Attestation & Biometric Hardware Gating',
+        say: [
+          'Enterprise mobile security requires hardware-backed protection for cryptographic secrets to protect against memory inspection and rooting exploits.',
+          'Mobile operating systems feature dedicated hardware security modules: the Apple Secure Enclave on iOS and the Android Keystore with StrongBox Keymaster on Android.',
+          'These chips are physically isolated hardware co-processors equipped with their own CPU, secure boot ROM, and internal cryptographic accelerators.',
+          'When an app creates a cryptographic keypair (such as an Elliptic Curve P-256 pair) inside the Secure Enclave, the private key is generated inside the chip and can never be exported or read by iOS or Android operating system RAM.',
+          'Furthermore, developers can configure keys with Biometric Access Control flags (kSecAccessControlBiometryCurrentSet / BIOMETRIC_STRONG): the hardware chip will physically refuse to sign data unless the biometric sensor confirms the user\'s biometric signature.',
+          'When authenticating against an API server, the backend issues an authentication challenge nonce; the mobile app prompts for Face ID / Fingerprint and signs the nonce entirely inside the hardware chip, achieving military-grade zero-trust authentication.'
+        ],
+        example: 'Think of a secure bank safe with an internal notary. You slip a document through a small slot in the safe wall (challenge nonce). The notary inside requires you to press your thumb against a scanner on the safe door (biometric gate). Once verified, the notary stamps the document inside and slips it back out (digital signature). At no point does the private wax seal ever leave the safe.',
+        code: `// Simulation: Secure Enclave Cryptographic Key Attestation & Biometric Gating
+class SecureEnclaveAuthenticator {
+  private keyPairGenerated: boolean = false;
+  private keyAlias: string;
+
+  constructor(keyAlias: string) {
+    this.keyAlias = keyAlias;
+    this.keyPairGenerated = true;
+  }
+
+  // Signs auth challenge inside hardware chip using ECC P-256 private key
+  signAuthChallenge(challengeNonce: string, biometricAuthPassed: boolean): {
+    authorized: boolean;
+    signatureHex?: string;
+    error?: string;
+  } {
+    if (!biometricAuthPassed) {
+      return { authorized: false, error: 'User canceled or failed Face ID / Biometric challenge' };
+    }
+
+    // Hardware co-processor signs nonce with private key that never leaves chip
+    let sigHash = 0;
+    for (let i = 0; i < challengeNonce.length; i++) {
+      sigHash = (sigHash << 5) - sigHash + challengeNonce.charCodeAt(i);
+      sigHash |= 0;
+    }
+    const signatureHex = '3045022100' + Math.abs(sigHash).toString(16).padStart(16, '0') + '02204a9f8e12b7';
+    return { authorized: true, signatureHex };
+  }
+}
+
+const enclaveAuth = new SecureEnclaveAuthenticator('com.pinit.auth.keypair');
+const nonce = 'session_challenge_987234';
+const failedAuth = enclaveAuth.signAuthChallenge(nonce, false);
+const successAuth = enclaveAuth.signAuthChallenge(nonce, true);
+
+console.log('=== SECURE ENCLAVE HARDWARE BIOMETRIC AUTHENTICATION ===');
+console.log('Hardware Target: Apple Secure Enclave / Android StrongBox (P-256 ECC)');
+console.log('Attempt 1 (No Biometrics): ' + failedAuth.error);
+console.log('Attempt 2 (Biometric Gate Passed): SUCCESS (Hardware Signature Produced)');
+console.log('ECDSA Signature: ' + successAuth.signatureHex?.slice(0, 32) + '...');
+console.log('Cryptographic Invariant: Private key never touches Android/iOS application heap or AsyncStorage');`,
+        output: `=== SECURE ENCLAVE HARDWARE BIOMETRIC AUTHENTICATION ===\nHardware Target: Apple Secure Enclave / Android StrongBox (P-256 ECC)\nAttempt 1 (No Biometrics): User canceled or failed Face ID / Biometric challenge\nAttempt 2 (Biometric Gate Passed): SUCCESS (Hardware Signature Produced)\nECDSA Signature: 3045022100000000004c1ee40002204a...\nCryptographic Invariant: Private key never touches Android/iOS application heap or AsyncStorage`,
+        tryIt: 'Change the nonce string and observe how the hardware cryptographic signature dynamically changes.',
+        check: {
+          question: 'What guarantees that an attacker with root access cannot extract a private key stored in the Apple Secure Enclave or Android StrongBox?',
+          options: [
+            'The private key is generated and stored inside a physically isolated hardware co-processor, and its circuitry physically lacks an export bus for private key bytes',
+            'The private key is hidden in the phone wallpaper',
+            'Root users are automatically blocked by the phone camera'
+          ],
+          answer: 0,
+          why: 'Hardware security modules are separate silicon chips with dedicated RAM and crypto engines. The operating system kernel can only submit data to be signed; it physically cannot read the private key bits.'
+        }
+      }
+    ],
+    summary: [
+      'CRDT LWW-Element-Sets enable offline multi-device synchronization that converges deterministically without central write locks.',
+      'APNs and FCM deliver remote push notifications, with silent background payloads waking headless tasks for data sync.',
+      'JSI TurboModules expose native C++ HostObjects directly into the JavaScript runtime, executing synchronous calls in nanoseconds.',
+      'Deep linking engines parse Universal Links into complete navigation stack hierarchies to preserve back navigation continuity.',
+      'Hardware Secure Enclaves protect P-256 ECC private keys behind biometric sensors, signing challenge nonces without exposing secrets to RAM.'
+    ],
+    projectStep: {
+      title: 'Architect an Offline-First Enterprise Mobile Core with CRDTs & Secure Enclave',
+      steps: [
+        'Build an LWW-Element-Set CRDT replication module supporting concurrent offline additions and removals.',
+        'Configure an APNs/FCM push notification router with silent background wakeups for cache synchronization.',
+        'Implement a custom C++ JSI HostObject providing synchronous cryptographic hashing to the Hermes engine.',
+        'Construct a Universal Link deep routing pipeline that builds hierarchical navigation stack trees.',
+        'Implement a Secure Enclave biometric challenge signing handler for zero-trust authentication.'
+      ]
+    }
   }
 ];
+

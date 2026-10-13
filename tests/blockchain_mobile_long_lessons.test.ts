@@ -170,3 +170,43 @@ test('Mobile Day 2: Fabric Renderer, Reanimated Worklets, WatermelonDB & Biometr
   assert.ok(mobileLesson2.parts[4].code?.includes('SecureEnclaveVault'));
   assert.ok(mobileLesson2.parts[4].output?.includes('HARDWARE SECURE ENCLAVE & BIOMETRIC STORAGE'));
 });
+
+test('Mobile Day 3: Offline CRDTs, Push Notifications, JSI TurboModules & Enclave Verification', () => {
+  const mobileLesson3 = getLongLesson('mobile', 3);
+  assert.ok(mobileLesson3, 'mobile Day 3 must resolve');
+  assert.equal(mobileLesson3.day, 3);
+  assert.equal(mobileLesson3.parts.length, 5, 'mobile Day 3 must contain exactly 5 parts');
+  assert.ok(mobileLesson3.summary.length >= 4, 'mobile Day 3 must have comprehensive summary');
+  assert.ok(mobileLesson3.projectStep, 'mobile Day 3 must have projectStep');
+  assert.ok(mobileLesson3.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  for (let i = 0; i < mobileLesson3.parts.length; i++) {
+    const part = mobileLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have >= 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(mobileLesson3.parts[0].code?.includes('LwwElementSetSimulator'));
+  assert.ok(mobileLesson3.parts[0].output?.includes('CRDT LWW-ELEMENT-SET REPLICATION'));
+  assert.ok(mobileLesson3.parts[1].code?.includes('PushNotificationRouter'));
+  assert.ok(mobileLesson3.parts[1].output?.includes('PUSH NOTIFICATIONS: APNS & FCM ROUTING'));
+  assert.ok(mobileLesson3.parts[2].code?.includes('JsiHostObjectSimulator'));
+  assert.ok(mobileLesson3.parts[2].output?.includes('NATIVE C++ JSI TURBOMODULE ZERO-COPY INVOCATION'));
+  assert.ok(mobileLesson3.parts[3].code?.includes('DeepLinkRouter'));
+  assert.ok(mobileLesson3.parts[3].output?.includes('DEEP LINKING & NAVIGATION STACK STATE RESTORATION'));
+  assert.ok(mobileLesson3.parts[4].code?.includes('SecureEnclaveAuthenticator'));
+  assert.ok(mobileLesson3.parts[4].output?.includes('SECURE ENCLAVE HARDWARE BIOMETRIC AUTHENTICATION'));
+});
+
