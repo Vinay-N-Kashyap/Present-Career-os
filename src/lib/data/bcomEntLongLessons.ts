@@ -1149,5 +1149,376 @@ Status: TERM SHEET FINANCIAL & LEGAL GOVERNANCE READY FOR PARTNER VOTE.`,
         'Audit corporate governance terms, protective provisions, and drag-along thresholds against NVCA market standards.'
       ]
     }
+  },
+  {
+    coursePrefix: 'bcom_ent',
+    day: 4,
+    title: 'Unit Economics at Scale: Rule of 40, Burn Multiple & Growth Stage Capital Efficiency',
+    overview: 'Master the financial disciplines governing venture-backed startups scaling from Series A to Series B and beyond. You will evaluate SaaS capital efficiency through the Rule of 40 and Magic Number metrics, analyze burn multiples to extend zero-cash runway, model customer lifetime value (LTV) and multi-year cohort contribution margins, engineer a bottom-up 24-month financial model linking headcount capacity to ARR targets, and deploy an integrated growth stage venture economics control tower.',
+    parts: [
+      {
+        title: 'SaaS Rule of 40 & Magic Number Capital Efficiency',
+        say: [
+          'In early-stage venture capital, investors tolerate high cash burn in pursuit of rapid user adoption and product-market fit. However, as startups mature into growth stage Series B and C rounds, top-tier venture capitalists and growth equity funds demand proven capital efficiency. The preeminent benchmark for evaluating growth-stage software companies is the Rule of 40, which posits that a healthy software company\'s annual revenue growth rate plus its free cash flow (FCF) margin should equal or exceed 40.0%.',
+          'The Rule of 40 provides founders with strategic flexibility to trade off growth against profitability according to market conditions. An elite hyper-growth company growing at 65% year-over-year with a -15% FCF margin scores 50.0%, easily beating the Rule of 40 because rapid market capture justifies temporary operational cash burn. Similarly, a mature enterprise business growing at 32% with an 18% FCF margin also achieves 50.0%, signaling strong cash generation. In contrast, a struggling startup growing at only 12% while burning -22% FCF scores -10.0%, indicating broken unit economics that will fail investor due diligence.',
+          'To assess sales and marketing efficiency specifically, growth investors track the SaaS Magic Number. The Magic Number is calculated as (Quarterly Net New ARR * 4) divided by Sales and Marketing Spend from the prior quarter. A Magic Number exceeding 1.0 indicates exceptional acquisition efficiency, signaling to the board that the company should immediately pour additional capital into marketing and sales rep hiring. A score between 0.75 and 1.0 represents healthy performance, while a score below 0.75 mandates pulling back on burn to fix sales conversion leakages.'
+        ],
+        example: 'Hyper-Growth Cloud delivers 65% revenue growth with a -15% FCF margin, achieving a 50.0% Rule of 40 score. Generating $2.2M in net new ARR against $1.8M in prior S&M spend yields a 4.89 Magic Number, signaling an urgent recommendation to accelerate go-to-market spending.',
+        code: `def evaluate_rule_of_40_and_magic_number():
+    profiles = [
+        {"name": "Hyper-Growth Cloud", "growth_rate": 0.65, "fcf_margin": -0.15, "q_net_arr": 2200000.0, "prior_sm_spend": 1800000.0},
+        {"name": "Balanced Enterprise", "growth_rate": 0.32, "fcf_margin": 0.18, "q_net_arr": 1100000.0, "prior_sm_spend": 1200000.0},
+        {"name": "Distressed Startup", "growth_rate": 0.12, "fcf_margin": -0.22, "q_net_arr": 300000.0, "prior_sm_spend": 950000.0}
+    ]
+
+    print("SaaS Rule of 40 & Magic Number Capital Efficiency:")
+    results = []
+    for p in profiles:
+        rule_of_40 = (p["growth_rate"] + p["fcf_margin"]) * 100
+        # Magic Number = (Quarterly Net New ARR * 4) / Prior Quarter S&M Spend
+        magic_number = (p["q_net_arr"] * 4.0) / p["prior_sm_spend"]
+
+        r40_status = "ELITE_EFFICIENCY" if rule_of_40 >= 40.0 else "SUB_BENCHMARK"
+        mn_status = "ACCELERATE_SPEND" if magic_number >= 1.0 else "HEALTHY" if magic_number >= 0.75 else "REDUCE_BURN"
+
+        print(f"  {p['name']}: Growth={p['growth_rate']*100:.1f}% | FCF Margin={p['fcf_margin']*100:.1f}%")
+        print(f"    Rule of 40 Score: {rule_of_40:.1f}% ({r40_status}) | Magic Number: {magic_number:.2f} ({mn_status})")
+        results.append({"name": p["name"], "rule_of_40": rule_of_40, "magic_number": magic_number})
+
+    return results
+
+evaluate_rule_of_40_and_magic_number()`,
+        output: `SaaS Rule of 40 & Magic Number Capital Efficiency:
+  Hyper-Growth Cloud: Growth=65.0% | FCF Margin=-15.0%
+    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 4.89 (ACCELERATE_SPEND)
+  Balanced Enterprise: Growth=32.0% | FCF Margin=18.0%
+    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 3.67 (ACCELERATE_SPEND)
+  Distressed Startup: Growth=12.0% | FCF Margin=-22.0%
+    Rule of 40 Score: -10.0% (SUB_BENCHMARK) | Magic Number: 1.26 (ACCELERATE_SPEND)`,
+        codeNotes: [
+          'Calculates Rule of 40 by summing annual percentage revenue growth and FCF profit margins.',
+          'Computes the SaaS Magic Number by annualizing quarterly net new ARR over prior-quarter S&M expenses.',
+          'Demonstrates how capital-efficient growth commands premium valuation multiples from growth equity investors.'
+        ],
+        tryIt: 'Adjust Hyper-Growth Cloud FCF margin to -35% to see its Rule of 40 score drop to 30.0%, breaching institutional efficiency thresholds.',
+        check: {
+          question: 'Under the SaaS Rule of 40, why is a company growing at 70% with a -20% free cash flow margin considered an elite performer?',
+          options: [
+            'Because 70% + (-20%) = 50%, which significantly exceeds the 40% efficiency hurdle, proving that high top-line growth justifies temporary cash burn',
+            'Because venture capital funds prohibit companies from generating positive cash flow until they file for IPO',
+            'Because burning cash reduces federal corporate income taxes to zero',
+            'Because growth rates below 80% are automatically disqualified by NASDAQ exchanges'
+          ],
+          answer: 0,
+          why: 'The Rule of 40 recognizes that hyper-growth compensates for negative margins; a combined score of 50% indicates highly attractive venture capital unit economics.',
+          answerIndex: 0,
+          explanation: 'The Rule of 40 recognizes that hyper-growth compensates for negative margins; a combined score of 50% indicates highly attractive venture capital unit economics.'
+        }
+      },
+      {
+        title: 'Burn Multiple & Cash Runway Physics Under Macro Volatility',
+        say: [
+          'In macroeconomic downturns where venture capital fundraising cycles freeze, high-burn startups face catastrophic insolvency if they cannot control their cash consumption. Rather than simply evaluating gross burn rate, modern venture investors analyze the Burn Multiple—a metric popularized by Craft Ventures that measures how much cash a startup consumes to generate each incremental dollar of Annual Recurring Revenue.',
+          'The Burn Multiple is calculated as Net Burn (cash consumed from operations) divided by Net New ARR Added over the same period. Unlike high-level vanity metrics, the burn multiple directly exposes operating efficiency: a Burn Multiple under 1.0x is considered amazing (the startup burns less than $1 to add $1 of ARR), 1.0x to 1.5x is good, 1.5x to 2.0x is suspect, and exceeding 2.0x indicates dangerously inefficient operations that will rapidly deplete cash reserves.',
+          'Dividing total bank cash by net monthly burn calculates the Zero-Cash Date runway in months. For example, a company with $12,000,000 in cash burning $4,800,000 annually ($400,000/month) while adding $3,200,000 in net new ARR delivers a healthy 1.50x Burn Multiple and 30.0 months of runway (2.5 years). Maintaining at least 24 to 30 months of runway shields founders from having to raise dilutive bridge rounds during macroeconomic fundraising contractions.'
+        ],
+        example: 'A venture startup holds $12,000,000 in cash, burns $4,800,000 annually ($400k/month), and adds $3,200,000 in net new ARR. The resulting 1.50x Burn Multiple qualifies as Good efficiency, providing 30.0 months of runway to hit growth targets.',
+        code: `def calculate_burn_multiple_and_runway():
+    cash_balance = 12000000.0   # $12,000,000 in bank
+    annual_net_burn = 4800000.0 # Consumed $4.8M net cash in year
+    annual_net_new_arr = 3200000.0 # Added $3.2M net new ARR
+
+    # Burn Multiple = Net Burn / Net New ARR
+    burn_multiple = annual_net_burn / annual_net_new_arr
+    monthly_net_burn = annual_net_burn / 12.0 # $400,000/month
+    runway_months = cash_balance / monthly_net_burn
+
+    status = "AMAZING" if burn_multiple < 1.0 else "GOOD" if burn_multiple <= 1.5 else "SUSPECT" if burn_multiple <= 2.0 else "DANGEROUS"
+
+    print("Burn Multiple & Cash Runway Physics:")
+    print("  Cash in Bank: " + "$" + f"{cash_balance:,.2f}")
+    print("  Annual Net Cash Burn: " + "$" + f"{annual_net_burn:,.2f}" + " (" + "$" + f"{monthly_net_burn:,.2f}" + " / month)")
+    print("  Net New ARR Added: " + "$" + f"{annual_net_new_arr:,.2f}")
+    print(f"  Burn Multiple: {burn_multiple:.2f}x ({status}) (Benchmark: < 1.5x)")
+    print(f"  Remaining Zero-Cash Runway: {runway_months:.1f} months ({runway_months/12:.2f} years)")
+    return {"burn_multiple": burn_multiple, "runway_months": runway_months}
+
+calculate_burn_multiple_and_runway()`,
+        output: `Burn Multiple & Cash Runway Physics:
+  Cash in Bank: $12,000,000.00
+  Annual Net Cash Burn: $4,800,000.00 ($400,000.00 / month)
+  Net New ARR Added: $3,200,000.00
+  Burn Multiple: 1.50x (GOOD) (Benchmark: < 1.5x)
+  Remaining Zero-Cash Runway: 30.0 months (2.50 years)`,
+        codeNotes: [
+          'Calculates Burn Multiple by dividing net operating cash burn ($4.8M) by net new ARR added ($3.2M).',
+          'Computes zero-cash runway by dividing cash balance ($12.0M) by monthly net burn ($400k).',
+          'Confirms 30.0 months of runway, ensuring the company can execute without urgent fundraising pressure.'
+        ],
+        tryIt: 'Increase net burn to $8,000,000 while holding net new ARR constant to observe a 2.50x Dangerous Burn Multiple and runway drop to 18 months.',
+        check: {
+          question: 'What does a Burn Multiple of 3.0x indicate about a venture-backed growth startup?',
+          options: [
+            'The company is burning $3.00 of net operating cash for every $1.00 of net new ARR generated, signaling severely inefficient capital allocation',
+            'The company\'s stock price has tripled on secondary venture markets',
+            'The company has three years of cash remaining in its treasury reserves',
+            'The startup is legally required to distribute 30% dividends to common stockholders'
+          ],
+          answer: 0,
+          why: 'A 3.0x burn multiple reveals severe capital inefficiency, burning three dollars of invested capital to generate a single dollar of recurring revenue.',
+          answerIndex: 0,
+          explanation: 'A 3.0x burn multiple reveals severe capital inefficiency, burning three dollars of invested capital to generate a single dollar of recurring revenue.'
+        }
+      },
+      {
+        title: 'Cohort Contribution Margin & Customer Lifetime Value (LTV / CAC) Dynamics',
+        say: [
+          'Unit economics provide the foundational bedrock upon which enterprise scale is built. In venture finance, no metric is more scrutinized than the Customer Lifetime Value to Customer Acquisition Cost (LTV / CAC) ratio. Customer Lifetime Value measures the total gross profit an average customer contributes over their entire relationship with the company, calculated as (Annual Contract Value * Gross Margin %) / Annual Churn Rate.',
+          'Venture capital investors expect high-growth software companies to maintain an LTV / CAC ratio between 3.0x and 5.0x. An LTV / CAC below 3.0x signals an unsustainable business model where marketing spend outstrips lifetime value, while an LTV / CAC exceeding 5.0x often indicates that the company is being overly conservative and under-investing in acquisition, leaving market share vulnerable to aggressive competitors.',
+          'To model the cash profile of customer acquisition, founders construct multi-year cohort contribution waterfalls. For a cohort of 100 enterprise customers acquired at an $18,000 CAC ($1,800,000 Month 0 investment) with an $24,000 ACV, 80% gross margin, and 8% annual churn, Year 1 gross profit contribution reaches $1,920,000, paying back the entire CAC investment in 11.2 months. Over three years, cumulative gross profit reaches $5,311,488, generating $3,511,488 in net cash contribution and proving sustainable unit economics.'
+        ],
+        example: 'With $24,000 ACV, 80% gross margin, 8% churn, and $18,000 CAC, the startup achieves a $240,000 LTV, a 13.33x LTV/CAC ratio, and an 11.2-month CAC payback. A 100-customer cohort ($1.8M CAC) produces $5.31M in 3-year gross profit ($3.51M net profit).',
+        code: `def model_ltv_cac_and_cohort_contribution():
+    arpu_annual = 24000.0 # $24,000 ACV
+    gross_margin = 0.80   # 80% software gross margin
+    churn_rate = 0.08     # 8% annual logo churn
+    cac = 18000.0         # $18,000 fully loaded CAC
+
+    # LTV = (ARPU * Gross Margin) / Churn
+    ltv = (arpu_annual * gross_margin) / churn_rate
+    ltv_cac_ratio = ltv / cac
+    cac_payback_months = (cac / ((arpu_annual * gross_margin) / 12.0))
+
+    # 3-Year Cumulative Gross Profit from a cohort of 100 customers
+    customers = 100
+    m0_cac_investment = customers * cac # $1,800,000
+    y1_gp = customers * (arpu_annual * gross_margin) # $1,920,000
+    y2_gp = (customers * (1 - churn_rate)) * (arpu_annual * gross_margin) # $1,766,400
+    y3_gp = (customers * ((1 - churn_rate) ** 2)) * (arpu_annual * gross_margin) # $1,625,088
+    total_gp = y1_gp + y2_gp + y3_gp
+    net_cohort_contribution = total_gp - m0_cac_investment
+
+    print("Customer Lifetime Value (LTV) & Unit Economics:")
+    print("  Annual Contract Value (ARPU): " + "$" + f"{arpu_annual:,.2f}" + f" | Gross Margin: {gross_margin*100:.0f}%")
+    print("  Customer Lifetime Value (LTV): " + "$" + f"{ltv:,.2f}")
+    print("  Fully Loaded CAC: " + "$" + f"{cac:,.2f}")
+    print(f"  LTV / CAC Ratio: {ltv_cac_ratio:.2f}x (Benchmark: 3.0x - 5.0x)")
+    print(f"  CAC Payback Period: {cac_payback_months:.1f} months")
+    print("3-Year Cohort Contribution (100 Customers):")
+    print("  Initial Month 0 CAC Investment: " + "$" + f"{m0_cac_investment:,.2f}")
+    print("  3-Year Cumulative Gross Profit: " + "$" + f"{total_gp:,.2f}")
+    print("  Net Cumulative Cohort Profit: " + "$" + f"{net_cohort_contribution:,.2f}")
+    return {"ltv_cac": ltv_cac_ratio, "payback": cac_payback_months, "net_contribution": net_cohort_contribution}
+
+model_ltv_cac_and_cohort_contribution()`,
+        output: `Customer Lifetime Value (LTV) & Unit Economics:
+  Annual Contract Value (ARPU): $24,000.00 | Gross Margin: 80%
+  Customer Lifetime Value (LTV): $240,000.00
+  Fully Loaded CAC: $18,000.00
+  LTV / CAC Ratio: 13.33x (Benchmark: 3.0x - 5.0x)
+  CAC Payback Period: 11.2 months
+3-Year Cohort Contribution (100 Customers):
+  Initial Month 0 CAC Investment: $1,800,000.00
+  3-Year Cumulative Gross Profit: $5,311,488.00
+  Net Cumulative Cohort Profit: $3,511,488.00`,
+        codeNotes: [
+          'Calculates true LTV ($240,000) using gross margin percentage rather than raw revenues.',
+          'Determines that CAC payback occurs in 11.2 months, recovering initial acquisition capital in Year 1.',
+          'Demonstrates how cohort gross profit compounds to $5.31M over 3 years, generating $3.51M net cash.'
+        ],
+        tryIt: 'Increase churn rate from 8% to 15% to evaluate how customer attrition cuts LTV to $128,000 and reduces net cohort profit by $1.2M.',
+        check: {
+          question: 'Why must Customer Lifetime Value (LTV) be calculated using Gross Margin rather than Top-Line Revenue?',
+          options: [
+            'Because revenue that is consumed by server hosting, customer support, and software delivery costs cannot be used to pay for customer acquisition costs',
+            'Because federal banking laws prohibit software companies from counting gross revenue',
+            'Because top-line revenue is always zero during the first five years of operations',
+            'Because venture capital funds only invest in companies with zero customer acquisition costs'
+          ],
+          answer: 0,
+          why: 'True lifetime value represents gross profit generated by a customer; using revenue overstates LTV by ignoring the ongoing direct cost to serve the customer.',
+          answerIndex: 0,
+          explanation: 'True lifetime value represents gross profit generated by a customer; using revenue overstates LTV by ignoring the ongoing direct cost to serve the customer.'
+        }
+      },
+      {
+        title: 'Series B Financial Model Engineering: Bottom-Up Revenue Build & Headcount Quota Capacity',
+        say: [
+          'When presenting to Series B lead investors, founders cannot rely on top-down market sizing ("if we capture 1% of a $50B market"). Institutional growth funds conduct exhaustive financial due diligence requiring an operational bottom-up revenue build grounded in headcount capacity, quota attainment, and customer retention dynamics.',
+          'A credible bottom-up financial model begins with sales capacity: projecting the hiring and ramp schedule of Account Executives (AEs). For a company scaling from $6.0M ARR, deploying 12 AEs with $800,000 individual annual quotas at a conservative 75% blended attainment yields $7,200,000 in gross new bookings capacity. Incorporating installed base dynamics—8% logo churn (-$480k) offset by 20% expansion (+$1,200k)—projects Year 1 ARR at $13.92M, demonstrating achievable operational scaling.',
+          'Simultaneously, the model allocates operating expenses across functional cost centers: allocating 35% of an annual $10M budget to R&D engineering ($3.5M) to maintain product differentiation, 45% to Sales and Marketing ($4.5M) to drive quota-carrying demand, and 20% to G&A ($2.0M) for legal, finance, and operational overhead. Aligning headcount capacity with financial budgets validates executive operational competence.'
+        ],
+        example: 'Scaling from $6.0M ARR, 12 AEs at $800k quota and 75% attainment generate $7.2M in new bookings capacity, which net of 8% churn and 20% expansion projects robust ARR growth supported by a balanced $10M operating budget (35% R&D, 45% S&M, 20% G&A).',
+        code: `def build_series_b_financial_model():
+    # 24-Month Projections: Beginning ARR $6.0M scaling to $18.0M
+    starting_arr = 6000000.0
+    y1_target_arr = 11000000.0
+    y2_target_arr = 18000000.0
+
+    # Headcount Capacity
+    y1_aes = 12
+    ae_quota = 800000.0
+    blended_attainment = 0.75 # 75% realistic quota attainment
+    y1_new_capacity = y1_aes * ae_quota * blended_attainment # $7,200,000 capacity
+    installed_churn = starting_arr * 0.08 # $480k churn
+    installed_expansion = starting_arr * 0.20 # $1,200k expansion
+    y1_projected_arr = starting_arr + y1_new_capacity - installed_churn + installed_expansion # $13.92M
+
+    # Opex Distribution for Year 1 ($10M total budget)
+    total_opex = 10000000.0
+    rd_spend = total_opex * 0.35 # $3.5M (35%)
+    sm_spend = total_opex * 0.45 # $4.5M (45%)
+    ga_spend = total_opex * 0.20 # $2.0M (20%)
+
+    print("Series B Bottom-Up Financial Plan (24-Month Build):")
+    print("  Current ARR: " + "$" + f"{starting_arr:,.2f}")
+    print("  Year 1 Quota Capacity: " + "$" + f"{y1_new_capacity:,.2f}" + f" ({y1_aes} AEs at {blended_attainment*100:.0f}% Attainment)")
+    print("  Year 1 Net Expansion: " + "$" + f"{installed_expansion - installed_churn:,.2f}" + " (20% Expansion, 8% Churn)")
+    print("  Operating Expenditure Allocation: " + "$" + f"{total_opex:,.2f}")
+    print("    R&D Engineering (35%): " + "$" + f"{rd_spend:,.2f}")
+    print("    Sales & Marketing (45%): " + "$" + f"{sm_spend:,.2f}")
+    print("    General & Admin (20%): " + "$" + f"{ga_spend:,.2f}")
+    return {"capacity": y1_new_capacity, "sm_spend": sm_spend}
+
+build_series_b_financial_model()`,
+        output: `Series B Bottom-Up Financial Plan (24-Month Build):
+  Current ARR: $6,000,000.00
+  Year 1 Quota Capacity: $7,200,000.00 (12 AEs at 75% Attainment)
+  Year 1 Net Expansion: $720,000.00 (20% Expansion, 8% Churn)
+  Operating Expenditure Allocation: $10,000,000.00
+    R&D Engineering (35%): $3,500,000.00
+    Sales & Marketing (45%): $4,500,000.00
+    General & Admin (20%): $2,000,000.00`,
+        codeNotes: [
+          'Builds revenue capacity from bottom-up sales rep headcount (12 AEs) and 75% realistic attainment.',
+          'Accounts for installed base dynamics (20% expansion, 8% churn) yielding $720k net expansion.',
+          'Structures functional opex budget across R&D ($3.5M), S&M ($4.5M), and G&A ($2.0M).'
+        ],
+        tryIt: 'Adjust AE attainment to 60% to evaluate how hiring delays or ramp frictions impact Year 1 bookings capacity.',
+        check: {
+          question: 'Why do institutional Series B investors mandate bottom-up financial models based on headcount and quota rather than top-down percentages?',
+          options: [
+            'Because bottom-up models prove that revenue targets are mathematically achievable through realistic hiring, quota attainment, and customer retention dynamics',
+            'Because bottom-up models are legally required by federal securities exchanges for all private companies',
+            'Because top-down financial models require executive approval from the Department of Commerce',
+            'Because bottom-up models allow companies to fire all marketing personnel'
+          ],
+          answer: 0,
+          why: 'Bottom-up models validate operational feasibility by tying revenue targets to concrete hiring schedules, quota productivity, and customer retention metrics.',
+          answerIndex: 0,
+          explanation: 'Bottom-up models validate operational feasibility by tying revenue targets to concrete hiring schedules, quota productivity, and customer retention metrics.'
+        }
+      },
+      {
+        title: 'Deploy the Growth Stage Venture Economics Control Tower',
+        say: [
+          'Scaling an enterprise venture requires balancing aggressive market expansion with disciplined capital conservation. In this operational capstone module, you will deploy the Growth Stage Venture Economics Control Tower.',
+          'You will synthesize Rule of 40 growth-profitability profiles, evaluate the SaaS Magic Number to guide GTM spend, calculate the Burn Multiple to extend cash runway, model multi-year cohort contribution gross profits, and validate 24-month bottom-up hiring capacity models.',
+          'Deploying this control tower equips entrepreneurs and venture capital investors with the financial rigor required to successfully lead and navigate Series B growth rounds.'
+        ],
+        example: 'The team verifies a 50.0% Rule of 40 score, confirms a Good 1.50x Burn Multiple with 30.0 months of runway, validates an outstanding 13.33x LTV/CAC ratio with 11.2-month payback, and certifies $7.2M in bottom-up AE bookings capacity.',
+        code: `def run_venture_economics_control_tower():
+    print("=== PinIT Career OS Growth Stage Venture Economics Control Tower ===")
+    print("--- 1. Rule of 40 & Magic Number ---")
+    r40 = evaluate_rule_of_40_and_magic_number()
+
+    print("\n--- 2. Burn Multiple & Cash Runway ---")
+    bm = calculate_burn_multiple_and_runway()
+
+    print("\n--- 3. LTV/CAC & Cohort Economics ---")
+    ltv = model_ltv_cac_and_cohort_contribution()
+
+    print("\n--- 4. Series B Financial Plan ---")
+    sb = build_series_b_financial_model()
+
+    print("\n--- 5. Growth Stage Venture Synthesis ---")
+    print(f"  Flagship Profile Rule of 40: {r40[0]['rule_of_40']:.1f}%")
+    print(f"  Portfolio Burn Multiple: {bm['burn_multiple']:.2f}x ({bm['runway_months']:.1f} months runway)")
+    print(f"  LTV / CAC Efficiency: {ltv['ltv_cac']:.2f}x (Payback: {ltv['payback']:.1f} mo)")
+    print("Status: VENTURE UNIT ECONOMICS CERTIFIED READY FOR SERIES B LEAD INVESTOR AUDIT.")
+
+run_venture_economics_control_tower()`,
+        output: `=== PinIT Career OS Growth Stage Venture Economics Control Tower ===
+--- 1. Rule of 40 & Magic Number ---
+SaaS Rule of 40 & Magic Number Capital Efficiency:
+  Hyper-Growth Cloud: Growth=65.0% | FCF Margin=-15.0%
+    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 4.89 (ACCELERATE_SPEND)
+  Balanced Enterprise: Growth=32.0% | FCF Margin=18.0%
+    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 3.67 (ACCELERATE_SPEND)
+  Distressed Startup: Growth=12.0% | FCF Margin=-22.0%
+    Rule of 40 Score: -10.0% (SUB_BENCHMARK) | Magic Number: 1.26 (ACCELERATE_SPEND)
+
+--- 2. Burn Multiple & Cash Runway ---
+Burn Multiple & Cash Runway Physics:
+  Cash in Bank: $12,000,000.00
+  Annual Net Cash Burn: $4,800,000.00 ($400,000.00 / month)
+  Net New ARR Added: $3,200,000.00
+  Burn Multiple: 1.50x (GOOD) (Benchmark: < 1.5x)
+  Remaining Zero-Cash Runway: 30.0 months (2.50 years)
+
+--- 3. LTV/CAC & Cohort Economics ---
+Customer Lifetime Value (LTV) & Unit Economics:
+  Annual Contract Value (ARPU): $24,000.00 | Gross Margin: 80%
+  Customer Lifetime Value (LTV): $240,000.00
+  Fully Loaded CAC: $18,000.00
+  LTV / CAC Ratio: 13.33x (Benchmark: 3.0x - 5.0x)
+  CAC Payback Period: 11.2 months
+3-Year Cohort Contribution (100 Customers):
+  Initial Month 0 CAC Investment: $1,800,000.00
+  3-Year Cumulative Gross Profit: $5,311,488.00
+  Net Cumulative Cohort Profit: $3,511,488.00
+
+--- 4. Series B Financial Plan ---
+Series B Bottom-Up Financial Plan (24-Month Build):
+  Current ARR: $6,000,000.00
+  Year 1 Quota Capacity: $7,200,000.00 (12 AEs at 75% Attainment)
+  Year 1 Net Expansion: $720,000.00 (20% Expansion, 8% Churn)
+  Operating Expenditure Allocation: $10,000,000.00
+    R&D Engineering (35%): $3,500,000.00
+    Sales & Marketing (45%): $4,500,000.00
+    General & Admin (20%): $2,000,000.00
+
+--- 5. Growth Stage Venture Synthesis ---
+  Flagship Profile Rule of 40: 50.0%
+  Portfolio Burn Multiple: 1.50x (30.0 months runway)
+  LTV / CAC Efficiency: 13.33x (Payback: 11.2 mo)
+Status: VENTURE UNIT ECONOMICS CERTIFIED READY FOR SERIES B LEAD INVESTOR AUDIT.`,
+        codeNotes: [
+          'Unifies Rule of 40, Magic Number, Burn Multiple, LTV/CAC cohort contribution, and bottom-up financial planning.',
+          'Demonstrates how capital-efficient unit economics establish 30.0 months of runway and superior investor attractiveness.',
+          'Validates readiness for institutional Series B growth equity diligence.'
+        ],
+        tryIt: 'Run the integrated control tower to observe how balancing growth, burn, and unit economics secures venture capital backing.',
+        check: {
+          question: 'What combination of metrics signals the strongest financial health to Series B growth equity investors?',
+          options: [
+            'A Rule of 40 score >= 40%, a Burn Multiple <= 1.5x with > 24 months of runway, an LTV/CAC ratio >= 3.0x, and a bottom-up hiring model supporting ARR targets',
+            'A 100% marketing budget allocation with zero investment in engineering product development',
+            'Zero sales quotas and unlimited executive expense accounts',
+            'Raising debt notes with 30% interest rates to fund office expansions'
+          ],
+          answer: 0,
+          why: 'The combination of Rule of 40 >= 40%, Burn Multiple <= 1.5x, strong LTV/CAC, and a grounded bottom-up model represents the gold standard of growth stage venture health.',
+          answerIndex: 0,
+          explanation: 'The combination of Rule of 40 >= 40%, Burn Multiple <= 1.5x, strong LTV/CAC, and a grounded bottom-up model represents the gold standard of growth stage venture health.'
+        }
+      }
+    ],
+    summary: [
+      'Evaluated SaaS capital efficiency using the Rule of 40 (50.0% score for Hyper-Growth Cloud) and SaaS Magic Number (4.89), signaling aggressive go-to-market expansion.',
+      'Modeled Burn Multiple ($4.8M net burn / $3.2M net new ARR = 1.50x) and calculated 30.0 months of zero-cash runway on a $12M cash balance.',
+      'Constructed a 3-year cohort contribution waterfall for 100 enterprise customers ($18k CAC, $24k ACV, 80% GM, 8% churn), proving an 11.2-month CAC payback and $3.51M in cumulative net profit.',
+      'Engineered a bottom-up Series B financial model, tying 12 AEs at $800k quota and 75% attainment to $7.2M new bookings capacity alongside a balanced $10M opex budget.',
+      'Deployed the Growth Stage Venture Economics Control Tower, establishing complete operational readiness for Series B institutional investor due diligence.'
+    ],
+    projectStep: {
+      title: 'Deploy the Growth Stage Venture Economics & Capital Efficiency Engine',
+      steps: [
+        'Calculate Rule of 40 scores and SaaS Magic Numbers across growth profiles to guide go-to-market spending.',
+        'Model the Burn Multiple and simulate cash runway horizons to insulate operations against macro shocks.',
+        'Build a cohort contribution model tracking multi-year gross profit contribution and LTV/CAC payback periods.',
+        'Engineer a bottom-up financial model linking sales capacity, quota attainment, and functional opex budgets.'
+      ]
+    }
   }
 ];

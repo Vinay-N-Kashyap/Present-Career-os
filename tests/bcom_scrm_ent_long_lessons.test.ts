@@ -413,6 +413,70 @@ test('Block 133: B.Com Entrepreneurship Day 3: Option Pool, Liquidation Preferen
   assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
 });
 
+test('Block 134: B.Com Entrepreneurship Day 4: Resolution & Structure Invariants', () => {
+  const lesson = getLongLesson('bcom_ent', 4);
+  assert.ok(lesson, 'bcom_ent Day 4 lesson must be defined');
+  assert.equal(lesson.coursePrefix, 'bcom_ent');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5, 'bcom_ent Day 4 must have exactly 5 parts');
+  assert.equal(getLongLessonLanguage('bcom_ent'), 'python');
+
+  // Realistic duration assertions
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be at least 8 minutes`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be at least 15 minutes`);
+});
+
+test('Block 134: B.Com Entrepreneurship Day 4: Rule of 40, Burn Multiple, LTV/CAC & Series B Model Verification', () => {
+  const lesson = BCOM_ENT_LONG_LESSONS[3];
+  assert.ok(lesson, 'BCOM_ENT_LONG_LESSONS[3] must exist');
+  assert.equal(lesson.day, 4);
+  assert.equal(lesson.parts.length, 5);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && (part.code.includes('def ') || part.code?.includes('class ')), `Part ${i + 1} code must contain Python functions/classes`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have >= 3 codeNotes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length === 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.equal(typeof check.answer, 'number', `Part ${i + 1} answer must be numerical index`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be within options range`);
+    assert.ok(check.why && check.why.length > 0, `Part ${i + 1} check why explanation must be non-empty`);
+    assert.equal(check.answerIndex, check.answer);
+    assert.equal(check.explanation, check.why);
+  }
+
+  // Domain specifics
+  assert.match(lesson.parts[0].title, /Rule of 40.*Magic Number/i);
+  assert.ok(lesson.parts[0].code?.includes('evaluate_rule_of_40_and_magic_number'));
+  assert.match(lesson.parts[1].title, /Burn Multiple.*Runway/i);
+  assert.ok(lesson.parts[1].code?.includes('calculate_burn_multiple_and_runway'));
+  assert.match(lesson.parts[2].title, /Cohort.*LTV.*CAC|LTV.*CAC.*Cohort/i);
+  assert.ok(lesson.parts[2].code?.includes('model_ltv_cac_and_cohort_contribution'));
+  assert.match(lesson.parts[3].title, /Series B.*Financial Model/i);
+  assert.ok(lesson.parts[3].code?.includes('build_series_b_financial_model'));
+  assert.match(lesson.parts[4].title, /Growth Stage Venture Economics/i);
+  assert.ok(lesson.parts[4].code?.includes('run_venture_economics_control_tower'));
+
+  // Metrics & Project step validation
+  assert.ok(lesson.summary && lesson.summary.length >= 4, 'Summary must have >= 4 bullet points');
+  assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, 'projectStep must have title and >= 4 steps');
+  const spoken = estimateSpokenMinutes(lesson);
+  assert.ok(spoken >= 8, `Spoken minutes (${spoken}) must be >= 8`);
+  const total = estimateLessonMinutes(lesson);
+  assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
+});
+
+
 
 
 
