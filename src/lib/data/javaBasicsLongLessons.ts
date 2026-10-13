@@ -368,5 +368,496 @@ console.log('Throughput Scale: 10,000 concurrent web socket requests with under 
         'Profile memory allocation and verify zero socket resource leaks upon completion.'
       ]
     }
+  },
+  {
+    coursePrefix: 'java-basics',
+    day: 2,
+    title: 'Java Memory Model, Collections Architecture & Spring Concurrency Pipelines',
+    goal: 'Master the Java Memory Model (JMM) happens-before guarantees, HashMap internal bucket resizing and treeify thresholds, Streams Spliterator parallel processing, Spring IoC with AOP transactional proxies, and ConcurrentHashMap CAS concurrency.',
+    minutes: 45,
+    recap: 'In Day 1, we mastered JVM bytecode classloading, tiered JIT C2 native compilation, Stack vs Heap memory layout, and Project Loom virtual threads. Now, we dive deep into multi-core CPU memory barriers, collection collision trees, functional parallel streams, Spring IoC AOP proxies, and lock-free CAS pipelines.',
+    parts: [
+      {
+        title: 'Java Memory Model (JMM), Happens-Before Guarantee & Volatile Invariants',
+        say: [
+          'In modern multi-core server hardware, each CPU core maintains its own ultrafast L1 and L2 cache hierarchies alongside write store buffers. When a Java thread writes a variable, the hardware does not immediately write the value to shared main memory; it sits buffered inside the local CPU core cache.',
+          'Without explicit synchronization barriers, another CPU core executing a concurrent worker thread can read a stale, cached value from its own L1 cache for seconds or even indefinitely, causing catastrophic state desynchronization in high-concurrency systems.',
+          'The Java Memory Model (JMM) provides formal architectural guarantees by defining the Happens-Before relationship. A happens-before relationship between two actions ensures that memory writes performed by one action are guaranteed to be visible to the second action.',
+          'Declaring a Java field with the volatile keyword provides two critical runtime semantics: memory visibility and instruction reordering prevention.',
+          'Under the hood, a write to a volatile variable forces the CPU to execute a Store-Load memory barrier (fence instruction). This immediately flushes the core store buffer into main memory and invalidates the cache lines across all other CPU cores via cache coherence bus snooping.',
+          'Furthermore, the JMM guarantees that all writes to regular variables that occur before a volatile write are also flushed and become visible to any thread that subsequent reads that volatile variable, establishing a lightweight synchronization protocol without heavyweight mutex locking.'
+        ],
+        example: 'Think of two accountants working in separate offices. If Accountant A writes an expense total on a personal sticky note on their own desk (L1 cache), Accountant B in the other room has no idea the total changed and continues using last week ledger (stale read). Declaring the number volatile is like forcing Accountant A to immediately broadcast the total over the office intercom and update the central ledger whiteboard (main memory barrier), so everyone instantly wipes their sticky notes and uses the new number.',
+        code: `// Simulation: Java Memory Model (JMM) Cache Coherence & Volatile Memory Barriers
+interface CpuCoreCache {
+  coreId: number;
+  l1CacheValue: number;
+  isDirty: boolean;
+}
+
+class JavaMemoryModelSimulator {
+  private mainMemoryValue = 0;
+  private caches: CpuCoreCache[] = [
+    { coreId: 0, l1CacheValue: 0, isDirty: false },
+    { coreId: 1, l1CacheValue: 0, isDirty: false },
+  ];
+
+  // Standard variable: writes stay in L1 cache buffer; other core reads stale data
+  writeStandard(coreId: number, value: number) {
+    this.caches[coreId].l1CacheValue = value;
+    this.caches[coreId].isDirty = true;
+  }
+
+  readStandard(coreId: number): number {
+    return this.caches[coreId].l1CacheValue;
+  }
+
+  // Volatile variable: enforces Memory Barrier / Store-Load Fence
+  // 1. Flushes writer core store buffer directly into Main Memory
+  // 2. Invalidates all other CPU cores' L1/L2 caches (Cache Coherence Bus Snooping)
+  writeVolatile(coreId: number, value: number) {
+    this.caches[coreId].l1CacheValue = value;
+    this.caches[coreId].isDirty = false;
+    this.mainMemoryValue = value;
+
+    // Invalidate all other CPU core caches
+    for (const cache of this.caches) {
+      if (cache.coreId !== coreId) {
+        cache.l1CacheValue = value; // Bus snooping reload
+      }
+    }
+  }
+
+  readVolatile(coreId: number): number {
+    return this.mainMemoryValue;
+  }
+}
+
+const jmm = new JavaMemoryModelSimulator();
+
+// Test Non-Volatile Flag (Worker Thread Stale Read)
+jmm.writeStandard(0, 100); // Core 0 writes 100
+const core1Stale = jmm.readStandard(1); // Core 1 still sees 0
+
+// Test Volatile Flag (Immediate Memory Barrier Sync)
+jmm.writeVolatile(0, 250);
+const core1Volatile = jmm.readVolatile(1);
+
+console.log('=== JAVA MEMORY MODEL (JMM) & VOLATILE CACHE INVARIANTS ===');
+console.log('Non-Volatile Write on Core 0 -> Core 1 L1 Read: ' + core1Stale + ' (STALE CACHE DETECTED)');
+console.log('Volatile Write on Core 0 -> Core 1 Fence Read: ' + core1Volatile + ' (MEMORY BARRIER SYNCHRONIZED)');
+console.log('Happens-Before Guarantee: All writes prior to volatile write are visible upon volatile read');`,
+        output: `=== JAVA MEMORY MODEL (JMM) & VOLATILE CACHE INVARIANTS ===\nNon-Volatile Write on Core 0 -> Core 1 L1 Read: 0 (STALE CACHE DETECTED)\nVolatile Write on Core 0 -> Core 1 Fence Read: 250 (MEMORY BARRIER SYNCHRONIZED)\nHappens-Before Guarantee: All writes prior to volatile write are visible upon volatile read`,
+        tryIt: 'Simulate a third CPU core reading from the JMM simulator after both standard and volatile writes.',
+        check: {
+          question: 'What hardware-level mechanism does the JVM invoke when writing to a field marked with the volatile keyword?',
+          options: [
+            'It serializes the object to disk using Java standard serialization',
+            'It issues a CPU memory barrier (Store-Load fence) that flushes the local store buffer into main memory and invalidates stale L1/L2 caches across peer cores',
+            'It locks the entire operating system kernel until all threads terminate'
+          ],
+          answer: 1,
+          why: 'A volatile write emits a hardware memory barrier instruction (such as mfence or lock addl on x86). This forces the writing core to flush pending writes to main memory and triggers cache coherence protocols (MESI) across the CPU interconnect to invalidate peer cache lines.'
+        }
+      },
+      {
+        title: 'HashMap Internal Architecture, Load Factors & Treeify Red-Black Trees',
+        say: [
+          'The Java HashMap is the foundational data structure for key-value storage across enterprise services. Internally, a HashMap is backed by an array of buckets (Node<K,V>[] table) whose capacity is always a power of two (defaulting to 16).',
+          'When a key-value pair is inserted, the JVM invokes the key hashCode() method, passes it through a 32-bit bit-spread function (h ^ (h >>> 16)) to distribute entropy across lower bits, and calculates the bucket array index using the bitwise mask (capacity - 1) & hash.',
+          'When two distinct keys produce the exact same bucket index, a hash collision occurs. In Java 7, collisions were stored as a simple singly-linked list. If an attacker maliciously crafted keys with identical hashes (HashDoS attack), lookups degraded from O(1) to O(N), paralyzing application servers.',
+          'To solve this, Java 8 introduced the TREEIFY_THRESHOLD: when a single bucket collision chain accumulates 8 or more entries and total table capacity is at least 64, the linked list is automatically converted into a balanced Red-Black Tree (TreeNode<K,V>), transforming worst-case search complexity from O(N) into O(log N).',
+          'To maintain high lookup performance, the HashMap dynamically expands when the number of elements exceeds the threshold defined by capacity * loadFactor (defaulting to 0.75). Upon resizing, the bucket table capacity doubles (16 to 32, then 64), and all elements are rehashed into the new table.',
+          'Understanding load factor trade-offs is crucial: a lower load factor reduces collision probability at the cost of higher memory consumption, while 0.75 represents the mathematically optimal Poisson distribution balance between time and space overhead.'
+        ],
+        example: 'Think of an office mail room with 16 pigeonhole cubbies. As mail arrives, the mail clerk places letters into cubbies based on postal codes. If one cubby fills up with more than 8 letters, instead of stacking them in a tall messy pile where the clerk must check every single envelope (linked list), the clerk inserts a neat alphabetized filing accordion folder (Red-Black Tree) so any letter can be found in 3 fast checks.',
+        code: `// Simulation: Java HashMap Internal Bucket Table, Resizing & Collision Treeify
+interface HashBucketNode {
+  key: string;
+  hash: number;
+  value: string;
+}
+
+class EnterpriseHashMapSimulator {
+  private capacity: number;
+  private loadFactor = 0.75;
+  private size = 0;
+  private buckets: HashBucketNode[][];
+  private treeifiedBuckets = 0;
+  private resizeCount = 0;
+
+  constructor(initialCapacity = 16) {
+    this.capacity = initialCapacity;
+    this.buckets = Array.from({ length: this.capacity }, () => []);
+  }
+
+  private hash(key: string): number {
+    let h = 0;
+    for (let i = 0; i < key.length; i++) {
+      h = (Math.imul(31, h) + key.charCodeAt(i)) | 0;
+    }
+    // Java 8 spread function: h ^ (h >>> 16)
+    return (h ^ (h >>> 16)) >>> 0;
+  }
+
+  put(key: string, value: string): void {
+    const h = this.hash(key);
+    const bucketIdx = (this.capacity - 1) & h;
+    const bucket = this.buckets[bucketIdx];
+
+    const existing = bucket.find(n => n.key === key);
+    if (existing) {
+      existing.value = value;
+      return;
+    }
+
+    bucket.push({ key, hash: h, value });
+    this.size++;
+
+    // Check TREEIFY_THRESHOLD: If bucket collision chain reaches 8 nodes
+    if (bucket.length >= 8 && this.capacity >= 64) {
+      this.treeifiedBuckets++;
+    }
+
+    // Check Resize Threshold
+    if (this.size > this.capacity * this.loadFactor) {
+      this.resize();
+    }
+  }
+
+  private resize(): void {
+    this.resizeCount++;
+    const oldBuckets = this.buckets;
+    this.capacity *= 2;
+    this.buckets = Array.from({ length: this.capacity }, () => []);
+    this.size = 0;
+
+    for (const bucket of oldBuckets) {
+      for (const node of bucket) {
+        this.put(node.key, node.value);
+      }
+    }
+  }
+
+  getDiagnostics() {
+    const threshold = Math.floor(this.capacity * this.loadFactor);
+    return {
+      capacity: this.capacity,
+      size: this.size,
+      threshold,
+      resizes: this.resizeCount,
+      maxBucketDepth: Math.max(...this.buckets.map(b => b.length))
+    };
+  }
+}
+
+const map = new EnterpriseHashMapSimulator(16);
+// Insert 25 items to trigger resize (16 * 0.75 = 12 threshold)
+for (let i = 1; i <= 25; i++) {
+  map.put('order_key_' + i, 'payload_' + i);
+}
+
+const diag = map.getDiagnostics();
+
+console.log('=== JAVA HASHMAP INTERNAL ARCHITECTURE & RESIZING ===');
+console.log('Total Elements Inserted: ' + diag.size);
+console.log('Current Bucket Table Capacity: ' + diag.capacity + ' (Doubled from 16)');
+console.log('Dynamic Resize Count: ' + diag.resizes + ' (Triggered at Load Factor 0.75)');
+console.log('Maximum Bucket Collision Chain Depth: ' + diag.maxBucketDepth + ' (Below TREEIFY_THRESHOLD of 8)');
+console.log('Algorithmic Lookup Complexity: O(1) Average Case | O(log N) Red-Black Tree Worst Case');`,
+        output: `=== JAVA HASHMAP INTERNAL ARCHITECTURE & RESIZING ===\nTotal Elements Inserted: 25\nCurrent Bucket Table Capacity: 64 (Doubled from 16)\nDynamic Resize Count: 2 (Triggered at Load Factor 0.75)\nMaximum Bucket Collision Chain Depth: 1 (Below TREEIFY_THRESHOLD of 8)\nAlgorithmic Lookup Complexity: O(1) Average Case | O(log N) Red-Black Tree Worst Case`,
+        tryIt: 'Artificially force hash collisions to 8 nodes on a bucket to observe the treeification threshold.',
+        check: {
+          question: 'Why did Java 8 introduce the TREEIFY_THRESHOLD (converting bucket linked lists to Red-Black Trees when collision depth reaches 8)?',
+          options: [
+            'To defend against algorithmic complexity attacks (HashDoS) where collided keys degrade lookups to O(N), guaranteeing O(log N) worst-case performance',
+            'To reduce the total number of RAM bytes allocated by the JVM garbage collector',
+            'Because Red-Black Trees do not require hashCode calculations'
+          ],
+          answer: 0,
+          why: 'In Java 7, severe hash collisions produced long linked lists with O(N) linear scan lookups. In Java 8, when a bucket exceeds 8 nodes, it converts to a Red-Black Tree (TreeNode), bounding worst-case lookup latency to O(log N) and neutralizing collision-based denial-of-service exploits.'
+        }
+      },
+      {
+        title: 'Java Streams API, Spliterator Partitioning & Parallel ForkJoinPool',
+        say: [
+          'The Java Streams API introduced declarative, functional data processing pipelines to enterprise Java. Rather than mutating external collections using imperative for-loops, Streams compose declarative transformation pipelines.',
+          'A Stream pipeline consists of three phases: a data source (such as a Collection or array), zero or more intermediate operations (such as .filter(), .map(), and .sorted()), and exactly one terminal operation (such as .collect(), .reduce(), or .count()).',
+          'A critical architectural characteristic of Streams is Lazy Evaluation. Intermediate operations do not process elements when invoked; they merely construct a pipeline execution plan. Data begins flowing only when the terminal operation is reached, enabling loop fusion and short-circuit optimizations like .findFirst().',
+          'When processing massive datasets with millions of records, invoking .parallelStream() splits the workload across multiple CPU cores using the Spliterator interface and the common ForkJoinPool.',
+          'The Spliterator uses the trySplit() method to recursively partition the dataset into balanced sub-chunks. Worker threads in the ForkJoinPool execute these chunks concurrently and employ Work-Stealing algorithms: idle threads steal tasks from the deque tails of busy threads to maximize multi-core hardware utilization.',
+          'However, parallel streams are not a magic bullet: for small datasets or operations with heavy shared-state contention or boxing overhead, thread synchronization latency often exceeds sequential execution time.'
+        ],
+        example: 'Think of an automated parcel sorting facility at an airport. A sequential stream is a single conveyor belt with inspectors filtering damaged boxes and packing them one by one. A parallel stream uses a mechanical splitter (Spliterator) that divides the incoming stream of 100,000 packages across 4 conveyor belts with 4 dedicated workers running simultaneously (ForkJoinPool), quadruple-checking packages in parallel.',
+        code: `// Simulation: Java Streams Pipeline with Lazy Evaluation & Parallel Spliterator
+interface Transaction {
+  id: string;
+  amount: number;
+  region: 'EMEA' | 'APAC' | 'NA';
+}
+
+// Generate 100,000 synthetic transaction amounts
+const transactions: Transaction[] = [];
+for (let i = 0; i < 100000; i++) {
+  transactions.push({
+    id: 'tx_' + i,
+    amount: (i % 500) + 1,
+    region: i % 3 === 0 ? 'EMEA' : i % 3 === 1 ? 'APAC' : 'NA'
+  });
+}
+
+// Sequential stream pipeline
+function executeSequentialStream(list: Transaction[]): { count: number; totalVolume: number } {
+  const filtered = list.filter(t => t.region === 'EMEA' && t.amount > 200);
+  const sum = filtered.reduce((acc, t) => acc + t.amount, 0);
+  return { count: filtered.length, totalVolume: sum };
+}
+
+// Parallel stream Spliterator partition simulation (ForkJoinPool with 4 worker threads)
+function executeParallelStream(list: Transaction[], cores = 4): { count: number; totalVolume: number; chunks: number } {
+  const chunkSize = Math.ceil(list.length / cores);
+  let totalCount = 0;
+  let totalVolume = 0;
+
+  for (let c = 0; c < cores; c++) {
+    const slice = list.slice(c * chunkSize, (c + 1) * chunkSize);
+    const res = executeSequentialStream(slice);
+    totalCount += res.count;
+    totalVolume += res.totalVolume;
+  }
+
+  return { count: totalCount, totalVolume, chunks: cores };
+}
+
+const seq = executeSequentialStream(transactions);
+const par = executeParallelStream(transactions, 4);
+
+console.log('=== JAVA STREAMS API & PARALLEL FORKJOINPOOL SPLITERATOR ===');
+console.log('Dataset Size: ' + transactions.length.toLocaleString('en-US') + ' Transactions Processed');
+console.log('Sequential Stream Result: ' + seq.count.toLocaleString('en-US') + ' Filtered Rows | Volume: $' + seq.totalVolume.toLocaleString('en-US'));
+console.log('Parallel Stream Spliterator: ' + par.chunks + ' ForkJoin Worker Threads (trySplit())');
+console.log('Parity Verified: ' + (seq.totalVolume === par.totalVolume ? '100% IDENTICAL REDUCE OUTPUT' : 'MISMATCH'));
+console.log('Execution Model: Lazy Intermediate Operations (filter, map) & Eager Terminal Aggregation (reduce)');`,
+        output: `=== JAVA STREAMS API & PARALLEL FORKJOINPOOL SPLITERATOR ===\nDataset Size: 100,000 Transactions Processed\nSequential Stream Result: 20,000 Filtered Rows | Volume: $7,010,100\nParallel Stream Spliterator: 4 ForkJoin Worker Threads (trySplit())\nParity Verified: 100% IDENTICAL REDUCE OUTPUT\nExecution Model: Lazy Intermediate Operations (filter, map) & Eager Terminal Aggregation (reduce)`,
+        tryIt: 'Change the filter condition to amount > 400 and observe how both sequential and parallel streams maintain identical reduced outputs.',
+        check: {
+          question: 'What interface is responsible for partitioning a data source into sub-chunks for parallel processing in Java Streams?',
+          options: [
+            'Spliterator via its trySplit() method',
+            'Iterator via its hasNext() method',
+            'Serializable via writeObject()'
+          ],
+          answer: 0,
+          why: 'The Spliterator (splitable iterator) interface defines trySplit(), which recursively partitions elements into balanced chunks that the common ForkJoinPool assigns across CPU worker threads.'
+        }
+      },
+      {
+        title: 'Spring IoC Container, Dependency Injection & AOP Transactional Proxies',
+        say: [
+          'The Spring Framework is the backbone of global enterprise Java development. At its core lies the Inversion of Control (IoC) container, managed by the ApplicationContext.',
+          'In traditional procedural code, objects instantiate their own dependencies using the new keyword, tightly coupling implementations and making unit testing impossible. In Spring, the container takes control of the object lifecycle: it instantiates Beans, resolves dependencies, and injects them via Constructor Injection.',
+          'The Spring Bean lifecycle follows strict lifecycle phases: instantiation, dependency injection, BeanPostProcessor pre-initialization, @PostConstruct execution, and post-initialization wrapping.',
+          'During the post-initialization phase, Spring applies Aspect-Oriented Programming (AOP). If a bean method is annotated with @Transactional, Spring does not return the raw Java object; it dynamically wraps the bean inside an AOP Proxy (using JDK Dynamic Proxies or CGLIB bytecode generation).',
+          'When client code invokes the proxied method, the proxy interceptor intercepts the call, opens a database transaction via the TransactionManager, delegates to the actual business logic method, and then commits the transaction upon clean completion.',
+          'If the method throws an unhandled RuntimeException, the AOP proxy catches the exception, issues an immediate database ROLLBACK, and rethrows the exception, guaranteeing ACID database integrity without polluting business classes with boilerplate transaction logic.'
+        ],
+        example: 'Think of an executive signing important contracts. Rather than the executive personally opening the fireproof safe, logging into notary databases, and stamping legal seals (boilerplate transaction code), an executive assistant (AOP Proxy) pre-opens the notary log (begin transaction), hands the pen to the executive to sign (business logic), and officially stamps and archives the document upon signature, or shreds it if anything was invalid (commit or rollback).',
+        code: `// Simulation: Spring IoC ApplicationContext, Dependency Injection & Dynamic AOP Transaction Proxy
+interface BeanDefinition {
+  name: string;
+  instance: unknown;
+  dependencies: string[];
+}
+
+class SpringApplicationContextSimulator {
+  private registry: Map<string, BeanDefinition> = new Map();
+  private singletonPool: Map<string, unknown> = new Map();
+
+  registerBean(name: string, constructorFn: (...deps: unknown[]) => unknown, dependencies: string[]) {
+    this.registry.set(name, { name, instance: constructorFn, dependencies });
+  }
+
+  getBean<T>(name: string): T {
+    if (this.singletonPool.has(name)) {
+      return this.singletonPool.get(name) as T;
+    }
+
+    const def = this.registry.get(name);
+    if (!def) throw new Error('NoSuchBeanDefinitionException: ' + name);
+
+    // Recursive Dependency Injection
+    const resolvedDeps = def.dependencies.map(depName => this.getBean(depName));
+    const constructorFn = def.instance as (...deps: unknown[]) => T;
+    const rawInstance = constructorFn(...resolvedDeps);
+
+    // Wrap in dynamic AOP Proxy for @Transactional semantics
+    const proxiedInstance = this.createAopTransactionalProxy(rawInstance);
+    this.singletonPool.set(name, proxiedInstance);
+    return proxiedInstance as T;
+  }
+
+  private createAopTransactionalProxy<T>(target: T): T {
+    const handler: ProxyHandler<any> = {
+      get(obj, prop) {
+        const original = obj[prop];
+        if (typeof original === 'function' && String(prop).startsWith('process')) {
+          return function (...args: unknown[]) {
+            console.log('  [AOP Proxy: @Transactional] >>> BEGIN DB TRANSACTION');
+            try {
+              const result = original.apply(obj, args);
+              console.log('  [AOP Proxy: @Transactional] <<< COMMIT TRANSACTION (Success)');
+              return result;
+            } catch (err: any) {
+              console.log('  [AOP Proxy: @Transactional] <<< ROLLBACK TRANSACTION (Exception: ' + err.message + ')');
+              throw err;
+            }
+          };
+        }
+        return original;
+      }
+    };
+    return new Proxy(target, handler);
+  }
+}
+
+interface AccountRepository {
+  findBalance(id: string): number;
+}
+
+interface PaymentService {
+  processTransfer(fromId: string, toId: string, amount: number): string;
+}
+
+const context = new SpringApplicationContextSimulator();
+
+// Register Repository
+context.registerBean('accountRepository', () => ({
+  findBalance: (id: string) => 1500
+}), []);
+
+// Register Service with injected repository
+context.registerBean('paymentService', (repo: AccountRepository) => ({
+  processTransfer: (from: string, to: string, amount: number) => {
+    const balance = repo.findBalance(from);
+    if (balance < amount) throw new Error('Insufficient Funds');
+    return 'Transferred $' + amount + ' from ' + from + ' to ' + to;
+  }
+}), ['accountRepository']);
+
+const paymentService = context.getBean<PaymentService>('paymentService');
+
+console.log('=== SPRING IOC CONTAINER & AOP TRANSACTIONAL PROXY ===');
+console.log('Wiring: PaymentService injected with AccountRepository Singleton');
+const transferResult = paymentService.processTransfer('ACC_987', 'ACC_123', 250);
+console.log('Result: ' + transferResult);`,
+        output: `=== SPRING IOC CONTAINER & AOP TRANSACTIONAL PROXY ===\nWiring: PaymentService injected with AccountRepository Singleton\n  [AOP Proxy: @Transactional] >>> BEGIN DB TRANSACTION\n  [AOP Proxy: @Transactional] <<< COMMIT TRANSACTION (Success)\nResult: Transferred $250 from ACC_987 to ACC_123`,
+        tryIt: 'Trigger a simulated transaction rollback by passing an amount greater than the $1500 balance.',
+        check: {
+          question: 'How does Spring Framework implement @Transactional method management without modifying your business code?',
+          options: [
+            'It wraps the target bean in an AOP dynamic proxy that intercepts method calls to manage database transaction begin, commit, and rollback boundaries',
+            'It rewrites the operating system kernel disk driver',
+            'It compiles all Java code directly into SQL triggers'
+          ],
+          answer: 0,
+          why: 'Spring uses JDK Dynamic Proxies or CGLIB bytecode proxies to wrap beans. When a @Transactional method is invoked, the proxy interceptor manages transaction begin/commit/rollback around the underlying method execution.'
+        }
+      },
+      {
+        title: 'ConcurrentHashMap CAS Locks & CompletableFuture Pipelines',
+        say: [
+          'In multi-threaded enterprise services handling tens of thousands of requests per second, traditional synchronization using synchronized blocks or ReentrantLocks can become severe throughput bottlenecks because threads block and context-switch while waiting for locks.',
+          'ConcurrentHashMap solves this by implementing fine-grained lock striping and lock-free Compare-And-Swap (CAS) atomic operations. Inserting into an empty bucket does not acquire any mutex lock; it executes an atomic hardware CAS instruction (via VarHandle or Unsafe). Only when updating an existing collision node does it acquire a lightweight synchronized lock on that specific bucket head node.',
+          'For orchestrating asynchronous non-blocking workflows across microservices, Java provides CompletableFuture. Unlike older Future objects where calling .get() blocks the caller thread, CompletableFuture supports functional composition and reactive chaining.',
+          'Using methods like .thenApply() for transformations, .thenCompose() for dependent async calls, and .allOf() for parallel scatter-gather fan-outs, developers construct non-blocking processing graphs.',
+          'In an e-commerce checkout flow, parallel stages—such as fraud scoring, atomic inventory reservation via ConcurrentHashMap, and payment authorization—can execute concurrently across thread pools and join cleanly when all stages complete.',
+          'If any asynchronous stage encounters an exception, methods like .exceptionally() and .handle() provide graceful error recovery without unhandled thread termination, ensuring resilient high-throughput cloud architectures.'
+        ],
+        example: 'Think of an airport express security checkpoint with 10 separate biometric automated lanes (ConcurrentHashMap bucket striping). Travelers do not wait in one single long line behind a single officer (synchronized lock). At the same time, the airport computer system checks passport validity, luggage weight, and boarding pass concurrently across 3 parallel servers and turns the gate light green only when all three pass (CompletableFuture.allOf()).',
+        code: `// Simulation: ConcurrentHashMap CAS Atomic Operations & CompletableFuture Pipeline
+class ConcurrentHashMapCasSimulator {
+  private table: Map<string, number> = new Map();
+
+  // Lock-free Compare-And-Swap (CAS) update
+  atomicIncrement(key: string, delta: number): number {
+    while (true) {
+      const current = this.table.get(key) || 0;
+      const next = current + delta;
+      // In real JVM, Unsafe.compareAndSwapInt tests hardware cache line
+      this.table.set(key, next);
+      return next;
+    }
+  }
+
+  get(key: string): number {
+    return this.table.get(key) || 0;
+  }
+}
+
+// CompletableFuture pipeline simulation (Parallel async tasks joined with allOf)
+interface CheckoutContext {
+  orderId: string;
+  fraudCheckPassed: boolean;
+  inventoryReserved: boolean;
+  paymentAuthorized: boolean;
+}
+
+function simulateAsyncCheckoutPipeline(orderId: string): CheckoutContext {
+  // 1. Task A: Fraud Score
+  const fraudPassed = true;
+  // 2. Task B: Inventory CAS decrement
+  const inventory = new ConcurrentHashMapCasSimulator();
+  inventory.atomicIncrement('SKU_MACBOOK_PRO', 50); // Initial 50 in stock
+  const remainingStock = inventory.atomicIncrement('SKU_MACBOOK_PRO', -1);
+  // 3. Task C: Payment Gateway Auth
+  const paymentAuth = true;
+
+  return {
+    orderId,
+    fraudCheckPassed: fraudPassed,
+    inventoryReserved: remainingStock >= 0,
+    paymentAuthorized: paymentAuth
+  };
+}
+
+const checkout = simulateAsyncCheckoutPipeline('ORD_2026_988');
+
+console.log('=== CONCURRENTHASHMAP CAS & COMPLETABLEFUTURE PIPELINE ===');
+console.log('Order Pipeline ID: ' + checkout.orderId);
+console.log('Async Stage 1 (Fraud Detection): ' + (checkout.fraudCheckPassed ? 'PASSED (Score 98/100)' : 'FAILED'));
+console.log('Async Stage 2 (ConcurrentHashMap CAS Inventory): RESERVED (Atomic Decrement)');
+console.log('Async Stage 3 (Stripe Payment Authorization): AUTHORIZED ($1,999.00)');
+console.log('CompletableFuture.allOf() Pipeline Status: ORDER CONFIRMED (All Async Stages Joined)');`,
+        output: `=== CONCURRENTHASHMAP CAS & COMPLETABLEFUTURE PIPELINE ===\nOrder Pipeline ID: ORD_2026_988\nAsync Stage 1 (Fraud Detection): PASSED (Score 98/100)\nAsync Stage 2 (ConcurrentHashMap CAS Inventory): RESERVED (Atomic Decrement)\nAsync Stage 3 (Stripe Payment Authorization): AUTHORIZED ($1,999.00)\nCompletableFuture.allOf() Pipeline Status: ORDER CONFIRMED (All Async Stages Joined)`,
+        tryIt: 'Simulate out-of-stock inventory handling where the atomic decrement returns a negative count.',
+        check: {
+          question: 'How does ConcurrentHashMap achieve high multi-threaded write throughput without global table locks?',
+          options: [
+            'By using lock-free Compare-And-Swap (CAS) instructions on empty bucket insertions and locking only individual bucket head nodes for collisions',
+            'By writing all updates to a single text file on disk',
+            'By disabling thread concurrency and running in single-threaded mode'
+          ],
+          answer: 0,
+          why: 'ConcurrentHashMap avoids coarse-grained table locks by using atomic hardware CAS primitives to initialize empty bucket nodes, and locks only the individual head node of a collided bucket chain, allowing unrelated buckets to be updated concurrently.'
+        }
+      }
+    ],
+    summary: [
+      'The Java Memory Model (JMM) guarantees memory visibility and prevents instruction reordering via happens-before relationships and volatile hardware memory barriers.',
+      'HashMap uses (capacity - 1) & hash for O(1) bucket indexing, doubling capacity at 0.75 load factor and treeifying buckets to Red-Black Trees (O(log N)) at 8 collisions.',
+      'The Streams API executes lazy intermediate operations and eager terminal reductions, partitioning workloads across the ForkJoinPool via Spliterator trySplit().',
+      'Spring IoC manages bean instantiation and dependency injection, dynamically wrapping @Transactional beans in AOP proxies to manage database boundaries.',
+      'ConcurrentHashMap utilizes lock-free CAS operations and bucket striping for thread-safe mutations, while CompletableFuture orchestrates non-blocking async pipelines.'
+    ],
+    projectStep: {
+      title: 'Build a High-Throughput Concurrent Banking Microservice in Java 21',
+      steps: [
+        'Define a thread-safe Account ledger using ConcurrentHashMap with lock-free CAS balance updates.',
+        'Implement a Spring IoC ApplicationContext configuration registering repositories and services.',
+        'Wrap transactional methods in an AOP proxy interceptor to guarantee ACID commit and rollback semantics.',
+        'Compose an asynchronous checkout pipeline using CompletableFuture to parallelize fraud detection, inventory reservation, and payment processing.'
+      ]
+    }
   }
 ];
+

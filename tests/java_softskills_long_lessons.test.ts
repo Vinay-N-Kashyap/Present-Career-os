@@ -61,3 +61,53 @@ test('Soft Skills Day 1: Behavioral Leadership & Communication Socratic Checks V
     assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
   }
 });
+
+test('Java Basics Day 2: Resolution & Structural Invariants for JMM, HashMap & Spring', () => {
+  const javaD2 = getLongLesson('java-basics', 2);
+  assert.ok(javaD2, 'java-basics Day 2 long lesson must resolve');
+  assert.equal(javaD2.day, 2);
+  assert.equal(javaD2.parts.length, 5, 'java-basics Day 2 must contain exactly 5 parts');
+  assert.ok(javaD2.summary.length >= 4, 'java-basics Day 2 must contain comprehensive summary');
+  assert.ok(javaD2.projectStep, 'java-basics Day 2 must have a hands-on project step');
+  assert.ok(javaD2.minutes >= 15, 'java-basics Day 2 must be at least 15 minutes');
+
+  // Structural invariants for every part
+  for (const part of javaD2.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 2: Domain-Specific Content Assertions', () => {
+  const javaD2 = getLongLesson('java-basics', 2);
+  assert.ok(javaD2);
+
+  // Part 1 – JMM & Volatile Memory Barrier
+  assert.ok(javaD2.parts[0].title.includes('Java Memory Model') || javaD2.parts[0].title.includes('JMM'));
+  assert.ok(javaD2.parts[0].output.includes('MEMORY BARRIER SYNCHRONIZED'));
+
+  // Part 2 – HashMap Resizing & Treeify
+  assert.ok(javaD2.parts[1].title.includes('HashMap'));
+  assert.ok(javaD2.parts[1].output.includes('TREEIFY_THRESHOLD'));
+
+  // Part 3 – Streams & Spliterator
+  assert.ok(javaD2.parts[2].title.includes('Streams') || javaD2.parts[2].title.includes('Spliterator'));
+  assert.ok(javaD2.parts[2].output.includes('100% IDENTICAL REDUCE OUTPUT'));
+
+  // Part 4 – Spring IoC & AOP Proxy
+  assert.ok(javaD2.parts[3].title.includes('Spring') || javaD2.parts[3].title.includes('AOP'));
+  assert.ok(javaD2.parts[3].output.includes('@Transactional'));
+  assert.ok(javaD2.parts[3].output.includes('COMMIT TRANSACTION'));
+
+  // Part 5 – ConcurrentHashMap CAS & CompletableFuture
+  assert.ok(javaD2.parts[4].title.includes('ConcurrentHashMap') || javaD2.parts[4].title.includes('CompletableFuture'));
+  assert.ok(javaD2.parts[4].output.includes('ORDER CONFIRMED'));
+});
