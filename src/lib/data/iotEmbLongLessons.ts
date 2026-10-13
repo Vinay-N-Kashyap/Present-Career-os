@@ -286,5 +286,287 @@ int main() {
         'Implement an active-high LED toggle loop manipulating the output data register (ODR)'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_emb',
+    day: 2,
+    title: 'NVIC Interrupts, Hardware Timers, DMA Circular Buffers & Low-Power Modes',
+    goal: 'Master bare-metal microcontroller hardware architecture: nested vectored interrupt controllers (NVIC), hardware timer prescaler and PWM registers, lock-free DMA circular buffers, UART baud rate generation, and low-power sleep modes.',
+    minutes: 45,
+    recap: 'Welcome to Day 2 of Microcontroller C++ Architecture & Embedded Systems. On Day 1, we mastered memory-mapped registers, volatile qualifiers, bitwise masking, and zero-cost template abstractions. Today, we step into dynamic silicon behavior: asynchronous hardware interrupts, timer PWM frequency generation, DMA ring buffers, and microampere low-power sleep modes.',
+    parts: [
+      {
+        title: 'ARM Cortex-M NVIC Architecture & Interrupt Priority Invariants',
+        say: [
+          'In embedded systems, polling hardware peripherals in a while loop wastes substantial CPU cycles and introduces unpredictable timing jitter.',
+          'The Nested Vectored Interrupt Controller (NVIC) in ARM Cortex-M processors provides deterministic, low-latency interrupt handling (typically 12 clock cycles from electrical signal to execution).',
+          'The NVIC uses an Interrupt Vector Table (IVT) located in memory, where each peripheral IRQ maps directly to a function pointer address.',
+          'Interrupt priorities are configured in 8-bit priority registers. However, Cortex-M cores implement only the upper 3 to 4 bits of this register, dividing priorities into Preemption Priority (which interrupt can preempt a running ISR) and Subpriority (which pending interrupt executes first if multiple trigger simultaneously).',
+          'Priority numbers are inverted in silicon: Priority 0 is the highest possible urgency, while higher numbers indicate lower urgency.'
+        ],
+        example: 'Think of an emergency hospital triage ward. A patient with a minor headache is placed in waiting (low priority). If a cardiac arrest arrives (Priority 0 preemption), the doctor immediately drops everything to save the life before returning to the first patient.',
+        code: `#include <iostream>
+#include <cstdint>
+
+uint8_t encodeNvicPriority(uint8_t preemptPriority, uint8_t subPriority, uint8_t priorityGrouping) {
+    // ARM Cortex-M NVIC encodes priorities in upper bits of 8-bit priority register
+    uint8_t preemptShift = 7 - priorityGrouping;
+    uint8_t encoded = (preemptPriority << preemptShift) | (subPriority & ((1 << preemptShift) - 1));
+    return encoded;
+}
+
+int main() {
+    uint8_t priorityGroup3 = encodeNvicPriority(2, 1, 3);
+    std::cout << "Encoded NVIC Priority Register: 0x" << std::hex << (int)priorityGroup3 << "\\n";
+    return 0;
+}`,
+        output: `Encoded NVIC Priority Register: 0x21`,
+        codeNotes: [
+          { line: 4, note: 'Computes hardware bit-packing for preemption and subpriority fields' },
+          { line: 7, note: 'Shifts preemption priority into upper bits while masking subpriority' },
+          { line: 12, note: 'Encodes priority for Group 3 into 8-bit hardware register' }
+        ],
+        tryIt: 'Change preemptPriority to 0 and verify that the encoded register reflects maximum preemption urgency.',
+        check: {
+          question: 'In the ARM Cortex-M Nested Vectored Interrupt Controller (NVIC), which numerical priority value represents the highest preemption urgency?',
+          options: [
+            'Priority 0 is the highest urgency; higher numerical values indicate lower priority',
+            'Priority 255 is the highest urgency',
+            'All interrupts have identical priority and execute strictly FIFO',
+            'Priority numbers correlate with the baud rate of the UART'
+          ],
+          answer: 0,
+          why: 'ARM NVIC architecture defines numerical priority 0 as the highest urgency. A lower number always preempts a higher number.',
+          answerIndex: 0,
+          explanation: 'ARM NVIC architecture defines numerical priority 0 as the highest urgency. A lower number always preempts a higher number.'
+        }
+      },
+      {
+        title: 'Hardware Timers, Prescaler Clock Division & PWM Frequency Math',
+        say: [
+          'Hardware timers are the heartbeat of embedded microcontrollers. Rather than using crude software delay loops like for(int i=0; i<1000; i++), dedicated timer peripherals (e.g., TIM2, TIM3) count clock ticks independently of the CPU core.',
+          'The core clock tree supplies a high frequency (such as 84 MHz) to the timer peripheral. The Prescaler (PSC) register divides this clock: counter frequency equals timer clock divided by (PSC + 1).',
+          'The Auto-Reload Register (ARR) defines the period of the timer: when the counter reaches ARR, it overflows back to 0 and triggers an update event or toggle pin.',
+          'Pulse Width Modulation (PWM) uses a Capture/Compare Register (CCR). The pin stays HIGH while the counter is below CCR and drops LOW once the counter exceeds CCR, generating precise duty cycles for motor speed or LED dimming.'
+        ],
+        example: 'Think of an analog metronome. By moving the weighted counter weight up or down the pendulum (the prescaler), you adjust how fast it ticks. A second marker (the CCR) determines how long the bell rings during each beat.',
+        code: `#include <iostream>
+#include <cstdint>
+
+struct TimerConfig {
+    uint32_t prescaler;
+    uint32_t autoReload;
+    uint32_t compareValue;
+};
+
+TimerConfig calculateTimerPwmConfig(uint32_t timerClockHz, uint32_t targetPwmHz, float dutyCyclePercent) {
+    // Prescaler divides clock to 1 MHz base counter
+    uint32_t prescaler = (timerClockHz / 1000000) - 1;
+    uint32_t autoReload = (1000000 / targetPwmHz) - 1;
+    uint32_t compareValue = static_cast<uint32_t>((autoReload + 1) * (dutyCyclePercent / 100.0f));
+    return {prescaler, autoReload, compareValue};
+}
+
+int main() {
+    TimerConfig cfg = calculateTimerPwmConfig(84000000, 1000, 75.0f);
+    std::cout << "PSC: " << cfg.prescaler << " ARR: " << cfg.autoReload << " CCR: " << cfg.compareValue << "\\n";
+    return 0;
+}`,
+        output: `PSC: 83 ARR: 999 CCR: 750`,
+        codeNotes: [
+          { line: 4, note: 'Structure holds peripheral register settings for timer configuration' },
+          { line: 12, note: 'Subtract 1 accounts for hardware zero-indexing: counter divides by (PSC + 1)' },
+          { line: 14, note: 'Calculates pulse width compare threshold for 75% duty cycle' }
+        ],
+        tryIt: 'Change targetPwmHz to 5000 and calculate the new ARR auto-reload register value.',
+        check: {
+          question: 'Why do embedded timer prescaler (PSC) and auto-reload (ARR) register calculations subtract 1 from the mathematical divisor?',
+          options: [
+            'Because hardware counter circuits are zero-indexed: setting PSC = 0 divides the input clock by (0 + 1) = 1',
+            'To compensate for thermal expansion of the silicon clock crystal',
+            'Because C++ arrays are 0-indexed while timers are 1-indexed',
+            'To prevent integer overflow in the 32-bit ALU'
+          ],
+          answer: 0,
+          why: 'Microcontroller timer registers count from 0 to N. A register value of 0 represents 1 clock cycle, meaning the effective divisor is always (Register + 1).',
+          answerIndex: 0,
+          explanation: 'Microcontroller timer registers count from 0 to N. A register value of 0 represents 1 clock cycle, meaning the effective divisor is always (Register + 1).'
+        }
+      },
+      {
+        title: 'Lock-Free Direct Memory Access (DMA) Circular Ring Buffers',
+        say: [
+          'High-speed peripherals like UART, SPI, and ADC can flood a microcontroller with data at megabaud rates. Servicing a CPU interrupt for every individual received byte causes interrupt starvation and freezes application code.',
+          'Direct Memory Access (DMA) offloads data movement entirely to hardware: incoming bytes from peripheral registers stream directly into SRAM without CPU intervention.',
+          'To handle continuous asynchronous data streams, embedded C++ architects employ circular ring buffers sized to a power of two (such as 16, 64, or 256 bytes).',
+          'Sizing the buffer to a power of two allows the buffer index modulo arithmetic to be replaced with a single-cycle bitwise AND mask: `nextIndex = (index + 1) & (BUFFER_SIZE - 1)`.',
+          'With a single-producer (DMA or ISR) and single-consumer (main thread), updating separate head and tail pointers provides lock-free, race-condition-free operation without disabling interrupts!'
+        ],
+        example: 'Think of baggage claim at an airport. Suitcases drop onto a rotating circular conveyor belt (DMA writing to ring buffer). Travelers grab bags from the carousel as it spins (CPU reading from tail). If travelers are slow, bags circle continuously without stopping the airplane loaders.',
+        code: `#include <iostream>
+#include <cstdint>
+
+class DmaRingBuffer {
+private:
+    static constexpr size_t BUFFER_SIZE = 16;
+    uint8_t buffer[BUFFER_SIZE];
+    volatile size_t head{0};
+    volatile size_t tail{0};
+public:
+    bool push(uint8_t byte) {
+        size_t nextHead = (head + 1) & (BUFFER_SIZE - 1);
+        if (nextHead == tail) return false; // Buffer full
+        buffer[head] = byte;
+        head = nextHead;
+        return true;
+    }
+    bool pop(uint8_t& outByte) {
+        if (head == tail) return false; // Buffer empty
+        outByte = buffer[tail];
+        tail = (tail + 1) & (BUFFER_SIZE - 1);
+        return true;
+    }
+};
+
+int main() {
+    DmaRingBuffer ring;
+    ring.push(0x41);
+    ring.push(0x42);
+    uint8_t val;
+    ring.pop(val);
+    std::cout << "Popped byte: 0x" << std::hex << (int)val << "\\n";
+    return 0;
+}`,
+        output: `Popped byte: 0x41`,
+        codeNotes: [
+          { line: 5, note: 'Power-of-two buffer size allows single-cycle bitwise wrapping' },
+          { line: 7, note: 'Volatile pointers ensure thread visibility across ISR and main loop' },
+          { line: 11, note: 'Fast bitwise AND replaces expensive modulo operator (%)' }
+        ],
+        tryIt: 'Push 16 bytes sequentially into the buffer and verify that the 16th push returns false due to buffer full detection.',
+        check: {
+          question: 'Why are embedded circular ring buffers frequently sized to exact powers of two (e.g., 16, 64, 256)?',
+          options: [
+            'It replaces slow hardware division/modulo operations with a single-cycle bitwise AND mask: (index + 1) & (SIZE - 1)',
+            'Because microcontrollers cannot address odd numbers in memory',
+            'Because C++ std::vector enforces power-of-two sizing',
+            'To double the clock speed of the serial communication bus'
+          ],
+          answer: 0,
+          why: 'On ARM Cortex-M cores without hardware division instructions, the modulo operator (%) takes multiple cycles. Bitwise AND with (SIZE - 1) executes in a single clock cycle.',
+          answerIndex: 0,
+          explanation: 'On ARM Cortex-M cores without hardware division instructions, the modulo operator (%) takes multiple cycles. Bitwise AND with (SIZE - 1) executes in a single clock cycle.'
+        }
+      },
+      {
+        title: 'UART Baud Rate Generation & BRR Clock Division Math',
+        say: [
+          'Universal Asynchronous Receiver/Transmitter (UART) communication sends serial data over two wires (TX and RX) without a shared clock line.',
+          'Because there is no clock wire, the receiver must sample incoming bits based strictly on an agreed-upon transmission speed known as the Baud Rate (e.g., 9600, 115200 bps).',
+          'The microcontroller generates this timing by dividing the peripheral clock frequency (fPCLK) using the Baud Rate Register (BRR).',
+          'In STM32 and ARM Cortex-M architectures, the Baud Rate divisor (USARTDIV) is split into a 12-bit integer Mantissa and a 4-bit Fractional part representing sixteenths (1/16th) of a clock cycle.',
+          'The receiver oversamples each bit period by 16x, sampling at ticks 7, 8, and 9 to perform majority voting and eliminate high-frequency bus noise.'
+        ],
+        example: 'Think of two runners on separate tracks agreeing to blow a whistle every 10 strides without looking at each other. If their stride count is calibrated with fractional precision, they stay synchronized for miles without a connecting rope.',
+        code: `#include <iostream>
+#include <cstdint>
+
+uint32_t calculateUsartBrr(uint32_t pclkFrequencyHz, uint32_t targetBaudRate) {
+    // USARTDIV = fPCLK / (16 * BaudRate)
+    // BRR register: [15:4] Mantissa, [3:0] Fraction (16ths)
+    uint32_t div16 = (pclkFrequencyHz * 100) / (16 * targetBaudRate);
+    uint32_t mantissa = div16 / 100;
+    uint32_t fraction = ((div16 % 100) * 16 + 50) / 100;
+    return (mantissa << 4) | (fraction & 0x0F);
+}
+
+int main() {
+    uint32_t brr = calculateUsartBrr(42000000, 115200);
+    std::cout << "USART BRR for 115200 Baud: 0x" << std::hex << brr << "\\n";
+    return 0;
+}`,
+        output: `USART BRR for 115200 Baud: 0x16c`,
+        codeNotes: [
+          { line: 6, note: 'Multiplies by 100 for integer arithmetic without floating-point FPU overhead' },
+          { line: 8, note: 'Calculates 4-bit fractional remainder with rounding (+50)' },
+          { line: 9, note: 'Packs 12-bit mantissa and 4-bit fraction into hardware BRR format' }
+        ],
+        tryIt: 'Calculate the BRR register value for 9600 baud on a 16 MHz internal clock.',
+        check: {
+          question: 'Why does the UART Baud Rate Register (BRR) split clock division into integer mantissa and fractional sixteenths?',
+          options: [
+            'To match non-integer clock division ratios and keep baud rate timing error below the 2% tolerance threshold needed for error-free framing',
+            'To convert serial data into encrypted AES ciphertext',
+            'To allow the microcontroller to communicate over Bluetooth without an antenna',
+            'Because microcontrollers cannot represent numbers larger than 16'
+          ],
+          answer: 0,
+          why: 'Peripheral clocks rarely divide evenly into standard baud rates. The 4-bit fraction fine-tunes the clock divider to keep timing errors well within the 2-3% tolerance limit.',
+          answerIndex: 0,
+          explanation: 'Peripheral clocks rarely divide evenly into standard baud rates. The 4-bit fraction fine-tunes the clock divider to keep timing errors well within the 2-3% tolerance limit.'
+        }
+      },
+      {
+        title: 'Microcontroller Low-Power Sleep Modes & Duty-Cycled Energy Physics',
+        say: [
+          'Battery-powered edge devices cannot run continuously at full clock speed. An STM32 running at 84 MHz consumes ~20 mA; on a standard 2400 mAh coin cell or AA battery, it would die in under 5 days.',
+          'To achieve 5 to 10-year battery lifespans, the firmware must duty-cycle execution: spend 50 ms taking a sensor reading and transmitting via radio, then enter low-power sleep for 9.95 seconds (a 0.5% active duty cycle).',
+          'ARM Cortex-M cores implement assembly instructions for sleep: `WFI` (Wait For Interrupt) and `WFE` (Wait For Event).',
+          'The architecture provides three tiers of sleep: (1) Sleep Mode (gates CPU clock, peripherals stay active, ~2 mA), (2) Stop / Deep Sleep Mode (stops all high-speed oscillators, retains SRAM, ~15 µA), and (3) Standby Mode (powers off internal core regulator, preserves only RTC and backup registers, ~1 µA).',
+          'An external real-time clock (RTC) alarm or GPIO interrupt wakes the processor, returning it to full speed in microseconds.'
+        ],
+        example: 'Think of a smart refrigerator light. When the door is closed (99.9% of the day), the light is completely powered off. The momentary act of opening the door (hardware interrupt) flips the light on for 10 seconds before returning to dark.',
+        code: `#include <iostream>
+
+float calculateBatteryLifeHours(float activeMa, float activeMs, float sleepMa, float periodMs, float batteryMah) {
+    float sleepMs = periodMs - activeMs;
+    float avgCurrentMa = ((activeMa * activeMs) + (sleepMa * sleepMs)) / periodMs;
+    return batteryMah / avgCurrentMa;
+}
+
+int main() {
+    float lifeHours = calculateBatteryLifeHours(18.5f, 50.0f, 0.015f, 10000.0f, 2400.0f);
+    std::cout << "Battery Life (Hours): " << lifeHours << "\\n";
+    return 0;
+}`,
+        output: `Battery Life (Hours): 22341.2`,
+        codeNotes: [
+          { line: 3, note: 'Calculates time-weighted average current across active and sleep phases' },
+          { line: 5, note: 'Applies Peukert capacity equation to compute total operational hours' },
+          { line: 9, note: 'Simulates 50ms active burst every 10 seconds with 15uA deep sleep' }
+        ],
+        tryIt: 'Increase sleep current to 1.0 mA (simulating a leaky peripheral) and observe how battery life collapses from 2.5 years down to 3 months.',
+        check: {
+          question: 'What ARM assembly instruction suspends CPU clock execution until an interrupt occurs in low-power embedded firmware?',
+          options: [
+            'WFI (Wait For Interrupt)',
+            'NOP (No Operation)',
+            'MOV (Move Register)',
+            'JMP (Jump Immediate)'
+          ],
+          answer: 0,
+          why: 'The WFI (Wait For Interrupt) instruction halts the CPU clock pipeline immediately, entering the configured sleep mode until the NVIC asserts a valid interrupt request.',
+          answerIndex: 0,
+          explanation: 'The WFI (Wait For Interrupt) instruction halts the CPU clock pipeline immediately, entering the configured sleep mode until the NVIC asserts a valid interrupt request.'
+        }
+      }
+    ],
+    summary: [
+      'The ARM Cortex-M NVIC provides deterministic low-latency interrupt preemption, prioritizing urgent hardware events using inverted numerical priority levels.',
+      'Hardware timers divide master clocks using Prescaler (PSC) and Auto-Reload (ARR) registers to generate precise PWM frequencies without CPU overhead.',
+      'Lock-free DMA circular ring buffers with power-of-two sizing replace expensive division with single-cycle bitwise AND masking for high-throughput I/O.',
+      'UART Baud Rate Registers (BRR) combine 12-bit mantissas and 4-bit fractional sixteenths to eliminate timing error across asynchronous serial lines.',
+      'Duty-cycled sleep modes (Sleep, Deep Sleep, Standby) invoked via WFI reduce average current from 20 mA to microamperes, enabling multi-year battery operation.'
+    ],
+    projectStep: {
+      title: 'Architect an Interrupt-Driven Sensor & Power Management System',
+      steps: [
+        'Configure NVIC interrupt preemption grouping for priority management.',
+        'Calculate timer prescaler and compare values for a 1 kHz motor PWM signal.',
+        'Implement a lock-free circular ring buffer for incoming DMA UART packets.',
+        'Calculate duty-cycled energy budgets and implement a WFI sleep management loop.'
+      ]
+    }
   }
 ];
+
