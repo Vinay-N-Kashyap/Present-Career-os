@@ -874,6 +874,306 @@ int main() {
         'Implement a CRC-16-CCITT polynomial packet validation engine to verify telemetry frame integrity.'
       ]
     }
+  },
+  {
+    day: 4,
+    title: 'Real-Time Operating Systems (FreeRTOS) Kernel Architecture & Task Concurrency',
+    goal: 'Master embedded RTOS fundamentals: preemptive priority-based scheduling, Task Control Blocks (TCB), stack overflow watermarks, FreeRTOS queues, priority inheritance mutexes, and low-power tickless idle.',
+    minutes: 45,
+    recap: 'In Day 3, we mastered low-level peripheral communication: UART asynchronous framing, SPI full-duplex shift registers, I2C open-drain arbitration, automotive CAN bus differential signaling, and CRC-16 hardware integrity checks. In Day 4, we graduate to embedded operating systems: transitioning from bare-metal super-loops to the FreeRTOS real-time kernel, managing preemptive task prioritization, stack canary watermarks, queue-based IPC, priority inheritance, and tickless low-power sleep.',
+    parts: [
+      {
+        title: 'Real-Time Kernels vs Bare Metal & Fixed-Priority Preemptive Scheduling',
+        say: [
+          'In bare-metal embedded firmware, execution is governed by a single infinite while(1) "super-loop" coupled with interrupt handlers (ISRs). As system complexity increases with multiple sensors, wireless connectivity, and display updates, this architecture collapses: a long-running computation or slow sensor read starves other time-critical tasks.',
+          'A Real-Time Operating System (RTOS) like FreeRTOS or Zephyr fundamentally solves this by introducing multitasking with deterministic execution guarantees. In a real-time kernel, "real-time" does not mean fastest; it means predictability—deadlines are guaranteed to be met within strict mathematical bounds.',
+          'FreeRTOS uses a Fixed-Priority Preemptive Scheduler driven by the ARM Cortex-M hardware SysTick timer tick (typically 1 millisecond). Each task is assigned a numerical priority. At every SysTick interrupt, the scheduler evaluates the Task Control Blocks (TCBs) of all ready tasks. If a higher-priority task transitions from Blocked to Ready, the kernel immediately preempts the lower-priority running task, switches CPU register context, and grants execution to the higher-priority task.',
+          'If multiple tasks share the same priority, the scheduler executes them in a Round-Robin time-sliced fashion. When no application tasks are ready to run, the kernel executes the background Idle Task (Priority 0).'
+        ],
+        example: 'Like an emergency room triage nurse. Minor injuries (low-priority background tasks) are treated sequentially, but the moment an ambulance brings a critical trauma patient (high-priority real-time task), the doctors immediately drop what they are doing and treat the trauma patient first.',
+        code: `#include <iostream>
+#include <cstdint>
+#include <string>
+
+struct TaskControlBlock {
+    const char* taskName;
+    uint32_t priority;
+    uint32_t stackRemainingBytes;
+    bool isReady;
+};
+
+std::string scheduleFreeRtosTask(TaskControlBlock* tasks, int count) {
+    int highestPriorityIdx = -1;
+    uint32_t maxPriority = 0;
+    for (int i = 0; i < count; ++i) {
+        if (tasks[i].isReady && tasks[i].priority > maxPriority) {
+            maxPriority = tasks[i].priority;
+            highestPriorityIdx = i;
+        }
+    }
+    if (highestPriorityIdx != -1) {
+        return tasks[highestPriorityIdx].taskName;
+    }
+    return "IDLE_TASK";
+}
+
+int main() {
+    TaskControlBlock taskList[] = {
+        {"TelemetryTask", 2, 512, true},
+        {"MotorControlTask", 5, 256, true},
+        {"SensorSamplingTask", 3, 384, true}
+    };
+    std::string running = scheduleFreeRtosTask(taskList, 3);
+    std::cout << "Selected Preempted Task: " << running << "\\n";
+    return 0;
+}`,
+        output: `Selected Preempted Task: MotorControlTask`,
+        codeNotes: [
+          { line: 5, note: 'Defines FreeRTOS Task Control Block (TCB) metadata' },
+          { line: 12, note: 'Implements fixed-priority preemptive scheduling evaluation' },
+          { line: 24, note: 'Initializes tasks with priorities 2, 5, and 3' },
+          { line: 30, note: 'Correctly selects highest priority task (MotorControlTask, priority 5)' }
+        ],
+        tryIt: 'Set MotorControlTask isReady to false and observe the scheduler preempt to SensorSamplingTask (priority 3).',
+        check: {
+          question: 'What is the core guarantee of a preemptive real-time operating system scheduler?',
+          options: [
+            'The highest-priority task that is ready to run will always be allocated CPU execution time over lower-priority tasks',
+            'All tasks execute at exactly the same speed simultaneously',
+            'Tasks are scheduled in alphabetical order',
+            'Low-priority tasks are automatically deleted'
+          ],
+          answer: 0,
+          why: 'In preemptive priority scheduling, the scheduler immediately suspends lower-priority tasks whenever a higher-priority task becomes ready, guaranteeing determinism for critical operations.'
+        }
+      },
+      {
+        title: 'Task Stacks, Stack Overflow Canaries & Context Switching Mechanics',
+        say: [
+          'In bare-metal C++, all non-ISR execution shares a single continuous stack. In FreeRTOS, every individual task is allocated its own dedicated stack memory buffer upon creation (via xTaskCreate or xTaskCreateStatic).',
+          'When a context switch occurs on an ARM Cortex-M processor, the hardware automatically pushes caller-saved registers (R0-R3, R12, LR, PC, and xPSR) onto the task Process Stack Pointer (PSP). The FreeRTOS PendSV exception handler then executes in software, pushing the remaining callee-saved registers (R4-R11) onto the task stack, saving the updated stack pointer into the task TCB, and loading the next task stack pointer.',
+          'Because embedded microcontrollers have limited RAM (often 32KB to 256KB), sizing task stacks is critical. If a task uses deeply nested function calls or large local arrays, it will overflow its allocated stack buffer, silently corrupting neighboring TCBs or global variables in SRAM.',
+          'To detect stack corruption, FreeRTOS employs Stack Canary Watermarking: when a task stack is allocated, the kernel fills the entire buffer with the canary byte pattern 0xA5. During execution or context switches, the kernel checks the "high-water mark"—the number of untouched 0xA5 bytes remaining near the stack boundary. If any canary bytes at the limit are overwritten, the vApplicationStackOverflowHook() callback triggers an emergency halt.'
+        ],
+        example: 'Like setting up tents at a campsite with chalk lines drawn around each tent boundary. If morning inspection reveals someone stepped across the chalk line (canary byte overwritten), you know the tent was pitched too close to its neighbor.',
+        code: `#include <iostream>
+#include <cstdint>
+#include <cstddef>
+
+// FreeRTOS Stack Overflow Detection (Method 2: 0xA5 watermark)
+uint32_t evaluateStackWatermark(const uint8_t* stackBuffer, size_t totalBytes) {
+    size_t unusedBytes = 0;
+    for (size_t i = 0; i < totalBytes; ++i) {
+        if (stackBuffer[i] == 0xA5) {
+            unusedBytes++;
+        } else {
+            break; // Stop at first used stack byte
+        }
+    }
+    return static_cast<uint32_t>(unusedBytes);
+}
+
+int main() {
+    uint8_t stack[128];
+    for (int i = 0; i < 48; ++i) stack[i] = 0xA5;
+    for (int i = 48; i < 128; ++i) stack[i] = 0xAA; // Modified by execution
+    uint32_t freeWatermark = evaluateStackWatermark(stack, 128);
+    std::cout << "Stack High-Water Mark: " << freeWatermark << " bytes\\n";
+    return 0;
+}`,
+        output: `Stack High-Water Mark: 48 bytes`,
+        codeNotes: [
+          { line: 6, note: 'Inspects stack buffer looking for untouched 0xA5 canary bytes' },
+          { line: 17, note: 'Simulates 128-byte task stack with 48 bytes untouched canary reserve' },
+          { line: 20, note: 'Computes remaining stack safety margin before overflow' }
+        ],
+        tryIt: 'Change the loop so all 128 bytes are filled with 0xAA and verify the watermark drops to 0 bytes (stack overflow).',
+        check: {
+          question: 'How does FreeRTOS Stack Overflow Detection Method 2 detect stack exhaustion?',
+          options: [
+            'It fills the task stack with 0xA5 canary bytes at creation and verifies that the boundary bytes remain untouched',
+            'It asks the user to restart the microcontroller',
+            'It sends an HTTP GET request to a monitoring server',
+            'It doubles the size of physical flash memory'
+          ],
+          answer: 0,
+          why: 'By initializing the stack with a known pattern (0xA5), the kernel inspects the boundary limit during context switches to ensure execution has not overwritten the canary threshold.'
+        }
+      },
+      {
+        title: 'Inter-Task Communication (IPC): FreeRTOS Queues & Ring Buffers',
+        say: [
+          'In multithreaded embedded firmware, tasks must exchange sensor readings, network commands, and telemetry payloads. Sharing data via global variables is dangerous: without synchronization, concurrent tasks produce race conditions, torn reads, and data corruption.',
+          'The primary Inter-Task Communication (IPC) primitive in FreeRTOS is the Queue. A FreeRTOS queue is a thread-safe, First-In-First-Out (FIFO) ring buffer managed by the kernel. Queues operate by value: when a task posts an item with xQueueSend(), the kernel copies the byte payload directly into the queue storage area, freeing the sending task to safely overwrite its local variable.',
+          'Crucially, queues provide deterministic task blocking. If a consumer task attempts to read from an empty queue with xQueueReceive(), the task enters the Blocked state with zero CPU overhead, allowing lower-priority tasks to execute. The moment a producer task or ISR (via xQueueSendFromISR) writes a message to the queue, the kernel unblocks the consumer task instantly.',
+          'For large data structures (such as high-resolution camera frames or audio buffers), copying full payloads wastes CPU cycles and RAM. In these scenarios, embedded architects pass pointers to memory buffers through the queue, pairing the queue with buffer ownership transfer to achieve zero-copy IPC.'
+        ],
+        example: 'Like an internal pneumatic tube system in a hospital. The lab places blood sample capsules into the tube (xQueueSend). The pharmacy desk waits asleep until a capsule arrives with a chime (xQueueReceive), waking the pharmacist without them having to stand and poll the door every second.',
+        code: `#include <iostream>
+#include <cstdint>
+
+struct TelemetryQueue {
+    uint32_t buffer[8];
+    int head;
+    int tail;
+    int count;
+};
+
+bool dispatchQueueMessage(TelemetryQueue* q, uint32_t item) {
+    if (q->count >= 8) {
+        return false; // Queue full
+    }
+    q->buffer[q->tail] = item;
+    q->tail = (q->tail + 1) % 8;
+    q->count++;
+    return true;
+}
+
+int main() {
+    TelemetryQueue q = {{0}, 0, 0, 0};
+    bool ok1 = dispatchQueueMessage(&q, 0xAA11);
+    bool ok2 = dispatchQueueMessage(&q, 0xBB22);
+    std::cout << "Queue Dispatched: " << (ok1 && ok2 ? "SUCCESS" : "FAIL") << "\\n";
+    std::cout << "Queue Items Count: " << q.count << "\\n";
+    return 0;
+}`,
+        output: `Queue Dispatched: SUCCESS\nQueue Items Count: 2`,
+        codeNotes: [
+          { line: 4, note: 'Defines thread-safe FIFO ring buffer structure' },
+          { line: 11, note: 'Checks capacity and inserts item into circular buffer' },
+          { line: 20, note: 'Dispatches two telemetry words into the queue' }
+        ],
+        tryIt: 'Dispatch 8 items into the queue and verify that the 9th dispatch returns false (Queue full).',
+        check: {
+          question: 'What happens when a high-priority FreeRTOS task calls xQueueReceive() on an empty queue with a non-zero timeout?',
+          options: [
+            'The task enters the Blocked state with 0% CPU consumption, allowing lower-priority tasks to run until a message arrives',
+            'The microcontroller executes an infinite while loop spinning the CPU at 100%',
+            'The task is permanently deleted from the RTOS',
+            'The queue returns random garbage data immediately'
+          ],
+          answer: 0,
+          why: 'FreeRTOS blocks tasks waiting on empty queues, yielding the CPU to other ready tasks and waking the consumer task only when data is pushed or the timeout expires.'
+        }
+      },
+      {
+        title: 'Synchronization Primitives, Mutexes & Priority Inversion (Priority Inheritance)',
+        say: [
+          'When multiple tasks share a physical hardware resource—such as an SPI bus connected to both an SD card and a flash memory chip—they must synchronize access to prevent interleaved transmissions. FreeRTOS provides Binary Semaphores and Mutexes for mutual exclusion.',
+          'While a binary semaphore and a mutex both act as tokens with binary states (taken or available), a Mutex possesses a critical property: ownership and Priority Inheritance. Using simple semaphores for resource locking leads to the catastrophic bug known as Priority Inversion, famously experienced on the Mars Pathfinder spacecraft in 1997.',
+          'Priority Inversion unfolds in three steps: (1) A low-priority task (Task L) acquires a shared semaphore. (2) A high-priority task (Task H) wakes up, attempts to acquire the semaphore, and blocks waiting for Task L. (3) A medium-priority task (Task M) that does NOT need the semaphore wakes up and preempts Task L! As a result, Task M runs, Task L cannot finish to release the resource, and Task H is indefinitely starved by a lower-priority task!',
+          'FreeRTOS Mutexes eliminate priority inversion through Priority Inheritance. When Task H blocks waiting for a mutex held by Task L, the FreeRTOS kernel dynamically boosts the priority of Task L to match Task H. Task L can no longer be preempted by intermediate tasks like Task M. Once Task L releases the mutex, its priority drops back to normal, and Task H claims the resource immediately.'
+        ],
+        example: 'Like an intern holding the physical key to the boardroom where the CEO needs to hold an urgent board meeting. If middle managers try to stop the intern to assign routine paperwork, the CEO grants the intern executive authorization (priority inheritance) so the intern walks straight through, unlocks the door, and gives the key to the CEO.',
+        code: `#include <iostream>
+#include <cstdint>
+
+struct MutexResource {
+    int ownerTaskId;
+    uint32_t basePriority;
+    uint32_t boostedPriority;
+};
+
+uint32_t resolvePriorityInversion(MutexResource* m, uint32_t waitingTaskPriority) {
+    if (waitingTaskPriority > m->boostedPriority) {
+        m->boostedPriority = waitingTaskPriority; // Priority inheritance boost!
+    }
+    return m->boostedPriority;
+}
+
+int main() {
+    MutexResource spiMutex = {1, 2, 2}; // Owned by low priority task (prio 2)
+    uint32_t boosted = resolvePriorityInversion(&spiMutex, 5); // High prio task (prio 5) waits
+    std::cout << "Mutex Owner Boosted Priority: " << boosted << "\\n";
+    return 0;
+}`,
+        output: `Mutex Owner Boosted Priority: 5`,
+        codeNotes: [
+          { line: 4, note: 'Tracks mutex owner and priority inheritance state' },
+          { line: 10, note: 'Elevates low-priority owner priority to match high-priority waiter' },
+          { line: 18, note: 'Verifies owner priority boosted from 2 to 5' }
+        ],
+        tryIt: 'Simulate a waiting task with priority 1 (lower than owner) and verify boostedPriority remains 2.',
+        check: {
+          question: 'How does Priority Inheritance resolve the priority inversion anomaly in real-time operating systems?',
+          options: [
+            'It temporarily elevates the priority of the task holding the mutex to match the highest-priority task waiting for it',
+            'It deletes all medium-priority tasks in the system',
+            'It restarts the microcontroller every time a mutex is acquired',
+            'It executes all tasks on a cloud server'
+          ],
+          answer: 0,
+          why: 'Priority inheritance temporarily elevates the resource holder priority so it cannot be preempted by medium-priority tasks, allowing it to release the mutex quickly to the waiting high-priority task.'
+        }
+      },
+      {
+        title: 'Task Notifications, Event Groups & Low-Power Tickless Idle Mode',
+        say: [
+          'While queues and semaphores provide full-featured IPC, each primitive requires a dedicated kernel control structure in RAM. In resource-constrained microcontrollers, FreeRTOS provides Direct-to-Task Notifications: a built-in 32-bit integer array embedded directly inside every TCB.',
+          'Task notifications can act as lightweight binary semaphores, counting semaphores, or event bits with 45% faster context execution and ZERO additional RAM allocation. Tasks wait using ulTaskNotifyTake() or xTaskNotifyWait(), and ISRs or producer tasks send events using xTaskNotifyGive() or xTaskNotify().',
+          'In battery-powered IoT devices (like environmental trackers or smart medical patches), the microcontroller must spend 99% of its life asleep. However, a standard RTOS wakes up every 1 millisecond due to the SysTick timer interrupt, burning precious battery current (often 10mA to 20mA).',
+          'FreeRTOS solves this with Tickless Idle mode (configUSE_TICKLESS_IDLE). When all tasks are blocked for an extended duration (such as 500ms), the kernel stops the periodic SysTick timer, programs a low-power hardware timer (LPTIM or RTC), and puts the CPU core into deep sleep (ARM Cortex-M Wait For Interrupt WFI instruction). Current consumption plummets from 15mA down to under 3 microamps, extending battery longevity from days to years.'
+        ],
+        example: 'Like turning off a loud alarm clock that rings every 60 seconds when you know you do not need to wake up for another 6 hours. You program the single 6:00 AM alarm (low-power timer) and sleep soundly in complete silence (tickless idle).',
+        code: `#include <iostream>
+#include <cstdint>
+
+struct PowerProfile {
+    uint32_t activeCurrentMa;
+    uint32_t sleepCurrentUa;
+    uint32_t suppressedTicks;
+};
+
+uint32_t configureTicklessIdle(PowerProfile* profile, uint32_t expectedIdleMs) {
+    profile->suppressedTicks = expectedIdleMs;
+    // Enter Cortex-M WFI (Wait For Interrupt) low power state
+    return profile->suppressedTicks;
+}
+
+int main() {
+    PowerProfile nrf52 = {15, 3, 0};
+    uint32_t idleTicks = configureTicklessIdle(&nrf52, 500);
+    std::cout << "Tickless Idle Suppressed Ticks: " << idleTicks << "\\n";
+    std::cout << "Deep Sleep Current: " << nrf52.sleepCurrentUa << " uA\\n";
+    return 0;
+}`,
+        output: `Tickless Idle Suppressed Ticks: 500\nDeep Sleep Current: 3 uA`,
+        codeNotes: [
+          { line: 4, note: 'Models active vs deep sleep current profile for battery IoT devices' },
+          { line: 10, note: 'Suppresses periodic SysTick timer interrupts during extended idle windows' },
+          { line: 18, note: 'Verifies 500 suppressed ticks and ultra-low 3 uA sleep state' }
+        ],
+        tryIt: 'Change expectedIdleMs to 1000 and verify 1000 ticks are suppressed during low power sleep.',
+        check: {
+          question: 'Why is Tickless Idle mode crucial for battery-powered IoT devices running FreeRTOS?',
+          options: [
+            'It suppresses the periodic 1ms SysTick interrupt during extended idle periods, allowing the MCU to remain in deep sleep (WFI) and reducing current from milliamps to microamps',
+            'It speeds up the CPU clock frequency to 5 GHz',
+            'It replaces C++ code with WebAssembly',
+            'It recharges the battery over radio waves'
+          ],
+          answer: 0,
+          why: 'By stopping periodic timer ticks when tasks are blocked, Tickless Idle prevents unnecessary CPU wakeups, allowing the device to remain in deep sleep consuming microamps of current.'
+        }
+      }
+    ],
+    summary: [
+      'FreeRTOS fixed-priority preemptive scheduling guarantees that the highest-priority ready task always preempts lower-priority execution.',
+      'Task stacks require individual allocation and context switching saves CPU registers onto the Process Stack Pointer (PSP) verified by 0xA5 canaries.',
+      'FreeRTOS queues provide thread-safe FIFO ring buffer IPC with deterministic task blocking and zero CPU overhead while waiting.',
+      'Priority Inheritance in FreeRTOS mutexes temporarily boosts the priority of a resource owner, preventing catastrophic priority inversion.',
+      'Tickless Idle mode suppresses periodic SysTick interrupts during idle periods, dropping microcontroller consumption to microamps.'
+    ],
+    projectStep: {
+      title: 'Architect a Production FreeRTOS Multi-Task Telemetry & Power Management Engine',
+      steps: [
+        'Configure a fixed-priority preemptive task scheduler managing telemetry, motor control, and sensor sampling tasks.',
+        'Implement a 0xA5 stack canary watermark detector to monitor task stack high-water marks and prevent stack overflows.',
+        'Construct a thread-safe circular ring buffer queue dispatching telemetry packets between producer and consumer tasks.',
+        'Implement a priority inheritance mutex algorithm to eliminate priority inversion across shared SPI/I2C peripheral buses.',
+        'Configure a low-power Tickless Idle power profile suppressing periodic SysTick interrupts during extended idle sleep windows.'
+      ]
+    }
   }
 ];
 
