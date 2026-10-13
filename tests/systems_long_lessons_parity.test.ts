@@ -368,6 +368,61 @@ test('Systems Long Lessons: comp_fund Day 4 POSIX Sockets, TCP State, epoll & TL
   assert.ok(res5.stdout?.includes('FORWARD_SECRECY: VERIFIED'), 'Must confirm forward secrecy');
 });
 
+test('Systems Long Lessons: git_vcs Day 4 Hooks, Signed Commits, Worktrees & Monorepo Scaling Verification', async () => {
+  const gitVcsD4 = getLongLesson('git_vcs', 4);
+  assert.ok(gitVcsD4, 'git_vcs Day 4 must resolve');
+  assert.equal(gitVcsD4.day, 4);
+  assert.equal(gitVcsD4.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(gitVcsD4);
+  const totalMin = estimateLessonMinutes(gitVcsD4);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < gitVcsD4.parts.length; i++) {
+    const part = gitVcsD4.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code must contain bash commands`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Part 1: Git Hooks Architecture (pre-commit, commit-msg)
+  const res1 = await executeBashSuite(gitVcsD4.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 git hooks must succeed');
+  assert.ok(res1.stdout?.includes('HOOK_STATUS: COMMIT_MSG_VALIDATED'), 'Must validate commit message hook');
+
+  // Part 2: Cryptographically Signed Commits (GPG/SSH)
+  const res2 = await executeBashSuite(gitVcsD4.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 signed commits must succeed');
+  assert.ok(res2.stdout?.includes('GPG_VERIFIED_VALID'), 'Must verify cryptographic GPG signature');
+
+  // Part 3: Git Worktrees
+  const res3 = await executeBashSuite(gitVcsD4.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 worktrees must succeed');
+  assert.ok(res3.stdout?.includes('agent/antigravity'), 'Must identify agent worktree');
+
+  // Part 4: Git Submodules vs Subtrees
+  const res4 = await executeBashSuite(gitVcsD4.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 submodules must succeed');
+  assert.ok(res4.stdout?.includes('160000 commit e9a0812'), 'Must detect submodule commit mode 160000');
+
+  // Part 5: Monorepo Scaling (Partial / Blobless Clones)
+  const res5 = await executeBashSuite(gitVcsD4.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 monorepo scaling must succeed');
+  assert.ok(res5.stdout?.includes('INITIAL_DOWNLOAD_SAVING: 92%'), 'Must calculate download performance savings');
+});
+
+
 
 
 

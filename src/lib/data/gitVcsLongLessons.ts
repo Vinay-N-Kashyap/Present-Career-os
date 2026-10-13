@@ -610,6 +610,205 @@ grep "squash" rebase_todo.txt | wc -l`,
         'Curate a feature branch commit history using interactive rebase squashing.'
       ]
     }
+  },
+  {
+    day: 4,
+    title: 'Enterprise Git Workflows: Git Hooks, Signed Commits, Worktrees & Monorepo Scaling',
+    goal: 'Master production enterprise Git operations: Client vs Server Git hooks (pre-commit, commit-msg, pre-push), cryptographically signed commits with GPG/SSH keys for zero-trust supply chain security, multi-branch Git worktrees for collision-free parallel workflows, Git submodules vs subtrees for multi-repo dependency management, and monorepo scaling with shallow/partial blobless clones.',
+    minutes: 35,
+    recap: 'Welcome to Enterprise Git Architecture & Monorepo Operations. Today we transition from individual developer workflows into enterprise repository governance, cryptographically signed audit trails, and multi-worktree concurrency.',
+    parts: [
+      {
+        title: 'Git Hooks Architecture: Client-Side (pre-commit, commit-msg) vs Server-Side',
+        say: [
+          'In professional software teams, quality assurance must be automated directly into the version control workflow rather than relying on human memory. Git hooks provide native event-driven automation: shell scripts residing in .git/hooks/ that fire automatically before or after Git events.',
+          'Client-side hooks run locally on developer workstations. The pre-commit hook runs before a commit is created, commonly executing linters, TypeScript type checks, and staged file formatting (via tools like Husky and lint-staged). The commit-msg hook inspects the commit message draft, enforcing Conventional Commits formatting (such as feat:, fix:, docs:) to ensure automated changelog generation.',
+          'Server-side hooks run on the remote Git server (such as GitHub Enterprise or GitLab) during git push. The pre-receive hook evaluates all pushed commits before updating branch refs: rejecting unsigned commits, preventing secrets or AWS API keys from entering the repository, and enforcing strict linear history. If any hook exits with a non-zero exit code, Git aborts the operation immediately.'
+        ],
+        example: 'Like airport security checkpoints: pre-commit is the airline desk checking your ID and boarding pass; commit-msg is the baggage scanner rejecting oversized luggage; and pre-receive is the gate agent scanning your final boarding pass before allowing you onto the aircraft.',
+        code: `mkdir -p /home/student/workspace/git_hooks
+echo "feat(auth): add oauth2 jwt refresh token" > /home/student/workspace/git_hooks/commit_msg.txt
+cat /home/student/workspace/git_hooks/commit_msg.txt
+grep "feat(auth)" /home/student/workspace/git_hooks/commit_msg.txt
+echo "HOOK_STATUS: COMMIT_MSG_VALIDATED"`,
+        output: `feat(auth): add oauth2 jwt refresh token\n\nHOOK_STATUS: COMMIT_MSG_VALIDATED`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual git_hooks directory' },
+          { line: 2, note: 'Simulates staged commit message conforming to Conventional Commits' },
+          { line: 4, note: 'Verifies prefix compliance against regex filter' },
+          { line: 5, note: 'Confirms hook execution passed with exit code 0' }
+        ],
+        tryIt: 'Change the commit message to "fixed bug" and observe how regex verification fails the commit-msg hook.',
+        check: {
+          question: 'What happens when a Git pre-commit or commit-msg hook exits with a non-zero return code (e.g., exit 1)?',
+          options: [
+            'Git immediately halts the operation and aborts the commit, preventing unformatted or invalid code from being recorded',
+            'Git automatically formats the hard drive',
+            'The commit is uploaded to an emergency backup branch',
+            'The computer operating system restarts'
+          ],
+          answer: 0,
+          why: 'A non-zero exit status from any pre-action Git hook immediately terminates the command, ensuring compliance checks cannot be bypassed accidentally.'
+        }
+      },
+      {
+        title: 'Cryptographically Signed Commits: GPG & SSH Key Attestation',
+        say: [
+          'A dangerous and poorly understood reality of Git is that author identity is completely unverified by default. Any developer can run git config user.name "Linus Torvalds" and git config user.email "torvalds@linux-foundation.org" and craft commits appearing to originate from Linux creator.',
+          'In enterprise supply chain security (SOC2, ISO 27001, and SLSA compliance), unverified commits represent a critical vector for malicious code injection. The solution is Cryptographically Signed Commits (git commit -S).',
+          'Using a local GPG private key or modern SSH signing key (introduced in Git 2.34), Git hashes the commit object payload and encrypts the digest with your private key, embedding the ASCII-armored digital signature directly into the commit header. Platforms like GitHub verify the signature against your registered public key, displaying the Verified badge.',
+          'Running git verify-commit or git log --show-signature mathematically validates that the commit content has not been tampered with and was indisputably authored by the owner of the private key.'
+        ],
+        example: 'Like an official legal contract notarized with a raised wax seal: anyone can type an executive name on a contract letterhead, but a cryptographic notary signature legally proves the genuine executive witnessed and signed the document.',
+        code: `mkdir -p /home/student/workspace/signed_commits
+echo "commit 4b825dc642cb6eb9a060e54bf8d69288fbee4904" > /home/student/workspace/signed_commits/commit.log
+echo "gpg: Signature made Sun Oct 13 14:00:00 2026 UTC" >> /home/student/workspace/signed_commits/commit.log
+echo "gpg: Good signature from Linus (KeyID: 0x9B88E523)" >> /home/student/workspace/signed_commits/commit.log
+echo "SIGNATURE_STATUS: GPG_VERIFIED_VALID" >> /home/student/workspace/signed_commits/commit.log
+cat /home/student/workspace/signed_commits/commit.log
+grep "GPG_VERIFIED" /home/student/workspace/signed_commits/commit.log`,
+        output: `commit 4b825dc642cb6eb9a060e54bf8d69288fbee4904\ngpg: Signature made Sun Oct 13 14:00:00 2026 UTC\ngpg: Good signature from Linus (KeyID: 0x9B88E523)\nSIGNATURE_STATUS: GPG_VERIFIED_VALID\n\nSIGNATURE_STATUS: GPG_VERIFIED_VALID`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual signed_commits directory' },
+          { line: 2, note: 'Logs commit object SHA identifier' },
+          { line: 3, note: 'Records cryptographic GPG signature timestamp' },
+          { line: 4, note: 'Validates public key matching against verified identity' },
+          { line: 6, note: 'Confirms cryptographic signature attestation passes' }
+        ],
+        tryIt: 'Inspect the commit verification log using cat /home/student/workspace/signed_commits/commit.log.',
+        check: {
+          question: 'Why is cryptographic commit signing (GPG or SSH) essential in enterprise zero-trust development?',
+          options: [
+            'Because Git author names and emails can be easily spoofed by anyone, whereas cryptographic signatures prove identity and payload integrity',
+            'Because signed commits compress repository files by 50%',
+            'Because GitHub deletes unsigned repositories after 30 days',
+            'To make git status run faster'
+          ],
+          answer: 0,
+          why: 'Anyone can configure arbitrary git user.name and email strings. Cryptographic signing binds the commit SHA to a verified private key, preventing impersonation.'
+        }
+      },
+      {
+        title: 'Git Worktrees (git worktree): Zero-Switch Multi-Branch Concurrency',
+        say: [
+          'In fast-paced engineering environments, you frequently need to switch tasks while deep in feature development: a production hotfix requires immediate review, an AI agent is working on a separate branch, or you need to test a colleague pull request.',
+          'The traditional workflow requires running git stash, switching branches with git checkout, reinstalling node_modules, and rebuilding native binaries. When returning, you un-stash, resolve stash conflicts, and rebuild again, wasting valuable focus and time.',
+          'Git Worktrees (git worktree add <path> <branch>) completely eliminate this friction. A single Git repository (.git) can maintain multiple linked working trees checked out in separate filesystem folders simultaneously. Each worktree has its own isolated index and working directory, yet all worktrees share the identical underlying object database, commits, and refs. You simply open a second terminal tab in the hotfix directory with zero stash friction.'
+        ],
+        example: 'Like an auto mechanic garage with multiple service bays: rather than pushing an unfinished sports car out into the street and packing away all tools every time an emergency ambulance arrives, the mechanic simply steps over into Bay 2 where the ambulance is already parked.',
+        code: `mkdir -p /home/student/workspace/worktrees
+echo "/home/student/workspace/repo-main     [main]" > /home/student/workspace/worktrees/list.txt
+echo "/home/student/workspace/repo-hotfix   [hotfix-db]" >> /home/student/workspace/worktrees/list.txt
+echo "/home/student/workspace/repo-agent    [agent/antigravity]" >> /home/student/workspace/worktrees/list.txt
+cat /home/student/workspace/worktrees/list.txt
+grep "agent/antigravity" /home/student/workspace/worktrees/list.txt`,
+        output: `/home/student/workspace/repo-main     [main]\n/home/student/workspace/repo-hotfix   [hotfix-db]\n/home/student/workspace/repo-agent    [agent/antigravity]\n\n/home/student/workspace/repo-agent    [agent/antigravity]`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual worktrees directory' },
+          { line: 2, note: 'Registers primary worktree checked out to branch main' },
+          { line: 3, note: 'Registers parallel hotfix worktree checked out to branch hotfix-db' },
+          { line: 4, note: 'Registers dedicated agent worktree checked out to branch agent/antigravity' }
+        ],
+        tryIt: 'Filter for the hotfix worktree path using grep "hotfix" /home/student/workspace/worktrees/list.txt.',
+        check: {
+          question: 'What is the primary benefit of using Git worktrees over git stash and branch switching?',
+          options: [
+            'It allows multiple branches to be checked out simultaneously in separate directories sharing the same .git object store with zero stashing overhead',
+            'It deletes old commits to save hard drive space',
+            'It replaces Git with Mercurial',
+            'It prevents merge conflicts permanently'
+          ],
+          answer: 0,
+          why: 'Git worktrees provide completely independent working directories linked to the same repository database, enabling simultaneous multi-branch development without stashing or node_modules rebuilds.'
+        }
+      },
+      {
+        title: 'Git Submodules vs Git Subtrees for Multi-Repo Code Sharing',
+        say: [
+          'When companies build multiple software products that share common code (such as a shared cryptographic library, a UI component kit, or microservice protobuf contracts), copying and pasting code across repositories creates maintenance nightmares.',
+          'Git provides two distinct mechanisms for embedding external repositories: Git Submodules and Git Subtrees. A Git Submodule (git submodule add) embeds a pointer to a specific commit SHA of an external repo, recorded as a special 160000 mode tree entry in the parent index. Submodules keep repos decoupled, but require developers to run git submodule update --init --recursive and can lead to detached HEAD states.',
+          'In contrast, Git Subtrees (git subtree add --prefix=path --squash) merge the external repository content directly into a subdirectory of your main repository as standard files and commit trees. Teammates do not need to learn submodule commands; they can commit and push as normal, while upstream library updates can be pulled or pushed using git subtree pull/push.'
+        ],
+        example: 'Like embedding a live web stream (Submodule: a lightweight iframe pointer that requires external network loading) versus downloading the video file and embedding it directly on your server storage (Subtree: fully self-contained).',
+        code: `mkdir -p /home/student/workspace/submodules
+echo "160000 commit e9a0812  libs/shared-crypto (submodule)" > /home/student/workspace/submodules/manifest.txt
+echo "040000 tree   7f04123  packages/ui-kit   (subtree)" >> /home/student/workspace/submodules/manifest.txt
+cat /home/student/workspace/submodules/manifest.txt
+grep "160000" /home/student/workspace/submodules/manifest.txt`,
+        output: `160000 commit e9a0812  libs/shared-crypto (submodule)\n040000 tree   7f04123  packages/ui-kit   (subtree)\n\n160000 commit e9a0812  libs/shared-crypto (submodule)`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual submodules directory' },
+          { line: 2, note: 'Logs Git submodule entry indicated by octal mode 160000 and commit SHA' },
+          { line: 3, note: 'Logs Git subtree directory indicated by octal mode 040000 tree entry' },
+          { line: 5, note: 'Filters for submodule pointer entry' }
+        ],
+        tryIt: 'Filter for the subtree entry using grep "subtree" /home/student/workspace/submodules/manifest.txt.',
+        check: {
+          question: 'What is the key difference between a Git submodule and a Git subtree?',
+          options: [
+            'A submodule records a lightweight commit pointer (mode 160000) requiring separate initialization, while a subtree imports the actual files directly into the repository tree',
+            'Submodules only work on Windows while subtrees only work on macOS',
+            'Subtrees require a paid commercial Git license',
+            'Submodules cannot contain TypeScript code'
+          ],
+          answer: 0,
+          why: 'Submodules store external commit references that must be initialized separately, whereas subtrees embed the code directly into the repository tree structure.'
+        }
+      },
+      {
+        title: 'Monorepo Scaling: Shallow Clones, Sparse Checkout & Blobless Clones',
+        say: [
+          'In large organizations adopting monorepos (such as Google, Meta, or enterprise suites with millions of files and a decade of commit history), running a full git clone downloads tens of gigabytes of historical data, consuming hours of time and gigabytes of disk space.',
+          'Git provides three modern scaling optimizations: Shallow Clones, Sparse Checkout, and Partial/Blobless Clones. In CI/CD pipelines where only the latest revision is required to run a build, git clone --depth=1 creates a shallow clone, fetching only the tip commit and cutting download times by 95%.',
+          'For developers working on a single package within a massive monorepo, git sparse-checkout set packages/auth configures the working directory to materialize only the specified subfolder, leaving millions of irrelevant files out of the filesystem. Finally, blobless clones (git clone --filter=blob:none) download all commit histories and tree structures (allowing instant git log, branch switches, and git bisect) while deferring file blob downloads until individual files are actually opened.'
+        ],
+        example: 'Like streaming video on demand: instead of waiting 5 hours to download an entire 50-episode TV series box set to your hard drive before watching, you stream individual episodes on demand as you watch them.',
+        code: `mkdir -p /home/student/workspace/clone_perf
+echo "CLONE_FILTER: blob:none" > /home/student/workspace/clone_perf/stats.txt
+echo "TREES_DOWNLOADED: 100%" >> /home/student/workspace/clone_perf/stats.txt
+echo "BLOBS_DEFERRED: 84321 objects (download on demand)" >> /home/student/workspace/clone_perf/stats.txt
+echo "INITIAL_DOWNLOAD_SAVING: 92%" >> /home/student/workspace/clone_perf/stats.txt
+cat /home/student/workspace/clone_perf/stats.txt
+grep "INITIAL_DOWNLOAD_SAVING" /home/student/workspace/clone_perf/stats.txt`,
+        output: `CLONE_FILTER: blob:none\nTREES_DOWNLOADED: 100%\nBLOBS_DEFERRED: 84321 objects (download on demand)\nINITIAL_DOWNLOAD_SAVING: 92%\n\nINITIAL_DOWNLOAD_SAVING: 92%`,
+        codeNotes: [
+          { line: 1, note: 'Creates virtual clone_perf directory' },
+          { line: 2, note: 'Specifies partial clone filter omitting file blobs' },
+          { line: 3, note: 'Confirms all commit tree structures downloaded for full history visibility' },
+          { line: 4, note: 'Records 84,321 heavy blob objects deferred until checkout' },
+          { line: 5, note: 'Reports 92% initial network bandwidth and time savings' }
+        ],
+        tryIt: 'Filter for the clone filter strategy using grep "CLONE_FILTER" /home/student/workspace/clone_perf/stats.txt.',
+        check: {
+          question: 'What makes a blobless clone (git clone --filter=blob:none) ideal for large monorepo developer environments?',
+          options: [
+            'It downloads all commits and directory trees for full history and bisect capability, while downloading file contents only on-demand when checked out',
+            'It deletes all Git branches except main',
+            'It converts all code into binary assembly',
+            'It prevents other developers from pushing code'
+          ],
+          answer: 0,
+          why: 'Blobless clones preserve complete commit histories and trees (so git log and git checkout work seamlessly) while deferring the download of heavy historical file blobs until needed.'
+        }
+      }
+    ],
+    summary: [
+      'Client hooks (pre-commit, commit-msg) and server hooks (pre-receive) enforce code quality, commit hygiene, and security policies.',
+      'Cryptographically signed commits with GPG or SSH keys prove author authenticity and protect against commit spoofing.',
+      'Git worktrees enable simultaneous multi-branch development in separate directories linked to a shared .git object store.',
+      'Git submodules track external commit pointers (mode 160000), while subtrees merge foreign repository trees directly into subdirectories.',
+      'Shallow clones (--depth=1), sparse checkout, and blobless filter clones (--filter=blob:none) scale monorepos to millions of files.'
+    ],
+    projectStep: {
+      title: 'Architect an Enterprise Git Governance & Monorepo Scaling Suite',
+      steps: [
+        'Deploy a commit-msg Git hook validating Conventional Commits format with automated regex filtering.',
+        'Configure GPG/SSH cryptographic commit signing and verify digital signature validity in commit logs.',
+        'Establish parallel Git worktrees for main, hotfixes, and autonomous agent workspaces sharing a single repository.',
+        'Inspect Git submodule commit pointers and compare structural differences with Git subtrees.',
+        'Benchmark monorepo scaling metrics comparing shallow depth clones with blobless on-demand filter clones.'
+      ]
+    }
   }
 ];
 
