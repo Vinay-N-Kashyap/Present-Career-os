@@ -327,5 +327,66 @@ test('Blockchain Day 4: Read-Only Reentrancy, Foundry Invariants, SMT & Governan
   assert.ok(blockchainLesson4.parts[4].output?.includes('TIMELOCK CONTROLLER & GOVERNANCE SAFETY PIPELINE'));
 });
 
+test('Blockchain Day 5: Zero-Knowledge Groth16, ERC-4337, Rollups, GMP & MEV-Boost Verification', () => {
+  const blockchainLesson5 = getLongLesson('blockchain', 5);
+  assert.ok(blockchainLesson5, 'blockchain Day 5 must resolve');
+  assert.equal(blockchainLesson5.day, 5);
+  assert.equal(blockchainLesson5.parts.length, 5, 'blockchain Day 5 must contain exactly 5 parts');
+  assert.ok(blockchainLesson5.summary.length >= 4, 'blockchain Day 5 must have comprehensive summary');
+  assert.ok(blockchainLesson5.projectStep, 'blockchain Day 5 must have projectStep');
+  assert.ok(blockchainLesson5.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(blockchainLesson5);
+  const totalMin = estimateLessonMinutes(blockchainLesson5);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < blockchainLesson5.parts.length; i++) {
+    const part = blockchainLesson5.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have >= 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  // Part 1: Groth16
+  assert.ok(blockchainLesson5.parts[0].code?.includes('Groth16VerifierSimulator'));
+  assert.ok(blockchainLesson5.parts[0].output?.includes('ZK_PROOF_VERIFIED_VALID'));
+  assert.ok(blockchainLesson5.parts[0].output?.includes('alt_bn128 (BN254)'));
+  assert.ok(blockchainLesson5.parts[0].output?.includes('198400 gas'));
+
+  // Part 2: ERC-4337
+  assert.ok(blockchainLesson5.parts[1].code?.includes('EntryPointSimulator'));
+  assert.ok(blockchainLesson5.parts[1].output?.includes('ERC4337_USEROPS_EXECUTED_SUCCESSFULLY'));
+  assert.ok(blockchainLesson5.parts[1].output?.includes('GAS_SPONSORED_BY_PAYMASTER'));
+
+  // Part 3: Rollup Interactive Bisection
+  assert.ok(blockchainLesson5.parts[2].code?.includes('RollupVerificationSimulator'));
+  assert.ok(blockchainLesson5.parts[2].output?.includes('Interactive Bisection Rounds: 20 Rounds'));
+  assert.ok(blockchainLesson5.parts[2].output?.includes('FRAUD_PROVEN_STATE_REVERTED_CHALLENGER_REWARDED'));
+  assert.ok(blockchainLesson5.parts[2].output?.includes('OneStepProver'));
+
+  // Part 4: Cross-Chain GMP
+  assert.ok(blockchainLesson5.parts[3].code?.includes('CrossChainRouterSimulator'));
+  assert.ok(blockchainLesson5.parts[3].output?.includes('SUCCESS_CROSS_CHAIN_PAYLOAD_DISPATCHED'));
+  assert.ok(blockchainLesson5.parts[3].output?.includes('ERROR_REPLAY_ATTEMPT_REJECTED'));
+
+  // Part 5: MEV-Boost
+  assert.ok(blockchainLesson5.parts[4].code?.includes('MevBoostRelayAuction'));
+  assert.ok(blockchainLesson5.parts[4].output?.includes('MEV_BOOST_AUCTION_SETTLED'));
+  assert.ok(blockchainLesson5.parts[4].output?.includes('BeaverBuild_Alpha'));
+  assert.ok(blockchainLesson5.parts[4].output?.includes('Validator MEV Reward: 0.68 ETH'));
+});
+
 
 
