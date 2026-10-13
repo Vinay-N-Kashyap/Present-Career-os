@@ -22,6 +22,11 @@ test('IoT Net & B.Com Analytics Long Lessons: Resolution & Language Invariants',
   assert.equal(netLesson2.day, 2);
   assert.equal(netLesson2.parts.length, 5, 'iot_net Day 2 must contain exactly 5 parts');
 
+  const netLesson3 = getLongLesson('iot_net', 3);
+  assert.ok(netLesson3, 'iot_net Day 3 long lesson must resolve');
+  assert.equal(netLesson3.day, 3);
+  assert.equal(netLesson3.parts.length, 5, 'iot_net Day 3 must contain exactly 5 parts');
+
   // 2. bcom_ana
   const anaLesson = getLongLesson('bcom_ana', 1);
   assert.ok(anaLesson, 'bcom_ana Day 1 long lesson must resolve');
@@ -147,6 +152,48 @@ test('IoT Net Day 2: LoRa Time-on-Air, Duty Cycle, BLE Mesh, NB-IoT & RPL Snippe
   assert.ok(netLesson2.parts[2].code?.includes('simulate_ble_mesh_relay'));
   assert.ok(netLesson2.parts[3].code?.includes('calculate_cellular_iot_battery_life'));
   assert.ok(netLesson2.parts[4].code?.includes('evaluate_rpl_dodag_mesh_routing'));
+});
+
+test('IoT Net Day 3: Thread IPv6 Mesh, CoAP Blockwise & OSCORE Security Verification', () => {
+  const netLesson3 = getLongLesson('iot_net', 3);
+  assert.ok(netLesson3, 'iot_net Day 3 must resolve');
+  assert.equal(netLesson3.day, 3);
+  assert.equal(netLesson3.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(netLesson3);
+  const totalMin = estimateLessonMinutes(netLesson3);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < netLesson3.parts.length; i++) {
+    const part = netLesson3.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must contain Python function definitions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(netLesson3.parts[0].code?.includes('evaluate_thread_mesh_partition_and_leader'));
+  assert.ok(netLesson3.parts[0].output?.includes('THREAD IPV6 MESH TOPOLOGY & LEADER ELECTION'));
+  assert.ok(netLesson3.parts[1].code?.includes('simulate_coap_blockwise_transfer'));
+  assert.ok(netLesson3.parts[1].output?.includes('COAP BLOCKWISE TRANSFER (RFC 7959)'));
+  assert.ok(netLesson3.parts[2].code?.includes('simulate_oscore_packet_protection'));
+  assert.ok(netLesson3.parts[2].output?.includes('OSCORE END-TO-END APPLICATION SECURITY (RFC 8613)'));
+  assert.ok(netLesson3.parts[3].code?.includes('simulate_thread_border_router_prefix_dissemination'));
+  assert.ok(netLesson3.parts[3].output?.includes('THREAD BORDER ROUTER PREFIX DISSEMINATION'));
+  assert.ok(netLesson3.parts[4].code?.includes('simulate_thread_commissioning_handshake'));
+  assert.ok(netLesson3.parts[4].output?.includes('THREAD COMMISSIONING & SECURE CREDENTIAL DELIVERY'));
 });
 
 

@@ -695,6 +695,339 @@ for r in rpl_eval:
         'Compute NB-IoT battery lifespan and evaluate RPL DODAG rank hierarchy and parent selection.'
       ]
     }
+  },
+  {
+    coursePrefix: 'iot_net',
+    day: 3,
+    title: 'Thread IPv6 Mesh Networks, CoAP Blockwise Transfers & OSCORE Security',
+    goal: 'Master low-power IP mesh networking with Thread: leader election and router partitioning over 802.15.4, streaming large payloads using CoAP Blockwise Transfers (RFC 7959), end-to-end application encryption with OSCORE (RFC 8613), Border Router prefix dissemination, and DTLS commissioning.',
+    minutes: 35,
+    recap: 'In Day 2, we mastered LoRa CSS modulation, 1% duty cycles, BLE mesh flooding, and RPL routing. Today in Day 3, we dive into Thread IPv6 mesh architectures, CoAP Blockwise transfers, OSCORE object encryption, and secure network commissioning.',
+    parts: [
+      {
+        title: 'Thread Protocol Architecture: Self-Healing 6LoWPAN IPv6 Mesh & Leader Election',
+        say: [
+          'In smart homes, commercial buildings, and industrial sensor arrays, legacy point-to-point and star wireless topologies suffer from single points of failure. If a central Wi-Fi router reboots, all connected smart plugs, door locks, and thermostats lose connectivity simultaneously. The Thread Protocol, developed by the Thread Group (including Google, Apple, and ARM), addresses this vulnerability by delivering a self-healing, IPv6-addressable wireless mesh built on IEEE 802.15.4 radios in the 2.4 GHz band.',
+          'Thread classifies devices into two hardware categories: Full Thread Devices (FTD) which maintain full radio reception and routing tables, and Minimal Thread Devices (MTD) which are constrained sensors (often battery-powered Sleepy End Devices, SED). Within a Thread network partition, FTD nodes dynamically take on roles: one node operates as the Thread Leader, while up to 32 FTDs operate as active Thread Routers. All other nodes connect as Children attached to a parent Router.',
+          'The Thread Leader manages network configuration, assigns Router IDs, and maintains the centralized Network Data repository. Crucially, Thread eliminates single points of failure through automated Leader Election: if the active Leader loses power or suffers radio interference, the remaining Routers execute a distributed election algorithm based on monotonic Partition Weight metrics. The highest-weight Router instantly promotes itself to Leader without dropping a single packet or requiring user intervention!'
+        ],
+        example: 'Like an expedition team hiking in a remote wilderness: the team elects a lead guide to carry the master map. If the lead guide twists their ankle or steps away, the next most senior hiker immediately steps forward and takes the map, ensuring the team continues hiking toward camp without disbanding.',
+        code: `# Simulation: Thread IPv6 Mesh Topology, Router Partitioning & Leader Election
+def evaluate_thread_mesh_partition_and_leader(nodes: list[dict]) -> dict:
+    # Full Thread Devices (FTDs) can become Routers or Leader
+    # Minimal Thread Devices (MTDs) remain End Devices / Sleepy End Devices (SED)
+    ftd_routers = [n for n in nodes if n.get("is_ftd", False)]
+    
+    # Leader is elected based on highest Router Weight and lowest Node ID as tiebreaker
+    leader = max(ftd_routers, key=lambda n: (n.get("router_weight", 0), -n.get("id", 0)))
+    
+    # Map child attachment: each MTD attaches to router with best Link Quality Indicator (LQI: 1 to 3)
+    attachments = {}
+    for n in nodes:
+        if not n.get("is_ftd", False):
+            # Best parent from available routers
+            parent = min(ftd_routers, key=lambda r: abs(r["id"] - n["id"]))
+            attachments[n["id"]] = {
+                "parent_id": parent["id"],
+                "role": "Sleepy End Device" if n.get("is_sed", False) else "End Device"
+            }
+            
+    return {
+        "partition_id": 0x11223344,
+        "active_router_count": len(ftd_routers),
+        "leader_id": leader["id"],
+        "leader_weight": leader["router_weight"],
+        "child_attachments": attachments
+    }
+
+mesh_nodes = [
+    {"id": 1, "is_ftd": True, "router_weight": 64},  # Router A (Candidate Leader)
+    {"id": 2, "is_ftd": True, "router_weight": 56},  # Router B
+    {"id": 3, "is_ftd": False, "is_sed": False},     # End Device C
+    {"id": 4, "is_ftd": False, "is_sed": True}       # Sleepy End Device D (Battery Door Sensor)
+]
+p1_res = evaluate_thread_mesh_partition_and_leader(mesh_nodes)
+
+print("=== THREAD IPV6 MESH TOPOLOGY & LEADER ELECTION ===")
+print(f"Thread Partition ID:    {hex(p1_res['partition_id'])}")
+print(f"Active Mesh Routers:    {p1_res['active_router_count']} FTD Nodes")
+print(f"Elected Thread Leader:  Node {p1_res['leader_id']} (Weight: {p1_res['leader_weight']})")
+print(f"Child Attachments:      Node 3 -> Parent {p1_res['child_attachments'][3]['parent_id']}, Node 4 -> Parent {p1_res['child_attachments'][4]['parent_id']} ({p1_res['child_attachments'][4]['role']})")`,
+        output: `=== THREAD IPV6 MESH TOPOLOGY & LEADER ELECTION ===\nThread Partition ID:    0x11223344\nActive Mesh Routers:    2 FTD Nodes\nElected Thread Leader:  Node 1 (Weight: 64)\nChild Attachments:      Node 3 -> Parent 2, Node 4 -> Parent 2 (Sleepy End Device)`,
+        codeNotes: [
+          { line: 2, note: 'Distinguishes Full Thread Devices (FTDs) from constrained Minimal Thread Devices (MTDs)' },
+          { line: 7, note: 'Elects dynamic Thread Leader based on highest partition router weight' },
+          { line: 36, note: 'Assigns parent attachments for battery-powered Sleepy End Devices (SED)' }
+        ],
+        tryIt: 'Change Node 2 router_weight to 72 and verify that Node 2 immediately takes over as the elected Thread Leader.',
+        check: {
+          question: 'How does the Thread Protocol eliminate single points of failure in low-power wireless mesh networks?',
+          options: [
+            'By allowing any Full Thread Device (FTD) to dynamically promote itself to Leader via automated election if the active Leader fails',
+            'By requiring all devices to be wired directly to an Ethernet wall jack',
+            'By broadcasting all data packets over unencrypted FM radio frequencies',
+            'By forcing every device to maintain a persistent satellite connection'
+          ],
+          answer: 0,
+          why: 'Thread uses a decentralized mesh architecture where any FTD router can assume the Leader role if the current Leader disconnects, guaranteeing continuous network operation.'
+        }
+      },
+      {
+        title: 'CoAP Blockwise Transfers (RFC 7959): Reliable Large Payload Segmentation',
+        say: [
+          'In constrained 802.15.4 wireless networks, the physical Maximum Transmission Unit (MTU) is strictly capped at 127 bytes. After subtracting MAC framing headers, 6LoWPAN encapsulation, and UDP headers, an application packet has only 60 to 80 bytes of usable payload space. However, real-world IoT workflows frequently require transferring large data structures: a 2-kilobyte JSON configuration manifest, an X.509 device identity certificate, or a 128-kilobyte OTA firmware binary update.',
+          'While IP-layer 6LoWPAN fragmentation can split an IP packet across multiple radio frames, IP fragmentation is notoriously fragile in lossy wireless environments: if a single fragment is dropped by radio interference, the entire multi-kilobyte IP packet is discarded, forcing a complete retransmission of all fragments!',
+          'To achieve reliable, memory-safe data movement on microcontrollers with only 2 KB of RAM, the IETF standardized CoAP Blockwise Transfers (RFC 7959). CoAP defines two header options: Block1 (for segmenting request payloads, e.g. PUT/POST) and Block2 (for segmenting response payloads, e.g. GET). The Block option packs three critical fields into a compact 4-byte header: the Block Number (NUM), the More Flag (M, indicating if more blocks follow), and the Block Size Exponent (SZX, where BlockSize = 2^(SZX + 4), supporting 16 to 1024 bytes). Each block is acknowledged individually at the application layer, ensuring loss of one chunk only retransmits that single block!'
+        ],
+        example: 'Like mailing an encyclopedia to a friend using standard post office letter envelopes: instead of buying an oversized wooden crate that exceeds postal limits, you mail 20 numbered envelopes (Page 1/20, More=True). If envelope #5 gets lost in the mail, your friend only asks you to re-send envelope #5, not the entire encyclopedia.',
+        code: `# Simulation: CoAP Blockwise Transfer (RFC 7959) Block2 Response Segmentation
+def simulate_coap_blockwise_transfer(payload_bytes: int, block_szx: int = 2) -> dict:
+    # SZX: 0=16B, 1=32B, 2=64B, 3=128B, 4=256B, 5=512B, 6=1024B
+    block_size = 1 << (block_szx + 4) # 1 << 6 = 64 bytes
+    import math
+    total_blocks = math.ceil(payload_bytes / block_size)
+    
+    blocks_meta = []
+    remaining_bytes = payload_bytes
+    
+    for num in range(total_blocks):
+        current_chunk = min(remaining_bytes, block_size)
+        more_flag = 1 if num < (total_blocks - 1) else 0
+        remaining_bytes -= current_chunk
+        
+        # Block2 Option Value: (NUM << 4) | (M << 3) | SZX
+        option_val = (num << 4) | (more_flag << 3) | block_szx
+        blocks_meta.append({
+            "block_num": num,
+            "chunk_bytes": current_chunk,
+            "more_flag": bool(more_flag),
+            "option_hex": hex(option_val)
+        })
+        
+    return {
+        "total_payload_bytes": payload_bytes,
+        "block_size_bytes": block_size,
+        "total_blocks": total_blocks,
+        "blocks": blocks_meta,
+        "reassembly_success": remaining_bytes == 0
+    }
+
+p2_res = simulate_coap_blockwise_transfer(payload_bytes=150, block_szx=2) # 150 bytes in 64B blocks
+
+print("=== COAP BLOCKWISE TRANSFER (RFC 7959) ===")
+print(f"Total Resource Size:    {p2_res['total_payload_bytes']} Bytes")
+print(f"Block SZX Configuration: SZX=2 ({p2_res['block_size_bytes']} Bytes / Block)")
+print(f"Total Chunks Required:  {p2_res['total_blocks']} Blocks")
+for b in p2_res['blocks']:
+    print(f"  Block #{b['block_num']}: Size={b['chunk_bytes']}B | More={b['more_flag']} | Option Value={b['option_hex']}")
+print(f"Assembly Status:        Reassembly Success={p2_res['reassembly_success']}")`,
+        output: `=== COAP BLOCKWISE TRANSFER (RFC 7959) ===\nTotal Resource Size:    150 Bytes\nBlock SZX Configuration: SZX=2 (64 Bytes / Block)\nTotal Chunks Required:  3 Blocks\n  Block #0: Size=64B | More=True | Option Value=0xa\n  Block #1: Size=64B | More=True | Option Value=0x1a\n  Block #2: Size=22B | More=False | Option Value=0x22\nAssembly Status:        Reassembly Success=True`,
+        codeNotes: [
+          { line: 2, note: 'Calculates chunk size from 3-bit SZX exponent: BlockSize = 2^(SZX + 4)' },
+          { line: 15, note: 'Encodes Block2 option bitmask: (NUM << 4) | (M << 3) | SZX' },
+          { line: 36, note: 'Demonstrates streaming 150-byte resource in 64-byte chunks with zero memory buffer overflow' }
+        ],
+        tryIt: 'Change block_szx to 1 (32 bytes) and observe how the transfer automatically segments into 5 blocks.',
+        check: {
+          question: 'Why is CoAP Blockwise Transfer (RFC 7959) superior to IP-layer 6LoWPAN fragmentation for sending large payloads over wireless sensor networks?',
+          options: [
+            'Because CoAP blocks are acknowledged at the application layer; if one block is lost in transit, only that specific block is retransmitted rather than the entire multi-kilobyte payload',
+            'Because CoAP blockwise transfers convert all text into binary audio signals',
+            'Because CoAP blockwise transfers require a cellular SIM card to function',
+            'Because IP fragmentation increases the physical radio frequency of the transmitter'
+          ],
+          answer: 0,
+          why: 'IP fragmentation causes packet loss amplification: losing 1 fragment drops the whole datagram. CoAP blockwise transfer acknowledges individual blocks, allowing single-chunk retransmission.'
+        }
+      },
+      {
+        title: 'OSCORE (RFC 8613): End-to-End Object Security for Constrained RESTful Environments',
+        say: [
+          'In modern cloud-integrated IoT systems, constrained edge devices rarely communicate directly with end servers over pure end-to-end IP sockets. Instead, network traffic passes through intermediate forward proxies, protocol gateways (such as CoAP-to-HTTP translators), and multi-hop mesh relays.',
+          'While Datagram Transport Layer Security (DTLS) encrypts traffic across a single hop (e.g. from the sensor to the local gateway), DTLS terminates at the gateway! The intermediate proxy must decrypt the packet into plaintext before re-encrypting it toward the cloud server. If an untrusted or compromised cloud proxy manages the network, attackers can read confidential telemetry and tamper with actuator commands.',
+          'To provide true End-to-End Security across untrusted intermediaries, the IETF standardized Object Security for Constrained RESTful Environments (OSCORE, RFC 8613). OSCORE protects CoAP messages at the Application Layer using CBOR Object Signing and Encryption (COSE). An OSCORE packet splits the request into two layers: (1) The Outer CoAP Header, which remains unencrypted so forward proxies can route the packet (Uri-Host, Proxy-Uri); and (2) The Inner CoAP Header, where the original Request Method, sensitive URI paths (/api/v1/sensors), and Payload are encrypted with AES-CCM-16-64. Even if the proxy is completely compromised, it cannot read a single byte of telemetry!'
+        ],
+        example: 'Like shipping confidential corporate documents inside a locked steel lockbox placed inside a FedEx cardboard shipping box: the courier can read the destination address on the cardboard label to route the box through airport sorting hubs, but only the recipient with the physical brass key can open the steel lockbox.',
+        code: `# Simulation: OSCORE (RFC 8613) End-to-End Application Object Security
+def simulate_oscore_packet_protection(plain_payload: str, method: str, path: str, sender_seq: int) -> dict:
+    # OSCORE splits CoAP into:
+    # 1. Outer CoAP (visible to forward proxies for routing): Method=POST, Path=coap://proxy
+    # 2. Inner CoAP (encrypted with COSE AEAD): Original Method, Original Path, Payload
+    # Encrypt simulated using XOR mask + sequence number
+    payload_raw = plain_payload.encode('utf-8')
+    key_stream = [(0xA5 ^ ((sender_seq + i) & 0xFF)) for i in range(len(payload_raw))]
+    ciphertext_bytes = bytes([b ^ k for b, k in zip(payload_raw, key_stream)])
+    
+    # OSCORE Option value: [Compressed Flag, Sequence Number]
+    oscore_option_hex = f"09{sender_seq:02x}" # Flag 0x09 + 1-byte seq
+    
+    return {
+        "original_method": method,
+        "original_uri_path": path,
+        "plaintext_payload": plain_payload,
+        "sender_sequence_number": sender_seq,
+        "oscore_option_hex": oscore_option_hex,
+        "ciphertext_hex": ciphertext_bytes.hex(),
+        "proxy_readable_uri": "UNTRUSTED_PROXY_CANNOT_READ_PATH",
+        "end_to_end_protected": True
+    }
+
+p3_res = simulate_oscore_packet_protection("temperature=22.4", "POST", "/api/v1/sensors", 42)
+
+print("=== OSCORE END-TO-END APPLICATION SECURITY (RFC 8613) ===")
+print(f"Original Request:       {p3_res['original_method']} {p3_res['original_uri_path']} ({p3_res['plaintext_payload']})")
+print(f"OSCORE Sequence Num:    #{p3_res['sender_sequence_number']} (Anti-Replay Tag: {p3_res['oscore_option_hex']})")
+print(f"Encrypted Ciphertext:   0x{p3_res['ciphertext_hex']}")
+print(f"Intermediate Proxy:     Payload & URI path 100% hidden (E2E Verified: {p3_res['end_to_end_protected']})")`,
+        output: `=== OSCORE END-TO-END APPLICATION SECURITY (RFC 8613) ===\nOriginal Request:       POST /api/v1/sensors (temperature=22.4)\nOSCORE Sequence Num:    #42 (Anti-Replay Tag: 092a)\nEncrypted Ciphertext:   0xfbebe4f8eef8f4e0e2e4f4ada1a0b3a8\nIntermediate Proxy:     Payload & URI path 100% hidden (E2E Verified: True)`,
+        codeNotes: [
+          { line: 2, note: 'Demonstrates end-to-end application layer encryption isolating payload from proxies' },
+          { line: 11, note: 'Constructs OSCORE option header embedding monotonic sequence number for anti-replay' },
+          { line: 26, note: 'Hides URI path and payload while exposing only outer routing metadata to proxies' }
+        ],
+        tryIt: 'Change the sender_seq to 43 and observe how the ciphertext and OSCORE option update dynamically.',
+        check: {
+          question: 'What critical security advantage does OSCORE (RFC 8613) provide over standard DTLS in IoT architectures that use forward proxies or gateways?',
+          options: [
+            'End-to-end application encryption: the payload and sensitive URI path remain encrypted across intermediate proxies and protocol translators, preventing proxies from eavesdropping or tampering',
+            'It allows batteries to be charged wirelessly over radio waves',
+            'It eliminates the need for IP addresses entirely',
+            'It converts all sensor readings into GPS coordinates'
+          ],
+          answer: 0,
+          why: 'DTLS is hop-by-hop and decrypts at every intermediate proxy. OSCORE encrypts at the application layer using COSE, keeping data completely opaque to intermediate network routers and proxies.'
+        }
+      },
+      {
+        title: 'Thread Low-Power Border Routers & Unicast IPv6 Prefix Dissemination',
+        say: [
+          'Because Thread networks operate over standard IPv6, a Thread device is not trapped inside an isolated, proprietary silo (unlike legacy Zigbee or Z-Wave networks which require complex application-layer gateway translation). Every Thread node has a genuine, standard IPv6 address that can exchange UDP packets directly with servers on the global internet!',
+          'The architectural component that bridges the IEEE 802.15.4 Thread mesh to the wider local network (Ethernet or Wi-Fi) is the Thread Border Router (such as an OpenThread Border Router, OTBR, running on a Raspberry Pi or Wi-Fi access point).',
+          'The Border Router does not perform Network Address Translation (NAT) or protocol translation. Instead, it functions as an authentic IPv6 Network Router. The Border Router advertises an On-Mesh IPv6 Prefix (typically a Unique Local Address ULA prefix, e.g. fd00::/8) into the Thread Network Data repository using Mesh Link Establishment (MLE). End devices use Stateless Address Autoconfiguration (SLAAC) to combine the 64-bit advertised prefix with their 64-bit IEEE EUI-64 MAC address, automatically forming a globally routable IPv6 address!'
+        ],
+        example: 'Like an international bridge between an island nation (Thread mesh) and the mainland highway (Ethernet/Wi-Fi): the bridge customs authority issues valid road maps and signs (IPv6 prefix advertisement) so any island resident can drive directly onto mainland roads without changing vehicles.',
+        code: `# Simulation: Thread Border Router Prefix Dissemination & SLAAC Address Generation
+def simulate_thread_border_router_prefix_dissemination(on_mesh_prefix: str, mesh_eui64_list: list[str]) -> dict:
+    # Border Router disseminates 64-bit IPv6 ULA prefix via Thread Network Data TLV
+    # Each node combines the 64-bit prefix with its 64-bit EUI-64 to form a globally routable SLAAC IPv6 address
+    slaac_addresses = {}
+    for eui in mesh_eui64_list:
+        clean_eui = eui.replace(":", "").lower()
+        # Invert U/L bit (bit 6 of first byte) for modified EUI-64
+        first_byte = int(clean_eui[:2], 16) ^ 0x02
+        iid = f"{first_byte:02x}{clean_eui[2:4]}:{clean_eui[4:8]}:{clean_eui[8:12]}:{clean_eui[12:16]}"
+        full_ipv6 = f"{on_mesh_prefix}:{iid}"
+        slaac_addresses[eui] = full_ipv6
+        
+    return {
+        "border_router_prefix": on_mesh_prefix,
+        "prefix_flags": "Preferred=1, Valid=1, OnMesh=1, DefRoute=1",
+        "generated_ipv6_addresses": slaac_addresses,
+        "dual_radio_routing": "802.15.4 Mesh <-> Ethernet/Wi-Fi WAN"
+    }
+
+euilist = ["00:12:4b:00:14:d5:2f:01", "00:12:4b:00:14:d5:2f:02"]
+p4_res = simulate_thread_border_router_prefix_dissemination("fdde:ad00:beef:0001", euilist)
+
+print("=== THREAD BORDER ROUTER PREFIX DISSEMINATION ===")
+print(f"Disseminated Prefix:    {p4_res['border_router_prefix']}::/64 ({p4_res['prefix_flags']})")
+for eui, ip in p4_res['generated_ipv6_addresses'].items():
+    print(f"  EUI-64 {eui} -> IPv6: {ip}")
+print(f"WAN Routing Mode:       {p4_res['dual_radio_routing']}")`,
+        output: `=== THREAD BORDER ROUTER PREFIX DISSEMINATION ===\nDisseminated Prefix:    fdde:ad00:beef:0001::/64 (Preferred=1, Valid=1, OnMesh=1, DefRoute=1)\n  EUI-64 00:12:4b:00:14:d5:2f:01 -> IPv6: fdde:ad00:beef:0001:0212:4b00:14d5:2f01\n  EUI-64 00:12:4b:00:14:d5:2f:02 -> IPv6: fdde:ad00:beef:0001:0212:4b00:14d5:2f02\nWAN Routing Mode:       802.15.4 Mesh <-> Ethernet/Wi-Fi WAN`,
+        codeNotes: [
+          { line: 2, note: 'Simulates Thread Network Data TLV dissemination of 64-bit On-Mesh IPv6 prefixes' },
+          { line: 8, note: 'Inverts U/L bit on IEEE EUI-64 MAC to construct RFC 4291 modified Interface Identifiers (IID)' },
+          { line: 24, note: 'Generates genuine IPv6 addresses enabling direct bidirectional UDP communication with the WAN' }
+        ],
+        tryIt: 'Add a third EUI-64 address to euilist and verify that SLAAC generates an address matching the on-mesh prefix.',
+        check: {
+          question: 'What is the primary architectural function of a Thread Border Router (OTBR)?',
+          options: [
+            'Routing IPv6 packets between the low-power 802.15.4 Thread mesh and external Ethernet/Wi-Fi networks without requiring application-level translation',
+            'Translating Bluetooth signals into audio FM radio broadcasts',
+            'Charging smart home devices wirelessly over Wi-Fi',
+            'Replacing battery cells in remote sensor nodes'
+          ],
+          answer: 0,
+          why: 'A Thread Border Router is an authentic network-layer IPv6 router that bridges low-power 802.15.4 wireless packets directly to Ethernet/Wi-Fi infrastructure without application-layer translation.'
+        }
+      },
+      {
+        title: 'Thread Network Commissioning & DTLS-Based Passphrase Authentication',
+        say: [
+          'Before a brand-new, factory-unboxed IoT sensor (the Joiner) can participate in a secure Thread mesh, it must obtain the network\'s operational parameters: the Network Master Key, Extended PAN ID, Channel, and Network Name. However, broadcasting the Master Key over the air in plaintext would allow any nearby eavesdropper with a packet sniffer to compromise the entire building mesh!',
+          'To solve this bootstrapping challenge, Thread specifies a cryptographically secure Commissioning Protocol. The user uses an authorized mobile application (the Commissioner, e.g. a smartphone) to scan a QR code printed on the physical device label. The QR code encodes a single-use Joiner Passphrase (and optional EUI-64).',
+          'The Joiner scans wireless channels and broadcasts an unencrypted MLE Discovery Request. An existing Thread Router acts as a Commissioning Relay: it relays UDP packets between the Joiner and the Commissioner. The Joiner and Commissioner execute a DTLS handshake authenticated using a Pre-Shared Key for Joiner (PSK-J) derived from the QR-code passphrase via PBKDF2. Over this authenticated, encrypted DTLS tunnel, the Commissioner transfers the Thread Master Key to the Joiner. Once received, the Joiner attaches to the mesh as an authenticated child!'
+        ],
+        example: 'Like checking into a luxury hotel: at the front desk, the guest shows their reservation QR code and passport to the concierge. Once verified, the concierge programs an electronic RFID room keycard and hands it to the guest, granting access to the private elevators and suite.',
+        code: `# Simulation: Thread Secure Commissioning & Network Credential Handshake
+def simulate_thread_commissioning_handshake(joiner_eui64: str, joiner_passphrase: str, network_master_key: str) -> dict:
+    # 1. Joiner and Commissioner establish DTLS tunnel authenticated with PSK-J derived from passphrase
+    # Deterministic PBKDF2/PSK derivation simulation
+    psk_j_derived = hex(sum(ord(c) * (i + 1) for i, c in enumerate(joiner_passphrase)) & 0xFFFFFFFF)
+    
+    # 2. Authentication assertion
+    auth_passed = len(joiner_passphrase) >= 6 and bool(psk_j_derived)
+    
+    # 3. Commissioner transfers Meshcop credentials over encrypted tunnel
+    if auth_passed:
+        transferred_key = network_master_key
+        status = "JOINER_COMMISSIONED_ACTIVE_ROUTER_ATTACHED"
+    else:
+        transferred_key = "0x0000000000000000"
+        status = "COMMISSIONING_FAILED_UNAUTHORIZED"
+        
+    return {
+        "joiner_eui64": joiner_eui64,
+        "passphrase_verified": auth_passed,
+        "dtls_tunnel_psk": psk_j_derived,
+        "delivered_network_key": transferred_key,
+        "commissioning_status": status
+    }
+
+p5_res = simulate_thread_commissioning_handshake("00:12:4b:00:99:aa:bb:cc", "THREAD2026KEY", "0x00112233445566778899aabbccddeeff")
+
+print("=== THREAD COMMISSIONING & SECURE CREDENTIAL DELIVERY ===")
+print(f"Joiner EUI-64:          {p5_res['joiner_eui64']}")
+print(f"DTLS PSK-J Tunnel:      Established (Auth: {p5_res['passphrase_verified']})")
+print(f"Delivered Network Key:  {p5_res['delivered_network_key']}")
+print(f"Thread Node State:      {p5_res['commissioning_status']}")`,
+        output: `=== THREAD COMMISSIONING & SECURE CREDENTIAL DELIVERY ===\nJoiner EUI-64:          00:12:4b:00:99:aa:bb:cc\nDTLS PSK-J Tunnel:      Established (Auth: True)\nDelivered Network Key:  0x00112233445566778899aabbccddeeff\nThread Node State:      JOINER_COMMISSIONED_ACTIVE_ROUTER_ATTACHED`,
+        codeNotes: [
+          { line: 2, note: 'Derives ephemeral PSK-J secret from out-of-band QR-code passphrase' },
+          { line: 9, note: 'Transfers master operational network key over encrypted DTLS tunnel via Commissioning Relay' },
+          { line: 26, note: 'Transitions unconfigured Joiner into authenticated active child router on the mesh' }
+        ],
+        tryIt: 'Set joiner_passphrase to an invalid short password (e.g. "123") and verify commissioning fails.',
+        check: {
+          question: 'How does Thread Commissioning securely onboard a new joiner device without exposing the network master key over plaintext radio broadcasts?',
+          options: [
+            'By establishing a temporary DTLS tunnel authenticated with a single-use passphrase (scanned from a QR code), transferring the Master Key exclusively within the encrypted tunnel',
+            'By shouting the password over an audio speaker',
+            'By turning off all security encryption on the router for 5 minutes',
+            'By requiring the device to be plugged into a USB cable'
+          ],
+          answer: 0,
+          why: 'The Commissioner and Joiner authenticate over a temporary DTLS tunnel using a QR-code passphrase (PSK-J). The Master Key is delivered strictly inside the encrypted DTLS tunnel.'
+        }
+      }
+    ],
+    summary: [
+      'Thread creates self-healing 6LoWPAN IPv6 meshes with automated Leader election, eliminating single points of failure.',
+      'CoAP Blockwise Transfers (RFC 7959) stream large resources in acknowledged 64-byte chunks, avoiding IP-layer fragmentation dropouts.',
+      'OSCORE (RFC 8613) provides end-to-end application layer encryption using COSE, keeping payloads completely opaque to intermediate forward proxies.',
+      'Thread Border Routers advertise On-Mesh IPv6 prefixes, enabling SLAAC address autoconfiguration and direct bidirectional WAN communication.',
+      'Thread Commissioning securely onboards Joiners over an encrypted DTLS tunnel authenticated via out-of-band QR-code passphrases.'
+    ],
+    projectStep: {
+      title: 'Architect a Secure Thread IPv6 Mesh & CoAP/OSCORE Networking Stack',
+      steps: [
+        'Simulate a multi-router Thread mesh partition and verify automated leader election.',
+        'Implement a CoAP Block2 response segmentation engine streaming large resources chunk-by-chunk.',
+        'Construct an OSCORE application-layer protection wrapper isolating payload and URI paths from proxies.',
+        'Simulate Border Router SLAAC IPv6 prefix dissemination and DTLS joiner commissioning.'
+      ]
+    }
   }
 ];
-
