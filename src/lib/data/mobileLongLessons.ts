@@ -389,5 +389,429 @@ console.log(engine.getStore().map(m => \`  [\${m.status}] \${m.action} (id: \${m
         'Implement an offline mutation queue persisting actions to local SQLite storage.'
       ]
     }
+  },
+  {
+    day: 2,
+    title: 'Fabric Renderer, Reanimated Worklets, WatermelonDB & Biometric Security',
+    goal: 'Master modern React Native system internals: Fabric concurrent rendering and TurboModule JSI lazy loading, Reanimated 3 worklet spring physics running at 120 FPS on the UI thread, WatermelonDB lazy relational SQLite modeling, Universal Link routing patterns, and Hardware Secure Enclave biometric token protection.',
+    minutes: 32,
+    recap: 'Yesterday we established JS vs Native UI thread separation, Safe Area geometry, FlatList window virtualization, and offline SQLite synchronization. Today we build production-grade mobile architecture: the New Architecture (Fabric + TurboModules), 120 FPS worklet physics, reactive lazy relational databases, universal routing, and hardware security enclaves.',
+    parts: [
+      {
+        title: 'The New Architecture: Fabric Concurrent Renderer & TurboModule JSI Lazy Loading',
+        say: [
+          'In legacy React Native, the application started by instantiating every registered native module upfront, degrading Time-to-Interactive (TTI) and bloating app launch time.',
+          'Furthermore, UI updates crossed the asynchronous JSON bridge, causing visible white flashes during fast scrolling because native views had to wait for JS round-trips.',
+          'The New Architecture permanently resolves this with two pillars: the Fabric Renderer and TurboModules, both powered by the JavaScript Interface (JSI).',
+          'TurboModules implement lazy initialization: native modules remain uninstantiated until their methods are explicitly invoked by JavaScript code.',
+          'Instead of serializing JSON strings over a bridge queue, JSI allows JavaScript to hold direct references to C++ Host Objects in memory, executing native platform calls in nanoseconds.',
+          'The Fabric Renderer operates concurrently in C++, computing shadow trees and layout passes synchronously to eliminate scroll tearing and layout flicker.',
+          'This transition unifies cross-platform code into a single high-performance C++ core shared seamlessly between iOS and Android.'
+        ],
+        example: 'Like an app store on your phone: instead of downloading and launching all 50 apps on your device the moment you turn on the phone, the OS loads only the core launcher and starts specific apps the exact moment you tap their icon.',
+        code: `// React Native TurboModule Registry & JSI Synchronous Invocation Simulator
+interface ModuleMetadata {
+  name: string;
+  initialized: boolean;
+  loadTimeMs: number;
+}
+
+class TurboModuleRegistry {
+  private modules = new Map<string, ModuleMetadata>();
+
+  register(name: string, loadTimeMs: number) {
+    this.modules.set(name, { name, initialized: false, loadTimeMs });
+  }
+
+  getModule(name: string): { name: string; latencyNs: number } {
+    const mod = this.modules.get(name);
+    if (!mod) throw new Error('Module not found');
+
+    if (!mod.initialized) {
+      // Lazy initialization on first call only, preventing startup lag
+      mod.initialized = true;
+    }
+
+    // Synchronous JSI C++ call executes in nanoseconds without JSON bridge
+    return { name: mod.name, latencyNs: 85 };
+  }
+
+  getStats() {
+    let initCount = 0;
+    for (const m of this.modules.values()) {
+      if (m.initialized) initCount++;
+    }
+    return { total: this.modules.size, initialized: initCount };
+  }
+}
+
+const registry = new TurboModuleRegistry();
+// Register native platform modules
+registry.register('CameraTurboModule', 45);
+registry.register('BluetoothTurboModule', 35);
+registry.register('HapticsTurboModule', 12);
+registry.register('BiometricsTurboModule', 18);
+
+console.log('=== REACT NATIVE NEW ARCHITECTURE: TURBOMODULES & JSI ===');
+console.log('App Launch State: ' + registry.getStats().initialized + '/' + registry.getStats().total + ' Native Modules Loaded (Zero TTI Startup Latency)');
+
+// User taps a button requiring Haptics
+const hapticsCall = registry.getModule('HapticsTurboModule');
+console.log('First Access [HapticsTurboModule]: Lazy Loaded on Demand');
+console.log('Synchronous JSI Execution Speed: ' + hapticsCall.latencyNs + ' ns (Zero JSON Serialization Overhead)');
+console.log('Active Module Footprint: ' + registry.getStats().initialized + '/' + registry.getStats().total + ' Modules Resident in Memory');`,
+        output: `=== REACT NATIVE NEW ARCHITECTURE: TURBOMODULES & JSI ===\nApp Launch State: 0/4 Native Modules Loaded (Zero TTI Startup Latency)\nFirst Access [HapticsTurboModule]: Lazy Loaded on Demand\nSynchronous JSI Execution Speed: 85 ns (Zero JSON Serialization Overhead)\nActive Module Footprint: 1/4 Modules Resident in Memory`,
+        codeNotes: [
+          { line: 17, note: 'Lazy instantiation defers module creation until first invocation, slashing app launch TTI' },
+          { line: 22, note: 'Direct C++ Host Object calls execute in 85 nanoseconds without bridge serialization' },
+          { line: 38, note: 'Zero native modules initialized at app cold start, minimizing launch memory' },
+          { line: 44, note: 'Demonstrates on-demand memory footprint growth matching user interaction patterns' }
+        ],
+        tryIt: 'Invoke the CameraTurboModule and observe the active module footprint update from 1/4 to 2/4.',
+        check: {
+          question: 'What is the primary architectural performance advantage of TurboModules over legacy React Native native modules?',
+          options: [
+            'TurboModules are loaded lazily on first access and invoked synchronously via C++ JSI pointers rather than eagerly at cold start across a JSON bridge',
+            'TurboModules convert all TypeScript code into Objective-C before compilation',
+            'TurboModules permanently disable native device permissions',
+            'TurboModules require an active cellular connection to initialize'
+          ],
+          answer: 0,
+          why: 'By deferring initialization until first invocation and bypassing the JSON bridge with JSI, TurboModules dramatically accelerate app cold start and eliminate invocation overhead.'
+        }
+      },
+      {
+        title: 'Native Thread Animations: Reanimated 3 Worklets & 120 FPS Gesture Physics',
+        say: [
+          'On modern smartphones equipped with 120 Hz ProMotion or AMOLED displays, the screen refreshes every 8.33 milliseconds.',
+          'Driving continuous gestures (such as swiping cards or bottom sheets) using standard React useState causes severe frame drops.',
+          'If the JavaScript thread is busy parsing network JSON or updating component state, touch events queue up, causing sluggish "rubber-banding" and stutter.',
+          'React Native Reanimated resolves this by introducing Worklets: specialized JavaScript functions tagged with the "worklet" directive.',
+          'Worklets are compiled into bytecode and executed inside a secondary JavaScript runtime running directly on the Native UI Main Thread.',
+          'Spring animation physics (damping ratio, stiffness, and mass) calculate position and velocity per frame without crossing back to the JS thread.',
+          'This guarantees uninterrupted 120 FPS gesture fluidity even when the primary JavaScript thread is completely saturated.'
+        ],
+        example: 'Like having an autopilot chip directly inside a drone propeller (Worklet on UI thread) adjusting blade angle 120 times a second to stabilize against wind, rather than sending radio telemetry to ground control and waiting for a command back.',
+        code: `// Reanimated 3 Worklet Spring Physics Simulation (120 FPS Native UI Thread)
+interface SpringConfig {
+  stiffness: number; // k
+  damping: number;   // c
+  mass: number;      // m
+}
+
+// Pure worklet function executing directly on the Native UI thread runtime
+function simulateSpringStep(
+  currentPos: number,
+  targetPos: number,
+  velocity: number,
+  dt: number,
+  config: SpringConfig
+): { nextPos: number; nextVel: number } {
+  'worklet';
+  const displacement = currentPos - targetPos;
+  const springForce = -config.stiffness * displacement;
+  const dampingForce = -config.damping * velocity;
+  const acceleration = (springForce + dampingForce) / config.mass;
+
+  const nextVel = velocity + acceleration * dt;
+  const nextPos = currentPos + nextVel * dt;
+  return { nextPos, nextVel };
+}
+
+const springConfig: SpringConfig = { stiffness: 100, damping: 10, mass: 1 };
+let pos = 0;
+let vel = 0;
+const target = 100;
+const dt = 1 / 120; // 120 FPS mobile screen refresh rate (8.33 ms frame budget)
+
+// Simulate 10 consecutive animation frames on UI thread
+for (let frame = 1; frame <= 10; frame++) {
+  const step = simulateSpringStep(pos, target, vel, dt, springConfig);
+  pos = step.nextPos;
+  vel = step.nextVel;
+}
+
+console.log('=== REANIMATED WORKLET SPRING PHYSICS (120 FPS NATIVE UI) ===');
+console.log('Display Refresh Target: 120 Hz (8.33 ms frame budget)');
+console.log('Displacement Target: 0.0 -> 100.0 pt');
+console.log('Position at Frame 10: ' + pos.toFixed(2) + ' pt (Velocity: ' + vel.toFixed(2) + ' pt/s)');
+console.log('Worklet UI Thread Execution: ZERO JS BRIDGE HOPS (Silky Smooth)');`,
+        output: `=== REANIMATED WORKLET SPRING PHYSICS (120 FPS NATIVE UI) ===\nDisplay Refresh Target: 120 Hz (8.33 ms frame budget)\nDisplacement Target: 0.0 -> 100.0 pt\nPosition at Frame 10: 28.28 pt (Velocity: 514.78 pt/s)\nWorklet UI Thread Execution: ZERO JS BRIDGE HOPS (Silky Smooth)`,
+        codeNotes: [
+          { line: 8, note: 'Worklet directive compiles function for direct execution in the native UI thread runtime' },
+          { line: 17, note: 'Calculates physical spring equations (Hookes Law + viscous fluid damping)' },
+          { line: 28, note: 'Simulates strict 8.33 ms delta-time budget matching 120 Hz mobile displays' },
+          { line: 40, note: 'Smooth acceleration trajectory reaches 28.28 pt with zero thread hopping latency' }
+        ],
+        tryIt: 'Increase damping from 10 to 25 to simulate an over-damped spring with zero oscillation overshoot.',
+        check: {
+          question: 'How do Reanimated worklets achieve 120 FPS animation smoothness even during heavy JavaScript computations?',
+          options: [
+            'Worklets execute inside a dedicated JS runtime hosted directly on the Native UI thread, updating frames with zero thread-hopping latency',
+            'Worklets automatically increase the smartphone battery voltage',
+            'Worklets run on a remote cloud GPU and stream video frames to the phone',
+            'Worklets convert all animations into static GIF images'
+          ],
+          answer: 0,
+          why: 'By running on a separate UI-thread JS context, worklets compute spring physics and native view transforms per frame without waiting for the busy JavaScript thread.'
+        }
+      },
+      {
+        title: 'Offline-First Reactive Relational Storage: WatermelonDB & Lazy Relational Loading',
+        say: [
+          'Mobile devices operate under strict memory caps: loading 10,000 JSON records into the JavaScript heap quickly triggers an Out-of-Memory (OOM) operating system kill.',
+          'Traditional mobile apps that deserialize full records into Redux or MobX stores create massive garbage collection pauses.',
+          'WatermelonDB solves this with a lazy-loading architecture built on top of native SQLite.',
+          'Instead of instantiating thousands of JavaScript objects, queries return lightweight record handles holding only IDs (~40 bytes each).',
+          'Field attributes (such as post title or body text) are fetched from SQLite on demand the exact moment a visible UI cell requests them.',
+          'Furthermore, WatermelonDB queries are reactive: components subscribe to RxJS observables and automatically re-render only when specific rows are modified.',
+          'This enables mobile apps to effortlessly manage datasets of 50,000+ records with a fixed 5 MB JavaScript heap footprint.'
+        ],
+        example: 'Like reading a physical dictionary: you keep a small index thumb tab (record ID pointers) and only open the specific page for the word you need right now, rather than memorizing all 50,000 words in your head before starting to read.',
+        code: `// WatermelonDB Lazy Relational Loading & SQLite Memory Optimization
+interface RawPostRow {
+  id: string;
+  title: string;
+  commentCount: number;
+}
+
+class LazyRecord {
+  public readonly id: string;
+  private _title: string | null = null;
+  private _commentCount: number | null = null;
+
+  constructor(id: string) {
+    this.id = id;
+  }
+
+  // Lazy getters load columns on demand from native SQLite storage
+  getTitle(sqliteDb: Map<string, RawPostRow>): string {
+    if (this._title === null) {
+      this._title = sqliteDb.get(this.id)?.title || '';
+    }
+    return this._title;
+  }
+
+  getCommentCount(sqliteDb: Map<string, RawPostRow>): number {
+    if (this._commentCount === null) {
+      this._commentCount = sqliteDb.get(this.id)?.commentCount || 0;
+    }
+    return this._commentCount;
+  }
+}
+
+// Simulated SQLite storage holding 5,000 records
+const sqliteDb = new Map<string, RawPostRow>();
+for (let i = 1; i <= 5000; i++) {
+  sqliteDb.set('post_' + i, {
+    id: 'post_' + i,
+    title: 'Mobile Architecture Deep Dive #' + i,
+    commentCount: i * 3
+  });
+}
+
+// WatermelonDB creates lightweight lazy pointers (~40 bytes each in JS heap)
+const lazyRecords: LazyRecord[] = [
+  new LazyRecord('post_1'),
+  new LazyRecord('post_2'),
+  new LazyRecord('post_3'),
+];
+
+console.log('=== WATERMELONDB LAZY RELATIONAL MOBILE STORAGE ===');
+console.log('Total Database Records in SQLite: ' + sqliteDb.size.toLocaleString('en-US') + ' rows');
+console.log('Initial JavaScript Heap Footprint: ONLY 3 RECORD POINTERS LOADED');
+
+// Access specific record attributes
+const post1Title = lazyRecords[0].getTitle(sqliteDb);
+const post1Comments = lazyRecords[0].getCommentCount(sqliteDb);
+console.log('Lazy Loaded [post_1]: "' + post1Title + '" (' + post1Comments + ' comments)');
+console.log('Unreferenced Records (post_2, post_3): RAW COLUMNS REMAIN IN SQLITE (Zero RAM Bloat)');`,
+        output: `=== WATERMELONDB LAZY RELATIONAL MOBILE STORAGE ===\nTotal Database Records in SQLite: 5,000 rows\nInitial JavaScript Heap Footprint: ONLY 3 RECORD POINTERS LOADED\nLazy Loaded [post_1]: "Mobile Architecture Deep Dive #1" (3 comments)\nUnreferenced Records (post_2, post_3): RAW COLUMNS REMAIN IN SQLITE (Zero RAM Bloat)`,
+        codeNotes: [
+          { line: 7, note: 'Defines lazy entity handle: holds atomic ID while columns remain null until accessed' },
+          { line: 17, note: 'Fetches raw column data from underlying SQLite table only on first property access' },
+          { line: 36, note: 'Simulates large database of 5,000 records stored efficiently on disk' },
+          { line: 49, note: 'Unreferenced records keep columns on disk, preventing JavaScript heap memory exhaustion' }
+        ],
+        tryIt: 'Query post_2 and observe its title populate dynamically without loading post_3.',
+        check: {
+          question: 'Why does WatermelonDB utilize lazy loading rather than deserializing full JSON objects into the JavaScript heap?',
+          options: [
+            'To maintain a tiny, bounded JavaScript heap footprint and avoid out-of-memory crashes when managing tens of thousands of records',
+            'Because SQLite cannot store numbers greater than 100',
+            'To force the device to connect to Wi-Fi before displaying text',
+            'Because React Native prohibits storing data in arrays'
+          ],
+          answer: 0,
+          why: 'By only loading record IDs into the JS heap and reading column data from SQLite on demand, WatermelonDB handles 50,000+ records within a strict 5 MB memory budget.'
+        }
+      },
+      {
+        title: 'Deep Linking, Universal Links (AASA) & Deterministic Route Pattern Matching',
+        say: [
+          'Seamless mobile user acquisition requires deep linking: when a user clicks a web link in an email or SMS, they should land directly on the relevant in-app screen.',
+          'Legacy custom URL schemes (such as myapp://course/123) suffer from serious flaws: if the app is not installed, the browser displays a broken error page, and malicious apps can register the same scheme to hijack traffic.',
+          'Modern mobile engineering enforces Universal Links on iOS and Android App Links on Android.',
+          'These use standard HTTPS URLs (https://pinit.career/courses/123) verified via an Apple App Site Association (AASA) file or assetlinks.json hosted on the web domain.',
+          'When clicked, the operating system verifies cryptographic ownership and routes directly into the mobile app without opening a web browser.',
+          'The mobile routing engine parses the incoming pathname, matches dynamic pattern segments (:courseId, :lessonId), and dispatches the exact navigation state.',
+          'Robust deep link routing guarantees frictionless user onboarding, promotional marketing attribution, and web-to-app conversion.'
+        ],
+        example: 'Like an executive private entrance key: clicking the public front door link instantly opens the VIP boardroom elevator directly to floor 12 if you have the mobile badge, while visitors without the badge seamlessly enter the ground-floor web lobby.',
+        code: `// Universal Link Route Pattern Matcher & Deep Link Navigation Router
+interface RouteMatch {
+  matched: boolean;
+  route: string;
+  params: Record<string, string>;
+}
+
+function matchUniversalLink(pattern: string, url: string): RouteMatch {
+  const parsed = new URL(url);
+  const pathSegments = parsed.pathname.split('/').filter(Boolean);
+  const patternSegments = pattern.split('/').filter(Boolean);
+
+  if (pathSegments.length !== patternSegments.length) {
+    return { matched: false, route: '', params: {} };
+  }
+
+  const params: Record<string, string> = {};
+  for (let i = 0; i < patternSegments.length; i++) {
+    if (patternSegments[i].startsWith(':')) {
+      const paramName = patternSegments[i].slice(1);
+      params[paramName] = pathSegments[i];
+    } else if (patternSegments[i] !== pathSegments[i]) {
+      return { matched: false, route: '', params: {} };
+    }
+  }
+
+  return { matched: true, route: pattern, params };
+}
+
+const incomingUrl = 'https://pinit.career/courses/react-native/lessons/day-2';
+const pattern = '/courses/:courseId/lessons/:lessonId';
+
+const match = matchUniversalLink(pattern, incomingUrl);
+
+console.log('=== UNIVERSAL LINKS & DEEP LINK ROUTING ENGINE ===');
+console.log('Incoming Inbound URL: ' + incomingUrl);
+console.log('Pattern Schema: ' + pattern);
+console.log('Routing Match Status: ' + (match.matched ? 'MATCHED' : 'UNMATCHED'));
+console.log('Extracted Route Params: courseId=' + match.params.courseId + ', lessonId=' + match.params.lessonId);
+console.log('Navigation Action: Dispatch direct push to CoursePlayerScreen');`,
+        output: `=== UNIVERSAL LINKS & DEEP LINK ROUTING ENGINE ===\nIncoming Inbound URL: https://pinit.career/courses/react-native/lessons/day-2\nPattern Schema: /courses/:courseId/lessons/:lessonId\nRouting Match Status: MATCHED\nExtracted Route Params: courseId=react-native, lessonId=day-2\nNavigation Action: Dispatch direct push to CoursePlayerScreen`,
+        codeNotes: [
+          { line: 8, note: 'Deconstructs incoming HTTPS URL path into normalized segments' },
+          { line: 17, note: 'Matches dynamic route parameter tokens prefixed with : and maps to key-value pairs' },
+          { line: 28, note: 'Simulates production incoming Universal Link pointing to deep curriculum content' },
+          { line: 36, note: 'Extracts courseId and lessonId parameters enabling instant screen hydration' }
+        ],
+        tryIt: 'Pass a mismatched URL like https://pinit.career/settings and observe the router return matched: false.',
+        check: {
+          question: 'Why are HTTPS Universal Links superior to custom URI schemes (myapp://) in mobile engineering?',
+          options: [
+            'Universal links cannot be hijacked by third-party apps and gracefully fall back to the website if the app is not installed',
+            'Universal links make the app file size 50% smaller',
+            'Custom URI schemes can only be opened on desktop computers',
+            'Universal links do not require an internet connection'
+          ],
+          answer: 0,
+          why: 'Universal links use standard HTTPS domains verified by domain DNS records, preventing app-scheme hijacking and providing an automatic web fallback when the app is uninstalled.'
+        }
+      },
+      {
+        title: 'Hardware Security Enclaves: iOS Keychain & Android Keystore Biometric Authentication',
+        say: [
+          'A pervasive security vulnerability in mobile applications is storing authentication JWT tokens or private API keys in AsyncStorage.',
+          'AsyncStorage is completely unencrypted: on rooted or jailbroken devices, an attacker can open the plaintext SQLite or XML file and exfiltrate user credentials.',
+          'Production mobile security mandates storing sensitive tokens in Hardware Security Enclaves: Apple Secure Enclave on iOS and Android Titan M / Hardware Keystore on Android.',
+          'In this architecture, cryptographic keys are generated and stored directly inside a physically isolated co-processor chip.',
+          'Keys never enter application memory or operating system RAM, rendering memory-dump attacks impossible.',
+          'Access to the hardware enclave key can be cryptographically gated behind Biometric Authentication (Face ID / Fingerprint / Touch ID).',
+          'Only when the biometric sensor verifies the user does the enclave decrypt the authentication payload and return it to the application.'
+        ],
+        example: 'Like a tamper-proof titanium lockbox with a fingerprint scanner bolted to the bank foundation, rather than writing your banking password on a sticky note attached to your computer monitor (AsyncStorage).',
+        code: `// Hardware Secure Enclave & Biometric Authentication Vault Simulator
+interface SecureItem {
+  key: string;
+  encryptedPayload: string;
+  biometricGated: boolean;
+}
+
+class SecureEnclaveVault {
+  private hardwareVault = new Map<string, SecureItem>();
+
+  storeSecret(key: string, secret: string, biometricGated: boolean): void {
+    // Hardware AES-GCM encryption occurs directly inside Secure Enclave silicon
+    const encrypted = 'enc_enclave_' + Buffer.from(secret).toString('hex');
+    this.hardwareVault.set(key, { key, encryptedPayload: encrypted, biometricGated });
+  }
+
+  retrieveSecret(key: string, userAuthenticated: boolean): { success: boolean; secret?: string; error?: string } {
+    const item = this.hardwareVault.get(key);
+    if (!item) return { success: false, error: 'Key not found' };
+
+    if (item.biometricGated && !userAuthenticated) {
+      return { success: false, error: 'Biometric authorization required (Face ID rejected)' };
+    }
+
+    // Decrypt payload inside hardware chip without exposing key to OS RAM
+    const rawHex = item.encryptedPayload.replace('enc_enclave_', '');
+    const decrypted = Buffer.from(rawHex, 'hex').toString('utf8');
+    return { success: true, secret: decrypted };
+  }
+}
+
+const vault = new SecureEnclaveVault();
+vault.storeSecret('auth_jwt_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.career_os', true);
+
+console.log('=== HARDWARE SECURE ENCLAVE & BIOMETRIC STORAGE ===');
+console.log('Storage Target: iOS Secure Enclave / Android Titan M Keystore');
+
+// Attempt 1: Unauthorized access without Face ID verification
+const failedAccess = vault.retrieveSecret('auth_jwt_token', false);
+console.log('Attempt 1 (Without Biometrics): ' + failedAccess.error);
+
+// Attempt 2: Successful biometric verification
+const successAccess = vault.retrieveSecret('auth_jwt_token', true);
+console.log('Attempt 2 (Biometric Authenticated): SUCCESS');
+console.log('Decrypted Secure Token: ' + (successAccess.secret ? successAccess.secret.slice(0, 30) + '...' : ''));
+console.log('Security Invariant: Plaintext keys NEVER touch unencrypted AsyncStorage');`,
+        output: `=== HARDWARE SECURE ENCLAVE & BIOMETRIC STORAGE ===\nStorage Target: iOS Secure Enclave / Android Titan M Keystore\nAttempt 1 (Without Biometrics): Biometric authorization required (Face ID rejected)\nAttempt 2 (Biometric Authenticated): SUCCESS\nDecrypted Secure Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...\nSecurity Invariant: Plaintext keys NEVER touch unencrypted AsyncStorage`,
+        codeNotes: [
+          { line: 8, note: 'Simulates hardware co-processor storage isolating cryptographic keys from application memory' },
+          { line: 17, note: 'Enforces biometric sensor gating: decryption fails unless hardware sensor verifies user' },
+          { line: 36, note: 'Rejects unauthorized retrieval attempts when Face ID / Touch ID verification fails' },
+          { line: 42, note: 'Protects user session tokens with hardware-backed encryption resisting jailbreak exploits' }
+        ],
+        tryIt: 'Store an un-gated secret and verify that it can be retrieved without biometric verification.',
+        check: {
+          question: 'Why must authentication tokens and private credentials be stored in the iOS Keychain or Android Keystore rather than AsyncStorage?',
+          options: [
+            'AsyncStorage stores unencrypted plaintext files accessible to attackers on rooted or jailbroken devices, whereas Keychains use hardware-backed encryption inside the Secure Enclave',
+            'AsyncStorage has a 100-character string limit',
+            'Keychains automatically delete tokens every 24 hours',
+            'AsyncStorage can only be accessed by Apple employees'
+          ],
+          answer: 0,
+          why: 'AsyncStorage stores unencrypted plaintext on disk. The Secure Enclave / Keystore generates and stores encryption keys in hardware, preventing credential exfiltration even if the OS is rooted.'
+        }
+      }
+    ],
+    summary: [
+      'The New Architecture pairs the Fabric concurrent C++ renderer with TurboModules, slashing TTI through JSI lazy loading.',
+      'Reanimated 3 worklets execute spring physics directly on the Native UI thread, guaranteeing 120 FPS gesture fluidity with zero bridge hops.',
+      'WatermelonDB lazy-loads relational SQLite records on demand, enabling 50,000+ row datasets within a strict 5 MB memory budget.',
+      'Universal Links provide cryptographic domain ownership and deterministic parameter routing without browser redirects or scheme hijacking.',
+      'Hardware Security Enclaves (iOS Keychain / Android Keystore) protect sensitive tokens behind biometric sensor gates, eliminating AsyncStorage plaintext risks.'
+    ],
+    projectStep: {
+      title: 'Engineer a Production-Grade High-Performance Mobile Architecture Suite',
+      steps: [
+        'Implement a lazy-loading TurboModule registry using synchronous JSI C++ invocations.',
+        'Build a Reanimated worklet spring physics calculator simulating 120 FPS UI-thread animations.',
+        'Construct a WatermelonDB lazy relational record store reading column attributes on demand from SQLite.',
+        'Implement a Universal Link deep routing engine and configure Secure Enclave biometric token protection.'
+      ]
+    }
   }
 ];

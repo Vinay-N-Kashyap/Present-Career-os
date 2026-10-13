@@ -31,6 +31,11 @@ test('Blockchain & Mobile Long Lessons: Resolution & Language Invariants', () =>
   assert.ok(mobileLesson.projectStep, 'mobile Day 1 must have a hands-on project step');
   assert.equal(getLongLessonLanguage('mobile'), 'typescript');
 
+  const mobileLesson2 = getLongLesson('mobile', 2);
+  assert.ok(mobileLesson2, 'mobile Day 2 long lesson must resolve');
+  assert.equal(mobileLesson2.day, 2);
+  assert.equal(mobileLesson2.parts.length, 5, 'mobile Day 2 must contain exactly 5 parts');
+
   // 3. g3d and java-basics language mapping
   assert.equal(getLongLessonLanguage('g3d'), 'typescript');
   assert.equal(getLongLessonLanguage('java-basics'), 'javascript');
@@ -119,4 +124,49 @@ test('Blockchain Day 2: AMM Constant Product, TWAP, EIP-712 Permit & Rollup Proo
   assert.ok(blockchainLesson2.parts[3].output?.includes('LAYER 2 ROLLUP BATCH STATE COMMITMENT ENGINE'));
   assert.ok(blockchainLesson2.parts[4].code?.includes('UpgradeableProxy'));
   assert.ok(blockchainLesson2.parts[4].output?.includes('ERC-1967 UPGRADEABLE PROXY STORAGE ARCHITECTURE'));
+});
+
+test('Mobile Day 2: Fabric Renderer, Reanimated Worklets, WatermelonDB & Biometrics Verification', () => {
+  const mobileLesson2 = getLongLesson('mobile', 2);
+  assert.ok(mobileLesson2, 'mobile Day 2 must resolve');
+  assert.equal(mobileLesson2.day, 2);
+  assert.equal(mobileLesson2.parts.length, 5, 'mobile Day 2 must contain exactly 5 parts');
+  assert.ok(mobileLesson2.summary.length >= 4, 'mobile Day 2 must have comprehensive summary');
+  assert.ok(mobileLesson2.projectStep, 'mobile Day 2 must have projectStep');
+  assert.ok(mobileLesson2.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(mobileLesson2);
+  const totalMin = estimateLessonMinutes(mobileLesson2);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < mobileLesson2.parts.length; i++) {
+    const part = mobileLesson2.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+    assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Part ${i + 1} must have at least 3 code notes`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have exactly 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(mobileLesson2.parts[0].code?.includes('TurboModuleRegistry'));
+  assert.ok(mobileLesson2.parts[0].output?.includes('REACT NATIVE NEW ARCHITECTURE: TURBOMODULES & JSI'));
+  assert.ok(mobileLesson2.parts[1].code?.includes('simulateSpringStep'));
+  assert.ok(mobileLesson2.parts[1].output?.includes('REANIMATED WORKLET SPRING PHYSICS'));
+  assert.ok(mobileLesson2.parts[2].code?.includes('LazyRecord'));
+  assert.ok(mobileLesson2.parts[2].output?.includes('WATERMELONDB LAZY RELATIONAL MOBILE STORAGE'));
+  assert.ok(mobileLesson2.parts[3].code?.includes('matchUniversalLink'));
+  assert.ok(mobileLesson2.parts[3].output?.includes('UNIVERSAL LINKS & DEEP LINK ROUTING ENGINE'));
+  assert.ok(mobileLesson2.parts[4].code?.includes('SecureEnclaveVault'));
+  assert.ok(mobileLesson2.parts[4].output?.includes('HARDWARE SECURE ENCLAVE & BIOMETRIC STORAGE'));
 });
