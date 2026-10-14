@@ -50,3 +50,62 @@ test('Block 3 Invariant: COURSES_REGISTRY has all courses populated with block t
     assert.ok(course.quests && course.quests.length >= 30, `Course "${course.id}" must have at least 30 quests`);
   }
 });
+
+test('Block 159 (TASK-479): resolveTrackForCourse achieves 100% deterministic parity across all catalog and registry courses', async () => {
+  const { resolveTrackForCourse } = await import('../src/lib/onboarding/trackResolver');
+
+  // 1. All COURSES_CATALOG items resolve to a valid track
+  for (const course of COURSES_CATALOG) {
+    const track = resolveTrackForCourse(course.id);
+    assert.ok(track, `Track for catalog course "${course.id}" must not be null/undefined`);
+    assert.ok(track.targetRoleLabel && track.targetRoleLabel.length > 0, `Course "${course.id}" must have targetRoleLabel`);
+    assert.ok(track.courseId && track.courseId.startsWith('course-'), `Course "${course.id}" resolved courseId must start with course-`);
+    assert.ok(track.skillsList && track.skillsList.length > 0, `Course "${course.id}" must have non-empty skillsList`);
+    assert.ok(Array.isArray(track.weakAreas) && track.weakAreas.length > 0, `Course "${course.id}" must have non-empty weakAreas`);
+  }
+
+  // 2. All COURSES_REGISTRY items resolve to a valid track
+  for (const course of COURSES_REGISTRY) {
+    const track = resolveTrackForCourse(course.id);
+    assert.ok(track, `Track for registry course "${course.id}" must not be null/undefined`);
+    assert.ok(track.targetRoleLabel && track.targetRoleLabel.length > 0, `Course "${course.id}" must have targetRoleLabel`);
+    assert.ok(track.courseId && track.courseId.startsWith('course-'), `Course "${course.id}" resolved courseId must start with course-`);
+    assert.ok(track.skillsList && track.skillsList.length > 0, `Course "${course.id}" must have non-empty skillsList`);
+    assert.ok(Array.isArray(track.weakAreas) && track.weakAreas.length > 0, `Course "${course.id}" must have non-empty weakAreas`);
+  }
+});
+
+test('Block 159 (TASK-479): matchTrackFromGoal and resolveTrackFromGoal deterministically map onboarding options, labels, and degree fallbacks', async () => {
+  const { matchTrackFromGoal, resolveTrackFromGoal, TRACKS } = await import('../src/lib/onboarding/trackResolver');
+
+  // Tech option IDs
+  const frontend = matchTrackFromGoal('frontend_developer');
+  assert.strictEqual(frontend?.targetRoleLabel, TRACKS.frontend.targetRoleLabel);
+
+  const ai = matchTrackFromGoal('ai_ml_engineer');
+  assert.strictEqual(ai?.targetRoleLabel, TRACKS.ai.targetRoleLabel);
+
+  const cyber = matchTrackFromGoal('cybersecurity');
+  assert.strictEqual(cyber?.targetRoleLabel, TRACKS.cyber.targetRoleLabel);
+
+  const dataAnalyst = matchTrackFromGoal('data_analyst');
+  assert.strictEqual(dataAnalyst?.targetRoleLabel, TRACKS.analytics.targetRoleLabel);
+
+  // Commerce & Management option IDs
+  const accounting = matchTrackFromGoal('accounting_finance');
+  assert.strictEqual(accounting?.targetRoleLabel, TRACKS.accounting.targetRoleLabel);
+
+  const banking = matchTrackFromGoal('banking_services');
+  assert.strictEqual(banking?.targetRoleLabel, TRACKS.banking.targetRoleLabel);
+
+  // Degree fallbacks
+  const bcomFallback = resolveTrackFromGoal('', 'B.Com Accounting');
+  assert.strictEqual(bcomFallback.targetRoleLabel, TRACKS.finance.targetRoleLabel);
+
+  const mbaFallback = resolveTrackFromGoal('', 'MBA Operations');
+  assert.strictEqual(mbaFallback.targetRoleLabel, TRACKS.operations.targetRoleLabel);
+
+  const defaultFallback = resolveTrackFromGoal('', '');
+  assert.strictEqual(defaultFallback.targetRoleLabel, TRACKS.java.targetRoleLabel);
+});
+
