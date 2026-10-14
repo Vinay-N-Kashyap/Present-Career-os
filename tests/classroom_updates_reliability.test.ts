@@ -105,4 +105,28 @@ describe('Classroom Navigation, Avatar, and Code Execution Reliability Suite', (
     assert.equal(refilled.fallbackNote, null, 'Flow template visual must not carry fallback error notice');
     assert.equal(refilled.visual.nodes?.length, 3);
   });
+
+  it('verifies Day 1 Python has all 6 parts enriched with exactly 5 progression steps including example and tryIt', () => {
+    const { getVisual } = require('@/lib/visuals/loadVisuals');
+    const { PYTHON_LONG_LESSONS } = require('@/lib/data/pythonLongLessons');
+    const day1Lesson = PYTHON_LONG_LESSONS.find((l: any) => l.day === 1);
+    assert.ok(day1Lesson, 'Day 1 lesson must exist in PYTHON_LONG_LESSONS');
+
+    for (let p = 0; p < 6; p++) {
+      const part = day1Lesson.parts[p];
+      assert.ok(part, `Part ${p} must exist in Day 1`);
+      const visual = getVisual('python', 1, p);
+      assert.ok(visual, `Visual for python:1:${p} must exist`);
+      assert.equal(visual.steps.length, 5, `Part ${p} (${part.title}) must have exactly 5 visual steps`);
+
+      const ats = visual.steps.map((s: any) => s.at);
+      assert.ok(ats.includes('example'), `Part ${p} visual must include example step`);
+      assert.ok(ats.includes('tryIt'), `Part ${p} visual must include tryIt step`);
+
+      for (const step of visual.steps) {
+        assert.ok(step.caption.endsWith('.'), `Caption "${step.caption}" must end with a period`);
+        assert.ok(step.caption.length <= 80, `Caption "${step.caption}" exceeds 80 characters`);
+      }
+    }
+  });
 });
