@@ -781,6 +781,65 @@
             "mustNotShow": [
               "Step 1: open the app"
             ]
+          },
+          {
+            "at": "example",
+            "caption": "Like a torn page in attendance, Python stops when reading fails.",
+            "rows": [
+              {
+                "cells": [
+                  "Names before torn page",
+                  "Read in order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Torn page in register",
+                  "Stops attendance"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Names after torn page",
+                  "Never called"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Try prnt to see line 1 run then stop with a NameError on line 2.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"Step 1: open the app\")",
+                  "Step 1: open the app"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prnt(\"Step 2: add an expense\")",
+                  "NameError"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Step 3: see the total\")",
+                  "never ran"
+                ],
+                "tone": "idle"
+              }
+            ],
+            "whatIf": "print(\"Step 1: open the app\")\nprnt(\"Step 2: add an expense\")\nprint(\"Step 3: see the total\")",
+            "checks": [
+              "Step 1: open the app",
+              "NameError"
+            ]
           }
         ]
       },
@@ -888,6 +947,65 @@
             ],
             "mustNotShow": [
               "Step 1: open the app"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Like a torn page in attendance, Python stops when reading fails.",
+            "rows": [
+              {
+                "cells": [
+                  "Names before torn page",
+                  "Read in order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Torn page in register",
+                  "Stops attendance"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Names after torn page",
+                  "Never called"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Try prnt to see line 1 run then stop with a NameError on line 2.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"Step 1: open the app\")",
+                  "Step 1: open the app"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prnt(\"Step 2: add an expense\")",
+                  "NameError"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "print(\"Step 3: see the total\")",
+                  "never ran"
+                ],
+                "tone": "idle"
+              }
+            ],
+            "whatIf": "print(\"Step 1: open the app\")\nprnt(\"Step 2: add an expense\")\nprint(\"Step 3: see the total\")",
+            "checks": [
+              "Step 1: open the app",
+              "NameError"
             ]
           }
         ]
