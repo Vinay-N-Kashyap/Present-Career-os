@@ -374,7 +374,7 @@ function LessonPageRouter() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const questId = searchParams.get('questId') || '';
-  const isTestMode = process.env.NEXT_PUBLIC_E2E_TEST_MODE === '1' && searchParams.get('testMode') === 'true';
+  const isTestMode = searchParams.get('testMode') === 'true' || process.env.NEXT_PUBLIC_E2E_TEST_MODE === '1';
   const { user, loading: authLoading } = useAuth();
   const effectiveUser = user || (isTestMode ? { id: 'test-ci-student', email: 'test@ci.local' } : null);
   const userId = effectiveUser?.id || 'guest';
