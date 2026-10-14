@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
 import { TEACHERS } from '@/lib/teachers';
-import { generateLocalSocraticHint } from '@/components/quests/workspace/WorkspaceAIHint';
+import { generateLocalSocraticHint } from '@/lib/tutor/socraticHint';
 
 export { generateLocalSocraticHint };
 
