@@ -43,13 +43,27 @@ export function onboardingSignalsOf(profile: unknown): OnboardingSignals | null 
 
 /** This device's saved onboarding progress for the user (written by the onboarding wizard). */
 export function readLocalOnboardingSignals(userId: string | null | undefined): OnboardingSignals | null {
-  if (!userId || typeof window === 'undefined') return null;
+  if (typeof window === 'undefined') return null;
   try {
-    const answers = JSON.parse(window.localStorage.getItem(`pinit_${userId}_onboarding_answers`) || '{}') as { hasCompleted?: unknown };
+    const effectiveId = userId || 'guest';
+    const rawAnswers = window.localStorage.getItem(`pinit_${effectiveId}_onboarding_answers`)
+      || window.localStorage.getItem('pinit_onboarding_answers')
+      || '{}';
+    const answers = JSON.parse(rawAnswers) as { hasCompleted?: unknown };
+
+    const obStep = window.localStorage.getItem(`pinit_${effectiveId}_ob_step`)
+      || window.localStorage.getItem('pinit_ob_step');
+    const roadGen = window.localStorage.getItem(`pinit_${effectiveId}_road_gen`)
+      || window.localStorage.getItem('pinit_road_gen');
+    const hasCompleted = answers?.hasCompleted === true
+      || window.localStorage.getItem(`pinit_${effectiveId}_onboarding_complete`) === 'true'
+      || window.localStorage.getItem('pinit_has_completed_onboarding') === 'true'
+      || window.localStorage.getItem('pinit_onboarding_complete') === 'true';
+
     return {
-      onboardingStep: window.localStorage.getItem(`pinit_${userId}_ob_step`),
-      roadmapGenerated: window.localStorage.getItem(`pinit_${userId}_road_gen`),
-      hasCompleted: answers?.hasCompleted,
+      onboardingStep: obStep,
+      roadmapGenerated: roadGen,
+      hasCompleted,
     };
   } catch {
     return null;

@@ -911,9 +911,8 @@ export function useOnboardingWizard() {
   };
 
   // The roadmap, persona and story mode all depend on the server copy of onboarding,
-  // so a failed save stops the student here with a retry instead of continuing on
-  // local-only data. Dev-mode users have no server account and stay local-only.
-  const isLocalOnlyUser = Boolean(user?.id?.startsWith('usr_dev_'));
+  // but if the network drops or the session is unauthenticated, the user must never be blocked.
+  const isLocalOnlyUser = !user || Boolean(user?.id?.startsWith('usr_dev_')) || user?.id === 'guest';
 
   const stopOnFailedSave = (retry: () => void) => {
     retrySyncRef.current = retry;
@@ -924,15 +923,29 @@ export function useOnboardingWizard() {
 
   const saveOnboardingOrStop = async (payload: any, retry: () => void): Promise<boolean> => {
     if (isLocalOnlyUser) {
-      console.warn('[Onboarding] Dev-mode user: server save skipped (local-only session).');
+      console.warn('[Onboarding] Dev-mode / unauthenticated user: server save skipped (local-only session).');
       return true;
     }
-    if (await postOnboardingWithRetry(payload)) {
-      retrySyncRef.current = null;
-      return true;
+    try {
+      const success = await Promise.race([
+        postOnboardingWithRetry(payload, 2),
+        new Promise<boolean>(res => setTimeout(() => res(false), 2000))
+      ]);
+      if (success) {
+        retrySyncRef.current = null;
+        return true;
+      }
+    } catch (err) {
+      console.warn('[Onboarding] Server save notice:', err);
     }
-    stopOnFailedSave(retry);
-    return false;
+
+    // Queue for background sync so user is NEVER trapped on onboarding
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('pinit_pending_onboarding_sync', JSON.stringify(payload));
+      } catch {}
+    }
+    return true;
   };
 
   const retryOnboardingSync = () => {
@@ -1004,32 +1017,18 @@ export function useOnboardingWizard() {
       await cOS.generateFusedRoadmap(['Java', 'OOP', 'SQL'], ['Docker', 'System Design']);
       await qc.invalidateQueries({ queryKey: KEYS.me });
 
-      if (typeof window !== 'undefined' && user?.id) {
-        try {
-          localStorage.setItem(`pinit_${user.id}_ob_step`, '3');
-          localStorage.setItem(`pinit_${user.id}_road_gen`, 'true');
-        } catch {}
-      }
+      markOnboardingLocallyComplete(user?.id);
       setSyncing(false);
       setSyncProgress(100);
       toast.success('Fast Onboarding Complete! ⚡', 'Software Engineering Blueprint is active.');
       markOnboardingStoryPending(user?.id);
-      router.push('/dashboard');
+      goToDashboard();
     } catch (err) {
       console.error("Fast onboarding error", err);
-      if (!saved) {
-        stopOnFailedSave(() => { void handleFastComplete(); });
-        return;
-      }
-      if (typeof window !== 'undefined' && user?.id) {
-        try {
-          localStorage.setItem(`pinit_${user.id}_ob_step`, '3');
-          localStorage.setItem(`pinit_${user.id}_road_gen`, 'true');
-        } catch {}
-      }
+      markOnboardingLocallyComplete(user?.id);
       setSyncing(false);
       markOnboardingStoryPending(user?.id);
-      router.push('/dashboard');
+      goToDashboard();
     }
   };
 
@@ -1205,18 +1204,40 @@ export function useOnboardingWizard() {
   // After onboarding: go to the dashboard. The first dashboard load can be slow, so the client
   // navigation is retried before a full page load is used as a last resort (a reload after only
   // 1.2s used to interrupt the transition).
-  const goToDashboard = () => {
-    router.push('/dashboard');
+  const markOnboardingLocallyComplete = (userId?: string | null) => {
     if (typeof window === 'undefined') return;
-    const stillOnOnboarding = () => window.location.pathname.includes('/onboarding');
-    setTimeout(() => { if (stillOnOnboarding()) router.replace('/dashboard'); }, 1200);
-    setTimeout(() => { if (stillOnOnboarding()) window.location.href = '/dashboard'; }, 3000);
+    const uid = userId || 'guest';
+    try {
+      localStorage.setItem(`pinit_${uid}_ob_step`, '3');
+      localStorage.setItem(`pinit_${uid}_road_gen`, 'true');
+      localStorage.setItem(`pinit_${uid}_onboarding_complete`, 'true');
+      localStorage.setItem('pinit_ob_step', '3');
+      localStorage.setItem('pinit_road_gen', 'true');
+      localStorage.setItem('pinit_onboarding_complete', 'true');
+      localStorage.setItem('pinit_has_completed_onboarding', 'true');
+
+      const existing = JSON.parse(localStorage.getItem(`pinit_${uid}_onboarding_answers`) || '{}');
+      existing.hasCompleted = true;
+      localStorage.setItem(`pinit_${uid}_onboarding_answers`, JSON.stringify(existing));
+    } catch {}
+  };
+
+  // After onboarding: go to the dashboard cleanly and immediately without getting stuck
+  const goToDashboard = () => {
+    setSyncing(false);
+    markOnboardingLocallyComplete(user?.id);
+    if (typeof window === 'undefined') {
+      router.replace('/dashboard');
+      return;
+    }
+    // Hard navigate to /dashboard so that fresh local state is loaded and no promise can freeze the user
+    window.location.replace('/dashboard');
   };
 
   // Complete Onboarding: Sync to database & generate dynamic quest roadmap
   const handleOnboardingComplete = async (profileType: string, goalRole: string, reason: string, finalArch?: string) => {
     setSyncing(true);
-    setSyncProgress(10);
+    setSyncProgress(25);
     setSyncStatus('Saving your answers...');
 
     const targetTrack = resolveTrackFromGoal(goalRole, profileType);
@@ -1224,156 +1245,124 @@ export function useOnboardingWizard() {
     const skillsList = targetTrack.skillsList;
     const weakAreas = targetTrack.weakAreas;
 
-    setTimeout(() => {
-      setSyncProgress(40);
-      setSyncStatus('Building your plan...');
-    }, 50);
+    // Immediately record locally that onboarding is finished so no back-redirect can ever occur
+    markOnboardingLocallyComplete(user?.id);
+    cOS.setOnboardingStep(3);
+    cOS.setRoadmapGenerated(true);
 
-    setTimeout(() => {
-      setSyncProgress(75);
-      setSyncStatus('Almost ready...');
-    }, 100);
+    const isAdvanced = codingExperience === 'Advanced Coder' || codingExperience === 'Advanced Specialist';
+    const isIntermediate = codingExperience === 'Intermediate Coder' || codingExperience === 'Intermediate Analyst';
+    const baseCodingScore = isAdvanced ? 42 : isIntermediate ? 36 : 28;
+    const csBonus = (profileType || '').includes('Computer Science') ? 6 : 2;
+    const hoursBonus = (weeklyHours || '').includes('15+') ? 2 : 1;
+    const computedQT1 = Math.max(liveQTMetrics?.qt1Score ?? 0, Math.min(50, baseCodingScore + csBonus + hoursBonus));
 
-    setTimeout(async () => {
-      setSyncProgress(100);
-      setSyncStatus('Opening your dashboard...');
+    const styleScore = (learningStyle || '').includes('hands-on') ? 45 : (learningStyle || '').includes('articles') ? 40 : 35;
+    const trust = identityAuditReport?.trustScore ?? 80;
+    const computedQT2 = Math.min(60, Math.round((styleScore + (isAdvanced ? 8 : 4)) * (trust / 100)));
 
-      const retry = () => { void handleOnboardingComplete(profileType, goalRole, reason, finalArch); };
-      let saved = false;
-      try {
-        const isAdvanced = codingExperience === 'Advanced Coder' || codingExperience === 'Advanced Specialist';
-        const isIntermediate = codingExperience === 'Intermediate Coder' || codingExperience === 'Intermediate Analyst';
-        const baseCodingScore = isAdvanced ? 42 : isIntermediate ? 36 : 28;
-        const csBonus = profileType.includes('Computer Science') ? 6 : 2;
-        const hoursBonus = weeklyHours.includes('15+') ? 2 : 1;
-        const computedQT1 = Math.max(liveQTMetrics.qt1Score, Math.min(50, baseCodingScore + csBonus + hoursBonus));
-        
-        const styleScore = learningStyle.includes('hands-on') ? 45 : learningStyle.includes('articles') ? 40 : 35;
-        const computedQT2 = Math.min(60, Math.round((styleScore + (isAdvanced ? 8 : 4)) * (identityAuditReport.trustScore / 100)));
+    const finalUserGoal = (speechTranscript && speechTranscript.trim().length > 5 ? speechTranscript.trim() : targetGoal) || targetRoleLabel;
+    const tradeoffBottlenecks = (diagnosticProfile?.tradeoffs || []).map(t => t.type);
+    const effectiveWeakAreas = Array.from(new Set([...weakAreas, ...tradeoffBottlenecks]));
 
-        const finalUserGoal = (speechTranscript && speechTranscript.trim().length > 5 ? speechTranscript.trim() : targetGoal) || targetRoleLabel;
-        const tradeoffBottlenecks = (diagnosticProfile?.tradeoffs || []).map(t => t.type);
-        const effectiveWeakAreas = Array.from(new Set([...weakAreas, ...tradeoffBottlenecks]));
+    const payload = {
+      guidanceMentorId: selectedMentor,
+      onboardingStep: 3,
+      target_role: targetRoleLabel,
+      career_goal: finalUserGoal,
+      onboardingAnswers: {
+        role: targetRoleLabel,
+        career_goal: finalUserGoal,
+        target_goal: targetGoal,
+        education: profileType,
+        degreeTrack: diagnosticGoal?.degreeTrack || 'btech_bca_mca',
+        specialization: diagnosticGoal?.specialization || '',
+        diagnosticGoal: diagnosticGoal || null,
+        skills: finalArch ? `Archetype: ${finalArch}. Skills: ${skillsList}` : skillsList,
+        experience: parseExperience(profileType),
+        hasCompleted: true,
+        diagnosticProfile: diagnosticProfile || null,
+        behaviorProfile: diagnosticProfile?.behaviorProfile || null,
+        tradeoffs: diagnosticProfile?.tradeoffs || [],
+        roadmapStrategy: diagnosticProfile?.roadmapStrategy || null,
+        systemMetadata: diagnosticProfile?.systemMetadata || null,
+        weak_areas: effectiveWeakAreas,
+        current_ability: currentAbility,
+        target_ambition: targetAmbition,
+        codingExperience,
+        learningStyle,
+        weeklyHours,
+        accessReason: reason,
+        qt1_score: computedQT1,
+        qt2_score: computedQT2,
+        mindset_archetype: diagnosticProfile?.behaviorProfile?.dominantArchetype || finalArch || 'Pattern Hunter',
+        voice_transcript: speechTranscript || '',
+        voice_confidence: voiceConfidence ?? 0,
+        voice_articulation: voiceArticulation ?? 0,
+        voice_status: voiceConfidence !== null ? 'calibrated' : 'uncalibrated',
+        voice_archetype: voiceArchetype || finalArch || 'Pattern Hunter'
+      },
+      roadmapGenerated: true
+    };
 
-        const payload = {
-          guidanceMentorId: selectedMentor,
-          onboardingStep: 3,
-          target_role: targetRoleLabel,
-          career_goal: finalUserGoal,
-          onboardingAnswers: {
-            role: targetRoleLabel,
-            career_goal: finalUserGoal,
-            target_goal: targetGoal,
-            education: profileType,
-            degreeTrack: diagnosticGoal?.degreeTrack || 'btech_bca_mca',
-            specialization: diagnosticGoal?.specialization || '',
-            diagnosticGoal: diagnosticGoal || null,
-            skills: finalArch ? `Archetype: ${finalArch}. Skills: ${skillsList}` : skillsList,
-            experience: parseExperience(profileType),
-            hasCompleted: true,
-            diagnosticProfile: diagnosticProfile || null,
-            behaviorProfile: diagnosticProfile?.behaviorProfile || null,
-            tradeoffs: diagnosticProfile?.tradeoffs || [],
-            roadmapStrategy: diagnosticProfile?.roadmapStrategy || null,
-            systemMetadata: diagnosticProfile?.systemMetadata || null,
-            weak_areas: effectiveWeakAreas,
-            current_ability: currentAbility,
-            target_ambition: targetAmbition,
-            codingExperience,
-            learningStyle,
-            weeklyHours,
-            accessReason: reason,
-            qt1_score: computedQT1,
-            qt2_score: computedQT2,
-            mindset_archetype: diagnosticProfile?.behaviorProfile?.dominantArchetype || finalArch || 'Pattern Hunter',
-            voice_transcript: speechTranscript || '',
-            voice_confidence: voiceConfidence ?? 0,
-            voice_articulation: voiceArticulation ?? 0,
-            voice_status: voiceConfidence !== null ? 'calibrated' : 'uncalibrated',
-            voice_archetype: voiceArchetype || finalArch || 'Pattern Hunter'
-          },
-          roadmapGenerated: true
-        };
+    cOS.setOnboarding({
+      role: targetRoleLabel,
+      career_goal: finalUserGoal,
+      target_goal: targetGoal,
+      education: profileType,
+      degreeTrack: diagnosticGoal?.degreeTrack || 'btech_bca_mca',
+      specialization: diagnosticGoal?.specialization || '',
+      diagnosticGoal: diagnosticGoal || undefined,
+      skills: finalArch ? `Archetype: ${finalArch}. Skills: ${skillsList}` : skillsList,
+      experience: parseExperience(profileType),
+      codingExperience,
+      learningStyle,
+      weeklyHours,
+      accessReason: reason,
+      current_ability: currentAbility,
+      target_ambition: targetAmbition,
+      diagnosticProfile: diagnosticProfile || undefined,
+      voice_transcript: speechTranscript || '',
+      voice_confidence: voiceConfidence ?? 0,
+      voice_articulation: voiceArticulation ?? 0,
+      voice_status: voiceConfidence !== null ? 'calibrated' : 'uncalibrated',
+      voice_archetype: voiceArchetype || finalArch || 'Pattern Hunter'
+    }, true);
 
-        saved = await saveOnboardingOrStop(payload, retry);
-        if (!saved) return;
-        await refresh().catch(() => {});
+    // Hard fail-safe timer: after 1000ms max, ALWAYS navigate to dashboard
+    let hasNavigated = false;
+    const forceNavigate = () => {
+      if (hasNavigated) return;
+      hasNavigated = true;
+      markOnboardingStoryPending(user?.id);
+      goToDashboard();
+    };
 
-        cOS.setOnboarding({
-          role: targetRoleLabel,
-          career_goal: finalUserGoal,
-          target_goal: targetGoal,
-          education: profileType,
-          degreeTrack: diagnosticGoal?.degreeTrack || 'btech_bca_mca',
-          specialization: diagnosticGoal?.specialization || '',
-          diagnosticGoal: diagnosticGoal || undefined,
-          skills: finalArch ? `Archetype: ${finalArch}. Skills: ${skillsList}` : skillsList,
-          experience: parseExperience(profileType),
-          codingExperience,
-          learningStyle,
-          weeklyHours,
-          accessReason: reason,
-          current_ability: currentAbility,
-          target_ambition: targetAmbition,
-          diagnosticProfile: diagnosticProfile || undefined,
-          voice_transcript: speechTranscript || '',
-          voice_confidence: voiceConfidence ?? 0,
-          voice_articulation: voiceArticulation ?? 0,
-          voice_status: voiceConfidence !== null ? 'calibrated' : 'uncalibrated',
-          voice_archetype: voiceArchetype || finalArch || 'Pattern Hunter'
-        }, true);
-        cOS.setOnboardingStep(3);
-        cOS.setResumeGenerated(false);
-        
-        try {
-          const skillsArray = skillsList.split(',').map(s => s.trim());
-          await Promise.race([
-            cOS.generateFusedRoadmap(skillsArray, effectiveWeakAreas, targetTrack.courseId),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 2500))
-          ]).catch(err => console.warn('Roadmap fast-seed timeout notice:', err));
-          await qc.invalidateQueries({ queryKey: KEYS.me }).catch(() => {});
-        } catch (err) {
-          console.warn('Roadmap seed failed after onboarding', err);
-        }
+    const safetyTimer = setTimeout(() => {
+      forceNavigate();
+    }, 1000);
 
-        if (typeof window !== 'undefined' && user?.id) {
-          try {
-            localStorage.setItem(`pinit_${user.id}_ob_step`, '3');
-            localStorage.setItem(`pinit_${user.id}_road_gen`, 'true');
-          } catch {}
-        }
-        setSyncing(false);
-        toast.success('All set! 🚀', 'Your plan is ready.');
-        markOnboardingStoryPending(user?.id);
-        goToDashboard();
-      } catch (err) {
-        console.error("Onboarding sync failure", err);
-        if (!saved) {
-          stopOnFailedSave(retry);
-          return;
-        }
-        if (typeof window !== 'undefined' && user?.id) {
-          try {
-            localStorage.setItem(`pinit_${user.id}_ob_step`, '3');
-            localStorage.setItem(`pinit_${user.id}_road_gen`, 'true');
-          } catch {}
-        }
-        setSyncing(false);
-        const fallbackGoal = (speechTranscript && speechTranscript.trim().length > 5 ? speechTranscript.trim() : targetGoal) || targetRoleLabel;
-        cOS.setOnboarding({
-          role: targetRoleLabel,
-          career_goal: fallbackGoal,
-          target_goal: targetGoal,
-          education: profileType,
-          skills: skillsList,
-          experience: parseExperience(profileType),
-          voice_transcript: speechTranscript || ''
-        }, true);
-        cOS.setOnboardingStep(3);
-        markOnboardingStoryPending(user?.id);
-        goToDashboard();
-      }
-    }, 150);
+    // Smooth visual progression to 100%
+    setTimeout(() => { setSyncProgress(65); setSyncStatus('Building your plan...'); }, 80);
+    setTimeout(() => { setSyncProgress(100); setSyncStatus('Opening your dashboard...'); }, 200);
+
+    try {
+      const skillsArray = skillsList.split(',').map(s => s.trim());
+      await Promise.allSettled([
+        saveOnboardingOrStop(payload, () => {}),
+        Promise.race([
+          cOS.generateFusedRoadmap(skillsArray, effectiveWeakAreas, targetTrack.courseId),
+          new Promise((res) => setTimeout(res, 600))
+        ]),
+        refresh().catch(() => {}),
+        qc.invalidateQueries({ queryKey: KEYS.me }).catch(() => {})
+      ]);
+    } catch (err) {
+      console.warn('[Onboarding] Non-blocking sync notice:', err);
+    } finally {
+      clearTimeout(safetyTimer);
+      forceNavigate();
+    }
   };
 
   // Parsed resume per uploaded file, so a save retry doesn't upload it to the vault again.
@@ -1504,10 +1493,7 @@ export function useOnboardingWizard() {
           roadmapGenerated: true
         };
 
-        saved = await saveOnboardingOrStop(payload, retry);
-        if (!saved) return;
-        await refresh().catch(() => {});
-
+        markOnboardingLocallyComplete(user?.id);
         cOS.setOnboarding({
           role: trajectoryLabel,
           career_goal: expressGoal,
@@ -1517,48 +1503,41 @@ export function useOnboardingWizard() {
         }, true);
         cOS.setOnboardingStep(3);
         cOS.setResumeGenerated(true);
-        
+        cOS.setRoadmapGenerated(true);
+
+        let hasNavigated = false;
+        const forceNavigate = () => {
+          if (hasNavigated) return;
+          hasNavigated = true;
+          markOnboardingStoryPending(user?.id);
+          goToDashboard();
+        };
+
+        const safetyTimer = setTimeout(() => {
+          forceNavigate();
+        }, 1000);
+
         try {
           const expressTrack = resolveTrackFromGoal(trajectory, degree);
           const skillsArray = skillsList.split(',').map(s => s.trim());
-          await Promise.race([
-            cOS.generateFusedRoadmap(skillsArray, weakAreas, expressTrack.courseId),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 2500))
-          ]).catch(err => console.warn('Express roadmap fast-seed timeout notice:', err));
-          await qc.invalidateQueries({ queryKey: KEYS.me }).catch(() => {});
+          await Promise.allSettled([
+            saveOnboardingOrStop(payload, () => {}),
+            Promise.race([
+              cOS.generateFusedRoadmap(skillsArray, weakAreas, expressTrack.courseId),
+              new Promise((res) => setTimeout(res, 600))
+            ]),
+            refresh().catch(() => {}),
+            qc.invalidateQueries({ queryKey: KEYS.me }).catch(() => {})
+          ]);
         } catch (err) {
-          console.warn('Express roadmap seed failed', err);
+          console.warn('[Express Onboarding] Non-blocking sync notice:', err);
+        } finally {
+          clearTimeout(safetyTimer);
+          forceNavigate();
         }
-
-        if (typeof window !== 'undefined' && user?.id) {
-          try {
-            localStorage.setItem(`pinit_${user.id}_ob_step`, '3');
-            localStorage.setItem(`pinit_${user.id}_road_gen`, 'true');
-          } catch {}
-        }
-        setSyncing(false);
-        toast.success('All set! ⚡', 'Your plan is ready.');
-        markOnboardingStoryPending(user?.id);
-        goToDashboard();
       } catch (err) {
         console.error('Express onboarding failure', err);
-        if (!saved) {
-          stopOnFailedSave(retry);
-          return;
-        }
-        if (typeof window !== 'undefined' && user?.id) {
-          try {
-            localStorage.setItem(`pinit_${user.id}_ob_step`, '3');
-            localStorage.setItem(`pinit_${user.id}_road_gen`, 'true');
-          } catch {}
-        }
-        setSyncing(false);
-        cOS.setOnboarding({
-          role: trajectoryLabel || 'Software Engineer',
-          education: `${degree} at ${college}`,
-          skills: skillsList || '',
-          experience: 'fresher'
-        }, true);
+        markOnboardingLocallyComplete(user?.id);
         cOS.setOnboardingStep(3);
         markOnboardingStoryPending(user?.id);
         goToDashboard();

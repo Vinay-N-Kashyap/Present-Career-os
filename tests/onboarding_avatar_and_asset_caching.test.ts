@@ -72,10 +72,14 @@ describe('Onboarding, Procedural Avatar, and Asset Caching Verification', () => 
       wizardFile.includes('Promise.race') && wizardFile.includes('cOS.generateFusedRoadmap(skillsArray, effectiveWeakAreas'),
       'Standard onboarding should wrap generateFusedRoadmap in Promise.race'
     );
-    // Verify fallback navigation to dashboard is snappy (< 5s)
+    // Verify immediate fail-safe navigation to dashboard
     assert.ok(
-      wizardFile.includes("window.location.href = '/dashboard'; }, 3000)"),
-      'Fallback window navigation to /dashboard should execute within 3000ms'
+      wizardFile.includes("window.location.replace('/dashboard')"),
+      'goToDashboard should execute window.location.replace to /dashboard'
+    );
+    assert.ok(
+      wizardFile.includes('markOnboardingLocallyComplete'),
+      'wizard should call markOnboardingLocallyComplete to prevent back-redirects'
     );
   });
 

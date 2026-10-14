@@ -650,6 +650,32 @@ export default function OnboardingPage() {
           <div style={{ width: 300, height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
             <div style={{ width: `${syncProgress}%`, height: '100%', background: 'linear-gradient(90deg, var(--accent), var(--teal))', borderRadius: 2, transition: 'width 0.2s ease' }} />
           </div>
+
+          {/* Failsafe Direct Navigation Action */}
+          {syncProgress === 100 && (
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.location.replace('/dashboard');
+                }
+              }}
+              style={{
+                marginTop: 20,
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.18)',
+                color: 'var(--t1)',
+                padding: '8px 18px',
+                borderRadius: 8,
+                fontSize: 13,
+                cursor: 'pointer',
+                fontFamily: 'var(--font-mono)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              Continue to Dashboard →
+            </button>
+          )}
         </div>
       )}
 

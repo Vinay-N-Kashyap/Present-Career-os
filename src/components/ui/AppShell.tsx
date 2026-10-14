@@ -382,10 +382,15 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!loading && isLoaded && user && isStudent && !isPublic && pathname !== '/onboarding') {
       // Context step (server value, raised by this device's progress) or any profile/local signal.
-      const onboardingDone = isOnboardingComplete({ onboardingStep }, readLocalOnboardingSignals(user.id))
+      const localSignals = readLocalOnboardingSignals(user.id);
+      const onboardingDone = isOnboardingComplete({ onboardingStep }, localSignals)
         || isOnboardingComplete(onboardingSignalsOf(user));
 
       if (!onboardingDone && pathname !== '/onboarding') {
+        // If already on /dashboard and any completion signal exists locally, do not bounce back
+        if (pathname === '/dashboard' && (localSignals?.hasCompleted || localSignals?.roadmapGenerated || onboardingStep >= 3)) {
+          return;
+        }
         if (isRedirectingRef.current) return;
         isRedirectingRef.current = true;
         console.warn("[AppShell] Redirecting to /onboarding because onboardingStep is:", onboardingStep);
