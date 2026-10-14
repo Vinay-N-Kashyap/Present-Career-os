@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { speakWithAvatar as speakWithAvatarRaw, stopSpeaking, getAvatarVoiceVolume, setAvatarVoiceVolume } from '@/lib/tts';
+import { setSoundscapeDucking } from '@/lib/audio/soundscapes';
 import { pingRenderServer } from '@/lib/smartVoiceRouter';
 import { Stage } from '../interviewTypes';
 
@@ -371,10 +372,12 @@ export function useInterviewVoice({
     speakWithAvatarRaw(text, teacherId, () => {
       isAvatarSpeakingRef.current = true;
       setIsAvatarSpeaking(true);
+      setSoundscapeDucking(true);
       onStart();
     }, () => {
       isAvatarSpeakingRef.current = false;
       setIsAvatarSpeaking(false);
+      setSoundscapeDucking(false);
       lastSpokenEndTimeRef.current = Date.now();
       onEnd();
       if (autoVoiceLoopRef.current && (isInterviewActiveRef.current || isInterviewActive) && isMountedRef.current) {
@@ -389,6 +392,7 @@ export function useInterviewVoice({
 
   const interruptSpeech = useCallback(() => {
     stopSpeaking();
+    setSoundscapeDucking(false);
     isAvatarSpeakingRef.current = false;
     setIsAvatarSpeaking(false);
     startVoiceListening();

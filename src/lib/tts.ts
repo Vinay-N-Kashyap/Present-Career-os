@@ -23,19 +23,30 @@ function getAudioContext(): AudioContext {
   }
   const win = window as any;
   if (!win._sharedAudioCtx) {
-    win._sharedAudioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
-    const unlockAudio = () => {
-      if (win._sharedAudioCtx && win._sharedAudioCtx.state === 'suspended') {
-        win._sharedAudioCtx.resume().catch(() => {});
+    try {
+      const AudioCtxClass = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioCtxClass) {
+        win._sharedAudioCtx = new AudioCtxClass();
       }
+    } catch (err) {
+      console.warn('[PinIT TTS] AudioContext initialization failed:', err);
+    }
+    const unlockAudio = () => {
+      try {
+        if (win._sharedAudioCtx && win._sharedAudioCtx.state === 'suspended') {
+          win._sharedAudioCtx.resume().catch(() => {});
+        }
+      } catch {}
     };
     window.addEventListener('click', unlockAudio, { once: true });
     window.addEventListener('keydown', unlockAudio, { once: true });
     window.addEventListener('touchstart', unlockAudio, { once: true });
   }
-  if (win._sharedAudioCtx.state === 'suspended') {
-    win._sharedAudioCtx.resume().catch(() => {});
-  }
+  try {
+    if (win._sharedAudioCtx && win._sharedAudioCtx.state === 'suspended') {
+      win._sharedAudioCtx.resume().catch(() => {});
+    }
+  } catch {}
   return win._sharedAudioCtx;
 }
 
