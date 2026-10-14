@@ -397,6 +397,90 @@
               "Bus ticket 45",
               "65"
             ]
+          },
+          {
+            "at": "example",
+            "caption": "Like a station loudspeaker, print broadcasts each message in order.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(20 + 45)",
+                  "65"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "My Expense Tracker",
+              "65"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Add Lunch and recalculate the total to show 185 on screen.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(20 + 45 + 120)",
+                  "185"
+                ],
+                "tone": "data"
+              }
+            ],
+            "whatIf": "print(\"My Expense Tracker\")\nprint(\"Tea\", 20)\nprint('Bus ticket', 45)\nprint(\"Lunch\", 120)\nprint(20 + 45 + 120)",
+            "checks": [
+              "Lunch 120",
+              "185"
+            ]
           }
         ]
       },
@@ -500,6 +584,90 @@
               "Tea 20",
               "Bus ticket 45",
               "65"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Like a station loudspeaker, print broadcasts each message in order.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(20 + 45)",
+                  "65"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "My Expense Tracker",
+              "65"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Add Lunch and recalculate the total to show 185 on screen.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"My Expense Tracker\")",
+                  "My Expense Tracker"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print('Bus ticket', 45)",
+                  "Bus ticket 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(20 + 45 + 120)",
+                  "185"
+                ],
+                "tone": "data"
+              }
+            ],
+            "whatIf": "print(\"My Expense Tracker\")\nprint(\"Tea\", 20)\nprint('Bus ticket', 45)\nprint(\"Lunch\", 120)\nprint(20 + 45 + 120)",
+            "checks": [
+              "Lunch 120",
+              "185"
             ]
           }
         ]
