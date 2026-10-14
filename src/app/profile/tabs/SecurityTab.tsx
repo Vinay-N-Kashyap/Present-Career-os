@@ -214,10 +214,19 @@ export default function SecurityTab({ logout, router }: SecurityTabProps) {
           Biometric Hardware Info →
         </button>
       </div>
-      <div style={{ ...CS.card, borderColor:'rgba(var(--danger-rgb), 0.2)' }}>
-        <div style={{ ...CS.cardTitle, color:'var(--coral)' }}>⚠ Danger Zone</div>
-        <button onClick={async () => { await logout(); router.push('/login'); }} className="btn-ghost btn-sm" style={{ color:'var(--coral)', borderColor:'rgba(var(--danger-rgb), 0.2)' }}>
-          ⏻ Sign Out of All Devices
+      <div style={{ ...CS.card, borderColor:'rgba(var(--danger-rgb), 0.25)' }}>
+        <div style={{ ...CS.cardTitle, color:'var(--coral)' }}>⚠ Danger Zone & Session Control</div>
+        <p style={{ fontSize: 13, color: 'var(--t3)', margin: '0 0 12px 0', lineHeight: 1.5 }}>
+          Sign out and invalidate all active session tokens, clear client and browser storage caches, and terminate authentication credentials.
+        </p>
+        <button
+          type="button"
+          data-testid="security-danger-logout-btn"
+          onClick={logout}
+          className="btn-ghost btn-sm"
+          style={{ color:'var(--coral)', borderColor:'rgba(var(--danger-rgb), 0.3)', background: 'rgba(var(--danger-rgb), 0.08)', fontWeight: 700 }}
+        >
+          ⏻ Sign Out & Clear All Sessions
         </button>
       </div>
 

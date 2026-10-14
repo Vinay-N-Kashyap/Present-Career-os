@@ -354,9 +354,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const channel = new BroadcastChannel('pinit_career_os_sync');
       channel.onmessage = (event) => {
         if (event.data?.type === 'FORCE_STORAGE_PURGE') {
+          profileCacheRef.current = {};
           setUser(null);
           if (window.location.pathname !== '/login') {
-            window.location.href = '/login';
+            window.location.replace('/login');
           }
         }
       };
@@ -794,6 +795,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       console.warn('[AuthContext] Network signout warning:', e);
     } finally {
       // Guaranteed local state reset and storage/cookie purging
+      profileCacheRef.current = {};
       setUser(null);
 
       // Defect 003: Invalidate server session HttpOnly cookies
@@ -801,18 +803,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         await fetch('/api/auth/session', { method: 'DELETE' }).catch(() => {});
       } catch {}
 
-      // Comprehensive storage purge of all pinit_, supabase, and sb- keys
+      // Comprehensive storage purge (preserve theme if set)
       if (typeof window !== 'undefined') {
         try {
-          const keysToRemove: string[] = [];
-          for (let i = 0; i < localStorage.length; i++) {
-            const k = localStorage.key(i);
-            if (k && (k.startsWith('pinit_') || k.startsWith('sb-') || k.includes('supabase'))) {
-              keysToRemove.push(k);
-            }
+          const theme = window.localStorage.getItem('pc_theme');
+          window.localStorage.clear();
+          if (theme) {
+            window.localStorage.setItem('pc_theme', theme);
           }
-          keysToRemove.forEach(k => localStorage.removeItem(k));
-          sessionStorage.clear();
+          window.sessionStorage.clear();
         } catch {}
 
         // Purge IndexedDB voice cache for campus shared machine privacy
@@ -820,12 +819,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           await voiceCacheDB.clearCache();
         } catch {}
 
-        // Clear legacy client-side cookies
-        if (typeof document !== 'undefined') {
-          document.cookie = "pinit_role=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-          document.cookie = "pinit_uid=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-          document.cookie = "pinit_session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        }
+        // Clear all cookies
+        try {
+          if (typeof document !== 'undefined' && document.cookie) {
+            const cookies = document.cookie.split(';');
+            for (const c of cookies) {
+              const eq = c.indexOf('=');
+              const name = eq > -1 ? c.substring(0, eq).trim() : c.trim();
+              if (name) {
+                document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax`;
+                if (window.location && window.location.hostname) {
+                  document.cookie = `${name}=; path=/; domain=${window.location.hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax`;
+                }
+              }
+            }
+          }
+        } catch {}
 
         // Broadcast force purge to all open tabs
         if ('BroadcastChannel' in window) {

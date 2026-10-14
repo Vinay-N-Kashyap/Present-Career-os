@@ -8,9 +8,11 @@ import { setUserSoundscapeVolume } from '@/lib/audio/soundscapes';
 interface SettingsTabProps {
   soundscapeVol: number;
   setSoundscapeVol: (vol: number) => void;
+  onLogout?: () => void;
+  loggingOut?: boolean;
 }
 
-export default function SettingsTab({ soundscapeVol, setSoundscapeVol }: SettingsTabProps) {
+export default function SettingsTab({ soundscapeVol, setSoundscapeVol, onLogout, loggingOut }: SettingsTabProps) {
   const [calibratedRms, setCalibratedRms] = useState<number | null>(null);
 
   return (
@@ -184,6 +186,35 @@ export default function SettingsTab({ soundscapeVol, setSoundscapeVol }: Setting
           />
         </div>
       </div>
+
+      {/* Card 5: Session & Sign Out */}
+      {onLogout && (
+        <div style={{ ...CS.card, borderColor: 'rgba(var(--danger-rgb), 0.25)' }}>
+          <div style={{ ...CS.cardTitle, color: 'var(--coral)' }}>🚪 Session &amp; Sign Out</div>
+          <div style={{ fontSize: 13, color: 'var(--t3)', marginBottom: 14, lineHeight: 1.5 }}>
+            Securely sign out of PinIT Career OS on this browser. All cached profile data, active session keys, and query memory will be cleared.
+          </div>
+          <button
+            type="button"
+            data-testid="settings-logout-btn"
+            onClick={onLogout}
+            disabled={loggingOut}
+            className="btn-ghost btn-sm"
+            style={{
+              color: 'var(--coral)',
+              borderColor: 'rgba(var(--danger-rgb), 0.35)',
+              background: 'rgba(var(--danger-rgb), 0.08)',
+              fontWeight: 700,
+              cursor: loggingOut ? 'not-allowed' : 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 6
+            }}
+          >
+            {loggingOut ? 'Signing out...' : '⏻ Sign Out Account'}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

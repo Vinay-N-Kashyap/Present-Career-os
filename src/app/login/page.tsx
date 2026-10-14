@@ -41,6 +41,21 @@ function LoginContent() {
     }
   }, [searchParams, router]);
 
+  // Trap browser Back navigation on /login so clicking Back cannot return to previous authenticated pages
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      window.history.pushState(null, '', window.location.href);
+      const handlePopState = () => {
+        window.history.pushState(null, '', window.location.href);
+      };
+      window.addEventListener('popstate', handlePopState);
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    } catch {}
+  }, []);
+
   // Password Form State
   const [loginForm, setLoginForm] = useState({ identifier: '', password: '', role: 'student' });
   const [errorMsg, setErrorMsg] = useState<string>('');
@@ -54,9 +69,9 @@ function LoginContent() {
 
       const destination = getSafeRedirect(searchParams.get('redirect'));
       if (!onboardCompleted) {
-        router.push('/onboarding');
+        router.replace('/onboarding');
       } else {
-        router.push(destination);
+        router.replace(destination);
       }
     }
   }, [user, isSuccessSplash, router, searchParams]);

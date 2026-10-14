@@ -222,6 +222,14 @@ export async function middleware(request: NextRequest) {
     response.headers.set(key, value);
   }
 
+  // Browser History & Cache Protection: prevent caching of private pages so Back button cannot display stale state
+  const isPublicPage = path === '/' || path.startsWith('/login') || path.startsWith('/signup') || path.startsWith('/pricing') || path.startsWith('/about') || path.startsWith('/contact') || path.startsWith('/privacy') || path.startsWith('/terms');
+  if (!isPublicPage && !path.startsWith('/_next') && !path.startsWith('/favicon.ico')) {
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '0');
+  }
+
   // Measure timing on response
   const durationMs = Date.now() - startTime;
   console.log(`⏱️ [CSP-FIX MIDDLEWARE] [${requestId}] ${method} ${path} processed in ${durationMs}ms`);

@@ -10,6 +10,7 @@ import { toast } from '@/lib/store/useAppStore';
 import Link from 'next/link';
 import { useCareerOS } from '@/lib/context/CareerOSContext';
 import { getUserSoundscapeVolume } from '@/lib/audio/soundscapes';
+import { executeSecureLogout } from '@/lib/auth/secureLogout';
 
 import PortfolioTab from './tabs/PortfolioTab';
 import PassportTab from './tabs/PassportTab';
@@ -40,6 +41,17 @@ function ProfilePageInner() {
   const [teacherId, setTeacherId] = useState(user?.selectedTeacherId || 'priya');
   const [visibility, setVisibility] = useState('recruiters_only');
   const [saving, setSaving] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  const handleLogout = async () => {
+    if (loggingOut) return;
+    setLoggingOut(true);
+    await executeSecureLogout({
+      queryClient: qc,
+      authLogout: logout,
+      redirectTo: '/login'
+    });
+  };
 
   // Focus Audio Soundscape Volume State
   const [soundscapeVol, setSoundscapeVol] = useState<number>(50);
@@ -165,9 +177,31 @@ function ProfilePageInner() {
             </span>
           </div>
         </div>
-        <Link href="/pricing" style={{ textDecoration: 'none', flexShrink: 0 }}>
-          <button className="btn-ghost btn-sm">⭐ Upgrade</button>
-        </Link>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexShrink: 0 }}>
+          <Link href="/pricing" style={{ textDecoration: 'none' }}>
+            <button type="button" className="btn-ghost btn-sm">⭐ Upgrade</button>
+          </Link>
+          <button
+            type="button"
+            data-testid="profile-header-logout-btn"
+            onClick={handleLogout}
+            disabled={loggingOut}
+            className="btn-ghost btn-sm"
+            style={{
+              color: 'var(--coral)',
+              borderColor: 'rgba(var(--danger-rgb), 0.35)',
+              background: 'rgba(var(--danger-rgb), 0.08)',
+              fontWeight: 700,
+              cursor: loggingOut ? 'not-allowed' : 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              transition: 'all 0.15s ease'
+            }}
+          >
+            {loggingOut ? 'Signing out...' : '🚪 Log Out'}
+          </button>
+        </div>
       </div>
 
       {/* Main Consolidated Tabs Menu */}
@@ -216,9 +250,14 @@ function ProfilePageInner() {
         />
       )}
       {tab === 'settings' && (
-        <SettingsTab soundscapeVol={soundscapeVol} setSoundscapeVol={setSoundscapeVol} />
+        <SettingsTab
+          soundscapeVol={soundscapeVol}
+          setSoundscapeVol={setSoundscapeVol}
+          onLogout={handleLogout}
+          loggingOut={loggingOut}
+        />
       )}
-      {tab === 'security' && <SecurityTab logout={logout} router={router} />}
+      {tab === 'security' && <SecurityTab logout={handleLogout} router={router} />}
       {tab === 'activity' && <ActivityTab user={user} />}
     </div>
   );

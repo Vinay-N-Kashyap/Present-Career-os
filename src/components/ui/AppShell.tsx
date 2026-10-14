@@ -413,14 +413,38 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     }
   }, [user, loading, isLoaded, isStudent, isPublic, onboardingStep, router, pathname]);
 
-  // Signed out on a private page: sign in, then come back to this page (the login page only
-  // follows same-site paths; see getSafeRedirect in app/login/page.tsx).
+  // Signed out on a private page: immediately replace history state with /login
   useEffect(() => {
     if (!loading && user === null && !isPublic) {
-      const search = typeof window !== 'undefined' ? window.location.search : '';
-      router.push(`/login?redirect=${encodeURIComponent(`${pathname}${search}`)}`);
+      if (typeof window !== 'undefined') {
+        window.history.replaceState(null, '', '/login');
+        window.location.replace('/login');
+      } else {
+        router.replace('/login');
+      }
     }
-  }, [user, loading, isPublic, pathname, router]);
+  }, [user, loading, isPublic, router]);
+
+  // Defeat Back-Forward Cache (BFCache): if a protected page is restored from memory cache
+  // after the user has logged out, immediately replace with /login.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        const hasSession =
+          document.cookie.includes('pinit_session') ||
+          document.cookie.includes('sb-') ||
+          Boolean(localStorage.getItem('pinit_current_user')) ||
+          Object.keys(localStorage).some(k => k.startsWith('sb-') || k.startsWith('pinit_'));
+        if (!hasSession && !isPublic) {
+          window.history.replaceState(null, '', '/login');
+          window.location.replace('/login');
+        }
+      }
+    };
+    window.addEventListener('pageshow', handlePageShow);
+    return () => window.removeEventListener('pageshow', handlePageShow);
+  }, [isPublic]);
 
   const PUBLIC_SHOWCASE_PATHS = ['/', '/problem', '/identity', '/how-it-works', '/modules', '/pricing', '/campus-demo', '/about', '/contact', '/privacy', '/terms', '/university', '/admissions', '/verify'];
   const isPublicShowcase = PUBLIC_SHOWCASE_PATHS.some(p => pathname === p || (p !== '/' && pathname.startsWith(p)));

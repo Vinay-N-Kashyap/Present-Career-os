@@ -462,7 +462,16 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
               </div>
             </Link>
             <button
-              onClick={() => logout().then(() => router.push('/'))}
+              onClick={() => {
+                logout().then(() => {
+                  if (typeof window !== 'undefined') {
+                    window.history.replaceState(null, '', '/login');
+                    window.location.replace('/login');
+                  } else {
+                    router.replace('/login');
+                  }
+                });
+              }}
               title="Logout"
               style={{
                 background: 'none',
