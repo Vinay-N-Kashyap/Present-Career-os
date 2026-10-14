@@ -1,4 +1,4 @@
-import type { LessonVisual, ComponentTreeNodeType } from '@/lib/types/lessonVisual';
+import type { LessonVisual } from '@/lib/types/lessonVisual';
 import { isCourseVisualsEnabled } from '@/lib/visuals/enabledCourses';
 
 export interface DayFileEntry {
@@ -675,11 +675,11 @@ export function synthesizeLongLessonVisual(
 
   // 6. Mobile App Development -> 4-step ComponentTreeVisual
   if (normPrefix === 'mobile') {
-    const nodes: ComponentTreeNodeType[] = [
-      { id: 'AppShell', name: '<MobileAppShell />', props: { theme: 'dark' }, state: { online: 'true' }, tone: 'ok' },
-      { id: 'NavStack', name: '<NavigationStack />', props: { route: `Day${day}` }, tone: 'data' },
-      { id: 'ScreenView', name: '<ScreenViewport />', state: { loading: 'false' }, tone: 'data' },
-      { id: 'NativeBridge', name: '<NativeSensorBridge />', props: { fps: '60' }, tone: 'ok' }
+    const nodes = [
+      { id: 'AppShell', name: '<MobileAppShell />', props: { theme: 'dark' }, state: { online: 'true' }, tone: 'ok' as const },
+      { id: 'NavStack', name: '<NavigationStack />', props: { route: `Day${day}` }, tone: 'data' as const },
+      { id: 'ScreenView', name: '<ScreenViewport />', state: { loading: 'false' }, tone: 'data' as const },
+      { id: 'NativeBridge', name: '<NativeSensorBridge />', props: { fps: '60' }, tone: 'ok' as const }
     ];
     return {
       template: 'component-tree',
