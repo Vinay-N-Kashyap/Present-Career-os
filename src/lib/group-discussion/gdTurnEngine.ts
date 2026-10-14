@@ -5,6 +5,44 @@ export const GD_MAX_SPEAK_MS = 14_000;
 export const GD_TARGET_WORDS_MIN = 28;
 export const GD_TARGET_WORDS_MAX = 42;
 
+export interface GdTurnLockState {
+  activeSpeaker: string | null;
+  isSpeaking: boolean;
+  lockTime: number;
+}
+
+export function createInitialGdTurnLock(): GdTurnLockState {
+  return { activeSpeaker: null, isSpeaking: false, lockTime: 0 };
+}
+
+export function acquireGdTurnLock(
+  current: GdTurnLockState,
+  speaker: string,
+  now: number = Date.now(),
+  maxHoldMs: number = GD_MAX_SPEAK_MS
+): { acquired: boolean; state: GdTurnLockState } {
+  const isExpired = current.isSpeaking && (now - current.lockTime > maxHoldMs);
+  if (!current.isSpeaking || isExpired || current.activeSpeaker === speaker) {
+    return {
+      acquired: true,
+      state: {
+        activeSpeaker: speaker,
+        isSpeaking: true,
+        lockTime: now,
+      },
+    };
+  }
+  return { acquired: false, state: current };
+}
+
+export function releaseGdTurnLock(current: GdTurnLockState): GdTurnLockState {
+  return {
+    activeSpeaker: null,
+    isSpeaking: false,
+    lockTime: 0,
+  };
+}
+
 export type GdRoleType = 'avatar_a' | 'avatar_b';
 
 export type GdHistoryItem = { role: string; content: string; sender?: string };
