@@ -2191,8 +2191,320 @@ console.log('Delivered Action: ' + processor.evaluateOrder('DELIVERED').nextActi
         'Refactor the state processor to switch over a sealed interface hierarchy, verifying compile-time exhaustiveness.'
       ]
     }
+  },
+  {
+    day: 7,
+    title: 'While Loops, Do-While Mechanics, Loop Invariants & Iterative State Machines',
+    goal: 'Master repetitive execution in Java: pre-condition while loops, post-condition do-while loops, exponential backoff retries, loop invariant proofs, preventing runaway execution with watchdog bounds, and labeled break/continue in nested structures.',
+    minutes: 30,
+    recap: 'Yesterday we mastered modern switch expressions and sealed state machines. Today we master repetitive control flow: condition guards, exponential backoff, loop termination proofs, and iterative queue consumers.',
+    parts: [
+      {
+        title: 'While Loop Mechanics: Loop Guards, Pre-Condition Evaluation & Halting Invariants',
+        say: [
+          'A while loop is a pre-condition control structure: it evaluates its boolean guard expression before every iteration. If the guard evaluates to true, the loop body executes; if it evaluates to false on the very first check, the body is skipped entirely with zero iterations.',
+          'In distributed computing and backend networking, while loops form the foundational engine for polling mechanisms and exponential backoff retry algorithms. When contacting an external payment gateway or database server that may be transiently unavailable, the client executes requests inside a while loop with increasing backoff delays.',
+          'Every robust while loop must satisfy a formal loop halting invariant: every pass through the loop must make monotonic progress toward satisfying the termination condition (e.g., incrementing an attempt counter or reducing a work queue), ensuring execution cannot hang indefinitely.'
+        ],
+        example: 'Like an automated room thermostat: every minute it checks if the temperature is below 20 degrees Celsius. While it remains too cold, the heating element runs. As soon as the room reaches 20 degrees, the heater immediately shuts off.',
+        code: `// Exponential Backoff Retry Loop Simulation
+class NetworkRetryEngine {
+  executeWithBackoff(maxRetries: number): {
+    attempts: number;
+    finalStatus: 'CONNECTED' | 'EXHAUSTED';
+    log: string[];
+  } {
+    let attempt = 0;
+    let delayMs = 100;
+    let success = false;
+    const log: string[] = [];
+
+    // Pre-condition while loop: halts as soon as attempt reaches maxRetries or success is true
+    while (attempt < maxRetries && !success) {
+      attempt++;
+      if (attempt === 3) {
+        success = true;
+        log.push('ATTEMPT_' + attempt + '_SUCCESS');
+      } else {
+        log.push('ATTEMPT_' + attempt + '_FAILED_RETRYING_IN_' + delayMs + 'MS');
+        delayMs *= 2; // Exponential increase
+      }
+    }
+    return { attempts: attempt, finalStatus: success ? 'CONNECTED' : 'EXHAUSTED', log };
+  }
+}
+
+const engine = new NetworkRetryEngine();
+const result = engine.executeWithBackoff(5);
+console.log('Retry Status: ' + result.finalStatus);
+console.log('Total Attempts: ' + result.attempts);
+console.log('Final Event: ' + result.log[result.log.length - 1]);`,
+        output: `Retry Status: CONNECTED\nTotal Attempts: 3\nFinal Event: ATTEMPT_3_SUCCESS`,
+        codeNotes: [
+          { line: 15, note: 'Pre-condition guard combines attempt bounds with boolean success flag' },
+          { line: 22, note: 'Exponentially doubles delay interval (100ms, 200ms) to prevent server throttling' },
+          { line: 28, note: 'Halts cleanly upon successful connection on attempt 3' }
+        ],
+        tryIt: 'Run with maxRetries = 2 to verify that the loop terminates with EXHAUSTED status when retries are limited.',
+        check: {
+          question: 'What happens if a while loop boolean condition is false prior to the first iteration?',
+          options: [
+            'The loop body does not execute at all (0 iterations)',
+            'The loop body executes exactly once before exiting',
+            'The JVM throws an InfiniteLoopException'
+          ],
+          answer: 0,
+          why: 'A while loop evaluates its condition before executing any code. If the condition is false initially, the entire loop body is bypassed.'
+        }
+      },
+      {
+        title: 'The Do-While Loop: Guaranteed Single Execution & Post-Condition Validation',
+        say: [
+          'Unlike the standard while loop, the do-while loop is a post-condition iteration construct: its body executes first, and its boolean guard is evaluated at the bottom of the loop (do { ... } while (condition);).',
+          'This guarantees that the loop body executes at least once, regardless of whether the condition is true or false initially. This makes do-while ideal for interactive terminal prompts, protocol handshakes, and cryptographic nonce generation where an initial action must always occur before determining if a repeat is necessary.',
+          'Notice the mandatory semicolon (;) at the end of the while condition in do-while. Omitting this semicolon is a common syntax error because developers confuse it with standard while loop blocks.'
+        ],
+        example: 'Like inserting a coin into a candy vending machine: you must turn the dispenser crank at least once to see if a candy drops before checking if the coin slot accepts another turn.',
+        code: `// Do-While Database Handshake Simulation
+class DatabaseHandshake {
+  connectWithDoWhile(maxAttempts: number): {
+    attempts: number;
+    status: 'HANDSHAKE_ACK' | 'HANDSHAKE_TIMEOUT';
+  } {
+    let attempts = 0;
+    let connected = false;
+
+    // Guaranteed single execution before checking post-condition
+    do {
+      attempts++;
+      if (attempts >= 2) {
+        connected = true;
+      }
+    } while (!connected && attempts < maxAttempts);
+
+    return { attempts, status: connected ? 'HANDSHAKE_ACK' : 'HANDSHAKE_TIMEOUT' };
+  }
+}
+
+const handshake = new DatabaseHandshake();
+const conn = handshake.connectWithDoWhile(3);
+console.log('Connection Result: ' + conn.status);
+console.log('Handshake Attempts Required: ' + conn.attempts);`,
+        output: `Connection Result: HANDSHAKE_ACK\nHandshake Attempts Required: 2`,
+        codeNotes: [
+          { line: 11, note: 'do-while body executes immediately on attempt 1 without preliminary check' },
+          { line: 16, note: 'Post-condition checks if connection was established; repeats for attempt 2 where ACK occurs' },
+          { line: 23, note: 'Outputs confirm exactly 2 attempts were executed to achieve handshake confirmation' }
+        ],
+        tryIt: 'Run with maxAttempts = 1 and observe that exactly 1 attempt executes and results in TIMEOUT.',
+        check: {
+          question: 'What is the minimum number of times a do-while loop body will execute?',
+          options: [
+            'At least once, because the condition is checked at the bottom after execution',
+            'Zero times, if the condition is false',
+            'Infinite times, unless a break is present'
+          ],
+          answer: 0,
+          why: 'Because the do-while condition is checked after the body runs, it is guaranteed to execute at least one time.'
+        }
+      },
+      {
+        title: 'Preventing Infinite Loops: Counter Progression, Loop Invariants & Watchdog Timers',
+        say: [
+          'An infinite loop occurs when a loop condition never transitions to false. In server applications, an uncontrolled infinite loop pins a CPU core at 100% utilization, starves other threads of computing resources, and eventually causes operating system throttling or container eviction.',
+          'Infinite loops typically stem from three mistakes: forgetting to increment the counter, incrementing in the wrong direction (i-- instead of i++), or floating-point precision errors where equality (d == 1.0) is never strictly met.',
+          'Production-grade systems implement watchdog timers and hard iteration limits. In distributed systems (such as consensus algorithms and token bucket rate limiters), a safety bound ensures that even if external signals fail to arrive, the loop breaks gracefully after N maximum iterations.'
+        ],
+        example: 'Like an escalator with an automatic emergency stop sensor: if a mechanical object blocks the steps, the safety mechanism trips after 3 seconds of resistance rather than burning out the electric motor.',
+        code: `// Watchdog-Protected Token Bucket Loop Simulation
+class TokenBucketDraining {
+  drain(availableTokens: number, maxIterations: number): {
+    remainingTokens: number;
+    iterations: number;
+    watchdogTripped: boolean;
+  } {
+    let tokens = availableTokens;
+    let iterations = 0;
+    let watchdogTripped = false;
+
+    // Safety watchdog bounds loop execution against runaway states
+    while (tokens > 0) {
+      iterations++;
+      if (iterations >= maxIterations) {
+        watchdogTripped = true;
+        break; // Hard exit prevents infinite execution
+      }
+      tokens -= 10;
+    }
+
+    return { remainingTokens: tokens, iterations, watchdogTripped };
+  }
+}
+
+const bucket = new TokenBucketDraining();
+const drain1 = bucket.drain(30, 100);
+console.log('Drain 30 Tokens: iterations=' + drain1.iterations + ', remaining=' + drain1.remainingTokens);
+const drain2 = bucket.drain(1000, 5);
+console.log('Watchdog Guard Triggered: ' + drain2.watchdogTripped + ', iterations=' + drain2.iterations);`,
+        output: `Drain 30 Tokens: iterations=3, remaining=0\nWatchdog Guard Triggered: true, iterations=5`,
+        codeNotes: [
+          { line: 15, note: 'Normal execution decrements tokens by 10 each pass until 0 is reached' },
+          { line: 17, note: 'Watchdog check triggers break if iterations exceed safety ceiling' },
+          { line: 28, note: 'Demonstrates safe early exit when attempting to process 1,000 tokens with limit 5' }
+        ],
+        tryIt: 'Drain 50 tokens with limit 10 and confirm remainingTokens reaches 0 in 5 iterations without tripping watchdog.',
+        check: {
+          question: 'Why are iteration ceilings and watchdog timers recommended in production loop algorithms?',
+          options: [
+            'They prevent unexpected infinite execution from consuming 100% CPU in the event of unexpected state corruption',
+            'They make loops run at double the clock frequency',
+            'They save hard drive disk storage'
+          ],
+          answer: 0,
+          why: 'Iteration bounds prevent runaway loops from locking CPU cores and starving production server threads when unexpected data occurs.'
+        }
+      },
+      {
+        title: 'Loop Control Flow: Break, Continue & Labeled Loops in Deeply Nested Traversals',
+        say: [
+          'Java provides two primary jump keywords inside loop bodies: break and continue. The break statement aborts the innermost enclosing loop immediately. The continue statement skips the remainder of the current iteration and jumps directly to the loop condition evaluation for the next pass.',
+          'In single loops, break and continue are straightforward. However, when navigating nested loops (such as searching a 2D matrix, graph adjacency list, or nested JSON structure), a standard break only escapes the innermost inner loop, leaving outer loops running.',
+          'Java provides labeled loops (labelName: for (...) { for (...) { break labelName; } }). A labeled break allows an inner loop to instantly terminate one or more enclosing outer loops in a single atomic jump, eliminating awkward boolean flags like boolean found = true;.'
+        ],
+        example: 'Like finding your lost keys inside a multi-drawer filing cabinet: as soon as you open drawer 2 and see your keys, you immediately close the entire cabinet and leave (labeled break), rather than continuing to open drawers 3, 4, and 5.',
+        code: `// Labeled Loop Search Simulation
+class MatrixSearchEngine {
+  searchGrid(matrix: number[][], target: number): {
+    found: boolean;
+    targetRow: number;
+    targetCol: number;
+  } {
+    let found = false;
+    let targetRow = -1;
+    let targetCol = -1;
+
+    // Outer labeled loop: searchLoop
+    searchLoop:
+    for (let r = 0; r < matrix.length; r++) {
+      for (let c = 0; c < matrix[r].length; c++) {
+        if (matrix[r][c] === target) {
+          found = true;
+          targetRow = r;
+          targetCol = c;
+          break searchLoop; // Escapes BOTH loops atomically!
+        }
+      }
+    }
+
+    return { found, targetRow, targetCol };
+  }
+}
+
+const searcher = new MatrixSearchEngine();
+const grid = [
+  [10, 20, 30],
+  [40, 50, 60],
+  [70, 80, 90]
+];
+const res = searcher.searchGrid(grid, 50);
+console.log('Target Found: ' + res.found);
+console.log('Target Coordinates: Row ' + res.targetRow + ', Col ' + res.targetCol);`,
+        output: `Target Found: true\nTarget Coordinates: Row 1, Col 1`,
+        codeNotes: [
+          { line: 12, note: 'Declares label searchLoop targeting the outer iteration' },
+          { line: 18, note: 'break searchLoop breaks out of the outer loop immediately upon discovering target 50' },
+          { line: 28, note: 'Outputs confirm target located at row 1, column 1 without inspecting row 2' }
+        ],
+        tryIt: 'Search for target 80 and observe that coordinates row 2, col 1 are returned.',
+        check: {
+          question: 'What is the purpose of a labeled break statement in Java?',
+          options: [
+            'It terminates a specified outer enclosing loop from inside a nested inner loop',
+            'It assigns a string name to an integer variable',
+            'It restarts the entire Java application from the main method'
+          ],
+          answer: 0,
+          why: 'A labeled break allows execution to escape out of multiple nested loops simultaneously without needing boolean exit flags.'
+        }
+      },
+      {
+        title: 'Iterative State Machines & Queue Consumers: Polling, Drainage & Graceful Shutdown',
+        say: [
+          'In enterprise backend architecture, background worker threads (such as Kafka listeners, RabbitMQ consumers, and batch job processors) operate as infinite or semi-infinite while loops that poll message queues for new work units.',
+          'A production queue consumer loop typically looks like: while (!shutdownRequested) { Message msg = queue.poll(1, TimeUnit.SECONDS); if (msg != null) process(msg); }. The loop blocks or sleeps briefly to avoid spinning CPU cycles when the queue is idle.',
+          'When the JVM receives a shutdown signal (SIGTERM during a Kubernetes container rollout), a shutdown hook sets shutdownRequested = true. The consumer loop detects this flag, drains remaining in-flight messages from memory, commits its transaction offsets, and exits cleanly with zero message loss.'
+        ],
+        example: 'Like a post office package sorting clerk: they continuously take packages from the sorting bin while the open sign is lit. When the closing bell rings, they finish sorting the packages already on their table before turning off the lights.',
+        code: `// Message Queue Consumer Loop Simulation
+class MessageQueueConsumer {
+  drainQueue(queue: string[], shutdownSignal: () => boolean): {
+    processed: number;
+    queueRemaining: number;
+    isTerminated: boolean;
+  } {
+    let processed = 0;
+    let isTerminated = false;
+
+    // Iterative worker loop drains queue until empty or shutdown is requested
+    while (queue.length > 0 && !shutdownSignal()) {
+      const msg = queue.shift();
+      processed++;
+    }
+
+    if (queue.length === 0) {
+      isTerminated = true;
+    }
+
+    return { processed, queueRemaining: queue.length, isTerminated };
+  }
+}
+
+const consumer = new MessageQueueConsumer();
+const queue = ['order_created', 'payment_captured', 'invoice_sent'];
+let signal = false;
+const qResult = consumer.drainQueue(queue, () => signal);
+console.log('Processed Messages Count: ' + qResult.processed);
+console.log('Remaining in Queue: ' + qResult.queueRemaining);
+console.log('Queue State: ' + (qResult.isTerminated ? 'DRAINED_CLEANLY' : 'INTERRUPTED'));`,
+        output: `Processed Messages Count: 3\nRemaining in Queue: 0\nQueue State: DRAINED_CLEANLY`,
+        codeNotes: [
+          { line: 12, note: 'Worker loop checks queue depth and volatile shutdown signal on every iteration' },
+          { line: 18, note: 'Sets isTerminated flag when queue is drained with zero leftover items' },
+          { line: 28, note: 'Outputs confirm all 3 messages were processed cleanly without premature termination' }
+        ],
+        tryIt: 'Provide an active shutdown signal after 1 message to observe graceful early exit.',
+        check: {
+          question: 'How do production message consumers achieve graceful shutdown without losing messages?',
+          options: [
+            'They monitor a shutdown flag, finish processing in-flight messages in the current loop, and exit cleanly',
+            'They immediately kill the process with System.exit(1)',
+            'They delete all pending messages from the queue immediately'
+          ],
+          answer: 0,
+          why: 'Graceful shutdown allows the worker loop to detect termination requests, process in-flight transactions, and shut down without data loss.'
+        }
+      }
+    ],
+    summary: [
+      'While loops evaluate pre-conditions before each iteration and require monotonic counter updates to ensure termination.',
+      'Do-while loops guarantee at least one execution pass because condition checking occurs at the bottom of the loop body.',
+      'Watchdog counters prevent runaway infinite loops caused by unexpected data states or communication network stalls.',
+      'Labeled break statements allow inner nested loops to escape multiple enclosing outer loops in a single atomic jump.',
+      'Message consumers use while loops with volatile shutdown flags to achieve resilient queue drainage and zero-loss shutdowns.'
+    ],
+    projectStep: {
+      title: 'Architect a Resilient Background Queue Consumer with Exponential Backoff',
+      steps: [
+        'Implement a network retry loop with exponential backoff and maximum retry bounds.',
+        'Construct a post-condition do-while loop to perform initial handshake negotiations.',
+        'Embed an iteration watchdog guard into high-throughput loops to prevent CPU core lockup.',
+        'Utilize labeled loops to perform multi-dimensional matrix search with immediate early exit.',
+        'Implement a message queue consumer loop that drains in-flight tasks cleanly upon shutdown signals.'
+      ]
+    }
   }
 ];
+
 
 
 
