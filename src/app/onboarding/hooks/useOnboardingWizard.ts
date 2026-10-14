@@ -1209,8 +1209,8 @@ export function useOnboardingWizard() {
     router.push('/dashboard');
     if (typeof window === 'undefined') return;
     const stillOnOnboarding = () => window.location.pathname.includes('/onboarding');
-    setTimeout(() => { if (stillOnOnboarding()) router.replace('/dashboard'); }, 1500);
-    setTimeout(() => { if (stillOnOnboarding()) window.location.href = '/dashboard'; }, 6000);
+    setTimeout(() => { if (stillOnOnboarding()) router.replace('/dashboard'); }, 1200);
+    setTimeout(() => { if (stillOnOnboarding()) window.location.href = '/dashboard'; }, 3000);
   };
 
   // Complete Onboarding: Sync to database & generate dynamic quest roadmap
@@ -1327,8 +1327,11 @@ export function useOnboardingWizard() {
         
         try {
           const skillsArray = skillsList.split(',').map(s => s.trim());
-          await cOS.generateFusedRoadmap(skillsArray, effectiveWeakAreas, targetTrack.courseId);
-          await qc.invalidateQueries({ queryKey: KEYS.me });
+          await Promise.race([
+            cOS.generateFusedRoadmap(skillsArray, effectiveWeakAreas, targetTrack.courseId),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 2500))
+          ]).catch(err => console.warn('Roadmap fast-seed timeout notice:', err));
+          await qc.invalidateQueries({ queryKey: KEYS.me }).catch(() => {});
         } catch (err) {
           console.warn('Roadmap seed failed after onboarding', err);
         }
@@ -1518,8 +1521,11 @@ export function useOnboardingWizard() {
         try {
           const expressTrack = resolveTrackFromGoal(trajectory, degree);
           const skillsArray = skillsList.split(',').map(s => s.trim());
-          await cOS.generateFusedRoadmap(skillsArray, weakAreas, expressTrack.courseId);
-          await qc.invalidateQueries({ queryKey: KEYS.me });
+          await Promise.race([
+            cOS.generateFusedRoadmap(skillsArray, weakAreas, expressTrack.courseId),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 2500))
+          ]).catch(err => console.warn('Express roadmap fast-seed timeout notice:', err));
+          await qc.invalidateQueries({ queryKey: KEYS.me }).catch(() => {});
         } catch (err) {
           console.warn('Express roadmap seed failed', err);
         }

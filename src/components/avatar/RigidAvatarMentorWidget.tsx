@@ -322,7 +322,9 @@ class AvatarScene {
     const spine=new THREE.Group(); spine.position.y=1.22; this.spine=spine; g.add(spine);
     const torso=new THREE.Mesh(new THREE.CapsuleGeometry(0.14,0.36,8,12),mat(SHIRT,0.7)); torso.position.y=0; spine.add(torso);
     const neck=new THREE.Group(); neck.position.set(0,0.24,0); spine.add(neck); this.neck=neck;
-    neck.add(Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(0.055,0.065,0.12,12),mat(SKIN,0.5)),{position:new THREE.Vector3(0,0.06,0)}));
+    const neckMesh=new THREE.Mesh(new THREE.CylinderGeometry(0.055,0.065,0.12,12),mat(SKIN,0.5));
+    neckMesh.position.set(0,0.06,0);
+    neck.add(neckMesh);
     const head=new THREE.Group(); head.position.y=0.18; neck.add(head); this.head=head;
     const skull=new THREE.Mesh(new THREE.SphereGeometry(0.13,24,20),mat(SKIN,0.45)); skull.scale.set(1,1.08,0.97); head.add(skull);
     const hair=new THREE.Mesh(new THREE.SphereGeometry(0.135,24,20),mat(HAIR,0.8)); hair.position.y=0.04; head.add(hair);

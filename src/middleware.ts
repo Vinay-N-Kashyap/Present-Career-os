@@ -101,6 +101,24 @@ export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const search = request.nextUrl.search;
 
+  // Early bypass for static assets (3D GLBs, audio, images, WASM, fonts) to preserve CDN caching & low latency
+  const isStaticAsset =
+    path.startsWith('/avatar') ||
+    path.startsWith('/audio') ||
+    path.startsWith('/brand') ||
+    path.startsWith('/draco') ||
+    path.startsWith('/esbuild') ||
+    path.startsWith('/pyodide') ||
+    path.startsWith('/sandbox') ||
+    path.startsWith('/sql') ||
+    path.startsWith('/_next') ||
+    path.startsWith('/favicon.ico') ||
+    /\.(?:svg|png|jpg|jpeg|gif|webp|ico|glb|gltf|wasm|bin|mp3|wav|mp4|webm|woff|woff2|ttf|eot)$/i.test(path);
+
+  if (isStaticAsset) {
+    return NextResponse.next();
+  }
+
   // Sanitize log: log only pathname and method to prevent leaking query params (auth tokens, student IDs)
   console.log(`\n🌐 [CSP-FIX MIDDLEWARE] [${requestId}] ${method} ${path}`);
 
@@ -224,7 +242,7 @@ export async function middleware(request: NextRequest) {
 
   // Browser History & Cache Protection: prevent caching of private pages so Back button cannot display stale state
   const isPublicPage = path === '/' || path.startsWith('/login') || path.startsWith('/signup') || path.startsWith('/pricing') || path.startsWith('/about') || path.startsWith('/contact') || path.startsWith('/privacy') || path.startsWith('/terms');
-  if (!isPublicPage && !path.startsWith('/_next') && !path.startsWith('/favicon.ico')) {
+  if (!isPublicPage && !isStaticAsset && !path.startsWith('/api')) {
     response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
     response.headers.set('Pragma', 'no-cache');
     response.headers.set('Expires', '0');
@@ -240,12 +258,12 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public assets
+     * Match all request paths except for:
+     * - _next/static, _next/image
+     * - favicon.ico
+     * - static directories: avatar, audio, brand, draco, esbuild, pyodide, sandbox, sql
+     * - static file extensions: svg, png, jpg, jpeg, gif, webp, ico, glb, gltf, wasm, bin, mp3, wav, mp4, webm, woff, woff2, ttf, eot
      */
-    '/((?!_next/static|_next/image|favicon.ico).*)',
+    '/((?!_next/static|_next/image|favicon.ico|avatar/|audio/|brand/|draco/|esbuild/|pyodide/|sandbox/|sql/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|glb|gltf|wasm|bin|mp3|wav|mp4|webm|woff|woff2|ttf|eot)$).*)',
   ],
 };
