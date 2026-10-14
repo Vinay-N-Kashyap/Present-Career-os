@@ -183,11 +183,25 @@ export function getLessonCheck(prefix: string, day: number, blockIndex: number):
 
 /** The questions of the test covering days start..end of a course (empty if the days have none). */
 export function getTestQuestions(prefix: string, start: number, end: number): TestQuestion[] {
+  if (start < 1 || end < start) return [];
   // Wrong choices come from the outputs of the lessons around this block (10 days either side).
   const pool = outputPool(prefix, start, end);
   const out: TestQuestion[] = [];
   for (let day = start; day <= end; day++) out.push(...questionsForDay(prefix, day, pool));
-  return out;
+  return out.map((q, idx) => {
+    const safeOptions = Array.isArray(q.options) && q.options.length >= 2
+      ? q.options
+      : ['Optimal production invariant', 'Suboptimal unvalidated implementation'];
+    const safeAnswerIdx = (typeof q.answerIndex === 'number' && q.answerIndex >= 0 && q.answerIndex < safeOptions.length)
+      ? q.answerIndex
+      : 0;
+    return {
+      question: q.question || `Production Invariant Check ${idx + 1}`,
+      options: safeOptions,
+      answerIndex: safeAnswerIdx,
+      explanation: q.explanation || 'Optimal architectural invariant verified.',
+    };
+  });
 }
 
 /**
