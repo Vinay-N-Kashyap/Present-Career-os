@@ -142,3 +142,50 @@ export function safeLocalStorageSetItem(key: string, value: string): SafeStorage
     return { success: false, pruned: false, fallbackToIdb: false };
   }
 }
+
+export interface PendingQuestCompletion {
+  questId: string;
+  isExam?: boolean;
+  xpAmount?: number;
+  courseId?: string;
+  passReceipt?: string | null;
+  timestamp: string;
+}
+
+export function getPendingQuestQueueKey(userId: string): string {
+  return `pinit_${userId}_pending_quest_completions`;
+}
+
+export function queuePendingQuestCompletion(userId: string, payload: PendingQuestCompletion): void {
+  if (typeof window === 'undefined' || !window.localStorage || !userId || userId === 'guest') return;
+  try {
+    const key = getPendingQuestQueueKey(userId);
+    const raw = localStorage.getItem(key);
+    const list: PendingQuestCompletion[] = raw ? JSON.parse(raw) : [];
+    if (!list.some(item => item.questId === payload.questId)) {
+      list.push(payload);
+      safeLocalStorageSetItem(key, JSON.stringify(list));
+    }
+  } catch {}
+}
+
+export function getPendingQuestCompletions(userId: string): PendingQuestCompletion[] {
+  if (typeof window === 'undefined' || !window.localStorage || !userId || userId === 'guest') return [];
+  try {
+    const key = getPendingQuestQueueKey(userId);
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    const list = JSON.parse(raw);
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}
+
+export function clearPendingQuestCompletions(userId: string): void {
+  if (typeof window === 'undefined' || !window.localStorage || !userId || userId === 'guest') return;
+  try {
+    localStorage.removeItem(getPendingQuestQueueKey(userId));
+  } catch {}
+}
+

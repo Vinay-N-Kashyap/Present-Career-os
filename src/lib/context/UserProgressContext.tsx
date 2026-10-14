@@ -7,9 +7,14 @@ import { api } from '@/lib/api/client';
 import { consecutiveCalendarStreak } from '@/lib/missions/streak';
 import { supabase } from '@/lib/supabaseClient';
 import { persistQuestCompletion, updateUserProfile } from '@/lib/supabaseService';
-import { markOnboardingStoryPending } from '@/lib/storyTour';
-import { safeLocalStorageSetItem } from '@/lib/storage/careerStorage';
-import { generateDynamicStudentRoadmap } from '@/lib/data/roadmapFuser';
+import {
+  safeLocalStorageSetItem,
+  queuePendingQuestCompletion,
+  getPendingQuestCompletions,
+  getPendingQuestQueueKey,
+  clearPendingQuestCompletions,
+  PendingQuestCompletion
+} from '@/lib/storage/careerStorage';
 
 export interface OnboardingAnswers {
   role?: string;
@@ -391,13 +396,10 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
 
     const flushPending = async () => {
       try {
-        const queueKey = `pinit_${userId}_pending_quest_completions`;
-        const raw = localStorage.getItem(queueKey);
-        if (!raw) return;
-        const pending = JSON.parse(raw);
-        if (!Array.isArray(pending) || pending.length === 0) return;
+        const pending = getPendingQuestCompletions(userId);
+        if (pending.length === 0) return;
 
-        const remaining: any[] = [];
+        const remaining: PendingQuestCompletion[] = [];
         for (const item of pending) {
           try {
             await api.post('/api/quest/complete', item);
@@ -408,9 +410,9 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
           }
         }
         if (remaining.length > 0) {
-          localStorage.setItem(queueKey, JSON.stringify(remaining));
+          safeLocalStorageSetItem(getPendingQuestQueueKey(userId), JSON.stringify(remaining));
         } else {
-          localStorage.removeItem(queueKey);
+          clearPendingQuestCompletions(userId);
         }
       } catch {}
     };
@@ -535,15 +537,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         // without a server pass receipt, or the daily cap) would be refused again.
         const status = (err as { status?: unknown })?.status;
         if (typeof status === 'number' && status > 0) return;
-        try {
-          const queueKey = `pinit_${userId}_pending_quest_completions`;
-          const raw = localStorage.getItem(queueKey);
-          const existing = raw ? JSON.parse(raw) : [];
-          if (!existing.some((item: any) => item.questId === questId)) {
-            existing.push(payload);
-            localStorage.setItem(queueKey, JSON.stringify(existing));
-          }
-        } catch {}
+        queuePendingQuestCompletion(userId, payload);
       });
       persistQuestCompletion(userId, questId, isExam, xpAmount || 150, courseId).catch(() => {});
       updateUserProfile(userId, {
