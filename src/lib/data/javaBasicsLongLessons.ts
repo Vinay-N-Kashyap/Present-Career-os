@@ -3508,8 +3508,342 @@ console.log('Milestone 2 Status: JAVA_FUNDAMENTALS_CORE_ENGINE_CERTIFIED');`,
         'Synthesize Days 6 through 10 into the Milestone 2 Financial Clearing & Auditing Engine.'
       ]
     }
+  },
+  {
+    day: 11,
+    title: 'Classes, Objects, Fields, Constructors & JVM Heap Object Allocation',
+    goal: 'Master the mechanics of Object-Oriented Programming in Java: class blueprints vs heap instances, field initialization sequences, default and parameterized constructors, constructor chaining via this(), the JVM object header (Mark Word & Klass Word), and reference equality (==) vs semantic equivalence (.equals()).',
+    minutes: 35,
+    recap: 'Yesterday we mastered the JVM call stack, recursive termination bounds, and completed the Milestone 2 Financial Engine. Today we transition into Object-Oriented Programming: classes, heap instance allocation, constructor chaining with this(), object memory layouts, and identity vs equivalence.',
+    parts: [
+      {
+        title: 'Class Blueprint vs Heap Object Instance & Field Initialization Order',
+        say: [
+          'In Java, a class serves as a compile-time blueprint stored in the JVM Metaspace, defining the fields (state attributes) and methods (behavioral actions) common to all objects of that type. An object is a concrete runtime instance of that class dynamically allocated in the Eden generation of the JVM Heap using the new keyword.',
+          'When the new operator executes, the JVM follows an unalterable four-step initialization sequence: 1) Class Loading & Static Initialization: if not already loaded, the class bytecode is verified and static initializers execute; 2) Memory Allocation & Zeroing: heap memory is reserved and all instance fields are automatically initialized to their binary default zero values (0, 0.0, false, null); 3) Explicit Field Initializers: inline field initializers and instance initialization blocks ({ ... }) execute in top-to-bottom declaration order; 4) Constructor Body: the invoked constructor body executes to finalize state.',
+          'Understanding this four-stage sequence prevents subtle bugs where constructor logic accidentally inspects fields before explicit initializers or subclass overrides have taken effect.'
+        ],
+        example: 'Like an automotive assembly plant: the architectural engineering blueprint (class) remains in headquarters (Metaspace). On the assembly line (JVM heap), a steel chassis is stamped and painted (memory allocation and zeroing), default safety parts are fitted (field inits), and finally customized leather upholstery and options are installed per customer order (constructor body).',
+        code: `// Class Instance Allocation & Field Initialization Sequence Simulation
+class DatabaseSession {
+  // 1. Explicit field initializers run before constructor body
+  readonly createdAt: number = 1700000000000;
+  connectionState: string = 'INITIALIZING';
+  maxRetries: number = 3;
+
+  constructor(public sessionId: string, customRetries?: number) {
+    // 2. Constructor body executes after field initialization
+    if (customRetries !== undefined) {
+      this.maxRetries = customRetries;
+    }
+    this.connectionState = 'ACTIVE_READY';
+  }
+}
+
+const session1 = new DatabaseSession('sess-alpha-01');
+const session2 = new DatabaseSession('sess-beta-02', 5);
+
+console.log('Session 1: id=' + session1.sessionId + ', state=' + session1.connectionState + ', retries=' + session1.maxRetries);
+console.log('Session 2: id=' + session2.sessionId + ', state=' + session2.connectionState + ', retries=' + session2.maxRetries);
+console.log('Initialization Order: ZERO_DEFAULTS -> FIELD_INITS -> CONSTRUCTOR_BODY');`,
+        output: `Session 1: id=sess-alpha-01, state=ACTIVE_READY, retries=3\nSession 2: id=sess-beta-02, state=ACTIVE_READY, retries=5\nInitialization Order: ZERO_DEFAULTS -> FIELD_INITS -> CONSTRUCTOR_BODY`,
+        codeNotes: [
+          { line: 4, note: 'Explicit initializers assign default connectionState INITIALIZING and maxRetries = 3' },
+          { line: 9, note: 'Constructor body executes after field initialization, setting ACTIVE_READY' },
+          { line: 17, note: 'Instance 1 receives default 3 retries; Instance 2 overrides with custom 5 retries' },
+          { line: 22, note: 'Demonstrates zero-defaults -> field initializers -> constructor body order' }
+        ],
+        tryIt: 'Instantiate session3 with customRetries = 10 and observe maxRetries reflects 10.',
+        check: {
+          question: 'What is the exact execution order during object creation with the new keyword in Java?',
+          options: [
+            'Memory Zeroing -> Explicit Field Initializers -> Constructor Body',
+            'Constructor Body -> Explicit Field Initializers -> Memory Zeroing',
+            'Constructor Body runs first, then memory is zeroed'
+          ],
+          answer: 0,
+          why: 'The JVM first zeros all fields, then executes explicit initializers in top-to-bottom order, and finally runs the constructor body.'
+        }
+      },
+      {
+        title: 'Constructors, Overloading & Constructor Chaining via this()',
+        say: [
+          'A constructor is a specialized initialization block possessing the exact same identifier name as its enclosing class, with no return type declared (not even void). If a class defines zero explicit constructors, the Java compiler automatically synthesizes a default public no-argument constructor that invokes super(). However, the moment you declare even a single parameterized constructor, javac permanently suppresses this automatic default constructor.',
+          'Classes frequently define multiple constructor overloads to support various initialization configurations (e.g. minimal vs fully customized parameters). To avoid code duplication and maintain invariant validation in a single location, Java provides Constructor Chaining via the this(...) syntax.',
+          'The inviolable syntax rule of constructor chaining is that this(...) MUST be the very first statement inside the constructor body. The compiler prohibits placing any logging, calculations, or statements before this(...), and it strictly forbids circular constructor invocations (e.g. constructor A invoking B, which invokes A).'
+        ],
+        example: 'Like ordering coffee at a barista: asking for "a coffee" (no-arg constructor) automatically delegates to "medium dark roast with whole milk" (primary parameterized constructor). You don’t have multiple distinct coffee machines; all orders funnel into the primary brewing machine with sensible defaults.',
+        code: `// Constructor Chaining via this() Simulation
+class HttpClientConfiguration {
+  endpoint: string;
+  timeoutMs: number;
+  enableTls: boolean;
+  maxConnections: number;
+
+  // Constructor 1: Full specification
+  constructor(endpoint: string, timeoutMs: number, enableTls: boolean, maxConnections: number) {
+    this.endpoint = endpoint;
+    this.timeoutMs = timeoutMs;
+    this.enableTls = enableTls;
+    this.maxConnections = maxConnections;
+  }
+
+  // Factory/Constructor Chaining simulation (simulates Java: this(endpoint, timeoutMs, true, 10))
+  static createDefault(endpoint: string): HttpClientConfiguration {
+    return new HttpClientConfiguration(endpoint, 5000, true, 10);
+  }
+
+  static createWithTimeout(endpoint: string, timeoutMs: number): HttpClientConfiguration {
+    return new HttpClientConfiguration(endpoint, timeoutMs, true, 20);
+  }
+}
+
+const config1 = HttpClientConfiguration.createDefault('https://api.pinit.os');
+const config2 = HttpClientConfiguration.createWithTimeout('https://payments.pinit.os', 12000);
+
+console.log('Config 1: ' + config1.endpoint + ', timeout=' + config1.timeoutMs + 'ms, conns=' + config1.maxConnections);
+console.log('Config 2: ' + config2.endpoint + ', timeout=' + config2.timeoutMs + 'ms, conns=' + config2.maxConnections);
+console.log('Chaining Invariant: THIS_CALL_DELEGATES_TO_PRIMARY_CONSTRUCTOR');`,
+        output: `Config 1: https://api.pinit.os, timeout=5000ms, conns=10\nConfig 2: https://payments.pinit.os, timeout=12000ms, conns=20\nChaining Invariant: THIS_CALL_DELEGATES_TO_PRIMARY_CONSTRUCTOR`,
+        codeNotes: [
+          { line: 9, note: 'Primary 4-parameter constructor centralizes all field assignment invariants' },
+          { line: 18, note: 'Default constructor delegates to primary constructor with 5000ms timeout and 10 conns' },
+          { line: 22, note: 'Specialized constructor configures custom timeout while defaulting TLS and pool bounds' },
+          { line: 31, note: 'Confirms constructor chaining eliminates duplicate initialization logic' }
+        ],
+        tryIt: 'Create a createMinimal(endpoint) that delegates with timeoutMs = 1000 and maxConnections = 1.',
+        check: {
+          question: 'What is the required location of a this(...) constructor invocation inside a Java constructor body?',
+          options: [
+            'It must be the very first statement in the constructor body',
+            'It must be the last statement before returning',
+            'It can be placed anywhere after variable declarations'
+          ],
+          answer: 0,
+          why: 'The Java language specification mandates that this(...) or super(...) must appear as the first statement in a constructor body.'
+        }
+      },
+      {
+        title: 'The this Reference: Disambiguation, Method Chaining & Fluent Builders',
+        say: [
+          'Inside any non-static instance method or constructor, the keyword this is an implicit reference variable pointing to the current executing object instance. At the bytecode level, the JVM always passes this as hidden argument 0 (occupying slot 0 in the method’s local variable array).',
+          'The most common practical use of this is parameter disambiguation: when a constructor or method parameter shares the exact same identifier name as an instance field (e.g. void setPort(int port)), the local parameter shadows the field. Writing this.port = port explicitly directs the JVM to assign the local argument to the instance field.',
+          'Furthermore, returning this from instance methods (return this;) is the foundational mechanism behind the Fluent Builder Pattern. Method chaining allows developers to configure complex object graphs in a clear, declarative, and readable pipeline without creating awkward intermediate variables.'
+        ],
+        example: 'Like filling out an official application form: when the form asks for "Applicant Signature" (parameter name), writing "I, the undersigned" (this reference) unambiguously ties the signature to the specific individual holding the pen.',
+        code: `// Fluent Builder & this Reference Disambiguation Simulation
+class HttpRequestPayloadBuilder {
+  private url: string = '';
+  private method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET';
+  private headers: Record<string, string> = {};
+  private bodyPayload: string = '';
+
+  // Disambiguates and returns this for method chaining
+  setUrl(url: string): this {
+    this.url = url; // 'this.url' resolves instance field, 'url' resolves parameter
+    return this;
+  }
+
+  setMethod(method: 'GET' | 'POST' | 'PUT' | 'DELETE'): this {
+    this.method = method;
+    return this;
+  }
+
+  addHeader(key: string, value: string): this {
+    this.headers[key] = value;
+    return this;
+  }
+
+  setBody(body: string): this {
+    this.bodyPayload = body;
+    return this;
+  }
+
+  build(): { requestLine: string; authHeaderPresent: boolean; payloadBytes: number } {
+    return {
+      requestLine: this.method + ' ' + this.url,
+      authHeaderPresent: 'Authorization' in this.headers,
+      payloadBytes: this.bodyPayload.length
+    };
+  }
+}
+
+const req = new HttpRequestPayloadBuilder()
+  .setUrl('/v1/settlements')
+  .setMethod('POST')
+  .addHeader('Authorization', 'Bearer tok-live-9921')
+  .setBody('{"amount": 4500}')
+  .build();
+
+console.log('Request Line: ' + req.requestLine);
+console.log('Authorization Verified: ' + req.authHeaderPresent);
+console.log('Payload Size: ' + req.payloadBytes + ' bytes');
+console.log('Fluent Builder Invariant: RETURN_THIS_ENABLES_FLUENT_CHAINING');`,
+        output: `Request Line: POST /v1/settlements\nAuthorization Verified: true\nPayload Size: 17 bytes\nFluent Builder Invariant: RETURN_THIS_ENABLES_FLUENT_CHAINING`,
+        codeNotes: [
+          { line: 9, note: 'this.url disambiguates shadowed instance field from method parameter' },
+          { line: 10, note: 'Returning this allows continuous chained method invocations on same instance' },
+          { line: 36, note: 'Chains setUrl, setMethod, addHeader, setBody, and build into elegant fluent statement' },
+          { line: 44, note: 'Verifies correct payload construction and Authorization header inclusion' }
+        ],
+        tryIt: 'Add a Content-Type header to the builder and observe headers dictionary update.',
+        check: {
+          question: 'What is the bytecode role of the this reference in Java instance methods?',
+          options: [
+            'It is passed as an implicit argument occupying slot 0 of the local variable array',
+            'It is a global static variable shared across all threads',
+            'It is stored on the hard drive swap partition'
+          ],
+          answer: 0,
+          why: 'In non-static methods, the JVM automatically assigns the caller object reference to slot 0 of the local variable array as this.'
+        }
+      },
+      {
+        title: 'JVM Object Memory Layout: Mark Word, Klass Word, Fields & 8-Byte Padding',
+        say: [
+          'Have you ever wondered how many bytes of physical RAM a Java object consumes on the heap? In 64-bit HotSpot JVM environments, every object begins with a 12-byte Object Header (when UseCompressedOops is enabled). This header contains two components: the 8-byte Mark Word and the 4-byte Klass Word.',
+          'The 8-byte Mark Word is the Swiss Army knife of the JVM: it encodes the object’s identity hash code, its GC generation age (4 bits, allowing ages 0 to 15 before promotion to Old Gen), lock state bits (biased, lightweight, heavyweight synchronization), and biased locking thread IDs. The 4-byte Klass Word is a compressed pointer pointing to the class metadata in Metaspace.',
+          'Following the header are the instance fields, organized to minimize padding. Finally, the HotSpot memory manager mandates that all objects in memory must be aligned to 8-byte boundaries. If header + fields do not equal an exact multiple of 8, the JVM adds 1 to 7 bytes of dead memory called Alignment Padding. Tools like JOL (Java Object Layout) inspect these physical bytes directly.'
+        ],
+        example: 'Like shipping cargo containers on a freight ship: the shipping container has a standardized manifest barcode and locking twistlocks (object header). The cargo is packed inside (fields), and if the container is slightly under length, spacer foam blocks (alignment padding) are added so every container locks rigidly into the ship’s 8-foot grid.',
+        code: `// JVM Object Memory Layout & 8-Byte Alignment Calculation Simulation
+class JvmObjectLayoutAnalyzer {
+  // Simulates 64-bit HotSpot JVM with Compressed OOPs (UseCompressedOops enabled)
+  calculateMemoryFootprint(primitiveBytes: number, referenceCount: number): {
+    headerBytes: number;
+    fieldsBytes: number;
+    paddingBytes: number;
+    totalAllocatedBytes: number;
+  } {
+    const markWord = 8;     // 8 bytes Mark Word (hash, GC age, locks)
+    const klassWord = 4;    // 4 bytes compressed Klass pointer
+    const headerBytes = markWord + klassWord; // 12 bytes total header
+
+    const refsBytes = referenceCount * 4;     // 4 bytes per compressed reference
+    const rawSize = headerBytes + primitiveBytes + refsBytes;
+
+    // HotSpot aligns objects to 8-byte boundaries
+    const remainder = rawSize % 8;
+    const paddingBytes = remainder === 0 ? 0 : 8 - remainder;
+    const totalAllocatedBytes = rawSize + paddingBytes;
+
+    return { headerBytes, fieldsBytes: primitiveBytes + refsBytes, paddingBytes, totalAllocatedBytes };
+  }
+}
+
+const analyzer = new JvmObjectLayoutAnalyzer();
+// Class Example: 2 ints (8 bytes), 1 long (8 bytes), 2 object refs (8 bytes) -> fields = 24 bytes
+const layout1 = analyzer.calculateMemoryFootprint(16, 2);
+// Class Example: 1 boolean (1 byte) -> fields = 1 byte
+const layout2 = analyzer.calculateMemoryFootprint(1, 0);
+
+console.log('Layout 1 (Heavy): Header=12B, Fields=' + layout1.fieldsBytes + 'B, Padding=' + layout1.paddingBytes + 'B, Total=' + layout1.totalAllocatedBytes + 'B');
+console.log('Layout 2 (Tiny):  Header=12B, Fields=' + layout2.fieldsBytes + 'B, Padding=' + layout2.paddingBytes + 'B, Total=' + layout2.totalAllocatedBytes + 'B');
+console.log('JOL Alignment: HOTSPOT_8_BYTE_BOUNDARY_PADDING_VERIFIED');`,
+        output: `Layout 1 (Heavy): Header=12B, Fields=24B, Padding=4B, Total=40B\nLayout 2 (Tiny):  Header=12B, Fields=1B, Padding=3B, Total=16B\nJOL Alignment: HOTSPOT_8_BYTE_BOUNDARY_PADDING_VERIFIED`,
+        codeNotes: [
+          { line: 9, note: '12-byte header: 8 bytes Mark Word + 4 bytes compressed Klass pointer' },
+          { line: 17, note: 'Calculates necessary alignment padding to reach next multiple of 8 bytes' },
+          { line: 30, note: 'Layout 1 raw size 36B pads with 4B to reach 40 bytes total allocation' },
+          { line: 31, note: 'Layout 2 raw size 13B pads with 3B to reach 16 bytes minimum allocation' }
+        ],
+        tryIt: 'Calculate footprint for a class with 0 fields and verify it still occupies 16 bytes on the heap.',
+        check: {
+          question: 'Why does the JVM append alignment padding to objects on the heap?',
+          options: [
+            'To ensure every object address is aligned to an 8-byte boundary for CPU cache efficiency',
+            'To fill up hard drive space so the OS does not complain',
+            'To allow methods to execute backwards'
+          ],
+          answer: 0,
+          why: 'Aligning memory addresses to 8-byte boundaries allows 64-bit CPUs to fetch object data using single memory bus transactions.'
+        }
+      },
+      {
+        title: 'Reference Identity (==) vs Semantic Equivalence (.equals()) & HashCode Contract',
+        say: [
+          'One of the most consequential design fundamentals in Java is the distinction between reference identity and semantic equivalence. The equality operator == strictly compares the binary values stored in variable slots: for primitive types, it compares the numbers; for object references, it compares memory pointer addresses.',
+          'Two distinct objects on the heap holding identical field data will evaluate to false when compared with == because they reside at different memory addresses. To compare structural content, classes must override public boolean equals(Object obj) inherited from java.lang.Object.',
+          'Crucially, whenever a class overrides equals(), it MUST override hashCode() to uphold the general contract: if two objects are equal according to equals(), calling hashCode() on each MUST produce the exact same integer result. Violating this contract breaks HashMap, HashSet, and Hashtable, causing inserted elements to become completely unretrievable.'
+        ],
+        example: 'Like two identical five-dollar banknotes: they have different serial numbers and physical paper fibers (reference identity == false), but in any store, they have the exact same purchasing power and face value (semantic equals() == true).',
+        code: `// Reference Identity (==) vs Semantic Equivalence (.equals()) & HashCode Simulation
+class SecurityStockOrder {
+  constructor(
+    public orderId: string,
+    public symbol: string,
+    public quantity: number
+  ) {}
+
+  // Semantic equivalence (.equals)
+  equals(other: any): boolean {
+    if (this === other) return true; // Reference identity check
+    if (!other || !(other instanceof SecurityStockOrder)) return false;
+    return this.orderId === other.orderId &&
+           this.symbol === other.symbol &&
+           this.quantity === other.quantity;
+  }
+
+  // Consistent hashCode contract
+  hashCode(): number {
+    let hash = 17;
+    for (let i = 0; i < this.orderId.length; i++) hash = 31 * hash + this.orderId.charCodeAt(i);
+    for (let i = 0; i < this.symbol.length; i++) hash = 31 * hash + this.symbol.charCodeAt(i);
+    hash = 31 * hash + this.quantity;
+    return hash | 0; // 32-bit integer clamp
+  }
+}
+
+const ordA = new SecurityStockOrder('ORD-101', 'INFY', 500);
+const ordB = new SecurityStockOrder('ORD-101', 'INFY', 500); // Distinct heap instance, identical data
+const ordC = ordA; // Shared reference
+
+console.log('ordA == ordB (Reference Identity): ' + (ordA === ordB));
+console.log('ordA.equals(ordB) (Semantic Equivalence): ' + ordA.equals(ordB));
+console.log('ordA == ordC (Shared Reference): ' + (ordA === ordC));
+console.log('HashCodes Match: ' + (ordA.hashCode() === ordB.hashCode()));
+console.log('Contract Invariant: EQUALS_AND_HASHCODE_CONTRACT_ENFORCED');`,
+        output: `ordA == ordB (Reference Identity): false\nordA.equals(ordB) (Semantic Equivalence): true\nordA == ordC (Shared Reference): true\nHashCodes Match: true\nContract Invariant: EQUALS_AND_HASHCODE_CONTRACT_ENFORCED`,
+        codeNotes: [
+          { line: 10, note: 'Optimization: identity check this === other returns true instantly' },
+          { line: 11, note: 'Verifies type safety before casting and comparing fields' },
+          { line: 29, note: 'ordA === ordB is false because they are distinct heap allocations' },
+          { line: 30, note: 'ordA.equals(ordB) is true because all identifying fields match' },
+          { line: 32, note: 'Both instances produce identical hashCodes, satisfying hash collection contracts' }
+        ],
+        tryIt: 'Create ordD with quantity = 600 and verify equals returns false and hashCodes differ.',
+        check: {
+          question: 'What is the required relationship between equals() and hashCode() in Java?',
+          options: [
+            'If two objects are equal via equals(), their hashCode() methods must return the same integer',
+            'If two objects have the same hashCode(), they must always be equal via equals()',
+            'hashCode() must always return 0'
+          ],
+          answer: 0,
+          why: 'The contract states that equal objects must have equal hash codes. Unequal objects may share hash codes due to hash collisions.'
+        }
+      }
+    ],
+    summary: [
+      'The JVM allocates objects on the heap via a 4-step sequence: loading -> memory zeroing -> explicit field initializers -> constructor body.',
+      'Constructor chaining via this(...) must be the first statement in a constructor, centralizing default parameter delegation.',
+      'The this keyword disambiguates instance fields and powers fluent builder method chaining.',
+      'HotSpot object layout consists of an 8-byte Mark Word, 4-byte Klass pointer, instance fields, and 8-byte boundary alignment padding.',
+      'Reference identity (==) checks heap address equality; semantic equivalence requires overriding equals() and hashCode() in unison.'
+    ],
+    projectStep: {
+      title: 'Architect a Production-Grade Domain Entity & Memory-Optimized Object Model',
+      steps: [
+        'Profile JVM object allocation and field initialization sequences.',
+        'Implement overloaded constructors with strict this(...) constructor chaining.',
+        'Design a fluent builder utility leveraging this reference chaining.',
+        'Calculate physical JVM heap memory footprints and alignment padding with JOL formulas.',
+        'Implement robust equals() and hashCode() contracts for high-throughput HashMap collections.'
+      ]
+    }
   }
 ];
+
 
 
 

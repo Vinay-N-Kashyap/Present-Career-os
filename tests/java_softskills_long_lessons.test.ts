@@ -803,6 +803,74 @@ test('Java Basics Day 10: Domain-Specific Content Assertions & Milestone 2 Certi
   assert.ok(javaD10.parts[4].output.includes('JAVA_FUNDAMENTALS_CORE_ENGINE_CERTIFIED'));
 });
 
+test('Java Basics Day 11: Resolution & Structural Invariants for Classes, Objects & Memory Layout', () => {
+  const javaD11 = getLongLesson('java-basics', 11);
+  assert.ok(javaD11, 'java-basics Day 11 long lesson must resolve');
+  assert.equal(javaD11.day, 11);
+  assert.equal(javaD11.parts.length, 5, 'java-basics Day 11 must contain exactly 5 parts');
+  assert.ok(javaD11.summary.length >= 4, 'java-basics Day 11 must contain comprehensive summary');
+  assert.ok(javaD11.projectStep, 'java-basics Day 11 must have a hands-on project step');
+  assert.ok(javaD11.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(javaD11);
+  const totalMin = estimateLessonMinutes(javaD11);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of javaD11.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 11: Domain-Specific Content Assertions', () => {
+  const javaD11 = getLongLesson('java-basics', 11);
+  assert.ok(javaD11);
+
+  // Part 1 – Field Initialization Sequence
+  assert.ok(javaD11.parts[0].title.includes('Blueprint') || javaD11.parts[0].title.includes('Initialization Order'));
+  assert.ok(javaD11.parts[0].output.includes('Session 1: id=sess-alpha-01, state=ACTIVE_READY, retries=3'));
+  assert.ok(javaD11.parts[0].output.includes('Session 2: id=sess-beta-02, state=ACTIVE_READY, retries=5'));
+  assert.ok(javaD11.parts[0].output.includes('ZERO_DEFAULTS -> FIELD_INITS -> CONSTRUCTOR_BODY'));
+
+  // Part 2 – Constructor Chaining via this()
+  assert.ok(javaD11.parts[1].title.includes('Constructors') || javaD11.parts[1].title.includes('Constructor Chaining'));
+  assert.ok(javaD11.parts[1].output.includes('Config 1: https://api.pinit.os, timeout=5000ms, conns=10'));
+  assert.ok(javaD11.parts[1].output.includes('Config 2: https://payments.pinit.os, timeout=12000ms, conns=20'));
+  assert.ok(javaD11.parts[1].output.includes('THIS_CALL_DELEGATES_TO_PRIMARY_CONSTRUCTOR'));
+
+  // Part 3 – Fluent Builder & this Reference Disambiguation
+  assert.ok(javaD11.parts[2].title.includes('this Reference') || javaD11.parts[2].title.includes('Fluent'));
+  assert.ok(javaD11.parts[2].output.includes('Request Line: POST /v1/settlements'));
+  assert.ok(javaD11.parts[2].output.includes('Authorization Verified: true'));
+  assert.ok(javaD11.parts[2].output.includes('Payload Size: 17 bytes'));
+  assert.ok(javaD11.parts[2].output.includes('RETURN_THIS_ENABLES_FLUENT_CHAINING'));
+
+  // Part 4 – JVM Object Memory Layout & 8-Byte Alignment
+  assert.ok(javaD11.parts[3].title.includes('Memory Layout') || javaD11.parts[3].title.includes('Mark Word'));
+  assert.ok(javaD11.parts[3].output.includes('Layout 1 (Heavy): Header=12B, Fields=24B, Padding=4B, Total=40B'));
+  assert.ok(javaD11.parts[3].output.includes('Layout 2 (Tiny):  Header=12B, Fields=1B, Padding=3B, Total=16B'));
+  assert.ok(javaD11.parts[3].output.includes('HOTSPOT_8_BYTE_BOUNDARY_PADDING_VERIFIED'));
+
+  // Part 5 – Reference Identity vs Semantic Equivalence (.equals & hashCode)
+  assert.ok(javaD11.parts[4].title.includes('Identity') || javaD11.parts[4].title.includes('HashCode'));
+  assert.ok(javaD11.parts[4].output.includes('ordA == ordB (Reference Identity): false'));
+  assert.ok(javaD11.parts[4].output.includes('ordA.equals(ordB) (Semantic Equivalence): true'));
+  assert.ok(javaD11.parts[4].output.includes('ordA == ordC (Shared Reference): true'));
+  assert.ok(javaD11.parts[4].output.includes('HashCodes Match: true'));
+  assert.ok(javaD11.parts[4].output.includes('EQUALS_AND_HASHCODE_CONTRACT_ENFORCED'));
+});
+
+
 
 
 
