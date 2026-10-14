@@ -673,6 +673,72 @@ test('Java Basics Day 8: Domain-Specific Content Assertions', () => {
   assert.ok(javaD8.parts[4].output.includes('100,000 Elements Strategy: PARALLEL_STREAM_FORK_JOIN'));
 });
 
+test('Java Basics Day 9: Resolution & Structural Invariants for Methods, Pass-by-Value & Overloading', () => {
+  const javaD9 = getLongLesson('java-basics', 9);
+  assert.ok(javaD9, 'java-basics Day 9 long lesson must resolve');
+  assert.equal(javaD9.day, 9);
+  assert.equal(javaD9.parts.length, 5, 'java-basics Day 9 must contain exactly 5 parts');
+  assert.ok(javaD9.summary.length >= 4, 'java-basics Day 9 must contain comprehensive summary');
+  assert.ok(javaD9.projectStep, 'java-basics Day 9 must have a hands-on project step');
+  assert.ok(javaD9.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(javaD9);
+  const totalMin = estimateLessonMinutes(javaD9);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of javaD9.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 9: Domain-Specific Content Assertions', () => {
+  const javaD9 = getLongLesson('java-basics', 9);
+  assert.ok(javaD9);
+
+  // Part 1 – Method Signatures & Early Return Guard Clauses
+  assert.ok(javaD9.parts[0].title.includes('Signatures') || javaD9.parts[0].title.includes('Guard Clauses'));
+  assert.ok(javaD9.parts[0].output.includes('Valid Transfer: status=TRANSFER_APPROVED, fee=100'));
+  assert.ok(javaD9.parts[0].output.includes('Invalid Transfer: status=INVALID_ACCOUNT_ID, fee=0'));
+
+  // Part 2 – Primitive Pass-by-Value Photocopy Invariant
+  assert.ok(javaD9.parts[1].title.includes('Pass-by-Value') || javaD9.parts[1].title.includes('Primitive'));
+  assert.ok(javaD9.parts[1].output.includes('Caller Frame Price After Method Return: 2500'));
+  assert.ok(javaD9.parts[1].output.includes('Method Frame Internal Price: 2000'));
+  assert.ok(javaD9.parts[1].output.includes('PRIMITIVE_PASS_BY_VALUE_VERIFIED'));
+
+  // Part 3 – Object References as Values: Heap Mutation vs Reassignment
+  assert.ok(javaD9.parts[2].title.includes('Object References') || javaD9.parts[2].title.includes('Heap Mutation'));
+  assert.ok(javaD9.parts[2].output.includes('Post-Mutation Host: prod-cluster-01, Weight: 85'));
+  assert.ok(javaD9.parts[2].output.includes('Post-Reassignment Host: prod-cluster-01, Weight: 85'));
+  assert.ok(javaD9.parts[2].output.includes('HEAP_MUTATION_ALLOWED_REASSIGNMENT_ISOLATED'));
+
+  // Part 4 – Method Overloading Precedence: Exact > Widening > Boxing > Varargs
+  assert.ok(javaD9.parts[3].title.includes('Overloading') || javaD9.parts[3].title.includes('Widening'));
+  assert.ok(javaD9.parts[3].output.includes('EXACT_MATCH: String -> System initialized'));
+  assert.ok(javaD9.parts[3].output.includes('PRIMITIVE_NUMERIC: number -> 404'));
+  assert.ok(javaD9.parts[3].output.includes('VARARGS_FALLBACK: count=3'));
+  assert.ok(javaD9.parts[3].output.includes('EXACT_MATCH > WIDENING > BOXING > VARARGS'));
+
+  // Part 5 – Pure Functions & Idempotent Backend Services
+  assert.ok(javaD9.parts[4].title.includes('Pure Functions') || javaD9.parts[4].title.includes('Idempotent'));
+  assert.ok(javaD9.parts[4].output.includes('Initial Balance: $10000'));
+  assert.ok(javaD9.parts[4].output.includes('Balance After First Credit: $12500'));
+  assert.ok(javaD9.parts[4].output.includes('Balance After Duplicate Retry: $12500'));
+  assert.ok(javaD9.parts[4].output.includes('PURE_IDEMPOTENT_TRANSACTION_VERIFIED'));
+});
+
+
 
 
 

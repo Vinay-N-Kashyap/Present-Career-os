@@ -2808,8 +2808,332 @@ console.log('100,000 Elements Rationale: ' + selector.recommendStrategy(100000).
         'Implement an algorithmic threshold selector choosing between sequential for loops and ForkJoinPool parallel streams.'
       ]
     }
+  },
+  {
+    day: 9,
+    title: 'Custom Methods, Method Signatures & Pass-by-Value Mechanics',
+    goal: 'Master modular code architecture in Java: defining explicit method signatures, understanding the invariant pass-by-value photocopy rule for both primitives and object references, mastering compiler method overloading resolution precedence, and designing pure, idempotent methods for resilient backend distributed systems.',
+    minutes: 35,
+    recap: 'Yesterday we mastered for loops, enhanced iterators, row-major cache locality, and safe collection pruning. Today we build modular abstraction: method signatures, stack-frame parameter passing invariants, reference mutations vs reassignments, overloading rules, and pure functions.',
+    parts: [
+      {
+        title: 'Method Anatomy, Access Modifiers, Signatures & Guard Clauses',
+        say: [
+          'A method in Java is a modular, encapsulated block of statements that executes a specific business or algorithmic action. Every Java method declaration consists of six distinct elements: access modifiers (public, protected, package-private, private), optional specifiers (static, final, synchronized), return type (a primitive, object type, or void), method identifier name, parameter list enclosed in parentheses, and an optional throws clause for checked exceptions.',
+          'Crucially, in the Java Language Specification, a method signature consists strictly of the method name and the sequence of its parameter types. The return type, access modifiers, and thrown exceptions are NOT part of the method signature. This foundational distinction determines what the compiler permits when declaring overloaded methods in a single class hierarchy.',
+          'Enterprise software engineering mandates clean method structure through early return guard clauses. Instead of deeply nested if-else statements that increase cyclomatic complexity, high-quality code validates pre-conditions at the very top of the method body, immediately returning default or error states if inputs violate operational contracts.'
+        ],
+        example: 'Like an airport international departures checkpoint: security guards verify passports and boarding passes at the entrance (guard clauses) and immediately turn away unauthorized passengers, allowing valid travelers to proceed through the terminal on a streamlined, linear path.',
+        code: `// Method Anatomy & Guard Clauses Simulation
+interface WireTransferRequest {
+  accountId: string;
+  amount: number;
+  currency: string;
+}
+
+interface TransferResult {
+  success: boolean;
+  status: string;
+  fee: number;
+}
+
+class TransferService {
+  // Method signature: calculateTransferFee(WireTransferRequest) -> TransferResult
+  processTransfer(request: WireTransferRequest): TransferResult {
+    // Early return guard clause 1: validate account
+    if (!request.accountId || request.accountId.length < 5) {
+      return { success: false, status: 'INVALID_ACCOUNT_ID', fee: 0 };
+    }
+    // Early return guard clause 2: validate amount
+    if (request.amount <= 0) {
+      return { success: false, status: 'INVALID_AMOUNT', fee: 0 };
+    }
+
+    // Business calculation logic
+    const feeRate = request.currency === 'INR' ? 0.002 : 0.015;
+    const fee = Math.round(request.amount * feeRate * 100) / 100;
+
+    return {
+      success: true,
+      status: 'TRANSFER_APPROVED',
+      fee
+    };
+  }
+}
+
+const service = new TransferService();
+const validTransfer = service.processTransfer({
+  accountId: 'ACC-98210',
+  amount: 50000,
+  currency: 'INR'
+});
+const invalidTransfer = service.processTransfer({
+  accountId: 'ACC-1',
+  amount: 100,
+  currency: 'INR'
+});
+console.log('Valid Transfer: status=' + validTransfer.status + ', fee=' + validTransfer.fee);
+console.log('Invalid Transfer: status=' + invalidTransfer.status + ', fee=' + invalidTransfer.fee);`,
+        output: `Valid Transfer: status=TRANSFER_APPROVED, fee=100\nInvalid Transfer: status=INVALID_ACCOUNT_ID, fee=0`,
+        codeNotes: [
+          { line: 15, note: 'Method signature bundles parameter type WireTransferRequest into defined method name' },
+          { line: 17, note: 'Guard clause 1 ejects invalid short account IDs before executing business logic' },
+          { line: 21, note: 'Guard clause 2 ejects non-positive transaction amounts cleanly' },
+          { line: 43, note: 'Valid INR transfer of 50,000 correctly incurs 0.2% fee (100 INR)' }
+        ],
+        tryIt: 'Pass currency = "USD" and observe feeRate increase to 1.5% producing a $750 fee.',
+        check: {
+          question: 'According to the Java Language Specification, what components constitute a method signature?',
+          options: [
+            'Method name and parameter types list only',
+            'Method name, return type, and access modifier',
+            'Method name, parameter types, return type, and throws clause'
+          ],
+          answer: 0,
+          why: 'A Java method signature consists solely of the method name and its parameter type list. Return type and exceptions are not part of the signature.'
+        }
+      },
+      {
+        title: 'The Pass-by-Value Photocopy Invariant: Primitive Types & Isolated Stack Frames',
+        say: [
+          'There is no greater source of confusion for junior engineers than argument passing in Java. Hear this clearly: Java is ALWAYS 100% pass-by-value. There is zero pass-by-reference in the Java programming language. None.',
+          'When an argument is passed to a method, the JVM makes a bitwise copy (a photocopy) of whatever value is stored in the caller’s variable and places that copy onto the newly allocated stack frame of the called method. For primitive types (byte, short, int, long, float, double, char, boolean), the value stored in the variable is the literal numeric data.',
+          'Consequently, when the invoked method modifies a primitive parameter variable, it is altering its own private local photocopy on its own call stack frame. The caller’s stack frame remains completely insulated, untouched, and unchanged. When the method returns, its stack frame is popped, and the local copy vanishes.'
+        ],
+        example: 'Like photocopying your homework paper and handing the photocopy to a friend: if your friend takes a red pen and scribbles over the photocopy, your original homework paper resting on your desk remains completely pristine and unmodified.',
+        code: `// Primitive Pass-by-Value Photocopy Simulation
+class PrimitiveValuator {
+  // Simulates Java primitive method: void applyDiscount(double price, double discountRate)
+  // In Java, price and discountRate are photocopies on the call stack frame of applyDiscount
+  attemptInPlaceDiscount(price: number, discountRate: number): {
+    methodInternalPrice: number;
+  } {
+    price = price * (1 - discountRate);
+    return { methodInternalPrice: price };
+  }
+}
+
+const valuator = new PrimitiveValuator();
+const originalPrice = 2500;
+const rate = 0.20;
+
+// Caller stack frame holds originalPrice = 2500
+const result = valuator.attemptInPlaceDiscount(originalPrice, rate);
+
+console.log('Caller Frame Price After Method Return: ' + originalPrice);
+console.log('Method Frame Internal Price: ' + result.methodInternalPrice);
+console.log('Photocopy Invariant: PRIMITIVE_PASS_BY_VALUE_VERIFIED');`,
+        output: `Caller Frame Price After Method Return: 2500\nMethod Frame Internal Price: 2000\nPhotocopy Invariant: PRIMITIVE_PASS_BY_VALUE_VERIFIED`,
+        codeNotes: [
+          { line: 7, note: 'Reassigning parameter variable price modifies only the method local frame' },
+          { line: 18, note: 'Caller variable originalPrice remains exactly 2500 after method returns' },
+          { line: 22, note: 'Confirms Java primitive pass-by-value photocopy isolation' }
+        ],
+        tryIt: 'Change originalPrice to 5000 and verify caller frame retains 5000 while method computes 4000.',
+        check: {
+          question: 'If a method modifies a primitive int parameter passed into it, what happens to the caller variable?',
+          options: [
+            'It remains completely unchanged because Java passes primitive values by copy',
+            'It is updated to the new value',
+            'The compiler throws a NullPointerException'
+          ],
+          answer: 0,
+          why: 'Java is strictly pass-by-value. Primitives pass a bitwise copy of their value, isolating the caller variable.'
+        }
+      },
+      {
+        title: 'Object References as Values: Heap Mutation vs Reference Reassignment',
+        say: [
+          'What happens when you pass an object into a method? Many developers mistakenly believe this is pass-by-reference. It is NOT. It is passing an object reference by value.',
+          'In Java, an object variable does not hold the actual object; it holds a memory reference (a pointer address) pointing to the object located on the shared JVM heap. When you pass that variable to a method, the JVM photocopies the reference address into the method’s parameter variable. Both the caller and the callee now hold distinct pointer variables pointing to the exact same heap instance.',
+          'This leads to two critical behaviors: 1) Mutation: calling setter methods or mutating object fields modifies the shared object on the heap, visible to both caller and callee; 2) Reassignment: reassigning the parameter variable (param = new MyObject()) simply points the method’s local pointer copy to a different heap location. It has ZERO effect on the caller’s original reference pointer.'
+        ],
+        example: 'Like sharing a Google Doc link with a colleague: if your colleague edits the document text, everyone sees the edits (heap mutation). But if your colleague closes the tab and opens a different website on their own computer screen (reference reassignment), your screen still displays the original Google Doc.',
+        code: `// Object Reference Pass-by-Value: Mutation vs Reassignment Simulation
+interface ServerNode {
+  hostname: string;
+  loadWeight: number;
+}
+
+class ClusterManager {
+  // Operation 1: Mutating state via reference copy
+  tuneWeight(node: ServerNode, newWeight: number): void {
+    node.loadWeight = newWeight; // Mutates heap object field
+  }
+
+  // Operation 2: Reassigning parameter reference
+  replaceNodeReference(node: ServerNode): void {
+    // In Java, 'node = new ServerNode(...)' reassigns ONLY the local stack variable
+    node = { hostname: 'backup-node-99', loadWeight: 10 };
+  }
+}
+
+const cluster = new ClusterManager();
+const primaryServer: ServerNode = { hostname: 'prod-cluster-01', loadWeight: 50 };
+
+// 1. Mutate field
+cluster.tuneWeight(primaryServer, 85);
+console.log('Post-Mutation Host: ' + primaryServer.hostname + ', Weight: ' + primaryServer.loadWeight);
+
+// 2. Attempt reference reassignment
+cluster.replaceNodeReference(primaryServer);
+console.log('Post-Reassignment Host: ' + primaryServer.hostname + ', Weight: ' + primaryServer.loadWeight);
+console.log('Reference Rule: HEAP_MUTATION_ALLOWED_REASSIGNMENT_ISOLATED');`,
+        output: `Post-Mutation Host: prod-cluster-01, Weight: 85\nPost-Reassignment Host: prod-cluster-01, Weight: 85\nReference Rule: HEAP_MUTATION_ALLOWED_REASSIGNMENT_ISOLATED`,
+        codeNotes: [
+          { line: 9, note: 'Field mutation updates the shared object properties on the heap' },
+          { line: 15, note: 'Parameter reassignment modifies only the local pointer variable, leaving caller pointing to original' },
+          { line: 26, note: 'Demonstrates loadWeight updated to 85 while hostname remains prod-cluster-01 throughout' }
+        ],
+        tryIt: 'Pass a second property (e.g. status: "ACTIVE") and verify field mutation persists while reassignment fails.',
+        check: {
+          question: 'If a Java method assigns a new object instance to its parameter variable (param = new Node()), what happens to the caller variable?',
+          options: [
+            'The caller variable continues pointing to the original object instance',
+            'The caller variable is updated to point to the new object instance',
+            'The JVM throws an OutOfMemoryError'
+          ],
+          answer: 0,
+          why: 'Reassigning a parameter variable merely points the method local copy of the reference to a new heap object; the caller reference is unaffected.'
+        }
+      },
+      {
+        title: 'Method Overloading: Compiler Resolution Precedence & Widening vs Boxing',
+        say: [
+          'Method overloading is compile-time polymorphism (static binding) where multiple methods in the same class share the same identifier name but possess different parameter signatures (different types, counts, or order). Overloading is resolved strictly by the Java compiler at compile-time based on static reference types, not at runtime.',
+          'When multiple overloaded candidates exist, the Java compiler uses a strict resolution hierarchy to select the most specific method: 1) Exact type match; 2) Primitive widening conversion (e.g. byte -> short -> int -> long -> float -> double); 3) Autoboxing / Unboxing (e.g. int -> Integer); 4) Variable-arity arguments (varargs, e.g. int...).',
+          'Crucially, the compiler will never perform primitive widening followed by autoboxing in a single step (e.g. int cannot widen to long and then box to Long). Furthermore, if two methods are equally specific (e.g. method(String, Object) vs method(Object, String) when calling method("a", "b")), the compiler rejects the invocation as ambiguous with a compilation error.'
+        ],
+        example: 'Like sending a parcel at a postal service counter: if you have an exact flat-rate priority box (exact match), they use it. If not, they find a slightly larger standard box (widening). If not, they pack it in a custom crate (boxing). Only as a last resort do they toss it into bulk freight cargo (varargs).',
+        code: `// Method Overloading Compiler Resolution Hierarchy
+class LoggerDispatcher {
+  // Method 1: Exact String match
+  log(message: string): string {
+    return 'EXACT_MATCH: String -> ' + message;
+  }
+
+  // Method 2: Primitive numeric type
+  logNumber(val: number): string {
+    return 'PRIMITIVE_NUMERIC: number -> ' + val;
+  }
+
+  // Method 3: Varargs fallback
+  logVarargs(...entries: string[]): string {
+    return 'VARARGS_FALLBACK: count=' + entries.length;
+  }
+}
+
+const dispatcher = new LoggerDispatcher();
+console.log(dispatcher.log('System initialized'));
+console.log(dispatcher.logNumber(404));
+console.log(dispatcher.logVarargs('trace-1', 'trace-2', 'trace-3'));
+console.log('Resolution Precedence: EXACT_MATCH > WIDENING > BOXING > VARARGS');`,
+        output: `EXACT_MATCH: String -> System initialized\nPRIMITIVE_NUMERIC: number -> 404\nVARARGS_FALLBACK: count=3\nResolution Precedence: EXACT_MATCH > WIDENING > BOXING > VARARGS`,
+        codeNotes: [
+          { line: 4, note: 'Exact String match resolves with highest priority' },
+          { line: 9, note: 'Numeric type handling resolves via primitive widening rules' },
+          { line: 14, note: 'Varargs executes as lowest priority fallback when no fixed-arity methods match' },
+          { line: 22, note: 'Displays compiler resolution precedence order: EXACT > WIDENING > BOXING > VARARGS' }
+        ],
+        tryIt: 'Call dispatcher.logVarargs with 1 element and verify it still invokes the varargs fallback when no exact method matches.',
+        check: {
+          question: 'What is the compiler resolution priority order when matching overloaded methods in Java?',
+          options: [
+            'Exact Match -> Primitive Widening -> Autoboxing -> Varargs',
+            'Varargs -> Autoboxing -> Widening -> Exact Match',
+            'Autoboxing -> Varargs -> Exact Match -> Widening'
+          ],
+          answer: 0,
+          why: 'The Java compiler prioritizes backward compatibility and performance: exact matches first, primitive widening next, followed by autoboxing, and finally varargs.'
+        }
+      },
+      {
+        title: 'Pure Functions, Immutability & Idempotent Backend Service Architecture',
+        say: [
+          'In modern distributed systems and microservice architectures, methods must be designed for reliability under network failures, concurrent execution, and automatic message retries. This requires embracing functional programming principles within object-oriented Java: pure functions and idempotency.',
+          'A pure function satisfies two mathematical criteria: 1) Determinism: given the identical input arguments, it will always return the exact same output value; 2) Zero side effects: it does not mutate global state, modify its input arguments, or execute uncoordinated I/O. Methods adhering to this contract are trivial to test, thread-safe by default, and seamlessly cacheable.',
+          'An idempotent operation is one that can be applied multiple times without changing the result beyond the initial application (f(f(x)) = f(x)). In payment processing and banking engines, assigning idempotency keys to incoming requests ensures that network retries never cause double-charging or corrupt ledger states.'
+        ],
+        example: 'Like an elevator call button: pressing the button once requests the elevator. Pressing it 10 more times does not summon 10 separate elevators; the elevator still arrives exactly once (idempotent behavior).',
+        code: `// Pure Functions & Idempotent Backend Service Simulation
+interface AccountBalance {
+  readonly accountId: string;
+  readonly balance: number;
+}
+
+class BankingLedgerService {
+  // Pure function: deterministic output, zero side-effects, immutable state return
+  applyDeposit(account: AccountBalance, amount: number): AccountBalance {
+    if (amount <= 0) {
+      throw new Error('Deposit amount must be positive');
+    }
+    // Returns brand new immutable instance without mutating input
+    return {
+      accountId: account.accountId,
+      balance: account.balance + amount
+    };
+  }
+
+  // Idempotent operation: applying same idempotent token produces identical system outcome
+  deduplicateCredit(account: AccountBalance, idempotencyKey: string, amount: number, processedKeys: Set<string>): AccountBalance {
+    if (processedKeys.has(idempotencyKey)) {
+      return account; // Return current state without applying second credit
+    }
+    processedKeys.add(idempotencyKey);
+    return this.applyDeposit(account, amount);
+  }
+}
+
+const ledger = new BankingLedgerService();
+const processedTx = new Set<string>();
+const initialAcct: AccountBalance = { accountId: 'ACC-8812', balance: 10000 };
+
+const credit1 = ledger.deduplicateCredit(initialAcct, 'tx-idem-991', 2500, processedTx);
+const credit2 = ledger.deduplicateCredit(credit1, 'tx-idem-991', 2500, processedTx); // Duplicate retry
+
+console.log('Initial Balance: $' + initialAcct.balance);
+console.log('Balance After First Credit: $' + credit1.balance);
+console.log('Balance After Duplicate Retry: $' + credit2.balance);
+console.log('Idempotency Status: PURE_IDEMPOTENT_TRANSACTION_VERIFIED');`,
+        output: `Initial Balance: $10000\nBalance After First Credit: $12500\nBalance After Duplicate Retry: $12500\nIdempotency Status: PURE_IDEMPOTENT_TRANSACTION_VERIFIED`,
+        codeNotes: [
+          { line: 9, note: 'Pure function produces new immutable record without mutating input balance' },
+          { line: 20, note: 'Idempotency key check guards against duplicate financial credit operations' },
+          { line: 36, note: 'Duplicate retry with key tx-idem-991 returns exact balance $12,500 without incrementing' }
+        ],
+        tryIt: 'Execute a credit with a new key "tx-idem-992" and observe balance successfully increment to $15,000.',
+        check: {
+          question: 'What defines an idempotent backend method in software architecture?',
+          options: [
+            'Executing the operation multiple times yields the exact same outcome as the initial execution',
+            'The method only runs when internet connectivity is offline',
+            'The method must always return void'
+          ],
+          answer: 0,
+          why: 'An idempotent operation satisfies f(f(x)) = f(x). Multiple identical requests have the exact same effect as a single request.'
+        }
+      }
+    ],
+    summary: [
+      'A Java method signature consists strictly of the method name and its parameter type list; return types and exceptions are excluded.',
+      'Java is strictly 100% pass-by-value; primitive parameters pass bitwise copies that cannot affect caller stack frames.',
+      'Passing an object passes a copy of its heap pointer; field mutations persist, but reference reassignments are completely isolated.',
+      'Compiler overloading precedence follows: Exact Match -> Primitive Widening -> Autoboxing -> Varargs.',
+      'Pure functions and idempotent service methods protect backend banking and distributed systems against race conditions and duplicate retries.'
+    ],
+    projectStep: {
+      title: 'Architect a Modular, Idempotent Financial Transaction & Calculation Engine',
+      steps: [
+        'Define explicit method signatures and implement guard clauses to eliminate cyclomatic branching.',
+        'Verify stack frame isolation by implementing primitive parameter calculation methods.',
+        'Demonstrate object reference pass-by-value mechanics with safe defensive copying patterns.',
+        'Structure compile-time overloaded methods adhering to widening and boxing precedence.',
+        'Implement an idempotent ledger transaction processor with cryptographic deduplication keys.'
+      ]
+    }
   }
 ];
+
 
 
 
