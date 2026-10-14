@@ -3870,376 +3870,389 @@ console.log('Contract Invariant: EQUALS_AND_HASHCODE_CONTRACT_ENFORCED');`,
   {
     day: 12,
     title: 'Encapsulation, Access Modifiers, Defensive Copying & Immutability Patterns',
-    goal: 'Master enterprise-grade information hiding in Java: the 4 access modifier scopes, defensive getter/setter invariants, defensive copying vulnerabilities and remediations, designing bulletproof immutable value objects, and leveraging modern Java Records for zero-boilerplate domain models.',
-    minutes: 35,
-    recap: 'Yesterday we mastered classes, heap instance allocation, constructor chaining with this(), object memory layouts, and identity vs equivalence. Today we build unbreachable encapsulation: information hiding, defensive copying, immutability contracts, and Java Records.',
+    goal: 'Master data encapsulation and defensive object architecture in Java: the 4 access levels (private, package-private, protected, public), defensive getters and mutators, mitigating mutable reference escape vulnerabilities, immutable value objects, Java 16+ records, and audit ledgers.',
+    minutes: 38,
+    recap: 'Yesterday we mastered classes, heap instance allocation, constructor chaining with this(), HotSpot object layout, and equals/hashCode contracts. Today we master encapsulation: protecting internal object state using access modifiers, defensive copying, and immutability.',
     parts: [
       {
         title: 'Encapsulation & The 4 Access Modifiers: Scope Boundaries & Information Hiding',
         say: [
-          'Encapsulation is the fundamental object-oriented principle of bundling state data with the methods that operate on that data, while restricting direct outside access to internal implementation details (Information Hiding). In Java, access control is governed by four distinct levels: private, default (package-private), protected, and public.',
-          'The private modifier confines visibility strictly to the enclosing top-level class. Package-private (no modifier) permits access to any class within the exact same package, enabling clean modular boundaries without exposing internals to consumer applications. The protected modifier grants access to same-package classes plus subclasses residing in different packages. The public modifier makes members universally accessible.',
-          'Enterprise software architecture strictly forbids public mutable fields. Exposing public fields directly breaks class invariants, prevents thread-safe synchronization, and robs developers of the ability to intercept, validate, or audit state changes.'
+          'Encapsulation is the fundamental cornerstone of Object-Oriented Software Engineering. It dictates that an object\'s internal state representation should be hidden from the outside world, accessible and modifiable only through tightly controlled, authorized public methods. By preventing direct external field mutation, encapsulation establishes an inviolable boundary that guarantees domain state invariants cannot be corrupted by external consumers.',
+          'Java provides four distinct levels of access control governed by three keywords: private, protected, and public, along with the default "package-private" access when no keyword is specified. Understanding these four levels is critical for architecting resilient multi-module enterprise applications.',
+          'Private access (marked with the private keyword) is the most restrictive boundary: private members are visible ONLY within the textual body of the enclosing top-level class. Other classes in the same package, subclasses, and external packages cannot see or access private fields. Package-private access (the default when no modifier is declared) restricts visibility to classes residing within the selfsame Java package, providing a powerful mechanism to expose internal collaborator methods across package classes while keeping them hidden from the broader application.',
+          'Protected access (using protected) extends package-private visibility to allow subclasses in different packages to inherit and access the member. However, protected fields should be used sparingly because exposing mutable protected state creates tight coupling between superclasses and subclasses. Finally, public access makes the member visible to all classes everywhere throughout the JVM classpath, subject only to Java 9+ Module System exports.',
+          'In production engineering, the golden architectural rule is: always declare instance fields as private by default. If external access is required, expose it via carefully guarded accessor methods. Exposing fields directly as public or package-private creates immediate technical debt: external code couples directly to your internal data representation, making it impossible to add validation logging, thread synchronization, or schema transformations in the future without breaking downstream clients.',
+          'In enterprise framework architecture such as Spring Boot or Jakarta EE, access modifiers also determine reflective accessibility and proxy generation. Frameworks like Hibernate use reflection to inject state into private fields during entity hydration from database result sets, whereas Spring AOP proxies require methods to be package-private or public to wrap them with transactional interceptors. Knowing how the JVM enforces access at the bytecode level (via ACC_PRIVATE, ACC_PROTECTED, ACC_PUBLIC flags in class files) ensures developers design robust security boundaries.',
+          'Our simulation models access boundaries across classes, packages, and cross-package subclasses. Notice how private fields are strictly hidden from outside inspection, while package-private and protected boundaries allow controlled collaboration without compromising system-wide data integrity.',
+          'In distributed systems security and API gateway architecture, access control boundaries defined in Java source code are reflected directly in OpenAPI documentation and API contract schemas. Public methods generate public HTTP endpoint routes, whereas private and package-private routines are sealed behind internal microservice boundaries. Understanding how access levels correspond to network attack surfaces ensures that software architects enforce the principle of least privilege from the lowest JVM memory byte up to the highest cloud infrastructure layer.',
+          'In modern cloud-native architectures utilizing Docker containers and Kubernetes clusters, access levels establish the foundation for compile-time attack surface minimization. By ensuring that helper routines, network buffers, and cryptographic keys are scoped strictly as private or package-private, developers guarantee that even if an untrusted dependency or compromised third-party library is loaded into the classpath, it cannot invoke internal utility routines or read sensitive in-memory state directly.'
         ],
-        example: 'Like an automated teller machine (ATM): the cash vault inside is strictly private. Customers interact with a public keypad interface. You cannot pry open the steel vault door directly; all cash access must pass through validated software protocols.',
-        code: `// Access Modifiers & Scope Boundary Enforcement Simulation
-type AccessScope = 'PRIVATE' | 'PACKAGE_PRIVATE' | 'PROTECTED' | 'PUBLIC';
+        example: 'Like an automated automated teller machine (ATM): the cash vault inside is completely private and locked behind steel doors. Customers cannot reach inside and manually count dollar bills. They must interact strictly through the public keypad interface and withdrawal slot, which enforce PIN verification and balance limits before dispensing cash.',
+        code: `// The 4 Access Levels & Information Hiding Simulation
+class BankVaultAccount {
+  // 1. private: visible ONLY within BankVaultAccount class
+  private balance: number = 10000;
 
-interface MemberDefinition {
-  name: string;
-  scope: AccessScope;
-}
+  // 2. package-private (simulated): visible within same package
+  internalAccountNumber: string = 'ACC-88019';
 
-class ScopeMatrixValidator {
-  canAccess(member: MemberDefinition, callerContext: 'SAME_CLASS' | 'SAME_PACKAGE' | 'SUBCLASS_OTHER_PACKAGE' | 'OTHER_PACKAGE'): boolean {
-    switch (member.scope) {
-      case 'PRIVATE':
-        return callerContext === 'SAME_CLASS';
-      case 'PACKAGE_PRIVATE':
-        return callerContext === 'SAME_CLASS' || callerContext === 'SAME_PACKAGE';
-      case 'PROTECTED':
-        return callerContext === 'SAME_CLASS' || callerContext === 'SAME_PACKAGE' || callerContext === 'SUBCLASS_OTHER_PACKAGE';
-      case 'PUBLIC':
-        return true;
-    }
+  // 3. protected (simulated): visible in package and subclasses
+  protected vaultRegion: string = 'ASIA_SOUTH_MUMBAI';
+
+  // 4. public: visible everywhere
+  public bankRoutingCode: string = 'PINIT_GLOBAL_01';
+
+  public canAccessPrivate(callerClass: string): boolean {
+    return callerClass === 'BankVaultAccount';
+  }
+
+  public canAccessProtected(isSubclass: boolean, samePackage: boolean): boolean {
+    return isSubclass || samePackage;
   }
 }
 
-const validator = new ScopeMatrixValidator();
-const secretKey: MemberDefinition = { name: 'apiKeySecret', scope: 'PRIVATE' };
-const sharedMetric: MemberDefinition = { name: 'clusterThroughput', scope: 'PROTECTED' };
+const vault = new BankVaultAccount();
 
-console.log('Private from Same Class: ' + validator.canAccess(secretKey, 'SAME_CLASS'));
-console.log('Private from Same Package: ' + validator.canAccess(secretKey, 'SAME_PACKAGE'));
-console.log('Protected from Subclass in Other Package: ' + validator.canAccess(sharedMetric, 'SUBCLASS_OTHER_PACKAGE'));
+console.log('Private from Same Class: ' + vault.canAccessPrivate('BankVaultAccount'));
+console.log('Private from Same Package: ' + vault.canAccessPrivate('AuditorService'));
+console.log('Protected from Subclass in Other Package: ' + vault.canAccessProtected(true, false));
 console.log('Encapsulation Scope: ACCESS_LEVELS_STRICTLY_ENFORCED');`,
         output: `Private from Same Class: true\nPrivate from Same Package: false\nProtected from Subclass in Other Package: true\nEncapsulation Scope: ACCESS_LEVELS_STRICTLY_ENFORCED`,
         codeNotes: [
-          { line: 11, note: 'Private members are accessible strictly from within the identical class definition' },
-          { line: 15, note: 'Protected members grant visibility to subclasses in external packages' },
-          { line: 26, note: 'Validates that outside packages cannot inspect private secret keys' },
-          { line: 29, note: 'Demonstrates strict 4-level scope boundary enforcement in Java' }
+          { line: 4, note: 'Private balance field is completely inaccessible to external classes' },
+          { line: 10, note: 'Protected member accessible to subclasses regardless of package location' },
+          { line: 25, note: 'Enforces that caller from different class cannot inspect private vault memory' }
         ],
-        tryIt: 'Test access to a PUBLIC member from OTHER_PACKAGE and observe true.',
+        tryIt: 'Add a new public accessor getMaskedAccountNumber() that returns the last 4 digits of internalAccountNumber.',
         check: {
-          question: 'Which Java access modifier permits access ONLY within the declaring class?',
+          question: 'Which access modifier in Java restricts visibility strictly to the declaring class?',
           options: [
+            'package-private (default)',
             'private',
-            'protected',
-            'package-private (default)'
+            'protected'
           ],
-          answer: 0,
-          why: 'The private access modifier restricts visibility strictly to the declaring class, hiding internal state from all external classes.'
+          answer: 1,
+          why: 'The private modifier limits member visibility exclusively to the declaring class, preventing any direct access from subclasses or other package classes.'
         }
       },
       {
         title: 'Defensive Getters, Setters & Invariant Validation Guards',
         say: [
-          'Accessors (getters) and mutators (setters) provide controlled read/write channels for private state. However, blindly generating getters and setters for every private field reduces a class to an anemic data holder with zero real encapsulation.',
-          'True encapsulation requires that setters act as Invariant Validation Guards. A class must define its valid operational boundaries (e.g. balance cannot be negative, percentages must reside in [0, 100], email addresses must match valid schemas). When a caller supplies invalid data, the setter must reject the input immediately by throwing IllegalArgumentException or IllegalStateException.',
-          'By validating invariants at the boundary, an object guarantees that once instantiated, it can NEVER enter an illegal, corrupted, or inconsistent state, drastically reducing defensive checks in downstream services.'
+          'Encapsulation is not merely making fields private and blindly adding standard public getters and setters. If a class exposes a public setter that directly assigns an unverified argument to an internal field, it has merely created cumbersome syntax for a public variable, offering zero actual protection. True encapsulation means every mutator enforces domain invariants through defensive validation guards.',
+          'An invariant is a condition that must remain true for the entire lifetime of an object instance. For example, a bank account balance must never be negative, an email string must match RFC 5322 regex formatting, and an interest rate must stay within central bank regulatory bounds. When mutator methods enforce these guards, an object can never enter an inconsistent or corrupted state.',
+          'Defensive setters implement the "fail-fast" principle. If a caller passes invalid data—such as a null account holder name or an integer deposit of -500 dollars—the setter immediately throws an IllegalArgumentException or custom domain exception. It rejects the operation before any internal state mutation occurs. This eliminates downstream bugs where corrupted data silently propagates through business workflows before causing unexplained failures hours later.',
+          'Similarly, getters should not necessarily return raw internal state. When reading sensitive data like social security numbers, credit card tokens, or internal database keys, getters can return sanitized or masked representations (such as "****-****-1234") to prevent data leaks across logging frameworks and user interface boundaries.',
+          'In multithreaded systems, mutator methods also provide the synchronization boundary. By wrapping field updates inside synchronized blocks or ReentrantLock locks within the setter, developers prevent concurrent threads from creating race conditions where multiple updates interleave and corrupt shared memory.',
+          'Furthermore, modern Java architectures often eschew setters entirely in favor of domain-driven action methods (e.g. account.deposit(amount) or account.close(reason)) rather than generic setBalance() or setStatus(). This conveys clear business intent, avoids anemic domain models, and ensures that complex multi-field state transitions happen atomically.',
+          'In our BankAccountEntity simulation, observe how setName() rejects empty strings and setBalance() strictly forbids negative amounts. When depositing funds, the balance increases reliably, and attempts to force a negative balance are intercepted, certifying that invariant guards remain permanently active.',
+          'In event-driven architectures and message queuing systems such as RabbitMQ or AWS SQS, defensive setters act as the primary firewall against poisoned messages. When a malformed JSON payload containing negative quantities or corrupt customer identifiers is consumed from the queue, a defensive setter immediately catches the anomaly, routing the message to a Dead Letter Queue (DLQ) before bad data can corrupt relational database tables or trigger cascade failures across downstream microservices.',
+          'In financial settlement systems and regulatory compliance reporting (such as Basel III and Sarbanes-Oxley), defensive mutators provide non-repudiation guarantees. Every mutator invocation can be coupled with structured audit logging that records the calling user identity, client IP address, and previous versus updated state values. If an anomaly occurs, forensic security engineers can trace every single state transition backward through time to verify compliance.'
         ],
-        example: 'Like a security turnstile at a subway station: you cannot simply walk through (direct field mutation); you must tap a valid metro card with adequate fare balance (setter guard), which unlocks the gate for exactly one turn.',
-        code: `// Validated Mutators & Invariant Guard Enforcement Simulation
+        example: 'Like a security checkpoint at an international airport: passengers cannot walk directly onto the tarmac and board an airplane. They must pass through ticket verification, passport control, and metal detectors (validation guards). If any check fails, the passenger is turned away immediately, ensuring only valid travelers enter the cabin.',
+        code: `// Validated Mutators & Domain Invariant Guards Simulation
 class BankAccountEntity {
-  private _balance: number = 0;
-  private _accountHolder: string = '';
+  private accountHolder: string;
+  private balance: number;
 
-  constructor(holder: string, initialDeposit: number) {
-    this.setAccountHolder(holder);
-    this.deposit(initialDeposit);
+  constructor(holder: string, initialBalance: number) {
+    this.accountHolder = this.validateHolder(holder);
+    this.balance = this.validateBalance(initialBalance);
   }
 
-  get balance(): number {
-    return this._balance;
-  }
-
-  get accountHolder(): string {
-    return this._accountHolder;
-  }
-
-  setAccountHolder(name: string): void {
-    if (!name || name.trim().length < 3) {
-      throw new Error('INVALID_HOLDER_NAME: Minimum 3 characters required');
+  // Defensive Invariant Validator
+  private validateHolder(holder: string): string {
+    if (!holder || holder.trim().length === 0) {
+      throw new Error('Account holder name cannot be empty');
     }
-    this._accountHolder = name.trim();
+    return holder.trim();
   }
 
-  deposit(amount: number): void {
+  private validateBalance(bal: number): number {
+    if (bal < 0) {
+      throw new Error('Account balance cannot be negative');
+    }
+    return bal;
+  }
+
+  // Guarded Mutators
+  public deposit(amount: number): void {
     if (amount <= 0) {
-      throw new Error('INVALID_DEPOSIT: Amount must be strictly positive');
+      throw new Error('Deposit amount must be strictly positive');
     }
-    this._balance += amount;
+    this.balance += amount;
   }
 
-  withdraw(amount: number): void {
-    if (amount <= 0) {
-      throw new Error('INVALID_WITHDRAWAL: Amount must be positive');
-    }
-    if (amount > this._balance) {
-      throw new Error('INSUFFICIENT_FUNDS: Overdraft not permitted');
-    }
-    this._balance -= amount;
+  public getAccountHolder(): string {
+    return this.accountHolder;
+  }
+
+  public getBalance(): number {
+    return this.balance;
   }
 }
 
-const acct = new BankAccountEntity('Kashyap Vinay', 10000);
-acct.deposit(2500);
-acct.withdraw(1500);
+const account = new BankAccountEntity('Kashyap Vinay', 10000);
+account.deposit(1000);
 
-console.log('Account Holder: ' + acct.accountHolder);
-console.log('Current Invariant Balance: ₹' + acct.balance);
+console.log('Account Holder: ' + account.getAccountHolder());
+console.log('Current Invariant Balance: ₹' + account.getBalance());
 console.log('Invariant Guard Status: MUTATION_GUARDS_ACTIVE');`,
         output: `Account Holder: Kashyap Vinay\nCurrent Invariant Balance: ₹11000\nInvariant Guard Status: MUTATION_GUARDS_ACTIVE`,
         codeNotes: [
-          { line: 17, note: 'Validates non-empty holder name with minimum 3 character constraint' },
-          { line: 24, note: 'Deposit guard prevents negative or zero monetary transactions' },
-          { line: 31, note: 'Withdrawal guard prevents overdrafts and balance corruptions' },
-          { line: 43, note: '10,000 + 2,500 - 1,500 produces exact invariant balance ₹11,000' }
+          { line: 11, note: 'Validates non-empty holder name during construction and updates' },
+          { line: 18, note: 'Enforces non-negative balance invariant across all state transitions' },
+          { line: 26, note: 'Deposit mutator validates strictly positive amount before modifying balance' }
         ],
-        tryIt: 'Attempt acct.withdraw(20000) and observe INSUFFICIENT_FUNDS error thrown.',
+        tryIt: 'Add a withdraw(amount: number) method that validates amount > 0 and ensures amount <= this.balance.',
         check: {
-          question: 'What is the primary architectural purpose of invariant validation guards in setter methods?',
+          question: 'What is the primary architectural purpose of a defensive setter in Java?',
           options: [
-            'To guarantee that objects never transition into corrupted or invalid business states',
-            'To speed up CPU clock cycles',
-            'To automatically email the database administrator'
+            'To make the code run faster by skipping JIT compilation',
+            'To enforce domain invariants and prevent objects from entering corrupted states',
+            'To allow external packages to bypass access modifiers'
           ],
-          answer: 0,
-          why: 'Setter validation guards ensure that any state transition satisfies business rules, preventing invalid object states.'
+          answer: 1,
+          why: 'Defensive setters validate incoming arguments against domain rules, rejecting invalid updates and guaranteeing that objects maintain valid state invariants.'
         }
       },
       {
         title: 'Defensive Copying: The Mutable Reference Escape Vulnerability',
         say: [
-          'A catastrophic security vulnerability in Java systems occurs when an encapsulated class innocently leaks references to mutable objects (such as Date, arrays, or standard Collections like ArrayList). Even if a field is declared private and final, if a getter returns that reference directly, outside callers can mutate internal state without using setters!',
-          'To prevent Reference Escape, developers must employ Defensive Copying in two critical places: 1) On Constructor Entry: clone or copy any mutable parameters passed into the constructor before storing them into private fields; 2) On Getter Exit: never return the internal mutable collection directly; instead, return a deep clone, a new copy, or wrap it using Collections.unmodifiableList().',
-          'Bloch’s Effective Java rule states: "Make defensive copies of each mutable parameter to the constructor, and make defensive copies of each mutable field in accessors."'
+          'One of the most insidious and widespread security vulnerabilities in Object-Oriented programming is "Mutable Reference Escape". A class may diligently declare all its instance fields as private and final, provide no public setters whatsoever, and yet remain completely vulnerable to unauthorized external mutation if it naively accepts or returns references to mutable objects.',
+          'In Java, variables holding non-primitive types do not hold the object itself; they hold a reference (memory pointer) to an object on the heap. If a constructor accepts a mutable object—such as a Date, an array int[], or a List<String>—and assigns it directly to a private field without copying, the caller still holds a pointer to that selfsame heap object. The caller can subsequently mutate that object from the outside, silently corrupting the encapsulated state of the class.',
+          'The exact same vulnerability occurs in reverse with getter methods. If a getter returns a direct reference to a private mutable collection or array, any external caller can call getRoles().clear() or getPermissions().add("ADMIN"), bypassing all validation checks and granting unauthorized privileges without the owning class ever knowing.',
+          'The robust engineering solution to this vulnerability is Defensive Copying. When receiving a mutable object in a constructor, the class must create a clone or new defensive copy of that object and store the copy in its private field. When returning a mutable object from a getter, the class must return a fresh copy or wrap it in an unmodifiable wrapper (such as Collections.unmodifiableList()).',
+          'Defensive copying must be performed in a specific order in multithreaded environments: always make the defensive copy FIRST, and then validate the copy\'s invariants. If you validate the parameter first and then copy it, an attacker or concurrent thread could mutate the parameter in the microsecond between validation and copying (a classic Time-of-Check to Time-of-Use / TOCTOU race condition).',
+          'In high-security enterprise environments like banking authorizations or PCI-DSS credit card tokenizers, defensive copying prevents privilege escalation attacks. If an authorization token containing user roles leaks its internal array to an untrusted plugin, the plugin could inject root administrative roles. Defensive copying severs the memory reference link, guaranteeing zero reference escape.',
+          'Our SecurityPolicy simulation demonstrates this invariant. When an external caller attempts to mutate its local roles array after constructing the policy, the policy remains completely unaffected. When an external caller inspects getRoles() and attempts to push "ROOT_OVERRIDE", the internal policy array remains pristine and immutable.',
+          'In security auditing and compliance standards such as SOC 2, HIPAA, and ISO 27001, immutable records and defensive copying provide mathematically verifiable data privacy guarantees. When sensitive patient medical records or banking transactions pass through memory, defensive copying guarantees that third-party analytics plugins or auditing interceptors cannot harvest or alter critical fields, keeping compliance audit failure rates at zero percent.',
+          'In high-performance gaming engines, graphics pipelines, and real-time simulations, defensive copying must be balanced against allocation throughput. When processing sixty frames per second, creating thousands of temporary defensive copies on the heap can trigger garbage collector stutter. In such specialized scenarios, engineers employ read-only view wrappers or immutable flyweight structs, achieving absolute encapsulation without incurring young-generation allocation churn.'
         ],
-        example: 'Like displaying an ancient museum artifact: if you let visitors hold the original fragile parchment (leaked mutable reference), someone will spill ink on it. Instead, you display a photographic facsimile behind glass (defensive copy), keeping the priceless original untouched in the climate-controlled vault.',
-        code: `// Defensive Copying Vulnerability & Remediation Simulation
+        example: 'Like signing a legal contract: both parties sign the paper document, and then you take a physical photocopy of the signed agreement to store in your home safe. If the other party later takes a red pen and scribbles new clauses onto their own copy, your copy in the safe remains unaltered and legally binding.',
+        code: `// Defensive Copying & Mutable Reference Escape Mitigation
 class SecurityPolicy {
-  private readonly allowedRoles: string[];
+  private readonly authorizedRoles: string[];
 
   constructor(roles: string[]) {
-    // DEFENSIVE COPY ON ENTRY: Clones incoming array to prevent caller mutation
-    this.allowedRoles = [...roles];
+    // 1. Defensive copy on INPUT: clone array so caller cannot mutate internal state
+    this.authorizedRoles = [...roles];
   }
 
-  // DEFENSIVE COPY ON EXIT: Returns a fresh clone or unmodifiable view
-  getRoles(): string[] {
-    return [...this.allowedRoles];
+  // 2. Defensive copy on OUTPUT: return fresh array so caller cannot modify internal state
+  public getAuthorizedRoles(): string[] {
+    return [...this.authorizedRoles];
   }
 
-  isAuthorized(role: string): boolean {
-    return this.allowedRoles.includes(role);
+  public isAuthorized(role: string): boolean {
+    return this.authorizedRoles.includes(role);
   }
 }
 
-const externalRoles = ['ENGINEER', 'ANALYST'];
-const policy = new SecurityPolicy(externalRoles);
+const callerRoles = ['USER', 'AUDITOR'];
+const policy = new SecurityPolicy(callerRoles);
 
-// Attacker attempts mutation via constructor reference leak
-externalRoles.push('SUPER_ADMIN');
+// Attacker attempts to mutate original array
+callerRoles.push('SUPER_ADMIN');
 
-// Attacker attempts mutation via getter reference leak
-const getterLeakedRoles = policy.getRoles();
-getterLeakedRoles.push('ROOT_OVERRIDE');
+// Attacker attempts to mutate returned getter array
+const leakedArray = policy.getAuthorizedRoles();
+leakedArray.push('ROOT_OVERRIDE');
 
 console.log('Super Admin Authorized: ' + policy.isAuthorized('SUPER_ADMIN'));
 console.log('Root Override Authorized: ' + policy.isAuthorized('ROOT_OVERRIDE'));
-console.log('Policy Roles Count: ' + policy.getRoles().length);
+console.log('Policy Roles Count: ' + policy.getAuthorizedRoles().length);
 console.log('Defensive Copying: ZERO_REFERENCE_ESCAPE_VERIFIED');`,
         output: `Super Admin Authorized: false\nRoot Override Authorized: false\nPolicy Roles Count: 2\nDefensive Copying: ZERO_REFERENCE_ESCAPE_VERIFIED`,
         codeNotes: [
-          { line: 6, note: 'Defensive copy on entry prevents constructor caller from mutating internal array' },
-          { line: 11, note: 'Defensive copy on exit prevents getter consumers from appending rogue roles' },
-          { line: 24, note: 'Pushing SUPER_ADMIN to externalRoles fails to breach internal security policy' },
-          { line: 32, note: 'Demonstrates zero reference escape vulnerability across all boundaries' }
+          { line: 7, note: 'Defensive copy on input severs memory reference to callerRoles array' },
+          { line: 12, note: 'Defensive copy on output prevents caller from mutating internal authorizedRoles array' },
+          { line: 29, note: 'Certifies policy roles count remains strictly 2 despite external push attempts' }
         ],
-        tryIt: 'Verify that policy.isAuthorized("ENGINEER") correctly returns true.',
+        tryIt: 'Remove the spread operators ([...]) and observe how Super Admin Authorized becomes true (reference escape vulnerability).',
         check: {
-          question: 'Why must getters return defensive copies or unmodifiable views of internal collections?',
+          question: 'What is the "Mutable Reference Escape" vulnerability in Java?',
           options: [
-            'To prevent callers from modifying private internal collection state through the leaked reference',
-            'Because Java collections automatically delete themselves if inspected twice',
-            'To force the operating system to allocate virtual memory'
+            'A bug where the garbage collector fails to free memory',
+            'When an object exposes direct references to its internal mutable fields, allowing external modification',
+            'When a thread encounters a deadlocked synchronized block'
           ],
-          answer: 0,
-          why: 'Returning a mutable reference directly allows external callers to bypass encapsulation and alter private internal state.'
+          answer: 1,
+          why: 'Mutable reference escape occurs when getters or constructors pass raw references to internal mutable structures, allowing external code to bypass encapsulation and corrupt state.'
         }
       },
       {
         title: 'Immutability Design Pattern & Modern Java Records',
         say: [
-          'An immutable object is an object whose observable state cannot be modified after it is constructed. Immutable classes are inherently thread-safe, require no synchronization, can be freely shared across concurrent pipelines, and make excellent Map keys and Set elements.',
-          'To construct an immutable class in traditional Java: 1) Do not provide any mutator methods; 2) Declare all fields private and final; 3) Declare the class final to prevent subclassing and state overriding; 4) Make defensive copies of mutable components; 5) Initialize all fields strictly within the constructor.',
-          'Java 14 introduced and Java 16 finalized Records (record CurrencyRate(String base, String target, double rate)). A Record is a specialized immutable data carrier that automatically synthesizes private final fields, canonical and compact constructors, accessors matching field names, equals(), hashCode(), and toString() with zero boilerplate.'
+          'An immutable object is an object whose state cannot be altered in any way after its construction is complete. Once allocated on the JVM heap, its fields remain forever fixed until garbage collected. Immutability is the ultimate form of encapsulation: it eliminates mutable reference escape, renders defensive copying unnecessary, and makes objects inherently thread-safe without requiring synchronized locks or concurrent coordination.',
+          'To construct a fully immutable class in traditional Java, five strict architectural rules must be satisfied: 1) Declare the class as final so subclasses cannot override methods to introduce mutable state; 2) Make all fields private and final; 3) Provide no mutator (setter) methods whatsoever; 4) If fields reference mutable objects, perform defensive copying in constructors and getters; 5) Ensure that instance methods returning modified state return a brand new instance rather than modifying the existing instance.',
+          'Java 16 introduced Records (JEP 395) as a native language-level primitive for immutable data modeling. A record declaration, such as public record CurrencyPair(String base, String quote, double rate) {}, automatically generates an immutable class with final fields, a canonical constructor, accessor methods, equals(), hashCode(), and toString() implementations—all in a single concise line of code.',
+          'Records are value-based classes. They represent transparent carriers for immutable data. Because the Java compiler guarantees that record components cannot be reassigned, records eliminate thousands of lines of boilerplate boilerplate code while providing rock-solid correctness guarantees for Data Transfer Objects (DTOs), event payloads, and API response contracts.',
+          'In high-throughput microservices, immutable objects provide extraordinary performance advantages in multithreaded pipelines. Because immutable objects cannot be modified, multiple worker threads can share, read, and cache instances without synchronization locks, memory barriers, or volatile read penalties. When state must change, the application follows persistent data structure principles: creating a lightweight new instance carrying the updated value while preserving the original instance.',
+          'Furthermore, immutable value objects eliminate temporal coupling bugs in distributed transaction processing. When an event is broadcast to multiple consumer queues (such as Kafka topics or RabbitMQ exchanges), having immutable payloads guarantees that no downstream consumer can inadvertently tamper with data destined for parallel audit logs.',
+          'In our CurrencyPairRecord simulation, observe how currency conversion is calculated immutably. When rate conversions are evaluated, the record remains completely invariant, producing deterministic conversions with zero risk of concurrent tampering.',
+          'In reactive stream processing frameworks like Project Reactor and RxJava, immutability is an absolute operational requirement. Reactive streams process millions of events asynchronously across non-blocking event loop threads such as Netty event loops. If an event payload were mutable, concurrent subscriber threads would race to read and modify state, causing unpredictable data corruption. Immutable records ensure that every reactive subscriber observes a pure, uncorrupted snapshot of the domain event.',
+          'In concurrent multi-agent systems and asynchronous actor models (such as Akka or Virtual Thread workers), immutable records serve as the universal message format. Because records cannot change state once posted to a channel, hundreds of concurrent agent threads can process the same telemetry stream in parallel without lock contention, cache invalidation storms, or read-write locks, maximizing multi-core CPU utilization.'
         ],
-        example: 'Like an engraved commemorative coin: once minted and stamped in gold at the treasury, its year, denomination, and insignia are permanently fixed. It cannot be altered; if you want a different denomination, you must mint an entirely new coin.',
-        code: `// Immutable Record & Compact Constructor Simulation
-// Simulates Java: public record CurrencyRate(String base, String target, double rate, long timestamp)
-class CurrencyRateRecord {
-  readonly base: string;
-  readonly target: string;
-  readonly rate: number;
-  readonly timestamp: number;
-
-  constructor(base: string, target: string, rate: number, timestamp: number) {
-    // Compact constructor validation guard
-    if (rate <= 0) {
-      throw new Error('INVALID_RATE: Rate must be greater than zero');
-    }
-    this.base = base.toUpperCase();
-    this.target = target.toUpperCase();
-    this.rate = rate;
-    this.timestamp = timestamp;
-    Object.freeze(this); // Immutability guarantee
+        example: 'Like a printed five-dollar banknote: you cannot "modify" a five-dollar bill into a ten-dollar bill. If you want ten dollars, the central bank must issue a distinct ten-dollar banknote. Because banknotes are immutable in value, millions of people can exchange and count them concurrently without calculating race conditions.',
+        code: `// Immutability Pattern & Java 16+ Record Simulation
+class CurrencyPairRecord {
+  // All fields are strictly private and readonly
+  constructor(
+    public readonly base: string,
+    public readonly quote: string,
+    public readonly rate: number
+  ) {
+    if (!base || !quote) throw new Error('Currency symbols required');
+    if (rate <= 0) throw new Error('Exchange rate must be positive');
   }
 
-  convert(amount: number): number {
+  // Value-based conversion: Pure, produces new value without mutating state
+  public convert(amount: number): number {
     return Math.round(amount * this.rate * 100) / 100;
+  }
+
+  // With-copier pattern: Returns brand new immutable instance with updated rate
+  public withRate(newRate: number): CurrencyPairRecord {
+    return new CurrencyPairRecord(this.base, this.quote, newRate);
   }
 }
 
-const rate = new CurrencyRateRecord('usd', 'inr', 83.45, 1718000000000);
+const pair = new CurrencyPairRecord('USD', 'INR', 83.45);
+const converted = pair.convert(1000);
 
-console.log('Pair: ' + rate.base + '/' + rate.target + ' @ ' + rate.rate);
-console.log('Conversion of $1,000: ₹' + rate.convert(1000));
+console.log('Pair: ' + pair.base + '/' + pair.quote + ' @ ' + pair.rate);
+console.log('Conversion of $1,000: ₹' + converted);
 console.log('Record Status: IMMUTABLE_VALUE_OBJECT_CERTIFIED');`,
         output: `Pair: USD/INR @ 83.45\nConversion of $1,000: ₹83450\nRecord Status: IMMUTABLE_VALUE_OBJECT_CERTIFIED`,
         codeNotes: [
-          { line: 9, note: 'Compact constructor validates that exchange rate is strictly positive' },
-          { line: 15, note: 'Normalizes currency codes to uppercase and freezes object state' },
-          { line: 26, note: 'Converts $1,000 to ₹83,450 deterministically' },
-          { line: 28, note: 'Certifies thread-safe immutable value object semantics' }
+          { line: 5, note: 'Simulates Java record final components with constructor invariant validation' },
+          { line: 15, note: 'Pure method calculates conversion without mutating internal rate or currency state' },
+          { line: 20, note: 'withRate returns a fresh instance, preserving immutability of original pair' }
         ],
-        tryIt: 'Attempt to instantiate CurrencyRateRecord with rate = -5 and verify error thrown.',
+        tryIt: 'Use pair.withRate(84.00) to create a new pair and convert $1,000 to verify the original pair is untouched.',
         check: {
-          question: 'What are the core characteristics of a Java Record introduced in Java 14/16?',
+          question: 'What is a key architectural advantage of Java 16+ Records over traditional classes?',
           options: [
-            'It is a transparent, immutable carrier for shallowly immutable data with automatic accessors, equals(), and hashCode()',
-            'It is a mutable database table with auto-incrementing primary keys',
-            'It is an abstract class that must be extended by subclasses'
+            'They execute directly in native C++ memory without JVM overhead',
+            'They provide built-in immutability, compact syntax, and automatic equals/hashCode implementations',
+            'They allow instance fields to be mutated from any package without getters'
           ],
-          answer: 0,
-          why: 'Java Records are concise immutable data carriers where the compiler automatically generates fields, accessors, constructors, equals, and hashCode.'
+          answer: 1,
+          why: 'Records provide transparent, immutable data carriers where the compiler automatically generates canonical constructors, accessors, equals(), hashCode(), and toString().'
         }
       },
       {
         title: 'Enterprise Domain Model: Encapsulated Wallet & Audit Ledger State Machine',
         say: [
-          'In financial backend engineering, combining encapsulation, defensive copying, and immutable audit logs is essential for regulatory compliance and auditability. A customer wallet must never allow direct balance reassignment, must log every credit and debit to a tamper-proof ledger, and must guard against concurrency corruption.',
-          'Notice how our wallet encapsulates its internal ledger: callers cannot inject fabricated transactions or delete previous debits because getAuditLog() returns a defensive copy. Furthermore, every debit and credit atomically generates an immutable AuditEntry recording timestamp, transaction ID, and resultant balance.',
-          'This pattern demonstrates the pinnacle of defensive object-oriented design: an airtight entity whose invariants are impossible to violate from the outside world.'
+          'In enterprise financial systems, digital wallet architectures demand the highest standard of defensive software engineering. A wallet cannot simply be an object with a balance number and deposit or withdraw methods. To comply with banking audit standards and prevent financial leakage, every transaction must be recorded in an immutable, tamper-evident audit ledger that maintains full transaction provenance.',
+          'An audit ledger records every state transition as a discrete, immutable ledger entry containing a unique transaction identifier, a timestamp, the transaction type (CREDIT or DEBIT), the delta amount, and the resulting post-transaction balance. This provides absolute auditability: at any point in time, auditors can reconstruct the exact account balance from scratch by replaying all historical ledger entries.',
+          'Encapsulation guarantees that the audit ledger cannot be tampered with. The wallet\'s internal ledger collection must be completely private. When reporting transaction histories to external monitoring dashboards or tax authorities, the wallet returns defensive copies or unmodifiable snapshots of the ledger. Direct entry insertion, deletion, or balance modification without passing through the authorized transaction state machine is strictly impossible.',
+          'Furthermore, the wallet must enforce non-negative balance invariants atomically. If an account has a balance of $1,000 and a concurrent debit request of $1,500 arrives, the transaction mutator must evaluate the condition (balance >= debitAmount), reject the request with an InsufficientFundsException, and log the rejected attempt in security audit telemetry without decrementing the balance.',
+          'In enterprise banking applications, this architecture is modeled using the Domain-Driven Design (DDD) Aggregate pattern. The DigitalWallet acts as the Aggregate Root, encapsulating internal entities like LedgerEntry. Outside callers cannot bypass the DigitalWallet to touch LedgerEntry directly, ensuring that business rules, balance constraints, and audit logging execute atomically as a unified consistency boundary.',
+          'In cloud microservice deployments, combining encapsulated state machines with idempotent deduplication tokens protects financial systems against network retries. If a payment network sends a duplicate webhook for an already processed settlement, the wallet checks its internal ledger for the transaction ID, detects the duplicate, and safely returns the existing confirmation without double-crediting customer funds.',
+          'Our DigitalWallet simulation synthesizes all of today\'s architectural concepts: access modifier encapsulation, defensive validation guards, reference escape prevention, and tamper-proof ledger logging. Watch as deposits and withdrawals transition state and emit immutable audit records with complete ledger integrity.',
+          'In cryptographic financial ledgers and blockchain state machines, the audit ledger pattern provides the bedrock foundation for tamper-evident data verification. By computing cryptographic SHA-256 rolling hashes across sequential ledger entries--where each entry hash incorporates the hash of the preceding entry--the system guarantees that any unauthorized alteration to a historical balance immediately breaks the hash chain, alerting security operations centers to fraudulent activity in real time.',
+          'In enterprise transaction processing and payment gateway integrations, encapsulated wallets combine state machines with optimistic concurrency control. By storing an immutable version sequence number alongside the balance and ledger entries, the wallet can detect concurrent update collisions, rejecting stale transactions and preserving deterministic balance integrity across high-concurrency payment spikes.'
         ],
-        example: 'Like an armored bank depository: customers slide deposit envelopes through a one-way security slot. The mechanical counter updates the digital ledger and prints an unalterable receipt with cryptographic serial numbers.',
-        code: `// Enterprise Encapsulated Wallet & Tamper-Proof Audit Ledger Simulation
-interface AuditEntry {
-  readonly txId: string;
-  readonly type: 'DEBIT' | 'CREDIT';
+        example: 'Like an armored bank vault with an automated ledger: every deposit of cash or withdrawal is automatically stamped with a sequential serial number and logged into an indelible paper ledger that cannot be erased with white-out. Even the bank manager cannot withdraw a single dollar without the automated printing press stamping a timestamped ledger record.',
+        code: `// Encapsulated Digital Wallet & Tamper-Proof Audit Ledger State Machine
+interface LedgerEntry {
+  readonly id: string;
+  readonly type: 'CREDIT' | 'DEBIT';
   readonly amount: number;
   readonly postBalance: number;
-  readonly timestamp: number;
 }
 
-class EncapsulatedWallet {
+class DigitalWallet {
   private balance: number = 0;
-  private readonly ledger: AuditEntry[] = [];
+  private readonly ledger: LedgerEntry[] = [];
+  private txCounter: number = 0;
 
-  constructor(public readonly walletId: string, initialCredit: number) {
-    if (initialCredit > 0) {
-      this.credit('TX-INIT-001', initialCredit);
+  constructor(public readonly walletId: string, initialDeposit: number) {
+    if (initialDeposit < 0) throw new Error('Initial deposit cannot be negative');
+    if (initialDeposit > 0) {
+      this.credit(initialDeposit);
     }
   }
 
-  getBalance(): number {
+  // Atomically guarded credit operation
+  public credit(amount: number): void {
+    if (amount <= 0) throw new Error('Credit amount must be positive');
+    this.balance += amount;
+    this.appendLedger('CREDIT', amount);
+  }
+
+  // Atomically guarded debit operation enforcing non-negative invariant
+  public debit(amount: number): void {
+    if (amount <= 0) throw new Error('Debit amount must be positive');
+    if (this.balance < amount) throw new Error('Insufficient funds');
+    this.balance -= amount;
+    this.appendLedger('DEBIT', amount);
+  }
+
+  private appendLedger(type: 'CREDIT' | 'DEBIT', amount: number): void {
+    this.txCounter++;
+    const entry: LedgerEntry = {
+      id: 'TX-' + this.txCounter,
+      type,
+      amount,
+      postBalance: this.balance
+    };
+    this.ledger.push(entry);
+  }
+
+  public getBalance(): number {
     return this.balance;
   }
 
-  // Returns defensive copy of audit log to prevent external tampering
-  getAuditLog(): readonly AuditEntry[] {
-    return [...this.ledger];
-  }
-
-  credit(txId: string, amount: number): void {
-    if (amount <= 0) throw new Error('Credit amount must be positive');
-    this.balance += amount;
-    this.ledger.push({
-      txId,
-      type: 'CREDIT',
-      amount,
-      postBalance: this.balance,
-      timestamp: Date.now()
-    });
-  }
-
-  debit(txId: string, amount: number): void {
-    if (amount <= 0) throw new Error('Debit amount must be positive');
-    if (amount > this.balance) throw new Error('Insufficient wallet balance');
-    this.balance -= amount;
-    this.ledger.push({
-      txId,
-      type: 'DEBIT',
-      amount,
-      postBalance: this.balance,
-      timestamp: Date.now()
-    });
+  // Defensive Copy of Audit Ledger
+  public getLedgerHistory(): LedgerEntry[] {
+    return this.ledger.map(entry => ({ ...entry }));
   }
 }
 
-const wallet = new EncapsulatedWallet('WLT-9921', 5000);
-wallet.credit('TX-102', 3000);
-wallet.debit('TX-103', 2000);
+const wallet = new DigitalWallet('WAL-7701', 5000);
+wallet.credit(3000);
+wallet.debit(2000);
 
 console.log('Final Wallet Balance: ₹' + wallet.getBalance());
-console.log('Total Ledger Entries: ' + wallet.getAuditLog().length);
+console.log('Total Ledger Entries: ' + wallet.getLedgerHistory().length);
 console.log('Audit Integrity: TAMPER_PROOF_LEDGER_ENFORCED');`,
         output: `Final Wallet Balance: ₹6000\nTotal Ledger Entries: 3\nAudit Integrity: TAMPER_PROOF_LEDGER_ENFORCED`,
         codeNotes: [
-          { line: 20, note: 'Returns shallow defensive copy of ledger, preserving internal audit integrity' },
-          { line: 26, note: 'Credit mutator validates positive magnitude and appends immutable entry' },
-          { line: 38, note: 'Debit mutator asserts solvency before adjusting balance' },
-          { line: 55, note: '5,000 + 3,000 - 2,000 computes exact final balance ₹6,000 across 3 audited events' }
+          { line: 9, note: 'Private balance and private ledger array protect internal financial state' },
+          { line: 27, note: 'Debit mutator strictly validates balance >= amount before permitting deduction' },
+          { line: 50, note: 'Returns defensive copy of ledger history so external callers cannot mutate records' }
         ],
-        tryIt: 'Try wallet.debit("TX-104", 10000) and observe insufficient balance exception.',
+        tryIt: 'Attempt wallet.debit(10000) inside a try/catch block and verify the transaction is rejected without corrupting balance.',
         check: {
-          question: 'What ensures the audit ledger in the EncapsulatedWallet cannot be manipulated from outside callers?',
+          question: 'Why should a DigitalWallet return a defensive copy of its ledger history instead of the raw array?',
           options: [
-            'getAuditLog() returns a defensive copy, and ledger is a private field modified only via credit/debit methods',
-            'The Java virtual machine deletes callers who try to inspect it',
-            'The ledger is stored in an encrypted blockchain on the user phone'
+            'Because arrays take up less memory than objects',
+            'To prevent external callers from clearing or modifying transaction audit records (preventing reference escape)',
+            'Because the JVM forbids returning collections from public methods'
           ],
-          answer: 0,
-          why: 'Private visibility combined with defensive copying on accessors ensures internal audit records cannot be mutated by external references.'
+          answer: 1,
+          why: 'Returning a raw reference would allow external callers to modify or clear the internal ledger array, destroying the tamper-proof audit trail.'
         }
       }
     ],
     summary: [
-      'Encapsulation bundles data with behavior, using 4 access modifiers (private, package-private, protected, public) to enforce information hiding.',
-      'Setters must act as invariant validation guards, rejecting illegal values immediately to prevent corrupted object states.',
-      'Defensive copying on constructor entry and getter exit stops the mutable reference escape vulnerability.',
-      'Immutable classes and modern Java Records provide thread-safe, side-effect-free value objects with minimal boilerplate.',
-      'Enterprise financial entities combine encapsulation, defensive copies, and immutable audit logs for regulatory compliance.'
+      'Encapsulation hides internal state and exposes strictly guarded public accessor and mutator methods.',
+      'Java provides 4 access levels: private (class), package-private (default), protected (package + subclasses), and public (everywhere).',
+      'Defensive setters implement validation guards enforcing domain invariants and preventing invalid object states.',
+      'Defensive copying severs memory references to mutable parameters and return values, preventing mutable reference escape vulnerabilities.',
+      'Immutability patterns and modern Java 16+ records create value-based, thread-safe data carriers with zero mutable state.'
     ],
     projectStep: {
-      title: 'Architect an Airtight Enterprise Fintech Wallet & Tamper-Proof Audit Entity',
+      title: 'Architect Enterprise Banking Security & Immutable Ledger Engine',
       steps: [
-        'Enforce strict private access modifiers and define package boundary visibility matrices.',
-        'Implement invariant validation guards rejecting negative balances and invalid account identifiers.',
-        'Neutralize mutable reference escape vulnerabilities via defensive copying in constructors and accessors.',
-        'Model domain exchange rates and financial value objects using modern Java Records.',
-        'Construct a tamper-proof financial ledger engine maintaining an unalterable audit trail.'
+        'Enforce strict private access boundaries across core banking entities with guarded public accessors.',
+        'Implement defensive validation mutators enforcing non-negative balance and non-empty string invariants.',
+        'Mitigate mutable reference escape vulnerabilities using defensive copies in constructors and getters.',
+        'Construct immutable currency exchange and financial transaction records using modern record patterns.',
+        'Synthesize an encapsulated digital wallet state machine with a tamper-evident audit ledger.'
       ]
     }
   }
 ];
-
-
-
-
-
-
-
-
-

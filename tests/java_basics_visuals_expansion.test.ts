@@ -8,14 +8,14 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 11 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 12 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
 
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
-  for (const day of [6, 7, 8, 9, 10, 11]) {
+  for (const day of [6, 7, 8, 9, 10, 11, 12]) {
     const dayPadded = String(day).padStart(2, '0');
     const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/${prefix}/day-${dayPadded}.json`);
     assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
@@ -57,12 +57,14 @@ test('Java Basics Visuals Expansion: Days 6 to 11 On-Disk Spec Verification', ()
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
   const { estimateSpokenMinutes, estimateLessonMinutes } = require('../src/lib/data/longLessons');
-  const d11 = getLongLesson('java-basics', 11);
-  assert.ok(d11);
-  const spoken = estimateSpokenMinutes(d11);
-  const total = estimateLessonMinutes(d11);
+  for (const day of [11, 12]) {
+    const lesson = getLongLesson('java-basics', day);
+    assert.ok(lesson);
+    const spoken = estimateSpokenMinutes(lesson);
+    const total = estimateLessonMinutes(lesson);
 
-  assert.ok(spoken >= 20, `Spoken duration must be >= 20 min, got ${spoken}`);
-  assert.ok(total >= 35 && total <= 40, `Total duration must be 35-40 min, got ${total}`);
+    assert.ok(spoken >= 20, `Day ${day} spoken duration must be >= 20 min, got ${spoken}`);
+    assert.ok(total >= 35 && total <= 40, `Day ${day} total duration must be 35-40 min, got ${total}`);
+  }
 });
 

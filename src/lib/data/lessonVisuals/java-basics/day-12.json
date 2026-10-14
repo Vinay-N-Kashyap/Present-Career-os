@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 1,
+  "prefix": "java-basics",
+  "day": 12,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Encapsulation & The 4 Access Modifiers: Scope Boundaries & Information Hiding",
+      "codeHash": "f5d082fbb0090a15f8841e49c833a7e50787a2ea8e5d8db9226ce792e1f54e79",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Encapsulation & The 4 Access Modifiers: Scope... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Encapsulation & The 4...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Encapsulation & The 4 Access Modifiers: Scope... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Encapsulation & The 4...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defensive Getters, Setters & Invariant Validation Guards",
+      "codeHash": "ccbff83cac51e2a94ef27d532c96a8908afecdd29842e0fcb2effe3cdaa194b7",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Defensive Getters, Setters & Invariant Valida... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Defensive Getters, Se...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Defensive Getters, Setters & Invariant Valida... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Defensive Getters, Se...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defensive Copying: The Mutable Reference Escape Vulnerability",
+      "codeHash": "9836ebb283f33c154d14383412d167d62182dd43ed850d2fbb7a114274e1b04d",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Defensive Copying: The Mutable Reference Esca... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Defensive Copying: Th...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Defensive Copying: The Mutable Reference Esca... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Defensive Copying: Th...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Immutability Design Pattern & Modern Java Records",
+      "codeHash": "620796654793eb4078e76af505fef731a9174400b20a0bc5ef33df9b469b2a54",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Immutability Design Pattern & Modern Java Rec... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Immutability Design P...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Immutability Design Pattern & Modern Java Rec... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Immutability Design P...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Domain Model: Encapsulated Wallet & Audit Ledger State Machine",
+      "codeHash": "a64629e95790541af8e77bbb0da52d7616b5ac19f75ffef59a5a0a2a15189714",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Enterprise Domain Model: Encapsulated Wallet ... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Enterprise Domain Mod...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Enterprise Domain Model: Encapsulated Wallet ... — JVM Call Stack & Frame Lifecycle",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Push root frames onto JVM execution stack for Enterprise Domain Mod...",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "push",
+            "actionItem": "Repository.query()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push DomainValidator.verify() onto active stack frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()",
+              "DomainValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "DomainValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after invariant verification.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Service.invoke()",
+              "Repository.query()"
+            ],
+            "action": "pop",
+            "actionItem": "DomainValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Unwind stack and return verified result to main() Frame.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "Verified Return Value ✓"
+            ],
+            "action": "pop",
+            "actionItem": "Service.invoke() -> 200 OK",
+            "tones": [
+              "ok",
+              "ok"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

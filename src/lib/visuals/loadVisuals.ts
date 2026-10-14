@@ -555,7 +555,8 @@ export function synthesizeLongLessonVisual(
   // 4C. Accounting, Finance, Tax, Audit, Banking & Corporate Law -> 4-step LedgerSheetVisual
   if (
     normPrefix.startsWith('bcom_') ||
-    /\b(ledger|journal|debit|credit|balance\s+sheet|audit|tax|gst|ifrs|npv|irr|amortization)\b/.test(titleLow)
+    normPrefix.startsWith('bcom-') ||
+    (normPrefix !== 'java_basics' && /\b(ledger|journal|debit|credit|balance\s+sheet|audit|tax|gst|ifrs|npv|irr|amortization)\b/.test(titleLow))
   ) {
     const baseAmt = 2500 + (day * 150) + (partIndex * 200);
     const adjAmt = Math.round(baseAmt * 0.2);
