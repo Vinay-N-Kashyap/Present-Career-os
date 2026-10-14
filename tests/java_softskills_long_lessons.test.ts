@@ -613,6 +613,67 @@ test('Java Basics Day 7: Domain-Specific Content Assertions', () => {
   assert.ok(javaD7.parts[4].output.includes('DRAINED_CLEANLY'));
 });
 
+test('Java Basics Day 8: Resolution & Structural Invariants for For Loops, Enhanced For-Each & Cache Locality', () => {
+  const javaD8 = getLongLesson('java-basics', 8);
+  assert.ok(javaD8, 'java-basics Day 8 long lesson must resolve');
+  assert.equal(javaD8.day, 8);
+  assert.equal(javaD8.parts.length, 5, 'java-basics Day 8 must contain exactly 5 parts');
+  assert.ok(javaD8.summary.length >= 4, 'java-basics Day 8 must contain comprehensive summary');
+  assert.ok(javaD8.projectStep, 'java-basics Day 8 must have a hands-on project step');
+  assert.ok(javaD8.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(javaD8);
+  const totalMin = estimateLessonMinutes(javaD8);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of javaD8.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 8: Domain-Specific Content Assertions', () => {
+  const javaD8 = getLongLesson('java-basics', 8);
+  assert.ok(javaD8);
+
+  // Part 1 – Classic Three-Part For Loop & Custom Strides
+  assert.ok(javaD8.parts[0].title.includes('Three-Part') || javaD8.parts[0].title.includes('Stride'));
+  assert.ok(javaD8.parts[0].output.includes('Sequential Sum: 360'));
+  assert.ok(javaD8.parts[0].output.includes('Stride-2 Sum: 160'));
+
+  // Part 2 – Enhanced For-Each & Iterable Abstraction
+  assert.ok(javaD8.parts[1].title.includes('Enhanced For-Each') || javaD8.parts[1].title.includes('Iterable'));
+  assert.ok(javaD8.parts[1].output.includes('In-Stock Items: 2'));
+  assert.ok(javaD8.parts[1].output.includes('Total Available Inventory Value: $6900'));
+
+  // Part 3 – Row-Major Order & CPU Cache Locality in 2D Arrays
+  assert.ok(javaD8.parts[2].title.includes('Multi-Dimensional') || javaD8.parts[2].title.includes('Cache Locality'));
+  assert.ok(javaD8.parts[2].output.includes('Matrix Total Sum: 45'));
+  assert.ok(javaD8.parts[2].output.includes('Cell Traversal Count: 9'));
+
+  // Part 4 – Safe Iterator Removal vs ConcurrentModificationException
+  assert.ok(javaD8.parts[3].title.includes('ConcurrentModificationException') || javaD8.parts[3].title.includes('Safe Iterator Removal'));
+  assert.ok(javaD8.parts[3].output.includes('Valid Active Tokens: 2'));
+  assert.ok(javaD8.parts[3].output.includes('Safely Pruned Expired Tokens: 2'));
+  assert.ok(javaD8.parts[3].output.includes('CONCURRENT_SAFETY_VERIFIED'));
+
+  // Part 5 – Parallel Streams vs For Loops & ForkJoin Heuristics
+  assert.ok(javaD8.parts[4].title.includes('Parallel Streams') || javaD8.parts[4].title.includes('ForkJoinPool'));
+  assert.ok(javaD8.parts[4].output.includes('500 Elements Strategy: SEQUENTIAL_FOR_LOOP'));
+  assert.ok(javaD8.parts[4].output.includes('100,000 Elements Strategy: PARALLEL_STREAM_FORK_JOIN'));
+});
+
+
 
 
 
