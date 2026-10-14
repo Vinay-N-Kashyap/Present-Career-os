@@ -1,0 +1,1609 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 5,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Unified CRO Growth Flywheel & End-to-End Funnel Physics",
+      "codeHash": "85dfd6d861f2988e0258f5b3dfe43b2edf93e14639a9831dab437559506c0a76",
+      "spec": {
+        "template": "funnel",
+        "title": "Unified CRO Growth Flywheel & End-to-End Funn... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Unified CRO Growth Flywheel & End-to-End Funn... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Segment Customer Acquisition Cost (CAC) & Payback Period Efficiency",
+      "codeHash": "d8073a722f27a741ba07cbe5f9a5b41d787aee51d3865d950f53e491b53b2efc",
+      "spec": {
+        "template": "funnel",
+        "title": "Multi-Segment Customer Acquisition Cost (CAC)... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Multi-Segment Customer Acquisition Cost (CAC)... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Customer Success Portfolio Tiering & NRR Hedging",
+      "codeHash": "79fbb3fef35b2c8cc306c9d719c5a1f3ca1d18c03304f906987381de8260cff6",
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Customer Success Portfolio Tiering... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Enterprise Customer Success Portfolio Tiering... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sales Compensation Plan Modeling: OTE, Commission Accelerators & SPIFFs",
+      "codeHash": "d095660eedd614831aae0fd2fff78a7e84ceaeaf37b125e1651571ac5f06aa98",
+      "spec": {
+        "template": "funnel",
+        "title": "Sales Compensation Plan Modeling: OTE, Commis... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Sales Compensation Plan Modeling: OTE, Commis... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 1 Capstone Defense: The CRO Boardroom Revenue Plan & Accreditation",
+      "codeHash": "b08ed71b6a812288eb8d99d9b0b131ab43a45116707d61360d99bfbfc381f426",
+      "spec": {
+        "template": "funnel",
+        "title": "Milestone 1 Capstone Defense: The CRO Boardro... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Milestone 1 Capstone Defense: The CRO Boardro... — Conversion Pipeline",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel acquisition baseline (11,250 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filter retains 45% high-intent cohort (5,063).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active pipeline evaluation stage (2,025 engaged accounts).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Closed-won & retained customer cohort verified (810).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Acquisition Reach",
+                "value": 11250,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent",
+                "value": 5063,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Evaluation",
+                "value": 2025,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Conversion",
+                "value": 810,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

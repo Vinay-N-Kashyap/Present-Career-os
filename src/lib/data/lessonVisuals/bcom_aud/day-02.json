@@ -1,0 +1,1279 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 2,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Beneish M-Score 8-Variable Earnings Manipulation Detection Model",
+      "codeHash": "02ca69f1e761c97e460565a1f9d169460fa17ca9ef29431e1550fdb6273d532f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Beneish M-Score 8-Variable Earnings Manip... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (2800) for The Beneish M-Score 8-Variable ...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2800,
+            "totalCredit": 2800,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 2800,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (560).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3360,
+            "totalCredit": 3360,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 560,
+                "balance": 3360,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 3360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (3360).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 3360,
+            "totalCredit": 3360,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 560,
+                "balance": 3360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 3360,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 3360 = CR 3360).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 3360,
+            "totalCredit": 3360,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 560,
+                "balance": 3360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 3360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Beneish M-Score 8-Variable Earnings Manip... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (2800) for The Beneish M-Score 8-Variable ...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2800,
+            "totalCredit": 2800,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 2800,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (560).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3360,
+            "totalCredit": 3360,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 560,
+                "balance": 3360,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 3360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (3360).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 3360,
+            "totalCredit": 3360,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 560,
+                "balance": 3360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 3360,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 3360 = CR 3360).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 3360,
+            "totalCredit": 3360,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 2800,
+                "balance": 2800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 560,
+                "balance": 3360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 3360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Altman Z-Score Insolvency & Bankruptcy Prediction Matrix",
+      "codeHash": "1300972b362344fc9abb202af6f5b8d8b84c78c1a84ce3f5c8a11119c00ec4c6",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Altman Z-Score Insolvency & Bankruptcy Predic... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3000) for Altman Z-Score Insolvency & Ban...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3000,
+            "totalCredit": 3000,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (600).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 600,
+                "balance": 3600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (3600).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 3600 = CR 3600).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Altman Z-Score Insolvency & Bankruptcy Predic... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3000) for Altman Z-Score Insolvency & Ban...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3000,
+            "totalCredit": 3000,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (600).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 600,
+                "balance": 3600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (3600).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 3600 = CR 3600).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3000,
+                "balance": 3000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forensic Digital Bank Statement Hash Verification & PDF Metadata Tampering Detection",
+      "codeHash": "5ed5965537ca4333b24dfbe6481c61309a106a4ed48e93ef17f573327c2aa818",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Forensic Digital Bank Statement Hash Verifica... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3200) for Forensic Digital Bank Statement...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3200,
+            "totalCredit": 3200,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3200,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (640).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3840,
+            "totalCredit": 3840,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 640,
+                "balance": 3840,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 3840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (3840).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 3840,
+            "totalCredit": 3840,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 640,
+                "balance": 3840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 3840,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 3840 = CR 3840).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 3840,
+            "totalCredit": 3840,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 640,
+                "balance": 3840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 3840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Forensic Digital Bank Statement Hash Verifica... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3200) for Forensic Digital Bank Statement...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3200,
+            "totalCredit": 3200,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3200,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (640).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3840,
+            "totalCredit": 3840,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 640,
+                "balance": 3840,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 3840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (3840).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 3840,
+            "totalCredit": 3840,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 640,
+                "balance": 3840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 3840,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 3840 = CR 3840).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 3840,
+            "totalCredit": 3840,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3200,
+                "balance": 3200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 640,
+                "balance": 3840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 3840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shell Company Red-Flag Profiling & Vendor Kickback Detection Matrix",
+      "codeHash": "a5b0db7233f4ad9fecd5e8e1c417e4ff1d51adf4053b60aeb2e1c722bab1bd15",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Shell Company Red-Flag Profiling & Vendor Kic... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3400) for Shell Company Red-Flag Profilin...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3400,
+            "totalCredit": 3400,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3400,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (680).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 4080,
+            "totalCredit": 4080,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 680,
+                "balance": 4080,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 4080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (4080).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 4080,
+            "totalCredit": 4080,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 680,
+                "balance": 4080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 4080,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 4080 = CR 4080).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 4080,
+            "totalCredit": 4080,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 680,
+                "balance": 4080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 4080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Shell Company Red-Flag Profiling & Vendor Kic... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3400) for Shell Company Red-Flag Profilin...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3400,
+            "totalCredit": 3400,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3400,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (680).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 4080,
+            "totalCredit": 4080,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 680,
+                "balance": 4080,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 4080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (4080).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 4080,
+            "totalCredit": 4080,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 680,
+                "balance": 4080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 4080,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 4080 = CR 4080).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 4080,
+            "totalCredit": 4080,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3400,
+                "balance": 3400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 680,
+                "balance": 4080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 4080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Whistleblower Hotline Triage Matrix & Dodd-Frank Protocols",
+      "codeHash": "2ede371090bd0619a27ba5e3b8345f0613693553c5aaa893d9427419a87c8265",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Whistleblower Hotline Triage Matrix & Dodd-Fr... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3600) for Whistleblower Hotline Triage Ma...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (720).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 4320,
+            "totalCredit": 4320,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 720,
+                "balance": 4320,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 4320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (4320).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 4320,
+            "totalCredit": 4320,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 720,
+                "balance": 4320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 4320,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 4320 = CR 4320).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 4320,
+            "totalCredit": 4320,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 720,
+                "balance": 4320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 4320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Whistleblower Hotline Triage Matrix & Dodd-Fr... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (3600) for Whistleblower Hotline Triage Ma...",
+            "title": "Day 2 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3600,
+            "totalCredit": 3600,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Clearing & Settlement Control",
+                "credit": 3600,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (720).",
+            "title": "Day 2 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 4320,
+            "totalCredit": 4320,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Primary Operating Asset",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 720,
+                "balance": 4320,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Clearing & Settlement Control",
+                "credit": 4320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (4320).",
+            "title": "Day 2 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 4320,
+            "totalCredit": 4320,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Verified Compliance Reserve",
+                "debit": 720,
+                "balance": 4320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "General Ledger Control Account",
+                "credit": 4320,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 4320 = CR 4320).",
+            "title": "Day 2 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 4320,
+            "totalCredit": 4320,
+            "entries": [
+              {
+                "id": "JNL-201",
+                "account": "Audited Operating Asset",
+                "debit": 3600,
+                "balance": 3600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-202",
+                "account": "Audited Compliance Reserve",
+                "debit": 720,
+                "balance": 4320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-203",
+                "account": "Audited Treasury Settlement",
+                "credit": 4320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1169 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 5,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Multi-Entity Consolidated Financial Statements & Intercompany Eliminations",
+      "codeHash": "091b80b4d638306b7ade099d28e922663febc84cd56e8f85c3d9805f62ed5dbe",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Entity Consolidated Financial Statement... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Multi-Entity Consolidated Financial...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 49,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 36,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 46,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 54,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 39,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Multi-Entity Consolidated F...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 43,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Multi-Entity Consolidated Financial Statement... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Multi-Entity Consolidated Financial...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 49,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 36,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 46,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 54,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 39,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Multi-Entity Consolidated F...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 43,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Beneish M-Score Earnings Manipulation & Financial Forensic Detection",
+      "codeHash": "d7b8a86f34b0d56943a7264d85726985c204ccc19c7ea88141efd1f4cf010cf7",
+      "spec": {
+        "template": "bars",
+        "title": "Beneish M-Score Earnings Manipulation & Finan... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Beneish M-Score Earnings Manipulati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 52,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 63,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 49,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 33,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 57,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 41,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Beneish M-Score Earnings Ma...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 46,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Beneish M-Score Earnings Manipulation & Finan... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Beneish M-Score Earnings Manipulati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 52,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 63,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 49,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 33,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 57,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 41,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Beneish M-Score Earnings Ma...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 46,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Altman Z-Score Corporate Insolvency & Bankruptcy Prediction Engine",
+      "codeHash": "f86e572bce426cfcc6be54105d418987573f8881163260c9d2cd07174108ce8a",
+      "spec": {
+        "template": "bars",
+        "title": "Altman Z-Score Corporate Insolvency & Bankrup... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Altman Z-Score Corporate Insolvency...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 39,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 29,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 19,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 49,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 72,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 45,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 32,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Altman Z-Score Corporate In...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 49,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 36,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Altman Z-Score Corporate Insolvency & Bankrup... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Altman Z-Score Corporate Insolvency...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 39,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 29,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 19,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 49,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 72,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 45,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 32,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Altman Z-Score Corporate In...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 49,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 36,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cash Flow Statement Quality of Earnings & Accruals Ratio Engine",
+      "codeHash": "ba1aa2b1dc9cbfcfae3a20640548f946d0c3322f8cd043e924f9a0ebd7eed2e7",
+      "spec": {
+        "template": "bars",
+        "title": "Cash Flow Statement Quality of Earnings & Acc... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Cash Flow Statement Quality of Earn...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 31,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 21,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 73,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 53,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 41,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Cash Flow Statement Quality...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 52,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 38,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Cash Flow Statement Quality of Earnings & Acc... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Cash Flow Statement Quality of Earn...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 31,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 21,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 73,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 53,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 41,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Cash Flow Statement Quality...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 52,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 38,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capstone Verification: End-to-End Enterprise Financial Health & Forensic Audit Suite",
+      "codeHash": "554e71c8ea003e9debae634310b349b73557c09db76f45e191dd44027b278cc2",
+      "spec": {
+        "template": "bars",
+        "title": "Capstone Verification: End-to-End Enterprise ... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Capstone Verification: End-to-End E...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 46,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 22,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 56,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 44,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 51,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 37,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Capstone Verification: End-...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 41,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Capstone Verification: End-to-End Enterprise ... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Capstone Verification: End-to-End E...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 46,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 22,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 56,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 44,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 51,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 37,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Capstone Verification: End-...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 41,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

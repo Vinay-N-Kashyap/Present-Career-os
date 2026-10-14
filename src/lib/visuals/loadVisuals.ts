@@ -326,7 +326,7 @@ export function synthesizeLongLessonVisual(
     normPrefix === 'bcom_marketing' ||
     normPrefix === 'bcom_ecom' ||
     normPrefix === 'bcom_ent' ||
-    /\b(funnel|conversion\s+rate|cac|ltv|roas|churn)\b/.test(titleLow)
+    (!normPrefix.startsWith('bcom_') && !normPrefix.startsWith('bcom-') && /\b(funnel|conversion\s+rate|cac|roas)\b/.test(titleLow))
   ) {
     const baseVol = 10000 + (day * 250);
     const s2 = Math.round(baseVol * 0.45);
