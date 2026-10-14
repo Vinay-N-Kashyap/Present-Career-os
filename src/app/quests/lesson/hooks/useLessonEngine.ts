@@ -71,7 +71,20 @@ export function refillVisualFromTrace(
 ): { visual: LessonVisual; fallbackNote: string | null } {
   const FALLBACK_MESSAGE = "Your code changed the names this picture uses, so it shows the lesson's values.";
 
-  if (!spec || !defaultVisual || !events || events.length === 0) {
+  if (!spec || !defaultVisual) {
+    return {
+      visual: defaultVisual,
+      fallbackNote: null,
+    };
+  }
+
+  // Non-boxes templates (flow, table, tree, pipeline, etc.) do not inspect trace variables.
+  // Return default visual cleanly without spurious fallback note!
+  if (spec.template !== 'boxes') {
+    return { visual: defaultVisual, fallbackNote: null };
+  }
+
+  if (!events || events.length === 0) {
     return {
       visual: { ...(defaultVisual as any), fallbackNote: FALLBACK_MESSAGE },
       fallbackNote: FALLBACK_MESSAGE,
@@ -95,18 +108,15 @@ export function refillVisualFromTrace(
       prevVars = currentVars;
     }
 
-    // 2. Identify variables required by the visual
+    // 2. Identify variables required by the visual (only from variable bindings in boxes)
     const requiredVars = new Set<string>();
-      for (const step of defaultVisual.steps) {
-        const stepValues = (step as any).values;
-        if (stepValues) {
-          for (const [boxId, val] of Object.entries(stepValues)) {
-            if (val !== '' && val !== undefined) {
-              requiredVars.add(boxId);
-            }
-          }
+    if (Array.isArray(spec.boxes)) {
+      for (const b of spec.boxes) {
+        if (b.id && b.tappable !== false) {
+          requiredVars.add(b.id);
         }
       }
+    }
 
     if (Array.isArray(spec.steps)) {
       for (const s of spec.steps) {
@@ -209,7 +219,7 @@ export function refillVisualFromTrace(
       }
     }
 
-    return { visual: { ...updatedVisual, fallbackNote: null }, fallbackNote: null };
+    return { visual: { ...(updatedVisual as any), fallbackNote: null }, fallbackNote: null };
   } catch {
     return {
       visual: { ...(defaultVisual as any), fallbackNote: FALLBACK_MESSAGE },
@@ -1353,6 +1363,9 @@ export function useLessonEngine({
     }
   }, [slides, getSpeakerText, setIsPlaying, teacherIdRef, setCurrentPieceAt, setCurrentVisualStepIndex]);
 
+  const playSlideNarrationRef = useRef(playSlideNarration);
+  playSlideNarrationRef.current = playSlideNarration;
+
   const playSpeech = useCallback(() => {
     if (typeof window === 'undefined') return;
     if (currentSlide > 0 && currentSlide <= slides.length) {
@@ -1515,7 +1528,7 @@ export function useLessonEngine({
     const playTimer = setTimeout(() => {
       if (currentSlideRef.current === activeSlideAtStart) {
         if (activeSlideAtStart >= 1 && activeSlideAtStart <= slidesLength) {
-          playSlideNarration(activeSlideAtStart - 1);
+          playSlideNarrationRef.current(activeSlideAtStart - 1);
         } else {
           const speakerText = getSpeakerTextRef.current();
           if (speakerText) {
@@ -1539,7 +1552,7 @@ export function useLessonEngine({
       if (playTimer) clearTimeout(playTimer);
       stopSpeaking();
     };
-  }, [currentSlide, isAudioUnlocked, setIsPlaying, currentSlideRef, getSpeakerTextRef, teacherIdRef, timerRef, slidesLengthRef, playSlideNarration]);
+  }, [currentSlide, isAudioUnlocked, setIsPlaying, currentSlideRef, getSpeakerTextRef, teacherIdRef, timerRef, slidesLengthRef]);
 
   // Audio progress tracker
   useEffect(() => {

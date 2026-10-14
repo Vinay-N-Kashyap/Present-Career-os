@@ -50,13 +50,13 @@
           },
           {
             "at": "say2",
-            "caption": "Python reads your instructions, one line at a time.",
+            "caption": "Many lines of Python look almost like simple English.",
             "values": {
               "instructions": {
                 "text": "print(\"Hello! This is my first Python program.\")"
               },
               "python": {
-                "text": ""
+                "text": "simple English"
               },
               "screen": {
                 "text": ""
@@ -75,8 +75,64 @@
             ]
           },
           {
+            "at": "say3",
+            "caption": "Companies use Python for websites, automation, and data.",
+            "values": {
+              "instructions": {
+                "text": "Instagram, YouTube and many banks and startups in India use Python every day."
+              },
+              "python": {
+                "text": "Expense Tracker"
+              },
+              "screen": {
+                "text": ""
+              }
+            },
+            "tones": {
+              "instructions": "idle",
+              "python": "data",
+              "screen": "ok"
+            },
+            "arrows": [
+              [
+                "instructions",
+                "python"
+              ]
+            ]
+          },
+          {
             "at": "example",
-            "caption": "The computer follows the steps and shows the result.",
+            "caption": "A recipe is a list of exact steps for cooking a dish.",
+            "values": {
+              "instructions": {
+                "text": "boil water, add rice, wait ten minutes."
+              },
+              "python": {
+                "text": "recipe"
+              },
+              "screen": {
+                "text": "dish"
+              }
+            },
+            "tones": {
+              "instructions": "data",
+              "python": "data",
+              "screen": "ok"
+            },
+            "arrows": [
+              [
+                "instructions",
+                "python"
+              ],
+              [
+                "python",
+                "screen"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Change the message and press Run Code to show results on screen.",
             "values": {
               "instructions": {
                 "text": "print(\"Hello! This is my first Python program.\")"
@@ -94,6 +150,10 @@
               "screen": "ok"
             },
             "arrows": [
+              [
+                "instructions",
+                "python"
+              ],
               [
                 "python",
                 "screen"
@@ -141,10 +201,10 @@
           },
           {
             "at": "say2",
-            "caption": "Python reads your instructions, one line at a time.",
+            "caption": "Many lines of Python look almost like simple English.",
             "values": {
               "instructions": "print(\"Hello! This is my first Python program.\")",
-              "python": "reads it",
+              "python": "simple English",
               "screen": ""
             },
             "tones": {
@@ -160,11 +220,55 @@
             ]
           },
           {
+            "at": "say3",
+            "caption": "Companies use Python for websites, automation, and data.",
+            "values": {
+              "instructions": "Instagram, YouTube and many banks and startups in India use Python every day.",
+              "python": "Expense Tracker",
+              "screen": ""
+            },
+            "tones": {
+              "instructions": "idle",
+              "python": "data",
+              "screen": "ok"
+            },
+            "arrows": [
+              [
+                "instructions",
+                "python"
+              ]
+            ]
+          },
+          {
             "at": "example",
-            "caption": "The computer follows the steps and shows the result.",
+            "caption": "A recipe is a list of exact steps for cooking a dish.",
+            "values": {
+              "instructions": "boil water, add rice, wait ten minutes.",
+              "python": "recipe",
+              "screen": "dish"
+            },
+            "tones": {
+              "instructions": "data",
+              "python": "data",
+              "screen": "ok"
+            },
+            "arrows": [
+              [
+                "instructions",
+                "python"
+              ],
+              [
+                "python",
+                "screen"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Change the message and press Run Code to show results on screen.",
             "values": {
               "instructions": "print(\"Hello! This is my first Python program.\")",
-              "python": "reads it",
+              "python": "",
               "screen": "Hello! This is my first Python program."
             },
             "tones": {
@@ -173,6 +277,10 @@
               "screen": "ok"
             },
             "arrows": [
+              [
+                "instructions",
+                "python"
+              ],
               [
                 "python",
                 "screen"

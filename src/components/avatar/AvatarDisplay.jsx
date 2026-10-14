@@ -1,5 +1,7 @@
+'use client';
+
 // components/avatar/AvatarDisplay.jsx
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const CFG = {
   priya:   { skin:'#F5C5B0', hair:'#2C1208', cloth:'#f472b6', eye:'#5C2E00', blush:'rgba(244,114,182,.3)',  glow:'rgba(244,114,182,.25)', female:true  },

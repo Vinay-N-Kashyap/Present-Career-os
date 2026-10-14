@@ -116,8 +116,32 @@ export function LessonNavigationBar({
         />
       </div>
 
-      {/* Zone 2 (Middle-Center): Prominent Centered Next / Finish Button */}
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1, minWidth: 0, padding: '0 8px' }}>
+      {/* Zone 2 (Middle-Center): Grouped Slide Controls [ Prev ] [ Next / Finish ] [ Interactive Q&A ] */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', flex: 1, minWidth: 0, padding: '0 8px' }}>
+        {/* Previous Slide Button */}
+        <button
+          onClick={handlePrevSlide}
+          disabled={currentSlide === 0}
+          className="lesson-nav-btn lesson-nav-btn-prev"
+          data-testid="btn-prev-slide"
+          style={{
+            background: 'transparent',
+            border: '1px solid var(--border)',
+            padding: '10px 16px',
+            borderRadius: 12,
+            fontSize: 13.5,
+            fontWeight: 700,
+            color: 'var(--t2)',
+            cursor: currentSlide === 0 ? 'not-allowed' : 'pointer',
+            opacity: currentSlide === 0 ? 0.5 : 1,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          <span className="lesson-nav-label-desktop">◀ Previous Slide</span>
+          <span className="lesson-nav-label-mobile">◀ Prev</span>
+        </button>
+
+        {/* Center Next / Finish Quest Button */}
         {isLastSlide ? (
           <button
             data-testid="btn-finish-quest"
@@ -174,51 +198,6 @@ export function LessonNavigationBar({
             </span>
           </button>
         )}
-      </div>
-
-      {/* Zone 3 (Right-Down): Secondary Controls (Progress, Prev, Q&A) */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-        {slidesLength > 0 && (
-          <span
-            data-testid="lesson-check-progress-pill"
-            className="lesson-nav-label-desktop"
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              color: confirmedCount >= slidesLength ? 'var(--success)' : 'var(--t3)',
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid var(--border)',
-              borderRadius: 999,
-              padding: '4px 10px',
-              fontFamily: 'var(--font-mono)',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            ✓ {Math.min(confirmedCount, slidesLength)}/{slidesLength} Checks
-          </span>
-        )}
-
-        <button
-          onClick={handlePrevSlide}
-          disabled={currentSlide === 0}
-          className="lesson-nav-btn lesson-nav-btn-prev"
-          data-testid="btn-prev-slide"
-          style={{
-            background: 'transparent',
-            border: '1px solid var(--border)',
-            padding: '10px 16px',
-            borderRadius: 12,
-            fontSize: 13.5,
-            fontWeight: 700,
-            color: 'var(--t2)',
-            cursor: currentSlide === 0 ? 'not-allowed' : 'pointer',
-            opacity: currentSlide === 0 ? 0.5 : 1,
-            whiteSpace: 'nowrap',
-          }}
-        >
-          <span className="lesson-nav-label-desktop">◀ Previous Slide</span>
-          <span className="lesson-nav-label-mobile">◀ Prev</span>
-        </button>
 
         {/* Q&A Interactive Toggle Mode Button */}
         <button
@@ -247,6 +226,29 @@ export function LessonNavigationBar({
           <span className="lesson-nav-label-desktop">{isInteractive ? '📖 Slide Lecture' : '💬 Interactive Q&A'}</span>
           <span className="lesson-nav-label-mobile">{isInteractive ? '📖 Slides' : '💬 Q&A'}</span>
         </button>
+      </div>
+
+      {/* Zone 3 (Right-Down): Secondary Progress Indicator */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '8px', flexShrink: 0 }}>
+        {slidesLength > 0 && (
+          <span
+            data-testid="lesson-check-progress-pill"
+            className="lesson-nav-label-desktop"
+            style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: confirmedCount >= slidesLength ? 'var(--success)' : 'var(--t3)',
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid var(--border)',
+              borderRadius: 999,
+              padding: '4px 10px',
+              fontFamily: 'var(--font-mono)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            ✓ {Math.min(confirmedCount, slidesLength)}/{slidesLength} Checks
+          </span>
+        )}
       </div>
     </div>
   );

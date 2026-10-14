@@ -79,141 +79,50 @@ function renderWithTappableWords(
   highlightedLabel: string | null,
   onWordClick: (label: string) => void,
   onWordHover?: (label: string | null) => void,
-  isSpokenParagraph?: boolean,
-  audioProgress?: number
+  _isSpokenParagraph?: boolean,
+  _audioProgress?: number
 ): React.ReactNode {
   if (!text) return text;
   const tokens = tokenizeParagraphWithUnderlines(text, labels);
 
-  // If not currently spoken, render tokens with clear underline on key concepts
-  if (!isSpokenParagraph || typeof audioProgress !== 'number' || audioProgress <= 0) {
-    if (tokens.length <= 1 && (!tokens[0] || !tokens[0].isUnderlined)) {
-      return text;
-    }
-    return tokens.map((token, idx) => {
-      if (!token.isUnderlined || !token.matchedLabel) {
-        return <React.Fragment key={idx}>{token.text}</React.Fragment>;
-      }
-      const lowerKey = token.matchedLabel.toLowerCase();
-      const isHighlighted = highlightedLabel && highlightedLabel.toLowerCase() === lowerKey;
-
-      return (
-        <button
-          key={idx}
-          type="button"
-          data-testid={`tappable-word-${lowerKey}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            onWordClick(token.matchedLabel!);
-          }}
-          onMouseEnter={() => onWordHover && onWordHover(token.matchedLabel!)}
-          onMouseLeave={() => onWordHover && onWordHover(null)}
-          style={{
-            display: 'inline',
-            background: isHighlighted ? 'color-mix(in srgb, var(--accent) 20%, transparent)' : 'transparent',
-            border: 'none',
-            borderBottom: isHighlighted ? '2px solid var(--accent)' : '1.5px solid var(--accent)',
-            color: isHighlighted ? 'var(--accent)' : 'inherit',
-            font: 'inherit',
-            padding: '0 2px',
-            margin: 0,
-            cursor: 'pointer',
-            borderRadius: 3,
-            transition: 'all 0.15s ease',
-          }}
-          title={`Tap to highlight ${token.matchedLabel} in the visual`}
-        >
-          {token.text}
-        </button>
-      );
-    });
+  if (tokens.length <= 1 && (!tokens[0] || !tokens[0].isUnderlined)) {
+    return text;
   }
-
-  // When speech is active on this paragraph: Karaoke word-by-word highlight with 5-10% subtle glow
-  const allWords = text.match(/\S+/g) || [];
-  const activeWordIdx = allWords.length > 0
-    ? Math.min(allWords.length - 1, Math.max(0, Math.floor((audioProgress / 100) * allWords.length)))
-    : -1;
-
-  let wordCounter = 0;
-
-  return tokens.map((token, tIdx) => {
-    if (token.isUnderlined && token.matchedLabel) {
-      const lowerKey = token.matchedLabel.toLowerCase();
-      const isHighlighted = highlightedLabel && highlightedLabel.toLowerCase() === lowerKey;
-      const tokenWords = token.text.match(/\S+/g) || [''];
-      const isCurrentSpokenWord = activeWordIdx >= wordCounter && activeWordIdx < wordCounter + tokenWords.length;
-      wordCounter += tokenWords.length;
-
-      return (
-        <button
-          key={tIdx}
-          type="button"
-          data-testid={`tappable-word-${lowerKey}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            onWordClick(token.matchedLabel!);
-          }}
-          onMouseEnter={() => onWordHover && onWordHover(token.matchedLabel!)}
-          onMouseLeave={() => onWordHover && onWordHover(null)}
-          style={{
-            display: 'inline',
-            background: isCurrentSpokenWord
-              ? 'color-mix(in srgb, var(--accent) 18%, transparent)'
-              : isHighlighted
-              ? 'color-mix(in srgb, var(--accent) 20%, transparent)'
-              : 'transparent',
-            border: 'none',
-            borderBottom: isHighlighted ? '2px solid var(--accent)' : '1.5px solid var(--accent)',
-            color: isCurrentSpokenWord || isHighlighted ? 'var(--accent)' : 'inherit',
-            boxShadow: isCurrentSpokenWord ? '0 0 10px rgba(var(--brand-rgb), 0.35)' : undefined,
-            font: 'inherit',
-            padding: '0 2px',
-            margin: 0,
-            cursor: 'pointer',
-            borderRadius: 3,
-            transition: 'all 0.15s ease',
-          }}
-          title={`Tap to highlight ${token.matchedLabel} in the visual`}
-        >
-          {token.text}
-        </button>
-      );
+  return tokens.map((token, idx) => {
+    if (!token.isUnderlined || !token.matchedLabel) {
+      return <React.Fragment key={idx}>{token.text}</React.Fragment>;
     }
+    const lowerKey = token.matchedLabel.toLowerCase();
+    const isHighlighted = highlightedLabel && highlightedLabel.toLowerCase() === lowerKey;
 
-    // Non-underlined text: split into words and whitespace
-    const chunks = token.text.split(/(\s+)/);
     return (
-      <React.Fragment key={tIdx}>
-        {chunks.map((chunk, cIdx) => {
-          if (!chunk) return null;
-          if (/^\s+$/.test(chunk)) {
-            return <React.Fragment key={cIdx}>{chunk}</React.Fragment>;
-          }
-          const isCurrentSpokenWord = (wordCounter === activeWordIdx);
-          wordCounter++;
-
-          if (isCurrentSpokenWord) {
-            return (
-              <span
-                key={cIdx}
-                style={{
-                  background: 'color-mix(in srgb, var(--accent) 16%, transparent)',
-                  color: 'var(--accent)',
-                  boxShadow: '0 0 8px rgba(var(--brand-rgb), 0.3)',
-                  borderRadius: '3px',
-                  padding: '1px 3px',
-                  fontWeight: 700,
-                  transition: 'all 0.12s ease',
-                }}
-              >
-                {chunk}
-              </span>
-            );
-          }
-          return <React.Fragment key={cIdx}>{chunk}</React.Fragment>;
-        })}
-      </React.Fragment>
+      <button
+        key={idx}
+        type="button"
+        data-testid={`tappable-word-${lowerKey}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onWordClick(token.matchedLabel!);
+        }}
+        onMouseEnter={() => onWordHover && onWordHover(token.matchedLabel!)}
+        onMouseLeave={() => onWordHover && onWordHover(null)}
+        style={{
+          display: 'inline',
+          background: isHighlighted ? 'color-mix(in srgb, var(--accent) 20%, transparent)' : 'transparent',
+          border: 'none',
+          borderBottom: isHighlighted ? '2px solid var(--accent)' : '1.5px solid var(--accent)',
+          color: isHighlighted ? 'var(--accent)' : 'inherit',
+          font: 'inherit',
+          padding: '0 2px',
+          margin: 0,
+          cursor: 'pointer',
+          borderRadius: 3,
+          transition: 'all 0.15s ease',
+        }}
+        title={`Tap to highlight ${token.matchedLabel} in the visual`}
+      >
+        {token.text}
+      </button>
     );
   });
 }

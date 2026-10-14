@@ -1,9 +1,5 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
-
-const AvatarMentorWidget = dynamic(() => import('@/components/avatar/AvatarMentorWidget'), {
-  ssr: false,
-});
+import AvatarDisplay from '@/components/avatar/AvatarDisplay';
 
 export interface LessonQuestData {
   id?: string;
@@ -31,9 +27,9 @@ export interface TeacherAvatarFrameProps {
 }
 
 /**
- * Spec v1.1 Rule:
- * Docked teacher avatar frame inside the bottom navigation bar.
- * Never floats over the page or overlaps any buttons/links.
+ * Spec v1.2:
+ * Dedicated teacher avatar panel covering ~10% screen width in bottom navigation bar.
+ * Renders animated SVG avatar with live mouth movement, breathing, and presence.
  */
 export function TeacherAvatarFrame({
   userId,
@@ -60,17 +56,19 @@ export function TeacherAvatarFrame({
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
-        gap: '8px',
-        padding: '4px 10px 4px 6px',
-        borderRadius: '24px',
+        gap: '10px',
+        padding: '4px 12px 4px 6px',
+        borderRadius: '16px',
         background: 'var(--bg2)',
         border: `1.5px solid ${isPlaying ? (safeTeacher.accent || 'var(--accent)') : 'var(--border)'}`,
         boxShadow: isPlaying
-          ? '0 0 12px color-mix(in srgb, var(--accent) 25%, transparent)'
+          ? '0 0 14px color-mix(in srgb, var(--accent) 30%, transparent)'
           : 'var(--shadow-sm)',
         transition: 'all 0.2s ease',
         flexShrink: 0,
-        height: '42px',
+        height: '48px',
+        minWidth: '160px',
+        maxWidth: '240px',
         boxSizing: 'border-box',
       }}
       aria-label={`Tutor: ${safeTeacher.name}`}
@@ -79,7 +77,8 @@ export function TeacherAvatarFrame({
         .teacher-avatar-docked-info {
           display: flex;
           flex-direction: column;
-          line-height: 1.15;
+          line-height: 1.2;
+          min-width: 0;
         }
         @keyframes avatarVoicePulse {
           0%, 100% {
@@ -103,18 +102,19 @@ export function TeacherAvatarFrame({
           .teacher-avatar-docked-frame {
             padding: 2px !important;
             border-radius: 50% !important;
-            width: 38px !important;
-            height: 38px !important;
+            width: 42px !important;
+            height: 42px !important;
+            min-width: 42px !important;
             justify-content: center !important;
           }
         }
       `}</style>
 
-      {/* Avatar Face / Emoji */}
+      {/* Real Animated Avatar Portrait */}
       <div
         style={{
-          width: '34px',
-          height: '34px',
+          width: '40px',
+          height: '40px',
           borderRadius: '50%',
           background: 'var(--bg3)',
           border: `1.5px solid ${isPlaying ? (safeTeacher.accent || 'var(--accent)') : 'var(--border)'}`,
@@ -122,28 +122,31 @@ export function TeacherAvatarFrame({
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative',
-          overflow: 'visible',
+          overflow: 'hidden',
           flexShrink: 0,
           animation: isPlaying ? 'avatarVoicePulse 1.8s infinite ease-in-out' : 'none',
         }}
       >
-        <span style={{ fontSize: '20px', userSelect: 'none' }}>
-          {safeTeacher.avatar || '👨‍🏫'}
-        </span>
+        <AvatarDisplay
+          teacherId={teacherId || 'kashyap'}
+          speaking={isPlaying}
+          size={42}
+        />
 
         {/* Live speaking indicator dot */}
         {isPlaying && (
           <span
             style={{
               position: 'absolute',
-              bottom: '-1px',
-              right: '-1px',
+              bottom: '1px',
+              right: '1px',
               width: '8px',
               height: '8px',
               borderRadius: '50%',
               background: 'var(--success)',
               boxShadow: '0 0 6px var(--success)',
               border: '1.5px solid var(--bg2)',
+              zIndex: 3,
             }}
           />
         )}
