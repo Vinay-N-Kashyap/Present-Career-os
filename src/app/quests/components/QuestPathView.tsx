@@ -754,21 +754,28 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                         {/* Quests Pill Chips */}
                         {stageQuests.length > 0 && (
                           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', paddingTop: 6, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                            {stageQuests.map((q) => {
+                            {stageQuests.map((q, qIdx) => {
                               const isQDone = completedQuests.includes(q.id);
                               const isExam = q.category === 'exam' || q.type === 'interactive' || q.id.includes('exam');
                               const isCode = q.type === 'coding';
                               const catIcon = isExam ? '📝' : isCode ? '💻' : '🎓';
                               const catLabel = isExam ? 'Exam' : isCode ? 'Coding' : 'Learn';
+                              const isPrevQuestDone = qIdx === 0 || completedQuests.includes(stageQuests[qIdx - 1].id);
+                              const isQuestLocked = isLocked || (!isQDone && !isPrevQuestDone);
                               return (
                                 <button
                                   key={q.id}
                                   type="button"
-                                  disabled={isLocked}
+                                  disabled={isQuestLocked}
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    if (isLocked) {
-                                      toast.warning('Prerequisite Stage Locked 🔒', 'Complete previous stage quests first.');
+                                    if (isQuestLocked) {
+                                      if (isLocked) {
+                                        toast.warning('Prerequisite Stage Locked 🔒', 'Complete previous stage quests first.');
+                                      } else {
+                                        const prevQ = stageQuests[qIdx - 1];
+                                        toast.warning('Prerequisite Quest Locked 🔒', `Complete "${prevQ?.title || 'previous quest'}" first.`);
+                                      }
                                       return;
                                     }
                                     handleLaunchQuest(q, activeCourseId || 'course-java-logic');
@@ -776,20 +783,21 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                                   style={{
                                     fontSize: 12,
                                     fontWeight: 700,
-                                    background: isQDone ? 'rgba(var(--success-rgb), 0.15)' : 'var(--bg3)',
-                                    border: `1px solid ${isQDone ? 'var(--green)' : 'var(--border)'}`,
-                                    color: isQDone ? 'var(--green)' : 'var(--t1)',
+                                    background: isQDone ? 'rgba(var(--success-rgb), 0.15)' : isQuestLocked ? 'var(--bg2)' : 'var(--bg3)',
+                                    border: `1px solid ${isQDone ? 'var(--green)' : isQuestLocked ? 'rgba(255,255,255,0.05)' : 'var(--border)'}`,
+                                    color: isQDone ? 'var(--green)' : isQuestLocked ? 'var(--t4)' : 'var(--t1)',
                                     padding: '5px 12px',
                                     borderRadius: 10,
-                                    cursor: isLocked ? 'not-allowed' : 'pointer',
+                                    cursor: isQuestLocked ? 'not-allowed' : 'pointer',
+                                    opacity: isQuestLocked ? 0.6 : 1,
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: 6,
                                     transition: 'all 0.15s ease'
                                   }}
-                                  className={isLocked ? '' : 'card-hover'}
+                                  className={isQuestLocked ? '' : 'card-hover'}
                                 >
-                                  <span>{isQDone ? '✓' : catIcon}</span>
+                                  <span>{isQDone ? '✓' : isQuestLocked ? '🔒' : catIcon}</span>
                                   <span style={{ fontSize: 11, opacity: 0.8, textTransform: 'uppercase' }}>[{catLabel}]</span>
                                   <span>{q.title.replace(/^Day \d+[:\s-]*/i, '').replace(/Challenge:?\s*/i, '').replace(/Assignment:?\s*/i, '').slice(0, 36)}</span>
                                 </button>

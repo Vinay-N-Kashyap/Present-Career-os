@@ -914,6 +914,17 @@ export function useQuestProgression() {
     const initiated = onboardingAnswers?.initiatedQuests || [];
     const isInitiated = initiated.includes(quest.id);
 
+    // Sequential progression gating: Quest N+1 requires Quest N completed, unless quest is already completed/reviewable
+    const allQuestsInCourse = modules.flatMap(m => m.quests || []);
+    const questIdx = allQuestsInCourse.findIndex(q => q.id === quest.id);
+    if (questIdx > 0 && !isCompleted) {
+      const prevQuest = allQuestsInCourse[questIdx - 1];
+      if (prevQuest && !completedQuests.includes(prevQuest.id)) {
+        toast.warning('Prerequisite Locked 🔒', `Please complete "${prevQuest.title}" before starting this quest.`);
+        return;
+      }
+    }
+
     if (!isCompleted && !isInitiated) {
       // Same rule as the server: 3 lessons or practice tasks a day, and up to 5 when the extra ones are tests.
       const isTest = quest.category === 'exam';
