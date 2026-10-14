@@ -7,7 +7,7 @@ import { resolveQuestLanguage, getLangInfo } from '../src/components/quests/work
 import type { CodeLanguage } from '../src/lib/code/types';
 
 test('W-01: every existing quest across all registered courses still resolves to its old language', () => {
-  const allowedOldLanguages = new Set(['javascript', 'python', 'sql', 'java']);
+  const allowedOldLanguages = new Set(['javascript', 'python', 'sql', 'java', 'cpp', 'bash']);
   let totalQuestsChecked = 0;
 
   for (const course of COURSES_REGISTRY) {

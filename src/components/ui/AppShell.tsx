@@ -693,7 +693,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </aside>
       )}
 
-      {isStudent && !isLandingPage && (
+      {isStudent && !isLandingPage && !isLessonOrDetail && (
         <GlobalAvatar
           user={user}
           profile={profile}

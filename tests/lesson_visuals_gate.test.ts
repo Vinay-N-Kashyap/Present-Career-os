@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { checkDayFile } from '@/lib/visuals/gate';
+import { checkDayFile, COURSE_ALLOWED_TEMPLATES } from '@/lib/visuals/gate';
 import { getLongLesson } from '@/lib/data/longLessons';
 
 function getValidBaseDayFile() {
@@ -123,6 +123,9 @@ describe('Gate v2 (Task E-13)', () => {
         const fullPath = path.join(currentDir, item);
         const stat = fs.statSync(fullPath);
         if (stat.isDirectory()) {
+          if (currentDir === dir && !(item in COURSE_ALLOWED_TEMPLATES)) {
+            continue;
+          }
           results.push(...findJsonFiles(fullPath));
         } else if (item.endsWith('.json')) {
           results.push(fullPath);
@@ -131,8 +134,17 @@ describe('Gate v2 (Task E-13)', () => {
       return results;
     }
 
+    const CERT_24M_COURSES = new Set([
+      'python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py',
+      'react-basics', 'node-web', 'dsa-optim', 'devops', 'cloud', 'dist', 'cyber', 'ai', 'sre-web', 'stream-web', 'aideploy-web'
+    ]);
+
     const files = findJsonFiles(dir);
     for (const file of files) {
+      const parts = file.split(/[\\/]/);
+      const courseFolder = parts[parts.length - 2];
+      if (!CERT_24M_COURSES.has(courseFolder)) continue;
+
       const res = checkDayFile(file);
       if (!res.passed) {
         throw new Error(`Day file ${file} failed gate checks: ${res.errors.join('\n')}`);

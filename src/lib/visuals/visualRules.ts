@@ -74,7 +74,9 @@ export function tokenizeParagraphWithUnderlines(
     return [{ text, isUnderlined: false }];
   }
 
-  const validLabels = labels.filter(l => Boolean(l && l.trim()));
+  const validLabels = labels
+    .map(l => (l !== null && l !== undefined ? String(l).trim() : ''))
+    .filter(l => l.length > 0);
   if (validLabels.length === 0) {
     return [{ text, isUnderlined: false }];
   }

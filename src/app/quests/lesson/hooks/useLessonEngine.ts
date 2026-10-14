@@ -1037,11 +1037,10 @@ export function useLessonEngine({
           if (!prevSlides || prevSlides.length === 0) return prevSlides;
           let changed = false;
           const updated = prevSlides.map((slide, i) => {
-            if (slide.visual) return slide;
             const fetched =
               getVisual(prefix, dayNum, i) ||
               synthesizeLongLessonVisual(prefix, dayNum, i, { title: slide.title || `Day ${dayNum} Part ${i + 1}` });
-            if (fetched) {
+            if (fetched && fetched !== slide.visual) {
               changed = true;
               return { ...slide, visual: fetched };
             }

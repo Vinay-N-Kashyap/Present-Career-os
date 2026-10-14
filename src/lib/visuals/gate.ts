@@ -495,17 +495,20 @@ export function checkDayFile(fileInput: string | any, options?: GateCheckOptions
       const entry = entries[i];
       const spec = entry?.spec;
       if (!spec || spec.template === 'none') continue;
+      // Spec v1.1 Rule: Only flow and boxes have tappable nodes/boxes for text underline linking
+      if (spec.template !== 'flow' && spec.template !== 'boxes') continue;
       const part = lesson.parts[i];
       const partAllText = getPartAllText(part);
 
       // Call getTappableLabelsForVisual from visualRules.ts
       const labels = getTappableLabelsForVisual(spec as any);
       for (const label of labels) {
-        if (!label || !label.trim()) continue;
-        const regex = new RegExp(`\\b${escapeRegExp(label.trim())}\\b`, 'i');
+        const strLabel = typeof label === 'string' ? label.trim() : String(label || '').trim();
+        if (!strLabel) continue;
+        const regex = new RegExp(`\\b${escapeRegExp(strLabel)}\\b`, 'i');
         if (!regex.test(partAllText)) {
           errors.push(
-            `R8: Entry [${i}] tappable label "${label}" does not appear as a whole word in part text or code`
+            `R8: Entry [${i}] tappable label "${strLabel}" does not appear as a whole word in part text or code`
           );
         }
       }
