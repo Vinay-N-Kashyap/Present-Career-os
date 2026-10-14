@@ -115,8 +115,9 @@ COURSES_CATALOG.forEach((cat, idx) => {
         if (p.example) dayWords += p.example.split(/\s+/).filter(Boolean).length;
         if (p.tryIt) dayWords += p.tryIt.split(/\s+/).filter(Boolean).length;
         if (p.check) {
-          dayWords += p.check.question.split(/\s+/).filter(Boolean).length;
-          dayWords += p.check.why.split(/\s+/).filter(Boolean).length;
+          if (p.check.question) dayWords += p.check.question.split(/\s+/).filter(Boolean).length;
+          const explanationText = p.check.why || (p.check as any).explanation;
+          if (explanationText) dayWords += String(explanationText).split(/\s+/).filter(Boolean).length;
         }
       });
       totalWordsSampled += dayWords;

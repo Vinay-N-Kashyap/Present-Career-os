@@ -3,7 +3,7 @@
     "totalCourses": 37,
     "alreadyBuiltCount": 13,
     "needsBuildingCount": 24,
-    "compliantDurationCount": 11
+    "compliantDurationCount": 13
   },
   "courses": [
     {
@@ -15,8 +15,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 4,
-      "avgWordsPerDay": 125,
-      "estimatedMinutesPerDay": 8.2,
+      "avgWordsPerDay": 321,
+      "estimatedMinutesPerDay": 9.7,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -113,8 +113,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 84,
-      "estimatedMinutesPerDay": 6,
+      "avgWordsPerDay": 276,
+      "estimatedMinutesPerDay": 7.5,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -183,8 +183,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 91,
-      "estimatedMinutesPerDay": 6.1,
+      "avgWordsPerDay": 334,
+      "estimatedMinutesPerDay": 8,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -197,8 +197,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 118,
-      "estimatedMinutesPerDay": 6.3,
+      "avgWordsPerDay": 318,
+      "estimatedMinutesPerDay": 7.8,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -211,8 +211,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 120,
-      "estimatedMinutesPerDay": 6.3,
+      "avgWordsPerDay": 353,
+      "estimatedMinutesPerDay": 8.1,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -225,8 +225,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 116,
-      "estimatedMinutesPerDay": 6.3,
+      "avgWordsPerDay": 299,
+      "estimatedMinutesPerDay": 7.7,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -239,8 +239,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 123,
-      "estimatedMinutesPerDay": 6.3,
+      "avgWordsPerDay": 338,
+      "estimatedMinutesPerDay": 8,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -253,8 +253,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 126,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 343,
+      "estimatedMinutesPerDay": 8,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -267,8 +267,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 129,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 360,
+      "estimatedMinutesPerDay": 8.2,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -295,8 +295,8 @@
       "hasExistingVisuals": true,
       "visualDaysCount": 30,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 128,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 313,
+      "estimatedMinutesPerDay": 7.8,
       "durationCompliant": false,
       "notes": "Built in Cert Track"
     },
@@ -309,8 +309,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 128,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 374,
+      "estimatedMinutesPerDay": 8.3,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -323,8 +323,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 136,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 354,
+      "estimatedMinutesPerDay": 8.1,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -337,8 +337,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 133,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 343,
+      "estimatedMinutesPerDay": 8,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -351,8 +351,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 126,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 385,
+      "estimatedMinutesPerDay": 8.4,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -365,8 +365,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 134,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 320,
+      "estimatedMinutesPerDay": 7.9,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -379,8 +379,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 133,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 402,
+      "estimatedMinutesPerDay": 8.5,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -393,8 +393,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 130,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 338,
+      "estimatedMinutesPerDay": 8,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -407,8 +407,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 128,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 342,
+      "estimatedMinutesPerDay": 8,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -421,8 +421,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 134,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 363,
+      "estimatedMinutesPerDay": 8.2,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -435,8 +435,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 126,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 330,
+      "estimatedMinutesPerDay": 7.9,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -449,8 +449,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 124,
-      "estimatedMinutesPerDay": 6.4,
+      "avgWordsPerDay": 302,
+      "estimatedMinutesPerDay": 7.7,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -462,10 +462,10 @@
       "prefix": "ai_prompt",
       "hasExistingVisuals": true,
       "visualDaysCount": 30,
-      "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 112,
-      "estimatedMinutesPerDay": 6.3,
-      "durationCompliant": false,
+      "sampleDayPartsCount": 6,
+      "avgWordsPerDay": 1175,
+      "estimatedMinutesPerDay": 19.8,
+      "durationCompliant": true,
       "notes": "Built in Cert Track"
     },
     {
@@ -477,8 +477,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 96,
-      "estimatedMinutesPerDay": 6.1,
+      "avgWordsPerDay": 277,
+      "estimatedMinutesPerDay": 7.5,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -491,8 +491,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 98,
-      "estimatedMinutesPerDay": 6.2,
+      "avgWordsPerDay": 275,
+      "estimatedMinutesPerDay": 7.5,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -505,8 +505,8 @@
       "hasExistingVisuals": false,
       "visualDaysCount": 0,
       "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 90,
-      "estimatedMinutesPerDay": 6.1,
+      "avgWordsPerDay": 300,
+      "estimatedMinutesPerDay": 7.7,
       "durationCompliant": false,
       "notes": "Requires New Visuals"
     },
@@ -518,10 +518,10 @@
       "prefix": "nlp",
       "hasExistingVisuals": true,
       "visualDaysCount": 30,
-      "sampleDayPartsCount": 3,
-      "avgWordsPerDay": 93,
-      "estimatedMinutesPerDay": 6.1,
-      "durationCompliant": false,
+      "sampleDayPartsCount": 6,
+      "avgWordsPerDay": 1192,
+      "estimatedMinutesPerDay": 20,
+      "durationCompliant": true,
       "notes": "Built in Cert Track"
     }
   ]

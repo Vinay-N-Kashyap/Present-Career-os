@@ -40,6 +40,41 @@ export const COURSE_ALLOWED_TEMPLATES: Record<string, string[]> = {
   'sre-web': ['bars', 'states', 'sequence', 'table', 'workflow', 'compare'],
   'stream-web': ['cells', 'flow', 'sequence', 'bars', 'table', 'states'],
   'aideploy-web': ['workflow', 'flow', 'bars', 'table', 'states', 'compare'],
+  // IoT & Hardware Systems Masterclasses
+  iot_emb: ['register-bits', 'flow', 'states', 'boxes'],
+  iot_net: ['register-bits', 'flow', 'sequence', 'states'],
+  iot_edge: ['register-bits', 'flow', 'bars', 'states'],
+  iot_sec: ['register-bits', 'flow', 'states', 'sequence'],
+  // Launchpad & Core Engineering
+  comp_fund: ['cells', 'boxes', 'flow', 'table'],
+  git_vcs: ['workflow', 'flow', 'tree-graph', 'states'],
+  excel_viz: ['bars', 'table', 'flow', 'cells'],
+  'soft-skills': ['workflow', 'funnel', 'flow', 'compare'],
+  // Advanced Systems & Graphics
+  'java-basics': ['stack-queue', 'flow', 'boxes', 'cells'],
+  mobile: ['component-tree', 'wireframe', 'flow', 'states'],
+  'fullstack-js': ['flow', 'sequence', 'boxes', 'table'],
+  design: ['wireframe', 'component-tree', 'compare', 'flow'],
+  blockchain: ['sequence', 'flow', 'states', 'table'],
+  g3d: ['states', 'flow', 'boxes', 'bars'],
+  'quant-systems': ['states', 'bars', 'flow', 'table'],
+  // Flagship Commerce & B.Com Specializations
+  'bcom-accounting': ['ledger-sheet', 'table', 'bars', 'flow'],
+  bcom_acc: ['ledger-sheet', 'table', 'bars', 'flow'],
+  'bcom-finance': ['ledger-sheet', 'bars', 'table', 'funnel'],
+  bcom_tax: ['ledger-sheet', 'table', 'bars', 'flow'],
+  bcom_aud: ['ledger-sheet', 'workflow', 'table', 'bars'],
+  bcom_ban: ['ledger-sheet', 'flow', 'table', 'bars'],
+  bcom_law: ['ledger-sheet', 'workflow', 'table', 'flow'],
+  bcom_ops: ['workflow', 'bars', 'flow', 'funnel'],
+  bcom_ait: ['tree-graph', 'flow', 'workflow', 'bars'],
+  bcom_ana: ['bars', 'table', 'flow', 'funnel'],
+  'bcom-marketing': ['funnel', 'bars', 'flow', 'compare'],
+  bcom_marketing: ['funnel', 'bars', 'flow', 'compare'],
+  bcom_scrm: ['funnel', 'workflow', 'bars', 'table'],
+  bcom_ent: ['funnel', 'bars', 'workflow', 'table'],
+  bcom_ecom: ['funnel', 'bars', 'workflow', 'flow'],
+  bcom_dmkt: ['funnel', 'bars', 'flow', 'table'],
 };
 
 const STOP_WORDS = new Set([
