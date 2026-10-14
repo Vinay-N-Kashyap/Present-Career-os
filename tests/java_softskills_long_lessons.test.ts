@@ -738,6 +738,72 @@ test('Java Basics Day 9: Domain-Specific Content Assertions', () => {
   assert.ok(javaD9.parts[4].output.includes('PURE_IDEMPOTENT_TRANSACTION_VERIFIED'));
 });
 
+test('Java Basics Day 10: Resolution & Structural Invariants for Call Stack, Recursion & Milestone 2 Capstone', () => {
+  const javaD10 = getLongLesson('java-basics', 10);
+  assert.ok(javaD10, 'java-basics Day 10 long lesson must resolve');
+  assert.equal(javaD10.day, 10);
+  assert.equal(javaD10.parts.length, 5, 'java-basics Day 10 must contain exactly 5 parts');
+  assert.ok(javaD10.summary.length >= 4, 'java-basics Day 10 must contain comprehensive summary');
+  assert.ok(javaD10.projectStep, 'java-basics Day 10 must have a hands-on project step');
+  assert.ok(javaD10.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(javaD10);
+  const totalMin = estimateLessonMinutes(javaD10);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of javaD10.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 10: Domain-Specific Content Assertions & Milestone 2 Certification', () => {
+  const javaD10 = getLongLesson('java-basics', 10);
+  assert.ok(javaD10);
+
+  // Part 1 – JVM Call Stack Architecture & LIFO Lifecycle
+  assert.ok(javaD10.parts[0].title.includes('Call Stack') || javaD10.parts[0].title.includes('Frame Allocation'));
+  assert.ok(javaD10.parts[0].output.includes('Peak Stack Depth: 3'));
+  assert.ok(javaD10.parts[0].output.includes('Popped Frame: lookupJurisdiction'));
+  assert.ok(javaD10.parts[0].output.includes('LIFO_FRAME_ALLOCATION_VERIFIED'));
+
+  // Part 2 – Recursion Base Case Contract vs StackOverflowError
+  assert.ok(javaD10.parts[1].title.includes('Recursion') || javaD10.parts[1].title.includes('StackOverflow'));
+  assert.ok(javaD10.parts[1].output.includes('Safe Run Factorial(5): 120, Depth: 5'));
+  assert.ok(javaD10.parts[1].output.includes('Guarded Run Status: STACK_OVERFLOW_GUARD_TRIGGERED, Depth: 51'));
+  assert.ok(javaD10.parts[1].output.includes('INDUCTIVE_BASE_CASE_MANDATORY'));
+
+  // Part 3 – Tail Recursion vs HotSpot Invariant (No TCO)
+  assert.ok(javaD10.parts[2].title.includes('Tail Recursion') || javaD10.parts[2].title.includes('TCO'));
+  assert.ok(javaD10.parts[2].output.includes('Tail-Recursive Factorial(6): 720'));
+  assert.ok(javaD10.parts[2].output.includes('Iterative Loop Factorial(6): 720'));
+  assert.ok(javaD10.parts[2].output.includes('ZERO_HOTSPOT_TCO_USE_ITERATIVE_LOOPS'));
+
+  // Part 4 – Thread Stack Sizing (-Xss) & Heap Trampoline Stacks
+  assert.ok(javaD10.parts[3].title.includes('Stack Sizing') || javaD10.parts[3].title.includes('Trampoline'));
+  assert.ok(javaD10.parts[3].output.includes('Heap Trampoline Total Sum: 325'));
+  assert.ok(javaD10.parts[3].output.includes('Heap Trampoline Nodes Visited: 4'));
+  assert.ok(javaD10.parts[3].output.includes('HEAP_WORK_STACK_PREVENTS_XSS_OVERFLOW'));
+
+  // Part 5 – Milestone 2 Capstone Financial Engine Synthesis
+  assert.ok(javaD10.parts[4].title.includes('Milestone 2') || javaD10.parts[4].title.includes('Financial Engine'));
+  assert.ok(javaD10.parts[4].output.includes('Portfolio Gross Value: ₹1500000'));
+  assert.ok(javaD10.parts[4].output.includes('Total Regulatory Surcharge: ₹2470'));
+  assert.ok(javaD10.parts[4].output.includes('Net Audited Valuation: ₹1497530'));
+  assert.ok(javaD10.parts[4].output.includes('JAVA_FUNDAMENTALS_CORE_ENGINE_CERTIFIED'));
+});
+
+
 
 
 

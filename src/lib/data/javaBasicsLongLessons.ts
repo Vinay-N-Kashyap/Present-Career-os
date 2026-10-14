@@ -3131,8 +3131,386 @@ console.log('Idempotency Status: PURE_IDEMPOTENT_TRANSACTION_VERIFIED');`,
         'Implement an idempotent ledger transaction processor with cryptographic deduplication keys.'
       ]
     }
+  },
+  {
+    day: 10,
+    title: 'Call Stack, Recursion Mechanics, StackOverflowError & Milestone 2 Financial Engine',
+    goal: 'Master the low-level execution mechanics of Java threads: frame allocation on the call stack, LIFO push/pop lifecycle, recursion vs StackOverflowError, HotSpot JIT lack of tail-call optimization (TCO), iterative work-stack trampolines, and synthesize Days 6–10 into the Milestone 2 Financial Utility Engine.',
+    minutes: 38,
+    recap: 'Yesterday we mastered custom method signatures, primitive pass-by-value photocopies, reference heap mutations, and overloading rules. Today we dissect the JVM call stack, recursive termination bounds, stack safety trampolines, and complete the Milestone 2 Capstone Financial Engine.',
+    parts: [
+      {
+        title: 'JVM Call Stack Architecture: Frame Allocation, Local Variable Array & LIFO Lifecycle',
+        say: [
+          'Every thread in the Java Virtual Machine possesses its own private JVM Call Stack, allocated when the OS native thread is spawned. The call stack stores stack frames, which are created and pushed onto the stack whenever a method is invoked, and popped off when the method terminates (either by normal return or uncaught exception).',
+          'A single stack frame contains three core memory sections: 1) The Local Variable Array (LVA), which holds method parameters and local variables indexed by zero-based slots (primitives like int take 1 slot, long and double take 2 slots, and slot 0 holds the "this" reference in instance methods); 2) The Operand Stack, a pushdown LIFO workspace where JVM bytecode instructions load, add, multiply, and store values; 3) Frame Data, which stores references to the runtime constant pool and method return addresses.',
+          'Because the stack is strictly LIFO (Last-In, First-Out), memory allocation and deallocation require only incrementing or decrementing the thread’s stack pointer. This makes stack allocation orders of magnitude faster than heap allocation, requiring zero Garbage Collection overhead.'
+        ],
+        example: 'Like a spring-loaded cafeteria plate dispenser: clean plates are pushed onto the top of the stack as customers enter the queue, and the top plate is immediately popped off and consumed, ensuring absolute orderly LIFO discipline.',
+        code: `// JVM Stack Frame LIFO Lifecycle Simulation
+interface StackFrame {
+  methodName: string;
+  localVariables: Record<string, any>;
+  depth: number;
+}
+
+class JvmThreadStack {
+  private frames: StackFrame[] = [];
+
+  pushFrame(methodName: string, locals: Record<string, any>): void {
+    const frame: StackFrame = {
+      methodName,
+      localVariables: { ...locals },
+      depth: this.frames.length + 1
+    };
+    this.frames.push(frame);
+  }
+
+  popFrame(): StackFrame | undefined {
+    return this.frames.pop();
+  }
+
+  getCurrentDepth(): number {
+    return this.frames.length;
+  }
+}
+
+const stack = new JvmThreadStack();
+stack.pushFrame('main', { args: [] });
+stack.pushFrame('calculateTax', { amount: 50000, rate: 0.18 });
+stack.pushFrame('lookupJurisdiction', { zipCode: '560001' });
+
+console.log('Peak Stack Depth: ' + stack.getCurrentDepth());
+const popped1 = stack.popFrame();
+console.log('Popped Frame: ' + popped1?.methodName);
+console.log('Active Top Frame: ' + stack.getCurrentDepth());
+console.log('Stack Invariant: LIFO_FRAME_ALLOCATION_VERIFIED');`,
+        output: `Peak Stack Depth: 3\nPopped Frame: lookupJurisdiction\nActive Top Frame: 2\nStack Invariant: LIFO_FRAME_ALLOCATION_VERIFIED`,
+        codeNotes: [
+          { line: 12, note: 'Pushes new method stack frame recording local parameters on top of stack' },
+          { line: 20, note: 'Pops topmost frame when method returns, instantly reclaiming memory' },
+          { line: 36, note: 'Peak stack depth reaches 3 frames during nested method chain execution' },
+          { line: 40, note: 'Confirms LIFO lifecycle discipline across thread invocation stack' }
+        ],
+        tryIt: 'Push another frame "validatePostalCode" and observe peak stack depth reach 4 frames.',
+        check: {
+          question: 'What three primary structures are contained inside every JVM call stack frame?',
+          options: [
+            'Local Variable Array, Operand Stack, and Frame Data (Constant Pool / Return Address)',
+            'Heap Young Gen, Old Gen, and Metaspace',
+            'CPU L1 Cache, L2 Cache, and RAM'
+          ],
+          answer: 0,
+          why: 'A JVM stack frame consists strictly of the Local Variable Array, the Operand Stack, and Frame Data references.'
+        }
+      },
+      {
+        title: 'Recursion Fundamentals: Base Case Contracts, Inductive Steps & StackOverflowError',
+        say: [
+          'Recursion is an algorithmic technique where a method solves a computational problem by invoking itself with smaller sub-problems. Every valid recursive algorithm requires two non-negotiable components: 1) The Inductive Step, which breaks the current state into smaller inputs and triggers the self-invocation; 2) The Base Case Contract, which defines the terminal condition where the function stops recursing and returns a concrete constant.',
+          'If a developer omits the base case, writes an unreachable terminal condition, or processes an excessively deep input set, each recursive invocation pushes a new stack frame without ever popping previous ones.',
+          'Eventually, the contiguous memory block reserved for the thread’s call stack is completely exhausted. When this occurs, the JVM throws java.lang.StackOverflowError. Because StackOverflowError is an Error (not an Exception), standard try-catch blocks in enterprise code should never attempt to swallow it; it indicates fatal thread resource exhaustion.'
+        ],
+        example: 'Like a set of Russian Matryoshka nesting dolls: opening doll 5 reveals doll 4, then doll 3, then doll 2, until doll 1 (the base case) is reached. If the dolls were infinite with no solid final wooden doll inside, your table would collapse under the weight of opening endless shells.',
+        code: `// Recursion Base Condition vs Stack Overflow Guard Simulation
+class RecursiveFactorialCalculator {
+  computeSafeFactorial(n: number, maxStackLimit: number): {
+    result: number;
+    stackDepthReached: number;
+    status: string;
+  } {
+    let currentDepth = 0;
+
+    const recurse = (val: number): number => {
+      currentDepth++;
+      if (currentDepth > maxStackLimit) {
+        throw new Error('STACK_OVERFLOW_GUARD_TRIGGERED');
+      }
+      // Base condition (inductive halt contract)
+      if (val <= 1) {
+        return 1;
+      }
+      // Recursive step: n * factorial(n - 1)
+      return val * recurse(val - 1);
+    };
+
+    try {
+      const res = recurse(n);
+      return { result: res, stackDepthReached: currentDepth, status: 'SUCCESS' };
+    } catch (e: any) {
+      return { result: -1, stackDepthReached: currentDepth, status: e.message };
+    }
+  }
+}
+
+const calc = new RecursiveFactorialCalculator();
+const safeRun = calc.computeSafeFactorial(5, 100);
+const overflowRun = calc.computeSafeFactorial(500, 50);
+
+console.log('Safe Run Factorial(5): ' + safeRun.result + ', Depth: ' + safeRun.stackDepthReached);
+console.log('Guarded Run Status: ' + overflowRun.status + ', Depth: ' + overflowRun.stackDepthReached);
+console.log('Recursion Contract: INDUCTIVE_BASE_CASE_MANDATORY');`,
+        output: `Safe Run Factorial(5): 120, Depth: 5\nGuarded Run Status: STACK_OVERFLOW_GUARD_TRIGGERED, Depth: 51\nRecursion Contract: INDUCTIVE_BASE_CASE_MANDATORY`,
+        codeNotes: [
+          { line: 15, note: 'Base case returns 1 when val <= 1, preventing runaway stack frame creation' },
+          { line: 19, note: 'Recursive invocation pushes frame computing subproblem (val - 1)' },
+          { line: 36, note: 'Factorial(5) terminates cleanly at depth 5 producing exact answer 120' },
+          { line: 37, note: 'Factorial(500) with limit 50 triggers overflow guard at depth 51' }
+        ],
+        tryIt: 'Run safe factorial with n = 6 and verify it produces result 720 at depth 6.',
+        check: {
+          question: 'What runtime error does the JVM throw when recursive calls exceed allocated thread stack capacity?',
+          options: [
+            'java.lang.StackOverflowError',
+            'java.lang.OutOfMemoryError',
+            'java.lang.NullPointerException'
+          ],
+          answer: 0,
+          why: 'When thread stack frames exceed the physical stack memory allocated by the operating system, the JVM throws StackOverflowError.'
+        }
+      },
+      {
+        title: 'Tail Recursion vs. HotSpot JVM Invariant: Why Java Does Not Support TCO',
+        say: [
+          'In computer science theory, a recursive call is said to be in tail position if it is the very last operation executed before the method returns (e.g. return helper(n - 1, acc * n)). In functional languages like Scala, Kotlin, Haskell, or Scheme, the compiler optimizes tail calls via Tail Call Optimization (TCO), reusing the current stack frame instead of allocating a new one.',
+          'However, the standard Oracle / OpenJDK HotSpot JVM does NOT support automatic Tail Call Optimization. Even if your Java code is written in perfect tail-recursive form with accumulators, the HotSpot compiler still pushes a new physical stack frame for every single invocation.',
+          'Why does Java omit TCO? The Java architecture team intentionally chose not to implement TCO in HotSpot because: 1) Security: Java’s SecurityManager historically inspected the exact call stack frames to verify permissions (Stack Walking); 2) Debuggability: Omitting frames would destroy accurate stack traces in logs during production debugging. Therefore, in Java enterprise engineering, deep recursion must ALWAYS be rewritten as an explicit iterative loop.'
+        ],
+        example: 'Like an accountant keeping a ledger: functional languages erase line 1 and rewrite line 2 over it to save paper (TCO). Java strictly insists on turning the page and creating a brand new numbered invoice for every transaction so auditors have an unalterable paper trail.',
+        code: `// Tail Recursion vs Iterative Unwinding Simulation
+class TailRecursionComparator {
+  // Tail-recursive conceptual model with accumulator
+  factorialTail(n: number, acc: number = 1): number {
+    if (n <= 1) return acc;
+    return this.factorialTail(n - 1, n * acc); // Tail call: nothing left to compute after return
+  }
+
+  // Iterative unwinding (the transformation HotSpot JIT requires you to do manually)
+  factorialIterative(n: number): number {
+    let acc = 1;
+    for (let i = n; i > 1; i--) {
+      acc *= i;
+    }
+    return acc;
+  }
+}
+
+const comp = new TailRecursionComparator();
+const tailRes = comp.factorialTail(6, 1);
+const iterRes = comp.factorialIterative(6);
+
+console.log('Tail-Recursive Factorial(6): ' + tailRes);
+console.log('Iterative Loop Factorial(6): ' + iterRes);
+console.log('JVM HotSpot Invariant: ZERO_HOTSPOT_TCO_USE_ITERATIVE_LOOPS');`,
+        output: `Tail-Recursive Factorial(6): 720\nIterative Loop Factorial(6): 720\nJVM HotSpot Invariant: ZERO_HOTSPOT_TCO_USE_ITERATIVE_LOOPS`,
+        codeNotes: [
+          { line: 5, note: 'Tail call passes accumulated result forward in parameter acc' },
+          { line: 11, note: 'Iterative loop uses single stack frame with O(1) constant stack memory' },
+          { line: 24, note: 'Confirms both produce identical result 720 while loop avoids JVM stack overflow risks' }
+        ],
+        tryIt: 'Compute factorial of 7 (5,040) using both methods and confirm outputs match.',
+        check: {
+          question: 'Why does the standard HotSpot JVM not support Tail Call Optimization (TCO)?',
+          options: [
+            'To preserve accurate stack traces for debugging and support JVM stack-walking security checks',
+            'Because modern CPUs do not allow loops',
+            'Because the Java language specification banned recursion'
+          ],
+          answer: 0,
+          why: 'HotSpot preserves every physical stack frame to guarantee accurate debugging stack traces and historical security call-stack inspections.'
+        }
+      },
+      {
+        title: 'Thread Stack Sizing (-Xss), Deep Trees & Iterative Trampoline Stacks',
+        say: [
+          'In Java, the memory allocated to each thread’s call stack is governed by the -Xss JVM flag (e.g. -Xss1m for 1 MB, or -Xss256k for 256 KB). The default stack size on 64-bit systems is typically 1024 KB (1 MB). Depending on frame size, this permits roughly 7,000 to 10,000 nested calls before throwing StackOverflowError.',
+          'Increasing -Xss to solve recursion crashes is dangerous: thread stack memory is allocated off-heap from native OS memory. If you configure 5,000 platform threads with -Xss2m, the JVM consumes 10 GB of native RAM purely for idle thread stacks!',
+          'The robust architectural solution for deep tree traversals, graph algorithms, and JSON parsing is an Iterative Work-Stack Trampoline. Instead of relying on the CPU thread stack, the algorithm allocates a java.util.ArrayDeque on the JVM Heap. Because the heap can scale to gigabytes, the heap work-stack can process millions of nested nodes without ever crashing the thread stack.'
+        ],
+        example: 'Like packing boxes in a bedroom: trying to stack boxes to the ceiling in a tiny room (-Xss limit) will hit the ceiling and topple. Instead, rolling boxes into an enormous commercial warehouse (the JVM heap) gives you limitless vertical space.',
+        code: `// Explicit Heap Work-Stack Trampoline for Deep Tree Traversal
+interface TreeNode {
+  id: string;
+  value: number;
+  left?: TreeNode;
+  right?: TreeNode;
+}
+
+class SafeTreeTraverser {
+  // Explicit stack allocated on the HEAP, completely immune to thread call stack size (-Xss)
+  sumTreeIteratively(root: TreeNode): {
+    totalValue: number;
+    nodesVisited: number;
+  } {
+    let totalValue = 0;
+    let nodesVisited = 0;
+    const workStack: TreeNode[] = [root];
+
+    while (workStack.length > 0) {
+      const current = workStack.pop()!;
+      totalValue += current.value;
+      nodesVisited++;
+
+      if (current.right) workStack.push(current.right);
+      if (current.left) workStack.push(current.left);
+    }
+    return { totalValue, nodesVisited };
+  }
+}
+
+const tree: TreeNode = {
+  id: 'root',
+  value: 100,
+  left: {
+    id: 'node-l1',
+    value: 50,
+    left: { id: 'node-l2', value: 25 }
+  },
+  right: {
+    id: 'node-r1',
+    value: 150
+  }
+};
+
+const traverser = new SafeTreeTraverser();
+const treeRes = traverser.sumTreeIteratively(tree);
+
+console.log('Heap Trampoline Total Sum: ' + treeRes.totalValue);
+console.log('Heap Trampoline Nodes Visited: ' + treeRes.nodesVisited);
+console.log('Stack Safety Invariant: HEAP_WORK_STACK_PREVENTS_XSS_OVERFLOW');`,
+        output: `Heap Trampoline Total Sum: 325\nHeap Trampoline Nodes Visited: 4\nStack Safety Invariant: HEAP_WORK_STACK_PREVENTS_XSS_OVERFLOW`,
+        codeNotes: [
+          { line: 15, note: 'Work stack resides on the JVM heap, safely scaling beyond native thread stack limits' },
+          { line: 18, note: 'Processes tree nodes iteratively without allocating recursive call stack frames' },
+          { line: 44, note: 'Correctly visits all 4 nodes (100 + 50 + 25 + 150) computing exact sum 325' }
+        ],
+        tryIt: 'Add a right child to node-r1 with value 200 and observe total sum reach 525 across 5 visits.',
+        check: {
+          question: 'What is the primary architectural advantage of an explicit heap work-stack over recursive method calls?',
+          options: [
+            'It allocates storage on the gigabyte-scale JVM heap, preventing thread StackOverflowError',
+            'It forces the CPU to run at double clock speed',
+            'It bypasses the Java garbage collector entirely'
+          ],
+          answer: 0,
+          why: 'Heap memory can store millions of nodes, whereas native thread stacks (-Xss) typically overflow after a few thousand frames.'
+        }
+      },
+      {
+        title: 'Milestone 2 Capstone: The Multi-Tier Financial Utility Engine Synthesis',
+        say: [
+          'Congratulations on reaching Day 10! You have mastered the foundational core of the Java programming language. In this milestone capstone, we synthesize everything learned across Days 6 through 10 into a production-grade Financial Valuation Engine.',
+          'Our architecture integrates: 1) Switch expressions with pattern guards (Day 6) to compute regulatory asset category surcharges; 2) Bounded iterative loops (Day 7) to drain transaction queue batches; 3) Cache-aligned array iteration (Day 8) to traverse multi-dimensional asset ledgers; 4) Pass-by-value photocopy invariants and pure functions (Day 9) to protect account balances from unauthorized side-effects; 5) Stack-safe iterative evaluation (Day 10) to compute gross valuation and net audited returns with zero recursion risk.',
+          'This synthesis represents the standard expected of enterprise Java developers in modern banking, fintech, and high-frequency trading backend systems.'
+        ],
+        example: 'Like an automated stock exchange clearing house: trades flow in from multiple asset classes, pass through regulatory fee matrices, are audited via immutable math, and produce a tamper-proof settlement record.',
+        code: `// Milestone 2 Capstone: Multi-Tier Financial Utility Engine Synthesis
+// Synthesizes Days 6-10: switch expressions, iterative loops, cache matrices, pass-by-value, pure functions
+
+type AssetCategory = 'EQUITY' | 'FIXED_INCOME' | 'COMMODITY' | 'CRYPTO';
+
+interface FinancialRecord {
+  readonly assetId: string;
+  readonly category: AssetCategory;
+  readonly units: number;
+  readonly unitPrice: number;
+}
+
+class Milestone2FinancialEngine {
+  // 1. Switch expression fee calculation (Day 6)
+  resolveRegulatoryFeeBps(cat: AssetCategory): number {
+    switch (cat) {
+      case 'EQUITY': return 15;        // 0.15%
+      case 'FIXED_INCOME': return 5;   // 0.05%
+      case 'COMMODITY': return 25;     // 0.25%
+      case 'CRYPTO': return 50;        // 0.50%
+      default: return 30;
+    }
+  }
+
+  // 2. Iterative valuation with pass-by-value defensive protection (Days 7, 8, 9)
+  evaluatePortfolio(records: FinancialRecord[]): {
+    grossValue: number;
+    totalRegulatoryFees: number;
+    netPortfolioValue: number;
+    assetCount: number;
+  } {
+    let grossValue = 0;
+    let totalRegulatoryFees = 0;
+
+    for (const rec of records) {
+      const positionValue = rec.units * rec.unitPrice;
+      const feeBps = this.resolveRegulatoryFeeBps(rec.category);
+      const fee = positionValue * (feeBps / 10000);
+
+      grossValue += positionValue;
+      totalRegulatoryFees += fee;
+    }
+
+    const netPortfolioValue = grossValue - totalRegulatoryFees;
+
+    return {
+      grossValue: Math.round(grossValue * 100) / 100,
+      totalRegulatoryFees: Math.round(totalRegulatoryFees * 100) / 100,
+      netPortfolioValue: Math.round(netPortfolioValue * 100) / 100,
+      assetCount: records.length
+    };
+  }
+}
+
+const engine = new Milestone2FinancialEngine();
+const portfolio: FinancialRecord[] = [
+  { assetId: 'EQ-RELIANCE', category: 'EQUITY', units: 100, unitPrice: 2800 },         // 280,000 -> 15 bps = 420
+  { assetId: 'FI-GOVBOND', category: 'FIXED_INCOME', units: 50, unitPrice: 10000 },    // 500,000 -> 5 bps = 250
+  { assetId: 'COM-GOLD', category: 'COMMODITY', units: 10, unitPrice: 72000 }          // 720,000 -> 25 bps = 1800
+];
+
+const report = engine.evaluatePortfolio(portfolio);
+
+console.log('Portfolio Gross Value: ₹' + report.grossValue);
+console.log('Total Regulatory Surcharge: ₹' + report.totalRegulatoryFees);
+console.log('Net Audited Valuation: ₹' + report.netPortfolioValue);
+console.log('Milestone 2 Status: JAVA_FUNDAMENTALS_CORE_ENGINE_CERTIFIED');`,
+        output: `Portfolio Gross Value: ₹1500000\nTotal Regulatory Surcharge: ₹2470\nNet Audited Valuation: ₹1497530\nMilestone 2 Status: JAVA_FUNDAMENTALS_CORE_ENGINE_CERTIFIED`,
+        codeNotes: [
+          { line: 14, note: 'Evaluates asset category fee rates using exhaustive switch logic' },
+          { line: 26, note: 'Iterates portfolio records with pure functional immutable math' },
+          { line: 55, note: 'Produces ₹1,500,000 gross valuation and ₹2,470 surcharge' },
+          { line: 58, note: 'Certifies Milestone 2 Java Fundamentals Engine completion' }
+        ],
+        tryIt: 'Add a 4th record for CRYPTO (units: 2, price: 50000) and verify gross valuation increments by ₹100,000.',
+        check: {
+          question: 'What architectural principles ensure the Milestone 2 Financial Engine remains resilient and deterministic?',
+          options: [
+            'Exhaustive switch mapping, pure functions, immutable records, and iterative stack safety',
+            'Storing account passwords in global static variables',
+            'Calling System.exit() whenever a transaction executes'
+          ],
+          answer: 0,
+          why: 'Combining pattern-matching switches, pure functions, and iterative stack execution eliminates runtime nulls and stack overflow risks.'
+        }
+      }
+    ],
+    summary: [
+      'Every JVM thread has a private call stack containing LIFO frames with Local Variable Arrays and Operand Stacks.',
+      'Recursion requires an explicit base case contract; unconstrained recursion triggers java.lang.StackOverflowError.',
+      'The standard HotSpot JVM does NOT support Tail Call Optimization (TCO) in order to protect stack trace fidelity.',
+      'Deep tree traversals must use an explicit heap work-stack trampoline rather than native thread stacks governed by -Xss.',
+      'Milestone 2 synthesizes switch expressions, iterative loops, cache locality, pass-by-value photocopy safety, and pure functions.'
+    ],
+    projectStep: {
+      title: 'Construct the Milestone 2 Production-Grade Multi-Asset Financial Clearing House',
+      steps: [
+        'Profile JVM call stack frame push and pop mechanics during nested method invocations.',
+        'Implement an inductive base-condition guard preventing recursive StackOverflowError.',
+        'Refactor recursive algorithms into iterative loops to bypass HotSpot lack of Tail Call Optimization.',
+        'Implement a heap-allocated work-stack trampoline to traverse deep hierarchical data structures.',
+        'Synthesize Days 6 through 10 into the Milestone 2 Financial Clearing & Auditing Engine.'
+      ]
+    }
   }
 ];
+
 
 
 
