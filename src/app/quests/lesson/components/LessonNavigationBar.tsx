@@ -104,16 +104,28 @@ export function LessonNavigationBar({
         }
       `}</style>
 
-      {/* Zone 1 (Left-Down): Prominent Teacher Avatar Frame */}
-      <div style={{ display: 'flex', alignItems: 'center', flexShrink: 0, minWidth: 0 }}>
-        <TeacherAvatarFrame
-          userId={userId || 'guest'}
-          teacherId={teacherId || 'kashyap'}
-          teacher={safeTeacher}
-          isPlaying={Boolean(isPlaying)}
-          speechText={speechText || ''}
-          questData={questData}
-        />
+      {/* Zone 1 (Left-Down): Clean Classroom Status Tag (2D Cartoon avatar removed per user request) */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0, minWidth: 0 }}>
+        <div
+          data-testid="classroom-topic-pill"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            padding: '6px 14px',
+            borderRadius: 12,
+            background: 'var(--bg2)',
+            border: '1px solid var(--border)',
+            fontSize: 12.5,
+            fontWeight: 700,
+            color: 'var(--t2)',
+            fontFamily: 'var(--font-mono)',
+          }}
+        >
+          <span style={{ color: safeTeacher.accent || 'var(--accent)', fontSize: 13 }}>⚡</span>
+          <span className="lesson-nav-label-desktop">{questData?.title || 'PinIT Classroom'}</span>
+          <span className="lesson-nav-label-mobile">Slide {currentSlide + 1}</span>
+        </div>
       </div>
 
       {/* Zone 2 (Middle-Center): Grouped Slide Controls [ Prev ] [ Next / Finish ] [ Interactive Q&A ] */}

@@ -17,6 +17,7 @@ import { LessonHeader } from './components/LessonHeader';
 import { LessonContentRenderer } from './components/LessonContentRenderer';
 import { LessonNavigationBar } from './components/LessonNavigationBar';
 import { LessonCompletionModal } from './components/LessonCompletionModal';
+import { TeacherVRoidPanel } from './components/TeacherVRoidPanel';
 
 const QuestWorkspaceClient = dynamic(() => import('@/components/quests/QuestWorkspaceClient'), { ssr: false });
 
@@ -334,31 +335,35 @@ const lessonStyles = `
 
   /* Fullscreen Gaming Mode (Shift + Space x2) */
   .classroom-page-root.fullscreen-mode {
-    padding: 0 !important;
+    padding: 16px 24px !important;
     margin: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
     height: 100dvh !important;
     max-width: 100vw !important;
     max-height: 100vh !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #080d1a !important;
     overflow: hidden !important;
-    border-radius: 0 !important;
   }
   .classroom-page-root.fullscreen-mode .classroom-return-btn {
     display: none !important;
   }
   .classroom-page-root.fullscreen-mode .lesson-card {
-    width: 100vw !important;
-    height: 100vh !important;
-    height: 100dvh !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-    border-radius: 0 !important;
-    border: none !important;
-    padding: 12px 24px !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 1680px !important;
+    max-height: 96vh !important;
+    border-radius: 20px !important;
+    border: 1.5px solid var(--border) !important;
+    padding: 18px 26px !important;
     box-sizing: border-box !important;
-    box-shadow: none !important;
-    gap: 12px !important;
+    box-shadow: 0 16px 56px rgba(0, 0, 0, 0.75) !important;
+    background: linear-gradient(135deg, var(--bg2), var(--bg3)) !important;
+    gap: 14px !important;
   }
 `;
 
@@ -763,7 +768,7 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
           style={{
             position: 'fixed',
             top: 14,
-            right: 18,
+            left: 24,
             zIndex: 99999,
             background: 'rgba(15, 23, 42, 0.92)',
             backdropFilter: 'blur(10px)',
@@ -951,6 +956,16 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
             isPlaying={state.isPlaying}
             speechText={engine.getSpeakerText ? engine.getSpeakerText() : ''}
             questData={questData}
+          />
+
+          {/* Dedicated 3D VRoid Teacher Avatar Panel docked in bottom-right corner (~10% screen) */}
+          <TeacherVRoidPanel
+            teacherId={teacherId || 'kashyap'}
+            teacherName={teacher.name}
+            teacherRole={teacher.role}
+            teacherAccent={teacher.accent}
+            isPlaying={state.isPlaying}
+            isFullscreen={isFullscreen}
           />
         </div>
       )}

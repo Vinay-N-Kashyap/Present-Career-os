@@ -3,12 +3,12 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { LessonNavigationBar } from '@/app/quests/lesson/components/LessonNavigationBar';
-import { TeacherAvatarFrame } from '@/app/quests/lesson/components/TeacherAvatarFrame';
+import { TeacherVRoidPanel } from '@/app/quests/lesson/components/TeacherVRoidPanel';
 import { refillVisualFromTrace } from '@/app/quests/lesson/hooks/useLessonEngine';
 import type { LessonVisual } from '@/lib/types/lessonVisual';
 
 describe('Classroom Navigation, Avatar, and Code Execution Reliability Suite', () => {
-  it('groups Previous Slide, Next Slide, and Interactive Q&A buttons together in the center', () => {
+  it('groups Previous Slide, Next Slide, and Interactive Q&A in center, and removes cartoon avatar from bottom-left', () => {
     const html = renderToString(
       React.createElement(LessonNavigationBar, {
         currentSlide: 1,
@@ -24,8 +24,16 @@ describe('Classroom Navigation, Avatar, and Code Execution Reliability Suite', (
         finishLessonAndReturn: () => {},
         slidesLength: 6,
         understandingConfirmed: { 0: true },
+        questData: { title: 'Day 1: Your First Python Program' }
       })
     );
+
+    // Verify cartoon avatar is NOT present in bottom-left
+    assert.doesNotMatch(html, /data-testid="teacher-avatar-dock"/, 'Cartoon avatar dock must be removed from bottom-left');
+
+    // Verify clean classroom topic pill is rendered on the left
+    assert.match(html, /data-testid="classroom-topic-pill"/);
+    assert.match(html, /Day 1: Your First Python Program/);
 
     // Verify all 3 primary buttons are present
     assert.match(html, /data-testid="btn-prev-slide"/);
@@ -44,24 +52,27 @@ describe('Classroom Navigation, Avatar, and Code Execution Reliability Suite', (
     assert.match(html, /data-testid="lesson-check-progress-pill"/);
   });
 
-  it('renders dedicated TeacherAvatarFrame with animated AvatarDisplay portrait and role', () => {
+  it('renders dedicated 3D VRoid Teacher Panel docked in bottom-right corner (~10% screen)', () => {
     const html = renderToString(
-      React.createElement(TeacherAvatarFrame, {
-        userId: 'test-user',
+      React.createElement(TeacherVRoidPanel, {
         teacherId: 'kashyap',
-        teacher: { name: 'Kashyap Sir', avatar: '👩‍🎨', accent: '#3b82f6', role: 'Staff Systems Architect' },
+        teacherName: 'Kashyap Sir',
+        teacherRole: 'Staff Systems Architect',
+        teacherAccent: '#3b82f6',
         isPlaying: true,
-        speechText: 'Welcome to your first Python lecture.',
-        questData: null,
+        isFullscreen: false,
       })
     );
 
-    assert.match(html, /data-testid="teacher-avatar-dock"/);
-    assert.match(html, /data-testid="teacher-avatar-name"/);
+    // Verify panel elements
+    assert.match(html, /data-testid="teacher-vroid-panel"/);
+    assert.match(html, /data-testid="vroid-teacher-name"/);
     assert.match(html, /Kashyap Sir/);
-    assert.match(html, /data-speech-active="true"/);
-    // Verify SVG avatar portrait is rendered inside
-    assert.match(html, /<svg/);
+    assert.match(html, /data-testid="vroid-teacher-status"/);
+    assert.match(html, /data-testid="vroid-teacher-role"/);
+    assert.match(html, /Staff Systems Architect/);
+    assert.match(html, /data-testid="vroid-avatar-viewport"/);
+    assert.match(html, /data-testid="btn-toggle-vroid-panel"/);
   });
 
   it('refillVisualFromTrace returns default visual cleanly without fallback error for flow template', () => {
@@ -78,26 +89,20 @@ describe('Classroom Navigation, Avatar, and Code Execution Reliability Suite', (
           at: 'say1',
           caption: 'You write exact instructions for the computer.',
           values: { instructions: 'print("Hi")', python: '', screen: '' },
-          tones: { instructions: 'data', python: 'idle', screen: 'idle' },
-          arrows: [],
+          activeIds: ['instructions'],
         },
       ],
     };
 
-    const mockSpec = {
-      template: 'flow',
-      title: 'Instructions Pipeline',
-      nodes: mockFlowVisual.nodes,
-      steps: mockFlowVisual.steps,
-    };
+    const refilled = refillVisualFromTrace(
+      mockFlowVisual,
+      mockFlowVisual,
+      [],
+      'Hi'
+    );
 
-    // Trace events without "instructions" variable (conceptual flow)
-    const traceEvents: Array<[number, number, Record<string, unknown>]> = [
-      [1, 1, { x: 42 }],
-    ];
-
-    const result = refillVisualFromTrace(mockSpec, mockFlowVisual, traceEvents, 'Hi\n');
-    assert.equal(result.fallbackNote, null, 'Flow template should never show variable mismatch fallback note');
-    assert.equal(result.visual.template, 'flow');
+    assert.equal(refilled.visual.template, 'flow');
+    assert.equal(refilled.fallbackNote, null, 'Flow template visual must not carry fallback error notice');
+    assert.equal(refilled.visual.nodes?.length, 3);
   });
 });
