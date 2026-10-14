@@ -911,6 +911,10 @@ export function useQuestProgression() {
     }
 
     const isCompleted = completedQuests.includes(quest.id);
+    if (isCompleted) {
+      toast.warning('Class Already Completed 🔒', 'You cannot access previous classes. Please continue with your next scheduled class.');
+      return;
+    }
     const initiated = onboardingAnswers?.initiatedQuests || [];
     const isInitiated = initiated.includes(quest.id);
 

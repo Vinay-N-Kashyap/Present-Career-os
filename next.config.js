@@ -58,6 +58,19 @@ const SECURITY_HEADERS = [
   { key: 'Content-Security-Policy', value: CSP },
 ];
 
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+try {
+  const pyodideTarget = path.join(__dirname, 'public', 'pyodide', 'pyodide.js');
+  if (!fs.existsSync(pyodideTarget)) {
+    execSync('node scripts/utils/copy-pyodide.cjs', { stdio: 'inherit' });
+  }
+} catch (_e) {
+  // Graceful fallback to Pyodide CDN in python-worker.js
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {

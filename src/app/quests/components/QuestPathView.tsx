@@ -666,6 +666,10 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                             toast.warning('Prerequisite Stage Locked 🔒', 'Please complete the previous stage quests before advancing to this stage.');
                             return;
                           }
+                          if (isStageCompleted) {
+                            toast.warning('Stage Completed 🔒', 'All classes in this stage have been completed. Previous classes cannot be re-accessed.');
+                            return;
+                          }
                           if (nextQuestInStage) {
                             handleLaunchQuest(nextQuestInStage, activeCourseId || 'course-java-logic');
                           }
@@ -928,6 +932,10 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                         onClick={() => {
                           if (isLocked) {
                             toast.warning('Prerequisite Stage Locked 🔒', 'Please complete the previous stage quests before advancing to this stage.');
+                            return;
+                          }
+                          if (isNodeCompleted) {
+                            toast.warning('Milestone Completed 🔒', 'All classes in this milestone have been completed. Previous classes cannot be re-accessed.');
                             return;
                           }
                           if (nextQuestInNode) {

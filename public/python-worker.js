@@ -1,14 +1,36 @@
 /* Runs student Python in the browser with Pyodide (self-hosted in /pyodide/, see
  * scripts/utils/copy-pyodide.cjs). One run at a time. The page terminates this worker on a
  * timeout (for example an endless loop) and starts a new one. */
-/* global importScripts, loadPyodide */
-importScripts('/pyodide/pyodide.js');
-
 let pyodideReady = null;
 
-function getPyodide() {
+async function getPyodide() {
   if (!pyodideReady) {
-    pyodideReady = loadPyodide({ indexURL: '/pyodide/' });
+    pyodideReady = (async () => {
+      // 1. Try local self-hosted pyodide first (/pyodide/)
+      try {
+        if (typeof loadPyodide === 'undefined') {
+          importScripts('/pyodide/pyodide.js');
+        }
+        if (typeof loadPyodide === 'function') {
+          return await loadPyodide({ indexURL: '/pyodide/' });
+        }
+      } catch (_localErr) {
+        // Local files not deployed or returned 404, fall back to official CDN
+      }
+
+      // 2. Fallback to official Pyodide CDN
+      try {
+        if (typeof loadPyodide === 'undefined') {
+          importScripts('https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js');
+        }
+        if (typeof loadPyodide === 'function') {
+          return await loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.4/full/' });
+        }
+        throw new Error('loadPyodide unavailable from CDN');
+      } catch (cdnErr) {
+        throw new Error('Pyodide engine failed to start: ' + ((cdnErr && cdnErr.message) || String(cdnErr)));
+      }
+    })();
   }
   return pyodideReady;
 }

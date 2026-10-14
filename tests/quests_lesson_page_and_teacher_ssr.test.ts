@@ -197,5 +197,73 @@ describe('Quests Lesson Page and Teacher SSR Suite (Block 53 / TASK-341)', () =>
     const unregisteredHtml = renderToStaticMarkup(unregisteredFallback);
     assert.ok(unregisteredHtml.includes('data-testid="quest-not-found"'));
     assert.ok(unregisteredHtml.includes('data-testid="btn-unregistered-return"'));
+
+    // Completed previous class locked fallback markup (Feature 1)
+    const completedLockedFallback = React.createElement(
+      'div',
+      { 'data-testid': 'quest-already-completed-locked' },
+      React.createElement('h2', null, 'Class Already Completed'),
+      React.createElement('button', { 'data-testid': 'btn-completed-return' }, 'Return to Quests Roadmap')
+    );
+    const completedHtml = renderToStaticMarkup(completedLockedFallback);
+    assert.ok(completedHtml.includes('data-testid="quest-already-completed-locked"'));
+    assert.ok(completedHtml.includes('data-testid="btn-completed-return"'));
+    assert.ok(completedHtml.includes('Class Already Completed'));
+  });
+
+  test('LessonHeader renders Fullscreen Game Mode toggle with Shift+Space shortcut (Feature 2)', () => {
+    const { LessonHeader } = require('../src/app/quests/lesson/components/LessonHeader');
+    const headerHtml = renderToStaticMarkup(
+      React.createElement(LessonHeader, {
+        questTitle: 'Python Lecture 1: Day 1',
+        isFocusMusicEnabled: false,
+        setIsFocusMusicEnabled: () => {},
+        soundscapeVol: 50,
+        setSoundscapeVol: () => {},
+        isAudioUnlocked: true,
+        setIsAudioUnlocked: () => {},
+        playSpeech: () => {},
+        stopSpeaking: () => {},
+        setIsPlaying: () => {},
+        setIsInteractive: () => {},
+        currentSlide: 1,
+        setCurrentSlide: () => {},
+        totalSlides: 6,
+        isInteractive: false,
+        examPassed: false,
+        isFullscreen: false,
+        toggleFullscreen: () => {},
+      })
+    );
+
+    assert.ok(headerHtml.includes('data-testid="btn-fullscreen-toggle"'));
+    assert.ok(headerHtml.includes('Shift + Space x2'));
+
+    // In fullscreen active mode
+    const fsHeaderHtml = renderToStaticMarkup(
+      React.createElement(LessonHeader, {
+        questTitle: 'Python Lecture 1: Day 1',
+        isFocusMusicEnabled: false,
+        setIsFocusMusicEnabled: () => {},
+        soundscapeVol: 50,
+        setSoundscapeVol: () => {},
+        isAudioUnlocked: true,
+        setIsAudioUnlocked: () => {},
+        playSpeech: () => {},
+        stopSpeaking: () => {},
+        setIsPlaying: () => {},
+        setIsInteractive: () => {},
+        currentSlide: 1,
+        setCurrentSlide: () => {},
+        totalSlides: 6,
+        isInteractive: false,
+        examPassed: false,
+        isFullscreen: true,
+        toggleFullscreen: () => {},
+      })
+    );
+
+    assert.ok(fsHeaderHtml.includes('Exit Focus (Shift+Esc)'));
   });
 });
+

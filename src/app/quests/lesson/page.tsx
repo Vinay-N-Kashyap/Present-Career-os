@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useCallback, useEffect } from 'react';
+import { Suspense, useCallback, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { COURSES_REGISTRY } from '@/lib/data/coursesData';
@@ -331,6 +331,35 @@ const lessonStyles = `
       padding: 18px 22px 40px 22px;
     }
   }
+
+  /* Fullscreen Gaming Mode (Shift + Space x2) */
+  .classroom-page-root.fullscreen-mode {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+  }
+  .classroom-page-root.fullscreen-mode .classroom-return-btn {
+    display: none !important;
+  }
+  .classroom-page-root.fullscreen-mode .lesson-card {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    gap: 12px !important;
+  }
 `;
 
 export default function LessonPage() {
@@ -349,7 +378,7 @@ function LessonPageRouter() {
   const { user, loading: authLoading } = useAuth();
   const effectiveUser = user || (isTestMode ? { id: 'test-ci-student', email: 'test@ci.local' } : null);
   const userId = effectiveUser?.id || 'guest';
-  const { onboardingAnswers } = useCareerOS();
+  const { onboardingAnswers, completedQuests = [] } = useCareerOS();
 
   useEffect(() => {
     if (!isTestMode && !authLoading && !user) {
@@ -488,6 +517,53 @@ function LessonPageRouter() {
     );
   }
 
+  // Guard against accessing completed previous classes (Feature 1: user cant access previous classes)
+  const isClassAlreadyCompleted = Boolean(questId && completedQuests.includes(questId));
+  if (isClassAlreadyCompleted && !isTestMode) {
+    return (
+      <div
+        data-testid="quest-already-completed-locked"
+        style={{
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'var(--bg)',
+          color: 'var(--t1)',
+          gap: 16,
+          padding: 24,
+          textAlign: 'center'
+        }}
+      >
+        <div style={{ fontSize: 53 }}>🔒</div>
+        <h2 style={{ fontSize: 22, fontWeight: 900 }}>Class Already Completed</h2>
+        <p style={{ fontSize: 14.5, color: 'var(--t2)', maxWidth: 460, lineHeight: 1.5 }}>
+          You have already completed this class (<code style={{ color: 'var(--accent)', background: 'var(--bg2)', padding: '2px 6px', borderRadius: 4 }}>{questData?.title || questId}</code>).
+          Previous classes are locked to ensure focus on your current daily progress.
+        </p>
+        <button
+          data-testid="btn-completed-return"
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.location.assign('/quests?tab=custom_roadmap');
+            }
+          }}
+          className="btn-primary"
+          style={{
+            padding: '10px 20px',
+            borderRadius: 10,
+            cursor: 'pointer',
+            fontSize: 13,
+            fontWeight: 800
+          }}
+        >
+          Return to Quests Roadmap
+        </button>
+      </div>
+    );
+  }
 
   if (questData?.type === 'coding' || (questId && (questId.includes('-exam-') || questId.includes('-assign-')))) {
     return <QuestWorkspaceClient questId={questId} />;
@@ -546,6 +622,97 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
     isTestMode,
   });
 
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showFullscreenPill, setShowFullscreenPill] = useState(false);
+
+  const enterFullscreen = useCallback(async () => {
+    try {
+      if (typeof document !== 'undefined' && !document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      }
+    } catch (err) {
+      console.warn('Fullscreen request failed:', err);
+    }
+  }, []);
+
+  const exitFullscreen = useCallback(async () => {
+    try {
+      if (typeof document !== 'undefined' && document.fullscreenElement) {
+        await document.exitFullscreen();
+      }
+    } catch (err) {
+      console.warn('Exit fullscreen failed:', err);
+    }
+  }, []);
+
+  const toggleFullscreen = useCallback(() => {
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      exitFullscreen();
+    } else {
+      enterFullscreen();
+    }
+  }, [enterFullscreen, exitFullscreen]);
+
+  // Sync fullscreen state with browser events
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const handleFullscreenChange = () => {
+      const active = Boolean(document.fullscreenElement);
+      setIsFullscreen(active);
+      if (active) {
+        setShowFullscreenPill(true);
+        const timer = setTimeout(() => setShowFullscreenPill(false), 3500);
+        return () => clearTimeout(timer);
+      }
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
+  // Keyboard shortcut listener:
+  // 1. Shift + twice Spacebar -> Enter Fullscreen Gaming Mode
+  // 2. Shift + Esc (or Esc) -> Exit Fullscreen
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    let lastShiftSpaceTime = 0;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Shift + twice Spacebar
+      if (e.shiftKey && (e.code === 'Space' || e.key === ' ')) {
+        const target = e.target as HTMLElement | null;
+        const isInputField = target && (
+          target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          Boolean(target.isContentEditable) ||
+          target.closest('.monaco-editor') !== null
+        );
+        if (!isInputField) {
+          const now = Date.now();
+          if (now - lastShiftSpaceTime < 500) {
+            e.preventDefault();
+            lastShiftSpaceTime = 0;
+            if (!document.fullscreenElement) {
+              enterFullscreen();
+            }
+          } else {
+            lastShiftSpaceTime = now;
+          }
+        }
+      }
+
+      // Shift + Esc (or Esc) to exit fullscreen
+      if (e.code === 'Escape' || e.key === 'Escape') {
+        if (document.fullscreenElement) {
+          e.preventDefault();
+          exitFullscreen();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [enterFullscreen, exitFullscreen]);
+
   const syllabus: string[] = Array.isArray(questData?.syllabus) ? questData.syllabus : [];
   const totalSlides = (state.slides.length || syllabus.length) + 2;
   const isLastSlide = state.currentSlide === (state.slides.length || syllabus.length) + 1;
@@ -563,8 +730,58 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
       boxSizing: 'border-box',
       overflow: 'hidden',
       position: 'relative'
-    }} className="classroom-page-root animate-fade-in" data-testid="classroom-page-root">
+    }} className={`classroom-page-root animate-fade-in ${isFullscreen ? 'fullscreen-mode' : ''}`} data-testid="classroom-page-root">
       <style>{lessonStyles}</style>
+
+      {/* Floating Fullscreen Mode HUD */}
+      {isFullscreen && (
+        <div
+          data-testid="fullscreen-mode-pill"
+          style={{
+            position: 'fixed',
+            top: 14,
+            right: 18,
+            zIndex: 99999,
+            background: 'rgba(15, 23, 42, 0.92)',
+            backdropFilter: 'blur(10px)',
+            border: '1.5px solid var(--accent)',
+            borderRadius: 20,
+            padding: '6px 14px',
+            color: 'var(--t1)',
+            fontSize: 12,
+            fontWeight: 800,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+            boxShadow: '0 4px 24px rgba(0,0,0,0.6)',
+            transition: 'opacity 0.3s ease',
+            opacity: showFullscreenPill ? 1 : 0.35,
+          }}
+          onMouseEnter={() => setShowFullscreenPill(true)}
+          onMouseLeave={() => setShowFullscreenPill(false)}
+        >
+          <span>🎮 Fullscreen Game Mode</span>
+          <span style={{ color: 'var(--accent)', fontSize: 11, background: 'rgba(var(--brand-rgb), 0.2)', padding: '2px 6px', borderRadius: 6 }}>
+            Shift + Esc to exit
+          </span>
+          <button
+            onClick={exitFullscreen}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--t2)',
+              cursor: 'pointer',
+              fontSize: 14,
+              padding: '0 2px',
+              display: 'flex',
+              alignItems: 'center'
+            }}
+            title="Exit Fullscreen Mode"
+          >
+            ✕
+          </button>
+        </div>
+      )}
 
       {/* Return Button */}
       <button
@@ -627,6 +844,8 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
             maxUnlockedSlide={state.maxUnlockedSlide}
             understandingConfirmed={state.understandingConfirmed}
             isTest={Boolean(parseTestQuestId(questId))}
+            isFullscreen={isFullscreen}
+            toggleFullscreen={toggleFullscreen}
           />
 
           <LessonContentRenderer

@@ -24,6 +24,8 @@ interface LessonHeaderProps {
   understandingConfirmed?: Record<number, boolean>;
   /** A test after 5 days: no teaching slides, so no "skip to code". */
   isTest?: boolean;
+  isFullscreen?: boolean;
+  toggleFullscreen?: () => void;
 }
 
 export function LessonHeader({
@@ -46,6 +48,8 @@ export function LessonHeader({
   maxUnlockedSlide = 0,
   understandingConfirmed,
   isTest = false,
+  isFullscreen = false,
+  toggleFullscreen,
 }: LessonHeaderProps) {
   return (
     <div className="lesson-header-root" data-testid="lesson-header-root">
@@ -237,6 +241,30 @@ export function LessonHeader({
         >
           ⚡ Skip to the code
         </button>
+        )}
+        {toggleFullscreen && (
+          <button
+            type="button"
+            data-testid="btn-fullscreen-toggle"
+            onClick={toggleFullscreen}
+            title="Focus Game Mode (Shift + Space x2 to enter, Shift + Esc to exit)"
+            style={{
+              background: isFullscreen ? 'rgba(var(--brand-rgb), 0.25)' : 'rgba(255, 255, 255, 0.05)',
+              border: `1.5px solid ${isFullscreen ? 'var(--accent)' : 'var(--border)'}`,
+              color: isFullscreen ? 'var(--accent)' : 'var(--t2)',
+              borderRadius: 10,
+              padding: '4px 10px',
+              fontSize: 11.5,
+              fontWeight: 800,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 4,
+              transition: 'all 0.2s'
+            }}
+          >
+            {isFullscreen ? '🖥️ Exit Focus (Shift+Esc)' : '🎮 Focus Mode (Shift + Space x2)'}
+          </button>
         )}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: 8 }}>

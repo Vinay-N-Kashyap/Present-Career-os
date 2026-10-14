@@ -1,4 +1,5 @@
 {
+  "buildCommand": "node scripts/utils/copy-pyodide.cjs && node scripts/utils/build-sql-worker.cjs && node scripts/utils/copy-esbuild.cjs && next build",
   "crons": [
     {
       "path": "/api/cron/daily-pin-reset",
