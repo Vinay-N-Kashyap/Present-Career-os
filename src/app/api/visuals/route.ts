@@ -40,7 +40,8 @@ export async function GET(req: NextRequest) {
       const longLesson = getLongLesson(prefix, day);
       if (longLesson && Array.isArray(longLesson.parts) && longLesson.parts.length > 0) {
         const entries = longLesson.parts.map((part, idx) => {
-          const filled = synthesizeLongLessonVisual(prefix, day, idx, part);
+          const sayList = Array.isArray(part.say) ? part.say : (part.say ? [part.say] : []);
+          const filled = synthesizeLongLessonVisual(prefix, day, idx, { ...part, say: sayList });
           return {
             partTitle: part.title,
             codeHash: `synth-${prefix}-${day}-${idx}`,

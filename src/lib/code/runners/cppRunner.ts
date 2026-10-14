@@ -36,7 +36,7 @@ export function inspectCppSource(code: string, expectedFnName: string): CppInspe
   }
 
   const hasHeaders = /#include\s*<[\w.]+>/.test(code);
-  const hasLoopsOrRecursion = /\b(for|while)\s*\(/.test(code) || (expectedFnName && new RegExp(`\\b${expectedFnName}\\s*\\(`).test(code.replace(fnRegex, '')));
+  const hasLoopsOrRecursion = Boolean(/\b(for|while)\s*\(/.test(code) || (expectedFnName && new RegExp(`\\b${expectedFnName}\\s*\\(`).test(code.replace(fnRegex, ''))));
   const usesPointersOrReferences = /[*&]\s*\w+/.test(code) || /\b(unique_ptr|shared_ptr|make_unique|make_shared)\b/.test(code);
 
   return {

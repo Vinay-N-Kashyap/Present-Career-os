@@ -15,6 +15,7 @@ import {
   clearPendingQuestCompletions,
   PendingQuestCompletion
 } from '@/lib/storage/careerStorage';
+import { generateDynamicStudentRoadmap } from '@/lib/data/roadmapFuser';
 
 export interface OnboardingAnswers {
   role?: string;

@@ -319,13 +319,12 @@ const RUNNER_LABELS: Record<string, string> = {
   'git_vcs': '🐙 Git, GitHub & Version Control Sandbox',
   'soft-skills': '🎙️ Executive Communication & Behavioral Leadership Simulator',
   'design': '🎨 UI/UX Design Systems & Visual Frontend Sandbox',
-  'mobile': '📱 Mobile Application Development & React Native Sandbox',
+  'mobile': '📱 React Native & Mobile Engine Simulator',
   'nlp': '📚 Natural Language Processing & LLM Infrastructure Sandbox',
   'cyber': '🛡️ Cybersecurity Principles & Secure Systems Sandbox',
-  'excel_viz': '📊 Excel & Spreadsheet Data Analysis Sandbox',
-  'ai_prompt': '🤖 Everyday AI Literacy & Prompt Engineering Sandbox',
+  'excel_viz': '📊 Excel & Business Analytics Python Engine',
+  'ai_prompt': '🧠 Prompt Engineering & LLM Architecture Python Engine',
   'comp_fund': '💻 POSIX Virtual Shell & CLI Sandbox',
-  'git_vcs': '🐙 Git & Bash Sandbox',
   'bcom_ait': '🤖 AI & Digital Transformation for Business Simulator',
   'bcom_ops': '⚙️ Operations, Supply Chain & Business Compliance Simulator',
   'bcom_tax': '📋 Corporate & Direct Tax Simulator',
@@ -342,8 +341,6 @@ const RUNNER_LABELS: Record<string, string> = {
   'bcom_ana': '📊 Business Analytics & Decision Intelligence Simulator',
   'bcom-accounting': '📊 Digital Accounting & ERP Simulator',
   'quant-systems': '📈 C++ Low-Latency & Quantitative Trading Simulator',
-  'excel_viz': '📊 Excel & Business Analytics Python Engine',
-  'ai_prompt': '🧠 Prompt Engineering & LLM Architecture Python Engine',
   'iot_sec': '🔒 Hardware Root of Trust & Secure Boot Simulator',
   'iot_edge': '🧠 Edge AI & TinyML TFLM Inference Simulator',
   'ai': '🤖 AI & LLM Engine Simulator',
@@ -362,7 +359,6 @@ const RUNNER_LABELS: Record<string, string> = {
   'iot_emb': '🔌 Embedded MCU C++ Simulator',
   'g3d': '🔮 WebGL2 & GPU Shader Graphics Simulator',
   'blockchain': '🪙 EVM Web3 & Solidity TypeScript Simulator',
-  'mobile': '📱 React Native & Mobile Engine Simulator',
 };
 
 interface UseLessonEngineProps {
@@ -735,11 +731,12 @@ export function useLessonEngine({
     if (longLesson) {
       setSlides(longLesson.parts.map((part, i) => {
         const visualKey = `${coursePrefix}:${dayNum}:${i}`;
-        const visual = getVisual(coursePrefix, dayNum, i) || synthesizeLongLessonVisual(coursePrefix, dayNum, i, part);
+        const sayList = Array.isArray(part.say) ? part.say : (part.say ? [part.say] : []);
+        const visual = getVisual(coursePrefix, dayNum, i) || synthesizeLongLessonVisual(coursePrefix, dayNum, i, { ...part, say: sayList });
 
         const speechPieces: { at: VisualAt; text: string }[] = [
           { at: 'intro' as VisualAt, text: `Part ${i + 1}: ${part.title}.` },
-          ...part.say.map((s, sIdx) => ({ at: `say${sIdx + 1}` as VisualAt, text: s })),
+          ...sayList.map((s: string, sIdx: number) => ({ at: `say${sIdx + 1}` as VisualAt, text: s })),
           ...(part.example ? [{ at: 'example' as VisualAt, text: `Here is an everyday example. ${part.example}` }] : []),
           ...(part.tryIt ? [{ at: 'tryIt' as VisualAt, text: `Now you try. ${part.tryIt}` }] : []),
         ].filter(p => Boolean(p.text && p.text.trim()));
@@ -1230,7 +1227,7 @@ export function useLessonEngine({
       return [
         `Welcome, ${studentName}! Today's lesson is ${longLesson.title}.`,
         longLesson.recap || '',
-        `By the end of this lesson, ${longLesson.goal.charAt(0).toLowerCase()}${longLesson.goal.slice(1)}`,
+        longLesson.goal ? `By the end of this lesson, ${longLesson.goal.charAt(0).toLowerCase()}${longLesson.goal.slice(1)}` : '',
         `We will go step by step, in ${longLesson.parts.length} parts. After each part there is a small question, and you can ask me anything if something is not clear.`,
       ].filter(Boolean).join(' ');
     }

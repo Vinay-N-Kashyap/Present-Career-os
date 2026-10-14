@@ -66,15 +66,17 @@ export interface LongLessonCheck {
   question: string;
   options: string[];
   /** Index into options of the right answer. */
-  answer: number;
+  answer?: number;
   /** Why the right answer is right, in one or two plain sentences. */
-  why: string;
+  why?: string;
+  answerIndex?: number;
+  explanation?: string;
 }
 
 export interface LongLessonPart {
   title: string;
   /** What the teacher says, one paragraph per entry. Shown on screen and spoken aloud. */
-  say: string[];
+  say: string[] | string;
   /** An everyday, non-computer example of the idea. */
   example?: string;
   /** Runnable code that prints its result: JavaScript (console.log) or, for Python courses, Python (print). */
@@ -82,7 +84,7 @@ export interface LongLessonPart {
   /** What the code prints, so students can compare. */
   output?: string;
   /** Notes for important code lines (1-based line numbers). */
-  codeNotes?: { line: number; note: string }[];
+  codeNotes?: ({ line: number; note: string } | string)[];
   /** A small change for the student to make and run. */
   tryIt?: string;
   /**
@@ -94,14 +96,16 @@ export interface LongLessonPart {
 }
 
 export interface LongLesson {
+  coursePrefix?: string;
   day: number;
   title: string;
   /** One sentence: what the student can do after this lesson. */
-  goal: string;
+  goal?: string;
   /** Rough lesson length in minutes (lesson only, not practice). */
-  minutes: number;
+  minutes?: number;
   /** Short reminder of the previous day, spoken at the start. */
   recap?: string;
+  overview?: string;
   parts: LongLessonPart[];
   /** Key points to remember, shown at the end. */
   summary: string[];
@@ -171,7 +175,7 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
 };
 
 /** Language of each course's lesson code. Python runs in the browser with Pyodide, SQL with PGlite (PostgreSQL), TypeScript is compiled with esbuild, Bash runs via in-memory POSIX shell sandbox, C++ runs via AST structural invariant inspector. */
-export type LongLessonLanguage = 'javascript' | 'python' | 'sql' | 'typescript' | 'bash' | 'cpp';
+export type LongLessonLanguage = 'javascript' | 'python' | 'sql' | 'typescript' | 'bash' | 'cpp' | 'java';
 
 const LONG_LESSON_LANGUAGE: Record<string, LongLessonLanguage> = {
   'react-basics': 'javascript',

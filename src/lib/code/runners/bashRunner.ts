@@ -580,7 +580,7 @@ export async function executeBashSuite(
       const runRes = tcSession.execute(code);
       const actual = runRes.stdout.trim();
       const expected = (tc.output || '').trim();
-      const isPass = actual === expected || (expected && actual.includes(expected));
+      const isPass = actual === expected || Boolean(expected && actual.includes(expected));
 
       if (isPass) passed++;
 
