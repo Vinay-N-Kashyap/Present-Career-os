@@ -1,0 +1,1169 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 2,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Dynamic Array Spill Ranges: =FILTER, =UNIQUE & =SORT Without Array Brackets",
+      "codeHash": "7b401124fbcd86656e5f051797354da64b242c01feeb739811910cc96e5ae047",
+      "spec": {
+        "template": "bars",
+        "title": "Dynamic Array Spill Ranges: =FILTER, =UNIQUE ... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Dynamic Array Spill Ranges: =FILTER...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 66,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 43,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 32,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 21,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 53,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 41,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Dynamic Array Spill Ranges:...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 63,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 53,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 39,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Dynamic Array Spill Ranges: =FILTER, =UNIQUE ... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Dynamic Array Spill Ranges: =FILTER...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 66,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 43,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 32,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 21,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 53,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 41,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Dynamic Array Spill Ranges:...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 63,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 53,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 39,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monte Carlo Financial Risk Simulation & Empirical Distribution Bands (P10, P50, P90)",
+      "codeHash": "98272ae5d35047797a52ff3b336630d45826feca45bf1cd20b44b0420f49603e",
+      "spec": {
+        "template": "bars",
+        "title": "Monte Carlo Financial Risk Simulation & Empir... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Monte Carlo Financial Risk Simulati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 46,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 23,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 57,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 44,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 63,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 51,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 37,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Monte Carlo Financial Risk ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 67,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 41,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Monte Carlo Financial Risk Simulation & Empir... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Monte Carlo Financial Risk Simulati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 46,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 23,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 57,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 44,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 63,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 51,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 37,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Monte Carlo Financial Risk ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 67,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 41,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Power Pivot Star Schema Architecture & DAX Calculated Measures (Filter Context vs Row Context)",
+      "codeHash": "3d1037f5dd9ff9e7091015d37d6ba3b06ba88a4a9f3c85b58b3c948f74a79626",
+      "spec": {
+        "template": "bars",
+        "title": "Power Pivot Star Schema Architecture & DAX Ca... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Power Pivot Star Schema Architectur...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 49,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 36,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 84,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 47,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 67,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 40,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Power Pivot Star Schema Arc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 71,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 44,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Power Pivot Star Schema Architecture & DAX Ca... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Power Pivot Star Schema Architectur...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 49,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 36,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 84,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 47,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 67,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 40,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Power Pivot Star Schema Arc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 71,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 44,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Two-Way What-If Sensitivity Analysis Data Tables: DCF Valuation Matrix",
+      "codeHash": "49b628257d8d38fef471e2981ec3537e3ff66b79ce55ce7371f52b05707f0901",
+      "spec": {
+        "template": "bars",
+        "title": "Two-Way What-If Sensitivity Analysis Data Tab... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Two-Way What-If Sensitivity Analysi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 81,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 53,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 39,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 89,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 64,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 93,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 71,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 58,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Two-Way What-If Sensitivity...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 96,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 46,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Two-Way What-If Sensitivity Analysis Data Tab... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Two-Way What-If Sensitivity Analysi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 81,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 53,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 39,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 89,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 64,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 93,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 71,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 58,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Two-Way What-If Sensitivity...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 96,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 46,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Financial Waterfall Charts & Executive EBITDA Variance Attribution Bridge",
+      "codeHash": "dc7c2954e4ce9697713203df3ea104c4b91847dc315346d684fae42f00f7d7c9",
+      "spec": {
+        "template": "bars",
+        "title": "Financial Waterfall Charts & Executive EBITDA... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Financial Waterfall Charts & Execut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 61,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 29,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 20,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 69,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 39,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 73,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 45,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 33,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Financial Waterfall Charts ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 76,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 49,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 36,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Financial Waterfall Charts & Executive EBITDA... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Financial Waterfall Charts & Execut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 61,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 29,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 20,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate Contribution Margin & Operating Cash Flow drivers.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 69,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 39,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 73,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 55,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 45,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 33,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Financial Waterfall Charts ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 76,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 59,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 49,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 36,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
