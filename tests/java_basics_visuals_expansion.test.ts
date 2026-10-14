@@ -8,14 +8,14 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 20 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 30 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
 
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
-  for (const day of [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) {
+  for (const day of [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) {
     const dayPadded = String(day).padStart(2, '0');
     const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/${prefix}/day-${dayPadded}.json`);
     assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
@@ -57,7 +57,7 @@ test('Java Basics Visuals Expansion: Days 6 to 20 On-Disk Spec Verification', ()
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
   const { estimateSpokenMinutes, estimateLessonMinutes } = require('../src/lib/data/longLessons');
-  for (const day of [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) {
+  for (const day of [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) {
     const lesson = getLongLesson('java-basics', day);
     assert.ok(lesson);
     const spoken = estimateSpokenMinutes(lesson);
